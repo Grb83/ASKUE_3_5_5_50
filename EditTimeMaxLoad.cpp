@@ -34,7 +34,7 @@ void __fastcall TFormEditTimeMaxLoad::FormShow(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-bool __fastcall TFormEditTimeMaxLoad::ReadData(void)// Читает данные
+bool __fastcall TFormEditTimeMaxLoad::ReadData(void)// Р§РёС‚Р°РµС‚ РґР°РЅРЅС‹Рµ
 {
   POINTSDIV *PTreeTable;
   TTreeNode *AddNode=NULL;

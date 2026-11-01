@@ -10,10 +10,10 @@
 //      class names
 //      procedure names
 // DESCRIPTION :
-//      Невизуальный компонент для получения событий об обновлении таблицы
-//      системных сообщений. Событие приходит от фоновой нити выполнения
-//      MonitorAlert. Сообщение об обновлении передается главному окну приложения
-//      для обновления статусов.
+//      РќРµРІРёР·СѓР°Р»СЊРЅС‹Р№ РєРѕРјРїРѕРЅРµРЅС‚ РґР»СЏ РїРѕР»СѓС‡РµРЅРёСЏ СЃРѕР±С‹С‚РёР№ РѕР± РѕР±РЅРѕРІР»РµРЅРёРё С‚Р°Р±Р»РёС†С‹
+//      СЃРёСЃС‚РµРјРЅС‹С… СЃРѕРѕР±С‰РµРЅРёР№. РЎРѕР±С‹С‚РёРµ РїСЂРёС…РѕРґРёС‚ РѕС‚ С„РѕРЅРѕРІРѕР№ РЅРёС‚Рё РІС‹РїРѕР»РЅРµРЅРёСЏ
+//      MonitorAlert. РЎРѕРѕР±С‰РµРЅРёРµ РѕР± РѕР±РЅРѕРІР»РµРЅРёРё РїРµСЂРµРґР°РµС‚СЃСЏ РіР»Р°РІРЅРѕРјСѓ РѕРєРЅСѓ РїСЂРёР»РѕР¶РµРЅРёСЏ
+//      РґР»СЏ РѕР±РЅРѕРІР»РµРЅРёСЏ СЃС‚Р°С‚СѓСЃРѕРІ.
 // REVISIONS   :
 //      MM/DD/YY - (Author) Description
 /////////////////////////////////////////////////////////////////////////////
@@ -23,10 +23,10 @@
 #include "unDataMod.h"
 #include "SupperMain.h"
 /////////////////////////////////////////////////////////////////////////////
-//Глобальный список компонентов, получающих сообщения об обновленях таблиц
+//Р“Р»РѕР±Р°Р»СЊРЅС‹Р№ СЃРїРёСЃРѕРє РєРѕРјРїРѕРЅРµРЅС‚РѕРІ, РїРѕР»СѓС‡Р°СЋС‰РёС… СЃРѕРѕР±С‰РµРЅРёСЏ РѕР± РѕР±РЅРѕРІР»РµРЅСЏС… С‚Р°Р±Р»РёС†
 extern TList *ListInterior;
 
-//Глобальный обект для синхронизации исключения членов из очереди наблюдателей
+//Р“Р»РѕР±Р°Р»СЊРЅС‹Р№ РѕР±РµРєС‚ РґР»СЏ СЃРёРЅС…СЂРѕРЅРёР·Р°С†РёРё РёСЃРєР»СЋС‡РµРЅРёСЏ С‡Р»РµРЅРѕРІ РёР· РѕС‡РµСЂРµРґРё РЅР°Р±Р»СЋРґР°С‚РµР»РµР№
 extern CRITICAL_SECTION ListInteriorCriticalSection;
 /////////////////////////////////////////////////////////////////////////////
 // TInteriorAlert::TInteriorAlert - constructor
@@ -44,15 +44,15 @@ __fastcall TInteriorAlert::TInteriorAlert(TComponent* Owner):TInterior(Owner)
 	VT_PrintData        = NULL;
 	hMutex              = CreateMutex( NULL, FALSE, NULL );
 
-	//Поместить экземпляр в список ожидающих обновления
+	//РџРѕРјРµСЃС‚РёС‚СЊ СЌРєР·РµРјРїР»СЏСЂ РІ СЃРїРёСЃРѕРє РѕР¶РёРґР°СЋС‰РёС… РѕР±РЅРѕРІР»РµРЅРёСЏ
         if( hMutex )
         {
-                //Без мьютекса компонент не будет получать сообщения об обновлении таблиц
+                //Р‘РµР· РјСЊСЋС‚РµРєСЃР° РєРѕРјРїРѕРЅРµРЅС‚ РЅРµ Р±СѓРґРµС‚ РїРѕР»СѓС‡Р°С‚СЊ СЃРѕРѕР±С‰РµРЅРёСЏ РѕР± РѕР±РЅРѕРІР»РµРЅРёРё С‚Р°Р±Р»РёС†
         	EnterCriticalSection(&ListInteriorCriticalSection);
 	        ListInterior->Add( this );
         	LeaveCriticalSection(&ListInteriorCriticalSection);
         }
-   // Add by KSS - посылаем инициализирующее сообщение ...
+   // Add by KSS - РїРѕСЃС‹Р»Р°РµРј РёРЅРёС†РёР°Р»РёР·РёСЂСѓСЋС‰РµРµ СЃРѕРѕР±С‰РµРЅРёРµ ...
 }
 /////////////////////////////////////////////////////////////////////////////
 // TInteriorAlert::~TInteriorAlert - destructor
@@ -76,7 +76,7 @@ __fastcall TInteriorAlert::~TInteriorAlert(void)
 /////////////////////////////////////////////////////////////////////////////
 // TInteriorAlert::refreshData - <reference name>
 // TAKES:
-//      Table     - [in] код таблицы от которой получен сигнал об обновлении
+//      Table     - [in] РєРѕРґ С‚Р°Р±Р»РёС†С‹ РѕС‚ РєРѕС‚РѕСЂРѕР№ РїРѕР»СѓС‡РµРЅ СЃРёРіРЅР°Р» РѕР± РѕР±РЅРѕРІР»РµРЅРёРё
 //      oraCursor - [in]
 // RETURNS:
 //      none
@@ -95,7 +95,7 @@ void __fastcall TInteriorAlert::refreshData( int Table, TOraQuery *quMain )
    LPARAM lParam = 0;
 
 	if ( Table == 4){
-		// Обрыв связи
+		// РћР±СЂС‹РІ СЃРІСЏР·Рё
     quMain->Params->Clear();
     quMain->SQL->Text = " begin "+SchemeName+"interior_pg.InteriorAlert_refreshData1_p(:par1);end;";
     quMain->ParamByName("par1")->DataType=ftCursor;
@@ -107,7 +107,7 @@ void __fastcall TInteriorAlert::refreshData( int Table, TOraQuery *quMain )
 			lParam |= 0x04;
 		else
 			lParam &= 0xFFFFFFFB;
-		// Предупреждение
+		// РџСЂРµРґСѓРїСЂРµР¶РґРµРЅРёРµ
     quMain->Params->Clear();
     quMain->SQL->Text = " begin "+SchemeName+"interior_pg.InteriorAlert_refreshData2_p(:par1);end;";
     quMain->ParamByName("par1")->DataType=ftCursor;
@@ -120,7 +120,7 @@ void __fastcall TInteriorAlert::refreshData( int Table, TOraQuery *quMain )
 		else
 			lParam &= 0xFFFFFFFD;
 
-		// Сообщение
+		// РЎРѕРѕР±С‰РµРЅРёРµ
     quMain->Params->Clear();
     quMain->SQL->Text = " begin "+SchemeName+"interior_pg.InteriorAlert_refreshData3_p(:par1);end;";
     quMain->ParamByName("par1")->DataType=ftCursor;

@@ -41,9 +41,9 @@ void __fastcall TfmAbout::FormCreate(TObject *Sender)
         }__finally{
                 delete Reg;
   }
-  lbVersion->Caption="Âåðñèÿ "+GetFileVerInfo(Application->ExeName).vver;
+  lbVersion->Caption="Ð’ÐµÑ€ÑÐ¸Ñ "+GetFileVerInfo(Application->ExeName).vver;
   if (Language=="UKR")
-  lbVersion->Caption="Âåðñiÿ "+GetFileVerInfo(Application->ExeName).vver;
+  lbVersion->Caption="Ð’ÐµÑ€ÑiÑ "+GetFileVerInfo(Application->ExeName).vver;
   try{
     if (Language!="UKR"){
     if(FileExists(ExtractFilePath(Application->ExeName)+AnsiString("askue.jpg")))
@@ -51,7 +51,7 @@ void __fastcall TfmAbout::FormCreate(TObject *Sender)
       }else{
     if(FileExists(ExtractFilePath(Application->ExeName)+AnsiString("askue_ukr.jpg")))
       Image1->Picture->LoadFromFile(ExtractFilePath(Application->ExeName)+AnsiString("askue_ukr.jpg"));
-      else{//åñëè íåòó òî ãðóçèì ðóññêèé (íàïðèìåð íà ìàøèíàõ ñî ñòàðûìè âåðñèÿìè)
+      else{//ÐµÑÐ»Ð¸ Ð½ÐµÑ‚Ñƒ Ñ‚Ð¾ Ð³Ñ€ÑƒÐ·Ð¸Ð¼ Ñ€ÑƒÑÑÐºÐ¸Ð¹ (Ð½Ð°Ð¿Ñ€Ð¸Ð¼ÐµÑ€ Ð½Ð° Ð¼Ð°ÑˆÐ¸Ð½Ð°Ñ… ÑÐ¾ ÑÑ‚Ð°Ñ€Ñ‹Ð¼Ð¸ Ð²ÐµÑ€ÑÐ¸ÑÐ¼Ð¸)
         if(FileExists(ExtractFilePath(Application->ExeName)+AnsiString("askue.jpg")))
                 Image1->Picture->LoadFromFile(ExtractFilePath(Application->ExeName)+AnsiString("askue.jpg"));
       }

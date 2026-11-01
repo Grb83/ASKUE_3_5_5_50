@@ -13,7 +13,7 @@
 #pragma link "OraSmart"
 #pragma resource "*.dfm"
 // AnsiString rate_type[]={Reconst_smes25_1.c_str(),Reconst_smes25_2.c_str(),Reconst_smes25_3.c_str(),Reconst_smes25_4.c_str()};
-   AnsiString rate_type[]={"À(ïèê)","Â(ïîëóïèê)","Ñ(íî÷ü)","D(ðåçåðâ)","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X",};
+   AnsiString rate_type[]={"Ð(Ð¿Ð¸Ðº)","Ð’(Ð¿Ð¾Ð»ÑƒÐ¿Ð¸Ðº)","Ð¡(Ð½Ð¾Ñ‡ÑŒ)","D(Ñ€ÐµÐ·ÐµÑ€Ð²)","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X",};
 //---------------------------------------------------------------------------
 __fastcall TFormEditRates::TFormEditRates(TComponent* Owner, AnsiString Name, TAccess a)
 	: TMainForm(Owner, Name, a)
@@ -99,7 +99,7 @@ void TFormEditRates::TreeWrite()
                   end; ";*/
    RATE_LIST pTreeTable;
 
-//   char *massage = "Èçìåíåíà òàáëèöà ÒÀÐÈÔÎÂ";
+//   char *massage = "Ð˜Ð·Ð¼ÐµÐ½ÐµÐ½Ð° Ñ‚Ð°Ð±Ð»Ð¸Ñ†Ð° Ð¢ÐÐ Ð˜Ð¤ÐžÐ’";
   int Rid=0;
   TSmartQuery* Act = NULL;
    try{
@@ -598,7 +598,7 @@ void __fastcall TFormEditRates::TimeDTPKeyPress(TObject *Sender, char &Key)
 
 void __fastcall TFormEditRates::RateCBKeyPress(TObject *Sender, char &Key)
 {
-   static flag=0;// ôëàã äëÿ ïðêäîòâðàùåíèÿ äâîéíîãî íàæàòèÿ íà Enter
+   static flag=0;// Ñ„Ð»Ð°Ð³ Ð´Ð»Ñ Ð¿Ñ€ÐºÐ´Ð¾Ñ‚Ð²Ñ€Ð°Ñ‰ÐµÐ½Ð¸Ñ Ð´Ð²Ð¾Ð¹Ð½Ð¾Ð³Ð¾ Ð½Ð°Ð¶Ð°Ñ‚Ð¸Ñ Ð½Ð° Enter
    if(Key==VK_RETURN){
       if(flag==0){
          RateCBExit(Sender);
@@ -717,7 +717,7 @@ void __fastcall TFormEditRates::TimeDTPEnter(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall TFormEditRates::vClone(TObject* Sender)
 {
-/*  dmMain->quMain->SQL->Text="begin "+SchemeName+"RATES_PG.clone_p; end;";     //---------------------ÒÓÒ------------------
+/*  dmMain->quMain->SQL->Text="begin "+SchemeName+"RATES_PG.clone_p; end;";     //---------------------Ð¢Ð£Ð¢------------------
   dmMain->quMain->Execute();
   vRefresh(Sender);         */
   oqClone->ParamByName("AN_SCHDUE")->AsInteger = (int) cbZone->Items->Objects[cbZone->ItemIndex];

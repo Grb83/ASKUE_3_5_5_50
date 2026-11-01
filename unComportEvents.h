@@ -59,7 +59,7 @@ private:	// User declarations
   bool desc3;
   int ssdID;
   AnsiString defaultCOM;
-  int sort;// признак сортировки для запроса
+  int sort;// РїСЂРёР·РЅР°Рє СЃРѕСЂС‚РёСЂРѕРІРєРё РґР»СЏ Р·Р°РїСЂРѕСЃР°
   int zapros_go;
   void __fastcall SortData( void );
 public:		// User declarations

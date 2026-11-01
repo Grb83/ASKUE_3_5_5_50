@@ -31,8 +31,8 @@ __fastcall TFormSelectSvitchPoint::~TFormSelectSvitchPoint()
       delete InputMet;
 }
 //---------------------------------------------------------------------------
-void _fastcall TFormSelectSvitchPoint::LoadCombo(TComboBox* ptrCombo)        //читает из базы содержимое комбобоксов
-                                                                             //в зависимости от иx имени
+void _fastcall TFormSelectSvitchPoint::LoadCombo(TComboBox* ptrCombo)        //С‡РёС‚Р°РµС‚ РёР· Р±Р°Р·С‹ СЃРѕРґРµСЂР¶РёРјРѕРµ РєРѕРјР±РѕР±РѕРєСЃРѕРІ
+                                                                             //РІ Р·Р°РІРёСЃРёРјРѕСЃС‚Рё РѕС‚ Рёx РёРјРµРЅРё
 {
      if(ptrCombo->Name=="cbOV")
      {
@@ -75,13 +75,13 @@ void __fastcall TFormSelectSvitchPoint::SetMasks(TMaskEdit* me1, TMaskEdit* me2,
      SetMask->ParamByName("fmid")->AsInteger = MID;
      SetMask->Execute();
 
-     InputMet->Label7->Caption = "Р птр:";
-     InputMet->Label9->Caption = "Р ген:";
+     InputMet->Label7->Caption = "Р  РїС‚СЂ:";
+     InputMet->Label9->Caption = "Р  РіРµРЅ:";
      InputMet->Q2Panel->Visible = false;
      InputMet->Q4Panel->Visible = false;
      InputMet->PgenPanel->Top = 96;
-     InputMet->Label11->Caption = "Р птр:";
-     InputMet->Label13->Caption = "Р ген:";
+     InputMet->Label11->Caption = "Р  РїС‚СЂ:";
+     InputMet->Label13->Caption = "Р  РіРµРЅ:";
      InputMet->Q2FinishPanel->Visible = false;
      InputMet->Q4FinishPanel->Visible = false;
                       InputMet->PgenFinishPanel->Top = 113;
@@ -114,8 +114,8 @@ void __fastcall TFormSelectSvitchPoint::SetMasks(TMaskEdit* me1, TMaskEdit* me2,
                    me5->EditMask = dmMain->quMain->FieldByName("digits")->IsNull?AnsiString(""):"!"+dmMain->quMain->FieldByName("digits")->AsString+";1;_";
                    me6->EditMask = dmMain->quMain->FieldByName("digits")->IsNull?AnsiString(""):"!"+dmMain->quMain->FieldByName("digits")->AsString+";1;_";*/
                    if(SetMask->FieldByName("q1234")->AsInteger)
-                   {                                      //если выбран интелектуальный счетчик
-                      InputMet->Label7->Caption = "Q1:";  //проверяем, квадранты или нет
+                   {                                      //РµСЃР»Рё РІС‹Р±СЂР°РЅ РёРЅС‚РµР»РµРєС‚СѓР°Р»СЊРЅС‹Р№ СЃС‡РµС‚С‡РёРє
+                      InputMet->Label7->Caption = "Q1:";  //РїСЂРѕРІРµСЂСЏРµРј, РєРІР°РґСЂР°РЅС‚С‹ РёР»Рё РЅРµС‚
                       InputMet->Label9->Caption = "Q3:";
                       InputMet->Q2Panel->Visible = true;
                       InputMet->Q4Panel->Visible = true;
@@ -132,13 +132,13 @@ void __fastcall TFormSelectSvitchPoint::SetMasks(TMaskEdit* me1, TMaskEdit* me2,
                    }
                    else
                    {                                      
-                      InputMet->Label7->Caption = "Р птр:";
-                      InputMet->Label9->Caption = "Р ген:";
+                      InputMet->Label7->Caption = "Р  РїС‚СЂ:";
+                      InputMet->Label9->Caption = "Р  РіРµРЅ:";
                       InputMet->Q2Panel->Visible = false;
                       InputMet->Q4Panel->Visible = false;
                       InputMet->PgenPanel->Top = 96;
-                      InputMet->Label11->Caption = "Р птр:";
-                      InputMet->Label13->Caption = "Р ген:";
+                      InputMet->Label11->Caption = "Р  РїС‚СЂ:";
+                      InputMet->Label13->Caption = "Р  РіРµРЅ:";
                       InputMet->Q2FinishPanel->Visible = false;
                       InputMet->Q4FinishPanel->Visible = false;
                       InputMet->PgenFinishPanel->Top = 113;
@@ -151,7 +151,7 @@ void __fastcall TFormSelectSvitchPoint::SetMasks(TMaskEdit* me1, TMaskEdit* me2,
               }
        SetMask->Next();
      }
-     me1->Enabled = true; //в любом случае будут видны
+     me1->Enabled = true; //РІ Р»СЋР±РѕРј СЃР»СѓС‡Р°Рµ Р±СѓРґСѓС‚ РІРёРґРЅС‹
      me2->Enabled = true;
      me3->Enabled = true;
      me5->Enabled = true;
@@ -164,8 +164,8 @@ void __fastcall TFormSelectSvitchPoint::cbOVChange(TObject *Sender)
    {
       SetMasks(InputMet->meERM,InputMet->meEDM,InputMet->meQ1M,InputMet->meQ2M,
                InputMet->meQ3M,InputMet->meQ4M,(long)cbOV->Items->Objects[cbOV->ItemIndex]);
-      //По постановке Вештака все поля ввода должны иметь 6 знаков после запятой, независимо
-      //от формата, указанного в базе
+      //РџРѕ РїРѕСЃС‚Р°РЅРѕРІРєРµ Р’РµС€С‚Р°РєР° РІСЃРµ РїРѕР»СЏ РІРІРѕРґР° РґРѕР»Р¶РЅС‹ РёРјРµС‚СЊ 6 Р·РЅР°РєРѕРІ РїРѕСЃР»Рµ Р·Р°РїСЏС‚РѕР№, РЅРµР·Р°РІРёСЃРёРјРѕ
+      //РѕС‚ С„РѕСЂРјР°С‚Р°, СѓРєР°Р·Р°РЅРЅРѕРіРѕ РІ Р±Р°Р·Рµ
       /*InputMet->meERM->EditMask = "!999999.999999;1; ";
       InputMet->meEDM->EditMask = "!999999.999999;1; ";
       InputMet->meQ1M->EditMask = "!999999.999999;1; ";
@@ -188,13 +188,13 @@ void __fastcall TFormSelectSvitchPoint::bbOKClick(TObject *Sender)
     opCheckSwitch->Execute();
     if ((opCheckSwitch->ParamByName("RESULT")->AsInteger)&&(meDateSwitchOff->Text == "  .  .       :  "))
     {
-     Application->MessageBox("Данный ОВ уже используется",Application->Title.c_str(),MB_OK);
+     Application->MessageBox("Р”Р°РЅРЅС‹Р№ РћР’ СѓР¶Рµ РёСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ",Application->Title.c_str(),MB_OK);
      return;
     }
    if (meDateSwitchOff->Text != "  .  .       :  ")
     if(StrToDateTime(meDateSwitch->Text)>=StrToDateTime(meDateSwitchOff->Text))
     {
-     Application->MessageBox("Дата перевода на ОВ не может быть больше или равна дате снятия",Application->Title.c_str(),MB_OK);
+     Application->MessageBox("Р”Р°С‚Р° РїРµСЂРµРІРѕРґР° РЅР° РћР’ РЅРµ РјРѕР¶РµС‚ Р±С‹С‚СЊ Р±РѕР»СЊС€Рµ РёР»Рё СЂР°РІРЅР° РґР°С‚Рµ СЃРЅСЏС‚РёСЏ",Application->Title.c_str(),MB_OK);
      return;
     }
 
@@ -205,7 +205,7 @@ void __fastcall TFormSelectSvitchPoint::bbOKClick(TObject *Sender)
          ModalResult = mrOk;
          return;
        }
- //      if(!DataControl()) throw Exception("По данному ОВ отсутствует график нагрузки. Опросите счетчик с помощью задачи оперативного опроса.");
+ //      if(!DataControl()) throw Exception("РџРѕ РґР°РЅРЅРѕРјСѓ РћР’ РѕС‚СЃСѓС‚СЃС‚РІСѓРµС‚ РіСЂР°С„РёРє РЅР°РіСЂСѓР·РєРё. РћРїСЂРѕСЃРёС‚Рµ СЃС‡РµС‚С‡РёРє СЃ РїРѕРјРѕС‰СЊСЋ Р·Р°РґР°С‡Рё РѕРїРµСЂР°С‚РёРІРЅРѕРіРѕ РѕРїСЂРѕСЃР°.");
        if(InputMet->ModalResult==mrOk)
         ModalResult = mrOk;
        else
@@ -220,32 +220,32 @@ void __fastcall TFormSelectSvitchPoint::bbOKClick(TObject *Sender)
  }
   catch(EConvertError &e)
   {
-   Application->MessageBox("Неверно введена дата/время!",Application->Title.c_str(),MB_OK);
+   Application->MessageBox("РќРµРІРµСЂРЅРѕ РІРІРµРґРµРЅР° РґР°С‚Р°/РІСЂРµРјСЏ!",Application->Title.c_str(),MB_OK);
   }
 
   catch (EOraError &e)
   {
-   Application->MessageBox("Отсутствует подключение к базе данных",Application->Title.c_str(),MB_OK);
+   Application->MessageBox("РћС‚СЃСѓС‚СЃС‚РІСѓРµС‚ РїРѕРґРєР»СЋС‡РµРЅРёРµ Рє Р±Р°Р·Рµ РґР°РЅРЅС‹С…",Application->Title.c_str(),MB_OK);
   }
   
   catch (Exception &e)
   {
-   Application->MessageBox("Неизвестная ошибка!",Application->Title.c_str(),MB_OK);
+   Application->MessageBox("РќРµРёР·РІРµСЃС‚РЅР°СЏ РѕС€РёР±РєР°!",Application->Title.c_str(),MB_OK);
   }
 }
 //---------------------------------------------------------------------------
-void __fastcall TFormSelectSvitchPoint::bbInputMeterageClick(     //обработчик ввода параметров
-      TObject *Sender)                                            //тут же заполняются рассчетные параметры (DataControl)
+void __fastcall TFormSelectSvitchPoint::bbInputMeterageClick(     //РѕР±СЂР°Р±РѕС‚С‡РёРє РІРІРѕРґР° РїР°СЂР°РјРµС‚СЂРѕРІ
+      TObject *Sender)                                            //С‚СѓС‚ Р¶Рµ Р·Р°РїРѕР»РЅСЏСЋС‚СЃСЏ СЂР°СЃСЃС‡РµС‚РЅС‹Рµ РїР°СЂР°РјРµС‚СЂС‹ (DataControl)
 {
    int r = IDYES;
    if(!InputControl()) return;
    if(!DataControl())
      r = Application->MessageBox(Reconst_smes58_5.c_str(),Application->Title.c_str(),MB_YESNO|MB_ICONQUESTION);
-     if(r==IDYES&&InputMet->ShowModal()==mrOk)   //Вызывается форма ввода показаний, введенные данные хранятся в ее контролах
+     if(r==IDYES&&InputMet->ShowModal()==mrOk)   //Р’С‹Р·С‹РІР°РµС‚СЃСЏ С„РѕСЂРјР° РІРІРѕРґР° РїРѕРєР°Р·Р°РЅРёР№, РІРІРµРґРµРЅРЅС‹Рµ РґР°РЅРЅС‹Рµ С…СЂР°РЅСЏС‚СЃСЏ РІ РµРµ РєРѕРЅС‚СЂРѕР»Р°С…
        bbInputMeterage->Font->Color = clBlack;
 }
 //---------------------------------------------------------------------------
-bool __fastcall TFormSelectSvitchPoint::InputControl()//проверяет формат даты переключения
+bool __fastcall TFormSelectSvitchPoint::InputControl()//РїСЂРѕРІРµСЂСЏРµС‚ С„РѕСЂРјР°С‚ РґР°С‚С‹ РїРµСЂРµРєР»СЋС‡РµРЅРёСЏ
 {
      TWinControl* Ctrl;
      int meEnabled, meNoInput;
@@ -284,7 +284,7 @@ bool __fastcall TFormSelectSvitchPoint::InputControl()//проверяет формат даты пе
    return true;
 }
 //---------------------------------------------------------------------------
-bool __fastcall TFormSelectSvitchPoint::DataControl()      //заполняет контролы подсказок получасовыми данными
+bool __fastcall TFormSelectSvitchPoint::DataControl()      //Р·Р°РїРѕР»РЅСЏРµС‚ РєРѕРЅС‚СЂРѕР»С‹ РїРѕРґСЃРєР°Р·РѕРє РїРѕР»СѓС‡Р°СЃРѕРІС‹РјРё РґР°РЅРЅС‹РјРё
 {
    bool ret = false;
    char CalcMet[12][20];
@@ -341,7 +341,7 @@ bool __fastcall TFormSelectSvitchPoint::DataControl()      //заполняет контролы 
 
 
   /*or(int i=0; i<12; i++)
-    { if(!AnsiString(CalcMet[i]).IsEmpty())  //если хотя бы одно значение не пустое
+    { if(!AnsiString(CalcMet[i]).IsEmpty())  //РµСЃР»Рё С…РѕС‚СЏ Р±С‹ РѕРґРЅРѕ Р·РЅР°С‡РµРЅРёРµ РЅРµ РїСѓСЃС‚РѕРµ
      {
          ret = true;
         // continue;
@@ -385,7 +385,7 @@ bool __fastcall TFormSelectSvitchPoint::DataControl()      //заполняет контролы 
        sVal = (InputMet->meCalcQ1M1->Text==InputMet->meCalcQ1M1->Text||InputMet->lTime2->Caption.IsEmpty())? InputMet->meCalcQ4M1->Text:InputMet->meQ4M->Text;
        InputMet->meQ4M->Text = sVal.SetLength(sVal.Pos(".")+(InputMet->meQ4M->Text.Length()-InputMet->meQ4M->Text.Pos(".")) );
                                       */
-        //какойто индийский код
+        //РєР°РєРѕР№С‚Рѕ РёРЅРґРёР№СЃРєРёР№ РєРѕРґ
       /* InputMet->meERM->EditMask = InputMet->meERM->ReadOnly ? AnsiString(""):InputMet->meERM->EditMask;
        InputMet->meEDM->EditMask = InputMet->meEDM->ReadOnly ? AnsiString(""):InputMet->meEDM->EditMask;
        InputMet->meQ1M->EditMask = InputMet->meQ1M->ReadOnly ? AnsiString(""):InputMet->meQ1M->EditMask;

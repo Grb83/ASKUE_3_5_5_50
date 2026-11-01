@@ -66,10 +66,10 @@ private:	// User declarations
       char Name[148];
       int Position;
       int Entype;
-      char SMART[4];	//VARCHAR2(1), признак интел. счетчика
+      char SMART[4];	//VARCHAR2(1), РїСЂРёР·РЅР°Рє РёРЅС‚РµР». СЃС‡РµС‚С‡РёРєР°
       char MTRSN[20];		//
       char DATE_TIME[12];
-      char DIGITS[20]; //рарядность
+      char DIGITS[20]; //СЂР°СЂСЏРґРЅРѕСЃС‚СЊ
       char MTYPE[50];
       int MCURRENT;
       int MPOWER;
@@ -80,7 +80,7 @@ private:	// User declarations
       bool editRecord;
    }MATER;
 
-   unsigned long CountStr; // Количество строчек в результате запросаs
+   unsigned long CountStr; // РљРѕР»РёС‡РµСЃС‚РІРѕ СЃС‚СЂРѕС‡РµРє РІ СЂРµР·СѓР»СЊС‚Р°С‚Рµ Р·Р°РїСЂРѕСЃР°s
    MATER TreeTable[CountsListSize];
    void __fastcall ProvMask(AnsiString Str);
    void __fastcall SetAccess(TAccess value) {TMainForm::SetAccess(value);}

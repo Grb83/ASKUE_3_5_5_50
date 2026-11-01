@@ -32,7 +32,7 @@ __fastcall TUserForumMain::~TUserForumMain()
 void __fastcall TUserForumMain::UpdateUserList()
 {
   usersComboBox->Clear();
-  usersComboBox->Items->AddObject("--- Âñå àâòîðû ---", (TObject *)(Integer(0)));
+  usersComboBox->Items->AddObject("--- Ð’ÑÐµ Ð°Ð²Ñ‚Ð¾Ñ€Ñ‹ ---", (TObject *)(Integer(0)));
 
   receiveUsersQuery->Execute();
   while (!receiveUsersQuery->Eof)
@@ -98,7 +98,7 @@ void __fastcall TUserForumMain::topicsGridDblClick(TObject *Sender)
   if(UserForumViewTopic == NULL)
     UserForumViewTopic = new TUserForumViewTopic(Application);
 
-  UserForumViewTopic->Caption = "Òåìà: " + receiveTopicsQuery->FieldByName("vsubject")->AsString;
+  UserForumViewTopic->Caption = "Ð¢ÐµÐ¼Ð°: " + receiveTopicsQuery->FieldByName("vsubject")->AsString;
   UserForumViewTopic->topicAuthorLabel->Caption = receiveTopicsQuery->FieldByName("name")->AsString;
   UserForumViewTopic->topicDateLabel->Caption = (receiveTopicsQuery->FieldByName("ddate")->AsDateTime).DateTimeString();
   UserForumViewTopic->topicMessageMemo->Text = receiveTopicsQuery->FieldByName("vmessage")->AsString;

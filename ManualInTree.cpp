@@ -77,7 +77,7 @@ void __fastcall TFormManualInTree::FormCreate(TObject *Sender)
   }
 }
 //---------------------------------------------------------------------------
-bool __fastcall TFormManualInTree::ReadNode(TTreeNode* NodeParent)// Читает ветку дерева Точек
+bool __fastcall TFormManualInTree::ReadNode(TTreeNode* NodeParent)// Р§РёС‚Р°РµС‚ РІРµС‚РєСѓ РґРµСЂРµРІР° РўРѕС‡РµРє
 {
     POINTSTREEDEF*pData;
    TTreeNode* Node;
@@ -152,7 +152,7 @@ void __fastcall TFormManualInTree::FindCurrNode(void)
     ZeroMemory(&pointsTree,sizeof(pointsTree));
 
       dmMain->quMain->Params->Clear();
-      //14.01.2021 - GRB REWRITE Фикс бага на ОЖД с задвоением GID/MID и не раскрытием дерева
+      //14.01.2021 - GRB REWRITE Р¤РёРєСЃ Р±Р°РіР° РЅР° РћР–Р” СЃ Р·Р°РґРІРѕРµРЅРёРµРј GID/MID Рё РЅРµ СЂР°СЃРєСЂС‹С‚РёРµРј РґРµСЂРµРІР°
 	  /*dmMain->quMain->SQL->Text="begin "+SchemeName+"MANUAL_IN_PG.Find_Node_p(:par1,:par2);end; ";
       dmMain->quMain->ParamByName("par2")->ParamType=ptOutput;
       dmMain->quMain->ParamByName("par2")->DataType=ftCursor;
@@ -283,8 +283,8 @@ void __fastcall TFormManualInTree::btOkClick(TObject *Sender)
 
 void __fastcall TFormManualInTree::vFindClick(TObject *Sender)
 {
-  //GRB ADD 09.03.2021 -добавляем вызов 2-х сеттеров, определяющих контекст задачи
- fmFP->setContext(0);//и не ноль и не один а внутри файндпоинта по переданному GroupsAndPoints ставить контекст по 000 так или сяк ну или 0 
+  //GRB ADD 09.03.2021 -РґРѕР±Р°РІР»СЏРµРј РІС‹Р·РѕРІ 2-С… СЃРµС‚С‚РµСЂРѕРІ, РѕРїСЂРµРґРµР»СЏСЋС‰РёС… РєРѕРЅС‚РµРєСЃС‚ Р·Р°РґР°С‡Рё
+ fmFP->setContext(0);//Рё РЅРµ РЅРѕР»СЊ Рё РЅРµ РѕРґРёРЅ Р° РІРЅСѓС‚СЂРё С„Р°Р№РЅРґРїРѕРёРЅС‚Р° РїРѕ РїРµСЂРµРґР°РЅРЅРѕРјСѓ GroupsAndPoints СЃС‚Р°РІРёС‚СЊ РєРѕРЅС‚РµРєСЃС‚ РїРѕ 000 С‚Р°Рє РёР»Рё СЃСЏРє РЅСѓ РёР»Рё 0 
  fmFP->setGroupsAndPoints(true);
  //end add
 
@@ -299,13 +299,13 @@ void __fastcall TFormManualInTree::vFindClick(TObject *Sender)
     //GRB ADD 09.03.2021
     int isGroups = Message.WParam;
     if (!isGroups){
-    //01.04.2021 - GRB FIX (Исправление бага с непоиском по дереву точек)
+    //01.04.2021 - GRB FIX (РСЃРїСЂР°РІР»РµРЅРёРµ Р±Р°РіР° СЃ РЅРµРїРѕРёСЃРєРѕРј РїРѕ РґРµСЂРµРІСѓ С‚РѕС‡РµРє)
     _from_points = 1;
     //end fix
     FindCurrNode();
     }
     else{
-    //01.04.2021 - GRB FIX Для цельности
+    //01.04.2021 - GRB FIX Р”Р»СЏ С†РµР»СЊРЅРѕСЃС‚Рё
     _from_points = 0;
     //end fix 
     FindCurrNodeGroup(Message.LParam);
@@ -325,9 +325,9 @@ void __fastcall TFormManualInTree::seldateChange(TObject *Sender)
   pointPOL->myTime=seldate->DateTime;
 }
 //---------------------------------------------------------------------------
-//GRB ADD 09.03.2021 - добавляем размотчик для поиска в дереве групп, его тянем из EditGroupsList
+//GRB ADD 09.03.2021 - РґРѕР±Р°РІР»СЏРµРј СЂР°Р·РјРѕС‚С‡РёРє РґР»СЏ РїРѕРёСЃРєР° РІ РґРµСЂРµРІРµ РіСЂСѓРїРї, РµРіРѕ С‚СЏРЅРµРј РёР· EditGroupsList
 void __fastcall TFormManualInTree::FindCurrNodeGroup(long id){
-    // Запрос - путь к точке :1 начиная с коренного узла
+    // Р—Р°РїСЂРѕСЃ - РїСѓС‚СЊ Рє С‚РѕС‡РєРµ :1 РЅР°С‡РёРЅР°СЏ СЃ РєРѕСЂРµРЅРЅРѕРіРѕ СѓР·Р»Р°
     #define MAXCOUNTLEVEL  100
     long parmid=id;
     long pointsTree[MAXCOUNTLEVEL];

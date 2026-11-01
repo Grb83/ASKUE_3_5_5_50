@@ -104,7 +104,7 @@ void __fastcall TfmSelectReportForm::btNextClick(TObject *Sender)
         Node->Delete();
         return;
       }
-//Зачищаем (чтоб else не писать)
+//Р—Р°С‡РёС‰Р°РµРј (С‡С‚РѕР± else РЅРµ РїРёСЃР°С‚СЊ)
       fd->VerticalSplit=false;
       fd->EnableControls.Clear();
       fd->indbird=false;
@@ -202,7 +202,7 @@ void __fastcall TfmSelectReportForm::tvMainExpanding(TObject *Sender, TTreeNode 
 //---------------------------------------------------------------------------
 
 int __fastcall TfmSelectReportForm::AddPoints(TTreeView*tv, TTreeNode*tn, int ind1, int ind2, int lmid)
-{ //если ind1==1-Saa_SelectGroup, ==2-Saa_SelectGroupProc
+{ //РµСЃР»Рё ind1==1-Saa_SelectGroup, ==2-Saa_SelectGroupProc
 
   try{
     TTreeNode *tmp;

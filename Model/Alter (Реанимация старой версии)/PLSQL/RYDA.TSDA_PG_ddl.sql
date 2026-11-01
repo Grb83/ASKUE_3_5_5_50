@@ -4,12 +4,12 @@
 CREATE OR REPLACE 
 PACKAGE BODY tsda_pg IS
  ------------------------------------------------------------------------------------------------------------------------
-   -- пакет обмена по tsda
-   -- дата создания 11/02/2008 Сечин А.А.
+   -- РїР°РєРµС‚ РѕР±РјРµРЅР° РїРѕ tsda
+   -- РґР°С‚Р° СЃРѕР·РґР°РЅРёСЏ 11/02/2008 РЎРµС‡РёРЅ Рђ.Рђ.
 ------------------------------------------------------------------------------------------------------------------------
  cn_hh_shift      CONSTANT NUMBER        DEFAULT 1 / 48;
  cv_enter_shift   CONSTANT VARCHAR2 (10) DEFAULT '1 / 480';
- cn_rndend        CONSTANT NUMBER        DEFAULT -456456;   --Признак, что необходимые данные для передачи по ICCP не поместились в пакет
+ cn_rndend        CONSTANT NUMBER        DEFAULT -456456;   --РџСЂРёР·РЅР°Рє, С‡С‚Рѕ РЅРµРѕР±С…РѕРґРёРјС‹Рµ РґР°РЅРЅС‹Рµ РґР»СЏ РїРµСЂРµРґР°С‡Рё РїРѕ ICCP РЅРµ РїРѕРјРµСЃС‚РёР»РёСЃСЊ РІ РїР°РєРµС‚
  gt_last_save              ttitemvalue;
  gt_read_raw               ttitemvalue;
 
@@ -46,52 +46,52 @@ DBMS_OUTPUT.Put_Line( 'at_id='||at_id(i)||' at_datetime='''||to_char(at_datetime
 end loop;
 end;*/
 ------------------------------------------------------------------------------------------------------------------------
-    -- Вставка (замена) данных
- FUNCTION sync_insert_replace_base (an_typeoffunc NUMBER,   -- 1- sync_insert 2 - sync_replace, иначе sync_insert_replace
+    -- Р’СЃС‚Р°РІРєР° (Р·Р°РјРµРЅР°) РґР°РЅРЅС‹С…
+ FUNCTION sync_insert_replace_base (an_typeoffunc NUMBER,   -- 1- sync_insert 2 - sync_replace, РёРЅР°С‡Рµ sync_insert_replace
                                                          an_typeofquery NUMBER,   -- 0-NOTUSED, 1-CURRENTDATA, 2-MINUTEDATA, 3-HOURDATA, 4-DAYDATA, 5-MONTHDATA, 6-INSTANTDATA
- an_cid NUMBER,   -- Объект , с которого дадо получить информацию (channels.cid)
-               an_size NUMBER,   -- размер at_id
-                              at_id common_pg.tt_number,   -- массив id
-                                                        at_datetime common_pg.tt_date,   -- массив меток времени
-                                                                                      at_er common_pg.tt_number,   --массив значений
-                                                                                                                at_ed common_pg.tt_number,   --массив значений
- at_q1 common_pg.tt_number,   --массив значений
-                           at_q3 common_pg.tt_number,   --массив значений
-                                                     at_qm common_pg.tt_varchar2   --массив меток качества
+ an_cid NUMBER,   -- РћР±СЉРµРєС‚ , СЃ РєРѕС‚РѕСЂРѕРіРѕ РґР°РґРѕ РїРѕР»СѓС‡РёС‚СЊ РёРЅС„РѕСЂРјР°С†РёСЋ (channels.cid)
+               an_size NUMBER,   -- СЂР°Р·РјРµСЂ at_id
+                              at_id common_pg.tt_number,   -- РјР°СЃСЃРёРІ id
+                                                        at_datetime common_pg.tt_date,   -- РјР°СЃСЃРёРІ РјРµС‚РѕРє РІСЂРµРјРµРЅРё
+                                                                                      at_er common_pg.tt_number,   --РјР°СЃСЃРёРІ Р·РЅР°С‡РµРЅРёР№
+                                                                                                                at_ed common_pg.tt_number,   --РјР°СЃСЃРёРІ Р·РЅР°С‡РµРЅРёР№
+ at_q1 common_pg.tt_number,   --РјР°СЃСЃРёРІ Р·РЅР°С‡РµРЅРёР№
+                           at_q3 common_pg.tt_number,   --РјР°СЃСЃРёРІ Р·РЅР°С‡РµРЅРёР№
+                                                     at_qm common_pg.tt_varchar2   --РјР°СЃСЃРёРІ РјРµС‚РѕРє РєР°С‡РµСЃС‚РІР°
  )
   RETURN NUMBER;
 
 ------------------------------------------------------------------------------------------------------------------------
---Преобразование метки качества
+--РџСЂРµРѕР±СЂР°Р·РѕРІР°РЅРёРµ РјРµС‚РєРё РєР°С‡РµСЃС‚РІР°
  FUNCTION create_qm_from_old_format (an_validity NUMBER, an_quality NUMBER, an_source NUMBER)
   RETURN VARCHAR2;
 
 ------------------------------------------------------------------------------------------------------------------------
- -- Чтение данных
- FUNCTION sync_read_raw (at_names common_pg.tt_varchar2,   -- массив mRid запрашиваемых параметров, которых надо найти
-                                                        at_ids common_pg.tt_number,   -- массив id запрашиваемых параметров
-                                                                                   an_paramcount NUMBER,   -- кол. входных и выходных параметров
+ -- Р§С‚РµРЅРёРµ РґР°РЅРЅС‹С…
+ FUNCTION sync_read_raw (at_names common_pg.tt_varchar2,   -- РјР°СЃСЃРёРІ mRid Р·Р°РїСЂР°С€РёРІР°РµРјС‹С… РїР°СЂР°РјРµС‚СЂРѕРІ, РєРѕС‚РѕСЂС‹С… РЅР°РґРѕ РЅР°Р№С‚Рё
+                                                        at_ids common_pg.tt_number,   -- РјР°СЃСЃРёРІ id Р·Р°РїСЂР°С€РёРІР°РµРјС‹С… РїР°СЂР°РјРµС‚СЂРѕРІ
+                                                                                   an_paramcount NUMBER,   -- РєРѕР». РІС…РѕРґРЅС‹С… Рё РІС‹С…РѕРґРЅС‹С… РїР°СЂР°РјРµС‚СЂРѕРІ
                                                                                                         an_typeofquery NUMBER,   -- 0-NOTUSED, 1-CURRENTDATA, 2-MINUTEDATA, 3-HOURDATA, 4-DAYDATA, 5-MONTHDATA, 6-INSTANTDATA
- ad_timebegin DATE,   --дата с
-                   ad_timeend DATE,   --дата по
-                                   ad_change DATE,   -- дата последних изменений (показания появившиеся с)
-                                                  an_beginfrom NUMBER,   --Стартовать с такого
-                                                                      an_count IN OUT NUMBER,   -- макс количество возвращ значений (ДАТ)
- at_id OUT common_pg.tt_number,   -- массив id
-                               at_datetime OUT common_pg.tt_date,   -- массив меток времени
-                                                                 at_er OUT common_pg.tt_number,   --массив значений
-                                                                                               at_ed OUT common_pg.tt_number,   --массив значений
- at_q1 OUT common_pg.tt_number,   --массив значений
-                               at_q3 OUT common_pg.tt_number,   --массив значений
-                                                             at_validity OUT common_pg.tt_number,   --массив достовернрости
-                                                                                                 at_quality OUT common_pg.tt_number,   --массив меток качества
- at_source OUT common_pg.tt_number,   --массив источников
-                                   at_qm OUT common_pg.tt_varchar2   --массив меток качества
+ ad_timebegin DATE,   --РґР°С‚Р° СЃ
+                   ad_timeend DATE,   --РґР°С‚Р° РїРѕ
+                                   ad_change DATE,   -- РґР°С‚Р° РїРѕСЃР»РµРґРЅРёС… РёР·РјРµРЅРµРЅРёР№ (РїРѕРєР°Р·Р°РЅРёСЏ РїРѕСЏРІРёРІС€РёРµСЃСЏ СЃ)
+                                                  an_beginfrom NUMBER,   --РЎС‚Р°СЂС‚РѕРІР°С‚СЊ СЃ С‚Р°РєРѕРіРѕ
+                                                                      an_count IN OUT NUMBER,   -- РјР°РєСЃ РєРѕР»РёС‡РµСЃС‚РІРѕ РІРѕР·РІСЂР°С‰ Р·РЅР°С‡РµРЅРёР№ (Р”РђРў)
+ at_id OUT common_pg.tt_number,   -- РјР°СЃСЃРёРІ id
+                               at_datetime OUT common_pg.tt_date,   -- РјР°СЃСЃРёРІ РјРµС‚РѕРє РІСЂРµРјРµРЅРё
+                                                                 at_er OUT common_pg.tt_number,   --РјР°СЃСЃРёРІ Р·РЅР°С‡РµРЅРёР№
+                                                                                               at_ed OUT common_pg.tt_number,   --РјР°СЃСЃРёРІ Р·РЅР°С‡РµРЅРёР№
+ at_q1 OUT common_pg.tt_number,   --РјР°СЃСЃРёРІ Р·РЅР°С‡РµРЅРёР№
+                               at_q3 OUT common_pg.tt_number,   --РјР°СЃСЃРёРІ Р·РЅР°С‡РµРЅРёР№
+                                                             at_validity OUT common_pg.tt_number,   --РјР°СЃСЃРёРІ РґРѕСЃС‚РѕРІРµСЂРЅСЂРѕСЃС‚Рё
+                                                                                                 at_quality OUT common_pg.tt_number,   --РјР°СЃСЃРёРІ РјРµС‚РѕРє РєР°С‡РµСЃС‚РІР°
+ at_source OUT common_pg.tt_number,   --РјР°СЃСЃРёРІ РёСЃС‚РѕС‡РЅРёРєРѕРІ
+                                   at_qm OUT common_pg.tt_varchar2   --РјР°СЃСЃРёРІ РјРµС‚РѕРє РєР°С‡РµСЃС‚РІР°
  )
   RETURN NUMBER;
 
 ------------------------------------------------------------------------------------------------------------------------
- --Возвращает default типа titemdvalue
+ --Р’РѕР·РІСЂР°С‰Р°РµС‚ default С‚РёРїР° titemdvalue
  FUNCTION get_def_titemvalue
   RETURN titemvalue IS
   lr_tmp   titemvalue;
@@ -171,7 +171,7 @@ end;*/
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
---Возвращает следующее ид типа измерения для запроса an_typeofquery, начиная с ln_mestype
+--Р’РѕР·РІСЂР°С‰Р°РµС‚ СЃР»РµРґСѓСЋС‰РµРµ РёРґ С‚РёРїР° РёР·РјРµСЂРµРЅРёСЏ РґР»СЏ Р·Р°РїСЂРѕСЃР° an_typeofquery, РЅР°С‡РёРЅР°СЏ СЃ ln_mestype
  FUNCTION get_nextmestype (an_typeofquery NUMBER, ln_mestype NUMBER)
   RETURN NUMBER IS
  BEGIN
@@ -187,9 +187,9 @@ end;*/
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
- -- Поиск элемента по наименованию
- FUNCTION find (av_name VARCHAR2,   -- Наименование элемента
-                                 an_id OUT NUMBER   -- Ид элемента
+ -- РџРѕРёСЃРє СЌР»РµРјРµРЅС‚Р° РїРѕ РЅР°РёРјРµРЅРѕРІР°РЅРёСЋ
+ FUNCTION find (av_name VARCHAR2,   -- РќР°РёРјРµРЅРѕРІР°РЅРёРµ СЌР»РµРјРµРЅС‚Р°
+                                 an_id OUT NUMBER   -- РРґ СЌР»РµРјРµРЅС‚Р°
                                                  )
   RETURN NUMBER IS
  BEGIN
@@ -206,10 +206,10 @@ end;*/
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
- -- Поиск группы узлов
- FUNCTION find_each (at_names IN OUT common_pg.tt_varchar2,   -- массив mRid параметров, которых надо найти
-                                                           at_ids OUT common_pg.tt_number,   -- массив id найденных параметров
- an_count IN OUT NUMBER   --кол. входных и выходных параметров
+ -- РџРѕРёСЃРє РіСЂСѓРїРїС‹ СѓР·Р»РѕРІ
+ FUNCTION find_each (at_names IN OUT common_pg.tt_varchar2,   -- РјР°СЃСЃРёРІ mRid РїР°СЂР°РјРµС‚СЂРѕРІ, РєРѕС‚РѕСЂС‹С… РЅР°РґРѕ РЅР°Р№С‚Рё
+                                                           at_ids OUT common_pg.tt_number,   -- РјР°СЃСЃРёРІ id РЅР°Р№РґРµРЅРЅС‹С… РїР°СЂР°РјРµС‚СЂРѕРІ
+ an_count IN OUT NUMBER   --РєРѕР». РІС…РѕРґРЅС‹С… Рё РІС‹С…РѕРґРЅС‹С… РїР°СЂР°РјРµС‚СЂРѕРІ
  )
   RETURN NUMBER IS
   an_id   NUMBER;
@@ -237,9 +237,9 @@ end;*/
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
- -- Поиск по типу запроса
- FUNCTION find_by_type (an_typeofquery NUMBER, av_name VARCHAR2, an_beginfrom NUMBER, an_count IN OUT NUMBER, at_names OUT common_pg.tt_varchar2,   -- массив mRid параметров, которых надо найти
- at_ids OUT common_pg.tt_number   -- массив id найденных параметров
+ -- РџРѕРёСЃРє РїРѕ С‚РёРїСѓ Р·Р°РїСЂРѕСЃР°
+ FUNCTION find_by_type (an_typeofquery NUMBER, av_name VARCHAR2, an_beginfrom NUMBER, an_count IN OUT NUMBER, at_names OUT common_pg.tt_varchar2,   -- РјР°СЃСЃРёРІ mRid РїР°СЂР°РјРµС‚СЂРѕРІ, РєРѕС‚РѕСЂС‹С… РЅР°РґРѕ РЅР°Р№С‚Рё
+ at_ids OUT common_pg.tt_number   -- РјР°СЃСЃРёРІ id РЅР°Р№РґРµРЅРЅС‹С… РїР°СЂР°РјРµС‚СЂРѕРІ
  )
   RETURN NUMBER IS
   ln_size   NUMBER DEFAULT an_count;
@@ -249,7 +249,7 @@ end;*/
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
---Преобразование метки качества
+--РџСЂРµРѕР±СЂР°Р·РѕРІР°РЅРёРµ РјРµС‚РєРё РєР°С‡РµСЃС‚РІР°
  FUNCTION create_qm_from_old_format (an_validity NUMBER, an_quality NUMBER, an_source NUMBER)
   RETURN VARCHAR2 IS
   lv_qm   VARCHAR2 (32) := qm_pg.okqm;
@@ -278,15 +278,15 @@ end;*/
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
---------------  Клиент (Киев) ------------------------------------------------------------------------------------------
+--------------  РљР»РёРµРЅС‚ (РљРёРµРІ) ------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------------------------
-  -- Получение массива ID и меток времени последних сохраненных данных
+  -- РџРѕР»СѓС‡РµРЅРёРµ РјР°СЃСЃРёРІР° ID Рё РјРµС‚РѕРє РІСЂРµРјРµРЅРё РїРѕСЃР»РµРґРЅРёС… СЃРѕС…СЂР°РЅРµРЅРЅС‹С… РґР°РЅРЅС‹С…
  FUNCTION get_last_save (an_typeofquery NUMBER,   -- 0-NOTUSED, 1-CURRENTDATA, 2-MINUTEDATA, 3-HOURDATA, 4-DAYDATA, 5-MONTHDATA, 6-INSTANTDATA
-                                               an_cid NUMBER,   -- Объект , с которого дадо получить информацию (channels.cid)
-                                                             an_beginfrom NUMBER,   --Стартовать с такого
-                                                                                 an_count IN OUT NUMBER,   --Требуемый и возвращаемый объем щбъем выборки
- at_ids OUT common_pg.tt_number,   -- массив id найденных параметров
-                                at_lastdate OUT common_pg.tt_date   -- массив дат найденных параметров
+                                               an_cid NUMBER,   -- РћР±СЉРµРєС‚ , СЃ РєРѕС‚РѕСЂРѕРіРѕ РґР°РґРѕ РїРѕР»СѓС‡РёС‚СЊ РёРЅС„РѕСЂРјР°С†РёСЋ (channels.cid)
+                                                             an_beginfrom NUMBER,   --РЎС‚Р°СЂС‚РѕРІР°С‚СЊ СЃ С‚Р°РєРѕРіРѕ
+                                                                                 an_count IN OUT NUMBER,   --РўСЂРµР±СѓРµРјС‹Р№ Рё РІРѕР·РІСЂР°С‰Р°РµРјС‹Р№ РѕР±СЉРµРј С‰Р±СЉРµРј РІС‹Р±РѕСЂРєРё
+ at_ids OUT common_pg.tt_number,   -- РјР°СЃСЃРёРІ id РЅР°Р№РґРµРЅРЅС‹С… РїР°СЂР°РјРµС‚СЂРѕРІ
+                                at_lastdate OUT common_pg.tt_date   -- РјР°СЃСЃРёРІ РґР°С‚ РЅР°Р№РґРµРЅРЅС‹С… РїР°СЂР°РјРµС‚СЂРѕРІ
  )
   RETURN NUMBER IS
   lt_lastchange   common_pg.tt_date;
@@ -296,14 +296,14 @@ end;*/
 
 ------------------------------------------------------------------------------------------------------------------------
 
- -- Получение массива ID и меток времени последних сохраненных данных
+ -- РџРѕР»СѓС‡РµРЅРёРµ РјР°СЃСЃРёРІР° ID Рё РјРµС‚РѕРє РІСЂРµРјРµРЅРё РїРѕСЃР»РµРґРЅРёС… СЃРѕС…СЂР°РЅРµРЅРЅС‹С… РґР°РЅРЅС‹С…
  FUNCTION get_last_save (an_typeofquery NUMBER,   -- 0-NOTUSED, 1-CURRENTDATA, 2-MINUTEDATA, 3-HOURDATA, 4-DAYDATA, 5-MONTHDATA, 6-INSTANTDATA
-                                               an_cid NUMBER,   -- Объект , с которого дадо получить информацию (channels.cid)
-                                                             an_beginfrom NUMBER,   --Стартовать с такого
-                                                                                 an_count IN OUT NUMBER,   --Требуемый и возвращаемый объем выборки
- at_ids OUT common_pg.tt_number,   -- массив id найденных параметров
-                                at_lastdate OUT common_pg.tt_date,   -- массив дат найденных параметров
- at_lastchange OUT common_pg.tt_date   -- массив дат найденных параметров
+                                               an_cid NUMBER,   -- РћР±СЉРµРєС‚ , СЃ РєРѕС‚РѕСЂРѕРіРѕ РґР°РґРѕ РїРѕР»СѓС‡РёС‚СЊ РёРЅС„РѕСЂРјР°С†РёСЋ (channels.cid)
+                                                             an_beginfrom NUMBER,   --РЎС‚Р°СЂС‚РѕРІР°С‚СЊ СЃ С‚Р°РєРѕРіРѕ
+                                                                                 an_count IN OUT NUMBER,   --РўСЂРµР±СѓРµРјС‹Р№ Рё РІРѕР·РІСЂР°С‰Р°РµРјС‹Р№ РѕР±СЉРµРј РІС‹Р±РѕСЂРєРё
+ at_ids OUT common_pg.tt_number,   -- РјР°СЃСЃРёРІ id РЅР°Р№РґРµРЅРЅС‹С… РїР°СЂР°РјРµС‚СЂРѕРІ
+                                at_lastdate OUT common_pg.tt_date,   -- РјР°СЃСЃРёРІ РґР°С‚ РЅР°Р№РґРµРЅРЅС‹С… РїР°СЂР°РјРµС‚СЂРѕРІ
+ at_lastchange OUT common_pg.tt_date   -- РјР°СЃСЃРёРІ РґР°С‚ РЅР°Р№РґРµРЅРЅС‹С… РїР°СЂР°РјРµС‚СЂРѕРІ
  )
   RETURN NUMBER IS
   ld_sys       DATE       DEFAULT SYSDATE;
@@ -353,7 +353,7 @@ end;*/
    at_lastchange (an_count) := gt_last_save (an_count + an_beginfrom - 1).dchange;
   END LOOP;
 
-  IF an_count < ln_size THEN   --Очистка памяти
+  IF an_count < ln_size THEN   --РћС‡РёСЃС‚РєР° РїР°РјСЏС‚Рё
    gt_last_save.DELETE;
   END IF;
 
@@ -361,18 +361,18 @@ end;*/
  END;
 
 -----------------------------------------------------------------------------------------------------------------------
-    -- Вставка (замена) данных
- FUNCTION sync_insert_replace_base (an_typeoffunc NUMBER,   -- 1- sync_insert 2 - sync_replace, иначе sync_insert_replace
+    -- Р’СЃС‚Р°РІРєР° (Р·Р°РјРµРЅР°) РґР°РЅРЅС‹С…
+ FUNCTION sync_insert_replace_base (an_typeoffunc NUMBER,   -- 1- sync_insert 2 - sync_replace, РёРЅР°С‡Рµ sync_insert_replace
                                                          an_typeofquery NUMBER,   -- 0-NOTUSED, 1-CURRENTDATA, 2-MINUTEDATA, 3-HOURDATA, 4-DAYDATA, 5-MONTHDATA, 6-INSTANTDATA
- an_cid NUMBER,   -- Объект , с которого дадо получить информацию (channels.cid)
-               an_size NUMBER,   -- размер at_id
-                              at_id common_pg.tt_number,   -- массив id
-                                                        at_datetime common_pg.tt_date,   -- массив меток времени
-                                                                                      at_er common_pg.tt_number,   --массив значений
-                                                                                                                at_ed common_pg.tt_number,   --массив значений
- at_q1 common_pg.tt_number,   --массив значений
-                           at_q3 common_pg.tt_number,   --массив значений
-                                                     at_qm common_pg.tt_varchar2   --массив меток качества
+ an_cid NUMBER,   -- РћР±СЉРµРєС‚ , СЃ РєРѕС‚РѕСЂРѕРіРѕ РґР°РґРѕ РїРѕР»СѓС‡РёС‚СЊ РёРЅС„РѕСЂРјР°С†РёСЋ (channels.cid)
+               an_size NUMBER,   -- СЂР°Р·РјРµСЂ at_id
+                              at_id common_pg.tt_number,   -- РјР°СЃСЃРёРІ id
+                                                        at_datetime common_pg.tt_date,   -- РјР°СЃСЃРёРІ РјРµС‚РѕРє РІСЂРµРјРµРЅРё
+                                                                                      at_er common_pg.tt_number,   --РјР°СЃСЃРёРІ Р·РЅР°С‡РµРЅРёР№
+                                                                                                                at_ed common_pg.tt_number,   --РјР°СЃСЃРёРІ Р·РЅР°С‡РµРЅРёР№
+ at_q1 common_pg.tt_number,   --РјР°СЃСЃРёРІ Р·РЅР°С‡РµРЅРёР№
+                           at_q3 common_pg.tt_number,   --РјР°СЃСЃРёРІ Р·РЅР°С‡РµРЅРёР№
+                                                     at_qm common_pg.tt_varchar2   --РјР°СЃСЃРёРІ РјРµС‚РѕРє РєР°С‡РµСЃС‚РІР°
  )
   RETURN NUMBER IS
   cn_rn   CONSTANT NUMBER := 3;
@@ -395,7 +395,7 @@ end;*/
                SELECT at_id (i) mid
                  FROM DUAL
                 WHERE an_cid = 0) LOOP
-     IF nvl(at_er (i),0) <> cn_rndend THEN   --Если признак неполноты пакета
+     IF nvl(at_er (i),0) <> cn_rndend THEN   --Р•СЃР»Рё РїСЂРёР·РЅР°Рє РЅРµРїРѕР»РЅРѕС‚С‹ РїР°РєРµС‚Р°
       IF an_typeoffunc IN (cn_tf_ins, cn_tf_rep) THEN
        SELECT COUNT (*)
          INTO ln_exists
@@ -433,7 +433,7 @@ end;*/
       admin_pg.ins_last_save (lc.mid);
      END IF;
 
-     --Если неполнота пакета (at_er (i)=cn_rndend) мы обновляем last_save.halfhour всегда
+     --Р•СЃР»Рё РЅРµРїРѕР»РЅРѕС‚Р° РїР°РєРµС‚Р° (at_er (i)=cn_rndend) РјС‹ РѕР±РЅРѕРІР»СЏРµРј last_save.halfhour РІСЃРµРіРґР°
      UPDATE last_save
         SET halfhour =
              DECODE (at_er (i),
@@ -449,7 +449,7 @@ end;*/
      NULL;
     END LOOP;
    END LOOP;
-  ELSIF an_typeofquery = cn_qt_currentdata THEN   --Текущие
+  ELSIF an_typeofquery = cn_qt_currentdata THEN   --РўРµРєСѓС‰РёРµ
    FOR i IN 1 .. an_size LOOP
     ln_mid := TRUNC (at_id (i) / cn_id_shift);
     ln_type := MOD (at_id (i), cn_id_shift);
@@ -463,8 +463,8 @@ end;*/
                 WHERE an_cid = 0) LOOP
      admin_pg.ins_last_save (lc.mid);
 
-     IF nvl(at_er (i),0) <> cn_rndend THEN   --Если признак неполноты пакета
---На вход Метка времени зима ()
+     IF nvl(at_er (i),0) <> cn_rndend THEN   --Р•СЃР»Рё РїСЂРёР·РЅР°Рє РЅРµРїРѕР»РЅРѕС‚С‹ РїР°РєРµС‚Р°
+--РќР° РІС…РѕРґ РњРµС‚РєР° РІСЂРµРјРµРЅРё Р·РёРјР° ()
       FOR lc1 IN (SELECT DECODE (ln_type, cn_mt_er, at_er (i), util_pg.cn_random) er, DECODE (ln_type, cn_mt_ed, at_er (i), util_pg.cn_random) ed,
                          DECODE (ln_type, cn_mt_rr, at_er (i), util_pg.cn_random) q1, DECODE (ln_type, cn_mt_rd, at_er (i), util_pg.cn_random) q3
                     FROM DUAL) LOOP
@@ -490,7 +490,7 @@ end;*/
       WHERE mid = lc.mid;
     END LOOP;
    END LOOP;
-  ELSIF an_typeofquery = cn_qt_xmldayvalues THEN   --Суточные
+  ELSIF an_typeofquery = cn_qt_xmldayvalues THEN   --РЎСѓС‚РѕС‡РЅС‹Рµ
    FOR i IN 1 .. an_size LOOP
     FOR lc IN (SELECT c.mid
                  FROM chanpoint c, feeders f
@@ -552,18 +552,18 @@ end;*/
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
- -- Вставка (замена) данных
+ -- Р’СЃС‚Р°РІРєР° (Р·Р°РјРµРЅР°) РґР°РЅРЅС‹С…
  FUNCTION sync_insert_replace (an_typeofquery NUMBER,   -- 0-NOTUSED, 1-CURRENTDATA, 2-MINUTEDATA, 3-HOURDATA, 4-DAYDATA, 5-MONTHDATA, 6-INSTANTDATA
-                                                     an_cid NUMBER,   -- Объект , с которого дадо получить информацию (channels.cid)
-                                                                   an_size NUMBER,   -- размер at_id
-                                                                                  at_id common_pg.tt_number,   -- массив id
-                                                                                                            at_datetime common_pg.tt_date,   -- массив меток времени
- at_er common_pg.tt_number,   --массив значений
-                           at_ed common_pg.tt_number,   --массив значений
-                                                     at_q1 common_pg.tt_number,   --массив значений
-                                                                               at_q3 common_pg.tt_number,   --массив значений
-                                                                                                         at_validity common_pg.tt_number,   --массив достовернрости
- at_quality common_pg.tt_number,   --массив меток качества
+                                                     an_cid NUMBER,   -- РћР±СЉРµРєС‚ , СЃ РєРѕС‚РѕСЂРѕРіРѕ РґР°РґРѕ РїРѕР»СѓС‡РёС‚СЊ РёРЅС„РѕСЂРјР°С†РёСЋ (channels.cid)
+                                                                   an_size NUMBER,   -- СЂР°Р·РјРµСЂ at_id
+                                                                                  at_id common_pg.tt_number,   -- РјР°СЃСЃРёРІ id
+                                                                                                            at_datetime common_pg.tt_date,   -- РјР°СЃСЃРёРІ РјРµС‚РѕРє РІСЂРµРјРµРЅРё
+ at_er common_pg.tt_number,   --РјР°СЃСЃРёРІ Р·РЅР°С‡РµРЅРёР№
+                           at_ed common_pg.tt_number,   --РјР°СЃСЃРёРІ Р·РЅР°С‡РµРЅРёР№
+                                                     at_q1 common_pg.tt_number,   --РјР°СЃСЃРёРІ Р·РЅР°С‡РµРЅРёР№
+                                                                               at_q3 common_pg.tt_number,   --РјР°СЃСЃРёРІ Р·РЅР°С‡РµРЅРёР№
+                                                                                                         at_validity common_pg.tt_number,   --РјР°СЃСЃРёРІ РґРѕСЃС‚РѕРІРµСЂРЅСЂРѕСЃС‚Рё
+ at_quality common_pg.tt_number,   --РјР°СЃСЃРёРІ РјРµС‚РѕРє РєР°С‡РµСЃС‚РІР°
                                 at_source common_pg.tt_number
  )
   RETURN NUMBER IS
@@ -577,17 +577,17 @@ end;*/
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
- -- Вставка (замена) данных
+ -- Р’СЃС‚Р°РІРєР° (Р·Р°РјРµРЅР°) РґР°РЅРЅС‹С…
  FUNCTION sync_insert_replace (an_typeofquery NUMBER,   -- 0-NOTUSED, 1-CURRENTDATA, 2-MINUTEDATA, 3-HOURDATA, 4-DAYDATA, 5-MONTHDATA, 6-INSTANTDATA
-                                                     an_cid NUMBER,   -- Объект , с которого дадо получить информацию (channels.cid)
-                                                                   an_size NUMBER,   -- размер at_id
-                                                                                  at_id common_pg.tt_number,   -- массив id
-                                                                                                            at_datetime common_pg.tt_date,   -- массив меток времени
- at_er common_pg.tt_number,   --массив значений
-                           at_ed common_pg.tt_number,   --массив значений
-                                                     at_q1 common_pg.tt_number,   --массив значений
-                                                                               at_q3 common_pg.tt_number,   --массив значений
- at_qm common_pg.tt_varchar2   --массив меток качества
+                                                     an_cid NUMBER,   -- РћР±СЉРµРєС‚ , СЃ РєРѕС‚РѕСЂРѕРіРѕ РґР°РґРѕ РїРѕР»СѓС‡РёС‚СЊ РёРЅС„РѕСЂРјР°С†РёСЋ (channels.cid)
+                                                                   an_size NUMBER,   -- СЂР°Р·РјРµСЂ at_id
+                                                                                  at_id common_pg.tt_number,   -- РјР°СЃСЃРёРІ id
+                                                                                                            at_datetime common_pg.tt_date,   -- РјР°СЃСЃРёРІ РјРµС‚РѕРє РІСЂРµРјРµРЅРё
+ at_er common_pg.tt_number,   --РјР°СЃСЃРёРІ Р·РЅР°С‡РµРЅРёР№
+                           at_ed common_pg.tt_number,   --РјР°СЃСЃРёРІ Р·РЅР°С‡РµРЅРёР№
+                                                     at_q1 common_pg.tt_number,   --РјР°СЃСЃРёРІ Р·РЅР°С‡РµРЅРёР№
+                                                                               at_q3 common_pg.tt_number,   --РјР°СЃСЃРёРІ Р·РЅР°С‡РµРЅРёР№
+ at_qm common_pg.tt_varchar2   --РјР°СЃСЃРёРІ РјРµС‚РѕРє РєР°С‡РµСЃС‚РІР°
  )
   RETURN NUMBER IS
  BEGIN
@@ -595,20 +595,20 @@ end;*/
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
-   -- Вставка данных
+   -- Р’СЃС‚Р°РІРєР° РґР°РЅРЅС‹С…
  FUNCTION sync_insert (an_typeofquery NUMBER,   -- 0-NOTUSED, 1-CURRENTDATA, 2-MINUTEDATA, 3-HOURDATA, 4-DAYDATA, 5-MONTHDATA, 6-INSTANTDATA
-                                             an_cid NUMBER,   -- Объект , с которого дадо получить информацию (channels.cid)
-                                                           an_size NUMBER,   -- размер at_id
-                                                                          at_id common_pg.tt_number,   -- массив id
-                                                                                                    at_datetime common_pg.tt_date,   -- массив меток времени
- at_er common_pg.tt_number,   --массив значений
-                           at_ed common_pg.tt_number,   --массив значений
-                                                     at_q1 common_pg.tt_number,   --массив значений
-                                                                               at_q3 common_pg.tt_number,   --массив значений
-                                                                                                         at_validity common_pg.tt_number,   --массив достовернрости
- at_quality common_pg.tt_number,   --массив меток качества
+                                             an_cid NUMBER,   -- РћР±СЉРµРєС‚ , СЃ РєРѕС‚РѕСЂРѕРіРѕ РґР°РґРѕ РїРѕР»СѓС‡РёС‚СЊ РёРЅС„РѕСЂРјР°С†РёСЋ (channels.cid)
+                                                           an_size NUMBER,   -- СЂР°Р·РјРµСЂ at_id
+                                                                          at_id common_pg.tt_number,   -- РјР°СЃСЃРёРІ id
+                                                                                                    at_datetime common_pg.tt_date,   -- РјР°СЃСЃРёРІ РјРµС‚РѕРє РІСЂРµРјРµРЅРё
+ at_er common_pg.tt_number,   --РјР°СЃСЃРёРІ Р·РЅР°С‡РµРЅРёР№
+                           at_ed common_pg.tt_number,   --РјР°СЃСЃРёРІ Р·РЅР°С‡РµРЅРёР№
+                                                     at_q1 common_pg.tt_number,   --РјР°СЃСЃРёРІ Р·РЅР°С‡РµРЅРёР№
+                                                                               at_q3 common_pg.tt_number,   --РјР°СЃСЃРёРІ Р·РЅР°С‡РµРЅРёР№
+                                                                                                         at_validity common_pg.tt_number,   --РјР°СЃСЃРёРІ РґРѕСЃС‚РѕРІРµСЂРЅСЂРѕСЃС‚Рё
+ at_quality common_pg.tt_number,   --РјР°СЃСЃРёРІ РјРµС‚РѕРє РєР°С‡РµСЃС‚РІР°
                                 at_source common_pg.tt_number
- )   --массив источников
+ )   --РјР°СЃСЃРёРІ РёСЃС‚РѕС‡РЅРёРєРѕРІ
   RETURN NUMBER IS
   lt_qm   common_pg.tt_varchar2;
  BEGIN
@@ -620,38 +620,38 @@ end;*/
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
-   -- Вставка данных
+   -- Р’СЃС‚Р°РІРєР° РґР°РЅРЅС‹С…
  FUNCTION sync_insert (an_typeofquery NUMBER,   -- 0-NOTUSED, 1-CURRENTDATA, 2-MINUTEDATA, 3-HOURDATA, 4-DAYDATA, 5-MONTHDATA, 6-INSTANTDATA
-                                             an_cid NUMBER,   -- Объект , с которого дадо получить информацию (channels.cid)
-                                                           an_size NUMBER,   -- размер at_id
-                                                                          at_id common_pg.tt_number,   -- массив id
-                                                                                                    at_datetime common_pg.tt_date,   -- массив меток времени
- at_er common_pg.tt_number,   --массив значений
-                           at_ed common_pg.tt_number,   --массив значений
-                                                     at_q1 common_pg.tt_number,   --массив значений
-                                                                               at_q3 common_pg.tt_number,   --массив значений
- at_qm common_pg.tt_varchar2   --массив меток качества
- )   --массив источников
+                                             an_cid NUMBER,   -- РћР±СЉРµРєС‚ , СЃ РєРѕС‚РѕСЂРѕРіРѕ РґР°РґРѕ РїРѕР»СѓС‡РёС‚СЊ РёРЅС„РѕСЂРјР°С†РёСЋ (channels.cid)
+                                                           an_size NUMBER,   -- СЂР°Р·РјРµСЂ at_id
+                                                                          at_id common_pg.tt_number,   -- РјР°СЃСЃРёРІ id
+                                                                                                    at_datetime common_pg.tt_date,   -- РјР°СЃСЃРёРІ РјРµС‚РѕРє РІСЂРµРјРµРЅРё
+ at_er common_pg.tt_number,   --РјР°СЃСЃРёРІ Р·РЅР°С‡РµРЅРёР№
+                           at_ed common_pg.tt_number,   --РјР°СЃСЃРёРІ Р·РЅР°С‡РµРЅРёР№
+                                                     at_q1 common_pg.tt_number,   --РјР°СЃСЃРёРІ Р·РЅР°С‡РµРЅРёР№
+                                                                               at_q3 common_pg.tt_number,   --РјР°СЃСЃРёРІ Р·РЅР°С‡РµРЅРёР№
+ at_qm common_pg.tt_varchar2   --РјР°СЃСЃРёРІ РјРµС‚РѕРє РєР°С‡РµСЃС‚РІР°
+ )   --РјР°СЃСЃРёРІ РёСЃС‚РѕС‡РЅРёРєРѕРІ
   RETURN NUMBER IS
  BEGIN
   RETURN sync_insert_replace_base (cn_tf_ins, an_typeofquery, an_cid, an_size, at_id, at_datetime, at_er, at_ed, at_q1, at_q3, at_qm);
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
-    -- Замена данных
+    -- Р—Р°РјРµРЅР° РґР°РЅРЅС‹С…
  FUNCTION sync_replace (an_typeofquery NUMBER,   -- 0-NOTUSED, 1-CURRENTDATA, 2-MINUTEDATA, 3-HOURDATA, 4-DAYDATA, 5-MONTHDATA, 6-INSTANTDATA
-                                              an_cid NUMBER,   -- Объект , на который дадо получить информацию (channels.cid)
-                                                            an_size NUMBER,   -- размер at_id
-                                                                           at_id common_pg.tt_number,   -- массив id
-                                                                                                     at_datetime common_pg.tt_date,   -- массив меток времени
- at_er common_pg.tt_number,   --массив значений
-                           at_ed common_pg.tt_number,   --массив значений
-                                                     at_q1 common_pg.tt_number,   --массив значений
-                                                                               at_q3 common_pg.tt_number,   --массив значений
-                                                                                                         at_validity common_pg.tt_number,   --массив достовернрости
- at_quality common_pg.tt_number,   --массив меток качества
+                                              an_cid NUMBER,   -- РћР±СЉРµРєС‚ , РЅР° РєРѕС‚РѕСЂС‹Р№ РґР°РґРѕ РїРѕР»СѓС‡РёС‚СЊ РёРЅС„РѕСЂРјР°С†РёСЋ (channels.cid)
+                                                            an_size NUMBER,   -- СЂР°Р·РјРµСЂ at_id
+                                                                           at_id common_pg.tt_number,   -- РјР°СЃСЃРёРІ id
+                                                                                                     at_datetime common_pg.tt_date,   -- РјР°СЃСЃРёРІ РјРµС‚РѕРє РІСЂРµРјРµРЅРё
+ at_er common_pg.tt_number,   --РјР°СЃСЃРёРІ Р·РЅР°С‡РµРЅРёР№
+                           at_ed common_pg.tt_number,   --РјР°СЃСЃРёРІ Р·РЅР°С‡РµРЅРёР№
+                                                     at_q1 common_pg.tt_number,   --РјР°СЃСЃРёРІ Р·РЅР°С‡РµРЅРёР№
+                                                                               at_q3 common_pg.tt_number,   --РјР°СЃСЃРёРІ Р·РЅР°С‡РµРЅРёР№
+                                                                                                         at_validity common_pg.tt_number,   --РјР°СЃСЃРёРІ РґРѕСЃС‚РѕРІРµСЂРЅСЂРѕСЃС‚Рё
+ at_quality common_pg.tt_number,   --РјР°СЃСЃРёРІ РјРµС‚РѕРє РєР°С‡РµСЃС‚РІР°
                                 at_source common_pg.tt_number
- )   --массив источников
+ )   --РјР°СЃСЃРёРІ РёСЃС‚РѕС‡РЅРёРєРѕРІ
   RETURN NUMBER IS
   lt_qm   common_pg.tt_varchar2;
  BEGIN
@@ -663,30 +663,30 @@ end;*/
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
-    -- Замена данных
+    -- Р—Р°РјРµРЅР° РґР°РЅРЅС‹С…
  FUNCTION sync_replace (an_typeofquery NUMBER,   -- 0-NOTUSED, 1-CURRENTDATA, 2-MINUTEDATA, 3-HOURDATA, 4-DAYDATA, 5-MONTHDATA, 6-INSTANTDATA
-                                              an_cid NUMBER,   -- Объект , на который дадо получить информацию (channels.cid)
-                                                            an_size NUMBER,   -- размер at_id
-                                                                           at_id common_pg.tt_number,   -- массив id
-                                                                                                     at_datetime common_pg.tt_date,   -- массив меток времени
- at_er common_pg.tt_number,   --массив значений
-                           at_ed common_pg.tt_number,   --массив значений
-                                                     at_q1 common_pg.tt_number,   --массив значений
-                                                                               at_q3 common_pg.tt_number,   --массив значений
- at_qm common_pg.tt_varchar2   --массив меток качества
- )   --массив источников
+                                              an_cid NUMBER,   -- РћР±СЉРµРєС‚ , РЅР° РєРѕС‚РѕСЂС‹Р№ РґР°РґРѕ РїРѕР»СѓС‡РёС‚СЊ РёРЅС„РѕСЂРјР°С†РёСЋ (channels.cid)
+                                                            an_size NUMBER,   -- СЂР°Р·РјРµСЂ at_id
+                                                                           at_id common_pg.tt_number,   -- РјР°СЃСЃРёРІ id
+                                                                                                     at_datetime common_pg.tt_date,   -- РјР°СЃСЃРёРІ РјРµС‚РѕРє РІСЂРµРјРµРЅРё
+ at_er common_pg.tt_number,   --РјР°СЃСЃРёРІ Р·РЅР°С‡РµРЅРёР№
+                           at_ed common_pg.tt_number,   --РјР°СЃСЃРёРІ Р·РЅР°С‡РµРЅРёР№
+                                                     at_q1 common_pg.tt_number,   --РјР°СЃСЃРёРІ Р·РЅР°С‡РµРЅРёР№
+                                                                               at_q3 common_pg.tt_number,   --РјР°СЃСЃРёРІ Р·РЅР°С‡РµРЅРёР№
+ at_qm common_pg.tt_varchar2   --РјР°СЃСЃРёРІ РјРµС‚РѕРє РєР°С‡РµСЃС‚РІР°
+ )   --РјР°СЃСЃРёРІ РёСЃС‚РѕС‡РЅРёРєРѕРІ
   RETURN NUMBER IS
  BEGIN
   RETURN sync_insert_replace_base (cn_tf_rep, an_typeofquery, an_cid, an_size, at_id, at_datetime, at_er, at_ed, at_q1, at_q3, at_qm);
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
-      -- Удаление данных
+      -- РЈРґР°Р»РµРЅРёРµ РґР°РЅРЅС‹С…
  FUNCTION sync_delete_raw (an_typeofquery NUMBER,   -- 0-NOTUSED, 1-CURRENTDATA, 2-MINUTEDATA, 3-HOURDATA, 4-DAYDATA, 5-MONTHDATA, 6-INSTANTDATA
-                                                 an_cid NUMBER,   -- Объект , с которого дадо получить информацию (channels.cid)
-                                                               an_size NUMBER,   -- размер at_id
-                                                                              at_id common_pg.tt_number,   -- массив id
- at_datetime common_pg.tt_date   -- массив меток времени
+                                                 an_cid NUMBER,   -- РћР±СЉРµРєС‚ , СЃ РєРѕС‚РѕСЂРѕРіРѕ РґР°РґРѕ РїРѕР»СѓС‡РёС‚СЊ РёРЅС„РѕСЂРјР°С†РёСЋ (channels.cid)
+                                                               an_size NUMBER,   -- СЂР°Р·РјРµСЂ at_id
+                                                                              at_id common_pg.tt_number,   -- РјР°СЃСЃРёРІ id
+ at_datetime common_pg.tt_date   -- РјР°СЃСЃРёРІ РјРµС‚РѕРє РІСЂРµРјРµРЅРё
  )
   RETURN NUMBER IS
   ln_id        NUMBER;
@@ -706,27 +706,27 @@ end;*/
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
---------------  Сервер (Львов)  ----------------------------------------------------------------------------------------
+--------------  РЎРµСЂРІРµСЂ (Р›СЊРІРѕРІ)  ----------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------------------------
-   -- Чтение данных
- FUNCTION sync_read_raw (at_names common_pg.tt_varchar2,   -- массив mRid запрашиваемых параметров, которых надо найти
-                                                        at_ids common_pg.tt_number,   -- массив id запрашиваемых параметров
-                                                                                   an_paramcount NUMBER,   -- кол. входных и выходных параметров
+   -- Р§С‚РµРЅРёРµ РґР°РЅРЅС‹С…
+ FUNCTION sync_read_raw (at_names common_pg.tt_varchar2,   -- РјР°СЃСЃРёРІ mRid Р·Р°РїСЂР°С€РёРІР°РµРјС‹С… РїР°СЂР°РјРµС‚СЂРѕРІ, РєРѕС‚РѕСЂС‹С… РЅР°РґРѕ РЅР°Р№С‚Рё
+                                                        at_ids common_pg.tt_number,   -- РјР°СЃСЃРёРІ id Р·Р°РїСЂР°С€РёРІР°РµРјС‹С… РїР°СЂР°РјРµС‚СЂРѕРІ
+                                                                                   an_paramcount NUMBER,   -- РєРѕР». РІС…РѕРґРЅС‹С… Рё РІС‹С…РѕРґРЅС‹С… РїР°СЂР°РјРµС‚СЂРѕРІ
                                                                                                         an_typeofquery NUMBER,   -- 0-NOTUSED, 1-CURRENTDATA, 2-MINUTEDATA, 3-HOURDATA, 4-DAYDATA, 5-MONTHDATA, 6-INSTANTDATA
- ad_timebegin DATE,   --дата с
-                   ad_timeend DATE,   --дата по
-                                   an_beginfrom NUMBER,   --Стартовать с такого
-                                                       an_count IN OUT NUMBER,   -- макс количество возвращ значений (ДАТ)
-                                                                              at_id OUT common_pg.tt_number,   -- массив id
-                                                                                                            at_datetime OUT common_pg.tt_date,   -- массив меток времени
- at_er OUT common_pg.tt_number,   --массив значений
-                               at_ed OUT common_pg.tt_number,   --массив значений
-                                                             at_q1 OUT common_pg.tt_number,   --массив значений
-                                                                                           at_q3 OUT common_pg.tt_number,   --массив значений
- at_validity OUT common_pg.tt_number,   --массив достовернрости
-                                     at_quality OUT common_pg.tt_number,   --массив меток качества
+ ad_timebegin DATE,   --РґР°С‚Р° СЃ
+                   ad_timeend DATE,   --РґР°С‚Р° РїРѕ
+                                   an_beginfrom NUMBER,   --РЎС‚Р°СЂС‚РѕРІР°С‚СЊ СЃ С‚Р°РєРѕРіРѕ
+                                                       an_count IN OUT NUMBER,   -- РјР°РєСЃ РєРѕР»РёС‡РµСЃС‚РІРѕ РІРѕР·РІСЂР°С‰ Р·РЅР°С‡РµРЅРёР№ (Р”РђРў)
+                                                                              at_id OUT common_pg.tt_number,   -- РјР°СЃСЃРёРІ id
+                                                                                                            at_datetime OUT common_pg.tt_date,   -- РјР°СЃСЃРёРІ РјРµС‚РѕРє РІСЂРµРјРµРЅРё
+ at_er OUT common_pg.tt_number,   --РјР°СЃСЃРёРІ Р·РЅР°С‡РµРЅРёР№
+                               at_ed OUT common_pg.tt_number,   --РјР°СЃСЃРёРІ Р·РЅР°С‡РµРЅРёР№
+                                                             at_q1 OUT common_pg.tt_number,   --РјР°СЃСЃРёРІ Р·РЅР°С‡РµРЅРёР№
+                                                                                           at_q3 OUT common_pg.tt_number,   --РјР°СЃСЃРёРІ Р·РЅР°С‡РµРЅРёР№
+ at_validity OUT common_pg.tt_number,   --РјР°СЃСЃРёРІ РґРѕСЃС‚РѕРІРµСЂРЅСЂРѕСЃС‚Рё
+                                     at_quality OUT common_pg.tt_number,   --РјР°СЃСЃРёРІ РјРµС‚РѕРє РєР°С‡РµСЃС‚РІР°
                                                                         at_source OUT common_pg.tt_number
- )   --массив источников
+ )   --РјР°СЃСЃРёРІ РёСЃС‚РѕС‡РЅРёРєРѕРІ
   RETURN NUMBER IS
   lt_qm   common_pg.tt_varchar2;
  BEGIN
@@ -735,23 +735,23 @@ end;*/
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
-   -- Чтение данных
- FUNCTION sync_read_raw (at_names common_pg.tt_varchar2,   -- массив mRid запрашиваемых параметров, которых надо найти
-                                                        at_ids common_pg.tt_number,   -- массив id запрашиваемых параметров
-                                                                                   an_paramcount NUMBER,   -- кол. входных и выходных параметров
+   -- Р§С‚РµРЅРёРµ РґР°РЅРЅС‹С…
+ FUNCTION sync_read_raw (at_names common_pg.tt_varchar2,   -- РјР°СЃСЃРёРІ mRid Р·Р°РїСЂР°С€РёРІР°РµРјС‹С… РїР°СЂР°РјРµС‚СЂРѕРІ, РєРѕС‚РѕСЂС‹С… РЅР°РґРѕ РЅР°Р№С‚Рё
+                                                        at_ids common_pg.tt_number,   -- РјР°СЃСЃРёРІ id Р·Р°РїСЂР°С€РёРІР°РµРјС‹С… РїР°СЂР°РјРµС‚СЂРѕРІ
+                                                                                   an_paramcount NUMBER,   -- РєРѕР». РІС…РѕРґРЅС‹С… Рё РІС‹С…РѕРґРЅС‹С… РїР°СЂР°РјРµС‚СЂРѕРІ
                                                                                                         an_typeofquery NUMBER,   -- 0-NOTUSED, 1-CURRENTDATA, 2-MINUTEDATA, 3-HOURDATA, 4-DAYDATA, 5-MONTHDATA, 6-INSTANTDATA
- ad_timebegin DATE,   --дата с
-                   ad_timeend DATE,   --дата по
-                                   ad_change DATE,   -- дата последних изменений (показания появившиеся с)
-                                                  an_beginfrom NUMBER,   --Стартовать с такого
-                                                                      an_count IN OUT NUMBER,   -- макс количество возвращ значений (ДАТ)
-                                                                                             at_id OUT common_pg.tt_number,   -- массив id
- at_datetime OUT common_pg.tt_date,   -- массив меток времени
-                                   at_er OUT common_pg.tt_number,   --массив значений
-                                                                 at_ed OUT common_pg.tt_number,   --массив значений
-                                                                                               at_q1 OUT common_pg.tt_number,   --массив значений
- at_q3 OUT common_pg.tt_number,   --массив значений
-                               at_qm OUT common_pg.tt_varchar2   --массив меток качества
+ ad_timebegin DATE,   --РґР°С‚Р° СЃ
+                   ad_timeend DATE,   --РґР°С‚Р° РїРѕ
+                                   ad_change DATE,   -- РґР°С‚Р° РїРѕСЃР»РµРґРЅРёС… РёР·РјРµРЅРµРЅРёР№ (РїРѕРєР°Р·Р°РЅРёСЏ РїРѕСЏРІРёРІС€РёРµСЃСЏ СЃ)
+                                                  an_beginfrom NUMBER,   --РЎС‚Р°СЂС‚РѕРІР°С‚СЊ СЃ С‚Р°РєРѕРіРѕ
+                                                                      an_count IN OUT NUMBER,   -- РјР°РєСЃ РєРѕР»РёС‡РµСЃС‚РІРѕ РІРѕР·РІСЂР°С‰ Р·РЅР°С‡РµРЅРёР№ (Р”РђРў)
+                                                                                             at_id OUT common_pg.tt_number,   -- РјР°СЃСЃРёРІ id
+ at_datetime OUT common_pg.tt_date,   -- РјР°СЃСЃРёРІ РјРµС‚РѕРє РІСЂРµРјРµРЅРё
+                                   at_er OUT common_pg.tt_number,   --РјР°СЃСЃРёРІ Р·РЅР°С‡РµРЅРёР№
+                                                                 at_ed OUT common_pg.tt_number,   --РјР°СЃСЃРёРІ Р·РЅР°С‡РµРЅРёР№
+                                                                                               at_q1 OUT common_pg.tt_number,   --РјР°СЃСЃРёРІ Р·РЅР°С‡РµРЅРёР№
+ at_q3 OUT common_pg.tt_number,   --РјР°СЃСЃРёРІ Р·РЅР°С‡РµРЅРёР№
+                               at_qm OUT common_pg.tt_varchar2   --РјР°СЃСЃРёРІ РјРµС‚РѕРє РєР°С‡РµСЃС‚РІР°
  )
   RETURN NUMBER IS
   at_validity   common_pg.tt_number;
@@ -763,26 +763,26 @@ end;*/
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
-   -- Чтение данных
- FUNCTION sync_read_raw (at_names common_pg.tt_varchar2,   -- массив mRid запрашиваемых параметров, которых надо найти
-                                                        at_ids common_pg.tt_number,   -- массив id запрашиваемых параметров
-                                                                                   an_paramcount NUMBER,   -- кол. входных параметров
+   -- Р§С‚РµРЅРёРµ РґР°РЅРЅС‹С…
+ FUNCTION sync_read_raw (at_names common_pg.tt_varchar2,   -- РјР°СЃСЃРёРІ mRid Р·Р°РїСЂР°С€РёРІР°РµРјС‹С… РїР°СЂР°РјРµС‚СЂРѕРІ, РєРѕС‚РѕСЂС‹С… РЅР°РґРѕ РЅР°Р№С‚Рё
+                                                        at_ids common_pg.tt_number,   -- РјР°СЃСЃРёРІ id Р·Р°РїСЂР°С€РёРІР°РµРјС‹С… РїР°СЂР°РјРµС‚СЂРѕРІ
+                                                                                   an_paramcount NUMBER,   -- РєРѕР». РІС…РѕРґРЅС‹С… РїР°СЂР°РјРµС‚СЂРѕРІ
                                                                                                         an_typeofquery NUMBER,   -- 0-NOTUSED, 1-CURRENTDATA, 2-MINUTEDATA, 3-HOURDATA, 4-DAYDATA, 5-MONTHDATA, 6-INSTANTDATA
- ad_timebegin DATE,   --дата с
-                   ad_timeend DATE,   --дата по
-                                   ad_change DATE,   -- дата последних изменений (показания появившиеся с)
-                                                  an_beginfrom NUMBER,   --Стартовать с такого
-                                                                      an_count IN OUT NUMBER,   -- макс количество массива at_id
-                                                                                             at_id OUT common_pg.tt_number,   -- массив id
- at_datetime OUT common_pg.tt_date,   -- массив меток времени
-                                   at_er OUT common_pg.tt_number,   --массив значений
-                                                                 at_ed OUT common_pg.tt_number,   --массив значений
-                                                                                               at_q1 OUT common_pg.tt_number,   --массив значений
- at_q3 OUT common_pg.tt_number,   --массив достовернрости
-                               at_validity OUT common_pg.tt_number,   --массив значений
-                                                                   at_quality OUT common_pg.tt_number,   --массив меток качества
-                                                                                                      at_source OUT common_pg.tt_number,   --массив источников
- at_qm OUT common_pg.tt_varchar2   --массив меток качества
+ ad_timebegin DATE,   --РґР°С‚Р° СЃ
+                   ad_timeend DATE,   --РґР°С‚Р° РїРѕ
+                                   ad_change DATE,   -- РґР°С‚Р° РїРѕСЃР»РµРґРЅРёС… РёР·РјРµРЅРµРЅРёР№ (РїРѕРєР°Р·Р°РЅРёСЏ РїРѕСЏРІРёРІС€РёРµСЃСЏ СЃ)
+                                                  an_beginfrom NUMBER,   --РЎС‚Р°СЂС‚РѕРІР°С‚СЊ СЃ С‚Р°РєРѕРіРѕ
+                                                                      an_count IN OUT NUMBER,   -- РјР°РєСЃ РєРѕР»РёС‡РµСЃС‚РІРѕ РјР°СЃСЃРёРІР° at_id
+                                                                                             at_id OUT common_pg.tt_number,   -- РјР°СЃСЃРёРІ id
+ at_datetime OUT common_pg.tt_date,   -- РјР°СЃСЃРёРІ РјРµС‚РѕРє РІСЂРµРјРµРЅРё
+                                   at_er OUT common_pg.tt_number,   --РјР°СЃСЃРёРІ Р·РЅР°С‡РµРЅРёР№
+                                                                 at_ed OUT common_pg.tt_number,   --РјР°СЃСЃРёРІ Р·РЅР°С‡РµРЅРёР№
+                                                                                               at_q1 OUT common_pg.tt_number,   --РјР°СЃСЃРёРІ Р·РЅР°С‡РµРЅРёР№
+ at_q3 OUT common_pg.tt_number,   --РјР°СЃСЃРёРІ РґРѕСЃС‚РѕРІРµСЂРЅСЂРѕСЃС‚Рё
+                               at_validity OUT common_pg.tt_number,   --РјР°СЃСЃРёРІ Р·РЅР°С‡РµРЅРёР№
+                                                                   at_quality OUT common_pg.tt_number,   --РјР°СЃСЃРёРІ РјРµС‚РѕРє РєР°С‡РµСЃС‚РІР°
+                                                                                                      at_source OUT common_pg.tt_number,   --РјР°СЃСЃРёРІ РёСЃС‚РѕС‡РЅРёРєРѕРІ
+ at_qm OUT common_pg.tt_varchar2   --РјР°СЃСЃРёРІ РјРµС‚РѕРє РєР°С‡РµСЃС‚РІР°
  )
   RETURN NUMBER IS
   cr_sel                 common_pg.tcur;
@@ -814,9 +814,9 @@ end;*/
   IF an_beginfrom = 1 THEN
    gt_read_raw.DELETE;
 
-   IF an_typeofquery IN (cn_qt_hourdata, cn_qt_minutedata, cn_qt_daydata, cn_qt_monthdata, cn_qt_instantdata) THEN   --30 минутки
+   IF an_typeofquery IN (cn_qt_hourdata, cn_qt_minutedata, cn_qt_daydata, cn_qt_monthdata, cn_qt_instantdata) THEN   --30 РјРёРЅСѓС‚РєРё
     FOR i IN 1 .. an_paramcount LOOP
-     IF at_ids (1) > 0 THEN   --Работаем по ИД (проверка по перврму элементу)
+     IF at_ids (1) > 0 THEN   --Р Р°Р±РѕС‚Р°РµРј РїРѕ РР” (РїСЂРѕРІРµСЂРєР° РїРѕ РїРµСЂРІСЂРјСѓ СЌР»РµРјРµРЅС‚Сѓ)
       ln_mid := at_ids (i);
       ln_measure := 0;
      ELSE
@@ -830,7 +830,7 @@ end;*/
      lb_exit := FALSE;
 
      IF an_typeofquery = cn_qt_hourdata AND ln_measure <= 10 THEN
-      IF ld_change IS NULL THEN   --Если ld_change IS NULL THEN   Работаем по старому без подтяжки вновь поступивших данных
+      IF ld_change IS NULL THEN   --Р•СЃР»Рё ld_change IS NULL THEN   Р Р°Р±РѕС‚Р°РµРј РїРѕ СЃС‚Р°СЂРѕРјСѓ Р±РµР· РїРѕРґС‚СЏР¶РєРё РІРЅРѕРІСЊ РїРѕСЃС‚СѓРїРёРІС€РёС… РґР°РЅРЅС‹С…
        OPEN cr_sel FOR 'SELECT   util_pg.to_unlocaltime (date_time, nsource) dat, er, ed, util_pg.sumn (q1, q2) q1, util_pg.sumn (q3, q4) q3, vqm FROM halfhour WHERE mid ='
                        || ln_mid || ' AND date_time > to_date(''' || lv_timebegin
                        || ''',''dd.mm.yyyy hh24:mi:ss'') - 1 / 24 AND util_pg.to_unlocaltime (date_time, nsource) > to_date(''' || lv_timebegin
@@ -883,7 +883,7 @@ end;*/
 
       EXIT WHEN cr_sel%NOTFOUND;
 
-      IF lr_tmp.dat = lr_tmp1.dat AND lr_tmp.ID = ln_mid THEN   --Для одной метки времени складываем (например ОВ)
+      IF lr_tmp.dat = lr_tmp1.dat AND lr_tmp.ID = ln_mid THEN   --Р”Р»СЏ РѕРґРЅРѕР№ РјРµС‚РєРё РІСЂРµРјРµРЅРё СЃРєР»Р°РґС‹РІР°РµРј (РЅР°РїСЂРёРјРµСЂ РћР’)
        lr_tmp.er := util_pg.sumn (lr_tmp.er, lr_tmp1.er);
        lr_tmp.ed := util_pg.sumn (lr_tmp.ed, lr_tmp1.ed);
        lr_tmp.q1 := util_pg.sumn (lr_tmp.q1, lr_tmp1.q1);
@@ -917,7 +917,7 @@ end;*/
       EXIT;
      END IF;
     END LOOP;
-   ELSIF an_typeofquery = cn_qt_currentdata THEN   --Текущие
+   ELSIF an_typeofquery = cn_qt_currentdata THEN   --РўРµРєСѓС‰РёРµ
     ld_sys := util_pg.trunc_d (SYSDATE, cn_hh_shift);
 
     FOR i IN 1 .. an_paramcount LOOP
@@ -944,7 +944,7 @@ end;*/
       gt_read_raw (ln_cnt) := lr_tmp;
      END IF;
     END LOOP;
-   ELSE   --Не написали
+   ELSE   --РќРµ РЅР°РїРёСЃР°Р»Рё
     RETURN cn_err_badarg;
    END IF;
   END IF;
@@ -966,7 +966,7 @@ end;*/
 
   COMMIT;
 
-  IF an_count < ln_size THEN   --Очистка памяти
+  IF an_count < ln_size THEN   --РћС‡РёСЃС‚РєР° РїР°РјСЏС‚Рё
    gt_read_raw.DELETE;
   END IF;
 
@@ -974,13 +974,13 @@ end;*/
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
-  -- Получение массива ID и меток времени последних сохраненных данных ГН
- FUNCTION get_clnt_last_save_hh (an_cid NUMBER,   -- Объект , с которого дадо получить информацию (channels.cid)
-                                               an_beginfrom NUMBER,   --Стартовать с такого
-                                                                   an_count IN OUT NUMBER,   --Требуемый и возвращаемый объем щбъем выборки
- at_ids OUT common_pg.tt_number,   -- массив id найденных параметров
-                                at_lastdate OUT common_pg.tt_date,   -- массив дат найденных параметров
- at_lastchange OUT common_pg.tt_date   -- массив дат найденных параметров
+  -- РџРѕР»СѓС‡РµРЅРёРµ РјР°СЃСЃРёРІР° ID Рё РјРµС‚РѕРє РІСЂРµРјРµРЅРё РїРѕСЃР»РµРґРЅРёС… СЃРѕС…СЂР°РЅРµРЅРЅС‹С… РґР°РЅРЅС‹С… Р“Рќ
+ FUNCTION get_clnt_last_save_hh (an_cid NUMBER,   -- РћР±СЉРµРєС‚ , СЃ РєРѕС‚РѕСЂРѕРіРѕ РґР°РґРѕ РїРѕР»СѓС‡РёС‚СЊ РёРЅС„РѕСЂРјР°С†РёСЋ (channels.cid)
+                                               an_beginfrom NUMBER,   --РЎС‚Р°СЂС‚РѕРІР°С‚СЊ СЃ С‚Р°РєРѕРіРѕ
+                                                                   an_count IN OUT NUMBER,   --РўСЂРµР±СѓРµРјС‹Р№ Рё РІРѕР·РІСЂР°С‰Р°РµРјС‹Р№ РѕР±СЉРµРј С‰Р±СЉРµРј РІС‹Р±РѕСЂРєРё
+ at_ids OUT common_pg.tt_number,   -- РјР°СЃСЃРёРІ id РЅР°Р№РґРµРЅРЅС‹С… РїР°СЂР°РјРµС‚СЂРѕРІ
+                                at_lastdate OUT common_pg.tt_date,   -- РјР°СЃСЃРёРІ РґР°С‚ РЅР°Р№РґРµРЅРЅС‹С… РїР°СЂР°РјРµС‚СЂРѕРІ
+ at_lastchange OUT common_pg.tt_date   -- РјР°СЃСЃРёРІ РґР°С‚ РЅР°Р№РґРµРЅРЅС‹С… РїР°СЂР°РјРµС‚СЂРѕРІ
  )
   RETURN NUMBER IS
  BEGIN
@@ -988,12 +988,12 @@ end;*/
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
-  -- Получение массива ID и меток времени последних сохраненных данных Показаний
- FUNCTION get_clnt_last_save_d (an_cid NUMBER,   -- Объект , с которого дадо получить информацию (channels.cid)
-                                              an_beginfrom NUMBER,   --Стартовать с такого
-                                                                  an_count IN OUT NUMBER,   --Требуемый и возвращаемый объем щбъем выборки
- at_ids OUT common_pg.tt_number,   -- массив id найденных параметров
-                                at_lastdate OUT common_pg.tt_date   -- массив дат найденных параметров
+  -- РџРѕР»СѓС‡РµРЅРёРµ РјР°СЃСЃРёРІР° ID Рё РјРµС‚РѕРє РІСЂРµРјРµРЅРё РїРѕСЃР»РµРґРЅРёС… СЃРѕС…СЂР°РЅРµРЅРЅС‹С… РґР°РЅРЅС‹С… РџРѕРєР°Р·Р°РЅРёР№
+ FUNCTION get_clnt_last_save_d (an_cid NUMBER,   -- РћР±СЉРµРєС‚ , СЃ РєРѕС‚РѕСЂРѕРіРѕ РґР°РґРѕ РїРѕР»СѓС‡РёС‚СЊ РёРЅС„РѕСЂРјР°С†РёСЋ (channels.cid)
+                                              an_beginfrom NUMBER,   --РЎС‚Р°СЂС‚РѕРІР°С‚СЊ СЃ С‚Р°РєРѕРіРѕ
+                                                                  an_count IN OUT NUMBER,   --РўСЂРµР±СѓРµРјС‹Р№ Рё РІРѕР·РІСЂР°С‰Р°РµРјС‹Р№ РѕР±СЉРµРј С‰Р±СЉРµРј РІС‹Р±РѕСЂРєРё
+ at_ids OUT common_pg.tt_number,   -- РјР°СЃСЃРёРІ id РЅР°Р№РґРµРЅРЅС‹С… РїР°СЂР°РјРµС‚СЂРѕРІ
+                                at_lastdate OUT common_pg.tt_date   -- РјР°СЃСЃРёРІ РґР°С‚ РЅР°Р№РґРµРЅРЅС‹С… РїР°СЂР°РјРµС‚СЂРѕРІ
  )
   RETURN NUMBER IS
   lt_lastchange   common_pg.tt_date;
@@ -1002,12 +1002,12 @@ end;*/
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
-  -- Получение массива ID и меток времени последних сохраненных данных Журнала
- FUNCTION get_clnt_last_save_j (an_cid NUMBER,   -- Объект , с которого дадо получить информацию (channels.cid)
-                                              an_beginfrom NUMBER,   --Стартовать с такого
-                                                                  an_count IN OUT NUMBER,   --Требуемый и возвращаемый объем щбъем выборки
- at_ids OUT common_pg.tt_number,   -- массив id найденных параметров
-                                at_lastdate OUT common_pg.tt_date   -- массив дат найденных параметров
+  -- РџРѕР»СѓС‡РµРЅРёРµ РјР°СЃСЃРёРІР° ID Рё РјРµС‚РѕРє РІСЂРµРјРµРЅРё РїРѕСЃР»РµРґРЅРёС… СЃРѕС…СЂР°РЅРµРЅРЅС‹С… РґР°РЅРЅС‹С… Р–СѓСЂРЅР°Р»Р°
+ FUNCTION get_clnt_last_save_j (an_cid NUMBER,   -- РћР±СЉРµРєС‚ , СЃ РєРѕС‚РѕСЂРѕРіРѕ РґР°РґРѕ РїРѕР»СѓС‡РёС‚СЊ РёРЅС„РѕСЂРјР°С†РёСЋ (channels.cid)
+                                              an_beginfrom NUMBER,   --РЎС‚Р°СЂС‚РѕРІР°С‚СЊ СЃ С‚Р°РєРѕРіРѕ
+                                                                  an_count IN OUT NUMBER,   --РўСЂРµР±СѓРµРјС‹Р№ Рё РІРѕР·РІСЂР°С‰Р°РµРјС‹Р№ РѕР±СЉРµРј С‰Р±СЉРµРј РІС‹Р±РѕСЂРєРё
+ at_ids OUT common_pg.tt_number,   -- РјР°СЃСЃРёРІ id РЅР°Р№РґРµРЅРЅС‹С… РїР°СЂР°РјРµС‚СЂРѕРІ
+                                at_lastdate OUT common_pg.tt_date   -- РјР°СЃСЃРёРІ РґР°С‚ РЅР°Р№РґРµРЅРЅС‹С… РїР°СЂР°РјРµС‚СЂРѕРІ
  )
   RETURN NUMBER IS
   lt_lastchange   common_pg.tt_date;
@@ -1016,16 +1016,16 @@ end;*/
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
-    -- Вставка (замена) данных ГН
- FUNCTION set_clnt_hh (an_cid NUMBER,   -- Объект , с которого дадо получить информацию (channels.cid)
-                                     an_size NUMBER,   --Кол элеменотов массивов
-                                                    at_id common_pg.tt_number,   -- массив id
-                                                                              at_datetime common_pg.tt_date,   -- массив меток времени
-                                                                                                            at_er common_pg.tt_number,   --массив значений
- at_ed common_pg.tt_number,   --массив значений
-                           at_q1 common_pg.tt_number,   --массив значений
-                                                     at_q3 common_pg.tt_number,   --массив значений
-                                                                               at_qm common_pg.tt_varchar2   --массив меток качества
+    -- Р’СЃС‚Р°РІРєР° (Р·Р°РјРµРЅР°) РґР°РЅРЅС‹С… Р“Рќ
+ FUNCTION set_clnt_hh (an_cid NUMBER,   -- РћР±СЉРµРєС‚ , СЃ РєРѕС‚РѕСЂРѕРіРѕ РґР°РґРѕ РїРѕР»СѓС‡РёС‚СЊ РёРЅС„РѕСЂРјР°С†РёСЋ (channels.cid)
+                                     an_size NUMBER,   --РљРѕР» СЌР»РµРјРµРЅРѕС‚РѕРІ РјР°СЃСЃРёРІРѕРІ
+                                                    at_id common_pg.tt_number,   -- РјР°СЃСЃРёРІ id
+                                                                              at_datetime common_pg.tt_date,   -- РјР°СЃСЃРёРІ РјРµС‚РѕРє РІСЂРµРјРµРЅРё
+                                                                                                            at_er common_pg.tt_number,   --РјР°СЃСЃРёРІ Р·РЅР°С‡РµРЅРёР№
+ at_ed common_pg.tt_number,   --РјР°СЃСЃРёРІ Р·РЅР°С‡РµРЅРёР№
+                           at_q1 common_pg.tt_number,   --РјР°СЃСЃРёРІ Р·РЅР°С‡РµРЅРёР№
+                                                     at_q3 common_pg.tt_number,   --РјР°СЃСЃРёРІ Р·РЅР°С‡РµРЅРёР№
+                                                                               at_qm common_pg.tt_varchar2   --РјР°СЃСЃРёРІ РјРµС‚РѕРє РєР°С‡РµСЃС‚РІР°
  )
   RETURN NUMBER IS
  BEGIN
@@ -1033,11 +1033,11 @@ end;*/
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
-     -- Вставка (замена) данных Суточные
- FUNCTION set_clnt_day (an_cid NUMBER,   -- Объект , с которого дадо получить информацию (channels.cid)
-                                      an_size NUMBER,   --Кол элеменотов массивов
-                                                     at_id common_pg.tt_number,   -- массив id
-                                                                               at_datetime common_pg.tt_date,   -- массив меток времени
+     -- Р’СЃС‚Р°РІРєР° (Р·Р°РјРµРЅР°) РґР°РЅРЅС‹С… РЎСѓС‚РѕС‡РЅС‹Рµ
+ FUNCTION set_clnt_day (an_cid NUMBER,   -- РћР±СЉРµРєС‚ , СЃ РєРѕС‚РѕСЂРѕРіРѕ РґР°РґРѕ РїРѕР»СѓС‡РёС‚СЊ РёРЅС„РѕСЂРјР°С†РёСЋ (channels.cid)
+                                      an_size NUMBER,   --РљРѕР» СЌР»РµРјРµРЅРѕС‚РѕРІ РјР°СЃСЃРёРІРѕРІ
+                                                     at_id common_pg.tt_number,   -- РјР°СЃСЃРёРІ id
+                                                                               at_datetime common_pg.tt_date,   -- РјР°СЃСЃРёРІ РјРµС‚РѕРє РІСЂРµРјРµРЅРё
                                                                                                              at_er common_pg.tt_number, at_ed common_pg.tt_number,
  at_q1 common_pg.tt_number, at_q3 common_pg.tt_number, at_q2 common_pg.tt_number, at_q4 common_pg.tt_number, at_aer common_pg.tt_number, at_aed common_pg.tt_number,
  at_aq1 common_pg.tt_number, at_aq3 common_pg.tt_number, at_aq2 common_pg.tt_number, at_aq4 common_pg.tt_number, at_ber common_pg.tt_number,
@@ -1093,14 +1093,14 @@ end;*/
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
-    -- Вставка (замена) данных Журнал
- FUNCTION set_clnt_journal (an_cid NUMBER,   -- Объект , с которого дадо получить информацию (channels.cid)
-                                          an_size NUMBER,   --Кол элеменотов массивов
-                                                         at_id common_pg.tt_number,   -- массив id
-                                                                                   at_datetime common_pg.tt_date,   -- массив меток времени
- at_state_cod common_pg.tt_number,   --Массив типов событий
-                                  at_state_descr common_pg.tt_varchar2,   --Массив событий
-                                                                       at_code common_pg.tt_varchar2   --массив оригинальных кодов событий
+    -- Р’СЃС‚Р°РІРєР° (Р·Р°РјРµРЅР°) РґР°РЅРЅС‹С… Р–СѓСЂРЅР°Р»
+ FUNCTION set_clnt_journal (an_cid NUMBER,   -- РћР±СЉРµРєС‚ , СЃ РєРѕС‚РѕСЂРѕРіРѕ РґР°РґРѕ РїРѕР»СѓС‡РёС‚СЊ РёРЅС„РѕСЂРјР°С†РёСЋ (channels.cid)
+                                          an_size NUMBER,   --РљРѕР» СЌР»РµРјРµРЅРѕС‚РѕРІ РјР°СЃСЃРёРІРѕРІ
+                                                         at_id common_pg.tt_number,   -- РјР°СЃСЃРёРІ id
+                                                                                   at_datetime common_pg.tt_date,   -- РјР°СЃСЃРёРІ РјРµС‚РѕРє РІСЂРµРјРµРЅРё
+ at_state_cod common_pg.tt_number,   --РњР°СЃСЃРёРІ С‚РёРїРѕРІ СЃРѕР±С‹С‚РёР№
+                                  at_state_descr common_pg.tt_varchar2,   --РњР°СЃСЃРёРІ СЃРѕР±С‹С‚РёР№
+                                                                       at_code common_pg.tt_varchar2   --РјР°СЃСЃРёРІ РѕСЂРёРіРёРЅР°Р»СЊРЅС‹С… РєРѕРґРѕРІ СЃРѕР±С‹С‚РёР№
  )
   RETURN NUMBER IS
   ln_mid   NUMBER DEFAULT 0;
@@ -1138,25 +1138,25 @@ end;*/
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
-   -- Чтение данных ГН
- FUNCTION get_srv_hh (an_pointcnt NUMBER,   --Кол запрашиваемых точек
-                                         at_ids common_pg.tt_number,   -- массив id запрашиваемых параметров
-                                                                    at_date common_pg.tt_date,   --дата с
-                                                                                              at_change common_pg.tt_date,   -- дата последних изменений (показания появившиеся с)
- an_count IN OUT NUMBER,   -- Длина масcива (На вход макс кол-во)
-                        at_id OUT common_pg.tt_number,   -- массив id
-                                                      at_datetime OUT common_pg.tt_date,   -- массив меток времени
-                                                                                        at_er OUT common_pg.tt_number,   --массив значений
- at_ed OUT common_pg.tt_number,   --массив значений
-                               at_q1 OUT common_pg.tt_number,   --массив значений
-                                                             at_q3 OUT common_pg.tt_number,   --массив значений
-                                                                                           at_qm OUT common_pg.tt_varchar2   --массив меток качества
+   -- Р§С‚РµРЅРёРµ РґР°РЅРЅС‹С… Р“Рќ
+ FUNCTION get_srv_hh (an_pointcnt NUMBER,   --РљРѕР» Р·Р°РїСЂР°С€РёРІР°РµРјС‹С… С‚РѕС‡РµРє
+                                         at_ids common_pg.tt_number,   -- РјР°СЃСЃРёРІ id Р·Р°РїСЂР°С€РёРІР°РµРјС‹С… РїР°СЂР°РјРµС‚СЂРѕРІ
+                                                                    at_date common_pg.tt_date,   --РґР°С‚Р° СЃ
+                                                                                              at_change common_pg.tt_date,   -- РґР°С‚Р° РїРѕСЃР»РµРґРЅРёС… РёР·РјРµРЅРµРЅРёР№ (РїРѕРєР°Р·Р°РЅРёСЏ РїРѕСЏРІРёРІС€РёРµСЃСЏ СЃ)
+ an_count IN OUT NUMBER,   -- Р”Р»РёРЅР° РјР°СЃcРёРІР° (РќР° РІС…РѕРґ РјР°РєСЃ РєРѕР»-РІРѕ)
+                        at_id OUT common_pg.tt_number,   -- РјР°СЃСЃРёРІ id
+                                                      at_datetime OUT common_pg.tt_date,   -- РјР°СЃСЃРёРІ РјРµС‚РѕРє РІСЂРµРјРµРЅРё
+                                                                                        at_er OUT common_pg.tt_number,   --РјР°СЃСЃРёРІ Р·РЅР°С‡РµРЅРёР№
+ at_ed OUT common_pg.tt_number,   --РјР°СЃСЃРёРІ Р·РЅР°С‡РµРЅРёР№
+                               at_q1 OUT common_pg.tt_number,   --РјР°СЃСЃРёРІ Р·РЅР°С‡РµРЅРёР№
+                                                             at_q3 OUT common_pg.tt_number,   --РјР°СЃСЃРёРІ Р·РЅР°С‡РµРЅРёР№
+                                                                                           at_qm OUT common_pg.tt_varchar2   --РјР°СЃСЃРёРІ РјРµС‚РѕРє РєР°С‡РµСЃС‚РІР°
  )
   RETURN NUMBER IS
   cr_sel          common_pg.tcur;
-  lt_length       common_pg.tt_number;   --Количество строк данных, которые нужно передать
-  lt_reallength   common_pg.tt_number;   --Реальное количество, которые можно передать
-  lt_numlast      common_pg.tt_number;   --Номер последней записи
+  lt_length       common_pg.tt_number;   --РљРѕР»РёС‡РµСЃС‚РІРѕ СЃС‚СЂРѕРє РґР°РЅРЅС‹С…, РєРѕС‚РѕСЂС‹Рµ РЅСѓР¶РЅРѕ РїРµСЂРµРґР°С‚СЊ
+  lt_reallength   common_pg.tt_number;   --Р РµР°Р»СЊРЅРѕРµ РєРѕР»РёС‡РµСЃС‚РІРѕ, РєРѕС‚РѕСЂС‹Рµ РјРѕР¶РЅРѕ РїРµСЂРµРґР°С‚СЊ
+  lt_numlast      common_pg.tt_number;   --РќРѕРјРµСЂ РїРѕСЃР»РµРґРЅРµР№ Р·Р°РїРёСЃРё
   lt_ret          ttitemvalue;
   lr_tmp1         titemvalue;
   lr_tmp          titemvalue;
@@ -1171,7 +1171,7 @@ end;*/
   ln_max := TRUNC (an_count / an_pointcnt) * an_pointcnt;
   an_count := 0;
 
-/*Тянем не более чем an_count для каждой точки а потом по одному значению из каждого массива будем забрасывать в at_id,at_datetime и.т.д */
+/*РўСЏРЅРµРј РЅРµ Р±РѕР»РµРµ С‡РµРј an_count РґР»СЏ РєР°Р¶РґРѕР№ С‚РѕС‡РєРё Р° РїРѕС‚РѕРј РїРѕ РѕРґРЅРѕРјСѓ Р·РЅР°С‡РµРЅРёСЋ РёР· РєР°Р¶РґРѕРіРѕ РјР°СЃСЃРёРІР° Р±СѓРґРµРј Р·Р°Р±СЂР°СЃС‹РІР°С‚СЊ РІ at_id,at_datetime Рё.С‚.Рґ */
   FOR i IN 1 .. an_pointcnt LOOP
    lt_length (i) := 0;
    lt_reallength (i) := 0;
@@ -1203,7 +1203,7 @@ end;*/
 
     EXIT WHEN cr_sel%NOTFOUND;
 
-    IF lr_tmp.dat = lr_tmp1.dat AND lr_tmp.ID = at_ids (i) THEN   --Для одной метки времени складываем (например ОВ)
+    IF lr_tmp.dat = lr_tmp1.dat AND lr_tmp.ID = at_ids (i) THEN   --Р”Р»СЏ РѕРґРЅРѕР№ РјРµС‚РєРё РІСЂРµРјРµРЅРё СЃРєР»Р°РґС‹РІР°РµРј (РЅР°РїСЂРёРјРµСЂ РћР’)
      lr_tmp.er := util_pg.sumn (lr_tmp.er, lr_tmp1.er);
      lr_tmp.ed := util_pg.sumn (lr_tmp.ed, lr_tmp1.ed);
      lr_tmp.q1 := util_pg.sumn (lr_tmp.q1, lr_tmp1.q1);
@@ -1212,7 +1212,7 @@ end;*/
      lt_ret (ln_max * (i - 1) + lt_length (i)) := lr_tmp;
     ELSE
      IF lb_exit THEN
-      IF lr_tmp1.dat <= at_date (i) THEN   --Не поместилось в один пакет (<= т.к эта строка не попадает в пакет)
+      IF lr_tmp1.dat <= at_date (i) THEN   --РќРµ РїРѕРјРµСЃС‚РёР»РѕСЃСЊ РІ РѕРґРёРЅ РїР°РєРµС‚ (<= С‚.Рє СЌС‚Р° СЃС‚СЂРѕРєР° РЅРµ РїРѕРїР°РґР°РµС‚ РІ РїР°РєРµС‚)
        lt_ret (ln_max * (i - 1) + lt_length (i)).er := cn_rndend;
       END IF;
 
@@ -1238,7 +1238,7 @@ end;*/
    END LOOP;
   END LOOP;
 
-  ---Метим те, которые не поместились
+  ---РњРµС‚РёРј С‚Рµ, РєРѕС‚РѕСЂС‹Рµ РЅРµ РїРѕРјРµСЃС‚РёР»РёСЃСЊ
   FOR j IN 1 .. ln_max LOOP
    FOR i IN 1 .. an_pointcnt LOOP
     IF j <= lt_length (i) THEN
@@ -1265,7 +1265,7 @@ end;*/
    END IF;
   END LOOP;
 
-  ---Метим те, которые не поместились в один пакет
+  ---РњРµС‚РёРј С‚Рµ, РєРѕС‚РѕСЂС‹Рµ РЅРµ РїРѕРјРµСЃС‚РёР»РёСЃСЊ РІ РѕРґРёРЅ РїР°РєРµС‚
   FOR i IN 1 .. an_pointcnt LOOP
    IF lt_reallength (i) < lt_length (i) AND lt_numlast (i) > 0 THEN
     IF at_datetime (lt_numlast (i)) < at_date (i) THEN
@@ -1278,19 +1278,19 @@ end;*/
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
-   -- Чтение данных журнал
- FUNCTION get_srv_jounal (an_pointcnt NUMBER,   --Кол запрашиваемых точек
-                                             at_ids common_pg.tt_number,   -- массив id запрашиваемых параметров
-                                                                        at_date common_pg.tt_date,   --дата с
-                                                                                                  an_count IN OUT NUMBER,   -- Длина масcива (На вход макс кол-во)
- at_id OUT common_pg.tt_number,   -- массив id
-                               at_datetime OUT common_pg.tt_date,   -- массив меток времени
-                                                                 at_state_cod OUT common_pg.tt_number,   --Массив типов событий
- at_state_descr OUT common_pg.tt_varchar2,   --Массив событий
-                                          at_code OUT common_pg.tt_varchar2   --массив оригинальных кодов событий
+   -- Р§С‚РµРЅРёРµ РґР°РЅРЅС‹С… Р¶СѓСЂРЅР°Р»
+ FUNCTION get_srv_jounal (an_pointcnt NUMBER,   --РљРѕР» Р·Р°РїСЂР°С€РёРІР°РµРјС‹С… С‚РѕС‡РµРє
+                                             at_ids common_pg.tt_number,   -- РјР°СЃСЃРёРІ id Р·Р°РїСЂР°С€РёРІР°РµРјС‹С… РїР°СЂР°РјРµС‚СЂРѕРІ
+                                                                        at_date common_pg.tt_date,   --РґР°С‚Р° СЃ
+                                                                                                  an_count IN OUT NUMBER,   -- Р”Р»РёРЅР° РјР°СЃcРёРІР° (РќР° РІС…РѕРґ РјР°РєСЃ РєРѕР»-РІРѕ)
+ at_id OUT common_pg.tt_number,   -- РјР°СЃСЃРёРІ id
+                               at_datetime OUT common_pg.tt_date,   -- РјР°СЃСЃРёРІ РјРµС‚РѕРє РІСЂРµРјРµРЅРё
+                                                                 at_state_cod OUT common_pg.tt_number,   --РњР°СЃСЃРёРІ С‚РёРїРѕРІ СЃРѕР±С‹С‚РёР№
+ at_state_descr OUT common_pg.tt_varchar2,   --РњР°СЃСЃРёРІ СЃРѕР±С‹С‚РёР№
+                                          at_code OUT common_pg.tt_varchar2   --РјР°СЃСЃРёРІ РѕСЂРёРіРёРЅР°Р»СЊРЅС‹С… РєРѕРґРѕРІ СЃРѕР±С‹С‚РёР№
  )
   RETURN NUMBER IS
-  lt_length   common_pg.tt_number;   --Для хранения
+  lt_length   common_pg.tt_number;   --Р”Р»СЏ С…СЂР°РЅРµРЅРёСЏ
   lt_ret      ttitemvalue;
   lr_tmp      titemvalue;
   ln_max      NUMBER;
@@ -1302,7 +1302,7 @@ end;*/
   ln_max := TRUNC (an_count / an_pointcnt) * an_pointcnt;
   an_count := 0;
 
-/*Тянем не более чем an_count для каждой точки а потом по одному значению из каждого массива будем забрасывать в at_id,at_datetime и.т.д */
+/*РўСЏРЅРµРј РЅРµ Р±РѕР»РµРµ С‡РµРј an_count РґР»СЏ РєР°Р¶РґРѕР№ С‚РѕС‡РєРё Р° РїРѕС‚РѕРј РїРѕ РѕРґРЅРѕРјСѓ Р·РЅР°С‡РµРЅРёСЋ РёР· РєР°Р¶РґРѕРіРѕ РјР°СЃСЃРёРІР° Р±СѓРґРµРј Р·Р°Р±СЂР°СЃС‹РІР°С‚СЊ РІ at_id,at_datetime Рё.С‚.Рґ */
   FOR i IN 1 .. an_pointcnt LOOP
    lt_length (i) := 0;
 
@@ -1347,13 +1347,13 @@ end;*/
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
-    -- Чтение суточных данных
- FUNCTION get_srv_day (an_pointcnt NUMBER,   --Кол запрашиваемых точек
-                                          at_ids common_pg.tt_number,   -- массив id запрашиваемых параметров
-                                                                     at_date common_pg.tt_date,   --дата с
-                                                                                               an_count IN OUT NUMBER,   -- Длина масcива (На вход макс кол-во)
- at_id OUT common_pg.tt_number,   -- массив id
-                               at_datetime OUT common_pg.tt_date,   -- массив меток времени
+    -- Р§С‚РµРЅРёРµ СЃСѓС‚РѕС‡РЅС‹С… РґР°РЅРЅС‹С…
+ FUNCTION get_srv_day (an_pointcnt NUMBER,   --РљРѕР» Р·Р°РїСЂР°С€РёРІР°РµРјС‹С… С‚РѕС‡РµРє
+                                          at_ids common_pg.tt_number,   -- РјР°СЃСЃРёРІ id Р·Р°РїСЂР°С€РёРІР°РµРјС‹С… РїР°СЂР°РјРµС‚СЂРѕРІ
+                                                                     at_date common_pg.tt_date,   --РґР°С‚Р° СЃ
+                                                                                               an_count IN OUT NUMBER,   -- Р”Р»РёРЅР° РјР°СЃcРёРІР° (РќР° РІС…РѕРґ РјР°РєСЃ РєРѕР»-РІРѕ)
+ at_id OUT common_pg.tt_number,   -- РјР°СЃСЃРёРІ id
+                               at_datetime OUT common_pg.tt_date,   -- РјР°СЃСЃРёРІ РјРµС‚РѕРє РІСЂРµРјРµРЅРё
                                                                  at_er OUT common_pg.tt_number, at_ed OUT common_pg.tt_number, at_q1 OUT common_pg.tt_number,
  at_q3 OUT common_pg.tt_number, at_q2 OUT common_pg.tt_number, at_q4 OUT common_pg.tt_number, at_aer OUT common_pg.tt_number, at_aed OUT common_pg.tt_number,
  at_aq1 OUT common_pg.tt_number, at_aq3 OUT common_pg.tt_number, at_aq2 OUT common_pg.tt_number, at_aq4 OUT common_pg.tt_number, at_ber OUT common_pg.tt_number,
@@ -1369,7 +1369,7 @@ end;*/
  at_dq2m OUT common_pg.tt_number, at_dq4m OUT common_pg.tt_number, at_mtrsn OUT common_pg.tt_varchar2
  )
   RETURN NUMBER IS
-  lt_length   common_pg.tt_number;   --Для хранения
+  lt_length   common_pg.tt_number;   --Р”Р»СЏ С…СЂР°РЅРµРЅРёСЏ
   lt_ret      ttitemvalue;
   lr_tmp      titemvalue;
   ln_max      NUMBER;
@@ -1381,7 +1381,7 @@ end;*/
   ln_max := TRUNC (an_count / an_pointcnt) * an_pointcnt;
   an_count := 0;
 
-/*Тянем не более чем an_count для каждой точки а потом по одному значению из каждого массива будем забрасывать в at_id,at_datetime и.т.д */
+/*РўСЏРЅРµРј РЅРµ Р±РѕР»РµРµ С‡РµРј an_count РґР»СЏ РєР°Р¶РґРѕР№ С‚РѕС‡РєРё Р° РїРѕС‚РѕРј РїРѕ РѕРґРЅРѕРјСѓ Р·РЅР°С‡РµРЅРёСЋ РёР· РєР°Р¶РґРѕРіРѕ РјР°СЃСЃРёРІР° Р±СѓРґРµРј Р·Р°Р±СЂР°СЃС‹РІР°С‚СЊ РІ at_id,at_datetime Рё.С‚.Рґ */
   FOR i IN 1 .. an_pointcnt LOOP
    lt_length (i) := 0;
 
@@ -1544,7 +1544,7 @@ end;*/
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
- --Возвращает guid по каналу и связному номеру (из feeders.vinfo)
+ --Р’РѕР·РІСЂР°С‰Р°РµС‚ guid РїРѕ РєР°РЅР°Р»Сѓ Рё СЃРІСЏР·РЅРѕРјСѓ РЅРѕРјРµСЂСѓ (РёР· feeders.vinfo)
  FUNCTION get_guid (an_cid NUMBER, an_canal NUMBER, an_type NUMBER)
   RETURN VARCHAR2 IS
   lv_ret            VARCHAR2 (256);
@@ -1563,7 +1563,7 @@ end;*/
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
- --Возвращает guid по каналу и связному номеру (из addpointparam.vvalue)
+ --Р’РѕР·РІСЂР°С‰Р°РµС‚ guid РїРѕ РєР°РЅР°Р»Сѓ Рё СЃРІСЏР·РЅРѕРјСѓ РЅРѕРјРµСЂСѓ (РёР· addpointparam.vvalue)
  FUNCTION get_guidm (an_cid NUMBER, an_canal NUMBER, an_type NUMBER)
   RETURN VARCHAR2 IS
   lv_ret            VARCHAR2 (256);
@@ -1600,18 +1600,18 @@ end;*/
    lv_what := 'sum(nvl(P.q3,0))';
   ELSIF an_meastype = 6 THEN   --Q4
    lv_what := 'sum(nvl(P.q4,0))';
-  ELSIF an_meastype = 7 THEN   --Свернутые Q1+Q2
+  ELSIF an_meastype = 7 THEN   --РЎРІРµСЂРЅСѓС‚С‹Рµ Q1+Q2
    lv_what := 'sum(nvl(P.q1,0))+sum(nvl(P.q2,0))';
-  ELSIF an_meastype = 8 THEN   --Свернутые Q3+Q4
+  ELSIF an_meastype = 8 THEN   --РЎРІРµСЂРЅСѓС‚С‹Рµ Q3+Q4
    lv_what := 'sum(nvl(P.q3,0))+sum(nvl(P.q3,0))';
-  ELSIF an_meastype = 9 THEN   --Переток ER-ED
+  ELSIF an_meastype = 9 THEN   --РџРµСЂРµС‚РѕРє ER-ED
    lv_what := 'sum(util_pg.sld(P.mid,nvl(P.er,0),nvl(P.ed,0)))';
-  ELSIF an_meastype = 10 THEN   --Переток (Q1-Q3)+(Q2-Q4)
+  ELSIF an_meastype = 10 THEN   --РџРµСЂРµС‚РѕРє (Q1-Q3)+(Q2-Q4)
    lv_what := 'sum(util_pg.sld(P.mid,nvl(P.q1,0),nvl(P.q3,0)))+
                 sum(util_pg.sld(P.mid,nvl(P.q2,0),nvl(P.q4,0)))';
-  ELSIF an_meastype = 36 THEN   --Переток ER-ED
+  ELSIF an_meastype = 36 THEN   --РџРµСЂРµС‚РѕРє ER-ED
    lv_what := 'sum(nvl(P.er,0)+nvl(P.ed,0))';
-  ELSIF an_meastype = 37 THEN   --Переток (Q1-Q3)+(Q2-Q4)
+  ELSIF an_meastype = 37 THEN   --РџРµСЂРµС‚РѕРє (Q1-Q3)+(Q2-Q4)
    lv_what := 'sum(nvl(P.q1,0)+nvl(P.q3,0)+nvl(P.q2,0)+nvl(P.q4,0))';
   END IF;
 
@@ -1633,7 +1633,7 @@ end;*/
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
---Сбор статистики ICCP
+--РЎР±РѕСЂ СЃС‚Р°С‚РёСЃС‚РёРєРё ICCP
  PROCEDURE iccpstat_ins (an_cid NUMBER, ad_date DATE, an_reason NUMBER, an_send NUMBER, an_received NUMBER, an_loss NUMBER, an_correction NUMBER, an_error NUMBER,
  an_connect NUMBER, an_disconnect NUMBER, an_duration NUMBER, an_mindelay NUMBER, an_maxdelay NUMBER, an_avgdelay NUMBER
  ) IS
@@ -1648,7 +1648,7 @@ end;*/
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
---Возвращает ид точки по MDID
+--Р’РѕР·РІСЂР°С‰Р°РµС‚ РёРґ С‚РѕС‡РєРё РїРѕ MDID
  FUNCTION get_point_id_for_event_mrid (av_mrid VARCHAR2)
   RETURN NUMBER IS
   ln_ret   NUMBER;

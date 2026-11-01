@@ -39,7 +39,7 @@ __fastcall TInteriorPLTable::TInteriorPLTable(TComponent* Owner,TSplitterForm *a
 
      SplitterForm->Font=FormSetupMonitors->REdPLSQLRep->Font;
 
-     //e Назначаем для него свойства
+     //e РќР°Р·РЅР°С‡Р°РµРј РґР»СЏ РЅРµРіРѕ СЃРІРѕР№СЃС‚РІР°
      OnProgressBarStepBy(this);//10
   }
   catch(Exception &exception)
@@ -66,7 +66,7 @@ __fastcall TInteriorPLTable::TInteriorPLTable(TComponent* Owner,TSplitterForm *a
 
      SplitterForm->Font=FormSetupMonitors->REdPLSQLRep->Font;
 
-     //e Назначаем для него свойства
+     //e РќР°Р·РЅР°С‡Р°РµРј РґР»СЏ РЅРµРіРѕ СЃРІРѕР№СЃС‚РІР°
      OnProgressBarStepBy(this);//10
   }
   catch(Exception &exception)
@@ -80,19 +80,19 @@ void __fastcall TInteriorPLTable::Place(void)
 {
   try
   {
-    //Имя
+    //РРјСЏ
     AnsiString prStr = fd->NameForm + Reconst_smes127_2 + fd->NameGroup;
-    //e Имя
+    //e РРјСЏ
     dynamic_cast<TBaseMonitorForm*>(Owner)->Caption = prStr;
     dynamic_cast<TBaseMonitorForm*>(Owner)->HelpContext = 31;
 
       SplitterForm->AddChild(NULL, FInUn, alClient);
     OnProgressBarStepBy(this);//20
 
-    //Загружаем файл
+    //Р—Р°РіСЂСѓР¶Р°РµРј С„Р°Р№Р»
 
       FInUn->vRefresh(this);
-    //e Загружаем файл
+    //e Р—Р°РіСЂСѓР¶Р°РµРј С„Р°Р№Р»
 
     OnProgressBarStepBy(NULL);
   }catch(Exception &e){
@@ -114,8 +114,8 @@ void __fastcall TInteriorPLTable::Invalidate(int Table)
   if(Table==1 /*PROFILE*/)
   {
     dynamic_cast<TBaseMonitorForm*>(Owner)->Cursor = crHourGlass;
-    //Возможно, обновление
-    //e Возможно, обновление
+    //Р’РѕР·РјРѕР¶РЅРѕ, РѕР±РЅРѕРІР»РµРЅРёРµ
+    //e Р’РѕР·РјРѕР¶РЅРѕ, РѕР±РЅРѕРІР»РµРЅРёРµ
     dynamic_cast<TBaseMonitorForm*>(Owner)->Cursor = crDefault;
     OnProgressBarStepBy(NULL);
   }

@@ -46,28 +46,28 @@ bool __fastcall TFindForm::Compare(TMeasure*arg)
 {
    int pos;
    switch(arg->entype){
-   case EN:   // Актив приём
+   case EN:   // РђРєС‚РёРІ РїСЂРёС‘Рј
       if(!cbAP->Checked)
          goto chck;
       pos = eAP->Text.IsEmpty()?0:eAP->Text.ToInt();
       if(pos!=0 && pos!=arg->pos)
          return false;
       break;
-   case ED:    // Актив отдача
+   case ED:    // РђРєС‚РёРІ РѕС‚РґР°С‡Р°
       if(!cbAM->Checked)
          goto chck;
       pos = eAM->Text.IsEmpty()?0:eAM->Text.ToInt();
       if(pos!=0 && pos!=arg->pos)
          return false;
       break;
-   case Q1:    // Реактив приём
+   case Q1:    // Р РµР°РєС‚РёРІ РїСЂРёС‘Рј
       if(!cbRP->Checked)
          goto chck;
       pos = eRP->Text.IsEmpty()?0:eRP->Text.ToInt();
       if(pos!=0 && pos!=arg->pos)
          return false;
       break;
-   case Q3:    // Реактив отдача
+   case Q3:    // Р РµР°РєС‚РёРІ РѕС‚РґР°С‡Р°
       if(!cbRM->Checked)
          goto chck;
       pos = eRM->Text.IsEmpty()?0:eRM->Text.ToInt();
@@ -87,7 +87,7 @@ cntn:
    return false;
 }
 //---------------------------------------------------------------------------
-// проверка соответствия строки маске
+// РїСЂРѕРІРµСЂРєР° СЃРѕРѕС‚РІРµС‚СЃС‚РІРёСЏ СЃС‚СЂРѕРєРё РјР°СЃРєРµ
 bool __fastcall TFindForm::conformance(char*text, char*mask)
 {
    if(StrLen(mask)==0) return true;

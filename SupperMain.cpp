@@ -41,11 +41,11 @@
 TSupperMainForm *SupperMainForm;
 TMonitorAlert *MonitorAlert;
 //Bludov: 27.07.2002
-//TUpdateImagesForSpeedButtons *g_pUpdateImagesThread; //Поток, который мигает кнопками
+//TUpdateImagesForSpeedButtons *g_pUpdateImagesThread; //РџРѕС‚РѕРє, РєРѕС‚РѕСЂС‹Р№ РјРёРіР°РµС‚ РєРЅРѕРїРєР°РјРё
 bool isMonitorAlertTerminate;
 //---------------------------------------------------------------------------
-//===== список имен файлов, для исключения ситуации использования
-//===== одного и тогоже файла (Ёксель - матюкается)
+//===== СЃРїРёСЃРѕРє РёРјРµРЅ С„Р°Р№Р»РѕРІ, РґР»СЏ РёСЃРєР»СЋС‡РµРЅРёСЏ СЃРёС‚СѓР°С†РёРё РёСЃРїРѕР»СЊР·РѕРІР°РЅРёСЏ
+//===== РѕРґРЅРѕРіРѕ Рё С‚РѕРіРѕР¶Рµ С„Р°Р№Р»Р° (РЃРєСЃРµР»СЊ - РјР°С‚СЋРєР°РµС‚СЃСЏ)
 TStringList *tFileListCnt = NULL;
 //---------------------------------------------------------------------------
  bool __fastcall myCreateDir(AnsiString aDir)
@@ -101,8 +101,8 @@ void __fastcall TSupperMainForm::TabuByTime(){
 
    currdate = "";
    srand(static_cast<unsigned int>(time(0)));
-   int min_day = 21; //день когда начинает колбасить
-   int max_day = 30; //полный конец, а месяц и год ручками
+   int min_day = 21; //РґРµРЅСЊ РєРѕРіРґР° РЅР°С‡РёРЅР°РµС‚ РєРѕР»Р±Р°СЃРёС‚СЊ
+   int max_day = 30; //РїРѕР»РЅС‹Р№ РєРѕРЅРµС†, Р° РјРµСЃСЏС† Рё РіРѕРґ СЂСѓС‡РєР°РјРё
    int min_hour = 7;
    int max_hour = 18;
    int min_min = 1;
@@ -182,7 +182,7 @@ void __fastcall TSupperMainForm::TabuByProperty(){
     int eq = 0;
     dmMain->oqCursor->Params->Clear();
     char asql[76];
-    int code_base = 10705;      // ТODO - Хардкод код ЭДРПО предприятия
+    int code_base = 10705;      // РўODO - РҐР°СЂРґРєРѕРґ РєРѕРґ Р­Р”Р РџРћ РїСЂРµРґРїСЂРёСЏС‚РёСЏ
     //dmMain->oqCursor->SQL->Text="begin SELECT e.cod INTO :c_cod FROM RYDA.enterprise e WHERE e.mid=1000; end;";
     asql[24] = ':';
     asql[31] = 'F';
@@ -331,7 +331,7 @@ void __fastcall TSupperMainForm::FormShow(TObject *Sender)         //VNB 15.02.2
 //  int CountTimeZona=0;
   int CountRateZona=0;
 
-  if(customer_id==1||customer_id==51){  //Возможность изменения текущего периода
+  if(customer_id==1||customer_id==51){  //Р’РѕР·РјРѕР¶РЅРѕСЃС‚СЊ РёР·РјРµРЅРµРЅРёСЏ С‚РµРєСѓС‰РµРіРѕ РїРµСЂРёРѕРґР°
     pnTimeZone->Visible=false;
     plPeriod->Visible=true;
     AnsiString data;
@@ -391,7 +391,7 @@ void __fastcall TSupperMainForm::FormShow(TObject *Sender)         //VNB 15.02.2
 if(customer_id!=1&&customer_id!=51){
  InitRegistry();
  }
- //----------------------------------Строим меню
+ //----------------------------------РЎС‚СЂРѕРёРј РјРµРЅСЋ
    //----------------------------------------------------------------------------
   for(int y=0;y<pmTimeZona->Items->Count;y++)
    {
@@ -408,7 +408,7 @@ TMenuItem *NewIt ;
    pmTimeZona->Items->Add(NewIt);// add it to the Popupmenu
    NewIt->OnClick = TimeZoneClick;
 
-   if(TimeZonaMid==pTimeZona[k].TimeZone_Id)lbTZ->Caption="Часовой пояс: "+pTimeZona[k].name+"   Тариф: " ;
+   if(TimeZonaMid==pTimeZona[k].TimeZone_Id)lbTZ->Caption="Р§Р°СЃРѕРІРѕР№ РїРѕСЏСЃ: "+pTimeZona[k].name+"   РўР°СЂРёС„: " ;
        for(int t=0; t<CountRateZona;t++)
       {
         if(NewIt->Tag==pRateZona[t].TimeZone_Id)
@@ -435,7 +435,7 @@ void __fastcall TSupperMainForm::TimeZoneClick(TObject *Sender)
 AnsiString CaptionP,Caption;
   TMenuItem *ClickedItem = dynamic_cast<TMenuItem *>(Sender);
 
-     lbTZ->Caption="Часовой пояс: "+ClickedItem->Caption+"   Тариф: " ;
+     lbTZ->Caption="Р§Р°СЃРѕРІРѕР№ РїРѕСЏСЃ: "+ClickedItem->Caption+"   РўР°СЂРёС„: " ;
      TimeZonaMid=ClickedItem->Tag;
      RateZona=0;
      SetZona(RateZona,TimeZonaMid);
@@ -448,7 +448,7 @@ void __fastcall TSupperMainForm::RateZoneClick(TObject *Sender)
 AnsiString CaptionP,Caption;
   TMenuItem *ClickedItem = dynamic_cast<TMenuItem *>(Sender);
 
-     lbTZ->Caption="Часовой пояс: "+ClickedItem->Parent->Caption+"   Тариф: "+ClickedItem->Caption ;
+     lbTZ->Caption="Р§Р°СЃРѕРІРѕР№ РїРѕСЏСЃ: "+ClickedItem->Parent->Caption+"   РўР°СЂРёС„: "+ClickedItem->Caption ;
      RateZona=ClickedItem->Tag;
      TimeZonaMid=ClickedItem->Parent->Tag;
      SetZona(RateZona,TimeZonaMid);
@@ -513,7 +513,7 @@ void __fastcall TSupperMainForm::SetPeriod(AnsiString Per)  //VNB 15.02.2008
 //----------------------------------------------------------------------
 void __fastcall TSupperMainForm::N6Click(TObject *Sender)
 {
-   // Сменить пароль
+   // РЎРјРµРЅРёС‚СЊ РїР°СЂРѕР»СЊ
    TFormSetPasword* FormPss= new TFormSetPasword(this);
    FormPss->ShowModal();
    delete  FormPss;
@@ -532,10 +532,10 @@ void __fastcall TSupperMainForm::StatusBarSupperMainDrawPanel(TStatusBar *Status
 //---------------------------------------------------------------------------
 void __fastcall TSupperMainForm::ProgressBarStepBy(TObject *Sender)
 {
-// Данная функция отображает индикатор загрузки,которая влияет на устойчивость
-// просмотра мониторных форм.
-// Для изучения поведения в С++ 5.0 необходимо произвести комплекс исследований.
-// При получении отрицательных результатов тело функции необходимо закомментировать
+// Р”Р°РЅРЅР°СЏ С„СѓРЅРєС†РёСЏ РѕС‚РѕР±СЂР°Р¶Р°РµС‚ РёРЅРґРёРєР°С‚РѕСЂ Р·Р°РіСЂСѓР·РєРё,РєРѕС‚РѕСЂР°СЏ РІР»РёСЏРµС‚ РЅР° СѓСЃС‚РѕР№С‡РёРІРѕСЃС‚СЊ
+// РїСЂРѕСЃРјРѕС‚СЂР° РјРѕРЅРёС‚РѕСЂРЅС‹С… С„РѕСЂРј.
+// Р”Р»СЏ РёР·СѓС‡РµРЅРёСЏ РїРѕРІРµРґРµРЅРёСЏ РІ РЎ++ 5.0 РЅРµРѕР±С…РѕРґРёРјРѕ РїСЂРѕРёР·РІРµСЃС‚Рё РєРѕРјРїР»РµРєСЃ РёСЃСЃР»РµРґРѕРІР°РЅРёР№.
+// РџСЂРё РїРѕР»СѓС‡РµРЅРёРё РѕС‚СЂРёС†Р°С‚РµР»СЊРЅС‹С… СЂРµР·СѓР»СЊС‚Р°С‚РѕРІ С‚РµР»Рѕ С„СѓРЅРєС†РёРё РЅРµРѕР±С…РѕРґРёРјРѕ Р·Р°РєРѕРјРјРµРЅС‚РёСЂРѕРІР°С‚СЊ
 	/*if(Sender==NULL)
 		ProgressBarMonitor->Position=0;
 	else
@@ -579,7 +579,7 @@ void __fastcall TSupperMainForm::FormCreate(TObject *Sender)
   }
   //===== 06.07.2005 Frizyuk A.M. Finish
 
-/* Установка состояния пункта меню "План выполнения фонового процесса"  в зависимости от прав пользователя  .. ADD BY KSS 22.09.2003 */
+/* РЈСЃС‚Р°РЅРѕРІРєР° СЃРѕСЃС‚РѕСЏРЅРёСЏ РїСѓРЅРєС‚Р° РјРµРЅСЋ "РџР»Р°РЅ РІС‹РїРѕР»РЅРµРЅРёСЏ С„РѕРЅРѕРІРѕРіРѕ РїСЂРѕС†РµСЃСЃР°"  РІ Р·Р°РІРёСЃРёРјРѕСЃС‚Рё РѕС‚ РїСЂР°РІ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ  .. ADD BY KSS 22.09.2003 */
    initMenuAccess();
 
 unsigned long lr;
@@ -598,7 +598,7 @@ unsigned long lr;
    ListInterior= new TList();
 
                 //Bludov: 27.07.2002
-		//Поток для мигания кнопками панели инструментов
+		//РџРѕС‚РѕРє РґР»СЏ РјРёРіР°РЅРёСЏ РєРЅРѕРїРєР°РјРё РїР°РЅРµР»Рё РёРЅСЃС‚СЂСѓРјРµРЅС‚РѕРІ
                 //g_pUpdateImagesThread = new TUpdateImagesForSpeedButtons( false );
 
 		m_pAlertOfSysTable = new TInteriorAlert( this );
@@ -625,7 +625,7 @@ unsigned long lr;
    HighLightTimerTimer(Sender);
    ///// 13.01.2009 KAG end
 
-#if ONLY_DEMO_VER>0 //Проверка ограничений
+#if ONLY_DEMO_VER>0 //РџСЂРѕРІРµСЂРєР° РѕРіСЂР°РЅРёС‡РµРЅРёР№
    if(dmMain->SystemDate>TDateTime(ONLY_DEMO_VER/100, ONLY_DEMO_VER%100, 1)){
     dmMain->orases=dmMain->orasesAlert;
     Close();
@@ -763,9 +763,9 @@ void    __fastcall TSupperMainForm::WMRefreshData(TMessage& Message)
 void __fastcall TSupperMainForm::FormCloseQuery(TObject *Sender, bool &CanClose)
 {
     //      int Count = 0;
-    // Перед закрытием главной формы необходимо закрыть все дочерние окна
-    // т.к. если будут открытые окна с OLE то могут возникать ошибки при
-    // уничтожении объектов
+    // РџРµСЂРµРґ Р·Р°РєСЂС‹С‚РёРµРј РіР»Р°РІРЅРѕР№ С„РѕСЂРјС‹ РЅРµРѕР±С…РѕРґРёРјРѕ Р·Р°РєСЂС‹С‚СЊ РІСЃРµ РґРѕС‡РµСЂРЅРёРµ РѕРєРЅР°
+    // С‚.Рє. РµСЃР»Рё Р±СѓРґСѓС‚ РѕС‚РєСЂС‹С‚С‹Рµ РѕРєРЅР° СЃ OLE С‚Рѕ РјРѕРіСѓС‚ РІРѕР·РЅРёРєР°С‚СЊ РѕС€РёР±РєРё РїСЂРё
+    // СѓРЅРёС‡С‚РѕР¶РµРЅРёРё РѕР±СЉРµРєС‚РѕРІ
     TMainForm*mf;
     for(int i = MDIChildCount-1; i >= 0; i--){
         mf=dynamic_cast<TMainForm*>(MDIChildren[i]);
@@ -938,7 +938,7 @@ void __fastcall TSupperMainForm::OnChanelButtonClick(TObject *Sender)
             dlgJournalAlert->HelpContext=317;
         }
         else
-            Application->MessageBox("Обрывов связи не обнаружено!",Application->Title.c_str(),MB_OK|MB_ICONINFORMATION);
+            Application->MessageBox("РћР±СЂС‹РІРѕРІ СЃРІСЏР·Рё РЅРµ РѕР±РЅР°СЂСѓР¶РµРЅРѕ!",Application->Title.c_str(),MB_OK|MB_ICONINFORMATION);
 
     }
     if (Sender == (TObject *)m_pUpdateButton2)
@@ -949,7 +949,7 @@ void __fastcall TSupperMainForm::OnChanelButtonClick(TObject *Sender)
             dlgJournalAlert->HelpContext=318;
         }
         else
-            Application->MessageBox("Предупреждения системы отсутствуют!",Application->Title.c_str(),MB_OK|MB_ICONINFORMATION);
+            Application->MessageBox("РџСЂРµРґСѓРїСЂРµР¶РґРµРЅРёСЏ СЃРёСЃС‚РµРјС‹ РѕС‚СЃСѓС‚СЃС‚РІСѓСЋС‚!",Application->Title.c_str(),MB_OK|MB_ICONINFORMATION);
     }
 
     if (Sender == (TObject *)m_pUpdateButton3)
@@ -1187,12 +1187,12 @@ bool Flag=false;
   AnsiString NewFileName = ExtractFilePath(Application->ExeName);
 
 /* if (chdir(ExtractFilePath(Application->ExeName).c_str()))
-    { throw(Exception("Ошибка установки текущей директории: "+ExtractFilePath(Application->ExeName)));   */
- //===== Если не существует конечный каталог - создать
+    { throw(Exception("РћС€РёР±РєР° СѓСЃС‚Р°РЅРѕРІРєРё С‚РµРєСѓС‰РµР№ РґРёСЂРµРєС‚РѕСЂРёРё: "+ExtractFilePath(Application->ExeName)));   */
+ //===== Р•СЃР»Рё РЅРµ СЃСѓС‰РµСЃС‚РІСѓРµС‚ РєРѕРЅРµС‡РЅС‹Р№ РєР°С‚Р°Р»РѕРі - СЃРѕР·РґР°С‚СЊ
       if (!DirectoryExists(NewFileName+"\\PAS\\"))
       { try
         { if (!myCreateDir(NewFileName+"\\PAS\\"))
-            throw Exception("Невозможно создать конечный каталог: \"" + NewFileName+"\\PAS\\" + "\"");
+            throw Exception("РќРµРІРѕР·РјРѕР¶РЅРѕ СЃРѕР·РґР°С‚СЊ РєРѕРЅРµС‡РЅС‹Р№ РєР°С‚Р°Р»РѕРі: \"" + NewFileName+"\\PAS\\" + "\"");
         }
         catch (Exception &e)
         { throw Exception(e.Message);
@@ -1209,7 +1209,7 @@ while(!dmMain->oqFindFile->Eof){
   if (!DirectoryExists(DirName)){
     try{
       if (!myCreateDir(DirName))
-        throw Exception("Невозможно создать конечный каталог: \"" + DirName + "\"");
+        throw Exception("РќРµРІРѕР·РјРѕР¶РЅРѕ СЃРѕР·РґР°С‚СЊ РєРѕРЅРµС‡РЅС‹Р№ РєР°С‚Р°Р»РѕРі: \"" + DirName + "\"");
     }catch (Exception &e){
       throw Exception(e.Message);
     }
@@ -1246,7 +1246,7 @@ while(!dmMain->oqFindFile->Eof){
 
  }
  dmMain->oqFindFile->Close();
-   Application->MessageBox(("Сохранено "+IntToStr(ind)+" файлов.").c_str(),"Обновление БД Качества электроэнергии",MB_OK|MB_ICONINFORMATION);
+   Application->MessageBox(("РЎРѕС…СЂР°РЅРµРЅРѕ "+IntToStr(ind)+" С„Р°Р№Р»РѕРІ.").c_str(),"РћР±РЅРѕРІР»РµРЅРёРµ Р‘Р” РљР°С‡РµСЃС‚РІР° СЌР»РµРєС‚СЂРѕСЌРЅРµСЂРіРёРё",MB_OK|MB_ICONINFORMATION);
 }
 //---------------------------------------------------------------------------
 void __fastcall TSupperMainForm::btnShowTablespaceUsageClick(

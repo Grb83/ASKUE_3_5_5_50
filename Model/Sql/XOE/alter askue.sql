@@ -6,15 +6,15 @@ CREATE TABLE ASKUE.ASKUELOG
 /
 
  COMMENT ON TABLE ASKUE.ASKUELOG IS
-'Журнал экспортируемых данных, по которым были изменения'
+'Р–СѓСЂРЅР°Р» СЌРєСЃРїРѕСЂС‚РёСЂСѓРµРјС‹С… РґР°РЅРЅС‹С…, РїРѕ РєРѕС‚РѕСЂС‹Рј Р±С‹Р»Рё РёР·РјРµРЅРµРЅРёСЏ'
 /
 
  COMMENT ON COLUMN ASKUE.ASKUELOG.NROOT IS
-'Ид объекта'
+'РРґ РѕР±СЉРµРєС‚Р°'
 /
 
  COMMENT ON COLUMN ASKUE.ASKUELOG.NCLASS IS
-'Класс таблицы объекта'
+'РљР»Р°СЃСЃ С‚Р°Р±Р»РёС†С‹ РѕР±СЉРµРєС‚Р°'
 /
 
 grant insert on askuelog to rs
@@ -33,15 +33,15 @@ CREATE TABLE pointimportinaskue
   verror                     VARCHAR2(2000)
  )
 /
-COMMENT ON TABLE pointimportinaskue IS 'Импорт данных в АСКУЭ'
+COMMENT ON TABLE pointimportinaskue IS 'РРјРїРѕСЂС‚ РґР°РЅРЅС‹С… РІ РђРЎРљРЈР­'
 /
-COMMENT ON COLUMN pointimportinaskue.nerror IS 'Код ошибки'
+COMMENT ON COLUMN pointimportinaskue.nerror IS 'РљРѕРґ РѕС€РёР±РєРё'
 /
-COMMENT ON COLUMN pointimportinaskue.npoint IS 'Ид точки'
+COMMENT ON COLUMN pointimportinaskue.npoint IS 'РРґ С‚РѕС‡РєРё'
 /
-COMMENT ON COLUMN pointimportinaskue.verror IS 'Текст ошибки'
+COMMENT ON COLUMN pointimportinaskue.verror IS 'РўРµРєСЃС‚ РѕС€РёР±РєРё'
 /
-COMMENT ON COLUMN pointimportinaskue.norder IS 'Служебный'
+COMMENT ON COLUMN pointimportinaskue.norder IS 'РЎР»СѓР¶РµР±РЅС‹Р№'
 /
 -- Indexes for pointimportinaskue
 ALTER TABLE pointimportinaskue
@@ -69,13 +69,13 @@ CREATE TABLE groupimportinaskue
   verror                     VARCHAR2(2000)
  )
 /
-COMMENT ON TABLE groupimportinaskue IS 'Импорт данных в АСКУЭ'
+COMMENT ON TABLE groupimportinaskue IS 'РРјРїРѕСЂС‚ РґР°РЅРЅС‹С… РІ РђРЎРљРЈР­'
 /
-COMMENT ON COLUMN groupimportinaskue.nerror IS 'Код ошибки'
+COMMENT ON COLUMN groupimportinaskue.nerror IS 'РљРѕРґ РѕС€РёР±РєРё'
 /
-COMMENT ON COLUMN groupimportinaskue.ngroup IS 'Ид группы'
+COMMENT ON COLUMN groupimportinaskue.ngroup IS 'РРґ РіСЂСѓРїРїС‹'
 /
-COMMENT ON COLUMN groupimportinaskue.verror IS 'Текст ошибки'
+COMMENT ON COLUMN groupimportinaskue.verror IS 'РўРµРєСЃС‚ РѕС€РёР±РєРё'
 /
 -- Indexes for groupimportinaskue
 ALTER TABLE groupimportinaskue
@@ -101,7 +101,7 @@ CREATE SEQUENCE importinaskue_s
 
 
 
--- Generated 17-ноя-02  3:01:55 pm
+-- Generated 17-РЅРѕСЏ-02  3:01:55 pm
 CREATE TABLE jobs
  (
   njob                       NUMBER(10) NOT NULL,
@@ -117,22 +117,22 @@ ALTER TABLE jobs
   TABLESPACE amsind
 /
 
-COMMENT ON TABLE jobs IS 'Фоновые процессы'
+COMMENT ON TABLE jobs IS 'Р¤РѕРЅРѕРІС‹Рµ РїСЂРѕС†РµСЃСЃС‹'
 /
-COMMENT ON COLUMN jobs.njob IS 'Ид процесса'
+COMMENT ON COLUMN jobs.njob IS 'РРґ РїСЂРѕС†РµСЃСЃР°'
 /
-COMMENT ON COLUMN jobs.ddate IS 'Дата выполнения'
+COMMENT ON COLUMN jobs.ddate IS 'Р”Р°С‚Р° РІС‹РїРѕР»РЅРµРЅРёСЏ'
 /
-COMMENT ON COLUMN jobs.nerror IS 'Код завершения'
+COMMENT ON COLUMN jobs.nerror IS 'РљРѕРґ Р·Р°РІРµСЂС€РµРЅРёСЏ'
 /
-COMMENT ON COLUMN jobs.verrortext IS 'Текст ожибки'
+COMMENT ON COLUMN jobs.verrortext IS 'РўРµРєСЃС‚ РѕР¶РёР±РєРё'
 /
 
 -- End of DDL script for JOBS
 
 
 -- Start of DDL script for JOBS
--- Generated 28-ноя-02  11:22:40 am
+-- Generated 28-РЅРѕСЏ-02  11:22:40 am
 -- from ea-ASKUE:5
 CREATE TABLE lastjobs
  (
@@ -142,15 +142,15 @@ CREATE TABLE lastjobs
   verrortext                 VARCHAR2(2000)
  )
 /
-COMMENT ON TABLE lastjobs IS 'Фоновые процессы последние данные'
+COMMENT ON TABLE lastjobs IS 'Р¤РѕРЅРѕРІС‹Рµ РїСЂРѕС†РµСЃСЃС‹ РїРѕСЃР»РµРґРЅРёРµ РґР°РЅРЅС‹Рµ'
 /
-COMMENT ON COLUMN lastjobs.ddate IS 'Дата выполнения'
+COMMENT ON COLUMN lastjobs.ddate IS 'Р”Р°С‚Р° РІС‹РїРѕР»РЅРµРЅРёСЏ'
 /
-COMMENT ON COLUMN lastjobs.nerror IS 'Код завершения'
+COMMENT ON COLUMN lastjobs.nerror IS 'РљРѕРґ Р·Р°РІРµСЂС€РµРЅРёСЏ'
 /
-COMMENT ON COLUMN lastjobs.njob IS 'Ид процесса'
+COMMENT ON COLUMN lastjobs.njob IS 'РРґ РїСЂРѕС†РµСЃСЃР°'
 /
-COMMENT ON COLUMN lastjobs.verrortext IS 'Текст ожибки'
+COMMENT ON COLUMN lastjobs.verrortext IS 'РўРµРєСЃС‚ РѕР¶РёР±РєРё'
 /
 ALTER TABLE lastjobs
  ADD CONSTRAINT pk_lastjobs PRIMARY KEY (njob)

@@ -148,7 +148,7 @@ try{
   else dmMain->quMain->ParamByName("par9")->AsInteger=StrToInt(Edit7->Text)*1000;
   dmMain->quMain->ParamByName("par10")->AsInteger=(Cb_delete_all->Checked)?1:0;
   dmMain->quMain->Execute();
-  /*ïåðåðàñ÷åò*/
+  /*Ð¿ÐµÑ€ÐµÑ€Ð°ÑÑ‡ÐµÑ‚*/
   dmMain->quMain->Params->Clear();
   dmMain->quMain->SQL->Text="begin "+SchemeName+"EDITFEEDERS_PG.recalcdiff(:par1, to_date(:par2,'dd.mm.yyyy hh24:mi')); end;";
   dmMain->quMain->ParamByName("par1")->AsInteger=Mid;
@@ -157,7 +157,7 @@ try{
   dmMain->orases->Commit();
   MessageBox(Handle,Reconst_smes20_62.c_str(),Caption.c_str(),MB_OK|MB_ICONINFORMATION);
   ModalResult=mrOk;
-  /*çàêîí÷èëè îïåðàöèþ x1000 è ïåðåðàñ÷åò*/
+  /*Ð·Ð°ÐºÐ¾Ð½Ñ‡Ð¸Ð»Ð¸ Ð¾Ð¿ÐµÑ€Ð°Ñ†Ð¸ÑŽ x1000 Ð¸ Ð¿ÐµÑ€ÐµÑ€Ð°ÑÑ‡ÐµÑ‚*/
   }catch(Exception&e){
     dmMain->orases->Rollback();
     Application->ShowException(&e);

@@ -37,8 +37,8 @@ __fastcall TPrintDrawTable::~TPrintDrawTable(void)
 void __fastcall TPrintDrawTable::PrintTable(AnsiString aTitle, AnsiString aComment, TStrings *aColumnsCaption,
                                             TVirtualTable *aVT_PrintData, int aColumhNameWidth, int aColumnWidth, int aRepType, TFormDescr *fd)
 {
-    // aRepType = 1 Интерьер не имеет подстрок
-    // aRepType = 2 Интерьер имеет подстроки
+    // aRepType = 1 РРЅС‚РµСЂСЊРµСЂ РЅРµ РёРјРµРµС‚ РїРѕРґСЃС‚СЂРѕРє
+    // aRepType = 2 РРЅС‚РµСЂСЊРµСЂ РёРјРµРµС‚ РїРѕРґСЃС‚СЂРѕРєРё
    int LeftLabelCoord = 0, ColumnCount, QRCount=1, NumLabel, NumDBText, NumField = 1,
        lColumnWidth = aColumnWidth, lColumhNameWidth = aColumhNameWidth+10;
    AnsiString LabelName, DBTextName, QRName, TitleName, CommentName, RowName, SubRowName;
@@ -69,7 +69,7 @@ void __fastcall TPrintDrawTable::PrintTable(AnsiString aTitle, AnsiString aComme
                {
                    fmQR = new TfmQR(this);
                    fmQR->QRGroup1->Expression = aVT_PrintData->Name+".RowName";
-                   for(int j=0; !i&&j<fmQR->ComponentCount; j++) // находим координаты крайней левой ЛЕЙБЫ, чтобы от нее потом плясать
+                   for(int j=0; !i&&j<fmQR->ComponentCount; j++) // РЅР°С…РѕРґРёРј РєРѕРѕСЂРґРёРЅР°С‚С‹ РєСЂР°Р№РЅРµР№ Р»РµРІРѕР№ Р›Р•Р™Р‘Р«, С‡С‚РѕР±С‹ РѕС‚ РЅРµРµ РїРѕС‚РѕРј РїР»СЏСЃР°С‚СЊ
                    {
                       if((aRepType==1)&&(fmQR->Components[j]->Name==RowName))
                       {
@@ -109,7 +109,7 @@ void __fastcall TPrintDrawTable::PrintTable(AnsiString aTitle, AnsiString aComme
                       }
                    }
                    NumLabel = NumDBText = 1;
-                   for(int j=0; j<fmQR->ComponentCount; j++) // А тут уже пошла возня
+                   for(int j=0; j<fmQR->ComponentCount; j++) // Рђ С‚СѓС‚ СѓР¶Рµ РїРѕС€Р»Р° РІРѕР·РЅСЏ
                    {
                       if(fmQR->Components[j]->Name==TitleName)
                          ((TQRLabel*)fmQR->Components[j])->Caption = aTitle;
@@ -214,9 +214,9 @@ void __fastcall TPrintDrawTable::PrintTable(AnsiString aTitle, AnsiString aComme
 void __fastcall TPrintDrawTable::SaveTableToFile(AnsiString aTitle, AnsiString aComment, TStrings *aColumnsCaption,
                                 TVirtualTable *aVT_PrintData, int aColumhNameWidth, int aColumnWidth, int aRepType, AnsiString aFileName, WORD aFlags)
 {
-    // aRepType = 0 Интерьер простой (типа журналов)
-    // aRepType = 1 Интерьер не имеет подстрок
-    // aRepType = 2 Интерьер имеет подстроки
+    // aRepType = 0 РРЅС‚РµСЂСЊРµСЂ РїСЂРѕСЃС‚РѕР№ (С‚РёРїР° Р¶СѓСЂРЅР°Р»РѕРІ)
+    // aRepType = 1 РРЅС‚РµСЂСЊРµСЂ РЅРµ РёРјРµРµС‚ РїРѕРґСЃС‚СЂРѕРє
+    // aRepType = 2 РРЅС‚РµСЂСЊРµСЂ РёРјРµРµС‚ РїРѕРґСЃС‚СЂРѕРєРё
   AnsiString ExportSeparator;
     TRegistry *Reg = new TRegistry(KEY_READ);
       try

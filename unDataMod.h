@@ -19,8 +19,8 @@
 #include "DBGridEh.hpp"
 #include "uOraDBConnection.h"
 //---------------------------------------------------------------------------
-#define CHK_ALL_LIMITS 1 //Контролировать ограничения
-#define ONLY_DEMO_VER 0 //Временная версия 0 или дата типа 201306
+#define CHK_ALL_LIMITS 1 //РљРѕРЅС‚СЂРѕР»РёСЂРѕРІР°С‚СЊ РѕРіСЂР°РЅРёС‡РµРЅРёСЏ
+#define ONLY_DEMO_VER 0 //Р’СЂРµРјРµРЅРЅР°СЏ РІРµСЂСЃРёСЏ 0 РёР»Рё РґР°С‚Р° С‚РёРїР° 201306
 //---------------------------------------------------------------------------
 #define CHK_LIC_POINT 0
 #define CHK_LIC_TASK 1
@@ -35,7 +35,7 @@
 #define CHK_LIC_TASK_MAKSEND 5
 #define CHK_LIC_TASK_MAKRETRIVE 6
 #define CHK_LIC_TASK_MONITORING 7
-const int LicPoint[]={0,2,5,10,20,50,100,1000000};//Ограничение количества точек
+const int LicPoint[]={0,2,5,10,20,50,100,1000000};//РћРіСЂР°РЅРёС‡РµРЅРёРµ РєРѕР»РёС‡РµСЃС‚РІР° С‚РѕС‡РµРє
 #define SAA_MAXLICPOINT 8
 //---------------------------------------------------------------------------
 const TCursor crDragCopy = 1;
@@ -58,10 +58,10 @@ typedef struct VerInfo{
 //---------------------------------------------------------------------------
 TVerInfo GetFileVerInfo(AnsiString filename);
 //---------------------------------------------------------------------------
-// результат выполнения  sql запроса
+// СЂРµР·СѓР»СЊС‚Р°С‚ РІС‹РїРѕР»РЅРµРЅРёСЏ  sql Р·Р°РїСЂРѕСЃР°
 const AnsiString BASE_SCHEME="RYDA.";
 //---------------------------------------------------------------------------
-typedef struct {   // структура таблицы пользователей
+typedef struct {   // СЃС‚СЂСѓРєС‚СѓСЂР° С‚Р°Р±Р»РёС†С‹ РїРѕР»СЊР·РѕРІР°С‚РµР»РµР№
     int User_Id;
 	  AnsiString UserName;
     AnsiString Pasword;
@@ -70,7 +70,7 @@ typedef struct {   // структура таблицы пользователей
     int Role_Id;
 }SCONNECT;
 
-typedef struct { //структура таблицы ролей
+typedef struct { //СЃС‚СЂСѓРєС‚СѓСЂР° С‚Р°Р±Р»РёС†С‹ СЂРѕР»РµР№
     int Role_Id;
     int Monitor;
 }SROLS;
@@ -87,11 +87,11 @@ const int TASK_RIGHTS_ERROR     = 0xFF;
 //---------------------------------------------------------------------------
 extern SCONNECT UsCon;
 extern SROLS UserRol;
-extern AnsiString ExFileFullName; // Переменная используется для передачи пути файла-шаблона Excel + его имя
-extern AnsiString ExFilePuth; // Переменная используется для передачи пути файла-шаблона Excel
-extern AnsiString SchemeName; //Имя схемы
+extern AnsiString ExFileFullName; // РџРµСЂРµРјРµРЅРЅР°СЏ РёСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ РґР»СЏ РїРµСЂРµРґР°С‡Рё РїСѓС‚Рё С„Р°Р№Р»Р°-С€Р°Р±Р»РѕРЅР° Excel + РµРіРѕ РёРјСЏ
+extern AnsiString ExFilePuth; // РџРµСЂРµРјРµРЅРЅР°СЏ РёСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ РґР»СЏ РїРµСЂРµРґР°С‡Рё РїСѓС‚Рё С„Р°Р№Р»Р°-С€Р°Р±Р»РѕРЅР° Excel
+extern AnsiString SchemeName; //РРјСЏ СЃС…РµРјС‹
 extern long customer_id;
-extern long period; //текущий период
+extern long period; //С‚РµРєСѓС‰РёР№ РїРµСЂРёРѕРґ
 extern AnsiString ObsoleteTimeLimit;
 extern AnsiString EnterpriseName;
 extern int StepPROFILE;
@@ -145,9 +145,9 @@ private:	// User declarations
   AnsiString FFullName;
   TStrings* FSrvList;
   TDateTime __fastcall FSystemDate(void);
-  int FLicType;//Тип лицензии
-  int PointCnt;//Лцензия на количество точек
-  int FCanManualOperPoint;//Разрешен оперативный опрос точки
+  int FLicType;//РўРёРї Р»РёС†РµРЅР·РёРё
+  int PointCnt;//Р›С†РµРЅР·РёСЏ РЅР° РєРѕР»РёС‡РµСЃС‚РІРѕ С‚РѕС‡РµРє
+  int FCanManualOperPoint;//Р Р°Р·СЂРµС€РµРЅ РѕРїРµСЂР°С‚РёРІРЅС‹Р№ РѕРїСЂРѕСЃ С‚РѕС‡РєРё
   void __fastcall CheckLicPoint();
 //---------------------------------------------------------------------------
 public:		// User declarations

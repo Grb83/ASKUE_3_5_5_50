@@ -18,7 +18,7 @@ class TInteriorExRep : public TInterior
     void PreviousSheet();
     void PrintActiveSheet();
     void Preview();
-    void DoVerb();// Для активации Excela в окне АСКУЭ
+    void DoVerb();// Р”Р»СЏ Р°РєС‚РёРІР°С†РёРё Excela РІ РѕРєРЅРµ РђРЎРљРЈР­
     void __fastcall PrintRep();
     void __fastcall SaveRepToFile(TSaveDialog *aSaveDialog);
     //chig

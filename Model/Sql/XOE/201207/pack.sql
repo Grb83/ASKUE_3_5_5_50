@@ -3,120 +3,120 @@
 
 CREATE OR REPLACE 
 PACKAGE editfeeders_pg IS
-  -- пакет работы с точками
-  -- дата создания 19/10/2001 (Сечин А.А.)
+  -- РїР°РєРµС‚ СЂР°Р±РѕС‚С‹ СЃ С‚РѕС‡РєР°РјРё
+  -- РґР°С‚Р° СЃРѕР·РґР°РЅРёСЏ 19/10/2001 (РЎРµС‡РёРЅ Рђ.Рђ.)
 ------------------------------------------------------------------------------------------------------------------------
-  -- Процедура вставки (полное кол-во параметров)
- PROCEDURE ins_p (an_parent NUMBER,   --Родитель
-                                   an_type NUMBER,   --Тип точки
-                                                  av_name VARCHAR2,   --Название
-                                                                   av_short_name VARCHAR2,   --Краткое название
+  -- РџСЂРѕС†РµРґСѓСЂР° РІСЃС‚Р°РІРєРё (РїРѕР»РЅРѕРµ РєРѕР»-РІРѕ РїР°СЂР°РјРµС‚СЂРѕРІ)
+ PROCEDURE ins_p (an_parent NUMBER,   --Р РѕРґРёС‚РµР»СЊ
+                                   an_type NUMBER,   --РўРёРї С‚РѕС‡РєРё
+                                                  av_name VARCHAR2,   --РќР°Р·РІР°РЅРёРµ
+                                                                   av_short_name VARCHAR2,   --РљСЂР°С‚РєРѕРµ РЅР°Р·РІР°РЅРёРµ
                                                                                           an_er_position NUMBER, an_q1_position NUMBER, an_ed_position NUMBER,
- an_q3_position NUMBER, an_smart NUMBER,   --Интеллектуал
-                                        an_q1234 NUMBER,   --Квадранты
-                                                        an_canal NUMBER,   --Номер канала
-                                                                        av_cellnum VARCHAR2,   --Номер ячейки
-                                                                                            an_power NUMBER,   --Мощность перв кВ
-                                                                                                            an_current1 NUMBER,   --Напряжение перв
-                                                                                                                               an_current2 NUMBER,   --Напряжение вторич
- an_kc NUMBER,   --Коэфф
-              an_tag NUMBER,   --Тег связи
-                            av_info VARCHAR2,   --Доп информация
-                                             an_power2 NUMBER,   --Мощность вторич кВ
-                                                              an_metkc NUMBER,   --Коэф прошитый в счетчике
-                                                                              an_abc NUMBER,   --Заземленная нейтраль
-                                                                                            an_calcbill NUMBER,   --Верифицировать суточные
-                                                                                                               an_calcmonths NUMBER,   --Верифицировать месячные
- an_inverted NUMBER,   --Инверсия
-                    an_switch NUMBER,   --Признак обводника
-                                     an_usd NUMBER,   --УСД
-                                                   an_nblock NUMBER,   -- блокировка автоматического опроса
-                                                                    an_dataabsence NUMBER, an_commctrl NUMBER, an_techctrl NUMBER, an_main NUMBER,   --nMainPoint - основная точка учёта (для дублирования)
- av_verifyparam VARCHAR2,   -- Параметры верификации
-                         av_addparams VARCHAR2,   -- Дополнительные параметры
-                                               av_importcode VARCHAR2,   -- Связной код импорта
-                                                                      an_lockcorrecttime NUMBER,   -- блокировка коррекции времени
-                                                                                                av_code VARCHAR2,   -- код точки
-                                                                                                                 av_verifyday VARCHAR2,   -- Параметры верификации суточных
- an_classtn NUMBER,   --Класс тотности ТН
-                   an_classtt NUMBER,   --Класс тотности ТТ
-                                     an_timezonew NUMBER,   --Веменная зона зимой
-                                                         an_timezones NUMBER,   --Веменная зона летом
-                                                                             an_opposite NUMBER,   --id, информация о противоположной точке
-                                                                                                an_norder NUMBER,   --порядок в дереве по умолчанию 0
-                                                                                                an_nintegr NUMBER, --период интеграции
- an_mid OUT NUMBER   --Ид точки
+ an_q3_position NUMBER, an_smart NUMBER,   --РРЅС‚РµР»Р»РµРєС‚СѓР°Р»
+                                        an_q1234 NUMBER,   --РљРІР°РґСЂР°РЅС‚С‹
+                                                        an_canal NUMBER,   --РќРѕРјРµСЂ РєР°РЅР°Р»Р°
+                                                                        av_cellnum VARCHAR2,   --РќРѕРјРµСЂ СЏС‡РµР№РєРё
+                                                                                            an_power NUMBER,   --РњРѕС‰РЅРѕСЃС‚СЊ РїРµСЂРІ РєР’
+                                                                                                            an_current1 NUMBER,   --РќР°РїСЂСЏР¶РµРЅРёРµ РїРµСЂРІ
+                                                                                                                               an_current2 NUMBER,   --РќР°РїСЂСЏР¶РµРЅРёРµ РІС‚РѕСЂРёС‡
+ an_kc NUMBER,   --РљРѕСЌС„С„
+              an_tag NUMBER,   --РўРµРі СЃРІСЏР·Рё
+                            av_info VARCHAR2,   --Р”РѕРї РёРЅС„РѕСЂРјР°С†РёСЏ
+                                             an_power2 NUMBER,   --РњРѕС‰РЅРѕСЃС‚СЊ РІС‚РѕСЂРёС‡ РєР’
+                                                              an_metkc NUMBER,   --РљРѕСЌС„ РїСЂРѕС€РёС‚С‹Р№ РІ СЃС‡РµС‚С‡РёРєРµ
+                                                                              an_abc NUMBER,   --Р—Р°Р·РµРјР»РµРЅРЅР°СЏ РЅРµР№С‚СЂР°Р»СЊ
+                                                                                            an_calcbill NUMBER,   --Р’РµСЂРёС„РёС†РёСЂРѕРІР°С‚СЊ СЃСѓС‚РѕС‡РЅС‹Рµ
+                                                                                                               an_calcmonths NUMBER,   --Р’РµСЂРёС„РёС†РёСЂРѕРІР°С‚СЊ РјРµСЃСЏС‡РЅС‹Рµ
+ an_inverted NUMBER,   --РРЅРІРµСЂСЃРёСЏ
+                    an_switch NUMBER,   --РџСЂРёР·РЅР°Рє РѕР±РІРѕРґРЅРёРєР°
+                                     an_usd NUMBER,   --РЈРЎР”
+                                                   an_nblock NUMBER,   -- Р±Р»РѕРєРёСЂРѕРІРєР° Р°РІС‚РѕРјР°С‚РёС‡РµСЃРєРѕРіРѕ РѕРїСЂРѕСЃР°
+                                                                    an_dataabsence NUMBER, an_commctrl NUMBER, an_techctrl NUMBER, an_main NUMBER,   --nMainPoint - РѕСЃРЅРѕРІРЅР°СЏ С‚РѕС‡РєР° СѓС‡С‘С‚Р° (РґР»СЏ РґСѓР±Р»РёСЂРѕРІР°РЅРёСЏ)
+ av_verifyparam VARCHAR2,   -- РџР°СЂР°РјРµС‚СЂС‹ РІРµСЂРёС„РёРєР°С†РёРё
+                         av_addparams VARCHAR2,   -- Р”РѕРїРѕР»РЅРёС‚РµР»СЊРЅС‹Рµ РїР°СЂР°РјРµС‚СЂС‹
+                                               av_importcode VARCHAR2,   -- РЎРІСЏР·РЅРѕР№ РєРѕРґ РёРјРїРѕСЂС‚Р°
+                                                                      an_lockcorrecttime NUMBER,   -- Р±Р»РѕРєРёСЂРѕРІРєР° РєРѕСЂСЂРµРєС†РёРё РІСЂРµРјРµРЅРё
+                                                                                                av_code VARCHAR2,   -- РєРѕРґ С‚РѕС‡РєРё
+                                                                                                                 av_verifyday VARCHAR2,   -- РџР°СЂР°РјРµС‚СЂС‹ РІРµСЂРёС„РёРєР°С†РёРё СЃСѓС‚РѕС‡РЅС‹С…
+ an_classtn NUMBER,   --РљР»Р°СЃСЃ С‚РѕС‚РЅРѕСЃС‚Рё РўРќ
+                   an_classtt NUMBER,   --РљР»Р°СЃСЃ С‚РѕС‚РЅРѕСЃС‚Рё РўРў
+                                     an_timezonew NUMBER,   --Р’РµРјРµРЅРЅР°СЏ Р·РѕРЅР° Р·РёРјРѕР№
+                                                         an_timezones NUMBER,   --Р’РµРјРµРЅРЅР°СЏ Р·РѕРЅР° Р»РµС‚РѕРј
+                                                                             an_opposite NUMBER,   --id, РёРЅС„РѕСЂРјР°С†РёСЏ Рѕ РїСЂРѕС‚РёРІРѕРїРѕР»РѕР¶РЅРѕР№ С‚РѕС‡РєРµ
+                                                                                                an_norder NUMBER,   --РїРѕСЂСЏРґРѕРє РІ РґРµСЂРµРІРµ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ 0
+                                                                                                an_nintegr NUMBER, --РїРµСЂРёРѕРґ РёРЅС‚РµРіСЂР°С†РёРё
+ an_mid OUT NUMBER   --РРґ С‚РѕС‡РєРё
  );
 
 ------------------------------------------------------------------------------------------------------------------------
-    -- Процедура вставки АСКУЭ
- PROCEDURE ins_p_a (an_parent NUMBER,   --Родитель
-                                     an_type NUMBER,   --Тип точки
-                                                    av_name VARCHAR2,   --Название
-                                                                     av_short_name VARCHAR2,   --Краткое название
+    -- РџСЂРѕС†РµРґСѓСЂР° РІСЃС‚Р°РІРєРё РђРЎРљРЈР­
+ PROCEDURE ins_p_a (an_parent NUMBER,   --Р РѕРґРёС‚РµР»СЊ
+                                     an_type NUMBER,   --РўРёРї С‚РѕС‡РєРё
+                                                    av_name VARCHAR2,   --РќР°Р·РІР°РЅРёРµ
+                                                                     av_short_name VARCHAR2,   --РљСЂР°С‚РєРѕРµ РЅР°Р·РІР°РЅРёРµ
                                                                                             an_er_position NUMBER, an_q1_position NUMBER, an_ed_position NUMBER,
- an_q3_position NUMBER, an_smart NUMBER,   --Интеллектуал
-                                        an_q1234 NUMBER,   --Квадранты
-                                                        av_cellnum VARCHAR2,   --Номер ячейки
-                                                                            an_power NUMBER,   --Мощность
-                                                                                            an_current1 NUMBER,   --Напряжение перв
-                                                                                                               an_current2 NUMBER,   --Напряжение вторич
-                                                                                                                                  an_kc NUMBER,   --Коэфф
- an_point NUMBER,   --Ид точки АСРПП
-                 an_power2 NUMBER,   --Мощность вторич кВ
+ an_q3_position NUMBER, an_smart NUMBER,   --РРЅС‚РµР»Р»РµРєС‚СѓР°Р»
+                                        an_q1234 NUMBER,   --РљРІР°РґСЂР°РЅС‚С‹
+                                                        av_cellnum VARCHAR2,   --РќРѕРјРµСЂ СЏС‡РµР№РєРё
+                                                                            an_power NUMBER,   --РњРѕС‰РЅРѕСЃС‚СЊ
+                                                                                            an_current1 NUMBER,   --РќР°РїСЂСЏР¶РµРЅРёРµ РїРµСЂРІ
+                                                                                                               an_current2 NUMBER,   --РќР°РїСЂСЏР¶РµРЅРёРµ РІС‚РѕСЂРёС‡
+                                                                                                                                  an_kc NUMBER,   --РљРѕСЌС„С„
+ an_point NUMBER,   --РРґ С‚РѕС‡РєРё РђРЎР РџРџ
+                 an_power2 NUMBER,   --РњРѕС‰РЅРѕСЃС‚СЊ РІС‚РѕСЂРёС‡ РєР’
                  an_ptype NUMBER,
                 an_order NUMBER,
-                                  an_mid OUT NUMBER   --Ид точки
+                                  an_mid OUT NUMBER   --РРґ С‚РѕС‡РєРё
  );
 
 ------------------------------------------------------------------------------------------------------------------------
- PROCEDURE upd_p_b(an_mid NUMBER,an_test NUMBER   --Ид точки
+ PROCEDURE upd_p_b(an_mid NUMBER,an_test NUMBER   --РРґ С‚РѕС‡РєРё
  );
 ------------------------------------------------------------------------------------------------------------------------
-  -- Процедура обновления данных АСКУЭ
- PROCEDURE upd_p_a (an_mid NUMBER,   --Ид точки
-                                  an_parent NUMBER,   --Родитель
-                                                   an_type NUMBER,   --Тип точки
-                                                                  av_name VARCHAR2,   --Название
-                                                                                   av_short_name VARCHAR2,   --Краткое название
+  -- РџСЂРѕС†РµРґСѓСЂР° РѕР±РЅРѕРІР»РµРЅРёСЏ РґР°РЅРЅС‹С… РђРЎРљРЈР­
+ PROCEDURE upd_p_a (an_mid NUMBER,   --РРґ С‚РѕС‡РєРё
+                                  an_parent NUMBER,   --Р РѕРґРёС‚РµР»СЊ
+                                                   an_type NUMBER,   --РўРёРї С‚РѕС‡РєРё
+                                                                  av_name VARCHAR2,   --РќР°Р·РІР°РЅРёРµ
+                                                                                   av_short_name VARCHAR2,   --РљСЂР°С‚РєРѕРµ РЅР°Р·РІР°РЅРёРµ
                                                                                                           an_er_position NUMBER, an_q1_position NUMBER,
- an_ed_position NUMBER, an_q3_position NUMBER, an_smart NUMBER,   --Интеллектуал
-                                                               an_q1234 NUMBER,   --Квадранты
-                                                                               av_cellnum VARCHAR2,   --Номер ячейки
-                                                                                                   an_power NUMBER,   --Мощность
-                                                                                                                   an_current1 NUMBER,   --Напряжение перв
- an_current2 NUMBER,   --Напряжение вторич
-                    an_kc NUMBER,   --Коэфф
-                                 an_power2 NUMBER   --Мощность вторич кВ
- --  an_metkc       NUMBER --Коэф прошитый в счетчике
+ an_ed_position NUMBER, an_q3_position NUMBER, an_smart NUMBER,   --РРЅС‚РµР»Р»РµРєС‚СѓР°Р»
+                                                               an_q1234 NUMBER,   --РљРІР°РґСЂР°РЅС‚С‹
+                                                                               av_cellnum VARCHAR2,   --РќРѕРјРµСЂ СЏС‡РµР№РєРё
+                                                                                                   an_power NUMBER,   --РњРѕС‰РЅРѕСЃС‚СЊ
+                                                                                                                   an_current1 NUMBER,   --РќР°РїСЂСЏР¶РµРЅРёРµ РїРµСЂРІ
+ an_current2 NUMBER,   --РќР°РїСЂСЏР¶РµРЅРёРµ РІС‚РѕСЂРёС‡
+                    an_kc NUMBER,   --РљРѕСЌС„С„
+                                 an_power2 NUMBER   --РњРѕС‰РЅРѕСЃС‚СЊ РІС‚РѕСЂРёС‡ РєР’
+ --  an_metkc       NUMBER --РљРѕСЌС„ РїСЂРѕС€РёС‚С‹Р№ РІ СЃС‡РµС‚С‡РёРєРµ
  );
 
 ------------------------------------------------------------------------------------------------------------------------
-  -- Процедура вставки при синхронизации
- PROCEDURE ins_p_synchro (an_parent NUMBER,   --Родитель
-                                           an_type NUMBER,   --Тип точки
-                                                          av_name VARCHAR2,   --Название
-                                                                           av_short_name VARCHAR2,   --Краткое название
-                                                                                                  an_smart NUMBER,   --Интеллектуал
-                                                                                                                  an_q1234 NUMBER,   --Квадранты
-                                                                                                                                  av_cellnum VARCHAR2,   --Номер ячейки
- an_power NUMBER,   --Мощность
-                 an_current1 NUMBER,   --Напряжение перв
-                                    an_current2 NUMBER,   --Напряжение вторич
-                                                       an_kc NUMBER,   --Коэфф
-                                                                    an_root NUMBER,   --Ид точки в родительской БД
-                                                                                   an_power2 NUMBER,   --Мощность вторич кВ
-                                                                                                    an_mid OUT NUMBER   --Ид точки
+  -- РџСЂРѕС†РµРґСѓСЂР° РІСЃС‚Р°РІРєРё РїСЂРё СЃРёРЅС…СЂРѕРЅРёР·Р°С†РёРё
+ PROCEDURE ins_p_synchro (an_parent NUMBER,   --Р РѕРґРёС‚РµР»СЊ
+                                           an_type NUMBER,   --РўРёРї С‚РѕС‡РєРё
+                                                          av_name VARCHAR2,   --РќР°Р·РІР°РЅРёРµ
+                                                                           av_short_name VARCHAR2,   --РљСЂР°С‚РєРѕРµ РЅР°Р·РІР°РЅРёРµ
+                                                                                                  an_smart NUMBER,   --РРЅС‚РµР»Р»РµРєС‚СѓР°Р»
+                                                                                                                  an_q1234 NUMBER,   --РљРІР°РґСЂР°РЅС‚С‹
+                                                                                                                                  av_cellnum VARCHAR2,   --РќРѕРјРµСЂ СЏС‡РµР№РєРё
+ an_power NUMBER,   --РњРѕС‰РЅРѕСЃС‚СЊ
+                 an_current1 NUMBER,   --РќР°РїСЂСЏР¶РµРЅРёРµ РїРµСЂРІ
+                                    an_current2 NUMBER,   --РќР°РїСЂСЏР¶РµРЅРёРµ РІС‚РѕСЂРёС‡
+                                                       an_kc NUMBER,   --РљРѕСЌС„С„
+                                                                    an_root NUMBER,   --РРґ С‚РѕС‡РєРё РІ СЂРѕРґРёС‚РµР»СЊСЃРєРѕР№ Р‘Р”
+                                                                                   an_power2 NUMBER,   --РњРѕС‰РЅРѕСЃС‚СЊ РІС‚РѕСЂРёС‡ РєР’
+                                                                                                    an_mid OUT NUMBER   --РРґ С‚РѕС‡РєРё
  );
 
 ------------------------------------------------------------------------------------------------------------------------
-  -- Процедура удаления данных
- PROCEDURE del_p (an_mid NUMBER   --Ид точки
+  -- РџСЂРѕС†РµРґСѓСЂР° СѓРґР°Р»РµРЅРёСЏ РґР°РЅРЅС‹С…
+ PROCEDURE del_p (an_mid NUMBER   --РРґ С‚РѕС‡РєРё
                                );
 
 ------------------------------------------------------------------------------------------------------------------------
---Процедура обновления счетчика АСКУЭ
- PROCEDURE upd_meters_a (an_mid NUMBER,   --Ид точки
+--РџСЂРѕС†РµРґСѓСЂР° РѕР±РЅРѕРІР»РµРЅРёСЏ СЃС‡РµС‚С‡РёРєР° РђРЎРљРЈР­
+ PROCEDURE upd_meters_a (an_mid NUMBER,   --РРґ С‚РѕС‡РєРё
                                        an_entype NUMBER,   --ENTYPE
                                                         av_smart VARCHAR2,   --SMART
                                                                           av_mtrsn VARCHAR2,   --MTRSN
@@ -136,125 +136,125 @@ PACKAGE editfeeders_pg IS
   RETURN NUMBER;
 
 ------------------------------------------------------------------------------------------------------------------------
---Устанавливает параметры простых потерь
- PROCEDURE setaddparam (an_mid NUMBER,   --Ид точки
-                                      an_wastepercentcalc NUMBER,   --Тип потерь
-                                                                 an_workinghours NUMBER,   --Часы работы
-                                                                                        an_fullhours NUMBER,   --Полные часы работы
-                                                                                                            an_line_loss NUMBER,   --Портери в линии
- an_act_loss NUMBER,   --Потери акт транс
-                    an_react_loss NUMBER,   --Потери реакт транс
-                                         an_recompens NUMBER,   --Тип расчета реактива
-                                                             an_calcpointtype NUMBER DEFAULT NULL,   -- Тип расчетной точки
- an_gid NUMBER DEFAULT NULL   --ид расчет группы
+--РЈСЃС‚Р°РЅР°РІР»РёРІР°РµС‚ РїР°СЂР°РјРµС‚СЂС‹ РїСЂРѕСЃС‚С‹С… РїРѕС‚РµСЂСЊ
+ PROCEDURE setaddparam (an_mid NUMBER,   --РРґ С‚РѕС‡РєРё
+                                      an_wastepercentcalc NUMBER,   --РўРёРї РїРѕС‚РµСЂСЊ
+                                                                 an_workinghours NUMBER,   --Р§Р°СЃС‹ СЂР°Р±РѕС‚С‹
+                                                                                        an_fullhours NUMBER,   --РџРѕР»РЅС‹Рµ С‡Р°СЃС‹ СЂР°Р±РѕС‚С‹
+                                                                                                            an_line_loss NUMBER,   --РџРѕСЂС‚РµСЂРё РІ Р»РёРЅРёРё
+ an_act_loss NUMBER,   --РџРѕС‚РµСЂРё Р°РєС‚ С‚СЂР°РЅСЃ
+                    an_react_loss NUMBER,   --РџРѕС‚РµСЂРё СЂРµР°РєС‚ С‚СЂР°РЅСЃ
+                                         an_recompens NUMBER,   --РўРёРї СЂР°СЃС‡РµС‚Р° СЂРµР°РєС‚РёРІР°
+                                                             an_calcpointtype NUMBER DEFAULT NULL,   -- РўРёРї СЂР°СЃС‡РµС‚РЅРѕР№ С‚РѕС‡РєРё
+ an_gid NUMBER DEFAULT NULL   --РёРґ СЂР°СЃС‡РµС‚ РіСЂСѓРїРїС‹
  );
 
 ------------------------------------------------------------------------------------------------------------------------
-     -- Нормативные параметры точки
- PROCEDURE setcalcparam_p (an_mid NUMBER,   --Ид точки
-                                         at_date common_pg.tt_number,   --Дата ввода в действие
-                                                                     at_currpower common_pg.tt_number,   --Мощность
-                                                                                                      at_monthconsumpt common_pg.tt_number,   --Месяч расход
- at_kc common_pg.tt_number   --Коэф пересчета
+     -- РќРѕСЂРјР°С‚РёРІРЅС‹Рµ РїР°СЂР°РјРµС‚СЂС‹ С‚РѕС‡РєРё
+ PROCEDURE setcalcparam_p (an_mid NUMBER,   --РРґ С‚РѕС‡РєРё
+                                         at_date common_pg.tt_number,   --Р”Р°С‚Р° РІРІРѕРґР° РІ РґРµР№СЃС‚РІРёРµ
+                                                                     at_currpower common_pg.tt_number,   --РњРѕС‰РЅРѕСЃС‚СЊ
+                                                                                                      at_monthconsumpt common_pg.tt_number,   --РњРµСЃСЏС‡ СЂР°СЃС…РѕРґ
+ at_kc common_pg.tt_number   --РљРѕСЌС„ РїРµСЂРµСЃС‡РµС‚Р°
  );
 
 ------------------------------------------------------------------------------------------------------------------------
-  -- Процедура обновления данных (с полным набором параметров)
- PROCEDURE upd_p (an_mid NUMBER,   --Ид точки
-                                an_parent NUMBER,   --Родитель
-                                                 an_type NUMBER,   --Тип точки
-                                                                av_name VARCHAR2,   --Название
-                                                                                 av_short_name VARCHAR2,   --Краткое название
+  -- РџСЂРѕС†РµРґСѓСЂР° РѕР±РЅРѕРІР»РµРЅРёСЏ РґР°РЅРЅС‹С… (СЃ РїРѕР»РЅС‹Рј РЅР°Р±РѕСЂРѕРј РїР°СЂР°РјРµС‚СЂРѕРІ)
+ PROCEDURE upd_p (an_mid NUMBER,   --РРґ С‚РѕС‡РєРё
+                                an_parent NUMBER,   --Р РѕРґРёС‚РµР»СЊ
+                                                 an_type NUMBER,   --РўРёРї С‚РѕС‡РєРё
+                                                                av_name VARCHAR2,   --РќР°Р·РІР°РЅРёРµ
+                                                                                 av_short_name VARCHAR2,   --РљСЂР°С‚РєРѕРµ РЅР°Р·РІР°РЅРёРµ
                                                                                                         an_er_position NUMBER, an_q1_position NUMBER,
- an_ed_position NUMBER, an_q3_position NUMBER, an_smart NUMBER,   --Интеллектуал
-                                                               an_q1234 NUMBER,   --Квадранты
-                                                                               an_canal NUMBER,   --Номер канала
-                                                                                               av_cellnum VARCHAR2,   --Номер ячейки
-                                                                                                                   an_power NUMBER,   --Мощность
-                                                                                                                                   an_current1 NUMBER,   --Напряжение перв
- an_current2 NUMBER,   --Напряжение вторич
-                    an_kc NUMBER,   --Коэфф
-                                 an_tag NUMBER,   --Тег связи
-                                               av_info VARCHAR2,   --Доп информация
-                                                                an_power2 NUMBER,   --Мощность вторич кВ
-                                                                                 an_metkc NUMBER,   --Коэф прошитый в счетчике
-                                                                                                 an_abc NUMBER,   --Заземленная нейтраль
-                                                                                                               an_calcbill NUMBER,   --Верифицировать суточные
- an_calcmonths NUMBER,   --Верифицировать месячные
-                      an_inverted NUMBER,   --Инверсия
-                                         an_switch NUMBER,   --Признак обводника
-                                                          an_usd NUMBER,   --УСД
-                                                                        an_nblock NUMBER,   --Блокировка авт. опроса
+ an_ed_position NUMBER, an_q3_position NUMBER, an_smart NUMBER,   --РРЅС‚РµР»Р»РµРєС‚СѓР°Р»
+                                                               an_q1234 NUMBER,   --РљРІР°РґСЂР°РЅС‚С‹
+                                                                               an_canal NUMBER,   --РќРѕРјРµСЂ РєР°РЅР°Р»Р°
+                                                                                               av_cellnum VARCHAR2,   --РќРѕРјРµСЂ СЏС‡РµР№РєРё
+                                                                                                                   an_power NUMBER,   --РњРѕС‰РЅРѕСЃС‚СЊ
+                                                                                                                                   an_current1 NUMBER,   --РќР°РїСЂСЏР¶РµРЅРёРµ РїРµСЂРІ
+ an_current2 NUMBER,   --РќР°РїСЂСЏР¶РµРЅРёРµ РІС‚РѕСЂРёС‡
+                    an_kc NUMBER,   --РљРѕСЌС„С„
+                                 an_tag NUMBER,   --РўРµРі СЃРІСЏР·Рё
+                                               av_info VARCHAR2,   --Р”РѕРї РёРЅС„РѕСЂРјР°С†РёСЏ
+                                                                an_power2 NUMBER,   --РњРѕС‰РЅРѕСЃС‚СЊ РІС‚РѕСЂРёС‡ РєР’
+                                                                                 an_metkc NUMBER,   --РљРѕСЌС„ РїСЂРѕС€РёС‚С‹Р№ РІ СЃС‡РµС‚С‡РёРєРµ
+                                                                                                 an_abc NUMBER,   --Р—Р°Р·РµРјР»РµРЅРЅР°СЏ РЅРµР№С‚СЂР°Р»СЊ
+                                                                                                               an_calcbill NUMBER,   --Р’РµСЂРёС„РёС†РёСЂРѕРІР°С‚СЊ СЃСѓС‚РѕС‡РЅС‹Рµ
+ an_calcmonths NUMBER,   --Р’РµСЂРёС„РёС†РёСЂРѕРІР°С‚СЊ РјРµСЃСЏС‡РЅС‹Рµ
+                      an_inverted NUMBER,   --РРЅРІРµСЂСЃРёСЏ
+                                         an_switch NUMBER,   --РџСЂРёР·РЅР°Рє РѕР±РІРѕРґРЅРёРєР°
+                                                          an_usd NUMBER,   --РЈРЎР”
+                                                                        an_nblock NUMBER,   --Р‘Р»РѕРєРёСЂРѕРІРєР° Р°РІС‚. РѕРїСЂРѕСЃР°
                                                                                          an_dataabsence NUMBER, an_commctrl NUMBER, an_techctrl NUMBER,
- an_main NUMBER,   --nMainPoint - основная точка учёта (для дублирования)
-                av_verifyparam VARCHAR2,   -- Параметры верификации
-                                        av_addparams VARCHAR2,   -- Дополнительные параметры
-                                                              av_importcode VARCHAR2,   -- Связной код импорта
-                                                                                     an_lockcorrecttime NUMBER,   -- блокировка коррекции времени
-                                                                                                               av_code VARCHAR2,   -- код точки
-                                                                                                                                av_verifyday VARCHAR2,   -- Параметры верификации суточных
- an_classtn NUMBER,   --Класс тотности ТН
-                   an_classtt NUMBER,   --Класс тотности ТТ
-                                     an_timezonew NUMBER,   --Веменная зона зимой
-                                                         an_timezones NUMBER,   --Веменная зона летом
-                                                                             an_opposite NUMBER,   --id, информация о противоположной точке
- an_norder NUMBER,   --порядок в дереве по умолчанию 0
- an_nintegr NUMBER, --период интеграции
- an_lockswitch NUMBER --не переходит на ОВ
+ an_main NUMBER,   --nMainPoint - РѕСЃРЅРѕРІРЅР°СЏ С‚РѕС‡РєР° СѓС‡С‘С‚Р° (РґР»СЏ РґСѓР±Р»РёСЂРѕРІР°РЅРёСЏ)
+                av_verifyparam VARCHAR2,   -- РџР°СЂР°РјРµС‚СЂС‹ РІРµСЂРёС„РёРєР°С†РёРё
+                                        av_addparams VARCHAR2,   -- Р”РѕРїРѕР»РЅРёС‚РµР»СЊРЅС‹Рµ РїР°СЂР°РјРµС‚СЂС‹
+                                                              av_importcode VARCHAR2,   -- РЎРІСЏР·РЅРѕР№ РєРѕРґ РёРјРїРѕСЂС‚Р°
+                                                                                     an_lockcorrecttime NUMBER,   -- Р±Р»РѕРєРёСЂРѕРІРєР° РєРѕСЂСЂРµРєС†РёРё РІСЂРµРјРµРЅРё
+                                                                                                               av_code VARCHAR2,   -- РєРѕРґ С‚РѕС‡РєРё
+                                                                                                                                av_verifyday VARCHAR2,   -- РџР°СЂР°РјРµС‚СЂС‹ РІРµСЂРёС„РёРєР°С†РёРё СЃСѓС‚РѕС‡РЅС‹С…
+ an_classtn NUMBER,   --РљР»Р°СЃСЃ С‚РѕС‚РЅРѕСЃС‚Рё РўРќ
+                   an_classtt NUMBER,   --РљР»Р°СЃСЃ С‚РѕС‚РЅРѕСЃС‚Рё РўРў
+                                     an_timezonew NUMBER,   --Р’РµРјРµРЅРЅР°СЏ Р·РѕРЅР° Р·РёРјРѕР№
+                                                         an_timezones NUMBER,   --Р’РµРјРµРЅРЅР°СЏ Р·РѕРЅР° Р»РµС‚РѕРј
+                                                                             an_opposite NUMBER,   --id, РёРЅС„РѕСЂРјР°С†РёСЏ Рѕ РїСЂРѕС‚РёРІРѕРїРѕР»РѕР¶РЅРѕР№ С‚РѕС‡РєРµ
+ an_norder NUMBER,   --РїРѕСЂСЏРґРѕРє РІ РґРµСЂРµРІРµ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ 0
+ an_nintegr NUMBER, --РїРµСЂРёРѕРґ РёРЅС‚РµРіСЂР°С†РёРё
+ an_lockswitch NUMBER --РЅРµ РїРµСЂРµС…РѕРґРёС‚ РЅР° РћР’
  );
 
 ------------------------------------------------------------------------------------------------------------------------
- -- Процедура обновления данных (с неполным набором параметров)
- PROCEDURE upd_p (an_mid NUMBER,   --Ид точки
-                                av_importcode VARCHAR2,   -- Связной код импорта
-                                                       an_canal NUMBER,   --Номер канала
-                                                                       an_tag NUMBER,   --Тег связи
+ -- РџСЂРѕС†РµРґСѓСЂР° РѕР±РЅРѕРІР»РµРЅРёСЏ РґР°РЅРЅС‹С… (СЃ РЅРµРїРѕР»РЅС‹Рј РЅР°Р±РѕСЂРѕРј РїР°СЂР°РјРµС‚СЂРѕРІ)
+ PROCEDURE upd_p (an_mid NUMBER,   --РРґ С‚РѕС‡РєРё
+                                av_importcode VARCHAR2,   -- РЎРІСЏР·РЅРѕР№ РєРѕРґ РёРјРїРѕСЂС‚Р°
+                                                       an_canal NUMBER,   --РќРѕРјРµСЂ РєР°РЅР°Р»Р°
+                                                                       an_tag NUMBER,   --РўРµРі СЃРІСЏР·Рё
                                                                                      an_er_position NUMBER, an_q1_position NUMBER, an_ed_position NUMBER,
- an_q3_position NUMBER, av_info VARCHAR2,   --Доп информация
-                                         an_nblock NUMBER,   --Блокировка авт. опроса
-                                                          an_dataabsence NUMBER, an_commctrl NUMBER, an_techctrl NUMBER, an_lockcorrecttime NUMBER,   -- блокировка коррекции времени
- an_timezonew NUMBER,   --Временная зона зимой
-                     an_timezones NUMBER   --Временная зона летом
- );   -- 16 параметра
+ an_q3_position NUMBER, av_info VARCHAR2,   --Р”РѕРї РёРЅС„РѕСЂРјР°С†РёСЏ
+                                         an_nblock NUMBER,   --Р‘Р»РѕРєРёСЂРѕРІРєР° Р°РІС‚. РѕРїСЂРѕСЃР°
+                                                          an_dataabsence NUMBER, an_commctrl NUMBER, an_techctrl NUMBER, an_lockcorrecttime NUMBER,   -- Р±Р»РѕРєРёСЂРѕРІРєР° РєРѕСЂСЂРµРєС†РёРё РІСЂРµРјРµРЅРё
+ an_timezonew NUMBER,   --Р’СЂРµРјРµРЅРЅР°СЏ Р·РѕРЅР° Р·РёРјРѕР№
+                     an_timezones NUMBER   --Р’СЂРµРјРµРЅРЅР°СЏ Р·РѕРЅР° Р»РµС‚РѕРј
+ );   -- 16 РїР°СЂР°РјРµС‚СЂР°
 
 ---------------------------------------------------------------------------------------------------------------------
---Процедура обновления параметров
- PROCEDURE upd_last_save (an_mid NUMBER,   --Ид точки
-                                        ad_profile DATE,   -- Дата постедней считанного профиля
-                                                        ad_halfhour DATE,   -- Дата постедней считанного получасовки
-                                                                         ad_bill DATE,   -- Дата постедней считанного суточного показания
- ad_month DATE   -- Дата постедней считанного месячного показания
+--РџСЂРѕС†РµРґСѓСЂР° РѕР±РЅРѕРІР»РµРЅРёСЏ РїР°СЂР°РјРµС‚СЂРѕРІ
+ PROCEDURE upd_last_save (an_mid NUMBER,   --РРґ С‚РѕС‡РєРё
+                                        ad_profile DATE,   -- Р”Р°С‚Р° РїРѕСЃС‚РµРґРЅРµР№ СЃС‡РёС‚Р°РЅРЅРѕРіРѕ РїСЂРѕС„РёР»СЏ
+                                                        ad_halfhour DATE,   -- Р”Р°С‚Р° РїРѕСЃС‚РµРґРЅРµР№ СЃС‡РёС‚Р°РЅРЅРѕРіРѕ РїРѕР»СѓС‡Р°СЃРѕРІРєРё
+                                                                         ad_bill DATE,   -- Р”Р°С‚Р° РїРѕСЃС‚РµРґРЅРµР№ СЃС‡РёС‚Р°РЅРЅРѕРіРѕ СЃСѓС‚РѕС‡РЅРѕРіРѕ РїРѕРєР°Р·Р°РЅРёСЏ
+ ad_month DATE   -- Р”Р°С‚Р° РїРѕСЃС‚РµРґРЅРµР№ СЃС‡РёС‚Р°РЅРЅРѕРіРѕ РјРµСЃСЏС‡РЅРѕРіРѕ РїРѕРєР°Р·Р°РЅРёСЏ
  );
 
 ------------------------------------------------------------------------------------------------------------------------
-  --Процедура добавления пустой строки в last_save
- PROCEDURE ins_last_save (an_mid NUMBER,   --Ид точки
+  --РџСЂРѕС†РµРґСѓСЂР° РґРѕР±Р°РІР»РµРЅРёСЏ РїСѓСЃС‚РѕР№ СЃС‚СЂРѕРєРё РІ last_save
+ PROCEDURE ins_last_save (an_mid NUMBER,   --РРґ С‚РѕС‡РєРё
                                         av_state VARCHAR2 DEFAULT NULL, an_state_cod NUMBER DEFAULT 0, an_clock NUMBER DEFAULT 0);
 
 ------------------------------------------------------------------------------------------------------------------------
-   -- Пересчитывает расход по показаниям счетчика и ГН
- PROCEDURE recalcdiff (an_mid NUMBER, ad_from DATE);   --расход
+   -- РџРµСЂРµСЃС‡РёС‚С‹РІР°РµС‚ СЂР°СЃС…РѕРґ РїРѕ РїРѕРєР°Р·Р°РЅРёСЏРј СЃС‡РµС‚С‡РёРєР° Рё Р“Рќ
+ PROCEDURE recalcdiff (an_mid NUMBER, ad_from DATE);   --СЂР°СЃС…РѕРґ
 
 ------------------------------------------------------------------------------------------------------------------------
- --Процедура удаления данных из БД
- PROCEDURE delete_data (an_mid NUMBER,   --Ид точки
-                                      ad_profile DATE,   -- Дата > которой удаляются данные профиля
-                                                ad_halfhour DATE,   -- Дата > которой удаляются данные ГН
-                                                           ad_bill DATE,   -- Дата > которой удаляются данные Суточных
-                                                                  ad_month DATE,   --  Дата > которой удаляются месячные Суточных                                                                          
- ad_profile_e DATE DEFAULT NULL,   -- Дата <= которой удаляются данные профиля
-             ad_halfhour_e DATE DEFAULT NULL,   -- Дата <= которой удаляются данные ГН
-                          ad_bill_e DATE DEFAULT NULL,   -- Дата <= которой удаляются данные Суточных
-                                   ad_month_e DATE DEFAULT NULL,   --  Дата <= которой удаляются месячные Суточных
- ad_journal DATE DEFAULT NULL,   -- Дата > которой удаляются данные Журнала
-           ad_journal_e DATE DEFAULT NULL,   -- Дата <= которой удаляются данные Журнала
-                       ad_currpower DATE DEFAULT NULL,   --  Дата > которой удаляются мгновенные данные                                                            
-                                   ad_currpower_e DATE DEFAULT NULL,   --  Дата <= которой удаляются мгновенные данные
- an_withreload NUMBER DEFAULT 1   --Признак сдвига LAST_SAVE
+ --РџСЂРѕС†РµРґСѓСЂР° СѓРґР°Р»РµРЅРёСЏ РґР°РЅРЅС‹С… РёР· Р‘Р”
+ PROCEDURE delete_data (an_mid NUMBER,   --РРґ С‚РѕС‡РєРё
+                                      ad_profile DATE,   -- Р”Р°С‚Р° > РєРѕС‚РѕСЂРѕР№ СѓРґР°Р»СЏСЋС‚СЃСЏ РґР°РЅРЅС‹Рµ РїСЂРѕС„РёР»СЏ
+                                                ad_halfhour DATE,   -- Р”Р°С‚Р° > РєРѕС‚РѕСЂРѕР№ СѓРґР°Р»СЏСЋС‚СЃСЏ РґР°РЅРЅС‹Рµ Р“Рќ
+                                                           ad_bill DATE,   -- Р”Р°С‚Р° > РєРѕС‚РѕСЂРѕР№ СѓРґР°Р»СЏСЋС‚СЃСЏ РґР°РЅРЅС‹Рµ РЎСѓС‚РѕС‡РЅС‹С…
+                                                                  ad_month DATE,   --  Р”Р°С‚Р° > РєРѕС‚РѕСЂРѕР№ СѓРґР°Р»СЏСЋС‚СЃСЏ РјРµСЃСЏС‡РЅС‹Рµ РЎСѓС‚РѕС‡РЅС‹С…                                                                          
+ ad_profile_e DATE DEFAULT NULL,   -- Р”Р°С‚Р° <= РєРѕС‚РѕСЂРѕР№ СѓРґР°Р»СЏСЋС‚СЃСЏ РґР°РЅРЅС‹Рµ РїСЂРѕС„РёР»СЏ
+             ad_halfhour_e DATE DEFAULT NULL,   -- Р”Р°С‚Р° <= РєРѕС‚РѕСЂРѕР№ СѓРґР°Р»СЏСЋС‚СЃСЏ РґР°РЅРЅС‹Рµ Р“Рќ
+                          ad_bill_e DATE DEFAULT NULL,   -- Р”Р°С‚Р° <= РєРѕС‚РѕСЂРѕР№ СѓРґР°Р»СЏСЋС‚СЃСЏ РґР°РЅРЅС‹Рµ РЎСѓС‚РѕС‡РЅС‹С…
+                                   ad_month_e DATE DEFAULT NULL,   --  Р”Р°С‚Р° <= РєРѕС‚РѕСЂРѕР№ СѓРґР°Р»СЏСЋС‚СЃСЏ РјРµСЃСЏС‡РЅС‹Рµ РЎСѓС‚РѕС‡РЅС‹С…
+ ad_journal DATE DEFAULT NULL,   -- Р”Р°С‚Р° > РєРѕС‚РѕСЂРѕР№ СѓРґР°Р»СЏСЋС‚СЃСЏ РґР°РЅРЅС‹Рµ Р–СѓСЂРЅР°Р»Р°
+           ad_journal_e DATE DEFAULT NULL,   -- Р”Р°С‚Р° <= РєРѕС‚РѕСЂРѕР№ СѓРґР°Р»СЏСЋС‚СЃСЏ РґР°РЅРЅС‹Рµ Р–СѓСЂРЅР°Р»Р°
+                       ad_currpower DATE DEFAULT NULL,   --  Р”Р°С‚Р° > РєРѕС‚РѕСЂРѕР№ СѓРґР°Р»СЏСЋС‚СЃСЏ РјРіРЅРѕРІРµРЅРЅС‹Рµ РґР°РЅРЅС‹Рµ                                                            
+                                   ad_currpower_e DATE DEFAULT NULL,   --  Р”Р°С‚Р° <= РєРѕС‚РѕСЂРѕР№ СѓРґР°Р»СЏСЋС‚СЃСЏ РјРіРЅРѕРІРµРЅРЅС‹Рµ РґР°РЅРЅС‹Рµ
+ an_withreload NUMBER DEFAULT 1   --РџСЂРёР·РЅР°Рє СЃРґРІРёРіР° LAST_SAVE
  );
 
 ------------------------------------------------------------------------------------------------------------------------
---ищем точку (an_mid - точка старта)
+--РёС‰РµРј С‚РѕС‡РєСѓ (an_mid - С‚РѕС‡РєР° СЃС‚Р°СЂС‚Р°)
  FUNCTION findpoint (an_mid NUMBER, av_name VARCHAR2, av_code VARCHAR2, av_mtrsn VARCHAR2, av_pmid VARCHAR2 DEFAULT NULL,an_pointtype NUMBER DEFAULT NULL, av_canal VARCHAR2 DEFAULT NULL)
   RETURN NUMBER;
 ------------------------------------------------------------------------------------------------------------------------
@@ -268,16 +268,16 @@ PROCEDURE CONNECTACCPERIOD_p(an_mid NUMBER,acur_t OUT common_pg.tcur);
 ----------------------------------------------------------------------------------------------------------------------
 PROCEDURE nperiod_p(an_mid NUMBER,acur_t OUT common_pg.tcur);
 -----------------------------------------------------------------------------------------------------------------------
---дерево точек
+--РґРµСЂРµРІРѕ С‚РѕС‡РµРє
 PROCEDURE ReadNode_p(an_mid NUMBER,an_parent NUMBER,acur_t OUT common_pg.tcur);
 ------------------------------------------------------------------------------------------------------------------------
---счетчики для точки
+--СЃС‡РµС‚С‡РёРєРё РґР»СЏ С‚РѕС‡РєРё
 PROCEDURE ReadCounter_p(an_mid NUMBER,acur_t OUT common_pg.tcur);
 ----------------------------------------------------------------------------------------------------------------------
---потери для точки
+--РїРѕС‚РµСЂРё РґР»СЏ С‚РѕС‡РєРё
 PROCEDURE ReadLossts_p(an_mid NUMBER,acur_t OUT common_pg.tcur);
 ----------------------------------------------------------------------------------------------------------------------
---рассчетная группа для точки
+--СЂР°СЃСЃС‡РµС‚РЅР°СЏ РіСЂСѓРїРїР° РґР»СЏ С‚РѕС‡РєРё
 PROCEDURE ReadGroup_p(an_mid NUMBER,acur_t OUT common_pg.tcur);
 -----------------------------------------------------------------------------------------------------------------------
 PROCEDURE SMART_p(an_mid NUMBER,av_sm OUT VARCHAR2);
@@ -288,12 +288,12 @@ PROCEDURE NMAINPOINT_p(an_mid NUMBER,acur_t OUT common_pg.tcur);
 -----------------------------------------------------------------------------------------------------------------------
 PROCEDURE NOPPOSITE_p(an_mid NUMBER,acur_t OUT common_pg.tcur);
 -----------------------------------------------------------------------------------------------------------------------
---возвращает измерения и их глобальные индексы для конкретной точки
---Виленская Н.Б. 14.11.2008
+--РІРѕР·РІСЂР°С‰Р°РµС‚ РёР·РјРµСЂРµРЅРёСЏ Рё РёС… РіР»РѕР±Р°Р»СЊРЅС‹Рµ РёРЅРґРµРєСЃС‹ РґР»СЏ РєРѕРЅРєСЂРµС‚РЅРѕР№ С‚РѕС‡РєРё
+--Р’РёР»РµРЅСЃРєР°СЏ Рќ.Р‘. 14.11.2008
 PROCEDURE get_Measure(an_mid NUMBER,an_objtype NUMBER,acur_t OUT common_pg.tcur);
 -----------------------------------------------------------------------------------------------------------------------
---сохраняет измерения и их глобальные индексы для конкретной точки
---Виленская Н.Б. 14.11.2008
+--СЃРѕС…СЂР°РЅСЏРµС‚ РёР·РјРµСЂРµРЅРёСЏ Рё РёС… РіР»РѕР±Р°Р»СЊРЅС‹Рµ РёРЅРґРµРєСЃС‹ РґР»СЏ РєРѕРЅРєСЂРµС‚РЅРѕР№ С‚РѕС‡РєРё
+--Р’РёР»РµРЅСЃРєР°СЏ Рќ.Р‘. 14.11.2008
 PROCEDURE ins_Guid(an_mid NUMBER,an_nmeasure common_pg.tt_number, an_mrid common_pg.tt_varchar2);
 
 -----------------------------------------------------------------------------------------------------------
@@ -301,7 +301,7 @@ FUNCTION FormulaMeas_p(an_mid NUMBER)
 RETURN VARCHAR2;
 ------------------------------------------------------------------------------------------------- 
  -- added by KAG 27.01.2010
- -- список базовых периодов интеграции
+ -- СЃРїРёСЃРѕРє Р±Р°Р·РѕРІС‹С… РїРµСЂРёРѕРґРѕРІ РёРЅС‚РµРіСЂР°С†РёРё
  PROCEDURE IntegratorTimes_p (acur_t OUT common_pg.tcur);
 --------------------------------------------------------------------------------------------------------------
 END;   -- Package Specification EDITFEEDERS_PG
@@ -316,8 +316,8 @@ END;   -- Package Specification EDITFEEDERS_PG
 CREATE OR REPLACE 
 PACKAGE comsrv_pg IS
 ------------------------------------------------------------------------------------------------------------------------
-   -- Интерфейс взаимодействия БД с Носиком А.В.
-   -- дата создания 30/11/2001 Сечин А.А.
+   -- РРЅС‚РµСЂС„РµР№СЃ РІР·Р°РёРјРѕРґРµР№СЃС‚РІРёСЏ Р‘Р” СЃ РќРѕСЃРёРєРѕРј Рђ.Р’.
+   -- РґР°С‚Р° СЃРѕР·РґР°РЅРёСЏ 30/11/2001 РЎРµС‡РёРЅ Рђ.Рђ.
 ------------------------------------------------------------------------------------------------------------------------
  cn_auto           CONSTANT NUMBER := 10;
 ------------------------------------------------------------------------------------------------------------------------
@@ -339,7 +339,7 @@ PACKAGE comsrv_pg IS
  cn_a1r            CONSTANT NUMBER := 17;
  cn_metkom         CONSTANT NUMBER := 18;
  cn_rtu            CONSTANT NUMBER := 19;
- cn_itek           CONSTANT NUMBER := 20;   --И дубль
+ cn_itek           CONSTANT NUMBER := 20;   --Р РґСѓР±Р»СЊ
  cn_oblik          CONSTANT NUMBER := 21;
  cn_mercury        CONSTANT NUMBER := 22;
  cn_calc           CONSTANT NUMBER := 23;
@@ -347,8 +347,8 @@ PACKAGE comsrv_pg IS
  cn_ev2            CONSTANT NUMBER := 25;
  cn_iccp           CONSTANT NUMBER := 26;
  cn_uppd           CONSTANT NUMBER := 27;
- cn_oik            CONSTANT NUMBER := 28;   --ОИК ХАРТЭП
- cn_oikdonbas      CONSTANT NUMBER := 29;   --ОИК Донбас ЭС (Старый)
+ cn_oik            CONSTANT NUMBER := 28;   --РћРРљ РҐРђР РўР­Рџ
+ cn_oikdonbas      CONSTANT NUMBER := 29;   --РћРРљ Р”РѕРЅР±Р°СЃ Р­РЎ (РЎС‚Р°СЂС‹Р№)
  cn_a1800          CONSTANT NUMBER := 30;
  cn_nik2303 CONSTANT NUMBER := 32;
  cn_mtx     CONSTANT NUMBER := 33;
@@ -356,9 +356,9 @@ PACKAGE comsrv_pg IS
  
 
 ------------------------------------------------------------------------------------------------------------------------
---******************************          Общие процедуры      *******************************************************--
+--******************************          РћР±С‰РёРµ РїСЂРѕС†РµРґСѓСЂС‹      *******************************************************--
 ------------------------------------------------------------------------------------------------------------------------
-   --Вставка суточных расходов (Єнергия меркурий облик и.т.д. только расход)
+   --Р’СЃС‚Р°РІРєР° СЃСѓС‚РѕС‡РЅС‹С… СЂР°СЃС…РѕРґРѕРІ (Р„РЅРµСЂРіРёСЏ РјРµСЂРєСѓСЂРёР№ РѕР±Р»РёРє Рё.С‚.Рґ. С‚РѕР»СЊРєРѕ СЂР°СЃС…РѕРґ)
  PROCEDURE set_bill_eom (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_q2 NUMBER, an_q4 NUMBER, an_aer NUMBER, an_aed NUMBER,
  an_aq1 NUMBER, an_aq3 NUMBER, an_aq2 NUMBER, an_aq4 NUMBER, an_ber NUMBER, an_bed NUMBER, an_bq1 NUMBER, an_bq3 NUMBER, an_bq2 NUMBER, an_bq4 NUMBER,
  an_cer NUMBER, an_ced NUMBER, an_cq1 NUMBER, an_cq3 NUMBER, an_cq2 NUMBER, an_cq4 NUMBER, an_der NUMBER, an_ded NUMBER, an_dq1 NUMBER, an_dq3 NUMBER,
@@ -369,34 +369,34 @@ PACKAGE comsrv_pg IS
  PROCEDURE signal (an_signal NUMBER);
 
 ------------------------------------------------------------------------------------------------------------------------
---Возвращает признак необходимость коррекции времени и допустимый диапазон (Если an_cid>0, то проверяет канал, an_mid>0, то проверяет точку)
+--Р’РѕР·РІСЂР°С‰Р°РµС‚ РїСЂРёР·РЅР°Рє РЅРµРѕР±С…РѕРґРёРјРѕСЃС‚СЊ РєРѕСЂСЂРµРєС†РёРё РІСЂРµРјРµРЅРё Рё РґРѕРїСѓСЃС‚РёРјС‹Р№ РґРёР°РїР°Р·РѕРЅ (Р•СЃР»Рё an_cid>0, С‚Рѕ РїСЂРѕРІРµСЂСЏРµС‚ РєР°РЅР°Р», an_mid>0, С‚Рѕ РїСЂРѕРІРµСЂСЏРµС‚ С‚РѕС‡РєСѓ)
  PROCEDURE get_timeinfo (an_cid NUMBER, an_mid NUMBER, an_min_delta OUT NUMBER, an_max_delta OUT NUMBER, an_clock_set OUT NUMBER);
 
 ------------------------------------------------------------------------------------------------------------------------
---Возвращает информацию по программироваению времени счетчика (часовые пояса)
+--Р’РѕР·РІСЂР°С‰Р°РµС‚ РёРЅС„РѕСЂРјР°С†РёСЋ РїРѕ РїСЂРѕРіСЂР°РјРјРёСЂРѕРІР°РµРЅРёСЋ РІСЂРµРјРµРЅРё СЃС‡РµС‚С‡РёРєР° (С‡Р°СЃРѕРІС‹Рµ РїРѕСЏСЃР°)
  PROCEDURE get_wstimeinfo(an_mid NUMBER, an_timezonew OUT NUMBER, an_timezones OUT NUMBER);
 ------------------------------------------------------------------------------------------------------------------------
  PROCEDURE set_traffic (an_cid NUMBER, ad_open DATE, ad_start DATE, ad_end DATE, an_send NUMBER, an_recv NUMBER, av_user VARCHAR2);
 
 ------------------------------------------------------------------------------------------------------------------------
 
- --Сверка номера счетчика (Если возвращает не 0 то отваливаем и переходим к другому счетчику)
+ --РЎРІРµСЂРєР° РЅРѕРјРµСЂР° СЃС‡РµС‚С‡РёРєР° (Р•СЃР»Рё РІРѕР·РІСЂР°С‰Р°РµС‚ РЅРµ 0 С‚Рѕ РѕС‚РІР°Р»РёРІР°РµРј Рё РїРµСЂРµС…РѕРґРёРј Рє РґСЂСѓРіРѕРјСѓ СЃС‡РµС‚С‡РёРєСѓ)
  FUNCTION check_mtrsn (an_mid NUMBER, av_mtrsn VARCHAR2)
   RETURN NUMBER;
 
 ------------------------------------------------------------------------------------------------------------------------
- --Вставка текущих
+ --Р’СЃС‚Р°РІРєР° С‚РµРєСѓС‰РёС…
  PROCEDURE set_curr_power_meter (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_q2m NUMBER, an_q4m NUMBER, ad_date DATE);
 
 ------------------------------------------------------------------------------------------------------------------------
- --Вставка текущих (+ ток в нуле)
+ --Р’СЃС‚Р°РІРєР° С‚РµРєСѓС‰РёС… (+ С‚РѕРє РІ РЅСѓР»Рµ)
  PROCEDURE set_curr_power_meter (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_q2m NUMBER, an_q4m NUMBER, an_freq NUMBER,
  an_cos_fi NUMBER, an_volt1 NUMBER, an_volt2 NUMBER, an_volt3 NUMBER, an_curr1 NUMBER, an_curr2 NUMBER, an_curr3 NUMBER, an_fii1 NUMBER, an_fii2 NUMBER,
  an_fii3 NUMBER, an_fiu1 NUMBER, an_fiu2 NUMBER, an_fiu3 NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_q2 NUMBER, an_q4 NUMBER, an_i0 NUMBER,
  an_type NUMBER, ad_date DATE
  );
 
- --Вставка текущих
+ --Р’СЃС‚Р°РІРєР° С‚РµРєСѓС‰РёС…
  PROCEDURE set_curr_power_meter (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_q2m NUMBER, an_q4m NUMBER, an_freq NUMBER,
  an_cos_fi NUMBER, an_volt1 NUMBER, an_volt2 NUMBER, an_volt3 NUMBER, an_curr1 NUMBER, an_curr2 NUMBER, an_curr3 NUMBER, an_fii1 NUMBER, an_fii2 NUMBER,
  an_fii3 NUMBER, an_fiu1 NUMBER, an_fiu2 NUMBER, an_fiu3 NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_q2 NUMBER, an_q4 NUMBER, an_type NUMBER,
@@ -404,14 +404,14 @@ PACKAGE comsrv_pg IS
  );
 
 -----------------------------------------------------------------------------------------------------------------------
- --Вставка параметров качества
+ --Р’СЃС‚Р°РІРєР° РїР°СЂР°РјРµС‚СЂРѕРІ РєР°С‡РµСЃС‚РІР°
  PROCEDURE set_curr_quality_meter (an_mid NUMBER, an_voltvar NUMBER, an_voltchanmod NUMBER, an_flickersev NUMBER, an_thd NUMBER, an_nharmkoef NUMBER,
  an_obrunbkoef NUMBER, an_zerunbkoef NUMBER, an_powfreq NUMBER, an_voltdiptime NUMBER, an_tempvoltkoef NUMBER, an_quickchan NUMBER, an_unbalvolt NUMBER,
  an_voltinterharm NUMBER, an_voltdip NUMBER, an_shortinterrupt NUMBER, an_longinterrupt NUMBER, an_tempovervolt NUMBER, an_transovervolt NUMBER, ad_date DATE
  );
 
 -----------------------------------------------------------------------------------------------------------------------
-  --Вставка суточных для счетчиков
+  --Р’СЃС‚Р°РІРєР° СЃСѓС‚РѕС‡РЅС‹С… РґР»СЏ СЃС‡РµС‚С‡РёРєРѕРІ
  PROCEDURE set_bill_meter (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_q2m NUMBER, an_q4m NUMBER, an_aerm NUMBER, an_aedm NUMBER,
  an_aq1m NUMBER, an_aq3m NUMBER, an_aq2m NUMBER, an_aq4m NUMBER, an_berm NUMBER, an_bedm NUMBER, an_bq1m NUMBER, an_bq3m NUMBER, an_bq2m NUMBER, an_bq4m NUMBER,
  an_cerm NUMBER, an_cedm NUMBER, an_cq1m NUMBER, an_cq3m NUMBER, an_cq2m NUMBER, an_cq4m NUMBER, an_derm NUMBER, an_dedm NUMBER, an_dq1m NUMBER, an_dq3m NUMBER,
@@ -419,7 +419,7 @@ PACKAGE comsrv_pg IS
  );
 
 ------------------------------------------------------------------------------------------------------------------------
-  --Вставка месячных для счетчиков
+  --Р’СЃС‚Р°РІРєР° РјРµСЃСЏС‡РЅС‹С… РґР»СЏ СЃС‡РµС‚С‡РёРєРѕРІ
  PROCEDURE set_months_meter (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_q2m NUMBER, an_q4m NUMBER, an_aerm NUMBER,
  an_aedm NUMBER, an_aq1m NUMBER, an_aq3m NUMBER, an_aq2m NUMBER, an_aq4m NUMBER, an_berm NUMBER, an_bedm NUMBER, an_bq1m NUMBER, an_bq3m NUMBER, an_bq2m NUMBER,
  an_bq4m NUMBER, an_cerm NUMBER, an_cedm NUMBER, an_cq1m NUMBER, an_cq3m NUMBER, an_cq2m NUMBER, an_cq4m NUMBER, an_derm NUMBER, an_dedm NUMBER, an_dq1m NUMBER,
@@ -436,59 +436,59 @@ PACKAGE comsrv_pg IS
  );
 
 -----------------------------------------------------------------------------------------------------------------------
---******************************          УСПД КМ-64           *******************************************************--
+--******************************          РЈРЎРџР” РљРњ-64           *******************************************************--
 ------------------------------------------------------------------------------------------------------------------------
-   --Вставка суточных
+   --Р’СЃС‚Р°РІРєР° СЃСѓС‚РѕС‡РЅС‹С…
  PROCEDURE set_bill_uspd (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_q2m NUMBER, an_q4m NUMBER, an_aerm NUMBER, an_aedm NUMBER,
  an_aq1m NUMBER, an_aq3m NUMBER, an_aq2m NUMBER, an_aq4m NUMBER, an_berm NUMBER, an_bedm NUMBER, an_bq1m NUMBER, an_bq3m NUMBER, an_bq2m NUMBER, an_bq4m NUMBER,
  an_cerm NUMBER, an_cedm NUMBER, an_cq1m NUMBER, an_cq3m NUMBER, an_cq2m NUMBER, an_cq4m NUMBER, an_derm NUMBER, an_dedm NUMBER, an_dq1m NUMBER, an_dq3m NUMBER,
- an_dq2m NUMBER, an_dq4m NUMBER, av_mtrsn VARCHAR2, an_digits NUMBER,   --Значность счетчика, необходимо передать соответствующую АРГО
-                                                                        --( для A1R было 6 - A1R_ParamCalc.DPLocE )
+ an_dq2m NUMBER, an_dq4m NUMBER, av_mtrsn VARCHAR2, an_digits NUMBER,   --Р—РЅР°С‡РЅРѕСЃС‚СЊ СЃС‡РµС‚С‡РёРєР°, РЅРµРѕР±С…РѕРґРёРјРѕ РїРµСЂРµРґР°С‚СЊ СЃРѕРѕС‚РІРµС‚СЃС‚РІСѓСЋС‰СѓСЋ РђР Р“Рћ
+                                                                        --( РґР»СЏ A1R Р±С‹Р»Рѕ 6 - A1R_ParamCalc.DPLocE )
                                                                      ad_date DATE
  );
 
 ------------------------------------------------------------------------------------------------------------------------
-  --Вставка месячных
+  --Р’СЃС‚Р°РІРєР° РјРµСЃСЏС‡РЅС‹С…
  PROCEDURE set_months_uspd (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_q2m NUMBER, an_q4m NUMBER, an_aerm NUMBER, an_aedm NUMBER,
  an_aq1m NUMBER, an_aq3m NUMBER, an_aq2m NUMBER, an_aq4m NUMBER, an_berm NUMBER, an_bedm NUMBER, an_bq1m NUMBER, an_bq3m NUMBER, an_bq2m NUMBER, an_bq4m NUMBER,
  an_cerm NUMBER, an_cedm NUMBER, an_cq1m NUMBER, an_cq3m NUMBER, an_cq2m NUMBER, an_cq4m NUMBER, an_derm NUMBER, an_dedm NUMBER, an_dq1m NUMBER, an_dq3m NUMBER,
- an_dq2m NUMBER, an_dq4m NUMBER, av_mtrsn VARCHAR2, an_digits NUMBER,   --Значность счетчика, необходимо передать соответствующую АРГО
-                                                                        --( для A1R 6 - A1R_ParamCalc.DPLocE )
+ an_dq2m NUMBER, an_dq4m NUMBER, av_mtrsn VARCHAR2, an_digits NUMBER,   --Р—РЅР°С‡РЅРѕСЃС‚СЊ СЃС‡РµС‚С‡РёРєР°, РЅРµРѕР±С…РѕРґРёРјРѕ РїРµСЂРµРґР°С‚СЊ СЃРѕРѕС‚РІРµС‚СЃС‚РІСѓСЋС‰СѓСЋ РђР Р“Рћ
+                                                                        --( РґР»СЏ A1R 6 - A1R_ParamCalc.DPLocE )
                                                                      ad_date DATE
  );
 
 ------------------------------------------------------------------------------------------------------------------------
- --Вставка графика нагрузки
+ --Р’СЃС‚Р°РІРєР° РіСЂР°С„РёРєР° РЅР°РіСЂСѓР·РєРё
  PROCEDURE set_halfhour_uspd (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_q2 NUMBER, an_q4 NUMBER, ad_date DATE);
 
 ------------------------------------------------------------------------------------------------------------------------
 --******************************          Itek 210             *******************************************************--
 ------------------------------------------------------------------------------------------------------------------------
---Вставка коэффициентов
+--Р’СЃС‚Р°РІРєР° РєРѕСЌС„С„РёС†РёРµРЅС‚РѕРІ
  PROCEDURE set_coeffic_itek (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER);
 
 ------------------------------------------------------------------------------------------------------------------------
---Вставка 3-х минуток
+--Р’СЃС‚Р°РІРєР° 3-С… РјРёРЅСѓС‚РѕРє
  PROCEDURE set_profile_itek (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, ad_date DATE);
 
 ------------------------------------------------------------------------------------------------------------------------
- --Вставка графика нагрузки
+ --Р’СЃС‚Р°РІРєР° РіСЂР°С„РёРєР° РЅР°РіСЂСѓР·РєРё
  PROCEDURE set_halfhour_itek (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, ad_date DATE);
 
 ------------------------------------------------------------------------------------------------------------------------
- --Вставка суточных
- PROCEDURE set_bill_itek (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_zone NUMBER,   --1-A, 2-B, 3-C,4-D. иначе общий
+ --Р’СЃС‚Р°РІРєР° СЃСѓС‚РѕС‡РЅС‹С…
+ PROCEDURE set_bill_itek (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_zone NUMBER,   --1-A, 2-B, 3-C,4-D. РёРЅР°С‡Рµ РѕР±С‰РёР№
                                                                                                                 ad_date DATE);
 
 ------------------------------------------------------------------------------------------------------------------------
- --Вставка месячных
- PROCEDURE set_months_itek (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_zone NUMBER,   --1-A, 2-B, 3-C,4-D. иначе общий
+ --Р’СЃС‚Р°РІРєР° РјРµСЃСЏС‡РЅС‹С…
+ PROCEDURE set_months_itek (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_zone NUMBER,   --1-A, 2-B, 3-C,4-D. РёРЅР°С‡Рµ РѕР±С‰РёР№
                                                                                                                   ad_date DATE);
 
 ------------------------------------------------------------------------------------------------------------------------
 --******************************          L                  *******************************************************--
 ------------------------------------------------------------------------------------------------------------------------
- --Статус LG
+ --РЎС‚Р°С‚СѓСЃ LG
  PROCEDURE mark_lgstatus (newmid NUMBER, newdate_time DATE, newt NUMBER, newu NUMBER, news NUMBER, newm NUMBER, newkt NUMBER, newl1 IN OUT NUMBER,
  newl2 IN OUT NUMBER, newl3 IN OUT NUMBER
  );
@@ -499,46 +499,46 @@ PACKAGE comsrv_pg IS
  );
 
 ------------------------------------------------------------------------------------------------------------------------
--- Журнал событий ZxD
+-- Р–СѓСЂРЅР°Р» СЃРѕР±С‹С‚РёР№ ZxD
  PROCEDURE mark_zxd_event (an_mid NUMBER, ad_date DATE, an_event_hi NUMBER, an_found OUT NUMBER, av_state VARCHAR2, av_error VARCHAR2);
 
 ------------------------------------------------------------------------------------------------------------------------
- --Вставка текущих ZxB
+ --Р’СЃС‚Р°РІРєР° С‚РµРєСѓС‰РёС… ZxB
  PROCEDURE set_curr_power_zxb (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, ad_date DATE);
 
- --Вставка текущих ZxB (+ ток в нуле)
+ --Р’СЃС‚Р°РІРєР° С‚РµРєСѓС‰РёС… ZxB (+ С‚РѕРє РІ РЅСѓР»Рµ)
  PROCEDURE set_curr_power_zxb (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_q2m NUMBER, an_q4m NUMBER, an_freq NUMBER,
  an_cos_fi NUMBER, an_volt1 NUMBER, an_volt2 NUMBER, an_volt3 NUMBER, an_curr1 NUMBER, an_curr2 NUMBER, an_curr3 NUMBER, an_fiu1i1 NUMBER, an_fiu2i2 NUMBER,
  an_fiu3i3 NUMBER, an_fiu1 NUMBER, an_fiu2 NUMBER, an_fiu3 NUMBER, an_i0 NUMBER, ad_date DATE
  );
 
- --Вставка текущих ZxB
+ --Р’СЃС‚Р°РІРєР° С‚РµРєСѓС‰РёС… ZxB
  PROCEDURE set_curr_power_zxb (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_q2m NUMBER, an_q4m NUMBER, an_freq NUMBER,
  an_cos_fi NUMBER, an_volt1 NUMBER, an_volt2 NUMBER, an_volt3 NUMBER, an_curr1 NUMBER, an_curr2 NUMBER, an_curr3 NUMBER, an_fiu1i1 NUMBER, an_fiu2i2 NUMBER,
  an_fiu3i3 NUMBER, an_fiu1 NUMBER, an_fiu2 NUMBER, an_fiu3 NUMBER, ad_date DATE
  );
 
- --Вставка текущих ZxB с квадрантами (+ ток в нуле)
+ --Р’СЃС‚Р°РІРєР° С‚РµРєСѓС‰РёС… ZxB СЃ РєРІР°РґСЂР°РЅС‚Р°РјРё (+ С‚РѕРє РІ РЅСѓР»Рµ)
  PROCEDURE set_curr_power_zxb (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_rrm NUMBER, an_rdm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_q2m NUMBER,
  an_q4m NUMBER, an_freq NUMBER, an_cos_fi NUMBER, an_volt1 NUMBER, an_volt2 NUMBER, an_volt3 NUMBER, an_curr1 NUMBER, an_curr2 NUMBER, an_curr3 NUMBER,
  an_fiu1i1 NUMBER, an_fiu2i2 NUMBER, an_fiu3i3 NUMBER, an_fiu1 NUMBER, an_fiu2 NUMBER, an_fiu3 NUMBER, an_i0 NUMBER, ad_date DATE
  );
 
- --Вставка текущих ZxB с квадрантами
+ --Р’СЃС‚Р°РІРєР° С‚РµРєСѓС‰РёС… ZxB СЃ РєРІР°РґСЂР°РЅС‚Р°РјРё
  PROCEDURE set_curr_power_zxb (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_rrm NUMBER, an_rdm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_q2m NUMBER,
  an_q4m NUMBER, an_freq NUMBER, an_cos_fi NUMBER, an_volt1 NUMBER, an_volt2 NUMBER, an_volt3 NUMBER, an_curr1 NUMBER, an_curr2 NUMBER, an_curr3 NUMBER,
  an_fiu1i1 NUMBER, an_fiu2i2 NUMBER, an_fiu3i3 NUMBER, an_fiu1 NUMBER, an_fiu2 NUMBER, an_fiu3 NUMBER, ad_date DATE
  );
 
 ------------------------------------------------------------------------------------------------------------------------
-  --Вставка текущих ZxD (+ ток в нуле)
+  --Р’СЃС‚Р°РІРєР° С‚РµРєСѓС‰РёС… ZxD (+ С‚РѕРє РІ РЅСѓР»Рµ)
  PROCEDURE set_curr_power_zxd (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_rrm NUMBER, an_rdm NUMBER, an_q1m NUMBER, an_q2m NUMBER, an_q3m NUMBER,
  an_q4m NUMBER, an_freq NUMBER, an_cos_fi NUMBER, an_volt1 NUMBER, an_volt2 NUMBER, an_volt3 NUMBER, an_curr1 NUMBER, an_curr2 NUMBER, an_curr3 NUMBER,
  an_fiu1i1 NUMBER, an_fiu2i2 NUMBER, an_fiu3i3 NUMBER, an_fiu1u2 NUMBER, an_fiu1u3 NUMBER, an_fiu2u3 NUMBER, an_er NUMBER, an_ed NUMBER, an_rr NUMBER, an_rd NUMBER,
  an_q1 NUMBER, an_q2 NUMBER, an_q3 NUMBER, an_q4 NUMBER, an_i0 NUMBER, ad_date DATE
  );
 
- --Вставка текущих ZxD
+ --Р’СЃС‚Р°РІРєР° С‚РµРєСѓС‰РёС… ZxD
  PROCEDURE set_curr_power_zxd (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_rrm NUMBER, an_rdm NUMBER, an_q1m NUMBER, an_q2m NUMBER, an_q3m NUMBER,
  an_q4m NUMBER, an_freq NUMBER, an_cos_fi NUMBER, an_volt1 NUMBER, an_volt2 NUMBER, an_volt3 NUMBER, an_curr1 NUMBER, an_curr2 NUMBER, an_curr3 NUMBER,
  an_fiu1i1 NUMBER, an_fiu2i2 NUMBER, an_fiu3i3 NUMBER, an_fiu1u2 NUMBER, an_fiu1u3 NUMBER, an_fiu2u3 NUMBER, an_er NUMBER, an_ed NUMBER, an_rr NUMBER, an_rd NUMBER,
@@ -546,134 +546,134 @@ PACKAGE comsrv_pg IS
  );
 
 ------------------------------------------------------------------------------------------------------------------------
- --Вставка графика нагрузки
+ --Р’СЃС‚Р°РІРєР° РіСЂР°С„РёРєР° РЅР°РіСЂСѓР·РєРё
  PROCEDURE set_halfhour_zxb (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_status NUMBER, ad_date DATE);
 
 ------------------------------------------------------------------------------------------------------------------------
- --Вставка графика нагрузки (По показаниям)
+ --Р’СЃС‚Р°РІРєР° РіСЂР°С„РёРєР° РЅР°РіСЂСѓР·РєРё (РџРѕ РїРѕРєР°Р·Р°РЅРёСЏРј)
  PROCEDURE set_halfhour_zxb (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER,
  av_mtrsn VARCHAR2, an_digits NUMBER, an_status NUMBER, ad_date DATE, an_source NUMBER DEFAULT NULL
  );
 
 ------------------------------------------------------------------------------------------------------------------------
- --Вставка графика нагрузки по индукционникам
+ --Р’СЃС‚Р°РІРєР° РіСЂР°С„РёРєР° РЅР°РіСЂСѓР·РєРё РїРѕ РёРЅРґСѓРєС†РёРѕРЅРЅРёРєР°Рј
  PROCEDURE set_halfhour_zxb_induc (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, av_mtrsn VARCHAR2, an_digits NUMBER, ad_date DATE);
 
 ------------------------------------------------------------------------------------------------------------------------
  PROCEDURE set_halfhour_fag_induc (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, av_mtrsn VARCHAR2, an_digits NUMBER, ad_date DATE);
 
 ------------------------------------------------------------------------------------------------------------------------
- --Вставка листинга показаний
+ --Р’СЃС‚Р°РІРєР° Р»РёСЃС‚РёРЅРіР° РїРѕРєР°Р·Р°РЅРёР№
  PROCEDURE set_readout_zxb (an_mid NUMBER, at_data common_pg.tt_varchar2);
 
 ------------------------------------------------------------------------------------------------------------------------
- --Вставка листинга графика нагрузки
+ --Р’СЃС‚Р°РІРєР° Р»РёСЃС‚РёРЅРіР° РіСЂР°С„РёРєР° РЅР°РіСЂСѓР·РєРё
  PROCEDURE set_loadprof_zxb (an_mid NUMBER, at_data common_pg.tt_varchar2);
 
 ------------------------------------------------------------------------------------------------------------------------
- --Вставка суточных
+ --Р’СЃС‚Р°РІРєР° СЃСѓС‚РѕС‡РЅС‹С…
  PROCEDURE set_bill_zxb (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_aerm NUMBER, an_aedm NUMBER, an_aq1m NUMBER, an_aq3m NUMBER,
  an_berm NUMBER, an_bedm NUMBER, an_bq1m NUMBER, an_bq3m NUMBER, an_cerm NUMBER, an_cedm NUMBER, an_cq1m NUMBER, an_cq3m NUMBER, an_derm NUMBER, an_dedm NUMBER,
- an_dq1m NUMBER, an_dq3m NUMBER, av_mtrsn VARCHAR2, an_digits NUMBER,   --Значность счетчика
+ an_dq1m NUMBER, an_dq3m NUMBER, av_mtrsn VARCHAR2, an_digits NUMBER,   --Р—РЅР°С‡РЅРѕСЃС‚СЊ СЃС‡РµС‚С‡РёРєР°
                                                                      ad_date DATE
  );
 
 ------------------------------------------------------------------------------------------------------------------------
- --Вставка месячных
+ --Р’СЃС‚Р°РІРєР° РјРµСЃСЏС‡РЅС‹С…
  PROCEDURE set_months_zxb (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_aerm NUMBER, an_aedm NUMBER, an_aq1m NUMBER,
  an_aq3m NUMBER, an_berm NUMBER, an_bedm NUMBER, an_bq1m NUMBER, an_bq3m NUMBER, an_cerm NUMBER, an_cedm NUMBER, an_cq1m NUMBER, an_cq3m NUMBER, an_derm NUMBER,
- an_dedm NUMBER, an_dq1m NUMBER, an_dq3m NUMBER, av_mtrsn VARCHAR2, an_digits NUMBER,   --Значность счетчика
+ an_dedm NUMBER, an_dq1m NUMBER, an_dq3m NUMBER, av_mtrsn VARCHAR2, an_digits NUMBER,   --Р—РЅР°С‡РЅРѕСЃС‚СЊ СЃС‡РµС‚С‡РёРєР°
                                                                                      ad_date DATE
  );
 
 ------------------------------------------------------------------------------------------------------------------------
---Расширенный с квадрантами
+--Р Р°СЃС€РёСЂРµРЅРЅС‹Р№ СЃ РєРІР°РґСЂР°РЅС‚Р°РјРё
 ------------------------------------------------------------------------------------------------------------------------
- --Вставка суточных
+ --Р’СЃС‚Р°РІРєР° СЃСѓС‚РѕС‡РЅС‹С…
  PROCEDURE set_bill_zxb (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_rrm NUMBER, an_rdm NUMBER, an_aerm NUMBER, an_aedm NUMBER, an_arrm NUMBER, an_ardm NUMBER,
  an_berm NUMBER, an_bedm NUMBER, an_brrm NUMBER, an_brdm NUMBER, an_cerm NUMBER, an_cedm NUMBER, an_crrm NUMBER, an_crdm NUMBER, an_derm NUMBER, an_dedm NUMBER,
  an_drrm NUMBER, an_drdm NUMBER, an_q1m NUMBER, an_q2m NUMBER, an_q3m NUMBER, an_q4m NUMBER, an_aq1m NUMBER, an_aq2m NUMBER, an_aq3m NUMBER, an_aq4m NUMBER,
  an_bq1m NUMBER, an_bq2m NUMBER, an_bq3m NUMBER, an_bq4m NUMBER, an_cq1m NUMBER, an_cq2m NUMBER, an_cq3m NUMBER, an_cq4m NUMBER, an_dq1m NUMBER, an_dq2m NUMBER,
- an_dq3m NUMBER, an_dq4m NUMBER, av_mtrsn VARCHAR2, an_digits NUMBER,   --Значность счетчика
+ an_dq3m NUMBER, an_dq4m NUMBER, av_mtrsn VARCHAR2, an_digits NUMBER,   --Р—РЅР°С‡РЅРѕСЃС‚СЊ СЃС‡РµС‚С‡РёРєР°
                                                                      ad_date DATE
  );
 
 ------------------------------------------------------------------------------------------------------------------------
- --Вставка месячных
+ --Р’СЃС‚Р°РІРєР° РјРµСЃСЏС‡РЅС‹С…
  PROCEDURE set_months_zxb (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_rrm NUMBER, an_rdm NUMBER, an_aerm NUMBER, an_aedm NUMBER, an_arrm NUMBER,
  an_ardm NUMBER, an_berm NUMBER, an_bedm NUMBER, an_brrm NUMBER, an_brdm NUMBER, an_cerm NUMBER, an_cedm NUMBER, an_crrm NUMBER, an_crdm NUMBER, an_derm NUMBER,
  an_dedm NUMBER, an_drrm NUMBER, an_drdm NUMBER, an_q1m NUMBER, an_q2m NUMBER, an_q3m NUMBER, an_q4m NUMBER, an_aq1m NUMBER, an_aq2m NUMBER, an_aq3m NUMBER,
  an_aq4m NUMBER, an_bq1m NUMBER, an_bq2m NUMBER, an_bq3m NUMBER, an_bq4m NUMBER, an_cq1m NUMBER, an_cq2m NUMBER, an_cq3m NUMBER, an_cq4m NUMBER, an_dq1m NUMBER,
- an_dq2m NUMBER, an_dq3m NUMBER, an_dq4m NUMBER, av_mtrsn VARCHAR2, an_digits NUMBER,   --Значность счетчика
+ an_dq2m NUMBER, an_dq3m NUMBER, an_dq4m NUMBER, av_mtrsn VARCHAR2, an_digits NUMBER,   --Р—РЅР°С‡РЅРѕСЃС‚СЊ СЃС‡РµС‚С‡РёРєР°
                                                                                      ad_date DATE
  );
 
 ------------------------------------------------------------------------------------------------------------------------
 --******************************          A1R                  *******************************************************--
 ------------------------------------------------------------------------------------------------------------------------
- --Вставка текущих
+ --Р’СЃС‚Р°РІРєР° С‚РµРєСѓС‰РёС…
  PROCEDURE set_curr_power_a1r (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_q2m NUMBER, an_q4m NUMBER, ad_date DATE);
 
 -----------------------------------------------------------------------------------------------------------------------
- --Вставка графика нагрузки
+ --Р’СЃС‚Р°РІРєР° РіСЂР°С„РёРєР° РЅР°РіСЂСѓР·РєРё
  PROCEDURE set_halfhour_a1r (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, ad_date DATE);
 
 -----------------------------------------------------------------------------------------------------------------------
-  --Вставка суточных
+  --Р’СЃС‚Р°РІРєР° СЃСѓС‚РѕС‡РЅС‹С…
  PROCEDURE set_bill_a1r (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_q2m NUMBER, an_q4m NUMBER, an_aerm NUMBER, an_aedm NUMBER,
  an_aq1m NUMBER, an_aq3m NUMBER, an_aq2m NUMBER, an_aq4m NUMBER, an_berm NUMBER, an_bedm NUMBER, an_bq1m NUMBER, an_bq3m NUMBER, an_bq2m NUMBER, an_bq4m NUMBER,
  an_cerm NUMBER, an_cedm NUMBER, an_cq1m NUMBER, an_cq3m NUMBER, an_cq2m NUMBER, an_cq4m NUMBER, an_derm NUMBER, an_dedm NUMBER, an_dq1m NUMBER, an_dq3m NUMBER,
- an_dq2m NUMBER, an_dq4m NUMBER, av_mtrsn VARCHAR2, an_digits NUMBER,   --Значность счетчика, необходимо передать 6 - A1R_ParamCalc.DPLocE
+ an_dq2m NUMBER, an_dq4m NUMBER, av_mtrsn VARCHAR2, an_digits NUMBER,   --Р—РЅР°С‡РЅРѕСЃС‚СЊ СЃС‡РµС‚С‡РёРєР°, РЅРµРѕР±С…РѕРґРёРјРѕ РїРµСЂРµРґР°С‚СЊ 6 - A1R_ParamCalc.DPLocE
                                                                      ad_date DATE
  );
 
 -----------------------------------------------------------------------------------------------------------------------
-  --Вставка месячных
+  --Р’СЃС‚Р°РІРєР° РјРµСЃСЏС‡РЅС‹С…
  PROCEDURE set_months_a1r (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_q2m NUMBER, an_q4m NUMBER, an_aerm NUMBER, an_aedm NUMBER,
  an_aq1m NUMBER, an_aq3m NUMBER, an_aq2m NUMBER, an_aq4m NUMBER, an_berm NUMBER, an_bedm NUMBER, an_bq1m NUMBER, an_bq3m NUMBER, an_bq2m NUMBER, an_bq4m NUMBER,
  an_cerm NUMBER, an_cedm NUMBER, an_cq1m NUMBER, an_cq3m NUMBER, an_cq2m NUMBER, an_cq4m NUMBER, an_derm NUMBER, an_dedm NUMBER, an_dq1m NUMBER, an_dq3m NUMBER,
- an_dq2m NUMBER, an_dq4m NUMBER, av_mtrsn VARCHAR2, an_digits NUMBER,   --Значность счетчика, необходимо передать 6 - A1R_ParamCalc.DPLocE
+ an_dq2m NUMBER, an_dq4m NUMBER, av_mtrsn VARCHAR2, an_digits NUMBER,   --Р—РЅР°С‡РЅРѕСЃС‚СЊ СЃС‡РµС‚С‡РёРєР°, РЅРµРѕР±С…РѕРґРёРјРѕ РїРµСЂРµРґР°С‚СЊ 6 - A1R_ParamCalc.DPLocE
                                                                      ad_date DATE
  );
 
 ------------------------------------------------------------------------------------------------------------------------
 --******************************          Alpha                *******************************************************--
 ------------------------------------------------------------------------------------------------------------------------
- --Вставка текущих
+ --Р’СЃС‚Р°РІРєР° С‚РµРєСѓС‰РёС…
  PROCEDURE set_curr_power_alpha (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_rrm NUMBER, an_rdm NUMBER, an_q1m NUMBER, an_q2m NUMBER, an_q3m NUMBER,
  an_q4m NUMBER, ad_date DATE
  );
 
 -----------------------------------------------------------------------------------------------------------------------
-  --Вставка параметров сети
+  --Р’СЃС‚Р°РІРєР° РїР°СЂР°РјРµС‚СЂРѕРІ СЃРµС‚Рё
  PROCEDURE set_net_param_alpha (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_volt1 NUMBER, an_volt2 NUMBER, an_volt3 NUMBER,
  an_curr1 NUMBER, an_curr2 NUMBER, an_curr3 NUMBER, an_fiu1 NUMBER, an_fiu2 NUMBER, an_fiu3 NUMBER, an_fii1 NUMBER, an_fii2 NUMBER, an_fii3 NUMBER,
  an_cos_fi NUMBER, ad_date DATE
  );
 
 -----------------------------------------------------------------------------------------------------------------------
- --Вставка графика нагрузки
+ --Р’СЃС‚Р°РІРєР° РіСЂР°С„РёРєР° РЅР°РіСЂСѓР·РєРё
  PROCEDURE set_halfhour_alpha (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, ad_date DATE, an_period NUMBER DEFAULT 30);
 
 -----------------------------------------------------------------------------------------------------------------------
- --Вставка графика нагрузки
+ --Р’СЃС‚Р°РІРєР° РіСЂР°С„РёРєР° РЅР°РіСЂСѓР·РєРё
  PROCEDURE set_halfhour_alpha (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_q2 NUMBER, an_q4 NUMBER, ad_date DATE,
  an_period NUMBER DEFAULT 30
  );
 
 -----------------------------------------------------------------------------------------------------------------------
-  --Вставка суточных
+  --Р’СЃС‚Р°РІРєР° СЃСѓС‚РѕС‡РЅС‹С…
  PROCEDURE set_bill_alpha (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_rrm NUMBER, an_rdm NUMBER, an_aerm NUMBER, an_aedm NUMBER, an_aq1m NUMBER,
  an_aq3m NUMBER, an_berm NUMBER, an_bedm NUMBER, an_bq1m NUMBER, an_bq3m NUMBER, an_cerm NUMBER, an_cedm NUMBER, an_cq1m NUMBER, an_cq3m NUMBER, an_derm NUMBER,
- an_dedm NUMBER, an_dq1m NUMBER, an_dq3m NUMBER, an_q1m NUMBER, an_q2m NUMBER, an_q3m NUMBER, an_q4m NUMBER, av_mtrsn VARCHAR2, an_digits NUMBER,   --Значность счетчика, необходимо передать 6 - Alpha_ParamCalc.DPLocE
+ an_dedm NUMBER, an_dq1m NUMBER, an_dq3m NUMBER, an_q1m NUMBER, an_q2m NUMBER, an_q3m NUMBER, an_q4m NUMBER, av_mtrsn VARCHAR2, an_digits NUMBER,   --Р—РЅР°С‡РЅРѕСЃС‚СЊ СЃС‡РµС‚С‡РёРєР°, РЅРµРѕР±С…РѕРґРёРјРѕ РїРµСЂРµРґР°С‚СЊ 6 - Alpha_ParamCalc.DPLocE
  ad_date DATE
  );
 
 -----------------------------------------------------------------------------------------------------------------------
-  --Вставка месячных
+  --Р’СЃС‚Р°РІРєР° РјРµСЃСЏС‡РЅС‹С…
  PROCEDURE set_months_alpha (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_rrm NUMBER, an_rdm NUMBER, an_aerm NUMBER, an_aedm NUMBER, an_aq1m NUMBER,
  an_aq3m NUMBER, an_berm NUMBER, an_bedm NUMBER, an_bq1m NUMBER, an_bq3m NUMBER, an_cerm NUMBER, an_cedm NUMBER, an_cq1m NUMBER, an_cq3m NUMBER, an_derm NUMBER,
- an_dedm NUMBER, an_dq1m NUMBER, an_dq3m NUMBER, an_q1m NUMBER, an_q2m NUMBER, an_q3m NUMBER, an_q4m NUMBER, av_mtrsn VARCHAR2, an_digits NUMBER,   --Значность счетчика, необходимо передать 6 - Alpha_ParamCalc.DPLocE
+ an_dedm NUMBER, an_dq1m NUMBER, an_dq3m NUMBER, an_q1m NUMBER, an_q2m NUMBER, an_q3m NUMBER, an_q4m NUMBER, av_mtrsn VARCHAR2, an_digits NUMBER,   --Р—РЅР°С‡РЅРѕСЃС‚СЊ СЃС‡РµС‚С‡РёРєР°, РЅРµРѕР±С…РѕРґРёРјРѕ РїРµСЂРµРґР°С‚СЊ 6 - Alpha_ParamCalc.DPLocE
  ad_date DATE
  );
 
@@ -686,36 +686,36 @@ PACKAGE comsrv_pg IS
 ------------------------------------------------------------------------------------------------------------------------
  --******************************          Metkom              *******************************************************--
  ------------------------------------------------------------------------------------------------------------------------
-  --Вставка графика нагрузки
+  --Р’СЃС‚Р°РІРєР° РіСЂР°С„РёРєР° РЅР°РіСЂСѓР·РєРё
  PROCEDURE set_halfhour_metcom (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, ad_date DATE);
 
 ------------------------------------------------------------------------------------------------------------------------
-  --Вставка трафика обмена с  Fag12
+  --Р’СЃС‚Р°РІРєР° С‚СЂР°С„РёРєР° РѕР±РјРµРЅР° СЃ  Fag12
  PROCEDURE set_traffic_fag12 (an_mid NUMBER, at_data common_pg.tt_varchar2);
 
 ------------------------------------------------------------------------------------------------------------------------
-  --Процедура проверки доступности коррекции времени УСД Fag-12
- FUNCTION get_acc_time_correct_fag12 (an_cid NUMBER   -- Ид канала (возврат 1-Можно, 0- нельзя)
+  --РџСЂРѕС†РµРґСѓСЂР° РїСЂРѕРІРµСЂРєРё РґРѕСЃС‚СѓРїРЅРѕСЃС‚Рё РєРѕСЂСЂРµРєС†РёРё РІСЂРµРјРµРЅРё РЈРЎР” Fag-12
+ FUNCTION get_acc_time_correct_fag12 (an_cid NUMBER   -- РРґ РєР°РЅР°Р»Р° (РІРѕР·РІСЂР°С‚ 1-РњРѕР¶РЅРѕ, 0- РЅРµР»СЊР·СЏ)
                                                    )
   RETURN NUMBER;
 
  PRAGMA RESTRICT_REFERENCES (get_acc_time_correct_fag12, WNDS, WNPS);
 
 ------------------------------------------------------------------------------------------------------------------------
- --Установка состояния и величины расхождения системного таймера Fag-12
- PROCEDURE set_time_info_fag12 (an_cid NUMBER,   -- Ид канала
-                                              an_state NUMBER,   -- Состояние (0 -Расхождение в норме, 1-Расхождение в пределах коррекции (требуется коррекция),2-Рассхождение привысило верхнюю величину)
- an_value NUMBER   --Величина рассхождения в секундах
+ --РЈСЃС‚Р°РЅРѕРІРєР° СЃРѕСЃС‚РѕСЏРЅРёСЏ Рё РІРµР»РёС‡РёРЅС‹ СЂР°СЃС…РѕР¶РґРµРЅРёСЏ СЃРёСЃС‚РµРјРЅРѕРіРѕ С‚Р°Р№РјРµСЂР° Fag-12
+ PROCEDURE set_time_info_fag12 (an_cid NUMBER,   -- РРґ РєР°РЅР°Р»Р°
+                                              an_state NUMBER,   -- РЎРѕСЃС‚РѕСЏРЅРёРµ (0 -Р Р°СЃС…РѕР¶РґРµРЅРёРµ РІ РЅРѕСЂРјРµ, 1-Р Р°СЃС…РѕР¶РґРµРЅРёРµ РІ РїСЂРµРґРµР»Р°С… РєРѕСЂСЂРµРєС†РёРё (С‚СЂРµР±СѓРµС‚СЃСЏ РєРѕСЂСЂРµРєС†РёСЏ),2-Р Р°СЃСЃС…РѕР¶РґРµРЅРёРµ РїСЂРёРІС‹СЃРёР»Рѕ РІРµСЂС…РЅСЋСЋ РІРµР»РёС‡РёРЅСѓ)
+ an_value NUMBER   --Р’РµР»РёС‡РёРЅР° СЂР°СЃСЃС…РѕР¶РґРµРЅРёСЏ РІ СЃРµРєСѓРЅРґР°С…
  );
 
 ------------------------------------------------------------------------------------------------------------------------
 --******************************          RTU                 *******************************************************--
 ------------------------------------------------------------------------------------------------------------------------
- --Вставка графика нагрузки
+ --Р’СЃС‚Р°РІРєР° РіСЂР°С„РёРєР° РЅР°РіСЂСѓР·РєРё
  PROCEDURE set_halfhour_rtu (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, ad_date DATE);
 
 -----------------------------------------------------------------------------------------------------------------------
-   --Вставка суточных расходов и показаний
+   --Р’СЃС‚Р°РІРєР° СЃСѓС‚РѕС‡РЅС‹С… СЂР°СЃС…РѕРґРѕРІ Рё РїРѕРєР°Р·Р°РЅРёР№
  PROCEDURE set_bill_rtu (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_q2 NUMBER, an_q4 NUMBER, an_erm NUMBER, an_edm NUMBER,
  an_q1m NUMBER, an_q3m NUMBER, an_q2m NUMBER, an_q4m NUMBER, ad_date DATE
  );
@@ -723,14 +723,14 @@ PACKAGE comsrv_pg IS
 ------------------------------------------------------------------------------------------------------------------------
 --******************************          SCHLUM               *******************************************************--
 ------------------------------------------------------------------------------------------------------------------------
- --Вставка текущих (+ ток в нуле)
+ --Р’СЃС‚Р°РІРєР° С‚РµРєСѓС‰РёС… (+ С‚РѕРє РІ РЅСѓР»Рµ)
  PROCEDURE set_curr_power_schlum (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_q2m NUMBER, an_q4m NUMBER, an_freq NUMBER,
  an_cos_fi NUMBER, an_volt1 NUMBER, an_volt2 NUMBER, an_volt3 NUMBER, an_curr1 NUMBER, an_curr2 NUMBER, an_curr3 NUMBER, an_fiu1i1 NUMBER, an_fiu2i2 NUMBER,
  an_fiu3i3 NUMBER, an_fiu1u2 NUMBER, an_fiu1u3 NUMBER, an_fiu2u3 NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_q2 NUMBER, an_q4 NUMBER,
  an_i0 NUMBER, ad_date DATE
  );
 
- --Вставка текущих
+ --Р’СЃС‚Р°РІРєР° С‚РµРєСѓС‰РёС…
  PROCEDURE set_curr_power_schlum (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_q2m NUMBER, an_q4m NUMBER, an_freq NUMBER,
  an_cos_fi NUMBER, an_volt1 NUMBER, an_volt2 NUMBER, an_volt3 NUMBER, an_curr1 NUMBER, an_curr2 NUMBER, an_curr3 NUMBER, an_fiu1i1 NUMBER, an_fiu2i2 NUMBER,
  an_fiu3i3 NUMBER, an_fiu1u2 NUMBER, an_fiu1u3 NUMBER, an_fiu2u3 NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_q2 NUMBER, an_q4 NUMBER,
@@ -738,26 +738,26 @@ PACKAGE comsrv_pg IS
  );
 
 -----------------------------------------------------------------------------------------------------------------------
- --Вставка графика нагрузки
+ --Р’СЃС‚Р°РІРєР° РіСЂР°С„РёРєР° РЅР°РіСЂСѓР·РєРё
  PROCEDURE set_halfhour_schlum (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_q2 NUMBER, an_q4 NUMBER, ad_date DATE,
  an_period NUMBER DEFAULT 30, an_status NUMBER DEFAULT 0
  );
 
 -----------------------------------------------------------------------------------------------------------------------
-  --Вставка суточных
+  --Р’СЃС‚Р°РІРєР° СЃСѓС‚РѕС‡РЅС‹С…
  PROCEDURE set_bill_schlum (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_q2m NUMBER, an_q4m NUMBER, an_aerm NUMBER, an_aedm NUMBER,
  an_aq1m NUMBER, an_aq3m NUMBER, an_aq2m NUMBER, an_aq4m NUMBER, an_berm NUMBER, an_bedm NUMBER, an_bq1m NUMBER, an_bq3m NUMBER, an_bq2m NUMBER, an_bq4m NUMBER,
  an_cerm NUMBER, an_cedm NUMBER, an_cq1m NUMBER, an_cq3m NUMBER, an_cq2m NUMBER, an_cq4m NUMBER, an_derm NUMBER, an_dedm NUMBER, an_dq1m NUMBER, an_dq3m NUMBER,
- an_dq2m NUMBER, an_dq4m NUMBER, av_mtrsn VARCHAR2, an_digits NUMBER,   --Значность счетчика, необходимо передать 6 - A1R_ParamCalc.DPLocE
+ an_dq2m NUMBER, an_dq4m NUMBER, av_mtrsn VARCHAR2, an_digits NUMBER,   --Р—РЅР°С‡РЅРѕСЃС‚СЊ СЃС‡РµС‚С‡РёРєР°, РЅРµРѕР±С…РѕРґРёРјРѕ РїРµСЂРµРґР°С‚СЊ 6 - A1R_ParamCalc.DPLocE
                                                                      ad_date DATE
  );
 
 -----------------------------------------------------------------------------------------------------------------------
-  --Вставка месячных
+  --Р’СЃС‚Р°РІРєР° РјРµСЃСЏС‡РЅС‹С…
  PROCEDURE set_months_schlum (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_q2m NUMBER, an_q4m NUMBER, an_aerm NUMBER,
  an_aedm NUMBER, an_aq1m NUMBER, an_aq3m NUMBER, an_aq2m NUMBER, an_aq4m NUMBER, an_berm NUMBER, an_bedm NUMBER, an_bq1m NUMBER, an_bq3m NUMBER, an_bq2m NUMBER,
  an_bq4m NUMBER, an_cerm NUMBER, an_cedm NUMBER, an_cq1m NUMBER, an_cq3m NUMBER, an_cq2m NUMBER, an_cq4m NUMBER, an_derm NUMBER, an_dedm NUMBER, an_dq1m NUMBER,
- an_dq3m NUMBER, an_dq2m NUMBER, an_dq4m NUMBER, av_mtrsn VARCHAR2, an_digits NUMBER,   --Значность счетчика, необходимо передать 6 - A1R_ParamCalc.DPLocE
+ an_dq3m NUMBER, an_dq2m NUMBER, an_dq4m NUMBER, av_mtrsn VARCHAR2, an_digits NUMBER,   --Р—РЅР°С‡РЅРѕСЃС‚СЊ СЃС‡РµС‚С‡РёРєР°, РЅРµРѕР±С…РѕРґРёРјРѕ РїРµСЂРµРґР°С‚СЊ 6 - A1R_ParamCalc.DPLocE
  ad_date DATE
  );
 
@@ -765,7 +765,7 @@ PACKAGE comsrv_pg IS
  PROCEDURE mark_status_schlum (an_mid NUMBER, at_date_time common_pg.tt_varchar2, at_event_hi common_pg.tt_number, at_event_lo common_pg.tt_number);
 
 ------------------------------------------------------------------------------------------------------------------------
---Вставка графика нагрузки по индукционникам
+--Р’СЃС‚Р°РІРєР° РіСЂР°С„РёРєР° РЅР°РіСЂСѓР·РєРё РїРѕ РёРЅРґСѓРєС†РёРѕРЅРЅРёРєР°Рј
  PROCEDURE set_halfhour_sl_induc (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_q2 NUMBER, an_q4 NUMBER, ad_date DATE,
  an_period NUMBER DEFAULT 30
  );
@@ -773,31 +773,31 @@ PACKAGE comsrv_pg IS
 ------------------------------------------------------------------------------------------------------------------------
   --******************************          Energy              *******************************************************--
   ------------------------------------------------------------------------------------------------------------------------
-  --Вставка текущих
+  --Р’СЃС‚Р°РІРєР° С‚РµРєСѓС‰РёС…
  PROCEDURE set_curr_power_energy (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_freq NUMBER, an_cos_fi NUMBER, an_volt1 NUMBER,
  an_curr1 NUMBER, an_volt2 NUMBER, an_volt3 NUMBER, an_curr2 NUMBER, an_curr3 NUMBER, ad_date DATE
  );
 
 -----------------------------------------------------------------------------------------------------------------------
- --Вставка показаний счетчика
+ --Р’СЃС‚Р°РІРєР° РїРѕРєР°Р·Р°РЅРёР№ СЃС‡РµС‚С‡РёРєР°
  PROCEDURE set_total_energy (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q2 NUMBER, an_q3 NUMBER, an_q4 NUMBER);
 
 -----------------------------------------------------------------------------------------------------------------------
- --Журнал событий
+ --Р–СѓСЂРЅР°Р» СЃРѕР±С‹С‚РёР№
  PROCEDURE mark_energyevent (newmid NUMBER, newev_date DATE, newtype NUMBER, FOUND OUT NUMBER, newl1 NUMBER, newl2 NUMBER, newl3 NUMBER);
 
 -----------------------------------------------------------------------------------------------------------------------
- --Вставка графика нагрузки
+ --Р’СЃС‚Р°РІРєР° РіСЂР°С„РёРєР° РЅР°РіСЂСѓР·РєРё
  PROCEDURE set_halfhour_energy (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_q2 NUMBER, an_q4 NUMBER, ad_date DATE);
 
 -----------------------------------------------------------------------------------------------------------------------
-  --Вставка графика нагрузки (для упращенной енергии)
+  --Р’СЃС‚Р°РІРєР° РіСЂР°С„РёРєР° РЅР°РіСЂСѓР·РєРё (РґР»СЏ СѓРїСЂР°С‰РµРЅРЅРѕР№ РµРЅРµСЂРіРёРё)
  PROCEDURE set_halfhour_energy_simple (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_q2m NUMBER, an_q4m NUMBER, av_mtrsn VARCHAR2,
  an_status NUMBER, ad_date DATE, an_step NUMBER DEFAULT 1 / 48
  );
 
 -----------------------------------------------------------------------------------------------------------------------
-  --Вставка суточных расходов
+  --Р’СЃС‚Р°РІРєР° СЃСѓС‚РѕС‡РЅС‹С… СЂР°СЃС…РѕРґРѕРІ
  PROCEDURE set_bill_energy (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_q2 NUMBER, an_q4 NUMBER, an_aer NUMBER, an_aed NUMBER,
  an_aq1 NUMBER, an_aq3 NUMBER, an_aq2 NUMBER, an_aq4 NUMBER, an_ber NUMBER, an_bed NUMBER, an_bq1 NUMBER, an_bq3 NUMBER, an_bq2 NUMBER, an_bq4 NUMBER,
  an_cer NUMBER, an_ced NUMBER, an_cq1 NUMBER, an_cq3 NUMBER, an_cq2 NUMBER, an_cq4 NUMBER, an_der NUMBER, an_ded NUMBER, an_dq1 NUMBER, an_dq3 NUMBER,
@@ -805,7 +805,7 @@ PACKAGE comsrv_pg IS
  );
 
 ------------------------------------------------------------------------------------------------------------------------
-   --Вставка суточных показаний
+   --Р’СЃС‚Р°РІРєР° СЃСѓС‚РѕС‡РЅС‹С… РїРѕРєР°Р·Р°РЅРёР№
  PROCEDURE set_bill_energy_m (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_q2m NUMBER, an_q4m NUMBER, an_aerm NUMBER,
  an_aedm NUMBER, an_aq1m NUMBER, an_aq3m NUMBER, an_aq2m NUMBER, an_aq4m NUMBER, an_berm NUMBER, an_bedm NUMBER, an_bq1m NUMBER, an_bq3m NUMBER, an_bq2m NUMBER,
  an_bq4m NUMBER, an_cerm NUMBER, an_cedm NUMBER, an_cq1m NUMBER, an_cq3m NUMBER, an_cq2m NUMBER, an_cq4m NUMBER, an_derm NUMBER, an_dedm NUMBER, an_dq1m NUMBER,
@@ -813,7 +813,7 @@ PACKAGE comsrv_pg IS
  );
 
 ------------------------------------------------------------------------------------------------------------------------
-   --Вставка месячных расходов
+   --Р’СЃС‚Р°РІРєР° РјРµСЃСЏС‡РЅС‹С… СЂР°СЃС…РѕРґРѕРІ
  PROCEDURE set_months_energy (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_q2 NUMBER, an_q4 NUMBER, an_aer NUMBER, an_aed NUMBER,
  an_aq1 NUMBER, an_aq3 NUMBER, an_aq2 NUMBER, an_aq4 NUMBER, an_ber NUMBER, an_bed NUMBER, an_bq1 NUMBER, an_bq3 NUMBER, an_bq2 NUMBER, an_bq4 NUMBER,
  an_cer NUMBER, an_ced NUMBER, an_cq1 NUMBER, an_cq3 NUMBER, an_cq2 NUMBER, an_cq4 NUMBER, an_der NUMBER, an_ded NUMBER, an_dq1 NUMBER, an_dq3 NUMBER,
@@ -821,7 +821,7 @@ PACKAGE comsrv_pg IS
  );
 
 ------------------------------------------------------------------------------------------------------------------------
-  --Вставка месячных показаний
+  --Р’СЃС‚Р°РІРєР° РјРµСЃСЏС‡РЅС‹С… РїРѕРєР°Р·Р°РЅРёР№
  PROCEDURE set_months_energy_m (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_q2m NUMBER, an_q4m NUMBER, an_aerm NUMBER,
  an_aedm NUMBER, an_aq1m NUMBER, an_aq3m NUMBER, an_aq2m NUMBER, an_aq4m NUMBER, an_berm NUMBER, an_bedm NUMBER, an_bq1m NUMBER, an_bq3m NUMBER, an_bq2m NUMBER,
  an_bq4m NUMBER, an_cerm NUMBER, an_cedm NUMBER, an_cq1m NUMBER, an_cq3m NUMBER, an_cq2m NUMBER, an_cq4m NUMBER, an_derm NUMBER, an_dedm NUMBER, an_dq1m NUMBER,
@@ -831,33 +831,33 @@ PACKAGE comsrv_pg IS
 ------------------------------------------------------------------------------------------------------------------------
  --******************************          Oblik              *******************************************************--
  ------------------------------------------------------------------------------------------------------------------------
- --Вставка текущих
+ --Р’СЃС‚Р°РІРєР° С‚РµРєСѓС‰РёС…
  PROCEDURE set_curr_power_oblik (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_freq NUMBER, an_cos_fi NUMBER, an_volt1 NUMBER,
  an_curr1 NUMBER, an_volt2 NUMBER, an_volt3 NUMBER, an_curr2 NUMBER, an_curr3 NUMBER, ad_date DATE
  );
 
 -----------------------------------------------------------------------------------------------------------------------
- --Вставка показаний счетчика
+ --Р’СЃС‚Р°РІРєР° РїРѕРєР°Р·Р°РЅРёР№ СЃС‡РµС‚С‡РёРєР°
  PROCEDURE set_total_oblik (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_q2 NUMBER, an_q4 NUMBER);
 
 -----------------------------------------------------------------------------------------------------------------------
- --Вставка минутного профиля
+ --Р’СЃС‚Р°РІРєР° РјРёРЅСѓС‚РЅРѕРіРѕ РїСЂРѕС„РёР»СЏ
  PROCEDURE set_profile_oblik (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_q2 NUMBER, an_q4 NUMBER, ad_date DATE);
 
 ------------------------------------------------------------------------------------------------------------------------
- --Вставка минутного профиля по индукционникам
+ --Р’СЃС‚Р°РІРєР° РјРёРЅСѓС‚РЅРѕРіРѕ РїСЂРѕС„РёР»СЏ РїРѕ РёРЅРґСѓРєС†РёРѕРЅРЅРёРєР°Рј
  PROCEDURE set_profile_oblik_induc (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_q2 NUMBER, an_q4 NUMBER, ad_date DATE);
 
 -----------------------------------------------------------------------------------------------------------------------
- --Вставка графика нагрузки
+ --Р’СЃС‚Р°РІРєР° РіСЂР°С„РёРєР° РЅР°РіСЂСѓР·РєРё
  PROCEDURE set_halfhour_oblik (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_q2 NUMBER, an_q4 NUMBER, ad_date DATE);
 
 ------------------------------------------------------------------------------------------------------------------------
- --Вставка графика нагрузки по индукционникам
+ --Р’СЃС‚Р°РІРєР° РіСЂР°С„РёРєР° РЅР°РіСЂСѓР·РєРё РїРѕ РёРЅРґСѓРєС†РёРѕРЅРЅРёРєР°Рј
  PROCEDURE set_halfhour_oblik_induc (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_q2 NUMBER, an_q4 NUMBER, ad_date DATE);
 
 -----------------------------------------------------------------------------------------------------------------------
-  --Вставка суточных расходов
+  --Р’СЃС‚Р°РІРєР° СЃСѓС‚РѕС‡РЅС‹С… СЂР°СЃС…РѕРґРѕРІ
  PROCEDURE set_bill_oblik (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_q2 NUMBER, an_q4 NUMBER, an_aer NUMBER, an_aed NUMBER,
  an_aq1 NUMBER, an_aq3 NUMBER, an_aq2 NUMBER, an_aq4 NUMBER, an_ber NUMBER, an_bed NUMBER, an_bq1 NUMBER, an_bq3 NUMBER, an_bq2 NUMBER, an_bq4 NUMBER,
  an_cer NUMBER, an_ced NUMBER, an_cq1 NUMBER, an_cq3 NUMBER, an_cq2 NUMBER, an_cq4 NUMBER, an_der NUMBER, an_ded NUMBER, an_dq1 NUMBER, an_dq3 NUMBER,
@@ -865,7 +865,7 @@ PACKAGE comsrv_pg IS
  );
 
 -----------------------------------------------------------------------------------------------------------------------
-  --Вставка суточных расходов по индукционникам
+  --Р’СЃС‚Р°РІРєР° СЃСѓС‚РѕС‡РЅС‹С… СЂР°СЃС…РѕРґРѕРІ РїРѕ РёРЅРґСѓРєС†РёРѕРЅРЅРёРєР°Рј
  PROCEDURE set_bill_oblik_induc (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_q2 NUMBER, an_q4 NUMBER, an_aer NUMBER, an_aed NUMBER,
  an_aq1 NUMBER, an_aq3 NUMBER, an_aq2 NUMBER, an_aq4 NUMBER, an_ber NUMBER, an_bed NUMBER, an_bq1 NUMBER, an_bq3 NUMBER, an_bq2 NUMBER, an_bq4 NUMBER,
  an_cer NUMBER, an_ced NUMBER, an_cq1 NUMBER, an_cq3 NUMBER, an_cq2 NUMBER, an_cq4 NUMBER, an_der NUMBER, an_ded NUMBER, an_dq1 NUMBER, an_dq3 NUMBER,
@@ -873,7 +873,7 @@ PACKAGE comsrv_pg IS
  );
 
 ------------------------------------------------------------------------------------------------------------------------
-   --Вставка суточных показаний
+   --Р’СЃС‚Р°РІРєР° СЃСѓС‚РѕС‡РЅС‹С… РїРѕРєР°Р·Р°РЅРёР№
  PROCEDURE set_bill_oblik_m (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_q2m NUMBER, an_q4m NUMBER, an_aerm NUMBER,
  an_aedm NUMBER, an_aq1m NUMBER, an_aq3m NUMBER, an_aq2m NUMBER, an_aq4m NUMBER, an_berm NUMBER, an_bedm NUMBER, an_bq1m NUMBER, an_bq3m NUMBER, an_bq2m NUMBER,
  an_bq4m NUMBER, an_cerm NUMBER, an_cedm NUMBER, an_cq1m NUMBER, an_cq3m NUMBER, an_cq2m NUMBER, an_cq4m NUMBER, an_derm NUMBER, an_dedm NUMBER, an_dq1m NUMBER,
@@ -881,7 +881,7 @@ PACKAGE comsrv_pg IS
  );
 
 ------------------------------------------------------------------------------------------------------------------------
-   --Вставка суточных показаний по индукционникам
+   --Р’СЃС‚Р°РІРєР° СЃСѓС‚РѕС‡РЅС‹С… РїРѕРєР°Р·Р°РЅРёР№ РїРѕ РёРЅРґСѓРєС†РёРѕРЅРЅРёРєР°Рј
  PROCEDURE set_bill_oblik_m_induc (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_q2m NUMBER, an_q4m NUMBER, an_aerm NUMBER,
  an_aedm NUMBER, an_aq1m NUMBER, an_aq3m NUMBER, an_aq2m NUMBER, an_aq4m NUMBER, an_berm NUMBER, an_bedm NUMBER, an_bq1m NUMBER, an_bq3m NUMBER, an_bq2m NUMBER,
  an_bq4m NUMBER, an_cerm NUMBER, an_cedm NUMBER, an_cq1m NUMBER, an_cq3m NUMBER, an_cq2m NUMBER, an_cq4m NUMBER, an_derm NUMBER, an_dedm NUMBER, an_dq1m NUMBER,
@@ -889,7 +889,7 @@ PACKAGE comsrv_pg IS
  );
 
 ------------------------------------------------------------------------------------------------------------------------
-   --Вставка месячных расходов
+   --Р’СЃС‚Р°РІРєР° РјРµСЃСЏС‡РЅС‹С… СЂР°СЃС…РѕРґРѕРІ
  PROCEDURE set_months_oblik (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_q2 NUMBER, an_q4 NUMBER, an_aer NUMBER, an_aed NUMBER,
  an_aq1 NUMBER, an_aq3 NUMBER, an_aq2 NUMBER, an_aq4 NUMBER, an_ber NUMBER, an_bed NUMBER, an_bq1 NUMBER, an_bq3 NUMBER, an_bq2 NUMBER, an_bq4 NUMBER,
  an_cer NUMBER, an_ced NUMBER, an_cq1 NUMBER, an_cq3 NUMBER, an_cq2 NUMBER, an_cq4 NUMBER, an_der NUMBER, an_ded NUMBER, an_dq1 NUMBER, an_dq3 NUMBER,
@@ -897,7 +897,7 @@ PACKAGE comsrv_pg IS
  );
 
 ------------------------------------------------------------------------------------------------------------------------
-   --Вставка месячных расходов по индукционникам
+   --Р’СЃС‚Р°РІРєР° РјРµСЃСЏС‡РЅС‹С… СЂР°СЃС…РѕРґРѕРІ РїРѕ РёРЅРґСѓРєС†РёРѕРЅРЅРёРєР°Рј
  PROCEDURE set_months_oblik_induc (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_q2 NUMBER, an_q4 NUMBER, an_aer NUMBER, an_aed NUMBER,
  an_aq1 NUMBER, an_aq3 NUMBER, an_aq2 NUMBER, an_aq4 NUMBER, an_ber NUMBER, an_bed NUMBER, an_bq1 NUMBER, an_bq3 NUMBER, an_bq2 NUMBER, an_bq4 NUMBER,
  an_cer NUMBER, an_ced NUMBER, an_cq1 NUMBER, an_cq3 NUMBER, an_cq2 NUMBER, an_cq4 NUMBER, an_der NUMBER, an_ded NUMBER, an_dq1 NUMBER, an_dq3 NUMBER,
@@ -905,7 +905,7 @@ PACKAGE comsrv_pg IS
  );
 
 ------------------------------------------------------------------------------------------------------------------------
-  --Вставка месячных показаний
+  --Р’СЃС‚Р°РІРєР° РјРµСЃСЏС‡РЅС‹С… РїРѕРєР°Р·Р°РЅРёР№
  PROCEDURE set_months_oblik_m (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_q2m NUMBER, an_q4m NUMBER, an_aerm NUMBER,
  an_aedm NUMBER, an_aq1m NUMBER, an_aq3m NUMBER, an_aq2m NUMBER, an_aq4m NUMBER, an_berm NUMBER, an_bedm NUMBER, an_bq1m NUMBER, an_bq3m NUMBER, an_bq2m NUMBER,
  an_bq4m NUMBER, an_cerm NUMBER, an_cedm NUMBER, an_cq1m NUMBER, an_cq3m NUMBER, an_cq2m NUMBER, an_cq4m NUMBER, an_derm NUMBER, an_dedm NUMBER, an_dq1m NUMBER,
@@ -913,7 +913,7 @@ PACKAGE comsrv_pg IS
  );
 
 ------------------------------------------------------------------------------------------------------------------------
-  --Вставка месячных показаний по индукционникам
+  --Р’СЃС‚Р°РІРєР° РјРµСЃСЏС‡РЅС‹С… РїРѕРєР°Р·Р°РЅРёР№ РїРѕ РёРЅРґСѓРєС†РёРѕРЅРЅРёРєР°Рј
  PROCEDURE set_months_oblik_m_induc (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_q2m NUMBER, an_q4m NUMBER, an_aerm NUMBER,
  an_aedm NUMBER, an_aq1m NUMBER, an_aq3m NUMBER, an_aq2m NUMBER, an_aq4m NUMBER, an_berm NUMBER, an_bedm NUMBER, an_bq1m NUMBER, an_bq3m NUMBER, an_bq2m NUMBER,
  an_bq4m NUMBER, an_cerm NUMBER, an_cedm NUMBER, an_cq1m NUMBER, an_cq3m NUMBER, an_cq2m NUMBER, an_cq4m NUMBER, an_derm NUMBER, an_dedm NUMBER, an_dq1m NUMBER,
@@ -921,14 +921,14 @@ PACKAGE comsrv_pg IS
  );
 
 ------------------------------------------------------------------------------------------------------------------------
---Выдача ТУ
+--Р’С‹РґР°С‡Р° РўРЈ
  FUNCTION put_tu_oblik (an_mid NUMBER, an_clamp NUMBER DEFAULT 0)
   RETURN NUMBER;
 
 ------------------------------------------------------------------------------------------------------------------------
---******************************          АРГО             *******************************************************--
+--******************************          РђР Р“Рћ             *******************************************************--
 ------------------------------------------------------------------------------------------------------------------------
- --Вставка текущих
+ --Р’СЃС‚Р°РІРєР° С‚РµРєСѓС‰РёС…
  PROCEDURE set_curr_power_argo (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_q2m NUMBER, an_q4m NUMBER, an_freq NUMBER,
  an_cos_fi NUMBER, an_volt1 NUMBER, an_volt2 NUMBER, an_volt3 NUMBER, an_curr1 NUMBER, an_curr2 NUMBER, an_curr3 NUMBER, an_fiu1i1 NUMBER, an_fiu2i2 NUMBER,
  an_fiu3i3 NUMBER, an_fiu1u2 NUMBER, an_fiu1u3 NUMBER, an_fiu2u3 NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_q2 NUMBER, an_q4 NUMBER,
@@ -936,11 +936,11 @@ PACKAGE comsrv_pg IS
  );
 
 -----------------------------------------------------------------------------------------------------------------------
- --Вставка графика нагрузки
+ --Р’СЃС‚Р°РІРєР° РіСЂР°С„РёРєР° РЅР°РіСЂСѓР·РєРё
  PROCEDURE set_halfhour_argo (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, ad_date DATE);
 
 ------------------------------------------------------------------------------------------------------------------------
-  --Вставка суточных
+  --Р’СЃС‚Р°РІРєР° СЃСѓС‚РѕС‡РЅС‹С…
  PROCEDURE set_bill_argo (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_q2m NUMBER, an_q4m NUMBER, an_aerm NUMBER, an_aedm NUMBER,
  an_aq1m NUMBER, an_aq3m NUMBER, an_aq2m NUMBER, an_aq4m NUMBER, an_berm NUMBER, an_bedm NUMBER, an_bq1m NUMBER, an_bq3m NUMBER, an_bq2m NUMBER, an_bq4m NUMBER,
  an_cerm NUMBER, an_cedm NUMBER, an_cq1m NUMBER, an_cq3m NUMBER, an_cq2m NUMBER, an_cq4m NUMBER, an_derm NUMBER, an_dedm NUMBER, an_dq1m NUMBER, an_dq3m NUMBER,
@@ -948,33 +948,33 @@ PACKAGE comsrv_pg IS
  );
 
 ------------------------------------------------------------------------------------------------------------------------
-  --Вставка месячных
+  --Р’СЃС‚Р°РІРєР° РјРµСЃСЏС‡РЅС‹С…
  PROCEDURE set_months_argo (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_q2m NUMBER, an_q4m NUMBER, an_aerm NUMBER, an_aedm NUMBER,
  an_aq1m NUMBER, an_aq3m NUMBER, an_aq2m NUMBER, an_aq4m NUMBER, an_berm NUMBER, an_bedm NUMBER, an_bq1m NUMBER, an_bq3m NUMBER, an_bq2m NUMBER, an_bq4m NUMBER,
  an_cerm NUMBER, an_cedm NUMBER, an_cq1m NUMBER, an_cq3m NUMBER, an_cq2m NUMBER, an_cq4m NUMBER, an_derm NUMBER, an_dedm NUMBER, an_dq1m NUMBER, an_dq3m NUMBER,
- an_dq2m NUMBER, an_dq4m NUMBER, av_mtrsn VARCHAR2, an_digits NUMBER,   --Значность счетчика, необходимо передать соответствующую АРГО
-                                                                        --( для A1R 6 - A1R_ParamCalc.DPLocE )
+ an_dq2m NUMBER, an_dq4m NUMBER, av_mtrsn VARCHAR2, an_digits NUMBER,   --Р—РЅР°С‡РЅРѕСЃС‚СЊ СЃС‡РµС‚С‡РёРєР°, РЅРµРѕР±С…РѕРґРёРјРѕ РїРµСЂРµРґР°С‚СЊ СЃРѕРѕС‚РІРµС‚СЃС‚РІСѓСЋС‰СѓСЋ РђР Р“Рћ
+                                                                        --( РґР»СЏ A1R 6 - A1R_ParamCalc.DPLocE )
                                                                      ad_date DATE
  );
 
 ------------------------------------------------------------------------------------------------------------------------
-  --Вставка событий
+  --Р’СЃС‚Р°РІРєР° СЃРѕР±С‹С‚РёР№
  PROCEDURE mark_status_argo (an_mid NUMBER, at_date_time common_pg.tt_varchar2, at_event_hi common_pg.tt_number, at_event_lo common_pg.tt_number);
 
 ------------------------------------------------------------------------------------------------------------------------
---******************************          Меркурий             *******************************************************--
+--******************************          РњРµСЂРєСѓСЂРёР№             *******************************************************--
 -----------------------------------------------------------------------------------------------------------------------
- --Вставка показаний счетчика
+ --Р’СЃС‚Р°РІРєР° РїРѕРєР°Р·Р°РЅРёР№ СЃС‡РµС‚С‡РёРєР°
  PROCEDURE set_total_mercury (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_q2 NUMBER, an_q4 NUMBER);
 
 ------------------------------------------------------------------------------------------------------------------------
---Вставка текущих
+--Р’СЃС‚Р°РІРєР° С‚РµРєСѓС‰РёС…
  PROCEDURE set_curr_power_mercury (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_freq NUMBER, an_cos_fi NUMBER, an_volt1 NUMBER,
  an_curr1 NUMBER, an_volt2 NUMBER, an_volt3 NUMBER, an_curr2 NUMBER, an_curr3 NUMBER, an_fiu1u2 NUMBER, an_fiu1u3 NUMBER, an_fiu2u3 NUMBER, ad_date DATE
  );
 
 ------------------------------------------------------------------------------------------------------------------------
-  --Вставка суточных расходов
+  --Р’СЃС‚Р°РІРєР° СЃСѓС‚РѕС‡РЅС‹С… СЂР°СЃС…РѕРґРѕРІ
  PROCEDURE set_bill_mercury (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_q2 NUMBER, an_q4 NUMBER, an_aer NUMBER, an_aed NUMBER,
  an_aq1 NUMBER, an_aq3 NUMBER, an_aq2 NUMBER, an_aq4 NUMBER, an_ber NUMBER, an_bed NUMBER, an_bq1 NUMBER, an_bq3 NUMBER, an_bq2 NUMBER, an_bq4 NUMBER,
  an_cer NUMBER, an_ced NUMBER, an_cq1 NUMBER, an_cq3 NUMBER, an_cq2 NUMBER, an_cq4 NUMBER, an_der NUMBER, an_ded NUMBER, an_dq1 NUMBER, an_dq3 NUMBER,
@@ -982,7 +982,7 @@ PACKAGE comsrv_pg IS
  );
 
 ------------------------------------------------------------------------------------------------------------------------
-   --Вставка суточных показаний
+   --Р’СЃС‚Р°РІРєР° СЃСѓС‚РѕС‡РЅС‹С… РїРѕРєР°Р·Р°РЅРёР№
  PROCEDURE set_bill_mercury_m (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_q2m NUMBER, an_q4m NUMBER, an_aerm NUMBER,
  an_aedm NUMBER, an_aq1m NUMBER, an_aq3m NUMBER, an_aq2m NUMBER, an_aq4m NUMBER, an_berm NUMBER, an_bedm NUMBER, an_bq1m NUMBER, an_bq3m NUMBER, an_bq2m NUMBER,
  an_bq4m NUMBER, an_cerm NUMBER, an_cedm NUMBER, an_cq1m NUMBER, an_cq3m NUMBER, an_cq2m NUMBER, an_cq4m NUMBER, an_derm NUMBER, an_dedm NUMBER, an_dq1m NUMBER,
@@ -990,7 +990,7 @@ PACKAGE comsrv_pg IS
  );
 
 ------------------------------------------------------------------------------------------------------------------------
-   --Вставка месячных расходов
+   --Р’СЃС‚Р°РІРєР° РјРµСЃСЏС‡РЅС‹С… СЂР°СЃС…РѕРґРѕРІ
  PROCEDURE set_months_mercury (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_q2 NUMBER, an_q4 NUMBER, an_aer NUMBER, an_aed NUMBER,
  an_aq1 NUMBER, an_aq3 NUMBER, an_aq2 NUMBER, an_aq4 NUMBER, an_ber NUMBER, an_bed NUMBER, an_bq1 NUMBER, an_bq3 NUMBER, an_bq2 NUMBER, an_bq4 NUMBER,
  an_cer NUMBER, an_ced NUMBER, an_cq1 NUMBER, an_cq3 NUMBER, an_cq2 NUMBER, an_cq4 NUMBER, an_der NUMBER, an_ded NUMBER, an_dq1 NUMBER, an_dq3 NUMBER,
@@ -998,7 +998,7 @@ PACKAGE comsrv_pg IS
  );
 
 ------------------------------------------------------------------------------------------------------------------------
-  --Вставка месячных показаний
+  --Р’СЃС‚Р°РІРєР° РјРµСЃСЏС‡РЅС‹С… РїРѕРєР°Р·Р°РЅРёР№
  PROCEDURE set_months_mercury_m (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_q2m NUMBER, an_q4m NUMBER, an_aerm NUMBER,
  an_aedm NUMBER, an_aq1m NUMBER, an_aq3m NUMBER, an_aq2m NUMBER, an_aq4m NUMBER, an_berm NUMBER, an_bedm NUMBER, an_bq1m NUMBER, an_bq3m NUMBER, an_bq2m NUMBER,
  an_bq4m NUMBER, an_cerm NUMBER, an_cedm NUMBER, an_cq1m NUMBER, an_cq3m NUMBER, an_cq2m NUMBER, an_cq4m NUMBER, an_derm NUMBER, an_dedm NUMBER, an_dq1m NUMBER,
@@ -1006,13 +1006,13 @@ PACKAGE comsrv_pg IS
  );
 
 ------------------------------------------------------------------------------------------------------------------------
- --Вставка графика нагрузки
+ --Р’СЃС‚Р°РІРєР° РіСЂР°С„РёРєР° РЅР°РіСЂСѓР·РєРё
  PROCEDURE set_halfhour_mercury (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_q2 NUMBER, an_q4 NUMBER, ad_date DATE);
 
 ------------------------------------------------------------------------------------------------------------------------
 --******************************          LZQM             *******************************************************--
 -----------------------------------------------------------------------------------------------------------------------
- --Вставка показаний счетчика
+ --Р’СЃС‚Р°РІРєР° РїРѕРєР°Р·Р°РЅРёР№ СЃС‡РµС‚С‡РёРєР°
  PROCEDURE set_total_lzqm (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_q2 NUMBER, an_q4 NUMBER);
 
 -----------------------------------------------------------------------------------------------------------------------
@@ -1057,58 +1057,58 @@ PACKAGE comsrv_pg IS
 ------------------------------------------------------------------------------------------------------------------------
 --******************************          SET-4               *******************************************************--
 ------------------------------------------------------------------------------------------------------------------------
- --Вставка текущих
+ --Р’СЃС‚Р°РІРєР° С‚РµРєСѓС‰РёС…
  PROCEDURE set_curr_power_set4 (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_freq NUMBER, an_cos_fi NUMBER, an_volt1 NUMBER,
  an_volt2 NUMBER, an_volt3 NUMBER, an_curr1 NUMBER, an_curr2 NUMBER, an_curr3 NUMBER, an_fiu1i1 NUMBER, an_fiu2i2 NUMBER, an_fiu3i3 NUMBER, an_er NUMBER,
  an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, ad_date DATE
  );
 
 -----------------------------------------------------------------------------------------------------------------------
- --Вставка графика нагрузки
+ --Р’СЃС‚Р°РІРєР° РіСЂР°С„РёРєР° РЅР°РіСЂСѓР·РєРё
  PROCEDURE set_halfhour_set4 (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, ad_date DATE);
 
 ------------------------------------------------------------------------------------------------------------------------
-  --Вставка суточных расходов
+  --Р’СЃС‚Р°РІРєР° СЃСѓС‚РѕС‡РЅС‹С… СЂР°СЃС…РѕРґРѕРІ
  PROCEDURE set_bill_set4 (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_aer NUMBER, an_aed NUMBER, an_aq1 NUMBER, an_aq3 NUMBER,
  an_ber NUMBER, an_bed NUMBER, an_bq1 NUMBER, an_bq3 NUMBER, an_cer NUMBER, an_ced NUMBER, an_cq1 NUMBER, an_cq3 NUMBER, an_der NUMBER, an_ded NUMBER,
  an_dq1 NUMBER, an_dq3 NUMBER, av_mtrsn VARCHAR2, ad_date DATE
  );
 
 ------------------------------------------------------------------------------------------------------------------------
-   --Вставка суточных показаний
+   --Р’СЃС‚Р°РІРєР° СЃСѓС‚РѕС‡РЅС‹С… РїРѕРєР°Р·Р°РЅРёР№
  PROCEDURE set_bill_set4_m (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_aerm NUMBER, an_aedm NUMBER, an_aq1m NUMBER,
  an_aq3m NUMBER, an_berm NUMBER, an_bedm NUMBER, an_bq1m NUMBER, an_bq3m NUMBER, an_cerm NUMBER, an_cedm NUMBER, an_cq1m NUMBER, an_cq3m NUMBER, an_derm NUMBER,
  an_dedm NUMBER, an_dq1m NUMBER, an_dq3m NUMBER, ad_date DATE
  );
 
 ------------------------------------------------------------------------------------------------------------------------
-   --Вставка месячных расходов
+   --Р’СЃС‚Р°РІРєР° РјРµСЃСЏС‡РЅС‹С… СЂР°СЃС…РѕРґРѕРІ
  PROCEDURE set_months_set4 (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_aer NUMBER, an_aed NUMBER, an_aq1 NUMBER, an_aq3 NUMBER,
  an_ber NUMBER, an_bed NUMBER, an_bq1 NUMBER, an_bq3 NUMBER, an_cer NUMBER, an_ced NUMBER, an_cq1 NUMBER, an_cq3 NUMBER, an_der NUMBER, an_ded NUMBER,
  an_dq1 NUMBER, an_dq3 NUMBER, av_mtrsn VARCHAR2, ad_date DATE
  );
 
 ------------------------------------------------------------------------------------------------------------------------
-  --Вставка месячных показаний
+  --Р’СЃС‚Р°РІРєР° РјРµСЃСЏС‡РЅС‹С… РїРѕРєР°Р·Р°РЅРёР№
  PROCEDURE set_months_set4_m (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_aerm NUMBER, an_aedm NUMBER, an_aq1m NUMBER,
  an_aq3m NUMBER, an_berm NUMBER, an_bedm NUMBER, an_bq1m NUMBER, an_bq3m NUMBER, an_cerm NUMBER, an_cedm NUMBER, an_cq1m NUMBER, an_cq3m NUMBER, an_derm NUMBER,
  an_dedm NUMBER, an_dq1m NUMBER, an_dq3m NUMBER, ad_date DATE
  );
 
 ------------------------------------------------------------------------------------------------------------------------
--- Журнал событий SET4
+-- Р–СѓСЂРЅР°Р» СЃРѕР±С‹С‚РёР№ SET4
  PROCEDURE mark_set4event (newmid NUMBER, newev_date DATE, newtype NUMBER, FOUND OUT NUMBER);
 
 ------------------------------------------------------------------------------------------------------------------------
 --******************************          SEB-2A.07            *******************************************************--
 ------------------------------------------------------------------------------------------------------------------------
--- Журнал событий SEB-2A.07
+-- Р–СѓСЂРЅР°Р» СЃРѕР±С‹С‚РёР№ SEB-2A.07
  PROCEDURE mark_seb2a07event (newmid NUMBER, newev_date DATE, newtype NUMBER, FOUND OUT NUMBER);
 
 ------------------------------------------------------------------------------------------------------------------------
 --**********************************          CE-304    CE-6850        ***********************************************--
 ------------------------------------------------------------------------------------------------------------------------
---Вставка текущих
+--Р’СЃС‚Р°РІРєР° С‚РµРєСѓС‰РёС…
  PROCEDURE set_curr_power_ce304 (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_q2m NUMBER, an_q4m NUMBER, an_freq NUMBER,
  an_cos_fi NUMBER, an_volt1 NUMBER, an_volt2 NUMBER, an_volt3 NUMBER, an_curr1 NUMBER, an_curr2 NUMBER, an_curr3 NUMBER, an_fiu1i1 NUMBER, an_fiu2i2 NUMBER,
  an_fiu3i3 NUMBER, an_fiu1u2 NUMBER, an_fiu1u3 NUMBER, an_fiu2u3 NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_q2 NUMBER, an_q4 NUMBER,
@@ -1116,11 +1116,11 @@ PACKAGE comsrv_pg IS
  );
 
 -----------------------------------------------------------------------------------------------------------------------
- --Вставка графика нагрузки
+ --Р’СЃС‚Р°РІРєР° РіСЂР°С„РёРєР° РЅР°РіСЂСѓР·РєРё
  PROCEDURE set_halfhour_ce304 (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_q2 NUMBER, an_q4 NUMBER, an_status NUMBER, ad_date DATE);
 
 ------------------------------------------------------------------------------------------------------------------------
-   --Вставка суточных показаний
+   --Р’СЃС‚Р°РІРєР° СЃСѓС‚РѕС‡РЅС‹С… РїРѕРєР°Р·Р°РЅРёР№
  PROCEDURE set_bill_ce304_m (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_q2m NUMBER, an_q4m NUMBER, an_aerm NUMBER,
  an_aedm NUMBER, an_aq1m NUMBER, an_aq3m NUMBER, an_aq2m NUMBER, an_aq4m NUMBER, an_berm NUMBER, an_bedm NUMBER, an_bq1m NUMBER, an_bq3m NUMBER, an_bq2m NUMBER,
  an_bq4m NUMBER, an_cerm NUMBER, an_cedm NUMBER, an_cq1m NUMBER, an_cq3m NUMBER, an_cq2m NUMBER, an_cq4m NUMBER, an_derm NUMBER, an_dedm NUMBER, an_dq1m NUMBER,
@@ -1128,7 +1128,7 @@ PACKAGE comsrv_pg IS
  );
 
 ------------------------------------------------------------------------------------------------------------------------
-   --Вставка месячных показаний
+   --Р’СЃС‚Р°РІРєР° РјРµСЃСЏС‡РЅС‹С… РїРѕРєР°Р·Р°РЅРёР№
  PROCEDURE set_months_ce304_m (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_q2m NUMBER, an_q4m NUMBER, an_aerm NUMBER,
  an_aedm NUMBER, an_aq1m NUMBER, an_aq3m NUMBER, an_aq2m NUMBER, an_aq4m NUMBER, an_berm NUMBER, an_bedm NUMBER, an_bq1m NUMBER, an_bq3m NUMBER, an_bq2m NUMBER,
  an_bq4m NUMBER, an_cerm NUMBER, an_cedm NUMBER, an_cq1m NUMBER, an_cq3m NUMBER, an_cq2m NUMBER, an_cq4m NUMBER, an_derm NUMBER, an_dedm NUMBER, an_dq1m NUMBER,
@@ -1136,7 +1136,7 @@ PACKAGE comsrv_pg IS
  );
 
  ------------------------------------------------------------------------------------------------------------------------
--- журнал событий
+-- Р¶СѓСЂРЅР°Р» СЃРѕР±С‹С‚РёР№
  PROCEDURE mark_ce304event (newmid NUMBER, newev_date DATE, newtype NUMBER, FOUND OUT NUMBER, newstate NUMBER);
 
 ------------------------------------------------------------------------------------------------------------------------
@@ -1151,50 +1151,50 @@ PACKAGE comsrv_pg IS
 ------------------------------------------------------------------------------------------------------------------------
  --******************************          A1800             *******************************************************--
  ------------------------------------------------------------------------------------------------------------------------
- --Вставка текущих
+ --Р’СЃС‚Р°РІРєР° С‚РµРєСѓС‰РёС…
  PROCEDURE set_curr_power_a1800 (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_freq NUMBER, an_cos_fi NUMBER, an_volt1 NUMBER,
  an_volt2 NUMBER, an_volt3 NUMBER, an_curr1 NUMBER, an_curr2 NUMBER, an_curr3 NUMBER, an_fiu1u2 NUMBER, an_fiu1u3 NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER,
  an_q3 NUMBER, ad_date DATE
  );
 
 ------------------------------------------------------------------------------------------------------------------------
- --Вставка графика нагрузки
+ --Р’СЃС‚Р°РІРєР° РіСЂР°С„РёРєР° РЅР°РіСЂСѓР·РєРё
  PROCEDURE set_halfhour_a1800 (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_status NUMBER, ad_date DATE);
 
 ------------------------------------------------------------------------------------------------------------------------
-  --Вставка суточных
+  --Р’СЃС‚Р°РІРєР° СЃСѓС‚РѕС‡РЅС‹С…
  PROCEDURE set_bill_a1800 (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_aerm NUMBER, an_aedm NUMBER, an_aq1m NUMBER,
  an_aq3m NUMBER, an_berm NUMBER, an_bedm NUMBER, an_bq1m NUMBER, an_bq3m NUMBER, an_cerm NUMBER, an_cedm NUMBER, an_cq1m NUMBER, an_cq3m NUMBER, an_derm NUMBER,
  an_dedm NUMBER, an_dq1m NUMBER, an_dq3m NUMBER, av_mtrsn VARCHAR2, ad_date DATE
  );
 
 ------------------------------------------------------------------------------------------------------------------------
-  --Вставка месячных
+  --Р’СЃС‚Р°РІРєР° РјРµСЃСЏС‡РЅС‹С…
  PROCEDURE set_months_a1800 (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_aerm NUMBER, an_aedm NUMBER, an_aq1m NUMBER,
  an_aq3m NUMBER, an_berm NUMBER, an_bedm NUMBER, an_bq1m NUMBER, an_bq3m NUMBER, an_cerm NUMBER, an_cedm NUMBER, an_cq1m NUMBER, an_cq3m NUMBER, an_derm NUMBER,
  an_dedm NUMBER, an_dq1m NUMBER, an_dq3m NUMBER, av_mtrsn VARCHAR2, ad_date DATE
  );
 
 ------------------------------------------------------------------------------------------------------------------------
- --Журнал событий
+ --Р–СѓСЂРЅР°Р» СЃРѕР±С‹С‚РёР№
  PROCEDURE mark_a1800event (newmid NUMBER, newev_date DATE, newtype NUMBER, FOUND OUT NUMBER);
 
 ------------------------------------------------------------------------------------------------------------------------
  --******************************          EMS             *******************************************************--
  ------------------------------------------------------------------------------------------------------------------------
 
- --Вставка текущих
+ --Р’СЃС‚Р°РІРєР° С‚РµРєСѓС‰РёС…
  PROCEDURE set_curr_power_ems (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, ad_date DATE);
 
 ------------------------------------------------------------------------------------------------------------------------
-  --Вставка суточных
+  --Р’СЃС‚Р°РІРєР° СЃСѓС‚РѕС‡РЅС‹С…
  PROCEDURE set_bill_ems (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_aerm NUMBER, an_aedm NUMBER, an_aq1m NUMBER, an_aq3m NUMBER,
  an_berm NUMBER, an_bedm NUMBER, an_bq1m NUMBER, an_bq3m NUMBER, an_cerm NUMBER, an_cedm NUMBER, an_cq1m NUMBER, an_cq3m NUMBER, an_derm NUMBER, an_dedm NUMBER,
  an_dq1m NUMBER, an_dq3m NUMBER, av_mtrsn VARCHAR2, ad_date DATE
  );
 
 ------------------------------------------------------------------------------------------------------------------------
-   --Вставка месячных расходов
+   --Р’СЃС‚Р°РІРєР° РјРµСЃСЏС‡РЅС‹С… СЂР°СЃС…РѕРґРѕРІ
  PROCEDURE set_months_ems (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_q2 NUMBER, an_q4 NUMBER, an_aer NUMBER, an_aed NUMBER,
  an_aq1 NUMBER, an_aq3 NUMBER, an_aq2 NUMBER, an_aq4 NUMBER, an_ber NUMBER, an_bed NUMBER, an_bq1 NUMBER, an_bq3 NUMBER, an_bq2 NUMBER, an_bq4 NUMBER,
  an_cer NUMBER, an_ced NUMBER, an_cq1 NUMBER, an_cq3 NUMBER, an_cq2 NUMBER, an_cq4 NUMBER, an_der NUMBER, an_ded NUMBER, an_dq1 NUMBER, an_dq3 NUMBER,
@@ -1202,7 +1202,7 @@ PACKAGE comsrv_pg IS
  );
 
 ------------------------------------------------------------------------------------------------------------------------
-  --Вставка месячных показаний
+  --Р’СЃС‚Р°РІРєР° РјРµСЃСЏС‡РЅС‹С… РїРѕРєР°Р·Р°РЅРёР№
  PROCEDURE set_months_ems_m (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_q2m NUMBER, an_q4m NUMBER, an_aerm NUMBER,
  an_aedm NUMBER, an_aq1m NUMBER, an_aq3m NUMBER, an_aq2m NUMBER, an_aq4m NUMBER, an_berm NUMBER, an_bedm NUMBER, an_bq1m NUMBER, an_bq3m NUMBER, an_bq2m NUMBER,
  an_bq4m NUMBER, an_cerm NUMBER, an_cedm NUMBER, an_cq1m NUMBER, an_cq3m NUMBER, an_cq2m NUMBER, an_cq4m NUMBER, an_derm NUMBER, an_dedm NUMBER, an_dq1m NUMBER,
@@ -1213,7 +1213,7 @@ PACKAGE comsrv_pg IS
  --******************************          DLL METER           *******************************************************--
 ------------------------------------------------------------------------------------------------------------------------
 
- --Вставка текущих
+ --Р’СЃС‚Р°РІРєР° С‚РµРєСѓС‰РёС…
  PROCEDURE set_curr_power_dllmtr (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_q2m NUMBER, an_q4m NUMBER, an_freq NUMBER,
  an_cos_fi NUMBER, an_volt1 NUMBER, an_volt2 NUMBER, an_volt3 NUMBER, an_curr1 NUMBER, an_curr2 NUMBER, an_curr3 NUMBER, an_fiu1i1 NUMBER, an_fiu2i2 NUMBER,
  an_fiu3i3 NUMBER, an_fiu1u2 NUMBER, an_fiu1u3 NUMBER, an_fiu2u3 NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_q2 NUMBER, an_q4 NUMBER,
@@ -1249,7 +1249,7 @@ PACKAGE comsrv_pg IS
  );
 
 -----------------------------------------------------------------------------------------------------------------------
- PROCEDURE set_parametrization_date (an_mid NUMBER, av_date VARCHAR2);   --Установка (сверка) даты параметризации av_date dd.mm.yyyy hh24:mi:ss
+ PROCEDURE set_parametrization_date (an_mid NUMBER, av_date VARCHAR2);   --РЈСЃС‚Р°РЅРѕРІРєР° (СЃРІРµСЂРєР°) РґР°С‚С‹ РїР°СЂР°РјРµС‚СЂРёР·Р°С†РёРё av_date dd.mm.yyyy hh24:mi:ss
 -----------------------------------------------------------------------------------------------------------------------
 END;   -- Package Specification comsrv_pg
 /
@@ -1263,18 +1263,18 @@ END;   -- Package Specification comsrv_pg
 CREATE OR REPLACE 
 PACKAGE comsrvmtx_pg IS
 ------------------------------------------------------------------------------------------------------------------------
-   -- Интерфейс взаимодействия БД с драйвером МТХ
-   -- дата создания 02/04/2012
+   -- РРЅС‚РµСЂС„РµР№СЃ РІР·Р°РёРјРѕРґРµР№СЃС‚РІРёСЏ Р‘Р” СЃ РґСЂР°Р№РІРµСЂРѕРј РњРўРҐ
+   -- РґР°С‚Р° СЃРѕР·РґР°РЅРёСЏ 02/04/2012
 ------------------------------------------------------------------------------------------------------------------------
  FUNCTION connectnextmeter(
- an_mid NUMBER,                                                                               --Ид точки, начиная с которой необходимо получить следующую точку
-               an_cid NUMBER,                                                                                                                       --Ид канала
-                             an_retmid OUT NUMBER,                                                                                                   --Ид точки
-                                                  ln_canal OUT NUMBER,                                                                        --Адресс счетчика
-                                                                      lv_name OUT VARCHAR2,                                                      --Наименование
-                                                                                           ln_kc OUT NUMBER,                                   --Расчетный коэф
-                                                                                                            ln_tag OUT NUMBER,                      --Тег связи
- lv_info OUT VARCHAR2                                                                                                                          --Доп информация
+ an_mid NUMBER,                                                                               --РРґ С‚РѕС‡РєРё, РЅР°С‡РёРЅР°СЏ СЃ РєРѕС‚РѕСЂРѕР№ РЅРµРѕР±С…РѕРґРёРјРѕ РїРѕР»СѓС‡РёС‚СЊ СЃР»РµРґСѓСЋС‰СѓСЋ С‚РѕС‡РєСѓ
+               an_cid NUMBER,                                                                                                                       --РРґ РєР°РЅР°Р»Р°
+                             an_retmid OUT NUMBER,                                                                                                   --РРґ С‚РѕС‡РєРё
+                                                  ln_canal OUT NUMBER,                                                                        --РђРґСЂРµСЃСЃ СЃС‡РµС‚С‡РёРєР°
+                                                                      lv_name OUT VARCHAR2,                                                      --РќР°РёРјРµРЅРѕРІР°РЅРёРµ
+                                                                                           ln_kc OUT NUMBER,                                   --Р Р°СЃС‡РµС‚РЅС‹Р№ РєРѕСЌС„
+                                                                                                            ln_tag OUT NUMBER,                      --РўРµРі СЃРІСЏР·Рё
+ lv_info OUT VARCHAR2                                                                                                                          --Р”РѕРї РёРЅС„РѕСЂРјР°С†РёСЏ
  )
   RETURN NUMBER;
 
@@ -1300,16 +1300,16 @@ PACKAGE comsrvmtx_pg IS
  );
 
 -----------------------------------------------------------------------------------------------------------------------
- --Запись журнала (an_type - тип счетчика 3-3-х фазник  1-однофазник, иначе 3-х фазник)
- PROCEDURE set_journal(an_mid NUMBER, an_event common_pg.tt_number, av_date common_pg.tt_varchar2                              --в формате d.mm.yyyy hh24:mi:ss
+ --Р—Р°РїРёСЃСЊ Р¶СѓСЂРЅР°Р»Р° (an_type - С‚РёРї СЃС‡РµС‚С‡РёРєР° 3-3-С… С„Р°Р·РЅРёРє  1-РѕРґРЅРѕС„Р°Р·РЅРёРє, РёРЅР°С‡Рµ 3-С… С„Р°Р·РЅРёРє)
+ PROCEDURE set_journal(an_mid NUMBER, an_event common_pg.tt_number, av_date common_pg.tt_varchar2                              --РІ С„РѕСЂРјР°С‚Рµ d.mm.yyyy hh24:mi:ss
                                                                                                  ,an_type NUMBER DEFAULT 3);
 
 ------------------------------------------------------------------------------------------------------------------------
  PROCEDURE set_state(
- an_mid NUMBER,                                                                                                                           --Ид точки или канала
-               an_state_cod NUMBER,                                                                                                             --Код сообщения
-                                   av_state_descr VARCHAR2,                                                                                   --Текст сообщения
-                                                           an_clock NUMBER DEFAULT 0                                                        --Расхождение часов
+ an_mid NUMBER,                                                                                                                           --РРґ С‚РѕС‡РєРё РёР»Рё РєР°РЅР°Р»Р°
+               an_state_cod NUMBER,                                                                                                             --РљРѕРґ СЃРѕРѕР±С‰РµРЅРёСЏ
+                                   av_state_descr VARCHAR2,                                                                                   --РўРµРєСЃС‚ СЃРѕРѕР±С‰РµРЅРёСЏ
+                                                           an_clock NUMBER DEFAULT 0                                                        --Р Р°СЃС…РѕР¶РґРµРЅРёРµ С‡Р°СЃРѕРІ
  );
 
 ------------------------------------------------------------------------------------------------------------------------
@@ -1325,8 +1325,8 @@ END;                                                                            
 CREATE OR REPLACE 
 PACKAGE comsrvcim_pg IS
 ------------------------------------------------------------------------------------------------------------------------
-   -- Интерфейс взаимодействия БД с Носиком А.В. для прямых select'ов в коде опросчика
-   -- дата создания 11/06/2008
+   -- РРЅС‚РµСЂС„РµР№СЃ РІР·Р°РёРјРѕРґРµР№СЃС‚РІРёСЏ Р‘Р” СЃ РќРѕСЃРёРєРѕРј Рђ.Р’. РґР»СЏ РїСЂСЏРјС‹С… select'РѕРІ РІ РєРѕРґРµ РѕРїСЂРѕСЃС‡РёРєР°
+   -- РґР°С‚Р° СЃРѕР·РґР°РЅРёСЏ 11/06/2008
 ------------------------------------------------------------------------------------------------------------------------
 --                                       TComServerThread
 ------------------------------------------------------------------------------------------------------------------------
@@ -1447,11 +1447,11 @@ PACKAGE comsrvcim_pg IS
 
  -- void __fastcall TZxB_Thread::LoadLastSaveDates(void)
  FUNCTION loadlastsavedates(
-  an_mid              NUMBER,                                                                                --Ид точки
-  ln_profile    OUT   VARCHAR2,                                                --Дата чтения текущих dd.mm.yyyy hh24:mi
-  ln_halfhour   OUT   VARCHAR2,                                                     --Дата чтения ГН dd.mm.yyyy hh24:mi
-  ln_bill       OUT   VARCHAR2,                                               --Дата чтения суточных dd.mm.yyyy hh24:mi
-  ln_months     OUT   VARCHAR2                                                --Дата чтения месячных dd.mm.yyyy hh24:mi
+  an_mid              NUMBER,                                                                                --РРґ С‚РѕС‡РєРё
+  ln_profile    OUT   VARCHAR2,                                                --Р”Р°С‚Р° С‡С‚РµРЅРёСЏ С‚РµРєСѓС‰РёС… dd.mm.yyyy hh24:mi
+  ln_halfhour   OUT   VARCHAR2,                                                     --Р”Р°С‚Р° С‡С‚РµРЅРёСЏ Р“Рќ dd.mm.yyyy hh24:mi
+  ln_bill       OUT   VARCHAR2,                                               --Р”Р°С‚Р° С‡С‚РµРЅРёСЏ СЃСѓС‚РѕС‡РЅС‹С… dd.mm.yyyy hh24:mi
+  ln_months     OUT   VARCHAR2                                                --Р”Р°С‚Р° С‡С‚РµРЅРёСЏ РјРµСЃСЏС‡РЅС‹С… dd.mm.yyyy hh24:mi
  )
   RETURN NUMBER;
 
@@ -1484,9 +1484,9 @@ PACKAGE comsrvcim_pg IS
 
  -- void __fastcall TZxB_Thread::SaveCurrentValues(void* tempProfile, stLandis_Net Landis_Net)
  PROCEDURE upd_lastsaveprofile(
-  an_mid       NUMBER,                                                                                       --Ид точки
-  an_clock     NUMBER,                                                                 --Расхождение времени в секундах
-  an_profile   VARCHAR2                                                           ----Дата показаний dd.mm.yyyy hh24:mi
+  an_mid       NUMBER,                                                                                       --РРґ С‚РѕС‡РєРё
+  an_clock     NUMBER,                                                                 --Р Р°СЃС…РѕР¶РґРµРЅРёРµ РІСЂРµРјРµРЅРё РІ СЃРµРєСѓРЅРґР°С…
+  an_profile   VARCHAR2                                                           ----Р”Р°С‚Р° РїРѕРєР°Р·Р°РЅРёР№ dd.mm.yyyy hh24:mi
  );
 
 ------------------------------------------------------------------------------------------------------------------------
@@ -1941,14 +1941,14 @@ PACKAGE comsrvcim_pg IS
  PROCEDURE upd_lastfilename3(an_mid NUMBER, an_date VARCHAR2, an_file VARCHAR2);
 
 ------------------------------------------------------------------------------------------------------------------------
- --чтение даты последней коррекции времени сетчика  в формате dd.mm.yyyy hh24:mi:ss
+ --С‡С‚РµРЅРёРµ РґР°С‚С‹ РїРѕСЃР»РµРґРЅРµР№ РєРѕСЂСЂРµРєС†РёРё РІСЂРµРјРµРЅРё СЃРµС‚С‡РёРєР°  РІ С„РѕСЂРјР°С‚Рµ dd.mm.yyyy hh24:mi:ss
  FUNCTION get_metercorrect(an_mid NUMBER)
   RETURN VARCHAR2;
 
  PRAGMA RESTRICT_REFERENCES(get_metercorrect, WNDS, WNPS);
 
 ------------------------------------------------------------------------------------------------------------------------
- --установка даты последней коррекции времени сетчика в формате dd.mm.yyyy hh24:mi:ss
+ --СѓСЃС‚Р°РЅРѕРІРєР° РґР°С‚С‹ РїРѕСЃР»РµРґРЅРµР№ РєРѕСЂСЂРµРєС†РёРё РІСЂРµРјРµРЅРё СЃРµС‚С‡РёРєР° РІ С„РѕСЂРјР°С‚Рµ dd.mm.yyyy hh24:mi:ss
  PROCEDURE set_metercorrect(an_mid NUMBER, av_datetime VARCHAR2);
 ------------------------------------------------------------------------------------------------------------------------
 END;                                                                               -- Package Specification COMSRVCIM_PG
@@ -1962,53 +1962,53 @@ END;                                                                            
 
 CREATE OR REPLACE 
 PACKAGE BODY editfeeders_pg IS
- -- пакет работы с точками
- -- дата создания 19/10/2001 (Сечин А.А.)
+ -- РїР°РєРµС‚ СЂР°Р±РѕС‚С‹ СЃ С‚РѕС‡РєР°РјРё
+ -- РґР°С‚Р° СЃРѕР·РґР°РЅРёСЏ 19/10/2001 (РЎРµС‡РёРЅ Рђ.Рђ.)
  gn_task_code             NUMBER DEFAULT 46;
  lc_namelength   CONSTANT NUMBER := 140;
 
 ------------------------------------------------------------------------------------------------------------------------
-  -- Процедура вставки (полное кол-во параметров)
- PROCEDURE ins_p (an_parent NUMBER,   --Родитель
-                                   an_type NUMBER,   --Тип точки
-                                                  av_name VARCHAR2,   --Название
-                                                                   av_short_name VARCHAR2,   --Краткое название
+  -- РџСЂРѕС†РµРґСѓСЂР° РІСЃС‚Р°РІРєРё (РїРѕР»РЅРѕРµ РєРѕР»-РІРѕ РїР°СЂР°РјРµС‚СЂРѕРІ)
+ PROCEDURE ins_p (an_parent NUMBER,   --Р РѕРґРёС‚РµР»СЊ
+                                   an_type NUMBER,   --РўРёРї С‚РѕС‡РєРё
+                                                  av_name VARCHAR2,   --РќР°Р·РІР°РЅРёРµ
+                                                                   av_short_name VARCHAR2,   --РљСЂР°С‚РєРѕРµ РЅР°Р·РІР°РЅРёРµ
                                                                                           an_er_position NUMBER, an_q1_position NUMBER, an_ed_position NUMBER,
- an_q3_position NUMBER, an_smart NUMBER,   --Интеллектуал
-                                        an_q1234 NUMBER,   --Квадранты
-                                                        an_canal NUMBER,   --Номер канала
-                                                                        av_cellnum VARCHAR2,   --Номер ячейки
-                                                                                            an_power NUMBER,   --Мощность
-                                                                                                            an_current1 NUMBER,   --Напряжение перв
-                                                                                                                               an_current2 NUMBER,   --Напряжение вторич
- an_kc NUMBER,   --Коэфф
-              an_tag NUMBER,   --Тег связи
-                            av_info VARCHAR2,   --Доп информация
-                                             an_power2 NUMBER,   --Мощность вторич кВ
-                                                              an_metkc NUMBER,   --Коэф прошитый в счетчике
-                                                                              an_abc NUMBER,   --Заземленная нейтраль
-                                                                                            an_calcbill NUMBER,   --Верифицировать суточные
-                                                                                                               an_calcmonths NUMBER,   --Верифицировать месячные
- an_inverted NUMBER,   --Инверсия
-                    an_switch NUMBER,   --Признак обводника
-                                     an_usd NUMBER,   --УСД
-                                                   an_nblock NUMBER,   -- блокировка автоматического опроса
-                                                                    an_dataabsence NUMBER, an_commctrl NUMBER, an_techctrl NUMBER, an_main NUMBER,   --nMainPoint - основная точка учёта (для дублирования)
- av_verifyparam VARCHAR2,   -- Параметры верификации
-                         av_addparams VARCHAR2,   -- Дополнительные параметры
-                                               av_importcode VARCHAR2,   -- Связной код импорта
-                                                                      an_lockcorrecttime NUMBER,   -- блокировка коррекции времени
-                                                                                                av_code VARCHAR2,   -- код точки
-                                                                                                                 av_verifyday VARCHAR2,   -- Параметры верификации суточных
- an_classtn NUMBER,   --Класс тотности ТН
-                   an_classtt NUMBER,   --Класс тотности ТТ
-                                     an_timezonew NUMBER,   --Веменная зона зимой
-                                                         an_timezones NUMBER,   --Веменная зона летом
-                                                                             an_opposite NUMBER,   --id, информация о противоположной точке
-                                                                                                an_norder NUMBER,   --порядок в дереве по умолчанию 0
-                                                                                                an_nintegr NUMBER, --период интеграции
- an_mid OUT NUMBER   --Ид точки
- ) IS   -- 46 параметра
+ an_q3_position NUMBER, an_smart NUMBER,   --РРЅС‚РµР»Р»РµРєС‚СѓР°Р»
+                                        an_q1234 NUMBER,   --РљРІР°РґСЂР°РЅС‚С‹
+                                                        an_canal NUMBER,   --РќРѕРјРµСЂ РєР°РЅР°Р»Р°
+                                                                        av_cellnum VARCHAR2,   --РќРѕРјРµСЂ СЏС‡РµР№РєРё
+                                                                                            an_power NUMBER,   --РњРѕС‰РЅРѕСЃС‚СЊ
+                                                                                                            an_current1 NUMBER,   --РќР°РїСЂСЏР¶РµРЅРёРµ РїРµСЂРІ
+                                                                                                                               an_current2 NUMBER,   --РќР°РїСЂСЏР¶РµРЅРёРµ РІС‚РѕСЂРёС‡
+ an_kc NUMBER,   --РљРѕСЌС„С„
+              an_tag NUMBER,   --РўРµРі СЃРІСЏР·Рё
+                            av_info VARCHAR2,   --Р”РѕРї РёРЅС„РѕСЂРјР°С†РёСЏ
+                                             an_power2 NUMBER,   --РњРѕС‰РЅРѕСЃС‚СЊ РІС‚РѕСЂРёС‡ РєР’
+                                                              an_metkc NUMBER,   --РљРѕСЌС„ РїСЂРѕС€РёС‚С‹Р№ РІ СЃС‡РµС‚С‡РёРєРµ
+                                                                              an_abc NUMBER,   --Р—Р°Р·РµРјР»РµРЅРЅР°СЏ РЅРµР№С‚СЂР°Р»СЊ
+                                                                                            an_calcbill NUMBER,   --Р’РµСЂРёС„РёС†РёСЂРѕРІР°С‚СЊ СЃСѓС‚РѕС‡РЅС‹Рµ
+                                                                                                               an_calcmonths NUMBER,   --Р’РµСЂРёС„РёС†РёСЂРѕРІР°С‚СЊ РјРµСЃСЏС‡РЅС‹Рµ
+ an_inverted NUMBER,   --РРЅРІРµСЂСЃРёСЏ
+                    an_switch NUMBER,   --РџСЂРёР·РЅР°Рє РѕР±РІРѕРґРЅРёРєР°
+                                     an_usd NUMBER,   --РЈРЎР”
+                                                   an_nblock NUMBER,   -- Р±Р»РѕРєРёСЂРѕРІРєР° Р°РІС‚РѕРјР°С‚РёС‡РµСЃРєРѕРіРѕ РѕРїСЂРѕСЃР°
+                                                                    an_dataabsence NUMBER, an_commctrl NUMBER, an_techctrl NUMBER, an_main NUMBER,   --nMainPoint - РѕСЃРЅРѕРІРЅР°СЏ С‚РѕС‡РєР° СѓС‡С‘С‚Р° (РґР»СЏ РґСѓР±Р»РёСЂРѕРІР°РЅРёСЏ)
+ av_verifyparam VARCHAR2,   -- РџР°СЂР°РјРµС‚СЂС‹ РІРµСЂРёС„РёРєР°С†РёРё
+                         av_addparams VARCHAR2,   -- Р”РѕРїРѕР»РЅРёС‚РµР»СЊРЅС‹Рµ РїР°СЂР°РјРµС‚СЂС‹
+                                               av_importcode VARCHAR2,   -- РЎРІСЏР·РЅРѕР№ РєРѕРґ РёРјРїРѕСЂС‚Р°
+                                                                      an_lockcorrecttime NUMBER,   -- Р±Р»РѕРєРёСЂРѕРІРєР° РєРѕСЂСЂРµРєС†РёРё РІСЂРµРјРµРЅРё
+                                                                                                av_code VARCHAR2,   -- РєРѕРґ С‚РѕС‡РєРё
+                                                                                                                 av_verifyday VARCHAR2,   -- РџР°СЂР°РјРµС‚СЂС‹ РІРµСЂРёС„РёРєР°С†РёРё СЃСѓС‚РѕС‡РЅС‹С…
+ an_classtn NUMBER,   --РљР»Р°СЃСЃ С‚РѕС‚РЅРѕСЃС‚Рё РўРќ
+                   an_classtt NUMBER,   --РљР»Р°СЃСЃ С‚РѕС‚РЅРѕСЃС‚Рё РўРў
+                                     an_timezonew NUMBER,   --Р’РµРјРµРЅРЅР°СЏ Р·РѕРЅР° Р·РёРјРѕР№
+                                                         an_timezones NUMBER,   --Р’РµРјРµРЅРЅР°СЏ Р·РѕРЅР° Р»РµС‚РѕРј
+                                                                             an_opposite NUMBER,   --id, РёРЅС„РѕСЂРјР°С†РёСЏ Рѕ РїСЂРѕС‚РёРІРѕРїРѕР»РѕР¶РЅРѕР№ С‚РѕС‡РєРµ
+                                                                                                an_norder NUMBER,   --РїРѕСЂСЏРґРѕРє РІ РґРµСЂРµРІРµ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ 0
+                                                                                                an_nintegr NUMBER, --РїРµСЂРёРѕРґ РёРЅС‚РµРіСЂР°С†РёРё
+ an_mid OUT NUMBER   --РРґ С‚РѕС‡РєРё
+ ) IS   -- 46 РїР°СЂР°РјРµС‚СЂР°
   ln_mid   NUMBER;
  BEGIN
   SAVEPOINT editfeeders_ins;
@@ -2050,14 +2050,14 @@ PACKAGE BODY editfeeders_pg IS
    INSERT INTO meters
                (ID, mid, NAME, POSITION, entype, smart, kc
                )
-        VALUES (points_seq.NEXTVAL, ln_mid, SUBSTR (av_name, 1, lc_namelength) || ' Инт.', an_er_position, 7, '*', an_kc
+        VALUES (points_seq.NEXTVAL, ln_mid, SUBSTR (av_name, 1, lc_namelength) || ' РРЅС‚.', an_er_position, 7, '*', an_kc
                );
   ELSE
    IF an_er_position != 0 THEN
     INSERT INTO meters
                 (ID, mid, NAME, POSITION, entype, smart, kc
                 )
-         VALUES (points_seq.NEXTVAL, ln_mid, SUBSTR (av_name, 1, lc_namelength) || ' А птр.', an_er_position, 1, '', an_kc
+         VALUES (points_seq.NEXTVAL, ln_mid, SUBSTR (av_name, 1, lc_namelength) || ' Рђ РїС‚СЂ.', an_er_position, 1, '', an_kc
                 );
    END IF;
 
@@ -2065,7 +2065,7 @@ PACKAGE BODY editfeeders_pg IS
     INSERT INTO meters
                 (ID, mid, NAME, POSITION, entype, smart, kc
                 )
-         VALUES (points_seq.NEXTVAL, ln_mid, SUBSTR (av_name, 1, lc_namelength) || ' А выд.', an_ed_position, 2, '', an_kc
+         VALUES (points_seq.NEXTVAL, ln_mid, SUBSTR (av_name, 1, lc_namelength) || ' Рђ РІС‹Рґ.', an_ed_position, 2, '', an_kc
                 );
    END IF;
 
@@ -2073,7 +2073,7 @@ PACKAGE BODY editfeeders_pg IS
     INSERT INTO meters
                 (ID, mid, NAME, POSITION, entype, smart, kc
                 )
-         VALUES (points_seq.NEXTVAL, ln_mid, SUBSTR (av_name, 1, lc_namelength) || ' Р птр.', an_q1_position, 3, '', an_kc
+         VALUES (points_seq.NEXTVAL, ln_mid, SUBSTR (av_name, 1, lc_namelength) || ' Р  РїС‚СЂ.', an_q1_position, 3, '', an_kc
                 );
    END IF;
 
@@ -2081,7 +2081,7 @@ PACKAGE BODY editfeeders_pg IS
     INSERT INTO meters
                 (ID, mid, NAME, POSITION, entype, smart, kc
                 )
-         VALUES (points_seq.NEXTVAL, ln_mid, SUBSTR (av_name, 1, lc_namelength) || ' Р выд.', an_q3_position, 5, '', an_kc
+         VALUES (points_seq.NEXTVAL, ln_mid, SUBSTR (av_name, 1, lc_namelength) || ' Р  РІС‹Рґ.', an_q3_position, 5, '', an_kc
                 );
    END IF;
   END IF;
@@ -2090,11 +2090,11 @@ PACKAGE BODY editfeeders_pg IS
    ln_mid := editfeeders_pg.insgroup (ln_mid);
   END IF;
 
-  admin_pg.fiscal_p (gn_task_code, 1, 'Добавлена точка учета ' || util_pg.node_path_f (an_mid, 'points', 'mid', 'parent'));
+  admin_pg.fiscal_p (gn_task_code, 1, 'Р”РѕР±Р°РІР»РµРЅР° С‚РѕС‡РєР° СѓС‡РµС‚Р° ' || util_pg.node_path_f (an_mid, 'points', 'mid', 'parent'));
  EXCEPTION
   WHEN OTHERS THEN
    ROLLBACK TO SAVEPOINT editfeeders_ins;
-   raise_application_error (-20001, 'editfeeders_pg.ins_p: Ошибка вставки присоединения. ' || CHR (10) || SQLERRM (SQLCODE));
+   raise_application_error (-20001, 'editfeeders_pg.ins_p: РћС€РёР±РєР° РІСЃС‚Р°РІРєРё РїСЂРёСЃРѕРµРґРёРЅРµРЅРёСЏ. ' || CHR (10) || SQLERRM (SQLCODE));
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
@@ -2141,7 +2141,7 @@ PACKAGE BODY editfeeders_pg IS
    SELECT MAX (gid)
      INTO ln_gid
      FROM GROUPS
-    WHERE PARENT IS NULL AND NAME = 'Точки АСРПП';
+    WHERE PARENT IS NULL AND NAME = 'РўРѕС‡РєРё РђРЎР РџРџ';
 
    IF ln_gid IS NULL THEN
     RETURN -1;
@@ -2161,24 +2161,24 @@ PACKAGE BODY editfeeders_pg IS
  END;
 
 -----------------------------------------------------------------------------------------------------------------------------
-   -- Процедура вставки АСКУЭ
- PROCEDURE ins_p_a (an_parent NUMBER,   --Родитель
-                                     an_type NUMBER,   --Тип точки
-                                                    av_name VARCHAR2,   --Название
-                                                                     av_short_name VARCHAR2,   --Краткое название
+   -- РџСЂРѕС†РµРґСѓСЂР° РІСЃС‚Р°РІРєРё РђРЎРљРЈР­
+ PROCEDURE ins_p_a (an_parent NUMBER,   --Р РѕРґРёС‚РµР»СЊ
+                                     an_type NUMBER,   --РўРёРї С‚РѕС‡РєРё
+                                                    av_name VARCHAR2,   --РќР°Р·РІР°РЅРёРµ
+                                                                     av_short_name VARCHAR2,   --РљСЂР°С‚РєРѕРµ РЅР°Р·РІР°РЅРёРµ
                                                                                             an_er_position NUMBER, an_q1_position NUMBER, an_ed_position NUMBER,
- an_q3_position NUMBER, an_smart NUMBER,   --Интеллектуал
-                                        an_q1234 NUMBER,   --Квадранты
-                                                        av_cellnum VARCHAR2,   --Номер ячейки
-                                                                            an_power NUMBER,   --Мощность
-                                                                                            an_current1 NUMBER,   --Напряжение перв
-                                                                                                               an_current2 NUMBER,   --Напряжение вторич
-                                                                                                                                  an_kc NUMBER,   --Коэфф
- an_point NUMBER,   --Ид точки АСРПП
-                 an_power2 NUMBER,   --Мощность вторич кВ,
+ an_q3_position NUMBER, an_smart NUMBER,   --РРЅС‚РµР»Р»РµРєС‚СѓР°Р»
+                                        an_q1234 NUMBER,   --РљРІР°РґСЂР°РЅС‚С‹
+                                                        av_cellnum VARCHAR2,   --РќРѕРјРµСЂ СЏС‡РµР№РєРё
+                                                                            an_power NUMBER,   --РњРѕС‰РЅРѕСЃС‚СЊ
+                                                                                            an_current1 NUMBER,   --РќР°РїСЂСЏР¶РµРЅРёРµ РїРµСЂРІ
+                                                                                                               an_current2 NUMBER,   --РќР°РїСЂСЏР¶РµРЅРёРµ РІС‚РѕСЂРёС‡
+                                                                                                                                  an_kc NUMBER,   --РљРѕСЌС„С„
+ an_point NUMBER,   --РРґ С‚РѕС‡РєРё РђРЎР РџРџ
+                 an_power2 NUMBER,   --РњРѕС‰РЅРѕСЃС‚СЊ РІС‚РѕСЂРёС‡ РєР’,
                  an_ptype NUMBER,
                  an_order NUMBER,
-                                  an_mid OUT NUMBER   --Ид точки
+                                  an_mid OUT NUMBER   --РРґ С‚РѕС‡РєРё
  ) IS
   ln_mid   NUMBER;
   ln_ind   NUMBER;
@@ -2218,14 +2218,14 @@ PACKAGE BODY editfeeders_pg IS
    INSERT INTO meters
                (ID, mid, NAME, POSITION, entype, smart, kc
                )
-        VALUES (points_seq.NEXTVAL, ln_mid, SUBSTR (av_name, 1, lc_namelength) || ' Инт.', an_er_position, 7, '*', an_kc
+        VALUES (points_seq.NEXTVAL, ln_mid, SUBSTR (av_name, 1, lc_namelength) || ' РРЅС‚.', an_er_position, 7, '*', an_kc
                );
   ELSE
    IF an_er_position != 0 THEN
     INSERT INTO meters
                 (ID, mid, NAME, POSITION, entype, smart, kc
                 )
-         VALUES (points_seq.NEXTVAL, ln_mid, SUBSTR (av_name, 1, lc_namelength) || ' А птр.', an_er_position, 1, '', an_kc
+         VALUES (points_seq.NEXTVAL, ln_mid, SUBSTR (av_name, 1, lc_namelength) || ' Рђ РїС‚СЂ.', an_er_position, 1, '', an_kc
                 );
    END IF;
 
@@ -2233,7 +2233,7 @@ PACKAGE BODY editfeeders_pg IS
     INSERT INTO meters
                 (ID, mid, NAME, POSITION, entype, smart, kc
                 )
-         VALUES (points_seq.NEXTVAL, ln_mid, SUBSTR (av_name, 1, lc_namelength) || ' А выд.', an_ed_position, 2, '', an_kc
+         VALUES (points_seq.NEXTVAL, ln_mid, SUBSTR (av_name, 1, lc_namelength) || ' Рђ РІС‹Рґ.', an_ed_position, 2, '', an_kc
                 );
    END IF;
 
@@ -2241,7 +2241,7 @@ PACKAGE BODY editfeeders_pg IS
     INSERT INTO meters
                 (ID, mid, NAME, POSITION, entype, smart, kc
                 )
-         VALUES (points_seq.NEXTVAL, ln_mid, SUBSTR (av_name, 1, lc_namelength) || ' Р птр.', an_q1_position, 3, '', an_kc
+         VALUES (points_seq.NEXTVAL, ln_mid, SUBSTR (av_name, 1, lc_namelength) || ' Р  РїС‚СЂ.', an_q1_position, 3, '', an_kc
                 );
    END IF;
 
@@ -2249,7 +2249,7 @@ PACKAGE BODY editfeeders_pg IS
     INSERT INTO meters
                 (ID, mid, NAME, POSITION, entype, smart, kc
                 )
-         VALUES (points_seq.NEXTVAL, ln_mid, SUBSTR (av_name, 1, lc_namelength) || ' Р выд.', an_q3_position, 5, '', an_kc
+         VALUES (points_seq.NEXTVAL, ln_mid, SUBSTR (av_name, 1, lc_namelength) || ' Р  РІС‹Рґ.', an_q3_position, 5, '', an_kc
                 );
    END IF;
   END IF;
@@ -2268,26 +2268,26 @@ PACKAGE BODY editfeeders_pg IS
   END IF;
  EXCEPTION
   WHEN OTHERS THEN
-   raise_application_error (-20001, 'editfeeders_pg.ins_p: Ошибка вставки присоединения. ' || CHR (10) || SQLERRM (SQLCODE));
+   raise_application_error (-20001, 'editfeeders_pg.ins_p: РћС€РёР±РєР° РІСЃС‚Р°РІРєРё РїСЂРёСЃРѕРµРґРёРЅРµРЅРёСЏ. ' || CHR (10) || SQLERRM (SQLCODE));
  END;
 
 
 ------------------------------------------------------------------------------------------------------------------------
-   -- Процедура вставки АСКУЭ
- PROCEDURE ins_p_synchro (an_parent NUMBER,   --Родитель
-                                           an_type NUMBER,   --Тип точки
-                                                          av_name VARCHAR2,   --Название
-                                                                           av_short_name VARCHAR2,   --Краткое название
-                                                                                                  an_smart NUMBER,   --Интеллектуал
-                                                                                                                  an_q1234 NUMBER,   --Квадранты
-                                                                                                                                  av_cellnum VARCHAR2,   --Номер ячейки
- an_power NUMBER,   --Мощность
-                 an_current1 NUMBER,   --Напряжение перв
-                                    an_current2 NUMBER,   --Напряжение вторич
-                                                       an_kc NUMBER,   --Коэфф
-                                                                    an_root NUMBER,   --Ид точки в родительской БД
-                                                                                   an_power2 NUMBER,   --Мощность вторич кВ
-                                                                                                    an_mid OUT NUMBER   --Ид точки
+   -- РџСЂРѕС†РµРґСѓСЂР° РІСЃС‚Р°РІРєРё РђРЎРљРЈР­
+ PROCEDURE ins_p_synchro (an_parent NUMBER,   --Р РѕРґРёС‚РµР»СЊ
+                                           an_type NUMBER,   --РўРёРї С‚РѕС‡РєРё
+                                                          av_name VARCHAR2,   --РќР°Р·РІР°РЅРёРµ
+                                                                           av_short_name VARCHAR2,   --РљСЂР°С‚РєРѕРµ РЅР°Р·РІР°РЅРёРµ
+                                                                                                  an_smart NUMBER,   --РРЅС‚РµР»Р»РµРєС‚СѓР°Р»
+                                                                                                                  an_q1234 NUMBER,   --РљРІР°РґСЂР°РЅС‚С‹
+                                                                                                                                  av_cellnum VARCHAR2,   --РќРѕРјРµСЂ СЏС‡РµР№РєРё
+ an_power NUMBER,   --РњРѕС‰РЅРѕСЃС‚СЊ
+                 an_current1 NUMBER,   --РќР°РїСЂСЏР¶РµРЅРёРµ РїРµСЂРІ
+                                    an_current2 NUMBER,   --РќР°РїСЂСЏР¶РµРЅРёРµ РІС‚РѕСЂРёС‡
+                                                       an_kc NUMBER,   --РљРѕСЌС„С„
+                                                                    an_root NUMBER,   --РРґ С‚РѕС‡РєРё РІ СЂРѕРґРёС‚РµР»СЊСЃРєРѕР№ Р‘Р”
+                                                                                   an_power2 NUMBER,   --РњРѕС‰РЅРѕСЃС‚СЊ РІС‚РѕСЂРёС‡ РєР’
+                                                                                                    an_mid OUT NUMBER   --РРґ С‚РѕС‡РєРё
  ) IS
   ln_mid   NUMBER;
  BEGIN
@@ -2320,30 +2320,30 @@ PACKAGE BODY editfeeders_pg IS
   INSERT INTO meters
               (ID, mid, NAME, POSITION, entype, smart, kc
               )
-       VALUES (points_seq.NEXTVAL, ln_mid, SUBSTR (av_name, 1, lc_namelength) || ' Инт.', 0, 7, '*', an_kc
+       VALUES (points_seq.NEXTVAL, ln_mid, SUBSTR (av_name, 1, lc_namelength) || ' РРЅС‚.', 0, 7, '*', an_kc
               );
  EXCEPTION
   WHEN OTHERS THEN
-   raise_application_error (-20001, 'editfeeders_pg.ins_p_synchro: Ошибка вставки присоединения. ' || CHR (10) || SQLERRM (SQLCODE));
+   raise_application_error (-20001, 'editfeeders_pg.ins_p_synchro: РћС€РёР±РєР° РІСЃС‚Р°РІРєРё РїСЂРёСЃРѕРµРґРёРЅРµРЅРёСЏ. ' || CHR (10) || SQLERRM (SQLCODE));
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
-  -- Процедура обновления данных АСКУЭ
-  PROCEDURE upd_p_a (an_mid NUMBER,   --Ид точки
-                                  an_parent NUMBER,   --Родитель
-                                                   an_type NUMBER,   --Тип точки
-                                                                  av_name VARCHAR2,   --Название
-                                                                                   av_short_name VARCHAR2,   --Краткое название
+  -- РџСЂРѕС†РµРґСѓСЂР° РѕР±РЅРѕРІР»РµРЅРёСЏ РґР°РЅРЅС‹С… РђРЎРљРЈР­
+  PROCEDURE upd_p_a (an_mid NUMBER,   --РРґ С‚РѕС‡РєРё
+                                  an_parent NUMBER,   --Р РѕРґРёС‚РµР»СЊ
+                                                   an_type NUMBER,   --РўРёРї С‚РѕС‡РєРё
+                                                                  av_name VARCHAR2,   --РќР°Р·РІР°РЅРёРµ
+                                                                                   av_short_name VARCHAR2,   --РљСЂР°С‚РєРѕРµ РЅР°Р·РІР°РЅРёРµ
                                                                                                           an_er_position NUMBER, an_q1_position NUMBER,
- an_ed_position NUMBER, an_q3_position NUMBER, an_smart NUMBER,   --Интеллектуал
-                                                               an_q1234 NUMBER,   --Квадранты
-                                                                               av_cellnum VARCHAR2,   --Номер ячейки
-                                                                                                   an_power NUMBER,   --Мощность
-                                                                                                                   an_current1 NUMBER,   --Напряжение перв
- an_current2 NUMBER,   --Напряжение вторич
-                    an_kc NUMBER,   --Коэфф
-                                 an_power2 NUMBER   --Мощность вторич кВ
- --  an_metkc       NUMBER --Коэф прошитый в счетчике
+ an_ed_position NUMBER, an_q3_position NUMBER, an_smart NUMBER,   --РРЅС‚РµР»Р»РµРєС‚СѓР°Р»
+                                                               an_q1234 NUMBER,   --РљРІР°РґСЂР°РЅС‚С‹
+                                                                               av_cellnum VARCHAR2,   --РќРѕРјРµСЂ СЏС‡РµР№РєРё
+                                                                                                   an_power NUMBER,   --РњРѕС‰РЅРѕСЃС‚СЊ
+                                                                                                                   an_current1 NUMBER,   --РќР°РїСЂСЏР¶РµРЅРёРµ РїРµСЂРІ
+ an_current2 NUMBER,   --РќР°РїСЂСЏР¶РµРЅРёРµ РІС‚РѕСЂРёС‡
+                    an_kc NUMBER,   --РљРѕСЌС„С„
+                                 an_power2 NUMBER   --РњРѕС‰РЅРѕСЃС‚СЊ РІС‚РѕСЂРёС‡ РєР’
+ --  an_metkc       NUMBER --РљРѕСЌС„ РїСЂРѕС€РёС‚С‹Р№ РІ СЃС‡РµС‚С‡РёРєРµ
  ) IS
   ln_gid    NUMBER;
   ln_gid1   NUMBER;
@@ -2377,7 +2377,7 @@ PACKAGE BODY editfeeders_pg IS
          WHERE mid = an_mid AND entype BETWEEN 1 AND 6;
 
    UPDATE meters
-      SET NAME = SUBSTR (av_name, 1, lc_namelength) || ' Инт.',
+      SET NAME = SUBSTR (av_name, 1, lc_namelength) || ' РРЅС‚.',
           POSITION = an_er_position,
           kc = an_kc
     WHERE mid = an_mid AND entype = 7;
@@ -2386,7 +2386,7 @@ PACKAGE BODY editfeeders_pg IS
     INSERT INTO meters
                 (ID, mid, NAME, POSITION, entype, smart, kc
                 )
-         VALUES (points_seq.NEXTVAL, an_mid, SUBSTR (av_name, 1, lc_namelength) || ' Инт.', an_er_position, 7, '*', an_kc
+         VALUES (points_seq.NEXTVAL, an_mid, SUBSTR (av_name, 1, lc_namelength) || ' РРЅС‚.', an_er_position, 7, '*', an_kc
                 );
    END IF;
   ELSE
@@ -2395,7 +2395,7 @@ PACKAGE BODY editfeeders_pg IS
 
    IF an_er_position != 0 THEN
     UPDATE meters
-       SET NAME = SUBSTR (av_name, 1, lc_namelength) || ' А птр.',
+       SET NAME = SUBSTR (av_name, 1, lc_namelength) || ' Рђ РїС‚СЂ.',
            POSITION = an_er_position,
            kc = an_kc
      WHERE mid = an_mid AND entype = 1;
@@ -2404,7 +2404,7 @@ PACKAGE BODY editfeeders_pg IS
      INSERT INTO meters
                  (ID, mid, NAME, POSITION, entype, smart, kc
                  )
-          VALUES (points_seq.NEXTVAL, an_mid, SUBSTR (av_name, 1, lc_namelength) || ' А птр.', an_er_position, 1, '', an_kc
+          VALUES (points_seq.NEXTVAL, an_mid, SUBSTR (av_name, 1, lc_namelength) || ' Рђ РїС‚СЂ.', an_er_position, 1, '', an_kc
                  );
     END IF;
    ELSE
@@ -2414,7 +2414,7 @@ PACKAGE BODY editfeeders_pg IS
 
    IF an_ed_position != 0 THEN
     UPDATE meters
-       SET NAME = SUBSTR (av_name, 1, lc_namelength) || ' А выд.',
+       SET NAME = SUBSTR (av_name, 1, lc_namelength) || ' Рђ РІС‹Рґ.',
            POSITION = an_ed_position,
            kc = an_kc
      WHERE mid = an_mid AND entype = 2;
@@ -2423,7 +2423,7 @@ PACKAGE BODY editfeeders_pg IS
      INSERT INTO meters
                  (ID, mid, NAME, POSITION, entype, smart, kc
                  )
-          VALUES (points_seq.NEXTVAL, an_mid, SUBSTR (av_name, 1, lc_namelength) || ' А выд.', an_ed_position, 2, '', an_kc
+          VALUES (points_seq.NEXTVAL, an_mid, SUBSTR (av_name, 1, lc_namelength) || ' Рђ РІС‹Рґ.', an_ed_position, 2, '', an_kc
                  );
     END IF;
 /* - changed by EVK 31.08.2011
@@ -2435,7 +2435,7 @@ PACKAGE BODY editfeeders_pg IS
 
    IF an_q1_position != 0 THEN
     UPDATE meters
-       SET NAME = SUBSTR (av_name, 1, lc_namelength) || ' Р птр.',
+       SET NAME = SUBSTR (av_name, 1, lc_namelength) || ' Р  РїС‚СЂ.',
            POSITION = an_q1_position,
            kc = an_kc
      WHERE mid = an_mid AND entype = 3;
@@ -2444,7 +2444,7 @@ PACKAGE BODY editfeeders_pg IS
      INSERT INTO meters
                  (ID, mid, NAME, POSITION, entype, smart, kc
                  )
-          VALUES (points_seq.NEXTVAL, an_mid, SUBSTR (av_name, 1, lc_namelength) || ' Р птр.', an_q1_position, 3, '', an_kc
+          VALUES (points_seq.NEXTVAL, an_mid, SUBSTR (av_name, 1, lc_namelength) || ' Р  РїС‚СЂ.', an_q1_position, 3, '', an_kc
                  );
     END IF;
    ELSE
@@ -2454,7 +2454,7 @@ PACKAGE BODY editfeeders_pg IS
 
    IF an_q3_position != 0 THEN
     UPDATE meters
-       SET NAME = SUBSTR (av_name, 1, lc_namelength) || ' Р выд.',
+       SET NAME = SUBSTR (av_name, 1, lc_namelength) || ' Р  РІС‹Рґ.',
            POSITION = an_q3_position,
            kc = an_kc
      WHERE mid = an_mid AND entype = 5;
@@ -2463,7 +2463,7 @@ PACKAGE BODY editfeeders_pg IS
      INSERT INTO meters
                  (ID, mid, NAME, POSITION, entype, smart, kc
                  )
-          VALUES (points_seq.NEXTVAL, an_mid, SUBSTR (av_name, 1, lc_namelength) || ' Р выд.', an_q3_position, 5, '', an_kc
+          VALUES (points_seq.NEXTVAL, an_mid, SUBSTR (av_name, 1, lc_namelength) || ' Р  РІС‹Рґ.', an_q3_position, 5, '', an_kc
                  );
     END IF;
    ELSE
@@ -2483,11 +2483,11 @@ PACKAGE BODY editfeeders_pg IS
   END IF;
  EXCEPTION
   WHEN OTHERS THEN
-   raise_application_error (-20001, 'editfeeders_pg.upd_p: Ошибка обновления присоединения. ' || CHR (10) || SQLERRM (SQLCODE));
+   raise_application_error (-20001, 'editfeeders_pg.upd_p: РћС€РёР±РєР° РѕР±РЅРѕРІР»РµРЅРёСЏ РїСЂРёСЃРѕРµРґРёРЅРµРЅРёСЏ. ' || CHR (10) || SQLERRM (SQLCODE));
  END;
 ------------------------------------------------------------------------------------------------------------------------
-PROCEDURE upd_p_b(an_mid NUMBER,   --Ид зеленой точки
-                   an_test NUMBER   --Ид синей точки
+PROCEDURE upd_p_b(an_mid NUMBER,   --РРґ Р·РµР»РµРЅРѕР№ С‚РѕС‡РєРё
+                   an_test NUMBER   --РРґ СЃРёРЅРµР№ С‚РѕС‡РєРё
  )IS
  
  
@@ -2536,11 +2536,11 @@ PROCEDURE upd_p_b(an_mid NUMBER,   --Ид зеленой точки
   
  END;
 ---------------------------------------------------------------------------------------------------------------
- -- Процедура удаления данных
- PROCEDURE del_p (an_mid NUMBER   --Ид точки
+ -- РџСЂРѕС†РµРґСѓСЂР° СѓРґР°Р»РµРЅРёСЏ РґР°РЅРЅС‹С…
+ PROCEDURE del_p (an_mid NUMBER   --РРґ С‚РѕС‡РєРё
                                ) IS
  BEGIN
-  admin_pg.fiscal_p (gn_task_code, 3, 'Удалена точка учета ' || util_pg.node_path_f (an_mid, 'points', 'mid', 'parent'));
+  admin_pg.fiscal_p (gn_task_code, 3, 'РЈРґР°Р»РµРЅР° С‚РѕС‡РєР° СѓС‡РµС‚Р° ' || util_pg.node_path_f (an_mid, 'points', 'mid', 'parent'));
 
   UPDATE feeders
      SET nusd = NULL
@@ -2568,12 +2568,12 @@ PROCEDURE upd_p_b(an_mid NUMBER,   --Ид зеленой точки
         WHERE nroot1 = 1 AND nroot2 = an_mid;
  EXCEPTION
   WHEN OTHERS THEN
-   raise_application_error (-20001, 'editfeeders_pg.del_p: Ошибка удаления присоединения. ' || CHR (10) || SQLERRM (SQLCODE));
+   raise_application_error (-20001, 'editfeeders_pg.del_p: РћС€РёР±РєР° СѓРґР°Р»РµРЅРёСЏ РїСЂРёСЃРѕРµРґРёРЅРµРЅРёСЏ. ' || CHR (10) || SQLERRM (SQLCODE));
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
---Процедура обновления счетчика АСКУЭ
- PROCEDURE upd_meters_a (an_mid NUMBER,   --Ид точки
+--РџСЂРѕС†РµРґСѓСЂР° РѕР±РЅРѕРІР»РµРЅРёСЏ СЃС‡РµС‚С‡РёРєР° РђРЎРљРЈР­
+ PROCEDURE upd_meters_a (an_mid NUMBER,   --РРґ С‚РѕС‡РєРё
                                        an_entype NUMBER,   --ENTYPE
                                                         av_smart VARCHAR2,   --SMART
                                                                           av_mtrsn VARCHAR2,   --MTRSN
@@ -2601,27 +2601,27 @@ PROCEDURE upd_p_b(an_mid NUMBER,   --Ид зеленой точки
          mclass = an_mclass
    WHERE mid = an_mid AND entype = an_entype;
 
-  admin_pg.fiscal_p (gn_task_code, 2, 'Изменены атрибуты счетчика №' || av_mtrsn || ' для точки ' || util_pg.node_path_f (an_mid, 'points', 'mid', 'parent'));
+  admin_pg.fiscal_p (gn_task_code, 2, 'РР·РјРµРЅРµРЅС‹ Р°С‚СЂРёР±СѓС‚С‹ СЃС‡РµС‚С‡РёРєР° в„–' || av_mtrsn || ' РґР»СЏ С‚РѕС‡РєРё ' || util_pg.node_path_f (an_mid, 'points', 'mid', 'parent'));
  EXCEPTION
   WHEN OTHERS THEN
-   raise_application_error (-20001, 'editfeeders_pg.upd_meters: Ошибка обновления счетчика. ' || CHR (10) || SQLERRM (SQLCODE));
+   raise_application_error (-20001, 'editfeeders_pg.upd_meters: РћС€РёР±РєР° РѕР±РЅРѕРІР»РµРЅРёСЏ СЃС‡РµС‚С‡РёРєР°. ' || CHR (10) || SQLERRM (SQLCODE));
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
---Устанавливает параметры простых потерь
- PROCEDURE setaddparam (an_mid NUMBER,   --Ид точки
-                                      an_wastepercentcalc NUMBER,   --Тип потерь
-                                                                 an_workinghours NUMBER,   --Часы работы
-                                                                                        an_fullhours NUMBER,   --Полные часы работы
-                                                                                                            an_line_loss NUMBER,   --Портери в линии
-                                                                                                                                an_act_loss NUMBER,   --Потери акт транс
- an_react_loss NUMBER,   --Потери реакт транс
-                      an_recompens NUMBER,   --Тип расчета реактива
-                                          an_calcpointtype NUMBER,   --Тип расчетной точки
-                                                                  an_gid NUMBER   --ид расчет группы
+--РЈСЃС‚Р°РЅР°РІР»РёРІР°РµС‚ РїР°СЂР°РјРµС‚СЂС‹ РїСЂРѕСЃС‚С‹С… РїРѕС‚РµСЂСЊ
+ PROCEDURE setaddparam (an_mid NUMBER,   --РРґ С‚РѕС‡РєРё
+                                      an_wastepercentcalc NUMBER,   --РўРёРї РїРѕС‚РµСЂСЊ
+                                                                 an_workinghours NUMBER,   --Р§Р°СЃС‹ СЂР°Р±РѕС‚С‹
+                                                                                        an_fullhours NUMBER,   --РџРѕР»РЅС‹Рµ С‡Р°СЃС‹ СЂР°Р±РѕС‚С‹
+                                                                                                            an_line_loss NUMBER,   --РџРѕСЂС‚РµСЂРё РІ Р»РёРЅРёРё
+                                                                                                                                an_act_loss NUMBER,   --РџРѕС‚РµСЂРё Р°РєС‚ С‚СЂР°РЅСЃ
+ an_react_loss NUMBER,   --РџРѕС‚РµСЂРё СЂРµР°РєС‚ С‚СЂР°РЅСЃ
+                      an_recompens NUMBER,   --РўРёРї СЂР°СЃС‡РµС‚Р° СЂРµР°РєС‚РёРІР°
+                                          an_calcpointtype NUMBER,   --РўРёРї СЂР°СЃС‡РµС‚РЅРѕР№ С‚РѕС‡РєРё
+                                                                  an_gid NUMBER   --РёРґ СЂР°СЃС‡РµС‚ РіСЂСѓРїРїС‹
  ) IS
  BEGIN
-  --  raise_application_error(-20001, 'В доступе отказано');
+  --  raise_application_error(-20001, 'Р’ РґРѕСЃС‚СѓРїРµ РѕС‚РєР°Р·Р°РЅРѕ');
   UPDATE feeders
      SET nwastepercentcalc = an_wastepercentcalc,
          nworkinghours = an_workinghours,
@@ -2651,16 +2651,16 @@ PROCEDURE upd_p_b(an_mid NUMBER,   --Ид зеленой точки
   END IF;
  EXCEPTION
   WHEN OTHERS THEN
-   raise_application_error (-20001, 'editfeeders_pg.setaddparam: Ошибка дополнительных параметров точки. ' || CHR (10) || SQLERRM (SQLCODE));
+   raise_application_error (-20001, 'editfeeders_pg.setaddparam: РћС€РёР±РєР° РґРѕРїРѕР»РЅРёС‚РµР»СЊРЅС‹С… РїР°СЂР°РјРµС‚СЂРѕРІ С‚РѕС‡РєРё. ' || CHR (10) || SQLERRM (SQLCODE));
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
-     -- Нормативные параметры точки
- PROCEDURE setcalcparam_p (an_mid NUMBER,   --Ид точки
-                                         at_date common_pg.tt_number,   --Дата ввода в действие
-                                                                     at_currpower common_pg.tt_number,   --Мощность
-                                                                                                      at_monthconsumpt common_pg.tt_number,   --Месяч расход
- at_kc common_pg.tt_number   --Коэф пересчета
+     -- РќРѕСЂРјР°С‚РёРІРЅС‹Рµ РїР°СЂР°РјРµС‚СЂС‹ С‚РѕС‡РєРё
+ PROCEDURE setcalcparam_p (an_mid NUMBER,   --РРґ С‚РѕС‡РєРё
+                                         at_date common_pg.tt_number,   --Р”Р°С‚Р° РІРІРѕРґР° РІ РґРµР№СЃС‚РІРёРµ
+                                                                     at_currpower common_pg.tt_number,   --РњРѕС‰РЅРѕСЃС‚СЊ
+                                                                                                      at_monthconsumpt common_pg.tt_number,   --РњРµСЃСЏС‡ СЂР°СЃС…РѕРґ
+ at_kc common_pg.tt_number   --РљРѕСЌС„ РїРµСЂРµСЃС‡РµС‚Р°
  ) IS
  BEGIN
   SAVEPOINT setcalcparam_sp;
@@ -2678,57 +2678,57 @@ PROCEDURE upd_p_b(an_mid NUMBER,   --Ид зеленой точки
    END LOOP;
   END IF;
 
-  admin_pg.fiscal_p (gn_task_code, 2, 'Изменены нормативные параметры точки учета ' || util_pg.node_path_f (an_mid, 'points', 'mid', 'parent'));
+  admin_pg.fiscal_p (gn_task_code, 2, 'РР·РјРµРЅРµРЅС‹ РЅРѕСЂРјР°С‚РёРІРЅС‹Рµ РїР°СЂР°РјРµС‚СЂС‹ С‚РѕС‡РєРё СѓС‡РµС‚Р° ' || util_pg.node_path_f (an_mid, 'points', 'mid', 'parent'));
  EXCEPTION
   WHEN OTHERS THEN
    ROLLBACK TO SAVEPOINT setcalcparam_sp;
-   raise_application_error (-20001, 'editfeeders_pg.setcalcparam_p: Задания нормативных параметров точки учета. ' || CHR (10) || SQLERRM (SQLCODE));
+   raise_application_error (-20001, 'editfeeders_pg.setcalcparam_p: Р—Р°РґР°РЅРёСЏ РЅРѕСЂРјР°С‚РёРІРЅС‹С… РїР°СЂР°РјРµС‚СЂРѕРІ С‚РѕС‡РєРё СѓС‡РµС‚Р°. ' || CHR (10) || SQLERRM (SQLCODE));
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
-  -- Процедура обновления данных (с полным набором параметров)
- PROCEDURE upd_p (an_mid NUMBER,   --Ид точки
-                                an_parent NUMBER,   --Родитель
-                                                 an_type NUMBER,   --Тип точки
-                                                                av_name VARCHAR2,   --Название
-                                                                                 av_short_name VARCHAR2,   --Краткое название
+  -- РџСЂРѕС†РµРґСѓСЂР° РѕР±РЅРѕРІР»РµРЅРёСЏ РґР°РЅРЅС‹С… (СЃ РїРѕР»РЅС‹Рј РЅР°Р±РѕСЂРѕРј РїР°СЂР°РјРµС‚СЂРѕРІ)
+ PROCEDURE upd_p (an_mid NUMBER,   --РРґ С‚РѕС‡РєРё
+                                an_parent NUMBER,   --Р РѕРґРёС‚РµР»СЊ
+                                                 an_type NUMBER,   --РўРёРї С‚РѕС‡РєРё
+                                                                av_name VARCHAR2,   --РќР°Р·РІР°РЅРёРµ
+                                                                                 av_short_name VARCHAR2,   --РљСЂР°С‚РєРѕРµ РЅР°Р·РІР°РЅРёРµ
                                                                                                         an_er_position NUMBER, an_q1_position NUMBER,
- an_ed_position NUMBER, an_q3_position NUMBER, an_smart NUMBER,   --Интеллектуал
-                                                               an_q1234 NUMBER,   --Квадранты
-                                                                               an_canal NUMBER,   --Номер канала
-                                                                                               av_cellnum VARCHAR2,   --Номер ячейки
-                                                                                                                   an_power NUMBER,   --Мощность
-                                                                                                                                   an_current1 NUMBER,   --Напряжение перв
- an_current2 NUMBER,   --Напряжение вторич
-                    an_kc NUMBER,   --Коэфф
-                                 an_tag NUMBER,   --Тег связи
-                                               av_info VARCHAR2,   --Доп информация
-                                                                an_power2 NUMBER,   --Мощность вторич кВ
-                                                                                 an_metkc NUMBER,   --Коэф прошитый в счетчике
-                                                                                                 an_abc NUMBER,   --Заземленная нейтраль
-                                                                                                               an_calcbill NUMBER,   --Верифицировать суточные
- an_calcmonths NUMBER,   --Верифицировать месячные
-                      an_inverted NUMBER,   --Инверсия
-                                         an_switch NUMBER,   --Признак обводника
-                                                          an_usd NUMBER,   --УСД
-                                                                        an_nblock NUMBER,   --Блокировка авт. опроса
+ an_ed_position NUMBER, an_q3_position NUMBER, an_smart NUMBER,   --РРЅС‚РµР»Р»РµРєС‚СѓР°Р»
+                                                               an_q1234 NUMBER,   --РљРІР°РґСЂР°РЅС‚С‹
+                                                                               an_canal NUMBER,   --РќРѕРјРµСЂ РєР°РЅР°Р»Р°
+                                                                                               av_cellnum VARCHAR2,   --РќРѕРјРµСЂ СЏС‡РµР№РєРё
+                                                                                                                   an_power NUMBER,   --РњРѕС‰РЅРѕСЃС‚СЊ
+                                                                                                                                   an_current1 NUMBER,   --РќР°РїСЂСЏР¶РµРЅРёРµ РїРµСЂРІ
+ an_current2 NUMBER,   --РќР°РїСЂСЏР¶РµРЅРёРµ РІС‚РѕСЂРёС‡
+                    an_kc NUMBER,   --РљРѕСЌС„С„
+                                 an_tag NUMBER,   --РўРµРі СЃРІСЏР·Рё
+                                               av_info VARCHAR2,   --Р”РѕРї РёРЅС„РѕСЂРјР°С†РёСЏ
+                                                                an_power2 NUMBER,   --РњРѕС‰РЅРѕСЃС‚СЊ РІС‚РѕСЂРёС‡ РєР’
+                                                                                 an_metkc NUMBER,   --РљРѕСЌС„ РїСЂРѕС€РёС‚С‹Р№ РІ СЃС‡РµС‚С‡РёРєРµ
+                                                                                                 an_abc NUMBER,   --Р—Р°Р·РµРјР»РµРЅРЅР°СЏ РЅРµР№С‚СЂР°Р»СЊ
+                                                                                                               an_calcbill NUMBER,   --Р’РµСЂРёС„РёС†РёСЂРѕРІР°С‚СЊ СЃСѓС‚РѕС‡РЅС‹Рµ
+ an_calcmonths NUMBER,   --Р’РµСЂРёС„РёС†РёСЂРѕРІР°С‚СЊ РјРµСЃСЏС‡РЅС‹Рµ
+                      an_inverted NUMBER,   --РРЅРІРµСЂСЃРёСЏ
+                                         an_switch NUMBER,   --РџСЂРёР·РЅР°Рє РѕР±РІРѕРґРЅРёРєР°
+                                                          an_usd NUMBER,   --РЈРЎР”
+                                                                        an_nblock NUMBER,   --Р‘Р»РѕРєРёСЂРѕРІРєР° Р°РІС‚. РѕРїСЂРѕСЃР°
                                                                                          an_dataabsence NUMBER, an_commctrl NUMBER, an_techctrl NUMBER,
- an_main NUMBER,   --nMainPoint - основная точка учёта (для дублирования)
-                av_verifyparam VARCHAR2,   -- Параметры верификации
-                                        av_addparams VARCHAR2,   -- Дополнительные параметры
-                                                              av_importcode VARCHAR2,   -- Связной код импорта
-                                                                                     an_lockcorrecttime NUMBER,   -- блокировка коррекции времени
-                                                                                                               av_code VARCHAR2,   -- код точки
-                                                                                                                                av_verifyday VARCHAR2,   -- Параметры верификации суточных
- an_classtn NUMBER,   --Класс тотности ТН
-                   an_classtt NUMBER,   --Класс тотности ТТ
-                                     an_timezonew NUMBER,   --Временная зона зимой
-                                                         an_timezones NUMBER,   --Временная зона летом
-                                                                             an_opposite NUMBER,   --id, информация о противоположной точке
- an_norder NUMBER,   --порядок в дереве по умолчанию 0
- an_nintegr NUMBER, --период интеграции
- an_lockswitch NUMBER --не переходит на ОВ
- ) IS   -- 44 параметра
+ an_main NUMBER,   --nMainPoint - РѕСЃРЅРѕРІРЅР°СЏ С‚РѕС‡РєР° СѓС‡С‘С‚Р° (РґР»СЏ РґСѓР±Р»РёСЂРѕРІР°РЅРёСЏ)
+                av_verifyparam VARCHAR2,   -- РџР°СЂР°РјРµС‚СЂС‹ РІРµСЂРёС„РёРєР°С†РёРё
+                                        av_addparams VARCHAR2,   -- Р”РѕРїРѕР»РЅРёС‚РµР»СЊРЅС‹Рµ РїР°СЂР°РјРµС‚СЂС‹
+                                                              av_importcode VARCHAR2,   -- РЎРІСЏР·РЅРѕР№ РєРѕРґ РёРјРїРѕСЂС‚Р°
+                                                                                     an_lockcorrecttime NUMBER,   -- Р±Р»РѕРєРёСЂРѕРІРєР° РєРѕСЂСЂРµРєС†РёРё РІСЂРµРјРµРЅРё
+                                                                                                               av_code VARCHAR2,   -- РєРѕРґ С‚РѕС‡РєРё
+                                                                                                                                av_verifyday VARCHAR2,   -- РџР°СЂР°РјРµС‚СЂС‹ РІРµСЂРёС„РёРєР°С†РёРё СЃСѓС‚РѕС‡РЅС‹С…
+ an_classtn NUMBER,   --РљР»Р°СЃСЃ С‚РѕС‚РЅРѕСЃС‚Рё РўРќ
+                   an_classtt NUMBER,   --РљР»Р°СЃСЃ С‚РѕС‚РЅРѕСЃС‚Рё РўРў
+                                     an_timezonew NUMBER,   --Р’СЂРµРјРµРЅРЅР°СЏ Р·РѕРЅР° Р·РёРјРѕР№
+                                                         an_timezones NUMBER,   --Р’СЂРµРјРµРЅРЅР°СЏ Р·РѕРЅР° Р»РµС‚РѕРј
+                                                                             an_opposite NUMBER,   --id, РёРЅС„РѕСЂРјР°С†РёСЏ Рѕ РїСЂРѕС‚РёРІРѕРїРѕР»РѕР¶РЅРѕР№ С‚РѕС‡РєРµ
+ an_norder NUMBER,   --РїРѕСЂСЏРґРѕРє РІ РґРµСЂРµРІРµ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ 0
+ an_nintegr NUMBER, --РїРµСЂРёРѕРґ РёРЅС‚РµРіСЂР°С†РёРё
+ an_lockswitch NUMBER --РЅРµ РїРµСЂРµС…РѕРґРёС‚ РЅР° РћР’
+ ) IS   -- 44 РїР°СЂР°РјРµС‚СЂР°
   ln_gid      NUMBER;
   ln_gid1     NUMBER;
   ln_old_kc   NUMBER;
@@ -2740,7 +2740,7 @@ PROCEDURE upd_p_b(an_mid NUMBER,   --Ид зеленой точки
     FROM feeders
    WHERE mid = an_mid;
 
-  IF util_pg.get_customer_id = 1 THEN   --ХЭС
+  IF util_pg.get_customer_id = 1 THEN   --РҐР­РЎ
    UPDATE points
       SET tag = an_tag,
           norder = an_norder
@@ -2841,7 +2841,7 @@ PROCEDURE upd_p_b(an_mid NUMBER,   --Ид зеленой точки
           WHERE mid = an_mid AND entype BETWEEN 1 AND 6;
 
     UPDATE meters
-       SET NAME = SUBSTR (av_name, 1, lc_namelength) || ' Инт.',
+       SET NAME = SUBSTR (av_name, 1, lc_namelength) || ' РРЅС‚.',
            POSITION = an_er_position,
            kc = an_kc
      WHERE mid = an_mid AND entype = 7;
@@ -2850,7 +2850,7 @@ PROCEDURE upd_p_b(an_mid NUMBER,   --Ид зеленой точки
      INSERT INTO meters
                  (ID, mid, NAME, POSITION, entype, smart, kc
                  )
-          VALUES (points_seq.NEXTVAL, an_mid, SUBSTR (av_name, 1, lc_namelength) || ' Инт.', an_er_position, 7, '*', an_kc
+          VALUES (points_seq.NEXTVAL, an_mid, SUBSTR (av_name, 1, lc_namelength) || ' РРЅС‚.', an_er_position, 7, '*', an_kc
                  );
     END IF;
    ELSE
@@ -2859,7 +2859,7 @@ PROCEDURE upd_p_b(an_mid NUMBER,   --Ид зеленой точки
 
     IF an_er_position != 0 THEN
      UPDATE meters
-        SET NAME = SUBSTR (av_name, 1, lc_namelength) || ' А птр.',
+        SET NAME = SUBSTR (av_name, 1, lc_namelength) || ' Рђ РїС‚СЂ.',
             POSITION = an_er_position,
             kc = an_kc
       WHERE mid = an_mid AND entype = 1;
@@ -2868,7 +2868,7 @@ PROCEDURE upd_p_b(an_mid NUMBER,   --Ид зеленой точки
       INSERT INTO meters
                   (ID, mid, NAME, POSITION, entype, smart, kc
                   )
-           VALUES (points_seq.NEXTVAL, an_mid, SUBSTR (av_name, 1, lc_namelength) || ' А птр.', an_er_position, 1, '', an_kc
+           VALUES (points_seq.NEXTVAL, an_mid, SUBSTR (av_name, 1, lc_namelength) || ' Рђ РїС‚СЂ.', an_er_position, 1, '', an_kc
                   );
      END IF;
     ELSE
@@ -2878,7 +2878,7 @@ PROCEDURE upd_p_b(an_mid NUMBER,   --Ид зеленой точки
 
     IF an_ed_position != 0 THEN
      UPDATE meters
-        SET NAME = SUBSTR (av_name, 1, lc_namelength) || ' А выд.',
+        SET NAME = SUBSTR (av_name, 1, lc_namelength) || ' Рђ РІС‹Рґ.',
             POSITION = an_ed_position,
             kc = an_kc
       WHERE mid = an_mid AND entype = 2;
@@ -2887,7 +2887,7 @@ PROCEDURE upd_p_b(an_mid NUMBER,   --Ид зеленой точки
       INSERT INTO meters
                   (ID, mid, NAME, POSITION, entype, smart, kc
                   )
-           VALUES (points_seq.NEXTVAL, an_mid, SUBSTR (av_name, 1, lc_namelength) || ' А выд.', an_ed_position, 2, '', an_kc
+           VALUES (points_seq.NEXTVAL, an_mid, SUBSTR (av_name, 1, lc_namelength) || ' Рђ РІС‹Рґ.', an_ed_position, 2, '', an_kc
                   );
      END IF;
     ELSE
@@ -2897,7 +2897,7 @@ PROCEDURE upd_p_b(an_mid NUMBER,   --Ид зеленой точки
 
     IF an_q1_position != 0 THEN
      UPDATE meters
-        SET NAME = SUBSTR (av_name, 1, lc_namelength) || ' Р птр.',
+        SET NAME = SUBSTR (av_name, 1, lc_namelength) || ' Р  РїС‚СЂ.',
             POSITION = an_q1_position,
             kc = an_kc
       WHERE mid = an_mid AND entype = 3;
@@ -2906,7 +2906,7 @@ PROCEDURE upd_p_b(an_mid NUMBER,   --Ид зеленой точки
       INSERT INTO meters
                   (ID, mid, NAME, POSITION, entype, smart, kc
                   )
-           VALUES (points_seq.NEXTVAL, an_mid, SUBSTR (av_name, 1, lc_namelength) || ' Р птр.', an_q1_position, 3, '', an_kc
+           VALUES (points_seq.NEXTVAL, an_mid, SUBSTR (av_name, 1, lc_namelength) || ' Р  РїС‚СЂ.', an_q1_position, 3, '', an_kc
                   );
      END IF;
     ELSE
@@ -2916,7 +2916,7 @@ PROCEDURE upd_p_b(an_mid NUMBER,   --Ид зеленой точки
 
     IF an_q3_position != 0 THEN
      UPDATE meters
-        SET NAME = SUBSTR (av_name, 1, lc_namelength) || ' Р выд.',
+        SET NAME = SUBSTR (av_name, 1, lc_namelength) || ' Р  РІС‹Рґ.',
             POSITION = an_q3_position,
             kc = an_kc
       WHERE mid = an_mid AND entype = 5;
@@ -2925,7 +2925,7 @@ PROCEDURE upd_p_b(an_mid NUMBER,   --Ид зеленой точки
       INSERT INTO meters
                   (ID, mid, NAME, POSITION, entype, smart, kc
                   )
-           VALUES (points_seq.NEXTVAL, an_mid, SUBSTR (av_name, 1, lc_namelength) || ' Р выд.', an_q3_position, 5, '', an_kc
+           VALUES (points_seq.NEXTVAL, an_mid, SUBSTR (av_name, 1, lc_namelength) || ' Р  РІС‹Рґ.', an_q3_position, 5, '', an_kc
                   );
      END IF;
     ELSE
@@ -2945,7 +2945,7 @@ PROCEDURE upd_p_b(an_mid NUMBER,   --Ид зеленой точки
     WHERE nroot1 = 1 AND nroot2 = an_mid;
   END IF;
 
-  admin_pg.fiscal_p (gn_task_code, 2, 'Изменены атрибуты точки ' || util_pg.node_path_f (an_mid, 'points', 'mid', 'parent'));
+  admin_pg.fiscal_p (gn_task_code, 2, 'РР·РјРµРЅРµРЅС‹ Р°С‚СЂРёР±СѓС‚С‹ С‚РѕС‡РєРё ' || util_pg.node_path_f (an_mid, 'points', 'mid', 'parent'));
 
   IF ln_old_kc <> an_kc THEN
    file_pg.startbyevents_p (46, an_mid, SYSDATE);
@@ -2953,50 +2953,50 @@ PROCEDURE upd_p_b(an_mid NUMBER,   --Ид зеленой точки
  EXCEPTION
   WHEN OTHERS THEN
    ROLLBACK TO SAVEPOINT editfeeders_upd;
-   raise_application_error (-20001, 'editfeeders_pg.upd_p: Ошибка обновления присоединения. ' || CHR (10) || SQLERRM (SQLCODE));
+   raise_application_error (-20001, 'editfeeders_pg.upd_p: РћС€РёР±РєР° РѕР±РЅРѕРІР»РµРЅРёСЏ РїСЂРёСЃРѕРµРґРёРЅРµРЅРёСЏ. ' || CHR (10) || SQLERRM (SQLCODE));
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
- -- Процедура обновления данных (с неполным набором параметров)
- PROCEDURE upd_p (an_mid NUMBER,   --Ид точки
-                                av_importcode VARCHAR2,   -- Связной код импорта
-                                                       an_canal NUMBER,   --Номер канала
-                                                                       an_tag NUMBER,   --Тег связи
+ -- РџСЂРѕС†РµРґСѓСЂР° РѕР±РЅРѕРІР»РµРЅРёСЏ РґР°РЅРЅС‹С… (СЃ РЅРµРїРѕР»РЅС‹Рј РЅР°Р±РѕСЂРѕРј РїР°СЂР°РјРµС‚СЂРѕРІ)
+ PROCEDURE upd_p (an_mid NUMBER,   --РРґ С‚РѕС‡РєРё
+                                av_importcode VARCHAR2,   -- РЎРІСЏР·РЅРѕР№ РєРѕРґ РёРјРїРѕСЂС‚Р°
+                                                       an_canal NUMBER,   --РќРѕРјРµСЂ РєР°РЅР°Р»Р°
+                                                                       an_tag NUMBER,   --РўРµРі СЃРІСЏР·Рё
                                                                                      an_er_position NUMBER, an_q1_position NUMBER, an_ed_position NUMBER,
- an_q3_position NUMBER, av_info VARCHAR2,   --Доп информация
-                                         an_nblock NUMBER,   --Блокировка авт. опроса
-                                                          an_dataabsence NUMBER, an_commctrl NUMBER, an_techctrl NUMBER, an_lockcorrecttime NUMBER,   -- блокировка коррекции времени
- an_timezonew NUMBER,   --Временная зона зимой
-                     an_timezones NUMBER   --Временная зона летом
- -- an_parent            NUMBER,   --Родитель
-  --an_type              NUMBER,   --Тип точки
-  --av_name              VARCHAR2,   --Название
-  --av_short_name        VARCHAR2,   --Краткое название
-  -- an_smart             NUMBER,   --Интеллектуал
- -- an_q1234             NUMBER,   --Квадранты
- -- av_cellnum           VARCHAR2,   --Номер ячейки
- -- an_power             NUMBER,   --Мощность
- -- an_current1          NUMBER,   --Напряжение перв
-  --an_current2          NUMBER,   --Напряжение вторич
-  --an_kc                NUMBER,   --Коэфф
-  --an_power2            NUMBER,   --Мощность вторич кВ
-  --an_metkc             NUMBER,   --Коэф прошитый в счетчике
-  --an_abc               NUMBER,   --Заземленная нейтраль
-  --an_calcbill          NUMBER,   --Верифицировать суточные
-  --an_calcmonths        NUMBER,   --Верифицировать месячные
-  --an_inverted          NUMBER,   --Инверсия
-  --an_switch            NUMBER,   --Признак обводника
- -- an_usd               NUMBER,   --УСД
---  an_main              NUMBER,   --nMainPoint - основная точка учёта (для дублирования)
---  av_verifyparam       VARCHAR2,   -- Параметры верификации
---  av_addparams         VARCHAR2,   -- Дополнительные параметры
---  av_code              VARCHAR2,   -- код точки
- -- av_verifyday         VARCHAR2,   -- Параметры верификации суточных
- -- an_classtn           NUMBER,   --Класс тотности ТН
- -- an_classtt           NUMBER,   --Класс тотности ТТ
- -- an_opposite          NUMBER,   --id, информация о противоположной точке
---  an_norder            NUMBER  --порядок в дереве по умолчанию 0
- ) IS   -- 16 параметра
+ an_q3_position NUMBER, av_info VARCHAR2,   --Р”РѕРї РёРЅС„РѕСЂРјР°С†РёСЏ
+                                         an_nblock NUMBER,   --Р‘Р»РѕРєРёСЂРѕРІРєР° Р°РІС‚. РѕРїСЂРѕСЃР°
+                                                          an_dataabsence NUMBER, an_commctrl NUMBER, an_techctrl NUMBER, an_lockcorrecttime NUMBER,   -- Р±Р»РѕРєРёСЂРѕРІРєР° РєРѕСЂСЂРµРєС†РёРё РІСЂРµРјРµРЅРё
+ an_timezonew NUMBER,   --Р’СЂРµРјРµРЅРЅР°СЏ Р·РѕРЅР° Р·РёРјРѕР№
+                     an_timezones NUMBER   --Р’СЂРµРјРµРЅРЅР°СЏ Р·РѕРЅР° Р»РµС‚РѕРј
+ -- an_parent            NUMBER,   --Р РѕРґРёС‚РµР»СЊ
+  --an_type              NUMBER,   --РўРёРї С‚РѕС‡РєРё
+  --av_name              VARCHAR2,   --РќР°Р·РІР°РЅРёРµ
+  --av_short_name        VARCHAR2,   --РљСЂР°С‚РєРѕРµ РЅР°Р·РІР°РЅРёРµ
+  -- an_smart             NUMBER,   --РРЅС‚РµР»Р»РµРєС‚СѓР°Р»
+ -- an_q1234             NUMBER,   --РљРІР°РґСЂР°РЅС‚С‹
+ -- av_cellnum           VARCHAR2,   --РќРѕРјРµСЂ СЏС‡РµР№РєРё
+ -- an_power             NUMBER,   --РњРѕС‰РЅРѕСЃС‚СЊ
+ -- an_current1          NUMBER,   --РќР°РїСЂСЏР¶РµРЅРёРµ РїРµСЂРІ
+  --an_current2          NUMBER,   --РќР°РїСЂСЏР¶РµРЅРёРµ РІС‚РѕСЂРёС‡
+  --an_kc                NUMBER,   --РљРѕСЌС„С„
+  --an_power2            NUMBER,   --РњРѕС‰РЅРѕСЃС‚СЊ РІС‚РѕСЂРёС‡ РєР’
+  --an_metkc             NUMBER,   --РљРѕСЌС„ РїСЂРѕС€РёС‚С‹Р№ РІ СЃС‡РµС‚С‡РёРєРµ
+  --an_abc               NUMBER,   --Р—Р°Р·РµРјР»РµРЅРЅР°СЏ РЅРµР№С‚СЂР°Р»СЊ
+  --an_calcbill          NUMBER,   --Р’РµСЂРёС„РёС†РёСЂРѕРІР°С‚СЊ СЃСѓС‚РѕС‡РЅС‹Рµ
+  --an_calcmonths        NUMBER,   --Р’РµСЂРёС„РёС†РёСЂРѕРІР°С‚СЊ РјРµСЃСЏС‡РЅС‹Рµ
+  --an_inverted          NUMBER,   --РРЅРІРµСЂСЃРёСЏ
+  --an_switch            NUMBER,   --РџСЂРёР·РЅР°Рє РѕР±РІРѕРґРЅРёРєР°
+ -- an_usd               NUMBER,   --РЈРЎР”
+--  an_main              NUMBER,   --nMainPoint - РѕСЃРЅРѕРІРЅР°СЏ С‚РѕС‡РєР° СѓС‡С‘С‚Р° (РґР»СЏ РґСѓР±Р»РёСЂРѕРІР°РЅРёСЏ)
+--  av_verifyparam       VARCHAR2,   -- РџР°СЂР°РјРµС‚СЂС‹ РІРµСЂРёС„РёРєР°С†РёРё
+--  av_addparams         VARCHAR2,   -- Р”РѕРїРѕР»РЅРёС‚РµР»СЊРЅС‹Рµ РїР°СЂР°РјРµС‚СЂС‹
+--  av_code              VARCHAR2,   -- РєРѕРґ С‚РѕС‡РєРё
+ -- av_verifyday         VARCHAR2,   -- РџР°СЂР°РјРµС‚СЂС‹ РІРµСЂРёС„РёРєР°С†РёРё СЃСѓС‚РѕС‡РЅС‹С…
+ -- an_classtn           NUMBER,   --РљР»Р°СЃСЃ С‚РѕС‚РЅРѕСЃС‚Рё РўРќ
+ -- an_classtt           NUMBER,   --РљР»Р°СЃСЃ С‚РѕС‚РЅРѕСЃС‚Рё РўРў
+ -- an_opposite          NUMBER,   --id, РёРЅС„РѕСЂРјР°С†РёСЏ Рѕ РїСЂРѕС‚РёРІРѕРїРѕР»РѕР¶РЅРѕР№ С‚РѕС‡РєРµ
+--  an_norder            NUMBER  --РїРѕСЂСЏРґРѕРє РІ РґРµСЂРµРІРµ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ 0
+ ) IS   -- 16 РїР°СЂР°РјРµС‚СЂР°
   CURSOR lcur_f (cn_mid NUMBER) IS
    SELECT p.mid, p.PARENT, 0 ntype, p.NAME, p.short_name, DECODE (f.smart, '*', 1, 0) smart, DECODE (f.q1234, '*', 1, 0) q1234, f.cellnum, f.POWER, f.current1,
           f.current2, f.kc, f.power2, f.metkc, f.nabc, f.ncalcbill, f.ncalcmonths, f.ninverted, f.nswitch, f.nlockswitch, f.nusd, f.vcode, f.nmainpoint, f.verifyparam,
@@ -3013,12 +3013,12 @@ PROCEDURE upd_p_b(an_mid NUMBER,   --Ид зеленой точки
  END;
 
 --------------------------------------------------------------------------------------------
---Процедура обновления параметров
- PROCEDURE upd_last_save (an_mid NUMBER,   --Ид точки
-                                        ad_profile DATE,   -- Дата постедней считанного профиля
-                                                        ad_halfhour DATE,   -- Дата постедней считанного получасовки
-                                                                         ad_bill DATE,   -- Дата постедней считанного суточного показания
- ad_month DATE   -- Дата постедней считанного месячного показания
+--РџСЂРѕС†РµРґСѓСЂР° РѕР±РЅРѕРІР»РµРЅРёСЏ РїР°СЂР°РјРµС‚СЂРѕРІ
+ PROCEDURE upd_last_save (an_mid NUMBER,   --РРґ С‚РѕС‡РєРё
+                                        ad_profile DATE,   -- Р”Р°С‚Р° РїРѕСЃС‚РµРґРЅРµР№ СЃС‡РёС‚Р°РЅРЅРѕРіРѕ РїСЂРѕС„РёР»СЏ
+                                                        ad_halfhour DATE,   -- Р”Р°С‚Р° РїРѕСЃС‚РµРґРЅРµР№ СЃС‡РёС‚Р°РЅРЅРѕРіРѕ РїРѕР»СѓС‡Р°СЃРѕРІРєРё
+                                                                         ad_bill DATE,   -- Р”Р°С‚Р° РїРѕСЃС‚РµРґРЅРµР№ СЃС‡РёС‚Р°РЅРЅРѕРіРѕ СЃСѓС‚РѕС‡РЅРѕРіРѕ РїРѕРєР°Р·Р°РЅРёСЏ
+ ad_month DATE   -- Р”Р°С‚Р° РїРѕСЃС‚РµРґРЅРµР№ СЃС‡РёС‚Р°РЅРЅРѕРіРѕ РјРµСЃСЏС‡РЅРѕРіРѕ РїРѕРєР°Р·Р°РЅРёСЏ
  ) IS
   ld_sys   DATE DEFAULT TRUNC (SYSDATE);
  BEGIN
@@ -3031,23 +3031,23 @@ PROCEDURE upd_p_b(an_mid NUMBER,   --Ид зеленой точки
          months = ad_month
    WHERE mid = an_mid;
 
-  admin_pg.fiscal_p (gn_task_code, 2, 'Изменены параметры дат считанных данных (LAST_SAVE) для точки ' || util_pg.node_path_f (an_mid, 'points', 'mid', 'parent'));
+  admin_pg.fiscal_p (gn_task_code, 2, 'РР·РјРµРЅРµРЅС‹ РїР°СЂР°РјРµС‚СЂС‹ РґР°С‚ СЃС‡РёС‚Р°РЅРЅС‹С… РґР°РЅРЅС‹С… (LAST_SAVE) РґР»СЏ С‚РѕС‡РєРё ' || util_pg.node_path_f (an_mid, 'points', 'mid', 'parent'));
   COMMIT;
  EXCEPTION
   WHEN OTHERS THEN
    ROLLBACK;
-   raise_application_error (-20001, 'editfeeders_pg.upd_last_save: Ошибка обновления параметров сохраненных данных. ' || CHR (10) || SQLERRM (SQLCODE));
+   raise_application_error (-20001, 'editfeeders_pg.upd_last_save: РћС€РёР±РєР° РѕР±РЅРѕРІР»РµРЅРёСЏ РїР°СЂР°РјРµС‚СЂРѕРІ СЃРѕС…СЂР°РЅРµРЅРЅС‹С… РґР°РЅРЅС‹С…. ' || CHR (10) || SQLERRM (SQLCODE));
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
-  --Процедура добавления пустой строки в last_save
- PROCEDURE ins_last_save (an_mid NUMBER,   --Ид точки
+  --РџСЂРѕС†РµРґСѓСЂР° РґРѕР±Р°РІР»РµРЅРёСЏ РїСѓСЃС‚РѕР№ СЃС‚СЂРѕРєРё РІ last_save
+ PROCEDURE ins_last_save (an_mid NUMBER,   --РРґ С‚РѕС‡РєРё
                                         av_state VARCHAR2,an_state_cod NUMBER , an_clock NUMBER ) IS
   ld_sys   DATE DEFAULT TRUNC (SYSDATE);
  BEGIN
   INSERT INTO last_save
               (mid, PROFILE, halfhour, bill, state_date, state_cod, state_descr, clock, luck, rates, months, journal)
-   SELECT an_mid, ld_sys - 10, ld_sys - 370, ld_sys - 370, ld_sys, NVL(an_state_cod, 0), NVL(av_state, 'Опрос не производился '), NVL(an_clock, 0),
+   SELECT an_mid, ld_sys - 10, ld_sys - 370, ld_sys - 370, ld_sys, NVL(an_state_cod, 0), NVL(av_state, 'РћРїСЂРѕСЃ РЅРµ РїСЂРѕРёР·РІРѕРґРёР»СЃСЏ '), NVL(an_clock, 0),
           ld_sys - 100, ld_sys - 100, ld_sys - 370, ld_sys - 370
    FROM   DUAL
    WHERE  NOT EXISTS(SELECT *
@@ -3056,8 +3056,8 @@ PROCEDURE upd_p_b(an_mid NUMBER,   --Ид зеленой точки
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
-   -- Пересчитывает расход по показаниям счетчика и ГН
- PROCEDURE recalcdiff (an_mid NUMBER, ad_from DATE) IS   --расход
+   -- РџРµСЂРµСЃС‡РёС‚С‹РІР°РµС‚ СЂР°СЃС…РѕРґ РїРѕ РїРѕРєР°Р·Р°РЅРёСЏРј СЃС‡РµС‚С‡РёРєР° Рё Р“Рќ
+ PROCEDURE recalcdiff (an_mid NUMBER, ad_from DATE) IS   --СЂР°СЃС…РѕРґ
   ln_rn     NUMBER          DEFAULT 10;
   lv_name   VARCHAR2 (4000);
  BEGIN
@@ -3072,7 +3072,7 @@ PROCEDURE upd_p_b(an_mid NUMBER,   --Ид зеленой точки
                                                    (calcformula_pg.cn_cpt_cons, calcformula_pg.cn_cpt_amm, calcformula_pg.cn_cpt_sum, calcformula_pg.cn_cpt_formula)) LOOP
    lv_name := util_pg.node_path_f (lc.mid, 'points', 'mid', 'parent');
 
-   --Обновляем точку
+   --РћР±РЅРѕРІР»СЏРµРј С‚РѕС‡РєСѓ
    UPDATE halfhourold
       SET er = ROUND (lc.kc * er / NVL (nkc, 1), ln_rn),
           ed = ROUND (lc.kc * ed / NVL (nkc, 1), ln_rn),
@@ -3153,7 +3153,7 @@ PROCEDURE upd_p_b(an_mid NUMBER,   --Ид зеленой точки
           q4_kc = lc.kc
     WHERE mid = lc.mid AND date_time > ad_from;
 
-   --Обновляем ОВ
+   --РћР±РЅРѕРІР»СЏРµРј РћР’
    UPDATE halfhourold
       SET er = ROUND (lc.kc * er / NVL (nkc, 1), ln_rn),
           ed = ROUND (lc.kc * ed / NVL (nkc, 1), ln_rn),
@@ -3168,7 +3168,7 @@ PROCEDURE upd_p_b(an_mid NUMBER,   --Ид зеленой точки
    DELETE FROM halfhourold
          WHERE nswitch = lc.mid AND date_time > TRUNC (ad_from) AND NOT (nsource BETWEEN 1 AND util_pg.cn_manualinputw);
 
-   -- Чистим bill
+   -- Р§РёСЃС‚РёРј bill
    DELETE FROM billold
          WHERE mid = lc.mid AND date_time > ad_from;
 
@@ -3182,7 +3182,7 @@ PROCEDURE upd_p_b(an_mid NUMBER,   --Ид зеленой точки
      SELECT mid, ddate
        FROM lagging_records);
 
-   admin_pg.fiscal_p (gn_task_code, 2, 'Выполнен перерасчет расхода начиная с ' || TO_CHAR (ad_from, 'DD.MM.YYYY HH24:MI:SS') || ' по точке учета ' || lv_name);
+   admin_pg.fiscal_p (gn_task_code, 2, 'Р’С‹РїРѕР»РЅРµРЅ РїРµСЂРµСЂР°СЃС‡РµС‚ СЂР°СЃС…РѕРґР° РЅР°С‡РёРЅР°СЏ СЃ ' || TO_CHAR (ad_from, 'DD.MM.YYYY HH24:MI:SS') || ' РїРѕ С‚РѕС‡РєРµ СѓС‡РµС‚Р° ' || lv_name);
    COMMIT;
   END LOOP;
 
@@ -3205,25 +3205,25 @@ PROCEDURE upd_p_b(an_mid NUMBER,   --Ид зеленой точки
  EXCEPTION
   WHEN OTHERS THEN
    ROLLBACK;
-   raise_application_error (-20001, 'indic_pg.recalcdiff: Ошибка перерасчета расходапо точке: ''' || lv_name || '''. ' || CHR (10) || SQLERRM (SQLCODE));
+   raise_application_error (-20001, 'indic_pg.recalcdiff: РћС€РёР±РєР° РїРµСЂРµСЂР°СЃС‡РµС‚Р° СЂР°СЃС…РѕРґР°РїРѕ С‚РѕС‡РєРµ: ''' || lv_name || '''. ' || CHR (10) || SQLERRM (SQLCODE));
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
- --Процедура удаления данных из БД
- PROCEDURE delete_data (an_mid NUMBER,   --Ид точки
-                                      ad_profile DATE,   -- Дата > которой удаляются данные профиля
-                                                      ad_halfhour DATE,   -- Дата > которой удаляются данные ГН
-                                                                       ad_bill DATE,   -- Дата > которой удаляются данные Суточных
-                                                                                    ad_month DATE,   --  Дата > которой удаляются месячные Суточных
-                                                                                                  ad_profile_e DATE,   -- Дата <= которой удаляются данные профиля
- ad_halfhour_e DATE,   -- Дата <= которой удаляются данные ГН
-                    ad_bill_e DATE,   -- Дата <= которой удаляются данные Суточных
-                                   ad_month_e DATE,   --  Дата <= которой удаляются месячные Суточных
-                                                   ad_journal DATE,   -- Дата > которой удаляются данные Журнала
-                                                                   ad_journal_e DATE,   -- Дата <= которой удаляются данные Журнала
-                                                                                     ad_currpower DATE,   --  Дата > которой удаляются мгновенные данные
- ad_currpower_e DATE,   --  Дата <= которой удаляются мгновенные данные
-                     an_withreload NUMBER   --Признак сдвига LAST_SAVE
+ --РџСЂРѕС†РµРґСѓСЂР° СѓРґР°Р»РµРЅРёСЏ РґР°РЅРЅС‹С… РёР· Р‘Р”
+ PROCEDURE delete_data (an_mid NUMBER,   --РРґ С‚РѕС‡РєРё
+                                      ad_profile DATE,   -- Р”Р°С‚Р° > РєРѕС‚РѕСЂРѕР№ СѓРґР°Р»СЏСЋС‚СЃСЏ РґР°РЅРЅС‹Рµ РїСЂРѕС„РёР»СЏ
+                                                      ad_halfhour DATE,   -- Р”Р°С‚Р° > РєРѕС‚РѕСЂРѕР№ СѓРґР°Р»СЏСЋС‚СЃСЏ РґР°РЅРЅС‹Рµ Р“Рќ
+                                                                       ad_bill DATE,   -- Р”Р°С‚Р° > РєРѕС‚РѕСЂРѕР№ СѓРґР°Р»СЏСЋС‚СЃСЏ РґР°РЅРЅС‹Рµ РЎСѓС‚РѕС‡РЅС‹С…
+                                                                                    ad_month DATE,   --  Р”Р°С‚Р° > РєРѕС‚РѕСЂРѕР№ СѓРґР°Р»СЏСЋС‚СЃСЏ РјРµСЃСЏС‡РЅС‹Рµ РЎСѓС‚РѕС‡РЅС‹С…
+                                                                                                  ad_profile_e DATE,   -- Р”Р°С‚Р° <= РєРѕС‚РѕСЂРѕР№ СѓРґР°Р»СЏСЋС‚СЃСЏ РґР°РЅРЅС‹Рµ РїСЂРѕС„РёР»СЏ
+ ad_halfhour_e DATE,   -- Р”Р°С‚Р° <= РєРѕС‚РѕСЂРѕР№ СѓРґР°Р»СЏСЋС‚СЃСЏ РґР°РЅРЅС‹Рµ Р“Рќ
+                    ad_bill_e DATE,   -- Р”Р°С‚Р° <= РєРѕС‚РѕСЂРѕР№ СѓРґР°Р»СЏСЋС‚СЃСЏ РґР°РЅРЅС‹Рµ РЎСѓС‚РѕС‡РЅС‹С…
+                                   ad_month_e DATE,   --  Р”Р°С‚Р° <= РєРѕС‚РѕСЂРѕР№ СѓРґР°Р»СЏСЋС‚СЃСЏ РјРµСЃСЏС‡РЅС‹Рµ РЎСѓС‚РѕС‡РЅС‹С…
+                                                   ad_journal DATE,   -- Р”Р°С‚Р° > РєРѕС‚РѕСЂРѕР№ СѓРґР°Р»СЏСЋС‚СЃСЏ РґР°РЅРЅС‹Рµ Р–СѓСЂРЅР°Р»Р°
+                                                                   ad_journal_e DATE,   -- Р”Р°С‚Р° <= РєРѕС‚РѕСЂРѕР№ СѓРґР°Р»СЏСЋС‚СЃСЏ РґР°РЅРЅС‹Рµ Р–СѓСЂРЅР°Р»Р°
+                                                                                     ad_currpower DATE,   --  Р”Р°С‚Р° > РєРѕС‚РѕСЂРѕР№ СѓРґР°Р»СЏСЋС‚СЃСЏ РјРіРЅРѕРІРµРЅРЅС‹Рµ РґР°РЅРЅС‹Рµ
+ ad_currpower_e DATE,   --  Р”Р°С‚Р° <= РєРѕС‚РѕСЂРѕР№ СѓРґР°Р»СЏСЋС‚СЃСЏ РјРіРЅРѕРІРµРЅРЅС‹Рµ РґР°РЅРЅС‹Рµ
+                     an_withreload NUMBER   --РџСЂРёР·РЅР°Рє СЃРґРІРёРіР° LAST_SAVE
  ) IS
   lv_name   VARCHAR2 (4000);
   ld_end    DATE            DEFAULT TO_DATE (300001, 'YYYYMM');
@@ -3242,8 +3242,8 @@ PROCEDURE upd_p_b(an_mid NUMBER,   --Ид зеленой точки
           WHERE mid = lc.mid AND date_time > ad_profile AND date_time <= NVL (ad_profile_e, ld_end);
 
     admin_pg.fiscal_p (gn_task_code, 3,
-                       'Выполнено удаление данных профиля за период с ' || TO_CHAR (ad_profile, 'DD.MM.YYYY HH24:MI:SS') || ' по '
-                       || TO_CHAR (NVL (ad_profile_e, ld_end), 'DD.MM.YYYY HH24:MI:SS') || ' по точке учета ' || lv_name);
+                       'Р’С‹РїРѕР»РЅРµРЅРѕ СѓРґР°Р»РµРЅРёРµ РґР°РЅРЅС‹С… РїСЂРѕС„РёР»СЏ Р·Р° РїРµСЂРёРѕРґ СЃ ' || TO_CHAR (ad_profile, 'DD.MM.YYYY HH24:MI:SS') || ' РїРѕ '
+                       || TO_CHAR (NVL (ad_profile_e, ld_end), 'DD.MM.YYYY HH24:MI:SS') || ' РїРѕ С‚РѕС‡РєРµ СѓС‡РµС‚Р° ' || lv_name);
    END IF;
 
    IF ad_halfhour IS NOT NULL THEN
@@ -3253,7 +3253,7 @@ PROCEDURE upd_p_b(an_mid NUMBER,   --Ид зеленой точки
     DELETE FROM billold
           WHERE mid = lc.mid AND date_time > ad_halfhour AND date_time <= NVL (ad_halfhour_e, ld_end);
 
-    --ОВ
+    --РћР’
     DELETE FROM billold
           WHERE mid IN (SELECT mid
                           FROM halfhourold
@@ -3264,8 +3264,8 @@ PROCEDURE upd_p_b(an_mid NUMBER,   --Ид зеленой точки
           WHERE nswitch = lc.mid AND date_time > ad_halfhour AND date_time <= NVL (ad_halfhour_e, ld_end);
 
     admin_pg.fiscal_p (gn_task_code, 3,
-                       'Выполнено удаление данных ГН начиная с ' || TO_CHAR (ad_halfhour, 'DD.MM.YYYY HH24:MI:SS') || ' по '
-                       || TO_CHAR (NVL (ad_halfhour_e, ld_end), 'DD.MM.YYYY HH24:MI:SS') || ' по точке учета ' || lv_name);
+                       'Р’С‹РїРѕР»РЅРµРЅРѕ СѓРґР°Р»РµРЅРёРµ РґР°РЅРЅС‹С… Р“Рќ РЅР°С‡РёРЅР°СЏ СЃ ' || TO_CHAR (ad_halfhour, 'DD.MM.YYYY HH24:MI:SS') || ' РїРѕ '
+                       || TO_CHAR (NVL (ad_halfhour_e, ld_end), 'DD.MM.YYYY HH24:MI:SS') || ' РїРѕ С‚РѕС‡РєРµ СѓС‡РµС‚Р° ' || lv_name);
    END IF;
 
    IF ad_bill IS NOT NULL THEN
@@ -3273,8 +3273,8 @@ PROCEDURE upd_p_b(an_mid NUMBER,   --Ид зеленой точки
           WHERE mid = lc.mid AND date_time >= TRUNC (ad_bill) + 1 AND date_time <= NVL (ad_bill_e, ld_end);
 
     admin_pg.fiscal_p (gn_task_code, 3,
-                       'Выполнено удаление суточных данных начиная с ' || TO_CHAR (ad_bill, 'DD.MM.YYYY HH24:MI:SS') || ' по '
-                       || TO_CHAR (NVL (ad_bill_e, ld_end), 'DD.MM.YYYY HH24:MI:SS') || ' по точке учета ' || lv_name);
+                       'Р’С‹РїРѕР»РЅРµРЅРѕ СѓРґР°Р»РµРЅРёРµ СЃСѓС‚РѕС‡РЅС‹С… РґР°РЅРЅС‹С… РЅР°С‡РёРЅР°СЏ СЃ ' || TO_CHAR (ad_bill, 'DD.MM.YYYY HH24:MI:SS') || ' РїРѕ '
+                       || TO_CHAR (NVL (ad_bill_e, ld_end), 'DD.MM.YYYY HH24:MI:SS') || ' РїРѕ С‚РѕС‡РєРµ СѓС‡РµС‚Р° ' || lv_name);
    END IF;
 
    IF ad_month IS NOT NULL THEN
@@ -3282,8 +3282,8 @@ PROCEDURE upd_p_b(an_mid NUMBER,   --Ид зеленой точки
           WHERE mid = lc.mid AND date_time >= ADD_MONTHS (TRUNC (ad_month, 'MONTH'), 1) AND date_time <= NVL (ad_month_e, ld_end);
 
     admin_pg.fiscal_p (gn_task_code, 3,
-                       'Выполнено удаление месячных данных начиная с ' || TO_CHAR (ad_month, 'DD.MM.YYYY HH24:MI:SS') || ' по '
-                       || TO_CHAR (NVL (ad_month_e, ld_end), 'DD.MM.YYYY HH24:MI:SS') || ' по точке учета ' || lv_name);
+                       'Р’С‹РїРѕР»РЅРµРЅРѕ СѓРґР°Р»РµРЅРёРµ РјРµСЃСЏС‡РЅС‹С… РґР°РЅРЅС‹С… РЅР°С‡РёРЅР°СЏ СЃ ' || TO_CHAR (ad_month, 'DD.MM.YYYY HH24:MI:SS') || ' РїРѕ '
+                       || TO_CHAR (NVL (ad_month_e, ld_end), 'DD.MM.YYYY HH24:MI:SS') || ' РїРѕ С‚РѕС‡РєРµ СѓС‡РµС‚Р° ' || lv_name);
    END IF;
 
    IF ad_journal IS NOT NULL THEN
@@ -3291,8 +3291,8 @@ PROCEDURE upd_p_b(an_mid NUMBER,   --Ид зеленой точки
           WHERE mid = lc.mid AND date_time > ad_journal AND date_time <= NVL (ad_journal_e, ld_end);
 
     admin_pg.fiscal_p (gn_task_code, 3,
-                       'Выполнено удаление данных журнала начиная с ' || TO_CHAR (ad_journal, 'DD.MM.YYYY HH24:MI:SS') || ' по '
-                       || TO_CHAR (NVL (ad_journal_e, ld_end), 'DD.MM.YYYY HH24:MI:SS') || ' по точке учета ' || lv_name);
+                       'Р’С‹РїРѕР»РЅРµРЅРѕ СѓРґР°Р»РµРЅРёРµ РґР°РЅРЅС‹С… Р¶СѓСЂРЅР°Р»Р° РЅР°С‡РёРЅР°СЏ СЃ ' || TO_CHAR (ad_journal, 'DD.MM.YYYY HH24:MI:SS') || ' РїРѕ '
+                       || TO_CHAR (NVL (ad_journal_e, ld_end), 'DD.MM.YYYY HH24:MI:SS') || ' РїРѕ С‚РѕС‡РєРµ СѓС‡РµС‚Р° ' || lv_name);
    END IF;
 
    IF ad_currpower IS NOT NULL THEN
@@ -3300,8 +3300,8 @@ PROCEDURE upd_p_b(an_mid NUMBER,   --Ид зеленой точки
           WHERE mid = lc.mid AND date_time > ad_currpower AND date_time <= NVL (ad_currpower_e, ld_end);
 
     admin_pg.fiscal_p (gn_task_code, 3,
-                       'Выполнено удаление мгновенных данных начиная с ' || TO_CHAR (ad_currpower, 'DD.MM.YYYY HH24:MI:SS') || ' по '
-                       || TO_CHAR (NVL (ad_currpower_e, ld_end), 'DD.MM.YYYY HH24:MI:SS') || ' по точке учета ' || lv_name);
+                       'Р’С‹РїРѕР»РЅРµРЅРѕ СѓРґР°Р»РµРЅРёРµ РјРіРЅРѕРІРµРЅРЅС‹С… РґР°РЅРЅС‹С… РЅР°С‡РёРЅР°СЏ СЃ ' || TO_CHAR (ad_currpower, 'DD.MM.YYYY HH24:MI:SS') || ' РїРѕ '
+                       || TO_CHAR (NVL (ad_currpower_e, ld_end), 'DD.MM.YYYY HH24:MI:SS') || ' РїРѕ С‚РѕС‡РєРµ СѓС‡РµС‚Р° ' || lv_name);
    END IF;
 
    IF an_withreload = 1 THEN
@@ -3331,11 +3331,11 @@ PROCEDURE upd_p_b(an_mid NUMBER,   --Ид зеленой точки
  EXCEPTION
   WHEN OTHERS THEN
    ROLLBACK;
-   raise_application_error (-20001, 'indic_pg.delete_data: Ошибка удаления данных по точке: ''' || lv_name || '''. ' || CHR (10) || SQLERRM (SQLCODE));
+   raise_application_error (-20001, 'indic_pg.delete_data: РћС€РёР±РєР° СѓРґР°Р»РµРЅРёСЏ РґР°РЅРЅС‹С… РїРѕ С‚РѕС‡РєРµ: ''' || lv_name || '''. ' || CHR (10) || SQLERRM (SQLCODE));
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
- --ищем точку, группу или канал (an_mid - точка старта)
+ --РёС‰РµРј С‚РѕС‡РєСѓ, РіСЂСѓРїРїСѓ РёР»Рё РєР°РЅР°Р» (an_mid - С‚РѕС‡РєР° СЃС‚Р°СЂС‚Р°)
  FUNCTION findpoint (an_mid NUMBER, av_name VARCHAR2, av_code VARCHAR2, av_mtrsn VARCHAR2, av_pmid VARCHAR2, an_pointtype NUMBER, av_canal VARCHAR2)
   RETURN NUMBER IS
   lv_sql     VARCHAR2 (2000);
@@ -3348,16 +3348,16 @@ PROCEDURE upd_p_b(an_mid NUMBER,   --Ид зеленой точки
  BEGIN
    
 --  IF an_pointtype IS NOT NULL THEN
-  IF an_pointtype = 1 THEN  -- группы
+  IF an_pointtype = 1 THEN  -- РіСЂСѓРїРїС‹
    lv_sql := 'select nvl(min(p.gid),0) from groups p,feeders f,meters m where p.gid> NVL (:an_mid, 0) and f.mid=p.mid and f.mid=m.mid(+) ';
-  ELSIF an_pointtype = 2 THEN -- каналы added by KAG 10.03.2010
+  ELSIF an_pointtype = 2 THEN -- РєР°РЅР°Р»С‹ added by KAG 10.03.2010
    lv_sql := 'select nvl(min(cp.cid),0) from chanpoint cp, feeders f, meters m, points p 
                WHERE cp.cid> NVL (:an_mid, 0) AND f.mid=cp.mid AND f.mid=m.mid(+) AND p.mid=cp.mid 
                      AND EXISTS (SELECT * FROM  schemchannels
                                   WHERE NOPERSCANSCHEMAS IN (SELECT NOPERSCANSCHEMAS FROM ROLES
                                                               WHERE role_id IN (SELECT role_id FROM users WHERE usr = '''||USER||'''))
                                         AND cid = cp.cid) ';    
-  ELSE  -- точки
+  ELSE  -- С‚РѕС‡РєРё
    -- lv_sql := 'select nvl(min(f.mid),0) from points p,feeders f,meters m where f.mid>' || NVL (an_mid, 0) || ' and f.mid=p.mid and f.mid=m.mid(+) ';
    lv_sql := 'select nvl(min(p.mid),0) from points p,feeders f,meters m where p.mid> NVL (:an_mid, 0) and p.mid=f.mid(+) and f.mid=m.mid(+) ';
   END IF;
@@ -3425,7 +3425,7 @@ PROCEDURE upd_p_b(an_mid NUMBER,   --Ид зеленой точки
    SELECT   nrecompens, LTRIM (TO_CHAR (nratio, '0.99')) || ' ' || vname vname, 1 nsort, nratio
        FROM recompens
    UNION ALL
-   SELECT   0 nrecompens, 'По счетчику на реактивную', 0 nsort, 0 nratio
+   SELECT   0 nrecompens, 'РџРѕ СЃС‡РµС‚С‡РёРєСѓ РЅР° СЂРµР°РєС‚РёРІРЅСѓСЋ', 0 nsort, 0 nratio
        FROM DUAL
    ORDER BY 3, 4 DESC;
  END;
@@ -3437,7 +3437,7 @@ PROCEDURE upd_p_b(an_mid NUMBER,   --Ид зеленой точки
    SELECT   ncalcpointtype, vname, 1 nsort
        FROM calcpointtype
    UNION ALL
-   SELECT   0, 'Не производить', 0 nsort
+   SELECT   0, 'РќРµ РїСЂРѕРёР·РІРѕРґРёС‚СЊ', 0 nsort
        FROM DUAL
    ORDER BY 3, 2;
  END;
@@ -3648,8 +3648,8 @@ PROCEDURE upd_p_b(an_mid NUMBER,   --Ид зеленой точки
  END;
 
 --------------------------------------------------------------------------------------------------------------
---возвращает измерения и их глобальные индексы для конкретной точки
---Виленская Н.Б. 14.11.2008
+--РІРѕР·РІСЂР°С‰Р°РµС‚ РёР·РјРµСЂРµРЅРёСЏ Рё РёС… РіР»РѕР±Р°Р»СЊРЅС‹Рµ РёРЅРґРµРєСЃС‹ РґР»СЏ РєРѕРЅРєСЂРµС‚РЅРѕР№ С‚РѕС‡РєРё
+--Р’РёР»РµРЅСЃРєР°СЏ Рќ.Р‘. 14.11.2008
  PROCEDURE get_measure (an_mid NUMBER, an_objtype NUMBER, acur_t OUT common_pg.tcur) IS
  BEGIN
   OPEN acur_t FOR
@@ -3660,7 +3660,7 @@ PROCEDURE upd_p_b(an_mid NUMBER,   --Ид зеленой точки
  END;
 
 -----------------------------------------------------------------------------------------------------------------------
---Сохранение глобальных индексов
+--РЎРѕС…СЂР°РЅРµРЅРёРµ РіР»РѕР±Р°Р»СЊРЅС‹С… РёРЅРґРµРєСЃРѕРІ
  PROCEDURE ins_guid (an_mid NUMBER, an_nmeasure common_pg.tt_number, an_mrid common_pg.tt_varchar2) IS
  BEGIN
   DELETE FROM mrids
@@ -3687,7 +3687,7 @@ PROCEDURE upd_p_b(an_mid NUMBER,   --Ид зеленой точки
   lv_row     VARCHAR2 (100) DEFAULT ' ';
  BEGIN
   OPEN lc_meas FOR
-   SELECT DECODE (a.nmeas, 0, 'Общая', 1, 'A+', 2, 'A-', 3, 'R+', 5, 'R-', ' ')
+   SELECT DECODE (a.nmeas, 0, 'РћР±С‰Р°СЏ', 1, 'A+', 2, 'A-', 3, 'R+', 5, 'R-', ' ')
      INTO lv_nmeas
      FROM pointformula a
     WHERE a.mid = an_mid;
@@ -3711,7 +3711,7 @@ PROCEDURE upd_p_b(an_mid NUMBER,   --Ид зеленой точки
  END;
 ------------------------------------------------------------------------------------------------- 
  -- added by KAG 27.01.2010
- -- список базовых периодов интеграции
+ -- СЃРїРёСЃРѕРє Р±Р°Р·РѕРІС‹С… РїРµСЂРёРѕРґРѕРІ РёРЅС‚РµРіСЂР°С†РёРё
  PROCEDURE IntegratorTimes_p (acur_t OUT common_pg.tcur) IS
  BEGIN
   OPEN acur_t FOR
@@ -3744,8 +3744,8 @@ END;   -- Package Body
 CREATE OR REPLACE 
 PACKAGE BODY comsrv_pg IS
 ------------------------------------------------------------------------------------------------------------------------
-   -- Интерфейс взаимодействия БД с Носиком А.В.
-   -- дата создания 30/11/2001 Сечин А.А.
+   -- РРЅС‚РµСЂС„РµР№СЃ РІР·Р°РёРјРѕРґРµР№СЃС‚РІРёСЏ Р‘Р” СЃ РќРѕСЃРёРєРѕРј Рђ.Р’.
+   -- РґР°С‚Р° СЃРѕР·РґР°РЅРёСЏ 30/11/2001 РЎРµС‡РёРЅ Рђ.Рђ.
 ------------------------------------------------------------------------------------------------------------------------
  cn_roundalpha   CONSTANT NUMBER := 6;
  cn_roundrtu     CONSTANT NUMBER := 5;
@@ -3755,9 +3755,9 @@ PACKAGE BODY comsrv_pg IS
  PROCEDURE set_abc_zxb (an_mid NUMBER, an_volt1 NUMBER, an_volt2 NUMBER, an_volt3 NUMBER, ad_date DATE);
 
 ------------------------------------------------------------------------------------------------------------------------
---******************************          Общие процедуры      *******************************************************--
+--******************************          РћР±С‰РёРµ РїСЂРѕС†РµРґСѓСЂС‹      *******************************************************--
 ------------------------------------------------------------------------------------------------------------------------
-   --Вставка суточных расходов (Єнергия меркурий облик и.т.д. только расход)
+   --Р’СЃС‚Р°РІРєР° СЃСѓС‚РѕС‡РЅС‹С… СЂР°СЃС…РѕРґРѕРІ (Р„РЅРµСЂРіРёСЏ РјРµСЂРєСѓСЂРёР№ РѕР±Р»РёРє Рё.С‚.Рґ. С‚РѕР»СЊРєРѕ СЂР°СЃС…РѕРґ)
  PROCEDURE set_bill_eom (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_q2 NUMBER, an_q4 NUMBER, an_aer NUMBER, an_aed NUMBER,
  an_aq1 NUMBER, an_aq3 NUMBER, an_aq2 NUMBER, an_aq4 NUMBER, an_ber NUMBER, an_bed NUMBER, an_bq1 NUMBER, an_bq3 NUMBER, an_bq2 NUMBER, an_bq4 NUMBER,
  an_cer NUMBER, an_ced NUMBER, an_cq1 NUMBER, an_cq3 NUMBER, an_cq2 NUMBER, an_cq4 NUMBER, an_der NUMBER, an_ded NUMBER, an_dq1 NUMBER, an_dq3 NUMBER,
@@ -3815,7 +3815,7 @@ PACKAGE BODY comsrv_pg IS
                q1_mtrsn, q3_mtrsn, q2_mtrsn, q4_mtrsn
               )
        VALUES (an_mid, ln_er, ln_ed, ln_q1, ln_q3, ln_q2, ln_q4, ln_aer, ln_aed, ln_aq1, ln_aq3, ln_aq2, ln_aq4, ln_ber, ln_bed, ln_bq1, ln_bq3, ln_bq2, ln_bq4,
-               ln_cer, ln_ced, ln_cq1, ln_cq3, ln_cq2, ln_cq4, ln_der, ln_ded, ln_dq1, ln_dq3, ln_dq2, ln_dq4, ad_date, 'КС', ln_source, lv_mtrsn, lv_mtrsn,
+               ln_cer, ln_ced, ln_cq1, ln_cq3, ln_cq2, ln_cq4, ln_der, ln_ded, ln_dq1, ln_dq3, ln_dq2, ln_dq4, ad_date, 'РљРЎ', ln_source, lv_mtrsn, lv_mtrsn,
                lv_mtrsn, lv_mtrsn, lv_mtrsn, lv_mtrsn
               );
  EXCEPTION
@@ -3831,7 +3831,7 @@ PACKAGE BODY comsrv_pg IS
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
-   --Вставка месячных расходов
+   --Р’СЃС‚Р°РІРєР° РјРµСЃСЏС‡РЅС‹С… СЂР°СЃС…РѕРґРѕРІ
  PROCEDURE set_months_eom (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_q2 NUMBER, an_q4 NUMBER, an_aer NUMBER, an_aed NUMBER,
  an_aq1 NUMBER, an_aq3 NUMBER, an_aq2 NUMBER, an_aq4 NUMBER, an_ber NUMBER, an_bed NUMBER, an_bq1 NUMBER, an_bq3 NUMBER, an_bq2 NUMBER, an_bq4 NUMBER, an_cer NUMBER,
  an_ced NUMBER, an_cq1 NUMBER, an_cq3 NUMBER, an_cq2 NUMBER, an_cq4 NUMBER, an_der NUMBER, an_ded NUMBER, an_dq1 NUMBER, an_dq3 NUMBER, an_dq2 NUMBER, an_dq4 NUMBER,
@@ -3886,7 +3886,7 @@ PACKAGE BODY comsrv_pg IS
                q3_mtrsn, q2_mtrsn, q4_mtrsn
               )
        VALUES (an_mid, ln_er, ln_ed, ln_q1, ln_q3, ln_q2, ln_q4, ln_aer, ln_aed, ln_aq1, ln_aq3, ln_aq2, ln_aq4, ln_ber, ln_bed, ln_bq1, ln_bq3, ln_bq2, ln_bq4,
-               ln_cer, ln_ced, ln_cq1, ln_cq3, ln_cq2, ln_cq4, ln_der, ln_ded, ln_dq1, ln_dq3, ln_dq2, ln_dq4, ad_date, 'КС', cn_auto, lv_mtrsn, lv_mtrsn, lv_mtrsn,
+               ln_cer, ln_ced, ln_cq1, ln_cq3, ln_cq2, ln_cq4, ln_der, ln_ded, ln_dq1, ln_dq3, ln_dq2, ln_dq4, ad_date, 'РљРЎ', cn_auto, lv_mtrsn, lv_mtrsn, lv_mtrsn,
                lv_mtrsn, lv_mtrsn, lv_mtrsn
               );
  EXCEPTION
@@ -3902,7 +3902,7 @@ PACKAGE BODY comsrv_pg IS
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
- --Сверка номера счетчика (Если возвращает не 0 то отваливаем и переходим к другому счетчику)
+ --РЎРІРµСЂРєР° РЅРѕРјРµСЂР° СЃС‡РµС‚С‡РёРєР° (Р•СЃР»Рё РІРѕР·РІСЂР°С‰Р°РµС‚ РЅРµ 0 С‚Рѕ РѕС‚РІР°Р»РёРІР°РµРј Рё РїРµСЂРµС…РѕРґРёРј Рє РґСЂСѓРіРѕРјСѓ СЃС‡РµС‚С‡РёРєСѓ)
  FUNCTION check_mtrsn (an_mid NUMBER, av_mtrsn VARCHAR2)
   RETURN NUMBER IS
  BEGIN
@@ -3910,13 +3910,13 @@ PACKAGE BODY comsrv_pg IS
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
---Проседура приведения формата углов счетчика к абсолютным углам
+--РџСЂРѕСЃРµРґСѓСЂР° РїСЂРёРІРµРґРµРЅРёСЏ С„РѕСЂРјР°С‚Р° СѓРіР»РѕРІ СЃС‡РµС‚С‡РёРєР° Рє Р°Р±СЃРѕР»СЋС‚РЅС‹Рј СѓРіР»Р°Рј
 /*
-an_typeconvert - 1  преобразуем sl-7000
-an_typeconvert - 2  преобразуем ARGO
-an_typeconvert - 3  Не преобразуем
-an_typeconvert - 4  преобразуем ZxD СЭС
-Иначе не преобразуем
+an_typeconvert - 1  РїСЂРµРѕР±СЂР°Р·СѓРµРј sl-7000
+an_typeconvert - 2  РїСЂРµРѕР±СЂР°Р·СѓРµРј ARGO
+an_typeconvert - 3  РќРµ РїСЂРµРѕР±СЂР°Р·СѓРµРј
+an_typeconvert - 4  РїСЂРµРѕР±СЂР°Р·СѓРµРј ZxD РЎР­РЎ
+РРЅР°С‡Рµ РЅРµ РїСЂРµРѕР±СЂР°Р·СѓРµРј
 */
  PROCEDURE convert_corners (an_typeconvert NUMBER, an_u1 IN OUT NUMBER, an_u2 IN OUT NUMBER, an_u3 IN OUT NUMBER, an_i1 IN OUT NUMBER, an_i2 IN OUT NUMBER,
  an_i3 IN OUT NUMBER
@@ -3929,12 +3929,12 @@ an_typeconvert - 4  преобразуем ZxD СЭС
   ln_i3   NUMBER DEFAULT an_i3;
  BEGIN
   IF an_typeconvert = 1 THEN   -- Schlum (SL7000)
-   /* - an_fiu1 - угол между U2 и U1, а надо U1
-      - an_fiu2 - угол между U3 и U1, а надо U2
-      - an_fiu3 - угол между U2 и U3, а надо U3
-      - an_fii1 - угол между I1 и U1, а надо I1
-      - an_fii2 - угол между I2 и U2, а надо I2
-      - an_fii3 - угол между I3 и U3, а надо I3    */
+   /* - an_fiu1 - СѓРіРѕР» РјРµР¶РґСѓ U2 Рё U1, Р° РЅР°РґРѕ U1
+      - an_fiu2 - СѓРіРѕР» РјРµР¶РґСѓ U3 Рё U1, Р° РЅР°РґРѕ U2
+      - an_fiu3 - СѓРіРѕР» РјРµР¶РґСѓ U2 Рё U3, Р° РЅР°РґРѕ U3
+      - an_fii1 - СѓРіРѕР» РјРµР¶РґСѓ I1 Рё U1, Р° РЅР°РґРѕ I1
+      - an_fii2 - СѓРіРѕР» РјРµР¶РґСѓ I2 Рё U2, Р° РЅР°РґРѕ I2
+      - an_fii3 - СѓРіРѕР» РјРµР¶РґСѓ I3 Рё U3, Р° РЅР°РґРѕ I3    */
    an_u1 := 0;
    an_u2 := ln_u1;
    an_u3 := ln_u1 + ln_u3;
@@ -3942,22 +3942,22 @@ an_typeconvert - 4  преобразуем ZxD СЭС
    an_i2 := an_u2 + ln_i2;
    an_i3 := an_u3 + ln_i3;
   ELSIF an_typeconvert = 2 THEN   -- ARGO
-   /* - an_fiu1 - NULL (подразумевается   0), а надо U1 (  0)
-      - an_fiu2 - NULL (подразумевается 120), а надо U2 (120)
-      - an_fiu3 - NULL (подразумевается 240), а надо U3 (240)
-      - an_fii1 - угол между I1 и U1, а надо I1
-      - an_fii2 - угол между I2 и U2, а надо I2
-      - an_fii3 - угол между I3 и U3, а надо I3    */
+   /* - an_fiu1 - NULL (РїРѕРґСЂР°Р·СѓРјРµРІР°РµС‚СЃСЏ   0), Р° РЅР°РґРѕ U1 (  0)
+      - an_fiu2 - NULL (РїРѕРґСЂР°Р·СѓРјРµРІР°РµС‚СЃСЏ 120), Р° РЅР°РґРѕ U2 (120)
+      - an_fiu3 - NULL (РїРѕРґСЂР°Р·СѓРјРµРІР°РµС‚СЃСЏ 240), Р° РЅР°РґРѕ U3 (240)
+      - an_fii1 - СѓРіРѕР» РјРµР¶РґСѓ I1 Рё U1, Р° РЅР°РґРѕ I1
+      - an_fii2 - СѓРіРѕР» РјРµР¶РґСѓ I2 Рё U2, Р° РЅР°РґРѕ I2
+      - an_fii3 - СѓРіРѕР» РјРµР¶РґСѓ I3 Рё U3, Р° РЅР°РґРѕ I3    */
    an_u1 := 0;
    an_u2 := 120;
    an_u3 := 240;
    an_i1 := ln_u1 + ln_i1;
    an_i2 := ln_u2 + ln_i2;
    an_i3 := ln_u3 + ln_i3;
-  ELSIF an_typeconvert = 4 THEN   -- ZxD с СЭС
-   /* - an_fii1 - угол между I1 и U1, а надо I1
-      - an_fii2 - угол между I2 и U2, а надо I2
-      - an_fii3 - угол между I3 и U3, а надо I3    */
+  ELSIF an_typeconvert = 4 THEN   -- ZxD СЃ РЎР­РЎ
+   /* - an_fii1 - СѓРіРѕР» РјРµР¶РґСѓ I1 Рё U1, Р° РЅР°РґРѕ I1
+      - an_fii2 - СѓРіРѕР» РјРµР¶РґСѓ I2 Рё U2, Р° РЅР°РґРѕ I2
+      - an_fii3 - СѓРіРѕР» РјРµР¶РґСѓ I3 Рё U3, Р° РЅР°РґРѕ I3    */
    an_i1 := ln_u1 + ln_i1;
    an_i2 := ln_u2 + ln_i2;
    an_i3 := ln_u3 + ln_i3;
@@ -3965,7 +3965,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
    an_u1 := 0;
   END IF;
 
-  --Убираем обороты
+  --РЈР±РёСЂР°РµРј РѕР±РѕСЂРѕС‚С‹
   an_u1 := MOD (an_u1, 360);
   an_u2 := MOD (an_u2, 360);
   an_u3 := MOD (an_u3, 360);
@@ -3973,7 +3973,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
   an_i2 := MOD (an_i2, 360);
   an_i3 := MOD (an_i3, 360);
 
-  --Делаем все от [0:360]
+  --Р”РµР»Р°РµРј РІСЃРµ РѕС‚ [0:360]
   IF an_u1 < 0 THEN
    an_u1 := 360 + an_u1;
   END IF;
@@ -4006,7 +4006,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
---Возвращает признак необходимость коррекции времени и допустимый диапазон (Если an_cid>0, то проверяет канал, an_mid>0, то проверяет точку)
+--Р’РѕР·РІСЂР°С‰Р°РµС‚ РїСЂРёР·РЅР°Рє РЅРµРѕР±С…РѕРґРёРјРѕСЃС‚СЊ РєРѕСЂСЂРµРєС†РёРё РІСЂРµРјРµРЅРё Рё РґРѕРїСѓСЃС‚РёРјС‹Р№ РґРёР°РїР°Р·РѕРЅ (Р•СЃР»Рё an_cid>0, С‚Рѕ РїСЂРѕРІРµСЂСЏРµС‚ РєР°РЅР°Р», an_mid>0, С‚Рѕ РїСЂРѕРІРµСЂСЏРµС‚ С‚РѕС‡РєСѓ)
  PROCEDURE get_timeinfo (an_cid NUMBER, an_mid NUMBER, an_min_delta OUT NUMBER, an_max_delta OUT NUMBER, an_clock_set OUT NUMBER) IS
   ln_clock_set   NUMBER;
  BEGIN
@@ -4032,7 +4032,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
---Возвращает информацию по программироваению времени счетчика (часовые пояса)
+--Р’РѕР·РІСЂР°С‰Р°РµС‚ РёРЅС„РѕСЂРјР°С†РёСЋ РїРѕ РїСЂРѕРіСЂР°РјРјРёСЂРѕРІР°РµРЅРёСЋ РІСЂРµРјРµРЅРё СЃС‡РµС‚С‡РёРєР° (С‡Р°СЃРѕРІС‹Рµ РїРѕСЏСЃР°)
  PROCEDURE get_wstimeinfo(an_mid NUMBER, an_timezonew OUT NUMBER, an_timezones OUT NUMBER) IS
  BEGIN
   SELECT NVL(MAX(ntimezonew), util_pg.cn_tzw), NVL(MAX(ntimezones), util_pg.cn_tzs)
@@ -4065,7 +4065,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
 ------------------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------------------------
- --Вставка текущих
+ --Р’СЃС‚Р°РІРєР° С‚РµРєСѓС‰РёС…
  PROCEDURE set_curr_power_meter (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_q2m NUMBER, an_q4m NUMBER, ad_date DATE) IS
   ln_rn     NUMBER DEFAULT 5;
   ln_kc     NUMBER;
@@ -4148,7 +4148,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
---Вставка текущих
+--Р’СЃС‚Р°РІРєР° С‚РµРєСѓС‰РёС…
  PROCEDURE set_curr_power_meter (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_q2m NUMBER, an_q4m NUMBER, an_freq NUMBER,
  an_cos_fi NUMBER, an_volt1 NUMBER, an_volt2 NUMBER, an_volt3 NUMBER, an_curr1 NUMBER, an_curr2 NUMBER, an_curr3 NUMBER, an_fii1 NUMBER, an_fii2 NUMBER,
  an_fii3 NUMBER, an_fiu1 NUMBER, an_fiu2 NUMBER, an_fiu3 NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_q2 NUMBER, an_q4 NUMBER, an_i0 NUMBER,
@@ -4229,7 +4229,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  END;
 
 -----------------------------------------------------------------------------------------------------------------------
---Вставка текущих
+--Р’СЃС‚Р°РІРєР° С‚РµРєСѓС‰РёС…
  PROCEDURE set_curr_power_meter (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_q2m NUMBER, an_q4m NUMBER, an_freq NUMBER,
  an_cos_fi NUMBER, an_volt1 NUMBER, an_volt2 NUMBER, an_volt3 NUMBER, an_curr1 NUMBER, an_curr2 NUMBER, an_curr3 NUMBER, an_fii1 NUMBER, an_fii2 NUMBER,
  an_fii3 NUMBER, an_fiu1 NUMBER, an_fiu2 NUMBER, an_fiu3 NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_q2 NUMBER, an_q4 NUMBER, an_type NUMBER,
@@ -4282,11 +4282,11 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  END;
 
 -----------------------------------------------------------------------------------------------------------------------
-  --Вставка суточных
+  --Р’СЃС‚Р°РІРєР° СЃСѓС‚РѕС‡РЅС‹С…
  PROCEDURE set_bill_meter (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_q2m NUMBER, an_q4m NUMBER, an_aerm NUMBER, an_aedm NUMBER,
  an_aq1m NUMBER, an_aq3m NUMBER, an_aq2m NUMBER, an_aq4m NUMBER, an_berm NUMBER, an_bedm NUMBER, an_bq1m NUMBER, an_bq3m NUMBER, an_bq2m NUMBER, an_bq4m NUMBER,
  an_cerm NUMBER, an_cedm NUMBER, an_cq1m NUMBER, an_cq3m NUMBER, an_cq2m NUMBER, an_cq4m NUMBER, an_derm NUMBER, an_dedm NUMBER, an_dq1m NUMBER, an_dq3m NUMBER,
- an_dq2m NUMBER, an_dq4m NUMBER, av_mtrsn VARCHAR2, an_digits NUMBER,   --Значность счетчика, необходимо передать 6 - A1R_ParamCalc.DPLocE
+ an_dq2m NUMBER, an_dq4m NUMBER, av_mtrsn VARCHAR2, an_digits NUMBER,   --Р—РЅР°С‡РЅРѕСЃС‚СЊ СЃС‡РµС‚С‡РёРєР°, РЅРµРѕР±С…РѕРґРёРјРѕ РїРµСЂРµРґР°С‚СЊ 6 - A1R_ParamCalc.DPLocE
                                                                      ad_date DATE
  ) IS
   CURSOR lcur_sel IS
@@ -4306,7 +4306,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
   lb_found    BOOLEAN;
   ln_kc       NUMBER;
   ln_rn       NUMBER             DEFAULT 10;
-  lv_source   VARCHAR2 (32)      DEFAULT 'КС';
+  lv_source   VARCHAR2 (32)      DEFAULT 'РљРЎ';
   ln_erm      NUMBER             DEFAULT ROUND (an_erm, cn_roundall);
   ln_edm      NUMBER             DEFAULT ROUND (an_edm, cn_roundall);
   ln_q1m      NUMBER             DEFAULT ROUND (an_q1m, cn_roundall);
@@ -4516,11 +4516,11 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
-  --Вставка месячных
+  --Р’СЃС‚Р°РІРєР° РјРµСЃСЏС‡РЅС‹С…
  PROCEDURE set_months_meter (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_q2m NUMBER, an_q4m NUMBER, an_aerm NUMBER, an_aedm NUMBER,
  an_aq1m NUMBER, an_aq3m NUMBER, an_aq2m NUMBER, an_aq4m NUMBER, an_berm NUMBER, an_bedm NUMBER, an_bq1m NUMBER, an_bq3m NUMBER, an_bq2m NUMBER, an_bq4m NUMBER,
  an_cerm NUMBER, an_cedm NUMBER, an_cq1m NUMBER, an_cq3m NUMBER, an_cq2m NUMBER, an_cq4m NUMBER, an_derm NUMBER, an_dedm NUMBER, an_dq1m NUMBER, an_dq3m NUMBER,
- an_dq2m NUMBER, an_dq4m NUMBER, av_mtrsn VARCHAR2, an_digits NUMBER,   --Значность счетчика, необходимо передать 6 - A1R_ParamCalc.DPLocE
+ an_dq2m NUMBER, an_dq4m NUMBER, av_mtrsn VARCHAR2, an_digits NUMBER,   --Р—РЅР°С‡РЅРѕСЃС‚СЊ СЃС‡РµС‚С‡РёРєР°, РЅРµРѕР±С…РѕРґРёРјРѕ РїРµСЂРµРґР°С‚СЊ 6 - A1R_ParamCalc.DPLocE
                                                                      ad_date DATE
  ) IS
   CURSOR lcur_sel IS
@@ -4540,7 +4540,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
   lb_found    BOOLEAN;
   ln_kc       NUMBER;
   ln_rn       NUMBER             DEFAULT 10;
-  lv_source   VARCHAR2 (32)      DEFAULT 'КС';
+  lv_source   VARCHAR2 (32)      DEFAULT 'РљРЎ';
   ln_erm      NUMBER             DEFAULT ROUND (an_erm, cn_roundall);
   ln_edm      NUMBER             DEFAULT ROUND (an_edm, cn_roundall);
   ln_q1m      NUMBER             DEFAULT ROUND (an_q1m, cn_roundall);
@@ -4750,7 +4750,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
-  --Вставка ГН для счетчиков
+  --Р’СЃС‚Р°РІРєР° Р“Рќ РґР»СЏ СЃС‡РµС‚С‡РёРєРѕРІ
  PROCEDURE set_halfhour_meter (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_q2 NUMBER, an_q4 NUMBER, an_status NUMBER,
  an_metertype NUMBER, av_qm VARCHAR2, ad_date DATE, an_period NUMBER
  ) IS
@@ -4759,7 +4759,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
-  --Вставка ГН для счетчиков
+  --Р’СЃС‚Р°РІРєР° Р“Рќ РґР»СЏ СЃС‡РµС‚С‡РёРєРѕРІ
  PROCEDURE set_halfhour_meter (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_q2 NUMBER, an_q4 NUMBER, an_erm NUMBER, an_edm NUMBER,
  an_q1m NUMBER, an_q3m NUMBER, an_q2m NUMBER, an_q4m NUMBER, an_status NUMBER, an_metertype NUMBER, av_qm VARCHAR2, ad_date DATE, an_period NUMBER
  ) IS
@@ -4786,8 +4786,8 @@ an_typeconvert - 4  преобразуем ZxD СЭС
 /*  IF an_metertype = cn_itek THEN
    ln_source := cn_itek;
   END IF;*/
-  IF /*Доп проверка*/ an_period <= ln_stepprofile AND MOD (ln_stepprofile, an_period) = 0 AND util_pg.get_typekeephalfhour (an_mid) = 1 THEN   --Расчитывать ГН по ГН счетчика (при параметризации ПУ < 30 писать в PROFILE и считать ГН)
-   IF util_pg.newhalfhour_f = 1 AND util_pg.is_timeswitch (ad_date) = -1 THEN   --Время перехода с лета на зиму (nsource=19,29)
+  IF /*Р”РѕРї РїСЂРѕРІРµСЂРєР°*/ an_period <= ln_stepprofile AND MOD (ln_stepprofile, an_period) = 0 AND util_pg.get_typekeephalfhour (an_mid) = 1 THEN   --Р Р°СЃС‡РёС‚С‹РІР°С‚СЊ Р“Рќ РїРѕ Р“Рќ СЃС‡РµС‚С‡РёРєР° (РїСЂРё РїР°СЂР°РјРµС‚СЂРёР·Р°С†РёРё РџРЈ < 30 РїРёСЃР°С‚СЊ РІ PROFILE Рё СЃС‡РёС‚Р°С‚СЊ Р“Рќ)
+   IF util_pg.newhalfhour_f = 1 AND util_pg.is_timeswitch (ad_date) = -1 THEN   --Р’СЂРµРјСЏ РїРµСЂРµС…РѕРґР° СЃ Р»РµС‚Р° РЅР° Р·РёРјСѓ (nsource=19,29)
     ln_source := 19;
    END IF;
 
@@ -4835,14 +4835,14 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  END;
 
  ------------------------------------------------------------------------------------------------------------------------
---******************************          УСПД КМ-64           *******************************************************--
+--******************************          РЈРЎРџР” РљРњ-64           *******************************************************--
 ------------------------------------------------------------------------------------------------------------------------
-   --Вставка суточных
+   --Р’СЃС‚Р°РІРєР° СЃСѓС‚РѕС‡РЅС‹С…
  PROCEDURE set_bill_uspd (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_q2m NUMBER, an_q4m NUMBER, an_aerm NUMBER, an_aedm NUMBER,
  an_aq1m NUMBER, an_aq3m NUMBER, an_aq2m NUMBER, an_aq4m NUMBER, an_berm NUMBER, an_bedm NUMBER, an_bq1m NUMBER, an_bq3m NUMBER, an_bq2m NUMBER, an_bq4m NUMBER,
  an_cerm NUMBER, an_cedm NUMBER, an_cq1m NUMBER, an_cq3m NUMBER, an_cq2m NUMBER, an_cq4m NUMBER, an_derm NUMBER, an_dedm NUMBER, an_dq1m NUMBER, an_dq3m NUMBER,
- an_dq2m NUMBER, an_dq4m NUMBER, av_mtrsn VARCHAR2, an_digits NUMBER,   --Значность счетчика, необходимо передать соответствующую АРГО
-                                                                        --( для A1R было 6 - A1R_ParamCalc.DPLocE )
+ an_dq2m NUMBER, an_dq4m NUMBER, av_mtrsn VARCHAR2, an_digits NUMBER,   --Р—РЅР°С‡РЅРѕСЃС‚СЊ СЃС‡РµС‚С‡РёРєР°, РЅРµРѕР±С…РѕРґРёРјРѕ РїРµСЂРµРґР°С‚СЊ СЃРѕРѕС‚РІРµС‚СЃС‚РІСѓСЋС‰СѓСЋ РђР Р“Рћ
+                                                                        --( РґР»СЏ A1R Р±С‹Р»Рѕ 6 - A1R_ParamCalc.DPLocE )
                                                                      ad_date DATE
  ) IS
  BEGIN
@@ -4852,12 +4852,12 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
-  --Вставка месячных
+  --Р’СЃС‚Р°РІРєР° РјРµСЃСЏС‡РЅС‹С…
  PROCEDURE set_months_uspd (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_q2m NUMBER, an_q4m NUMBER, an_aerm NUMBER, an_aedm NUMBER,
  an_aq1m NUMBER, an_aq3m NUMBER, an_aq2m NUMBER, an_aq4m NUMBER, an_berm NUMBER, an_bedm NUMBER, an_bq1m NUMBER, an_bq3m NUMBER, an_bq2m NUMBER, an_bq4m NUMBER,
  an_cerm NUMBER, an_cedm NUMBER, an_cq1m NUMBER, an_cq3m NUMBER, an_cq2m NUMBER, an_cq4m NUMBER, an_derm NUMBER, an_dedm NUMBER, an_dq1m NUMBER, an_dq3m NUMBER,
- an_dq2m NUMBER, an_dq4m NUMBER, av_mtrsn VARCHAR2, an_digits NUMBER,   --Значность счетчика, необходимо передать соответствующую АРГО
-                                                                        --( для A1R 6 - A1R_ParamCalc.DPLocE )
+ an_dq2m NUMBER, an_dq4m NUMBER, av_mtrsn VARCHAR2, an_digits NUMBER,   --Р—РЅР°С‡РЅРѕСЃС‚СЊ СЃС‡РµС‚С‡РёРєР°, РЅРµРѕР±С…РѕРґРёРјРѕ РїРµСЂРµРґР°С‚СЊ СЃРѕРѕС‚РІРµС‚СЃС‚РІСѓСЋС‰СѓСЋ РђР Р“Рћ
+                                                                        --( РґР»СЏ A1R 6 - A1R_ParamCalc.DPLocE )
                                                                      ad_date DATE
  ) IS
  BEGIN
@@ -4867,7 +4867,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
- --Вставка графика нагрузки
+ --Р’СЃС‚Р°РІРєР° РіСЂР°С„РёРєР° РЅР°РіСЂСѓР·РєРё
  PROCEDURE set_halfhour_uspd (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_q2 NUMBER, an_q4 NUMBER, ad_date DATE) IS
  BEGIN
   set_halfhour_meter (an_mid, an_er, an_ed, an_q1, an_q3, an_q2, an_q4, NULL, cn_uspd_64, NULL, ad_date, NULL);
@@ -4876,7 +4876,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
 ------------------------------------------------------------------------------------------------------------------------
 --******************************          Itek 210             *******************************************************--
 ------------------------------------------------------------------------------------------------------------------------
- --Вставка коэффициентов
+ --Р’СЃС‚Р°РІРєР° РєРѕСЌС„С„РёС†РёРµРЅС‚РѕРІ
  PROCEDURE set_coeffic_itek (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER) IS
  BEGIN
   UPDATE itekcoeff
@@ -4900,7 +4900,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
- --Вставка 3-х минуток
+ --Р’СЃС‚Р°РІРєР° 3-С… РјРёРЅСѓС‚РѕРє
  PROCEDURE set_profile_itek (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, ad_date DATE) IS
   ln_er       NUMBER DEFAULT an_er;
   ln_ed       NUMBER DEFAULT an_ed;
@@ -4911,10 +4911,10 @@ an_typeconvert - 4  преобразуем ZxD СЭС
   ln_source   NUMBER DEFAULT cn_auto;
   ln_mid      NUMBER;
  BEGIN
-  IF FALSE THEN   --IF убрать, когда Носик станет вести по зиме
+  IF FALSE THEN   --IF СѓР±СЂР°С‚СЊ, РєРѕРіРґР° РќРѕСЃРёРє СЃС‚Р°РЅРµС‚ РІРµСЃС‚Рё РїРѕ Р·РёРјРµ
    ld_date := util_pg.to_localtime_if_new (ad_date);
 
-   IF util_pg.newhalfhour_f = 1 AND util_pg.is_timeswitch (ad_date) = -1 THEN   --Время перехода с лета на зиму (nsource=19,29)
+   IF util_pg.newhalfhour_f = 1 AND util_pg.is_timeswitch (ad_date) = -1 THEN   --Р’СЂРµРјСЏ РїРµСЂРµС…РѕРґР° СЃ Р»РµС‚Р° РЅР° Р·РёРјСѓ (nsource=19,29)
     ln_source := 19;
    END IF;
   END IF;
@@ -4961,17 +4961,17 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
- --Вставка графика нагрузки
+ --Р’СЃС‚Р°РІРєР° РіСЂР°С„РёРєР° РЅР°РіСЂСѓР·РєРё
  PROCEDURE set_halfhour_itek (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, ad_date DATE) IS
  BEGIN
   set_halfhour_meter (an_mid, an_er, an_ed, an_q1, an_q3, NULL, NULL, NULL, cn_itek, NULL, ad_date, NULL);
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
-  --Вставка месячных и суточных ИТЭК
- PROCEDURE set_bm_itek (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_zone NUMBER,   --1-A, 2-B, 3-C,4-D. иначе общий
+  --Р’СЃС‚Р°РІРєР° РјРµСЃСЏС‡РЅС‹С… Рё СЃСѓС‚РѕС‡РЅС‹С… РРўР­Рљ
+ PROCEDURE set_bm_itek (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_zone NUMBER,   --1-A, 2-B, 3-C,4-D. РёРЅР°С‡Рµ РѕР±С‰РёР№
                                                                                                               ad_date DATE, an_type NUMBER
- )   -- 1 - BILL. иначе MONTHS
+ )   -- 1 - BILL. РёРЅР°С‡Рµ MONTHS
   IS
   ln_er      NUMBER          DEFAULT an_er;
   ln_ed      NUMBER          DEFAULT an_ed;
@@ -4983,14 +4983,14 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  BEGIN
   util_pg.chdr (an_mid, ln_er, ln_ed, ln_q1, ln_q3);
 
-  --выбираем таблицу
+  --РІС‹Р±РёСЂР°РµРј С‚Р°Р±Р»РёС†Сѓ
   IF an_type = 1 THEN
    lv_table := 'billorg';
   ELSE
    lv_table := 'monthsorg';
   END IF;
 
-  --выбираем тариф
+  --РІС‹Р±РёСЂР°РµРј С‚Р°СЂРёС„
   IF an_zone = 1 THEN
    lv_pref := 'a';
   ELSIF an_zone = 2 THEN
@@ -5022,16 +5022,16 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
- --Вставка суточных
- PROCEDURE set_bill_itek (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_zone NUMBER,   --1-A, 2-B, 3-C,4-D. иначе общий
+ --Р’СЃС‚Р°РІРєР° СЃСѓС‚РѕС‡РЅС‹С…
+ PROCEDURE set_bill_itek (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_zone NUMBER,   --1-A, 2-B, 3-C,4-D. РёРЅР°С‡Рµ РѕР±С‰РёР№
                                                                                                                 ad_date DATE) IS
  BEGIN
   set_bm_itek (an_mid, an_er, an_ed, an_q1, an_q3, an_zone, ad_date, 1);
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
- --Вставка месячных
- PROCEDURE set_months_itek (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_zone NUMBER,   --1-A, 2-B, 3-C,4-D. иначе общий
+ --Р’СЃС‚Р°РІРєР° РјРµСЃСЏС‡РЅС‹С…
+ PROCEDURE set_months_itek (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_zone NUMBER,   --1-A, 2-B, 3-C,4-D. РёРЅР°С‡Рµ РѕР±С‰РёР№
                                                                                                                   ad_date DATE) IS
  BEGIN
   set_bm_itek (an_mid, an_er, an_ed, an_q1, an_q3, an_zone, ad_date, 0);
@@ -5040,7 +5040,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
 ------------------------------------------------------------------------------------------------------------------------
 --******************************          L                  *******************************************************--
 ------------------------------------------------------------------------------------------------------------------------
- --Вставка текущих
+ --Р’СЃС‚Р°РІРєР° С‚РµРєСѓС‰РёС…
  PROCEDURE set_curr_power_zxb (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, ad_date DATE) IS
  BEGIN
   set_curr_power_zxb (an_mid, an_erm, an_edm, an_q1m, an_q3m, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL,
@@ -5048,7 +5048,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
- --Вставка текущих ZxB (+ ток в нуле)
+ --Р’СЃС‚Р°РІРєР° С‚РµРєСѓС‰РёС… ZxB (+ С‚РѕРє РІ РЅСѓР»Рµ)
  PROCEDURE set_curr_power_zxb (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_q2m NUMBER, an_q4m NUMBER, an_freq NUMBER,
  an_cos_fi NUMBER, an_volt1 NUMBER, an_volt2 NUMBER, an_volt3 NUMBER, an_curr1 NUMBER, an_curr2 NUMBER, an_curr3 NUMBER, an_fiu1i1 NUMBER, an_fiu2i2 NUMBER,
  an_fiu3i3 NUMBER, an_fiu1 NUMBER, an_fiu2 NUMBER, an_fiu3 NUMBER, an_i0 NUMBER, ad_date DATE
@@ -5059,7 +5059,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
- --Вставка текущих ZxB
+ --Р’СЃС‚Р°РІРєР° С‚РµРєСѓС‰РёС… ZxB
  PROCEDURE set_curr_power_zxb (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_q2m NUMBER, an_q4m NUMBER, an_freq NUMBER,
  an_cos_fi NUMBER, an_volt1 NUMBER, an_volt2 NUMBER, an_volt3 NUMBER, an_curr1 NUMBER, an_curr2 NUMBER, an_curr3 NUMBER, an_fiu1i1 NUMBER, an_fiu2i2 NUMBER,
  an_fiu3i3 NUMBER, an_fiu1 NUMBER, an_fiu2 NUMBER, an_fiu3 NUMBER, ad_date DATE
@@ -5070,7 +5070,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
- --Вставка текущих ZxB с квадрантами (+ ток в нуле)
+ --Р’СЃС‚Р°РІРєР° С‚РµРєСѓС‰РёС… ZxB СЃ РєРІР°РґСЂР°РЅС‚Р°РјРё (+ С‚РѕРє РІ РЅСѓР»Рµ)
  PROCEDURE set_curr_power_zxb (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_rrm NUMBER, an_rdm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_q2m NUMBER, an_q4m NUMBER,
  an_freq NUMBER, an_cos_fi NUMBER, an_volt1 NUMBER, an_volt2 NUMBER, an_volt3 NUMBER, an_curr1 NUMBER, an_curr2 NUMBER, an_curr3 NUMBER, an_fiu1i1 NUMBER,
  an_fiu2i2 NUMBER, an_fiu3i3 NUMBER, an_fiu1 NUMBER, an_fiu2 NUMBER, an_fiu3 NUMBER, an_i0 NUMBER, ad_date DATE
@@ -5173,7 +5173,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
- --Вставка текущих ZxB с квадрантами
+ --Р’СЃС‚Р°РІРєР° С‚РµРєСѓС‰РёС… ZxB СЃ РєРІР°РґСЂР°РЅС‚Р°РјРё
  PROCEDURE set_curr_power_zxb (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_rrm NUMBER, an_rdm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_q2m NUMBER, an_q4m NUMBER,
  an_freq NUMBER, an_cos_fi NUMBER, an_volt1 NUMBER, an_volt2 NUMBER, an_volt3 NUMBER, an_curr1 NUMBER, an_curr2 NUMBER, an_curr3 NUMBER, an_fiu1i1 NUMBER,
  an_fiu2i2 NUMBER, an_fiu3i3 NUMBER, an_fiu1 NUMBER, an_fiu2 NUMBER, an_fiu3 NUMBER, ad_date DATE
@@ -5184,7 +5184,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
-  --Вставка текущих ZxD (+ ток в нуле)
+  --Р’СЃС‚Р°РІРєР° С‚РµРєСѓС‰РёС… ZxD (+ С‚РѕРє РІ РЅСѓР»Рµ)
  PROCEDURE set_curr_power_zxd (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_rrm NUMBER, an_rdm NUMBER, an_q1m NUMBER, an_q2m NUMBER, an_q3m NUMBER, an_q4m NUMBER,
  an_freq NUMBER, an_cos_fi NUMBER, an_volt1 NUMBER, an_volt2 NUMBER, an_volt3 NUMBER, an_curr1 NUMBER, an_curr2 NUMBER, an_curr3 NUMBER, an_fiu1i1 NUMBER,
  an_fiu2i2 NUMBER, an_fiu3i3 NUMBER, an_fiu1u2 NUMBER, an_fiu1u3 NUMBER, an_fiu2u3 NUMBER, an_er NUMBER, an_ed NUMBER, an_rr NUMBER, an_rd NUMBER, an_q1 NUMBER,
@@ -5201,7 +5201,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
-  --Вставка текущих ZxD
+  --Р’СЃС‚Р°РІРєР° С‚РµРєСѓС‰РёС… ZxD
  PROCEDURE set_curr_power_zxd (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_rrm NUMBER, an_rdm NUMBER, an_q1m NUMBER, an_q2m NUMBER, an_q3m NUMBER, an_q4m NUMBER,
  an_freq NUMBER, an_cos_fi NUMBER, an_volt1 NUMBER, an_volt2 NUMBER, an_volt3 NUMBER, an_curr1 NUMBER, an_curr2 NUMBER, an_curr3 NUMBER, an_fiu1i1 NUMBER,
  an_fiu2i2 NUMBER, an_fiu3i3 NUMBER, an_fiu1u2 NUMBER, an_fiu1u3 NUMBER, an_fiu2u3 NUMBER, an_er NUMBER, an_ed NUMBER, an_rr NUMBER, an_rd NUMBER, an_q1 NUMBER,
@@ -5219,7 +5219,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
 
 ------------------------------------------------------------------------------------------------------------------------
 
- --Вставка графика нагрузки
+ --Р’СЃС‚Р°РІРєР° РіСЂР°С„РёРєР° РЅР°РіСЂСѓР·РєРё
  PROCEDURE set_halfhour_zxb (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_status NUMBER, ad_date DATE) IS
   lv_mtrsn       VARCHAR2 (256);
   ln_paramtype   NUMBER;
@@ -5229,7 +5229,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
     FROM addpointparamval
    WHERE mid = an_mid AND nsort = 72;
 
-  IF ln_paramtype = 1 THEN   --Параметризация счетчика на автосохранение показаний
+  IF ln_paramtype = 1 THEN   --РџР°СЂР°РјРµС‚СЂРёР·Р°С†РёСЏ СЃС‡РµС‚С‡РёРєР° РЅР° Р°РІС‚РѕСЃРѕС…СЂР°РЅРµРЅРёРµ РїРѕРєР°Р·Р°РЅРёР№
    SELECT NVL (MAX (mtrsn), 'LG')
      INTO lv_mtrsn
      FROM meters
@@ -5242,9 +5242,9 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
- --Вставка графика нагрузки (По показаниям)
+ --Р’СЃС‚Р°РІРєР° РіСЂР°С„РёРєР° РЅР°РіСЂСѓР·РєРё (РџРѕ РїРѕРєР°Р·Р°РЅРёСЏРј)
  PROCEDURE set_halfhour_zxb (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER,
- av_mtrsn VARCHAR2, an_digits NUMBER,   --Значность счетчика
+ av_mtrsn VARCHAR2, an_digits NUMBER,   --Р—РЅР°С‡РЅРѕСЃС‚СЊ СЃС‡РµС‚С‡РёРєР°
                                      an_status NUMBER, ad_date DATE, an_source NUMBER
  ) IS
   ld_winter   DATE               DEFAULT util_pg.to_localtime_if_new (ad_date, 1);
@@ -5263,7 +5263,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
      FROM halfhour
     WHERE mid = an_mid
           AND date_time = (SELECT MAX (date_time) dt
-                             FROM halfhourold   --halfhourold для быстроты и убрали AND lpad(UPPER(TRIM(er_mtrsn)),20,'0') = lpad(UPPER(TRIM(av_mtrsn)),20,'0')
+                             FROM halfhourold   --halfhourold РґР»СЏ Р±С‹СЃС‚СЂРѕС‚С‹ Рё СѓР±СЂР°Р»Рё AND lpad(UPPER(TRIM(er_mtrsn)),20,'0') = lpad(UPPER(TRIM(av_mtrsn)),20,'0')
                             WHERE mid = an_mid AND date_time < ld_winter /*AND (nsource = lc_source OR nsource = lc_source + 9)*/)
           AND LPAD (UPPER (TRIM (er_mtrsn)), 20, '0') = LPAD (UPPER (TRIM (av_mtrsn)), 20, '0') /*AND (nsource >= lc_source AND nsource <= lc_source + 9)*/;
 
@@ -5273,7 +5273,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
     WHERE mid = an_mid
           AND util_pg.to_unlocaltime_if_new (date_time, nsource) =
               (SELECT MAX (util_pg.to_unlocaltime_if_new (date_time, nsource)) dt
-                 FROM halfhourold   --halfhourold для быстроты и убрали AND lpad(UPPER(TRIM(er_mtrsn)),20,'0') = lpad(UPPER(TRIM(av_mtrsn)),20,'0')
+                 FROM halfhourold   --halfhourold РґР»СЏ Р±С‹СЃС‚СЂРѕС‚С‹ Рё СѓР±СЂР°Р»Рё AND lpad(UPPER(TRIM(er_mtrsn)),20,'0') = lpad(UPPER(TRIM(av_mtrsn)),20,'0')
                 WHERE mid = an_mid AND date_time < ld_winter /*AND (nsource = lc_source OR nsource = lc_source + 9)*/ AND date_time >= ld_winter - 2 / 24
                       AND util_pg.to_unlocaltime_if_new (date_time, nsource) < ad_date)
           AND LPAD (UPPER (TRIM (er_mtrsn)), 20, '0') = LPAD (UPPER (TRIM (av_mtrsn)), 20, '0')   /*AND (nsource >= lc_source AND nsource <= lc_source + 9)*/
@@ -5339,7 +5339,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
-  --Вставка графика нагрузки по индукционникам
+  --Р’СЃС‚Р°РІРєР° РіСЂР°С„РёРєР° РЅР°РіСЂСѓР·РєРё РїРѕ РёРЅРґСѓРєС†РёРѕРЅРЅРёРєР°Рј
  PROCEDURE set_halfhour_zxb_induc (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, av_mtrsn VARCHAR2, an_digits NUMBER, ad_date DATE) IS
  BEGIN
   set_halfhour_zxb (an_mid, NULL, NULL, NULL, NULL, an_erm, an_edm, an_q1m, an_q3m, av_mtrsn, an_digits, NULL, ad_date);
@@ -5352,7 +5352,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  END;
 
 -----------------------------------------------------------------------------------------------------------------------
-  --Вставка листинга показаний
+  --Р’СЃС‚Р°РІРєР° Р»РёСЃС‚РёРЅРіР° РїРѕРєР°Р·Р°РЅРёР№
  PROCEDURE set_readout_zxb (an_mid NUMBER, at_data common_pg.tt_varchar2) IS
   ld_dat   DATE DEFAULT SYSDATE;
  BEGIN
@@ -5362,7 +5362,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
 
   SAVEPOINT set_readout_zxb_sp;
 
-  FOR j IN 1 .. 2 LOOP   --Глупый код лечит ограничение первичного ключа на быстрых каналах при опросе месячных и суточных в одну секунду
+  FOR j IN 1 .. 2 LOOP   --Р“Р»СѓРїС‹Р№ РєРѕРґ Р»РµС‡РёС‚ РѕРіСЂР°РЅРёС‡РµРЅРёРµ РїРµСЂРІРёС‡РЅРѕРіРѕ РєР»СЋС‡Р° РЅР° Р±С‹СЃС‚СЂС‹С… РєР°РЅР°Р»Р°С… РїСЂРё РѕРїСЂРѕСЃРµ РјРµСЃСЏС‡РЅС‹С… Рё СЃСѓС‚РѕС‡РЅС‹С… РІ РѕРґРЅСѓ СЃРµРєСѓРЅРґСѓ
    BEGIN
     FOR i IN 1 .. at_data.COUNT LOOP
      INSERT INTO lg_readout
@@ -5392,7 +5392,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
- --Вставка листинга графика нвгрузки
+ --Р’СЃС‚Р°РІРєР° Р»РёСЃС‚РёРЅРіР° РіСЂР°С„РёРєР° РЅРІРіСЂСѓР·РєРё
  PROCEDURE set_loadprof_zxb (an_mid NUMBER, at_data common_pg.tt_varchar2) IS
   ld_dat   DATE DEFAULT SYSDATE;
  BEGIN
@@ -5416,10 +5416,10 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
-  --Вставка суточных
+  --Р’СЃС‚Р°РІРєР° СЃСѓС‚РѕС‡РЅС‹С…
  PROCEDURE set_bill_zxb (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_aerm NUMBER, an_aedm NUMBER, an_aq1m NUMBER, an_aq3m NUMBER,
  an_berm NUMBER, an_bedm NUMBER, an_bq1m NUMBER, an_bq3m NUMBER, an_cerm NUMBER, an_cedm NUMBER, an_cq1m NUMBER, an_cq3m NUMBER, an_derm NUMBER, an_dedm NUMBER,
- an_dq1m NUMBER, an_dq3m NUMBER, av_mtrsn VARCHAR2, an_digits NUMBER,   --Значность счетчика
+ an_dq1m NUMBER, an_dq3m NUMBER, av_mtrsn VARCHAR2, an_digits NUMBER,   --Р—РЅР°С‡РЅРѕСЃС‚СЊ СЃС‡РµС‚С‡РёРєР°
                                                                      ad_date DATE
  ) IS
  BEGIN
@@ -5428,10 +5428,10 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
-  --Вставка месячных
+  --Р’СЃС‚Р°РІРєР° РјРµСЃСЏС‡РЅС‹С…
  PROCEDURE set_months_zxb (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_aerm NUMBER, an_aedm NUMBER, an_aq1m NUMBER, an_aq3m NUMBER,
  an_berm NUMBER, an_bedm NUMBER, an_bq1m NUMBER, an_bq3m NUMBER, an_cerm NUMBER, an_cedm NUMBER, an_cq1m NUMBER, an_cq3m NUMBER, an_derm NUMBER, an_dedm NUMBER,
- an_dq1m NUMBER, an_dq3m NUMBER, av_mtrsn VARCHAR2, an_digits NUMBER,   --Значность счетчика
+ an_dq1m NUMBER, an_dq3m NUMBER, av_mtrsn VARCHAR2, an_digits NUMBER,   --Р—РЅР°С‡РЅРѕСЃС‚СЊ СЃС‡РµС‚С‡РёРєР°
                                                                      ad_date DATE
  ) IS
  BEGIN
@@ -5440,14 +5440,14 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
---Расширенный с квадрантами
+--Р Р°СЃС€РёСЂРµРЅРЅС‹Р№ СЃ РєРІР°РґСЂР°РЅС‚Р°РјРё
 ------------------------------------------------------------------------------------------------------------------------
-  --Вставка суточных
+  --Р’СЃС‚Р°РІРєР° СЃСѓС‚РѕС‡РЅС‹С…
  PROCEDURE set_bill_zxb (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_rrm NUMBER, an_rdm NUMBER, an_aerm NUMBER, an_aedm NUMBER, an_arrm NUMBER, an_ardm NUMBER,
  an_berm NUMBER, an_bedm NUMBER, an_brrm NUMBER, an_brdm NUMBER, an_cerm NUMBER, an_cedm NUMBER, an_crrm NUMBER, an_crdm NUMBER, an_derm NUMBER, an_dedm NUMBER,
  an_drrm NUMBER, an_drdm NUMBER, an_q1m NUMBER, an_q2m NUMBER, an_q3m NUMBER, an_q4m NUMBER, an_aq1m NUMBER, an_aq2m NUMBER, an_aq3m NUMBER, an_aq4m NUMBER,
  an_bq1m NUMBER, an_bq2m NUMBER, an_bq3m NUMBER, an_bq4m NUMBER, an_cq1m NUMBER, an_cq2m NUMBER, an_cq3m NUMBER, an_cq4m NUMBER, an_dq1m NUMBER, an_dq2m NUMBER,
- an_dq3m NUMBER, an_dq4m NUMBER, av_mtrsn VARCHAR2, an_digits NUMBER,   --Значность счетчика
+ an_dq3m NUMBER, an_dq4m NUMBER, av_mtrsn VARCHAR2, an_digits NUMBER,   --Р—РЅР°С‡РЅРѕСЃС‚СЊ СЃС‡РµС‚С‡РёРєР°
                                                                      ad_date DATE
  ) IS
  BEGIN
@@ -5462,12 +5462,12 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
- --Вставка месячных
+ --Р’СЃС‚Р°РІРєР° РјРµСЃСЏС‡РЅС‹С…
  PROCEDURE set_months_zxb (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_rrm NUMBER, an_rdm NUMBER, an_aerm NUMBER, an_aedm NUMBER, an_arrm NUMBER, an_ardm NUMBER,
  an_berm NUMBER, an_bedm NUMBER, an_brrm NUMBER, an_brdm NUMBER, an_cerm NUMBER, an_cedm NUMBER, an_crrm NUMBER, an_crdm NUMBER, an_derm NUMBER, an_dedm NUMBER,
  an_drrm NUMBER, an_drdm NUMBER, an_q1m NUMBER, an_q2m NUMBER, an_q3m NUMBER, an_q4m NUMBER, an_aq1m NUMBER, an_aq2m NUMBER, an_aq3m NUMBER, an_aq4m NUMBER,
  an_bq1m NUMBER, an_bq2m NUMBER, an_bq3m NUMBER, an_bq4m NUMBER, an_cq1m NUMBER, an_cq2m NUMBER, an_cq3m NUMBER, an_cq4m NUMBER, an_dq1m NUMBER, an_dq2m NUMBER,
- an_dq3m NUMBER, an_dq4m NUMBER, av_mtrsn VARCHAR2, an_digits NUMBER,   --Значность счетчика
+ an_dq3m NUMBER, an_dq4m NUMBER, av_mtrsn VARCHAR2, an_digits NUMBER,   --Р—РЅР°С‡РЅРѕСЃС‚СЊ СЃС‡РµС‚С‡РёРєР°
                                                                      ad_date DATE
  ) IS
  BEGIN
@@ -5484,14 +5484,14 @@ an_typeconvert - 4  преобразуем ZxD СЭС
 ------------------------------------------------------------------------------------------------------------------------
 --******************************          A1R             *******************************************************--
 ------------------------------------------------------------------------------------------------------------------------
- --Вставка текущих
+ --Р’СЃС‚Р°РІРєР° С‚РµРєСѓС‰РёС…
  PROCEDURE set_curr_power_a1r (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_q2m NUMBER, an_q4m NUMBER, ad_date DATE) IS
  BEGIN
   set_curr_power_meter (an_mid, an_erm, an_edm, an_q1m, an_q3m, an_q2m, an_q4m, ad_date);
  END;
 
 -----------------------------------------------------------------------------------------------------------------------
- --Вставка графика нагрузки
+ --Р’СЃС‚Р°РІРєР° РіСЂР°С„РёРєР° РЅР°РіСЂСѓР·РєРё
  PROCEDURE set_halfhour_a1r (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, ad_date DATE) IS
  BEGIN
   set_halfhour_meter (an_mid, ROUND (an_er, cn_roundalpha), ROUND (an_ed, cn_roundalpha), ROUND (an_q1, cn_roundalpha), ROUND (an_q3, cn_roundalpha), NULL, NULL,
@@ -5499,11 +5499,11 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
-  --Вставка суточных
+  --Р’СЃС‚Р°РІРєР° СЃСѓС‚РѕС‡РЅС‹С…
  PROCEDURE set_bill_a1r (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_q2m NUMBER, an_q4m NUMBER, an_aerm NUMBER, an_aedm NUMBER,
  an_aq1m NUMBER, an_aq3m NUMBER, an_aq2m NUMBER, an_aq4m NUMBER, an_berm NUMBER, an_bedm NUMBER, an_bq1m NUMBER, an_bq3m NUMBER, an_bq2m NUMBER, an_bq4m NUMBER,
  an_cerm NUMBER, an_cedm NUMBER, an_cq1m NUMBER, an_cq3m NUMBER, an_cq2m NUMBER, an_cq4m NUMBER, an_derm NUMBER, an_dedm NUMBER, an_dq1m NUMBER, an_dq3m NUMBER,
- an_dq2m NUMBER, an_dq4m NUMBER, av_mtrsn VARCHAR2, an_digits NUMBER,   --Значность счетчика, необходимо передать 6 - A1R_ParamCalc.DPLocE
+ an_dq2m NUMBER, an_dq4m NUMBER, av_mtrsn VARCHAR2, an_digits NUMBER,   --Р—РЅР°С‡РЅРѕСЃС‚СЊ СЃС‡РµС‚С‡РёРєР°, РЅРµРѕР±С…РѕРґРёРјРѕ РїРµСЂРµРґР°С‚СЊ 6 - A1R_ParamCalc.DPLocE
                                                                      ad_date DATE
  ) IS
   ln_round   NUMBER DEFAULT 5;
@@ -5525,11 +5525,11 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
-  --Вставка месячных
+  --Р’СЃС‚Р°РІРєР° РјРµСЃСЏС‡РЅС‹С…
  PROCEDURE set_months_a1r (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_q2m NUMBER, an_q4m NUMBER, an_aerm NUMBER, an_aedm NUMBER,
  an_aq1m NUMBER, an_aq3m NUMBER, an_aq2m NUMBER, an_aq4m NUMBER, an_berm NUMBER, an_bedm NUMBER, an_bq1m NUMBER, an_bq3m NUMBER, an_bq2m NUMBER, an_bq4m NUMBER,
  an_cerm NUMBER, an_cedm NUMBER, an_cq1m NUMBER, an_cq3m NUMBER, an_cq2m NUMBER, an_cq4m NUMBER, an_derm NUMBER, an_dedm NUMBER, an_dq1m NUMBER, an_dq3m NUMBER,
- an_dq2m NUMBER, an_dq4m NUMBER, av_mtrsn VARCHAR2, an_digits NUMBER,   --Значность счетчика, необходимо передать 6 - A1R_ParamCalc.DPLocE
+ an_dq2m NUMBER, an_dq4m NUMBER, av_mtrsn VARCHAR2, an_digits NUMBER,   --Р—РЅР°С‡РЅРѕСЃС‚СЊ СЃС‡РµС‚С‡РёРєР°, РЅРµРѕР±С…РѕРґРёРјРѕ РїРµСЂРµРґР°С‚СЊ 6 - A1R_ParamCalc.DPLocE
                                                                      ad_date DATE
  ) IS
   ln_round   NUMBER DEFAULT 5;
@@ -5553,7 +5553,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
 ------------------------------------------------------------------------------------------------------------------------
 --******************************          Alpha           *******************************************************--
 ------------------------------------------------------------------------------------------------------------------------
- --Вставка текущих
+ --Р’СЃС‚Р°РІРєР° С‚РµРєСѓС‰РёС…
  PROCEDURE set_curr_power_alpha (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_rrm NUMBER, an_rdm NUMBER, an_q1m NUMBER, an_q2m NUMBER, an_q3m NUMBER,
  an_q4m NUMBER, ad_date DATE
  ) IS
@@ -5566,7 +5566,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  END;
 
 -----------------------------------------------------------------------------------------------------------------------
- --Вставка параметров сети
+ --Р’СЃС‚Р°РІРєР° РїР°СЂР°РјРµС‚СЂРѕРІ СЃРµС‚Рё
  PROCEDURE set_net_param_alpha (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_volt1 NUMBER, an_volt2 NUMBER, an_volt3 NUMBER,
  an_curr1 NUMBER, an_curr2 NUMBER, an_curr3 NUMBER, an_fiu1 NUMBER, an_fiu2 NUMBER, an_fiu3 NUMBER, an_fii1 NUMBER, an_fii2 NUMBER, an_fii3 NUMBER, an_cos_fi NUMBER,
  ad_date DATE
@@ -5636,7 +5636,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  END;
 
 -----------------------------------------------------------------------------------------------------------------------
- --Вставка графика нагрузки
+ --Р’СЃС‚Р°РІРєР° РіСЂР°С„РёРєР° РЅР°РіСЂСѓР·РєРё
  PROCEDURE set_halfhour_alpha (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_q2 NUMBER, an_q4 NUMBER, ad_date DATE, an_period NUMBER) IS
  BEGIN
   set_halfhour_meter (an_mid, ROUND (an_er, cn_roundalpha), ROUND (an_ed, cn_roundalpha), ROUND (an_q1, cn_roundalpha), ROUND (an_q3, cn_roundalpha),
@@ -5644,10 +5644,10 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
-  --Вставка суточных
+  --Р’СЃС‚Р°РІРєР° СЃСѓС‚РѕС‡РЅС‹С…
  PROCEDURE set_bill_alpha (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_rrm NUMBER, an_rdm NUMBER, an_aerm NUMBER, an_aedm NUMBER, an_aq1m NUMBER, an_aq3m NUMBER,
  an_berm NUMBER, an_bedm NUMBER, an_bq1m NUMBER, an_bq3m NUMBER, an_cerm NUMBER, an_cedm NUMBER, an_cq1m NUMBER, an_cq3m NUMBER, an_derm NUMBER, an_dedm NUMBER,
- an_dq1m NUMBER, an_dq3m NUMBER, an_q1m NUMBER, an_q2m NUMBER, an_q3m NUMBER, an_q4m NUMBER, av_mtrsn VARCHAR2, an_digits NUMBER,   --Значность счетчика, необходимо передать 6 - Alpha_ParamCalc.DPLocE
+ an_dq1m NUMBER, an_dq3m NUMBER, an_q1m NUMBER, an_q2m NUMBER, an_q3m NUMBER, an_q4m NUMBER, av_mtrsn VARCHAR2, an_digits NUMBER,   --Р—РЅР°С‡РЅРѕСЃС‚СЊ СЃС‡РµС‚С‡РёРєР°, РЅРµРѕР±С…РѕРґРёРјРѕ РїРµСЂРµРґР°С‚СЊ 6 - Alpha_ParamCalc.DPLocE
  ad_date DATE
  ) IS
   ln_round   NUMBER DEFAULT 5;
@@ -5677,10 +5677,10 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
-  --Вставка месячных
+  --Р’СЃС‚Р°РІРєР° РјРµСЃСЏС‡РЅС‹С…
  PROCEDURE set_months_alpha (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_rrm NUMBER, an_rdm NUMBER, an_aerm NUMBER, an_aedm NUMBER, an_aq1m NUMBER,
  an_aq3m NUMBER, an_berm NUMBER, an_bedm NUMBER, an_bq1m NUMBER, an_bq3m NUMBER, an_cerm NUMBER, an_cedm NUMBER, an_cq1m NUMBER, an_cq3m NUMBER, an_derm NUMBER,
- an_dedm NUMBER, an_dq1m NUMBER, an_dq3m NUMBER, an_q1m NUMBER, an_q2m NUMBER, an_q3m NUMBER, an_q4m NUMBER, av_mtrsn VARCHAR2, an_digits NUMBER,   --Значность счетчика, необходимо передать 6 - Alpha_ParamCalc.DPLocE
+ an_dedm NUMBER, an_dq1m NUMBER, an_dq3m NUMBER, an_q1m NUMBER, an_q2m NUMBER, an_q3m NUMBER, an_q4m NUMBER, av_mtrsn VARCHAR2, an_digits NUMBER,   --Р—РЅР°С‡РЅРѕСЃС‚СЊ СЃС‡РµС‚С‡РёРєР°, РЅРµРѕР±С…РѕРґРёРјРѕ РїРµСЂРµРґР°С‚СЊ 6 - Alpha_ParamCalc.DPLocE
  ad_date DATE
  ) IS
   ln_round   NUMBER DEFAULT 5;
@@ -5712,7 +5712,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
 ------------------------------------------------------------------------------------------------------------------------
  --******************************          Metkom              *******************************************************--
  ------------------------------------------------------------------------------------------------------------------------
-  --Вставка графика нагрузки
+  --Р’СЃС‚Р°РІРєР° РіСЂР°С„РёРєР° РЅР°РіСЂСѓР·РєРё
  PROCEDURE set_halfhour_metcom (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, ad_date DATE) IS
   ln_er     NUMBER DEFAULT an_er;
   ln_ed     NUMBER DEFAULT an_ed;
@@ -5743,8 +5743,8 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
-  --Процедура проверки доступности коррекции времени УСД Fag-12
- FUNCTION get_acc_time_correct_fag12 (an_cid NUMBER   -- Ид канала (возврат 1-Можно, 0- нельзя)
+  --РџСЂРѕС†РµРґСѓСЂР° РїСЂРѕРІРµСЂРєРё РґРѕСЃС‚СѓРїРЅРѕСЃС‚Рё РєРѕСЂСЂРµРєС†РёРё РІСЂРµРјРµРЅРё РЈРЎР” Fag-12
+ FUNCTION get_acc_time_correct_fag12 (an_cid NUMBER   -- РРґ РєР°РЅР°Р»Р° (РІРѕР·РІСЂР°С‚ 1-РњРѕР¶РЅРѕ, 0- РЅРµР»СЊР·СЏ)
                                                    )
   RETURN NUMBER IS
   ln_dif     NUMBER;
@@ -5766,12 +5766,12 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
- --Установка состояния и величины расхождения системного таймера Fag-12
- PROCEDURE set_time_info_fag12 (an_cid NUMBER,   -- Ид канала
-                                              an_state NUMBER,   -- Состояние (0 -Расхождение в норме, 1-Расхождение в пределах коррекции (требуется коррекция),2-Рассхождение привысило верхнюю величину)
- an_value NUMBER   --Величина рассхождения в секундах
+ --РЈСЃС‚Р°РЅРѕРІРєР° СЃРѕСЃС‚РѕСЏРЅРёСЏ Рё РІРµР»РёС‡РёРЅС‹ СЂР°СЃС…РѕР¶РґРµРЅРёСЏ СЃРёСЃС‚РµРјРЅРѕРіРѕ С‚Р°Р№РјРµСЂР° Fag-12
+ PROCEDURE set_time_info_fag12 (an_cid NUMBER,   -- РРґ РєР°РЅР°Р»Р°
+                                              an_state NUMBER,   -- РЎРѕСЃС‚РѕСЏРЅРёРµ (0 -Р Р°СЃС…РѕР¶РґРµРЅРёРµ РІ РЅРѕСЂРјРµ, 1-Р Р°СЃС…РѕР¶РґРµРЅРёРµ РІ РїСЂРµРґРµР»Р°С… РєРѕСЂСЂРµРєС†РёРё (С‚СЂРµР±СѓРµС‚СЃСЏ РєРѕСЂСЂРµРєС†РёСЏ),2-Р Р°СЃСЃС…РѕР¶РґРµРЅРёРµ РїСЂРёРІС‹СЃРёР»Рѕ РІРµСЂС…РЅСЋСЋ РІРµР»РёС‡РёРЅСѓ)
+ an_value NUMBER   --Р’РµР»РёС‡РёРЅР° СЂР°СЃСЃС…РѕР¶РґРµРЅРёСЏ РІ СЃРµРєСѓРЅРґР°С…
  ) IS
-  lv_text        VARCHAR2 (2000) DEFAULT 'Время устройства сбора Fag-12 расходится с системным на ' || an_value || ' сек.';
+  lv_text        VARCHAR2 (2000) DEFAULT 'Р’СЂРµРјСЏ СѓСЃС‚СЂРѕР№СЃС‚РІР° СЃР±РѕСЂР° Fag-12 СЂР°СЃС…РѕРґРёС‚СЃСЏ СЃ СЃРёСЃС‚РµРјРЅС‹Рј РЅР° ' || an_value || ' СЃРµРє.';
   ln_procedure   NUMBER          DEFAULT 16;
  BEGIN
   IF an_state = 0 THEN
@@ -5798,7 +5798,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  ------------------------------------------------------------------------------------------------------------------------
  --******************************          RTU                 *******************************************************--
 ------------------------------------------------------------------------------------------------------------------------
-  --Вставка графика нагрузки
+  --Р’СЃС‚Р°РІРєР° РіСЂР°С„РёРєР° РЅР°РіСЂСѓР·РєРё
  PROCEDURE set_halfhour_rtu (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, ad_date DATE) IS
  BEGIN
   set_halfhour_meter (an_mid, ROUND (an_er / 2, cn_roundrtu), ROUND (an_ed / 2, cn_roundrtu), ROUND (an_q1 / 2, cn_roundrtu), ROUND (an_q3 / 2, cn_roundrtu), NULL,
@@ -5806,7 +5806,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  END;
 
 -----------------------------------------------------------------------------------------------------------------------
-   --Вставка суточных расходов и показаний
+   --Р’СЃС‚Р°РІРєР° СЃСѓС‚РѕС‡РЅС‹С… СЂР°СЃС…РѕРґРѕРІ Рё РїРѕРєР°Р·Р°РЅРёР№
  PROCEDURE set_bill_rtu (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_q2 NUMBER, an_q4 NUMBER, an_erm NUMBER, an_edm NUMBER,
  an_q1m NUMBER, an_q3m NUMBER, an_q2m NUMBER, an_q4m NUMBER, ad_date DATE
  ) IS
@@ -6003,7 +6003,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
            OR (util_pg.indicoverturn (ln_erm - ln_erm_old, ln_digits) * ln_kc) < ln_ers + ln_er - ln_delta
            OR (util_pg.indicoverturn (ln_erm - ln_erm_old, ln_digits) * ln_kc) > ln_ers + ln_er + ln_delta
           ) THEN
-    admin_pg.set_comport_event_p (ln_com, lv_name || '--> !!! Показания < erm > некорректны !!!  ' || ln_erm);
+    admin_pg.set_comport_event_p (ln_com, lv_name || '--> !!! РџРѕРєР°Р·Р°РЅРёСЏ < erm > РЅРµРєРѕСЂСЂРµРєС‚РЅС‹ !!!  ' || ln_erm);
 
     IF ln_metcontrol = 1 THEN
      ln_erm := NULL;
@@ -6016,7 +6016,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
            OR (util_pg.indicoverturn (ln_edm - ln_edm_old, ln_digits) * ln_kc) < ln_eds + ln_ed - ln_delta
            OR (util_pg.indicoverturn (ln_edm - ln_edm_old, ln_digits) * ln_kc) > ln_eds + ln_ed + ln_delta
           ) THEN
-    admin_pg.set_comport_event_p (ln_com, lv_name || '--> !!! Показания < edm > некорректны !!!  ' || ln_edm);
+    admin_pg.set_comport_event_p (ln_com, lv_name || '--> !!! РџРѕРєР°Р·Р°РЅРёСЏ < edm > РЅРµРєРѕСЂСЂРµРєС‚РЅС‹ !!!  ' || ln_edm);
 
     IF ln_metcontrol = 1 THEN
      ln_edm := NULL;
@@ -6029,7 +6029,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
            OR (util_pg.indicoverturn (ln_q1m - ln_q1m_old, ln_digits) * ln_kc) < ln_q1s + ln_q1 - ln_delta
            OR (util_pg.indicoverturn (ln_q1m - ln_q1m_old, ln_digits) * ln_kc) > ln_q1s + ln_q1 + ln_delta
           ) THEN
-    admin_pg.set_comport_event_p (ln_com, lv_name || '--> !!! Показания < q1m > некорректны !!!  ' || ln_q1m);
+    admin_pg.set_comport_event_p (ln_com, lv_name || '--> !!! РџРѕРєР°Р·Р°РЅРёСЏ < q1m > РЅРµРєРѕСЂСЂРµРєС‚РЅС‹ !!!  ' || ln_q1m);
 
     IF ln_metcontrol = 1 THEN
      ln_q1m := NULL;
@@ -6042,7 +6042,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
            OR (util_pg.indicoverturn (ln_q2m - ln_q2m_old, ln_digits) * ln_kc) < ln_q2s + ln_q2 - ln_delta
            OR (util_pg.indicoverturn (ln_q2m - ln_q2m_old, ln_digits) * ln_kc) > ln_q2s + ln_q2 + ln_delta
           ) THEN
-    admin_pg.set_comport_event_p (ln_com, lv_name || '--> !!! Показания < q2m > некорректны !!!  ' || ln_q2m);
+    admin_pg.set_comport_event_p (ln_com, lv_name || '--> !!! РџРѕРєР°Р·Р°РЅРёСЏ < q2m > РЅРµРєРѕСЂСЂРµРєС‚РЅС‹ !!!  ' || ln_q2m);
 
     IF ln_metcontrol = 1 THEN
      ln_q2m := NULL;
@@ -6055,7 +6055,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
            OR (util_pg.indicoverturn (ln_q3m - ln_q3m_old, ln_digits) * ln_kc) < ln_q3s + ln_q3 - ln_delta
            OR (util_pg.indicoverturn (ln_q3m - ln_q3m_old, ln_digits) * ln_kc) > ln_q3s + ln_q3 + ln_delta
           ) THEN
-    admin_pg.set_comport_event_p (ln_com, lv_name || '--> !!! Показания < q3m > некорректны !!!  ' || ln_q3m);
+    admin_pg.set_comport_event_p (ln_com, lv_name || '--> !!! РџРѕРєР°Р·Р°РЅРёСЏ < q3m > РЅРµРєРѕСЂСЂРµРєС‚РЅС‹ !!!  ' || ln_q3m);
 
     IF ln_metcontrol = 1 THEN
      ln_q3m := NULL;
@@ -6068,7 +6068,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
            OR (util_pg.indicoverturn (ln_q4m - ln_q4m_old, ln_digits) * ln_kc) < ln_q4s + ln_q4 - ln_delta
            OR (util_pg.indicoverturn (ln_q4m - ln_q4m_old, ln_digits) * ln_kc) > ln_q4s + ln_q4 + ln_delta
           ) THEN
-    admin_pg.set_comport_event_p (ln_com, lv_name || '--> !!! Показания < q4m > некорректны !!!  ' || ln_q4m);
+    admin_pg.set_comport_event_p (ln_com, lv_name || '--> !!! РџРѕРєР°Р·Р°РЅРёСЏ < q4m > РЅРµРєРѕСЂСЂРµРєС‚РЅС‹ !!!  ' || ln_q4m);
 
     IF ln_metcontrol = 1 THEN
      ln_q4m := NULL;
@@ -6079,7 +6079,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
   INSERT INTO billorg
               (mid, er, ed, q1, q3, q2, q4, erm, edm, q1m, q3m, q2m, q4m, date_time, SOURCE, nsource
               )
-       VALUES (an_mid, ln_er, ln_ed, ln_q1, ln_q3, ln_q2, ln_q4, ln_erm, ln_edm, ln_q1m, ln_q3m, ln_q2m, ln_q4m, ad_date, 'КС', cn_auto
+       VALUES (an_mid, ln_er, ln_ed, ln_q1, ln_q3, ln_q2, ln_q4, ln_erm, ln_edm, ln_q1m, ln_q3m, ln_q2m, ln_q4m, ad_date, 'РљРЎ', cn_auto
               );
  EXCEPTION
   WHEN OTHERS THEN
@@ -6090,7 +6090,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  --******************************          SCHLUM             *******************************************************--
  ------------------------------------------------------------------------------------------------------------------------
 
- --Вставка текущих (+ ток в нуле)
+ --Р’СЃС‚Р°РІРєР° С‚РµРєСѓС‰РёС… (+ С‚РѕРє РІ РЅСѓР»Рµ)
  PROCEDURE set_curr_power_schlum (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_q2m NUMBER, an_q4m NUMBER, an_freq NUMBER,
  an_cos_fi NUMBER, an_volt1 NUMBER, an_volt2 NUMBER, an_volt3 NUMBER, an_curr1 NUMBER, an_curr2 NUMBER, an_curr3 NUMBER, an_fiu1i1 NUMBER, an_fiu2i2 NUMBER,
  an_fiu3i3 NUMBER, an_fiu1u2 NUMBER, an_fiu1u3 NUMBER, an_fiu2u3 NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_q2 NUMBER, an_q4 NUMBER,
@@ -6102,7 +6102,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  END;
 
 -----------------------------------------------------------------------------------------------------------------------
- --Вставка текущих
+ --Р’СЃС‚Р°РІРєР° С‚РµРєСѓС‰РёС…
  PROCEDURE set_curr_power_schlum (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_q2m NUMBER, an_q4m NUMBER, an_freq NUMBER,
  an_cos_fi NUMBER, an_volt1 NUMBER, an_volt2 NUMBER, an_volt3 NUMBER, an_curr1 NUMBER, an_curr2 NUMBER, an_curr3 NUMBER, an_fiu1i1 NUMBER, an_fiu2i2 NUMBER,
  an_fiu3i3 NUMBER, an_fiu1u2 NUMBER, an_fiu1u3 NUMBER, an_fiu2u3 NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_q2 NUMBER, an_q4 NUMBER,
@@ -6114,7 +6114,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  END;
 
 -----------------------------------------------------------------------------------------------------------------------
- --Вставка графика нагрузки
+ --Р’СЃС‚Р°РІРєР° РіСЂР°С„РёРєР° РЅР°РіСЂСѓР·РєРё
  PROCEDURE set_halfhour_schlum (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_q2 NUMBER, an_q4 NUMBER, ad_date DATE, an_period NUMBER,
  an_status NUMBER
  ) IS
@@ -6123,18 +6123,18 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
- --Вставка графика нагрузки по индукционникам
+ --Р’СЃС‚Р°РІРєР° РіСЂР°С„РёРєР° РЅР°РіСЂСѓР·РєРё РїРѕ РёРЅРґСѓРєС†РёРѕРЅРЅРёРєР°Рј
  PROCEDURE set_halfhour_sl_induc (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_q2 NUMBER, an_q4 NUMBER, ad_date DATE, an_period NUMBER) IS
  BEGIN
   set_halfhour_schlum (an_mid, an_er, an_ed, an_q1, an_q3, an_q2, an_q4, ad_date, an_period);
  END;
 
 -----------------------------------------------------------------------------------------------------------------------
-  --Вставка суточных
+  --Р’СЃС‚Р°РІРєР° СЃСѓС‚РѕС‡РЅС‹С…
  PROCEDURE set_bill_schlum (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_q2m NUMBER, an_q4m NUMBER, an_aerm NUMBER, an_aedm NUMBER,
  an_aq1m NUMBER, an_aq3m NUMBER, an_aq2m NUMBER, an_aq4m NUMBER, an_berm NUMBER, an_bedm NUMBER, an_bq1m NUMBER, an_bq3m NUMBER, an_bq2m NUMBER, an_bq4m NUMBER,
  an_cerm NUMBER, an_cedm NUMBER, an_cq1m NUMBER, an_cq3m NUMBER, an_cq2m NUMBER, an_cq4m NUMBER, an_derm NUMBER, an_dedm NUMBER, an_dq1m NUMBER, an_dq3m NUMBER,
- an_dq2m NUMBER, an_dq4m NUMBER, av_mtrsn VARCHAR2, an_digits NUMBER,   --Значность счетчика, необходимо передать 6 - A1R_ParamCalc.DPLocE
+ an_dq2m NUMBER, an_dq4m NUMBER, av_mtrsn VARCHAR2, an_digits NUMBER,   --Р—РЅР°С‡РЅРѕСЃС‚СЊ СЃС‡РµС‚С‡РёРєР°, РЅРµРѕР±С…РѕРґРёРјРѕ РїРµСЂРµРґР°С‚СЊ 6 - A1R_ParamCalc.DPLocE
                                                                      ad_date DATE
  ) IS
   ln_round   NUMBER DEFAULT 5;
@@ -6149,11 +6149,11 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
-  --Вставка месячных
+  --Р’СЃС‚Р°РІРєР° РјРµСЃСЏС‡РЅС‹С…
  PROCEDURE set_months_schlum (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_q2m NUMBER, an_q4m NUMBER, an_aerm NUMBER,
  an_aedm NUMBER, an_aq1m NUMBER, an_aq3m NUMBER, an_aq2m NUMBER, an_aq4m NUMBER, an_berm NUMBER, an_bedm NUMBER, an_bq1m NUMBER, an_bq3m NUMBER, an_bq2m NUMBER,
  an_bq4m NUMBER, an_cerm NUMBER, an_cedm NUMBER, an_cq1m NUMBER, an_cq3m NUMBER, an_cq2m NUMBER, an_cq4m NUMBER, an_derm NUMBER, an_dedm NUMBER, an_dq1m NUMBER,
- an_dq3m NUMBER, an_dq2m NUMBER, an_dq4m NUMBER, av_mtrsn VARCHAR2, an_digits NUMBER,   --Значность счетчика, необходимо передать 6 - A1R_ParamCalc.DPLocE
+ an_dq3m NUMBER, an_dq2m NUMBER, an_dq4m NUMBER, av_mtrsn VARCHAR2, an_digits NUMBER,   --Р—РЅР°С‡РЅРѕСЃС‚СЊ СЃС‡РµС‚С‡РёРєР°, РЅРµРѕР±С…РѕРґРёРјРѕ РїРµСЂРµРґР°С‚СЊ 6 - A1R_ParamCalc.DPLocE
                                                                                      ad_date DATE
  ) IS
   ln_round   NUMBER DEFAULT 5;
@@ -6170,7 +6170,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
 ------------------------------------------------------------------------------------------------------------------------
  --******************************          Energy              *******************************************************--
  ------------------------------------------------------------------------------------------------------------------------
- --Вставка текущих
+ --Р’СЃС‚Р°РІРєР° С‚РµРєСѓС‰РёС…
  PROCEDURE set_curr_power_energy (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_freq NUMBER, an_cos_fi NUMBER, an_volt1 NUMBER,
  an_curr1 NUMBER, an_volt2 NUMBER, an_volt3 NUMBER, an_curr2 NUMBER, an_curr3 NUMBER, ad_date DATE
  ) IS
@@ -6205,7 +6205,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  END;
 
 -----------------------------------------------------------------------------------------------------------------------
- --Вставка показаний счетчика
+ --Р’СЃС‚Р°РІРєР° РїРѕРєР°Р·Р°РЅРёР№ СЃС‡РµС‚С‡РёРєР°
  PROCEDURE set_total_energy (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q2 NUMBER, an_q3 NUMBER, an_q4 NUMBER) IS
   ln_er   NUMBER DEFAULT an_er;
   ln_ed   NUMBER DEFAULT an_ed;
@@ -6231,14 +6231,14 @@ an_typeconvert - 4  преобразуем ZxD СЭС
 
 -----------------------------------------------------------------------------------------------------------------------
 
- --Вставка графика нагрузки
+ --Р’СЃС‚Р°РІРєР° РіСЂР°С„РёРєР° РЅР°РіСЂСѓР·РєРё
  PROCEDURE set_halfhour_energy (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_q2 NUMBER, an_q4 NUMBER, ad_date DATE) IS
  BEGIN
   set_halfhour_meter (an_mid, an_er, an_ed, an_q1, an_q3, an_q2, an_q4, NULL, cn_energy9, NULL, ad_date, NULL);
  END;
 
 -----------------------------------------------------------------------------------------------------------------------
-   --Вставка графика нагрузки (для упращенной енергии)
+   --Р’СЃС‚Р°РІРєР° РіСЂР°С„РёРєР° РЅР°РіСЂСѓР·РєРё (РґР»СЏ СѓРїСЂР°С‰РµРЅРЅРѕР№ РµРЅРµСЂРіРёРё)
  PROCEDURE set_halfhour_energy_simple (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_q2m NUMBER, an_q4m NUMBER, av_mtrsn VARCHAR2,
  an_status NUMBER, ad_date DATE, an_step NUMBER
  ) IS
@@ -6312,7 +6312,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
      FROM meters
     WHERE mid = an_mid AND entype = 7;
 
-   --Отсекаем до разрядности
+   --РћС‚СЃРµРєР°РµРј РґРѕ СЂР°Р·СЂСЏРґРЅРѕСЃС‚Рё
    ln_erm := TRUNC (ln_erm, ln_rn1);
    ln_edm := TRUNC (ln_edm, ln_rn1);
    ln_q1m := TRUNC (ln_q1m, ln_rn1);
@@ -6325,7 +6325,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
    lc.q3m := TRUNC (lc.q3m, ln_rn1);
    lc.q2m := TRUNC (lc.q2m, ln_rn1);
    lc.q4m := TRUNC (lc.q4m, ln_rn1);
-   --Вычислим разрядность для overindic_to_indic
+   --Р’С‹С‡РёСЃР»РёРј СЂР°Р·СЂСЏРґРЅРѕСЃС‚СЊ РґР»СЏ overindic_to_indic
    ln_tdigits :=
     GREATEST (NVL (ln_digits, 0), NVL (LENGTH (TRUNC (ln_erm)), 0), NVL (LENGTH (TRUNC (lc.erm)), 0), NVL (LENGTH (TRUNC (ln_edm)), 0),
               NVL (LENGTH (TRUNC (lc.edm)), 0), NVL (LENGTH (TRUNC (ln_q1m)), 0), NVL (LENGTH (TRUNC (lc.q1m)), 0), NVL (LENGTH (TRUNC (ln_q3m)), 0),
@@ -6338,7 +6338,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
    lt_q3m (ln_cn) := lc.q3m;
    lt_q2m (ln_cn) := lc.q2m;
    lt_q4m (ln_cn) := lc.q4m;
-   ld_date := util_pg.ceil_d (lc.date_time + 1 / 86400, an_step);   --Чуть больше чем предидущее
+   ld_date := util_pg.ceil_d (lc.date_time + 1 / 86400, an_step);   --Р§СѓС‚СЊ Р±РѕР»СЊС€Рµ С‡РµРј РїСЂРµРґРёРґСѓС‰РµРµ
 
    WHILE ld_date <= ad_date LOOP
     ln_cn := ln_cn + 1;
@@ -6373,7 +6373,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  END;
 
 -----------------------------------------------------------------------------------------------------------------------
-  --Вставка суточных расходов
+  --Р’СЃС‚Р°РІРєР° СЃСѓС‚РѕС‡РЅС‹С… СЂР°СЃС…РѕРґРѕРІ
  PROCEDURE set_bill_energy (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_q2 NUMBER, an_q4 NUMBER, an_aer NUMBER, an_aed NUMBER,
  an_aq1 NUMBER, an_aq3 NUMBER, an_aq2 NUMBER, an_aq4 NUMBER, an_ber NUMBER, an_bed NUMBER, an_bq1 NUMBER, an_bq3 NUMBER, an_bq2 NUMBER, an_bq4 NUMBER, an_cer NUMBER,
  an_ced NUMBER, an_cq1 NUMBER, an_cq3 NUMBER, an_cq2 NUMBER, an_cq4 NUMBER, an_der NUMBER, an_ded NUMBER, an_dq1 NUMBER, an_dq3 NUMBER, an_dq2 NUMBER, an_dq4 NUMBER,
@@ -6385,7 +6385,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
-   --Вставка суточных показаний
+   --Р’СЃС‚Р°РІРєР° СЃСѓС‚РѕС‡РЅС‹С… РїРѕРєР°Р·Р°РЅРёР№
  PROCEDURE set_bill_energy_m (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_q2m NUMBER, an_q4m NUMBER, an_aerm NUMBER,
  an_aedm NUMBER, an_aq1m NUMBER, an_aq3m NUMBER, an_aq2m NUMBER, an_aq4m NUMBER, an_berm NUMBER, an_bedm NUMBER, an_bq1m NUMBER, an_bq3m NUMBER, an_bq2m NUMBER,
  an_bq4m NUMBER, an_cerm NUMBER, an_cedm NUMBER, an_cq1m NUMBER, an_cq3m NUMBER, an_cq2m NUMBER, an_cq4m NUMBER, an_derm NUMBER, an_dedm NUMBER, an_dq1m NUMBER,
@@ -6441,7 +6441,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
-   --Вставка месячных расходов
+   --Р’СЃС‚Р°РІРєР° РјРµСЃСЏС‡РЅС‹С… СЂР°СЃС…РѕРґРѕРІ
  PROCEDURE set_months_energy (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_q2 NUMBER, an_q4 NUMBER, an_aer NUMBER, an_aed NUMBER,
  an_aq1 NUMBER, an_aq3 NUMBER, an_aq2 NUMBER, an_aq4 NUMBER, an_ber NUMBER, an_bed NUMBER, an_bq1 NUMBER, an_bq3 NUMBER, an_bq2 NUMBER, an_bq4 NUMBER, an_cer NUMBER,
  an_ced NUMBER, an_cq1 NUMBER, an_cq3 NUMBER, an_cq2 NUMBER, an_cq4 NUMBER, an_der NUMBER, an_ded NUMBER, an_dq1 NUMBER, an_dq3 NUMBER, an_dq2 NUMBER, an_dq4 NUMBER,
@@ -6453,7 +6453,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
-  --Вставка месячных показаний
+  --Р’СЃС‚Р°РІРєР° РјРµСЃСЏС‡РЅС‹С… РїРѕРєР°Р·Р°РЅРёР№
  PROCEDURE set_months_energy_m (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_q2m NUMBER, an_q4m NUMBER, an_aerm NUMBER,
  an_aedm NUMBER, an_aq1m NUMBER, an_aq3m NUMBER, an_aq2m NUMBER, an_aq4m NUMBER, an_berm NUMBER, an_bedm NUMBER, an_bq1m NUMBER, an_bq3m NUMBER, an_bq2m NUMBER,
  an_bq4m NUMBER, an_cerm NUMBER, an_cedm NUMBER, an_cq1m NUMBER, an_cq3m NUMBER, an_cq2m NUMBER, an_cq4m NUMBER, an_derm NUMBER, an_dedm NUMBER, an_dq1m NUMBER,
@@ -6511,7 +6511,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
 ------------------------------------------------------------------------------------------------------------------------
   --******************************          Oblik              *******************************************************--
   ------------------------------------------------------------------------------------------------------------------------
- --Вставка текущих
+ --Р’СЃС‚Р°РІРєР° С‚РµРєСѓС‰РёС…
  PROCEDURE set_curr_power_oblik (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_freq NUMBER, an_cos_fi NUMBER, an_volt1 NUMBER,
  an_curr1 NUMBER, an_volt2 NUMBER, an_volt3 NUMBER, an_curr2 NUMBER, an_curr3 NUMBER, ad_date DATE
  ) IS
@@ -6520,14 +6520,14 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  END;
 
 -----------------------------------------------------------------------------------------------------------------------
- --Вставка показаний счетчика
+ --Р’СЃС‚Р°РІРєР° РїРѕРєР°Р·Р°РЅРёР№ СЃС‡РµС‚С‡РёРєР°
  PROCEDURE set_total_oblik (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_q2 NUMBER, an_q4 NUMBER) IS
  BEGIN
   set_total_energy (an_mid, an_er, an_ed, an_q1, an_q2, an_q3, an_q4);
  END;
 
 -----------------------------------------------------------------------------------------------------------------------
- --Вставка минутного профиля
+ --Р’СЃС‚Р°РІРєР° РјРёРЅСѓС‚РЅРѕРіРѕ РїСЂРѕС„РёР»СЏ
  PROCEDURE set_profile_oblik (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_q2 NUMBER, an_q4 NUMBER, ad_date DATE) IS
   ln_er       NUMBER DEFAULT an_er;
   ln_ed       NUMBER DEFAULT an_ed;
@@ -6538,10 +6538,10 @@ an_typeconvert - 4  преобразуем ZxD СЭС
   ld_date     DATE   DEFAULT ad_date;
   ln_source   NUMBER DEFAULT cn_auto;
  BEGIN
-  IF FALSE THEN   --IF убрать, когда Носик станет вести по зиме
+  IF FALSE THEN   --IF СѓР±СЂР°С‚СЊ, РєРѕРіРґР° РќРѕСЃРёРє СЃС‚Р°РЅРµС‚ РІРµСЃС‚Рё РїРѕ Р·РёРјРµ
    ld_date := util_pg.to_localtime_if_new (ad_date);
 
-   IF util_pg.newhalfhour_f = 1 AND util_pg.is_timeswitch (ad_date) = -1 THEN   --Время перехода с лета на зиму (nsource=19,29)
+   IF util_pg.newhalfhour_f = 1 AND util_pg.is_timeswitch (ad_date) = -1 THEN   --Р’СЂРµРјСЏ РїРµСЂРµС…РѕРґР° СЃ Р»РµС‚Р° РЅР° Р·РёРјСѓ (nsource=19,29)
     ln_source := 19;
    END IF;
   END IF;
@@ -6568,28 +6568,28 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
- --Вставка минутного профиля по индукционникам
+ --Р’СЃС‚Р°РІРєР° РјРёРЅСѓС‚РЅРѕРіРѕ РїСЂРѕС„РёР»СЏ РїРѕ РёРЅРґСѓРєС†РёРѕРЅРЅРёРєР°Рј
  PROCEDURE set_profile_oblik_induc (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_q2 NUMBER, an_q4 NUMBER, ad_date DATE) IS
  BEGIN
   set_profile_oblik (an_mid, an_er, an_ed, an_q1, an_q3, an_q2, an_q4, ad_date);
  END;
 
 -----------------------------------------------------------------------------------------------------------------------
- --Вставка графика нагрузки
+ --Р’СЃС‚Р°РІРєР° РіСЂР°С„РёРєР° РЅР°РіСЂСѓР·РєРё
  PROCEDURE set_halfhour_oblik (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_q2 NUMBER, an_q4 NUMBER, ad_date DATE) IS
  BEGIN
   set_halfhour_meter (an_mid, an_er, an_ed, an_q1, an_q3, an_q2, an_q4, NULL, cn_oblik, NULL, ad_date, NULL);
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
- --Вставка графика нагрузки по индукционникам
+ --Р’СЃС‚Р°РІРєР° РіСЂР°С„РёРєР° РЅР°РіСЂСѓР·РєРё РїРѕ РёРЅРґСѓРєС†РёРѕРЅРЅРёРєР°Рј
  PROCEDURE set_halfhour_oblik_induc (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_q2 NUMBER, an_q4 NUMBER, ad_date DATE) IS
  BEGIN
   set_halfhour_meter (an_mid, an_er, an_ed, an_q1, an_q3, an_q2, an_q4, NULL, cn_oblik, NULL, ad_date, NULL);
  END;
 
 -----------------------------------------------------------------------------------------------------------------------
-  --Вставка суточных расходов
+  --Р’СЃС‚Р°РІРєР° СЃСѓС‚РѕС‡РЅС‹С… СЂР°СЃС…РѕРґРѕРІ
  PROCEDURE set_bill_oblik (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_q2 NUMBER, an_q4 NUMBER, an_aer NUMBER, an_aed NUMBER,
  an_aq1 NUMBER, an_aq3 NUMBER, an_aq2 NUMBER, an_aq4 NUMBER, an_ber NUMBER, an_bed NUMBER, an_bq1 NUMBER, an_bq3 NUMBER, an_bq2 NUMBER, an_bq4 NUMBER, an_cer NUMBER,
  an_ced NUMBER, an_cq1 NUMBER, an_cq3 NUMBER, an_cq2 NUMBER, an_cq4 NUMBER, an_der NUMBER, an_ded NUMBER, an_dq1 NUMBER, an_dq3 NUMBER, an_dq2 NUMBER, an_dq4 NUMBER,
@@ -6601,7 +6601,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  END;
 
 -----------------------------------------------------------------------------------------------------------------------
-  --Вставка суточных расходов по индукционникам
+  --Р’СЃС‚Р°РІРєР° СЃСѓС‚РѕС‡РЅС‹С… СЂР°СЃС…РѕРґРѕРІ РїРѕ РёРЅРґСѓРєС†РёРѕРЅРЅРёРєР°Рј
  PROCEDURE set_bill_oblik_induc (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_q2 NUMBER, an_q4 NUMBER, an_aer NUMBER, an_aed NUMBER,
  an_aq1 NUMBER, an_aq3 NUMBER, an_aq2 NUMBER, an_aq4 NUMBER, an_ber NUMBER, an_bed NUMBER, an_bq1 NUMBER, an_bq3 NUMBER, an_bq2 NUMBER, an_bq4 NUMBER, an_cer NUMBER,
  an_ced NUMBER, an_cq1 NUMBER, an_cq3 NUMBER, an_cq2 NUMBER, an_cq4 NUMBER, an_der NUMBER, an_ded NUMBER, an_dq1 NUMBER, an_dq3 NUMBER, an_dq2 NUMBER, an_dq4 NUMBER,
@@ -6613,7 +6613,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
-   --Вставка суточных показаний
+   --Р’СЃС‚Р°РІРєР° СЃСѓС‚РѕС‡РЅС‹С… РїРѕРєР°Р·Р°РЅРёР№
  PROCEDURE set_bill_oblik_m (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_q2m NUMBER, an_q4m NUMBER, an_aerm NUMBER, an_aedm NUMBER,
  an_aq1m NUMBER, an_aq3m NUMBER, an_aq2m NUMBER, an_aq4m NUMBER, an_berm NUMBER, an_bedm NUMBER, an_bq1m NUMBER, an_bq3m NUMBER, an_bq2m NUMBER, an_bq4m NUMBER,
  an_cerm NUMBER, an_cedm NUMBER, an_cq1m NUMBER, an_cq3m NUMBER, an_cq2m NUMBER, an_cq4m NUMBER, an_derm NUMBER, an_dedm NUMBER, an_dq1m NUMBER, an_dq3m NUMBER,
@@ -6625,7 +6625,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
-   --Вставка суточных показаний по индукционникам
+   --Р’СЃС‚Р°РІРєР° СЃСѓС‚РѕС‡РЅС‹С… РїРѕРєР°Р·Р°РЅРёР№ РїРѕ РёРЅРґСѓРєС†РёРѕРЅРЅРёРєР°Рј
  PROCEDURE set_bill_oblik_m_induc (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_q2m NUMBER, an_q4m NUMBER, an_aerm NUMBER,
  an_aedm NUMBER, an_aq1m NUMBER, an_aq3m NUMBER, an_aq2m NUMBER, an_aq4m NUMBER, an_berm NUMBER, an_bedm NUMBER, an_bq1m NUMBER, an_bq3m NUMBER, an_bq2m NUMBER,
  an_bq4m NUMBER, an_cerm NUMBER, an_cedm NUMBER, an_cq1m NUMBER, an_cq3m NUMBER, an_cq2m NUMBER, an_cq4m NUMBER, an_derm NUMBER, an_dedm NUMBER, an_dq1m NUMBER,
@@ -6637,7 +6637,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
-   --Вставка месячных расходов
+   --Р’СЃС‚Р°РІРєР° РјРµСЃСЏС‡РЅС‹С… СЂР°СЃС…РѕРґРѕРІ
  PROCEDURE set_months_oblik (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_q2 NUMBER, an_q4 NUMBER, an_aer NUMBER, an_aed NUMBER,
  an_aq1 NUMBER, an_aq3 NUMBER, an_aq2 NUMBER, an_aq4 NUMBER, an_ber NUMBER, an_bed NUMBER, an_bq1 NUMBER, an_bq3 NUMBER, an_bq2 NUMBER, an_bq4 NUMBER, an_cer NUMBER,
  an_ced NUMBER, an_cq1 NUMBER, an_cq3 NUMBER, an_cq2 NUMBER, an_cq4 NUMBER, an_der NUMBER, an_ded NUMBER, an_dq1 NUMBER, an_dq3 NUMBER, an_dq2 NUMBER, an_dq4 NUMBER,
@@ -6649,7 +6649,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
-   --Вставка месячных расходов по индукционникам
+   --Р’СЃС‚Р°РІРєР° РјРµСЃСЏС‡РЅС‹С… СЂР°СЃС…РѕРґРѕРІ РїРѕ РёРЅРґСѓРєС†РёРѕРЅРЅРёРєР°Рј
  PROCEDURE set_months_oblik_induc (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_q2 NUMBER, an_q4 NUMBER, an_aer NUMBER, an_aed NUMBER,
  an_aq1 NUMBER, an_aq3 NUMBER, an_aq2 NUMBER, an_aq4 NUMBER, an_ber NUMBER, an_bed NUMBER, an_bq1 NUMBER, an_bq3 NUMBER, an_bq2 NUMBER, an_bq4 NUMBER, an_cer NUMBER,
  an_ced NUMBER, an_cq1 NUMBER, an_cq3 NUMBER, an_cq2 NUMBER, an_cq4 NUMBER, an_der NUMBER, an_ded NUMBER, an_dq1 NUMBER, an_dq3 NUMBER, an_dq2 NUMBER, an_dq4 NUMBER,
@@ -6661,7 +6661,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
-  --Вставка месячных показаний
+  --Р’СЃС‚Р°РІРєР° РјРµСЃСЏС‡РЅС‹С… РїРѕРєР°Р·Р°РЅРёР№
  PROCEDURE set_months_oblik_m (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_q2m NUMBER, an_q4m NUMBER, an_aerm NUMBER,
  an_aedm NUMBER, an_aq1m NUMBER, an_aq3m NUMBER, an_aq2m NUMBER, an_aq4m NUMBER, an_berm NUMBER, an_bedm NUMBER, an_bq1m NUMBER, an_bq3m NUMBER, an_bq2m NUMBER,
  an_bq4m NUMBER, an_cerm NUMBER, an_cedm NUMBER, an_cq1m NUMBER, an_cq3m NUMBER, an_cq2m NUMBER, an_cq4m NUMBER, an_derm NUMBER, an_dedm NUMBER, an_dq1m NUMBER,
@@ -6674,7 +6674,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
-  --Вставка месячных показаний по индукционникам
+  --Р’СЃС‚Р°РІРєР° РјРµСЃСЏС‡РЅС‹С… РїРѕРєР°Р·Р°РЅРёР№ РїРѕ РёРЅРґСѓРєС†РёРѕРЅРЅРёРєР°Рј
  PROCEDURE set_months_oblik_m_induc (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_q2m NUMBER, an_q4m NUMBER, an_aerm NUMBER,
  an_aedm NUMBER, an_aq1m NUMBER, an_aq3m NUMBER, an_aq2m NUMBER, an_aq4m NUMBER, an_berm NUMBER, an_bedm NUMBER, an_bq1m NUMBER, an_bq3m NUMBER, an_bq2m NUMBER,
  an_bq4m NUMBER, an_cerm NUMBER, an_cedm NUMBER, an_cq1m NUMBER, an_cq3m NUMBER, an_cq2m NUMBER, an_cq4m NUMBER, an_derm NUMBER, an_dedm NUMBER, an_dq1m NUMBER,
@@ -6705,9 +6705,9 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
---******************************          АРГО             *******************************************************--
+--******************************          РђР Р“Рћ             *******************************************************--
 ------------------------------------------------------------------------------------------------------------------------
- --Вставка текущих
+ --Р’СЃС‚Р°РІРєР° С‚РµРєСѓС‰РёС…
  PROCEDURE set_curr_power_argo (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_q2m NUMBER, an_q4m NUMBER, an_freq NUMBER,
  an_cos_fi NUMBER, an_volt1 NUMBER, an_volt2 NUMBER, an_volt3 NUMBER, an_curr1 NUMBER, an_curr2 NUMBER, an_curr3 NUMBER, an_fiu1i1 NUMBER, an_fiu2i2 NUMBER,
  an_fiu3i3 NUMBER, an_fiu1u2 NUMBER, an_fiu1u3 NUMBER, an_fiu2u3 NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_q2 NUMBER, an_q4 NUMBER,
@@ -6719,19 +6719,19 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  END;
 
 -----------------------------------------------------------------------------------------------------------------------
- --Вставка графика нагрузки
+ --Р’СЃС‚Р°РІРєР° РіСЂР°С„РёРєР° РЅР°РіСЂСѓР·РєРё
  PROCEDURE set_halfhour_argo (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, ad_date DATE) IS
  BEGIN
   set_halfhour_meter (an_mid, an_er, an_ed, an_q1, an_q3, NULL, NULL, NULL, cn_argo, NULL, ad_date, NULL);
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
-  --Вставка суточных
+  --Р’СЃС‚Р°РІРєР° СЃСѓС‚РѕС‡РЅС‹С…
  PROCEDURE set_bill_argo (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_q2m NUMBER, an_q4m NUMBER, an_aerm NUMBER, an_aedm NUMBER,
  an_aq1m NUMBER, an_aq3m NUMBER, an_aq2m NUMBER, an_aq4m NUMBER, an_berm NUMBER, an_bedm NUMBER, an_bq1m NUMBER, an_bq3m NUMBER, an_bq2m NUMBER, an_bq4m NUMBER,
  an_cerm NUMBER, an_cedm NUMBER, an_cq1m NUMBER, an_cq3m NUMBER, an_cq2m NUMBER, an_cq4m NUMBER, an_derm NUMBER, an_dedm NUMBER, an_dq1m NUMBER, an_dq3m NUMBER,
- an_dq2m NUMBER, an_dq4m NUMBER, av_mtrsn VARCHAR2, an_digits NUMBER,   --Значность счетчика, необходимо передать соответствующую АРГО
-                                                                        --( для A1R было 6 - A1R_ParamCalc.DPLocE )
+ an_dq2m NUMBER, an_dq4m NUMBER, av_mtrsn VARCHAR2, an_digits NUMBER,   --Р—РЅР°С‡РЅРѕСЃС‚СЊ СЃС‡РµС‚С‡РёРєР°, РЅРµРѕР±С…РѕРґРёРјРѕ РїРµСЂРµРґР°С‚СЊ СЃРѕРѕС‚РІРµС‚СЃС‚РІСѓСЋС‰СѓСЋ РђР Р“Рћ
+                                                                        --( РґР»СЏ A1R Р±С‹Р»Рѕ 6 - A1R_ParamCalc.DPLocE )
                                                                      ad_date DATE
  ) IS
  BEGIN
@@ -6741,12 +6741,12 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
-  --Вставка месячных
+  --Р’СЃС‚Р°РІРєР° РјРµСЃСЏС‡РЅС‹С…
  PROCEDURE set_months_argo (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_q2m NUMBER, an_q4m NUMBER, an_aerm NUMBER, an_aedm NUMBER,
  an_aq1m NUMBER, an_aq3m NUMBER, an_aq2m NUMBER, an_aq4m NUMBER, an_berm NUMBER, an_bedm NUMBER, an_bq1m NUMBER, an_bq3m NUMBER, an_bq2m NUMBER, an_bq4m NUMBER,
  an_cerm NUMBER, an_cedm NUMBER, an_cq1m NUMBER, an_cq3m NUMBER, an_cq2m NUMBER, an_cq4m NUMBER, an_derm NUMBER, an_dedm NUMBER, an_dq1m NUMBER, an_dq3m NUMBER,
- an_dq2m NUMBER, an_dq4m NUMBER, av_mtrsn VARCHAR2, an_digits NUMBER,   --Значность счетчика, необходимо передать соответствующую АРГО
-                                                                        --( для A1R 6 - A1R_ParamCalc.DPLocE )
+ an_dq2m NUMBER, an_dq4m NUMBER, av_mtrsn VARCHAR2, an_digits NUMBER,   --Р—РЅР°С‡РЅРѕСЃС‚СЊ СЃС‡РµС‚С‡РёРєР°, РЅРµРѕР±С…РѕРґРёРјРѕ РїРµСЂРµРґР°С‚СЊ СЃРѕРѕС‚РІРµС‚СЃС‚РІСѓСЋС‰СѓСЋ РђР Р“Рћ
+                                                                        --( РґР»СЏ A1R 6 - A1R_ParamCalc.DPLocE )
                                                                      ad_date DATE
  ) IS
  BEGIN
@@ -6756,16 +6756,16 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
---******************************          Меркурий             *******************************************************--
+--******************************          РњРµСЂРєСѓСЂРёР№             *******************************************************--
 -----------------------------------------------------------------------------------------------------------------------
- --Вставка показаний счетчика
+ --Р’СЃС‚Р°РІРєР° РїРѕРєР°Р·Р°РЅРёР№ СЃС‡РµС‚С‡РёРєР°
  PROCEDURE set_total_mercury (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_q2 NUMBER, an_q4 NUMBER) IS
  BEGIN
   set_total_energy (an_mid, an_er, an_ed, an_q1, an_q2, an_q3, an_q4);
  END;
 
  ------------------------------------------------------------------------------------------------------------------------
---Вставка текущих
+--Р’СЃС‚Р°РІРєР° С‚РµРєСѓС‰РёС…
  PROCEDURE set_curr_power_mercury (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_freq NUMBER, an_cos_fi NUMBER, an_volt1 NUMBER,
  an_curr1 NUMBER, an_volt2 NUMBER, an_volt3 NUMBER, an_curr2 NUMBER, an_curr3 NUMBER, an_fiu1u2 NUMBER, an_fiu1u3 NUMBER, an_fiu2u3 NUMBER, ad_date DATE
  ) IS
@@ -6774,7 +6774,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
-  --Вставка суточных расходов
+  --Р’СЃС‚Р°РІРєР° СЃСѓС‚РѕС‡РЅС‹С… СЂР°СЃС…РѕРґРѕРІ
  PROCEDURE set_bill_mercury (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_q2 NUMBER, an_q4 NUMBER, an_aer NUMBER, an_aed NUMBER,
  an_aq1 NUMBER, an_aq3 NUMBER, an_aq2 NUMBER, an_aq4 NUMBER, an_ber NUMBER, an_bed NUMBER, an_bq1 NUMBER, an_bq3 NUMBER, an_bq2 NUMBER, an_bq4 NUMBER, an_cer NUMBER,
  an_ced NUMBER, an_cq1 NUMBER, an_cq3 NUMBER, an_cq2 NUMBER, an_cq4 NUMBER, an_der NUMBER, an_ded NUMBER, an_dq1 NUMBER, an_dq3 NUMBER, an_dq2 NUMBER, an_dq4 NUMBER,
@@ -6786,7 +6786,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
-   --Вставка суточных показаний
+   --Р’СЃС‚Р°РІРєР° СЃСѓС‚РѕС‡РЅС‹С… РїРѕРєР°Р·Р°РЅРёР№
  PROCEDURE set_bill_mercury_m (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_q2m NUMBER, an_q4m NUMBER, an_aerm NUMBER,
  an_aedm NUMBER, an_aq1m NUMBER, an_aq3m NUMBER, an_aq2m NUMBER, an_aq4m NUMBER, an_berm NUMBER, an_bedm NUMBER, an_bq1m NUMBER, an_bq3m NUMBER, an_bq2m NUMBER,
  an_bq4m NUMBER, an_cerm NUMBER, an_cedm NUMBER, an_cq1m NUMBER, an_cq3m NUMBER, an_cq2m NUMBER, an_cq4m NUMBER, an_derm NUMBER, an_dedm NUMBER, an_dq1m NUMBER,
@@ -6798,7 +6798,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
-   --Вставка месячных расходов
+   --Р’СЃС‚Р°РІРєР° РјРµСЃСЏС‡РЅС‹С… СЂР°СЃС…РѕРґРѕРІ
  PROCEDURE set_months_mercury (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_q2 NUMBER, an_q4 NUMBER, an_aer NUMBER, an_aed NUMBER,
  an_aq1 NUMBER, an_aq3 NUMBER, an_aq2 NUMBER, an_aq4 NUMBER, an_ber NUMBER, an_bed NUMBER, an_bq1 NUMBER, an_bq3 NUMBER, an_bq2 NUMBER, an_bq4 NUMBER, an_cer NUMBER,
  an_ced NUMBER, an_cq1 NUMBER, an_cq3 NUMBER, an_cq2 NUMBER, an_cq4 NUMBER, an_der NUMBER, an_ded NUMBER, an_dq1 NUMBER, an_dq3 NUMBER, an_dq2 NUMBER, an_dq4 NUMBER,
@@ -6810,7 +6810,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
-  --Вставка месячных показаний
+  --Р’СЃС‚Р°РІРєР° РјРµСЃСЏС‡РЅС‹С… РїРѕРєР°Р·Р°РЅРёР№
  PROCEDURE set_months_mercury_m (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_q2m NUMBER, an_q4m NUMBER, an_aerm NUMBER,
  an_aedm NUMBER, an_aq1m NUMBER, an_aq3m NUMBER, an_aq2m NUMBER, an_aq4m NUMBER, an_berm NUMBER, an_bedm NUMBER, an_bq1m NUMBER, an_bq3m NUMBER, an_bq2m NUMBER,
  an_bq4m NUMBER, an_cerm NUMBER, an_cedm NUMBER, an_cq1m NUMBER, an_cq3m NUMBER, an_cq2m NUMBER, an_cq4m NUMBER, an_derm NUMBER, an_dedm NUMBER, an_dq1m NUMBER,
@@ -6823,7 +6823,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
-  --Вставка графика нагрузки
+  --Р’СЃС‚Р°РІРєР° РіСЂР°С„РёРєР° РЅР°РіСЂСѓР·РєРё
  PROCEDURE set_halfhour_mercury (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_q2 NUMBER, an_q4 NUMBER, ad_date DATE) IS
  BEGIN
   set_halfhour_meter (an_mid, an_er, an_ed, an_q1, an_q3, an_q2, an_q4, NULL, cn_mercury, NULL, ad_date, NULL);
@@ -6832,14 +6832,14 @@ an_typeconvert - 4  преобразуем ZxD СЭС
 ------------------------------------------------------------------------------------------------------------------------
 --******************************          LZQM             *******************************************************--
 -----------------------------------------------------------------------------------------------------------------------
- --Вставка показаний счетчика
+ --Р’СЃС‚Р°РІРєР° РїРѕРєР°Р·Р°РЅРёР№ СЃС‡РµС‚С‡РёРєР°
  PROCEDURE set_total_lzqm (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_q2 NUMBER, an_q4 NUMBER) IS
  BEGIN
   set_total_energy (an_mid, an_er, an_ed, an_q1, an_q2, an_q3, an_q4);
  END;
 
  ------------------------------------------------------------------------------------------------------------------------
---Вставка текущих
+--Р’СЃС‚Р°РІРєР° С‚РµРєСѓС‰РёС…
  PROCEDURE set_curr_power_lzqm (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_freq NUMBER, an_cos_fi NUMBER, an_volt1 NUMBER,
  an_curr1 NUMBER, an_volt2 NUMBER, an_volt3 NUMBER, an_curr2 NUMBER, an_curr3 NUMBER, an_fiu1u2 NUMBER, an_fiu1u3 NUMBER, an_fiu2u3 NUMBER, ad_date DATE
  ) IS
@@ -6848,14 +6848,14 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
- --Вставка графика нагрузки
+ --Р’СЃС‚Р°РІРєР° РіСЂР°С„РёРєР° РЅР°РіСЂСѓР·РєРё
  PROCEDURE set_halfhour_lzqm (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_q2 NUMBER, an_q4 NUMBER, ad_date DATE) IS
  BEGIN
   set_halfhour_meter (an_mid, an_er, an_ed, an_q1, an_q3, an_q2, an_q4, NULL, cn_lzqm, NULL, ad_date, NULL);
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
-  --Вставка суточных расходов
+  --Р’СЃС‚Р°РІРєР° СЃСѓС‚РѕС‡РЅС‹С… СЂР°СЃС…РѕРґРѕРІ
  PROCEDURE set_bill_lzqm (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_q2 NUMBER, an_q4 NUMBER, an_aer NUMBER, an_aed NUMBER,
  an_aq1 NUMBER, an_aq3 NUMBER, an_aq2 NUMBER, an_aq4 NUMBER, an_ber NUMBER, an_bed NUMBER, an_bq1 NUMBER, an_bq3 NUMBER, an_bq2 NUMBER, an_bq4 NUMBER, an_cer NUMBER,
  an_ced NUMBER, an_cq1 NUMBER, an_cq3 NUMBER, an_cq2 NUMBER, an_cq4 NUMBER, an_der NUMBER, an_ded NUMBER, an_dq1 NUMBER, an_dq3 NUMBER, an_dq2 NUMBER, an_dq4 NUMBER,
@@ -6867,7 +6867,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
-   --Вставка суточных показаний
+   --Р’СЃС‚Р°РІРєР° СЃСѓС‚РѕС‡РЅС‹С… РїРѕРєР°Р·Р°РЅРёР№
  PROCEDURE set_bill_lzqm_m (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_q2m NUMBER, an_q4m NUMBER, an_aerm NUMBER, an_aedm NUMBER,
  an_aq1m NUMBER, an_aq3m NUMBER, an_aq2m NUMBER, an_aq4m NUMBER, an_berm NUMBER, an_bedm NUMBER, an_bq1m NUMBER, an_bq3m NUMBER, an_bq2m NUMBER, an_bq4m NUMBER,
  an_cerm NUMBER, an_cedm NUMBER, an_cq1m NUMBER, an_cq3m NUMBER, an_cq2m NUMBER, an_cq4m NUMBER, an_derm NUMBER, an_dedm NUMBER, an_dq1m NUMBER, an_dq3m NUMBER,
@@ -6879,7 +6879,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
-   --Вставка месячных расходов
+   --Р’СЃС‚Р°РІРєР° РјРµСЃСЏС‡РЅС‹С… СЂР°СЃС…РѕРґРѕРІ
  PROCEDURE set_months_lzqm (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_q2 NUMBER, an_q4 NUMBER, an_aer NUMBER, an_aed NUMBER,
  an_aq1 NUMBER, an_aq3 NUMBER, an_aq2 NUMBER, an_aq4 NUMBER, an_ber NUMBER, an_bed NUMBER, an_bq1 NUMBER, an_bq3 NUMBER, an_bq2 NUMBER, an_bq4 NUMBER, an_cer NUMBER,
  an_ced NUMBER, an_cq1 NUMBER, an_cq3 NUMBER, an_cq2 NUMBER, an_cq4 NUMBER, an_der NUMBER, an_ded NUMBER, an_dq1 NUMBER, an_dq3 NUMBER, an_dq2 NUMBER, an_dq4 NUMBER,
@@ -6891,7 +6891,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
-  --Вставка месячных показаний
+  --Р’СЃС‚Р°РІРєР° РјРµСЃСЏС‡РЅС‹С… РїРѕРєР°Р·Р°РЅРёР№
  PROCEDURE set_months_lzqm_m (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_q2m NUMBER, an_q4m NUMBER, an_aerm NUMBER,
  an_aedm NUMBER, an_aq1m NUMBER, an_aq3m NUMBER, an_aq2m NUMBER, an_aq4m NUMBER, an_berm NUMBER, an_bedm NUMBER, an_bq1m NUMBER, an_bq3m NUMBER, an_bq2m NUMBER,
  an_bq4m NUMBER, an_cerm NUMBER, an_cedm NUMBER, an_cq1m NUMBER, an_cq3m NUMBER, an_cq2m NUMBER, an_cq4m NUMBER, an_derm NUMBER, an_dedm NUMBER, an_dq1m NUMBER,
@@ -6907,7 +6907,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  --******************************          SET-4             *******************************************************--
  ------------------------------------------------------------------------------------------------------------------------
 
- --Вставка текущих
+ --Р’СЃС‚Р°РІРєР° С‚РµРєСѓС‰РёС…
  PROCEDURE set_curr_power_set4 (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_freq NUMBER, an_cos_fi NUMBER, an_volt1 NUMBER,
  an_volt2 NUMBER, an_volt3 NUMBER, an_curr1 NUMBER, an_curr2 NUMBER, an_curr3 NUMBER, an_fiu1i1 NUMBER, an_fiu2i2 NUMBER, an_fiu3i3 NUMBER, an_er NUMBER,
  an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, ad_date DATE
@@ -6918,14 +6918,14 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  END;
 
 -----------------------------------------------------------------------------------------------------------------------
- --Вставка графика нагрузки
+ --Р’СЃС‚Р°РІРєР° РіСЂР°С„РёРєР° РЅР°РіСЂСѓР·РєРё
  PROCEDURE set_halfhour_set4 (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, ad_date DATE) IS
  BEGIN
   set_halfhour_energy (an_mid, an_er, an_ed, an_q1, an_q3, NULL, NULL, ad_date);
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
-  --Вставка суточных расходов
+  --Р’СЃС‚Р°РІРєР° СЃСѓС‚РѕС‡РЅС‹С… СЂР°СЃС…РѕРґРѕРІ
  PROCEDURE set_bill_set4 (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_aer NUMBER, an_aed NUMBER, an_aq1 NUMBER, an_aq3 NUMBER,
  an_ber NUMBER, an_bed NUMBER, an_bq1 NUMBER, an_bq3 NUMBER, an_cer NUMBER, an_ced NUMBER, an_cq1 NUMBER, an_cq3 NUMBER, an_der NUMBER, an_ded NUMBER, an_dq1 NUMBER,
  an_dq3 NUMBER, av_mtrsn VARCHAR2, ad_date DATE
@@ -6936,7 +6936,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
-   --Вставка суточных показаний
+   --Р’СЃС‚Р°РІРєР° СЃСѓС‚РѕС‡РЅС‹С… РїРѕРєР°Р·Р°РЅРёР№
  PROCEDURE set_bill_set4_m (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_aerm NUMBER, an_aedm NUMBER, an_aq1m NUMBER,
  an_aq3m NUMBER, an_berm NUMBER, an_bedm NUMBER, an_bq1m NUMBER, an_bq3m NUMBER, an_cerm NUMBER, an_cedm NUMBER, an_cq1m NUMBER, an_cq3m NUMBER, an_derm NUMBER,
  an_dedm NUMBER, an_dq1m NUMBER, an_dq3m NUMBER, ad_date DATE
@@ -6947,7 +6947,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
-   --Вставка месячных расходов
+   --Р’СЃС‚Р°РІРєР° РјРµСЃСЏС‡РЅС‹С… СЂР°СЃС…РѕРґРѕРІ
  PROCEDURE set_months_set4 (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_aer NUMBER, an_aed NUMBER, an_aq1 NUMBER, an_aq3 NUMBER,
  an_ber NUMBER, an_bed NUMBER, an_bq1 NUMBER, an_bq3 NUMBER, an_cer NUMBER, an_ced NUMBER, an_cq1 NUMBER, an_cq3 NUMBER, an_der NUMBER, an_ded NUMBER, an_dq1 NUMBER,
  an_dq3 NUMBER, av_mtrsn VARCHAR2, ad_date DATE
@@ -6958,7 +6958,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
-  --Вставка месячных показаний
+  --Р’СЃС‚Р°РІРєР° РјРµСЃСЏС‡РЅС‹С… РїРѕРєР°Р·Р°РЅРёР№
  PROCEDURE set_months_set4_m (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_aerm NUMBER, an_aedm NUMBER, an_aq1m NUMBER,
  an_aq3m NUMBER, an_berm NUMBER, an_bedm NUMBER, an_bq1m NUMBER, an_bq3m NUMBER, an_cerm NUMBER, an_cedm NUMBER, an_cq1m NUMBER, an_cq3m NUMBER, an_derm NUMBER,
  an_dedm NUMBER, an_dq1m NUMBER, an_dq3m NUMBER, ad_date DATE
@@ -6971,7 +6971,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
 ------------------------------------------------------------------------------------------------------------------------
 --**********************************          CE-304    CE-6850        ***********************************************--
 ------------------------------------------------------------------------------------------------------------------------
---Вставка текущих
+--Р’СЃС‚Р°РІРєР° С‚РµРєСѓС‰РёС…
  PROCEDURE set_curr_power_ce304 (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_q2m NUMBER, an_q4m NUMBER, an_freq NUMBER,
  an_cos_fi NUMBER, an_volt1 NUMBER, an_volt2 NUMBER, an_volt3 NUMBER, an_curr1 NUMBER, an_curr2 NUMBER, an_curr3 NUMBER, an_fiu1i1 NUMBER, an_fiu2i2 NUMBER,
  an_fiu3i3 NUMBER, an_fiu1u2 NUMBER, an_fiu1u3 NUMBER, an_fiu2u3 NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_q2 NUMBER, an_q4 NUMBER,
@@ -6983,14 +6983,14 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  END;
 
 -----------------------------------------------------------------------------------------------------------------------
- --Вставка графика нагрузки
+ --Р’СЃС‚Р°РІРєР° РіСЂР°С„РёРєР° РЅР°РіСЂСѓР·РєРё
  PROCEDURE set_halfhour_ce304 (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_q2 NUMBER, an_q4 NUMBER, an_status NUMBER, ad_date DATE) IS
  BEGIN
   set_halfhour_meter (an_mid, an_er, an_ed, an_q1, an_q3, an_q2, an_q4, an_status, cn_ce_304, NULL, ad_date, NULL);
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
-   --Вставка суточных показаний
+   --Р’СЃС‚Р°РІРєР° СЃСѓС‚РѕС‡РЅС‹С… РїРѕРєР°Р·Р°РЅРёР№
  PROCEDURE set_bill_ce304_m (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_q2m NUMBER, an_q4m NUMBER, an_aerm NUMBER, an_aedm NUMBER,
  an_aq1m NUMBER, an_aq3m NUMBER, an_aq2m NUMBER, an_aq4m NUMBER, an_berm NUMBER, an_bedm NUMBER, an_bq1m NUMBER, an_bq3m NUMBER, an_bq2m NUMBER, an_bq4m NUMBER,
  an_cerm NUMBER, an_cedm NUMBER, an_cq1m NUMBER, an_cq3m NUMBER, an_cq2m NUMBER, an_cq4m NUMBER, an_derm NUMBER, an_dedm NUMBER, an_dq1m NUMBER, an_dq3m NUMBER,
@@ -7003,7 +7003,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
-   --Вставка месячных показаний
+   --Р’СЃС‚Р°РІРєР° РјРµСЃСЏС‡РЅС‹С… РїРѕРєР°Р·Р°РЅРёР№
  PROCEDURE set_months_ce304_m (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_q2m NUMBER, an_q4m NUMBER, an_aerm NUMBER,
  an_aedm NUMBER, an_aq1m NUMBER, an_aq3m NUMBER, an_aq2m NUMBER, an_aq4m NUMBER, an_berm NUMBER, an_bedm NUMBER, an_bq1m NUMBER, an_bq3m NUMBER, an_bq2m NUMBER,
  an_bq4m NUMBER, an_cerm NUMBER, an_cedm NUMBER, an_cq1m NUMBER, an_cq3m NUMBER, an_cq2m NUMBER, an_cq4m NUMBER, an_derm NUMBER, an_dedm NUMBER, an_dq1m NUMBER,
@@ -7019,7 +7019,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  --******************************          A1800             *******************************************************--
  ------------------------------------------------------------------------------------------------------------------------
 
- --Вставка текущих
+ --Р’СЃС‚Р°РІРєР° С‚РµРєСѓС‰РёС…
  PROCEDURE set_curr_power_a1800 (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_freq NUMBER, an_cos_fi NUMBER, an_volt1 NUMBER,
  an_volt2 NUMBER, an_volt3 NUMBER, an_curr1 NUMBER, an_curr2 NUMBER, an_curr3 NUMBER, an_fiu1u2 NUMBER, an_fiu1u3 NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER,
  an_q3 NUMBER, ad_date DATE
@@ -7031,14 +7031,14 @@ an_typeconvert - 4  преобразуем ZxD СЭС
 
 ------------------------------------------------------------------------------------------------------------------------
 
- --Вставка графика нагрузки
+ --Р’СЃС‚Р°РІРєР° РіСЂР°С„РёРєР° РЅР°РіСЂСѓР·РєРё
  PROCEDURE set_halfhour_a1800 (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_status NUMBER, ad_date DATE) IS
  BEGIN
   set_halfhour_meter (an_mid, an_er, an_ed, an_q1, an_q3, NULL, NULL, an_status, cn_a1800, NULL, ad_date, NULL);
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
-  --Вставка суточных
+  --Р’СЃС‚Р°РІРєР° СЃСѓС‚РѕС‡РЅС‹С…
  PROCEDURE set_bill_a1800 (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_aerm NUMBER, an_aedm NUMBER, an_aq1m NUMBER, an_aq3m NUMBER,
  an_berm NUMBER, an_bedm NUMBER, an_bq1m NUMBER, an_bq3m NUMBER, an_cerm NUMBER, an_cedm NUMBER, an_cq1m NUMBER, an_cq3m NUMBER, an_derm NUMBER, an_dedm NUMBER,
  an_dq1m NUMBER, an_dq3m NUMBER, av_mtrsn VARCHAR2, ad_date DATE
@@ -7049,7 +7049,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
-  --Вставка месячных
+  --Р’СЃС‚Р°РІРєР° РјРµСЃСЏС‡РЅС‹С…
  PROCEDURE set_months_a1800 (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_aerm NUMBER, an_aedm NUMBER, an_aq1m NUMBER,
  an_aq3m NUMBER, an_berm NUMBER, an_bedm NUMBER, an_bq1m NUMBER, an_bq3m NUMBER, an_cerm NUMBER, an_cedm NUMBER, an_cq1m NUMBER, an_cq3m NUMBER, an_derm NUMBER,
  an_dedm NUMBER, an_dq1m NUMBER, an_dq3m NUMBER, av_mtrsn VARCHAR2, ad_date DATE
@@ -7060,32 +7060,32 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
- --Журнал событий
+ --Р–СѓСЂРЅР°Р» СЃРѕР±С‹С‚РёР№
  PROCEDURE mark_a1800event (newmid NUMBER, newev_date DATE, newtype NUMBER, FOUND OUT NUMBER) IS
   code      NUMBER          DEFAULT 0;
   MESSAGE   VARCHAR2 (2000);
  BEGIN
   code := -1010;
-  MESSAGE := ' Событие счетчика: ' || newtype;
+  MESSAGE := ' РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: ' || newtype;
 
   IF newtype = 1 THEN
    code := 1010;
-   MESSAGE := ' Отключение напряжения (Primary Power Down)';
+   MESSAGE := ' РћС‚РєР»СЋС‡РµРЅРёРµ РЅР°РїСЂСЏР¶РµРЅРёСЏ (Primary Power Down)';
   END IF;
 
   IF newtype = 2 THEN
    code := -1010;
-   MESSAGE := ' Включение напряжения (Primary Power Up)';
+   MESSAGE := ' Р’РєР»СЋС‡РµРЅРёРµ РЅР°РїСЂСЏР¶РµРЅРёСЏ (Primary Power Up)';
   END IF;
 
   IF newtype = 3 THEN
    code := -1001;
-   MESSAGE := ' Коррекция часов. Время до коррекции.';
+   MESSAGE := ' РљРѕСЂСЂРµРєС†РёСЏ С‡Р°СЃРѕРІ. Р’СЂРµРјСЏ РґРѕ РєРѕСЂСЂРµРєС†РёРё.';
   END IF;
 
   IF newtype = 4 THEN
    code := 1001;
-   MESSAGE := ' Коррекция часов. Время после коррекции.';
+   MESSAGE := ' РљРѕСЂСЂРµРєС†РёСЏ С‡Р°СЃРѕРІ. Р’СЂРµРјСЏ РїРѕСЃР»Рµ РєРѕСЂСЂРµРєС†РёРё.';
   END IF;
 
   IF newtype = 7 THEN
@@ -7115,17 +7115,17 @@ an_typeconvert - 4  преобразуем ZxD СЭС
 
   IF newtype = 16 THEN
    code := 1014;
-   MESSAGE := ' Очистка журнала истории (History LOg Cleared)';
+   MESSAGE := ' РћС‡РёСЃС‚РєР° Р¶СѓСЂРЅР°Р»Р° РёСЃС‚РѕСЂРёРё (History LOg Cleared)';
   END IF;
 
   IF newtype = 18 THEN
    code := 1014;
-   MESSAGE := ' Очистка журнала событий.';
+   MESSAGE := ' РћС‡РёСЃС‚РєР° Р¶СѓСЂРЅР°Р»Р° СЃРѕР±С‹С‚РёР№.';
   END IF;
 
   IF newtype = 20 THEN
    code := 1013;
-   MESSAGE := ' Сброс максимальной мощности (Demand Reset Occured)';
+   MESSAGE := ' РЎР±СЂРѕСЃ РјР°РєСЃРёРјР°Р»СЊРЅРѕР№ РјРѕС‰РЅРѕСЃС‚Рё (Demand Reset Occured)';
   END IF;
 
   IF newtype = 21 THEN
@@ -7145,37 +7145,37 @@ an_typeconvert - 4  преобразуем ZxD СЭС
 
   IF newtype = 2056 THEN
    code := 1010;
-   MESSAGE := ' Пропадание питания фазы А';
+   MESSAGE := ' РџСЂРѕРїР°РґР°РЅРёРµ РїРёС‚Р°РЅРёСЏ С„Р°Р·С‹ Рђ';
   END IF;
 
   IF newtype = 2057 THEN
    code := -1010;
-   MESSAGE := ' Восстановление питания фазы А';
+   MESSAGE := ' Р’РѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ РїРёС‚Р°РЅРёСЏ С„Р°Р·С‹ Рђ';
   END IF;
 
   IF newtype = 2058 THEN
    code := 1010;
-   MESSAGE := ' Пропадание питания фазы В';
+   MESSAGE := ' РџСЂРѕРїР°РґР°РЅРёРµ РїРёС‚Р°РЅРёСЏ С„Р°Р·С‹ Р’';
   END IF;
 
   IF newtype = 2059 THEN
    code := -1010;
-   MESSAGE := ' Восстановление питания фазы В';
+   MESSAGE := ' Р’РѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ РїРёС‚Р°РЅРёСЏ С„Р°Р·С‹ Р’';
   END IF;
 
   IF newtype = 2060 THEN
    code := 1010;
-   MESSAGE := ' Пропадание питания фазы С';
+   MESSAGE := ' РџСЂРѕРїР°РґР°РЅРёРµ РїРёС‚Р°РЅРёСЏ С„Р°Р·С‹ РЎ';
   END IF;
 
   IF newtype = 2061 THEN
    code := -1010;
-   MESSAGE := ' Восстановление питания фазы С';
+   MESSAGE := ' Р’РѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ РїРёС‚Р°РЅРёСЏ С„Р°Р·С‹ РЎ';
   END IF;
 
   IF newtype = 2050 THEN
    code := 1012;
-   MESSAGE := ' Крышка счетчика снята';
+   MESSAGE := ' РљСЂС‹С€РєР° СЃС‡РµС‚С‡РёРєР° СЃРЅСЏС‚Р°';
   END IF;
 
   SELECT COUNT (*)
@@ -7206,14 +7206,14 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  --******************************          EMS             *******************************************************--
  ------------------------------------------------------------------------------------------------------------------------
 
- --Вставка текущих
+ --Р’СЃС‚Р°РІРєР° С‚РµРєСѓС‰РёС…
  PROCEDURE set_curr_power_ems (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, ad_date DATE) IS
  BEGIN
   set_curr_power_meter (an_mid, an_erm, an_edm, an_q1m, an_q3m, NULL, NULL, ad_date);
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
-  --Вставка суточных
+  --Р’СЃС‚Р°РІРєР° СЃСѓС‚РѕС‡РЅС‹С…
  PROCEDURE set_bill_ems (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_aerm NUMBER, an_aedm NUMBER, an_aq1m NUMBER, an_aq3m NUMBER,
  an_berm NUMBER, an_bedm NUMBER, an_bq1m NUMBER, an_bq3m NUMBER, an_cerm NUMBER, an_cedm NUMBER, an_cq1m NUMBER, an_cq3m NUMBER, an_derm NUMBER, an_dedm NUMBER,
  an_dq1m NUMBER, an_dq3m NUMBER, av_mtrsn VARCHAR2, ad_date DATE
@@ -7224,7 +7224,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
-   --Вставка месячных расходов
+   --Р’СЃС‚Р°РІРєР° РјРµСЃСЏС‡РЅС‹С… СЂР°СЃС…РѕРґРѕРІ
  PROCEDURE set_months_ems (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_q2 NUMBER, an_q4 NUMBER, an_aer NUMBER, an_aed NUMBER,
  an_aq1 NUMBER, an_aq3 NUMBER, an_aq2 NUMBER, an_aq4 NUMBER, an_ber NUMBER, an_bed NUMBER, an_bq1 NUMBER, an_bq3 NUMBER, an_bq2 NUMBER, an_bq4 NUMBER, an_cer NUMBER,
  an_ced NUMBER, an_cq1 NUMBER, an_cq3 NUMBER, an_cq2 NUMBER, an_cq4 NUMBER, an_der NUMBER, an_ded NUMBER, an_dq1 NUMBER, an_dq3 NUMBER, an_dq2 NUMBER, an_dq4 NUMBER,
@@ -7236,7 +7236,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
-  --Вставка месячных показаний
+  --Р’СЃС‚Р°РІРєР° РјРµСЃСЏС‡РЅС‹С… РїРѕРєР°Р·Р°РЅРёР№
  PROCEDURE set_months_ems_m (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_q2m NUMBER, an_q4m NUMBER, an_aerm NUMBER, an_aedm NUMBER,
  an_aq1m NUMBER, an_aq3m NUMBER, an_aq2m NUMBER, an_aq4m NUMBER, an_berm NUMBER, an_bedm NUMBER, an_bq1m NUMBER, an_bq3m NUMBER, an_bq2m NUMBER, an_bq4m NUMBER,
  an_cerm NUMBER, an_cedm NUMBER, an_cq1m NUMBER, an_cq3m NUMBER, an_cq2m NUMBER, an_cq4m NUMBER, an_derm NUMBER, an_dedm NUMBER, an_dq1m NUMBER, an_dq3m NUMBER,
@@ -7251,7 +7251,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  ------------------------------------------------------------------------------------------------------------------------
  --******************************          DLL METER           *******************************************************--
 ------------------------------------------------------------------------------------------------------------------------
---Вставка текущих
+--Р’СЃС‚Р°РІРєР° С‚РµРєСѓС‰РёС…
  PROCEDURE set_curr_power_dllmtr (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_q2m NUMBER, an_q4m NUMBER, an_freq NUMBER,
  an_cos_fi NUMBER, an_volt1 NUMBER, an_volt2 NUMBER, an_volt3 NUMBER, an_curr1 NUMBER, an_curr2 NUMBER, an_curr3 NUMBER, an_fiu1i1 NUMBER, an_fiu2i2 NUMBER,
  an_fiu3i3 NUMBER, an_fiu1u2 NUMBER, an_fiu1u3 NUMBER, an_fiu2u3 NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_q2 NUMBER, an_q4 NUMBER,
@@ -7263,7 +7263,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
-  --Вставка суточных расходов
+  --Р’СЃС‚Р°РІРєР° СЃСѓС‚РѕС‡РЅС‹С… СЂР°СЃС…РѕРґРѕРІ
  PROCEDURE set_bill_dllmtr (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_q2 NUMBER, an_q4 NUMBER, an_aer NUMBER, an_aed NUMBER,
  an_aq1 NUMBER, an_aq3 NUMBER, an_aq2 NUMBER, an_aq4 NUMBER, an_ber NUMBER, an_bed NUMBER, an_bq1 NUMBER, an_bq3 NUMBER, an_bq2 NUMBER, an_bq4 NUMBER, an_cer NUMBER,
  an_ced NUMBER, an_cq1 NUMBER, an_cq3 NUMBER, an_cq2 NUMBER, an_cq4 NUMBER, an_der NUMBER, an_ded NUMBER, an_dq1 NUMBER, an_dq3 NUMBER, an_dq2 NUMBER, an_dq4 NUMBER,
@@ -7275,7 +7275,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
-   --Вставка суточных показаний
+   --Р’СЃС‚Р°РІРєР° СЃСѓС‚РѕС‡РЅС‹С… РїРѕРєР°Р·Р°РЅРёР№
  PROCEDURE set_bill_dllmtr_m (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_q2m NUMBER, an_q4m NUMBER, an_aerm NUMBER,
  an_aedm NUMBER, an_aq1m NUMBER, an_aq3m NUMBER, an_aq2m NUMBER, an_aq4m NUMBER, an_berm NUMBER, an_bedm NUMBER, an_bq1m NUMBER, an_bq3m NUMBER, an_bq2m NUMBER,
  an_bq4m NUMBER, an_cerm NUMBER, an_cedm NUMBER, an_cq1m NUMBER, an_cq3m NUMBER, an_cq2m NUMBER, an_cq4m NUMBER, an_derm NUMBER, an_dedm NUMBER, an_dq1m NUMBER,
@@ -7287,7 +7287,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
-  --Вставка месячных расходов
+  --Р’СЃС‚Р°РІРєР° РјРµСЃСЏС‡РЅС‹С… СЂР°СЃС…РѕРґРѕРІ
  PROCEDURE set_months_dllmtr (an_mid NUMBER, an_er NUMBER, an_ed NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_q2 NUMBER, an_q4 NUMBER, an_aer NUMBER, an_aed NUMBER,
  an_aq1 NUMBER, an_aq3 NUMBER, an_aq2 NUMBER, an_aq4 NUMBER, an_ber NUMBER, an_bed NUMBER, an_bq1 NUMBER, an_bq3 NUMBER, an_bq2 NUMBER, an_bq4 NUMBER, an_cer NUMBER,
  an_ced NUMBER, an_cq1 NUMBER, an_cq3 NUMBER, an_cq2 NUMBER, an_cq4 NUMBER, an_der NUMBER, an_ded NUMBER, an_dq1 NUMBER, an_dq3 NUMBER, an_dq2 NUMBER, an_dq4 NUMBER,
@@ -7299,7 +7299,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
-   --Вставка месячных показаний
+   --Р’СЃС‚Р°РІРєР° РјРµСЃСЏС‡РЅС‹С… РїРѕРєР°Р·Р°РЅРёР№
  PROCEDURE set_months_dllmtr_m (an_mid NUMBER, an_erm NUMBER, an_edm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_q2m NUMBER, an_q4m NUMBER, an_aerm NUMBER,
  an_aedm NUMBER, an_aq1m NUMBER, an_aq3m NUMBER, an_aq2m NUMBER, an_aq4m NUMBER, an_berm NUMBER, an_bedm NUMBER, an_bq1m NUMBER, an_bq3m NUMBER, an_bq2m NUMBER,
  an_bq4m NUMBER, an_cerm NUMBER, an_cedm NUMBER, an_cq1m NUMBER, an_cq3m NUMBER, an_cq2m NUMBER, an_cq4m NUMBER, an_derm NUMBER, an_dedm NUMBER, an_dq1m NUMBER,
@@ -7312,9 +7312,9 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  END;
 
 -----------------------------------------------------------------------------------------------------------------------
- --******************************          Универсальный механизм вставки событий          ******************************
+ --******************************          РЈРЅРёРІРµСЂСЃР°Р»СЊРЅС‹Р№ РјРµС…Р°РЅРёР·Рј РІСЃС‚Р°РІРєРё СЃРѕР±С‹С‚РёР№          ******************************
  ------------------------------------------------------------------------------------------------------------------------
---Вставка событий - вспомогат. Возвращает 0- не вставляли 1-вставили -1 - не вставляли т.к. уже есть такое
+--Р’СЃС‚Р°РІРєР° СЃРѕР±С‹С‚РёР№ - РІСЃРїРѕРјРѕРіР°С‚. Р’РѕР·РІСЂР°С‰Р°РµС‚ 0- РЅРµ РІСЃС‚Р°РІР»СЏР»Рё 1-РІСЃС‚Р°РІРёР»Рё -1 - РЅРµ РІСЃС‚Р°РІР»СЏР»Рё С‚.Рє. СѓР¶Рµ РµСЃС‚СЊ С‚Р°РєРѕРµ
  FUNCTION mark_status_univ_single (an_metertype NUMBER, an_mid NUMBER, ad_date DATE, an_event_hi NUMBER, an_event_lo NUMBER)
   RETURN NUMBER IS
   lv_code    VARCHAR2 (256);
@@ -7377,14 +7377,14 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
---Вставка событий для schlum
+--Р’СЃС‚Р°РІРєР° СЃРѕР±С‹С‚РёР№ РґР»СЏ schlum
  PROCEDURE mark_status_schlum (an_mid NUMBER, at_date_time common_pg.tt_varchar2, at_event_hi common_pg.tt_number, at_event_lo common_pg.tt_number) IS
  BEGIN
   mark_status_univ (cn_sl_7000, an_mid, at_date_time, at_event_hi, at_event_lo);
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
-  --Вставка событий argo
+  --Р’СЃС‚Р°РІРєР° СЃРѕР±С‹С‚РёР№ argo
  PROCEDURE mark_status_argo (an_mid NUMBER, at_date_time common_pg.tt_varchar2, at_event_hi common_pg.tt_number, at_event_lo common_pg.tt_number) IS
  BEGIN
   mark_status_univ (cn_argo, an_mid, at_date_time, at_event_hi, at_event_lo);
@@ -7392,7 +7392,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
 
 ------------------------------------------------------------------------------------------------------------------------
 
- -- Журнал событий ZxD
+ -- Р–СѓСЂРЅР°Р» СЃРѕР±С‹С‚РёР№ ZxD
  PROCEDURE mark_zxd_event (an_mid NUMBER, ad_date DATE, an_event_hi NUMBER, an_found OUT NUMBER, av_state VARCHAR2, av_error VARCHAR2) IS
   lv_code    VARCHAR2 (256);
   ln_state   NUMBER;
@@ -7405,7 +7405,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
   ln_event := comsrverr_pg.get_metererrinfo (cn_lg_zxd, an_event_hi, 0, lv_code, ln_state, lv_descr, ln_lock);
 
   IF ln_event > 0 AND ln_lock = 0 THEN
-   ln_ret := admin_pg.ins_journal_p (ad_date, an_mid, ln_state, lv_descr || '. состояние: ' || av_state || '; ошибка F.F: ' || av_error, ln_event, lv_code);
+   ln_ret := admin_pg.ins_journal_p (ad_date, an_mid, ln_state, lv_descr || '. СЃРѕСЃС‚РѕСЏРЅРёРµ: ' || av_state || '; РѕС€РёР±РєР° F.F: ' || av_error, ln_event, lv_code);
 
    IF ln_ret = 0 THEN
     an_found := 1;
@@ -7414,7 +7414,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  END;
 
 -----------------------------------------------------------------------------------------------------------------------
-  --Статус LG
+  --РЎС‚Р°С‚СѓСЃ LG
  PROCEDURE mark_lgstatus (newmid NUMBER, newdate_time DATE, newt NUMBER, newu NUMBER, news NUMBER, newm NUMBER, newkt NUMBER, newl1 IN OUT NUMBER,
  newl2 IN OUT NUMBER, newl3 IN OUT NUMBER
  ) IS
@@ -7452,7 +7452,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
     FROM feeders
    WHERE mid = newmid;
 
-  IF ll = 0 THEN   -- для двухэлементных счетчиков фаза В есть всегда
+  IF ll = 0 THEN   -- РґР»СЏ РґРІСѓС…СЌР»РµРјРµРЅС‚РЅС‹С… СЃС‡РµС‚С‡РёРєРѕРІ С„Р°Р·Р° Р’ РµСЃС‚СЊ РІСЃРµРіРґР°
    l2 := 1;
    newl2 := 1;
   END IF;
@@ -7465,7 +7465,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
 
   IF news <> s THEN
    code := -1002;
-   MESSAGE := ' Смена сезона.';
+   MESSAGE := ' РЎРјРµРЅР° СЃРµР·РѕРЅР°.';
 
    INSERT INTO journal
                (date_time, mid, state_cod, state_descr
@@ -7476,7 +7476,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
 
   IF newt <> 0 THEN
    code := -1001;
-   MESSAGE := ' Коррекция часов.';
+   MESSAGE := ' РљРѕСЂСЂРµРєС†РёСЏ С‡Р°СЃРѕРІ.';
 
    INSERT INTO journal
                (date_time, mid, state_cod, state_descr
@@ -7487,7 +7487,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
 
   IF newm <> 0 THEN
    code := -1003;
-   MESSAGE := ' Проведена параметризация счетчика.';
+   MESSAGE := ' РџСЂРѕРІРµРґРµРЅР° РїР°СЂР°РјРµС‚СЂРёР·Р°С†РёСЏ СЃС‡РµС‚С‡РёРєР°.';
 
    INSERT INTO journal
                (date_time, mid, state_cod, state_descr
@@ -7498,7 +7498,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
 
   IF newu <> u AND newu = 1 THEN
    code := -1010;
-   MESSAGE := ' Включение напряжения.';
+   MESSAGE := ' Р’РєР»СЋС‡РµРЅРёРµ РЅР°РїСЂСЏР¶РµРЅРёСЏ.';
 
    INSERT INTO journal
                (date_time, mid, state_cod, state_descr
@@ -7509,7 +7509,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
 
   IF newl1 <> l1 AND newl1 <> 0 AND newu <> 0 THEN
    code := -1005;
-   MESSAGE := ' Есть фаза А.';
+   MESSAGE := ' Р•СЃС‚СЊ С„Р°Р·Р° Рђ.';
 
    INSERT INTO journal
                (date_time, mid, state_cod, state_descr
@@ -7520,7 +7520,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
 
   IF newl2 <> l2 AND newl2 <> 0 AND newu <> 0 THEN
    code := -1005;
-   MESSAGE := ' Есть фаза B.';
+   MESSAGE := ' Р•СЃС‚СЊ С„Р°Р·Р° B.';
 
    INSERT INTO journal
                (date_time, mid, state_cod, state_descr
@@ -7531,7 +7531,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
 
   IF newl3 <> l3 AND newl3 <> 0 AND newu <> 0 THEN
    code := -1005;
-   MESSAGE := ' Есть фаза C.';
+   MESSAGE := ' Р•СЃС‚СЊ С„Р°Р·Р° C.';
 
    INSERT INTO journal
                (date_time, mid, state_cod, state_descr
@@ -7542,7 +7542,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
 
   IF newl1 <> l1 AND newl1 = 0 AND newu <> 0 THEN
    code := 1005;
-   MESSAGE := ' Нет фазы А.';
+   MESSAGE := ' РќРµС‚ С„Р°Р·С‹ Рђ.';
 
    INSERT INTO journal
                (date_time, mid, state_cod, state_descr
@@ -7553,7 +7553,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
 
   IF newl2 <> l2 AND newl2 = 0 AND newu <> 0 THEN
    code := 1005;
-   MESSAGE := ' Нет фазы B.';
+   MESSAGE := ' РќРµС‚ С„Р°Р·С‹ B.';
 
    INSERT INTO journal
                (date_time, mid, state_cod, state_descr
@@ -7564,7 +7564,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
 
   IF newl3 <> l3 AND newl3 = 0 AND newu <> 0 THEN
    code := 1005;
-   MESSAGE := ' Нет фазы C.';
+   MESSAGE := ' РќРµС‚ С„Р°Р·С‹ C.';
 
    INSERT INTO journal
                (date_time, mid, state_cod, state_descr
@@ -7575,7 +7575,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
 
   IF newu <> u AND newu = 0 THEN
    code := 1010;
-   MESSAGE := ' Включение счетчика после отключения напряжения.';
+   MESSAGE := ' Р’РєР»СЋС‡РµРЅРёРµ СЃС‡РµС‚С‡РёРєР° РїРѕСЃР»Рµ РѕС‚РєР»СЋС‡РµРЅРёСЏ РЅР°РїСЂСЏР¶РµРЅРёСЏ.';
 
    INSERT INTO journal
                (date_time, mid, state_cod, state_descr
@@ -7617,17 +7617,17 @@ an_typeconvert - 4  преобразуем ZxD СЭС
   ad_date_time_l   DATE;
  BEGIN
   /*
-  if (StatusLP I 0x8000) St = 1; else St = 0; (Однократно) Запись статусного сообщения перед последним изменением времени
-  if (StatusLP I 0x4000) Lp = 1; else Lp = 0; (Однократно) Память профиля данных полностью обнулена
-  if (StatusLP I 0x2000) Ev = 1; else Ev = 0; (Однократно) Список событий полностью удален
-  if (StatusLP I 0x0080) Uo = 1; else Uo = 0; (Однократно) Провал напряжения (по 3 фазам)
-  if (StatusLP I 0x0040) U  = 1; else U  = 0; (Однократно) Восстановление напряжения
-  if (StatusLP I 0x0020) T  = 1; else T  = 0; (Однократно) Изменено время/дата
-  if (StatusLP I 0x0010) KT = 1; else KT = 0; (Однократно) Выполнен сброс
-  if (StatusLP I 0x0008) S  = 1; else S  = 0; (По изменению) Лето или зима (1 = лето, 0 = зима)
-  if (StatusLP I 0x0004) Ip = 1; else Ip = 0; (Не учит) Неполное измерение, интеграционный период слишком мал
-  if (StatusLP I 0x0002) Bt = 1; else Bt = 0; (По изменению) Резерв питания календарных часов исчерпан (некорр. время)
-  if (StatusLP I 0x0001) Fe = 1; else Fe = 0; (По изменению) Регистрация фатальной ошибки
+  if (StatusLP I 0x8000) St = 1; else St = 0; (РћРґРЅРѕРєСЂР°С‚РЅРѕ) Р—Р°РїРёСЃСЊ СЃС‚Р°С‚СѓСЃРЅРѕРіРѕ СЃРѕРѕР±С‰РµРЅРёСЏ РїРµСЂРµРґ РїРѕСЃР»РµРґРЅРёРј РёР·РјРµРЅРµРЅРёРµРј РІСЂРµРјРµРЅРё
+  if (StatusLP I 0x4000) Lp = 1; else Lp = 0; (РћРґРЅРѕРєСЂР°С‚РЅРѕ) РџР°РјСЏС‚СЊ РїСЂРѕС„РёР»СЏ РґР°РЅРЅС‹С… РїРѕР»РЅРѕСЃС‚СЊСЋ РѕР±РЅСѓР»РµРЅР°
+  if (StatusLP I 0x2000) Ev = 1; else Ev = 0; (РћРґРЅРѕРєСЂР°С‚РЅРѕ) РЎРїРёСЃРѕРє СЃРѕР±С‹С‚РёР№ РїРѕР»РЅРѕСЃС‚СЊСЋ СѓРґР°Р»РµРЅ
+  if (StatusLP I 0x0080) Uo = 1; else Uo = 0; (РћРґРЅРѕРєСЂР°С‚РЅРѕ) РџСЂРѕРІР°Р» РЅР°РїСЂСЏР¶РµРЅРёСЏ (РїРѕ 3 С„Р°Р·Р°Рј)
+  if (StatusLP I 0x0040) U  = 1; else U  = 0; (РћРґРЅРѕРєСЂР°С‚РЅРѕ) Р’РѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ РЅР°РїСЂСЏР¶РµРЅРёСЏ
+  if (StatusLP I 0x0020) T  = 1; else T  = 0; (РћРґРЅРѕРєСЂР°С‚РЅРѕ) РР·РјРµРЅРµРЅРѕ РІСЂРµРјСЏ/РґР°С‚Р°
+  if (StatusLP I 0x0010) KT = 1; else KT = 0; (РћРґРЅРѕРєСЂР°С‚РЅРѕ) Р’С‹РїРѕР»РЅРµРЅ СЃР±СЂРѕСЃ
+  if (StatusLP I 0x0008) S  = 1; else S  = 0; (РџРѕ РёР·РјРµРЅРµРЅРёСЋ) Р›РµС‚Рѕ РёР»Рё Р·РёРјР° (1 = Р»РµС‚Рѕ, 0 = Р·РёРјР°)
+  if (StatusLP I 0x0004) Ip = 1; else Ip = 0; (РќРµ СѓС‡РёС‚) РќРµРїРѕР»РЅРѕРµ РёР·РјРµСЂРµРЅРёРµ, РёРЅС‚РµРіСЂР°С†РёРѕРЅРЅС‹Р№ РїРµСЂРёРѕРґ СЃР»РёС€РєРѕРј РјР°Р»
+  if (StatusLP I 0x0002) Bt = 1; else Bt = 0; (РџРѕ РёР·РјРµРЅРµРЅРёСЋ) Р РµР·РµСЂРІ РїРёС‚Р°РЅРёСЏ РєР°Р»РµРЅРґР°СЂРЅС‹С… С‡Р°СЃРѕРІ РёСЃС‡РµСЂРїР°РЅ (РЅРµРєРѕСЂСЂ. РІСЂРµРјСЏ)
+  if (StatusLP I 0x0001) Fe = 1; else Fe = 0; (РџРѕ РёР·РјРµРЅРµРЅРёСЋ) Р РµРіРёСЃС‚СЂР°С†РёСЏ С„Р°С‚Р°Р»СЊРЅРѕР№ РѕС€РёР±РєРё
   */
   ad_date_time_l := util_pg.to_localtime (ad_date_time);
 
@@ -7649,7 +7649,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
     END IF; */
   IF an_st = 1 THEN
    ln_code := -1015;
-   lv_message := ' Запись статусного сообщения перед последним изменением времени.';
+   lv_message := ' Р—Р°РїРёСЃСЊ СЃС‚Р°С‚СѓСЃРЅРѕРіРѕ СЃРѕРѕР±С‰РµРЅРёСЏ РїРµСЂРµРґ РїРѕСЃР»РµРґРЅРёРј РёР·РјРµРЅРµРЅРёРµРј РІСЂРµРјРµРЅРё.';
 
    INSERT INTO journal
                (mid, date_time, state_cod, state_descr
@@ -7660,7 +7660,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
 
   IF an_lp = 1 THEN
    ln_code := 1016;
-   lv_message := ' Память профиля данных полностью обнулена.';
+   lv_message := ' РџР°РјСЏС‚СЊ РїСЂРѕС„РёР»СЏ РґР°РЅРЅС‹С… РїРѕР»РЅРѕСЃС‚СЊСЋ РѕР±РЅСѓР»РµРЅР°.';
 
    INSERT INTO journal
                (mid, date_time, state_cod, state_descr
@@ -7671,7 +7671,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
 
   IF an_ev = 1 THEN
    ln_code := 1014;
-   lv_message := ' Сброс журнала событий.';
+   lv_message := ' РЎР±СЂРѕСЃ Р¶СѓСЂРЅР°Р»Р° СЃРѕР±С‹С‚РёР№.';
 
    INSERT INTO journal
                (mid, date_time, state_cod, state_descr
@@ -7682,7 +7682,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
 
   IF an_uo = 1 THEN
    ln_code := 1010;
-   lv_message := ' Отключение напряжения';
+   lv_message := ' РћС‚РєР»СЋС‡РµРЅРёРµ РЅР°РїСЂСЏР¶РµРЅРёСЏ';
 
    INSERT INTO journal
                (mid, date_time, state_cod, state_descr
@@ -7693,7 +7693,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
 
   IF an_u = 1 THEN
    ln_code := -1010;
-   lv_message := ' Включение напряжения.';
+   lv_message := ' Р’РєР»СЋС‡РµРЅРёРµ РЅР°РїСЂСЏР¶РµРЅРёСЏ.';
 
    INSERT INTO journal
                (mid, date_time, state_cod, state_descr
@@ -7704,7 +7704,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
 
   IF an_t = 1 THEN
    ln_code := -1001;
-   lv_message := ' Коррекция часов.';
+   lv_message := ' РљРѕСЂСЂРµРєС†РёСЏ С‡Р°СЃРѕРІ.';
 
    INSERT INTO journal
                (mid, date_time, state_cod, state_descr
@@ -7715,7 +7715,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
 
   IF an_kt = 1 THEN
    ln_code := 1013;
-   lv_message := ' Выполнен сброс.';
+   lv_message := ' Р’С‹РїРѕР»РЅРµРЅ СЃР±СЂРѕСЃ.';
 
    INSERT INTO journal
                (mid, date_time, state_cod, state_descr
@@ -7726,7 +7726,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
 
   IF ln_s <> an_s THEN
    ln_code := -1002;
-   lv_message := ' Смена сезона.';
+   lv_message := ' РЎРјРµРЅР° СЃРµР·РѕРЅР°.';
 
    INSERT INTO journal
                (mid, date_time, state_cod, state_descr
@@ -7738,10 +7738,10 @@ an_typeconvert - 4  преобразуем ZxD СЭС
   IF ln_bt <> an_bt THEN
    IF an_bt = 1 THEN
     ln_code := 1017;
-    lv_message := ' Резерв питания календарных часов исчерпан. ';
+    lv_message := ' Р РµР·РµСЂРІ РїРёС‚Р°РЅРёСЏ РєР°Р»РµРЅРґР°СЂРЅС‹С… С‡Р°СЃРѕРІ РёСЃС‡РµСЂРїР°РЅ. ';
    ELSE
     ln_code := -1017;
-    lv_message := ' Резерв питания календарных часов восстановлен. ';
+    lv_message := ' Р РµР·РµСЂРІ РїРёС‚Р°РЅРёСЏ РєР°Р»РµРЅРґР°СЂРЅС‹С… С‡Р°СЃРѕРІ РІРѕСЃСЃС‚Р°РЅРѕРІР»РµРЅ. ';
    END IF;
 
    INSERT INTO journal
@@ -7754,10 +7754,10 @@ an_typeconvert - 4  преобразуем ZxD СЭС
   IF ln_fe <> an_fe THEN
    IF an_fe = 1 THEN
     ln_code := 1018;
-    lv_message := ' Фатальная ошибка. ';
+    lv_message := ' Р¤Р°С‚Р°Р»СЊРЅР°СЏ РѕС€РёР±РєР°. ';
    ELSE
     ln_code := -1018;
-    lv_message := ' Фатальная ошибка устранена. ';
+    lv_message := ' Р¤Р°С‚Р°Р»СЊРЅР°СЏ РѕС€РёР±РєР° СѓСЃС‚СЂР°РЅРµРЅР°. ';
    END IF;
 
    INSERT INTO journal
@@ -7783,7 +7783,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
- --Вставка информации по наличаю фазы
+ --Р’СЃС‚Р°РІРєР° РёРЅС„РѕСЂРјР°С†РёРё РїРѕ РЅР°Р»РёС‡Р°СЋ С„Р°Р·С‹
  PROCEDURE set_abc_zxb (an_mid NUMBER, an_volt1 NUMBER, an_volt2 NUMBER, an_volt3 NUMBER, ad_date DATE) IS
   ln_l1        NUMBER;
   ln_l2        NUMBER;
@@ -7824,7 +7824,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
 
   IF ln_volt1 <> ln_l1 AND ln_volt1 <> 0 AND an_volt1 IS NOT NULL THEN
    ln_code := -1005;
-   lv_message := ' Есть фаза A.';
+   lv_message := ' Р•СЃС‚СЊ С„Р°Р·Р° A.';
 
    INSERT INTO journal
                (date_time, mid, state_cod, state_descr
@@ -7835,7 +7835,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
 
   IF ln_volt1 <> ln_l1 AND ln_volt1 = 0 AND an_volt1 IS NOT NULL THEN
    ln_code := 1005;
-   lv_message := ' Нет фазы A.';
+   lv_message := ' РќРµС‚ С„Р°Р·С‹ A.';
 
    INSERT INTO journal
                (date_time, mid, state_cod, state_descr
@@ -7846,7 +7846,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
 
   IF ln_volt2 <> ln_l2 AND ln_volt2 <> 0 AND an_volt2 IS NOT NULL THEN
    ln_code := -1005;
-   lv_message := ' Есть фаза B.';
+   lv_message := ' Р•СЃС‚СЊ С„Р°Р·Р° B.';
 
    INSERT INTO journal
                (date_time, mid, state_cod, state_descr
@@ -7857,7 +7857,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
 
   IF ln_volt2 <> ln_l2 AND ln_volt2 = 0 AND an_volt2 IS NOT NULL THEN
    ln_code := 1005;
-   lv_message := ' Нет фазы B.';
+   lv_message := ' РќРµС‚ С„Р°Р·С‹ B.';
 
    INSERT INTO journal
                (date_time, mid, state_cod, state_descr
@@ -7868,7 +7868,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
 
   IF ln_volt3 <> ln_l3 AND ln_volt3 <> 0 AND an_volt3 IS NOT NULL THEN
    ln_code := -1005;
-   lv_message := ' Есть фаза C.';
+   lv_message := ' Р•СЃС‚СЊ С„Р°Р·Р° C.';
 
    INSERT INTO journal
                (date_time, mid, state_cod, state_descr
@@ -7879,7 +7879,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
 
   IF ln_volt3 <> ln_l3 AND ln_volt3 = 0 AND an_volt3 IS NOT NULL THEN
    ln_code := 1005;
-   lv_message := ' Нет фазы C.';
+   lv_message := ' РќРµС‚ С„Р°Р·С‹ C.';
 
    INSERT INTO journal
                (date_time, mid, state_cod, state_descr
@@ -7917,9 +7917,9 @@ an_typeconvert - 4  преобразуем ZxD СЭС
 
   CASE
    WHEN newtype1 >= 1 AND newtype1 <= 3 THEN
-    MESSAGE := ' Обратный ход ';
+    MESSAGE := ' РћР±СЂР°С‚РЅС‹Р№ С…РѕРґ ';
    WHEN newtype1 >= 4 AND newtype1 <= 6 THEN
-    MESSAGE := ' Отключение фазы: ';
+    MESSAGE := ' РћС‚РєР»СЋС‡РµРЅРёРµ С„Р°Р·С‹: ';
 
     IF BITAND (state, 1) = 1 THEN
      MESSAGE := MESSAGE || ' A';
@@ -7933,41 +7933,41 @@ an_typeconvert - 4  преобразуем ZxD СЭС
      MESSAGE := MESSAGE || ' C';
     END IF;
    WHEN newtype1 >= 7 AND newtype1 <= 9 THEN
-    MESSAGE := ' Отключение питания ';
+    MESSAGE := ' РћС‚РєР»СЋС‡РµРЅРёРµ РїРёС‚Р°РЅРёСЏ ';
    WHEN newtype1 >= 10 AND newtype1 <= 12 THEN
-    MESSAGE := ' Программирование счетчика';
+    MESSAGE := ' РџСЂРѕРіСЂР°РјРјРёСЂРѕРІР°РЅРёРµ СЃС‡РµС‚С‡РёРєР°';
 
     IF state = 0 THEN
-     MESSAGE := MESSAGE || ' (оптопорт)';
+     MESSAGE := MESSAGE || ' (РѕРїС‚РѕРїРѕСЂС‚)';
     ELSIF state = 1 THEN
-     MESSAGE := MESSAGE || ' (удаленно)';
+     MESSAGE := MESSAGE || ' (СѓРґР°Р»РµРЅРЅРѕ)';
     END IF;
    WHEN newtype1 >= 13 AND newtype1 <= 15 THEN
-    MESSAGE := ' Изменение коэффициента CT';
+    MESSAGE := ' РР·РјРµРЅРµРЅРёРµ РєРѕСЌС„С„РёС†РёРµРЅС‚Р° CT';
 
     IF state = 0 THEN
-     MESSAGE := MESSAGE || ' (оптопорт)';
+     MESSAGE := MESSAGE || ' (РѕРїС‚РѕРїРѕСЂС‚)';
     ELSIF state = 1 THEN
-     MESSAGE := MESSAGE || ' (удаленно)';
+     MESSAGE := MESSAGE || ' (СѓРґР°Р»РµРЅРЅРѕ)';
     END IF;
    WHEN newtype1 >= 16 AND newtype1 <= 18 THEN
-    MESSAGE := ' Событие биллинга';
+    MESSAGE := ' РЎРѕР±С‹С‚РёРµ Р±РёР»Р»РёРЅРіР°';
    WHEN newtype1 >= 19 AND newtype1 <= 21 THEN
-    MESSAGE := ' Транзитный сброс';
+    MESSAGE := ' РўСЂР°РЅР·РёС‚РЅС‹Р№ СЃР±СЂРѕСЃ';
    WHEN newtype1 >= 22 AND newtype1 <= 24 THEN
-    MESSAGE := ' Ошибка счетчика';
+    MESSAGE := ' РћС€РёР±РєР° СЃС‡РµС‚С‡РёРєР°';
    WHEN newtype1 >= 25 AND newtype1 <= 27 THEN
-    MESSAGE := ' Крышка терминала';
+    MESSAGE := ' РљСЂС‹С€РєР° С‚РµСЂРјРёРЅР°Р»Р°';
    WHEN newtype1 >= 28 AND newtype1 <= 30 THEN
-    MESSAGE := ' Крышка основная';
+    MESSAGE := ' РљСЂС‹С€РєР° РѕСЃРЅРѕРІРЅР°СЏ';
    WHEN newtype1 >= 31 AND newtype1 <= 33 THEN
-    MESSAGE := ' Батарея внутренняя';
+    MESSAGE := ' Р‘Р°С‚Р°СЂРµСЏ РІРЅСѓС‚СЂРµРЅРЅСЏСЏ';
    WHEN newtype1 >= 34 AND newtype1 <= 36 THEN
-    MESSAGE := ' Батарея внешняя';
+    MESSAGE := ' Р‘Р°С‚Р°СЂРµСЏ РІРЅРµС€РЅСЏСЏ';
    WHEN newtype1 = 37 THEN
-    MESSAGE := ' Установка внешней батареи ';
+    MESSAGE := ' РЈСЃС‚Р°РЅРѕРІРєР° РІРЅРµС€РЅРµР№ Р±Р°С‚Р°СЂРµРё ';
    ELSE
-    MESSAGE := ' Событие счетчика: ' || newtype1 || '/' || state;
+    MESSAGE := ' РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: ' || newtype1 || '/' || state;
   END CASE;
 
   SELECT COUNT (*)
@@ -8001,42 +8001,42 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  BEGIN
   IF newtype = 0 THEN
    code := 1010;
-   MESSAGE := ' Отключение напряжения.';
+   MESSAGE := ' РћС‚РєР»СЋС‡РµРЅРёРµ РЅР°РїСЂСЏР¶РµРЅРёСЏ.';
   END IF;
 
   IF newtype = 1 THEN
    code := -1010;
-   MESSAGE := ' Включение напряжения.';
+   MESSAGE := ' Р’РєР»СЋС‡РµРЅРёРµ РЅР°РїСЂСЏР¶РµРЅРёСЏ.';
   END IF;
 
   IF newtype = 2 THEN
    code := -1001;
-   MESSAGE := ' Коррекция часов. Время до коррекции.';
+   MESSAGE := ' РљРѕСЂСЂРµРєС†РёСЏ С‡Р°СЃРѕРІ. Р’СЂРµРјСЏ РґРѕ РєРѕСЂСЂРµРєС†РёРё.';
   END IF;
 
   IF newtype = 3 THEN
    code := 1001;
-   MESSAGE := ' Коррекция часов. Время после коррекции.';
+   MESSAGE := ' РљРѕСЂСЂРµРєС†РёСЏ С‡Р°СЃРѕРІ. Р’СЂРµРјСЏ РїРѕСЃР»Рµ РєРѕСЂСЂРµРєС†РёРё.';
   END IF;
 
   IF newtype = 4 THEN
    code := 1011;
-   MESSAGE := ' Начало режима тестирования счетчика.';
+   MESSAGE := ' РќР°С‡Р°Р»Рѕ СЂРµР¶РёРјР° С‚РµСЃС‚РёСЂРѕРІР°РЅРёСЏ СЃС‡РµС‚С‡РёРєР°.';
   END IF;
 
   IF newtype = 5 THEN
    code := 1012;
-   MESSAGE := ' Окончание режима тестирования счетчика.';
+   MESSAGE := ' РћРєРѕРЅС‡Р°РЅРёРµ СЂРµР¶РёРјР° С‚РµСЃС‚РёСЂРѕРІР°РЅРёСЏ СЃС‡РµС‚С‡РёРєР°.';
   END IF;
 
   IF newtype = 6 THEN
    code := 1013;
-   MESSAGE := ' Сброс максимальной мощности.';
+   MESSAGE := ' РЎР±СЂРѕСЃ РјР°РєСЃРёРјР°Р»СЊРЅРѕР№ РјРѕС‰РЅРѕСЃС‚Рё.';
   END IF;
 
   IF newtype = 255 THEN
    code := 1014;
-   MESSAGE := ' Сброс журнала событий.';
+   MESSAGE := ' РЎР±СЂРѕСЃ Р¶СѓСЂРЅР°Р»Р° СЃРѕР±С‹С‚РёР№.';
   END IF;
 
   SELECT COUNT (*)
@@ -8064,7 +8064,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
- --Журнал событий
+ --Р–СѓСЂРЅР°Р» СЃРѕР±С‹С‚РёР№
  PROCEDURE mark_energyevent (newmid NUMBER, newev_date DATE, newtype NUMBER, FOUND OUT NUMBER, newl1 NUMBER, newl2 NUMBER, newl3 NUMBER) IS
   ll        NUMBER;
   code      NUMBER;
@@ -8090,10 +8090,10 @@ an_typeconvert - 4  преобразуем ZxD СЭС
   code := -1005;
 
   IF newl1 = 0 THEN
-   MESSAGE := ' Есть фаза А.';
+   MESSAGE := ' Р•СЃС‚СЊ С„Р°Р·Р° Рђ.';
   ELSE
    code := 1005;
-   MESSAGE := ' Нет фазы А.';
+   MESSAGE := ' РќРµС‚ С„Р°Р·С‹ Рђ.';
   END IF;
 
   SELECT NVL (nabc, 0)
@@ -8101,20 +8101,20 @@ an_typeconvert - 4  преобразуем ZxD СЭС
     FROM feeders
    WHERE mid = newmid;
 
-  IF ll <> 0 THEN   -- для двухэлементных счетчиков фаза В есть всегда
+  IF ll <> 0 THEN   -- РґР»СЏ РґРІСѓС…СЌР»РµРјРµРЅС‚РЅС‹С… СЃС‡РµС‚С‡РёРєРѕРІ С„Р°Р·Р° Р’ РµСЃС‚СЊ РІСЃРµРіРґР°
    IF newl2 = 0 THEN
-    MESSAGE := MESSAGE || ' Есть фаза B.';
+    MESSAGE := MESSAGE || ' Р•СЃС‚СЊ С„Р°Р·Р° B.';
    ELSE
     code := 1005;
-    MESSAGE := MESSAGE || ' Нет фазы B.';
+    MESSAGE := MESSAGE || ' РќРµС‚ С„Р°Р·С‹ B.';
    END IF;
   END IF;
 
   IF newl3 = 0 THEN
-   MESSAGE := MESSAGE || ' Есть фаза C.';
+   MESSAGE := MESSAGE || ' Р•СЃС‚СЊ С„Р°Р·Р° C.';
   ELSE
    code := 1005;
-   MESSAGE := MESSAGE || ' Нет фазы C.';
+   MESSAGE := MESSAGE || ' РќРµС‚ С„Р°Р·С‹ C.';
   END IF;
 
   INSERT INTO journal
@@ -8136,12 +8136,12 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  BEGIN
   IF newtype = 0 THEN
    code := 1010;
-   MESSAGE := ' Отключение счетчика.';
+   MESSAGE := ' РћС‚РєР»СЋС‡РµРЅРёРµ СЃС‡РµС‚С‡РёРєР°.';
   END IF;
 
   IF newtype = 1 THEN
    code := -1010;
-   MESSAGE := ' Включение счетчика. Нет напряжения на фазах.';
+   MESSAGE := ' Р’РєР»СЋС‡РµРЅРёРµ СЃС‡РµС‚С‡РёРєР°. РќРµС‚ РЅР°РїСЂСЏР¶РµРЅРёСЏ РЅР° С„Р°Р·Р°С….';
   END IF;
 
   IF newtype > 1 THEN
@@ -8150,21 +8150,21 @@ an_typeconvert - 4  преобразуем ZxD СЭС
 
    IF l_type >= 8 THEN
     code := -1005;
-    MESSAGE := MESSAGE || ' Включение фазы C.';
+    MESSAGE := MESSAGE || ' Р’РєР»СЋС‡РµРЅРёРµ С„Р°Р·С‹ C.';
    END IF;
 
    l_type := MOD (newtype, 8);
 
    IF l_type >= 4 THEN
     code := -1005;
-    MESSAGE := MESSAGE || ' Включение фазы B.';
+    MESSAGE := MESSAGE || ' Р’РєР»СЋС‡РµРЅРёРµ С„Р°Р·С‹ B.';
    END IF;
 
    l_type := MOD (newtype, 4);
 
    IF l_type >= 2 THEN
     code := -1005;
-    MESSAGE := MESSAGE || ' Включение фазы A.';
+    MESSAGE := MESSAGE || ' Р’РєР»СЋС‡РµРЅРёРµ С„Р°Р·С‹ A.';
    END IF;
   END IF;
 
@@ -8194,7 +8194,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
--- Журнал событий SET4
+-- Р–СѓСЂРЅР°Р» СЃРѕР±С‹С‚РёР№ SET4
  PROCEDURE mark_set4event (newmid NUMBER, newev_date DATE, newtype NUMBER, FOUND OUT NUMBER) IS
   evtype    NUMBER;
   code      NUMBER          DEFAULT 0;
@@ -8202,82 +8202,82 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  BEGIN
   IF newtype = 1 THEN
    code := 1010;
-   MESSAGE := ' Отключение счетчика.';
+   MESSAGE := ' РћС‚РєР»СЋС‡РµРЅРёРµ СЃС‡РµС‚С‡РёРєР°.';
   END IF;
 
   IF newtype = 256 THEN
    code := -1010;
-   MESSAGE := ' Включение счетчика.';
+   MESSAGE := ' Р’РєР»СЋС‡РµРЅРёРµ СЃС‡РµС‚С‡РёРєР°.';
   END IF;
 
   IF newtype = 2 THEN
    code := -1001;
-   MESSAGE := ' Коррекция часов. Время до коррекции.';
+   MESSAGE := ' РљРѕСЂСЂРµРєС†РёСЏ С‡Р°СЃРѕРІ. Р’СЂРµРјСЏ РґРѕ РєРѕСЂСЂРµРєС†РёРё.';
   END IF;
 
   IF newtype = 512 THEN
    code := 1001;
-   MESSAGE := ' Коррекция часов. Время после коррекции.';
+   MESSAGE := ' РљРѕСЂСЂРµРєС†РёСЏ С‡Р°СЃРѕРІ. Р’СЂРµРјСЏ РїРѕСЃР»Рµ РєРѕСЂСЂРµРєС†РёРё.';
   END IF;
 
   IF newtype = 3 THEN
    code := 1019;
-   MESSAGE := ' Коррекция расписания праздничных дней.';
+   MESSAGE := ' РљРѕСЂСЂРµРєС†РёСЏ СЂР°СЃРїРёСЃР°РЅРёСЏ РїСЂР°Р·РґРЅРёС‡РЅС‹С… РґРЅРµР№.';
   END IF;
 
   IF newtype = 4 THEN
    code := 1020;
-   MESSAGE := ' Коррекция тарифного расписания.';
+   MESSAGE := ' РљРѕСЂСЂРµРєС†РёСЏ С‚Р°СЂРёС„РЅРѕРіРѕ СЂР°СЃРїРёСЃР°РЅРёСЏ.';
   END IF;
 
   IF newtype = 5 THEN
    code := 1021;
-   MESSAGE := ' Сброс показаний энергии.';
+   MESSAGE := ' РЎР±СЂРѕСЃ РїРѕРєР°Р·Р°РЅРёР№ СЌРЅРµСЂРіРёРё.';
   END IF;
 
   IF newtype = 6 THEN
    code := 1022;
-   MESSAGE := ' Инициализация массива профиля мощности.';
+   MESSAGE := ' РРЅРёС†РёР°Р»РёР·Р°С†РёСЏ РјР°СЃСЃРёРІР° РїСЂРѕС„РёР»СЏ РјРѕС‰РЅРѕСЃС‚Рё.';
   END IF;
 
   IF newtype = 7 THEN
    code := 1005;
-   MESSAGE := ' Выключение фазы 1 счетчика.';
+   MESSAGE := ' Р’С‹РєР»СЋС‡РµРЅРёРµ С„Р°Р·С‹ 1 СЃС‡РµС‚С‡РёРєР°.';
   END IF;
 
   IF newtype = 7 * 256 THEN
    code := -1005;
-   MESSAGE := ' Включение фазы 1 счетчика.';
+   MESSAGE := ' Р’РєР»СЋС‡РµРЅРёРµ С„Р°Р·С‹ 1 СЃС‡РµС‚С‡РёРєР°.';
   END IF;
 
   IF newtype = 8 THEN
    code := 1005;
-   MESSAGE := ' Выключение фазы 2 счетчика.';
+   MESSAGE := ' Р’С‹РєР»СЋС‡РµРЅРёРµ С„Р°Р·С‹ 2 СЃС‡РµС‚С‡РёРєР°.';
   END IF;
 
   IF newtype = 8 * 256 THEN
    code := -1005;
-   MESSAGE := ' Включение фазы 2 счетчика.';
+   MESSAGE := ' Р’РєР»СЋС‡РµРЅРёРµ С„Р°Р·С‹ 2 СЃС‡РµС‚С‡РёРєР°.';
   END IF;
 
   IF newtype = 9 THEN
    code := 1005;
-   MESSAGE := ' Выключение фазы 3 счетчика.';
+   MESSAGE := ' Р’С‹РєР»СЋС‡РµРЅРёРµ С„Р°Р·С‹ 3 СЃС‡РµС‚С‡РёРєР°.';
   END IF;
 
   IF newtype = 9 * 256 THEN
    code := -1005;
-   MESSAGE := ' Включение фазы 3 счетчика.';
+   MESSAGE := ' Р’РєР»СЋС‡РµРЅРёРµ С„Р°Р·С‹ 3 СЃС‡РµС‚С‡РёРєР°.';
   END IF;
 
   IF newtype = 10 THEN
    code := 1023;
-   MESSAGE := ' Открытие защитной крышки.';
+   MESSAGE := ' РћС‚РєСЂС‹С‚РёРµ Р·Р°С‰РёС‚РЅРѕР№ РєСЂС‹С€РєРё.';
   END IF;
 
   IF newtype = 10 * 256 THEN
    code := 1023;
-   MESSAGE := ' Закрытие защитной крышки.';
+   MESSAGE := ' Р—Р°РєСЂС‹С‚РёРµ Р·Р°С‰РёС‚РЅРѕР№ РєСЂС‹С€РєРё.';
   END IF;
 
   SELECT evtype
@@ -8306,7 +8306,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
--- Журнал событий SEB 2A.07
+-- Р–СѓСЂРЅР°Р» СЃРѕР±С‹С‚РёР№ SEB 2A.07
  PROCEDURE mark_seb2a07event (newmid NUMBER, newev_date DATE, newtype NUMBER, FOUND OUT NUMBER) IS
   code      NUMBER          DEFAULT 0;
   MESSAGE   VARCHAR2 (2000);
@@ -8314,22 +8314,22 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  BEGIN
   IF newtype = 1 THEN
    code := -1010;
-   MESSAGE := ' Включение счетчика.';
+   MESSAGE := ' Р’РєР»СЋС‡РµРЅРёРµ СЃС‡РµС‚С‡РёРєР°.';
   END IF;
 
   IF newtype = 2 THEN
    code := 1010;
-   MESSAGE := ' Отключение счетчика.';
+   MESSAGE := ' РћС‚РєР»СЋС‡РµРЅРёРµ СЃС‡РµС‚С‡РёРєР°.';
   END IF;
 
   IF newtype = 3 THEN
    code := 1023;
-   MESSAGE := ' Открытие защитной крышки.';
+   MESSAGE := ' РћС‚РєСЂС‹С‚РёРµ Р·Р°С‰РёС‚РЅРѕР№ РєСЂС‹С€РєРё.';
   END IF;
 
   IF newtype = 4 THEN
    code := -1001;
-   MESSAGE := ' Коррекция часов. Время до коррекции.';
+   MESSAGE := ' РљРѕСЂСЂРµРєС†РёСЏ С‡Р°СЃРѕРІ. Р’СЂРµРјСЏ РґРѕ РєРѕСЂСЂРµРєС†РёРё.';
   END IF;
 
   SELECT COUNT (*)
@@ -8364,17 +8364,17 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  BEGIN
   IF newtype = 0 THEN
    code := 1010;
-   MESSAGE := ' Отключение счетчика.';
+   MESSAGE := ' РћС‚РєР»СЋС‡РµРЅРёРµ СЃС‡РµС‚С‡РёРєР°.';
   END IF;
 
   IF newtype = 1 THEN
    code := -1010;
-   MESSAGE := ' Включение счетчика.';
+   MESSAGE := ' Р’РєР»СЋС‡РµРЅРёРµ СЃС‡РµС‚С‡РёРєР°.';
   END IF;
 
   IF newtype = 2 THEN
    code := -1010;
-   MESSAGE := ' Изменение состояния фаз: ' || newstate;
+   MESSAGE := ' РР·РјРµРЅРµРЅРёРµ СЃРѕСЃС‚РѕСЏРЅРёСЏ С„Р°Р·: ' || newstate;
   END IF;
 
   SELECT evtype
@@ -8403,7 +8403,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
--- журнал событий
+-- Р¶СѓСЂРЅР°Р» СЃРѕР±С‹С‚РёР№
  PROCEDURE mark_ce304event (newmid NUMBER, newev_date DATE, newtype NUMBER, FOUND OUT NUMBER, newstate NUMBER) IS
   evtype    NUMBER;
   code      NUMBER          DEFAULT 0;
@@ -8415,53 +8415,53 @@ an_typeconvert - 4  преобразуем ZxD СЭС
   IF newtype = 0 THEN
    IF newstate = 0 THEN
     code := -1015;
-    MESSAGE := 'Проблем счетчика не обнаружено';
+    MESSAGE := 'РџСЂРѕР±Р»РµРј СЃС‡РµС‚С‡РёРєР° РЅРµ РѕР±РЅР°СЂСѓР¶РµРЅРѕ';
    ELSE
     code := 1015;
     MESSAGE := '';
 
     IF BITAND (newstate, 1) = 1 THEN
-     MESSAGE := 'Сбой часов реального времени (невозможна тарификация) ' || MESSAGE;
+     MESSAGE := 'РЎР±РѕР№ С‡Р°СЃРѕРІ СЂРµР°Р»СЊРЅРѕРіРѕ РІСЂРµРјРµРЅРё (РЅРµРІРѕР·РјРѕР¶РЅР° С‚Р°СЂРёС„РёРєР°С†РёСЏ) ' || MESSAGE;
     END IF;
 
     IF BITAND (newstate, 2) = 2 THEN
-     MESSAGE := 'Проблемы группы системного времени (может быть неучтена энергия последнего измерения) ' || MESSAGE;
+     MESSAGE := 'РџСЂРѕР±Р»РµРјС‹ РіСЂСѓРїРїС‹ СЃРёСЃС‚РµРјРЅРѕРіРѕ РІСЂРµРјРµРЅРё (РјРѕР¶РµС‚ Р±С‹С‚СЊ РЅРµСѓС‡С‚РµРЅР° СЌРЅРµСЂРіРёСЏ РїРѕСЃР»РµРґРЅРµРіРѕ РёР·РјРµСЂРµРЅРёСЏ) ' || MESSAGE;
     END IF;
 
     IF BITAND (newstate, 4) = 4 THEN
-     MESSAGE := 'Проблемы группы технологической (нет учета энергии) ' || MESSAGE;
+     MESSAGE := 'РџСЂРѕР±Р»РµРјС‹ РіСЂСѓРїРїС‹ С‚РµС…РЅРѕР»РѕРіРёС‡РµСЃРєРѕР№ (РЅРµС‚ СѓС‡РµС‚Р° СЌРЅРµСЂРіРёРё) ' || MESSAGE;
     END IF;
 
     IF BITAND (newstate, 8) = 8 THEN
-     MESSAGE := 'Проблемы группы параметров измерителя (нет учета энергии) ' || MESSAGE;
+     MESSAGE := 'РџСЂРѕР±Р»РµРјС‹ РіСЂСѓРїРїС‹ РїР°СЂР°РјРµС‚СЂРѕРІ РёР·РјРµСЂРёС‚РµР»СЏ (РЅРµС‚ СѓС‡РµС‚Р° СЌРЅРµСЂРіРёРё) ' || MESSAGE;
     END IF;
 
     IF BITAND (newstate, 16) = 16 THEN
-     MESSAGE := 'Проблемы группы интерфейсного обмена (недостоверны параметры обмена) ' || MESSAGE;
+     MESSAGE := 'РџСЂРѕР±Р»РµРјС‹ РіСЂСѓРїРїС‹ РёРЅС‚РµСЂС„РµР№СЃРЅРѕРіРѕ РѕР±РјРµРЅР° (РЅРµРґРѕСЃС‚РѕРІРµСЂРЅС‹ РїР°СЂР°РјРµС‚СЂС‹ РѕР±РјРµРЅР°) ' || MESSAGE;
     END IF;
 
     IF BITAND (newstate, 32) = 32 THEN
-     MESSAGE := 'Проблемы группы тарификации (нет учета по тарифам) ' || MESSAGE;
+     MESSAGE := 'РџСЂРѕР±Р»РµРјС‹ РіСЂСѓРїРїС‹ С‚Р°СЂРёС„РёРєР°С†РёРё (РЅРµС‚ СѓС‡РµС‚Р° РїРѕ С‚Р°СЂРёС„Р°Рј) ' || MESSAGE;
     END IF;
 
     IF BITAND (newstate, 64) = 64 THEN
-     MESSAGE := 'Проблемы накопленных основных данных (недостоверна группа накопления энергий активного тарифа) ' || MESSAGE;
+     MESSAGE := 'РџСЂРѕР±Р»РµРјС‹ РЅР°РєРѕРїР»РµРЅРЅС‹С… РѕСЃРЅРѕРІРЅС‹С… РґР°РЅРЅС‹С… (РЅРµРґРѕСЃС‚РѕРІРµСЂРЅР° РіСЂСѓРїРїР° РЅР°РєРѕРїР»РµРЅРёСЏ СЌРЅРµСЂРіРёР№ Р°РєС‚РёРІРЅРѕРіРѕ С‚Р°СЂРёС„Р°) ' || MESSAGE;
     END IF;
 
     IF BITAND (newstate, 128) = 128 THEN
-     MESSAGE := 'Проблемы накопленных дополнительных данных (недостоверны максимумы средней мощности и активные записи профилей) ' || MESSAGE;
+     MESSAGE := 'РџСЂРѕР±Р»РµРјС‹ РЅР°РєРѕРїР»РµРЅРЅС‹С… РґРѕРїРѕР»РЅРёС‚РµР»СЊРЅС‹С… РґР°РЅРЅС‹С… (РЅРµРґРѕСЃС‚РѕРІРµСЂРЅС‹ РјР°РєСЃРёРјСѓРјС‹ СЃСЂРµРґРЅРµР№ РјРѕС‰РЅРѕСЃС‚Рё Рё Р°РєС‚РёРІРЅС‹Рµ Р·Р°РїРёСЃРё РїСЂРѕС„РёР»РµР№) ' || MESSAGE;
     END IF;
 
     IF BITAND (newstate, 256) = 256 THEN
-     MESSAGE := 'Проблемы группы журналов (недостоверна информация в журналах) ' || MESSAGE;
+     MESSAGE := 'РџСЂРѕР±Р»РµРјС‹ РіСЂСѓРїРїС‹ Р¶СѓСЂРЅР°Р»РѕРІ (РЅРµРґРѕСЃС‚РѕРІРµСЂРЅР° РёРЅС„РѕСЂРјР°С†РёСЏ РІ Р¶СѓСЂРЅР°Р»Р°С…) ' || MESSAGE;
     END IF;
 
     IF BITAND (newstate, 512) = 512 THEN
-     MESSAGE := 'Неожиданный аппаратный сброс ' || MESSAGE;
+     MESSAGE := 'РќРµРѕР¶РёРґР°РЅРЅС‹Р№ Р°РїРїР°СЂР°С‚РЅС‹Р№ СЃР±СЂРѕСЃ ' || MESSAGE;
     END IF;
 
     IF BITAND (newstate, 1024) = 1024 THEN
-     MESSAGE := 'Проблемы накопителя данных профиля. ' || MESSAGE;
+     MESSAGE := 'РџСЂРѕР±Р»РµРјС‹ РЅР°РєРѕРїРёС‚РµР»СЏ РґР°РЅРЅС‹С… РїСЂРѕС„РёР»СЏ. ' || MESSAGE;
     END IF;
    END IF;
   END IF;
@@ -8469,71 +8469,71 @@ an_typeconvert - 4  преобразуем ZxD СЭС
   IF newtype = 1 THEN
    IF newstate = 0 THEN
     code := -1011;
-    MESSAGE := 'Все параметры счетчика в норме';   --'Отклонений значений параметров не обнаружено';
+    MESSAGE := 'Р’СЃРµ РїР°СЂР°РјРµС‚СЂС‹ СЃС‡РµС‚С‡РёРєР° РІ РЅРѕСЂРјРµ';   --'РћС‚РєР»РѕРЅРµРЅРёР№ Р·РЅР°С‡РµРЅРёР№ РїР°СЂР°РјРµС‚СЂРѕРІ РЅРµ РѕР±РЅР°СЂСѓР¶РµРЅРѕ';
    ELSE
     code := 1011;
     MESSAGE := '';
 
     IF BITAND (newstate, 1) = 1 THEN
-     MESSAGE := 'Фаза А выключена (напряжение фазы меньше 5% номинального) ' || MESSAGE;
+     MESSAGE := 'Р¤Р°Р·Р° Рђ РІС‹РєР»СЋС‡РµРЅР° (РЅР°РїСЂСЏР¶РµРЅРёРµ С„Р°Р·С‹ РјРµРЅСЊС€Рµ 5% РЅРѕРјРёРЅР°Р»СЊРЅРѕРіРѕ) ' || MESSAGE;
     END IF;
 
     IF BITAND (newstate, 2) = 2 THEN
-     MESSAGE := 'Фаза B выключена (напряжение фазы меньше 5% номинального) ' || MESSAGE;
+     MESSAGE := 'Р¤Р°Р·Р° B РІС‹РєР»СЋС‡РµРЅР° (РЅР°РїСЂСЏР¶РµРЅРёРµ С„Р°Р·С‹ РјРµРЅСЊС€Рµ 5% РЅРѕРјРёРЅР°Р»СЊРЅРѕРіРѕ) ' || MESSAGE;
     END IF;
 
     IF BITAND (newstate, 4) = 4 THEN
-     MESSAGE := 'Фаза C выключена (напряжение фазы меньше 5% номинального) ' || MESSAGE;
+     MESSAGE := 'Р¤Р°Р·Р° C РІС‹РєР»СЋС‡РµРЅР° (РЅР°РїСЂСЏР¶РµРЅРёРµ С„Р°Р·С‹ РјРµРЅСЊС€Рµ 5% РЅРѕРјРёРЅР°Р»СЊРЅРѕРіРѕ) ' || MESSAGE;
     END IF;
 
     IF BITAND (newstate, 8) = 8 THEN
-     MESSAGE := 'Напряжение фазы А меньше заданного параметром LEVDN ' || MESSAGE;
+     MESSAGE := 'РќР°РїСЂСЏР¶РµРЅРёРµ С„Р°Р·С‹ Рђ РјРµРЅСЊС€Рµ Р·Р°РґР°РЅРЅРѕРіРѕ РїР°СЂР°РјРµС‚СЂРѕРј LEVDN ' || MESSAGE;
     END IF;
 
     IF BITAND (newstate, 16) = 16 THEN
-     MESSAGE := 'Напряжение фазы B меньше заданного параметром LEVDN ' || MESSAGE;
+     MESSAGE := 'РќР°РїСЂСЏР¶РµРЅРёРµ С„Р°Р·С‹ B РјРµРЅСЊС€Рµ Р·Р°РґР°РЅРЅРѕРіРѕ РїР°СЂР°РјРµС‚СЂРѕРј LEVDN ' || MESSAGE;
     END IF;
 
     IF BITAND (newstate, 32) = 32 THEN
-     MESSAGE := 'Напряжение фазы C меньше заданного параметром LEVDN ' || MESSAGE;
+     MESSAGE := 'РќР°РїСЂСЏР¶РµРЅРёРµ С„Р°Р·С‹ C РјРµРЅСЊС€Рµ Р·Р°РґР°РЅРЅРѕРіРѕ РїР°СЂР°РјРµС‚СЂРѕРј LEVDN ' || MESSAGE;
     END IF;
 
     IF BITAND (newstate, 64) = 64 THEN
-     MESSAGE := 'Напряжение фазы А больше заданного параметром LEVUP ' || MESSAGE;
+     MESSAGE := 'РќР°РїСЂСЏР¶РµРЅРёРµ С„Р°Р·С‹ Рђ Р±РѕР»СЊС€Рµ Р·Р°РґР°РЅРЅРѕРіРѕ РїР°СЂР°РјРµС‚СЂРѕРј LEVUP ' || MESSAGE;
     END IF;
 
     IF BITAND (newstate, 128) = 128 THEN
-     MESSAGE := 'Напряжение фазы B больше заданного параметром LEVUP ' || MESSAGE;
+     MESSAGE := 'РќР°РїСЂСЏР¶РµРЅРёРµ С„Р°Р·С‹ B Р±РѕР»СЊС€Рµ Р·Р°РґР°РЅРЅРѕРіРѕ РїР°СЂР°РјРµС‚СЂРѕРј LEVUP ' || MESSAGE;
     END IF;
 
     IF BITAND (newstate, 256) = 256 THEN
-     MESSAGE := 'Напряжение фазы C больше заданного параметром LEVUP ' || MESSAGE;
+     MESSAGE := 'РќР°РїСЂСЏР¶РµРЅРёРµ С„Р°Р·С‹ C Р±РѕР»СЊС€Рµ Р·Р°РґР°РЅРЅРѕРіРѕ РїР°СЂР°РјРµС‚СЂРѕРј LEVUP ' || MESSAGE;
     END IF;
 
     IF BITAND (newstate, 512) = 512 THEN
-     MESSAGE := 'Частота сети вне диапазона от 47,5 до 52,5 Гц ' || MESSAGE;
+     MESSAGE := 'Р§Р°СЃС‚РѕС‚Р° СЃРµС‚Рё РІРЅРµ РґРёР°РїР°Р·РѕРЅР° РѕС‚ 47,5 РґРѕ 52,5 Р“С† ' || MESSAGE;
     END IF;
    END IF;
   END IF;
 
   IF newtype = 2 THEN
    code := 1012;
-   MESSAGE := 'Очистка накопленных данных каналов вычислителя';
+   MESSAGE := 'РћС‡РёСЃС‚РєР° РЅР°РєРѕРїР»РµРЅРЅС‹С… РґР°РЅРЅС‹С… РєР°РЅР°Р»РѕРІ РІС‹С‡РёСЃР»РёС‚РµР»СЏ';
   END IF;
 
   IF newtype = 3 THEN
    code := 1013;
-   MESSAGE := 'Неожиданный аппаратный сброс';
+   MESSAGE := 'РќРµРѕР¶РёРґР°РЅРЅС‹Р№ Р°РїРїР°СЂР°С‚РЅС‹Р№ СЃР±СЂРѕСЃ';
   END IF;
 
   IF newtype = 4 THEN
    code := 1010;
-   MESSAGE := 'Выключение счетчика';
+   MESSAGE := 'Р’С‹РєР»СЋС‡РµРЅРёРµ СЃС‡РµС‚С‡РёРєР°';
   END IF;
 
   IF newtype = 5 THEN
    code := -1010;
-   MESSAGE := 'Включение счетчика';
+   MESSAGE := 'Р’РєР»СЋС‡РµРЅРёРµ СЃС‡РµС‚С‡РёРєР°';
   END IF;
 
   SELECT evtype
@@ -8573,49 +8573,49 @@ an_typeconvert - 4  преобразуем ZxD СЭС
   IF newtype = 0 THEN
    IF newstate = 0 THEN
     code := -1011;
-    MESSAGE := 'Фазы счетчика в норме';   --'Отклонений значений параметров не обнаружено';
+    MESSAGE := 'Р¤Р°Р·С‹ СЃС‡РµС‚С‡РёРєР° РІ РЅРѕСЂРјРµ';   --'РћС‚РєР»РѕРЅРµРЅРёР№ Р·РЅР°С‡РµРЅРёР№ РїР°СЂР°РјРµС‚СЂРѕРІ РЅРµ РѕР±РЅР°СЂСѓР¶РµРЅРѕ';
    ELSE
     code := 1011;
     MESSAGE := '';
 
     IF BITAND (newstate, 1) = 1 THEN
-     MESSAGE := 'Превышение напряжения фазы А ' || MESSAGE;
+     MESSAGE := 'РџСЂРµРІС‹С€РµРЅРёРµ РЅР°РїСЂСЏР¶РµРЅРёСЏ С„Р°Р·С‹ Рђ ' || MESSAGE;
     END IF;
 
     IF BITAND (newstate, 2) = 2 THEN
-     MESSAGE := 'Превышение напряжения фазы B ' || MESSAGE;
+     MESSAGE := 'РџСЂРµРІС‹С€РµРЅРёРµ РЅР°РїСЂСЏР¶РµРЅРёСЏ С„Р°Р·С‹ B ' || MESSAGE;
     END IF;
 
     IF BITAND (newstate, 4) = 4 THEN
-     MESSAGE := 'Превышение напряжения фазы C ' || MESSAGE;
+     MESSAGE := 'РџСЂРµРІС‹С€РµРЅРёРµ РЅР°РїСЂСЏР¶РµРЅРёСЏ С„Р°Р·С‹ C ' || MESSAGE;
     END IF;
 
     IF BITAND (newstate, 8) = 8 THEN
-     MESSAGE := 'Понижение напряжения фазы А ' || MESSAGE;
+     MESSAGE := 'РџРѕРЅРёР¶РµРЅРёРµ РЅР°РїСЂСЏР¶РµРЅРёСЏ С„Р°Р·С‹ Рђ ' || MESSAGE;
     END IF;
 
     IF BITAND (newstate, 16) = 16 THEN
-     MESSAGE := 'Понижение напряжения фазы B ' || MESSAGE;
+     MESSAGE := 'РџРѕРЅРёР¶РµРЅРёРµ РЅР°РїСЂСЏР¶РµРЅРёСЏ С„Р°Р·С‹ B ' || MESSAGE;
     END IF;
 
     IF BITAND (newstate, 32) = 32 THEN
-     MESSAGE := 'Понижение напряжения фазы C ' || MESSAGE;
+     MESSAGE := 'РџРѕРЅРёР¶РµРЅРёРµ РЅР°РїСЂСЏР¶РµРЅРёСЏ С„Р°Р·С‹ C ' || MESSAGE;
     END IF;
 
     IF BITAND (newstate, 64) = 64 THEN
-     MESSAGE := 'Нет напряжения фазы А ' || MESSAGE;
+     MESSAGE := 'РќРµС‚ РЅР°РїСЂСЏР¶РµРЅРёСЏ С„Р°Р·С‹ Рђ ' || MESSAGE;
     END IF;
 
     IF BITAND (newstate, 128) = 128 THEN
-     MESSAGE := 'Нет напряжения фазы B ' || MESSAGE;
+     MESSAGE := 'РќРµС‚ РЅР°РїСЂСЏР¶РµРЅРёСЏ С„Р°Р·С‹ B ' || MESSAGE;
     END IF;
 
     IF BITAND (newstate, 256) = 256 THEN
-     MESSAGE := 'Нет напряжения фазы C ' || MESSAGE;
+     MESSAGE := 'РќРµС‚ РЅР°РїСЂСЏР¶РµРЅРёСЏ С„Р°Р·С‹ C ' || MESSAGE;
     END IF;
 
     IF BITAND (newstate, 512) = 512 THEN
-     MESSAGE := 'Выключение счетчика ' || MESSAGE;
+     MESSAGE := 'Р’С‹РєР»СЋС‡РµРЅРёРµ СЃС‡РµС‚С‡РёРєР° ' || MESSAGE;
     END IF;
    END IF;
   END IF;
@@ -8623,69 +8623,69 @@ an_typeconvert - 4  преобразуем ZxD СЭС
   IF newtype = 1 THEN
    IF newstate = 0 THEN
     code := -1012;
-    MESSAGE := 'Состояние счетчика в норме';
+    MESSAGE := 'РЎРѕСЃС‚РѕСЏРЅРёРµ СЃС‡РµС‚С‡РёРєР° РІ РЅРѕСЂРјРµ';
    ELSE
     code := 1012;
     MESSAGE := '';
 
     IF BITAND (newstate, 1) = 1 THEN
-     MESSAGE := 'Ошибка контрольной суммы калибровочных коэффициентов ' || MESSAGE;
+     MESSAGE := 'РћС€РёР±РєР° РєРѕРЅС‚СЂРѕР»СЊРЅРѕР№ СЃСѓРјРјС‹ РєР°Р»РёР±СЂРѕРІРѕС‡РЅС‹С… РєРѕСЌС„С„РёС†РёРµРЅС‚РѕРІ ' || MESSAGE;
     END IF;
 
     IF BITAND (newstate, 2) = 2 THEN
-     MESSAGE := 'Ошибка накопления энергии (суммарная) ' || MESSAGE;
+     MESSAGE := 'РћС€РёР±РєР° РЅР°РєРѕРїР»РµРЅРёСЏ СЌРЅРµСЂРіРёРё (СЃСѓРјРјР°СЂРЅР°СЏ) ' || MESSAGE;
     END IF;
 
     IF BITAND (newstate, 4) = 4 THEN
-     MESSAGE := 'Ошибка EEPROM ' || MESSAGE;
+     MESSAGE := 'РћС€РёР±РєР° EEPROM ' || MESSAGE;
     END IF;
 
     IF BITAND (newstate, 8) = 8 THEN
-     MESSAGE := 'Состояние (резерв) ' || MESSAGE;
+     MESSAGE := 'РЎРѕСЃС‚РѕСЏРЅРёРµ (СЂРµР·РµСЂРІ) ' || MESSAGE;
     END IF;
 
     IF BITAND (newstate, 16) = 16 THEN
-     MESSAGE := 'Ошибка массива <Исключительные дни> ' || MESSAGE;
+     MESSAGE := 'РћС€РёР±РєР° РјР°СЃСЃРёРІР° <РСЃРєР»СЋС‡РёС‚РµР»СЊРЅС‹Рµ РґРЅРё> ' || MESSAGE;
     END IF;
 
     IF BITAND (newstate, 32) = 32 THEN
-     MESSAGE := 'Ошибка массива <Сезонные графики> ' || MESSAGE;
+     MESSAGE := 'РћС€РёР±РєР° РјР°СЃСЃРёРІР° <РЎРµР·РѕРЅРЅС‹Рµ РіСЂР°С„РёРєРё> ' || MESSAGE;
     END IF;
 
     IF BITAND (newstate, 64) = 64 THEN
-     MESSAGE := 'Ошибка массива <Тарифные графики> ' || MESSAGE;
+     MESSAGE := 'РћС€РёР±РєР° РјР°СЃСЃРёРІР° <РўР°СЂРёС„РЅС‹Рµ РіСЂР°С„РёРєРё> ' || MESSAGE;
     END IF;
 
     IF BITAND (newstate, 128) = 128 THEN
-     MESSAGE := 'Ошибка массива <Графики дней> ' || MESSAGE;
+     MESSAGE := 'РћС€РёР±РєР° РјР°СЃСЃРёРІР° <Р“СЂР°С„РёРєРё РґРЅРµР№> ' || MESSAGE;
     END IF;
 
     IF BITAND (newstate, 256) = 256 THEN
-     MESSAGE := 'Авария питания ' || MESSAGE;
+     MESSAGE := 'РђРІР°СЂРёСЏ РїРёС‚Р°РЅРёСЏ ' || MESSAGE;
     END IF;
 
     IF BITAND (newstate, 512) = 512 THEN
-     MESSAGE := 'Разряд батарейки ' || MESSAGE;
+     MESSAGE := 'Р Р°Р·СЂСЏРґ Р±Р°С‚Р°СЂРµР№РєРё ' || MESSAGE;
     END IF;
 
     IF BITAND (newstate, 1024) = 1024 THEN
-     MESSAGE := 'Ошибка чтения часов ' || MESSAGE;
+     MESSAGE := 'РћС€РёР±РєР° С‡С‚РµРЅРёСЏ С‡Р°СЃРѕРІ ' || MESSAGE;
     END IF;
 
     IF BITAND (newstate, 2048) = 2048 THEN
-     MESSAGE := 'Последнее воскресенье месяца ' || MESSAGE;
+     MESSAGE := 'РџРѕСЃР»РµРґРЅРµРµ РІРѕСЃРєСЂРµСЃРµРЅСЊРµ РјРµСЃСЏС†Р° ' || MESSAGE;
     END IF;
 
     IF BITAND (newstate, 4096) = 4096 THEN
-     MESSAGE := 'Летнее время ' || MESSAGE;
+     MESSAGE := 'Р›РµС‚РЅРµРµ РІСЂРµРјСЏ ' || MESSAGE;
     END IF;
 
     IF BITAND (newstate, 8192) = 8192 THEN
-     MESSAGE := 'Была корректировка часов ' || MESSAGE;
+     MESSAGE := 'Р‘С‹Р»Р° РєРѕСЂСЂРµРєС‚РёСЂРѕРІРєР° С‡Р°СЃРѕРІ ' || MESSAGE;
     END IF;
 
     IF BITAND (newstate, 16384) = 16384 THEN
-     MESSAGE := 'Ошибка записи энергий нарастающим итогом ' || MESSAGE;
+     MESSAGE := 'РћС€РёР±РєР° Р·Р°РїРёСЃРё СЌРЅРµСЂРіРёР№ РЅР°СЂР°СЃС‚Р°СЋС‰РёРј РёС‚РѕРіРѕРј ' || MESSAGE;
     END IF;
    END IF;
   END IF;
@@ -8729,21 +8729,21 @@ an_typeconvert - 4  преобразуем ZxD СЭС
    MESSAGE := '';
 
    IF BITAND (newstate, 1) = 1 THEN
-    MESSAGE := 'Фаза А-(1) ' || MESSAGE;
+    MESSAGE := 'Р¤Р°Р·Р° Рђ-(1) ' || MESSAGE;
    ELSE
-    MESSAGE := 'Фаза А-(0) ' || MESSAGE;
+    MESSAGE := 'Р¤Р°Р·Р° Рђ-(0) ' || MESSAGE;
    END IF;
 
    IF BITAND (newstate, 2) = 2 THEN
-    MESSAGE := 'Фаза B-(1) ' || MESSAGE;
+    MESSAGE := 'Р¤Р°Р·Р° B-(1) ' || MESSAGE;
    ELSE
-    MESSAGE := 'Фаза B-(0) ' || MESSAGE;
+    MESSAGE := 'Р¤Р°Р·Р° B-(0) ' || MESSAGE;
    END IF;
 
    IF BITAND (newstate, 4) = 4 THEN
-    MESSAGE := 'Фаза C-(1) ' || MESSAGE;
+    MESSAGE := 'Р¤Р°Р·Р° C-(1) ' || MESSAGE;
    ELSE
-    MESSAGE := 'Фаза C-(0) ' || MESSAGE;
+    MESSAGE := 'Р¤Р°Р·Р° C-(0) ' || MESSAGE;
    END IF;
   END IF;
 
@@ -8773,7 +8773,7 @@ an_typeconvert - 4  преобразуем ZxD СЭС
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
- PROCEDURE set_parametrization_date (an_mid NUMBER, av_date VARCHAR2) IS   --Установка (сверка) даты параметризации av_date dd.mm.yyyy hh24:mi:ss
+ PROCEDURE set_parametrization_date (an_mid NUMBER, av_date VARCHAR2) IS   --РЈСЃС‚Р°РЅРѕРІРєР° (СЃРІРµСЂРєР°) РґР°С‚С‹ РїР°СЂР°РјРµС‚СЂРёР·Р°С†РёРё av_date dd.mm.yyyy hh24:mi:ss
   cn_parammet   CONSTANT NUMBER := 522;
   ld_date                DATE;
   ld_tmp                 DATE;
@@ -8790,9 +8790,9 @@ an_typeconvert - 4  преобразуем ZxD СЭС
       SET dparametrization = ld_date
     WHERE mid = an_mid;
 
-   IF ld_tmp IS NOT NULL THEN   --Изменена дата параметризации генерим тревогу
+   IF ld_tmp IS NOT NULL THEN   --РР·РјРµРЅРµРЅР° РґР°С‚Р° РїР°СЂР°РјРµС‚СЂРёР·Р°С†РёРё РіРµРЅРµСЂРёРј С‚СЂРµРІРѕРіСѓ
     admin_pg.ins_journal_p (SYSDATE, an_mid, 0,
-                            'Изменение с ''' || TO_CHAR (ld_tmp, 'dd.mm.yyyy hh24:mi:ss') || ''' на ''' || TO_CHAR (ld_date, 'dd.mm.yyyy hh24:mi:ss') || '''',
+                            'РР·РјРµРЅРµРЅРёРµ СЃ ''' || TO_CHAR (ld_tmp, 'dd.mm.yyyy hh24:mi:ss') || ''' РЅР° ''' || TO_CHAR (ld_date, 'dd.mm.yyyy hh24:mi:ss') || '''',
                             cn_parammet);
    END IF;
   END IF;
@@ -8813,8 +8813,8 @@ END;   -- Package Body comsrv_pg
 CREATE OR REPLACE 
 PACKAGE BODY comsrvcim_pg IS
 ------------------------------------------------------------------------------------------------------------------------
-   -- Интерфейс взаимодействия БД с Носиком А.В. для прямых select'ов в коде опросчика
-   -- дата создания 11/06/2008
+   -- РРЅС‚РµСЂС„РµР№СЃ РІР·Р°РёРјРѕРґРµР№СЃС‚РІРёСЏ Р‘Р” СЃ РќРѕСЃРёРєРѕРј Рђ.Р’. РґР»СЏ РїСЂСЏРјС‹С… select'РѕРІ РІ РєРѕРґРµ РѕРїСЂРѕСЃС‡РёРєР°
+   -- РґР°С‚Р° СЃРѕР·РґР°РЅРёСЏ 11/06/2008
 ------------------------------------------------------------------------------------------------------------------------
 --                                       TComServerThread
 ------------------------------------------------------------------------------------------------------------------------
@@ -8824,7 +8824,7 @@ PACKAGE BODY comsrvcim_pg IS
  )
   RETURN NUMBER IS
  BEGIN
-  FOR lc IN (SELECT f.mid, NVL(f.canal, 0) canal, SUBSTR(NVL(p.NAME, 'Без имени'), 1, 31) vname, NVL(f.kc, 1) kc, NVL(p.tag, ln_tag_def) tag,
+  FOR lc IN (SELECT f.mid, NVL(f.canal, 0) canal, SUBSTR(NVL(p.NAME, 'Р‘РµР· РёРјРµРЅРё'), 1, 31) vname, NVL(f.kc, 1) kc, NVL(p.tag, ln_tag_def) tag,
                     SUBSTR(NVL(TRIM(f.vinfo), lv_info_def), 1, ln_info_len) vinfo, f.nabc, DECODE(f.q1234, '*', 1, 0) q1234
              FROM   points p, feeders f
              WHERE  f.mid = (SELECT MIN(pp.mid)
@@ -9156,7 +9156,7 @@ PACKAGE BODY comsrvcim_pg IS
  BEGIN
   ld_date := TO_DATE(an_bill, 'dd.mm.yyyy hh24:mi');
 
-  IF util_pg.get_customer_id = 45 THEN                                                                                        --Чтоб читать недоучеты постоянно
+  IF util_pg.get_customer_id = 45 THEN                                                                                        --Р§С‚РѕР± С‡РёС‚Р°С‚СЊ РЅРµРґРѕСѓС‡РµС‚С‹ РїРѕСЃС‚РѕСЏРЅРЅРѕ
    ld_date := LEAST(TRUNC(SYSDATE) - 1, ld_date);
   END IF;
 
@@ -9853,7 +9853,7 @@ PACKAGE BODY comsrvcim_pg IS
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
- --чтение даты последней коррекции времени сетчика  в формате dd.mm.yyyy hh24:mi:ss
+ --С‡С‚РµРЅРёРµ РґР°С‚С‹ РїРѕСЃР»РµРґРЅРµР№ РєРѕСЂСЂРµРєС†РёРё РІСЂРµРјРµРЅРё СЃРµС‚С‡РёРєР°  РІ С„РѕСЂРјР°С‚Рµ dd.mm.yyyy hh24:mi:ss
  FUNCTION get_metercorrect(an_mid NUMBER)
   RETURN VARCHAR2 IS
   lv_ret              VARCHAR2(32);
@@ -9867,7 +9867,7 @@ PACKAGE BODY comsrvcim_pg IS
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
- --установка даты последней коррекции времени сетчика в формате dd.mm.yyyy hh24:mi:ss
+ --СѓСЃС‚Р°РЅРѕРІРєР° РґР°С‚С‹ РїРѕСЃР»РµРґРЅРµР№ РєРѕСЂСЂРµРєС†РёРё РІСЂРµРјРµРЅРё СЃРµС‚С‡РёРєР° РІ С„РѕСЂРјР°С‚Рµ dd.mm.yyyy hh24:mi:ss
  PROCEDURE set_metercorrect(an_mid NUMBER, av_datetime VARCHAR2) IS
   ld_date             DATE := TO_DATE(av_datetime, 'dd.mm.yyyy hh24:mi:ss');
  BEGIN
@@ -9899,8 +9899,8 @@ PACKAGE BODY comsrvmtx_pg IS
  cn_mtxport CONSTANT NUMBER := 127;
 
 ------------------------------------------------------------------------------------------------------------------------
-   -- Интерфейс взаимодействия БД с драйвером МТХ
-   -- дата создания 02/04/2012
+   -- РРЅС‚РµСЂС„РµР№СЃ РІР·Р°РёРјРѕРґРµР№СЃС‚РІРёСЏ Р‘Р” СЃ РґСЂР°Р№РІРµСЂРѕРј РњРўРҐ
+   -- РґР°С‚Р° СЃРѕР·РґР°РЅРёСЏ 02/04/2012
 ------------------------------------------------------------------------------------------------------------------------
  FUNCTION connectnextmeter(
  an_mid NUMBER, an_cid NUMBER, an_retmid OUT NUMBER, ln_canal OUT NUMBER, lv_name OUT VARCHAR2, ln_kc OUT NUMBER, ln_tag OUT NUMBER, lv_info OUT VARCHAR2
@@ -9921,7 +9921,7 @@ PACKAGE BODY comsrvmtx_pg IS
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
-    --Вставка текущих
+    --Р’СЃС‚Р°РІРєР° С‚РµРєСѓС‰РёС…
  PROCEDURE set_curr_power(
  an_mid NUMBER, an_erm NUMBER, an_q1m NUMBER, an_q3m NUMBER, an_freq NUMBER, an_temp NUMBER, an_volt1 NUMBER, an_volt2 NUMBER, an_volt3 NUMBER, an_curr1 NUMBER,
  an_curr2 NUMBER, an_curr3 NUMBER, an_cosf NUMBER, ad_date DATE
@@ -9939,7 +9939,7 @@ PACKAGE BODY comsrvmtx_pg IS
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
- --Вставка графика нагрузки
+ --Р’СЃС‚Р°РІРєР° РіСЂР°С„РёРєР° РЅР°РіСЂСѓР·РєРё
  PROCEDURE set_halfhour(an_mid NUMBER, an_er NUMBER, ad_date DATE) IS
  BEGIN
   SAVEPOINT set_halfhour_sp;
@@ -9952,7 +9952,7 @@ PACKAGE BODY comsrvmtx_pg IS
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
-    --Вставка суточных расходов
+    --Р’СЃС‚Р°РІРєР° СЃСѓС‚РѕС‡РЅС‹С… СЂР°СЃС…РѕРґРѕРІ
  PROCEDURE set_bill(
  an_mid NUMBER, an_er NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_aer NUMBER, an_aq1 NUMBER, an_aq3 NUMBER, an_ber NUMBER, an_bq1 NUMBER, an_bq3 NUMBER,
  an_cer NUMBER, an_cq1 NUMBER, an_cq3 NUMBER, an_der NUMBER, an_dq1 NUMBER, an_dq3 NUMBER, av_mtrsn VARCHAR2, ad_date DATE
@@ -9969,7 +9969,7 @@ PACKAGE BODY comsrvmtx_pg IS
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
-  --Вставка месячных расходов
+  --Р’СЃС‚Р°РІРєР° РјРµСЃСЏС‡РЅС‹С… СЂР°СЃС…РѕРґРѕРІ
  PROCEDURE set_months(
  an_mid NUMBER, an_er NUMBER, an_q1 NUMBER, an_q3 NUMBER, an_aer NUMBER, an_aq1 NUMBER, an_aq3 NUMBER, an_ber NUMBER, an_bq1 NUMBER, an_bq3 NUMBER,
  an_cer NUMBER, an_cq1 NUMBER, an_cq3 NUMBER, an_der NUMBER, an_dq1 NUMBER, an_dq3 NUMBER, av_mtrsn VARCHAR2, ad_date DATE
@@ -9986,7 +9986,7 @@ PACKAGE BODY comsrvmtx_pg IS
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
---Запись журнала
+--Р—Р°РїРёСЃСЊ Р¶СѓСЂРЅР°Р»Р°
  PROCEDURE set_journal(an_mid NUMBER, an_event common_pg.tt_number, av_date common_pg.tt_varchar2, an_type NUMBER) IS
   cn_deferrcode CONSTANT NUMBER := 630;
   ln_event            NUMBER;
@@ -10022,10 +10022,10 @@ PACKAGE BODY comsrvmtx_pg IS
 
 ------------------------------------------------------------------------------------------------------------------------
  PROCEDURE set_state(
- an_mid NUMBER,                                                                                                                            --Ид точки или канала
-               an_state_cod NUMBER,                                                                                                              --Код сообщения
-                                   av_state_descr VARCHAR2,                                                                                    --Текст сообщения
-                                                           an_clock NUMBER DEFAULT 0                                                         --Расхождение часов
+ an_mid NUMBER,                                                                                                                            --РРґ С‚РѕС‡РєРё РёР»Рё РєР°РЅР°Р»Р°
+               an_state_cod NUMBER,                                                                                                              --РљРѕРґ СЃРѕРѕР±С‰РµРЅРёСЏ
+                                   av_state_descr VARCHAR2,                                                                                    --РўРµРєСЃС‚ СЃРѕРѕР±С‰РµРЅРёСЏ
+                                                           an_clock NUMBER DEFAULT 0                                                         --Р Р°СЃС…РѕР¶РґРµРЅРёРµ С‡Р°СЃРѕРІ
  ) IS
   ln_curr_cod         NUMBER;
   ln_clock            NUMBER := NVL(an_clock, 0);
@@ -10039,10 +10039,10 @@ PACKAGE BODY comsrvmtx_pg IS
    IF an_state_cod >= 0 THEN
     comsrvcim_pg.upd_lastsave(an_mid, an_state_cod, av_state_descr, ln_clock);
    ELSE 
-   	comsrvcim_pg.upd_lastsave(an_mid, an_state_cod, 'Штатный режим', ln_clock);
+   	comsrvcim_pg.upd_lastsave(an_mid, an_state_cod, 'РЁС‚Р°С‚РЅС‹Р№ СЂРµР¶РёРј', ln_clock);
    END IF;
 
-   comsrvcim_pg.ins_journal(an_mid, an_state_cod, nvl(av_state_descr, 'Штатный режим'));
+   comsrvcim_pg.ins_journal(an_mid, an_state_cod, nvl(av_state_descr, 'РЁС‚Р°С‚РЅС‹Р№ СЂРµР¶РёРј'));
   END IF;
  EXCEPTION
   WHEN OTHERS THEN

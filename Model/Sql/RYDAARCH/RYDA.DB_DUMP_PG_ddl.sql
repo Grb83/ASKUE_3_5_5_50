@@ -1,5 +1,5 @@
 -- Start of DDL Script for Package RYDA.DB_DUMP_PG
--- Generated 4-δεκ-2012 16:12:40 from RYDA@OE
+-- Generated 4-Π΄ΠµΠΊ-2012 16:12:40 from RYDA@OE
 
 CREATE OR REPLACE 
 PACKAGE db_dump_pg
@@ -17,7 +17,7 @@ END; -- Package spec
 -- End of DDL Script for Package RYDA.DB_DUMP_PG
 
 -- Start of DDL Script for Package Body RYDA.DB_DUMP_PG
--- Generated 4-δεκ-2012 16:12:59 from RYDA@OE
+-- Generated 4-Π΄ΠµΠΊ-2012 16:12:59 from RYDA@OE
 
 CREATE OR REPLACE 
 PACKAGE BODY db_dump_pg

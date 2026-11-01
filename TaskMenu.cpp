@@ -83,7 +83,7 @@ void __fastcall TTaskMenuForm::tvTasksDblClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-bool __fastcall TTaskMenuForm::ReadTreeNode(TTreeNode* NodeParent)// Читает ветку дерева
+bool __fastcall TTaskMenuForm::ReadTreeNode(TTreeNode* NodeParent)// Р§РёС‚Р°РµС‚ РІРµС‚РєСѓ РґРµСЂРµРІР°
 {
   TASKLIST *PTreeTable;
   TTreeNode *AddNode;
@@ -108,13 +108,13 @@ bool __fastcall TTaskMenuForm::ReadTreeNode(TTreeNode* NodeParent)// Читает ветк
     }
     dmMain->oqCursor->ParamByName("par3")->AsInteger=UsCon.Role_Id;
     }catch (Exception &ex){
-         AnsiString mess = "Беда перед вызовом interior_pg.TaskMenuForm_ReadTreeNode_p(:par1,:par2,:par3,:par4) с параметрами NodeParent->Data)->Task_id="+IntToStr (((TASKLIST*)NodeParent->Data)->Task_id);
+         AnsiString mess = "Р‘РµРґР° РїРµСЂРµРґ РІС‹Р·РѕРІРѕРј interior_pg.TaskMenuForm_ReadTreeNode_p(:par1,:par2,:par3,:par4) СЃ РїР°СЂР°РјРµС‚СЂР°РјРё NodeParent->Data)->Task_id="+IntToStr (((TASKLIST*)NodeParent->Data)->Task_id);
          Application->MessageBox (mess.c_str(),Application->Title.c_str(),MB_OK);
     }
     try{
     dmMain->oqCursor->Execute();
     }catch (Exception &ex){
-         AnsiString mess = "Беда на вызове interior_pg.TaskMenuForm_ReadTreeNode_p(:par1,:par2,:par3,:par4) с параметрами NodeParent->Data)->Task_id="+IntToStr (((TASKLIST*)NodeParent->Data)->Task_id);
+         AnsiString mess = "Р‘РµРґР° РЅР° РІС‹Р·РѕРІРµ interior_pg.TaskMenuForm_ReadTreeNode_p(:par1,:par2,:par3,:par4) СЃ РїР°СЂР°РјРµС‚СЂР°РјРё NodeParent->Data)->Task_id="+IntToStr (((TASKLIST*)NodeParent->Data)->Task_id);
          Application->MessageBox (mess.c_str(),Application->Title.c_str(),MB_OK);
     }
     try{
@@ -137,7 +137,7 @@ bool __fastcall TTaskMenuForm::ReadTreeNode(TTreeNode* NodeParent)// Читает ветк
     dmMain->oqCursor->Close();
     tvTasks->Items->EndUpdate();
     }catch   (Exception &ex){
-         AnsiString mess = "Беда после вызова interior_pg.TaskMenuForm_ReadTreeNode_p(:par1,:par2,:par3,:par4) с параметрами NodeParent->Data)->Task_id="+IntToStr (((TASKLIST*)NodeParent->Data)->Task_id);
+         AnsiString mess = "Р‘РµРґР° РїРѕСЃР»Рµ РІС‹Р·РѕРІР° interior_pg.TaskMenuForm_ReadTreeNode_p(:par1,:par2,:par3,:par4) СЃ РїР°СЂР°РјРµС‚СЂР°РјРё NodeParent->Data)->Task_id="+IntToStr (((TASKLIST*)NodeParent->Data)->Task_id);
          Application->MessageBox (mess.c_str(),Application->Title.c_str(),MB_OK);
     }
   }catch (Exception &exception){
@@ -186,7 +186,7 @@ void __fastcall TTaskMenuForm::RunTask(AnsiString Name, int Id, int a)
 //    Graphics::TColor accessColor = (acc==accRead)?clBlue:clGreen;
     int id = Id;
 
-    // проверка открыта выбранная задача или нет
+    // РїСЂРѕРІРµСЂРєР° РѕС‚РєСЂС‹С‚Р° РІС‹Р±СЂР°РЅРЅР°СЏ Р·Р°РґР°С‡Р° РёР»Рё РЅРµС‚
     for(int i=0; i<SupperMainForm->MDIChildCount; i++){
         Child = dynamic_cast<TMainForm*>(SupperMainForm->MDIChildren[i]);
         if(Child && (Child->TaskId==Id)){
@@ -196,23 +196,23 @@ void __fastcall TTaskMenuForm::RunTask(AnsiString Name, int Id, int a)
     }
     Child=NULL;
 
-   // запуск новый задачи
+   // Р·Р°РїСѓСЃРє РЅРѕРІС‹Р№ Р·Р°РґР°С‡Рё
    Screen->Cursor = crHourGlass;
    try{
        switch(id){
-   case 10:  //    настройка групп учета  по аскує +
+   case 10:  //    РЅР°СЃС‚СЂРѕР№РєР° РіСЂСѓРїРї СѓС‡РµС‚Р°  РїРѕ Р°СЃРєСѓС” +
         //22.08.2019 UNKEY VERSION COMMENT
       /*if(dmMain->LicType||GrdGetPermission(CHK_LIC_TASK,CHK_LIC_TASK_GROUP)>0)*/
           //22.08.2019 END  COMMENT
         Child = new TFormEditGropsList(Application, Name, acc);
     	break;
-/*   case 11:  // настройка експортных групп учета +
+/*   case 11:  // РЅР°СЃС‚СЂРѕР№РєР° РµРєСЃРїРѕСЂС‚РЅС‹С… РіСЂСѓРїРї СѓС‡РµС‚Р° +
       Child = new TFormEditExportGropsList(Application, Name, acc);
     	break;*/
-   case 21:  // Контроль объема БД +
+   case 21:  // РљРѕРЅС‚СЂРѕР»СЊ РѕР±СЉРµРјР° Р‘Р” +
       Child = new TFormControlVolueDB(Application, Name, acc);
     	break;
-   case 22:  // параметры коммуникационного сервера
+   case 22:  // РїР°СЂР°РјРµС‚СЂС‹ РєРѕРјРјСѓРЅРёРєР°С†РёРѕРЅРЅРѕРіРѕ СЃРµСЂРІРµСЂР°
       if(FormParamCommunicationServer){
          ::SetFocus(FormParamCommunicationServer->Handle);
          Screen->Cursor = crDefault;
@@ -220,10 +220,10 @@ void __fastcall TTaskMenuForm::RunTask(AnsiString Name, int Id, int a)
       }else
          Child = new TFormParamCommunicationServer(Application, Name, acc);
     	break;
-   case 33:  // задание часов максимума нагрузки
+   case 33:  // Р·Р°РґР°РЅРёРµ С‡Р°СЃРѕРІ РјР°РєСЃРёРјСѓРјР° РЅР°РіСЂСѓР·РєРё
       Child = new TFormEditTimeMaxLoad(Application, Name, acc);
     	break;
-   case 40:  // Ввод спецификации  предприятия   +
+   case 40:  // Р’РІРѕРґ СЃРїРµС†РёС„РёРєР°С†РёРё  РїСЂРµРґРїСЂРёСЏС‚РёСЏ   +
       if(FormIntrpriseReneme){
          ::SetFocus(FormIntrpriseReneme->Handle);
          Screen->Cursor = crDefault;
@@ -231,95 +231,95 @@ void __fastcall TTaskMenuForm::RunTask(AnsiString Name, int Id, int a)
       }else
          Child = new TFormIntrpriseReneme(Application, Name, acc);
     	break;
-   case 46:  // Настройка присоединений
+   case 46:  // РќР°СЃС‚СЂРѕР№РєР° РїСЂРёСЃРѕРµРґРёРЅРµРЅРёР№
       Child = new TFormEditFiders(Application, Name, acc); //, Message.LParam
       break;
-   case 47:  // Настройка счетчиков
+   case 47:  // РќР°СЃС‚СЂРѕР№РєР° СЃС‡РµС‚С‡РёРєРѕРІ
       Child = new TFormIntrodactPulsCount(Application, Name, acc);
       break;
-   case 48:  // Замена счетчиков
+   case 48:  // Р—Р°РјРµРЅР° СЃС‡РµС‚С‡РёРєРѕРІ
       Child = new TFormChangeCounters(Application, Name, acc);
       break;
-   case 49:  // Редактирование трансформаторов
+   case 49:  // Р РµРґР°РєС‚РёСЂРѕРІР°РЅРёРµ С‚СЂР°РЅСЃС„РѕСЂРјР°С‚РѕСЂРѕРІ
       Child = new TTransformersForm(Application, Name, acc);
       break;
-   case 51:  // Настройка  форм
+   case 51:  // РќР°СЃС‚СЂРѕР№РєР°  С„РѕСЂРј
         //22.08.2019 UNKEY VERSION COMMENT
       /*if(dmMain->LicType||GrdGetPermission(CHK_LIC_TASK,CHK_LIC_TASK_MONITOR)>0)*/
         //22.08.2019 UNKEY VERSION COMMENT
         Child = new TFormEditFormList(Application, Name, acc);
       break;
-   case 60:  // Тарифные зоны и типы дней
+   case 60:  // РўР°СЂРёС„РЅС‹Рµ Р·РѕРЅС‹ Рё С‚РёРїС‹ РґРЅРµР№
       Child = new TFormEditRates(Application, Name, acc);
       break;
-   case 71: // настройка СОМ портов   +
+   case 71: // РЅР°СЃС‚СЂРѕР№РєР° РЎРћРњ РїРѕСЂС‚РѕРІ   +
       Child = new TFormEditCOMportList(Application, Name, acc);
       break;
-   case 72: // 6.9 Переключение ОВ   +
+   case 72: // 6.9 РџРµСЂРµРєР»СЋС‡РµРЅРёРµ РћР’   +
       Child = new TFormSwitchOV(Application, Name, acc);
       break;
-   case 73: // Учет электроэнергии по дублирующим счетчикам
+   case 73: // РЈС‡РµС‚ СЌР»РµРєС‚СЂРѕСЌРЅРµСЂРіРёРё РїРѕ РґСѓР±Р»РёСЂСѓСЋС‰РёРј СЃС‡РµС‚С‡РёРєР°Рј
       Child = new TfmDuplicateCnt(Application, Name, acc);
       break;
-   case 76: // Редактор макетови Added by Kalak Sergey
+   case 76: // Р РµРґР°РєС‚РѕСЂ РјР°РєРµС‚РѕРІРё Added by Kalak Sergey
       Child = new TEditMaketForm(Application, Name, acc);
       break;
-   case 654:// Просомтр макетови
+   case 654:// РџСЂРѕСЃРѕРјС‚СЂ РјР°РєРµС‚РѕРІРё
         //22.08.2019 UNKEY VERSION COMMENT
       /*if(dmMain->LicType||GrdGetPermission(CHK_LIC_TASK,CHK_LIC_TASK_MAKCREATE)>0)*/
         //END COMMENT
         Child = new TfmMaketArm(Application, Name, acc);
       break;
-   case 605: // Ввод начальных показаний
+   case 605: // Р’РІРѕРґ РЅР°С‡Р°Р»СЊРЅС‹С… РїРѕРєР°Р·Р°РЅРёР№
      //22.08.2019 UNKEY VERSION COMMENT
       /*if(dmMain->LicType||GrdGetPermission(CHK_LIC_TASK,CHK_LIC_TASK_MANUAL)>0)*/{
         Child = new TFormVITInputExcel(Application,Name, 13,0, acc);
         Child->HelpContext = 515;
       }
       break;
-   case 606: // Процедуры для фоновых процессов
+   case 606: // РџСЂРѕС†РµРґСѓСЂС‹ РґР»СЏ С„РѕРЅРѕРІС‹С… РїСЂРѕС†РµСЃСЃРѕРІ
       Child = new TfmDeportProcs(Application, Name, acc);
       break;
-   case 200: // Ввод показаний по тарифам в BILL           +
+   case 200: // Р’РІРѕРґ РїРѕРєР°Р·Р°РЅРёР№ РїРѕ С‚Р°СЂРёС„Р°Рј РІ BILL           +
         //22.08.2019 UNKEY VERSION COMMENT
       /*if(dmMain->LicType||GrdGetPermission(CHK_LIC_TASK,CHK_LIC_TASK_MANUAL)>0)*/
         //END COMMENT
         Child = new TFormVITInput(Application, Name, acc);
       break;
-   case 201: // Ввод колличества энергии по тарифам в BILL  +
+   case 201: // Р’РІРѕРґ РєРѕР»Р»РёС‡РµСЃС‚РІР° СЌРЅРµСЂРіРёРё РїРѕ С‚Р°СЂРёС„Р°Рј РІ BILL  +
    //22.08.2019 UNKEY VERSION COMMENT
       /*if(dmMain->LicType||GrdGetPermission(CHK_LIC_TASK,CHK_LIC_TASK_MANUAL)>0)*/
       //END COMMENT
         Child = new TFormVITInputDelta(Application, Name, acc);
       break;
- /*  case 502: // Отчеты          Add KAS
+ /*  case 502: // РћС‚С‡РµС‚С‹          Add KAS
       Child = new TfmReportGroups(Application, Name, acc);
       break; */
-   case 505: // План опроса     Add KAS
+   case 505: // РџР»Р°РЅ РѕРїСЂРѕСЃР°     Add KAS
       Child = new TfmEditRequestPlan(Application, Name, acc);
       break;
-   case 506: // План отсылки     Add KAS
+   case 506: // РџР»Р°РЅ РѕС‚СЃС‹Р»РєРё     Add KAS
            //22.08.2019 UNKEY VERSION COMMENT
       /*if(dmMain->LicType||GrdGetPermission(CHK_LIC_TASK,CHK_LIC_TASK_MAKSEND)>0)*/
       //END COMMENT
         Child = new TfmEditDeportationPlan(Application, Name, acc);
        break;
- //  case 507:// План отсылки и приема информации VNB
+ //  case 507:// РџР»Р°РЅ РѕС‚СЃС‹Р»РєРё Рё РїСЂРёРµРјР° РёРЅС„РѕСЂРјР°С†РёРё VNB
   //  Child = new TfmMaketSend(Application, Name, acc);
   //    break;
-   case 204: // Ввод показаний в BILL          +
+   case 204: // Р’РІРѕРґ РїРѕРєР°Р·Р°РЅРёР№ РІ BILL          +
            //22.08.2019 UNKEY VERSION COMMENT
       /*if(dmMain->LicType||GrdGetPermission(CHK_LIC_TASK,CHK_LIC_TASK_MANUAL)>0)*/
       //END COMMENT
         Child = new TFormVITInputExcel(Application, Name, 1,0, acc);
       break;
-   case 203: // Ввод кол-ва энергии в BILL  +
+   case 203: // Р’РІРѕРґ РєРѕР»-РІР° СЌРЅРµСЂРіРёРё РІ BILL  +
               //22.08.2019 UNKEY VERSION COMMENT
       /*if(dmMain->LicType||GrdGetPermission(CHK_LIC_TASK,CHK_LIC_TASK_MANUAL)>0)*/
         //END COMMENT
         Child = new TFormVITInputDeltaExcel(Application, Name, 1,0, acc);
       break;
-   case 603: // Ввод кол-ва энергии  +(получасовки)
+   case 603: // Р’РІРѕРґ РєРѕР»-РІР° СЌРЅРµСЂРіРёРё  +(РїРѕР»СѓС‡Р°СЃРѕРІРєРё)
 //      Child = new TFormVITInputDeltaExcel(Application,Name, 2,0,acc,true);
   //    Child->HelpContext = 514;
           //22.08.2019 UNKEY VERSION COMMENT
@@ -329,7 +329,7 @@ void __fastcall TTaskMenuForm::RunTask(AnsiString Name, int Id, int a)
 //        Child->HelpContext = 515;
       }
       break;
-   case 604: // Ввод показаний          +(получасовки)
+   case 604: // Р’РІРѕРґ РїРѕРєР°Р·Р°РЅРёР№          +(РїРѕР»СѓС‡Р°СЃРѕРІРєРё)
 
       /*if(dmMain->LicType||GrdGetPermission(CHK_LIC_TASK,CHK_LIC_TASK_MANUAL)>0)*/{
         //END COMMENT
@@ -337,35 +337,35 @@ void __fastcall TTaskMenuForm::RunTask(AnsiString Name, int Id, int a)
         Child->HelpContext = 513;
       }
       break;
-   case 608: // Ввод показаний с разбивкой на 1/2 часа пропорционально
+   case 608: // Р’РІРѕРґ РїРѕРєР°Р·Р°РЅРёР№ СЃ СЂР°Р·Р±РёРІРєРѕР№ РЅР° 1/2 С‡Р°СЃР° РїСЂРѕРїРѕСЂС†РёРѕРЅР°Р»СЊРЅРѕ
           //22.08.2019 UNKEY VERSION COMMENT
       /*if(dmMain->LicType||GrdGetPermission(CHK_LIC_TASK,CHK_LIC_TASK_MANUAL)>0)*/
         //END COMMENT
         Child = new TfmManualInputMeter(Application,Name, 5,0, acc);
 //      Child = new TFormVITInputExcel(Application, Name, 5,0, acc);
       break;
-   case 609: // Ввод кол-ва энергии  + (с разноской по 1/2 часа ровный последние сутки) спец группа
+   case 609: // Р’РІРѕРґ РєРѕР»-РІР° СЌРЅРµСЂРіРёРё  + (СЃ СЂР°Р·РЅРѕСЃРєРѕР№ РїРѕ 1/2 С‡Р°СЃР° СЂРѕРІРЅС‹Р№ РїРѕСЃР»РµРґРЅРёРµ СЃСѓС‚РєРё) СЃРїРµС† РіСЂСѓРїРїР°
    //22.08.2019 UNKEY VERSION COMMENT
       /*if(dmMain->LicType||GrdGetPermission(CHK_LIC_TASK,CHK_LIC_TASK_MANUAL)>0)*/
       //END COMMENT
         Child = new TfmConsump(Application,Name, 8,0, acc);
       break;
-  case 610: // Ввод тарифов UMC
+  case 610: // Р’РІРѕРґ С‚Р°СЂРёС„РѕРІ UMC
       Child = new TEditTariffForm(Application,Name, acc);
       break;
-   case 611: // Ввод показаний с разбивкой на 1/2 часа пропорционально последние сутки           +
+   case 611: // Р’РІРѕРґ РїРѕРєР°Р·Р°РЅРёР№ СЃ СЂР°Р·Р±РёРІРєРѕР№ РЅР° 1/2 С‡Р°СЃР° РїСЂРѕРїРѕСЂС†РёРѕРЅР°Р»СЊРЅРѕ РїРѕСЃР»РµРґРЅРёРµ СЃСѓС‚РєРё           +
       //22.08.2019 UNKEY VERSION COMMENT
       /*if(dmMain->LicType||GrdGetPermission(CHK_LIC_TASK,CHK_LIC_TASK_MANUAL)>0)*/
       //END COMMENT
         Child = new TFormVITInputExcel(Application,Name, 6,0, acc);
       break;
-   case 612: // Ввод кол-ва энергии  +  (с разноской по 1/2 часа пропорционально последние сутки)
+   case 612: // Р’РІРѕРґ РєРѕР»-РІР° СЌРЅРµСЂРіРёРё  +  (СЃ СЂР°Р·РЅРѕСЃРєРѕР№ РїРѕ 1/2 С‡Р°СЃР° РїСЂРѕРїРѕСЂС†РёРѕРЅР°Р»СЊРЅРѕ РїРѕСЃР»РµРґРЅРёРµ СЃСѓС‚РєРё)
         //22.08.2019 UNKEY VERSION COMMENT
       /*if(dmMain->LicType||GrdGetPermission(CHK_LIC_TASK,CHK_LIC_TASK_MANUAL)>0)*/
         //END COMMENT
         Child = new TFormVITInputDeltaExcel(Application,Name, 6,0, acc);
       break;
-   case 614: // Ввод показаний с разбивкой на 1/2 часа ровно
+   case 614: // Р’РІРѕРґ РїРѕРєР°Р·Р°РЅРёР№ СЃ СЂР°Р·Р±РёРІРєРѕР№ РЅР° 1/2 С‡Р°СЃР° СЂРѕРІРЅРѕ
              //22.08.2019 UNKEY VERSION COMMENT
       /*if(dmMain->LicType||GrdGetPermission(CHK_LIC_TASK,CHK_LIC_TASK_MANUAL)>0)*/{
         //END COMMENT
@@ -373,19 +373,19 @@ void __fastcall TTaskMenuForm::RunTask(AnsiString Name, int Id, int a)
         Child->HelpContext = 508;
       }
       break;
-   case 615: // Ввод показаний с разбивкой на 1/2 часа ровно последние сутки           +
+   case 615: // Р’РІРѕРґ РїРѕРєР°Р·Р°РЅРёР№ СЃ СЂР°Р·Р±РёРІРєРѕР№ РЅР° 1/2 С‡Р°СЃР° СЂРѕРІРЅРѕ РїРѕСЃР»РµРґРЅРёРµ СЃСѓС‚РєРё           +
              //22.08.2019 UNKEY VERSION COMMENT
       /*if(dmMain->LicType||GrdGetPermission(CHK_LIC_TASK,CHK_LIC_TASK_MANUAL)>0)*/
       //END COMMENT
         Child = new TFormVITInputExcel(Application,Name, 8,0, acc);
       break;
-   case 616: // Ввод кол-ва энергии  +  (с разноской по 1/2 часа пропорционально)
+   case 616: // Р’РІРѕРґ РєРѕР»-РІР° СЌРЅРµСЂРіРёРё  +  (СЃ СЂР°Р·РЅРѕСЃРєРѕР№ РїРѕ 1/2 С‡Р°СЃР° РїСЂРѕРїРѕСЂС†РёРѕРЅР°Р»СЊРЅРѕ)
              //22.08.2019 UNKEY VERSION COMMENT
       /*if(dmMain->LicType||GrdGetPermission(CHK_LIC_TASK,CHK_LIC_TASK_MANUAL)>0)*/
       //END COMMENT
         Child = new TFormVITInputDeltaExcel(Application,Name, 5,0, acc);
       break;
-   case 617: // Ввод кол-ва энергии  +  (с разноской по 1/2 часа ровно)
+   case 617: // Р’РІРѕРґ РєРѕР»-РІР° СЌРЅРµСЂРіРёРё  +  (СЃ СЂР°Р·РЅРѕСЃРєРѕР№ РїРѕ 1/2 С‡Р°СЃР° СЂРѕРІРЅРѕ)
              //22.08.2019 UNKEY VERSION COMMENT
       /*if(dmMain->LicType||GrdGetPermission(CHK_LIC_TASK,CHK_LIC_TASK_MANUAL)>0)*/{
         //END COMMENT
@@ -393,22 +393,22 @@ void __fastcall TTaskMenuForm::RunTask(AnsiString Name, int Id, int a)
         Child->HelpContext = 512;
       }
       break;
-   case 618: // Ввод кол-ва энергии  +  (с разноской по 1/2 часа ровно последние сутки)
+   case 618: // Р’РІРѕРґ РєРѕР»-РІР° СЌРЅРµСЂРіРёРё  +  (СЃ СЂР°Р·РЅРѕСЃРєРѕР№ РїРѕ 1/2 С‡Р°СЃР° СЂРѕРІРЅРѕ РїРѕСЃР»РµРґРЅРёРµ СЃСѓС‚РєРё)
       //22.08.2019 UNKEY VERSION COMMENT
       /*if(dmMain->LicType||GrdGetPermission(CHK_LIC_TASK,CHK_LIC_TASK_MANUAL)>0)*/
       //END COMMENT
         Child = new TFormVITInputDeltaExcel(Application,Name, 8,0, acc);
       break;
-   case 619: // Импорт данных с файлов LG (Add by KSS)
+   case 619: // РРјРїРѕСЂС‚ РґР°РЅРЅС‹С… СЃ С„Р°Р№Р»РѕРІ LG (Add by KSS)
       Child = new TImportDatafilesForm(Application,Name,TType(tLGFiles),acc);
       break;
-   case 620: // Мониторинг опроса
+   case 620: // РњРѕРЅРёС‚РѕСЂРёРЅРі РѕРїСЂРѕСЃР°
        //22.08.2019 UNKEY VERSION COMMENT
       /*if(dmMain->LicType||GrdGetPermission(CHK_LIC_TASK,CHK_LIC_TASK_MONITORING)>0)*/
       //END COMMENT
         Child = new TfmRequestMonitoring(Application,Name,acc);
       break;
-   case 621: // Ввод кол-ва энергии  +  (с разноской по 1/2 часа ровно)
+   case 621: // Р’РІРѕРґ РєРѕР»-РІР° СЌРЅРµСЂРіРёРё  +  (СЃ СЂР°Р·РЅРѕСЃРєРѕР№ РїРѕ 1/2 С‡Р°СЃР° СЂРѕРІРЅРѕ)
    //22.08.2019 UNKEY VERSION COMMENT
       /*if(dmMain->LicType||GrdGetPermission(CHK_LIC_TASK,CHK_LIC_TASK_MANUAL)>0)*/{
       //END COMMENT
@@ -416,7 +416,7 @@ void __fastcall TTaskMenuForm::RunTask(AnsiString Name, int Id, int a)
         Child->HelpContext = 512;
       }
       break;
-      //GRB ADD 18.08.2026 - вызов терминала опроса и терминала показаний из меню
+      //GRB ADD 18.08.2026 - РІС‹Р·РѕРІ С‚РµСЂРјРёРЅР°Р»Р° РѕРїСЂРѕСЃР° Рё С‚РµСЂРјРёРЅР°Р»Р° РїРѕРєР°Р·Р°РЅРёР№ РёР· РјРµРЅСЋ
    /*case 630:{
          WinExec((AnsiString("evid_terme.exe ") +dmMain->orases->ConnectString).c_str(),SW_SHOW);
    }
@@ -429,25 +429,25 @@ void __fastcall TTaskMenuForm::RunTask(AnsiString Name, int Id, int a)
    }
    break; */
       //end
-   case 658: // АРМ оператора приема макетов
+   case 658: // РђР Рњ РѕРїРµСЂР°С‚РѕСЂР° РїСЂРёРµРјР° РјР°РєРµС‚РѕРІ
    //22.08.2019 UNKEY VERSION COMMENT
       /*if(dmMain->LicType||GrdGetPermission(CHK_LIC_TASK,CHK_LIC_TASK_MAKRETRIVE)>0)*/
       //END COMMENT
         Child = new TfmMaketArmR(Application,Name,acc);
       break;
-   case 659: // Статистика ICCP
+   case 659: // РЎС‚Р°С‚РёСЃС‚РёРєР° ICCP
       Child = new TStatICCPForm(Application,Name,acc);
       break;
-   case 660: // Форум пользователей
+   case 660: // Р¤РѕСЂСѓРј РїРѕР»СЊР·РѕРІР°С‚РµР»РµР№
       Child = new TUserForumMain(Application, Name, acc);
       break;
-   case 661: // Монитор ICCP
+   case 661: // РњРѕРЅРёС‚РѕСЂ ICCP
       Child = new TMonitorICCPForm(Application,Name,acc);
       break;
-   case 664:// Ввод стартовых показаний счетчика по отношению к "свистку"
+   case 664:// Р’РІРѕРґ СЃС‚Р°СЂС‚РѕРІС‹С… РїРѕРєР°Р·Р°РЅРёР№ СЃС‡РµС‚С‡РёРєР° РїРѕ РѕС‚РЅРѕС€РµРЅРёСЋ Рє "СЃРІРёСЃС‚РєСѓ"
       Child = new TfmInputStartMeters (Application,Name,acc);
       break;
-   case 1000:  //    настройка групп верификации
+   case 1000:  //    РЅР°СЃС‚СЂРѕР№РєР° РіСЂСѓРїРї РІРµСЂРёС„РёРєР°С†РёРё
       Child = new TFormEditGropsList(Application, Name, acc);
       ((TFormEditGropsList*)Child)->Panel7->Caption = Reconst_smes62_1;
       ((TFormEditGropsList*)Child)->Label5->Caption = Reconst_smes62_2;
@@ -461,16 +461,16 @@ void __fastcall TTaskMenuForm::RunTask(AnsiString Name, int Id, int a)
       ((TFormEditGropsList*)Child)->cbSum->Visible = false;
     	break;
 //===== 10.04.2006 DarLocK Started
-      //===== Коммутация
+      //===== РљРѕРјРјСѓС‚Р°С†РёСЏ
       case 652:
         Child = new TViewShemForm(Application, Name, acc, vsCommutation);
         break;
-      //===== Просмотр потерь
+      //===== РџСЂРѕСЃРјРѕС‚СЂ РїРѕС‚РµСЂСЊ
       case 653:
         Child = new TViewShemForm(Application, Name, acc, vsLoss);
         break;
 //===== 10.04.2006 DarLocK Finished
-       case 1001: //6.10. Редактирование телесигналов  
+       case 1001: //6.10. Р РµРґР°РєС‚РёСЂРѕРІР°РЅРёРµ С‚РµР»РµСЃРёРіРЅР°Р»РѕРІ  
         Child = new TFormTeleControlSignals(Application, Name, acc);
         break;
 

@@ -17,7 +17,7 @@
 #include "MemDS.hpp"
 #include "DBGridEh.hpp"
 //------------------------------------------------------------------------------
-struct strChIntr{ // Выбор данных пользователем
+struct strChIntr{ // Р’С‹Р±РѕСЂ РґР°РЅРЅС‹С… РїРѕР»СЊР·РѕРІР°С‚РµР»РµРј
    TDateTime fromTime;
    TDateTime tillTime;
    int NetParam;

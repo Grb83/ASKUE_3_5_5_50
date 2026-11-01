@@ -52,7 +52,7 @@ __fastcall TViewShemForm::TViewShemForm(TComponent* Owner, AnsiString Name, TAcc
       ScaleCB->ItemIndex  = 5;
       DataTypeCB->ItemIndex = 2;
 
-      //===== Ïðîâåðêà òèïà ðàñ÷åòà ïîòåðü (Ñóòêè/Ìåñÿö)
+      //===== ÐŸÑ€Ð¾Ð²ÐµÑ€ÐºÐ° Ñ‚Ð¸Ð¿Ð° Ñ€Ð°ÑÑ‡ÐµÑ‚Ð° Ð¿Ð¾Ñ‚ÐµÑ€ÑŒ (Ð¡ÑƒÑ‚ÐºÐ¸/ÐœÐµÑÑÑ†)
       //GRB ADD 16.04.2020 - test trouble ODAC
       dmMain->quMain->Params->Clear();
       //END ADD 
@@ -91,9 +91,9 @@ __fastcall TViewShemForm::TViewShemForm(TComponent* Owner, AnsiString Name, TAcc
   mnEdit->Visible   = false;
 }
 //---------------------------------------------------------------------------
-/*! Çàãðóçêà ñõåìû â ActiveX.
+/*! Ð—Ð°Ð³Ñ€ÑƒÐ·ÐºÐ° ÑÑ…ÐµÐ¼Ñ‹ Ð² ActiveX.
 
-    Èñõîäíûå äàííûå äëÿ ñõåìû áåðóòñÿ èç âûïàäàþùèõ ñïèñêîâ.
+    Ð˜ÑÑ…Ð¾Ð´Ð½Ñ‹Ðµ Ð´Ð°Ð½Ð½Ñ‹Ðµ Ð´Ð»Ñ ÑÑ…ÐµÐ¼Ñ‹ Ð±ÐµÑ€ÑƒÑ‚ÑÑ Ð¸Ð· Ð²Ñ‹Ð¿Ð°Ð´Ð°ÑŽÑ‰Ð¸Ñ… ÑÐ¿Ð¸ÑÐºÐ¾Ð².
 */
 void __fastcall TViewShemForm::LoadShem()
 {
@@ -158,7 +158,7 @@ void __fastcall TViewShemForm::LoadShem()
   tmpObjects.clear();
 }
 //---------------------------------------------------------------------------
-/*! Î÷èñòêà âñåõ çíà÷åíèé
+/*! ÐžÑ‡Ð¸ÑÑ‚ÐºÐ° Ð²ÑÐµÑ… Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ð¹
 */
 void __fastcall TViewShemForm::ClearLoss()
 {
@@ -186,13 +186,13 @@ void __fastcall TViewShemForm::ClearLoss()
   }
 }
 //---------------------------------------------------------------------------
-/*! Çàãðóçêà äàííûõ ïî ïåðåêëþ÷åíèÿì íà ñõåìå â çàâèñèìîñòè îò èíôîðìàöèè
-    â âûïàäàþùèõ ñïèñêàõ
+/*! Ð—Ð°Ð³Ñ€ÑƒÐ·ÐºÐ° Ð´Ð°Ð½Ð½Ñ‹Ñ… Ð¿Ð¾ Ð¿ÐµÑ€ÐµÐºÐ»ÑŽÑ‡ÐµÐ½Ð¸ÑÐ¼ Ð½Ð° ÑÑ…ÐµÐ¼Ðµ Ð² Ð·Ð°Ð²Ð¸ÑÐ¸Ð¼Ð¾ÑÑ‚Ð¸ Ð¾Ñ‚ Ð¸Ð½Ñ„Ð¾Ñ€Ð¼Ð°Ñ†Ð¸Ð¸
+    Ð² Ð²Ñ‹Ð¿Ð°Ð´Ð°ÑŽÑ‰Ð¸Ñ… ÑÐ¿Ð¸ÑÐºÐ°Ñ…
 */
 void __fastcall TViewShemForm::LoadCommutation()
 {
-  AnsiString  property_name;  //===== Íàèìåíîâàíèå ñâîéñòâà
-  AnsiString  date_from;      //===== Äàòà íà÷àëà ïåðèîäà
+  AnsiString  property_name;  //===== ÐÐ°Ð¸Ð¼ÐµÐ½Ð¾Ð²Ð°Ð½Ð¸Ðµ ÑÐ²Ð¾Ð¹ÑÑ‚Ð²Ð°
+  AnsiString  date_from;      //===== Ð”Ð°Ñ‚Ð° Ð½Ð°Ñ‡Ð°Ð»Ð° Ð¿ÐµÑ€Ð¸Ð¾Ð´Ð°
   try{
     //GRB ADD 16.04.2020 - test trouble ODAC
     dmMain->quMain->Params->Clear();
@@ -224,13 +224,13 @@ void __fastcall TViewShemForm::LoadCommutation()
   }
 }
 //---------------------------------------------------------------------------
-/*! Çàãðóçêà ïîòåðü ïî äàííûì â âûïàäàþùèõ ñïèñêàõ
+/*! Ð—Ð°Ð³Ñ€ÑƒÐ·ÐºÐ° Ð¿Ð¾Ñ‚ÐµÑ€ÑŒ Ð¿Ð¾ Ð´Ð°Ð½Ð½Ñ‹Ð¼ Ð² Ð²Ñ‹Ð¿Ð°Ð´Ð°ÑŽÑ‰Ð¸Ñ… ÑÐ¿Ð¸ÑÐºÐ°Ñ…
 */
 void __fastcall TViewShemForm::LoadLoss()
 {
   ClearLoss();
 
-  //===== Åñëè íåò äàííûõ äëÿ âûáîðêè - âûëåòàåì
+  //===== Ð•ÑÐ»Ð¸ Ð½ÐµÑ‚ Ð´Ð°Ð½Ð½Ñ‹Ñ… Ð´Ð»Ñ Ð²Ñ‹Ð±Ð¾Ñ€ÐºÐ¸ - Ð²Ñ‹Ð»ÐµÑ‚Ð°ÐµÐ¼
   if (PeriodCB->ItemIndex < 0
       || SubPeriodCB->ItemIndex < 0
       || DataTypeCB->ItemIndex < 0)
@@ -240,7 +240,7 @@ void __fastcall TViewShemForm::LoadLoss()
     WideString  srcStr;
     TColor      tColor,
                 bColor;
-    //===== Çàïîëíåíèå äàííûìè ìåòîê íà ñõåìå
+    //===== Ð—Ð°Ð¿Ð¾Ð»Ð½ÐµÐ½Ð¸Ðµ Ð´Ð°Ð½Ð½Ñ‹Ð¼Ð¸ Ð¼ÐµÑ‚Ð¾Ðº Ð½Ð° ÑÑ…ÐµÐ¼Ðµ
   //GRB ADD 16.04.2020 - test trouble ODAC
   dmMain->quMain->Params->Clear();
   //END ADD   
@@ -260,7 +260,7 @@ void __fastcall TViewShemForm::LoadLoss()
                   "and b.se_type in (200, 210)";
     dmMain->quMain->Execute();
     while(!dmMain->quMain->Eof){
-      //===== Çíà÷åíèå
+      //===== Ð—Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ
       switch (DataTypeCB->ItemIndex){
         case DATATYPE_DEBIT:
           valStr  = dmMain->quMain->FieldByName("valDebit")->AsString;
@@ -274,51 +274,51 @@ void __fastcall TViewShemForm::LoadLoss()
         default:
           continue;
       }
-      //===== Èñòî÷íèê
+      //===== Ð˜ÑÑ‚Ð¾Ñ‡Ð½Ð¸Ðº
       switch (dmMain->quMain->FieldByName("a_src")->AsInteger){
         case 20:
-          srcStr  = "Ø";
+          srcStr  = "Ð¨";
           break;
         case 30:
-          srcStr  = "Ë";
+          srcStr  = "Ð›";
           break;
         case 40:
-          srcStr  = "Ò";
+          srcStr  = "Ð¢";
           break;
         case 10:
         default:
           srcStr  = " ";
           break;
       }
-      switch (dmMain->quMain->FieldByName("a_qm")->AsInteger){ //===== Íåò äàííûõ
+      switch (dmMain->quMain->FieldByName("a_qm")->AsInteger){ //===== ÐÐµÑ‚ Ð´Ð°Ð½Ð½Ñ‹Ñ…
         case 1:
             tColor  = clYellow;
             bColor  = clRed;
           break;
-        //===== Îòêëþ÷åí
+        //===== ÐžÑ‚ÐºÐ»ÑŽÑ‡ÐµÐ½
         case -1:
             tColor  = (dmMain->quMain->FieldByName("a_debit")->AsFloat == 0) ? clBlack : clRed;
             bColor  = clWhite;
           break;
-        //====== Ñâåðíóò
+        //====== Ð¡Ð²ÐµÑ€Ð½ÑƒÑ‚
         case -2:
             tColor  = clYellow;
             bColor  = clGray;
           break;
-        //====== Íàâåðíóò
+        //====== ÐÐ°Ð²ÐµÑ€Ð½ÑƒÑ‚
         case -3:
             tColor  = clBlack;
             bColor  = clGray;
           break;
-        //===== ÎÊ
+        //===== ÐžÐš
         case 0:
         default:
             tColor  = clBlack;
             bColor  = clWhite;
           break;
       }
-      //SetMeterValue(ORD - ID ìåòêè, VALUE - çíà÷åíèå, SRC - Èñòî÷íèê,
-      //                TEXT_COLOR - öâåò òåêñòà, BACKGROUND_COLOR - öâåò ôîíà)
+      //SetMeterValue(ORD - ID Ð¼ÐµÑ‚ÐºÐ¸, VALUE - Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ, SRC - Ð˜ÑÑ‚Ð¾Ñ‡Ð½Ð¸Ðº,
+      //                TEXT_COLOR - Ñ†Ð²ÐµÑ‚ Ñ‚ÐµÐºÑÑ‚Ð°, BACKGROUND_COLOR - Ñ†Ð²ÐµÑ‚ Ñ„Ð¾Ð½Ð°)
       ShemEdit->SetMeterValue(WideString(dmMain->quMain->FieldByName("b_ord")->AsString), valStr, srcStr, tColor, bColor);
       dmMain->quMain->Next();
     }
@@ -326,7 +326,7 @@ void __fastcall TViewShemForm::LoadLoss()
   }
 }
 //---------------------------------------------------------------------------
-/*! Çàãðóçêà ñïèñêà ñõåì â ComboBox
+/*! Ð—Ð°Ð³Ñ€ÑƒÐ·ÐºÐ° ÑÐ¿Ð¸ÑÐºÐ° ÑÑ…ÐµÐ¼ Ð² ComboBox
 */
 void __fastcall TViewShemForm::LoadShemList()
 {
@@ -349,7 +349,7 @@ void __fastcall TViewShemForm::LoadShemList()
     ShemCB->Items->AddObject(dmMain->quMain->FieldByName("s_name")->AsString, (TObject *)(dmMain->quMain->FieldByName("s_sid")->AsInteger));
     dmMain->quMain->Next();
   }
-  //===== Âûáîð ïåðâîé ñõåìû â ñïèñêå
+  //===== Ð’Ñ‹Ð±Ð¾Ñ€ Ð¿ÐµÑ€Ð²Ð¾Ð¹ ÑÑ…ÐµÐ¼Ñ‹ Ð² ÑÐ¿Ð¸ÑÐºÐµ
   ShemCB->ItemIndex = ShemCB->Items->Count > 0 ? 0 : -1;
   if (ShemCB->ItemIndex < 0)
   { d->shemID   = BAD_ID;
@@ -366,7 +366,7 @@ void __fastcall TViewShemForm::LoadShemList()
   }
 }
 //---------------------------------------------------------------------------
-/*! Çåàãðóçêà ñïèñêà Ðàñ÷åòíûõ ïåðèîäîâ â ComboBox
+/*! Ð—ÐµÐ°Ð³Ñ€ÑƒÐ·ÐºÐ° ÑÐ¿Ð¸ÑÐºÐ° Ð Ð°ÑÑ‡ÐµÑ‚Ð½Ñ‹Ñ… Ð¿ÐµÑ€Ð¸Ð¾Ð´Ð¾Ð² Ð² ComboBox
 */
 void __fastcall TViewShemForm::LoadPeriodList()
 {
@@ -387,35 +387,35 @@ void __fastcall TViewShemForm::LoadPeriodList()
      dmMain->quMain->Next();
    }
 
-  //===== Ïðîâåðêà íà äîáàâëåíèå íîâîãî ïåðèîäà
+  //===== ÐŸÑ€Ð¾Ð²ÐµÑ€ÐºÐ° Ð½Ð° Ð´Ð¾Ð±Ð°Ð²Ð»ÐµÐ½Ð¸Ðµ Ð½Ð¾Ð²Ð¾Ð³Ð¾ Ð¿ÐµÑ€Ð¸Ð¾Ð´Ð°
   if (d->newperiod == BAD_STR)
-  { //===== Ïðîâåðêà íà óæå âûáðàííûé ïåðèîä
+  { //===== ÐŸÑ€Ð¾Ð²ÐµÑ€ÐºÐ° Ð½Ð° ÑƒÐ¶Ðµ Ð²Ñ‹Ð±Ñ€Ð°Ð½Ð½Ñ‹Ð¹ Ð¿ÐµÑ€Ð¸Ð¾Ð´
     if (d->period == BAD_STR)
-    { //===== Åñëè ÍÅÒ - âûáîð ïåðâîãî ïåðèîäà â ñïèñêå
+    { //===== Ð•ÑÐ»Ð¸ ÐÐ•Ð¢ - Ð²Ñ‹Ð±Ð¾Ñ€ Ð¿ÐµÑ€Ð²Ð¾Ð³Ð¾ Ð¿ÐµÑ€Ð¸Ð¾Ð´Ð° Ð² ÑÐ¿Ð¸ÑÐºÐµ
       PeriodCB->ItemIndex = PeriodCB->Items->Count > 0 ? 0 : -1;
     }
     else
-    { //===== Åñëè ÄÀ - ïðîâåðêà íà íàëè÷èå òàêîãî æå
+    { //===== Ð•ÑÐ»Ð¸ Ð”Ð - Ð¿Ñ€Ð¾Ð²ÐµÑ€ÐºÐ° Ð½Ð° Ð½Ð°Ð»Ð¸Ñ‡Ð¸Ðµ Ñ‚Ð°ÐºÐ¾Ð³Ð¾ Ð¶Ðµ
       int tmpI  = PeriodCB->Items->IndexOf(d->period);
       if (tmpI == -1)
-      { //===== Åñëè ÍÅÒ - âûáîð ïåðâîãî ïåðèîäà â ñïèñêå
+      { //===== Ð•ÑÐ»Ð¸ ÐÐ•Ð¢ - Ð²Ñ‹Ð±Ð¾Ñ€ Ð¿ÐµÑ€Ð²Ð¾Ð³Ð¾ Ð¿ÐµÑ€Ð¸Ð¾Ð´Ð° Ð² ÑÐ¿Ð¸ÑÐºÐµ
         PeriodCB->ItemIndex = PeriodCB->Items->Count > 0 ? 0 : -1;
       }
       else
-      { //===== Åñëè åñòü - âûáèðàåì åãî è âûõîäèì
+      { //===== Ð•ÑÐ»Ð¸ ÐµÑÑ‚ÑŒ - Ð²Ñ‹Ð±Ð¸Ñ€Ð°ÐµÐ¼ ÐµÐ³Ð¾ Ð¸ Ð²Ñ‹Ñ…Ð¾Ð´Ð¸Ð¼
         PeriodCB->ItemIndex = tmpI;
       }
     }
   }
   else
-  { //===== Åñòü íîâûé ïåðèîä
+  { //===== Ð•ÑÑ‚ÑŒ Ð½Ð¾Ð²Ñ‹Ð¹ Ð¿ÐµÑ€Ð¸Ð¾Ð´
     int tmpI  = PeriodCB->Items->IndexOf(d->newperiod);
     if (tmpI == -1)
-    { //===== Åñëè íåíàøëè â ñïèñêå - âûáîð ïåðâîãî ïåðèîäà â ñïèñêå
+    { //===== Ð•ÑÐ»Ð¸ Ð½ÐµÐ½Ð°ÑˆÐ»Ð¸ Ð² ÑÐ¿Ð¸ÑÐºÐµ - Ð²Ñ‹Ð±Ð¾Ñ€ Ð¿ÐµÑ€Ð²Ð¾Ð³Ð¾ Ð¿ÐµÑ€Ð¸Ð¾Ð´Ð° Ð² ÑÐ¿Ð¸ÑÐºÐµ
       PeriodCB->ItemIndex = PeriodCB->Items->Count > 0 ? 0 : -1;
     }
     else
-    { //===== Åñëè íàøëè - âûáèðàåì åãî è âûõîäèì
+    { //===== Ð•ÑÐ»Ð¸ Ð½Ð°ÑˆÐ»Ð¸ - Ð²Ñ‹Ð±Ð¸Ñ€Ð°ÐµÐ¼ ÐµÐ³Ð¾ Ð¸ Ð²Ñ‹Ñ…Ð¾Ð´Ð¸Ð¼
       PeriodCB->ItemIndex = tmpI;
     }
   }
@@ -444,8 +444,8 @@ void __fastcall TViewShemForm::LoadSubPeriodList()
     SubPeriodCB->Items->AddObject(dmMain->quMain->FieldByName("subperiod")->AsString, (TObject *)(dmMain->quMain->FieldByName("cp_cpid")->AsInteger));
     dmMain->quMain->Next();
   }
-  //===== Âûáîð ïðåäûäóùåãî Ïîäïåðèîäà, åñëè òàêîâîé áûë ïåðåä ýæòèì
-  if (d->subperiodStr == BAD_STR){ //===== Âûáîð ïåðâîãî ÏîäÏåðèîäà â ñïèñêå
+  //===== Ð’Ñ‹Ð±Ð¾Ñ€ Ð¿Ñ€ÐµÐ´Ñ‹Ð´ÑƒÑ‰ÐµÐ³Ð¾ ÐŸÐ¾Ð´Ð¿ÐµÑ€Ð¸Ð¾Ð´Ð°, ÐµÑÐ»Ð¸ Ñ‚Ð°ÐºÐ¾Ð²Ð¾Ð¹ Ð±Ñ‹Ð» Ð¿ÐµÑ€ÐµÐ´ ÑÐ¶Ñ‚Ð¸Ð¼
+  if (d->subperiodStr == BAD_STR){ //===== Ð’Ñ‹Ð±Ð¾Ñ€ Ð¿ÐµÑ€Ð²Ð¾Ð³Ð¾ ÐŸÐ¾Ð´ÐŸÐµÑ€Ð¸Ð¾Ð´Ð° Ð² ÑÐ¿Ð¸ÑÐºÐµ
     SubPeriodCB->ItemIndex  = SubPeriodCB->Items->Count > 0 ? 0 : -1;
   }else{
     SubPeriodCB->ItemIndex  = SubPeriodCB->Items->IndexOf(d->subperiodStr);
@@ -454,7 +454,7 @@ void __fastcall TViewShemForm::LoadSubPeriodList()
   }
 }
 //---------------------------------------------------------------------------
-/*! Îáíîâëåíèå äàííûõ íà ôîðìå
+/*! ÐžÐ±Ð½Ð¾Ð²Ð»ÐµÐ½Ð¸Ðµ Ð´Ð°Ð½Ð½Ñ‹Ñ… Ð½Ð° Ñ„Ð¾Ñ€Ð¼Ðµ
 */
 void __fastcall TViewShemForm::vRefresh(TObject *Sender)
 {
@@ -468,7 +468,7 @@ void __fastcall TViewShemForm::vRefresh(TObject *Sender)
   }
 }
 //---------------------------------------------------------------------------
-/*! Ñîõðàíåíèå äàííûõ
+/*! Ð¡Ð¾Ñ…Ñ€Ð°Ð½ÐµÐ½Ð¸Ðµ Ð´Ð°Ð½Ð½Ñ‹Ñ…
 */
 void __fastcall TViewShemForm::vSave(TObject *Sender)
 {
@@ -509,14 +509,14 @@ void __fastcall TViewShemForm::FormDestroy(TObject *Sender)
   InfoForm  = NULL;
 }
 //---------------------------------------------------------------------------
-/*! Ïå÷àòü ñõåìû
+/*! ÐŸÐµÑ‡Ð°Ñ‚ÑŒ ÑÑ…ÐµÐ¼Ñ‹
 */
 void __fastcall TViewShemForm::PrintActionExecute(TObject *Sender)
 {
   ShemEdit->PrintShem();
 }
 //---------------------------------------------------------------------------
-/*! Îáíîâëåíèå
+/*! ÐžÐ±Ð½Ð¾Ð²Ð»ÐµÐ½Ð¸Ðµ
 */
 void __fastcall TViewShemForm::RefreshActionExecute(TObject *Sender)
 {
@@ -532,7 +532,7 @@ void __fastcall TViewShemForm::RefreshActionExecute(TObject *Sender)
   }
 }
 //---------------------------------------------------------------------------
-/*! Ðàñòÿíóòü ïî ìàñøòàáó
+/*! Ð Ð°ÑÑ‚ÑÐ½ÑƒÑ‚ÑŒ Ð¿Ð¾ Ð¼Ð°ÑÑˆÑ‚Ð°Ð±Ñƒ
 */
 void __fastcall TViewShemForm::FitActionExecute(TObject *Sender)
 {
@@ -542,7 +542,7 @@ void __fastcall TViewShemForm::FitActionExecute(TObject *Sender)
     ScaleCB->ItemIndex  = iIndex;
 }
 //---------------------------------------------------------------------------
-/*! Ïîëíàÿ èíôîðìàöèÿ ïî âûáðàííîìó ïåðèîäó
+/*! ÐŸÐ¾Ð»Ð½Ð°Ñ Ð¸Ð½Ñ„Ð¾Ñ€Ð¼Ð°Ñ†Ð¸Ñ Ð¿Ð¾ Ð²Ñ‹Ð±Ñ€Ð°Ð½Ð½Ð¾Ð¼Ñƒ Ð¿ÐµÑ€Ð¸Ð¾Ð´Ñƒ
 */
 void __fastcall TViewShemForm::InfoActionExecute(TObject *Sender)
 {
@@ -552,7 +552,7 @@ void __fastcall TViewShemForm::InfoActionExecute(TObject *Sender)
   if (!InfoForm)
     InfoForm  = new TInfoForm(this);
 
-  //===== Çàïîëíåíèå òàáëèöû
+  //===== Ð—Ð°Ð¿Ð¾Ð»Ð½ÐµÐ½Ð¸Ðµ Ñ‚Ð°Ð±Ð»Ð¸Ñ†Ñ‹
   //GRB ADD 16.04.2020 - test trouble ODAC
   dmMain->quMain->Params->Clear();
   //END ADD 
@@ -577,7 +577,7 @@ void __fastcall TViewShemForm::InfoActionExecute(TObject *Sender)
   InfoForm->Show();
 }
 //---------------------------------------------------------------------------
-/*! Äîáàâëåíèå íîâîãî ïåðèîäà
+/*! Ð”Ð¾Ð±Ð°Ð²Ð»ÐµÐ½Ð¸Ðµ Ð½Ð¾Ð²Ð¾Ð³Ð¾ Ð¿ÐµÑ€Ð¸Ð¾Ð´Ð°
 */
 void __fastcall TViewShemForm::InsertActionExecute(TObject *Sender)
 {
@@ -607,7 +607,7 @@ void __fastcall TViewShemForm::InsertActionExecute(TObject *Sender)
   }
 }
 //---------------------------------------------------------------------------
-/*! Ïðîèçâîäèòñÿ ðàñ÷åò ïîòåðü çà òåêóùèé ïåðèîä
+/*! ÐŸÑ€Ð¾Ð¸Ð·Ð²Ð¾Ð´Ð¸Ñ‚ÑÑ Ñ€Ð°ÑÑ‡ÐµÑ‚ Ð¿Ð¾Ñ‚ÐµÑ€ÑŒ Ð·Ð° Ñ‚ÐµÐºÑƒÑ‰Ð¸Ð¹ Ð¿ÐµÑ€Ð¸Ð¾Ð´
 */
 void __fastcall TViewShemForm::CalcActionExecute(TObject *Sender)
 {
@@ -623,21 +623,21 @@ void __fastcall TViewShemForm::CalcActionExecute(TObject *Sender)
   RefreshActionExecute(RefreshSBtn);
 }
 //---------------------------------------------------------------------------
-/*! Ìàñøòàáèðîâàíèå ñõåìû
+/*! ÐœÐ°ÑÑˆÑ‚Ð°Ð±Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ðµ ÑÑ…ÐµÐ¼Ñ‹
 */
 void __fastcall TViewShemForm::ScaleCBChange(TObject *Sender)
 {
   ShemEdit->Scale = ScaleCB->Items->Strings[ScaleCB->ItemIndex].ToInt();
 }
 //---------------------------------------------------------------------------
-/*! Îáðàáîòêà èçìåíåíèÿ âûáðàííîé ñõåìû
+/*! ÐžÐ±Ñ€Ð°Ð±Ð¾Ñ‚ÐºÐ° Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ñ Ð²Ñ‹Ð±Ñ€Ð°Ð½Ð½Ð¾Ð¹ ÑÑ…ÐµÐ¼Ñ‹
 */
 void __fastcall TViewShemForm::ShemCBChange(TObject *Sender)
 {
-  //===== Åñëè íå âûáðàí ýëåìåíò - ÂÛËÅÒÀÅÌ
+  //===== Ð•ÑÐ»Ð¸ Ð½Ðµ Ð²Ñ‹Ð±Ñ€Ð°Ð½ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚ - Ð’Ð«Ð›Ð•Ð¢ÐÐ•Ðœ
   if (ShemCB->ItemIndex < 0)
     return;
-  //===== Ïðîâåðêà íà âûáîð òîãîæå ñàìîãî ýëåìåíòà
+  //===== ÐŸÑ€Ð¾Ð²ÐµÑ€ÐºÐ° Ð½Ð° Ð²Ñ‹Ð±Ð¾Ñ€ Ñ‚Ð¾Ð³Ð¾Ð¶Ðµ ÑÐ°Ð¼Ð¾Ð³Ð¾ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð°
   if ((long)ShemCB->Items->Objects[ShemCB->ItemIndex] == d->shemID)
     return;
 
@@ -649,13 +649,13 @@ void __fastcall TViewShemForm::ShemCBChange(TObject *Sender)
   LoadLoss();
 }
 //---------------------------------------------------------------------------
-/*! Îáðàáîòêà èçìåíåíèÿ âûáðàííîãî ïåðèîäà
-    Âûçûâàåòñÿ ïðè èçìåíåíèè
+/*! ÐžÐ±Ñ€Ð°Ð±Ð¾Ñ‚ÐºÐ° Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ñ Ð²Ñ‹Ð±Ñ€Ð°Ð½Ð½Ð¾Ð³Ð¾ Ð¿ÐµÑ€Ð¸Ð¾Ð´Ð°
+    Ð’Ñ‹Ð·Ñ‹Ð²Ð°ÐµÑ‚ÑÑ Ð¿Ñ€Ð¸ Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ð¸
 */
 void __fastcall TViewShemForm::PeriodCBChange(TObject *Sender)
 {
-  //===== Åñëè èçìåíåíèÿ èäóò ÷åðåç TTdateTimePicker
-  //===== (Âêëþ÷åí ñóòî÷íûé ðàñ÷åò)
+  //===== Ð•ÑÐ»Ð¸ Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ñ Ð¸Ð´ÑƒÑ‚ Ñ‡ÐµÑ€ÐµÐ· TTdateTimePicker
+  //===== (Ð’ÐºÐ»ÑŽÑ‡ÐµÐ½ ÑÑƒÑ‚Ð¾Ñ‡Ð½Ñ‹Ð¹ Ñ€Ð°ÑÑ‡ÐµÑ‚)
   if (d&&!d->period.IsEmpty()&&(dynamic_cast<TDateTimePicker *>(Sender)))
   { int tInt  = PeriodCB->Items->IndexOf(PeriodDTP->Date.FormatString("yyyymmdd"));
     if (tInt < 0)
@@ -667,10 +667,10 @@ void __fastcall TViewShemForm::PeriodCBChange(TObject *Sender)
     else
       PeriodCB->ItemIndex = tInt;
   }
-  //===== Åñëè íå âûáðàí ýëåìåíò - ÂÛËÅÒÀÅÌ
+  //===== Ð•ÑÐ»Ð¸ Ð½Ðµ Ð²Ñ‹Ð±Ñ€Ð°Ð½ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚ - Ð’Ð«Ð›Ð•Ð¢ÐÐ•Ðœ
   if (PeriodCB->ItemIndex < 0)
     return;
-  //===== Ïðîâåðêà íà âûáîð òîãîæå ñàìîãî ýëåìåíòà
+  //===== ÐŸÑ€Ð¾Ð²ÐµÑ€ÐºÐ° Ð½Ð° Ð²Ñ‹Ð±Ð¾Ñ€ Ñ‚Ð¾Ð³Ð¾Ð¶Ðµ ÑÐ°Ð¼Ð¾Ð³Ð¾ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð°
   if (PeriodCB->Items->Strings[PeriodCB->ItemIndex] == d->period && !d->refresh)
     return;
 
@@ -680,15 +680,15 @@ void __fastcall TViewShemForm::PeriodCBChange(TObject *Sender)
   SubPeriodCBChange(SubPeriodCB);
 }
 //---------------------------------------------------------------------------
-/*! Îáðàáîòêà èçìåíåíèÿ âûáðàííîãî ÏîäÏåðèîäà
-    Âûçûâàåòñÿ ïðè èçìåíåíèè
+/*! ÐžÐ±Ñ€Ð°Ð±Ð¾Ñ‚ÐºÐ° Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ñ Ð²Ñ‹Ð±Ñ€Ð°Ð½Ð½Ð¾Ð³Ð¾ ÐŸÐ¾Ð´ÐŸÐµÑ€Ð¸Ð¾Ð´Ð°
+    Ð’Ñ‹Ð·Ñ‹Ð²Ð°ÐµÑ‚ÑÑ Ð¿Ñ€Ð¸ Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ð¸
 */
 void __fastcall TViewShemForm::SubPeriodCBChange(TObject *Sender)
 {
-  //===== Åñëè íå âûáðàí ýëåìåíò - ÂÛËÅÒÀÅÌ
+  //===== Ð•ÑÐ»Ð¸ Ð½Ðµ Ð²Ñ‹Ð±Ñ€Ð°Ð½ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚ - Ð’Ð«Ð›Ð•Ð¢ÐÐ•Ðœ
   if (SubPeriodCB->ItemIndex < 0)
     return;
-  //===== Ïðîâåðêà íà âûáîð òîãîæå ñàìîãî ýëåìåíòà
+  //===== ÐŸÑ€Ð¾Ð²ÐµÑ€ÐºÐ° Ð½Ð° Ð²Ñ‹Ð±Ð¾Ñ€ Ñ‚Ð¾Ð³Ð¾Ð¶Ðµ ÑÐ°Ð¼Ð¾Ð³Ð¾ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð°
   if ((long)SubPeriodCB->Items->Objects[SubPeriodCB->ItemIndex] == d->subperiodID)
     return;
 
@@ -699,14 +699,14 @@ void __fastcall TViewShemForm::SubPeriodCBChange(TObject *Sender)
   LoadLoss();
 }
 //---------------------------------------------------------------------------
-/*! Âûáîð òèïà îòîáðàæàåìîé èíôîðìàöèè
+/*! Ð’Ñ‹Ð±Ð¾Ñ€ Ñ‚Ð¸Ð¿Ð° Ð¾Ñ‚Ð¾Ð±Ñ€Ð°Ð¶Ð°ÐµÐ¼Ð¾Ð¹ Ð¸Ð½Ñ„Ð¾Ñ€Ð¼Ð°Ñ†Ð¸Ð¸
 */
 void __fastcall TViewShemForm::DataTypeCBChange(TObject *Sender)
 {
-  //===== Åñëè íå âûáðàí ýëåìåíò - ÂÛËÅÒÀÅÌ
+  //===== Ð•ÑÐ»Ð¸ Ð½Ðµ Ð²Ñ‹Ð±Ñ€Ð°Ð½ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚ - Ð’Ð«Ð›Ð•Ð¢ÐÐ•Ðœ
   if (DataTypeCB->ItemIndex < 0)
     return;
-  //===== Ïðîâåðêà íà âûáîð òîãîæå ñàìîãî ýëåìåíòà
+  //===== ÐŸÑ€Ð¾Ð²ÐµÑ€ÐºÐ° Ð½Ð° Ð²Ñ‹Ð±Ð¾Ñ€ Ñ‚Ð¾Ð³Ð¾Ð¶Ðµ ÑÐ°Ð¼Ð¾Ð³Ð¾ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð°
   if (DataTypeCB->ItemIndex == d->datatype)
     return;
 

@@ -39,11 +39,11 @@ void __fastcall TManForm::MonitorMenuEnabled()
   if (rCode == TASK_RIGHTS_ERROR)
   { Application->MessageBox(Application->Title.c_str(),Reconst_smes130_1.c_str(),MB_OK | MB_ICONERROR);
   }
-  //===== Установка невидимости меню, вслучае запрета
+  //===== РЈСЃС‚Р°РЅРѕРІРєР° РЅРµРІРёРґРёРјРѕСЃС‚Рё РјРµРЅСЋ, РІСЃР»СѓС‡Р°Рµ Р·Р°РїСЂРµС‚Р°
   SaveMonitor->Visible      = rCode != TASK_RIGHTS_DISABLE;
   SaveMonitorAs->Visible    = rCode != TASK_RIGHTS_DISABLE;
   EditMonitorList->Visible  = rCode != TASK_RIGHTS_DISABLE;
-  //===== Установка разрешения меню, вслучае наличия прав доступа
+  //===== РЈСЃС‚Р°РЅРѕРІРєР° СЂР°Р·СЂРµС€РµРЅРёСЏ РјРµРЅСЋ, РІСЃР»СѓС‡Р°Рµ РЅР°Р»РёС‡РёСЏ РїСЂР°РІ РґРѕСЃС‚СѓРїР°
   SaveMonitor->Enabled      = rCode == TASK_RIGHTS_WRITE;
   SaveMonitorAs->Enabled    = rCode == TASK_RIGHTS_WRITE;
   EditMonitorList->Enabled  = rCode == TASK_RIGHTS_WRITE;
@@ -115,8 +115,8 @@ void __fastcall TManForm::N1Click(TObject *Sender)
 	sfd->StepProfile=TFormDescr::stpHour;
    while(WaitForSingleObject(UpdateMonitors,0)!=WAIT_OBJECT_0)
    {
-      Application->ProcessMessages();// если не удалось иниц-ть. CS то обновить экранные формы...
-      Sleep(0);// переключить управление на другой поток, коьт занял CS
+      Application->ProcessMessages();// РµСЃР»Рё РЅРµ СѓРґР°Р»РѕСЃСЊ РёРЅРёС†-С‚СЊ. CS С‚Рѕ РѕР±РЅРѕРІРёС‚СЊ СЌРєСЂР°РЅРЅС‹Рµ С„РѕСЂРјС‹...
+      Sleep(0);// РїРµСЂРµРєР»СЋС‡РёС‚СЊ СѓРїСЂР°РІР»РµРЅРёРµ РЅР° РґСЂСѓРіРѕР№ РїРѕС‚РѕРє, РєРѕСЊС‚ Р·Р°РЅСЏР» CS
    }
    // add by KSS
 	PostMessage(PageCtrlSplt->CurrentForm->Handle,WM_REFRESHFORM,0,(LPARAM)sfd);
@@ -128,11 +128,11 @@ void __fastcall TManForm::N2Click(TObject *Sender)
 	if( PageCtrlSplt->CurrentForm->GetFormDescr() )
 		*sfd=*(PageCtrlSplt->CurrentForm->GetFormDescr());
 	sfd->SummGroup=!sfd->SummGroup;
-   // перед любым обновлением мониторов необходимо инициализировать кр. секцию UpdateMonitors
+   // РїРµСЂРµРґ Р»СЋР±С‹Рј РѕР±РЅРѕРІР»РµРЅРёРµРј РјРѕРЅРёС‚РѕСЂРѕРІ РЅРµРѕР±С…РѕРґРёРјРѕ РёРЅРёС†РёР°Р»РёР·РёСЂРѕРІР°С‚СЊ РєСЂ. СЃРµРєС†РёСЋ UpdateMonitors
    while(WaitForSingleObject(UpdateMonitors,0)!=WAIT_OBJECT_0)
    {
-      Application->ProcessMessages();// если не удалось иниц-ть. CS то обновить экранные формы...
-      Sleep(0);// переключить управление на другой поток, коьт занял CS
+      Application->ProcessMessages();// РµСЃР»Рё РЅРµ СѓРґР°Р»РѕСЃСЊ РёРЅРёС†-С‚СЊ. CS С‚Рѕ РѕР±РЅРѕРІРёС‚СЊ СЌРєСЂР°РЅРЅС‹Рµ С„РѕСЂРјС‹...
+      Sleep(0);// РїРµСЂРµРєР»СЋС‡РёС‚СЊ СѓРїСЂР°РІР»РµРЅРёРµ РЅР° РґСЂСѓРіРѕР№ РїРѕС‚РѕРє, РєРѕСЊС‚ Р·Р°РЅСЏР» CS
    }
 	PostMessage(PageCtrlSplt->CurrentForm->Handle,WM_REFRESHFORM,0,(LPARAM)sfd);
 }
@@ -188,9 +188,9 @@ void __fastcall TManForm::BitBtnFormClick(TObject *Sender)
                 fmSelectGroupReportUniv = new TfmSelectGroupReportProc(this,sfd);
             else
                 fmSelectGroupReportUniv = new TfmSelectGroupReport(this,sfd);
-            //GRB ADD 07.02.2019 - пункт в меню для многотаблиичного отчёта для Житомира тут делаем видимым, а обработчик на onClick для него ставим в unInteriorIni.cpp там же для этого инклюдим Monitir.h. Хардкод -11й в списке меню File
+            //GRB ADD 07.02.2019 - РїСѓРЅРєС‚ РІ РјРµРЅСЋ РґР»СЏ РјРЅРѕРіРѕС‚Р°Р±Р»РёРёС‡РЅРѕРіРѕ РѕС‚С‡С‘С‚Р° РґР»СЏ Р–РёС‚РѕРјРёСЂР° С‚СѓС‚ РґРµР»Р°РµРј РІРёРґРёРјС‹Рј, Р° РѕР±СЂР°Р±РѕС‚С‡РёРє РЅР° onClick РґР»СЏ РЅРµРіРѕ СЃС‚Р°РІРёРј РІ unInteriorIni.cpp С‚Р°Рј Р¶Рµ РґР»СЏ СЌС‚РѕРіРѕ РёРЅРєР»СЋРґРёРј Monitir.h. РҐР°СЂРґРєРѕРґ -11Р№ РІ СЃРїРёСЃРєРµ РјРµРЅСЋ File
             if (PL_SQL_MANY_TABLE == sfd->CodeTemplate){
-                //20.09.2021 GRB ADD - споймал исключение ManForm == NULL
+                //20.09.2021 GRB ADD - СЃРїРѕР№РјР°Р» РёСЃРєР»СЋС‡РµРЅРёРµ ManForm == NULL
                 if (ManForm!=NULL){
 
                 ManForm->BitBtnPrevios->Enabled = false;
@@ -206,9 +206,9 @@ void __fastcall TManForm::BitBtnFormClick(TObject *Sender)
                                 }
                 }
             }else{
-                //20.09.2021 GRB ADD - споймал исключение ManForm == NULL
+                //20.09.2021 GRB ADD - СЃРїРѕР№РјР°Р» РёСЃРєР»СЋС‡РµРЅРёРµ ManForm == NULL
                 if (ManForm!=NULL){
-                ////20.09.2021 GRB ADD поставил проверку
+                ////20.09.2021 GRB ADD РїРѕСЃС‚Р°РІРёР» РїСЂРѕРІРµСЂРєСѓ
                 for (int i=0; i < ManForm->MainMenu1->Items->Items[0]->Count; i++)
                         if (ManForm->MainMenu1->Items->Items[0]->Items[i]->Name == "SaveMultyTableToFile"){
                                 ManForm->MainMenu1->Items->Items[0]->Items[i]->Visible = false;
@@ -241,15 +241,15 @@ void __fastcall TManForm::BitBtnFormClick(TObject *Sender)
             if (fmSelectGroupReportUniv->ModalResult == mrOk)
             {
                 //fmSelectReportForm->fd->CodeTemplate=1;
-                // перед любым обновлением мониторов необходимо инициализировать кр. секцию UpdateMonitors
+                // РїРµСЂРµРґ Р»СЋР±С‹Рј РѕР±РЅРѕРІР»РµРЅРёРµРј РјРѕРЅРёС‚РѕСЂРѕРІ РЅРµРѕР±С…РѕРґРёРјРѕ РёРЅРёС†РёР°Р»РёР·РёСЂРѕРІР°С‚СЊ РєСЂ. СЃРµРєС†РёСЋ UpdateMonitors
                 while(WaitForSingleObject(UpdateMonitors,0)!=WAIT_OBJECT_0)
                 {
-                    Application->ProcessMessages();// если не удалось иниц-ть. CS то обновить экранные формы...
-                    Sleep(0);// переключить управление на другой поток, коьт занял CS
+                    Application->ProcessMessages();// РµСЃР»Рё РЅРµ СѓРґР°Р»РѕСЃСЊ РёРЅРёС†-С‚СЊ. CS С‚Рѕ РѕР±РЅРѕРІРёС‚СЊ СЌРєСЂР°РЅРЅС‹Рµ С„РѕСЂРјС‹...
+                    Sleep(0);// РїРµСЂРµРєР»СЋС‡РёС‚СЊ СѓРїСЂР°РІР»РµРЅРёРµ РЅР° РґСЂСѓРіРѕР№ РїРѕС‚РѕРє, РєРѕСЊС‚ Р·Р°РЅСЏР» CS
                 }
                 PostMessage(PageCtrlSplt->CurrentForm->Handle,WM_REFRESHFORM,0,(LPARAM)new TFormDescr(*sfd));
             }else{
-                // Повтор данного кода выбора формы
+                // РџРѕРІС‚РѕСЂ РґР°РЅРЅРѕРіРѕ РєРѕРґР° РІС‹Р±РѕСЂР° С„РѕСЂРјС‹
                 again = true;
             }
         }
@@ -288,17 +288,17 @@ void __fastcall TManForm::BitBtnParamClick(TObject *Sender)
         if ( IsCommonRepForm( sfd->CodeTemplate ) )
             fmSelectGroupReportUniv = new TfmSelectGroupReportProc(this,sfd);
         else
-            fmSelectGroupReportUniv = new TfmSelectGroupReport(this,sfd);//обявление указателя окна настройки отображения
+            fmSelectGroupReportUniv = new TfmSelectGroupReport(this,sfd);//РѕР±СЏРІР»РµРЅРёРµ СѓРєР°Р·Р°С‚РµР»СЏ РѕРєРЅР° РЅР°СЃС‚СЂРѕР№РєРё РѕС‚РѕР±СЂР°Р¶РµРЅРёСЏ
         ::SetCursor(hCursor);
 
         if  (sfd->CodeTemplate != 1200)
-            fmSelectGroupReportUniv->ShowModal();//запускаетса форма в которой находитса компонент "птичник"
+            fmSelectGroupReportUniv->ShowModal();//Р·Р°РїСѓСЃРєР°РµС‚СЃР° С„РѕСЂРјР° РІ РєРѕС‚РѕСЂРѕР№ РЅР°С…РѕРґРёС‚СЃР° РєРѕРјРїРѕРЅРµРЅС‚ "РїС‚РёС‡РЅРёРє"
         if( fmSelectGroupReportUniv->ModalResult==mrOk ){
-            // перед любым обновлением мониторов необходимо инициализировать кр. секцию UpdateMonitors
+            // РїРµСЂРµРґ Р»СЋР±С‹Рј РѕР±РЅРѕРІР»РµРЅРёРµРј РјРѕРЅРёС‚РѕСЂРѕРІ РЅРµРѕР±С…РѕРґРёРјРѕ РёРЅРёС†РёР°Р»РёР·РёСЂРѕРІР°С‚СЊ РєСЂ. СЃРµРєС†РёСЋ UpdateMonitors
             while(WaitForSingleObject(UpdateMonitors,0)!=WAIT_OBJECT_0)
             {
-                Application->ProcessMessages();// если не удалось иниц-ть. CS то обновить экранные формы...
-                Sleep(0);// переключить управление на другой поток, коьт занял CS
+                Application->ProcessMessages();// РµСЃР»Рё РЅРµ СѓРґР°Р»РѕСЃСЊ РёРЅРёС†-С‚СЊ. CS С‚Рѕ РѕР±РЅРѕРІРёС‚СЊ СЌРєСЂР°РЅРЅС‹Рµ С„РѕСЂРјС‹...
+                Sleep(0);// РїРµСЂРµРєР»СЋС‡РёС‚СЊ СѓРїСЂР°РІР»РµРЅРёРµ РЅР° РґСЂСѓРіРѕР№ РїРѕС‚РѕРє, РєРѕСЊС‚ Р·Р°РЅСЏР» CS
             }
             PostMessage(PageCtrlSplt->CurrentForm->Handle,WM_REFRESHFORM,0,(LPARAM)sfd);
         }
@@ -364,7 +364,7 @@ void __fastcall TManForm::OpenEditClick(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall TManForm::BitBtnPreviosClick(TObject *Sender)
 {  TDateTime DateTime;
-// Add KAS 16.03.2001 Если форма-отчет то листаем ее листы
+// Add KAS 16.03.2001 Р•СЃР»Рё С„РѕСЂРјР°-РѕС‚С‡РµС‚ С‚Рѕ Р»РёСЃС‚Р°РµРј РµРµ Р»РёСЃС‚С‹
 
   /*   TBaseMonitorForm* MF = (TBaseMonitorForm*)PageCtrlSplt->listMonitorForms->Items[0];
      if(MF->Interior->fd->CodeTemplate != 1201 && MF->Interior->fd->CodeTemplate != 1202)
@@ -387,11 +387,11 @@ void __fastcall TManForm::BitBtnPreviosClick(TObject *Sender)
           }
         fd->DateTime= DateTime;
         dmMain->SetShiftTimeZona(fd->DateTime);
-       // перед любым обновлением мониторов необходимо инициализировать кр. секцию UpdateMonitors
+       // РїРµСЂРµРґ Р»СЋР±С‹Рј РѕР±РЅРѕРІР»РµРЅРёРµРј РјРѕРЅРёС‚РѕСЂРѕРІ РЅРµРѕР±С…РѕРґРёРјРѕ РёРЅРёС†РёР°Р»РёР·РёСЂРѕРІР°С‚СЊ РєСЂ. СЃРµРєС†РёСЋ UpdateMonitors
             while(WaitForSingleObject(UpdateMonitors,0)!=WAIT_OBJECT_0)
             {
-                Application->ProcessMessages();// если не удалось иниц-ть. CS то обновить экранные формы...
-                Sleep(0);// переключить управление на другой поток, коьт занял CS
+                Application->ProcessMessages();// РµСЃР»Рё РЅРµ СѓРґР°Р»РѕСЃСЊ РёРЅРёС†-С‚СЊ. CS С‚Рѕ РѕР±РЅРѕРІРёС‚СЊ СЌРєСЂР°РЅРЅС‹Рµ С„РѕСЂРјС‹...
+                Sleep(0);// РїРµСЂРµРєР»СЋС‡РёС‚СЊ СѓРїСЂР°РІР»РµРЅРёРµ РЅР° РґСЂСѓРіРѕР№ РїРѕС‚РѕРє, РєРѕСЊС‚ Р·Р°РЅСЏР» CS
             }
             PostMessage(PageCtrlSplt->CurrentForm->Handle,WM_REFRESHFORM,0,(LPARAM)fd);
      }
@@ -401,7 +401,7 @@ void __fastcall TManForm::BitBtnNextClick(TObject *Sender)
 {  TDateTime DateTime;
 
 
-// Add KAS 16.03.2001 Если форма-отчет то листаем ее листы
+// Add KAS 16.03.2001 Р•СЃР»Рё С„РѕСЂРјР°-РѕС‚С‡РµС‚ С‚Рѕ Р»РёСЃС‚Р°РµРј РµРµ Р»РёСЃС‚С‹
    /*  TBaseMonitorForm* MF = (TBaseMonitorForm*)PageCtrlSplt->listMonitorForms->Items[0];
      if(MF->Interior->fd->CodeTemplate != 1201 && MF->Interior->fd->CodeTemplate != 1202)
      	PageCtrlSplt->GoNextForm(); */
@@ -423,11 +423,11 @@ void __fastcall TManForm::BitBtnNextClick(TObject *Sender)
           }
         fd->DateTime= DateTime;
         dmMain->SetShiftTimeZona(fd->DateTime);
-       // перед любым обновлением мониторов необходимо инициализировать кр. секцию UpdateMonitors
+       // РїРµСЂРµРґ Р»СЋР±С‹Рј РѕР±РЅРѕРІР»РµРЅРёРµРј РјРѕРЅРёС‚РѕСЂРѕРІ РЅРµРѕР±С…РѕРґРёРјРѕ РёРЅРёС†РёР°Р»РёР·РёСЂРѕРІР°С‚СЊ РєСЂ. СЃРµРєС†РёСЋ UpdateMonitors
             while(WaitForSingleObject(UpdateMonitors,0)!=WAIT_OBJECT_0)
             {
-                Application->ProcessMessages();// если не удалось иниц-ть. CS то обновить экранные формы...
-                Sleep(0);// переключить управление на другой поток, коьт занял CS
+                Application->ProcessMessages();// РµСЃР»Рё РЅРµ СѓРґР°Р»РѕСЃСЊ РёРЅРёС†-С‚СЊ. CS С‚Рѕ РѕР±РЅРѕРІРёС‚СЊ СЌРєСЂР°РЅРЅС‹Рµ С„РѕСЂРјС‹...
+                Sleep(0);// РїРµСЂРµРєР»СЋС‡РёС‚СЊ СѓРїСЂР°РІР»РµРЅРёРµ РЅР° РґСЂСѓРіРѕР№ РїРѕС‚РѕРє, РєРѕСЊС‚ Р·Р°РЅСЏР» CS
             }
             PostMessage(PageCtrlSplt->CurrentForm->Handle,WM_REFRESHFORM,0,(LPARAM)fd);
    }
@@ -468,12 +468,12 @@ void __fastcall TManForm::FormCloseQuery(TObject *Sender, bool &CanClose)
 	int i;
    while(WaitForSingleObject(UpdateMonitors,0)!=WAIT_OBJECT_0)
    {
-      Application->ProcessMessages();// если не удалось иниц-ть. CS то обновить экранные формы...
-      Sleep(0);// переключить управление на другой поток, коьт занял CS
+      Application->ProcessMessages();// РµСЃР»Рё РЅРµ СѓРґР°Р»РѕСЃСЊ РёРЅРёС†-С‚СЊ. CS С‚Рѕ РѕР±РЅРѕРІРёС‚СЊ СЌРєСЂР°РЅРЅС‹Рµ С„РѕСЂРјС‹...
+      Sleep(0);// РїРµСЂРµРєР»СЋС‡РёС‚СЊ СѓРїСЂР°РІР»РµРЅРёРµ РЅР° РґСЂСѓРіРѕР№ РїРѕС‚РѕРє, РєРѕСЊС‚ Р·Р°РЅСЏР» CS
    }
 	TCloseAction Action;
 	CanClose=true;
-  //Для того чтобы свернуть OleContainer если он есть на форме
+  //Р”Р»СЏ С‚РѕРіРѕ С‡С‚РѕР±С‹ СЃРІРµСЂРЅСѓС‚СЊ OleContainer РµСЃР»Рё РѕРЅ РµСЃС‚СЊ РЅР° С„РѕСЂРјРµ
   ActiveControl = BitBtnClose;
 	for( i=0; i<PageCtrlSplt->listMonitorForms->Count; ++i )
 		((TBaseMonitorForm*)PageCtrlSplt->listMonitorForms->Items[i])->FormClose(this,Action);
@@ -518,7 +518,7 @@ void __fastcall TManForm::FormActivate(TObject *Sender)
      PostMessage(this->Handle,WM_ACTIVATETHISFORM,0,NULL);
 }
 //---------------------------------------------------------------------------
-// Для того чтобы убрать ненужный скроллинг на главной форме
+// Р”Р»СЏ С‚РѕРіРѕ С‡С‚РѕР±С‹ СѓР±СЂР°С‚СЊ РЅРµРЅСѓР¶РЅС‹Р№ СЃРєСЂРѕР»Р»РёРЅРі РЅР° РіР»Р°РІРЅРѕР№ С„РѕСЂРјРµ
 void __fastcall TManForm::WMActivateThisForm(TMessage & Message)
 {
   SupperMainForm->Height = SupperMainForm->Height-1;

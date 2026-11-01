@@ -21,10 +21,10 @@ __fastcall TfmOperScanPointPar::TfmOperScanPointPar(TComponent* Owner, long curr
 //---------------------------------------------------------------------------
 void __fastcall TfmOperScanPointPar::FormCreate(TObject *Sender)
 {
-   //Текущ канал
+   //РўРµРєСѓС‰ РєР°РЅР°Р»
    Caption = AnsiString(Reconst_smes46_1)+AnsiString(fmOperScanSched->TableChannList[ curr_it ].Name)+AnsiString("'");
    //e
-   //Запрос для выыбора точек канала
+   //Р—Р°РїСЂРѕСЃ РґР»СЏ РІС‹С‹Р±РѕСЂР° С‚РѕС‡РµРє РєР°РЅР°Р»Р°
    dmMain->oqCursor->Params->Clear();
    dmMain->oqCursor->SQL->Text= "begin "+SchemeName+"operscan_pg.get_channel_points(:par1,:par2); end;";
    dmMain->oqCursor->ParamByName("par1")->AsString= fmOperScanSched->TableChannList[ curr_it ].Id;
@@ -47,15 +47,15 @@ void __fastcall TfmOperScanPointPar::FormCreate(TObject *Sender)
      i++;
    }
    lbPoints->Items->EndUpdate();
-    //e Заполняем listview
-   //e Заполняем спсиок
+    //e Р—Р°РїРѕР»РЅСЏРµРј listview
+   //e Р—Р°РїРѕР»РЅСЏРµРј СЃРїСЃРёРѕРє
 
-   //Выделяем
+   //Р’С‹РґРµР»СЏРµРј
    if ( lbPoints->Items->Count > 0 )
      lbPoints->Items->Item[ 0 ]->Selected = TRUE;
-   //e Выделяем
+   //e Р’С‹РґРµР»СЏРµРј
 
-   //Умолч
+   //РЈРјРѕР»С‡
    EdRetries->Text = fmOperScanSched->TableChannList[ curr_it ].Retries;
    EdRetriesTout->Text = fmOperScanSched->TableChannList[ curr_it ].RetriesTout;
    chbBill_Data->Checked = (AnsiString(fmOperScanSched->TableChannList[ curr_it ].isbilldata)==AnsiString("1"));
@@ -64,7 +64,7 @@ void __fastcall TfmOperScanPointPar::FormCreate(TObject *Sender)
    eCurr_Data_Dept->Text = fmOperScanSched->TableChannList[ curr_it ].iscurrdatadepth;
    eBill_Data_Dept->Enabled=chbBill_Data->Checked;
    eCurr_Data_Dept->Enabled=chbCurr_Data->Checked;
-   //e Умолч
+   //e РЈРјРѕР»С‡
 
    BitBtn1->Enabled=dmMain->CanManualOperPoint;
    BitBtn1->Visible=BitBtn1->Enabled;
@@ -72,13 +72,13 @@ void __fastcall TfmOperScanPointPar::FormCreate(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall TfmOperScanPointPar::BitBtn1Click(TObject *Sender)
 {
-  //Определяем мид точки
-        //тек индекс
+  //РћРїСЂРµРґРµР»СЏРµРј РјРёРґ С‚РѕС‡РєРё
+        //С‚РµРє РёРЅРґРµРєСЃ
    TListItem *Item = lbPoints->Selected;
    if (Item)
    {
       int prPointInd = Item->Index;
-      //e тек индекс
+      //e С‚РµРє РёРЅРґРµРєСЃ
       if ( -1 != prPointInd )
       {
         if
@@ -93,11 +93,11 @@ void __fastcall TfmOperScanPointPar::BitBtn1Click(TObject *Sender)
         )
         {
         //e
-        //Вызов процедуры
+        //Р’С‹Р·РѕРІ РїСЂРѕС†РµРґСѓСЂС‹
           int prMId, prCId, prRetr, prRetrT;
           int prbill, prbilldept, prcurr, prcurrdept;
 
-          //Текущ канал
+          //РўРµРєСѓС‰ РєР°РЅР°Р»
            //e
 
        //   prCId = atoi( fmOperScanSched->TableChannList[ prChInd ].Id );
@@ -125,9 +125,9 @@ void __fastcall TfmOperScanPointPar::BitBtn1Click(TObject *Sender)
           dmMain->oqCursor->Execute();
           Close();
         }
-      //e Вызов процедуры
+      //e Р’С‹Р·РѕРІ РїСЂРѕС†РµРґСѓСЂС‹
       }
-  }//выбрана
+  }//РІС‹Р±СЂР°РЅР°
 }
 //---------------------------------------------------------------------------
 bool __fastcall CheckInteger( TEdit* PPEd, AnsiString PPName )

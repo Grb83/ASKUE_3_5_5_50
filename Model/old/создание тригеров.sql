@@ -1,6 +1,6 @@
 DECLARE
 -----------------
- CURSOR cr_del IS --для удаления
+ CURSOR cr_del IS --РґР»СЏ СѓРґР°Р»РµРЅРёСЏ
   SELECT object_name
     FROM user_objects
    WHERE object_type = 'TRIGGER' AND (object_name LIKE '%INS' OR object_name LIKE '%UPD' OR object_name LIKE '%DEL');
@@ -14,7 +14,7 @@ where TABLE_NAME not in ('COMPORTEVENTS','CURR_POWER_ARCH','M30817','MAKETTEMP',
 and TABLE_NAME not like 'UPDT%'
 order by 1
 */
- CURSOR cr IS --общие таблицы
+ CURSOR cr IS --РѕР±С‰РёРµ С‚Р°Р±Р»РёС†С‹
   SELECT table_name
     FROM user_tables
    WHERE TEMPORARY='N' and table_name IN (
@@ -104,7 +104,7 @@ order by 1
 ,'VERSION'
 ) order by 1;
 -----------------,
-/* CURSOR cr2 IS --таблицы администрирования
+/* CURSOR cr2 IS --С‚Р°Р±Р»РёС†С‹ Р°РґРјРёРЅРёСЃС‚СЂРёСЂРѕРІР°РЅРёСЏ
   SELECT table_name
     FROM user_tables
    WHERE table_name IN ('PAR_LIST', 'REP_PARAM', 'ROLES', 'ROLREPORT', 'ROLTASK', 'TASKS', 'USERS');*/
@@ -132,7 +132,7 @@ order by 1
 ------------------------------
 BEGIN
  zxc := sys.UTL_FILE.fopen('c:\', 'Triggers.sql', 'w'); --????????
- ------------------------------удаление всех тригеров---------------------------------------
+ ------------------------------СѓРґР°Р»РµРЅРёРµ РІСЃРµС… С‚СЂРёРіРµСЂРѕРІ---------------------------------------
  IF FALSE THEN
    FOR LN IN cr_del LOOP
     lv := 'DROP TRIGGER ' || LN.object_name || ';';
@@ -141,7 +141,7 @@ BEGIN
    sys.UTL_FILE.fclose(zxc);
    return;
  END IF;
- ------------------------------общие таблицы------------------------------------------------
+ ------------------------------РѕР±С‰РёРµ С‚Р°Р±Р»РёС†С‹------------------------------------------------
  FOR LN IN cr LOOP
   lv_pk := 'NULL';
   i := 0;
@@ -266,7 +266,7 @@ BEGIN
   lv := ' END IF;' || CHR(10) || 'End;' || CHR(10) || '/' || CHR(10);
   sys.UTL_FILE.put_line(zxc, lv);
  END LOOP;
- --------------------------таблицы администрирования---------------------------------------
+ --------------------------С‚Р°Р±Р»РёС†С‹ Р°РґРјРёРЅРёСЃС‚СЂРёСЂРѕРІР°РЅРёСЏ---------------------------------------
 /* FOR LN IN cr2 LOOP
   lv_pk := 'NULL';
   i := 0;

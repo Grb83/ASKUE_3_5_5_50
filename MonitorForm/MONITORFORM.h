@@ -13,20 +13,20 @@
 #include "SplitForm.h"
 #include "Interior.h"
 //---------------------------------------------------------------------------
-//Требоания к владельцу на проведение манипуляций с формой
+//РўСЂРµР±РѕР°РЅРёСЏ Рє РІР»Р°РґРµР»СЊС†Сѓ РЅР° РїСЂРѕРІРµРґРµРЅРёРµ РјР°РЅРёРїСѓР»СЏС†РёР№ СЃ С„РѕСЂРјРѕР№
 #define WM_CLOSESPLTCHILD		(WM_USER+200)
 #define WM_RESTSPLTCHILD		(WM_USER+201)
 #define WM_MAXSPLTCHILD			(WM_USER+202)
 #define WM_ACTIVESPLTCHILD		(WM_USER+203)
 #define WM_DEACTIVESPLTCHILD	(WM_USER+204)
-//Команды от владельца на отображение фокусного состояния формы
+//РљРѕРјР°РЅРґС‹ РѕС‚ РІР»Р°РґРµР»СЊС†Р° РЅР° РѕС‚РѕР±СЂР°Р¶РµРЅРёРµ С„РѕРєСѓСЃРЅРѕРіРѕ СЃРѕСЃС‚РѕСЏРЅРёСЏ С„РѕСЂРјС‹
 #define WM_SPLTSETFOCUS			(WM_USER+205)//isMaximized=Message.WParam;
 #define WM_SPLTKILLFOCUS		(WM_USER+206)//isMaximized=Message.WParam;
-//Команды от владельца на формирование соодержимого формы
+//РљРѕРјР°РЅРґС‹ РѕС‚ РІР»Р°РґРµР»СЊС†Р° РЅР° С„РѕСЂРјРёСЂРѕРІР°РЅРёРµ СЃРѕРѕРґРµСЂР¶РёРјРѕРіРѕ С„РѕСЂРјС‹
 #define WM_REFRESHDATA			(WM_USER+207)//Message.WParam=&NameAlert,Message.LParam=&VCursor;
 #define WM_REFRESHFORM			(WM_USER+208)//Message.LParam=&fd
 #define WM_SETSPLITORIENT		(WM_USER+209)
-#define WM_PROGRESS				(WM_USER+210)//Message.LParam=0 - прекратить прорисовку
+#define WM_PROGRESS				(WM_USER+210)//Message.LParam=0 - РїСЂРµРєСЂР°С‚РёС‚СЊ РїСЂРѕСЂРёСЃРѕРІРєСѓ
 //---------------------------------------------------------------------------
 class TBaseMonitorForm : public TForm
 {

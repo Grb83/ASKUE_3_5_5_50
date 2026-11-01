@@ -10,32 +10,32 @@ class TChartInterior : public TInterior
                 TPopupMenu *OwnerMenu;
 	protected:
 		TChart *pChart;
-		TStrings *NamesClones;//имена клонов
-		long Clones;//общее количество клонов в таблице
-		TCloneItem *datOracle;//Двумерный массив всегда содержащий суммарный клон и столбец
-						 //Клоны расположены по столбцам.
+		TStrings *NamesClones;//РёРјРµРЅР° РєР»РѕРЅРѕРІ
+		long Clones;//РѕР±С‰РµРµ РєРѕР»РёС‡РµСЃС‚РІРѕ РєР»РѕРЅРѕРІ РІ С‚Р°Р±Р»РёС†Рµ
+		TCloneItem *datOracle;//Р”РІСѓРјРµСЂРЅС‹Р№ РјР°СЃСЃРёРІ РІСЃРµРіРґР° СЃРѕРґРµСЂР¶Р°С‰РёР№ СЃСѓРјРјР°СЂРЅС‹Р№ РєР»РѕРЅ Рё СЃС‚РѕР»Р±РµС†
+						 //РљР»РѕРЅС‹ СЂР°СЃРїРѕР»РѕР¶РµРЅС‹ РїРѕ СЃС‚РѕР»Р±С†Р°Рј.
 	public:
 
 		__fastcall TChartInterior(TComponent* Owner,TSplitterForm *,TFormDescr*,Classes::TNotifyEvent );
 		virtual __fastcall ~TChartInterior(void);
 
-		//Снятие со SplitterFom таблицы и графика, вызываемтся при обновлении TBaseMonitorForm
+		//РЎРЅСЏС‚РёРµ СЃРѕ SplitterFom С‚Р°Р±Р»РёС†С‹ Рё РіСЂР°С„РёРєР°, РІС‹Р·С‹РІР°РµРјС‚СЃСЏ РїСЂРё РѕР±РЅРѕРІР»РµРЅРёРё TBaseMonitorForm
 		virtual void __fastcall Destroy(void);
 		virtual void __fastcall Place(void);
 
-		//Возвращает количесиво подколонок для формы
+		//Р’РѕР·РІСЂР°С‰Р°РµС‚ РєРѕР»РёС‡РµСЃРёРІРѕ РїРѕРґРєРѕР»РѕРЅРѕРє РґР»СЏ С„РѕСЂРјС‹
 		virtual long __fastcall SubColumns(void);
 
-		//Обновление данных из базы
-		//NameAlert=-1 для обновления в любом случае
+		//РћР±РЅРѕРІР»РµРЅРёРµ РґР°РЅРЅС‹С… РёР· Р±Р°Р·С‹
+		//NameAlert=-1 РґР»СЏ РѕР±РЅРѕРІР»РµРЅРёСЏ РІ Р»СЋР±РѕРј СЃР»СѓС‡Р°Рµ
 		virtual void __fastcall refreshData( int Table,TOraQuery *qwInter  );
 		virtual void __fastcall selectData( TOraQuery *qwInter );
 		virtual void __fastcall Invalidate( int Table );
 
-		//Получает данные о считываемой таблице
+		//РџРѕР»СѓС‡Р°РµС‚ РґР°РЅРЅС‹Рµ Рѕ СЃС‡РёС‚С‹РІР°РµРјРѕР№ С‚Р°Р±Р»РёС†Рµ
 		virtual void __fastcall formDescr( void );
 
-		//Строит линейный график для указанного клона
+		//РЎС‚СЂРѕРёС‚ Р»РёРЅРµР№РЅС‹Р№ РіСЂР°С„РёРє РґР»СЏ СѓРєР°Р·Р°РЅРЅРѕРіРѕ РєР»РѕРЅР°
 		void __fastcall ChartFXLines(long AClone);
 // Add KAS 11.02.02
  		virtual void __fastcall PrintGraph();

@@ -45,16 +45,16 @@ __fastcall T2xDrawTableChartInterior::T2xDrawTableChartInterior(TComponent* Owne
     ((TBaseMonitorForm*)Owner)->IsValid->OnClick=IsValidClick;
 		((TBaseMonitorForm*)Owner)->PopupMenuBaseForm->OnPopup=PopupMenuBaseFormPopup;
 
-		//Загружаем из базы полное описание таблицы
+		//Р—Р°РіСЂСѓР¶Р°РµРј РёР· Р±Р°Р·С‹ РїРѕР»РЅРѕРµ РѕРїРёСЃР°РЅРёРµ С‚Р°Р±Р»РёС†С‹
 		OnProgressBarStepBy(NULL);//0
 		formDescr();
 		OnProgressBarStepBy(this);//10
-        //GRB 23.05.2018 FIX - день перехода на летнее время для графика мощности - удары по выделенной памяти, т.к RowCount меньше чем обычно (46 вместо 48)
+        //GRB 23.05.2018 FIX - РґРµРЅСЊ РїРµСЂРµС…РѕРґР° РЅР° Р»РµС‚РЅРµРµ РІСЂРµРјСЏ РґР»СЏ РіСЂР°С„РёРєР° РјРѕС‰РЅРѕСЃС‚Рё - СѓРґР°СЂС‹ РїРѕ РІС‹РґРµР»РµРЅРЅРѕР№ РїР°РјСЏС‚Рё, С‚.Рє RowCount РјРµРЅСЊС€Рµ С‡РµРј РѕР±С‹С‡РЅРѕ (46 РІРјРµСЃС‚Рѕ 48)
         int fixSize = RowCount+2;
         /*if (RowCount == 46){
            fixSize = fixSize+2;
         }*/
-        //GRB 18.07.2019 FIX сверху очень наивный (30 минутки на NPID28 и только день при выборе пользователем)и не учитывает различных вариаций NPID22 и NPID28 и различных выборов пользователем периода отчёта (день и часы)
+        //GRB 18.07.2019 FIX СЃРІРµСЂС…Сѓ РѕС‡РµРЅСЊ РЅР°РёРІРЅС‹Р№ (30 РјРёРЅСѓС‚РєРё РЅР° NPID28 Рё С‚РѕР»СЊРєРѕ РґРµРЅСЊ РїСЂРё РІС‹Р±РѕСЂРµ РїРѕР»СЊР·РѕРІР°С‚РµР»РµРј)Рё РЅРµ СѓС‡РёС‚С‹РІР°РµС‚ СЂР°Р·Р»РёС‡РЅС‹С… РІР°СЂРёР°С†РёР№ NPID22 Рё NPID28 Рё СЂР°Р·Р»РёС‡РЅС‹С… РІС‹Р±РѕСЂРѕРІ РїРѕР»СЊР·РѕРІР°С‚РµР»РµРј РїРµСЂРёРѕРґР° РѕС‚С‡С‘С‚Р° (РґРµРЅСЊ Рё С‡Р°СЃС‹)
         switch(fd->StepProfile){
                 case TFormDescr::stpHour:{
                         if (RowCount == (24*(60/PowerProfile)-1*(60/PowerProfile)))
@@ -78,13 +78,13 @@ __fastcall T2xDrawTableChartInterior::T2xDrawTableChartInterior(TComponent* Owne
         ZeroMemory(Series, sizeof(PSeries)*(SeriesLines+SeriesDgrms));
         fPlace = true;
         fNumClones = new bool[Clones+1];
-        //chig Формируем перечень клонов отображаемых на графиках на основании того, что запомнено
+        //chig Р¤РѕСЂРјРёСЂСѓРµРј РїРµСЂРµС‡РµРЅСЊ РєР»РѕРЅРѕРІ РѕС‚РѕР±СЂР°Р¶Р°РµРјС‹С… РЅР° РіСЂР°С„РёРєР°С… РЅР° РѕСЃРЅРѕРІР°РЅРёРё С‚РѕРіРѕ, С‡С‚Рѕ Р·Р°РїРѕРјРЅРµРЅРѕ
         bool prIsPerechEmpty = TRUE;
         if (fd->IsMemParActualForClones)
             for(int i=0; i < Clones+1; ++i)
             {
                 fNumClones[i] = false;
-                //Существует ли она в конфигурации
+                //РЎСѓС‰РµСЃС‚РІСѓРµС‚ Р»Рё РѕРЅР° РІ РєРѕРЅС„РёРіСѓСЂР°С†РёРё
                 for(int j=0; j<MAXGRAFICPICTURE; j++)
                 if(i==fd->ColorAttr[j].PointId)
                 {
@@ -92,9 +92,9 @@ __fastcall T2xDrawTableChartInterior::T2xDrawTableChartInterior(TComponent* Owne
                     prIsPerechEmpty = FALSE;
                     break;
                 }
-                //e Существует ли она в конфигурации
+                //e РЎСѓС‰РµСЃС‚РІСѓРµС‚ Р»Рё РѕРЅР° РІ РєРѕРЅС„РёРіСѓСЂР°С†РёРё
             }
-        //e chig Формируем перечень клонов отображаемых на графиках на основании того, что запомнено
+        //e chig Р¤РѕСЂРјРёСЂСѓРµРј РїРµСЂРµС‡РµРЅСЊ РєР»РѕРЅРѕРІ РѕС‚РѕР±СЂР°Р¶Р°РµРјС‹С… РЅР° РіСЂР°С„РёРєР°С… РЅР° РѕСЃРЅРѕРІР°РЅРёРё С‚РѕРіРѕ, С‡С‚Рѕ Р·Р°РїРѕРјРЅРµРЅРѕ
         if (prIsPerechEmpty)
         {
             int prStertI = 0;
@@ -114,11 +114,11 @@ __fastcall T2xDrawTableChartInterior::T2xDrawTableChartInterior(TComponent* Owne
         }
         //add bu NNV
         if(AreTherTwoGraph())
-           pSecondChart = new TChart(Owner); //Добавление второго компонента TChart на форму
+           pSecondChart = new TChart(Owner); //Р”РѕР±Р°РІР»РµРЅРёРµ РІС‚РѕСЂРѕРіРѕ РєРѕРјРїРѕРЅРµРЅС‚Р° TChart РЅР° С„РѕСЂРјСѓ
         else
            pSecondChart = NULL;
         //end add by NNV
-		//Загружаем из базы данные
+		//Р—Р°РіСЂСѓР¶Р°РµРј РёР· Р±Р°Р·С‹ РґР°РЅРЅС‹Рµ
 	 //	selectData(dmMain->qwInter);
     selectData(dmMain->oqInterCursor);
 		OnProgressBarStepBy(this);//30
@@ -132,7 +132,7 @@ __fastcall T2xDrawTableChartInterior::T2xDrawTableChartInterior(TComponent* Owne
 		throw;
     }else
 		throw(Exception(Reconst_smes105_1));
-    //GRB ADD - подписываем на перерисовку
+    //GRB ADD - РїРѕРґРїРёСЃС‹РІР°РµРј РЅР° РїРµСЂРµСЂРёСЃРѕРІРєСѓ
     ((TBaseMonitorForm*)Owner)->OnResize=FormShow;
 }
 //---------------------------------------------------------------------------
@@ -164,7 +164,7 @@ void __fastcall T2xDrawTableChartInterior::Place(void)
     try
     {
         psm = new TFormSetupMonitors(Application);
-		//Создаем график
+		//РЎРѕР·РґР°РµРј РіСЂР°С„РёРє
 	pChart=new TChart(Owner);
         pChart->Enabled=true;
         //add by NNV
@@ -182,9 +182,9 @@ void __fastcall T2xDrawTableChartInterior::Place(void)
           pSecondChart->ClipPoints = true;
         }
         //end add by NNV
-		//Создаем таблицу
+		//РЎРѕР·РґР°РµРј С‚Р°Р±Р»РёС†Сѓ
 		DrawTable=new TDrawTable(Owner);
-		//Укладываем таблицу и график в SplitterForm
+		//РЈРєР»Р°РґС‹РІР°РµРј С‚Р°Р±Р»РёС†Сѓ Рё РіСЂР°С„РёРє РІ SplitterForm
 		SplitterForm->AddChild(NULL,DrawTable,alRight);
 		if(fd->VerticalSplit)
 			SplitterForm->AddChild(NULL,pChart,alRight);
@@ -198,7 +198,7 @@ void __fastcall T2xDrawTableChartInterior::Place(void)
 	  	       SplitterForm->AddChild(pChart,pSecondChart,alBottom);
                 }
                 //end add by NNV
-		//Проводим начальную настройку компонента TChart
+		//РџСЂРѕРІРѕРґРёРј РЅР°С‡Р°Р»СЊРЅСѓСЋ РЅР°СЃС‚СЂРѕР№РєСѓ РєРѕРјРїРѕРЅРµРЅС‚Р° TChart
 	pChart->View3D=false;
         pChart->Legend->Visible=true;
         pChart->Legend->ColorWidth = cw;
@@ -212,7 +212,7 @@ void __fastcall T2xDrawTableChartInterior::Place(void)
 		SplitterForm->Splitter->Tag=fd->PercentSplit;
 		SplitterForm->SplitFormResize(NULL);
 
-        // ======== Форматирование таблицы
+        // ======== Р¤РѕСЂРјР°С‚РёСЂРѕРІР°РЅРёРµ С‚Р°Р±Р»РёС†С‹
 		TPopupMenu *pPopup=
 		   (dynamic_cast<TBaseMonitorForm*>(Owner))->PopupMenu;
 		DrawTable->PopupMenu=pPopup;
@@ -252,7 +252,7 @@ void __fastcall T2xDrawTableChartInterior::Place(void)
 
       //  setDataSourceToDrawTable(DrawTable,datOracle,Clones+1+!fd->SummGroup,SubColumns(),RowCount+1);
 
-        //======== Строим график по умолчанию
+        //======== РЎС‚СЂРѕРёРј РіСЂР°С„РёРє РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
         //if( Clones>0 )
 		if(fd->SummGroup){
     setDataSourceToDrawTable(DrawTable,datOracle,Clones+1,SubColumns(),RowCount+1);
@@ -266,16 +266,16 @@ void __fastcall T2xDrawTableChartInterior::Place(void)
         //chig
         if (fd->IsMemParActualForClones)
         {
-            //Восстановление состояния скроллинга
+            //Р’РѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ СЃРѕСЃС‚РѕСЏРЅРёСЏ СЃРєСЂРѕР»Р»РёРЅРіР°
             DrawTable->TopRow = fd->TableTopRow;
-            //e Восстановление состояния скроллинга
+            //e Р’РѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ СЃРѕСЃС‚РѕСЏРЅРёСЏ СЃРєСЂРѕР»Р»РёРЅРіР°
             fd->IsMemParActualForClones = FALSE;
         }
         if ( fd->IsMemParActualForProf )
         {
-            //Восстановление состояния скроллинга
+            //Р’РѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ СЃРѕСЃС‚РѕСЏРЅРёСЏ СЃРєСЂРѕР»Р»РёРЅРіР°
             DrawTable->LeftCol = fd->TableLeftCol;
-            //e Восстановление состояния скроллинга
+            //e Р’РѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ СЃРѕСЃС‚РѕСЏРЅРёСЏ СЃРєСЂРѕР»Р»РёРЅРіР°
             fd->IsMemParActualForProf = FALSE;
         }
         //e
@@ -319,7 +319,7 @@ bool __fastcall T2xDrawTableChartInterior::setSplit(void)
         case RE_BALANCE_POW_F:
         case RE_BALANCE_SUM_F:
         case NOT_BALANCE:
-           {Application->MessageBox("Форма не поддерживает данную операцию",
+           {Application->MessageBox("Р¤РѕСЂРјР° РЅРµ РїРѕРґРґРµСЂР¶РёРІР°РµС‚ РґР°РЅРЅСѓСЋ РѕРїРµСЂР°С†РёСЋ",
                             Application->Title.c_str(), MB_OK | MB_ICONINFORMATION);
                return  true;
            }
@@ -420,7 +420,7 @@ void __fastcall T2xDrawTableChartInterior::refreshData( int Table,TOraQuery *qwI
 void __fastcall T2xDrawTableChartInterior::OnClickPanel(System::TObject* Sender)
 {
 	(dynamic_cast<TBaseMonitorForm*>(Owner))->FormActivate(Sender);
-        //GRB ADD 20.09.2021 Фиксим баг с возвращением к исходным размером при ресайзе диаграмм
+        //GRB ADD 20.09.2021 Р¤РёРєСЃРёРј Р±Р°Рі СЃ РІРѕР·РІСЂР°С‰РµРЅРёРµРј Рє РёСЃС…РѕРґРЅС‹Рј СЂР°Р·РјРµСЂРѕРј РїСЂРё СЂРµСЃР°Р№Р·Рµ РґРёР°РіСЂР°РјРј
         if (GetContainedWidthStatusFromReg())
                 AutoSizeNameOnly (DrawTable);
         //END ADD
@@ -455,11 +455,11 @@ void __fastcall T2xDrawTableChartInterior::dataInColumns(void)
 	int iClones, jColumns;
 	char *ptr, tmpData[20];
 	TCloneItem* ptrDatOracle;
-    //Подготавливаем переменные поля для приема
+    //РџРѕРґРіРѕС‚Р°РІР»РёРІР°РµРј РїРµСЂРµРјРµРЅРЅС‹Рµ РїРѕР»СЏ РґР»СЏ РїСЂРёРµРјР°
     if(fd->SummGroup)
 	    clones++;
 
-    //столбцы для названий точек(времени) и и подколонок
+    //СЃС‚РѕР»Р±С†С‹ РґР»СЏ РЅР°Р·РІР°РЅРёР№ С‚РѕС‡РµРє(РІСЂРµРјРµРЅРё) Рё Рё РїРѕРґРєРѕР»РѕРЅРѕРє
     ColumnsCaption->Clear();
     VT_PrintData->Close();
     VT_PrintData->Clear();
@@ -468,7 +468,7 @@ void __fastcall T2xDrawTableChartInterior::dataInColumns(void)
     //VT_PrintData->FieldDefs->Add("RowName", ftString, 50, false);
     VT_PrintData->FieldDefs->Add("RowName", ftString, 100, false);
     VT_PrintData->FieldDefs->Add("SubRowName", ftString, 30, false);
-    for(int CC = 1; CC<=clones; CC++) // RowCount+1 - Столбцы для данных
+    for(int CC = 1; CC<=clones; CC++) // RowCount+1 - РЎС‚РѕР»Р±С†С‹ РґР»СЏ РґР°РЅРЅС‹С…
         VT_PrintData->FieldDefs->Add("Data"+IntToStr(CC), ftString, 20, false);
     VT_PrintData->FieldDefs->EndUpdate();
     VT_PrintData->Open();
@@ -542,7 +542,7 @@ void __fastcall T2xDrawTableChartInterior::clonesInColumns(void)
  //	DrawTable->FixedRows=1+(columns>1?1:0);
     DrawTable->FixedRows=2+(columns>1?1:0);
 
-	//Подготавливаем переменные поля для приема
+	//РџРѕРґРіРѕС‚Р°РІР»РёРІР°РµРј РїРµСЂРµРјРµРЅРЅС‹Рµ РїРѕР»СЏ РґР»СЏ РїСЂРёРµРјР°
 	int *TempStruct=new int[clones*columns];
 	//char *ptr;
 	//TCloneItem* ptrDatOracle;
@@ -552,7 +552,7 @@ void __fastcall T2xDrawTableChartInterior::clonesInColumns(void)
 	dataInColumns();
 	delete []TempStruct;
 
-	//Добавляем заголовки клонов
+	//Р”РѕР±Р°РІР»СЏРµРј Р·Р°РіРѕР»РѕРІРєРё РєР»РѕРЅРѕРІ
 
 	DrawTable->StaticStrings->Clear();
 	if(fd->SummGroup){
@@ -563,13 +563,13 @@ void __fastcall T2xDrawTableChartInterior::clonesInColumns(void)
 	   DrawTable->StaticStrings->Add(NamesClones->Strings[iClones]);
            ColumnsCaption->Add(NamesClones->Strings[iClones]);
         }
-	//Добавляем заголовки колонок под клонами
+	//Р”РѕР±Р°РІР»СЏРµРј Р·Р°РіРѕР»РѕРІРєРё РєРѕР»РѕРЅРѕРє РїРѕРґ РєР»РѕРЅР°РјРё
     VT_PrintData->First();
     if(columns>1)
 	    for( iClones=1; iClones<=clones ; ++iClones )
 		    for( jColumns=0; jColumns<columns ; ++jColumns )
 			    DrawTable->StaticStrings->Add(GetSubColumnsNames(jColumns));
-    //Добавляем нумерацию профиля
+    //Р”РѕР±Р°РІР»СЏРµРј РЅСѓРјРµСЂР°С†РёСЋ РїСЂРѕС„РёР»СЏ
 	TDateTime tempDate;
 	AnsiString formatDate;
 	AnsiString formatDateSum;
@@ -598,12 +598,12 @@ void __fastcall T2xDrawTableChartInterior::clonesInColumns(void)
 		break;
 	case TFormDescr::stpHour:
 		hour=1;
-    if(RowCount>24*(60/PowerProfile))//25 час
+    if(RowCount>24*(60/PowerProfile))//25 С‡Р°СЃ
     {
     stepProfile=1.0/(RowCount-60/PowerProfile);
     tempDate=TDateTime(year,month,day)+hour/(double)(RowCount-60/PowerProfile);
     }
-    else if(RowCount<24*(60/PowerProfile))//23 час
+    else if(RowCount<24*(60/PowerProfile))//23 С‡Р°СЃ
     {
     stepProfile=1.0/(RowCount+60/PowerProfile);
     tempDate=TDateTime(year,month,day)+hour/(double)(RowCount+60/PowerProfile);
@@ -663,7 +663,7 @@ void __fastcall T2xDrawTableChartInterior::clonesInColumns(void)
 
 
        {
-           ind=60/PowerProfile;     //25 час
+           ind=60/PowerProfile;     //25 С‡Р°СЃ
            tempDate=tempDate-ind*stepProfile;
 
        }
@@ -672,14 +672,14 @@ void __fastcall T2xDrawTableChartInterior::clonesInColumns(void)
       && minute==(PowerProfile==60?0:PowerProfile)))
 
        {
-           ind=60/PowerProfile;     //23 час
+           ind=60/PowerProfile;     //23 С‡Р°СЃ
            tempDate=tempDate+ind*stepProfile;
 
        }
    
     }
-	//Формируем описание структуры для шапки всей таблицы опираясь
-	//на количество клонов. Шапка занимает две строки.
+	//Р¤РѕСЂРјРёСЂСѓРµРј РѕРїРёСЃР°РЅРёРµ СЃС‚СЂСѓРєС‚СѓСЂС‹ РґР»СЏ С€Р°РїРєРё РІСЃРµР№ С‚Р°Р±Р»РёС†С‹ РѕРїРёСЂР°СЏСЃСЊ
+	//РЅР° РєРѕР»РёС‡РµСЃС‚РІРѕ РєР»РѕРЅРѕРІ. РЁР°РїРєР° Р·Р°РЅРёРјР°РµС‚ РґРІРµ СЃС‚СЂРѕРєРё.
 	DrawTable->TabStrings->Clear();
 	AnsiString temp;
 	if( columns>1)
@@ -723,8 +723,8 @@ void __fastcall T2xDrawTableChartInterior::clonesInColumns(void)
 		DrawTable-> TabStrings->Add(temp);
 	}
 
-	//Формируем описание структуры для переменных строк всей таблицы опираясь
-	//на количество клонов.
+	//Р¤РѕСЂРјРёСЂСѓРµРј РѕРїРёСЃР°РЅРёРµ СЃС‚СЂСѓРєС‚СѓСЂС‹ РґР»СЏ РїРµСЂРµРјРµРЅРЅС‹С… СЃС‚СЂРѕРє РІСЃРµР№ С‚Р°Р±Р»РёС†С‹ РѕРїРёСЂР°СЏСЃСЊ
+	//РЅР° РєРѕР»РёС‡РµСЃС‚РІРѕ РєР»РѕРЅРѕРІ.
 	iClones=1;
 	if(fd->SummGroup)
 	{
@@ -807,7 +807,7 @@ void __fastcall T2xDrawTableChartInterior::dataInRows(void)
 	TCloneItem *ptrDataOra;
     long ptrDatOracle;
 //  TDrawTable::SAttrCell* pAtr;//VNB
-    //столбцы для названий точек(времени) и и подколонок
+    //СЃС‚РѕР»Р±С†С‹ РґР»СЏ РЅР°Р·РІР°РЅРёР№ С‚РѕС‡РµРє(РІСЂРµРјРµРЅРё) Рё Рё РїРѕРґРєРѕР»РѕРЅРѕРє
     ColumnsCaption  ->Clear();
     VT_PrintData->Close();
     VT_PrintData->Clear();
@@ -816,12 +816,12 @@ void __fastcall T2xDrawTableChartInterior::dataInRows(void)
     //VT_PrintData->FieldDefs->Add("RowName", ftString, 50, false);
     VT_PrintData->FieldDefs->Add("RowName", ftString, 100, false);
     VT_PrintData->FieldDefs->Add("SubRowName", ftString, 30, false);
-    for(int CC = 1; CC<=RowCount+1; CC++) // RowCount+1 - Столбцы для данных
+    for(int CC = 1; CC<=RowCount+1; CC++) // RowCount+1 - РЎС‚РѕР»Р±С†С‹ РґР»СЏ РґР°РЅРЅС‹С…
        VT_PrintData->FieldDefs->Add("Data"+IntToStr(CC), ftString, 20, false);
 
     VT_PrintData->FieldDefs->EndUpdate();
     VT_PrintData->Open();
-	//Подготавливаем переменные поля для приема
+	//РџРѕРґРіРѕС‚Р°РІР»РёРІР°РµРј РїРµСЂРµРјРµРЅРЅС‹Рµ РїРѕР»СЏ РґР»СЏ РїСЂРёРµРјР°
 	if(fd->SummGroup)
 	    clones++;
     ptr = DrawTable->StructStrings->GetArray();
@@ -865,9 +865,9 @@ void __fastcall T2xDrawTableChartInterior::dataInRows(void)
     }
 
 
-    // Заполняем таблицу для QR
+    // Р—Р°РїРѕР»РЅСЏРµРј С‚Р°Р±Р»РёС†Сѓ РґР»СЏ QR
     int m = 0;
-    // if(fd->SummGroup && clones==2) m = 1; //раскоментировать для правильного сохранения таблицы с одной строкой в файл
+    // if(fd->SummGroup && clones==2) m = 1; //СЂР°СЃРєРѕРјРµРЅС‚РёСЂРѕРІР°С‚СЊ РґР»СЏ РїСЂР°РІРёР»СЊРЅРѕРіРѕ СЃРѕС…СЂР°РЅРµРЅРёСЏ С‚Р°Р±Р»РёС†С‹ СЃ РѕРґРЅРѕР№ СЃС‚СЂРѕРєРѕР№ РІ С„Р°Р№Р»
     for( jColumns=0; jColumns < (clones-m)*columns ; ++jColumns )
     {
         VT_PrintData->Append();
@@ -907,13 +907,13 @@ void __fastcall T2xDrawTableChartInterior::clonesInRows(void)
 		++clones;
 	DrawTable->RowCount=1+clones*columns;
 	//DrawTable->FixedCols=1+(columns>1?1:0);
-  DrawTable->FixedCols=2+(columns>1?1:0);           //бажина тут +- (число STEPROFILE)
+  DrawTable->FixedCols=2+(columns>1?1:0);           //Р±Р°Р¶РёРЅР° С‚СѓС‚ +- (С‡РёСЃР»Рѕ STEPROFILE)
  //	DrawTable->FixedRows=1;
  if(fd->SummGroup)
     DrawTable->FixedRows=1+(columns>1?columns:1);
  else
     DrawTable->FixedRows=1;
-    //Подготавливаем переменные поля для приема
+    //РџРѕРґРіРѕС‚Р°РІР»РёРІР°РµРј РїРµСЂРµРјРµРЅРЅС‹Рµ РїРѕР»СЏ РґР»СЏ РїСЂРёРµРјР°
 	int *TempStruct=new int[RowCount+1];
 	//char *ptr;
 	//TCloneItem* ptrDatOracle;
@@ -923,7 +923,7 @@ void __fastcall T2xDrawTableChartInterior::clonesInRows(void)
 	dataInRows();
 	delete []TempStruct;
 
-	//Добавляем нумерацию профиля
+	//Р”РѕР±Р°РІР»СЏРµРј РЅСѓРјРµСЂР°С†РёСЋ РїСЂРѕС„РёР»СЏ
 	TDateTime tempDate;
 	AnsiString formatDate;
 	AnsiString formatDateSum;
@@ -951,12 +951,12 @@ void __fastcall T2xDrawTableChartInterior::clonesInRows(void)
 		break;
 	case TFormDescr::stpHour:
   hour=1;
-    if(RowCount>24*(60/PowerProfile)) //25 час
+    if(RowCount>24*(60/PowerProfile)) //25 С‡Р°СЃ
     {
     stepProfile=1.0/(RowCount-60/PowerProfile);
     tempDate=TDateTime(year,month,day)+hour/(double)(RowCount-60/PowerProfile);
     }
-    else if(RowCount<24*(60/PowerProfile)) //23 час
+    else if(RowCount<24*(60/PowerProfile)) //23 С‡Р°СЃ
     {
     stepProfile=1.0/(RowCount+60/PowerProfile);
     tempDate=TDateTime(year,month,day)+hour/(double)(RowCount+60/PowerProfile);
@@ -975,8 +975,8 @@ void __fastcall T2xDrawTableChartInterior::clonesInRows(void)
 		fd->DateTime.DecodeTime(&hour, &minute, &sec, &msec);
 		stepProfile=StepPROFILE*1.157407407407e-5;
 		formatDate="t";
-		formatDateSum="'Итого'";
-                //GRB COMMENT 11.07.2019 - баг с построением от произвольной минуты (0:30) -> (0:14:24+3 мин = 17 мин) при нажатии на точку в графике профиля
+		formatDateSum="'РС‚РѕРіРѕ'";
+                //GRB COMMENT 11.07.2019 - Р±Р°Рі СЃ РїРѕСЃС‚СЂРѕРµРЅРёРµРј РѕС‚ РїСЂРѕРёР·РІРѕР»СЊРЅРѕР№ РјРёРЅСѓС‚С‹ (0:30) -> (0:14:24+3 РјРёРЅ = 17 РјРёРЅ) РїСЂРё РЅР°Р¶Р°С‚РёРё РЅР° С‚РѕС‡РєСѓ РІ РіСЂР°С„РёРєРµ РїСЂРѕС„РёР»СЏ
 		tempDate=TDateTime(year,month,day)+hour/24.0+minute/1440.0+stepProfile;
                 //END GRB COMMENT
                 //GRB ADD
@@ -1008,13 +1008,13 @@ void __fastcall T2xDrawTableChartInterior::clonesInRows(void)
      if((IsShiftTimeZona)&&(IsDayShiftMonth(fd,10))&&!ind&&(hour==(4-TimeZona))
       && (minute==(StepPROFILE/60)))
        {
-           ind=60/(StepPROFILE/60);   //25 час
+           ind=60/(StepPROFILE/60);   //25 С‡Р°СЃ
            tempDate=tempDate-ind*stepProfile;
        }
      if((IsShiftTimeZona)&&(IsDayShiftMonth(fd,3))&&!ind&&(hour==(3-TimeZona))
       && (minute==(StepPROFILE/60)))
        {
-           ind=60/(StepPROFILE/60);   //23 час
+           ind=60/(StepPROFILE/60);   //23 С‡Р°СЃ
            tempDate=tempDate+ind*stepProfile;
 
        }
@@ -1024,7 +1024,7 @@ void __fastcall T2xDrawTableChartInterior::clonesInRows(void)
       && minute==(PowerProfile==60?0:PowerProfile)))
 
        {
-           ind=60/PowerProfile;   //25 час
+           ind=60/PowerProfile;   //25 С‡Р°СЃ
            tempDate=tempDate-ind*stepProfile;
 
        }
@@ -1032,13 +1032,13 @@ void __fastcall T2xDrawTableChartInterior::clonesInRows(void)
       && minute==(PowerProfile==60?0:PowerProfile)))
 
        {
-           ind=60/PowerProfile;   //23 час
+           ind=60/PowerProfile;   //23 С‡Р°СЃ
            tempDate=tempDate+ind*stepProfile;
 
        }
     }
     }
-	//Добавляем заголовки клонов
+	//Р”РѕР±Р°РІР»СЏРµРј Р·Р°РіРѕР»РѕРІРєРё РєР»РѕРЅРѕРІ
     VT_PrintData->First();
 	if(fd->SummGroup)
 	{
@@ -1062,7 +1062,7 @@ void __fastcall T2xDrawTableChartInterior::clonesInRows(void)
 	for( iClones=1; iClones<=Clones ; ++iClones )
 	{
 	    DrawTable->StaticStrings->Add(NamesClones->Strings[iClones]);
-        //Добавляем заголовки колонок под клонами
+        //Р”РѕР±Р°РІР»СЏРµРј Р·Р°РіРѕР»РѕРІРєРё РєРѕР»РѕРЅРѕРє РїРѕРґ РєР»РѕРЅР°РјРё
 		if(columns>1)
             for( jColumns=0; jColumns<columns ; ++jColumns )
             {
@@ -1080,8 +1080,8 @@ void __fastcall T2xDrawTableChartInterior::clonesInRows(void)
         }
     }
 
-    //Формируем описание структуры для шапки всей таблицы опираясь
-	//на количество клонов. Шапка занимает две строки.
+    //Р¤РѕСЂРјРёСЂСѓРµРј РѕРїРёСЃР°РЅРёРµ СЃС‚СЂСѓРєС‚СѓСЂС‹ РґР»СЏ С€Р°РїРєРё РІСЃРµР№ С‚Р°Р±Р»РёС†С‹ РѕРїРёСЂР°СЏСЃСЊ
+	//РЅР° РєРѕР»РёС‡РµСЃС‚РІРѕ РєР»РѕРЅРѕРІ. РЁР°РїРєР° Р·Р°РЅРёРјР°РµС‚ РґРІРµ СЃС‚СЂРѕРєРё.
 	DrawTable->TabStrings->Clear();
     AnsiString temp;
 	if(columns>1)
@@ -1179,12 +1179,12 @@ void __fastcall T2xDrawTableChartInterior::DrawTableMouseDown(TObject *Sender,
 	TShiftState rightShift;
 	leftShift<<ssLeft;
 	rightShift<<ssRight;
-  TShiftState ShiftShift;     //Shift + кнопка мыши для расчетных точек
+  TShiftState ShiftShift;     //Shift + РєРЅРѕРїРєР° РјС‹С€Рё РґР»СЏ СЂР°СЃС‡РµС‚РЅС‹С… С‚РѕС‡РµРє
   ShiftShift<<ssShift;
 
 
-	if( (Button==mbLeft && Shift==leftShift )||//нажата только левая кнопка мыши
-		(Button==mbRight && Shift==rightShift) )    //нажата только правая кнопка мыши
+	if( (Button==mbLeft && Shift==leftShift )||//РЅР°Р¶Р°С‚Р° С‚РѕР»СЊРєРѕ Р»РµРІР°СЏ РєРЅРѕРїРєР° РјС‹С€Рё
+		(Button==mbRight && Shift==rightShift) )    //РЅР°Р¶Р°С‚Р° С‚РѕР»СЊРєРѕ РїСЂР°РІР°СЏ РєРЅРѕРїРєР° РјС‹С€Рё
  //   ( Button==mbRight && Shift==ShiftShift+rightShift))
 		;
 	else
@@ -1306,25 +1306,25 @@ void __fastcall T2xDrawTableChartInterior::DrawTableMouseUp(TObject *Sender,
     		Sender->InvalidCell( ColPressed, RowPressed );
 	    	if( ACol==ColPressed && ARow==RowPressed )
 		    {
-			    //Произошел щелчок по разложению профиля или клона
+			    //РџСЂРѕРёР·РѕС€РµР» С‰РµР»С‡РѕРє РїРѕ СЂР°Р·Р»РѕР¶РµРЅРёСЋ РїСЂРѕС„РёР»СЏ РёР»Рё РєР»РѕРЅР°
     			if( !fd->VerticalSplit )
 	    		{
 		    		ColPressed=ARow;
 			    	RowPressed=ACol;
     			}
 	    		if( ShiftPressed == ( TShiftState()<<ssLeft ))
-		    		//Построение профиля или распределения
+		    		//РџРѕСЃС‚СЂРѕРµРЅРёРµ РїСЂРѕС„РёР»СЏ РёР»Рё СЂР°СЃРїСЂРµРґРµР»РµРЅРёСЏ
 			    	clickGraphics(ColPressed, RowPressed );
     			else
 
-	    			//Композиция или декомпозиция
+	    			//РљРѕРјРїРѕР·РёС†РёСЏ РёР»Рё РґРµРєРѕРјРїРѕР·РёС†РёСЏ
 		    		clickComposition(ColPressed, RowPressed );
 
     		}
 	    }
     	ClonePressed=false;
 	}
-	else//Если клон не нажимался
+	else//Р•СЃР»Рё РєР»РѕРЅ РЅРµ РЅР°Р¶РёРјР°Р»СЃСЏ
 		if( ShiftPressed == ( TShiftState()<<ssRight ) && Sender->PopupMenu )
 	{
 	    POINT p;
@@ -1340,10 +1340,10 @@ void __fastcall T2xDrawTableChartInterior::DrawTableMouseUp(TObject *Sender,
 //---------------------------------------------------------------------------
 void __fastcall T2xDrawTableChartInterior::clickComposition(long ColPressed, long RowPressed )
 {
-  if(ColPressed==0){//разложение по профилю
+  if(ColPressed==0){//СЂР°Р·Р»РѕР¶РµРЅРёРµ РїРѕ РїСЂРѕС„РёР»СЋ
     if( DrawTable )
       fd->TableTopRow = DrawTable->TopRow;
-    //Настройки нам еще понадобятся
+    //РќР°СЃС‚СЂРѕР№РєРё РЅР°Рј РµС‰Рµ РїРѕРЅР°РґРѕР±СЏС‚СЃСЏ
     fd->IsMemParActualForClones = TRUE;
 		TDateTime tempDate;
 		unsigned short year,month,day;
@@ -1352,7 +1352,7 @@ void __fastcall T2xDrawTableChartInterior::clickComposition(long ColPressed, lon
 			RowPressed++;
 		//if( fd->SummGroup )
     RowPressed--;
-		if(RowPressed>=2){//Декомпозиция по профилю
+		if(RowPressed>=2){//Р”РµРєРѕРјРїРѕР·РёС†РёСЏ РїРѕ РїСЂРѕС„РёР»СЋ
 		  switch(fd->StepProfile){
         case TFormDescr::stpMonth:
   		    if(fd->EnableControls.Contains(TFormDescr::ctrlDay)){
@@ -1370,7 +1370,7 @@ void __fastcall T2xDrawTableChartInterior::clickComposition(long ColPressed, lon
 		    	break;
         case TFormDescr::stpHour:
 		      if(fd->EnableControls.Contains(TFormDescr::ctrlMinute)){
-                                //GRB ADD TEST 25.07.2019 - Не даём проваливаться ниже 15 минуток в 3-5 минутки из
+                                //GRB ADD TEST 25.07.2019 - РќРµ РґР°С‘Рј РїСЂРѕРІР°Р»РёРІР°С‚СЊСЃСЏ РЅРёР¶Рµ 15 РјРёРЅСѓС‚РѕРє РІ 3-5 РјРёРЅСѓС‚РєРё РёР·
                                 break;
     				/*fd->DateTime=TDateTime(year,month,day)+(RowPressed-2)/(double)RowCount;
 		    		fd->StepProfile=TFormDescr::stpMinute;
@@ -1380,7 +1380,7 @@ void __fastcall T2xDrawTableChartInterior::clickComposition(long ColPressed, lon
         case TFormDescr::stpMinute:
     			break;
 		  }
-		}else{//Композиция по профилю
+		}else{//РљРѕРјРїРѕР·РёС†РёСЏ РїРѕ РїСЂРѕС„РёР»СЋ
   		switch(fd->StepProfile){
     		case TFormDescr::stpMonth:
 		    	break;
@@ -1413,7 +1413,7 @@ void __fastcall T2xDrawTableChartInterior::clickComposition(long ColPressed, lon
       ((TBaseMonitorForm*)Owner)->miFormula->Visible=false;
   }//end if(ColPressed==0)
 	if( RowPressed==0 && fd->EnableControls.Contains(TFormDescr::ctrlGroup)){
-  	//Разложение по клонам
+  	//Р Р°Р·Р»РѕР¶РµРЅРёРµ РїРѕ РєР»РѕРЅР°Рј
     /* if(fd->CodeTemplate==203||fd->CodeTemplate==204||fd->CodeTemplate==205||fd->CodeTemplate==206
        ||fd->CodeTemplate==303||fd->CodeTemplate==304||fd->CodeTemplate==305)
        return;  */
@@ -1421,7 +1421,7 @@ void __fastcall T2xDrawTableChartInterior::clickComposition(long ColPressed, lon
 
     if( DrawTable )
       fd->TableLeftCol = DrawTable->LeftCol;
-    //Настройки нам еще понадобятся
+    //РќР°СЃС‚СЂРѕР№РєРё РЅР°Рј РµС‰Рµ РїРѕРЅР°РґРѕР±СЏС‚СЃСЏ
     fd->IsMemParActualForProf = TRUE;
 
     ColPressed=(ColPressed-1)/SubColumns();
@@ -1429,8 +1429,8 @@ void __fastcall T2xDrawTableChartInterior::clickComposition(long ColPressed, lon
       ColPressed++;
     IdGroup=0;
     if(ColPressed==0){
-      if(fd->IdGroup==fd->IdGroupJump){ //*********Для списков
-        fd->IdGroup = fd->IdGroupList; // Перешли на предприятие
+      if(fd->IdGroup==fd->IdGroupJump){ //*********Р”Р»СЏ СЃРїРёСЃРєРѕРІ
+        fd->IdGroup = fd->IdGroupList; // РџРµСЂРµС€Р»Рё РЅР° РїСЂРµРґРїСЂРёСЏС‚РёРµ
         fd->IdGroupJump = 0;
         fd->IdGroupList = 0;
       }
@@ -1456,7 +1456,7 @@ void __fastcall T2xDrawTableChartInterior::clickComposition(long ColPressed, lon
       }catch (EStringListError &esle){
         return;
       }
-    //***************** Для списков *********************************************************************************
+    //***************** Р”Р»СЏ СЃРїРёСЃРєРѕРІ *********************************************************************************
     IdGroup = GroupJump(IdGroup);
     if(!IdGroup)
       return;
@@ -1477,7 +1477,7 @@ void __fastcall T2xDrawTableChartInterior::clickComposition(long ColPressed, lon
 
     dmMain->qwInter->Execute();
     if( !dmMain->qwInter->Eof ){
-        // Вставка
+        // Р’СЃС‚Р°РІРєР°
         fd->strGroup(dmMain->qwInter->FieldByName("Name")->AsString.c_str());
 		    fd->NameGroup=dmMain->qwInter->FieldByName("Name")->AsString;
     		fd->ShortNameGroup=dmMain->qwInter->FieldByName("ShortName")->AsString;
@@ -1492,7 +1492,7 @@ void __fastcall T2xDrawTableChartInterior::clickComposition(long ColPressed, lon
 //---------------------------------------------------------------------------
 void __fastcall T2xDrawTableChartInterior::clickGraphics(long ColPressed, long RowPressed )
 {
-    if(ColPressed==0)//разложение по группам
+    if(ColPressed==0)//СЂР°Р·Р»РѕР¶РµРЅРёРµ РїРѕ РіСЂСѓРїРїР°Рј
 	{
 		if(SubColumns()>1)
 	        RowPressed--;
@@ -1501,7 +1501,7 @@ void __fastcall T2xDrawTableChartInterior::clickGraphics(long ColPressed, long R
 		//else
 		//	ChartFXColumns(RowPressed);
 	}
-	if(RowPressed==0)//построение профиля
+	if(RowPressed==0)//РїРѕСЃС‚СЂРѕРµРЅРёРµ РїСЂРѕС„РёР»СЏ
 	{
         pChart->AxisVisible = true;
         if(pSecondChart)
@@ -1517,7 +1517,7 @@ void __fastcall T2xDrawTableChartInterior::clickGraphics(long ColPressed, long R
 void __fastcall T2xDrawTableChartInterior::ChartFXLinesClick(TObject *Sender)
 {
     long ACol,ARow;
-    //GRB ADD 27.11.2020 - Для диаграммы с новым качеством электроэнергии
+    //GRB ADD 27.11.2020 - Р”Р»СЏ РґРёР°РіСЂР°РјРјС‹ СЃ РЅРѕРІС‹Рј РєР°С‡РµСЃС‚РІРѕРј СЌР»РµРєС‚СЂРѕСЌРЅРµСЂРіРёРё
     if (!DrawTable) return;
     //END ADD
 	if( fd->VerticalSplit )
@@ -1575,14 +1575,14 @@ void __fastcall T2xDrawTableChartInterior::ChartFXLinesClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------------------
 /*
-	Отображение всплывающего контекстного меню
+	РћС‚РѕР±СЂР°Р¶РµРЅРёРµ РІСЃРїР»С‹РІР°СЋС‰РµРіРѕ РєРѕРЅС‚РµРєСЃС‚РЅРѕРіРѕ РјРµРЅСЋ
 */
 void __fastcall T2xDrawTableChartInterior::PopupMenuBaseFormPopup(TObject *Sender)
 {
 	if( dynamic_cast<TBaseMonitorForm*>(Owner) )
 	{
 		TBaseMonitorForm* pOwner=dynamic_cast<TBaseMonitorForm*>(Owner);
-		//предполагаем что все операции из меню доступны
+		//РїСЂРµРґРїРѕР»Р°РіР°РµРј С‡С‚Рѕ РІСЃРµ РѕРїРµСЂР°С†РёРё РёР· РјРµРЅСЋ РґРѕСЃС‚СѓРїРЅС‹
 		pOwner->SmallFont->Checked=!pOwner->isSmallFont;
 		pOwner->SmallFont2->Checked=!pOwner->isSmallFont;
 		pOwner->View->Enabled=true;
@@ -1591,7 +1591,7 @@ void __fastcall T2xDrawTableChartInterior::PopupMenuBaseFormPopup(TObject *Sende
 		pOwner->ByGroup->Enabled=true;
 		pOwner->ByProfile->Enabled=true;
 
-    //доступ к пункту меню "Достоверность" в зависимости от настроек и метки качества
+    //РґРѕСЃС‚СѓРї Рє РїСѓРЅРєС‚Сѓ РјРµРЅСЋ "Р”РѕСЃС‚РѕРІРµСЂРЅРѕСЃС‚СЊ" РІ Р·Р°РІРёСЃРёРјРѕСЃС‚Рё РѕС‚ РЅР°СЃС‚СЂРѕРµРє Рё РјРµС‚РєРё РєР°С‡РµСЃС‚РІР°
     SV = 0;
     TRegistry *pReg=new TRegistry;
 	  pReg->RootKey=HKEY_CURRENT_USER;
@@ -1637,19 +1637,19 @@ void __fastcall T2xDrawTableChartInterior::PopupMenuBaseFormPopup(TObject *Sende
 		  }
 
     //strcpy(s, "01011111111111111111111111");
-    pOwner->IsValid->Caption = "Качество электроэнергии";
+    pOwner->IsValid->Caption = "РљР°С‡РµСЃС‚РІРѕ СЌР»РµРєС‚СЂРѕСЌРЅРµСЂРіРёРё";
     if (s[0]!='\0')
       pOwner->IsValid->Enabled = StrToInt(s[1])+StrToInt(s[2]);
     else pOwner->IsValid->Enabled = false;
     }
     else if (SV == 1)
     {
-      pOwner->IsValid->Caption = "Достоверность";
+      pOwner->IsValid->Caption = "Р”РѕСЃС‚РѕРІРµСЂРЅРѕСЃС‚СЊ";
       pOwner->IsValid->Enabled = true;
     }
     else
     {
-      pOwner->IsValid->Caption = "Достоверность";
+      pOwner->IsValid->Caption = "Р”РѕСЃС‚РѕРІРµСЂРЅРѕСЃС‚СЊ";
       pOwner->IsValid->Enabled = false;
     }
 
@@ -1658,8 +1658,8 @@ void __fastcall T2xDrawTableChartInterior::PopupMenuBaseFormPopup(TObject *Sende
 
 		ACol=DrawTable->Col;
 		ARow=DrawTable->Row;
-		//находим атрибуты ячеек для заголовка клона и заголовка профиля
-		//а затем вычисляем номер клона и номер профиля
+		//РЅР°С…РѕРґРёРј Р°С‚СЂРёР±СѓС‚С‹ СЏС‡РµРµРє РґР»СЏ Р·Р°РіРѕР»РѕРІРєР° РєР»РѕРЅР° Рё Р·Р°РіРѕР»РѕРІРєР° РїСЂРѕС„РёР»СЏ
+		//Р° Р·Р°С‚РµРј РІС‹С‡РёСЃР»СЏРµРј РЅРѕРјРµСЂ РєР»РѕРЅР° Рё РЅРѕРјРµСЂ РїСЂРѕС„РёР»СЏ
 		if( fd->VerticalSplit )
 		{
 			ACol-=(ACol-1)%SubColumns();
@@ -1806,7 +1806,7 @@ void __fastcall T2xDrawTableChartInterior::ChartFXLines(long AClone)
         if(SubColumns()==1)
         {
             fCode=true;
-            // Условия выбора
+            // РЈСЃР»РѕРІРёСЏ РІС‹Р±РѕСЂР°
             if(!fPlace){
                 ColGraf=0;
                 for(i=0; i<Clones+1; i++){
@@ -1815,9 +1815,9 @@ void __fastcall T2xDrawTableChartInterior::ChartFXLines(long AClone)
                     if(fNumClones[i])
                         ColGraf+=1;
                 }
-                if(ColGraf > MAXGRAFICPICTURE)  // не показывать больше
+                if(ColGraf > MAXGRAFICPICTURE)  // РЅРµ РїРѕРєР°Р·С‹РІР°С‚СЊ Р±РѕР»СЊС€Рµ
                     fNumClones[AClone]=0;
-                if(ColGraf==0)                  // не показывать ноль графиков
+                if(ColGraf==0)                  // РЅРµ РїРѕРєР°Р·С‹РІР°С‚СЊ РЅРѕР»СЊ РіСЂР°С„РёРєРѕРІ
                     fNumClones[AClone]=1;
             }else if(Clones > 5)
                 ColGraf=MAXGRAFICPICTURE;
@@ -1825,7 +1825,7 @@ void __fastcall T2xDrawTableChartInterior::ChartFXLines(long AClone)
             fCode=false;
             ColGraf=SubColumns();
         }
-        // наличие легенды
+        // РЅР°Р»РёС‡РёРµ Р»РµРіРµРЅРґС‹
         if(ColGraf>1){
           if(pSecondChart){
             pChart->Legend->Visible=true;
@@ -1858,23 +1858,23 @@ void __fastcall T2xDrawTableChartInterior::ChartFXLines(long AClone)
         k=ColGraf;
         if(fCode) ColGraf=Clones+1;
         if(pSecondChart)  ColGraf-- ;
-        //chig формирование таблицы цветов
+        //chig С„РѕСЂРјРёСЂРѕРІР°РЅРёРµ С‚Р°Р±Р»РёС†С‹ С†РІРµС‚РѕРІ
         if(fCode)
         {
-            //Освобождаем незанятые цвета
+            //РћСЃРІРѕР±РѕР¶РґР°РµРј РЅРµР·Р°РЅСЏС‚С‹Рµ С†РІРµС‚Р°
             for(int i=0; i<MAXGRAFICPICTURE; i++)
             {
                 int prClonInd = fd->ColorAttr[i].PointId;
                 bool prIsStillUsed = FALSE;
                 if (-1 != prClonInd)
                 {
-                    //Если клон назначен
+                    //Р•СЃР»Рё РєР»РѕРЅ РЅР°Р·РЅР°С‡РµРЅ
                     //e
                     int prSelectedCount = 0;
                     for( int j=0; j<Clones+1; ++j)
                         if( fNumClones[j] )
                         {
-                            //Клон отобр-ся
+                            //РљР»РѕРЅ РѕС‚РѕР±СЂ-СЃСЏ
                             //e
                             if ( j == prClonInd )
                                 prIsStillUsed = TRUE;
@@ -1882,14 +1882,14 @@ void __fastcall T2xDrawTableChartInterior::ChartFXLines(long AClone)
                             if ( prSelectedCount >= MAXGRAFICPICTURE )
                                 break;
                         }
-                }//был назначен
+                }//Р±С‹Р» РЅР°Р·РЅР°С‡РµРЅ
                 if ( !prIsStillUsed )
-                    //Теперь уже не назначен
+                    //РўРµРїРµСЂСЊ СѓР¶Рµ РЅРµ РЅР°Р·РЅР°С‡РµРЅ
                     //e
                     fd->ColorAttr[ i ].PointId = -1;
             }
-            //e Освобождаем незанятые цвета
-            //Назначаем незанятые цвета
+            //e РћСЃРІРѕР±РѕР¶РґР°РµРј РЅРµР·Р°РЅСЏС‚С‹Рµ С†РІРµС‚Р°
+            //РќР°Р·РЅР°С‡Р°РµРј РЅРµР·Р°РЅСЏС‚С‹Рµ С†РІРµС‚Р°
             int prSelectedCount = 0;
             for(i=0; i<Clones+1; ++i)
             {
@@ -1903,7 +1903,7 @@ void __fastcall T2xDrawTableChartInterior::ChartFXLines(long AClone)
                 }
             }
         }
-        //e chig формирование цветов
+        //e chig С„РѕСЂРјРёСЂРѕРІР°РЅРёРµ С†РІРµС‚РѕРІ
 
         while(pChart->SeriesCount()>0)
             pChart->Series[0]->Free();
@@ -1978,7 +1978,7 @@ void __fastcall T2xDrawTableChartInterior::ChartFXLines(long AClone)
 
         switch(fd->StepProfile){
         case TFormDescr::stpMonth:
-            Str = Str+" "+fd->DateTime.FormatString("yyyy")+" г.";
+            Str = Str+" "+fd->DateTime.FormatString("yyyy")+" Рі.";
             LabelDateFormat = "mmm";
             for( j=1; j<=MaxRowCount ; ++j ){
                 tmpDateTime=TDateTime(year,(unsigned short)j,1);
@@ -1986,7 +1986,7 @@ void __fastcall T2xDrawTableChartInterior::ChartFXLines(long AClone)
             }
             break;
         case TFormDescr::stpDay:
-            Str = Str+" "+fd->DateTime.FormatString("yyyy")+" г.";
+            Str = Str+" "+fd->DateTime.FormatString("yyyy")+" Рі.";
             LabelDateFormat = "dd/mm";
             tmpDateTime=TDateTime(year,month,1);
             for( j=0; j<=MaxRowCount ; ++j ){
@@ -1999,8 +1999,8 @@ void __fastcall T2xDrawTableChartInterior::ChartFXLines(long AClone)
             LabelDateFormat = "t";
             tmpDateTime=TDateTime(year,month,day);
 //            for( j=0; j<=RowCount && tmpDateTime<=TDateTime::CurrentDateTime() ; ++j ){
-              if(RowCount>24*(60/PowerProfile))  StepRow=1.0/(RowCount-60/PowerProfile); //25 час
-              else if(RowCount<24*(60/PowerProfile))  StepRow=1.0/(RowCount+60/PowerProfile); //23 час
+              if(RowCount>24*(60/PowerProfile))  StepRow=1.0/(RowCount-60/PowerProfile); //25 С‡Р°СЃ
+              else if(RowCount<24*(60/PowerProfile))  StepRow=1.0/(RowCount+60/PowerProfile); //23 С‡Р°СЃ
               else   StepRow=1.0/RowCount;
               ind=0;
 
@@ -2062,7 +2062,7 @@ void __fastcall T2xDrawTableChartInterior::ChartFXLines(long AClone)
 //---------------------------------------------------------------------------
 void __fastcall T2xDrawTableChartInterior::IncreaseScaleValue( double & PPYMinVal, double & PPYMaxVal )
 {
-     //Только для profile
+     //РўРѕР»СЊРєРѕ РґР»СЏ profile
    if( TFormDescr::stpMinute == fd->StepProfile )
      //e
    {
@@ -2091,7 +2091,7 @@ void __fastcall T2xDrawTableChartInterior::ChartFXColumns(long ARow)
     TChartSeries *pSeries[AMOUNTSERIES];
     int razm = 40;
     int dgtype=FormSetupMonitors->rgDiagramType->ItemIndex;
-    // наличие легенды
+    // РЅР°Р»РёС‡РёРµ Р»РµРіРµРЅРґС‹
     if(SubColumns()>1){
         if(pSecondChart){
            razm = 20;
@@ -2174,7 +2174,7 @@ void __fastcall T2xDrawTableChartInterior::ChartFXColumns(long ARow)
         switch(fd->StepProfile){
         case TFormDescr::stpMonth:
             Str=TDateTime(year,(unsigned short)ARow,1).FormatString(AnsiString("mmmm"))
-                + " "+fd->DateTime.FormatString("yyyy")+" г.";
+                + " "+fd->DateTime.FormatString("yyyy")+" Рі.";
             break;
         case TFormDescr::stpDay:
             Str=(TDateTime(year,month,1)+(unsigned short)(ARow-1)).FormatString(AnsiString("ddddd"));
@@ -2190,10 +2190,10 @@ void __fastcall T2xDrawTableChartInterior::ChartFXColumns(long ARow)
     else
 	    switch(fd->StepProfile){
         case TFormDescr::stpMonth:
-            Str=fd->DateTime.FormatString(AnsiString("yyyy"))+" г.";
+            Str=fd->DateTime.FormatString(AnsiString("yyyy"))+" Рі.";
             break;
         case TFormDescr::stpDay:
-            Str=fd->DateTime.FormatString(AnsiString("mmmm"))+" "+fd->DateTime.FormatString(AnsiString("yyyy"))+" г.";
+            Str=fd->DateTime.FormatString(AnsiString("mmmm"))+" "+fd->DateTime.FormatString(AnsiString("yyyy"))+" Рі.";
             break;
         case TFormDescr::stpHour:
             Str=fd->DateTime.FormatString(AnsiString("ddddd"));
@@ -2215,7 +2215,7 @@ void __fastcall T2xDrawTableChartInterior::formDescr( void )
 		Clones=0;
 		if( fd->SummGroup )
 			++Clones;
-		//Заполняем необходимые поля описания формы
+		//Р—Р°РїРѕР»РЅСЏРµРј РЅРµРѕР±С…РѕРґРёРјС‹Рµ РїРѕР»СЏ РѕРїРёСЃР°РЅРёСЏ С„РѕСЂРјС‹
 		//fd->NameForm="T2xDrawTableChartInterior";
 		//fd->CommentForm=fd->DateTime.FormatString("dddddd")+fd->DateTime.TimeString();
 
@@ -2342,16 +2342,16 @@ void __fastcall T2xDrawTableChartInterior::PrintTable()
   /*  switch( fd->StepProfile )
     {
 		case TFormDescr::stpMonth:
-			RepTitle=fd->NameGroup+" за "+fd->DateTime.FormatString("yyyy 'г.'");
+			RepTitle=fd->NameGroup+" Р·Р° "+fd->DateTime.FormatString("yyyy 'Рі.'");
 			break;
 		case TFormDescr::stpDay:
-			RepTitle=fd->NameGroup+" за "+fd->DateTime.FormatString("mmmm'.'");
+			RepTitle=fd->NameGroup+" Р·Р° "+fd->DateTime.FormatString("mmmm'.'");
 			break;
 		case TFormDescr::stpHour:
-			RepTitle=fd->NameGroup+" за "+fd->DateTime.FormatString("ddddd");
+			RepTitle=fd->NameGroup+" Р·Р° "+fd->DateTime.FormatString("ddddd");
 			break;
 		case TFormDescr::stpMinute:
-			RepTitle=fd->NameGroup+" на "+fd->DateTime.FormatString("ddddd")+" c "+fd->DateTime.FormatString("t");
+			RepTitle=fd->NameGroup+" РЅР° "+fd->DateTime.FormatString("ddddd")+" c "+fd->DateTime.FormatString("t");
 			break;
     }*/
    TFormSetupMonitors*psm = new TFormSetupMonitors(Application);
@@ -2395,7 +2395,7 @@ void __fastcall T2xDrawTableChartInterior::SaveGraphToFile(TSaveDialog *aSaveDia
           bm->Width = pChart->Width;
           bm->Height= pChart->Height;
           pChart->BufferedDisplay=false;
-//add by NNV добавляетса возможность выводить второй график в файл
+//add by NNV РґРѕР±Р°РІР»СЏРµС‚СЃР° РІРѕР·РјРѕР¶РЅРѕСЃС‚СЊ РІС‹РІРѕРґРёС‚СЊ РІС‚РѕСЂРѕР№ РіСЂР°С„РёРє РІ С„Р°Р№Р»
           if(pSecondChart){
              bm->Height += pSecondChart->Height;
              pSecondChart->BufferedDisplay = false;
@@ -2514,7 +2514,7 @@ void __fastcall T2xDrawTableChartInterior::ScaleOfGraph(bool fCode, int ColGraf,
    double temp;
    double tempsave;
    TCloneItem *ptrDatOracle;
-   for(int j=0,k=0; j< ColGraf; ++j ){                        // массив элементов
+   for(int j=0,k=0; j< ColGraf; ++j ){                        // РјР°СЃСЃРёРІ СЌР»РµРјРµРЅС‚РѕРІ
        if(fCode){
           if(fNumClones[j])
              CurClone=j;
@@ -2543,7 +2543,7 @@ void __fastcall T2xDrawTableChartInterior::ScaleOfGraph(bool fCode, int ColGraf,
             //   tempsave=temp;
                //----------------------------------------
                if (fd->CodeTemplate==NOT_BALANCE) // added by KAG
-                 temp = temp>0?temp:(-1)*temp;    // на первом графике небалансы будут выводится по модулю
+                 temp = temp>0?temp:(-1)*temp;    // РЅР° РїРµСЂРІРѕРј РіСЂР°С„РёРєРµ РЅРµР±Р°Р»Р°РЅСЃС‹ Р±СѓРґСѓС‚ РІС‹РІРѕРґРёС‚СЃСЏ РїРѕ РјРѕРґСѓР»СЋ
                pSeries[k]->AddXY(i/*fDate[i]*/,temp,fDate[i].FormatString(LabelDateFormat),(TColor)clTeeColor);
             }
             if(YMaxVal == -MAXFLOAT){
@@ -2556,10 +2556,10 @@ void __fastcall T2xDrawTableChartInterior::ScaleOfGraph(bool fCode, int ColGraf,
         }
         k++;
    }
-//chig Изменение масштаба
+//chig РР·РјРµРЅРµРЅРёРµ РјР°СЃС€С‚Р°Р±Р°
    if(YMaxVal-YMinVal > 3)
       IncreaseScaleValue( YMinVal, YMaxVal );
-//e Изменение масштаба
+//e РР·РјРµРЅРµРЅРёРµ РјР°СЃС€С‚Р°Р±Р°
    pChart->LeftAxis->Minimum = -MAXFLOAT;
    pChart->LeftAxis->Maximum = YMaxVal+((YMaxVal-YMinVal)/100)*5;
    pChart->LeftAxis->Minimum = YMinVal-((YMaxVal-YMinVal)/100)*5;
@@ -2598,10 +2598,10 @@ void __fastcall T2xDrawTableChartInterior::ScaleOfTwoGraph(bool fCode, int MaxRo
           YMinVal = min(temp,YMinVal);
        }
    }
-//chig Изменение масштаба
+//chig РР·РјРµРЅРµРЅРёРµ РјР°СЃС€С‚Р°Р±Р°
    if(YMaxVal-YMinVal > 3)
       IncreaseScaleValue( YMinVal, YMaxVal );
-//e Изменение масштаба
+//e РР·РјРµРЅРµРЅРёРµ РјР°СЃС€С‚Р°Р±Р°
    pSecondChart->LeftAxis->Minimum = -MAXFLOAT;
    pSecondChart->LeftAxis->Maximum = YMaxVal+((YMaxVal-YMinVal)/100)*5;
    pSecondChart->LeftAxis->Minimum = YMinVal-((YMaxVal-YMinVal)/100)*5;
@@ -2623,8 +2623,8 @@ void __fastcall T2xDrawTableChartInterior::ScaleOfTwoGraph(bool fCode, int MaxRo
     ARowCount=DrawTable->RowCount;
     AColCount=DrawTable->ColCount;
     col=(SubColumns()>1)? 1:0;
-		//находим атрибуты ячеек для заголовка клона и заголовка профиля
-		//а затем вычисляем номер клона и номер профиля
+		//РЅР°С…РѕРґРёРј Р°С‚СЂРёР±СѓС‚С‹ СЏС‡РµРµРє РґР»СЏ Р·Р°РіРѕР»РѕРІРєР° РєР»РѕРЅР° Рё Р·Р°РіРѕР»РѕРІРєР° РїСЂРѕС„РёР»СЏ
+		//Р° Р·Р°С‚РµРј РІС‹С‡РёСЃР»СЏРµРј РЅРѕРјРµСЂ РєР»РѕРЅР° Рё РЅРѕРјРµСЂ РїСЂРѕС„РёР»СЏ
 		if( fd->VerticalSplit )
 		{
        pCellProfile=(TDrawTable::SAttrCell*)DrawTable->GetCellAttr(0,ARow);
@@ -2659,14 +2659,14 @@ void __fastcall T2xDrawTableChartInterior::ScaleOfTwoGraph(bool fCode, int MaxRo
   if (s[0]!='\0'){
    int A;
 
-    if (SV == 2)   //если выбрано отображение метки качества электроэнергии
+    if (SV == 2)   //РµСЃР»Рё РІС‹Р±СЂР°РЅРѕ РѕС‚РѕР±СЂР°Р¶РµРЅРёРµ РјРµС‚РєРё РєР°С‡РµСЃС‚РІР° СЌР»РµРєС‚СЂРѕСЌРЅРµСЂРіРёРё
     {
       TfmEnrgValid *FormEnrgValid = new TfmEnrgValid(this,s,pCellGroup->SourceData->Strings[pCellGroup->IndexData],pCellProfile->SourceData->Strings[pCellProfile->IndexData]);
       FormEnrgValid->ShowModal();
       delete FormEnrgValid;
     }
 
-    else    //иначе - метка качества данных
+    else    //РёРЅР°С‡Рµ - РјРµС‚РєР° РєР°С‡РµСЃС‚РІР° РґР°РЅРЅС‹С…
     {
       TfmValidityForm *ValidityForm = new TfmValidityForm(this,s,pCellGroup->SourceData->Strings[pCellGroup->IndexData],pCellProfile->SourceData->Strings[pCellProfile->IndexData]);
       ValidityForm->ShowModal();
@@ -2676,9 +2676,9 @@ void __fastcall T2xDrawTableChartInterior::ScaleOfTwoGraph(bool fCode, int MaxRo
 
  }
 //-------------------------------------------------------------------------------
-//GRB ADD 12.07.2019  - является ли дата в pfd->DateTime днём перевода времени за monthNumber
+//GRB ADD 12.07.2019  - СЏРІР»СЏРµС‚СЃСЏ Р»Рё РґР°С‚Р° РІ pfd->DateTime РґРЅС‘Рј РїРµСЂРµРІРѕРґР° РІСЂРµРјРµРЅРё Р·Р° monthNumber
 //-------------------------------------------------------------------------------
-bool __fastcall T2xDrawTableChartInterior::IsDayShiftMonth (TFormDescr *pfd, int monthNumber){      //Октаябрь - 10, Март - 3
+bool __fastcall T2xDrawTableChartInterior::IsDayShiftMonth (TFormDescr *pfd, int monthNumber){      //РћРєС‚Р°СЏР±СЂСЊ - 10, РњР°СЂС‚ - 3
    unsigned short year,month,day;
    pfd->DateTime.DecodeDate( &year, &month, &day);
 
@@ -2690,7 +2690,7 @@ bool __fastcall T2xDrawTableChartInterior::IsDayShiftMonth (TFormDescr *pfd, int
   return false;
 }
 //-------------------------------------------------------------------------------
-//GRB ADD 26.08.2021 - два метода для автоформатирования по содержимому фиксированых колонок - исправление бага с обрезанием длинных имён в колонках
+//GRB ADD 26.08.2021 - РґРІР° РјРµС‚РѕРґР° РґР»СЏ Р°РІС‚РѕС„РѕСЂРјР°С‚РёСЂРѕРІР°РЅРёСЏ РїРѕ СЃРѕРґРµСЂР¶РёРјРѕРјСѓ С„РёРєСЃРёСЂРѕРІР°РЅС‹С… РєРѕР»РѕРЅРѕРє - РёСЃРїСЂР°РІР»РµРЅРёРµ Р±Р°РіР° СЃ РѕР±СЂРµР·Р°РЅРёРµРј РґР»РёРЅРЅС‹С… РёРјС‘РЅ РІ РєРѕР»РѕРЅРєР°С…
 //---------------------------------------------------------------------------
 void __fastcall  T2xDrawTableChartInterior::AutoSizeColGRB (TDrawTable* tsg, int columnIndex){
         int i,w,WMax;
@@ -2741,7 +2741,7 @@ TFont * __fastcall T2xDrawTableChartInterior::GetActiveFont4MonitorFromReg (){
 
     }catch (Exception &ex){
         delete psm;
-        //Смелое предположение - так типа по дефолту
+        //РЎРјРµР»РѕРµ РїСЂРµРґРїРѕР»РѕР¶РµРЅРёРµ - С‚Р°Рє С‚РёРїР° РїРѕ РґРµС„РѕР»С‚Сѓ
         retFont->Name = "MS Sans Serif";
         retFont->Size = 8;
         return retFont;

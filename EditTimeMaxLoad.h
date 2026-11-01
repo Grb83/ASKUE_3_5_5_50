@@ -47,7 +47,7 @@ __published:	// IDE-managed Components
   void __fastcall meStartExit(TObject *Sender);
   void __fastcall meMStartExit(TObject *Sender);
 private:	// User declarations
-   typedef struct { //дерево обьектов учета
+   typedef struct { //РґРµСЂРµРІРѕ РѕР±СЊРµРєС‚РѕРІ СѓС‡РµС‚Р°
       long Mid;
       long tmpMid;
       char Date_Time[16];	    //DATE,
@@ -55,13 +55,13 @@ private:	// User declarations
       char Morning_End[8];  	//DATE,
       char Evening_Start[8];	//DATE,
       char Evening_End[8];  	//DATE,
-      long editing;// 0 -Не трогали, 1-трогали и скопировали, 2-трогали и не скопировали
+      long editing;// 0 -РќРµ С‚СЂРѕРіР°Р»Рё, 1-С‚СЂРѕРіР°Р»Рё Рё СЃРєРѕРїРёСЂРѕРІР°Р»Рё, 2-С‚СЂРѕРіР°Р»Рё Рё РЅРµ СЃРєРѕРїРёСЂРѕРІР°Р»Рё
    }POINTSDIV;
    bool realdeletion;
-   long nPoints_Del[1000]; // id тех групп которые удалены из дерева
-                            //  и необходимо удалить из таблицы MAXHOURS
-   long CountPoints_Del;// Кол-во удаляемых элементов
-   bool __fastcall ReadData(void);// Читает данные
+   long nPoints_Del[1000]; // id С‚РµС… РіСЂСѓРїРї РєРѕС‚РѕСЂС‹Рµ СѓРґР°Р»РµРЅС‹ РёР· РґРµСЂРµРІР°
+                            //  Рё РЅРµРѕР±С…РѕРґРёРјРѕ СѓРґР°Р»РёС‚СЊ РёР· С‚Р°Р±Р»РёС†С‹ MAXHOURS
+   long CountPoints_Del;// РљРѕР»-РІРѕ СѓРґР°Р»СЏРµРјС‹С… СЌР»РµРјРµРЅС‚РѕРІ
+   bool __fastcall ReadData(void);// Р§РёС‚Р°РµС‚ РґР°РЅРЅС‹Рµ
    void __fastcall SetAccess(TAccess value);
 public:		// User declarations
 	__fastcall TFormEditTimeMaxLoad(TComponent* Owner, AnsiString, TAccess = accDenied);

@@ -12,7 +12,7 @@ TfmEnrgValid *fmEnrgValid;
 __fastcall TfmEnrgValid::TfmEnrgValid(TComponent* Owner,  char isvalid[32], AnsiString Name,AnsiString NameForm)
   : TForm(Owner)
 {
-  Caption = Caption + " " + Name + " çà " + NameForm + "     " + AnsiString(isvalid);
+  Caption = Caption + " " + Name + " Ð·Ð° " + NameForm + "     " + AnsiString(isvalid);
   ReadData(isvalid);
 }
 //---------------------------------------------------------------------------
@@ -32,10 +32,10 @@ void __fastcall TfmEnrgValid::ReadData(char isval[32])
     if (!StrToInt(isval[0]))      //QualityValue = 0
     {
       if (StrToInt(isval[1])) Msg = " EN 50160  ";
-      if (StrToInt(isval[2])) Msg = " ÃÎÑÒ 13109 è" + Msg;
+      if (StrToInt(isval[2])) Msg = " Ð“ÐžÐ¡Ð¢ 13109 Ð¸" + Msg;
 
       Msg = Msg.SubString(1, (Msg.Length() - 2));
-      Msg = "Ýëåêòðîýíåðãèÿ ñîîòâåòñâóåò òðåáîâàíèÿì" + Msg;
+      Msg = "Ð­Ð»ÐµÐºÑ‚Ñ€Ð¾ÑÐ½ÐµÑ€Ð³Ð¸Ñ ÑÐ¾Ð¾Ñ‚Ð²ÐµÑ‚ÑÐ²ÑƒÐµÑ‚ Ñ‚Ñ€ÐµÐ±Ð¾Ð²Ð°Ð½Ð¸ÑÐ¼" + Msg;
 
       this->Height = 130;
     }
@@ -44,7 +44,7 @@ void __fastcall TfmEnrgValid::ReadData(char isval[32])
       TImage *im;
       int start = -1, fin = -1;
 
-      Msg = "Íåñîîòâåòñòâèå êà÷åñòâà òðåáîâàíèÿì";
+      Msg = "ÐÐµÑÐ¾Ð¾Ñ‚Ð²ÐµÑ‚ÑÑ‚Ð²Ð¸Ðµ ÐºÐ°Ñ‡ÐµÑÑ‚Ð²Ð° Ñ‚Ñ€ÐµÐ±Ð¾Ð²Ð°Ð½Ð¸ÑÐ¼";
       Panel4->Visible = true;
 
       pcUnRequir->Pages[1]->TabVisible = StrToInt(isval[1]);

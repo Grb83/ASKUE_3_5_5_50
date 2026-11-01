@@ -19,10 +19,10 @@
 //---------------------------------------------------------------------------
 #define MAX_POINTS 500
 #define PROGRESS_STEP 10
-#define ACTIVEX_VER_FAILED "\nÏðîâåðüòå âåðñèþ óñòàíîâëåííîãî êîìïîíåíòà ActiveX äëÿ ñõåìû."
+#define ACTIVEX_VER_FAILED "\nÐŸÑ€Ð¾Ð²ÐµÑ€ÑŒÑ‚Ðµ Ð²ÐµÑ€ÑÐ¸ÑŽ ÑƒÑÑ‚Ð°Ð½Ð¾Ð²Ð»ÐµÐ½Ð½Ð¾Ð³Ð¾ ÐºÐ¾Ð¼Ð¿Ð¾Ð½ÐµÐ½Ñ‚Ð° ActiveX Ð´Ð»Ñ ÑÑ…ÐµÐ¼Ñ‹."
 //---------------------------------------------------------------------------
 //typedef TArrow Sdepanelxcontrol_tlb::TIndicatorArrowDirection;
-// Äëÿ çàïóñêà ìîíèòîðà ïî âûäåëåííîìó îáúåêòó
+// Ð”Ð»Ñ Ð·Ð°Ð¿ÑƒÑÐºÐ° Ð¼Ð¾Ð½Ð¸Ñ‚Ð¾Ñ€Ð° Ð¿Ð¾ Ð²Ñ‹Ð´ÐµÐ»ÐµÐ½Ð½Ð¾Ð¼Ñƒ Ð¾Ð±ÑŠÐµÐºÑ‚Ñƒ
 extern HANDLE UpdateMonitors;
 //---------------------------------------------------------------------------
 
@@ -167,7 +167,7 @@ void __fastcall TModusInterior::selectData( TOraQuery *qwInter )
             HartePanel->SetDataToLabel(WideString(s), WideString(switch_val), color);
           else
             HartePanel->SetIndicatorData(WideString(s), value, (Open_tlb::TIndicatorArrowDirection)arrow, color);
-            //HartePanel->SetIndicatorData(WideString(s), value, (Open_tlb::TIndicatorArrowDirection)arrow, color,qwInter->ParamByName("par5")->AsInteger);  //Ýòî äëÿ äàòû
+            //HartePanel->SetIndicatorData(WideString(s), value, (Open_tlb::TIndicatorArrowDirection)arrow, color,qwInter->ParamByName("par5")->AsInteger);  //Ð­Ñ‚Ð¾ Ð´Ð»Ñ Ð´Ð°Ñ‚Ñ‹
         }else
           if(ModusPanel)
             ModusPanel->SetIndicatorData(WideString(s), value, arrow, color);
@@ -285,7 +285,7 @@ void __fastcall TModusInterior::MonSelectClick(TObject *Sender)
     sfd = new TFormDescr;
 	  if(ManForm->PageCtrlSplt->CurrentForm->GetFormDescr())
       *sfd=*(ManForm->PageCtrlSplt->CurrentForm->GetFormDescr());
-        // Ïîäãîòîâêà îïèñàíèÿ ôîðìû
+        // ÐŸÐ¾Ð´Ð³Ð¾Ñ‚Ð¾Ð²ÐºÐ° Ð¾Ð¿Ð¸ÑÐ°Ð½Ð¸Ñ Ñ„Ð¾Ñ€Ð¼Ñ‹
     sfd->IdFormTree = fms->fid;
     sfd->CodeTemplate = fms->tmplCode;
     sfd->IdGroup = currId;
@@ -334,11 +334,11 @@ void __fastcall TModusInterior::MonSelectClick(TObject *Sender)
       sfd->EnableControls<<TFormDescr::ctrlPoint;
     ch++;
     if(*ch=='1')
-      sfd->indbird = true;// äîáàâëåííî äàëÿ çàäàíèÿ ðåæèìà âèäèìîñòè ïàíåëè "ïåðå÷åíü îòîáðàæàåìûõ äàííûõ"
+      sfd->indbird = true;// Ð´Ð¾Ð±Ð°Ð²Ð»ÐµÐ½Ð½Ð¾ Ð´Ð°Ð»Ñ Ð·Ð°Ð´Ð°Ð½Ð¸Ñ Ñ€ÐµÐ¶Ð¸Ð¼Ð° Ð²Ð¸Ð´Ð¸Ð¼Ð¾ÑÑ‚Ð¸ Ð¿Ð°Ð½ÐµÐ»Ð¸ "Ð¿ÐµÑ€ÐµÑ‡ÐµÐ½ÑŒ Ð¾Ñ‚Ð¾Ð±Ñ€Ð°Ð¶Ð°ÐµÐ¼Ñ‹Ñ… Ð´Ð°Ð½Ð½Ñ‹Ñ…"
     else
       sfd->indbird = false;
 
-        // Êîíåö ïîäãîòîâêè
+        // ÐšÐ¾Ð½ÐµÑ† Ð¿Ð¾Ð´Ð³Ð¾Ñ‚Ð¾Ð²ÐºÐ¸
     fmSelectReportForm = new TfmSelectReportForm(this,fms->fid,sfd);
 
     if(IsCommonRepForm(sfd->CodeTemplate))
@@ -362,10 +362,10 @@ void __fastcall TModusInterior::MonSelectClick(TObject *Sender)
     }
     if (fmSelectGroupReportUniv->ModalResult == mrOk){
             //fmSelectReportForm->fd->CodeTemplate=1;
-            // ïåðåä ëþáûì îáíîâëåíèåì ìîíèòîðîâ íåîáõîäèìî èíèöèàëèçèðîâàòü êð. ñåêöèþ UpdateMonitors
+            // Ð¿ÐµÑ€ÐµÐ´ Ð»ÑŽÐ±Ñ‹Ð¼ Ð¾Ð±Ð½Ð¾Ð²Ð»ÐµÐ½Ð¸ÐµÐ¼ Ð¼Ð¾Ð½Ð¸Ñ‚Ð¾Ñ€Ð¾Ð² Ð½ÐµÐ¾Ð±Ñ…Ð¾Ð´Ð¸Ð¼Ð¾ Ð¸Ð½Ð¸Ñ†Ð¸Ð°Ð»Ð¸Ð·Ð¸Ñ€Ð¾Ð²Ð°Ñ‚ÑŒ ÐºÑ€. ÑÐµÐºÑ†Ð¸ÑŽ UpdateMonitors
       while(WaitForSingleObject(UpdateMonitors,0)!=WAIT_OBJECT_0){
-        Application->ProcessMessages();// åñëè íå óäàëîñü èíèö-òü. CS òî îáíîâèòü ýêðàííûå ôîðìû...
-        Sleep(0);// ïåðåêëþ÷èòü óïðàâëåíèå íà äðóãîé ïîòîê, êîüò çàíÿë CS
+        Application->ProcessMessages();// ÐµÑÐ»Ð¸ Ð½Ðµ ÑƒÐ´Ð°Ð»Ð¾ÑÑŒ Ð¸Ð½Ð¸Ñ†-Ñ‚ÑŒ. CS Ñ‚Ð¾ Ð¾Ð±Ð½Ð¾Ð²Ð¸Ñ‚ÑŒ ÑÐºÑ€Ð°Ð½Ð½Ñ‹Ðµ Ñ„Ð¾Ñ€Ð¼Ñ‹...
+        Sleep(0);// Ð¿ÐµÑ€ÐµÐºÐ»ÑŽÑ‡Ð¸Ñ‚ÑŒ ÑƒÐ¿Ñ€Ð°Ð²Ð»ÐµÐ½Ð¸Ðµ Ð½Ð° Ð´Ñ€ÑƒÐ³Ð¾Ð¹ Ð¿Ð¾Ñ‚Ð¾Ðº, ÐºÐ¾ÑŒÑ‚ Ð·Ð°Ð½ÑÐ» CS
       }
             // add by KSS
       PostMessage(ManForm->PageCtrlSplt->CurrentForm->Handle,WM_REFRESHFORM,0,(LPARAM)sfd);
@@ -449,7 +449,7 @@ void __fastcall TModusInterior::sdeDocRightClick(TObject*Sender,BSTR ID,long Shi
             p = HartePanel->ClientToScreen(TPoint(X,Y));
             HartePanel->PopupMenu->Popup(p.x, p.y);
         }else if(ModusPanel){
-            // êîîðäèíàòû âîçâðàùàþòñÿ â Screen ñèñòåìå è áåç ó÷¸òà ðàìêè... 
+            // ÐºÐ¾Ð¾Ñ€Ð´Ð¸Ð½Ð°Ñ‚Ñ‹ Ð²Ð¾Ð·Ð²Ñ€Ð°Ñ‰Ð°ÑŽÑ‚ÑÑ Ð² Screen ÑÐ¸ÑÑ‚ÐµÐ¼Ðµ Ð¸ Ð±ÐµÐ· ÑƒÑ‡Ñ‘Ñ‚Ð° Ñ€Ð°Ð¼ÐºÐ¸... 
             ModusPanel->PopupMenu->Popup(X+6, Y+7);
         }
     }catch(Exception&e){

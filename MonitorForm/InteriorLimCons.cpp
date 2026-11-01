@@ -16,7 +16,7 @@ __fastcall TConsumLimit::TConsumLimit(TComponent* Owner,TSplitterForm *aSP,
 		dynamic_cast<TBaseMonitorForm*>(Owner)->MenuItemAttr->OnClick=OnClickMenuItemAttr;
 */
 		dynamic_cast<TBaseMonitorForm*>(Owner)->PopupMenuDU->OnPopup=OnPopupMenuDU;
-                //GRB ADD - подписываем на перерисовку
+                //GRB ADD - РїРѕРґРїРёСЃС‹РІР°РµРј РЅР° РїРµСЂРµСЂРёСЃРѕРІРєСѓ
                 ((TBaseMonitorForm*)Owner)->OnResize=TDUInterior::FormShow;
 }
 //---------------------------------------------------------------------------
@@ -138,8 +138,8 @@ void __fastcall TConsumLimit::selectData( TOraQuery *qwInter )
 			  (ptr++)->val=-MAXFLOAT;
       }
     }
-// KAS Текущую дату на название формы
-    dynamic_cast<TBaseMonitorForm*>(Owner)->Caption = fd->NameGroup+" на "+GetCurrentDate(qwInter);
+// KAS РўРµРєСѓС‰СѓСЋ РґР°С‚Сѓ РЅР° РЅР°Р·РІР°РЅРёРµ С„РѕСЂРјС‹
+    dynamic_cast<TBaseMonitorForm*>(Owner)->Caption = fd->NameGroup+" РЅР° "+GetCurrentDate(qwInter);
     qwInter->Params->Clear();
     qwInter->SQL->Text=" begin "+SchemeName+"interior_pg.TConsumLimit_selectData_p(:par1,:par2,:par3,:par4,:par5,:par6,:par7,:par8,:par9);end;";
     qwInter->ParamByName("par9")->DataType=ftCursor;
@@ -220,7 +220,7 @@ void __fastcall TConsumLimit::dataInColumns(void)
 	char ptr_hour[8];
 	bool isSumm;
 	AnsiString RowsHeight;
-	//Подготавливаем переменные поля для приема
+	//РџРѕРґРіРѕС‚Р°РІР»РёРІР°РµРј РїРµСЂРµРјРµРЅРЅС‹Рµ РїРѕР»СЏ РґР»СЏ РїСЂРёРµРјР°
 	ptr=DrawTable->StructStrings->GetArray();
 	ptr+=LenFloat*(SubColumns()-1);
 	ptr+=4;
@@ -326,7 +326,7 @@ void __fastcall TConsumLimit::dataInColumns(void)
     VT_PrintData->Post();//+++++++++++++++++++++++++++++++++++++++++++++++++++++++
 	DrawTable->RowsHeight=RowsHeight;
     /*	dynamic_cast<TBaseMonitorForm*>(Owner)->Caption=
-	fd->NameGroup+" за "+fd->DateTime.FormatString("ddddd")+ptr_hour;
+	fd->NameGroup+" Р·Р° "+fd->DateTime.FormatString("ddddd")+ptr_hour;
 	dynamic_cast<TBaseMonitorForm*>(Owner)->PaintBoxCaption->Invalidate();
     */
 
@@ -357,12 +357,12 @@ void __fastcall TConsumLimit::dataInColumns(void)
 //---------------------------------------------------------------------------
 //---------------------------------------------------------------------------
 
-//Получает данные о считываемой таблице
+//РџРѕР»СѓС‡Р°РµС‚ РґР°РЅРЅС‹Рµ Рѕ СЃС‡РёС‚С‹РІР°РµРјРѕР№ С‚Р°Р±Р»РёС†Рµ
 void __fastcall TConsumLimit::formDescr( void )
 {
    fd->IdGroup = GroupJump(fd->IdGroup);
 
-	//Заполняем необходимые поля описания формы
+	//Р—Р°РїРѕР»РЅСЏРµРј РЅРµРѕР±С…РѕРґРёРјС‹Рµ РїРѕР»СЏ РѕРїРёСЃР°РЅРёСЏ С„РѕСЂРјС‹
 	Clones = 0;
 
   dmMain->oqInterCursor->Params->Clear();

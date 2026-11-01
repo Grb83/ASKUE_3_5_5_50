@@ -87,7 +87,7 @@ bool __fastcall TfmDuplicateCnt_InputParams::ReadNode(TObject* Sender, TObject* 
                 pData->Type=dmMain->quMain->FieldByName("type")->AsInteger;
                 if(!dmMain->quMain->FieldByName("name")->IsNull)
                 strcpy(pData->Name,dmMain->quMain->FieldByName("name")->AsString.c_str());
-                        if(pData->Type==4) //пропускаем расчетную точку
+                        if(pData->Type==4) //РїСЂРѕРїСѓСЃРєР°РµРј СЂР°СЃС‡РµС‚РЅСѓСЋ С‚РѕС‡РєСѓ
                         {
                                 id_node = ((POINTSTREEDEF*)tnParentNode->Data)->Gid;
                                 ((POINTSTREEDEF*)tnParentNode->Data)->Gid = pData->Gid;
@@ -112,7 +112,7 @@ bool __fastcall TfmDuplicateCnt_InputParams::ReadNode(TObject* Sender, TObject* 
              Application->ShowException(&exception);
              return false;
         }
-       return CreatedSmb;//если функция создала папку или точку возврат true
+       return CreatedSmb;//РµСЃР»Рё С„СѓРЅРєС†РёСЏ СЃРѕР·РґР°Р»Р° РїР°РїРєСѓ РёР»Рё С‚РѕС‡РєСѓ РІРѕР·РІСЂР°С‚ true
 }
 
 //---------------------------------------------------------------------------
@@ -135,7 +135,7 @@ void __fastcall TfmDuplicateCnt_InputParams::bbOkClick(TObject *Sender)
         }
         pointPOL->gid = ((POINTSTREEDEF*)tvMain->Selected->Data)->Gid;
         pointPOL->type = ((POINTSTREEDEF*)tvMain->Selected->Data)->Type;
-        if(!paEdit->Visible&&pointPOL->type!=1) // т.е. не точка, а при добавлении нужна точка
+        if(!paEdit->Visible&&pointPOL->type!=1) // С‚.Рµ. РЅРµ С‚РѕС‡РєР°, Р° РїСЂРё РґРѕР±Р°РІР»РµРЅРёРё РЅСѓР¶РЅР° С‚РѕС‡РєР°
           throw Exception(Reconst_smes15_2);
         ModalResult=mrOk;
 }

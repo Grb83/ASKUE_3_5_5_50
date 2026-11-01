@@ -132,7 +132,7 @@ void __fastcall TfmDSJournal::Timer1Timer(TObject *Sender)
    Timer1->Enabled=true;
 }
 //---------------------------------------------------------------------------
-/*! Îòîáðàæåíèå ïîëíîãî ñîäåðæèìîãî ÿ÷åéêè â îòäåëüíîì îêíå.
+/*! ÐžÑ‚Ð¾Ð±Ñ€Ð°Ð¶ÐµÐ½Ð¸Ðµ Ð¿Ð¾Ð»Ð½Ð¾Ð³Ð¾ ÑÐ¾Ð´ÐµÑ€Ð¶Ð¸Ð¼Ð¾Ð³Ð¾ ÑÑ‡ÐµÐ¹ÐºÐ¸ Ð² Ð¾Ñ‚Ð´ÐµÐ»ÑŒÐ½Ð¾Ð¼ Ð¾ÐºÐ½Ðµ.
 */
 void __fastcall TfmDSJournal::MessageGrid1DblClick(
       TObject *Sender)
@@ -248,7 +248,7 @@ void __fastcall TfmDSJournal::MessageGrid1GetSubItemImage(TObject *Sender,
 void __fastcall TfmDSJournal::acDeleteExecute(TObject *Sender)
 {
 int tmp;
-if (MessageBox(Handle,"Âû íàñòàèâàåòå íà óäàëåíèè?",Application->Title.c_str(),MB_YESNO|MB_ICONQUESTION|MB_DEFBUTTON2)==IDYES)
+if (MessageBox(Handle,"Ð’Ñ‹ Ð½Ð°ÑÑ‚Ð°Ð¸Ð²Ð°ÐµÑ‚Ðµ Ð½Ð° ÑƒÐ´Ð°Ð»ÐµÐ½Ð¸Ð¸?",Application->Title.c_str(),MB_YESNO|MB_ICONQUESTION|MB_DEFBUTTON2)==IDYES)
 {
   oqToDel->Close();
   oqToDel->ParamByName("mid")->AsInteger=(int)(MessageGrid1->ItemFocused->SubItems->Objects[0]);
@@ -293,14 +293,14 @@ void __fastcall TfmDSJournal::SaveTableToFile(TObject *Sender)
                 delete Reg;
         }
     if (Language=="UKR"){
-    aSaveDialog->Title = "Çáåðåãòè äî ôàéëà...";
-    aSaveDialog->FileName = "Ñëóæáà ä³àãîñòèêè";
-    aSaveDialog->Filter = "Òåêñòîâ³ äîêóìåíòè (*.txt)|*.txt|Ôàéë ç ðîçä³ëüíèêîì (*.csv)|*.csv|Excel-òàáëèöÿ (*.xls)|*.xls";
+    aSaveDialog->Title = "Ð—Ð±ÐµÑ€ÐµÐ³Ñ‚Ð¸ Ð´Ð¾ Ñ„Ð°Ð¹Ð»Ð°...";
+    aSaveDialog->FileName = "Ð¡Ð»ÑƒÐ¶Ð±Ð° Ð´Ñ–Ð°Ð³Ð¾ÑÑ‚Ð¸ÐºÐ¸";
+    aSaveDialog->Filter = "Ð¢ÐµÐºÑÑ‚Ð¾Ð²Ñ– Ð´Ð¾ÐºÑƒÐ¼ÐµÐ½Ñ‚Ð¸ (*.txt)|*.txt|Ð¤Ð°Ð¹Ð» Ð· Ñ€Ð¾Ð·Ð´Ñ–Ð»ÑŒÐ½Ð¸ÐºÐ¾Ð¼ (*.csv)|*.csv|Excel-Ñ‚Ð°Ð±Ð»Ð¸Ñ†Ñ (*.xls)|*.xls";
     }else{
-    aSaveDialog->Title = "Ñîõðàíèòü â ôàéë...";
-    aSaveDialog->FileName = "Ñëóæáà äèàãíîñòèêè";
+    aSaveDialog->Title = "Ð¡Ð¾Ñ…Ñ€Ð°Ð½Ð¸Ñ‚ÑŒ Ð² Ñ„Ð°Ð¹Ð»...";
+    aSaveDialog->FileName = "Ð¡Ð»ÑƒÐ¶Ð±Ð° Ð´Ð¸Ð°Ð³Ð½Ð¾ÑÑ‚Ð¸ÐºÐ¸";
     aSaveDialog->DefaultExt = "csv";
-    aSaveDialog->Filter = "Òåêñòîâûå äîêóìåíòû (*.txt)|*.txt|Ôàéë ñ ðàçäåëèòåëåì (*.csv)|*.csv|Excel-òàáëèöà (*.xls)|*.xls";
+    aSaveDialog->Filter = "Ð¢ÐµÐºÑÑ‚Ð¾Ð²Ñ‹Ðµ Ð´Ð¾ÐºÑƒÐ¼ÐµÐ½Ñ‚Ñ‹ (*.txt)|*.txt|Ð¤Ð°Ð¹Ð» Ñ Ñ€Ð°Ð·Ð´ÐµÐ»Ð¸Ñ‚ÐµÐ»ÐµÐ¼ (*.csv)|*.csv|Excel-Ñ‚Ð°Ð±Ð»Ð¸Ñ†Ð° (*.xls)|*.xls";
     }
     if(aSaveDialog->Execute())
     {

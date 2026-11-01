@@ -16,37 +16,37 @@
 #include <ToolWin.hpp>
 #include <Dialogs.hpp>
 //---------------------------------------------------------------------------
-struct stDeportProc{ // Атрибуты канала
-  long NProcedure;//                Ид канала                          N
-  char VName[256];//          Название                           N
-  char VProcedure[128];//          Название  проц                         N
-  char VMemo[2000];//         Примечание                         Y
+struct stDeportProc{ // РђС‚СЂРёР±СѓС‚С‹ РєР°РЅР°Р»Р°
+  long NProcedure;//                РРґ РєР°РЅР°Р»Р°                          N
+  char VName[256];//          РќР°Р·РІР°РЅРёРµ                           N
+  char VProcedure[128];//          РќР°Р·РІР°РЅРёРµ  РїСЂРѕС†                         N
+  char VMemo[2000];//         РџСЂРёРјРµС‡Р°РЅРёРµ                         Y
   char VParam[2000];
   float NPeriod;
   long NShift;
   long NType;
-  short indicator[6];//    Флаги для контроля 4-мя long и две даты
-  long editing;// 0 -Не трогали, 1-добавили, 2-редактировали
-  long tmpCid;//    Нужно при сохранении
+  short indicator[6];//    Р¤Р»Р°РіРё РґР»СЏ РєРѕРЅС‚СЂРѕР»СЏ 4-РјСЏ long Рё РґРІРµ РґР°С‚С‹
+  long editing;// 0 -РќРµ С‚СЂРѕРіР°Р»Рё, 1-РґРѕР±Р°РІРёР»Рё, 2-СЂРµРґР°РєС‚РёСЂРѕРІР°Р»Рё
+  long tmpCid;//    РќСѓР¶РЅРѕ РїСЂРё СЃРѕС…СЂР°РЅРµРЅРёРё
 };
 
 struct stProcesses
 {
-  long NType;// 1 - макет 2 - процедура
-  long nMaket;//                Ид канала                N
-  char vName[200];//          Название                  N
+  long NType;// 1 - РјР°РєРµС‚ 2 - РїСЂРѕС†РµРґСѓСЂР°
+  long nMaket;//                РРґ РєР°РЅР°Р»Р°                N
+  char vName[200];//          РќР°Р·РІР°РЅРёРµ                  N
   long nProcedure;
-  char vProcedure[256];//         Примечание                Y
-  char vNote[256];//         Примечание                Y
+  char vProcedure[256];//         РџСЂРёРјРµС‡Р°РЅРёРµ                Y
+  char vNote[256];//         РџСЂРёРјРµС‡Р°РЅРёРµ                Y
   char vPeriod[20];
   long nShift;
   char vParam[2000];
   char vError[2000];
-  char vNextCreated[20]; // дата следующего выполнения системного выполнения
+  char vNextCreated[20]; // РґР°С‚Р° СЃР»РµРґСѓСЋС‰РµРіРѕ РІС‹РїРѕР»РЅРµРЅРёСЏ СЃРёСЃС‚РµРјРЅРѕРіРѕ РІС‹РїРѕР»РЅРµРЅРёСЏ
   long nCycle;
   long nBlock;
-  long editing;// 0 -Не трогали, 1-добавили, 2-редактировали
-  char vLastCreated[20]; // дата последнего выполнения
+  long editing;// 0 -РќРµ С‚СЂРѕРіР°Р»Рё, 1-РґРѕР±Р°РІРёР»Рё, 2-СЂРµРґР°РєС‚РёСЂРѕРІР°Р»Рё
+  char vLastCreated[20]; // РґР°С‚Р° РїРѕСЃР»РµРґРЅРµРіРѕ РІС‹РїРѕР»РЅРµРЅРёСЏ
 };
 
 struct stProcedures
@@ -128,11 +128,11 @@ __published:	// IDE-managed Components
 private:	// User declarations
   bool ChangeControl;
   stProcesses *SelProcess;
-  long *Processes_Del; // id тех процессов которые удалены списка
-                              //  и необходимо удалить из таблицы
+  long *Processes_Del; // id С‚РµС… РїСЂРѕС†РµСЃСЃРѕРІ РєРѕС‚РѕСЂС‹Рµ СѓРґР°Р»РµРЅС‹ СЃРїРёСЃРєР°
+                              //  Рё РЅРµРѕР±С…РѕРґРёРјРѕ СѓРґР°Р»РёС‚СЊ РёР· С‚Р°Р±Р»РёС†С‹
   int Processes_Del_Count;
   bool __fastcall ReadCombo();
-  bool __fastcall ReadProcesses();    // Читает список процессов
+  bool __fastcall ReadProcesses();    // Р§РёС‚Р°РµС‚ СЃРїРёСЃРѕРє РїСЂРѕС†РµСЃСЃРѕРІ
   TStrings* PeriodName;
    void __fastcall SetAccess(TAccess value);
 public:		// User declarations

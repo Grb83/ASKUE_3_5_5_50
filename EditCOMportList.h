@@ -58,11 +58,11 @@ private:	// User declarations
    typedef struct {
       char COM_ID[20];	   //   NUMBER,
       char NAME[12];	   //	VARCHAR2(10),
-      char BAUDRATE[20];   //    - СКОРОСТЬ
-      char BYTESIZE[20];   //    - ЧИСЛО БИТ
-      char PARITY[20];     //    - ЧЕТНОСТЬ
+      char BAUDRATE[20];   //    - РЎРљРћР РћРЎРўР¬
+      char BYTESIZE[20];   //    - Р§РРЎР›Рћ Р‘РРў
+      char PARITY[20];     //    - Р§Р•РўРќРћРЎРўР¬
       char STOPBITS[20];
-      char NLINKTYPE[20];       // Ид типа соединения
+      char NLINKTYPE[20];       // РРґ С‚РёРїР° СЃРѕРµРґРёРЅРµРЅРёСЏ
       int pEdit;           //=1 new ,2-edit, 3- delete
       long nTariffType;
       int nOnlyOne;
@@ -71,7 +71,7 @@ private:	// User declarations
    unsigned long TreeCount;
    void __fastcall SetAccess(TAccess value);
    bool __fastcall LoadTypes(void);
-  // int CurrentScan;  //выбранный опросчик
+  // int CurrentScan;  //РІС‹Р±СЂР°РЅРЅС‹Р№ РѕРїСЂРѕСЃС‡РёРє
    int OldScanIndex;
 public:		// User declarations
 	__fastcall TFormEditCOMportList(TComponent* Owner, AnsiString, TAccess = accDenied);

@@ -170,7 +170,7 @@ void __fastcall TfmPrior::tvHistoryCollapsed(TObject *Sender,
     }
 }
 //---------------------------------------------------------------------------
-// ×èòàåò âåòêó äåðåâà Òî÷åê
+// Ð§Ð¸Ñ‚Ð°ÐµÑ‚ Ð²ÐµÑ‚ÐºÑƒ Ð´ÐµÑ€ÐµÐ²Ð° Ð¢Ð¾Ñ‡ÐµÐº
 void __fastcall TfmPrior::ReadNode(long Parent)
 {
   TTreeNode* Node;
@@ -298,7 +298,7 @@ void __fastcall TfmPrior::tbUpClick(TObject *Sender)
          {
           ptn->MoveTo(ptn->getPrevSibling(),naInsert);
 
-            ptn=ptn->Parent;//Ðîäèòåëüñêèé
+            ptn=ptn->Parent;//Ð Ð¾Ð´Ð¸Ñ‚ÐµÐ»ÑŒÑÐºÐ¸Ð¹
 
           Node = ptn->getFirstChild();
 
@@ -328,7 +328,7 @@ void __fastcall TfmPrior::tbFUpClick(TObject *Sender)
          {
           ptn->MoveTo(ptn->Parent->getFirstChild(),naInsert);
 
-            ptn=ptn->Parent;//Ðîäèòåëüñêèé
+            ptn=ptn->Parent;//Ð Ð¾Ð´Ð¸Ñ‚ÐµÐ»ÑŒÑÐºÐ¸Ð¹
 
           Node = ptn->getFirstChild();
 
@@ -359,7 +359,7 @@ void __fastcall TfmPrior::tbDownClick(TObject *Sender)
         {
           ptn->getNextSibling()->MoveTo(ptn,naInsert);
 
-            ptn=ptn->Parent;//Ðîäèòåëüñêèé
+            ptn=ptn->Parent;//Ð Ð¾Ð´Ð¸Ñ‚ÐµÐ»ÑŒÑÐºÐ¸Ð¹
 
            Node = ptn->getFirstChild();
 
@@ -393,7 +393,7 @@ void __fastcall TfmPrior::tbEDownClick(TObject *Sender)
           ptn->getNextSibling()->MoveTo(ptn,naInsert);
           }
        
-            ptn=ptn->Parent;//Ðîäèòåëüñêèé
+            ptn=ptn->Parent;//Ð Ð¾Ð´Ð¸Ñ‚ÐµÐ»ÑŒÑÐºÐ¸Ð¹
 
            Node = ptn->getFirstChild();
 

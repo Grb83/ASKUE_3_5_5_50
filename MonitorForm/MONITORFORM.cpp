@@ -60,9 +60,9 @@ __fastcall TBaseMonitorForm::~TBaseMonitorForm()
 	delete Interior;
 }
 //---------------------------------------------------------------------------
-// Отрисовка главного заголовка, в зависимости от состояния мозаичного окна
-//		с фокусом					без фокуса
-//		максимизировано				в обычном состоянии
+// РћС‚СЂРёСЃРѕРІРєР° РіР»Р°РІРЅРѕРіРѕ Р·Р°РіРѕР»РѕРІРєР°, РІ Р·Р°РІРёСЃРёРјРѕСЃС‚Рё РѕС‚ СЃРѕСЃС‚РѕСЏРЅРёСЏ РјРѕР·Р°РёС‡РЅРѕРіРѕ РѕРєРЅР°
+//		СЃ С„РѕРєСѓСЃРѕРј					Р±РµР· С„РѕРєСѓСЃР°
+//		РјР°РєСЃРёРјРёР·РёСЂРѕРІР°РЅРѕ				РІ РѕР±С‹С‡РЅРѕРј СЃРѕСЃС‚РѕСЏРЅРёРё
 void __fastcall TBaseMonitorForm::PaintBoxCaptionPaint(TObject *Sender)
 {
 #define Sender ((TPaintBox*)Sender)
@@ -110,7 +110,7 @@ void __fastcall TBaseMonitorForm::PaintBoxCaptionPaint(TObject *Sender)
 
    //r_close.right=r_close.left-2;
    //r_close.left=r_close.right-(GetSystemMetrics(SM_CXSIZE)-2);
-   //12.06.2020 (цеплЯет ключ-бесключ: применил в key_unkey_return_to_odac_5_7 22.07.2020) GRB COMMENT - отключаем прорисовку блямбы, т.к её функционал развернуть-свернуть по факту не работает. Также отключил прорисовку пункта меню в InteriorJournal.cpp::Place и вернул её в InteriorJournal.cpp::~InteriorJournal
+   //12.06.2020 (С†РµРїР»РЇРµС‚ РєР»СЋС‡-Р±РµСЃРєР»СЋС‡: РїСЂРёРјРµРЅРёР» РІ key_unkey_return_to_odac_5_7 22.07.2020) GRB COMMENT - РѕС‚РєР»СЋС‡Р°РµРј РїСЂРѕСЂРёСЃРѕРІРєСѓ Р±Р»СЏРјР±С‹, С‚.Рє РµС‘ С„СѓРЅРєС†РёРѕРЅР°Р» СЂР°Р·РІРµСЂРЅСѓС‚СЊ-СЃРІРµСЂРЅСѓС‚СЊ РїРѕ С„Р°РєС‚Сѓ РЅРµ СЂР°Р±РѕС‚Р°РµС‚. РўР°РєР¶Рµ РѕС‚РєР»СЋС‡РёР» РїСЂРѕСЂРёСЃРѕРІРєСѓ РїСѓРЅРєС‚Р° РјРµРЅСЋ РІ InteriorJournal.cpp::Place Рё РІРµСЂРЅСѓР» РµС‘ РІ InteriorJournal.cpp::~InteriorJournal
    /*
    DrawFrameControl(Sender->Canvas->Handle,&r_close,DFC_CAPTION,
 	   (isMaximized ? DFCS_CAPTIONRESTORE: DFCS_CAPTIONMAX ));*/
@@ -124,7 +124,7 @@ void __fastcall TBaseMonitorForm::PaintBoxCaptionPaint(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 /*
-	Для перерасчета системных размеров заголовка и т.д.
+	Р”Р»СЏ РїРµСЂРµСЂР°СЃС‡РµС‚Р° СЃРёСЃС‚РµРјРЅС‹С… СЂР°Р·РјРµСЂРѕРІ Р·Р°РіРѕР»РѕРІРєР° Рё С‚.Рґ.
 */
 void __fastcall TBaseMonitorForm::FormResize(TObject *Sender)
 {
@@ -136,8 +136,8 @@ void __fastcall TBaseMonitorForm::FormResize(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 /*
-	Для обработки ввода от мыши с целью генерации сообщений владельцу на
-	максимизацию восстановление или закрытие мозаичного окна.
+	Р”Р»СЏ РѕР±СЂР°Р±РѕС‚РєРё РІРІРѕРґР° РѕС‚ РјС‹С€Рё СЃ С†РµР»СЊСЋ РіРµРЅРµСЂР°С†РёРё СЃРѕРѕР±С‰РµРЅРёР№ РІР»Р°РґРµР»СЊС†Сѓ РЅР°
+	РјР°РєСЃРёРјРёР·Р°С†РёСЋ РІРѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ РёР»Рё Р·Р°РєСЂС‹С‚РёРµ РјРѕР·Р°РёС‡РЅРѕРіРѕ РѕРєРЅР°.
 */
 void __fastcall TBaseMonitorForm::PaintBoxCaptionMouseDown(TObject *Sender,
 	TMouseButton Button, TShiftState Shift, int X, int Y)
@@ -172,7 +172,7 @@ void __fastcall TBaseMonitorForm::PaintBoxCaptionMouseDown(TObject *Sender,
    if( X>=lprc.left && X<=lprc.right && Y>=lprc.top && Y<=lprc.bottom )
    {
 	   isPressButton=btMaxRest;
-	   //12.06.2020 GRB COMMENT(цеплЯет ключ-бесключ: применил в key_unkey_return_to_odac_5_7 22.07.2020) - отключаем прорисовку блямбы, т.к её функционал развернуть-свернуть по факту не работает. Также отключил прорисовку пункта меню в InteriorJournal.cpp::Place и вернул её в InteriorJournal.cpp::~InteriorJournal
+	   //12.06.2020 GRB COMMENT(С†РµРїР»РЇРµС‚ РєР»СЋС‡-Р±РµСЃРєР»СЋС‡: РїСЂРёРјРµРЅРёР» РІ key_unkey_return_to_odac_5_7 22.07.2020) - РѕС‚РєР»СЋС‡Р°РµРј РїСЂРѕСЂРёСЃРѕРІРєСѓ Р±Р»СЏРјР±С‹, С‚.Рє РµС‘ С„СѓРЅРєС†РёРѕРЅР°Р» СЂР°Р·РІРµСЂРЅСѓС‚СЊ-СЃРІРµСЂРЅСѓС‚СЊ РїРѕ С„Р°РєС‚Сѓ РЅРµ СЂР°Р±РѕС‚Р°РµС‚. РўР°РєР¶Рµ РѕС‚РєР»СЋС‡РёР» РїСЂРѕСЂРёСЃРѕРІРєСѓ РїСѓРЅРєС‚Р° РјРµРЅСЋ РІ InteriorJournal.cpp::Place Рё РІРµСЂРЅСѓР» РµС‘ РІ InteriorJournal.cpp::~InteriorJournal
 	  /*
       DrawFrameControl(Sender->Canvas->Handle,&lprc,DFC_CAPTION,
 		   (isMaximized ? DFCS_CAPTIONRESTORE: DFCS_CAPTIONMAX )|DFCS_PUSHED);*/
@@ -183,8 +183,8 @@ void __fastcall TBaseMonitorForm::PaintBoxCaptionMouseDown(TObject *Sender,
 }
 //---------------------------------------------------------------------------
 /*
-	Для обработки ввода от мыши с целью генерации сообщений владельцу на
-	максимизацию восстановление или закрытие мозаичного окна.
+	Р”Р»СЏ РѕР±СЂР°Р±РѕС‚РєРё РІРІРѕРґР° РѕС‚ РјС‹С€Рё СЃ С†РµР»СЊСЋ РіРµРЅРµСЂР°С†РёРё СЃРѕРѕР±С‰РµРЅРёР№ РІР»Р°РґРµР»СЊС†Сѓ РЅР°
+	РјР°РєСЃРёРјРёР·Р°С†РёСЋ РІРѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ РёР»Рё Р·Р°РєСЂС‹С‚РёРµ РјРѕР·Р°РёС‡РЅРѕРіРѕ РѕРєРЅР°.
 */
 void __fastcall TBaseMonitorForm::PaintBoxCaptionMouseMove(TObject *Sender,
 	TShiftState Shift, int X, int Y)
@@ -218,7 +218,7 @@ void __fastcall TBaseMonitorForm::PaintBoxCaptionMouseMove(TObject *Sender,
    //lprc.left=lprc.right-(GetSystemMetrics(SM_CXSIZE)-2);
    if( isPressButton==btMaxRest )
    {
-	//12.06.2020 GRB COMMENT(цеплЯет ключ-бесключ: применил в key_unkey_return_to_odac_5_7 22.07.2020) - отключаем прорисовку блямбы, т.к её функционал развернуть-свернуть по факту не работает. Также отключил прорисовку пункта меню в InteriorJournal.cpp::Place и вернул её в InteriorJournal.cpp::~InteriorJournal
+	//12.06.2020 GRB COMMENT(С†РµРїР»РЇРµС‚ РєР»СЋС‡-Р±РµСЃРєР»СЋС‡: РїСЂРёРјРµРЅРёР» РІ key_unkey_return_to_odac_5_7 22.07.2020) - РѕС‚РєР»СЋС‡Р°РµРј РїСЂРѕСЂРёСЃРѕРІРєСѓ Р±Р»СЏРјР±С‹, С‚.Рє РµС‘ С„СѓРЅРєС†РёРѕРЅР°Р» СЂР°Р·РІРµСЂРЅСѓС‚СЊ-СЃРІРµСЂРЅСѓС‚СЊ РїРѕ С„Р°РєС‚Сѓ РЅРµ СЂР°Р±РѕС‚Р°РµС‚. РўР°РєР¶Рµ РѕС‚РєР»СЋС‡РёР» РїСЂРѕСЂРёСЃРѕРІРєСѓ РїСѓРЅРєС‚Р° РјРµРЅСЋ РІ InteriorJournal.cpp::Place Рё РІРµСЂРЅСѓР» РµС‘ РІ InteriorJournal.cpp::~InteriorJournal
 
       /*	   if( X>=lprc.left && X<=lprc.right && Y>=lprc.top && Y<=lprc.bottom )
 		   DrawFrameControl(Sender->Canvas->Handle,&lprc,DFC_CAPTION,
@@ -232,8 +232,8 @@ void __fastcall TBaseMonitorForm::PaintBoxCaptionMouseMove(TObject *Sender,
 }
 //---------------------------------------------------------------------------
 /*
-	Для обработки ввода от мыши с целью генерации сообщений владельцу на
-	максимизацию восстановление или закрытие мозаичного окна.
+	Р”Р»СЏ РѕР±СЂР°Р±РѕС‚РєРё РІРІРѕРґР° РѕС‚ РјС‹С€Рё СЃ С†РµР»СЊСЋ РіРµРЅРµСЂР°С†РёРё СЃРѕРѕР±С‰РµРЅРёР№ РІР»Р°РґРµР»СЊС†Сѓ РЅР°
+	РјР°РєСЃРёРјРёР·Р°С†РёСЋ РІРѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ РёР»Рё Р·Р°РєСЂС‹С‚РёРµ РјРѕР·Р°РёС‡РЅРѕРіРѕ РѕРєРЅР°.
 */
 void __fastcall TBaseMonitorForm::PaintBoxCaptionMouseUp(TObject *Sender,
 	TMouseButton Button, TShiftState Shift, int X, int Y)
@@ -262,7 +262,7 @@ void __fastcall TBaseMonitorForm::PaintBoxCaptionMouseUp(TObject *Sender,
    //lprc.left=lprc.right-(GetSystemMetrics(SM_CXSIZE)-2);
       if( isPressButton==btMaxRest && X>=lprc.left && X<=lprc.right && Y>=lprc.top && Y<=lprc.bottom )
       {
-      //12.06.2020 GRB COMMENT(цеплЯет ключ-бесключ: применил в key_unkey_return_to_odac_5_7 22.07.2020) - отключаем прорисовку блямбы, т.к её функционал развернуть-свернуть по факту не работает. Также отключил прорисовку пункта меню в InteriorJournal.cpp::Place и вернул её в InteriorJournal.cpp::~InteriorJournal
+      //12.06.2020 GRB COMMENT(С†РµРїР»РЇРµС‚ РєР»СЋС‡-Р±РµСЃРєР»СЋС‡: РїСЂРёРјРµРЅРёР» РІ key_unkey_return_to_odac_5_7 22.07.2020) - РѕС‚РєР»СЋС‡Р°РµРј РїСЂРѕСЂРёСЃРѕРІРєСѓ Р±Р»СЏРјР±С‹, С‚.Рє РµС‘ С„СѓРЅРєС†РёРѕРЅР°Р» СЂР°Р·РІРµСЂРЅСѓС‚СЊ-СЃРІРµСЂРЅСѓС‚СЊ РїРѕ С„Р°РєС‚Сѓ РЅРµ СЂР°Р±РѕС‚Р°РµС‚. РўР°РєР¶Рµ РѕС‚РєР»СЋС‡РёР» РїСЂРѕСЂРёСЃРѕРІРєСѓ РїСѓРЅРєС‚Р° РјРµРЅСЋ РІ InteriorJournal.cpp::Place Рё РІРµСЂРЅСѓР» РµС‘ РІ InteriorJournal.cpp::~InteriorJournal
        /*	DrawFrameControl(Sender->Canvas->Handle,&lprc,DFC_CAPTION,
 		      (!isMaximized ? DFCS_CAPTIONRESTORE: DFCS_CAPTIONMAX ));  */
         //END COMMENT
@@ -303,7 +303,7 @@ void __fastcall TBaseMonitorForm::FormPaint(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 /*
-	Генерация сообщения владельцу о активизации мозаичного окна.(получение фокуса)
+	Р“РµРЅРµСЂР°С†РёСЏ СЃРѕРѕР±С‰РµРЅРёСЏ РІР»Р°РґРµР»СЊС†Сѓ Рѕ Р°РєС‚РёРІРёР·Р°С†РёРё РјРѕР·Р°РёС‡РЅРѕРіРѕ РѕРєРЅР°.(РїРѕР»СѓС‡РµРЅРёРµ С„РѕРєСѓСЃР°)
 */
 void __fastcall TBaseMonitorForm::FormActivate(TObject *Sender)
 {
@@ -312,7 +312,7 @@ void __fastcall TBaseMonitorForm::FormActivate(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 /*
-	Генерация сообщения владельцу о деактивизации мозаичного окна.(потеря фокуса)
+	Р“РµРЅРµСЂР°С†РёСЏ СЃРѕРѕР±С‰РµРЅРёСЏ РІР»Р°РґРµР»СЊС†Сѓ Рѕ РґРµР°РєС‚РёРІРёР·Р°С†РёРё РјРѕР·Р°РёС‡РЅРѕРіРѕ РѕРєРЅР°.(РїРѕС‚РµСЂСЏ С„РѕРєСѓСЃР°)
 */
 void __fastcall TBaseMonitorForm::FormDeactivate(TObject *Sender)
 {
@@ -321,7 +321,7 @@ void __fastcall TBaseMonitorForm::FormDeactivate(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 /*
-	Владелец активизирует мозаичное окно.(установка фокуса)
+	Р’Р»Р°РґРµР»РµС† Р°РєС‚РёРІРёР·РёСЂСѓРµС‚ РјРѕР·Р°РёС‡РЅРѕРµ РѕРєРЅРѕ.(СѓСЃС‚Р°РЅРѕРІРєР° С„РѕРєСѓСЃР°)
 */
 void __fastcall TBaseMonitorForm::WMSpltSetFocus(TMessage & Message)
 {
@@ -343,7 +343,7 @@ void __fastcall TBaseMonitorForm::WMSpltSetFocus(TMessage & Message)
 }
 //---------------------------------------------------------------------------
 /*
-	Владелец деактивизирует мозаичное окно.(снятие фокуса)
+	Р’Р»Р°РґРµР»РµС† РґРµР°РєС‚РёРІРёР·РёСЂСѓРµС‚ РјРѕР·Р°РёС‡РЅРѕРµ РѕРєРЅРѕ.(СЃРЅСЏС‚РёРµ С„РѕРєСѓСЃР°)
 */
 void __fastcall TBaseMonitorForm::WMSpltKillFocus(TMessage & Message)
 {
@@ -390,9 +390,9 @@ void __fastcall TBaseMonitorForm::WMRefreshForm(TMessage & Message)
         /*if(!dmMain->LicType&&GrdGetPermission(CHK_LIC_TASK,CHK_LIC_TASK_MONITOR)<=0)
           return;*/
         //END COMMENT
-        //chig Выясняем, что вызвано после ввода новых параметров для Эксель-мониторов
+        //chig Р’С‹СЏСЃРЅСЏРµРј, С‡С‚Рѕ РІС‹Р·РІР°РЅРѕ РїРѕСЃР»Рµ РІРІРѕРґР° РЅРѕРІС‹С… РїР°СЂР°РјРµС‚СЂРѕРІ РґР»СЏ Р­РєСЃРµР»СЊ-РјРѕРЅРёС‚РѕСЂРѕРІ
         bool prIsExcelNewParam = FALSE;
-        //Только если не изменился ид группы
+        //РўРѕР»СЊРєРѕ РµСЃР»Рё РЅРµ РёР·РјРµРЅРёР»СЃСЏ РёРґ РіСЂСѓРїРїС‹
         if (Interior && fd->IdFormTree == Interior->fd->IdFormTree )
             if(Interior->fd->CodeTemplate==EXCEL_REP_F ||
                 Interior->fd->CodeTemplate==EXCEL_F ||
@@ -406,7 +406,7 @@ void __fastcall TBaseMonitorForm::WMRefreshForm(TMessage & Message)
                     ((TInteriorExOpForm*)Interior)->DoVerb();
                 //e chig 29.01.03
             }
-        //e Только если не изменился ид группы
+        //e РўРѕР»СЊРєРѕ РµСЃР»Рё РЅРµ РёР·РјРµРЅРёР»СЃСЏ РёРґ РіСЂСѓРїРїС‹
         //e chig
         AnsiString dt;
         unsigned short year, month;
@@ -414,17 +414,17 @@ void __fastcall TBaseMonitorForm::WMRefreshForm(TMessage & Message)
         switch( fd->StepProfile )
         {
         case TFormDescr::stpMonth:
-		    Caption=fd->NameGroup+" за "+fd->DateTime.FormatString("yyyy 'г.'");
+		    Caption=fd->NameGroup+" Р·Р° "+fd->DateTime.FormatString("yyyy 'Рі.'");
 
 			break;
       case TFormDescr::stpDay:
-        Caption=fd->NameGroup+" за "+fd->DateTime.FormatString("mmmm YYYY'г.'");
+        Caption=fd->NameGroup+" Р·Р° "+fd->DateTime.FormatString("mmmm YYYY'Рі.'");
      	break;
       case TFormDescr::stpHour:
-		    Caption=fd->NameGroup+" за "+fd->DateTime.FormatString("ddddd");
+		    Caption=fd->NameGroup+" Р·Р° "+fd->DateTime.FormatString("ddddd");
      	break;
       case TFormDescr::stpMinute:
-		    Caption=fd->NameGroup+" на "+fd-> DateTime.FormatString("ddddd")+" c "+fd->DateTime.FormatString("t");
+		    Caption=fd->NameGroup+" РЅР° "+fd-> DateTime.FormatString("ddddd")+" c "+fd->DateTime.FormatString("t");
 			break;
         }
         LabelComment->Caption=fd->CommentForm;
@@ -434,11 +434,11 @@ void __fastcall TBaseMonitorForm::WMRefreshForm(TMessage & Message)
             if( hMutex==NULL || WaitForSingleObject(hMutex,INFINITE)==WAIT_OBJECT_0 )
             {
                 //chig 29.01.03
-                //Передача новых параметров в экземпляр интерьера
+                //РџРµСЂРµРґР°С‡Р° РЅРѕРІС‹С… РїР°СЂР°РјРµС‚СЂРѕРІ РІ СЌРєР·РµРјРїР»СЏСЂ РёРЅС‚РµСЂСЊРµСЂР°
                 Interior->fd = fd;
-                //e Передача новых параметров в экземпляр интерьера
+                //e РџРµСЂРµРґР°С‡Р° РЅРѕРІС‹С… РїР°СЂР°РјРµС‚СЂРѕРІ РІ СЌРєР·РµРјРїР»СЏСЂ РёРЅС‚РµСЂСЊРµСЂР°
                 //e chig 29.01.03
-                //Обновление монитора для новых параметров
+                //РћР±РЅРѕРІР»РµРЅРёРµ РјРѕРЅРёС‚РѕСЂР° РґР»СЏ РЅРѕРІС‹С… РїР°СЂР°РјРµС‚СЂРѕРІ
                 switch( fd->CodeTemplate )
                 { case EXCEL_REP_F:
                     ((TInteriorExRep*)Interior)->PassParamsToExcelAndRefr();
@@ -450,7 +450,7 @@ void __fastcall TBaseMonitorForm::WMRefreshForm(TMessage & Message)
                     ((TInteriorExOpForm*)Interior)->PassParamsToExcelAndRefr();
                     break;
                 }
-                //e Обновление монитора для новых параметров
+                //e РћР±РЅРѕРІР»РµРЅРёРµ РјРѕРЅРёС‚РѕСЂР° РґР»СЏ РЅРѕРІС‹С… РїР°СЂР°РјРµС‚СЂРѕРІ
                 if(hMutex)
                     ReleaseMutex(hMutex);
             }else
@@ -467,94 +467,94 @@ void __fastcall TBaseMonitorForm::WMRefreshForm(TMessage & Message)
                 case 1:
                     newInterior=new T2xDrawTableChartInterior(this,SplitterForm,fd,OnProgressBarStepBy);
                     break;
-                case AEBO_REBO_F:       // 100 - Переток Активной / Реактивной энергии [МВтч/МВАрч]
-                case AERO_AEDO_F:       // 200 - Приём / Отдача Активной энергии [МВтч]
-                case RERO_REDO_F:       // 300 - Приём / Отдача Реактивной энергии [МВАрч]
-                //*************** Получасовки и минутки в мощности ****************************/
-                case AEBO_REBO_POW_F:   // 101 - Переток Активной / Реактивной энергии [МВтч/МВАрч]
-                case AERO_AEDO_POW_F:   // 201 - Приём / Отдача Активной энергии [МВтч]
-                case RERO_REDO_POW_F:   // 301 - Приём / Отдача Реактивной энергии [МВАрч]
-                //*************** Расходы суммируются по наростающей **************************/
-                case AEBO_REBO_SUM_F:   // 102 - Переток Активной / Реактивной энергии [МВтч/МВАрч] Суммируется по наростающей
-                case AERO_AEDO_SUM_F:   // 202 - Приём / Отдача Активной энергии [МВтч] Суммируется по наростающей
-                case RERO_REDO_SUM_F:   // 302 - Приём / Отдача Реактивной энергии [МВАрч] Суммируется по наростающей
+                case AEBO_REBO_F:       // 100 - РџРµСЂРµС‚РѕРє РђРєС‚РёРІРЅРѕР№ / Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РњР’С‚С‡/РњР’РђСЂС‡]
+                case AERO_AEDO_F:       // 200 - РџСЂРёС‘Рј / РћС‚РґР°С‡Р° РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РњР’С‚С‡]
+                case RERO_REDO_F:       // 300 - РџСЂРёС‘Рј / РћС‚РґР°С‡Р° Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РњР’РђСЂС‡]
+                //*************** РџРѕР»СѓС‡Р°СЃРѕРІРєРё Рё РјРёРЅСѓС‚РєРё РІ РјРѕС‰РЅРѕСЃС‚Рё ****************************/
+                case AEBO_REBO_POW_F:   // 101 - РџРµСЂРµС‚РѕРє РђРєС‚РёРІРЅРѕР№ / Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РњР’С‚С‡/РњР’РђСЂС‡]
+                case AERO_AEDO_POW_F:   // 201 - РџСЂРёС‘Рј / РћС‚РґР°С‡Р° РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РњР’С‚С‡]
+                case RERO_REDO_POW_F:   // 301 - РџСЂРёС‘Рј / РћС‚РґР°С‡Р° Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РњР’РђСЂС‡]
+                //*************** Р Р°СЃС…РѕРґС‹ СЃСѓРјРјРёСЂСѓСЋС‚СЃСЏ РїРѕ РЅР°СЂРѕСЃС‚Р°СЋС‰РµР№ **************************/
+                case AEBO_REBO_SUM_F:   // 102 - РџРµСЂРµС‚РѕРє РђРєС‚РёРІРЅРѕР№ / Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РњР’С‚С‡/РњР’РђСЂС‡] РЎСѓРјРјРёСЂСѓРµС‚СЃСЏ РїРѕ РЅР°СЂРѕСЃС‚Р°СЋС‰РµР№
+                case AERO_AEDO_SUM_F:   // 202 - РџСЂРёС‘Рј / РћС‚РґР°С‡Р° РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РњР’С‚С‡] РЎСѓРјРјРёСЂСѓРµС‚СЃСЏ РїРѕ РЅР°СЂРѕСЃС‚Р°СЋС‰РµР№
+                case RERO_REDO_SUM_F:   // 302 - РџСЂРёС‘Рј / РћС‚РґР°С‡Р° Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РњР’РђСЂС‡] РЎСѓРјРјРёСЂСѓРµС‚СЃСЏ РїРѕ РЅР°СЂРѕСЃС‚Р°СЋС‰РµР№
                 //*****************************************************************************/
-                case RQ1_RQ4_F:         //Приём / Отдача Реактивной энергии при импорте активной энергии [МВАрч]
-                case RQ1_RQ4_POW_F:     //Приём / Отдача Реактивной энергии при импорте активной энергии [МВАрч]  Получасовки мощность
-                case RQ2_RQ3_F:         //Приём / Отдача Реактивной энергии при экспорте активной энергии [МВАрч]
-                case RQ2_RQ3_POW_F:     //Приём / Отдача Реактивной энергии при экспорте активной энергии [МВАрч] Получасовки мощность
+                case RQ1_RQ4_F:         //РџСЂРёС‘Рј / РћС‚РґР°С‡Р° Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё РїСЂРё РёРјРїРѕСЂС‚Рµ Р°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РњР’РђСЂС‡]
+                case RQ1_RQ4_POW_F:     //РџСЂРёС‘Рј / РћС‚РґР°С‡Р° Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё РїСЂРё РёРјРїРѕСЂС‚Рµ Р°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РњР’РђСЂС‡]  РџРѕР»СѓС‡Р°СЃРѕРІРєРё РјРѕС‰РЅРѕСЃС‚СЊ
+                case RQ2_RQ3_F:         //РџСЂРёС‘Рј / РћС‚РґР°С‡Р° Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё РїСЂРё СЌРєСЃРїРѕСЂС‚Рµ Р°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РњР’РђСЂС‡]
+                case RQ2_RQ3_POW_F:     //РџСЂРёС‘Рј / РћС‚РґР°С‡Р° Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё РїСЂРё СЌРєСЃРїРѕСЂС‚Рµ Р°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РњР’РђСЂС‡] РџРѕР»СѓС‡Р°СЃРѕРІРєРё РјРѕС‰РЅРѕСЃС‚СЊ
 
                     newInterior=new T2Interior(this,SplitterForm,fd,OnProgressBarStepBy);
                     break;
 
-                case AEBO_F:            // 400 - Переток Активной энергии [кВтч]
-                case AERO_F:            // 500 - Приём Активной энергии [кВтч]
-                case AEDO_F:            // 600 - Отдача Активной энергии [кВтч]
-                case REBO_F:            // 700 - Переток Реактивной энергии [кВАрч]
-                case RERO_F:            // 800 - Приём Реактивной энергии [кВАрч]
-                case REDO_F:            // 900 - Отдача реактивной энергии [кВАрч]
-                //************** Временные определенеия для газа, воды и тепла. ***************/
+                case AEBO_F:            // 400 - РџРµСЂРµС‚РѕРє РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РєР’С‚С‡]
+                case AERO_F:            // 500 - РџСЂРёС‘Рј РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РєР’С‚С‡]
+                case AEDO_F:            // 600 - РћС‚РґР°С‡Р° РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РєР’С‚С‡]
+                case REBO_F:            // 700 - РџРµСЂРµС‚РѕРє Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РєР’РђСЂС‡]
+                case RERO_F:            // 800 - РџСЂРёС‘Рј Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РєР’РђСЂС‡]
+                case REDO_F:            // 900 - РћС‚РґР°С‡Р° СЂРµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РєР’РђСЂС‡]
+                //************** Р’СЂРµРјРµРЅРЅС‹Рµ РѕРїСЂРµРґРµР»РµРЅРµРёСЏ РґР»СЏ РіР°Р·Р°, РІРѕРґС‹ Рё С‚РµРїР»Р°. ***************/
                 case WATER_F:
                 case GAS_F:
                 case HEAT_F:
                 //*****************************************************************************/
-                //*************** Получасовки и минутки в мощности ****************************/
-                case AEBO_POW_F:        // 401 - Переток Активной энергии [кВтч]
-                case AERO_POW_F:        // 501 - Приём Активной энергии [кВтч]
-                case AEDO_POW_F:        // 601 - Отдача Активной энергии [кВтч]
-                case REBO_POW_F:        // 701 - Переток Реактивной энергии [кВАрч]
-                case RERO_POW_F:        // 801 - Приём Реактивной энергии [кВАрч]
-                case REDO_POW_F:        // 901 - Отдача реактивной энергии [кВАрч]
+                //*************** РџРѕР»СѓС‡Р°СЃРѕРІРєРё Рё РјРёРЅСѓС‚РєРё РІ РјРѕС‰РЅРѕСЃС‚Рё ****************************/
+                case AEBO_POW_F:        // 401 - РџРµСЂРµС‚РѕРє РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РєР’С‚С‡]
+                case AERO_POW_F:        // 501 - РџСЂРёС‘Рј РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РєР’С‚С‡]
+                case AEDO_POW_F:        // 601 - РћС‚РґР°С‡Р° РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РєР’С‚С‡]
+                case REBO_POW_F:        // 701 - РџРµСЂРµС‚РѕРє Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РєР’РђСЂС‡]
+                case RERO_POW_F:        // 801 - РџСЂРёС‘Рј Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РєР’РђСЂС‡]
+                case REDO_POW_F:        // 901 - РћС‚РґР°С‡Р° СЂРµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РєР’РђСЂС‡]
                 //*****************************************************************************/
-                //*************** Расходы суммируются по наростающей **************************/
-                case AEBO_SUM_F: // 402 - Переток Активной энергии [кВтч] Суммируется по наростающей
-                case AERO_SUM_F: // 502 - Приём Активной энергии [кВтч] Суммируется по наростающей
-                case AEDO_SUM_F: // 602 - Отдача Активной энергии [кВтч] Суммируется по наростающей
-                case REBO_SUM_F: // 702 - Переток Реактивной энергии [кВАрч] Суммируется по наростающей
-                case RERO_SUM_F: // 802 - Приём Реактивной энергии [кВАрч] Суммируется по наростающей
-                case REDO_SUM_F: // 902 - Отдача реактивной энергии [кВАрч] Суммируется по наростающей
+                //*************** Р Р°СЃС…РѕРґС‹ СЃСѓРјРјРёСЂСѓСЋС‚СЃСЏ РїРѕ РЅР°СЂРѕСЃС‚Р°СЋС‰РµР№ **************************/
+                case AEBO_SUM_F: // 402 - РџРµСЂРµС‚РѕРє РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РєР’С‚С‡] РЎСѓРјРјРёСЂСѓРµС‚СЃСЏ РїРѕ РЅР°СЂРѕСЃС‚Р°СЋС‰РµР№
+                case AERO_SUM_F: // 502 - РџСЂРёС‘Рј РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РєР’С‚С‡] РЎСѓРјРјРёСЂСѓРµС‚СЃСЏ РїРѕ РЅР°СЂРѕСЃС‚Р°СЋС‰РµР№
+                case AEDO_SUM_F: // 602 - РћС‚РґР°С‡Р° РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РєР’С‚С‡] РЎСѓРјРјРёСЂСѓРµС‚СЃСЏ РїРѕ РЅР°СЂРѕСЃС‚Р°СЋС‰РµР№
+                case REBO_SUM_F: // 702 - РџРµСЂРµС‚РѕРє Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РєР’РђСЂС‡] РЎСѓРјРјРёСЂСѓРµС‚СЃСЏ РїРѕ РЅР°СЂРѕСЃС‚Р°СЋС‰РµР№
+                case RERO_SUM_F: // 802 - РџСЂРёС‘Рј Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РєР’РђСЂС‡] РЎСѓРјРјРёСЂСѓРµС‚СЃСЏ РїРѕ РЅР°СЂРѕСЃС‚Р°СЋС‰РµР№
+                case REDO_SUM_F: // 902 - РћС‚РґР°С‡Р° СЂРµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РєР’РђСЂС‡] РЎСѓРјРјРёСЂСѓРµС‚СЃСЏ РїРѕ РЅР°СЂРѕСЃС‚Р°СЋС‰РµР№
                 //*****************************************************************************/
                     newInterior=new T1Interior(this,SplitterForm,fd,OnProgressBarStepBy);
                     break;
-                case AERO_AERA_AERB_AERC_F:	// 910 - Активная принятая общая и по тарифам [кВтч]
-                case AEDO_AEDA_AEDB_AEDC_F: // 920 - Активная отданная общая и по тарифам [кВтч]
-                case RERO_RERA_RERB_RERC_F: // 930 - Реактивная принятая общая и по тарифам [кВАрч]
-                case REDO_REDA_REDB_REDC_F: // 940 - Реактивная отданная общая и по тарифам [кВАрч]
-                case AERA_AERB_AERC_AERD_F: // 950 - Активная принятая по тарифам [кВтч]
-                case AEDA_AEDB_AEDC_AEDD_F: // 960 - Активная отданная по тарифам [кВтч]
-                case RERA_RERB_RERC_RERD_F: // 970 - Реактивная принятая по тарифам [кВАрч]
-                case REDA_REDB_REDC_REDD_F: // 980 - Реактивная отданная по тарифам [кВАрч]
+                case AERO_AERA_AERB_AERC_F:	// 910 - РђРєС‚РёРІРЅР°СЏ РїСЂРёРЅСЏС‚Р°СЏ РѕР±С‰Р°СЏ Рё РїРѕ С‚Р°СЂРёС„Р°Рј [РєР’С‚С‡]
+                case AEDO_AEDA_AEDB_AEDC_F: // 920 - РђРєС‚РёРІРЅР°СЏ РѕС‚РґР°РЅРЅР°СЏ РѕР±С‰Р°СЏ Рё РїРѕ С‚Р°СЂРёС„Р°Рј [РєР’С‚С‡]
+                case RERO_RERA_RERB_RERC_F: // 930 - Р РµР°РєС‚РёРІРЅР°СЏ РїСЂРёРЅСЏС‚Р°СЏ РѕР±С‰Р°СЏ Рё РїРѕ С‚Р°СЂРёС„Р°Рј [РєР’РђСЂС‡]
+                case REDO_REDA_REDB_REDC_F: // 940 - Р РµР°РєС‚РёРІРЅР°СЏ РѕС‚РґР°РЅРЅР°СЏ РѕР±С‰Р°СЏ Рё РїРѕ С‚Р°СЂРёС„Р°Рј [РєР’РђСЂС‡]
+                case AERA_AERB_AERC_AERD_F: // 950 - РђРєС‚РёРІРЅР°СЏ РїСЂРёРЅСЏС‚Р°СЏ РїРѕ С‚Р°СЂРёС„Р°Рј [РєР’С‚С‡]
+                case AEDA_AEDB_AEDC_AEDD_F: // 960 - РђРєС‚РёРІРЅР°СЏ РѕС‚РґР°РЅРЅР°СЏ РїРѕ С‚Р°СЂРёС„Р°Рј [РєР’С‚С‡]
+                case RERA_RERB_RERC_RERD_F: // 970 - Р РµР°РєС‚РёРІРЅР°СЏ РїСЂРёРЅСЏС‚Р°СЏ РїРѕ С‚Р°СЂРёС„Р°Рј [РєР’РђСЂС‡]
+                case REDA_REDB_REDC_REDD_F: // 980 - Р РµР°РєС‚РёРІРЅР°СЏ РѕС‚РґР°РЅРЅР°СЏ РїРѕ С‚Р°СЂРёС„Р°Рј [РєР’РђСЂС‡]
                 // add KAS 20.04.2002
-                case AEBO_AEBA_AEBB_AEBC_F: // 921 Переток активной э/э (общая и по тарифам) [кВтч]
-                case REBO_REBA_REBB_REBC_F: //941 Переток реактивной э/э (общая и по тарифам) [кВарч]
+                case AEBO_AEBA_AEBB_AEBC_F: // 921 РџРµСЂРµС‚РѕРє Р°РєС‚РёРІРЅРѕР№ СЌ/СЌ (РѕР±С‰Р°СЏ Рё РїРѕ С‚Р°СЂРёС„Р°Рј) [РєР’С‚С‡]
+                case REBO_REBA_REBB_REBC_F: //941 РџРµСЂРµС‚РѕРє СЂРµР°РєС‚РёРІРЅРѕР№ СЌ/СЌ (РѕР±С‰Р°СЏ Рё РїРѕ С‚Р°СЂРёС„Р°Рј) [РєР’Р°СЂС‡]
                 // end add
-                //Баланс add by NNV
-                case BALANCE_F: // 203 - Баланас Активной энергии [МВтч]
-                case BALANCE_POW_F: // 204 - Баланс Активной энергии (ГН, Тех.проф. - мощность)
-                case BALANCE_SUM_F: // 205 - Баланс Активной энергии (Суммируется по наростающей)
-                case RE_BALANCE_F: // 303 - Баланс Реактивной энергии
-                case RE_BALANCE_POW_F: // 304 - Баланс Реактивной энергии (ГН, Тех.проф. - мощность)
-                case RE_BALANCE_SUM_F: // 305 - Баланс Реактивной энергии (Суммируется по наростающей)
+                //Р‘Р°Р»Р°РЅСЃ add by NNV
+                case BALANCE_F: // 203 - Р‘Р°Р»Р°РЅР°СЃ РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РњР’С‚С‡]
+                case BALANCE_POW_F: // 204 - Р‘Р°Р»Р°РЅСЃ РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё (Р“Рќ, РўРµС….РїСЂРѕС„. - РјРѕС‰РЅРѕСЃС‚СЊ)
+                case BALANCE_SUM_F: // 205 - Р‘Р°Р»Р°РЅСЃ РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё (РЎСѓРјРјРёСЂСѓРµС‚СЃСЏ РїРѕ РЅР°СЂРѕСЃС‚Р°СЋС‰РµР№)
+                case RE_BALANCE_F: // 303 - Р‘Р°Р»Р°РЅСЃ Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё
+                case RE_BALANCE_POW_F: // 304 - Р‘Р°Р»Р°РЅСЃ Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё (Р“Рќ, РўРµС….РїСЂРѕС„. - РјРѕС‰РЅРѕСЃС‚СЊ)
+                case RE_BALANCE_SUM_F: // 305 - Р‘Р°Р»Р°РЅСЃ Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё (РЎСѓРјРјРёСЂСѓРµС‚СЃСЏ РїРѕ РЅР°СЂРѕСЃС‚Р°СЋС‰РµР№)
                 //end add NNV
-                case NOT_BALANCE: // 206 - Небаланс  энергии
-                case NOT_BALANCE_AER: // 207 - Небаланс активной энергии
+                case NOT_BALANCE: // 206 - РќРµР±Р°Р»Р°РЅСЃ  СЌРЅРµСЂРіРёРё
+                case NOT_BALANCE_AER: // 207 - РќРµР±Р°Р»Р°РЅСЃ Р°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё
                     newInterior=new T4Interior(this,SplitterForm,fd,OnProgressBarStepBy);
                     break;
-                case APRO_C: // 10 - Активная мощность (графические формы)
-                case RPRO_C: // 20 - Реактиная мощность
+                case APRO_C: // 10 - РђРєС‚РёРІРЅР°СЏ РјРѕС‰РЅРѕСЃС‚СЊ (РіСЂР°С„РёС‡РµСЃРєРёРµ С„РѕСЂРјС‹)
+                case RPRO_C: // 20 - Р РµР°РєС‚РёРЅР°СЏ РјРѕС‰РЅРѕСЃС‚СЊ
                     newInterior=new TChartInterior(this,SplitterForm,fd,OnProgressBarStepBy);
                     break;
-                case APBO_F: // 30 - Мощность, лимит, отклонение [МВт]
-                case RPBO_F: // 40 - Мощность, лимит, отклонение [МВт]
+                case APBO_F: // 30 - РњРѕС‰РЅРѕСЃС‚СЊ, Р»РёРјРёС‚, РѕС‚РєР»РѕРЅРµРЅРёРµ [РњР’С‚]
+                case RPBO_F: // 40 - РњРѕС‰РЅРѕСЃС‚СЊ, Р»РёРјРёС‚, РѕС‚РєР»РѕРЅРµРЅРёРµ [РњР’С‚]
                     newInterior=new TLimitPowerInterior(this,SplitterForm,fd,OnProgressBarStepBy);
                     break;
-                case JOURNAL_F: // 1000 - Журнал действий оператора
+                case JOURNAL_F: // 1000 - Р–СѓСЂРЅР°Р» РґРµР№СЃС‚РІРёР№ РѕРїРµСЂР°С‚РѕСЂР°
                     newInterior=new TJournalInterior(this,SplitterForm,fd,OnProgressBarStepBy);
                     break;
                 //--------------------------------- Edit by Step------------------------------------------
                 case EXCEL_F:
                 // Add KAS 28.02.2001
-                // Проверяем есть ли файл в нужной директории и если нет то вытягиваем его из базы
+                // РџСЂРѕРІРµСЂСЏРµРј РµСЃС‚СЊ Р»Рё С„Р°Р№Р» РІ РЅСѓР¶РЅРѕР№ РґРёСЂРµРєС‚РѕСЂРёРё Рё РµСЃР»Рё РЅРµС‚ С‚Рѕ РІС‹С‚СЏРіРёРІР°РµРј РµРіРѕ РёР· Р±Р°Р·С‹
                     Control_Exist_File(fd->IdFormTree);
                     // end Add
 
@@ -570,14 +570,14 @@ void __fastcall TBaseMonitorForm::WMRefreshForm(TMessage & Message)
                     newInterior=new TInteriorPLTable(this,SplitterForm,fd,OnProgressBarStepBy);
                     break;
                 // end add -------------------------------------------------------------------------------
-				//GRB ADD 23.01.2019 - Для создания встроенного отчета о потреблении активной и реактивной энергии, а также генерации реактивной энергии по точке или группе точек абонента Житомир ОЭ
+				//GRB ADD 23.01.2019 - Р”Р»СЏ СЃРѕР·РґР°РЅРёСЏ РІСЃС‚СЂРѕРµРЅРЅРѕРіРѕ РѕС‚С‡РµС‚Р° Рѕ РїРѕС‚СЂРµР±Р»РµРЅРёРё Р°РєС‚РёРІРЅРѕР№ Рё СЂРµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё, Р° С‚Р°РєР¶Рµ РіРµРЅРµСЂР°С†РёРё СЂРµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё РїРѕ С‚РѕС‡РєРµ РёР»Рё РіСЂСѓРїРїРµ С‚РѕС‡РµРє Р°Р±РѕРЅРµРЅС‚Р° Р–РёС‚РѕРјРёСЂ РћР­
                 case PL_SQL_MANY_TABLE: //GRB 23/01/2019
                     newInterior=new TInteriorPLTable(this,SplitterForm,fd,OnProgressBarStepBy,3);
                     break;
                 // END GRB add -------------------------------------------------------------------------------
 
                 case EXCEL_REP_F:
-                // Проверяем есть ли файл в нужной директории и если нет то вытягиваем его из базы
+                // РџСЂРѕРІРµСЂСЏРµРј РµСЃС‚СЊ Р»Рё С„Р°Р№Р» РІ РЅСѓР¶РЅРѕР№ РґРёСЂРµРєС‚РѕСЂРёРё Рё РµСЃР»Рё РЅРµС‚ С‚Рѕ РІС‹С‚СЏРіРёРІР°РµРј РµРіРѕ РёР· Р±Р°Р·С‹
                     Control_Exist_File(fd->IdFormTree);
                     newInterior=new TInteriorExRep(this,SplitterForm,fd,OnProgressBarStepBy);
                     break;
@@ -590,72 +590,72 @@ void __fastcall TBaseMonitorForm::WMRefreshForm(TMessage & Message)
                   break;
                 //===== 07.07.2005 Frizyuk A.M. Finish
                 case EXCEL_OP_FORM:
-                // Проверяем есть ли файл в нужной директории и если нет то вытягиваем его из базы
+                // РџСЂРѕРІРµСЂСЏРµРј РµСЃС‚СЊ Р»Рё С„Р°Р№Р» РІ РЅСѓР¶РЅРѕР№ РґРёСЂРµРєС‚РѕСЂРёРё Рё РµСЃР»Рё РЅРµС‚ С‚Рѕ РІС‹С‚СЏРіРёРІР°РµРј РµРіРѕ РёР· Р±Р°Р·С‹
                     Control_Exist_File(fd->IdFormTree);
                     newInterior=new TInteriorExOpForm(this,SplitterForm,fd,OnProgressBarStepBy);
                     break;
                 // end add -------------------------------------------------------------------------------
-                case JOURNALSYS_F: // 1100 - Журнал сообщений системы
+                case JOURNALSYS_F: // 1100 - Р–СѓСЂРЅР°Р» СЃРѕРѕР±С‰РµРЅРёР№ СЃРёСЃС‚РµРјС‹
                     newInterior=new TJournalInteriorSys(this,SplitterForm,fd,OnProgressBarStepBy);
                     break;
-                //case Disturber_F: // 51 - Оперативный контроль лимитов
-                //case Disturber_F_BW:// 53 - Оперативный контроль лимитов (Ч\Б)
+                //case Disturber_F: // 51 - РћРїРµСЂР°С‚РёРІРЅС‹Р№ РєРѕРЅС‚СЂРѕР»СЊ Р»РёРјРёС‚РѕРІ
+                //case Disturber_F_BW:// 53 - РћРїРµСЂР°С‚РёРІРЅС‹Р№ РєРѕРЅС‚СЂРѕР»СЊ Р»РёРјРёС‚РѕРІ (Р§\Р‘)
                 //    newInterior=new TDisturberInterior(this,SplitterForm,fd,OnProgressBarStepBy,fd->CodeTemplate-Disturber_F);
                 //    break;
-                case DU_F:           // 50 - Текущая нагрузка, МВт
-                case DU_F_BW:       // 52 - Текущая нагрузка (Ч\Б)
+                case DU_F:           // 50 - РўРµРєСѓС‰Р°СЏ РЅР°РіСЂСѓР·РєР°, РњР’С‚
+                case DU_F_BW:       // 52 - РўРµРєСѓС‰Р°СЏ РЅР°РіСЂСѓР·РєР° (Р§\Р‘)
                     newInterior=new TDUInterior(this,SplitterForm,fd,OnProgressBarStepBy,fd->CodeTemplate-DU_F);
                     break;
-                case ConsumLim_F:   // 54 - Контроль потребителей
-                case ConsumLim_F_BW:// 55 - Контроль потребителей (Ч/Б)
+                case ConsumLim_F:   // 54 - РљРѕРЅС‚СЂРѕР»СЊ РїРѕС‚СЂРµР±РёС‚РµР»РµР№
+                case ConsumLim_F_BW:// 55 - РљРѕРЅС‚СЂРѕР»СЊ РїРѕС‚СЂРµР±РёС‚РµР»РµР№ (Р§/Р‘)
                     newInterior=new TConsumLimit(this,SplitterForm,fd,OnProgressBarStepBy,fd->CodeTemplate-ConsumLim_F);
                     break;
-                case ConsumLim_F__Debt:// 56 - Контроль потребителей-должников
-                case ConsumLim_F_BW__Debt:// 57 - Контроль потребителей-должников (Ч/Б)
+                case ConsumLim_F__Debt:// 56 - РљРѕРЅС‚СЂРѕР»СЊ РїРѕС‚СЂРµР±РёС‚РµР»РµР№-РґРѕР»Р¶РЅРёРєРѕРІ
+                case ConsumLim_F_BW__Debt:// 57 - РљРѕРЅС‚СЂРѕР»СЊ РїРѕС‚СЂРµР±РёС‚РµР»РµР№-РґРѕР»Р¶РЅРёРєРѕРІ (Р§/Р‘)
                     newInterior=new TConsumLimit(this,SplitterForm,fd,OnProgressBarStepBy,fd->CodeTemplate-ConsumLim_F__Debt);
                     break;
-                case ConsumLim_F__Limit: // 58 - Контроль потребителей-перерасходчиков
-                case ConsumLim_F_BW__Limit: // 59 - Контроль потребителей-перерасходчиков (Ч/Б)
+                case ConsumLim_F__Limit: // 58 - РљРѕРЅС‚СЂРѕР»СЊ РїРѕС‚СЂРµР±РёС‚РµР»РµР№-РїРµСЂРµСЂР°СЃС…РѕРґС‡РёРєРѕРІ
+                case ConsumLim_F_BW__Limit: // 59 - РљРѕРЅС‚СЂРѕР»СЊ РїРѕС‚СЂРµР±РёС‚РµР»РµР№-РїРµСЂРµСЂР°СЃС…РѕРґС‡РёРєРѕРІ (Р§/Р‘)
                     newInterior=new TConsumLimit(this,SplitterForm,fd,OnProgressBarStepBy,fd->CodeTemplate-ConsumLim_F__Limit);
                     break;
-                //case ConsumLost_F: // 60 - Контроль не поступления данных
-                //case ConsumLost_F_BW: // 61 - Контроль не поступления данных (Ч\Б)
+                //case ConsumLost_F: // 60 - РљРѕРЅС‚СЂРѕР»СЊ РЅРµ РїРѕСЃС‚СѓРїР»РµРЅРёСЏ РґР°РЅРЅС‹С…
+                //case ConsumLost_F_BW: // 61 - РљРѕРЅС‚СЂРѕР»СЊ РЅРµ РїРѕСЃС‚СѓРїР»РµРЅРёСЏ РґР°РЅРЅС‹С… (Р§\Р‘)
                 //    newInterior=new TConsumLost(this,SplitterForm,fd,OnProgressBarStepBy,fd->CodeTemplate-ConsumLost_F);
                 //    break;
 
-                case ConsumLimDebt_F:   //62 - Контроль потребителей (Есть столбец долг)
+                case ConsumLimDebt_F:   //62 - РљРѕРЅС‚СЂРѕР»СЊ РїРѕС‚СЂРµР±РёС‚РµР»РµР№ (Р•СЃС‚СЊ СЃС‚РѕР»Р±РµС† РґРѕР»Рі)
                     newInterior=new TConsumLimitDebt(this,SplitterForm,fd,OnProgressBarStepBy,fd->CodeTemplate-ConsumLimDebt_F);
                     break;
-                case ConsumImbalance_F: //63 - Небаланс энергообъектов
+                case ConsumImbalance_F: //63 - РќРµР±Р°Р»Р°РЅСЃ СЌРЅРµСЂРіРѕРѕР±СЉРµРєС‚РѕРІ
                     newInterior=new TConsumImbalance(this,SplitterForm,fd,OnProgressBarStepBy,fd->CodeTemplate-ConsumImbalance_F);
                     break;
-                case ConsumImbalance_POW_F: //64 - Небаланс энергообъектов (По мощности)
+                case ConsumImbalance_POW_F: //64 - РќРµР±Р°Р»Р°РЅСЃ СЌРЅРµСЂРіРѕРѕР±СЉРµРєС‚РѕРІ (РџРѕ РјРѕС‰РЅРѕСЃС‚Рё)
                     newInterior=new TConsumImbalance(this,SplitterForm,fd,OnProgressBarStepBy,fd->CodeTemplate-ConsumImbalance_POW_F);
                     break;
 
-                case AERO_DECAD_F: //1400 Приём Активной энергии по декадам [тыс.кВтч]
+                case AERO_DECAD_F: //1400 РџСЂРёС‘Рј РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё РїРѕ РґРµРєР°РґР°Рј [С‚С‹СЃ.РєР’С‚С‡]
                     newInterior=new TDecadInterior(this,SplitterForm,fd,OnProgressBarStepBy,fd->CodeTemplate-AERO_DECAD_F);
                     break;
-                case AEBO_DECAD_F: //1410 Переток Активной энергии по декадам [тыс.кВтч]
+                case AEBO_DECAD_F: //1410 РџРµСЂРµС‚РѕРє РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё РїРѕ РґРµРєР°РґР°Рј [С‚С‹СЃ.РєР’С‚С‡]
                     newInterior=new TDecadInterior(this,SplitterForm,fd,OnProgressBarStepBy,fd->CodeTemplate-AEBO_DECAD_F);
                     break;
-                case DU2CHART_PARAMS: //65 //Текущие значения и параметры качества электроэнергии (КСС)
-                    //26.11.2020 - изменил 
+                case DU2CHART_PARAMS: //65 //РўРµРєСѓС‰РёРµ Р·РЅР°С‡РµРЅРёСЏ Рё РїР°СЂР°РјРµС‚СЂС‹ РєР°С‡РµСЃС‚РІР° СЌР»РµРєС‚СЂРѕСЌРЅРµСЂРіРёРё (РљРЎРЎ)
+                    //26.11.2020 - РёР·РјРµРЅРёР» 
                     //newInterior=new TDU2ChartInterior(this,SplitterForm,fd,OnProgressBarStepBy);
                     newInterior=new TDU2ChartInteriorGRB(this,SplitterForm,fd,OnProgressBarStepBy);
                     break;
-                case SCHEMA_OP_FORM: //1204 //Оперативная форма со схемой электрической сети (КСС)
+                case SCHEMA_OP_FORM: //1204 //РћРїРµСЂР°С‚РёРІРЅР°СЏ С„РѕСЂРјР° СЃРѕ СЃС…РµРјРѕР№ СЌР»РµРєС‚СЂРёС‡РµСЃРєРѕР№ СЃРµС‚Рё (РљРЎРЎ)
                     Control_Exist_File(fd->IdFormTree);
                     newInterior = new TModusInterior(this,SplitterForm,fd,OnProgressBarStepBy);
                     break;
-                case MODUS_OP_FORM: //1205 //Оперативная форма со схемой электрической сети от Модуса(КСС)
+                case MODUS_OP_FORM: //1205 //РћРїРµСЂР°С‚РёРІРЅР°СЏ С„РѕСЂРјР° СЃРѕ СЃС…РµРјРѕР№ СЌР»РµРєС‚СЂРёС‡РµСЃРєРѕР№ СЃРµС‚Рё РѕС‚ РњРѕРґСѓСЃР°(РљРЎРЎ)
                     Control_Exist_File(fd->IdFormTree);
                     newInterior = new TModusInterior(this,SplitterForm,fd,OnProgressBarStepBy,TModusInterior::otModusActiveXeme);
                     break;
-                case MAKET_F: // 1450 - Макет 30817
+                case MAKET_F: // 1450 - РњР°РєРµС‚ 30817
                     newInterior = new TMaketInterior(this,SplitterForm,fd,OnProgressBarStepBy,fd->CodeTemplate-MAKET_F);
                     break;
-                case FULL_DATA: // 330 - //Полнота и своевременность прлучаемых данных
+                case FULL_DATA: // 330 - //РџРѕР»РЅРѕС‚Р° Рё СЃРІРѕРµРІСЂРµРјРµРЅРЅРѕСЃС‚СЊ РїСЂР»СѓС‡Р°РµРјС‹С… РґР°РЅРЅС‹С…
                     newInterior=new TInteriorFullDat(this,SplitterForm,fd,OnProgressBarStepBy);
                     break;
                 default:
@@ -670,7 +670,7 @@ void __fastcall TBaseMonitorForm::WMRefreshForm(TMessage & Message)
                 LeaveCriticalSection(&ListInteriorCriticalSection);
                 throw;
             }
-    //Удалить Interior из списка ожидающих обновления
+    //РЈРґР°Р»РёС‚СЊ Interior РёР· СЃРїРёСЃРєР° РѕР¶РёРґР°СЋС‰РёС… РѕР±РЅРѕРІР»РµРЅРёСЏ
             ListInterior->Remove(Interior);
             LeaveCriticalSection(&ListInteriorCriticalSection);
 
@@ -727,7 +727,7 @@ void __fastcall TBaseMonitorForm::WMRefreshForm(TMessage & Message)
                         FFF->BitBtnNext->Enabled = true;
                         FFF->BitBtnPrevios->Enabled = true;
                     }
-                    //GRB  COMMENT CHANGE 16.07.2019 - запрещаем бегать туда-сюда на минутке
+                    //GRB  COMMENT CHANGE 16.07.2019 - Р·Р°РїСЂРµС‰Р°РµРј Р±РµРіР°С‚СЊ С‚СѓРґР°-СЃСЋРґР° РЅР° РјРёРЅСѓС‚РєРµ
                     /*FFF->BitBtnPrevios->Enabled =(fd->CodeTemplate==1201||fd->CodeTemplate==1202||fd->CodeTemplate==PL_SQL_REP_F||fd->CodeTemplate==PL_SQL_TABLE?false:true);
                     FFF->BitBtnNext->Enabled = (fd->CodeTemplate==1201||fd->CodeTemplate==1202||fd->CodeTemplate==PL_SQL_REP_F||fd->CodeTemplate==PL_SQL_TABLE?false:true);
                     */
@@ -744,64 +744,64 @@ void __fastcall TBaseMonitorForm::WMRefreshForm(TMessage & Message)
                     switch( fd->CodeTemplate )
                     {
                     case 1:
-                    case AEBO_REBO_F: // 100 - Переток Активной / Реактивной энергии [МВтч/МВАрч]
-                    case AERO_AEDO_F: // 200 - Приём / Отдача Активной энергии [МВтч]
-                    case RERO_REDO_F: // 300 - Приём / Отдача Реактивной энергии [МВАрч]
-                    case AEBO_REBO_POW_F: // 101 - Переток Активной / Реактивной энергии [МВтч/МВАрч]
-                    case AERO_AEDO_POW_F: // 201 - Приём / Отдача Активной энергии [МВтч]
-                    case RERO_REDO_POW_F: // 301 - Приём / Отдача Реактивной энергии [МВАрч]
-                    case AEBO_F:	// 400 - Переток Активной энергии [кВтч]
-                    case AERO_F:    // 500 - Приём Активной энергии [кВтч]
-                    case AEDO_F:    // 600 - Отдача Активной энергии [кВтч]
-                    case REBO_F:    // 700 - Переток Реактивной энергии [кВАрч]
-                    case RERO_F:    // 800 - Приём Реактивной энергии [кВАрч]
-                    case REDO_F:    // 900 - Отдача реактивной энергии [кВАрч]
-                    case AEBO_POW_F:    // 401 - Переток Активной энергии [кВтч]
-                    case AERO_POW_F:    // 501 - Приём Активной энергии [кВтч]
-                    case AEDO_POW_F:    // 601 - Отдача Активной энергии [кВтч]
-                    case REBO_POW_F:    // 701 - Переток Реактивной энергии [кВАрч]
-                    case RERO_POW_F:    // 801 - Приём Реактивной энергии [кВАрч]
-                    case REDO_POW_F:    // 901 - Отдача реактивной энергии [кВАрч]
-                    /*************** Расходы суммируются по наростающей **************************/
-                    case AEBO_REBO_SUM_F: // 102 - Переток Активной / Реактивной энергии [МВтч/МВАрч] Суммируется по наростающей
-                    case AERO_AEDO_SUM_F: // 202 - Приём / Отдача Активной энергии [МВтч] Суммируется по наростающей
-                    case RERO_REDO_SUM_F: // 302 - Приём / Отдача Реактивной энергии [МВАрч] Суммируется по наростающей
-                    case AEBO_SUM_F: // 402 - Переток Активной энергии [кВтч] Суммируется по наростающей
-                    case AERO_SUM_F: // 502 - Приём Активной энергии [кВтч] Суммируется по наростающей
-                    case AEDO_SUM_F: // 602 - Отдача Активной энергии [кВтч] Суммируется по наростающей
-                    case REBO_SUM_F: // 702 - Переток Реактивной энергии [кВАрч] Суммируется по наростающей
-                    case RERO_SUM_F: // 802 - Приём Реактивной энергии [кВАрч] Суммируется по наростающей
-                    case REDO_SUM_F: // 902 - Отдача реактивной энергии [кВАрч] Суммируется по наростающей
+                    case AEBO_REBO_F: // 100 - РџРµСЂРµС‚РѕРє РђРєС‚РёРІРЅРѕР№ / Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РњР’С‚С‡/РњР’РђСЂС‡]
+                    case AERO_AEDO_F: // 200 - РџСЂРёС‘Рј / РћС‚РґР°С‡Р° РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РњР’С‚С‡]
+                    case RERO_REDO_F: // 300 - РџСЂРёС‘Рј / РћС‚РґР°С‡Р° Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РњР’РђСЂС‡]
+                    case AEBO_REBO_POW_F: // 101 - РџРµСЂРµС‚РѕРє РђРєС‚РёРІРЅРѕР№ / Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РњР’С‚С‡/РњР’РђСЂС‡]
+                    case AERO_AEDO_POW_F: // 201 - РџСЂРёС‘Рј / РћС‚РґР°С‡Р° РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РњР’С‚С‡]
+                    case RERO_REDO_POW_F: // 301 - РџСЂРёС‘Рј / РћС‚РґР°С‡Р° Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РњР’РђСЂС‡]
+                    case AEBO_F:	// 400 - РџРµСЂРµС‚РѕРє РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РєР’С‚С‡]
+                    case AERO_F:    // 500 - РџСЂРёС‘Рј РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РєР’С‚С‡]
+                    case AEDO_F:    // 600 - РћС‚РґР°С‡Р° РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РєР’С‚С‡]
+                    case REBO_F:    // 700 - РџРµСЂРµС‚РѕРє Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РєР’РђСЂС‡]
+                    case RERO_F:    // 800 - РџСЂРёС‘Рј Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РєР’РђСЂС‡]
+                    case REDO_F:    // 900 - РћС‚РґР°С‡Р° СЂРµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РєР’РђСЂС‡]
+                    case AEBO_POW_F:    // 401 - РџРµСЂРµС‚РѕРє РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РєР’С‚С‡]
+                    case AERO_POW_F:    // 501 - РџСЂРёС‘Рј РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РєР’С‚С‡]
+                    case AEDO_POW_F:    // 601 - РћС‚РґР°С‡Р° РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РєР’С‚С‡]
+                    case REBO_POW_F:    // 701 - РџРµСЂРµС‚РѕРє Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РєР’РђСЂС‡]
+                    case RERO_POW_F:    // 801 - РџСЂРёС‘Рј Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РєР’РђСЂС‡]
+                    case REDO_POW_F:    // 901 - РћС‚РґР°С‡Р° СЂРµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РєР’РђСЂС‡]
+                    /*************** Р Р°СЃС…РѕРґС‹ СЃСѓРјРјРёСЂСѓСЋС‚СЃСЏ РїРѕ РЅР°СЂРѕСЃС‚Р°СЋС‰РµР№ **************************/
+                    case AEBO_REBO_SUM_F: // 102 - РџРµСЂРµС‚РѕРє РђРєС‚РёРІРЅРѕР№ / Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РњР’С‚С‡/РњР’РђСЂС‡] РЎСѓРјРјРёСЂСѓРµС‚СЃСЏ РїРѕ РЅР°СЂРѕСЃС‚Р°СЋС‰РµР№
+                    case AERO_AEDO_SUM_F: // 202 - РџСЂРёС‘Рј / РћС‚РґР°С‡Р° РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РњР’С‚С‡] РЎСѓРјРјРёСЂСѓРµС‚СЃСЏ РїРѕ РЅР°СЂРѕСЃС‚Р°СЋС‰РµР№
+                    case RERO_REDO_SUM_F: // 302 - РџСЂРёС‘Рј / РћС‚РґР°С‡Р° Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РњР’РђСЂС‡] РЎСѓРјРјРёСЂСѓРµС‚СЃСЏ РїРѕ РЅР°СЂРѕСЃС‚Р°СЋС‰РµР№
+                    case AEBO_SUM_F: // 402 - РџРµСЂРµС‚РѕРє РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РєР’С‚С‡] РЎСѓРјРјРёСЂСѓРµС‚СЃСЏ РїРѕ РЅР°СЂРѕСЃС‚Р°СЋС‰РµР№
+                    case AERO_SUM_F: // 502 - РџСЂРёС‘Рј РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РєР’С‚С‡] РЎСѓРјРјРёСЂСѓРµС‚СЃСЏ РїРѕ РЅР°СЂРѕСЃС‚Р°СЋС‰РµР№
+                    case AEDO_SUM_F: // 602 - РћС‚РґР°С‡Р° РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РєР’С‚С‡] РЎСѓРјРјРёСЂСѓРµС‚СЃСЏ РїРѕ РЅР°СЂРѕСЃС‚Р°СЋС‰РµР№
+                    case REBO_SUM_F: // 702 - РџРµСЂРµС‚РѕРє Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РєР’РђСЂС‡] РЎСѓРјРјРёСЂСѓРµС‚СЃСЏ РїРѕ РЅР°СЂРѕСЃС‚Р°СЋС‰РµР№
+                    case RERO_SUM_F: // 802 - РџСЂРёС‘Рј Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РєР’РђСЂС‡] РЎСѓРјРјРёСЂСѓРµС‚СЃСЏ РїРѕ РЅР°СЂРѕСЃС‚Р°СЋС‰РµР№
+                    case REDO_SUM_F: // 902 - РћС‚РґР°С‡Р° СЂРµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РєР’РђСЂС‡] РЎСѓРјРјРёСЂСѓРµС‚СЃСЏ РїРѕ РЅР°СЂРѕСЃС‚Р°СЋС‰РµР№
                     /*****************************************************************************/
                     case WATER_F:
                     case GAS_F:
                     case HEAT_F:
-                    case AERO_AERA_AERB_AERC_F:	// 910 - Активная принятая общая и по тарифам [кВтч]
-                    case AEDO_AEDA_AEDB_AEDC_F: // 920 - Активная отданная общая и по тарифам [кВтч]
-                    case RERO_RERA_RERB_RERC_F: // 930 - Реактивная принятая общая и по тарифам [кВАрч]
-                    case REDO_REDA_REDB_REDC_F: // 940 - Реактивная отданная общая и по тарифам [кВАрч]
-                    case AERA_AERB_AERC_AERD_F: // 950 - Активная принятая по тарифам [кВтч]
-                    case AEDA_AEDB_AEDC_AEDD_F: // 960 - Активная отданная по тарифам [кВтч]
-                    case RERA_RERB_RERC_RERD_F: // 970 - Реактивная принятая по тарифам [кВАрч]
-                    case REDA_REDB_REDC_REDD_F: // 980 - Реактивная отданная по тарифам [кВАрч]
+                    case AERO_AERA_AERB_AERC_F:	// 910 - РђРєС‚РёРІРЅР°СЏ РїСЂРёРЅСЏС‚Р°СЏ РѕР±С‰Р°СЏ Рё РїРѕ С‚Р°СЂРёС„Р°Рј [РєР’С‚С‡]
+                    case AEDO_AEDA_AEDB_AEDC_F: // 920 - РђРєС‚РёРІРЅР°СЏ РѕС‚РґР°РЅРЅР°СЏ РѕР±С‰Р°СЏ Рё РїРѕ С‚Р°СЂРёС„Р°Рј [РєР’С‚С‡]
+                    case RERO_RERA_RERB_RERC_F: // 930 - Р РµР°РєС‚РёРІРЅР°СЏ РїСЂРёРЅСЏС‚Р°СЏ РѕР±С‰Р°СЏ Рё РїРѕ С‚Р°СЂРёС„Р°Рј [РєР’РђСЂС‡]
+                    case REDO_REDA_REDB_REDC_F: // 940 - Р РµР°РєС‚РёРІРЅР°СЏ РѕС‚РґР°РЅРЅР°СЏ РѕР±С‰Р°СЏ Рё РїРѕ С‚Р°СЂРёС„Р°Рј [РєР’РђСЂС‡]
+                    case AERA_AERB_AERC_AERD_F: // 950 - РђРєС‚РёРІРЅР°СЏ РїСЂРёРЅСЏС‚Р°СЏ РїРѕ С‚Р°СЂРёС„Р°Рј [РєР’С‚С‡]
+                    case AEDA_AEDB_AEDC_AEDD_F: // 960 - РђРєС‚РёРІРЅР°СЏ РѕС‚РґР°РЅРЅР°СЏ РїРѕ С‚Р°СЂРёС„Р°Рј [РєР’С‚С‡]
+                    case RERA_RERB_RERC_RERD_F: // 970 - Р РµР°РєС‚РёРІРЅР°СЏ РїСЂРёРЅСЏС‚Р°СЏ РїРѕ С‚Р°СЂРёС„Р°Рј [РєР’РђСЂС‡]
+                    case REDA_REDB_REDC_REDD_F: // 980 - Р РµР°РєС‚РёРІРЅР°СЏ РѕС‚РґР°РЅРЅР°СЏ РїРѕ С‚Р°СЂРёС„Р°Рј [РєР’РђСЂС‡]
                     // add KAS 20.04.2002
-                    case AEBO_AEBA_AEBB_AEBC_F: // 921 Переток активной э/э (общая и по тарифам) [кВтч]
-                    case REBO_REBA_REBB_REBC_F: //941 Переток реактивной э/э (общая и по тарифам) [кВарч]
+                    case AEBO_AEBA_AEBB_AEBC_F: // 921 РџРµСЂРµС‚РѕРє Р°РєС‚РёРІРЅРѕР№ СЌ/СЌ (РѕР±С‰Р°СЏ Рё РїРѕ С‚Р°СЂРёС„Р°Рј) [РєР’С‚С‡]
+                    case REBO_REBA_REBB_REBC_F: //941 РџРµСЂРµС‚РѕРє СЂРµР°РєС‚РёРІРЅРѕР№ СЌ/СЌ (РѕР±С‰Р°СЏ Рё РїРѕ С‚Р°СЂРёС„Р°Рј) [РєР’Р°СЂС‡]
                     // end add
-                    case APRO_C: // 10 - Активная мощность (графические формы)
-                    case RPRO_C: // 20 - Реактиная мощность
-                    case APBO_F: // 30 - Активная Мощность, лимит, отклонение [МВт]
-                    case RPBO_F: // 40 - Реактивная Мощность, лимит, отклонение [МВАр]
-                    //Баланс add by NNV
-                    case BALANCE_F: // 203 - Баланас Активной энергии [МВтч]
-                    case BALANCE_POW_F: // 204 - Баланс Активной энергии (ГН, Тех.проф. - мощность)
-                    case BALANCE_SUM_F: // 205 - Баланс Активной энергии (Суммируется по наростающей)
-                    case NOT_BALANCE: // 206 - Небаланс активной энергии
-                    case NOT_BALANCE_AER: // 207 - Небаланс активной энергии
-                    case RE_BALANCE_F: // 303 - Баланс Реактивной энергии
-                    case RE_BALANCE_POW_F: // 304 - Баланс Реактивной энергии (ГН, Тех.проф. - мощность)
-                    case RE_BALANCE_SUM_F: // 305 - Баланс Реактивной энергии (Суммируется по наростающей)
-                    case FULL_DATA : //330   //Полнота и своевременность прлучаемых данных
+                    case APRO_C: // 10 - РђРєС‚РёРІРЅР°СЏ РјРѕС‰РЅРѕСЃС‚СЊ (РіСЂР°С„РёС‡РµСЃРєРёРµ С„РѕСЂРјС‹)
+                    case RPRO_C: // 20 - Р РµР°РєС‚РёРЅР°СЏ РјРѕС‰РЅРѕСЃС‚СЊ
+                    case APBO_F: // 30 - РђРєС‚РёРІРЅР°СЏ РњРѕС‰РЅРѕСЃС‚СЊ, Р»РёРјРёС‚, РѕС‚РєР»РѕРЅРµРЅРёРµ [РњР’С‚]
+                    case RPBO_F: // 40 - Р РµР°РєС‚РёРІРЅР°СЏ РњРѕС‰РЅРѕСЃС‚СЊ, Р»РёРјРёС‚, РѕС‚РєР»РѕРЅРµРЅРёРµ [РњР’РђСЂ]
+                    //Р‘Р°Р»Р°РЅСЃ add by NNV
+                    case BALANCE_F: // 203 - Р‘Р°Р»Р°РЅР°СЃ РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РњР’С‚С‡]
+                    case BALANCE_POW_F: // 204 - Р‘Р°Р»Р°РЅСЃ РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё (Р“Рќ, РўРµС….РїСЂРѕС„. - РјРѕС‰РЅРѕСЃС‚СЊ)
+                    case BALANCE_SUM_F: // 205 - Р‘Р°Р»Р°РЅСЃ РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё (РЎСѓРјРјРёСЂСѓРµС‚СЃСЏ РїРѕ РЅР°СЂРѕСЃС‚Р°СЋС‰РµР№)
+                    case NOT_BALANCE: // 206 - РќРµР±Р°Р»Р°РЅСЃ Р°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё
+                    case NOT_BALANCE_AER: // 207 - РќРµР±Р°Р»Р°РЅСЃ Р°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё
+                    case RE_BALANCE_F: // 303 - Р‘Р°Р»Р°РЅСЃ Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё
+                    case RE_BALANCE_POW_F: // 304 - Р‘Р°Р»Р°РЅСЃ Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё (Р“Рќ, РўРµС….РїСЂРѕС„. - РјРѕС‰РЅРѕСЃС‚СЊ)
+                    case RE_BALANCE_SUM_F: // 305 - Р‘Р°Р»Р°РЅСЃ Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё (РЎСѓРјРјРёСЂСѓРµС‚СЃСЏ РїРѕ РЅР°СЂРѕСЃС‚Р°СЋС‰РµР№)
+                    case FULL_DATA : //330   //РџРѕР»РЅРѕС‚Р° Рё СЃРІРѕРµРІСЂРµРјРµРЅРЅРѕСЃС‚СЊ РїСЂР»СѓС‡Р°РµРјС‹С… РґР°РЅРЅС‹С…
                     //end add NNV
 
                         FFF->PrintTable->Visible = true;
@@ -810,11 +810,11 @@ void __fastcall TBaseMonitorForm::WMRefreshForm(TMessage & Message)
                         FFF->PrintGraph->Visible = true;
                         FFF->SaveGraphToFile->Visible = true;
                         break;
-                    case JOURNAL_F: //Журнал действий оператора
-                    case JOURNALSYS_F: //Журнал сообщений системы
+                    case JOURNAL_F: //Р–СѓСЂРЅР°Р» РґРµР№СЃС‚РІРёР№ РѕРїРµСЂР°С‚РѕСЂР°
+                    case JOURNALSYS_F: //Р–СѓСЂРЅР°Р» СЃРѕРѕР±С‰РµРЅРёР№ СЃРёСЃС‚РµРјС‹
                         FFF->SaveTableToFile->Visible = true;
                         break;
-                    case DU2CHART_PARAMS: //Контроль параметров качества электроэнергии
+                    case DU2CHART_PARAMS: //РљРѕРЅС‚СЂРѕР»СЊ РїР°СЂР°РјРµС‚СЂРѕРІ РєР°С‡РµСЃС‚РІР° СЌР»РµРєС‚СЂРѕСЌРЅРµСЂРіРёРё
                         FFF->SaveTableToFile->Visible = true;
                         FFF->PrintTable->Visible = true;
                         FFF->PrintGraph->Visible = true;
@@ -843,16 +843,16 @@ void __fastcall TBaseMonitorForm::WMRefreshForm(TMessage & Message)
             }
             catch (Exception &exception)
             {
-                //begin Сечин 31.07.01
+                //begin РЎРµС‡РёРЅ 31.07.01
                 fd=NULL;
-                //end Сечин
+                //end РЎРµС‡РёРЅ
                 delete newInterior;
                 throw;
             }
             Interior=newInterior;
             Interior->hMutex=hMutex;
             EnterCriticalSection(&ListInteriorCriticalSection);
-            //Поместить Interior в список ожидающих обновления
+            //РџРѕРјРµСЃС‚РёС‚СЊ Interior РІ СЃРїРёСЃРѕРє РѕР¶РёРґР°СЋС‰РёС… РѕР±РЅРѕРІР»РµРЅРёСЏ
             ListInterior->Add(Interior);
             LeaveCriticalSection(&ListInteriorCriticalSection);
             //chig
@@ -867,12 +867,12 @@ void __fastcall TBaseMonitorForm::WMRefreshForm(TMessage & Message)
             Interior->Destroy();
 		    delete Interior;
         }else if(fd){
-        //begin Сечин 31.07.01
+        //begin РЎРµС‡РёРЅ 31.07.01
         //rem delete fd;
             delete fd;
             fd=NULL;
         }
-        //end Сечин 31.07.01
+        //end РЎРµС‡РёРЅ 31.07.01
         TFormDescr *fd1=new TFormDescr;
         Interior=new TInterior(this,SplitterForm,fd1,OnProgressBarStepBy);
         Interior->hMutex=hMutex;
@@ -894,7 +894,7 @@ void __fastcall TBaseMonitorForm::WMRefreshForm(TMessage & Message)
     }
     ReleaseMutex(UpdateMonitors);
   //===== 04.07.2005 Frizyuk A.M. Start
-  //===== Из-за выноса отчета во "внешний" Excel необходимо удалить форму монитора
+  //===== РР·-Р·Р° РІС‹РЅРѕСЃР° РѕС‚С‡РµС‚Р° РІРѕ "РІРЅРµС€РЅРёР№" Excel РЅРµРѕР±С…РѕРґРёРјРѕ СѓРґР°Р»РёС‚СЊ С„РѕСЂРјСѓ РјРѕРЅРёС‚РѕСЂР°
 /*  try
   { if (Interior)
     { if (dynamic_cast<TInteriorExRepOut *>(Interior))
@@ -1040,10 +1040,10 @@ bool __fastcall TBaseMonitorForm::LoadMonitorForm( TStream* istream )
   catch (Exception &e)
   { isSmallFont = true;
 	}
-  // перед любым обновлением мониторов необходимо инициализировать кр. секцию UpdateMonitors
+  // РїРµСЂРµРґ Р»СЋР±С‹Рј РѕР±РЅРѕРІР»РµРЅРёРµРј РјРѕРЅРёС‚РѕСЂРѕРІ РЅРµРѕР±С…РѕРґРёРјРѕ РёРЅРёС†РёР°Р»РёР·РёСЂРѕРІР°С‚СЊ РєСЂ. СЃРµРєС†РёСЋ UpdateMonitors
   while (WaitForSingleObject(UpdateMonitors, 0) != WAIT_OBJECT_0)
-  { Application->ProcessMessages();   // если не удалось иниц-ть. CS то обновить экранные формы...
-    Sleep(0);                         // переключить управление на другой поток, кот занял CS
+  { Application->ProcessMessages();   // РµСЃР»Рё РЅРµ СѓРґР°Р»РѕСЃСЊ РёРЅРёС†-С‚СЊ. CS С‚Рѕ РѕР±РЅРѕРІРёС‚СЊ СЌРєСЂР°РЅРЅС‹Рµ С„РѕСЂРјС‹...
+    Sleep(0);                         // РїРµСЂРµРєР»СЋС‡РёС‚СЊ СѓРїСЂР°РІР»РµРЅРёРµ РЅР° РґСЂСѓРіРѕР№ РїРѕС‚РѕРє, РєРѕС‚ Р·Р°РЅСЏР» CS
   }
   // add by KSS
 	PostMessage(Handle, WM_REFRESHFORM, 1, (LPARAM)fd);
@@ -1122,7 +1122,7 @@ void __fastcall TBaseMonitorForm::FormClose(TObject *Sender,
 	if(hMutex==NULL)
 		return;
 	EnterCriticalSection(&ListInteriorCriticalSection);
-	//Удалить Interior из списка ожидающих обновления
+	//РЈРґР°Р»РёС‚СЊ Interior РёР· СЃРїРёСЃРєР° РѕР¶РёРґР°СЋС‰РёС… РѕР±РЅРѕРІР»РµРЅРёСЏ
 	ListInterior->Remove(Interior);
 	LeaveCriticalSection(&ListInteriorCriticalSection);
 	if( WaitForSingleObject(hMutex,INFINITE)==WAIT_OBJECT_0 )

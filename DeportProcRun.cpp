@@ -24,9 +24,9 @@ bool __fastcall CheckTimeInput( AnsiString PPVal, AnsiString PPNameStr )
   AnsiString prStr;
   try
   {
-    //Ôîðìèðóåì çíà÷åíèå êàê äîó.
+    //Ð¤Ð¾Ñ€Ð¼Ð¸Ñ€ÑƒÐµÐ¼ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ ÐºÐ°Ðº Ð´Ð¾Ñƒ.
     prDT = StrToTime( PPVal + ":00" );
-    //e Ôîðìèðóåì çíà÷åíèå êàê äîó.
+    //e Ð¤Ð¾Ñ€Ð¼Ð¸Ñ€ÑƒÐµÐ¼ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ ÐºÐ°Ðº Ð´Ð¾Ñƒ.
   }
   catch(Exception &exception)
   {
@@ -48,7 +48,7 @@ void __fastcall TfmDeportProcRun::BitBtn1Click(TObject *Sender)
     prCont = CheckTimeInput( MEdTime->Text, Reconst_smes10_2 );
   if ( prCont )
   {
-    //Âûçîâ ïðîö-ðû
+    //Ð’Ñ‹Ð·Ð¾Ð² Ð¿Ñ€Ð¾Ñ†-Ñ€Ñ‹
     TDateTime prTimeDT;
 
     if ( IsHour )
@@ -82,9 +82,9 @@ void __fastcall TfmDeportProcRun::BitBtn1Click(TObject *Sender)
      dmMain->quMain->Execute();
       SprParDT=SprParDT+1;
      }
-    //Èä ïðîö
-    //e Âûçîâ ïðîö-ðû
-  }//ïðîâ-êà âðåìåíè
+    //Ð˜Ð´ Ð¿Ñ€Ð¾Ñ†
+    //e Ð’Ñ‹Ð·Ð¾Ð² Ð¿Ñ€Ð¾Ñ†-Ñ€Ñ‹
+  }//Ð¿Ñ€Ð¾Ð²-ÐºÐ° Ð²Ñ€ÐµÐ¼ÐµÐ½Ð¸
   Close();
 }
 //---------------------------------------------------------------------------
@@ -97,7 +97,7 @@ bool __fastcall TfmDeportProcRun::DataInit( int PPNProc,int isMaket )
 {
   CurrDeportProc.NProcedure = PPNProc;
   unsigned long prCountStr;
-  //Ñ÷èòûâàåì òåêóù ñòðîêó
+  //Ð¡Ñ‡Ð¸Ñ‚Ñ‹Ð²Ð°ÐµÐ¼ Ñ‚ÐµÐºÑƒÑ‰ ÑÑ‚Ñ€Ð¾ÐºÑƒ
   try{
      dmMain->oqCursor->Params->Clear();
      dmMain->oqCursor->SQL->Text="begin "+SchemeName+"file_pg.data_init(:par1,:par2); end;";
@@ -112,10 +112,10 @@ bool __fastcall TfmDeportProcRun::DataInit( int PPNProc,int isMaket )
      CurrDeportProc.NShift=dmMain->oqCursor->FieldByName("nshift")->AsInteger;
      CurrDeportProc.NType=dmMain->oqCursor->FieldByName("ntype")->AsInteger;
      strcpy(CurrDeportProc.VParam,dmMain->oqCursor->FieldByName("vparam")->AsString.c_str());
-    //e Ñ÷èòûâàåì òåêóù ñòðîêó
+    //e Ð¡Ñ‡Ð¸Ñ‚Ñ‹Ð²Ð°ÐµÐ¼ Ñ‚ÐµÐºÑƒÑ‰ ÑÑ‚Ñ€Ð¾ÐºÑƒ
     if(!dmMain->oqCursor->Eof){
        Caption = Caption +AnsiString(" ")+CurrDeportProc.VName;
-       //Çàïîëíåíèå Äàòû âðåìåíè
+       //Ð—Ð°Ð¿Ð¾Ð»Ð½ÐµÐ½Ð¸Ðµ Ð”Ð°Ñ‚Ñ‹ Ð²Ñ€ÐµÐ¼ÐµÐ½Ð¸
        float prPeriod = StrToFloat( CurrDeportProc.NPeriod );
        TDateTime prNow=dmMain->SystemDate;
        if ( prPeriod < 1)
@@ -126,9 +126,9 @@ bool __fastcall TfmDeportProcRun::DataInit( int PPNProc,int isMaket )
          DTPPar->Left = 96;
          IsHour = TRUE;
 
-             //e Çàïîëíåíèå Äàòû âðåìåíè
+             //e Ð—Ð°Ð¿Ð¾Ð»Ð½ÐµÐ½Ð¸Ðµ Ð”Ð°Ñ‚Ñ‹ Ð²Ñ€ÐµÐ¼ÐµÐ½Ð¸
        EdParam->Text = CurrDeportProc.VParam;
-       //äëÿ ìàêåòîâ áëîêèðóåì âûâîä äîï ïàðàìåòðîâ
+       //Ð´Ð»Ñ Ð¼Ð°ÐºÐµÑ‚Ð¾Ð² Ð±Ð»Ð¾ÐºÐ¸Ñ€ÑƒÐµÐ¼ Ð²Ñ‹Ð²Ð¾Ð´ Ð´Ð¾Ð¿ Ð¿Ð°Ñ€Ð°Ð¼ÐµÑ‚Ñ€Ð¾Ð²
        Panel5->Visible = !(CurrDeportProc.NType==0);
        dynamic_cast<TForm*>(Panel5->Owner)->Height = 143 - 35 * ((int)!Panel5->Visible);
        }else{
@@ -148,9 +148,9 @@ bool __fastcall TfmDeportProcRun::DataInit( int PPNProc,int isMaket )
          MEdTime->Text = "00:00";
          IsHour = FALSE;
          
-        //e Çàïîëíåíèå Äàòû âðåìåíè
+        //e Ð—Ð°Ð¿Ð¾Ð»Ð½ÐµÐ½Ð¸Ðµ Ð”Ð°Ñ‚Ñ‹ Ð²Ñ€ÐµÐ¼ÐµÐ½Ð¸
          EdParam->Text = CurrDeportProc.VParam;
-         //äëÿ ìàêåòîâ áëîêèðóåì âûâîä äîï ïàðàìåòðîâ
+         //Ð´Ð»Ñ Ð¼Ð°ÐºÐµÑ‚Ð¾Ð² Ð±Ð»Ð¾ÐºÐ¸Ñ€ÑƒÐµÐ¼ Ð²Ñ‹Ð²Ð¾Ð´ Ð´Ð¾Ð¿ Ð¿Ð°Ñ€Ð°Ð¼ÐµÑ‚Ñ€Ð¾Ð²
          Panel5->Visible = !(CurrDeportProc.NType==0);
          dynamic_cast<TForm*>(Panel5->Owner)->Height = 143 - 35 * ((int)!Panel5->Visible);
         }
@@ -166,7 +166,7 @@ bool __fastcall TfmDeportProcRun::DataInit( int PPNProc,int isMaket )
 //---------------------------------------------------------------------------
 void __fastcall TfmDeportProcRun::FormCreate(TObject *Sender)
 {
-  //Èíèöèèðóåì
+  //Ð˜Ð½Ð¸Ñ†Ð¸Ð¸Ñ€ÑƒÐµÐ¼
   strcpy( CurrDeportProc.VName, "" );
   strcpy( CurrDeportProc.VMemo, "" );
   strcpy( CurrDeportProc.VProcedure, "" );
@@ -174,7 +174,7 @@ void __fastcall TfmDeportProcRun::FormCreate(TObject *Sender)
   CurrDeportProc.NShift = 0;
   CurrDeportProc.NType = 0;
   strcpy( CurrDeportProc.VParam, "" );
-  //e Èíèöèèðóåì
+  //e Ð˜Ð½Ð¸Ñ†Ð¸Ð¸Ñ€ÑƒÐµÐ¼
 }
 //---------------------------------------------------------------------------
 void DeportProcedureRun( int PPNProc,TComponent* Owner,int isMaket )
@@ -223,7 +223,7 @@ bool ShowDateStartFinishDialog(TDateTime &dt1,TDateTime &dt2, AnsiString vname,T
 {
   bool lret=false;
    TfmDeportProcRun* f= new TfmDeportProcRun( Owner );
-   f->Caption="Ñôîðìèðîâàòü äàííûå ïî "+vname;
+   f->Caption="Ð¡Ñ„Ð¾Ñ€Ð¼Ð¸Ñ€Ð¾Ð²Ð°Ñ‚ÑŒ Ð´Ð°Ð½Ð½Ñ‹Ðµ Ð¿Ð¾ "+vname;
    f->Panel2->Visible=false;
    f->Panel2->Enabled=false;
    f->Panel4->Visible=true;

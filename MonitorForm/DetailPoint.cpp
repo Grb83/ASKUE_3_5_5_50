@@ -22,7 +22,7 @@ __fastcall TfmDetailPoint::TfmDetailPoint(TComponent* Owner)
 {
    ReplaceRyda(this,BASE_SCHEME,SchemeName);
 
-     //заполнение списка объектов
+     //Р·Р°РїРѕР»РЅРµРЅРёРµ СЃРїРёСЃРєР° РѕР±СЉРµРєС‚РѕРІ
   oqObjType->Execute();
 
  while (!oqObjType->Eof) {
@@ -133,11 +133,11 @@ long __fastcall TfmDetailPoint::GetCodeTemplate()
   int ind=0;
  	unsigned short year,month,day,hour, minute, sec, msec;
 
-   //-----------------------------------   наполнение колонок фиксированных
+   //-----------------------------------   РЅР°РїРѕР»РЅРµРЅРёРµ РєРѕР»РѕРЅРѕРє С„РёРєСЃРёСЂРѕРІР°РЅРЅС‹С…
    AnsiString NamePoint1;
    TFieldDefs *pDefs = vtData->FieldDefs;
     TFieldDef *pDef=NULL;
-    //Теперь структура таблицы
+    //РўРµРїРµСЂСЊ СЃС‚СЂСѓРєС‚СѓСЂР° С‚Р°Р±Р»РёС†С‹
 
     pDef = pDefs->AddFieldDef();
     pDef->DataType = ftFloat;
@@ -200,9 +200,9 @@ long __fastcall TfmDetailPoint::GetCodeTemplate()
   int PP;
    //PowerProfile=30;
 
-    if((IsShiftTimeZona)&&(month==10)&&(iFD->DateTime.DayOfWeek()==1&&31-day<7))  //25 час
+    if((IsShiftTimeZona)&&(month==10)&&(iFD->DateTime.DayOfWeek()==1&&31-day<7))  //25 С‡Р°СЃ
        ColCount=24*(60/PowerProfile)+1*(60/PowerProfile);
-    else if((IsShiftTimeZona)&&(month==3)&&(iFD->DateTime.DayOfWeek()==1&&31-day<7)) //23 час
+    else if((IsShiftTimeZona)&&(month==3)&&(iFD->DateTime.DayOfWeek()==1&&31-day<7)) //23 С‡Р°СЃ
        ColCount=24*(60/PowerProfile)-1*(60/PowerProfile);
     else
      ColCount=24*(60/PowerProfile);
@@ -213,12 +213,12 @@ long __fastcall TfmDetailPoint::GetCodeTemplate()
 
     hour=1;
     StepPROFILE=1.0/ColCount;
-     if(ColCount>24*(60/PowerProfile))//25 час
+     if(ColCount>24*(60/PowerProfile))//25 С‡Р°СЃ
     {
     StepPROFILE=1.0/(ColCount-60/PowerProfile);
     tempDate=TDateTime(year,month,day)+hour/(double)(ColCount-60/PowerProfile);
     }
-    else if(ColCount<24*(60/PowerProfile))//23 час
+    else if(ColCount<24*(60/PowerProfile))//23 С‡Р°СЃ
     {
     StepPROFILE=1.0/(ColCount+60/PowerProfile);
     tempDate=TDateTime(year,month,day)+hour/(double)(ColCount+60/PowerProfile);
@@ -250,7 +250,7 @@ long __fastcall TfmDetailPoint::GetCodeTemplate()
     ReadDataRow();
     else
     ReadDataRowGreen();
-       //фиксированные колонки
+       //С„РёРєСЃРёСЂРѕРІР°РЅРЅС‹Рµ РєРѕР»РѕРЅРєРё
   for(int i=0;i<4;i++)
   {
   grColumn=grDetail->Columns->Add();
@@ -261,20 +261,20 @@ long __fastcall TfmDetailPoint::GetCodeTemplate()
           grColumn->ReadOnly=true;
           grColumn->Width=20;
           break;
-  case 1: grColumn->Title->Caption=(Ind==1)?"Формула|Аргументы формулы":"Обобщенная точка учета|Источники";
+  case 1: grColumn->Title->Caption=(Ind==1)?"Р¤РѕСЂРјСѓР»Р°|РђСЂРіСѓРјРµРЅС‚С‹ С„РѕСЂРјСѓР»С‹":"РћР±РѕР±С‰РµРЅРЅР°СЏ С‚РѕС‡РєР° СѓС‡РµС‚Р°|РСЃС‚РѕС‡РЅРёРєРё";
           grColumn->FieldName="name";
           grColumn->Color=clBtnFace;
           grColumn->ReadOnly=true;
           grColumn->Width=200;
           grColumn->WordWrap=true;
           break;
-  case 2: grColumn->Title->Caption="Вид энергии";
+  case 2: grColumn->Title->Caption="Р’РёРґ СЌРЅРµСЂРіРёРё";
           grColumn->FieldName="TYPE";
           grColumn->Color=clBtnFace;
           grColumn->ReadOnly=true;
           grColumn->Width=(Ind==1)?60:0;
           break;
-  case 3: grColumn->Title->Caption="Сумма|"+iFD->DateTime.FormatString(formatDateSum);
+  case 3: grColumn->Title->Caption="РЎСѓРјРјР°|"+iFD->DateTime.FormatString(formatDateSum);
           grColumn->Color=clYellow;
           grColumn->FieldName="Field"+IntToStr(0);
           grColumn->ReadOnly=true;
@@ -291,7 +291,7 @@ long __fastcall TfmDetailPoint::GetCodeTemplate()
 
     for(int z=1;z<ColCount+1;z++){
       grColumn=grDetail->Columns->Add();
-      grColumn->Tag=z+(grDetail->FrozenCols)-2;//Запоминаем порядок (а то колонки поменяют)
+      grColumn->Tag=z+(grDetail->FrozenCols)-2;//Р—Р°РїРѕРјРёРЅР°РµРј РїРѕСЂСЏРґРѕРє (Р° С‚Рѕ РєРѕР»РѕРЅРєРё РїРѕРјРµРЅСЏСЋС‚)
       grColumn->Title->Caption=tempDate.FormatString(formatDate);
       grColumn->FieldName="Field"+IntToStr(z);
           //------------------------------------------
@@ -305,7 +305,7 @@ long __fastcall TfmDetailPoint::GetCodeTemplate()
       && minute==(PowerProfile==60?0:PowerProfile)))
 
        {
-           ind=60/PowerProfile;   //25 час
+           ind=60/PowerProfile;   //25 С‡Р°СЃ
            tempDate=tempDate-ind*StepPROFILE;
 
        }
@@ -313,7 +313,7 @@ long __fastcall TfmDetailPoint::GetCodeTemplate()
       && minute==(PowerProfile==60?0:PowerProfile)))
 
        {
-           ind=60/PowerProfile;   //23 час
+           ind=60/PowerProfile;   //23 С‡Р°СЃ
            tempDate=tempDate+ind*StepPROFILE;
 
        }
@@ -554,17 +554,17 @@ void __fastcall TfmDetailPoint::grDetailDrawColumnCell(TObject *Sender,
  AnsiString s;
  char aisvalid[32];
  TRect Rect1(Rect.Right-(grDetail->Canvas->TextWidth("s"))-3,Rect.Top+1,
-            Rect.Right-1,Rect.Top+(grDetail->Canvas->TextWidth("s")+3)); //Верхний правый угол ячейки
+            Rect.Right-1,Rect.Top+(grDetail->Canvas->TextWidth("s")+3)); //Р’РµСЂС…РЅРёР№ РїСЂР°РІС‹Р№ СѓРіРѕР» СЏС‡РµР№РєРё
  //TRect Rect2(Rect.Left+1,Rect.Top+1,Rect.Left+(grDetail->Canvas->TextWidth("s"))+3,
- //           Rect.Top+(grDetail->Canvas->TextWidth("s")+3));             //Верхний левый угол ячейки
+ //           Rect.Top+(grDetail->Canvas->TextWidth("s")+3));             //Р’РµСЂС…РЅРёР№ Р»РµРІС‹Р№ СѓРіРѕР» СЏС‡РµР№РєРё
  TRect Rect3(Rect.Right-(grDetail->Canvas->TextWidth("s"))-3,Rect.Bottom-(grDetail->Canvas->TextWidth("s"))-3,
-            Rect.Right-1,Rect.Bottom);                                //Нижний правый угол ячейки
+            Rect.Right-1,Rect.Bottom);                                //РќРёР¶РЅРёР№ РїСЂР°РІС‹Р№ СѓРіРѕР» СЏС‡РµР№РєРё
   char Symb[4][32]={"OK"," X "," * "," ? "};
-  TColor Color [4]={clGreen,clRed,clBlue ,(TColor)RGB(255,128,0)}; //Цвет фона верхнего  RGB(255,128,0)
-  TColor ColorSimbol[4]={clWhite,clWhite,clWhite,clWhite}; //Цвет шрифта верхнего
-  char Symb1[9][32]={" N "," 1 "," 2 "," S "," P "," M "," O "," A "," П " };
-  TColor Color1[9]={(TColor)RGB(192,192,192),clGreen,clGreen,clBlue,clBlue,clBlue,clGreen,(TColor)RGB(159,255,159),clBlue};//Цвет фона нижнего
-  TColor ColorSimbol1[9]={clBlack,clWhite,clWhite,clWhite,clWhite,clWhite,clWhite,clBlack,clWhite};         //Цвет шрифта нижнего
+  TColor Color [4]={clGreen,clRed,clBlue ,(TColor)RGB(255,128,0)}; //Р¦РІРµС‚ С„РѕРЅР° РІРµСЂС…РЅРµРіРѕ  RGB(255,128,0)
+  TColor ColorSimbol[4]={clWhite,clWhite,clWhite,clWhite}; //Р¦РІРµС‚ С€СЂРёС„С‚Р° РІРµСЂС…РЅРµРіРѕ
+  char Symb1[9][32]={" N "," 1 "," 2 "," S "," P "," M "," O "," A "," Рџ " };
+  TColor Color1[9]={(TColor)RGB(192,192,192),clGreen,clGreen,clBlue,clBlue,clBlue,clGreen,(TColor)RGB(159,255,159),clBlue};//Р¦РІРµС‚ С„РѕРЅР° РЅРёР¶РЅРµРіРѕ
+  TColor ColorSimbol1[9]={clBlack,clWhite,clWhite,clWhite,clWhite,clWhite,clWhite,clBlack,clWhite};         //Р¦РІРµС‚ С€СЂРёС„С‚Р° РЅРёР¶РЅРµРіРѕ
 
   if(DataCol==0)
   {
@@ -687,7 +687,7 @@ void __fastcall TfmDetailPoint::SpezRef()
       //  Panel2->Enabled=(Ind==1);
         editFrmla->Clear();
         eTypeF->Caption="";
-        lbFormula->Caption=(Ind==1)?"Формула":"Обобщенная точка учета";
+        lbFormula->Caption=(Ind==1)?"Р¤РѕСЂРјСѓР»Р°":"РћР±РѕР±С‰РµРЅРЅР°СЏ С‚РѕС‡РєР° СѓС‡РµС‚Р°";
           grDetail->Columns->BeginUpdate();
           grDetail->FrozenCols=0;
           grDetail->FooterRowCount=0;
@@ -803,7 +803,7 @@ void __fastcall TfmDetailPoint::cbMeasChange(TObject *Sender)
     flag=0;
   // if (FormSetupMonitors->RadioGroupShowValidity->ItemIndex == 1)
    //   {
-          if(isvalid[0]!='\0')  //проверка правильности каждого символа в строке метки качества
+          if(isvalid[0]!='\0')  //РїСЂРѕРІРµСЂРєР° РїСЂР°РІРёР»СЊРЅРѕСЃС‚Рё РєР°Р¶РґРѕРіРѕ СЃРёРјРІРѕР»Р° РІ СЃС‚СЂРѕРєРµ РјРµС‚РєРё РєР°С‡РµСЃС‚РІР°
            {
              if(StrToInt(isvalid[0])<0 ||StrToInt(isvalid[0])>3)
              flag=1;

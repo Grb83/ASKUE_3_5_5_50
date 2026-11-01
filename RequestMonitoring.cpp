@@ -44,18 +44,18 @@ void __fastcall TfmRequestMonitoring::vInit(TObject* Sender){
      FDateControl=dtTimeControl->Date;
      DateTimePicker1->Date=Date();
      MaskEdit1->Text="01:00";
-     Panel3->Caption="Данные по группе (точке) учета за " + AnsiString(FDateControl);
+     Panel3->Caption="Р”Р°РЅРЅС‹Рµ РїРѕ РіСЂСѓРїРїРµ (С‚РѕС‡РєРµ) СѓС‡РµС‚Р° Р·Р° " + AnsiString(FDateControl);
      Test=true;
        miManualInp->Delete(miManualInp->Count-1);
      miManIn  = new TMenuItem(mMon);
 
-      miManIn->Caption = "Ввод количества энергии";
+      miManIn->Caption = "Р’РІРѕРґ РєРѕР»РёС‡РµСЃС‚РІР° СЌРЅРµСЂРіРёРё";
       miManIn->OnClick = miManualInp->OnClick;
       miManualInp->Add(miManIn);
 
       miManMetr  = new TMenuItem(mMon);
 
-      miManMetr->Caption = "Ввод показаний";
+      miManMetr->Caption = "Р’РІРѕРґ РїРѕРєР°Р·Р°РЅРёР№";
 
       miManMetr->OnClick =miManualInp->OnClick;
       miManualInp->Add(miManMetr);
@@ -77,7 +77,7 @@ void __fastcall TfmRequestMonitoring::vRefresh(TObject* Sender)
       ReadNode(tvGroupStatus,NULL,FDateControl,true);
 }
 //---------------------------------------------------------------------------
-bool __fastcall TfmRequestMonitoring::ReadNode(TTreeView* tv,TTreeNode* NodeParent, AnsiString aDateControl,bool IfInsert)// Читает ветку дерева Групп
+bool __fastcall TfmRequestMonitoring::ReadNode(TTreeView* tv,TTreeNode* NodeParent, AnsiString aDateControl,bool IfInsert)// Р§РёС‚Р°РµС‚ РІРµС‚РєСѓ РґРµСЂРµРІР° Р“СЂСѓРїРї
 {
 
    sGroupStatus* ptrGroupStatus;
@@ -362,7 +362,7 @@ void __fastcall TfmRequestMonitoring::InitRegistry(void)
   
     if (Reg->OpenKey(RegStr, false))
     {
-      TreeType= Reg->ReadInteger("Tree"); // --tree=1 по группам; tree=2 по каналам; tree=3 по точкам;
+      TreeType= Reg->ReadInteger("Tree"); // --tree=1 РїРѕ РіСЂСѓРїРїР°Рј; tree=2 РїРѕ РєР°РЅР°Р»Р°Рј; tree=3 РїРѕ С‚РѕС‡РєР°Рј;
       CheckBox1->OnClick=NULL;
       CheckBox2->OnClick=NULL;
       CheckBox3->OnClick=NULL;
@@ -428,13 +428,13 @@ void __fastcall TfmRequestMonitoring::tvGroupStatusChange(TObject *Sender,
        ptrGroupStatus = (sGroupStatus*)Node->Data;
        LI = lvInfo->Items->Add();
        LI->ImageIndex = Node->ImageIndex;
-       LI->SubItems->Add(ptrGroupStatus->Name);     // 1- Группа/точка
-       LI->SubItems->Add((IntToStr(ptrGroupStatus->HalfCount)+"/"+IntToStr(ptrGroupStatus->TestHalfCount)).c_str());  //2 - Гн,количество
-       LI->SubItems->Add( AnsiString(ptrGroupStatus->Halfhour).c_str());                              //3 - ГН, дата
-       LI->SubItems->Add((IntToStr(ptrGroupStatus->BillCount)+"/"+IntToStr(ptrGroupStatus->Count)).c_str());  //4 - За сутки, кол-во
-       LI->SubItems->Add(AnsiString(ptrGroupStatus->Bill).c_str());                                          //5 - За сутки, дата
-       LI->SubItems->Add((IntToStr(ptrGroupStatus->MonthsCount)+"/"+IntToStr(ptrGroupStatus->Count)).c_str());  //6 - За месяц, колво
-       LI->SubItems->Add(AnsiString(ptrGroupStatus->Months).c_str());                                            //7 - За месяц, дата
+       LI->SubItems->Add(ptrGroupStatus->Name);     // 1- Р“СЂСѓРїРїР°/С‚РѕС‡РєР°
+       LI->SubItems->Add((IntToStr(ptrGroupStatus->HalfCount)+"/"+IntToStr(ptrGroupStatus->TestHalfCount)).c_str());  //2 - Р“РЅ,РєРѕР»РёС‡РµСЃС‚РІРѕ
+       LI->SubItems->Add( AnsiString(ptrGroupStatus->Halfhour).c_str());                              //3 - Р“Рќ, РґР°С‚Р°
+       LI->SubItems->Add((IntToStr(ptrGroupStatus->BillCount)+"/"+IntToStr(ptrGroupStatus->Count)).c_str());  //4 - Р—Р° СЃСѓС‚РєРё, РєРѕР»-РІРѕ
+       LI->SubItems->Add(AnsiString(ptrGroupStatus->Bill).c_str());                                          //5 - Р—Р° СЃСѓС‚РєРё, РґР°С‚Р°
+       LI->SubItems->Add((IntToStr(ptrGroupStatus->MonthsCount)+"/"+IntToStr(ptrGroupStatus->Count)).c_str());  //6 - Р—Р° РјРµСЃСЏС†, РєРѕР»РІРѕ
+       LI->SubItems->Add(AnsiString(ptrGroupStatus->Months).c_str());                                            //7 - Р—Р° РјРµСЃСЏС†, РґР°С‚Р°
        //GRB ADD 20.10.2020 - rewrite to switch
        switch (currTypeTree){
         case 1:
@@ -444,73 +444,73 @@ void __fastcall TfmRequestMonitoring::tvGroupStatusChange(TObject *Sender,
                 LI->SubItems->Add(AnsiString(ptrGroupStatus->Gid).c_str());
                 break;
         case 3:
-                if(ptrGroupStatus->Mid>0)                                                                                      //8 - id точки Mid ДЛЯ ДЕРЕВА ТОЧЕК
+                if(ptrGroupStatus->Mid>0)                                                                                      //8 - id С‚РѕС‡РєРё Mid Р”Р›РЇ Р”Р•Р Р•Р’Рђ РўРћР§Р•Рљ
                         LI->SubItems->Add(AnsiString(ptrGroupStatus->Mid).c_str());
                 else
                         LI->SubItems->Add(AnsiString("").c_str());
                 break;
         case 5:
-                LI->SubItems->Add(AnsiString(ptrGroupStatus->Gid).c_str());                                                             // 8 - или никак
+                LI->SubItems->Add(AnsiString(ptrGroupStatus->Gid).c_str());                                                             // 8 - РёР»Рё РЅРёРєР°Рє
                 break;
         default:
-                if(ptrGroupStatus->Mid>0)                                                                                      //8 - id точки Mid ДЛЯ ДЕРЕВА ТОЧЕК
+                if(ptrGroupStatus->Mid>0)                                                                                      //8 - id С‚РѕС‡РєРё Mid Р”Р›РЇ Р”Р•Р Р•Р’Рђ РўРћР§Р•Рљ
                         LI->SubItems->Add(AnsiString(ptrGroupStatus->Mid).c_str());
                 else
                         LI->SubItems->Add(AnsiString("").c_str());
                 break;
        }
        /*if(ptrGroupStatus->Mid>0)
-       LI->SubItems->Add(AnsiString(ptrGroupStatus->Mid).c_str());                                               //8 - id точки Mid ДЛЯ ДЕРЕВА ТОЧЕК
+       LI->SubItems->Add(AnsiString(ptrGroupStatus->Mid).c_str());                                               //8 - id С‚РѕС‡РєРё Mid Р”Р›РЇ Р”Р•Р Р•Р’Рђ РўРћР§Р•Рљ
        else
        LI->SubItems->Add(AnsiString("").c_str());
         */
 
-       //22.10.2020 - GRB Убираем каналы 1
-       /*if(rbCanal->Checked ||(rbCom->Checked&&ptrGroupStatus->Type>1 )){                                         // 9 - id канала для каналов и ком-портов
+       //22.10.2020 - GRB РЈР±РёСЂР°РµРј РєР°РЅР°Р»С‹ 1
+       /*if(rbCanal->Checked ||(rbCom->Checked&&ptrGroupStatus->Type>1 )){                                         // 9 - id РєР°РЅР°Р»Р° РґР»СЏ РєР°РЅР°Р»РѕРІ Рё РєРѕРј-РїРѕСЂС‚РѕРІ
         if(ptrGroupStatus->Mid==0)
-          LI->SubItems->Add(AnsiString(ptrGroupStatus->Gid).c_str());                                            // 9 - id канала или так
+          LI->SubItems->Add(AnsiString(ptrGroupStatus->Gid).c_str());                                            // 9 - id РєР°РЅР°Р»Р° РёР»Рё С‚Р°Рє
         else
-          LI->SubItems->Add(AnsiString(((sGroupStatus*)Node->Parent->Data)->Gid).c_str());                       // 9 - пэрент гида или никак
+          LI->SubItems->Add(AnsiString(((sGroupStatus*)Node->Parent->Data)->Gid).c_str());                       // 9 - РїСЌСЂРµРЅС‚ РіРёРґР° РёР»Рё РЅРёРєР°Рє
        }else
-        LI->SubItems->Add(AnsiString("").c_str());                                                                // 9 - или никак
+        LI->SubItems->Add(AnsiString("").c_str());                                                                // 9 - РёР»Рё РЅРёРєР°Рє
         */
       //19.10.2020 - GRB CHANGE
       switch (currTypeTree){
         case 1:
                 if(ptrGroupStatus->parentGroup>0)
-                        LI->SubItems->Add(AnsiString(ptrGroupStatus->parentGroup).c_str());                          // 10 - id Родителя
+                        LI->SubItems->Add(AnsiString(ptrGroupStatus->parentGroup).c_str());                          // 10 - id Р РѕРґРёС‚РµР»СЏ
                 else
-                        LI->SubItems->Add(AnsiString("").c_str());                                                   // Либо так
-                LI->SubItems->Add(AnsiString(ptrGroupStatus->EIC).c_str());                                        // 11 - код точки - для дерева точек так
+                        LI->SubItems->Add(AnsiString("").c_str());                                                   // Р›РёР±Рѕ С‚Р°Рє
+                LI->SubItems->Add(AnsiString(ptrGroupStatus->EIC).c_str());                                        // 11 - РєРѕРґ С‚РѕС‡РєРё - РґР»СЏ РґРµСЂРµРІР° С‚РѕС‡РµРє С‚Р°Рє
                 break;
         case 2:
-                //GRB ADD: 20.10.2020 - так для конечных точек
+                //GRB ADD: 20.10.2020 - С‚Р°Рє РґР»СЏ РєРѕРЅРµС‡РЅС‹С… С‚РѕС‡РµРє
                 if ((LI->ImageIndex==0)||(LI->ImageIndex==1))                                                         //
                         LI->SubItems->Add(AnsiString(((sGroupStatus*)Node->Parent->Data)->Gid).c_str());
                 else{
 
                 if(ptrGroupStatus->parentGroup>0)
-                        LI->SubItems->Add(AnsiString(ptrGroupStatus->parentGroup).c_str());                          // Либо так если есть
+                        LI->SubItems->Add(AnsiString(ptrGroupStatus->parentGroup).c_str());                          // Р›РёР±Рѕ С‚Р°Рє РµСЃР»Рё РµСЃС‚СЊ
                 else
                         LI->SubItems->Add(AnsiString("").c_str());
-                }                                                   // Либо так
-                LI->SubItems->Add(AnsiString(ptrGroupStatus->EIC).c_str());                                        // 11 - код точки - для дерева точек так
+                }                                                   // Р›РёР±Рѕ С‚Р°Рє
+                LI->SubItems->Add(AnsiString(ptrGroupStatus->EIC).c_str());                                        // 11 - РєРѕРґ С‚РѕС‡РєРё - РґР»СЏ РґРµСЂРµРІР° С‚РѕС‡РµРє С‚Р°Рє
 		break;
         case 3:
                 if(ptrGroupStatus->parentGroup>0)
-                        LI->SubItems->Add(AnsiString(ptrGroupStatus->parentGroup).c_str());                          // Либо так если есть
+                        LI->SubItems->Add(AnsiString(ptrGroupStatus->parentGroup).c_str());                          // Р›РёР±Рѕ С‚Р°Рє РµСЃР»Рё РµСЃС‚СЊ
                 else
-                        LI->SubItems->Add(AnsiString("").c_str());                                                   // Либо так
-                LI->SubItems->Add(AnsiString(ptrGroupStatus->EIC).c_str());                                        // 11 - код точки - для дерева точек так
+                        LI->SubItems->Add(AnsiString("").c_str());                                                   // Р›РёР±Рѕ С‚Р°Рє
+                LI->SubItems->Add(AnsiString(ptrGroupStatus->EIC).c_str());                                        // 11 - РєРѕРґ С‚РѕС‡РєРё - РґР»СЏ РґРµСЂРµРІР° С‚РѕС‡РµРє С‚Р°Рє
 		break;
         case 4:
-                //тут парент
+                //С‚СѓС‚ РїР°СЂРµРЅС‚
                 if ((sGroupStatus*)Node->Parent!=NULL)
                         LI->SubItems->Add(AnsiString(((sGroupStatus*)Node->Parent->Data)->Gid).c_str());
                 else
                         LI->SubItems->Add(AnsiString(ptrGroupStatus->Gid).c_str());
 
-                //конец парента
+                //РєРѕРЅРµС† РїР°СЂРµРЅС‚Р°
                 resTST = TryStrToInt (ptrGroupStatus->EIC,tstEIC);
                 if ((resTST)&&(tstEIC>0)) LI->SubItems->Add(AnsiString(ptrGroupStatus->EIC).c_str());
                         else LI->SubItems->Add(AnsiString("").c_str());
@@ -545,13 +545,13 @@ void __fastcall TfmRequestMonitoring::tvGroupStatusChange(TObject *Sender,
        ptrGroupStatus = (sGroupStatus*)tn->Data;
        LI = lvInfo->Items->Add();
        LI->ImageIndex = tn->ImageIndex;
-       LI->SubItems->Add(ptrGroupStatus->Name);                      // 1- Группа/точка
-       LI->SubItems->Add((IntToStr(ptrGroupStatus->HalfCount)+"/"+IntToStr(ptrGroupStatus->TestHalfCount)).c_str());  //2 - Гн,количество
-       LI->SubItems->Add( AnsiString(ptrGroupStatus->Halfhour).c_str());                                              //3 - ГН, дата
-       LI->SubItems->Add((IntToStr(ptrGroupStatus->BillCount)+"/"+IntToStr(ptrGroupStatus->Count)).c_str());          //4 - За сутки, кол-во
-       LI->SubItems->Add(AnsiString(ptrGroupStatus->Bill).c_str());                                                   //5 - За сутки, дата
-       LI->SubItems->Add((IntToStr(ptrGroupStatus->MonthsCount)+"/"+IntToStr(ptrGroupStatus->Count)).c_str());        //6 - За месяц, колво
-       LI->SubItems->Add(AnsiString(ptrGroupStatus->Months).c_str());                                                 //7 - За месяц, дата
+       LI->SubItems->Add(ptrGroupStatus->Name);                      // 1- Р“СЂСѓРїРїР°/С‚РѕС‡РєР°
+       LI->SubItems->Add((IntToStr(ptrGroupStatus->HalfCount)+"/"+IntToStr(ptrGroupStatus->TestHalfCount)).c_str());  //2 - Р“РЅ,РєРѕР»РёС‡РµСЃС‚РІРѕ
+       LI->SubItems->Add( AnsiString(ptrGroupStatus->Halfhour).c_str());                                              //3 - Р“Рќ, РґР°С‚Р°
+       LI->SubItems->Add((IntToStr(ptrGroupStatus->BillCount)+"/"+IntToStr(ptrGroupStatus->Count)).c_str());          //4 - Р—Р° СЃСѓС‚РєРё, РєРѕР»-РІРѕ
+       LI->SubItems->Add(AnsiString(ptrGroupStatus->Bill).c_str());                                                   //5 - Р—Р° СЃСѓС‚РєРё, РґР°С‚Р°
+       LI->SubItems->Add((IntToStr(ptrGroupStatus->MonthsCount)+"/"+IntToStr(ptrGroupStatus->Count)).c_str());        //6 - Р—Р° РјРµСЃСЏС†, РєРѕР»РІРѕ
+       LI->SubItems->Add(AnsiString(ptrGroupStatus->Months).c_str());                                                 //7 - Р—Р° РјРµСЃСЏС†, РґР°С‚Р°
        //GRB ADD 19.10.2020 - to group - neeaded switch
        switch (currTypeTree){
 		   case 1:
@@ -561,7 +561,7 @@ void __fastcall TfmRequestMonitoring::tvGroupStatusChange(TObject *Sender,
 			    LI->SubItems->Add(AnsiString(ptrGroupStatus->Gid).c_str());
 			break;
 			case 3:
-				if(ptrGroupStatus->Gid>0)                                                                                      //8 - id точки Gid для ГРУПП ДЛЯ ДЕРЕВА ТОЧЕК
+				if(ptrGroupStatus->Gid>0)                                                                                      //8 - id С‚РѕС‡РєРё Gid РґР»СЏ Р“Р РЈРџРџ Р”Р›РЇ Р”Р•Р Р•Р’Рђ РўРћР§Р•Рљ
 					LI->SubItems->Add(AnsiString(ptrGroupStatus->Gid).c_str());
 				else
 					LI->SubItems->Add(AnsiString("").c_str());
@@ -572,15 +572,15 @@ void __fastcall TfmRequestMonitoring::tvGroupStatusChange(TObject *Sender,
                                                 LI->SubItems->Add(AnsiString(((sGroupStatus*)Node->Data)->Mid).c_str());
                                                 break;
                                         }else
-                                                                                      //8 - id точки Gid для ГРУПП ДЛЯ ДЕРЕВА ТОЧЕК
+                                                                                      //8 - id С‚РѕС‡РєРё Gid РґР»СЏ Р“Р РЈРџРџ Р”Р›РЇ Р”Р•Р Р•Р’Рђ РўРћР§Р•Рљ
 					LI->SubItems->Add(AnsiString(ptrGroupStatus->Gid).c_str());
                                         }
 				else
 					LI->SubItems->Add(AnsiString("").c_str());
                         break;
                         case 5:
-                         //!!!GRB ADD 21.10.2020 Бредоватый и избыточный код тк условия ptrGroupStatus->Mid==0 и (sGroupStatus*)Node->Parent==NULL  из того что видел(?) идут парой, но т.к он рабочий переделывать не будем!!!!
-                          if(ptrGroupStatus->Mid==0)                                                                                    // 9 - id канала для каналов и ком-портов
+                         //!!!GRB ADD 21.10.2020 Р‘СЂРµРґРѕРІР°С‚С‹Р№ Рё РёР·Р±С‹С‚РѕС‡РЅС‹Р№ РєРѕРґ С‚Рє СѓСЃР»РѕРІРёСЏ ptrGroupStatus->Mid==0 Рё (sGroupStatus*)Node->Parent==NULL  РёР· С‚РѕРіРѕ С‡С‚Рѕ РІРёРґРµР»(?) РёРґСѓС‚ РїР°СЂРѕР№, РЅРѕ С‚.Рє РѕРЅ СЂР°Р±РѕС‡РёР№ РїРµСЂРµРґРµР»С‹РІР°С‚СЊ РЅРµ Р±СѓРґРµРј!!!!
+                          if(ptrGroupStatus->Mid==0)                                                                                    // 9 - id РєР°РЅР°Р»Р° РґР»СЏ РєР°РЅР°Р»РѕРІ Рё РєРѕРј-РїРѕСЂС‚РѕРІ
                                 LI->SubItems->Add(AnsiString(ptrGroupStatus->Gid).c_str());
                          else{
                          if ((LI->ImageIndex==9)||(LI->ImageIndex==10)||(LI->ImageIndex==11)||(LI->ImageIndex==12)){
@@ -595,38 +595,38 @@ void __fastcall TfmRequestMonitoring::tvGroupStatusChange(TObject *Sender,
                         break;
 
 			default:
-				if(ptrGroupStatus->Gid>0)                                                                                      //8 - id точки Gid для ГРУПП ДЛЯ ДЕРЕВА ТОЧЕК
+				if(ptrGroupStatus->Gid>0)                                                                                      //8 - id С‚РѕС‡РєРё Gid РґР»СЏ Р“Р РЈРџРџ Р”Р›РЇ Р”Р•Р Р•Р’Рђ РўРћР§Р•Рљ
 					LI->SubItems->Add(AnsiString(ptrGroupStatus->Gid).c_str());
 				else
 					LI->SubItems->Add(AnsiString("").c_str());
 			break;
        }
-       //22.10.2020 - Убираем каналы 2
+       //22.10.2020 - РЈР±РёСЂР°РµРј РєР°РЅР°Р»С‹ 2
        /*
        if(rbCanal->Checked||(rbCom->Checked&&ptrGroupStatus->Type>1 )){
-        if(ptrGroupStatus->Mid==0)                                                                                    // 9 - id канала для каналов и ком-портов
+        if(ptrGroupStatus->Mid==0)                                                                                    // 9 - id РєР°РЅР°Р»Р° РґР»СЏ РєР°РЅР°Р»РѕРІ Рё РєРѕРј-РїРѕСЂС‚РѕРІ
           LI->SubItems->Add(AnsiString(ptrGroupStatus->Gid).c_str());
         else
           if(Node&&Node->Parent&&Node->Parent->Data)
-             LI->SubItems->Add(AnsiString(((sGroupStatus*)Node->Parent->Data)->Gid).c_str());                        // 9 - id канала или так
+             LI->SubItems->Add(AnsiString(((sGroupStatus*)Node->Parent->Data)->Gid).c_str());                        // 9 - id РєР°РЅР°Р»Р° РёР»Рё С‚Р°Рє
           else
-            LI->SubItems->Add(AnsiString("").c_str());                                                               // 9 - id канала или никак
+            LI->SubItems->Add(AnsiString("").c_str());                                                               // 9 - id РєР°РЅР°Р»Р° РёР»Рё РЅРёРєР°Рє
        }else
-        LI->SubItems->Add(AnsiString("").c_str());                           // 9 - id канала или никак если ты в других деревьях
+        LI->SubItems->Add(AnsiString("").c_str());                           // 9 - id РєР°РЅР°Р»Р° РёР»Рё РЅРёРєР°Рє РµСЃР»Рё С‚С‹ РІ РґСЂСѓРіРёС… РґРµСЂРµРІСЊСЏС…
         */
         //GRB 19.10.2020 GRB CHANGE
 		
 		switch (currTypeTree){
 			case 1:
 			if(ptrGroupStatus->parentGroup>0)
-				LI->SubItems->Add(AnsiString(ptrGroupStatus->parentGroup).c_str());                          // Либо так если есть
+				LI->SubItems->Add(AnsiString(ptrGroupStatus->parentGroup).c_str());                          // Р›РёР±Рѕ С‚Р°Рє РµСЃР»Рё РµСЃС‚СЊ
                         else
-                                LI->SubItems->Add(AnsiString("").c_str());                                                   // Либо так
-			LI->SubItems->Add(AnsiString(ptrGroupStatus->EIC).c_str());                                        // 11 - код точки - для дерева точек так
+                                LI->SubItems->Add(AnsiString("").c_str());                                                   // Р›РёР±Рѕ С‚Р°Рє
+			LI->SubItems->Add(AnsiString(ptrGroupStatus->EIC).c_str());                                        // 11 - РєРѕРґ С‚РѕС‡РєРё - РґР»СЏ РґРµСЂРµРІР° С‚РѕС‡РµРє С‚Р°Рє
 			break;
 			case 2:
                         if ((LI->ImageIndex==0)||(LI->ImageIndex==1)){
-							//04.11.2020 - GRB FIX - для дерева каналов весящие на 1м уровне вне папок каналы пишутся по другому
+							//04.11.2020 - GRB FIX - РґР»СЏ РґРµСЂРµРІР° РєР°РЅР°Р»РѕРІ РІРµСЃСЏС‰РёРµ РЅР° 1Рј СѓСЂРѕРІРЅРµ РІРЅРµ РїР°РїРѕРє РєР°РЅР°Р»С‹ РїРёС€СѓС‚СЃСЏ РїРѕ РґСЂСѓРіРѕРјСѓ
                             if ((ptrGroupStatus->HaveChild == 0)&&(((sGroupStatus*)Node->Data)->parentGroup==1)){
                               LI->SubItems->Add (AnsiString(((sGroupStatus*)Node->Data)->Gid).c_str());
                              break;
@@ -638,27 +638,27 @@ void __fastcall TfmRequestMonitoring::tvGroupStatusChange(TObject *Sender,
                             }else{
 								
 			        if(ptrGroupStatus->parentGroup>0)
-				        LI->SubItems->Add(AnsiString(ptrGroupStatus->parentGroup).c_str());                          // Либо так если есть
+				        LI->SubItems->Add(AnsiString(ptrGroupStatus->parentGroup).c_str());                          // Р›РёР±Рѕ С‚Р°Рє РµСЃР»Рё РµСЃС‚СЊ
                                 else
-                                        LI->SubItems->Add(AnsiString("").c_str());                                                    // Либо так
+                                        LI->SubItems->Add(AnsiString("").c_str());                                                    // Р›РёР±Рѕ С‚Р°Рє
                             }
                         }else{
 			if(ptrGroupStatus->parentGroup>0)
-				LI->SubItems->Add(AnsiString(ptrGroupStatus->parentGroup).c_str());                          // Либо так если есть
+				LI->SubItems->Add(AnsiString(ptrGroupStatus->parentGroup).c_str());                          // Р›РёР±Рѕ С‚Р°Рє РµСЃР»Рё РµСЃС‚СЊ
                         else
-                                LI->SubItems->Add(AnsiString("").c_str());                                                    // Либо так
+                                LI->SubItems->Add(AnsiString("").c_str());                                                    // Р›РёР±Рѕ С‚Р°Рє
                         }
-			LI->SubItems->Add(AnsiString(ptrGroupStatus->EIC).c_str());                                          // 11 - код точки - для дерева точек так
+			LI->SubItems->Add(AnsiString(ptrGroupStatus->EIC).c_str());                                          // 11 - РєРѕРґ С‚РѕС‡РєРё - РґР»СЏ РґРµСЂРµРІР° С‚РѕС‡РµРє С‚Р°Рє
 			break;
 			case 3:
 			if(ptrGroupStatus->parentGroup>0)
-				LI->SubItems->Add(AnsiString(ptrGroupStatus->parentGroup).c_str());                          // Либо так если есть
+				LI->SubItems->Add(AnsiString(ptrGroupStatus->parentGroup).c_str());                          // Р›РёР±Рѕ С‚Р°Рє РµСЃР»Рё РµСЃС‚СЊ
                         else
-                                LI->SubItems->Add(AnsiString("").c_str());                                                   // Либо так
-			LI->SubItems->Add(AnsiString(ptrGroupStatus->EIC).c_str());                                        // 11 - код точки - для дерева точек так
+                                LI->SubItems->Add(AnsiString("").c_str());                                                   // Р›РёР±Рѕ С‚Р°Рє
+			LI->SubItems->Add(AnsiString(ptrGroupStatus->EIC).c_str());                                        // 11 - РєРѕРґ С‚РѕС‡РєРё - РґР»СЏ РґРµСЂРµРІР° С‚РѕС‡РµРє С‚Р°Рє
 			break;
                         case 4:
-                        //тут будет много всякого
+                        //С‚СѓС‚ Р±СѓРґРµС‚ РјРЅРѕРіРѕ РІСЃСЏРєРѕРіРѕ
 
                         if ((sGroupStatus*)Node->Parent!=NULL){
                                 if ((LI->ImageIndex==0)||(LI->ImageIndex==1)){
@@ -673,7 +673,7 @@ void __fastcall TfmRequestMonitoring::tvGroupStatusChange(TObject *Sender,
                         else
 
                                 LI->SubItems->Add(AnsiString(((sGroupStatus*)Node->Data)->Gid).c_str());
-                        //конец
+                        //РєРѕРЅРµС†
                         resTST = TryStrToInt (ptrGroupStatus->EIC,tstEIC);
                         if ((resTST)&&(tstEIC>0)) LI->SubItems->Add(AnsiString(ptrGroupStatus->EIC).c_str());
                         else LI->SubItems->Add(AnsiString("").c_str());
@@ -723,25 +723,25 @@ void __fastcall TfmRequestMonitoring::iaRefreshExecute(TObject *Sender)
 
      FDateControl=dtTimeControl->Date;
      if(Sender==(TObject*)rbCanal){
-     Panel3->Caption="Данные по каналу (точке) учета за " + AnsiString(FDateControl);
-     Panel7->Caption="Контролируемые каналы учета";
+     Panel3->Caption="Р”Р°РЅРЅС‹Рµ РїРѕ РєР°РЅР°Р»Сѓ (С‚РѕС‡РєРµ) СѓС‡РµС‚Р° Р·Р° " + AnsiString(FDateControl);
+     Panel7->Caption="РљРѕРЅС‚СЂРѕР»РёСЂСѓРµРјС‹Рµ РєР°РЅР°Р»С‹ СѓС‡РµС‚Р°";
      }
      if(Sender==(TObject*)rbGroup){
-     Panel3->Caption="Данные по группе (точке) учета за " + AnsiString(FDateControl);
-     Panel7->Caption="Контролируемые группы учета";
+     Panel3->Caption="Р”Р°РЅРЅС‹Рµ РїРѕ РіСЂСѓРїРїРµ (С‚РѕС‡РєРµ) СѓС‡РµС‚Р° Р·Р° " + AnsiString(FDateControl);
+     Panel7->Caption="РљРѕРЅС‚СЂРѕР»РёСЂСѓРµРјС‹Рµ РіСЂСѓРїРїС‹ СѓС‡РµС‚Р°";
      }
      if(Sender==(TObject*)rbPoints){
-     Panel3->Caption="Данные по точке учета за " + AnsiString(FDateControl);
-     Panel7->Caption="Контролируемые точки учета";
+     Panel3->Caption="Р”Р°РЅРЅС‹Рµ РїРѕ С‚РѕС‡РєРµ СѓС‡РµС‚Р° Р·Р° " + AnsiString(FDateControl);
+     Panel7->Caption="РљРѕРЅС‚СЂРѕР»РёСЂСѓРµРјС‹Рµ С‚РѕС‡РєРё СѓС‡РµС‚Р°";
      }
      if(Sender==(TObject*)rbMaket){
-     Panel3->Caption="Данные по точке учета за " + AnsiString(FDateControl);
-     Panel7->Caption="Контролируемые макеты";
+     Panel3->Caption="Р”Р°РЅРЅС‹Рµ РїРѕ С‚РѕС‡РєРµ СѓС‡РµС‚Р° Р·Р° " + AnsiString(FDateControl);
+     Panel7->Caption="РљРѕРЅС‚СЂРѕР»РёСЂСѓРµРјС‹Рµ РјР°РєРµС‚С‹";
      }
      if(Sender==(TObject*)rbCom )
      {
-     Panel3->Caption="Данные по СОМ-порту(каналу,точке) учета за " + AnsiString(FDateControl);
-     Panel7->Caption="Контролируемые СОМ-порты";
+     Panel3->Caption="Р”Р°РЅРЅС‹Рµ РїРѕ РЎРћРњ-РїРѕСЂС‚Сѓ(РєР°РЅР°Р»Сѓ,С‚РѕС‡РєРµ) СѓС‡РµС‚Р° Р·Р° " + AnsiString(FDateControl);
+     Panel7->Caption="РљРѕРЅС‚СЂРѕР»РёСЂСѓРµРјС‹Рµ РЎРћРњ-РїРѕСЂС‚С‹";
      }
 
      tvGroupStatus->OnChange=NULL;
@@ -941,7 +941,7 @@ if(rbGroup->Checked||rbPoints->Checked){
     {
      if (((sGroupStatus*)tvGroupStatus->Selected->Data)->Mid)
         {
-         //27.04.2020 - ADD FOR TEST - отсутствует Parent - контекст - если не выбирать точку в списке каналов
+         //27.04.2020 - ADD FOR TEST - РѕС‚СЃСѓС‚СЃС‚РІСѓРµС‚ Parent - РєРѕРЅС‚РµРєСЃС‚ - РµСЃР»Рё РЅРµ РІС‹Р±РёСЂР°С‚СЊ С‚РѕС‡РєСѓ РІ СЃРїРёСЃРєРµ РєР°РЅР°Р»РѕРІ
          bool isNoParent = (((sGroupStatus*)tvGroupStatus->Selected->Parent==NULL)?true:false);
          if (isNoParent){
          TfmOperScanSched::OperScanSchedShow(((sGroupStatus*)tvGroupStatus->Selected->Data)->Mid,
@@ -966,7 +966,7 @@ if(rbGroup->Checked||rbPoints->Checked){
      {
        if(tvGroupStatus->Selected && tvGroupStatus->Selected->Data)
        {
-       //27.04.2020 - ADD FOR TEST - отсутствует Parent если выбрать точку в списке каналов
+       //27.04.2020 - ADD FOR TEST - РѕС‚СЃСѓС‚СЃС‚РІСѓРµС‚ Parent РµСЃР»Рё РІС‹Р±СЂР°С‚СЊ С‚РѕС‡РєСѓ РІ СЃРїРёСЃРєРµ РєР°РЅР°Р»РѕРІ
         bool isNoCParent = (((sGroupStatus*)tvGroupStatus->Selected->Parent==NULL)?true:false);
         if (isNoCParent){
         CMid=(((sGroupStatus*)tvGroupStatus->Selected->Data)->Mid);
@@ -1015,7 +1015,7 @@ void __fastcall TfmRequestMonitoring::WriteReg(void)
   try{
     Reg->RootKey = HKEY_CURRENT_USER;
 
-      if (Reg->OpenKey(RegStr, true)){       // --tree=1 по группам; tree=2 по каналам; tree=3 по точкам;
+      if (Reg->OpenKey(RegStr, true)){       // --tree=1 РїРѕ РіСЂСѓРїРїР°Рј; tree=2 РїРѕ РєР°РЅР°Р»Р°Рј; tree=3 РїРѕ С‚РѕС‡РєР°Рј;
         if( rbGroup->Checked)TreeType=1;
         if( rbCanal->Checked)TreeType=2;
         if( rbPoints->Checked)TreeType=3;
@@ -1084,7 +1084,7 @@ TAccess acc;
 
   if (rbGroup->Checked)  hh=2;
   if (rbPoints->Checked ) hh=1;
-  //GRB ADD FIX - Исправляем баг когда находимся в дереве групп и стоит на синей или красной точке 23.11.2020 в правой панели и по ней строим ручной ввод
+  //GRB ADD FIX - РСЃРїСЂР°РІР»СЏРµРј Р±Р°Рі РєРѕРіРґР° РЅР°С…РѕРґРёРјСЃСЏ РІ РґРµСЂРµРІРµ РіСЂСѓРїРї Рё СЃС‚РѕРёС‚ РЅР° СЃРёРЅРµР№ РёР»Рё РєСЂР°СЃРЅРѕР№ С‚РѕС‡РєРµ 23.11.2020 РІ РїСЂР°РІРѕР№ РїР°РЅРµР»Рё Рё РїРѕ РЅРµР№ СЃС‚СЂРѕРёРј СЂСѓС‡РЅРѕР№ РІРІРѕРґ
   if (rbGroup->Checked){
 	if(lvInfo->Focused()&&lvInfo->Selected&&(!lvInfo->Items->Item[lvInfo->ItemIndex]->SubItems->Strings[7].Trim().IsEmpty()))
    {
@@ -1119,21 +1119,21 @@ void __fastcall TfmRequestMonitoring::cbNotFullClick(TObject *Sender)
       tvGroupStatusChange(Sender, tvGroupStatus->Selected);
 }
 //---------------------------------------------------------------------------
-//Экспорт содержимого TListView формы в csv-файл, из которого Excel может сгенерить .xls
+//Р­РєСЃРїРѕСЂС‚ СЃРѕРґРµСЂР¶РёРјРѕРіРѕ TListView С„РѕСЂРјС‹ РІ csv-С„Р°Р№Р», РёР· РєРѕС‚РѕСЂРѕРіРѕ Excel РјРѕР¶РµС‚ СЃРіРµРЅРµСЂРёС‚СЊ .xls
 
 void __fastcall TfmRequestMonitoring::MnExcelItemClick(TObject *Sender)
 {
-        SaveDialog1->FileName = Panel3->Caption+ "_от_"+Date().CurrentDate();
+        SaveDialog1->FileName = Panel3->Caption+ "_РѕС‚_"+Date().CurrentDate();
         if (SaveDialog1->Execute()){
-                //GRB FIX 09.04.2019 - заменили разделитель колонок в csv-файле с запятой, на более естественный для Excel'я точку с запятой - и ниже по тексту файла меняем ;  на . в названиях колонок и данных 
+                //GRB FIX 09.04.2019 - Р·Р°РјРµРЅРёР»Рё СЂР°Р·РґРµР»РёС‚РµР»СЊ РєРѕР»РѕРЅРѕРє РІ csv-С„Р°Р№Р»Рµ СЃ Р·Р°РїСЏС‚РѕР№, РЅР° Р±РѕР»РµРµ РµСЃС‚РµСЃС‚РІРµРЅРЅС‹Р№ РґР»СЏ Excel'СЏ С‚РѕС‡РєСѓ СЃ Р·Р°РїСЏС‚РѕР№ - Рё РЅРёР¶Рµ РїРѕ С‚РµРєСЃС‚Сѓ С„Р°Р№Р»Р° РјРµРЅСЏРµРј ;  РЅР° . РІ РЅР°Р·РІР°РЅРёСЏС… РєРѕР»РѕРЅРѕРє Рё РґР°РЅРЅС‹С… 
                 AnsiString delim = ";";
                 AnsiString rowData,str="";
                 TStringList* sList=new TStringList;
                 AnsiString fileName = SaveDialog1->FileName;
-                //Вычитываем заголовки TListView первой строкой
+                //Р’С‹С‡РёС‚С‹РІР°РµРј Р·Р°РіРѕР»РѕРІРєРё TListView РїРµСЂРІРѕР№ СЃС‚СЂРѕРєРѕР№
                 for(int i=1;i<lvInfo->Columns->Count;i++){
                         rowData = lvInfo->Columns->Items[i]->Caption;
-                        //экранируем(меняем на точки) точку с запятой(разделитель) (GRB FIX от 09.04.2019 - раньше была запятая), чтобы не появлялись фейковые столбцы
+                        //СЌРєСЂР°РЅРёСЂСѓРµРј(РјРµРЅСЏРµРј РЅР° С‚РѕС‡РєРё) С‚РѕС‡РєСѓ СЃ Р·Р°РїСЏС‚РѕР№(СЂР°Р·РґРµР»РёС‚РµР»СЊ) (GRB FIX РѕС‚ 09.04.2019 - СЂР°РЅСЊС€Рµ Р±С‹Р»Р° Р·Р°РїСЏС‚Р°СЏ), С‡С‚РѕР±С‹ РЅРµ РїРѕСЏРІР»СЏР»РёСЃСЊ С„РµР№РєРѕРІС‹Рµ СЃС‚РѕР»Р±С†С‹
                         rowData = StringReplace(rowData,";",".",TReplaceFlags()<<rfReplaceAll<<rfIgnoreCase);
                         str = str + rowData;
                         if (i!=lvInfo->Columns->Count-1) str = str+delim;
@@ -1141,12 +1141,12 @@ void __fastcall TfmRequestMonitoring::MnExcelItemClick(TObject *Sender)
                 sList->Add (str);
                 str = "";
                 rowData ="";
-                //Вычитываем значения из TListView
+                //Р’С‹С‡РёС‚С‹РІР°РµРј Р·РЅР°С‡РµРЅРёСЏ РёР· TListView
                 for (int i = 0; i < lvInfo->Items->Count; i++){
                         //for (int j = 0; j < lvInfo->Items->Item[i]->SubItems->Count-1; j++){
                         for (int j = 0; j < lvInfo->Items->Item[i]->SubItems->Count; j++){
                                rowData =  lvInfo->Items->Item[i]->SubItems->Strings[j];
-                               //экранируем(меняем на точки) точки с запятой(разделитель) (GRB FIX от 09.04.2019 - раньше была запятая), чтобы не появлялись фейковые столбцы
+                               //СЌРєСЂР°РЅРёСЂСѓРµРј(РјРµРЅСЏРµРј РЅР° С‚РѕС‡РєРё) С‚РѕС‡РєРё СЃ Р·Р°РїСЏС‚РѕР№(СЂР°Р·РґРµР»РёС‚РµР»СЊ) (GRB FIX РѕС‚ 09.04.2019 - СЂР°РЅСЊС€Рµ Р±С‹Р»Р° Р·Р°РїСЏС‚Р°СЏ), С‡С‚РѕР±С‹ РЅРµ РїРѕСЏРІР»СЏР»РёСЃСЊ С„РµР№РєРѕРІС‹Рµ СЃС‚РѕР»Р±С†С‹
                                rowData =  StringReplace(rowData,";",".",TReplaceFlags()<<rfReplaceAll<<rfIgnoreCase);
                                str = str + rowData;
                                if (j != lvInfo->Items->Item[i]->SubItems->Count-1) str = str + delim;
@@ -1154,7 +1154,7 @@ void __fastcall TfmRequestMonitoring::MnExcelItemClick(TObject *Sender)
                     sList->Add (str);
                     str="";
                 }
-                //TODO:Перезаписывать без предупреждения, если файл с таким именем существует?
+                //TODO:РџРµСЂРµР·Р°РїРёСЃС‹РІР°С‚СЊ Р±РµР· РїСЂРµРґСѓРїСЂРµР¶РґРµРЅРёСЏ, РµСЃР»Рё С„Р°Р№Р» СЃ С‚Р°РєРёРј РёРјРµРЅРµРј СЃСѓС‰РµСЃС‚РІСѓРµС‚?
                 try{
                         if (!FileExists(fileName))
                                 sList->SaveToFile(fileName);
@@ -1350,7 +1350,7 @@ void __fastcall TfmRequestMonitoring::MonSelectClick(TObject *Sender)
         sfd = new TFormDescr;
 	    if(ManForm->PageCtrlSplt->CurrentForm->GetFormDescr())
     	    *sfd=*(ManForm->PageCtrlSplt->CurrentForm->GetFormDescr());
-        // Подготовка описания формы
+        // РџРѕРґРіРѕС‚РѕРІРєР° РѕРїРёСЃР°РЅРёСЏ С„РѕСЂРјС‹
         sfd->IdFormTree = fms->fid;
         sfd->CodeTemplate = fms->tmplCode;
         sfd->IdGroup = ((sGroupStatus*)tvGroupStatus->Selected->Data)->Gid;
@@ -1415,7 +1415,7 @@ void __fastcall TfmRequestMonitoring::MonSelectClick(TObject *Sender)
         if(*ch=='1')
           {sfd->indbird = true; sfd->bird = 0;}
 
-        // Конец подготовки
+        // РљРѕРЅРµС† РїРѕРґРіРѕС‚РѕРІРєРё
         fmSelectReportForm = new TfmSelectReportForm(this,fms->fid,sfd);
 
         if(IsCommonRepForm(sfd->CodeTemplate))
@@ -1444,11 +1444,11 @@ void __fastcall TfmRequestMonitoring::MonSelectClick(TObject *Sender)
         if (fmSelectGroupReportUniv->ModalResult == mrOk)
         {
             //fmSelectReportForm->fd->CodeTemplate=1;
-            // перед любым обновлением мониторов необходимо инициализировать кр. секцию UpdateMonitors
+            // РїРµСЂРµРґ Р»СЋР±С‹Рј РѕР±РЅРѕРІР»РµРЅРёРµРј РјРѕРЅРёС‚РѕСЂРѕРІ РЅРµРѕР±С…РѕРґРёРјРѕ РёРЅРёС†РёР°Р»РёР·РёСЂРѕРІР°С‚СЊ РєСЂ. СЃРµРєС†РёСЋ UpdateMonitors
             while(WaitForSingleObject(UpdateMonitors,0)!=WAIT_OBJECT_0)
             {
-                Application->ProcessMessages();// если не удалось иниц-ть. CS то обновить экранные формы...
-                Sleep(0);// переключить управление на другой поток, коьт занял CS
+                Application->ProcessMessages();// РµСЃР»Рё РЅРµ СѓРґР°Р»РѕСЃСЊ РёРЅРёС†-С‚СЊ. CS С‚Рѕ РѕР±РЅРѕРІРёС‚СЊ СЌРєСЂР°РЅРЅС‹Рµ С„РѕСЂРјС‹...
+                Sleep(0);// РїРµСЂРµРєР»СЋС‡РёС‚СЊ СѓРїСЂР°РІР»РµРЅРёРµ РЅР° РґСЂСѓРіРѕР№ РїРѕС‚РѕРє, РєРѕСЊС‚ Р·Р°РЅСЏР» CS
             }
             // add by KSS
             PostMessage(ManForm->PageCtrlSplt->CurrentForm->Handle,WM_REFRESHFORM,0,(LPARAM)sfd);
@@ -1539,16 +1539,16 @@ void __fastcall TfmRequestMonitoring::iaMonExecute(TObject *Sender)
             if (fmSelectGroupReportUniv->ModalResult == mrOk)
             {
         	    //fmSelectReportForm->fd->CodeTemplate=1;
-                // перед любым обновлением мониторов необходимо инициализировать кр. секцию UpdateMonitors
+                // РїРµСЂРµРґ Р»СЋР±С‹Рј РѕР±РЅРѕРІР»РµРЅРёРµРј РјРѕРЅРёС‚РѕСЂРѕРІ РЅРµРѕР±С…РѕРґРёРјРѕ РёРЅРёС†РёР°Р»РёР·РёСЂРѕРІР°С‚СЊ РєСЂ. СЃРµРєС†РёСЋ UpdateMonitors
                 while(WaitForSingleObject(UpdateMonitors,0)!=WAIT_OBJECT_0)
                 {
-                    Application->ProcessMessages();// если не удалось иниц-ть. CS то обновить экранные формы...
-                    Sleep(0);// переключить управление на другой поток, коьт занял CS
+                    Application->ProcessMessages();// РµСЃР»Рё РЅРµ СѓРґР°Р»РѕСЃСЊ РёРЅРёС†-С‚СЊ. CS С‚Рѕ РѕР±РЅРѕРІРёС‚СЊ СЌРєСЂР°РЅРЅС‹Рµ С„РѕСЂРјС‹...
+                    Sleep(0);// РїРµСЂРµРєР»СЋС‡РёС‚СЊ СѓРїСЂР°РІР»РµРЅРёРµ РЅР° РґСЂСѓРіРѕР№ РїРѕС‚РѕРє, РєРѕСЊС‚ Р·Р°РЅСЏР» CS
                 }
                 // add by KSS
                 PostMessage(pMF->PageCtrlSplt->CurrentForm->Handle,WM_REFRESHFORM,0,(LPARAM)fmSelectReportForm->fd);
             }else{
-                // Повтор данного кода выбора формы
+                // РџРѕРІС‚РѕСЂ РґР°РЅРЅРѕРіРѕ РєРѕРґР° РІС‹Р±РѕСЂР° С„РѕСЂРјС‹
             }
         }
         else
@@ -1676,12 +1676,12 @@ void __fastcall TfmRequestMonitoring::mMonClick(TObject *Sender)
         sfd = new TFormDescr;
 	    if(ManForm->PageCtrlSplt->CurrentForm->GetFormDescr())
     	    *sfd=*(ManForm->PageCtrlSplt->CurrentForm->GetFormDescr());
-        // Подготовка описания формы
+        // РџРѕРґРіРѕС‚РѕРІРєР° РѕРїРёСЃР°РЅРёСЏ С„РѕСЂРјС‹
         sfd->IdFormTree = fms->fid;
         sfd->CodeTemplate = fms->tmplCode;
         sfd->IdGroup = fms->gid;
         sfd->IsPoints = false;
-        sfd->SummGroup = "Сумма";//????? чо тулить((POINTSDIV*)tvGroup->Selected->Data)->nSum;
+        sfd->SummGroup = "РЎСѓРјРјР°";//????? С‡Рѕ С‚СѓР»РёС‚СЊ((POINTSDIV*)tvGroup->Selected->Data)->nSum;
         sfd->NameForm = fms->name;
         sfd->CommentForm = fms->comment;
         sfd->NameAlert = fms->alertname;
@@ -1741,7 +1741,7 @@ void __fastcall TfmRequestMonitoring::mMonClick(TObject *Sender)
         if(*ch=='1')
           {sfd->indbird = true; sfd->bird = 0; sfd->startmid=0;}
 
-        // Конец подготовки
+        // РљРѕРЅРµС† РїРѕРґРіРѕС‚РѕРІРєРё
         fmSelectReportForm = new TfmSelectReportForm(this,fms->fid,sfd);
 
         if(IsCommonRepForm(sfd->CodeTemplate))
@@ -1770,11 +1770,11 @@ void __fastcall TfmRequestMonitoring::mMonClick(TObject *Sender)
         if (fmSelectGroupReportUniv->ModalResult == mrOk)
         {
             //fmSelectReportForm->fd->CodeTemplate=1;
-            // перед любым обновлением мониторов необходимо инициализировать кр. секцию UpdateMonitors
+            // РїРµСЂРµРґ Р»СЋР±С‹Рј РѕР±РЅРѕРІР»РµРЅРёРµРј РјРѕРЅРёС‚РѕСЂРѕРІ РЅРµРѕР±С…РѕРґРёРјРѕ РёРЅРёС†РёР°Р»РёР·РёСЂРѕРІР°С‚СЊ РєСЂ. СЃРµРєС†РёСЋ UpdateMonitors
             while(WaitForSingleObject(UpdateMonitors,0)!=WAIT_OBJECT_0)
             {
-                Application->ProcessMessages();// если не удалось иниц-ть. CS то обновить экранные формы...
-                Sleep(0);// переключить управление на другой поток, коьт занял CS
+                Application->ProcessMessages();// РµСЃР»Рё РЅРµ СѓРґР°Р»РѕСЃСЊ РёРЅРёС†-С‚СЊ. CS С‚Рѕ РѕР±РЅРѕРІРёС‚СЊ СЌРєСЂР°РЅРЅС‹Рµ С„РѕСЂРјС‹...
+                Sleep(0);// РїРµСЂРµРєР»СЋС‡РёС‚СЊ СѓРїСЂР°РІР»РµРЅРёРµ РЅР° РґСЂСѓРіРѕР№ РїРѕС‚РѕРє, РєРѕСЊС‚ Р·Р°РЅСЏР» CS
             }
             // add by KSS
             PostMessage(ManForm->PageCtrlSplt->CurrentForm->Handle,WM_REFRESHFORM,0,(LPARAM)sfd);
@@ -1808,7 +1808,7 @@ fixPanelOnTree __fastcall TfmRequestMonitoring::getGidLName(){
 				ret.ShortName = tstStr;										
 				}
 				if (j==7){
-					ret.Gid = atol (tstStr.c_str()); //ид группы из таблицы справа 
+					ret.Gid = atol (tstStr.c_str()); //РёРґ РіСЂСѓРїРїС‹ РёР· С‚Р°Р±Р»РёС†С‹ СЃРїСЂР°РІР° 
 				}
 				
 			}

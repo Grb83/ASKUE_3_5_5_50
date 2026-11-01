@@ -11,30 +11,30 @@
 #pragma link "MemDS"
 #pragma link "Ora"
 #pragma resource "*.dfm"
-#define TI_USED         0     //!< Используемый расход
-#define TI_SHARED       1     //!< Долевые потери
-#define TI_PARALEL      2     //!< Паралельные присоединения
-#define TI_RELATED      3     //!< Зависимые присоединения
-#define MAXCOUNTROW     100   //!< Количество вычитываемых строк из БД
-#define FIRSTVISCOL     1     //!< Номер первой видимой колонки в StringGrid'е
-#define POWER3_CONT     3     //!< Количество параметров для 3-хобмоточного трансформатора
-#define TI_UP           0     //!< Высокая обмотка
-#define TI_MIDDLE       1     //!< Средняя обмотка
-#define TI_DOWN         2     //!< Низкая обмотка
-#define imCChckFldr     24    //!< Индекс иконки "Закрытая папка c галочкой"
-#define imOChckFldr     25    //!< Индекс иконки "Открытая папка c галочкой"
-#define imCFldr         4     //!< Индекс иконки "Закрытая папка"
-#define imOFldr         5     //!< Индекс иконки "Открытая папка"
-#define imPoint         0     //!< Индекс иконки "Точка"
-#define imParam         22    //!< Индекс иконки "Параметр (подточка)"
-#define imParamChck     23    //!< Индекс иконки "Параметр (подточка)"
-#define imPower2        26    //!< Индекс иконки "Силовой двухобмоточный трансформатор"
-#define imPower3        27    //!< Индекс иконки "Силовой трехобмоточный трансформатор"
-#define TT_FOLDER       2     //!< Тип папки при выборке из БД
-#define TT_POINT        3     //!< Тип точки при выборке из БД
-#define TT_PARAM        4     //!< Тип параметра точки при выборке из БД
-#define TT_POWER2       243   //!< Тип 2-х обмоточного трансформатора при выборке из БД
-#define TT_POWER3       244   //!< Тип 3-х обмоточного трансформатора при выборке из БД
+#define TI_USED         0     //!< РСЃРїРѕР»СЊР·СѓРµРјС‹Р№ СЂР°СЃС…РѕРґ
+#define TI_SHARED       1     //!< Р”РѕР»РµРІС‹Рµ РїРѕС‚РµСЂРё
+#define TI_PARALEL      2     //!< РџР°СЂР°Р»РµР»СЊРЅС‹Рµ РїСЂРёСЃРѕРµРґРёРЅРµРЅРёСЏ
+#define TI_RELATED      3     //!< Р—Р°РІРёСЃРёРјС‹Рµ РїСЂРёСЃРѕРµРґРёРЅРµРЅРёСЏ
+#define MAXCOUNTROW     100   //!< РљРѕР»РёС‡РµСЃС‚РІРѕ РІС‹С‡РёС‚С‹РІР°РµРјС‹С… СЃС‚СЂРѕРє РёР· Р‘Р”
+#define FIRSTVISCOL     1     //!< РќРѕРјРµСЂ РїРµСЂРІРѕР№ РІРёРґРёРјРѕР№ РєРѕР»РѕРЅРєРё РІ StringGrid'Рµ
+#define POWER3_CONT     3     //!< РљРѕР»РёС‡РµСЃС‚РІРѕ РїР°СЂР°РјРµС‚СЂРѕРІ РґР»СЏ 3-С…РѕР±РјРѕС‚РѕС‡РЅРѕРіРѕ С‚СЂР°РЅСЃС„РѕСЂРјР°С‚РѕСЂР°
+#define TI_UP           0     //!< Р’С‹СЃРѕРєР°СЏ РѕР±РјРѕС‚РєР°
+#define TI_MIDDLE       1     //!< РЎСЂРµРґРЅСЏСЏ РѕР±РјРѕС‚РєР°
+#define TI_DOWN         2     //!< РќРёР·РєР°СЏ РѕР±РјРѕС‚РєР°
+#define imCChckFldr     24    //!< РРЅРґРµРєСЃ РёРєРѕРЅРєРё "Р—Р°РєСЂС‹С‚Р°СЏ РїР°РїРєР° c РіР°Р»РѕС‡РєРѕР№"
+#define imOChckFldr     25    //!< РРЅРґРµРєСЃ РёРєРѕРЅРєРё "РћС‚РєСЂС‹С‚Р°СЏ РїР°РїРєР° c РіР°Р»РѕС‡РєРѕР№"
+#define imCFldr         4     //!< РРЅРґРµРєСЃ РёРєРѕРЅРєРё "Р—Р°РєСЂС‹С‚Р°СЏ РїР°РїРєР°"
+#define imOFldr         5     //!< РРЅРґРµРєСЃ РёРєРѕРЅРєРё "РћС‚РєСЂС‹С‚Р°СЏ РїР°РїРєР°"
+#define imPoint         0     //!< РРЅРґРµРєСЃ РёРєРѕРЅРєРё "РўРѕС‡РєР°"
+#define imParam         22    //!< РРЅРґРµРєСЃ РёРєРѕРЅРєРё "РџР°СЂР°РјРµС‚СЂ (РїРѕРґС‚РѕС‡РєР°)"
+#define imParamChck     23    //!< РРЅРґРµРєСЃ РёРєРѕРЅРєРё "РџР°СЂР°РјРµС‚СЂ (РїРѕРґС‚РѕС‡РєР°)"
+#define imPower2        26    //!< РРЅРґРµРєСЃ РёРєРѕРЅРєРё "РЎРёР»РѕРІРѕР№ РґРІСѓС…РѕР±РјРѕС‚РѕС‡РЅС‹Р№ С‚СЂР°РЅСЃС„РѕСЂРјР°С‚РѕСЂ"
+#define imPower3        27    //!< РРЅРґРµРєСЃ РёРєРѕРЅРєРё "РЎРёР»РѕРІРѕР№ С‚СЂРµС…РѕР±РјРѕС‚РѕС‡РЅС‹Р№ С‚СЂР°РЅСЃС„РѕСЂРјР°С‚РѕСЂ"
+#define TT_FOLDER       2     //!< РўРёРї РїР°РїРєРё РїСЂРё РІС‹Р±РѕСЂРєРµ РёР· Р‘Р”
+#define TT_POINT        3     //!< РўРёРї С‚РѕС‡РєРё РїСЂРё РІС‹Р±РѕСЂРєРµ РёР· Р‘Р”
+#define TT_PARAM        4     //!< РўРёРї РїР°СЂР°РјРµС‚СЂР° С‚РѕС‡РєРё РїСЂРё РІС‹Р±РѕСЂРєРµ РёР· Р‘Р”
+#define TT_POWER2       243   //!< РўРёРї 2-С… РѕР±РјРѕС‚РѕС‡РЅРѕРіРѕ С‚СЂР°РЅСЃС„РѕСЂРјР°С‚РѕСЂР° РїСЂРё РІС‹Р±РѕСЂРєРµ РёР· Р‘Р”
+#define TT_POWER3       244   //!< РўРёРї 3-С… РѕР±РјРѕС‚РѕС‡РЅРѕРіРѕ С‚СЂР°РЅСЃС„РѕСЂРјР°С‚РѕСЂР° РїСЂРё РІС‹Р±РѕСЂРєРµ РёР· Р‘Р”
 //---------------------------------------------------------------------------
 
 __fastcall TfmParameterPointsList::TfmParameterPointsList(TComponent* Owner, long *paramCid, int paramCnt, TAccess a)
@@ -113,26 +113,26 @@ void __fastcall TfmParameterPointsList::vDelete(TObject *Sender)
 
 void __fastcall TfmParameterPointsList::vRefresh(TObject *Sender)
 {
-  //===== Проверка на необходимость перечитки дерева при смене между
-  //===== закладками "Используемый расход" и "Долевые потери"
+  //===== РџСЂРѕРІРµСЂРєР° РЅР° РЅРµРѕР±С…РѕРґРёРјРѕСЃС‚СЊ РїРµСЂРµС‡РёС‚РєРё РґРµСЂРµРІР° РїСЂРё СЃРјРµРЅРµ РјРµР¶РґСѓ
+  //===== Р·Р°РєР»Р°РґРєР°РјРё "РСЃРїРѕР»СЊР·СѓРµРјС‹Р№ СЂР°СЃС…РѕРґ" Рё "Р”РѕР»РµРІС‹Рµ РїРѕС‚РµСЂРё"
   if (!((tcSelectParams->TabIndex == TI_USED || tcSelectParams->TabIndex == TI_SHARED)
         && (lastPage == TI_USED || lastPage == TI_SHARED)))
     ReadTreeNode(NULL);
 
   switch (tcSelectParams->TabIndex)
-  { case TI_USED:// Используемый расход
+  { case TI_USED:// РСЃРїРѕР»СЊР·СѓРµРјС‹Р№ СЂР°СЃС…РѕРґ
       ReadUsedData();
       break;
-    case TI_SHARED:// Долевые потери
+    case TI_SHARED:// Р”РѕР»РµРІС‹Рµ РїРѕС‚РµСЂРё
       ReadSharedData();
       break;
-    case TI_PARALEL:// Паралельные присоединения
+    case TI_PARALEL:// РџР°СЂР°Р»РµР»СЊРЅС‹Рµ РїСЂРёСЃРѕРµРґРёРЅРµРЅРёСЏ
       ReadParallelData();
       break;
-    case TI_RELATED:// Зависимые присоединения
+    case TI_RELATED:// Р—Р°РІРёСЃРёРјС‹Рµ РїСЂРёСЃРѕРµРґРёРЅРµРЅРёСЏ
       ReadRelatedData();
       break;
-    default:// Неизвестно
+    default:// РќРµРёР·РІРµСЃС‚РЅРѕ
       sgPointsList->RowCount = 2;
       sgPointsList->Rows[0]->Clear();
       sgPointsList->Rows[1]->Clear();
@@ -165,11 +165,11 @@ void __fastcall TfmParameterPointsList::vSave(TObject *Sender)
    }
 }
 //---------------------------------------------------------------------------
-// Читает ветку дерева
+// Р§РёС‚Р°РµС‚ РІРµС‚РєСѓ РґРµСЂРµРІР°
 bool __fastcall TfmParameterPointsList::ReadTreeNode(TObject *obj)
 {
   TTreeNode *NodeParent = dynamic_cast<TTreeNode *>(obj);
-  //===== Выбор вершин верхнего уровня
+  //===== Р’С‹Р±РѕСЂ РІРµСЂС€РёРЅ РІРµСЂС…РЅРµРіРѕ СѓСЂРѕРІРЅСЏ
   char  *sqlRoot  =
     "SELECT 1 f_havechild, p.mid f_mid, p.name f_name, decode(p.ind,1,1,2,2,3) f_type, "
         "ryda.util_pg.Get_Pointname(p.mid,1,0) f_fullname "
@@ -191,7 +191,7 @@ bool __fastcall TfmParameterPointsList::ReadTreeNode(TObject *obj)
                               "and (ind < 3 or mid in (Select mid from ryda.feeders)) "
                         ") "
     "ORDER BY 4, 3 ";
-  //===== Выбор Используемого расхода и Долевых потерь
+  //===== Р’С‹Р±РѕСЂ РСЃРїРѕР»СЊР·СѓРµРјРѕРіРѕ СЂР°СЃС…РѕРґР° Рё Р”РѕР»РµРІС‹С… РїРѕС‚РµСЂСЊ
   char  *sqlLoss  =
     "SELECT 1 f_havechild, p.mid f_mid, p.name f_name, decode(p.ind,1,1,2,2,3) f_type, "
         "ryda.util_pg.Get_Pointname(p.MID,1,0) f_fullname "
@@ -215,9 +215,9 @@ bool __fastcall TfmParameterPointsList::ReadTreeNode(TObject *obj)
                               "and (ind < 3 or mid in (Select mid from ryda.feeders)) "
                         ") "
     "ORDER BY 4, 3 ";
-  //===== Выбор параллельных присоединений
+  //===== Р’С‹Р±РѕСЂ РїР°СЂР°Р»Р»РµР»СЊРЅС‹С… РїСЂРёСЃРѕРµРґРёРЅРµРЅРёР№
   char  *sqlParallel  =
-    //--===== Выбор точек у которых есть параметры (подточек)
+    //--===== Р’С‹Р±РѕСЂ С‚РѕС‡РµРє Сѓ РєРѕС‚РѕСЂС‹С… РµСЃС‚СЊ РїР°СЂР°РјРµС‚СЂС‹ (РїРѕРґС‚РѕС‡РµРє)
     "SELECT 1 f_havechild, p.mid f_mid, p.name f_name, decode(p.ind,1,1,2,2,3) f_type, "
         "ryda.util_pg.Get_Pointname(p.mid,1,0) f_fullname "
       "FROM ryda.points p "
@@ -229,7 +229,7 @@ bool __fastcall TfmParameterPointsList::ReadTreeNode(TObject *obj)
                           "and (ind < 3 or ind = 600 or ind = 610) "
                     ") "
     "UNION ALL "
-    //--===== Выбор точек у которых нет параметров (подточек)
+    //--===== Р’С‹Р±РѕСЂ С‚РѕС‡РµРє Сѓ РєРѕС‚РѕСЂС‹С… РЅРµС‚ РїР°СЂР°РјРµС‚СЂРѕРІ (РїРѕРґС‚РѕС‡РµРє)
     "SELECT 0 f_havechild, p.mid f_mid, p.name f_name, decode(p.ind,1,1,2,2,3) f_type, "
         "ryda.util_pg.Get_Pointname(p.mid,1,0) f_fullname "
       "FROM ryda.points p "
@@ -241,20 +241,20 @@ bool __fastcall TfmParameterPointsList::ReadTreeNode(TObject *obj)
                               "and (ind < 3 or ind = 600 or ind = 610) "
                         ") "
     "UNION ALL "
-    //--===== Выбор 2-хобмоточных и 3-хобмоточных трансформаторов
+    //--===== Р’С‹Р±РѕСЂ 2-С…РѕР±РјРѕС‚РѕС‡РЅС‹С… Рё 3-С…РѕР±РјРѕС‚РѕС‡РЅС‹С… С‚СЂР°РЅСЃС„РѕСЂРјР°С‚РѕСЂРѕРІ
     "SELECT 1 f_havechild, p.mid f_mid, p.name f_name, decode(p.ind, 600, 243, 610, 244, 0) f_type, "
         "p.name f_fullname "
       "FROM ryda.points p "
       "WHERE p.parent = :par1 "
         "and (p.ind = 600 or p.ind = 610) "
     "ORDER BY 4, 3";
-  //===== Выборка параметров для параллельных присоединений
+  //===== Р’С‹Р±РѕСЂРєР° РїР°СЂР°РјРµС‚СЂРѕРІ РґР»СЏ РїР°СЂР°Р»Р»РµР»СЊРЅС‹С… РїСЂРёСЃРѕРµРґРёРЅРµРЅРёР№
   char  *sqlParallelParam =
     "SELECT 0 f_havechild, cp.nconnectionparam f_mid, cp.vname f_name, 4 f_type, "
         "cp.vname f_fullname "
       "FROM ryda.connectionparam cp "
       "WHERE cp.mid = :par1 ";
-  //===== Выборка зависимых присоединений
+  //===== Р’С‹Р±РѕСЂРєР° Р·Р°РІРёСЃРёРјС‹С… РїСЂРёСЃРѕРµРґРёРЅРµРЅРёР№
   char  *sqlRelated =
     "SELECT 1 f_havechild, p.mid f_mid, p.name f_name, decode(p.ind, 1, 1, 2, 2, 3) f_type, "
         "ryda.util_pg.Get_Pointname(p.mid,1,0) f_fullname, 0 nconnectionparam, 0 nparallelcon "
@@ -811,7 +811,7 @@ void __fastcall TfmParameterPointsList::ReadUsedData(void)
    char*s1=
       "select NRECOMPENS,ltrim(to_char(nratio,'0.99'))||' '||VNAME vname,1 nsort,nratio from ryda.recompens \
          union all \
-      select 0 NRECOMPENS,'Без переопределения',0 nsort,0 nratio from dual \
+      select 0 NRECOMPENS,'Р‘РµР· РїРµСЂРµРѕРїСЂРµРґРµР»РµРЅРёСЏ',0 nsort,0 nratio from dual \
       order by 3,4 desc";
     AnsiString field1="NRECOMPENS";
     AnsiString field2="vname";
@@ -954,7 +954,7 @@ void __fastcall TfmParameterPointsList::DropSharedData(stPoint*DragData)
       sgPointsList->Rows[sgPointsList->RowCount-1]->Clear();
       sgPointsList->Rows[sgPointsList->RowCount-1]->Add(DragData->Mid);
       sgPointsList->Rows[sgPointsList->RowCount-1]->Add(DragData->LongName);
-      sgPointsList->Rows[sgPointsList->RowCount-1]->Add("Да");
+      sgPointsList->Rows[sgPointsList->RowCount-1]->Add("Р”Р°");
       EditRec = true;
       iaDelete->Enabled = !sgPointsList->Cells[FIRSTVISCOL+0][1].IsEmpty();
       plEdit->Enabled = iaDelete->Enabled;
@@ -1069,7 +1069,7 @@ void __fastcall TfmParameterPointsList::SaveSharedData(TObject*)
   try
   {
     long  tCid  = FParamCid[Power3TabControl->TabIndex];
-    // сохранение привязки точек
+    // СЃРѕС…СЂР°РЅРµРЅРёРµ РїСЂРёРІСЏР·РєРё С‚РѕС‡РµРє
     oqSaveSharedData->SQL->Text=" begin ryda.loss_pg.setsharedpoint_p(:par1,:par2,:par3); end; ";
     oqSaveSharedData->ParamByName("par1")->AsInteger=tCid;
     for(int i=2;i<=3;i++){
@@ -1223,7 +1223,7 @@ void __fastcall TfmParameterPointsList::SaveParalelData(TObject *)
   TTreeNode *Node;
   long ind,dropAll = 1;
   try{
-    // сохранение привязки точек
+    // СЃРѕС…СЂР°РЅРµРЅРёРµ РїСЂРёРІСЏР·РєРё С‚РѕС‡РµРє
     oqSaveParalelData->SQL->Text=" begin ryda.loss_pg.setparallelconn_p(:par1, :par2, :par3, :par4); end; ";
     for(int j=1;j<=3;j++){
       oqSaveParalelData->ParamByName("par"+IntToStr(j))->Table=true;
@@ -1437,7 +1437,7 @@ void __fastcall TfmParameterPointsList::tvParamViewChange(TObject *Sender,
    iaDelete->Enabled = tvParamView->Selected;
 }
 //---------------------------------------------------------------------------
-/*! Действия перед изменением обмотки
+/*! Р”РµР№СЃС‚РІРёСЏ РїРµСЂРµРґ РёР·РјРµРЅРµРЅРёРµРј РѕР±РјРѕС‚РєРё
 */
 void __fastcall TfmParameterPointsList::Power3TabControlChanging(
       TObject *Sender, bool &AllowChange)
@@ -1474,7 +1474,7 @@ void __fastcall TfmParameterPointsList::Power3TabControlChanging(
   AllowChange = !EditRec;
 }
 //---------------------------------------------------------------------------
-/*! Действия после изменения обмотки
+/*! Р”РµР№СЃС‚РІРёСЏ РїРѕСЃР»Рµ РёР·РјРµРЅРµРЅРёСЏ РѕР±РјРѕС‚РєРё
 */
 void __fastcall TfmParameterPointsList::Power3TabControlChange(
       TObject *Sender)

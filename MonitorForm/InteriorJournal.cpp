@@ -36,7 +36,7 @@ __fastcall TJournalInterior::TJournalInterior(TComponent* Owner,TSplitterForm *a
 #undef bmf
 }
 //---------------------------------------------------------------------------
-/*! Отображение полного содержимого ячейки в отдельном окне.
+/*! РћС‚РѕР±СЂР°Р¶РµРЅРёРµ РїРѕР»РЅРѕРіРѕ СЃРѕРґРµСЂР¶РёРјРѕРіРѕ СЏС‡РµР№РєРё РІ РѕС‚РґРµР»СЊРЅРѕРј РѕРєРЅРµ.
 */
 void __fastcall TJournalInterior::MessageGridDblClick(TObject *Sender)
 {
@@ -53,7 +53,7 @@ void __fastcall TJournalInterior::Place(void)
 {
     try
     {
-        dynamic_cast<TBaseMonitorForm*>(Owner)->Caption=fd->NameGroup+" от " + DateToStr(fd->DateTime);
+        dynamic_cast<TBaseMonitorForm*>(Owner)->Caption=fd->NameGroup+" РѕС‚ " + DateToStr(fd->DateTime);
         dynamic_cast<TBaseMonitorForm*>(Owner)->HelpContext=31;
       MessageGrid = new TDBGridEh(Owner);
       MessageGrid->Options  = MessageGrid->Options << dgAlwaysShowSelection >> dgIndicator >> dgEditing;
@@ -63,21 +63,21 @@ void __fastcall TJournalInterior::Place(void)
       MessageGrid->OnDblClick = MessageGridDblClick;
       MessageGrid->OnDrawColumnCell = MessageGridDrawColumnCell;
       MessageGrid->OnTitleClick = MessageGridTitleClick;
-      //GRB ADD 25.02.2020 - фикс бага с вылетом по смене колонок с первой (тут и у наследника - InteriorJournalSys.cpp)
+      //GRB ADD 25.02.2020 - С„РёРєСЃ Р±Р°РіР° СЃ РІС‹Р»РµС‚РѕРј РїРѕ СЃРјРµРЅРµ РєРѕР»РѕРЅРѕРє СЃ РїРµСЂРІРѕР№ (С‚СѓС‚ Рё Сѓ РЅР°СЃР»РµРґРЅРёРєР° - InteriorJournalSys.cpp)
       MessageGrid->OnColumnMoved = MessageGridColumnMoved;
       //MessageGrid->Options << dgRowSelect << dgAlwaysShowSelection;
       //MessageGrid->Options >> dgIndicator >> dgEditing ;
       MessageGrid->ReadOnly = true;
         OnProgressBarStepBy(this);//30
         MessageGrid->PopupMenu = (dynamic_cast<TBaseMonitorForm*>(Owner))->PopupMenuDU;
-        //GRB TEST 12.06.2020 - Убираем из пунктов доступного меню зазвернуть-свернуть по просьбе Виты
+        //GRB TEST 12.06.2020 - РЈР±РёСЂР°РµРј РёР· РїСѓРЅРєС‚РѕРІ РґРѕСЃС‚СѓРїРЅРѕРіРѕ РјРµРЅСЋ Р·Р°Р·РІРµСЂРЅСѓС‚СЊ-СЃРІРµСЂРЅСѓС‚СЊ РїРѕ РїСЂРѕСЃСЊР±Рµ Р’РёС‚С‹
         MessageGrid->PopupMenu->Items->Items[5]->Visible = False;
        //END GRB
         MessageGrid->PopupMenu->AutoPopup = true;
         (dynamic_cast<TBaseMonitorForm*>(Owner))->PopupMenu->AutoPopup = false;
    		MessageGrid->OnEnter = OnClickPanel;
     
-// -------------- Для печати -----------------------------------------------------------------------
+// -------------- Р”Р»СЏ РїРµС‡Р°С‚Рё -----------------------------------------------------------------------
     ColumnsCaption->Clear();
     VT_PrintData->Close();
     VT_PrintData->Clear();
@@ -144,7 +144,7 @@ void __fastcall TJournalInterior::Destroy(void)
 //---------------------------------------------------------------------------
 __fastcall TJournalInterior::~TJournalInterior(void)
 {
-        //GRB TEST 12.06.2020 - Вертаем в пункты меню DU зазвернуть-свернуть на всякий случай
+        //GRB TEST 12.06.2020 - Р’РµСЂС‚Р°РµРј РІ РїСѓРЅРєС‚С‹ РјРµРЅСЋ DU Р·Р°Р·РІРµСЂРЅСѓС‚СЊ-СЃРІРµСЂРЅСѓС‚СЊ РЅР° РІСЃСЏРєРёР№ СЃР»СѓС‡Р°Р№
         MessageGrid->PopupMenu->Items->Items[5]->Visible = True;
 	if(MessageGrid)
 		delete MessageGrid;
@@ -204,7 +204,7 @@ void __fastcall TJournalInterior::selectData( TOraQuery *qwInter )
   qwInter->ParamByName("par6")->AsInteger=stepProf;
 
   OnProgressBarStepBy(this);//60
-// -------------- Для печати -----------------------------------------------------------------------
+// -------------- Р”Р»СЏ РїРµС‡Р°С‚Рё -----------------------------------------------------------------------
 
 //  MessageGrid->Enabled=false;
 
@@ -358,7 +358,7 @@ void __fastcall TJournalInterior::MessageGridTitleClick(TColumnEh *Column)
 
     selectData(dmMain->oqInterCursor);
 }
-//GRB ADD 25.02.2020 - фикс бага с вылетом по смене колонок с первой (тут и у наследника - InteriorJournalSys.cpp)
+//GRB ADD 25.02.2020 - С„РёРєСЃ Р±Р°РіР° СЃ РІС‹Р»РµС‚РѕРј РїРѕ СЃРјРµРЅРµ РєРѕР»РѕРЅРѕРє СЃ РїРµСЂРІРѕР№ (С‚СѓС‚ Рё Сѓ РЅР°СЃР»РµРґРЅРёРєР° - InteriorJournalSys.cpp)
 //---------------------------------------------------------------------------
 void __fastcall TJournalInterior::MessageGridColumnMoved(TObject *Sender,
           int FromIndex, int ToIndex){

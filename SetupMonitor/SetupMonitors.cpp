@@ -16,7 +16,7 @@ double mas[] = {12,8,7,6,8,13,18,19,17,10,3};
 __fastcall TFormSetupMonitors::TFormSetupMonitors(TComponent* Owner)
 	: TForm(Owner)//,pLine(NULL)
 {
-   // èíèöèàëèçàöèÿ ñòðóêòóð ñ èíäèêàöèåé èñòîðèè äàííûõ add by KSS
+   // Ð¸Ð½Ð¸Ñ†Ð¸Ð°Ð»Ð¸Ð·Ð°Ñ†Ð¸Ñ ÑÑ‚Ñ€ÑƒÐºÑ‚ÑƒÑ€ Ñ Ð¸Ð½Ð´Ð¸ÐºÐ°Ñ†Ð¸ÐµÐ¹ Ð¸ÑÑ‚Ð¾Ñ€Ð¸Ð¸ Ð´Ð°Ð½Ð½Ñ‹Ñ… add by KSS
    pLine=NULL;
    dsAll.kSymbFontSize = 80;
    dsMan.kSymbFontSize = 80;
@@ -24,20 +24,20 @@ __fastcall TFormSetupMonitors::TFormSetupMonitors(TComponent* Owner)
    dsAll.fSymbUL = 7;   dsAll.fSymbUR = 7;   dsAll.fSymbBL = 7; dsAll.fSymbBR = 7;
    dsMan.fSymbUL = 7;
    dsOvCh.fSymbUR = 7;   dsOvCh.fSymbBL = 7;
-//Îïèñûâàåì öâåòà ñèìâîëû äëÿ ìîíèòîðîâ
+//ÐžÐ¿Ð¸ÑÑ‹Ð²Ð°ÐµÐ¼ Ñ†Ð²ÐµÑ‚Ð° ÑÐ¸Ð¼Ð²Ð¾Ð»Ñ‹ Ð´Ð»Ñ Ð¼Ð¾Ð½Ð¸Ñ‚Ð¾Ñ€Ð¾Ð²
    strncpy(dsAll.cSymbUL," P ",sizeof(dsAll.cSymbUL));
    strncpy(dsAll.cSymbUR," O ",sizeof(dsAll.cSymbUR));
-   strncpy(dsAll.cSymbBL," Ò ",sizeof(dsAll.cSymbBL));
-   strncpy(dsAll.cSymbBR," Í ",sizeof(dsAll.cSymbBR));
-   dsAll.colUL = clWhite;  dsAll.bkcolUL = clGreen; //ðó÷íîé ââîä
-   dsAll.colUR = clWhite;  dsAll.bkcolUR = clBlue;  //îáõîäíèê
-   dsAll.colBL = clWhite;  dsAll.bkcolBL = clFuchsia;//òðåâîãà
-   dsAll.colBR = clWhite;  dsAll.bkcolBR = clRed;   //íåäîñòîâåðíûå äàííûå (äûðêà)
+   strncpy(dsAll.cSymbBL," Ð¢ ",sizeof(dsAll.cSymbBL));
+   strncpy(dsAll.cSymbBR," Ð ",sizeof(dsAll.cSymbBR));
+   dsAll.colUL = clWhite;  dsAll.bkcolUL = clGreen; //Ñ€ÑƒÑ‡Ð½Ð¾Ð¹ Ð²Ð²Ð¾Ð´
+   dsAll.colUR = clWhite;  dsAll.bkcolUR = clBlue;  //Ð¾Ð±Ñ…Ð¾Ð´Ð½Ð¸Ðº
+   dsAll.colBL = clWhite;  dsAll.bkcolBL = clFuchsia;//Ñ‚Ñ€ÐµÐ²Ð¾Ð³Ð°
+   dsAll.colBR = clWhite;  dsAll.bkcolBR = clRed;   //Ð½ÐµÐ´Ð¾ÑÑ‚Ð¾Ð²ÐµÑ€Ð½Ñ‹Ðµ Ð´Ð°Ð½Ð½Ñ‹Ðµ (Ð´Ñ‹Ñ€ÐºÐ°)
 
-//Îïèñûâàåì öâåòà ñèìâîëû äëÿ ïðèìåðà îòîáðàæåíèÿ ñèìàôîðîâ
+//ÐžÐ¿Ð¸ÑÑ‹Ð²Ð°ÐµÐ¼ Ñ†Ð²ÐµÑ‚Ð° ÑÐ¸Ð¼Ð²Ð¾Ð»Ñ‹ Ð´Ð»Ñ Ð¿Ñ€Ð¸Ð¼ÐµÑ€Ð° Ð¾Ñ‚Ð¾Ð±Ñ€Ð°Ð¶ÐµÐ½Ð¸Ñ ÑÐ¸Ð¼Ð°Ñ„Ð¾Ñ€Ð¾Ð²
    strncpy(dsMan.cSymbUL," P ",sizeof(dsMan.cSymbUL));
    strncpy(dsOvCh.cSymbUR," O ",sizeof(dsOvCh.cSymbUR));
-   strncpy(dsOvCh.cSymbBR," Í ",sizeof(dsOvCh.cSymbBR));
+   strncpy(dsOvCh.cSymbBR," Ð ",sizeof(dsOvCh.cSymbBR));
    dsMan.colUL = clWhite;  dsMan.bkcolUL = clGreen;
    dsOvCh.colUR = clWhite;   dsOvCh.bkcolUR = clBlue;
    dsOvCh.colBR = clWhite;   dsOvCh.bkcolBR = clRed;
@@ -91,7 +91,7 @@ __fastcall TFormSetupMonitors::TFormSetupMonitors(TComponent* Owner)
      RadioGroupProfilePower->Columns=2;
     }
 
-#if ONLY_DEMO_VER>0 //Ïðîâåðêà îãðàíè÷åíèé
+#if ONLY_DEMO_VER>0 //ÐŸÑ€Ð¾Ð²ÐµÑ€ÐºÐ° Ð¾Ð³Ñ€Ð°Ð½Ð¸Ñ‡ÐµÐ½Ð¸Ð¹
    if(dmMain->SystemDate>TDateTime(ONLY_DEMO_VER/100, ONLY_DEMO_VER%100, 1)){
     dmMain->orases=dmMain->orasesAlert;
     Close();
@@ -120,7 +120,7 @@ void __fastcall TFormSetupMonitors::InitRegistry(void)
          // end add
          // add KAS 20.04.2002
        //  int i = pReg->ValueExists("PowerProfile");
-//Add by Nadtochiy ïðè äîáàâëåíèè ïðîìåæóòêà âðåìåíè äîáàâèòü ñîîòâåòñòóåþùèé case
+//Add by Nadtochiy Ð¿Ñ€Ð¸ Ð´Ð¾Ð±Ð°Ð²Ð»ÐµÐ½Ð¸Ð¸ Ð¿Ñ€Ð¾Ð¼ÐµÐ¶ÑƒÑ‚ÐºÐ° Ð²Ñ€ÐµÐ¼ÐµÐ½Ð¸ Ð´Ð¾Ð±Ð°Ð²Ð¸Ñ‚ÑŒ ÑÐ¾Ð¾Ñ‚Ð²ÐµÑ‚ÑÑ‚ÑƒÐµÑŽÑ‰Ð¸Ð¹ case
          if(pReg->ValueExists("PowerProfile"))
            TempPowerProfile = pReg->ReadInteger("PowerProfile");
          //GRB CHANGE
@@ -134,7 +134,7 @@ void __fastcall TFormSetupMonitors::InitRegistry(void)
             case 15:{RadioGroupProfilePower->ItemIndex = 2; break;}
             default: {RadioGroupProfilePower->ItemIndex = 0; PowerProfile = 30;}
          }
-//VNB 12.12.2008 Êîýôôèöèåíò ïðåäñòàâëåíèÿ äàííûõ
+//VNB 12.12.2008 ÐšÐ¾ÑÑ„Ñ„Ð¸Ñ†Ð¸ÐµÐ½Ñ‚ Ð¿Ñ€ÐµÐ´ÑÑ‚Ð°Ð²Ð»ÐµÐ½Ð¸Ñ Ð´Ð°Ð½Ð½Ñ‹Ñ…
          if(pReg->ValueExists("PowerCoeff"))
            TempPowerCoeff = pReg->ReadInteger("PowerCoeff");
            PowerCoeff = (TempPowerCoeff) ? TempPowerCoeff : 1000;
@@ -245,7 +245,7 @@ void __fastcall TFormSetupMonitors::InitRegistry(void)
 			sprintf(buf,"#%d#%d",value,value2);
 			DrawTableBW->ColsWidth=buf;
 
-                        //GRB ADD 14.09.2021 - âû÷èòûâàåì èç ðååñòðà ôëàã èñïîëüçîâàíèÿ ðåæèìà îòðèñîâêè êîëîíêè ñ èìåíåì ãðóïïû ïî øèðèíå ñàìîãî äëèííîãî ýëåìåíòà
+                        //GRB ADD 14.09.2021 - Ð²Ñ‹Ñ‡Ð¸Ñ‚Ñ‹Ð²Ð°ÐµÐ¼ Ð¸Ð· Ñ€ÐµÐµÑÑ‚Ñ€Ð° Ñ„Ð»Ð°Ð³ Ð¸ÑÐ¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ð½Ð¸Ñ Ñ€ÐµÐ¶Ð¸Ð¼Ð° Ð¾Ñ‚Ñ€Ð¸ÑÐ¾Ð²ÐºÐ¸ ÐºÐ¾Ð»Ð¾Ð½ÐºÐ¸ Ñ Ð¸Ð¼ÐµÐ½ÐµÐ¼ Ð³Ñ€ÑƒÐ¿Ð¿Ñ‹ Ð¿Ð¾ ÑˆÐ¸Ñ€Ð¸Ð½Ðµ ÑÐ°Ð¼Ð¾Ð³Ð¾ Ð´Ð»Ð¸Ð½Ð½Ð¾Ð³Ð¾ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð°
                         if( pReg->ValueExists("isContainedWidth") )
                                 RadioGroupColWidthName->ItemIndex=(pReg->ReadInteger("isContainedWidth")==0) ? 0 : 1;
                         else
@@ -306,14 +306,14 @@ void __fastcall TFormSetupMonitors::InitRegistry(void)
         memcpy((void *)&s, (void *)&i, sizeof(s));
 				REdPLSQLRep->Font->Style=s;
       }
-      //Ñïîñîá ïå÷àòè
+      //Ð¡Ð¿Ð¾ÑÐ¾Ð± Ð¿ÐµÑ‡Ð°Ñ‚Ð¸
 			if( !pReg->ValueExists("PLSQLRepPrintMode") )
 				pReg->WriteInteger("PLSQLRepPrintMode",value=1);
 			else
 				value=pReg->ReadInteger("PLSQLRepPrintMode");
       value = value? 1: 0;
       RGrPrintMode->ItemIndex = value;
-      //e Ñïîñîá ïå÷àòè
+      //e Ð¡Ð¿Ð¾ÑÐ¾Ð± Ð¿ÐµÑ‡Ð°Ñ‚Ð¸
 		}
 		catch(Exception &e)
 		{
@@ -350,7 +350,7 @@ void __fastcall TFormSetupMonitors::InitRegistry(void)
 	pReg->CloseKey();
   //e KAS
 
-   // Add by KSS // Èíèöèàëèçàöèÿ âêëàäêè Ãðàôèêà
+   // Add by KSS // Ð˜Ð½Ð¸Ñ†Ð¸Ð°Ð»Ð¸Ð·Ð°Ñ†Ð¸Ñ Ð²ÐºÐ»Ð°Ð´ÐºÐ¸ Ð“Ñ€Ð°Ñ„Ð¸ÐºÐ°
 	if( pReg->OpenKey("\\SOFTWARE\\Grant\\Ascue\\Monitors\\Graph", true) )
 	{
       try
@@ -453,7 +453,7 @@ void __fastcall TFormSetupMonitors::BitBtn1Click(TObject *Sender)
 
       pReg->WriteString("ExportSeparator",(cbFormatPnt->ItemIndex == 1) ? (",") : ("."));
       pReg->WriteInteger("isSpecFormat", cbSpecFormat->Checked);
-      //GRB ADD 14.09.2021 Ñîõðàíåíèå â ðååñòð ïîçèöèè èñïîëüçîâàíèÿ ðåæèìà îòðèñîâêè êîëîíêè ñ èìåíåì ãðóïïû ïî øèðèíå ñàìîãî äëèííîãî ýëåìåíòà
+      //GRB ADD 14.09.2021 Ð¡Ð¾Ñ…Ñ€Ð°Ð½ÐµÐ½Ð¸Ðµ Ð² Ñ€ÐµÐµÑÑ‚Ñ€ Ð¿Ð¾Ð·Ð¸Ñ†Ð¸Ð¸ Ð¸ÑÐ¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ð½Ð¸Ñ Ñ€ÐµÐ¶Ð¸Ð¼Ð° Ð¾Ñ‚Ñ€Ð¸ÑÐ¾Ð²ÐºÐ¸ ÐºÐ¾Ð»Ð¾Ð½ÐºÐ¸ Ñ Ð¸Ð¼ÐµÐ½ÐµÐ¼ Ð³Ñ€ÑƒÐ¿Ð¿Ñ‹ Ð¿Ð¾ ÑˆÐ¸Ñ€Ð¸Ð½Ðµ ÑÐ°Ð¼Ð¾Ð³Ð¾ Ð´Ð»Ð¸Ð½Ð½Ð¾Ð³Ð¾ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð°
       pReg->WriteInteger("isContainedWidth",(RadioGroupColWidthName->ItemIndex == 1) ? 1 : 0);
 
       //END ADD
@@ -563,7 +563,7 @@ void __fastcall TFormSetupMonitors::FormShow(TObject *Sender)
 
 void __fastcall TFormSetupMonitors::RadioGroupProfilePowerClick(TObject *Sender)
 {
-//Add by Nadtochiy ïðè äîáàâëåíèè ïðîìåæóòêà âðåìåíè äîáàâèòü ñîîòâåòñòóåþùèé case
+//Add by Nadtochiy Ð¿Ñ€Ð¸ Ð´Ð¾Ð±Ð°Ð²Ð»ÐµÐ½Ð¸Ð¸ Ð¿Ñ€Ð¾Ð¼ÐµÐ¶ÑƒÑ‚ÐºÐ° Ð²Ñ€ÐµÐ¼ÐµÐ½Ð¸ Ð´Ð¾Ð±Ð°Ð²Ð¸Ñ‚ÑŒ ÑÐ¾Ð¾Ñ‚Ð²ÐµÑ‚ÑÑ‚ÑƒÐµÑŽÑ‰Ð¸Ð¹ case
    switch(RadioGroupProfilePower->ItemIndex)
    {
      case 0 : {PowerProfile = 60; break;}
@@ -594,9 +594,9 @@ void __fastcall TFormSetupMonitors::RadioGroupPowerCoeffClick(
 void __fastcall TFormSetupMonitors::Button1Click(TObject *Sender)
 {
     FontDialog->Options << fdEffects;
-    //Ïðèâíîñèì òåïàðàìåòðû, ÷òî áûëè
+    //ÐŸÑ€Ð¸Ð²Ð½Ð¾ÑÐ¸Ð¼ Ñ‚ÐµÐ¿Ð°Ñ€Ð°Ð¼ÐµÑ‚Ñ€Ñ‹, Ñ‡Ñ‚Ð¾ Ð±Ñ‹Ð»Ð¸
     FontDialog->Font=REdPLSQLRep->Font;
-    //e Ïðèâíîñèì òåïàðàìåòðû, ÷òî áûëè
+    //e ÐŸÑ€Ð¸Ð²Ð½Ð¾ÑÐ¸Ð¼ Ñ‚ÐµÐ¿Ð°Ñ€Ð°Ð¼ÐµÑ‚Ñ€Ñ‹, Ñ‡Ñ‚Ð¾ Ð±Ñ‹Ð»Ð¸
 	if( FontDialog->Execute() )
 	{
 	    PLSQLRepFont->Caption=AnsiString(FontDialog->Font->Name)+AnsiString(",")+AnsiString(FontDialog->Font->Size);
@@ -700,7 +700,7 @@ void __fastcall TFormSetupMonitors::cbMarksClick(TObject *Sender)
 void __fastcall TFormSetupMonitors::OnViewUpdate(TObject *Sender)
 {
     if(!cbDiagram->Checked){
-        pLine->Active = true;//âûáîð òèïà îòîáðàæåíèÿ èíôîðìàöèè
+        pLine->Active = true;//Ð²Ñ‹Ð±Ð¾Ñ€ Ñ‚Ð¸Ð¿Ð° Ð¾Ñ‚Ð¾Ð±Ñ€Ð°Ð¶ÐµÐ½Ð¸Ñ Ð¸Ð½Ñ„Ð¾Ñ€Ð¼Ð°Ñ†Ð¸Ð¸
         pBar->Active = false;
         pPie->Active = false;
     }else if(rgDiagramType->ItemIndex==0){

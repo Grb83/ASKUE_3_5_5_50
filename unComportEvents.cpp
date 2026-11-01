@@ -61,7 +61,7 @@ void __fastcall TfmComportEvents::FormShow(TObject *Sender)
   edTill->Text = dtCurrent+1;
 
   cbCOMPort->Clear();
-  cbCOMPort->AddItem("Âñå ïîðòû", 0);
+  cbCOMPort->AddItem("Ð’ÑÐµ Ð¿Ð¾Ñ€Ñ‚Ñ‹", 0);
   zapros_go = 0;
   oqMain->SQL->Text = "begin " + SchemeName + "COMPORTS_PG.list_ports(:par1, :par2); end;";
   oqMain->ParamByName("par1")->AsInteger = ssdID;
@@ -99,7 +99,7 @@ void __fastcall TfmComportEvents::SortData( void )
     sysDate = sysDate.CurrentDate() + StrToTime("00:00:00");
 
     }catch (Exception &ex1){
-    Application->MessageBox ("Âûëåò íà sysDate = dmMain->SystemDate;",Application->Title.c_str(),MB_OK);
+    Application->MessageBox ("Ð’Ñ‹Ð»ÐµÑ‚ Ð½Ð° sysDate = dmMain->SystemDate;",Application->Title.c_str(),MB_OK);
     Go->Enabled = true;
     return;
     }
@@ -111,7 +111,7 @@ void __fastcall TfmComportEvents::SortData( void )
         "COMPORTS_PG.select_events(:par1, :par2, to_date(:par3, 'dd.mm.yyyy hh24:mi:ss'), to_date(:par4, 'dd.mm.yyyy hh24:mi:ss'), :par5, :par6); end;";
         zapros_go = 1;
         }catch (Exception &ex3){
-        Application->MessageBox ("Âûëåò íà oqMain->SQL->Text =...;",Application->Title.c_str(),MB_OK);
+        Application->MessageBox ("Ð’Ñ‹Ð»ÐµÑ‚ Ð½Ð° oqMain->SQL->Text =...;",Application->Title.c_str(),MB_OK);
         ShowMessage(ex3.Message);
         Application->ShowException(&ex3);
         }
@@ -121,7 +121,7 @@ void __fastcall TfmComportEvents::SortData( void )
     /*try{
     oqMain->Params->Clear();
     }catch (Exception &ex2){
-    Application->MessageBox ("Âûëåò íà oqMain->Params->Clear();",Application->Title.c_str(),MB_OK);
+    Application->MessageBox ("Ð’Ñ‹Ð»ÐµÑ‚ Ð½Ð° oqMain->Params->Clear();",Application->Title.c_str(),MB_OK);
     Go->Enabled = true;
     return;
     } */
@@ -129,7 +129,7 @@ void __fastcall TfmComportEvents::SortData( void )
     oqMain->SQL->Text = "begin " + SchemeName +
       "COMPORTS_PG.select_events(:par1, :par2, to_date(:par3, 'dd.mm.yyyy hh24:mi:ss'), to_date(:par4, 'dd.mm.yyyy hh24:mi:ss'), :par5, :par6); end;";
     }catch (Exception &ex3){
-    Application->MessageBox ("Âûëåò íà oqMain->SQL->Text =...;",Application->Title.c_str(),MB_OK);
+    Application->MessageBox ("Ð’Ñ‹Ð»ÐµÑ‚ Ð½Ð° oqMain->SQL->Text =...;",Application->Title.c_str(),MB_OK);
     ShowMessage(ex3.Message);
     Application->ShowException(&ex3);
     Go->Enabled = true;
@@ -138,21 +138,21 @@ void __fastcall TfmComportEvents::SortData( void )
     try{
     index = cbCOMPort->ItemIndex;
     }catch (Exception &ex4){
-    Application->MessageBox ("Âûëåò íà int index = cbCOMPort->ItemIndex;",Application->Title.c_str(),MB_OK);
+    Application->MessageBox ("Ð’Ñ‹Ð»ÐµÑ‚ Ð½Ð° int index = cbCOMPort->ItemIndex;",Application->Title.c_str(),MB_OK);
     Go->Enabled = true;
     return;
     }
     try{
     pos = (int)cbCOMPort->Items->Objects[index];
     }catch (Exception &ex5){
-    Application->MessageBox ("Âûëåò íà int pos = (int)cbCOMPort->Items->Objects[index];",Application->Title.c_str(),MB_OK);
+    Application->MessageBox ("Ð’Ñ‹Ð»ÐµÑ‚ Ð½Ð° int pos = (int)cbCOMPort->Items->Objects[index];",Application->Title.c_str(),MB_OK);
     Go->Enabled = true;
     return;
     }
     try{
     oqMain->ParamByName("par1")->AsInteger = pos;
     }catch (Exception &ini_ex){
-    Application->MessageBox ("Âûëåò íà oqMain->ParamByName('par1')->AsInteger = pos; ",Application->Title.c_str(),MB_OK);
+    Application->MessageBox ("Ð’Ñ‹Ð»ÐµÑ‚ Ð½Ð° oqMain->ParamByName('par1')->AsInteger = pos; ",Application->Title.c_str(),MB_OK);
     Go->Enabled = true;
     return;
     }
@@ -171,14 +171,14 @@ void __fastcall TfmComportEvents::SortData( void )
     try{
     oqMain->Execute();
     }catch (Exception &eoe){
-    Application->MessageBox ("Âûëåò íà âûçîâå COMPORTS_PG.select_events",Application->Title.c_str(),MB_OK);
+    Application->MessageBox ("Ð’Ñ‹Ð»ÐµÑ‚ Ð½Ð° Ð²Ñ‹Ð·Ð¾Ð²Ðµ COMPORTS_PG.select_events",Application->Title.c_str(),MB_OK);
     Application->ShowException(&eoe);
     Go->Enabled = true;
     return;
     }
   } catch(Exception &exception)
     {
-        Application->MessageBox ("Íåîáðàáîòàííûå èñêëþ÷åíèÿ â TfmComportEvents::SortData",Application->Title.c_str(),MB_OK);
+        Application->MessageBox ("ÐÐµÐ¾Ð±Ñ€Ð°Ð±Ð¾Ñ‚Ð°Ð½Ð½Ñ‹Ðµ Ð¸ÑÐºÐ»ÑŽÑ‡ÐµÐ½Ð¸Ñ Ð² TfmComportEvents::SortData",Application->Title.c_str(),MB_OK);
         Application->ShowException(&exception);
         Go->Enabled = true;
     }
@@ -193,8 +193,8 @@ void __fastcall TfmComportEvents::GoClick(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall TfmComportEvents::m_btnSaveClick(TObject *Sender)
 {
-  TdmMain::SaveTable(this,MessageGrid1,Caption+" "+cbCOMPort->Text + ", ñ " + dtFrom->Date.FormatString("dd.mm.yyyy") +
-      " " + edFrom->Text + " ïî " + dtTill->Date.FormatString("dd.mm.yyyy") +
+  TdmMain::SaveTable(this,MessageGrid1,Caption+" "+cbCOMPort->Text + ", Ñ " + dtFrom->Date.FormatString("dd.mm.yyyy") +
+      " " + edFrom->Text + " Ð¿Ð¾ " + dtTill->Date.FormatString("dd.mm.yyyy") +
       " " + edTill->Text);
 }
 //---------------------------------------------------------------------------

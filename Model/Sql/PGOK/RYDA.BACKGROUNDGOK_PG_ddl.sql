@@ -5,8 +5,8 @@ CREATE OR REPLACE
 PACKAGE backgroundgok_pg
   IS
  ------------------------------------------------------------------------------------------------------------------------
-   -- пакет по созданию отчетов в файл
-   -- дата создания 11/02/2003 Сечин А.А.
+   -- РїР°РєРµС‚ РїРѕ СЃРѕР·РґР°РЅРёСЋ РѕС‚С‡РµС‚РѕРІ РІ С„Р°Р№Р»
+   -- РґР°С‚Р° СЃРѕР·РґР°РЅРёСЏ 11/02/2003 РЎРµС‡РёРЅ Рђ.Рђ.
 ------------------------------------------------------------------------------------------------------------------------
  PROCEDURE copydata (an_maket NUMBER, ad_date DATE);
 
@@ -20,8 +20,8 @@ CREATE OR REPLACE
 PACKAGE BODY backgroundgok_pg
 IS
  ------------------------------------------------------------------------------------------------------------------------
-   -- пакет по созданию отчетов в файл
-   -- дата создания 11/02/2003 Сечин А.А.
+   -- РїР°РєРµС‚ РїРѕ СЃРѕР·РґР°РЅРёСЋ РѕС‚С‡РµС‚РѕРІ РІ С„Р°Р№Р»
+   -- РґР°С‚Р° СЃРѕР·РґР°РЅРёСЏ 11/02/2003 РЎРµС‡РёРЅ Рђ.Рђ.
 ------------------------------------------------------------------------------------------------------------------------
  PROCEDURE copydata (an_maket NUMBER, ad_date DATE) IS
   ln_gid   NUMBER;
@@ -34,7 +34,7 @@ IS
      FROM makets WHERE nmaket = an_maket;
 
    IF ln_gid IS NULL THEN
-     raise_application_error(-20001,'Не задана группа для копирования точек');
+     raise_application_error(-20001,'РќРµ Р·Р°РґР°РЅР° РіСЂСѓРїРїР° РґР»СЏ РєРѕРїРёСЂРѕРІР°РЅРёСЏ С‚РѕС‡РµРє');
    END IF;
 
    FOR lc IN (SELECT mid from_mid, util_pg.get_param(vparam,1) to_mid
@@ -42,7 +42,7 @@ IS
                WHERE parent = ln_gid AND mid IS NOT NULL) LOOP
      SELECT max(mid) INTO ln_tmpmid FROM points WHERE mid = lc.to_mid;
      IF ln_tmpmid IS NULL THEN
-       raise_application_error(-20001,'В старой базе не найдена точка '||lc.to_mid);
+       raise_application_error(-20001,'Р’ СЃС‚Р°СЂРѕР№ Р±Р°Р·Рµ РЅРµ РЅР°Р№РґРµРЅР° С‚РѕС‡РєР° '||lc.to_mid);
      END IF;
 
      DELETE FROM halfhourold

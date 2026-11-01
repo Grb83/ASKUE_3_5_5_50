@@ -102,7 +102,7 @@ private:	// User declarations
    void __fastcall ReadData();
    void __fastcall GetColumnName();
    void __fastcall GetColumnNameInv();
-   void __fastcall Check(double mid ,int nmeasure,AnsiString mtrsn,double kc, double Field0,int Col); // Возврат данных при разбивке на сутки
+   void __fastcall Check(double mid ,int nmeasure,AnsiString mtrsn,double kc, double Field0,int Col); // Р’РѕР·РІСЂР°С‚ РґР°РЅРЅС‹С… РїСЂРё СЂР°Р·Р±РёРІРєРµ РЅР° СЃСѓС‚РєРё
    void __fastcall PCheck();
    void __fastcall InvCheck();
    bool __fastcall SaveCheck();
@@ -111,13 +111,13 @@ private:	// User declarations
    void __fastcall SetKoeff(int f);
    void __fastcall CopyData();
    //26.01.2021 GRB ADD
-   long __fastcall getLastMid ();//затыкаем баг с копированием за предыдущие сутки в СopyData - проблема в том что для последней точки мы выходим в vtData на неправильную область - теперь будем для таких точек делать отделт 
+   long __fastcall getLastMid ();//Р·Р°С‚С‹РєР°РµРј Р±Р°Рі СЃ РєРѕРїРёСЂРѕРІР°РЅРёРµРј Р·Р° РїСЂРµРґС‹РґСѓС‰РёРµ СЃСѓС‚РєРё РІ РЎopyData - РїСЂРѕР±Р»РµРјР° РІ С‚РѕРј С‡С‚Рѕ РґР»СЏ РїРѕСЃР»РµРґРЅРµР№ С‚РѕС‡РєРё РјС‹ РІС‹С…РѕРґРёРј РІ vtData РЅР° РЅРµРїСЂР°РІРёР»СЊРЅСѓСЋ РѕР±Р»Р°СЃС‚СЊ - С‚РµРїРµСЂСЊ Р±СѓРґРµРј РґР»СЏ С‚Р°РєРёС… С‚РѕС‡РµРє РґРµР»Р°С‚СЊ РѕС‚РґРµР»С‚ 
    TFormManualInTree *f;
    POINTDATA p;
    POINTDATA tp;
    bool EditSum;
- //  long prov;	// Состояние проверки 0-Не проводилась, 1-проводилась (сохранять нельзя), 2-проводилась (сохранять можно)
-   unsigned long CountStr; // Количество строчек в результате запроса
+ //  long prov;	// РЎРѕСЃС‚РѕСЏРЅРёРµ РїСЂРѕРІРµСЂРєРё 0-РќРµ РїСЂРѕРІРѕРґРёР»Р°СЃСЊ, 1-РїСЂРѕРІРѕРґРёР»Р°СЃСЊ (СЃРѕС…СЂР°РЅСЏС‚СЊ РЅРµР»СЊР·СЏ), 2-РїСЂРѕРІРѕРґРёР»Р°СЃСЊ (СЃРѕС…СЂР°РЅСЏС‚СЊ РјРѕР¶РЅРѕ)
+   unsigned long CountStr; // РљРѕР»РёС‡РµСЃС‚РІРѕ СЃС‚СЂРѕС‡РµРє РІ СЂРµР·СѓР»СЊС‚Р°С‚Рµ Р·Р°РїСЂРѕСЃР°
 //   long ttable;
    int ColCount;
    AnsiString NameGroup;
@@ -139,14 +139,14 @@ private:	// User declarations
      AnsiString mtrsn;
      double KC;
      float old;
-     double SumInv; //-для красивого раскрашивания суммы при инверсии храним сумму расчетную после Post
-     double PredMax;  //- Предупредительная граница
-     double PredMin;  //- Предупредительная граница
-     double AvarMax;  //- Аварийная граница
-     double AvarMin;  //- Аварийная граница
-     double FizMax;   //- Физическая граница
-     double FizMin;    //- Физическая граница
-     int IsEdit;       //- Признак редактирования
+     double SumInv; //-РґР»СЏ РєСЂР°СЃРёРІРѕРіРѕ СЂР°СЃРєСЂР°С€РёРІР°РЅРёСЏ СЃСѓРјРјС‹ РїСЂРё РёРЅРІРµСЂСЃРёРё С…СЂР°РЅРёРј СЃСѓРјРјСѓ СЂР°СЃС‡РµС‚РЅСѓСЋ РїРѕСЃР»Рµ Post
+     double PredMax;  //- РџСЂРµРґСѓРїСЂРµРґРёС‚РµР»СЊРЅР°СЏ РіСЂР°РЅРёС†Р°
+     double PredMin;  //- РџСЂРµРґСѓРїСЂРµРґРёС‚РµР»СЊРЅР°СЏ РіСЂР°РЅРёС†Р°
+     double AvarMax;  //- РђРІР°СЂРёР№РЅР°СЏ РіСЂР°РЅРёС†Р°
+     double AvarMin;  //- РђРІР°СЂРёР№РЅР°СЏ РіСЂР°РЅРёС†Р°
+     double FizMax;   //- Р¤РёР·РёС‡РµСЃРєР°СЏ РіСЂР°РЅРёС†Р°
+     double FizMin;    //- Р¤РёР·РёС‡РµСЃРєР°СЏ РіСЂР°РЅРёС†Р°
+     int IsEdit;       //- РџСЂРёР·РЅР°Рє СЂРµРґР°РєС‚РёСЂРѕРІР°РЅРёСЏ
      };
    MAXMIN * TestMinMax;
 

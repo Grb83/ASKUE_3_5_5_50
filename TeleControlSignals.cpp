@@ -111,7 +111,7 @@ void TFormTeleControlSignals::SaveConditions(long NParam)
   if ((ConditionsVTable->State == dsEdit) ||
        (ConditionsVTable->State == dsInsert))
      ConditionsVTable->Post();
-  //ò.ê. ïðöåäóðà ðåäàêòèðîâàíèÿ ÁÄ íå ðàáîòàåò ñ ïóñòûìè ìàññèâàìè
+  //Ñ‚.Ðº. Ð¿Ñ€Ñ†ÐµÐ´ÑƒÑ€Ð° Ñ€ÐµÐ´Ð°ÐºÑ‚Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ñ Ð‘Ð” Ð½Ðµ Ñ€Ð°Ð±Ð¾Ñ‚Ð°ÐµÑ‚ Ñ Ð¿ÑƒÑÑ‚Ñ‹Ð¼Ð¸ Ð¼Ð°ÑÑÐ¸Ð²Ð°Ð¼Ð¸
 
  try{
    oqSaveConditions->ParamByName("par1")->AsInteger=NParam;

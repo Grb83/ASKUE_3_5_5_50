@@ -16,7 +16,7 @@
 #include <Menus.hpp>
 #include <ActnList.hpp>
 //---------------------------------------------------------------------------
-struct strPOINTDATAFORM{ // Выбор данных пользователем
+struct strPOINTDATAFORM{ // Р’С‹Р±РѕСЂ РґР°РЅРЅС‹С… РїРѕР»СЊР·РѕРІР°С‚РµР»РµРј
    long mid;
    int ifpoint;
    int entype[6];
@@ -96,14 +96,14 @@ __published:	// IDE-managed Components
 
 private:	// User declarations
 
-	typedef struct { //дерево обьектов учета
+	typedef struct { //РґРµСЂРµРІРѕ РѕР±СЊРµРєС‚РѕРІ СѓС‡РµС‚Р°
     long Mid;
     long Type;
     long HaveChild;
     char Name[148];
     long IfPoint;
 	}POINTSTREEDEF;
-  bool __fastcall ReadNode(TTreeNode* NodeParent);// Читает ветку дерева Точек
+  bool __fastcall ReadNode(TTreeNode* NodeParent);// Р§РёС‚Р°РµС‚ РІРµС‚РєСѓ РґРµСЂРµРІР° РўРѕС‡РµРє
   void __fastcall FindCurrNode(void);
   void __fastcall FindCurrNodeGroup(long id);
   long __fastcall GetNodeId(TObject*obj){

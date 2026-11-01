@@ -87,10 +87,10 @@ __published:	// IDE-managed Components
   void __fastcall FormClose(TObject *Sender, TCloseAction &Action);
 
 private:	// User declarations
-    int RowToRem;        //хранение последней выделенной строки в табл "Монитор"
-    int AssRowToRem;     //хранение последней выделенной строки в табл "Ассоциации"
-    int MonColToRem;     //хранение столбца, по которому сортируем в табл "Монитор"
-    int AssColToRem;     //хранение столбца, по которому сортируем в табл "Ассоциации"
+    int RowToRem;        //С…СЂР°РЅРµРЅРёРµ РїРѕСЃР»РµРґРЅРµР№ РІС‹РґРµР»РµРЅРЅРѕР№ СЃС‚СЂРѕРєРё РІ С‚Р°Р±Р» "РњРѕРЅРёС‚РѕСЂ"
+    int AssRowToRem;     //С…СЂР°РЅРµРЅРёРµ РїРѕСЃР»РµРґРЅРµР№ РІС‹РґРµР»РµРЅРЅРѕР№ СЃС‚СЂРѕРєРё РІ С‚Р°Р±Р» "РђСЃСЃРѕС†РёР°С†РёРё"
+    int MonColToRem;     //С…СЂР°РЅРµРЅРёРµ СЃС‚РѕР»Р±С†Р°, РїРѕ РєРѕС‚РѕСЂРѕРјСѓ СЃРѕСЂС‚РёСЂСѓРµРј РІ С‚Р°Р±Р» "РњРѕРЅРёС‚РѕСЂ"
+    int AssColToRem;     //С…СЂР°РЅРµРЅРёРµ СЃС‚РѕР»Р±С†Р°, РїРѕ РєРѕС‚РѕСЂРѕРјСѓ СЃРѕСЂС‚РёСЂСѓРµРј РІ С‚Р°Р±Р» "РђСЃСЃРѕС†РёР°С†РёРё"
 
 public:		// User declarations
   __fastcall TMonitorICCPForm(TComponent* Owner, AnsiString Name, TAccess a);

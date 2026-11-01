@@ -43,12 +43,12 @@ private:	// User declarations
         char Mtrsn[20];
         char KC[20];
         char Date_time[20];
-        char E[20];     //Старый расход
-        char E_N[20];  //Новый расход
+        char E[20];     //РЎС‚Р°СЂС‹Р№ СЂР°СЃС…РѕРґ
+        char E_N[20];  //РќРѕРІС‹Р№ СЂР°СЃС…РѕРґ
         bool editRecord;
     }POINTLASTINPUT;
     POINTLASTINPUT pointLastInput[MAXINPUT];
-    unsigned long CountStr; // Количество строчек в результате запросаs
+    unsigned long CountStr; // РљРѕР»РёС‡РµСЃС‚РІРѕ СЃС‚СЂРѕС‡РµРє РІ СЂРµР·СѓР»СЊС‚Р°С‚Рµ Р·Р°РїСЂРѕСЃР°s
     long ttable;
     AnsiString tname;
     void __fastcall SetAccess(TAccess value);

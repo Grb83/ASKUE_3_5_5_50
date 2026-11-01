@@ -45,7 +45,7 @@ void __fastcall TFormVVMeter::FormCreate(TObject *Sender)
   }
 }
 //---------------------------------------------------------------------------
-bool __fastcall TFormVVMeter::ReadNode(TTreeNode* NodeParent)// Читает ветку дерева Точек
+bool __fastcall TFormVVMeter::ReadNode(TTreeNode* NodeParent)// Р§РёС‚Р°РµС‚ РІРµС‚РєСѓ РґРµСЂРµРІР° РўРѕС‡РµРє
 {
     POINTSTREEDEF*pData;
    TTreeNode* Node;
@@ -171,7 +171,7 @@ void __fastcall TFormVVMeter::FindCurrNode(void)
        //GRB ADD 16.04.2020 - test trouble ODAC
        dmMain->quMain->Params->Clear();
        //END ADD 
-       //14.01.2021 - 14.01.2021 - GRB REWRITE Фикс бага на ОЖД с задвоением GID/MID и не раскрытием дерева
+       //14.01.2021 - 14.01.2021 - GRB REWRITE Р¤РёРєСЃ Р±Р°РіР° РЅР° РћР–Р” СЃ Р·Р°РґРІРѕРµРЅРёРµРј GID/MID Рё РЅРµ СЂР°СЃРєСЂС‹С‚РёРµРј РґРµСЂРµРІР°
 	   /*dmMain->quMain->SQL->Text= "select mid from ryda.points connect by prior parent=mid and cod=0 start with mid=:par1 and cod=0  \
        union all  \
        select gid mid from ryda.groups connect by prior parent=gid start with gid=:par1 ";
@@ -293,7 +293,7 @@ void __fastcall TFormVVMeter::btOkClick(TObject *Sender)
    pointPOL->entype[5]=(CheckBox4->Checked)?6:0;
    pointPOL->myTime=seldate->DateTime;
    pointPOL->myStep=TDateTime(selstep->Text.SubString(1,2).ToInt(),selstep->Text.SubString(4,2).ToInt(),0,0); // Add by KSS
-   // выравнивание времени по границе шага // Add by KSS
+   // РІС‹СЂР°РІРЅРёРІР°РЅРёРµ РІСЂРµРјРµРЅРё РїРѕ РіСЂР°РЅРёС†Рµ С€Р°РіР° // Add by KSS
    if(pointPOL->usestep&&pointPOL->myStep.Val>0){
       double t = pointPOL->myTime.Val-(int)pointPOL->myTime.Val;
       double k = floor(t/pointPOL->myStep.Val*1000000000.0)/1000000000.0;
@@ -307,8 +307,8 @@ void __fastcall TFormVVMeter::btOkClick(TObject *Sender)
 
 void __fastcall TFormVVMeter::vFindClick(TObject *Sender)
 {
- //GRB ADD 10.03.2021 -добавляем вызов 2-х сеттеров, определяющих контекст задачи
- fmFP->setContext(0);//без разницы 0 или 1 на самом деле так как контекст где искать в группах или точках определяет юзер с полями 000 в ид группе или ид.точки
+ //GRB ADD 10.03.2021 -РґРѕР±Р°РІР»СЏРµРј РІС‹Р·РѕРІ 2-С… СЃРµС‚С‚РµСЂРѕРІ, РѕРїСЂРµРґРµР»СЏСЋС‰РёС… РєРѕРЅС‚РµРєСЃС‚ Р·Р°РґР°С‡Рё
+ fmFP->setContext(0);//Р±РµР· СЂР°Р·РЅРёС†С‹ 0 РёР»Рё 1 РЅР° СЃР°РјРѕРј РґРµР»Рµ С‚Р°Рє РєР°Рє РєРѕРЅС‚РµРєСЃС‚ РіРґРµ РёСЃРєР°С‚СЊ РІ РіСЂСѓРїРїР°С… РёР»Рё С‚РѕС‡РєР°С… РѕРїСЂРµРґРµР»СЏРµС‚ СЋР·РµСЂ СЃ РїРѕР»СЏРјРё 000 РІ РёРґ РіСЂСѓРїРїРµ РёР»Рё РёРґ.С‚РѕС‡РєРё
  fmFP->setGroupsAndPoints(true);
  //end add
  fmFP->ShowModal();
@@ -340,9 +340,9 @@ void __fastcall TFormVVMeter::FormDestroy(TObject *Sender)
    delete fmFP;
 }
 //---------------------------------------------------------------------------
-//GRB ADD 19.03.2021 - добавляем размотчик для поиска в дереве групп, его тянем из EditGroupsList
+//GRB ADD 19.03.2021 - РґРѕР±Р°РІР»СЏРµРј СЂР°Р·РјРѕС‚С‡РёРє РґР»СЏ РїРѕРёСЃРєР° РІ РґРµСЂРµРІРµ РіСЂСѓРїРї, РµРіРѕ С‚СЏРЅРµРј РёР· EditGroupsList
 void __fastcall TFormVVMeter::FindCurrNodeGroup(long id){
-    // Запрос - путь к точке :1 начиная с коренного узла
+    // Р—Р°РїСЂРѕСЃ - РїСѓС‚СЊ Рє С‚РѕС‡РєРµ :1 РЅР°С‡РёРЅР°СЏ СЃ РєРѕСЂРµРЅРЅРѕРіРѕ СѓР·Р»Р°
     #define MAXCOUNTLEVEL  100
     long parmid=id;
     long pointsTree[MAXCOUNTLEVEL];

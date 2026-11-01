@@ -16,7 +16,7 @@
 #include <Menus.hpp>
 #include <ActnList.hpp>
 //---------------------------------------------------------------------------
-struct strPOINTDATA{ // Выбор данных пользователем
+struct strPOINTDATA{ // Р’С‹Р±РѕСЂ РґР°РЅРЅС‹С… РїРѕР»СЊР·РѕРІР°С‚РµР»РµРј
    long mid;
    int ifpoint;
    int entype[6];
@@ -102,16 +102,16 @@ __published:	// IDE-managed Components
 
 private:	// User declarations
 
-	typedef struct { //дерево обьектов учета
+	typedef struct { //РґРµСЂРµРІРѕ РѕР±СЊРµРєС‚РѕРІ СѓС‡РµС‚Р°
     long Mid;
     long Type;
     long HaveChild;
     char Name[148];
     long IfPoint;
 	}POINTSTREEDEF;
-  bool __fastcall ReadNode(TTreeNode* NodeParent);// Читает ветку дерева Точек
+  bool __fastcall ReadNode(TTreeNode* NodeParent);// Р§РёС‚Р°РµС‚ РІРµС‚РєСѓ РґРµСЂРµРІР° РўРѕС‡РµРє
   void __fastcall FindCurrNode(void);
-  //GRB ADD 09.03.2021 - добавляем размотчик для поиска в дереве групп, его тянем из EditGroupsList
+  //GRB ADD 09.03.2021 - РґРѕР±Р°РІР»СЏРµРј СЂР°Р·РјРѕС‚С‡РёРє РґР»СЏ РїРѕРёСЃРєР° РІ РґРµСЂРµРІРµ РіСЂСѓРїРї, РµРіРѕ С‚СЏРЅРµРј РёР· EditGroupsList
       typedef struct {
         long Id;
         long Type;
@@ -123,7 +123,7 @@ private:	// User declarations
         long techbron;
         long nSum;
         long inverted;
-        long editing;// 0 -Не трогали, 1-трогали
+        long editing;// 0 -РќРµ С‚СЂРѕРіР°Р»Рё, 1-С‚СЂРѕРіР°Р»Рё
         long editlim;
         TList *plim;
         long tmpId;

@@ -84,10 +84,10 @@ __published:	// IDE-managed Components
    void __fastcall TimeDTPEnter(TObject *Sender);
   void __fastcall cbZoneChange(TObject *Sender);
 private:	// User declarations
-   typedef struct{ //таблица дат ввода в действие тарифа
+   typedef struct{ //С‚Р°Р±Р»РёС†Р° РґР°С‚ РІРІРѕРґР° РІ РґРµР№СЃС‚РІРёРµ С‚Р°СЂРёС„Р°
       long Rid;
       char Switch_Date[12];
-      struct RATES{ // список тарифов по зонам
+      struct RATES{ // СЃРїРёСЃРѕРє С‚Р°СЂРёС„РѕРІ РїРѕ Р·РѕРЅР°Рј
          char Time[8];
          long Rate;
       } RatesList[RATE_MAX];

@@ -128,7 +128,7 @@ public:		// User declarations
      //GRB ADD
      //TfmInteriorUni *fmInteriorUni;
      HCURSOR hCursor;
-     long Monitor_Id, nParent;// ИД монитора и его родитель в дереве. Нужно для сохранения монитора
+     long Monitor_Id, nParent;// РР” РјРѕРЅРёС‚РѕСЂР° Рё РµРіРѕ СЂРѕРґРёС‚РµР»СЊ РІ РґРµСЂРµРІРµ. РќСѓР¶РЅРѕ РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ РјРѕРЅРёС‚РѕСЂР°
 
   //===== 20.05.2005 Frizyuk A.M. Start
   void __fastcall MonitorMenuEnabled();

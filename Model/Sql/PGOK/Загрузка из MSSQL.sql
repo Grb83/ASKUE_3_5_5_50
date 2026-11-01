@@ -25,49 +25,49 @@ create table RYDA_OF1  (
 );
 
 comment on table RYDA_OF1 is
-'RYDA_OF1_ПГОК';
+'RYDA_OF1_РџР“РћРљ';
 
 comment on column RYDA_OF1.ORDERNO is
-'Порядковый номер записи';
+'РџРѕСЂСЏРґРєРѕРІС‹Р№ РЅРѕРјРµСЂ Р·Р°РїРёСЃРё';
 
 comment on column RYDA_OF1.ORDERDATE is
-'Дата записи';
+'Р”Р°С‚Р° Р·Р°РїРёСЃРё';
 
 comment on column RYDA_OF1.ORDERSM is
-'Номер смены';
+'РќРѕРјРµСЂ СЃРјРµРЅС‹';
 
 comment on column RYDA_OF1.NUMCHASSM is
-'Номер часа в смене';
+'РќРѕРјРµСЂ С‡Р°СЃР° РІ СЃРјРµРЅРµ';
 
 comment on column RYDA_OF1.TEKCHASSM is
-'Час записи';
+'Р§Р°СЃ Р·Р°РїРёСЃРё';
 
 comment on column RYDA_OF1.M_1 is
-'Секкция 1';
+'РЎРµРєРєС†РёСЏ 1';
 
 comment on column RYDA_OF1.M_2 is
-'Секкция 2';
+'РЎРµРєРєС†РёСЏ 2';
 
 comment on column RYDA_OF1.M_3 is
-'Секкция 3';
+'РЎРµРєРєС†РёСЏ 3';
 
 comment on column RYDA_OF1.M_4 is
-'Секкция 4';
+'РЎРµРєРєС†РёСЏ 4';
 
 comment on column RYDA_OF1.M_5 is
-'Секкция 5';
+'РЎРµРєРєС†РёСЏ 5';
 
 comment on column RYDA_OF1.M_6 is
-'Секкция 6';
+'РЎРµРєРєС†РёСЏ 6';
 
 comment on column RYDA_OF1.M_7 is
-'Секкция 7';
+'РЎРµРєРєС†РёСЏ 7';
 
 comment on column RYDA_OF1.M_8 is
-'Секкция 8';
+'РЎРµРєРєС†РёСЏ 8';
 
 comment on column RYDA_OF1.DP_WATER is
-'Вода';
+'Р’РѕРґР°';
 
 /*==============================================================*/
 /* Index: RYDA_OF1_IDX1                                         */
@@ -96,43 +96,43 @@ create table RYDA_OF2  (
 );
 
 comment on table RYDA_OF2 is
-'RYDA_OF2_ПГОК';
+'RYDA_OF2_РџР“РћРљ';
 
 comment on column RYDA_OF2.ORDERNO is
-'Порядковый номер записи';
+'РџРѕСЂСЏРґРєРѕРІС‹Р№ РЅРѕРјРµСЂ Р·Р°РїРёСЃРё';
 
 comment on column RYDA_OF2.ORDERDATE is
-'Дата записи';
+'Р”Р°С‚Р° Р·Р°РїРёСЃРё';
 
 comment on column RYDA_OF2.ORDERSM is
-'Номер смены';
+'РќРѕРјРµСЂ СЃРјРµРЅС‹';
 
 comment on column RYDA_OF2.NUMCHASSM is
-'Номер часа в смене';
+'РќРѕРјРµСЂ С‡Р°СЃР° РІ СЃРјРµРЅРµ';
 
 comment on column RYDA_OF2.TEKCHASSM is
-'Час записи';
+'Р§Р°СЃ Р·Р°РїРёСЃРё';
 
 comment on column RYDA_OF2.M_10 is
-'Секкция 10';
+'РЎРµРєРєС†РёСЏ 10';
 
 comment on column RYDA_OF2.M_11 is
-'Секкция 11';
+'РЎРµРєРєС†РёСЏ 11';
 
 comment on column RYDA_OF2.M_12 is
-'Секкция 12';
+'РЎРµРєРєС†РёСЏ 12';
 
 comment on column RYDA_OF2.M_13 is
-'Секкция 13';
+'РЎРµРєРєС†РёСЏ 13';
 
 comment on column RYDA_OF2.M_14 is
-'Секкция 14';
+'РЎРµРєРєС†РёСЏ 14';
 
 comment on column RYDA_OF2.M_15 is
-'Секкция 15';
+'РЎРµРєРєС†РёСЏ 15';
 
 comment on column RYDA_OF2.DP_WATER is
-'Вода';
+'Р’РѕРґР°';
 
 /*==============================================================*/
 /* Index: RYDA_OF2_IDX1                                         */

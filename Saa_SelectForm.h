@@ -37,7 +37,7 @@ __published:	// IDE-managed Components
 	void __fastcall tvMainChange(TObject *Sender, TTreeNode *Node);
 	void __fastcall tvMainExpanding(TObject *Sender, TTreeNode *Node, bool &AllowExpansion);
 private:	// User declarations
-	typedef struct {  // ÔÎĞÌÛ ÎÒ×¨ÒÎÂ
+	typedef struct {  // Ğ¤ĞĞ ĞœĞ« ĞĞ¢Ğ§ĞĞ¢ĞĞ’
 	 int Level;
 	 long Fid;
 	 char NameForm[200];
@@ -46,13 +46,13 @@ private:	// User declarations
    long fID;
    HCURSOR hCursor;
 public:		// User declarations
-   typedef struct {  //Íîâàÿ ÃÓÏÏÛ ÎÒ×¨ÒÎÂ
+   typedef struct {  //ĞĞ¾Ğ²Ğ°Ñ Ğ“Ğ£ĞŸĞŸĞ« ĞĞ¢Ğ§ĞĞ¢ĞĞ’
 	  int Level;
   	long Gid;
 	  char Name[150];
     int Mid;
    }NEWREPORTGROUP;
- 	typedef struct {  //ÇÀÄÀ×È
+ 	typedef struct {  //Ğ—ĞĞ”ĞĞ§Ğ˜
 	 int Level;
 	 long Task_Id;
 	 long Task_Cod;

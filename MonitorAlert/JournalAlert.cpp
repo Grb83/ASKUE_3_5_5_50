@@ -85,8 +85,8 @@ void __fastcall TdlgJournalAlert::OnSubmit(TObject *Sender)
   try
   { try
     { switch (Tag)
-      { case 1: // Îáğûâ ñâÿçè
-        case 2: // Ïğåäóïğåæäåíèå
+      { case 1: // ĞĞ±Ñ€Ñ‹Ğ² ÑĞ²ÑĞ·Ğ¸
+        case 2: // ĞŸÑ€ĞµĞ´ÑƒĞ¿Ñ€ĞµĞ¶Ğ´ĞµĞ½Ğ¸Ğµ
           if (quMain->RecordCount&&MessageGrid->SelectedRows->Count>0){
           if(MessageBox(Handle, Reconst_smes94_1.c_str(),Application->Title.c_str(),MB_YESNO | MB_ICONQUESTION | MB_DEFBUTTON2) == IDYES){
              dmMain->quMain->Params->Clear();
@@ -107,7 +107,7 @@ void __fastcall TdlgJournalAlert::OnSubmit(TObject *Sender)
                                       MB_OK | MB_ICONINFORMATION);
               }
           break;
-        case 3: // Ñîîáùåíèå
+        case 3: // Ğ¡Ğ¾Ğ¾Ğ±Ñ‰ĞµĞ½Ğ¸Ğµ
           if(!quMain->RecordCount)
             break;
           if (MessageBox(Handle, Reconst_smes94_4.c_str(),
@@ -145,20 +145,20 @@ void __fastcall TdlgJournalAlert::OnShow(TObject *Sender)
   aSubmit->Visible  = (dmMain->GetTaskRights(UsCon.Role_Id, 98)==TASK_RIGHTS_WRITE);
   aSubmit->Enabled  = aSubmit->Visible;
   switch (Tag)
-  { case 1: // Îáğûâ ñâÿçè
+  { case 1: // ĞĞ±Ñ€Ñ‹Ğ² ÑĞ²ÑĞ·Ğ¸
       Caption = Reconst_smes94_5;
 		  break;
-    case 2: // Ïğåäóïğåæäåíèå
+    case 2: // ĞŸÑ€ĞµĞ´ÑƒĞ¿Ñ€ĞµĞ¶Ğ´ĞµĞ½Ğ¸Ğµ
       Caption = Reconst_smes94_6;
 		  break;
-    case 3: // Ñîîáùåíèå
+    case 3: // Ğ¡Ğ¾Ğ¾Ğ±Ñ‰ĞµĞ½Ğ¸Ğµ
       Caption = Reconst_smes94_7;
 		  break;
   }
   MessageGrid->Columns->Items[0]->Title->Caption  = "";
   MessageGrid->Columns->Items[0]->Width = 25;
   orderStr  = "field2 desc";
-  if(Tag==1)  MessageGrid->Columns->Items[3]->Title->Caption  = "Ïîğò";
+  if(Tag==1)  MessageGrid->Columns->Items[3]->Title->Caption  = "ĞŸĞ¾Ñ€Ñ‚";
   SelectData();
  ((TColumnEh *)MessageGrid->Columns->Items[1])->Title->SortMarker  = smDownEh;
 }
@@ -229,7 +229,7 @@ void __fastcall TdlgJournalAlert::aFilterClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-/*! Îòîáğàæåíèå ïîëíîãî ñîäåğæèìîãî ÿ÷åéêè â îòäåëüíîì îêíå.
+/*! ĞÑ‚Ğ¾Ğ±Ñ€Ğ°Ğ¶ĞµĞ½Ğ¸Ğµ Ğ¿Ğ¾Ğ»Ğ½Ğ¾Ğ³Ğ¾ ÑĞ¾Ğ´ĞµÑ€Ğ¶Ğ¸Ğ¼Ğ¾Ğ³Ğ¾ ÑÑ‡ĞµĞ¹ĞºĞ¸ Ğ² Ğ¾Ñ‚Ğ´ĞµĞ»ÑŒĞ½Ğ¾Ğ¼ Ğ¾ĞºĞ½Ğµ.
 */
 void __fastcall TdlgJournalAlert::MessageGridDblClick(TObject *Sender)
 {
@@ -242,7 +242,7 @@ void __fastcall TdlgJournalAlert::MessageGridDblClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-/*! Îòğèñîâêà èêîíêè òèïà ñîîáùåíèÿ â ïåğâîé êîëîíêå ñåòêè
+/*! ĞÑ‚Ñ€Ğ¸ÑĞ¾Ğ²ĞºĞ° Ğ¸ĞºĞ¾Ğ½ĞºĞ¸ Ñ‚Ğ¸Ğ¿Ğ° ÑĞ¾Ğ¾Ğ±Ñ‰ĞµĞ½Ğ¸Ñ Ğ² Ğ¿ĞµÑ€Ğ²Ğ¾Ğ¹ ĞºĞ¾Ğ»Ğ¾Ğ½ĞºĞµ ÑĞµÑ‚ĞºĞ¸
 */
 void __fastcall TdlgJournalAlert::m_btnRefreshDataClick(TObject *Sender)
 {
@@ -268,7 +268,7 @@ void __fastcall TdlgJournalAlert::aExportExecute(TObject *Sender)
 
   try
   { StringList  = new TStringList;
-    //Çàâãîëîâîê
+    //Ğ—Ğ°Ğ²Ğ³Ğ¾Ğ»Ğ¾Ğ²Ğ¾Ğº
     StringList->Add(Caption);
     StringList->Add("");
     if (Tag == 4)
@@ -283,7 +283,7 @@ void __fastcall TdlgJournalAlert::aExportExecute(TObject *Sender)
         s += gr->Columns->Items[i]->Title->Caption;
     }
     StringList->Add(s);
-    //Äàííûå
+    //Ğ”Ğ°Ğ½Ğ½Ñ‹Ğµ
     SavePlace = ds->GetBookmark();
     ds->DisableControls();
     ds->First();

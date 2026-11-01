@@ -129,24 +129,24 @@ private:	// User declarations
       long Mid;
       char Name[156];
       char LongName[256];
-      long Type; //= 1 - enterprise, 2-station, 3-point, 4-точка учета
+      long Type; //= 1 - enterprise, 2-station, 3-point, 4-С‚РѕС‡РєР° СѓС‡РµС‚Р°
       char Tag[10];
-      long CANAL;		//NUMBER, канал
-      long ER_POSITION;	//NUMBER, активная принятая энергия
-      long Q1_POSITION;	//NUMBER, реактивная принятая энергия
-      long ED_POSITION;	//NUMBER, активная отданая энергия
-      long Q3_POSITION;	//NUMBER, реактивная отданая энергия
+      long CANAL;		//NUMBER, РєР°РЅР°Р»
+      long ER_POSITION;	//NUMBER, Р°РєС‚РёРІРЅР°СЏ РїСЂРёРЅСЏС‚Р°СЏ СЌРЅРµСЂРіРёСЏ
+      long Q1_POSITION;	//NUMBER, СЂРµР°РєС‚РёРІРЅР°СЏ РїСЂРёРЅСЏС‚Р°СЏ СЌРЅРµСЂРіРёСЏ
+      long ED_POSITION;	//NUMBER, Р°РєС‚РёРІРЅР°СЏ РѕС‚РґР°РЅР°СЏ СЌРЅРµСЂРіРёСЏ
+      long Q3_POSITION;	//NUMBER, СЂРµР°РєС‚РёРІРЅР°СЏ РѕС‚РґР°РЅР°СЏ СЌРЅРµСЂРіРёСЏ
       char v_info[256];
       char p_info[256];
       long nBlock;
       long DataAbsence;
       char CommCtrl[10];
       char TechCtrl[10];
-      char ImportCode[64];// связной код импорта
+      char ImportCode[64];// СЃРІСЏР·РЅРѕР№ РєРѕРґ РёРјРїРѕСЂС‚Р°
       long nblocktime;
       int ntimezonew, ntimezones;
-      long ResCanal; //Дополнительный связной номер
-      int CheckCanal;//Признак выбора связного номера
+      long ResCanal; //Р”РѕРїРѕР»РЅРёС‚РµР»СЊРЅС‹Р№ СЃРІСЏР·РЅРѕР№ РЅРѕРјРµСЂ
+      int CheckCanal;//РџСЂРёР·РЅР°Рє РІС‹Р±РѕСЂР° СЃРІСЏР·РЅРѕРіРѕ РЅРѕРјРµСЂР°
    };
 
    stPoint *DragData;
@@ -160,7 +160,7 @@ private:	// User declarations
    long FIdProtocol;
    long FIsViewImportCode;
    int PlusDopCanal;
-   bool __fastcall ReadTreeNode(TObject*obj);// Читает ветку дерева
+   bool __fastcall ReadTreeNode(TObject*obj);// Р§РёС‚Р°РµС‚ РІРµС‚РєСѓ РґРµСЂРµРІР°
    void __fastcall ReadData(AnsiString MidMass);
    void __fastcall ReadAddParam(int Mid);
    void __fastcall ReadDataCod();

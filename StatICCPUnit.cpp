@@ -32,7 +32,7 @@ __fastcall TStatICCPForm::TStatICCPForm(TComponent* Owner, AnsiString Name, TAcc
  oqChannals->ParamByName("par1")->ParamType = ptOutput;
  oqChannals->ParamByName("par1")->DataType = ftCursor;
  oqChannals->Execute();
- //08.10.2021 GRB TEST - âñòàâèë ñ÷¸ò÷èê åñëè íåòó ðåçóëüòàòîâ ñòàâëþ CLBChannels->Checked[0] â false
+ //08.10.2021 GRB TEST - Ð²ÑÑ‚Ð°Ð²Ð¸Ð» ÑÑ‡Ñ‘Ñ‚Ñ‡Ð¸Ðº ÐµÑÐ»Ð¸ Ð½ÐµÑ‚Ñƒ Ñ€ÐµÐ·ÑƒÐ»ÑŒÑ‚Ð°Ñ‚Ð¾Ð² ÑÑ‚Ð°Ð²Ð»ÑŽ CLBChannels->Checked[0] Ð² false
  int count = 0;
  while (!oqChannals->Eof)
  {

@@ -21,7 +21,7 @@ __fastcall TFormVITInputExcel::TFormVITInputExcel(TComponent* Owner,AnsiString N
    case 2:
       tname="HALFHOUR";
       pointPOL.usetime=true;
-      addwhere=" and nvl(b.nsource,0) not in (7,8) ";//эх яюърчрэш  яЁш чрьхэх
+      addwhere=" and nvl(b.nsource,0) not in (7,8) ";//СЌС… СЏСЋСЉСЂС‡СЂСЌС€В  СЏРЃС€ С‡СЂСЊС…СЌС…
       break;
    case 13:
       tname="MAN_INP_HHOUR";
@@ -37,11 +37,11 @@ __fastcall TFormVITInputExcel::TFormVITInputExcel(TComponent* Owner,AnsiString N
    case 8:
       tname="BILLORG";
       pointPOL.usetime=true;
-      addwhere=" and nvl(b.nsource,0) not in (7,8) ";//эх яюърчрэш  яЁш чрьхэх
+      addwhere=" and nvl(b.nsource,0) not in (7,8) ";//СЌС… СЏСЋСЉСЂС‡СЂСЌС€В  СЏРЃС€ С‡СЂСЊС…СЌС…
       break;
    default:
       tname="MONTHS";
-      addwhere=" and nvl(b.nsource,0) not in (7,8) ";//эх яюърчрэш  яЁш чрьхэх
+      addwhere=" and nvl(b.nsource,0) not in (7,8) ";//СЌС… СЏСЋСЉСЂС‡СЂСЌС€В  СЏРЃС€ С‡СЂСЊС…СЌС…
    }
    pointPOL.myTime=TDateTime::CurrentDate();
 }
@@ -266,7 +266,7 @@ void __fastcall TFormVITInputExcel::MainProc(TObject *Sender)
     }
     CountStr=i;
 
-//	Получение данных в структуру для вывода данных
+//	РџРѕР»СѓС‡РµРЅРёРµ РґР°РЅРЅС‹С… РІ СЃС‚СЂСѓРєС‚СѓСЂСѓ РґР»СЏ РІС‹РІРѕРґР° РґР°РЅРЅС‹С…
     DrawTable1->RowCount=1+CountStr;
     DrawTable1->ColCount=8;
     DrawTable1->RowsHeight="#25#25";
@@ -315,7 +315,7 @@ void __fastcall TFormVITInputExcel::MainProc(TObject *Sender)
   }
 }
 //---------------------------------------------------------------------------
-// Проверить
+// РџСЂРѕРІРµСЂРёС‚СЊ
 void __fastcall TFormVITInputExcel::vCheck(TObject* Sender)
 {
   AnsiString sras,scurr;
@@ -326,12 +326,12 @@ void __fastcall TFormVITInputExcel::vCheck(TObject* Sender)
   TDrawTable::SAttrCell *pCur,*pRas;
   long redcell,j=-1;
 
-  if(prov||!CountStr)//была проверка или нет записей
+  if(prov||!CountStr)//Р±С‹Р»Р° РїСЂРѕРІРµСЂРєР° РёР»Рё РЅРµС‚ Р·Р°РїРёСЃРµР№
     return;
 
   try{
     Screen->Cursor=crHourGlass;
-    prov=2;//Можно сохранять
+    prov=2;//РњРѕР¶РЅРѕ СЃРѕС…СЂР°РЅСЏС‚СЊ
     for(j=0;j <(long)CountStr ;j++){
       if(!pointLastInput[j].editRecord)
         continue;
@@ -388,16 +388,16 @@ void __fastcall TFormVITInputExcel::vRefresh(TObject* Sender)
    DrawTable1->SetFocus();
 }
 //---------------------------------------------------------------------------
-// Сохранить
+// РЎРѕС…СЂР°РЅРёС‚СЊ
 void __fastcall TFormVITInputExcel::vSave(TObject* Sender)
 {
   long i=-1;
 	char seldat[20];
   POINTLASTINPUT pLI;
   static char *insupd = "begin \
-                          ryda.indic_pg.setindic(:par12,to_date(:par11, 'dd.mm.yyyy hh24:mi'),:par17,:par101,1,'Р.В',:par14,:par15,:par16,:par1,:par2); \
+                          ryda.indic_pg.setindic(:par12,to_date(:par11, 'dd.mm.yyyy hh24:mi'),:par17,:par101,1,'Р .Р’',:par14,:par15,:par16,:par1,:par2); \
                          end;";
-  if(!EditRec||!CountStr)//нет редактирования или нет записей
+  if(!EditRec||!CountStr)//РЅРµС‚ СЂРµРґР°РєС‚РёСЂРѕРІР°РЅРёСЏ РёР»Рё РЅРµС‚ Р·Р°РїРёСЃРµР№
     return;
   if(!prov){
     MessageBox(Handle,Reconst_smes82_13.c_str(),

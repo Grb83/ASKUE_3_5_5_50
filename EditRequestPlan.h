@@ -149,40 +149,40 @@ __published:	// IDE-managed Components
   void __fastcall btAddParamClick(TObject *Sender);
   void __fastcall iaRTRExecute(TObject *Sender);
 private:	// User declarations
-   struct stChannel{ // Атрибуты канала
-      long Cid;//                Ид канала                          N
-      char Name[128];//          Название                           N
-      char Note[2000];//         Примечание                         Y
-      long PROTOCOL_ID;  //      Ид протокола	                  Y
-      long COM_ID;//             Ид компорта                        Y
-      char INIT_STR[200];//      Строка инициализации               Y
-      char ADDR[100];//          Коммуникационый адресс             Y
-      long CYCLE_TOUT;  //       Пауза между циклами                Y
-      long RETRIES;      //      Кол попыток соединения             Y
-      long RETRIES_TOUT; //      Пауза между попытками              Y
-      long BLOCKING;      //     Блокировка                         N
-      char Caller_Name[200];//   Название опросчика                 Y
-      long NBILLDATA;//          Коммерческие                       N
-      long NBILLDATADEPTH;//     Коммерческие глубина               Y    1
-      long NCURRDATA;//          Вычитка 3-х минуток                N
-      long NCURRDATADEPTH;//     3-х минутки глубина                Y    2
-      long NNETPARAM;//          Параметры сети                     N
-      long NJOURNAL;//           Журнал событий                     N
-      char DSTART[6];//          Начало опроса  (hh24:mi)           Y    3
-      char DEND[6];//            Окончание      (hh24:mi)           Y    4
-      long NDAY;//               День                               Y    5
-      short indicator[6];//    Флаги для контроля 4-мя long и две даты
-      long NPARENT;//            Главный канал                      Y    6
-      long NREADCUR; // не читать текущие сутки
-      long editing;// 0 -Не трогали, 1-добавили, 2-редактировали
-      long tmpCid;//    Нужно при сохранении
-      long iConnTimeWait;// Время ожидания установки соединения в сек.
+   struct stChannel{ // РђС‚СЂРёР±СѓС‚С‹ РєР°РЅР°Р»Р°
+      long Cid;//                РРґ РєР°РЅР°Р»Р°                          N
+      char Name[128];//          РќР°Р·РІР°РЅРёРµ                           N
+      char Note[2000];//         РџСЂРёРјРµС‡Р°РЅРёРµ                         Y
+      long PROTOCOL_ID;  //      РРґ РїСЂРѕС‚РѕРєРѕР»Р°	                  Y
+      long COM_ID;//             РРґ РєРѕРјРїРѕСЂС‚Р°                        Y
+      char INIT_STR[200];//      РЎС‚СЂРѕРєР° РёРЅРёС†РёР°Р»РёР·Р°С†РёРё               Y
+      char ADDR[100];//          РљРѕРјРјСѓРЅРёРєР°С†РёРѕРЅС‹Р№ Р°РґСЂРµСЃСЃ             Y
+      long CYCLE_TOUT;  //       РџР°СѓР·Р° РјРµР¶РґСѓ С†РёРєР»Р°РјРё                Y
+      long RETRIES;      //      РљРѕР» РїРѕРїС‹С‚РѕРє СЃРѕРµРґРёРЅРµРЅРёСЏ             Y
+      long RETRIES_TOUT; //      РџР°СѓР·Р° РјРµР¶РґСѓ РїРѕРїС‹С‚РєР°РјРё              Y
+      long BLOCKING;      //     Р‘Р»РѕРєРёСЂРѕРІРєР°                         N
+      char Caller_Name[200];//   РќР°Р·РІР°РЅРёРµ РѕРїСЂРѕСЃС‡РёРєР°                 Y
+      long NBILLDATA;//          РљРѕРјРјРµСЂС‡РµСЃРєРёРµ                       N
+      long NBILLDATADEPTH;//     РљРѕРјРјРµСЂС‡РµСЃРєРёРµ РіР»СѓР±РёРЅР°               Y    1
+      long NCURRDATA;//          Р’С‹С‡РёС‚РєР° 3-С… РјРёРЅСѓС‚РѕРє                N
+      long NCURRDATADEPTH;//     3-С… РјРёРЅСѓС‚РєРё РіР»СѓР±РёРЅР°                Y    2
+      long NNETPARAM;//          РџР°СЂР°РјРµС‚СЂС‹ СЃРµС‚Рё                     N
+      long NJOURNAL;//           Р–СѓСЂРЅР°Р» СЃРѕР±С‹С‚РёР№                     N
+      char DSTART[6];//          РќР°С‡Р°Р»Рѕ РѕРїСЂРѕСЃР°  (hh24:mi)           Y    3
+      char DEND[6];//            РћРєРѕРЅС‡Р°РЅРёРµ      (hh24:mi)           Y    4
+      long NDAY;//               Р”РµРЅСЊ                               Y    5
+      short indicator[6];//    Р¤Р»Р°РіРё РґР»СЏ РєРѕРЅС‚СЂРѕР»СЏ 4-РјСЏ long Рё РґРІРµ РґР°С‚С‹
+      long NPARENT;//            Р“Р»Р°РІРЅС‹Р№ РєР°РЅР°Р»                      Y    6
+      long NREADCUR; // РЅРµ С‡РёС‚Р°С‚СЊ С‚РµРєСѓС‰РёРµ СЃСѓС‚РєРё
+      long editing;// 0 -РќРµ С‚СЂРѕРіР°Р»Рё, 1-РґРѕР±Р°РІРёР»Рё, 2-СЂРµРґР°РєС‚РёСЂРѕРІР°Р»Рё
+      long tmpCid;//    РќСѓР¶РЅРѕ РїСЂРё СЃРѕС…СЂР°РЅРµРЅРёРё
+      long iConnTimeWait;// Р’СЂРµРјСЏ РѕР¶РёРґР°РЅРёСЏ СѓСЃС‚Р°РЅРѕРІРєРё СЃРѕРµРґРёРЅРµРЅРёСЏ РІ СЃРµРє.
       char eUsdName[300];
       char eUsdPassword[300];
-      long LOCKCORRECTTIME;      //     Блокировка коррекции времени N
-      char DopParam[128]; //Дополнительные параметры
+      long LOCKCORRECTTIME;      //     Р‘Р»РѕРєРёСЂРѕРІРєР° РєРѕСЂСЂРµРєС†РёРё РІСЂРµРјРµРЅРё N
+      char DopParam[128]; //Р”РѕРїРѕР»РЅРёС‚РµР»СЊРЅС‹Рµ РїР°СЂР°РјРµС‚СЂС‹
       TList *lsdopperiod;
-      long editingperiod;// 0 -Не трогали, 2-редактировали
+      long editingperiod;// 0 -РќРµ С‚СЂРѕРіР°Р»Рё, 2-СЂРµРґР°РєС‚РёСЂРѕРІР°Р»Рё
    };
     long __fastcall getNodeId(TObject*obj){
         TTreeNode*tn=dynamic_cast<TTreeNode*>(obj);
@@ -192,14 +192,14 @@ private:	// User declarations
    TfmFindPoint *fmFP;
    bool ChangeControl;
    stChannel *SelChannel;
-   long *nPoints_Del; // id тех каналов которые удалены списка
-                              //  и необходимо удалить из таблицы каналов
+   long *nPoints_Del; // id С‚РµС… РєР°РЅР°Р»РѕРІ РєРѕС‚РѕСЂС‹Рµ СѓРґР°Р»РµРЅС‹ СЃРїРёСЃРєР°
+                              //  Рё РЅРµРѕР±С…РѕРґРёРјРѕ СѓРґР°Р»РёС‚СЊ РёР· С‚Р°Р±Р»РёС†С‹ РєР°РЅР°Р»РѕРІ
    int Points_Del_Count;
    long nsrv;
-   //int CurrentScan;  //выбранный опросчик
+   //int CurrentScan;  //РІС‹Р±СЂР°РЅРЅС‹Р№ РѕРїСЂРѕСЃС‡РёРє
    int OldScanIndex;
    bool __fastcall GetCombo(TComboBox *cb);
-   bool __fastcall ReadChannelNode(TObject* pTreeNode); // Читает ветку каналов
+   bool __fastcall ReadChannelNode(TObject* pTreeNode); // Р§РёС‚Р°РµС‚ РІРµС‚РєСѓ РєР°РЅР°Р»РѕРІ
    void __fastcall SetAccess(TAccess value);
    bool __fastcall AcceptNode(TTreeNode*,TTreeNode*);
    inline bool __fastcall IsChannel(TTreeNode*);

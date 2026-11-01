@@ -1,5 +1,5 @@
 -- Start of DDL Script for Package RYDAARCH.EXEC_DUMP_PG
--- Generated 4-дек-2012 16:03:32 from RYDAARCH@OE
+-- Generated 4-РґРµРє-2012 16:03:32 from RYDAARCH@OE
 
 CREATE OR REPLACE 
 PACKAGE exec_dump_pg
@@ -22,13 +22,13 @@ GRANT EXECUTE ON exec_dump_pg TO ryda
 -- End of DDL Script for Package RYDAARCH.EXEC_DUMP_PG
 
 -- Start of DDL Script for Package Body RYDAARCH.EXEC_DUMP_PG
--- Generated 4-дек-2012 16:03:39 from RYDAARCH@OE
+-- Generated 4-РґРµРє-2012 16:03:39 from RYDAARCH@OE
 
 CREATE OR REPLACE 
 PACKAGE BODY exec_dump_pg
 IS
 -----------------------------------------------------------------------------------------------------------------------------------
---процедура для выгрузки мини дампа базы
+--РїСЂРѕС†РµРґСѓСЂР° РґР»СЏ РІС‹РіСЂСѓР·РєРё РјРёРЅРё РґР°РјРїР° Р±Р°Р·С‹
 PROCEDURE EXP_DUMP_P(av_tables VARCHAR2,av_fname VARCHAR2) IS
 
   l_dp_handle       NUMBER;
@@ -126,7 +126,7 @@ BEGIN
 END;
 ----------------------------------------------------------------------------------------------------------------------------
 PROCEDURE IMP_DUMP_P(av_filename VARCHAR2) IS
---процедура для загрузки мини дампа базы
+--РїСЂРѕС†РµРґСѓСЂР° РґР»СЏ Р·Р°РіСЂСѓР·РєРё РјРёРЅРё РґР°РјРїР° Р±Р°Р·С‹
 
 
   l_dp_handle       NUMBER;
@@ -137,7 +137,7 @@ BEGIN
 
     DROP_TABLE();
 
---— using a network link
+--вЂ” using a network link
 
 
   l_dp_handle := DBMS_DATAPUMP.open(

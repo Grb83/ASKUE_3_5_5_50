@@ -7,7 +7,7 @@
 #include "MonitorForm.h"
 #include "Reconst.hpp"
 
-// Ôèëüòðû
+// Ð¤Ð¸Ð»ÑŒÑ‚Ñ€Ñ‹
      AnsiString StrPlan = "";
      AnsiString StrReserv = "";
      AnsiString StrDebtRestr = "";
@@ -31,7 +31,7 @@ __fastcall TConsumLimitDebt::TConsumLimitDebt(TComponent* Owner,TSplitterForm *a
         if(sf.Length()>10)
            dynamic_cast<TBaseMonitorForm*>(Owner)->LabelComment->Caption =
            dynamic_cast<TBaseMonitorForm*>(Owner)->LabelComment->Caption+sf;
-        //GRB ADD - ïîäïèñûâàåì íà ïåðåðèñîâêó
+        //GRB ADD - Ð¿Ð¾Ð´Ð¿Ð¸ÑÑ‹Ð²Ð°ÐµÐ¼ Ð½Ð° Ð¿ÐµÑ€ÐµÑ€Ð¸ÑÐ¾Ð²ÐºÑƒ
         ((TBaseMonitorForm*)Owner)->OnResize=TDUInterior::FormShow;
 }
 //---------------------------------------------------------------------------
@@ -262,7 +262,7 @@ void __fastcall TConsumLimitDebt::dataInColumns(void)
 	char ptr_hour[8];
 	bool isSumm;
 	AnsiString RowsHeight;
-	//Ïîäãîòàâëèâàåì ïåðåìåííûå ïîëÿ äëÿ ïðèåìà
+	//ÐŸÐ¾Ð´Ð³Ð¾Ñ‚Ð°Ð²Ð»Ð¸Ð²Ð°ÐµÐ¼ Ð¿ÐµÑ€ÐµÐ¼ÐµÐ½Ð½Ñ‹Ðµ Ð¿Ð¾Ð»Ñ Ð´Ð»Ñ Ð¿Ñ€Ð¸ÐµÐ¼Ð°
 	ptr=DrawTable->StructStrings->GetArray();
 	ptr+=LenFloat*(SubColumns()-1);
 	ptr+=4;
@@ -368,19 +368,19 @@ void __fastcall TConsumLimitDebt::dataInColumns(void)
     VT_PrintData->Post();//+++++++++++++++++++++++++++++++++++++++++++++++++++++++
 	DrawTable->RowsHeight=RowsHeight;
     /*	dynamic_cast<TBaseMonitorForm*>(Owner)->Caption=
-	fd->NameGroup+" çà "+fd->DateTime.FormatString("ddddd")+ptr_hour;
+	fd->NameGroup+" Ð·Ð° "+fd->DateTime.FormatString("ddddd")+ptr_hour;
 	dynamic_cast<TBaseMonitorForm*>(Owner)->PaintBoxCaption->Invalidate();*/
 }
 //---------------------------------------------------------------------------
 //---------------------------------------------------------------------------
-//Ïîëó÷àåò äàííûå î ñ÷èòûâàåìîé òàáëèöå
+//ÐŸÐ¾Ð»ÑƒÑ‡Ð°ÐµÑ‚ Ð´Ð°Ð½Ð½Ñ‹Ðµ Ð¾ ÑÑ‡Ð¸Ñ‚Ñ‹Ð²Ð°ÐµÐ¼Ð¾Ð¹ Ñ‚Ð°Ð±Ð»Ð¸Ñ†Ðµ
 void __fastcall TConsumLimitDebt::formDescr( void )
 {
 
 
         fd->IdGroup = GroupJump(fd->IdGroup);
 
-	//Çàïîëíÿåì íåîáõîäèìûå ïîëÿ îïèñàíèÿ ôîðìû
+	//Ð—Ð°Ð¿Ð¾Ð»Ð½ÑÐµÐ¼ Ð½ÐµÐ¾Ð±Ñ…Ð¾Ð´Ð¸Ð¼Ñ‹Ðµ Ð¿Ð¾Ð»Ñ Ð¾Ð¿Ð¸ÑÐ°Ð½Ð¸Ñ Ñ„Ð¾Ñ€Ð¼Ñ‹
 
   
   dmMain->oqInterCursor->Params->Clear();

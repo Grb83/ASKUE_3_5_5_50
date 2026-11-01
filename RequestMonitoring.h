@@ -46,10 +46,10 @@ struct sGroupStatus
     int nblocking;
     int nparent;
     int Type;
-    //GRB ADD 11.09.2020 - резервируем под EIC код который надо показывать в таблице
+    //GRB ADD 11.09.2020 - СЂРµР·РµСЂРІРёСЂСѓРµРј РїРѕРґ EIC РєРѕРґ РєРѕС‚РѕСЂС‹Р№ РЅР°РґРѕ РїРѕРєР°Р·С‹РІР°С‚СЊ РІ С‚Р°Р±Р»РёС†Рµ
     char EIC[50];
 };
-  //GRB ADD 17.11.2020 - структурка для возвращения Gid и Name по значению для переходов в мониторы по добавленному контекстному меню по выбранному из таблицы а не дерева исп-ся в getGidLName
+  //GRB ADD 17.11.2020 - СЃС‚СЂСѓРєС‚СѓСЂРєР° РґР»СЏ РІРѕР·РІСЂР°С‰РµРЅРёСЏ Gid Рё Name РїРѕ Р·РЅР°С‡РµРЅРёСЋ РґР»СЏ РїРµСЂРµС…РѕРґРѕРІ РІ РјРѕРЅРёС‚РѕСЂС‹ РїРѕ РґРѕР±Р°РІР»РµРЅРЅРѕРјСѓ РєРѕРЅС‚РµРєСЃС‚РЅРѕРјСѓ РјРµРЅСЋ РїРѕ РІС‹Р±СЂР°РЅРЅРѕРјСѓ РёР· С‚Р°Р±Р»РёС†С‹ Р° РЅРµ РґРµСЂРµРІР° РёСЃРї-СЃСЏ РІ getGidLName
   struct fixPanelOnTree{
 	  long Gid;
 	  AnsiString NameGroup;
@@ -151,7 +151,7 @@ protected:
         AnsiString FDateControl; 
         void __fastcall vSave(TObject* Sender);
         void __fastcall vRefresh(TObject* Sender);
-        bool __fastcall ReadNode(TTreeView* tv,TTreeNode* NodeParent, AnsiString aDateControl,bool IfInsert=true);// Читает ветку дерева Точек или Групп
+        bool __fastcall ReadNode(TTreeView* tv,TTreeNode* NodeParent, AnsiString aDateControl,bool IfInsert=true);// Р§РёС‚Р°РµС‚ РІРµС‚РєСѓ РґРµСЂРµРІР° РўРѕС‡РµРє РёР»Рё Р“СЂСѓРїРї
         void __fastcall vInit(TObject* Sender);
 public:		// User declarations
         __fastcall TfmRequestMonitoring(TComponent* Owner, AnsiString Name, TAccess a);
@@ -159,7 +159,7 @@ public:		// User declarations
         void __fastcall createSubMenu_F(TMenuItem*);
         //GRB ADD 26.10.2020
         static void __fastcall createSubMenu_G(TMenuItem*mi);
-		//17.11.2020 -возвращает Gid и Name по значению для переходов в мониторы по добавленному контекстному меню по выбранному из таблицы а не дерева исп-ся в MonSelectClick
+		//17.11.2020 -РІРѕР·РІСЂР°С‰Р°РµС‚ Gid Рё Name РїРѕ Р·РЅР°С‡РµРЅРёСЋ РґР»СЏ РїРµСЂРµС…РѕРґРѕРІ РІ РјРѕРЅРёС‚РѕСЂС‹ РїРѕ РґРѕР±Р°РІР»РµРЅРЅРѕРјСѓ РєРѕРЅС‚РµРєСЃС‚РЅРѕРјСѓ РјРµРЅСЋ РїРѕ РІС‹Р±СЂР°РЅРЅРѕРјСѓ РёР· С‚Р°Р±Р»РёС†С‹ Р° РЅРµ РґРµСЂРµРІР° РёСЃРї-СЃСЏ РІ MonSelectClick
 		fixPanelOnTree __fastcall getGidLName();
 };
 //---------------------------------------------------------------------------

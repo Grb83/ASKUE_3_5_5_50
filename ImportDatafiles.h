@@ -23,9 +23,9 @@
 #define VARCHAR4LEN 4000
 //---------------------------------------------------------------------------
 enum TType{tNone=0,tLGFiles,tSchlumFiles,tAlphaFiles,tMaketNEK,tLGDatagyr,tElvin,tMercury,tCimRdf};
-// Параметры формата Excel файлов с данныим счётчиков SL7000
+// РџР°СЂР°РјРµС‚СЂС‹ С„РѕСЂРјР°С‚Р° Excel С„Р°Р№Р»РѕРІ СЃ РґР°РЅРЅС‹РёРј СЃС‡С‘С‚С‡РёРєРѕРІ SL7000
 struct TSL7000Params
-{ /* Конфигурационные параметры */
+{ /* РљРѕРЅС„РёРіСѓСЂР°С†РёРѕРЅРЅС‹Рµ РїР°СЂР°РјРµС‚СЂС‹ */
   AnsiString  TitlesWorksheet;
   //AnsiString posActivePlus, ActivePlus;
   //AnsiString posActiveMinus, ActiveMinus;
@@ -45,7 +45,7 @@ struct TSL7000Params
   TSL7000Params();
 };
 //---------------------------------------------------------------------------
-// Структура для хранение данных за сутки
+// РЎС‚СЂСѓРєС‚СѓСЂР° РґР»СЏ С…СЂР°РЅРµРЅРёРµ РґР°РЅРЅС‹С… Р·Р° СЃСѓС‚РєРё
 struct TDates{
    AnsiString dayDate;
    Variant dayDates;
@@ -111,7 +111,7 @@ private:
       int interval;
       char comm[VARCHAR2LEN];
       PARAMS():mid(0),interval(0){comm[0]=0;}
-      // служ. поля
+      // СЃР»СѓР¶. РїРѕР»СЏ
       bool sel;
       bool foc;
    };

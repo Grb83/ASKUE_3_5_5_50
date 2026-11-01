@@ -12,37 +12,37 @@ INSERT INTO FISCAL_C      (DATE_TIME) VALUES (sysdate);
 INSERT INTO COMPORTTYPE
 (NCOMTYPE,VNAME)
 VALUES
-(1,'Стандартное соединение')
+(1,'РЎС‚Р°РЅРґР°СЂС‚РЅРѕРµ СЃРѕРµРґРёРЅРµРЅРёРµ')
 /
 INSERT INTO COMPORTTYPE
 (NCOMTYPE,VNAME)
 VALUES
-(2,'Соединение по каналам связи телемеханики')
+(2,'РЎРѕРµРґРёРЅРµРЅРёРµ РїРѕ РєР°РЅР°Р»Р°Рј СЃРІСЏР·Рё С‚РµР»РµРјРµС…Р°РЅРёРєРё')
 /
 INSERT INTO COMPORTTYPE
 (NCOMTYPE,VNAME)
 VALUES
-(3,'Соединение по коммутируемой линии через стандартный модем')
+(3,'РЎРѕРµРґРёРЅРµРЅРёРµ РїРѕ РєРѕРјРјСѓС‚РёСЂСѓРµРјРѕР№ Р»РёРЅРёРё С‡РµСЂРµР· СЃС‚Р°РЅРґР°СЂС‚РЅС‹Р№ РјРѕРґРµРј')
 /
 INSERT INTO COMPORTTYPE
 (NCOMTYPE,VNAME)
 VALUES
-(4,'Соединение через GSM терминал')
+(4,'РЎРѕРµРґРёРЅРµРЅРёРµ С‡РµСЂРµР· GSM С‚РµСЂРјРёРЅР°Р»')
 /
 INSERT INTO COMPORTTYPE
 (NCOMTYPE,VNAME)
 VALUES
-(5,'Соединение через GSM терминал с управлением питанием')
+(5,'РЎРѕРµРґРёРЅРµРЅРёРµ С‡РµСЂРµР· GSM С‚РµСЂРјРёРЅР°Р» СЃ СѓРїСЂР°РІР»РµРЅРёРµРј РїРёС‚Р°РЅРёРµРј')
 /
 INSERT INTO COMPORTTYPE
 (NCOMTYPE,VNAME)
 VALUES
-(6,'Соединение через радиостанцию типа LG')
+(6,'РЎРѕРµРґРёРЅРµРЅРёРµ С‡РµСЂРµР· СЂР°РґРёРѕСЃС‚Р°РЅС†РёСЋ С‚РёРїР° LG')
 /
 INSERT INTO COMPORTTYPE
 (NCOMTYPE,VNAME)
 VALUES
-(7,'Соединение по спутниковому каналу ')
+(7,'РЎРѕРµРґРёРЅРµРЅРёРµ РїРѕ СЃРїСѓС‚РЅРёРєРѕРІРѕРјСѓ РєР°РЅР°Р»Сѓ ')
 /
 
 ------------------------------------------------------------------------------------------------------------------
@@ -93,50 +93,50 @@ INSERT INTO MAXHOURS (MAXHOUR_ID,DATE_TIME,MORNING_START,MORNING_END,EVENING_STA
             to_date('01-01-2001 17:00:00','dd-mm-yyyy hh24:mi:ss'),
             to_date('01-01-2001 20:00:00','dd-mm-yyyy hh24:mi:ss'));
 ------------------------------------------------------------------------------------------------------------------
-INSERT INTO MONITOR_SCHEMES (MONITOR,NAME) VALUES (1,'1. Схема');
-INSERT INTO MONITOR_SCHEMES (MONITOR,NAME) VALUES (2,'2. Схема ');
-INSERT INTO MONITOR_SCHEMES (MONITOR,NAME) VALUES (3,'3. Схема');
-INSERT INTO MONITOR_SCHEMES (MONITOR,NAME) VALUES (5,'4. Схема');
+INSERT INTO MONITOR_SCHEMES (MONITOR,NAME) VALUES (1,'1. РЎС…РµРјР°');
+INSERT INTO MONITOR_SCHEMES (MONITOR,NAME) VALUES (2,'2. РЎС…РµРјР° ');
+INSERT INTO MONITOR_SCHEMES (MONITOR,NAME) VALUES (3,'3. РЎС…РµРјР°');
+INSERT INTO MONITOR_SCHEMES (MONITOR,NAME) VALUES (5,'4. РЎС…РµРјР°');
 ------------------------------------------------------------------------------------------------------------------
 INSERT INTO protocols
 (PROTOCOL_ID,NAME)
 VALUES
-(1,'ЕвроАльфа')
+(1,'Р•РІСЂРѕРђР»СЊС„Р°')
 /
 INSERT INTO protocols
 (PROTOCOL_ID,NAME)
 VALUES
-(2,'Итек')
+(2,'РС‚РµРє')
 /
 INSERT INTO protocols
 (PROTOCOL_ID,NAME)
 VALUES
-(3,'KM --> Итек')
+(3,'KM --> РС‚РµРє')
 /
 INSERT INTO protocols
 (PROTOCOL_ID,NAME)
 VALUES
-(4,'Облик')
+(4,'РћР±Р»РёРє')
 /
 INSERT INTO protocols
 (PROTOCOL_ID,NAME)
 VALUES
-(5,'Энергия - 9')
+(5,'Р­РЅРµСЂРіРёСЏ - 9')
 /
 INSERT INTO protocols
 (PROTOCOL_ID,NAME)
 VALUES
-(6,'KM --> ЕвроАльфа')
+(6,'KM --> Р•РІСЂРѕРђР»СЊС„Р°')
 /
 INSERT INTO protocols
 (PROTOCOL_ID,NAME)
 VALUES
-(7,'KM --> Облик')
+(7,'KM --> РћР±Р»РёРє')
 /
 INSERT INTO protocols
 (PROTOCOL_ID,NAME)
 VALUES
-(8,'KM --> Энергия - 9')
+(8,'KM --> Р­РЅРµСЂРіРёСЏ - 9')
 /
 INSERT INTO protocols
 (PROTOCOL_ID,NAME)
@@ -146,32 +146,32 @@ VALUES
 INSERT INTO protocols
 (PROTOCOL_ID,NAME)
 VALUES
-(11,'A1R Альфа')
+(11,'A1R РђР»СЊС„Р°')
 /
 INSERT INTO protocols
 (PROTOCOL_ID,NAME)
 VALUES
-(12,'KM --> A1R Альфа')
+(12,'KM --> A1R РђР»СЊС„Р°')
 /
 INSERT INTO protocols
 (PROTOCOL_ID,NAME)
 VALUES
-(14,'УСД КМ')
+(14,'РЈРЎР” РљРњ')
 /
 INSERT INTO protocols
 (PROTOCOL_ID,NAME)
 VALUES
-(15,'KM --> УСД КМ')
+(15,'KM --> РЈРЎР” РљРњ')
 /
 INSERT INTO protocols
 (PROTOCOL_ID,NAME)
 VALUES
-(16,'Облик-2002')
+(16,'РћР±Р»РёРє-2002')
 /
 INSERT INTO protocols
 (PROTOCOL_ID,NAME)
 VALUES
-(17,'KM --> Облик-2002')
+(17,'KM --> РћР±Р»РёРє-2002')
 /
 INSERT INTO protocols
 (PROTOCOL_ID,NAME)
@@ -216,17 +216,17 @@ VALUES
 INSERT INTO protocols
 (PROTOCOL_ID,NAME)
 VALUES
-(26,'Тест GSM')
+(26,'РўРµСЃС‚ GSM')
 /
 INSERT INTO protocols
 (PROTOCOL_ID,NAME)
 VALUES
-(27,'УСД LG_ZxB')
+(27,'РЈРЎР” LG_ZxB')
 /
 INSERT INTO protocols
 (PROTOCOL_ID,NAME)
 VALUES
-(28,'KM --> УСД LG_ZxB')
+(28,'KM --> РЈРЎР” LG_ZxB')
 /
 INSERT INTO protocols
 (PROTOCOL_ID,NAME)
@@ -241,22 +241,22 @@ VALUES
 INSERT INTO protocols
 (PROTOCOL_ID,NAME)
 VALUES
-(31,'УСД LG_ZxD (IEC)')
+(31,'РЈРЎР” LG_ZxD (IEC)')
 /
 INSERT INTO protocols
 (PROTOCOL_ID,NAME)
 VALUES
-(32,'KM --> УСД LG_ZxD (IEC)')
+(32,'KM --> РЈРЎР” LG_ZxD (IEC)')
 /
 INSERT INTO protocols
 (PROTOCOL_ID,NAME)
 VALUES
-(33,'Энергия_9-2003')
+(33,'Р­РЅРµСЂРіРёСЏ_9-2003')
 /
 INSERT INTO protocols
 (PROTOCOL_ID,NAME)
 VALUES
-(34,'KM --> Энергия_9-2003')
+(34,'KM --> Р­РЅРµСЂРіРёСЏ_9-2003')
 /
 INSERT INTO protocols
 (PROTOCOL_ID,NAME)
@@ -272,121 +272,121 @@ commit
 /
 ------------------------------------------------------------------------------------------------------------------
 INSERT INTO TASKS (TASK_ID,PARENT,TASK_COD,NAME,NUM_ARG,CHAR_ARG,REMARK)
-  VALUES (42,NULL,0,'1. Ручной ввод',NULL,'','');
+  VALUES (42,NULL,0,'1. Р СѓС‡РЅРѕР№ РІРІРѕРґ',NULL,'','');
     INSERT INTO TASKS (TASK_ID,PARENT,TASK_COD,NAME,NUM_ARG,CHAR_ARG,REMARK)
-      VALUES (1,42,204,'1.1 Ввод показаний',NULL,'','');
+      VALUES (1,42,204,'1.1 Р’РІРѕРґ РїРѕРєР°Р·Р°РЅРёР№',NULL,'','');
     INSERT INTO TASKS (TASK_ID,PARENT,TASK_COD,NAME,NUM_ARG,CHAR_ARG,REMARK)
-      VALUES (2,42,200,'1.2 Ввод показаний по тарифам',NULL,'','');
+      VALUES (2,42,200,'1.2 Р’РІРѕРґ РїРѕРєР°Р·Р°РЅРёР№ РїРѕ С‚Р°СЂРёС„Р°Рј',NULL,'','');
     INSERT INTO TASKS (TASK_ID,PARENT,TASK_COD,NAME,NUM_ARG,CHAR_ARG,REMARK)
-      VALUES (3,42,203,'1.3 Ввод количества энергии',NULL,'','');
+      VALUES (3,42,203,'1.3 Р’РІРѕРґ РєРѕР»РёС‡РµСЃС‚РІР° СЌРЅРµСЂРіРёРё',NULL,'','');
     INSERT INTO TASKS (TASK_ID,PARENT,TASK_COD,NAME,NUM_ARG,CHAR_ARG,REMARK)
-      VALUES (4,42,201,'1.4 Ввод количества энегии по тарифам',NULL,'','');
+      VALUES (4,42,201,'1.4 Р’РІРѕРґ РєРѕР»РёС‡РµСЃС‚РІР° СЌРЅРµРіРёРё РїРѕ С‚Р°СЂРёС„Р°Рј',NULL,'','');
     INSERT INTO TASKS (TASK_ID,PARENT,TASK_COD,NAME,NUM_ARG,CHAR_ARG,REMARK)
-      VALUES (5,42,202,'1.5 Редактирование показаний',NULL,'','');
+      VALUES (5,42,202,'1.5 Р РµРґР°РєС‚РёСЂРѕРІР°РЅРёРµ РїРѕРєР°Р·Р°РЅРёР№',NULL,'','');
     INSERT INTO TASKS (TASK_ID,PARENT,TASK_COD,NAME,NUM_ARG,CHAR_ARG,REMARK)
-      VALUES (6,42,48,'1.7 Замена счетчиков',NULL,'','');
+      VALUES (6,42,48,'1.7 Р—Р°РјРµРЅР° СЃС‡РµС‚С‡РёРєРѕРІ',NULL,'','');
     INSERT INTO TASKS (TASK_ID,PARENT,TASK_COD,NAME,NUM_ARG,CHAR_ARG,REMARK)
-      VALUES (36,42,501,'1.6 Ввод значений нагрузки  по ручным точкам учета',NULL,'','');
+      VALUES (36,42,501,'1.6 Р’РІРѕРґ Р·РЅР°С‡РµРЅРёР№ РЅР°РіСЂСѓР·РєРё  РїРѕ СЂСѓС‡РЅС‹Рј С‚РѕС‡РєР°Рј СѓС‡РµС‚Р°',NULL,'','');
     INSERT INTO tasks (TASK_ID,PARENT,TASK_COD,NAME,NUM_ARG,CHAR_ARG,REMARK)
-      VALUES (53,42,603,'1.9 Ввод количества энергии (получасовки)',NULL,'','');
+      VALUES (53,42,603,'1.9 Р’РІРѕРґ РєРѕР»РёС‡РµСЃС‚РІР° СЌРЅРµСЂРіРёРё (РїРѕР»СѓС‡Р°СЃРѕРІРєРё)',NULL,'','');
     INSERT INTO tasks(TASK_ID,PARENT,TASK_COD,NAME,NUM_ARG,CHAR_ARG,REMARK)
-      VALUES (52,42,604,'1.8 Ввод показаний (получасовки)',NULL,'','');
+      VALUES (52,42,604,'1.8 Р’РІРѕРґ РїРѕРєР°Р·Р°РЅРёР№ (РїРѕР»СѓС‡Р°СЃРѕРІРєРё)',NULL,'','');
 
 INSERT INTO TASKS (TASK_ID,PARENT,TASK_COD,NAME,NUM_ARG,CHAR_ARG,REMARK)
-  VALUES (7,NULL,0,'2. Планы ; Лимиты',NULL,'','');
+  VALUES (7,NULL,0,'2. РџР»Р°РЅС‹ ; Р›РёРјРёС‚С‹',NULL,'','');
     INSERT INTO TASKS (TASK_ID,PARENT,TASK_COD,NAME,NUM_ARG,CHAR_ARG,REMARK)
-      VALUES (8,7,32,'2.1 Определение лимитов',NULL,'','');
+      VALUES (8,7,32,'2.1 РћРїСЂРµРґРµР»РµРЅРёРµ Р»РёРјРёС‚РѕРІ',NULL,'','');
     INSERT INTO TASKS (TASK_ID,PARENT,TASK_COD,NAME,NUM_ARG,CHAR_ARG,REMARK)
-      VALUES (9,7,31,'2.2 Определение планов',NULL,'','');
+      VALUES (9,7,31,'2.2 РћРїСЂРµРґРµР»РµРЅРёРµ РїР»Р°РЅРѕРІ',NULL,'','');
     INSERT INTO TASKS (TASK_ID,PARENT,TASK_COD,NAME,NUM_ARG,CHAR_ARG,REMARK)
-      VALUES (10,7,33,'2.3 Задание часов максимумов',NULL,'','');
+      VALUES (10,7,33,'2.3 Р—Р°РґР°РЅРёРµ С‡Р°СЃРѕРІ РјР°РєСЃРёРјСѓРјРѕРІ',NULL,'','');
     INSERT INTO TASKS (TASK_ID,PARENT,TASK_COD,NAME,NUM_ARG,CHAR_ARG,REMARK)
-      VALUES (11,7,30,'2.4 Контролируемые объекты',NULL,'','');
+      VALUES (11,7,30,'2.4 РљРѕРЅС‚СЂРѕР»РёСЂСѓРµРјС‹Рµ РѕР±СЉРµРєС‚С‹',NULL,'','');
 
 INSERT INTO TASKS (TASK_ID,PARENT,TASK_COD,NAME,NUM_ARG,CHAR_ARG,REMARK)
-  VALUES (12,NULL,0,'3. Тарифы',NULL,'','');
+  VALUES (12,NULL,0,'3. РўР°СЂРёС„С‹',NULL,'','');
     INSERT INTO TASKS (TASK_ID,PARENT,TASK_COD,NAME,NUM_ARG,CHAR_ARG,REMARK)
-      VALUES (13,12,60,'3.1 Тарифные зоны и типы дней',NULL,'','');
+      VALUES (13,12,60,'3.1 РўР°СЂРёС„РЅС‹Рµ Р·РѕРЅС‹ Рё С‚РёРїС‹ РґРЅРµР№',NULL,'','');
     INSERT INTO TASKS (TASK_ID,PARENT,TASK_COD,NAME,NUM_ARG,CHAR_ARG,REMARK)
-      VALUES (14,12,61,'3.2 Циклические даты',NULL,'','');
+      VALUES (14,12,61,'3.2 Р¦РёРєР»РёС‡РµСЃРєРёРµ РґР°С‚С‹',NULL,'','');
     INSERT INTO TASKS (TASK_ID,PARENT,TASK_COD,NAME,NUM_ARG,CHAR_ARG,REMARK)
-      VALUES (15,12,62,'3.3 Cпециальные даты',NULL,'','');
+      VALUES (15,12,62,'3.3 CРїРµС†РёР°Р»СЊРЅС‹Рµ РґР°С‚С‹',NULL,'','');
 INSERT INTO TASKS (TASK_ID,PARENT,TASK_COD,NAME,NUM_ARG,CHAR_ARG,REMARK)
-VALUES (54,12,75,'3.4 Тарификация по режимным суткам',NULL,'','');
+VALUES (54,12,75,'3.4 РўР°СЂРёС„РёРєР°С†РёСЏ РїРѕ СЂРµР¶РёРјРЅС‹Рј СЃСѓС‚РєР°Рј',NULL,'','');
 INSERT INTO TASKS (TASK_ID,PARENT,TASK_COD,NAME,NUM_ARG,CHAR_ARG,REMARK)
-VALUES (66,12,610,'3.5 Ввод тарифов UMC',NULL,'','');
+VALUES (66,12,610,'3.5 Р’РІРѕРґ С‚Р°СЂРёС„РѕРІ UMC',NULL,'','');
 
 
 INSERT INTO TASKS (TASK_ID,PARENT,TASK_COD,NAME,NUM_ARG,CHAR_ARG,REMARK)
-  VALUES (16,NULL,0,'4. Представление данных',NULL,'','');
+  VALUES (16,NULL,0,'4. РџСЂРµРґСЃС‚Р°РІР»РµРЅРёРµ РґР°РЅРЅС‹С…',NULL,'','');
     INSERT INTO TASKS (TASK_ID,PARENT,TASK_COD,NAME,NUM_ARG,CHAR_ARG,REMARK)
-      VALUES (17,16,10,'4.1 Группы учета',NULL,'','');
+      VALUES (17,16,10,'4.1 Р“СЂСѓРїРїС‹ СѓС‡РµС‚Р°',NULL,'','');
     INSERT INTO TASKS (TASK_ID,PARENT,TASK_COD,NAME,NUM_ARG,CHAR_ARG,REMARK)
-      VALUES (18,16,51,'4.2 Формы учета',NULL,'','');
+      VALUES (18,16,51,'4.2 Р¤РѕСЂРјС‹ СѓС‡РµС‚Р°',NULL,'','');
 --    INSERT INTO TASKS (TASK_ID,PARENT,TASK_COD,NAME,NUM_ARG,CHAR_ARG,REMARK)
---      VALUES (37,16,14,'4.3 Группы учета по точкам АСРП',NULL,'','');
+--      VALUES (37,16,14,'4.3 Р“СЂСѓРїРїС‹ СѓС‡РµС‚Р° РїРѕ С‚РѕС‡РєР°Рј РђРЎР Рџ',NULL,'','');
 --    INSERT INTO TASKS (TASK_ID,PARENT,TASK_COD,NAME,NUM_ARG,CHAR_ARG,REMARK)
---      VALUES (38,16,16,'4.4  Группы учета по контролируемым потребителям',NULL,'','');
+--      VALUES (38,16,16,'4.4  Р“СЂСѓРїРїС‹ СѓС‡РµС‚Р° РїРѕ РєРѕРЅС‚СЂРѕР»РёСЂСѓРµРјС‹Рј РїРѕС‚СЂРµР±РёС‚РµР»СЏРј',NULL,'','');
 
 INSERT INTO TASKS (TASK_ID,PARENT,TASK_COD,NAME,NUM_ARG,CHAR_ARG,REMARK)
-  VALUES (19,NULL,0,'5. Получение данных',NULL,'','');
+  VALUES (19,NULL,0,'5. РџРѕР»СѓС‡РµРЅРёРµ РґР°РЅРЅС‹С…',NULL,'','');
     INSERT INTO TASKS (TASK_ID,PARENT,TASK_COD,NAME,NUM_ARG,CHAR_ARG,REMARK)
-      VALUES (20,19,46,'5.1 Редактирование присоединений',NULL,'','');
+      VALUES (20,19,46,'5.1 Р РµРґР°РєС‚РёСЂРѕРІР°РЅРёРµ РїСЂРёСЃРѕРµРґРёРЅРµРЅРёР№',NULL,'','');
     INSERT INTO TASKS (TASK_ID,PARENT,TASK_COD,NAME,NUM_ARG,CHAR_ARG,REMARK)
-      VALUES (21,19,47,'5.2 Редактирование счетчиков',NULL,'','');
+      VALUES (21,19,47,'5.2 Р РµРґР°РєС‚РёСЂРѕРІР°РЅРёРµ СЃС‡РµС‚С‡РёРєРѕРІ',NULL,'','');
     INSERT INTO TASKS (TASK_ID,PARENT,TASK_COD,NAME,NUM_ARG,CHAR_ARG,REMARK)
-      VALUES (22,19,44,'5.3 Расчетные присоединения',NULL,'','');
+      VALUES (22,19,44,'5.3 Р Р°СЃС‡РµС‚РЅС‹Рµ РїСЂРёСЃРѕРµРґРёРЅРµРЅРёСЏ',NULL,'','');
     INSERT INTO TASKS (TASK_ID,PARENT,TASK_COD,NAME,NUM_ARG,CHAR_ARG,REMARK)
-      VALUES (23,19,45,'5.4 Обводные присоединения',NULL,'','');
+      VALUES (23,19,45,'5.4 РћР±РІРѕРґРЅС‹Рµ РїСЂРёСЃРѕРµРґРёРЅРµРЅРёСЏ',NULL,'','');
     INSERT INTO TASKS (TASK_ID,PARENT,TASK_COD,NAME,NUM_ARG,CHAR_ARG,REMARK)
-      VALUES (24,19,41,'5.5 Группы присоединений',NULL,'','');
+      VALUES (24,19,41,'5.5 Р“СЂСѓРїРїС‹ РїСЂРёСЃРѕРµРґРёРЅРµРЅРёР№',NULL,'','');
     INSERT INTO TASKS (TASK_ID,PARENT,TASK_COD,NAME,NUM_ARG,CHAR_ARG,REMARK)
-      VALUES (39,19,15,'5.6 Контролируемые потребители',NULL,'','');
+      VALUES (39,19,15,'5.6 РљРѕРЅС‚СЂРѕР»РёСЂСѓРµРјС‹Рµ РїРѕС‚СЂРµР±РёС‚РµР»Рё',NULL,'','');
     INSERT INTO TASKS (TASK_ID,PARENT,TASK_COD,NAME,NUM_ARG,CHAR_ARG,REMARK)
-      VALUES (40,19,500,'5.7 Редактирование "ручников" ',NULL,'','');
+      VALUES (40,19,500,'5.7 Р РµРґР°РєС‚РёСЂРѕРІР°РЅРёРµ "СЂСѓС‡РЅРёРєРѕРІ" ',NULL,'','');
 
 INSERT INTO TASKS (TASK_ID,PARENT,TASK_COD,NAME,NUM_ARG,CHAR_ARG,REMARK)
-  VALUES (27,NULL,0,'6. Спец. задачи',NULL,'','');
+  VALUES (27,NULL,0,'6. РЎРїРµС†. Р·Р°РґР°С‡Рё',NULL,'','');
     INSERT INTO TASKS (TASK_ID,PARENT,TASK_COD,NAME,NUM_ARG,CHAR_ARG,REMARK)
-      VALUES (28,27,40,'6.1 Спецификация предприятия',NULL,'','');
+      VALUES (28,27,40,'6.1 РЎРїРµС†РёС„РёРєР°С†РёСЏ РїСЂРµРґРїСЂРёСЏС‚РёСЏ',NULL,'','');
     INSERT INTO TASKS (TASK_ID,PARENT,TASK_COD,NAME,NUM_ARG,CHAR_ARG,REMARK)
-      VALUES (29,27,11,'6.2 Спецификация экспортируемых данных',NULL,'','');
+      VALUES (29,27,11,'6.2 РЎРїРµС†РёС„РёРєР°С†РёСЏ СЌРєСЃРїРѕСЂС‚РёСЂСѓРµРјС‹С… РґР°РЅРЅС‹С…',NULL,'','');
     INSERT INTO TASKS (TASK_ID,PARENT,TASK_COD,NAME,NUM_ARG,CHAR_ARG,REMARK)
-      VALUES (30,27,50,'6.3 Спецификация шаблонов форм',NULL,'','');
+      VALUES (30,27,50,'6.3 РЎРїРµС†РёС„РёРєР°С†РёСЏ С€Р°Р±Р»РѕРЅРѕРІ С„РѕСЂРј',NULL,'','');
     INSERT INTO TASKS (TASK_ID,PARENT,TASK_COD,NAME,NUM_ARG,CHAR_ARG,REMARK)
-      VALUES (31,27,20,'6.4 Спецификация задач',NULL,'','');
+      VALUES (31,27,20,'6.4 РЎРїРµС†РёС„РёРєР°С†РёСЏ Р·Р°РґР°С‡',NULL,'','');
 --    INSERT INTO TASKS (TASK_ID,PARENT,TASK_COD,NAME,NUM_ARG,CHAR_ARG,REMARK)
---      VALUES (32,27,100,'6.5 Расчётные функции',NULL,'','');
+--      VALUES (32,27,100,'6.5 Р Р°СЃС‡С‘С‚РЅС‹Рµ С„СѓРЅРєС†РёРё',NULL,'','');
 --    INSERT INTO TASKS (TASK_ID,PARENT,TASK_COD,NAME,NUM_ARG,CHAR_ARG,REMARK)
---      VALUES (33,27,12,'6.5 Перегруппировка объектов',NULL,'','');
+--      VALUES (33,27,12,'6.5 РџРµСЂРµРіСЂСѓРїРїРёСЂРѕРІРєР° РѕР±СЉРµРєС‚РѕРІ',NULL,'','');
     INSERT INTO TASKS (TASK_ID,PARENT,TASK_COD,NAME,NUM_ARG,CHAR_ARG,REMARK)
-      VALUES (34,27,21,'6.5 Контроль объема БД',NULL,'','');
+      VALUES (34,27,21,'6.5 РљРѕРЅС‚СЂРѕР»СЊ РѕР±СЉРµРјР° Р‘Р”',NULL,'','');
     INSERT INTO TASKS (TASK_ID,PARENT,TASK_COD,NAME,NUM_ARG,CHAR_ARG,REMARK)
-      VALUES (41,27,72,'6.6 Переключение ОВ',NULL,'','');
+      VALUES (41,27,72,'6.6 РџРµСЂРµРєР»СЋС‡РµРЅРёРµ РћР’',NULL,'','');
     INSERT INTO TASKS (TASK_ID,PARENT,TASK_COD,NAME,NUM_ARG,CHAR_ARG,REMARK)
-      VALUES (55,27,506,'6.7 План рассылки',NULL,'','');
+      VALUES (55,27,506,'6.7 РџР»Р°РЅ СЂР°СЃСЃС‹Р»РєРё',NULL,'','');
 
     INSERT INTO TASKS (TASK_ID,PARENT,TASK_COD,NAME,NUM_ARG,CHAR_ARG,REMARK)
-      VALUES (58,27,76,'6.10 Макеты',NULL,'','');
+      VALUES (58,27,76,'6.10 РњР°РєРµС‚С‹',NULL,'','');
 
 ------------------------------------------------------------------------------------------------------------------
 INSERT INTO TASKS (TASK_ID,PARENT,TASK_COD,NAME,NUM_ARG,CHAR_ARG,REMARK)
-  VALUES (56,NULL,0,'7. Коммуникации',NULL,'','');
+  VALUES (56,NULL,0,'7. РљРѕРјРјСѓРЅРёРєР°С†РёРё',NULL,'','');
     INSERT INTO TASKS (TASK_ID,PARENT,TASK_COD,NAME,NUM_ARG,CHAR_ARG,REMARK)
-      VALUES (35,56,22,'7.1 Параметры коммуникационного сервера',NULL,'','');
+      VALUES (35,56,22,'7.1 РџР°СЂР°РјРµС‚СЂС‹ РєРѕРјРјСѓРЅРёРєР°С†РёРѕРЅРЅРѕРіРѕ СЃРµСЂРІРµСЂР°',NULL,'','');
     INSERT INTO TASKS (TASK_ID,PARENT,TASK_COD,NAME,NUM_ARG,CHAR_ARG,REMARK)
-      VALUES (26,56,71,'7.2 Настройка СОМ - портов',NULL,'','');
+      VALUES (26,56,71,'7.2 РќР°СЃС‚СЂРѕР№РєР° РЎРћРњ - РїРѕСЂС‚РѕРІ',NULL,'','');
     INSERT INTO TASKS (TASK_ID,PARENT,TASK_COD,NAME,NUM_ARG,CHAR_ARG,REMARK)
-      VALUES (57,56,507,'7.3 УСПД',NULL,'','');
+      VALUES (57,56,507,'7.3 РЈРЎРџР”',NULL,'','');
     INSERT INTO TASKS (TASK_ID,PARENT,TASK_COD,NAME,NUM_ARG,CHAR_ARG,REMARK)
-      VALUES (50,56,505,'7.4 План опроса',NULL,'','');
+      VALUES (50,56,505,'7.4 РџР»Р°РЅ РѕРїСЂРѕСЃР°',NULL,'','');
     INSERT INTO TASKS (TASK_ID,PARENT,TASK_COD,NAME,NUM_ARG,CHAR_ARG,REMARK)
       VALUES (25,56,70,'7.9 Legacy',NULL,'','');
 ------------------------------------------------------------------------------------------------------------------
-INSERT INTO ROLES (ROLE_ID,NAME,MONITOR) VALUES (1,'Администратор',1);
+INSERT INTO ROLES (ROLE_ID,NAME,MONITOR) VALUES (1,'РђРґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂ',1);
 ------------------------------------------------------------------------------------------------------------------
 INSERT INTO USERS (USER_ID,USR,PASSWORD,NAME,ADMIN,ROLE_ID)
-  VALUES (1,'Administrator','Administrator','Администратор','*',1);
+  VALUES (1,'Administrator','Administrator','РђРґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂ','*',1);
 ------------------------------------------------------------------------------------------------------------------
 INSERT INTO ROLE_TASK (ROLE_ID,TASK_ID) VALUES (1,42);
 INSERT INTO ROLE_TASK (ROLE_ID,TASK_ID) VALUES (1,1);
@@ -437,14 +437,14 @@ INSERT INTO ROLE_TASK (ROLE_ID,TASK_ID) VALUES (1,56);
 INSERT INTO ROLE_TASK (ROLE_ID,TASK_ID) VALUES (1,57);
 INSERT INTO ROLE_TASK (ROLE_ID,TASK_ID) VALUES (1,58);
 ------------------------------------------------------------------------------------------------------------------
-INSERT INTO db_term (DATA_NAME,TABLE_NAME,TERM,VINDIC_COLUMN,VEXTENTION) VALUES ('Коммерческий профиль','HALFHOUROLD',10000,'date_time','hor');
-INSERT INTO db_term (DATA_NAME,TABLE_NAME,TERM,VINDIC_COLUMN,VEXTENTION) VALUES ('Суточные данные (расчетные)','BILL',10000,'date_time','bil');
-INSERT INTO db_term (DATA_NAME,TABLE_NAME,TERM,VINDIC_COLUMN,VEXTENTION) VALUES ('Суточные данные (первичная информация)','BILLORG',10000,'date_time','bilo');
-INSERT INTO db_term (DATA_NAME,TABLE_NAME,TERM,VINDIC_COLUMN,VEXTENTION) VALUES ('Оперативные данные','PROFILE',3,'date_time','prf');
-INSERT INTO db_term (DATA_NAME,TABLE_NAME,TERM,VINDIC_COLUMN,VEXTENTION) VALUES ('Журнал действий оператора','FISCAL',10000,'date_time','fsk');
-INSERT INTO db_term (DATA_NAME,TABLE_NAME,TERM,VINDIC_COLUMN,VEXTENTION) VALUES ('Журнал сообщений АСКУЭ','JOURNAL',10000,'date_time','jor');
-INSERT INTO db_term (DATA_NAME,TABLE_NAME,TERM,VINDIC_COLUMN,VEXTENTION) VALUES ('Протокол опроса','COMPORTEVENTS',10000,'dlastevent','cev');
-INSERT INTO db_term (DATA_NAME,TABLE_NAME,TERM,VINDIC_COLUMN,VEXTENTION) VALUES ('Протокол запуска фоновых процесов','JOBS',10,'DATE_TIME','jbs');
+INSERT INTO db_term (DATA_NAME,TABLE_NAME,TERM,VINDIC_COLUMN,VEXTENTION) VALUES ('РљРѕРјРјРµСЂС‡РµСЃРєРёР№ РїСЂРѕС„РёР»СЊ','HALFHOUROLD',10000,'date_time','hor');
+INSERT INTO db_term (DATA_NAME,TABLE_NAME,TERM,VINDIC_COLUMN,VEXTENTION) VALUES ('РЎСѓС‚РѕС‡РЅС‹Рµ РґР°РЅРЅС‹Рµ (СЂР°СЃС‡РµС‚РЅС‹Рµ)','BILL',10000,'date_time','bil');
+INSERT INTO db_term (DATA_NAME,TABLE_NAME,TERM,VINDIC_COLUMN,VEXTENTION) VALUES ('РЎСѓС‚РѕС‡РЅС‹Рµ РґР°РЅРЅС‹Рµ (РїРµСЂРІРёС‡РЅР°СЏ РёРЅС„РѕСЂРјР°С†РёСЏ)','BILLORG',10000,'date_time','bilo');
+INSERT INTO db_term (DATA_NAME,TABLE_NAME,TERM,VINDIC_COLUMN,VEXTENTION) VALUES ('РћРїРµСЂР°С‚РёРІРЅС‹Рµ РґР°РЅРЅС‹Рµ','PROFILE',3,'date_time','prf');
+INSERT INTO db_term (DATA_NAME,TABLE_NAME,TERM,VINDIC_COLUMN,VEXTENTION) VALUES ('Р–СѓСЂРЅР°Р» РґРµР№СЃС‚РІРёР№ РѕРїРµСЂР°С‚РѕСЂР°','FISCAL',10000,'date_time','fsk');
+INSERT INTO db_term (DATA_NAME,TABLE_NAME,TERM,VINDIC_COLUMN,VEXTENTION) VALUES ('Р–СѓСЂРЅР°Р» СЃРѕРѕР±С‰РµРЅРёР№ РђРЎРљРЈР­','JOURNAL',10000,'date_time','jor');
+INSERT INTO db_term (DATA_NAME,TABLE_NAME,TERM,VINDIC_COLUMN,VEXTENTION) VALUES ('РџСЂРѕС‚РѕРєРѕР» РѕРїСЂРѕСЃР°','COMPORTEVENTS',10000,'dlastevent','cev');
+INSERT INTO db_term (DATA_NAME,TABLE_NAME,TERM,VINDIC_COLUMN,VEXTENTION) VALUES ('РџСЂРѕС‚РѕРєРѕР» Р·Р°РїСѓСЃРєР° С„РѕРЅРѕРІС‹С… РїСЂРѕС†РµСЃРѕРІ','JOBS',10,'DATE_TIME','jbs');
 ------------------------------------------------------------------------------------------------------------------
 COMMIT;
 
@@ -457,82 +457,82 @@ COMMIT;
 
 
 
-insert into parameter(npid,vvalue,VDESCRIPTION) values (1,'25.'||to_char(sysdate,'MM.YYYY'),	'Дата расчета значений ручников с месячным профилем')
+insert into parameter(npid,vvalue,VDESCRIPTION) values (1,'25.'||to_char(sysdate,'MM.YYYY'),	'Р”Р°С‚Р° СЂР°СЃС‡РµС‚Р° Р·РЅР°С‡РµРЅРёР№ СЂСѓС‡РЅРёРєРѕРІ СЃ РјРµСЃСЏС‡РЅС‹Рј РїСЂРѕС„РёР»РµРј')
 /
-insert into parameter(npid,vvalue,VDESCRIPTION) values (2,'25.'||to_char(add_Months(sysdate,-1),'MM.YYYY'),	'Предыдущая дата расчета')
+insert into parameter(npid,vvalue,VDESCRIPTION) values (2,'25.'||to_char(add_Months(sysdate,-1),'MM.YYYY'),	'РџСЂРµРґС‹РґСѓС‰Р°СЏ РґР°С‚Р° СЂР°СЃС‡РµС‚Р°')
 /
-insert into parameter(npid,vvalue,VDESCRIPTION) values (3,'25.'||to_char(sysdate,'MM.YYYY'),	'Текущая дата расчета')
-/
-INSERT INTO parameter
-(NPID,VVALUE,VDESCRIPTION)
-VALUES
-(4,'1','Признак архивации технического профиля (если 1 арнивируем 0 - нет)')
+insert into parameter(npid,vvalue,VDESCRIPTION) values (3,'25.'||to_char(sysdate,'MM.YYYY'),	'РўРµРєСѓС‰Р°СЏ РґР°С‚Р° СЂР°СЃС‡РµС‚Р°')
 /
 INSERT INTO parameter
 (NPID,VVALUE,VDESCRIPTION)
 VALUES
-(5,'c:\','Каталог для записи файлов архивации технического профиля')
+(4,'1','РџСЂРёР·РЅР°Рє Р°СЂС…РёРІР°С†РёРё С‚РµС…РЅРёС‡РµСЃРєРѕРіРѕ РїСЂРѕС„РёР»СЏ (РµСЃР»Рё 1 Р°СЂРЅРёРІРёСЂСѓРµРј 0 - РЅРµС‚)')
 /
 INSERT INTO parameter
 (NPID,VVALUE,VDESCRIPTION)
 VALUES
-(6,'1','Признак архивации коммерческого профиля (если 1 арнивируем 0 - нет)')
+(5,'c:\','РљР°С‚Р°Р»РѕРі РґР»СЏ Р·Р°РїРёСЃРё С„Р°Р№Р»РѕРІ Р°СЂС…РёРІР°С†РёРё С‚РµС…РЅРёС‡РµСЃРєРѕРіРѕ РїСЂРѕС„РёР»СЏ')
 /
 INSERT INTO parameter
 (NPID,VVALUE,VDESCRIPTION)
 VALUES
-(7,'c:\','Каталог для записи файлов архивации коммерческого профиля')
+(6,'1','РџСЂРёР·РЅР°Рє Р°СЂС…РёРІР°С†РёРё РєРѕРјРјРµСЂС‡РµСЃРєРѕРіРѕ РїСЂРѕС„РёР»СЏ (РµСЃР»Рё 1 Р°СЂРЅРёРІРёСЂСѓРµРј 0 - РЅРµС‚)')
 /
 INSERT INTO parameter
 (NPID,VVALUE,VDESCRIPTION)
 VALUES
-(8,'1','Признак архивации суточных данных (если 1 арнивируем 0 - нет)')
+(7,'c:\','РљР°С‚Р°Р»РѕРі РґР»СЏ Р·Р°РїРёСЃРё С„Р°Р№Р»РѕРІ Р°СЂС…РёРІР°С†РёРё РєРѕРјРјРµСЂС‡РµСЃРєРѕРіРѕ РїСЂРѕС„РёР»СЏ')
 /
 INSERT INTO parameter
 (NPID,VVALUE,VDESCRIPTION)
 VALUES
-(9,'c:\','Каталог для записи файлов архивации суточных данных')
+(8,'1','РџСЂРёР·РЅР°Рє Р°СЂС…РёРІР°С†РёРё СЃСѓС‚РѕС‡РЅС‹С… РґР°РЅРЅС‹С… (РµСЃР»Рё 1 Р°СЂРЅРёРІРёСЂСѓРµРј 0 - РЅРµС‚)')
 /
 INSERT INTO parameter
 (NPID,VVALUE,VDESCRIPTION)
 VALUES
-(10,'c:\','Каталог для файлов отсылки отчетов')
+(9,'c:\','РљР°С‚Р°Р»РѕРі РґР»СЏ Р·Р°РїРёСЃРё С„Р°Р№Р»РѕРІ Р°СЂС…РёРІР°С†РёРё СЃСѓС‚РѕС‡РЅС‹С… РґР°РЅРЅС‹С…')
 /
 INSERT INTO parameter
 (NPID,VVALUE,VDESCRIPTION)
-values(11,'1','Автоматически обновлять версию.')
+VALUES
+(10,'c:\','РљР°С‚Р°Р»РѕРі РґР»СЏ С„Р°Р№Р»РѕРІ РѕС‚СЃС‹Р»РєРё РѕС‚С‡РµС‚РѕРІ')
 /
 INSERT INTO parameter
 (NPID,VVALUE,VDESCRIPTION)
-values(12,'0','Заказчик')
+values(11,'1','РђРІС‚РѕРјР°С‚РёС‡РµСЃРєРё РѕР±РЅРѕРІР»СЏС‚СЊ РІРµСЂСЃРёСЋ.')
 /
---0 По умолчанию
---1 ХЭС
 INSERT INTO parameter
 (NPID,VVALUE,VDESCRIPTION)
-values(13,'-11','Ид группы точек ручного ввода')
+values(12,'0','Р—Р°РєР°Р·С‡РёРє')
+/
+--0 РџРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
+--1 РҐР­РЎ
+INSERT INTO parameter
+(NPID,VVALUE,VDESCRIPTION)
+values(13,'-11','РРґ РіСЂСѓРїРїС‹ С‚РѕС‡РµРє СЂСѓС‡РЅРѕРіРѕ РІРІРѕРґР°')
 /
 
 
 INSERT INTO procedures
 (NPROCEDURE,VPROCDURE,VNAME,NORDER)
 VALUES
-(1,'CALC_PG.Calc_report_p','Отчет 1',1)
+(1,'CALC_PG.Calc_report_p','РћС‚С‡РµС‚ 1',1)
 /
 INSERT INTO procedures
 (NPROCEDURE,VPROCDURE,VNAME,NORDER)
 VALUES
-(2,'CALC_PG.Report_Debt_p','Отчет 2',2)
+(2,'CALC_PG.Report_Debt_p','РћС‚С‡РµС‚ 2',2)
 /
 INSERT INTO grouptypes
 (NGROUPTYPE,VNAME)
 VALUES
-(1,'Подстанция')
+(1,'РџРѕРґСЃС‚Р°РЅС†РёСЏ')
 /
 INSERT INTO grouptypes
 (NGROUPTYPE,VNAME)
 VALUES
-(2,'Потребитель')
+(2,'РџРѕС‚СЂРµР±РёС‚РµР»СЊ')
 /
 commit
 /
@@ -541,21 +541,21 @@ grant select on version to askuever
 
 
 --12.11.2002
---INSERT INTO tasks(TASK_ID,PARENT,TASK_COD,NAME,NUM_ARG,CHAR_ARG,REMARK) VALUES (59,42,605,'1.10 Ввод показаний для индукционных счетчиков',NULL,'','');
+--INSERT INTO tasks(TASK_ID,PARENT,TASK_COD,NAME,NUM_ARG,CHAR_ARG,REMARK) VALUES (59,42,605,'1.10 Р’РІРѕРґ РїРѕРєР°Р·Р°РЅРёР№ РґР»СЏ РёРЅРґСѓРєС†РёРѕРЅРЅС‹С… СЃС‡РµС‚С‡РёРєРѕРІ',NULL,'','');
 --INSERT INTO ROLE_TASK (ROLE_ID,TASK_ID) VALUES (1,59);
 --commit;
 
 
 --12/11/2002
-insert into POINTS (mid,ind,name) values(1,1,'Каналы опроса')
+insert into POINTS (mid,ind,name) values(1,1,'РљР°РЅР°Р»С‹ РѕРїСЂРѕСЃР°')
 /
 commit
 /
 
 
 --14/11/2002
-insert into deportprocedures values(1,'Макет 1010','ryda.reports1_pg.m1010_p',2,0,'');
-insert into deportprocedures values(2,'Макет 30817','ryda.reports1_pg.m30817_p',2,0,'');
+insert into deportprocedures values(1,'РњР°РєРµС‚ 1010','ryda.reports1_pg.m1010_p',2,0,'');
+insert into deportprocedures values(2,'РњР°РєРµС‚ 30817','ryda.reports1_pg.m30817_p',2,0,'');
 commit
 /
 
@@ -564,406 +564,406 @@ commit
 INSERT INTO RYDA.FORM_TEMPLATES
 (TEMPLATE_ID,PARENT,CODETEMPLATE,NAMEFORM,COMMENTFORM,ENABLECONTROLS,STEPPROFILE,NAMEALERT)
 VALUES
-(1,NULL,NULL,'1. Учет энергии','','000000',0,'')
+(1,NULL,NULL,'1. РЈС‡РµС‚ СЌРЅРµСЂРіРёРё','','000000',0,'')
 /
 INSERT INTO RYDA.FORM_TEMPLATES
 (TEMPLATE_ID,PARENT,CODETEMPLATE,NAMEFORM,COMMENTFORM,ENABLECONTROLS,STEPPROFILE,NAMEALERT)
 VALUES
-(6,1,500,'1.01. Приём Активной энергии','Приём Активной энергии [тыс.кВтч]','111101',2,'')
+(6,1,500,'1.01. РџСЂРёС‘Рј РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё','РџСЂРёС‘Рј РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [С‚С‹СЃ.РєР’С‚С‡]','111101',2,'')
 /
 INSERT INTO RYDA.FORM_TEMPLATES
 (TEMPLATE_ID,PARENT,CODETEMPLATE,NAMEFORM,COMMENTFORM,ENABLECONTROLS,STEPPROFILE,NAMEALERT)
 VALUES
-(56,1,501,'1.01.1.  Приём Активной энергии (ГН, Тех.проф. - мощность)',
-'Приём Активной энергии [тыс.кВтч]','111101',2,'')
+(56,1,501,'1.01.1.  РџСЂРёС‘Рј РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё (Р“Рќ, РўРµС….РїСЂРѕС„. - РјРѕС‰РЅРѕСЃС‚СЊ)',
+'РџСЂРёС‘Рј РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [С‚С‹СЃ.РєР’С‚С‡]','111101',2,'')
 /
 INSERT INTO RYDA.FORM_TEMPLATES
 (TEMPLATE_ID,PARENT,CODETEMPLATE,NAMEFORM,COMMENTFORM,ENABLECONTROLS,STEPPROFILE,NAMEALERT)
 VALUES
-(72,1,502,'1.01.2.  Приём Активной энергии (Суммируется по наростающей)',
-'Приём Активной энергии [тыс.кВтч]','111101',2,'')
+(72,1,502,'1.01.2.  РџСЂРёС‘Рј РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё (РЎСѓРјРјРёСЂСѓРµС‚СЃСЏ РїРѕ РЅР°СЂРѕСЃС‚Р°СЋС‰РµР№)',
+'РџСЂРёС‘Рј РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [С‚С‹СЃ.РєР’С‚С‡]','111101',2,'')
 /
 INSERT INTO RYDA.FORM_TEMPLATES
 (TEMPLATE_ID,PARENT,CODETEMPLATE,NAMEFORM,COMMENTFORM,ENABLECONTROLS,STEPPROFILE,NAMEALERT)
 VALUES
-(7,1,600,'1.02. Отдача Активной энергии','Отдача Активной энергии [тыс.кВтч]','111101',2,'')
+(7,1,600,'1.02. РћС‚РґР°С‡Р° РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё','РћС‚РґР°С‡Р° РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [С‚С‹СЃ.РєР’С‚С‡]','111101',2,'')
 /
 INSERT INTO RYDA.FORM_TEMPLATES
 (TEMPLATE_ID,PARENT,CODETEMPLATE,NAMEFORM,COMMENTFORM,ENABLECONTROLS,STEPPROFILE,NAMEALERT)
 VALUES
-(57,1,601,'1.02.1.  Отдача Активной энергии (ГН, Тех.проф. - мощность)',
-'Отдача Активной энергии [тыс.кВтч]','111101',2,'')
+(57,1,601,'1.02.1.  РћС‚РґР°С‡Р° РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё (Р“Рќ, РўРµС….РїСЂРѕС„. - РјРѕС‰РЅРѕСЃС‚СЊ)',
+'РћС‚РґР°С‡Р° РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [С‚С‹СЃ.РєР’С‚С‡]','111101',2,'')
 /
 INSERT INTO RYDA.FORM_TEMPLATES
 (TEMPLATE_ID,PARENT,CODETEMPLATE,NAMEFORM,COMMENTFORM,ENABLECONTROLS,STEPPROFILE,NAMEALERT)
 VALUES
-(73,1,602,'1.02.2.  Отдача Активной энергии (Суммируется по наростающей)',
-'Отдача Активной энергии [тыс.кВтч]','111101',2,'')
+(73,1,602,'1.02.2.  РћС‚РґР°С‡Р° РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё (РЎСѓРјРјРёСЂСѓРµС‚СЃСЏ РїРѕ РЅР°СЂРѕСЃС‚Р°СЋС‰РµР№)',
+'РћС‚РґР°С‡Р° РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [С‚С‹СЃ.РєР’С‚С‡]','111101',2,'')
 /
 INSERT INTO RYDA.FORM_TEMPLATES
 (TEMPLATE_ID,PARENT,CODETEMPLATE,NAMEFORM,COMMENTFORM,ENABLECONTROLS,STEPPROFILE,NAMEALERT)
 VALUES
-(5,1,400,'1.03. Переток Активной энергии','Переток Активной энергии [тыс.кВтч]','111101',2,'')
+(5,1,400,'1.03. РџРµСЂРµС‚РѕРє РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё','РџРµСЂРµС‚РѕРє РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [С‚С‹СЃ.РєР’С‚С‡]','111101',2,'')
 /
 INSERT INTO RYDA.FORM_TEMPLATES
 (TEMPLATE_ID,PARENT,CODETEMPLATE,NAMEFORM,COMMENTFORM,ENABLECONTROLS,STEPPROFILE,NAMEALERT)
 VALUES
-(55,1,401,'1.03.1.  Переток Активной энергии (ГН, Тех.проф. - мощность)',
-'Переток Активной энергии [тыс.кВтч]','111101',2,'')
+(55,1,401,'1.03.1.  РџРµСЂРµС‚РѕРє РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё (Р“Рќ, РўРµС….РїСЂРѕС„. - РјРѕС‰РЅРѕСЃС‚СЊ)',
+'РџРµСЂРµС‚РѕРє РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [С‚С‹СЃ.РєР’С‚С‡]','111101',2,'')
 /
 INSERT INTO RYDA.FORM_TEMPLATES
 (TEMPLATE_ID,PARENT,CODETEMPLATE,NAMEFORM,COMMENTFORM,ENABLECONTROLS,STEPPROFILE,NAMEALERT)
 VALUES
-(71,1,402,'1.03.2.  Переток Активной энергии (Суммируется по наростающей)',
-'Переток Активной энергии [тыс.кВтч]','111101',2,'')
+(71,1,402,'1.03.2.  РџРµСЂРµС‚РѕРє РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё (РЎСѓРјРјРёСЂСѓРµС‚СЃСЏ РїРѕ РЅР°СЂРѕСЃС‚Р°СЋС‰РµР№)',
+'РџРµСЂРµС‚РѕРє РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [С‚С‹СЃ.РєР’С‚С‡]','111101',2,'')
 /
 INSERT INTO RYDA.FORM_TEMPLATES
 (TEMPLATE_ID,PARENT,CODETEMPLATE,NAMEFORM,COMMENTFORM,ENABLECONTROLS,STEPPROFILE,NAMEALERT)
 VALUES
-(9,1,800,'1.04. Приём Реактивной энергии','Приём Реактивной энергии [тыс.кВАрч]','111101',2,'')
+(9,1,800,'1.04. РџСЂРёС‘Рј Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё','РџСЂРёС‘Рј Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [С‚С‹СЃ.РєР’РђСЂС‡]','111101',2,'')
 /
 INSERT INTO RYDA.FORM_TEMPLATES
 (TEMPLATE_ID,PARENT,CODETEMPLATE,NAMEFORM,COMMENTFORM,ENABLECONTROLS,STEPPROFILE,NAMEALERT)
 VALUES
-(59,1,801,'1.04.1.  Приём Реактивной энергии (ГН, Тех.проф. - мощность)',
-'Приём Реактивной энергии [тыс.кВАрч]','111101',2,'')
+(59,1,801,'1.04.1.  РџСЂРёС‘Рј Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё (Р“Рќ, РўРµС….РїСЂРѕС„. - РјРѕС‰РЅРѕСЃС‚СЊ)',
+'РџСЂРёС‘Рј Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [С‚С‹СЃ.РєР’РђСЂС‡]','111101',2,'')
 /
 INSERT INTO RYDA.FORM_TEMPLATES
 (TEMPLATE_ID,PARENT,CODETEMPLATE,NAMEFORM,COMMENTFORM,ENABLECONTROLS,STEPPROFILE,NAMEALERT)
 VALUES
-(75,1,802,'1.04.1.  Приём Реактивной энергии (Суммируется по наростающей)',
-'Приём Реактивной энергии [тыс.кВАрч]','111101',2,'')
+(75,1,802,'1.04.1.  РџСЂРёС‘Рј Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё (РЎСѓРјРјРёСЂСѓРµС‚СЃСЏ РїРѕ РЅР°СЂРѕСЃС‚Р°СЋС‰РµР№)',
+'РџСЂРёС‘Рј Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [С‚С‹СЃ.РєР’РђСЂС‡]','111101',2,'')
 /
 INSERT INTO RYDA.FORM_TEMPLATES
 (TEMPLATE_ID,PARENT,CODETEMPLATE,NAMEFORM,COMMENTFORM,ENABLECONTROLS,STEPPROFILE,NAMEALERT)
 VALUES
-(10,1,900,'1.05. Отдача Реактивной энергии','Отдача реактивной энергии [тыс.кВАрч]','111101',2,'')
+(10,1,900,'1.05. РћС‚РґР°С‡Р° Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё','РћС‚РґР°С‡Р° СЂРµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [С‚С‹СЃ.РєР’РђСЂС‡]','111101',2,'')
 /
 INSERT INTO RYDA.FORM_TEMPLATES
 (TEMPLATE_ID,PARENT,CODETEMPLATE,NAMEFORM,COMMENTFORM,ENABLECONTROLS,STEPPROFILE,NAMEALERT)
 VALUES
-(60,1,901,'1.05.1.  Отдача Реактивной энергии (ГН, Тех.проф. - мощность)',
-'Отдача реактивной энергии [тыс.кВАрч]','111101',2,'')
+(60,1,901,'1.05.1.  РћС‚РґР°С‡Р° Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё (Р“Рќ, РўРµС….РїСЂРѕС„. - РјРѕС‰РЅРѕСЃС‚СЊ)',
+'РћС‚РґР°С‡Р° СЂРµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [С‚С‹СЃ.РєР’РђСЂС‡]','111101',2,'')
 /
 INSERT INTO RYDA.FORM_TEMPLATES
 (TEMPLATE_ID,PARENT,CODETEMPLATE,NAMEFORM,COMMENTFORM,ENABLECONTROLS,STEPPROFILE,NAMEALERT)
 VALUES
-(76,1,902,'1.05.1.  Отдача Реактивной энергии (Суммируется по наростающей)',
-'Отдача реактивной энергии [тыс.кВАрч]','111101',2,'')
+(76,1,902,'1.05.1.  РћС‚РґР°С‡Р° Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё (РЎСѓРјРјРёСЂСѓРµС‚СЃСЏ РїРѕ РЅР°СЂРѕСЃС‚Р°СЋС‰РµР№)',
+'РћС‚РґР°С‡Р° СЂРµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [С‚С‹СЃ.РєР’РђСЂС‡]','111101',2,'')
 /
 INSERT INTO RYDA.FORM_TEMPLATES
 (TEMPLATE_ID,PARENT,CODETEMPLATE,NAMEFORM,COMMENTFORM,ENABLECONTROLS,STEPPROFILE,NAMEALERT)
 VALUES
-(8,1,700,'1.06. Переток Реактивной энергии','Переток Реактивной энергии [тыс.кВАрч]','111101',2,'')
+(8,1,700,'1.06. РџРµСЂРµС‚РѕРє Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё','РџРµСЂРµС‚РѕРє Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [С‚С‹СЃ.РєР’РђСЂС‡]','111101',2,'')
 /
 INSERT INTO RYDA.FORM_TEMPLATES
 (TEMPLATE_ID,PARENT,CODETEMPLATE,NAMEFORM,COMMENTFORM,ENABLECONTROLS,STEPPROFILE,NAMEALERT)
 VALUES
-(58,1,701,'1.06.1.  Переток Реактивной энергии (ГН, Тех.проф. - мощность)',
-'Переток Реактивной энергии [тыс.кВАрч]','111101',2,'')
+(58,1,701,'1.06.1.  РџРµСЂРµС‚РѕРє Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё (Р“Рќ, РўРµС….РїСЂРѕС„. - РјРѕС‰РЅРѕСЃС‚СЊ)',
+'РџРµСЂРµС‚РѕРє Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [С‚С‹СЃ.РєР’РђСЂС‡]','111101',2,'')
 /
 INSERT INTO RYDA.FORM_TEMPLATES
 (TEMPLATE_ID,PARENT,CODETEMPLATE,NAMEFORM,COMMENTFORM,ENABLECONTROLS,STEPPROFILE,NAMEALERT)
 VALUES
-(74,1,702,'1.06.1.  Переток Реактивной энергии (Суммируется по наростающей)',
-'Переток Реактивной энергии [тыс.кВАрч]','111101',2,'')
+(74,1,702,'1.06.1.  РџРµСЂРµС‚РѕРє Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё (РЎСѓРјРјРёСЂСѓРµС‚СЃСЏ РїРѕ РЅР°СЂРѕСЃС‚Р°СЋС‰РµР№)',
+'РџРµСЂРµС‚РѕРє Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [С‚С‹СЃ.РєР’РђСЂС‡]','111101',2,'')
 /
 INSERT INTO RYDA.FORM_TEMPLATES
 (TEMPLATE_ID,PARENT,CODETEMPLATE,NAMEFORM,COMMENTFORM,ENABLECONTROLS,STEPPROFILE,NAMEALERT)
 VALUES
-(3,1,200,'1.07. Приём ; Отдача Активной энергии','Приём ; Отдача Активной энергии [тыс.кВтч]',
+(3,1,200,'1.07. РџСЂРёС‘Рј ; РћС‚РґР°С‡Р° РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё','РџСЂРёС‘Рј ; РћС‚РґР°С‡Р° РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [С‚С‹СЃ.РєР’С‚С‡]',
 '111111',2,'')
 /
 INSERT INTO RYDA.FORM_TEMPLATES
 (TEMPLATE_ID,PARENT,CODETEMPLATE,NAMEFORM,COMMENTFORM,ENABLECONTROLS,STEPPROFILE,NAMEALERT)
 VALUES
-(53,1,201,'1.07.1.  Приём ; Отдача Активной энергии (ГН, Тех.проф. - мощность)',
-'Приём ; Отдача Активной энергии [тыс.кВтч]','111111',2,'')
+(53,1,201,'1.07.1.  РџСЂРёС‘Рј ; РћС‚РґР°С‡Р° РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё (Р“Рќ, РўРµС….РїСЂРѕС„. - РјРѕС‰РЅРѕСЃС‚СЊ)',
+'РџСЂРёС‘Рј ; РћС‚РґР°С‡Р° РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [С‚С‹СЃ.РєР’С‚С‡]','111111',2,'')
 /
 INSERT INTO RYDA.FORM_TEMPLATES
 (TEMPLATE_ID,PARENT,CODETEMPLATE,NAMEFORM,COMMENTFORM,ENABLECONTROLS,STEPPROFILE,NAMEALERT)
 VALUES
-(69,1,202,'1.07.2.  Приём ; Отдача Активной энергии (Суммируется по наростающей)',
-'Приём ; Отдача Активной энергии [тыс.кВтч]','111111',2,'')
+(69,1,202,'1.07.2.  РџСЂРёС‘Рј ; РћС‚РґР°С‡Р° РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё (РЎСѓРјРјРёСЂСѓРµС‚СЃСЏ РїРѕ РЅР°СЂРѕСЃС‚Р°СЋС‰РµР№)',
+'РџСЂРёС‘Рј ; РћС‚РґР°С‡Р° РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [С‚С‹СЃ.РєР’С‚С‡]','111111',2,'')
 /
 INSERT INTO RYDA.FORM_TEMPLATES
 (TEMPLATE_ID,PARENT,CODETEMPLATE,NAMEFORM,COMMENTFORM,ENABLECONTROLS,STEPPROFILE,NAMEALERT)
 VALUES
-(4,1,300,'1.08. Приём ; Отдача Реактивной энергии','Приём ; Отдача Реактивной энергии [тыс.кВАрч]',
+(4,1,300,'1.08. РџСЂРёС‘Рј ; РћС‚РґР°С‡Р° Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё','РџСЂРёС‘Рј ; РћС‚РґР°С‡Р° Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [С‚С‹СЃ.РєР’РђСЂС‡]',
 '111111',2,'')
 /
 INSERT INTO RYDA.FORM_TEMPLATES
 (TEMPLATE_ID,PARENT,CODETEMPLATE,NAMEFORM,COMMENTFORM,ENABLECONTROLS,STEPPROFILE,NAMEALERT)
 VALUES
-(54,1,301,'1.08.1.  Приём ; Отдача Реактивной энергии (ГН, Тех.проф. - мощность)',
-'Приём ; Отдача Реактивной энергии [тыс.кВАрч]','111111',2,'')
+(54,1,301,'1.08.1.  РџСЂРёС‘Рј ; РћС‚РґР°С‡Р° Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё (Р“Рќ, РўРµС….РїСЂРѕС„. - РјРѕС‰РЅРѕСЃС‚СЊ)',
+'РџСЂРёС‘Рј ; РћС‚РґР°С‡Р° Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [С‚С‹СЃ.РєР’РђСЂС‡]','111111',2,'')
 /
 INSERT INTO RYDA.FORM_TEMPLATES
 (TEMPLATE_ID,PARENT,CODETEMPLATE,NAMEFORM,COMMENTFORM,ENABLECONTROLS,STEPPROFILE,NAMEALERT)
 VALUES
-(70,1,302,'1.08.1.  Приём ; Отдача Реактивной энергии (Суммируется по наростающей)',
-'Приём ; Отдача Реактивной энергии [тыс.кВАрч]','111111',2,'')
+(70,1,302,'1.08.1.  РџСЂРёС‘Рј ; РћС‚РґР°С‡Р° Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё (РЎСѓРјРјРёСЂСѓРµС‚СЃСЏ РїРѕ РЅР°СЂРѕСЃС‚Р°СЋС‰РµР№)',
+'РџСЂРёС‘Рј ; РћС‚РґР°С‡Р° Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [С‚С‹СЃ.РєР’РђСЂС‡]','111111',2,'')
 /
 INSERT INTO RYDA.FORM_TEMPLATES
 (TEMPLATE_ID,PARENT,CODETEMPLATE,NAMEFORM,COMMENTFORM,ENABLECONTROLS,STEPPROFILE,NAMEALERT)
 VALUES
-(2,1,100,'1.10. Переток Активной ; Реактивной энергии',
-'Переток Активной ; Реактивной энергии [тыс.кВтч/тыс.кВАрч]','111111',2,'')
+(2,1,100,'1.10. РџРµСЂРµС‚РѕРє РђРєС‚РёРІРЅРѕР№ ; Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё',
+'РџРµСЂРµС‚РѕРє РђРєС‚РёРІРЅРѕР№ ; Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [С‚С‹СЃ.РєР’С‚С‡/С‚С‹СЃ.РєР’РђСЂС‡]','111111',2,'')
 /
 INSERT INTO RYDA.FORM_TEMPLATES
 (TEMPLATE_ID,PARENT,CODETEMPLATE,NAMEFORM,COMMENTFORM,ENABLECONTROLS,STEPPROFILE,NAMEALERT)
 VALUES
-(52,1,101,'1.10.1. Переток Активной ; Реактивной энергии (ГН, Тех.проф. - мощность)',
-'Переток Активной ; Реактивной энергии [тыс.кВтч/тыс.кВАрч]','111111',2,'')
+(52,1,101,'1.10.1. РџРµСЂРµС‚РѕРє РђРєС‚РёРІРЅРѕР№ ; Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё (Р“Рќ, РўРµС….РїСЂРѕС„. - РјРѕС‰РЅРѕСЃС‚СЊ)',
+'РџРµСЂРµС‚РѕРє РђРєС‚РёРІРЅРѕР№ ; Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [С‚С‹СЃ.РєР’С‚С‡/С‚С‹СЃ.РєР’РђСЂС‡]','111111',2,'')
 /
 INSERT INTO RYDA.FORM_TEMPLATES
 (TEMPLATE_ID,PARENT,CODETEMPLATE,NAMEFORM,COMMENTFORM,ENABLECONTROLS,STEPPROFILE,NAMEALERT)
 VALUES
-(68,1,102,'1.10.2. Переток Активной ; Реактивной энергии (Суммируется по наростающей)',
-'Переток Активной ; Реактивной энергии [тыс.кВтч/тыс.кВАрч]','111111',2,'')
+(68,1,102,'1.10.2. РџРµСЂРµС‚РѕРє РђРєС‚РёРІРЅРѕР№ ; Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё (РЎСѓРјРјРёСЂСѓРµС‚СЃСЏ РїРѕ РЅР°СЂРѕСЃС‚Р°СЋС‰РµР№)',
+'РџРµСЂРµС‚РѕРє РђРєС‚РёРІРЅРѕР№ ; Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [С‚С‹СЃ.РєР’С‚С‡/С‚С‹СЃ.РєР’РђСЂС‡]','111111',2,'')
 /
 INSERT INTO RYDA.FORM_TEMPLATES
 (TEMPLATE_ID,PARENT,CODETEMPLATE,NAMEFORM,COMMENTFORM,ENABLECONTROLS,STEPPROFILE,NAMEALERT)
 VALUES
-(61,1,310,'1.11. Приём ; Отдача Реактивной энергии при импорте активной энергии',
-'Приём ; Отдача Реактивной энергии при импорте активной энергии [тыс.кВАрч]','111111',2,'')
+(61,1,310,'1.11. РџСЂРёС‘Рј ; РћС‚РґР°С‡Р° Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё РїСЂРё РёРјРїРѕСЂС‚Рµ Р°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё',
+'РџСЂРёС‘Рј ; РћС‚РґР°С‡Р° Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё РїСЂРё РёРјРїРѕСЂС‚Рµ Р°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [С‚С‹СЃ.РєР’РђСЂС‡]','111111',2,'')
 /
 INSERT INTO RYDA.FORM_TEMPLATES
 (TEMPLATE_ID,PARENT,CODETEMPLATE,NAMEFORM,COMMENTFORM,ENABLECONTROLS,STEPPROFILE,NAMEALERT)
 VALUES
 (62,1,311,
-'1.11.1. Приём ; Отдача Реактивной энергии при импорте активной энергии (ГН, Тех.проф. - мощность)',
-'Приём ; Отдача Реактивной энергии при импорте активной энергии[тыс.кВАрч]','111111',2,'')
+'1.11.1. РџСЂРёС‘Рј ; РћС‚РґР°С‡Р° Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё РїСЂРё РёРјРїРѕСЂС‚Рµ Р°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё (Р“Рќ, РўРµС….РїСЂРѕС„. - РјРѕС‰РЅРѕСЃС‚СЊ)',
+'РџСЂРёС‘Рј ; РћС‚РґР°С‡Р° Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё РїСЂРё РёРјРїРѕСЂС‚Рµ Р°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё[С‚С‹СЃ.РєР’РђСЂС‡]','111111',2,'')
 /
 INSERT INTO RYDA.FORM_TEMPLATES
 (TEMPLATE_ID,PARENT,CODETEMPLATE,NAMEFORM,COMMENTFORM,ENABLECONTROLS,STEPPROFILE,NAMEALERT)
 VALUES
-(63,1,320,'1.12. Приём ; Отдача Реактивной энергии при экспорте активной энергии',
-'Приём ; Отдача Реактивной энергии при экспорте активной энергии [тыс.кВАрч]','111111',2,'')
+(63,1,320,'1.12. РџСЂРёС‘Рј ; РћС‚РґР°С‡Р° Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё РїСЂРё СЌРєСЃРїРѕСЂС‚Рµ Р°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё',
+'РџСЂРёС‘Рј ; РћС‚РґР°С‡Р° Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё РїСЂРё СЌРєСЃРїРѕСЂС‚Рµ Р°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [С‚С‹СЃ.РєР’РђСЂС‡]','111111',2,'')
 /
 INSERT INTO RYDA.FORM_TEMPLATES
 (TEMPLATE_ID,PARENT,CODETEMPLATE,NAMEFORM,COMMENTFORM,ENABLECONTROLS,STEPPROFILE,NAMEALERT)
 VALUES
 (64,1,321,
-'1.12.1. Приём ; Отдача Реактивной энергии при экспорте активной энергии (ГН, Тех.проф. - мощность)',
-'Приём ; Отдача Реактивной энергии при экспорте активной энергии [тыс.кВАрч]','111111',2,'')
+'1.12.1. РџСЂРёС‘Рј ; РћС‚РґР°С‡Р° Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё РїСЂРё СЌРєСЃРїРѕСЂС‚Рµ Р°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё (Р“Рќ, РўРµС….РїСЂРѕС„. - РјРѕС‰РЅРѕСЃС‚СЊ)',
+'РџСЂРёС‘Рј ; РћС‚РґР°С‡Р° Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё РїСЂРё СЌРєСЃРїРѕСЂС‚Рµ Р°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [С‚С‹СЃ.РєР’РђСЂС‡]','111111',2,'')
 /
 INSERT INTO RYDA.FORM_TEMPLATES
 (TEMPLATE_ID,PARENT,CODETEMPLATE,NAMEFORM,COMMENTFORM,ENABLECONTROLS,STEPPROFILE,NAMEALERT)
 VALUES
-(77,1,1400,'1.13. Приём Активной энергии по декадам','Приём Активной энергии [тыс.кВтч]','111101',2,
+(77,1,1400,'1.13. РџСЂРёС‘Рј РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё РїРѕ РґРµРєР°РґР°Рј','РџСЂРёС‘Рј РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [С‚С‹СЃ.РєР’С‚С‡]','111101',2,
 '')
 /
 INSERT INTO RYDA.FORM_TEMPLATES
 (TEMPLATE_ID,PARENT,CODETEMPLATE,NAMEFORM,COMMENTFORM,ENABLECONTROLS,STEPPROFILE,NAMEALERT)
 VALUES
-(11,NULL,NULL,'2. Учет энергии по тарифам','','000000',0,'')
+(11,NULL,NULL,'2. РЈС‡РµС‚ СЌРЅРµСЂРіРёРё РїРѕ С‚Р°СЂРёС„Р°Рј','','000000',0,'')
 /
 INSERT INTO RYDA.FORM_TEMPLATES
 (TEMPLATE_ID,PARENT,CODETEMPLATE,NAMEFORM,COMMENTFORM,ENABLECONTROLS,STEPPROFILE,NAMEALERT)
 VALUES
-(12,11,910,'2.01. Активная принятая общая и по тарифам',
-'Активная принятая общая и по тарифам [тыс.кВтч]','111101',1,'')
+(12,11,910,'2.01. РђРєС‚РёРІРЅР°СЏ РїСЂРёРЅСЏС‚Р°СЏ РѕР±С‰Р°СЏ Рё РїРѕ С‚Р°СЂРёС„Р°Рј',
+'РђРєС‚РёРІРЅР°СЏ РїСЂРёРЅСЏС‚Р°СЏ РѕР±С‰Р°СЏ Рё РїРѕ С‚Р°СЂРёС„Р°Рј [С‚С‹СЃ.РєР’С‚С‡]','111101',1,'')
 /
 INSERT INTO RYDA.FORM_TEMPLATES
 (TEMPLATE_ID,PARENT,CODETEMPLATE,NAMEFORM,COMMENTFORM,ENABLECONTROLS,STEPPROFILE,NAMEALERT)
 VALUES
-(13,11,920,'2.02. Активная отданная общая и по тарифам',
-'Активная отданная общая и по тарифам [тыс.кВтч]','111101',1,'')
+(13,11,920,'2.02. РђРєС‚РёРІРЅР°СЏ РѕС‚РґР°РЅРЅР°СЏ РѕР±С‰Р°СЏ Рё РїРѕ С‚Р°СЂРёС„Р°Рј',
+'РђРєС‚РёРІРЅР°СЏ РѕС‚РґР°РЅРЅР°СЏ РѕР±С‰Р°СЏ Рё РїРѕ С‚Р°СЂРёС„Р°Рј [С‚С‹СЃ.РєР’С‚С‡]','111101',1,'')
 /
 INSERT INTO RYDA.FORM_TEMPLATES
 (TEMPLATE_ID,PARENT,CODETEMPLATE,NAMEFORM,COMMENTFORM,ENABLECONTROLS,STEPPROFILE,NAMEALERT)
 VALUES
-(50,11,921,'2.03. Переток активной э/э (общая и по тарифам)',
-'Переток активной э/э (общая и по тарифам) [тыс.кВтч]','111001',1,'')
+(50,11,921,'2.03. РџРµСЂРµС‚РѕРє Р°РєС‚РёРІРЅРѕР№ СЌ/СЌ (РѕР±С‰Р°СЏ Рё РїРѕ С‚Р°СЂРёС„Р°Рј)',
+'РџРµСЂРµС‚РѕРє Р°РєС‚РёРІРЅРѕР№ СЌ/СЌ (РѕР±С‰Р°СЏ Рё РїРѕ С‚Р°СЂРёС„Р°Рј) [С‚С‹СЃ.РєР’С‚С‡]','111001',1,'')
 /
 INSERT INTO RYDA.FORM_TEMPLATES
 (TEMPLATE_ID,PARENT,CODETEMPLATE,NAMEFORM,COMMENTFORM,ENABLECONTROLS,STEPPROFILE,NAMEALERT)
 VALUES
-(14,11,930,'2.04. Реактивная принятая общая и по тарифам',
-'Реактивная принятая общая и по тарифам [тыс.кВАрч]','111001',1,'')
+(14,11,930,'2.04. Р РµР°РєС‚РёРІРЅР°СЏ РїСЂРёРЅСЏС‚Р°СЏ РѕР±С‰Р°СЏ Рё РїРѕ С‚Р°СЂРёС„Р°Рј',
+'Р РµР°РєС‚РёРІРЅР°СЏ РїСЂРёРЅСЏС‚Р°СЏ РѕР±С‰Р°СЏ Рё РїРѕ С‚Р°СЂРёС„Р°Рј [С‚С‹СЃ.РєР’РђСЂС‡]','111001',1,'')
 /
 INSERT INTO RYDA.FORM_TEMPLATES
 (TEMPLATE_ID,PARENT,CODETEMPLATE,NAMEFORM,COMMENTFORM,ENABLECONTROLS,STEPPROFILE,NAMEALERT)
 VALUES
-(15,11,940,'2.05. Реактивная отданная общая и по тарифам',
-'Реактивная отданная общая и по тарифам [тыс.кВАрч]','111001',1,'')
+(15,11,940,'2.05. Р РµР°РєС‚РёРІРЅР°СЏ РѕС‚РґР°РЅРЅР°СЏ РѕР±С‰Р°СЏ Рё РїРѕ С‚Р°СЂРёС„Р°Рј',
+'Р РµР°РєС‚РёРІРЅР°СЏ РѕС‚РґР°РЅРЅР°СЏ РѕР±С‰Р°СЏ Рё РїРѕ С‚Р°СЂРёС„Р°Рј [С‚С‹СЃ.РєР’РђСЂС‡]','111001',1,'')
 /
 INSERT INTO RYDA.FORM_TEMPLATES
 (TEMPLATE_ID,PARENT,CODETEMPLATE,NAMEFORM,COMMENTFORM,ENABLECONTROLS,STEPPROFILE,NAMEALERT)
 VALUES
-(51,11,941,'2.06. Переток реактивной э/э (общая и по тарифам)',
-'Переток реактивной э/э (общая и по тарифам) [тыс.кВарч]','111001',1,'')
+(51,11,941,'2.06. РџРµСЂРµС‚РѕРє СЂРµР°РєС‚РёРІРЅРѕР№ СЌ/СЌ (РѕР±С‰Р°СЏ Рё РїРѕ С‚Р°СЂРёС„Р°Рј)',
+'РџРµСЂРµС‚РѕРє СЂРµР°РєС‚РёРІРЅРѕР№ СЌ/СЌ (РѕР±С‰Р°СЏ Рё РїРѕ С‚Р°СЂРёС„Р°Рј) [С‚С‹СЃ.РєР’Р°СЂС‡]','111001',1,'')
 /
 INSERT INTO RYDA.FORM_TEMPLATES
 (TEMPLATE_ID,PARENT,CODETEMPLATE,NAMEFORM,COMMENTFORM,ENABLECONTROLS,STEPPROFILE,NAMEALERT)
 VALUES
-(16,11,950,'2.07. Активная принятая по тарифам','Активная принятая по тарифам [тыс.кВтч]','111001',
+(16,11,950,'2.07. РђРєС‚РёРІРЅР°СЏ РїСЂРёРЅСЏС‚Р°СЏ РїРѕ С‚Р°СЂРёС„Р°Рј','РђРєС‚РёРІРЅР°СЏ РїСЂРёРЅСЏС‚Р°СЏ РїРѕ С‚Р°СЂРёС„Р°Рј [С‚С‹СЃ.РєР’С‚С‡]','111001',
 1,'')
 /
 INSERT INTO RYDA.FORM_TEMPLATES
 (TEMPLATE_ID,PARENT,CODETEMPLATE,NAMEFORM,COMMENTFORM,ENABLECONTROLS,STEPPROFILE,NAMEALERT)
 VALUES
-(17,11,960,'2.08. Активная отданная по тарифам','Активная отданная по тарифам [тыс.кВтч]','111001',
+(17,11,960,'2.08. РђРєС‚РёРІРЅР°СЏ РѕС‚РґР°РЅРЅР°СЏ РїРѕ С‚Р°СЂРёС„Р°Рј','РђРєС‚РёРІРЅР°СЏ РѕС‚РґР°РЅРЅР°СЏ РїРѕ С‚Р°СЂРёС„Р°Рј [С‚С‹СЃ.РєР’С‚С‡]','111001',
 1,'')
 /
 INSERT INTO RYDA.FORM_TEMPLATES
 (TEMPLATE_ID,PARENT,CODETEMPLATE,NAMEFORM,COMMENTFORM,ENABLECONTROLS,STEPPROFILE,NAMEALERT)
 VALUES
-(18,11,970,'2.09. Реактивная принятая по тарифам','Реактивная принятая по тарифам [тыс.кВАрч]',
+(18,11,970,'2.09. Р РµР°РєС‚РёРІРЅР°СЏ РїСЂРёРЅСЏС‚Р°СЏ РїРѕ С‚Р°СЂРёС„Р°Рј','Р РµР°РєС‚РёРІРЅР°СЏ РїСЂРёРЅСЏС‚Р°СЏ РїРѕ С‚Р°СЂРёС„Р°Рј [С‚С‹СЃ.РєР’РђСЂС‡]',
 '111001',1,'')
 /
 INSERT INTO RYDA.FORM_TEMPLATES
 (TEMPLATE_ID,PARENT,CODETEMPLATE,NAMEFORM,COMMENTFORM,ENABLECONTROLS,STEPPROFILE,NAMEALERT)
 VALUES
-(19,11,980,'2.10. Реактивная отданная по тарифам','Реактивная отданная по тарифам [тыс.кВАрч]',
+(19,11,980,'2.10. Р РµР°РєС‚РёРІРЅР°СЏ РѕС‚РґР°РЅРЅР°СЏ РїРѕ С‚Р°СЂРёС„Р°Рј','Р РµР°РєС‚РёРІРЅР°СЏ РѕС‚РґР°РЅРЅР°СЏ РїРѕ С‚Р°СЂРёС„Р°Рј [С‚С‹СЃ.РєР’РђСЂС‡]',
 '111001',1,'')
 /
 INSERT INTO RYDA.FORM_TEMPLATES
 (TEMPLATE_ID,PARENT,CODETEMPLATE,NAMEFORM,COMMENTFORM,ENABLECONTROLS,STEPPROFILE,NAMEALERT)
 VALUES
-(20,NULL,NULL,'3. Контроль нагрузки','','000000',0,'')
+(20,NULL,NULL,'3. РљРѕРЅС‚СЂРѕР»СЊ РЅР°РіСЂСѓР·РєРё','','000000',0,'')
 /
 INSERT INTO RYDA.FORM_TEMPLATES
 (TEMPLATE_ID,PARENT,CODETEMPLATE,NAMEFORM,COMMENTFORM,ENABLECONTROLS,STEPPROFILE,NAMEALERT)
 VALUES
-(21,20,10,'3.01. Активная мощность','Активная мощность [МВт]','100101',0,'')
+(21,20,10,'3.01. РђРєС‚РёРІРЅР°СЏ РјРѕС‰РЅРѕСЃС‚СЊ','РђРєС‚РёРІРЅР°СЏ РјРѕС‰РЅРѕСЃС‚СЊ [РњР’С‚]','100101',0,'')
 /
 INSERT INTO RYDA.FORM_TEMPLATES
 (TEMPLATE_ID,PARENT,CODETEMPLATE,NAMEFORM,COMMENTFORM,ENABLECONTROLS,STEPPROFILE,NAMEALERT)
 VALUES
-(22,20,20,'3.02. Реактивная мощность','Реактивная мощность [МВАр]','100101',0,'')
+(22,20,20,'3.02. Р РµР°РєС‚РёРІРЅР°СЏ РјРѕС‰РЅРѕСЃС‚СЊ','Р РµР°РєС‚РёРІРЅР°СЏ РјРѕС‰РЅРѕСЃС‚СЊ [РњР’РђСЂ]','100101',0,'')
 /
 INSERT INTO RYDA.FORM_TEMPLATES
 (TEMPLATE_ID,PARENT,CODETEMPLATE,NAMEFORM,COMMENTFORM,ENABLECONTROLS,STEPPROFILE,NAMEALERT)
 VALUES
-(25,20,50,'3.03. Текущая нагрузка','Текущая нагрузка [МВт/МВАр]','111111',3,'')
+(25,20,50,'3.03. РўРµРєСѓС‰Р°СЏ РЅР°РіСЂСѓР·РєР°','РўРµРєСѓС‰Р°СЏ РЅР°РіСЂСѓР·РєР° [РњР’С‚/РњР’РђСЂ]','111111',3,'')
 /
 INSERT INTO RYDA.FORM_TEMPLATES
 (TEMPLATE_ID,PARENT,CODETEMPLATE,NAMEFORM,COMMENTFORM,ENABLECONTROLS,STEPPROFILE,NAMEALERT)
 VALUES
-(26,20,52,'3.03.1. Текущая нагрузка (Ч\Б)','Текущая нагрузка [МВт/МВАр]','100100',3,'')
+(26,20,52,'3.03.1. РўРµРєСѓС‰Р°СЏ РЅР°РіСЂСѓР·РєР° (Р§\Р‘)','РўРµРєСѓС‰Р°СЏ РЅР°РіСЂСѓР·РєР° [РњР’С‚/РњР’РђСЂ]','100100',3,'')
 /
 INSERT INTO RYDA.FORM_TEMPLATES
 (TEMPLATE_ID,PARENT,CODETEMPLATE,NAMEFORM,COMMENTFORM,ENABLECONTROLS,STEPPROFILE,NAMEALERT)
 VALUES
-(23,20,30,'3.04. Контроль лимита активной мощности','Мощность, лимит, отклонение [МВт]','100111',3,
+(23,20,30,'3.04. РљРѕРЅС‚СЂРѕР»СЊ Р»РёРјРёС‚Р° Р°РєС‚РёРІРЅРѕР№ РјРѕС‰РЅРѕСЃС‚Рё','РњРѕС‰РЅРѕСЃС‚СЊ, Р»РёРјРёС‚, РѕС‚РєР»РѕРЅРµРЅРёРµ [РњР’С‚]','100111',3,
 '')
 /
 INSERT INTO RYDA.FORM_TEMPLATES
 (TEMPLATE_ID,PARENT,CODETEMPLATE,NAMEFORM,COMMENTFORM,ENABLECONTROLS,STEPPROFILE,NAMEALERT)
 VALUES
-(24,20,40,'3.05. Контроль лимита реактивной мощности','Мощность, лимит, отклонение [МВАр]','100111',
+(24,20,40,'3.05. РљРѕРЅС‚СЂРѕР»СЊ Р»РёРјРёС‚Р° СЂРµР°РєС‚РёРІРЅРѕР№ РјРѕС‰РЅРѕСЃС‚Рё','РњРѕС‰РЅРѕСЃС‚СЊ, Р»РёРјРёС‚, РѕС‚РєР»РѕРЅРµРЅРёРµ [РњР’РђСЂ]','100111',
 3,'')
 /
 INSERT INTO RYDA.FORM_TEMPLATES
 (TEMPLATE_ID,PARENT,CODETEMPLATE,NAMEFORM,COMMENTFORM,ENABLECONTROLS,STEPPROFILE,NAMEALERT)
 VALUES
-(27,20,51,'3.06. Оперативный контроль лимитов','Контроль лимитов','100100',3,'')
+(27,20,51,'3.06. РћРїРµСЂР°С‚РёРІРЅС‹Р№ РєРѕРЅС‚СЂРѕР»СЊ Р»РёРјРёС‚РѕРІ','РљРѕРЅС‚СЂРѕР»СЊ Р»РёРјРёС‚РѕРІ','100100',3,'')
 /
 INSERT INTO RYDA.FORM_TEMPLATES
 (TEMPLATE_ID,PARENT,CODETEMPLATE,NAMEFORM,COMMENTFORM,ENABLECONTROLS,STEPPROFILE,NAMEALERT)
 VALUES
-(28,20,53,'3.06.1. Оперативный контроль лимитов (Ч\Б)','Контроль лимитов','100100',3,'')
+(28,20,53,'3.06.1. РћРїРµСЂР°С‚РёРІРЅС‹Р№ РєРѕРЅС‚СЂРѕР»СЊ Р»РёРјРёС‚РѕРІ (Р§\Р‘)','РљРѕРЅС‚СЂРѕР»СЊ Р»РёРјРёС‚РѕРІ','100100',3,'')
 /
 INSERT INTO RYDA.FORM_TEMPLATES
 (TEMPLATE_ID,PARENT,CODETEMPLATE,NAMEFORM,COMMENTFORM,ENABLECONTROLS,STEPPROFILE,NAMEALERT)
 VALUES
-(66,20,63,'3.07. Небалансы энергобъектов','Небалансы энергобъектов','100111',3,'')
+(66,20,63,'3.07. РќРµР±Р°Р»Р°РЅСЃС‹ СЌРЅРµСЂРіРѕР±СЉРµРєС‚РѕРІ','РќРµР±Р°Р»Р°РЅСЃС‹ СЌРЅРµСЂРіРѕР±СЉРµРєС‚РѕРІ','100111',3,'')
 /
 INSERT INTO RYDA.FORM_TEMPLATES
 (TEMPLATE_ID,PARENT,CODETEMPLATE,NAMEFORM,COMMENTFORM,ENABLECONTROLS,STEPPROFILE,NAMEALERT)
 VALUES
-(67,20,64,'3.08. Небалансы энергобъектов (Текущее)','Небалансы энергобъектов','100111',3,'')
+(67,20,64,'3.08. РќРµР±Р°Р»Р°РЅСЃС‹ СЌРЅРµСЂРіРѕР±СЉРµРєС‚РѕРІ (РўРµРєСѓС‰РµРµ)','РќРµР±Р°Р»Р°РЅСЃС‹ СЌРЅРµСЂРіРѕР±СЉРµРєС‚РѕРІ','100111',3,'')
 /
 INSERT INTO RYDA.FORM_TEMPLATES
 (TEMPLATE_ID,PARENT,CODETEMPLATE,NAMEFORM,COMMENTFORM,ENABLECONTROLS,STEPPROFILE,NAMEALERT)
 VALUES
-(65,20,62,'3.09. Контроль потребителей (Долг)','Контроль потребителей','100111',3,'')
+(65,20,62,'3.09. РљРѕРЅС‚СЂРѕР»СЊ РїРѕС‚СЂРµР±РёС‚РµР»РµР№ (Р”РѕР»Рі)','РљРѕРЅС‚СЂРѕР»СЊ РїРѕС‚СЂРµР±РёС‚РµР»РµР№','100111',3,'')
 /
 INSERT INTO RYDA.FORM_TEMPLATES
 (TEMPLATE_ID,PARENT,CODETEMPLATE,NAMEFORM,COMMENTFORM,ENABLECONTROLS,STEPPROFILE,NAMEALERT)
 VALUES
-(29,20,54,'3.10. Контроль потребителей','Контроль потребителей','100111',3,'')
+(29,20,54,'3.10. РљРѕРЅС‚СЂРѕР»СЊ РїРѕС‚СЂРµР±РёС‚РµР»РµР№','РљРѕРЅС‚СЂРѕР»СЊ РїРѕС‚СЂРµР±РёС‚РµР»РµР№','100111',3,'')
 /
 INSERT INTO RYDA.FORM_TEMPLATES
 (TEMPLATE_ID,PARENT,CODETEMPLATE,NAMEFORM,COMMENTFORM,ENABLECONTROLS,STEPPROFILE,NAMEALERT)
 VALUES
-(30,20,55,'3.10.1. Контроль потребителей (Ч/Б)','Контроль потребителей','100111',3,'')
+(30,20,55,'3.10.1. РљРѕРЅС‚СЂРѕР»СЊ РїРѕС‚СЂРµР±РёС‚РµР»РµР№ (Р§/Р‘)','РљРѕРЅС‚СЂРѕР»СЊ РїРѕС‚СЂРµР±РёС‚РµР»РµР№','100111',3,'')
 /
 INSERT INTO RYDA.FORM_TEMPLATES
 (TEMPLATE_ID,PARENT,CODETEMPLATE,NAMEFORM,COMMENTFORM,ENABLECONTROLS,STEPPROFILE,NAMEALERT)
 VALUES
-(31,20,58,'3.11. Контроль потребителей-перерасходчиков','Контроль потребителей-перерасходчиков',
+(31,20,58,'3.11. РљРѕРЅС‚СЂРѕР»СЊ РїРѕС‚СЂРµР±РёС‚РµР»РµР№-РїРµСЂРµСЂР°СЃС…РѕРґС‡РёРєРѕРІ','РљРѕРЅС‚СЂРѕР»СЊ РїРѕС‚СЂРµР±РёС‚РµР»РµР№-РїРµСЂРµСЂР°СЃС…РѕРґС‡РёРєРѕРІ',
 '101000',2,'')
 /
 INSERT INTO RYDA.FORM_TEMPLATES
 (TEMPLATE_ID,PARENT,CODETEMPLATE,NAMEFORM,COMMENTFORM,ENABLECONTROLS,STEPPROFILE,NAMEALERT)
 VALUES
-(32,20,59,'3.11.1. Контроль потребителей-перерасходчиков (Ч/Б)',
-'Контроль потребителей-перерасходчиков','101000',2,'')
+(32,20,59,'3.11.1. РљРѕРЅС‚СЂРѕР»СЊ РїРѕС‚СЂРµР±РёС‚РµР»РµР№-РїРµСЂРµСЂР°СЃС…РѕРґС‡РёРєРѕРІ (Р§/Р‘)',
+'РљРѕРЅС‚СЂРѕР»СЊ РїРѕС‚СЂРµР±РёС‚РµР»РµР№-РїРµСЂРµСЂР°СЃС…РѕРґС‡РёРєРѕРІ','101000',2,'')
 /
 INSERT INTO RYDA.FORM_TEMPLATES
 (TEMPLATE_ID,PARENT,CODETEMPLATE,NAMEFORM,COMMENTFORM,ENABLECONTROLS,STEPPROFILE,NAMEALERT)
 VALUES
-(33,20,56,'3.12. Контроль потребителей-должников','Контроль потребителей-должников','101000',2,'')
+(33,20,56,'3.12. РљРѕРЅС‚СЂРѕР»СЊ РїРѕС‚СЂРµР±РёС‚РµР»РµР№-РґРѕР»Р¶РЅРёРєРѕРІ','РљРѕРЅС‚СЂРѕР»СЊ РїРѕС‚СЂРµР±РёС‚РµР»РµР№-РґРѕР»Р¶РЅРёРєРѕРІ','101000',2,'')
 /
 INSERT INTO RYDA.FORM_TEMPLATES
 (TEMPLATE_ID,PARENT,CODETEMPLATE,NAMEFORM,COMMENTFORM,ENABLECONTROLS,STEPPROFILE,NAMEALERT)
 VALUES
-(34,20,57,'3.12.1. Контроль потребителей-должников (Ч/Б)','Контроль потребителей-должников',
+(34,20,57,'3.12.1. РљРѕРЅС‚СЂРѕР»СЊ РїРѕС‚СЂРµР±РёС‚РµР»РµР№-РґРѕР»Р¶РЅРёРєРѕРІ (Р§/Р‘)','РљРѕРЅС‚СЂРѕР»СЊ РїРѕС‚СЂРµР±РёС‚РµР»РµР№-РґРѕР»Р¶РЅРёРєРѕРІ',
 '101000',2,'')
 /
 INSERT INTO RYDA.FORM_TEMPLATES
 (TEMPLATE_ID,PARENT,CODETEMPLATE,NAMEFORM,COMMENTFORM,ENABLECONTROLS,STEPPROFILE,NAMEALERT)
 VALUES
-(35,20,60,'3.13.  Контроль не поступления данных','Контроль не поступления данных','100101',3,'')
+(35,20,60,'3.13.  РљРѕРЅС‚СЂРѕР»СЊ РЅРµ РїРѕСЃС‚СѓРїР»РµРЅРёСЏ РґР°РЅРЅС‹С…','РљРѕРЅС‚СЂРѕР»СЊ РЅРµ РїРѕСЃС‚СѓРїР»РµРЅРёСЏ РґР°РЅРЅС‹С…','100101',3,'')
 /
 INSERT INTO RYDA.FORM_TEMPLATES
 (TEMPLATE_ID,PARENT,CODETEMPLATE,NAMEFORM,COMMENTFORM,ENABLECONTROLS,STEPPROFILE,NAMEALERT)
 VALUES
-(36,20,61,'3.13.1. Контроль не поступления данных (Ч\Б)','Контроль не поступления данных (Ч\Б)',
+(36,20,61,'3.13.1. РљРѕРЅС‚СЂРѕР»СЊ РЅРµ РїРѕСЃС‚СѓРїР»РµРЅРёСЏ РґР°РЅРЅС‹С… (Р§\Р‘)','РљРѕРЅС‚СЂРѕР»СЊ РЅРµ РїРѕСЃС‚СѓРїР»РµРЅРёСЏ РґР°РЅРЅС‹С… (Р§\Р‘)',
 '100101',3,'')
 /
 INSERT INTO RYDA.FORM_TEMPLATES
 (TEMPLATE_ID,PARENT,CODETEMPLATE,NAMEFORM,COMMENTFORM,ENABLECONTROLS,STEPPROFILE,NAMEALERT)
 VALUES
-(37,NULL,NULL,'4. Журналы','','000000',0,'')
+(37,NULL,NULL,'4. Р–СѓСЂРЅР°Р»С‹','','000000',0,'')
 /
 INSERT INTO RYDA.FORM_TEMPLATES
 (TEMPLATE_ID,PARENT,CODETEMPLATE,NAMEFORM,COMMENTFORM,ENABLECONTROLS,STEPPROFILE,NAMEALERT)
 VALUES
-(38,37,1000,'4.01. Журнал действий оператора','Журнал действий оператора','100001',1,'')
+(38,37,1000,'4.01. Р–СѓСЂРЅР°Р» РґРµР№СЃС‚РІРёР№ РѕРїРµСЂР°С‚РѕСЂР°','Р–СѓСЂРЅР°Р» РґРµР№СЃС‚РІРёР№ РѕРїРµСЂР°С‚РѕСЂР°','100001',1,'')
 /
 INSERT INTO RYDA.FORM_TEMPLATES
 (TEMPLATE_ID,PARENT,CODETEMPLATE,NAMEFORM,COMMENTFORM,ENABLECONTROLS,STEPPROFILE,NAMEALERT)
 VALUES
-(39,37,1100,'4.02. Журнал сообщений системы','Журнал сообщений системы','100001',1,'')
+(39,37,1100,'4.02. Р–СѓСЂРЅР°Р» СЃРѕРѕР±С‰РµРЅРёР№ СЃРёСЃС‚РµРјС‹','Р–СѓСЂРЅР°Р» СЃРѕРѕР±С‰РµРЅРёР№ СЃРёСЃС‚РµРјС‹','100001',1,'')
 /
 INSERT INTO RYDA.FORM_TEMPLATES
 (TEMPLATE_ID,PARENT,CODETEMPLATE,NAMEFORM,COMMENTFORM,ENABLECONTROLS,STEPPROFILE,NAMEALERT)
 VALUES
-(40,NULL,NULL,'5. Универсальные формы','','',NULL,'')
+(40,NULL,NULL,'5. РЈРЅРёРІРµСЂСЃР°Р»СЊРЅС‹Рµ С„РѕСЂРјС‹','','',NULL,'')
 /
 INSERT INTO RYDA.FORM_TEMPLATES
 (TEMPLATE_ID,PARENT,CODETEMPLATE,NAMEFORM,COMMENTFORM,ENABLECONTROLS,STEPPROFILE,NAMEALERT)
 VALUES
-(43,40,1202,'5.01. Форма оперативного контроля',' ','110001',1,'')
+(43,40,1202,'5.01. Р¤РѕСЂРјР° РѕРїРµСЂР°С‚РёРІРЅРѕРіРѕ РєРѕРЅС‚СЂРѕР»СЏ',' ','110001',1,'')
 /
 INSERT INTO RYDA.FORM_TEMPLATES
 (TEMPLATE_ID,PARENT,CODETEMPLATE,NAMEFORM,COMMENTFORM,ENABLECONTROLS,STEPPROFILE,NAMEALERT)
 VALUES
-(41,40,1200,'5.02. Форма оперативного контроля (Маштабируемая)',' ','111111',2,'')
+(41,40,1200,'5.02. Р¤РѕСЂРјР° РѕРїРµСЂР°С‚РёРІРЅРѕРіРѕ РєРѕРЅС‚СЂРѕР»СЏ (РњР°С€С‚Р°Р±РёСЂСѓРµРјР°СЏ)',' ','111111',2,'')
 /
 INSERT INTO RYDA.FORM_TEMPLATES
 (TEMPLATE_ID,PARENT,CODETEMPLATE,NAMEFORM,COMMENTFORM,ENABLECONTROLS,STEPPROFILE,NAMEALERT)
 VALUES
-(42,40,1201,'5.03. Форма отчета',' ','010001',1,'')
+(42,40,1201,'5.03. Р¤РѕСЂРјР° РѕС‚С‡РµС‚Р°',' ','010001',1,'')
 /
 INSERT INTO RYDA.FORM_TEMPLATES
 (TEMPLATE_ID,PARENT,CODETEMPLATE,NAMEFORM,COMMENTFORM,ENABLECONTROLS,STEPPROFILE,NAMEALERT)
 VALUES
-(78,40,1203,'5.04. Форма отчета PL SQL','','111111',2,'')
+(78,40,1203,'5.04. Р¤РѕСЂРјР° РѕС‚С‡РµС‚Р° PL SQL','','111111',2,'')
 /
 
 
@@ -972,24 +972,24 @@ commit
 
 --30.11.2002
 INSERT INTO tasks(TASK_ID,PARENT,TASK_COD,NAME,NUM_ARG,CHAR_ARG,REMARK)
-VALUES (61,27,606,'6.11 План выполнения фоновых процессов',NULL,'','')
+VALUES (61,27,606,'6.11 РџР»Р°РЅ РІС‹РїРѕР»РЅРµРЅРёСЏ С„РѕРЅРѕРІС‹С… РїСЂРѕС†РµСЃСЃРѕРІ',NULL,'','')
 /
 INSERT INTO ROLE_TASK (ROLE_ID,TASK_ID) VALUES (1,61)
 /
 INSERT INTO deportprocedures
 (NPROCEDURE,VNAME,VPROCEDURE,NPERIOD,NTYPE,VMEMO)
 VALUES
-(4,'Расчет суточного расхода','ryda.DAS_PG.CalcOneDay4Bill',2,1,'')
+(4,'Р Р°СЃС‡РµС‚ СЃСѓС‚РѕС‡РЅРѕРіРѕ СЂР°СЃС…РѕРґР°','ryda.DAS_PG.CalcOneDay4Bill',2,1,'')
 /
 INSERT INTO deportprocedures
 (NPROCEDURE,VNAME,VPROCEDURE,NPERIOD,NTYPE,VMEMO)
 VALUES
-(3,'Проверка канала','ryda.reports1_pg.LastSave_p',1,0,'')
+(3,'РџСЂРѕРІРµСЂРєР° РєР°РЅР°Р»Р°','ryda.reports1_pg.LastSave_p',1,0,'')
 /
 INSERT INTO MAKETS
 (NMAKET,NPROCEDURE,VNAME,VNOTE,NBLOCK,NCYCLE,NSHIFT)
 VALUES
-(1081,4,'Расчет суточного расхода','',0,0,400)
+(1081,4,'Р Р°СЃС‡РµС‚ СЃСѓС‚РѕС‡РЅРѕРіРѕ СЂР°СЃС…РѕРґР°','',0,0,400)
 /
 commit
 /
@@ -998,7 +998,7 @@ commit
 
 --07.12.2002
 INSERT INTO tasks(TASK_ID,PARENT,TASK_COD,NAME,NUM_ARG,CHAR_ARG,REMARK)
-VALUES (63,42,608,'1.11 Ввод показаний с разбивкой на график',NULL,'','')
+VALUES (63,42,608,'1.11 Р’РІРѕРґ РїРѕРєР°Р·Р°РЅРёР№ СЃ СЂР°Р·Р±РёРІРєРѕР№ РЅР° РіСЂР°С„РёРє',NULL,'','')
 /
 INSERT INTO ROLE_TASK (ROLE_ID,TASK_ID) VALUES (1,63)
 /
@@ -1008,7 +1008,7 @@ commit
 
 --02.01.2003
 INSERT INTO tasks(TASK_ID,PARENT,TASK_COD,NAME,NUM_ARG,CHAR_ARG,REMARK)
-VALUES (64,42,609,'1.11 Ввод расхода с разбивкой на график',NULL,'','')
+VALUES (64,42,609,'1.11 Р’РІРѕРґ СЂР°СЃС…РѕРґР° СЃ СЂР°Р·Р±РёРІРєРѕР№ РЅР° РіСЂР°С„РёРє',NULL,'','')
 /
 INSERT INTO ROLE_TASK (ROLE_ID,TASK_ID) VALUES (1,64)
 /
@@ -1046,89 +1046,89 @@ VALUES
 INSERT INTO deportprocedures
 (NPROCEDURE,VNAME,VPROCEDURE,NPERIOD,NTYPE,VMEMO)
 VALUES
-(6,'Верификация по дублям','check_pg.by_duplicate',2,1,
-'Сверка профиля нагрузки LG с Итеком')
+(6,'Р’РµСЂРёС„РёРєР°С†РёСЏ РїРѕ РґСѓР±Р»СЏРј','check_pg.by_duplicate',2,1,
+'РЎРІРµСЂРєР° РїСЂРѕС„РёР»СЏ РЅР°РіСЂСѓР·РєРё LG СЃ РС‚РµРєРѕРј')
 /
 INSERT INTO deportprocedures
 (NPROCEDURE,VNAME,VPROCEDURE,NPERIOD,NTYPE,VMEMO)
 VALUES
-(7,'Верификация параметров УСД Итек','check_pg.by_itekcoeff',2,1,
-'Сверка коэффициентов Итека с базой данных')
+(7,'Р’РµСЂРёС„РёРєР°С†РёСЏ РїР°СЂР°РјРµС‚СЂРѕРІ РЈРЎР” РС‚РµРє','check_pg.by_itekcoeff',2,1,
+'РЎРІРµСЂРєР° РєРѕСЌС„С„РёС†РёРµРЅС‚РѕРІ РС‚РµРєР° СЃ Р±Р°Р·РѕР№ РґР°РЅРЅС‹С…')
 /
 INSERT INTO deportprocedures
 (NPROCEDURE,VNAME,VPROCEDURE,NPERIOD,NTYPE,VMEMO)
 VALUES
-(8,'Верификация связных номеров','check_pg.by_mtrsn',2,1,
-'Сверка заводских и связных номеров LG')
+(8,'Р’РµСЂРёС„РёРєР°С†РёСЏ СЃРІСЏР·РЅС‹С… РЅРѕРјРµСЂРѕРІ','check_pg.by_mtrsn',2,1,
+'РЎРІРµСЂРєР° Р·Р°РІРѕРґСЃРєРёС… Рё СЃРІСЏР·РЅС‹С… РЅРѕРјРµСЂРѕРІ LG')
 /
 INSERT INTO deportprocedures
 (NPROCEDURE,VNAME,VPROCEDURE,NPERIOD,NTYPE,VMEMO)
 VALUES
-(9,'Верификация суточных расходов','check_pg.by_day_expense',2,1,
-'Сверка суточного расхода Итека с суммой по профилю нагрузки.'
+(9,'Р’РµСЂРёС„РёРєР°С†РёСЏ СЃСѓС‚РѕС‡РЅС‹С… СЂР°СЃС…РѕРґРѕРІ','check_pg.by_day_expense',2,1,
+'РЎРІРµСЂРєР° СЃСѓС‚РѕС‡РЅРѕРіРѕ СЂР°СЃС…РѕРґР° РС‚РµРєР° СЃ СЃСѓРјРјРѕР№ РїРѕ РїСЂРѕС„РёР»СЋ РЅР°РіСЂСѓР·РєРё.'
 )
 /
 INSERT INTO deportprocedures
 (NPROCEDURE,VNAME,VPROCEDURE,NPERIOD,NTYPE,VMEMO)
 VALUES
-(10,'Верификация месячных расходов','check_pg.by_month_expense',5,1,
-'Сверка месячного расхода LG, Итека с суммой по профилю нагрузки.'
+(10,'Р’РµСЂРёС„РёРєР°С†РёСЏ РјРµСЃСЏС‡РЅС‹С… СЂР°СЃС…РѕРґРѕРІ','check_pg.by_month_expense',5,1,
+'РЎРІРµСЂРєР° РјРµСЃСЏС‡РЅРѕРіРѕ СЂР°СЃС…РѕРґР° LG, РС‚РµРєР° СЃ СЃСѓРјРјРѕР№ РїРѕ РїСЂРѕС„РёР»СЋ РЅР°РіСЂСѓР·РєРё.'
 )
 /
 INSERT INTO deportprocedures
 (NPROCEDURE,VNAME,VPROCEDURE,NPERIOD,NTYPE,VMEMO)
 VALUES
-(11,'Верификация по балансам шин','check_pg.by_balance',2,1,'Выполняется только для пст Лозовая-330')
+(11,'Р’РµСЂРёС„РёРєР°С†РёСЏ РїРѕ Р±Р°Р»Р°РЅСЃР°Рј С€РёРЅ','check_pg.by_balance',2,1,'Р’С‹РїРѕР»РЅСЏРµС‚СЃСЏ С‚РѕР»СЊРєРѕ РґР»СЏ РїСЃС‚ Р›РѕР·РѕРІР°СЏ-330')
 /
 INSERT INTO deportprocedures
 (NPROCEDURE,VNAME,VPROCEDURE,NPERIOD,NTYPE,VMEMO)
 VALUES
-(12,'Верификация переключений ОВ','check_pg.by_OV',2,1,
-'Проверка совпадения расхода по ОВ и по переключениям')
+(12,'Р’РµСЂРёС„РёРєР°С†РёСЏ РїРµСЂРµРєР»СЋС‡РµРЅРёР№ РћР’','check_pg.by_OV',2,1,
+'РџСЂРѕРІРµСЂРєР° СЃРѕРІРїР°РґРµРЅРёСЏ СЂР°СЃС…РѕРґР° РїРѕ РћР’ Рё РїРѕ РїРµСЂРµРєР»СЋС‡РµРЅРёСЏРј')
 /
 
 
 INSERT INTO points
 (mid, name, parent, ind)
 VALUES
-(2,'Процедуры верификации',null,1)
+(2,'РџСЂРѕС†РµРґСѓСЂС‹ РІРµСЂРёС„РёРєР°С†РёРё',null,1)
 /
 
 INSERT INTO points
 (mid, name, parent, ind)
 VALUES
-(6,'Сверка по дублям',2,1)
+(6,'РЎРІРµСЂРєР° РїРѕ РґСѓР±Р»СЏРј',2,1)
 /
 INSERT INTO points
 (mid, name, parent, ind)
 VALUES
-(7,'Сверка параметров УСД Итек',2,1)
+(7,'РЎРІРµСЂРєР° РїР°СЂР°РјРµС‚СЂРѕРІ РЈРЎР” РС‚РµРє',2,1)
 /
 INSERT INTO points
 (mid, name, parent, ind)
 VALUES
-(8,'Сверка связных номеров',2,1)
+(8,'РЎРІРµСЂРєР° СЃРІСЏР·РЅС‹С… РЅРѕРјРµСЂРѕРІ',2,1)
 /
 INSERT INTO points
 (mid, name, parent, ind)
 VALUES
-(9,'Сверка суточных расходов',2,1)
+(9,'РЎРІРµСЂРєР° СЃСѓС‚РѕС‡РЅС‹С… СЂР°СЃС…РѕРґРѕРІ',2,1)
 
 /
 INSERT INTO points
 (mid, name, parent, ind)
 VALUES
-(10,'Сверка месячных расходов',2,1)
+(10,'РЎРІРµСЂРєР° РјРµСЃСЏС‡РЅС‹С… СЂР°СЃС…РѕРґРѕРІ',2,1)
 /
 INSERT INTO points
 (mid, name, parent, ind)
 VALUES
-(11,'Сверка по балансам шин',2,1)
+(11,'РЎРІРµСЂРєР° РїРѕ Р±Р°Р»Р°РЅСЃР°Рј С€РёРЅ',2,1)
 /
 INSERT INTO points
 (mid, name, parent, ind)
 VALUES
-(12,'Сверка переключений ОВ',2,1)
+(12,'РЎРІРµСЂРєР° РїРµСЂРµРєР»СЋС‡РµРЅРёР№ РћР’',2,1)
 /
 commit
 /
@@ -1137,7 +1137,7 @@ commit
 INSERT INTO RYDA.FORM_TEMPLATES
 (TEMPLATE_ID,PARENT,CODETEMPLATE,NAMEFORM,COMMENTFORM,ENABLECONTROLS,STEPPROFILE,NAMEALERT)
 VALUES
-(79,1,1410,'1.14. Переток Активной энергии (по декадам)','Переток Активной энергии [тыс.кВтч]',
+(79,1,1410,'1.14. РџРµСЂРµС‚РѕРє РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё (РїРѕ РґРµРєР°РґР°Рј)','РџРµСЂРµС‚РѕРє РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [С‚С‹СЃ.РєР’С‚С‡]',
 '111101',2,'')
 /
 commit
@@ -1147,34 +1147,34 @@ commit
 INSERT INTO deportprocedures
 (NPROCEDURE,VNAME,VPROCEDURE,NPERIOD,NTYPE,VMEMO)
 VALUES
-(17,'Архивация и чистка БД за сутки','background01_pg.save4kill',2,1,'Архивация и чистка БД')
+(17,'РђСЂС…РёРІР°С†РёСЏ Рё С‡РёСЃС‚РєР° Р‘Р” Р·Р° СЃСѓС‚РєРё','background01_pg.save4kill',2,1,'РђСЂС…РёРІР°С†РёСЏ Рё С‡РёСЃС‚РєР° Р‘Р”')
 /
 INSERT INTO MAKETS
 (NMAKET,NPROCEDURE,VNAME,VNOTE,NBLOCK,NCYCLE,NSHIFT)
 VALUES
-(MAKETS_SEQ.nextval,17,'Архивация и чистка БД','',0,0,400)
+(MAKETS_SEQ.nextval,17,'РђСЂС…РёРІР°С†РёСЏ Рё С‡РёСЃС‚РєР° Р‘Р”','',0,0,400)
 /
 INSERT INTO deportprocedures
 (NPROCEDURE,VNAME,VPROCEDURE,NPERIOD,NTYPE,VMEMO)
 VALUES
-(18,'Удаление данных по истечению срока','background01_pg.killdata',2,1,'Удаление данных по истечению срока')
+(18,'РЈРґР°Р»РµРЅРёРµ РґР°РЅРЅС‹С… РїРѕ РёСЃС‚РµС‡РµРЅРёСЋ СЃСЂРѕРєР°','background01_pg.killdata',2,1,'РЈРґР°Р»РµРЅРёРµ РґР°РЅРЅС‹С… РїРѕ РёСЃС‚РµС‡РµРЅРёСЋ СЃСЂРѕРєР°')
 /
 INSERT INTO MAKETS
 (NMAKET,NPROCEDURE,VNAME,VNOTE,NBLOCK,NCYCLE,NSHIFT)
 VALUES
-(MAKETS_SEQ.nextval,18,'Удаление данных по истечению срока','',1,0,400)
+(MAKETS_SEQ.nextval,18,'РЈРґР°Р»РµРЅРёРµ РґР°РЅРЅС‹С… РїРѕ РёСЃС‚РµС‡РµРЅРёСЋ СЃСЂРѕРєР°','',1,0,400)
 /
 commit
 /
 
 
 /*
---Устаревшее
+--РЈСЃС‚Р°СЂРµРІС€РµРµ
 INSERT INTO deportprocedures
 (NPROCEDURE,VNAME,VPROCEDURE,NPERIOD,NTYPE,VMEMO)
 VALUES
-(24,'Тарификация по режимным суткам','rates_pg.calcratescoef',2,1,
-'Тарификация по режимным суткам')
+(24,'РўР°СЂРёС„РёРєР°С†РёСЏ РїРѕ СЂРµР¶РёРјРЅС‹Рј СЃСѓС‚РєР°Рј','rates_pg.calcratescoef',2,1,
+'РўР°СЂРёС„РёРєР°С†РёСЏ РїРѕ СЂРµР¶РёРјРЅС‹Рј СЃСѓС‚РєР°Рј')
 /
 commit
 /
@@ -1182,15 +1182,15 @@ commit
 
 --12.02.2003
 --12.02.2003
-insert into parameter(npid,vvalue,VDESCRIPTION) values (14,'16:00','Дата начала действия вечернего плана')
+insert into parameter(npid,vvalue,VDESCRIPTION) values (14,'16:00','Р”Р°С‚Р° РЅР°С‡Р°Р»Р° РґРµР№СЃС‚РІРёСЏ РІРµС‡РµСЂРЅРµРіРѕ РїР»Р°РЅР°')
 /
-insert into parameter(npid,vvalue,VDESCRIPTION) values (15,'01:00','Дата начала действия утреннего плана')
+insert into parameter(npid,vvalue,VDESCRIPTION) values (15,'01:00','Р”Р°С‚Р° РЅР°С‡Р°Р»Р° РґРµР№СЃС‚РІРёСЏ СѓС‚СЂРµРЅРЅРµРіРѕ РїР»Р°РЅР°')
 /
 commit
 /
 
 -------17.02.2003
-insert into parameter(npid,vvalue,VDESCRIPTION) values (16,'20','Вемя устаревания данных (мин)')
+insert into parameter(npid,vvalue,VDESCRIPTION) values (16,'20','Р’РµРјСЏ СѓСЃС‚Р°СЂРµРІР°РЅРёСЏ РґР°РЅРЅС‹С… (РјРёРЅ)')
 /
 commit
 /
@@ -1201,69 +1201,69 @@ commit
 INSERT INTO RECOMPENS
 (NRECOMPENS,VNAME,NRATIO)
 VALUES
-(1,'Пром потребители ',to_number('0.8','9.9'))
+(1,'РџСЂРѕРј РїРѕС‚СЂРµР±РёС‚РµР»Рё ',to_number('0.8','9.9'))
 /
 INSERT INTO RECOMPENS
 (NRECOMPENS,VNAME,NRATIO)
 VALUES
-(2,'Тяг п/ст ж/д пер тока',1)
+(2,'РўСЏРі Рї/СЃС‚ Р¶/Рґ РїРµСЂ С‚РѕРєР°',1)
 /
 INSERT INTO RECOMPENS
 (NRECOMPENS,VNAME,NRATIO)
 VALUES
-(3,'Тяг п/ст ж/д пост тока',to_number('0.5','9.9'))
+(3,'РўСЏРі Рї/СЃС‚ Р¶/Рґ РїРѕСЃС‚ С‚РѕРєР°',to_number('0.5','9.9'))
 /
 INSERT INTO RECOMPENS
 (NRECOMPENS,VNAME,NRATIO)
 VALUES
-(4,'Непром потребители',to_number('0.6','9.9'))
+(4,'РќРµРїСЂРѕРј РїРѕС‚СЂРµР±РёС‚РµР»Рё',to_number('0.6','9.9'))
 /
 commit
 /
 
 -------24.03.2003
 INSERT INTO TASKS (TASK_ID,PARENT,TASK_COD,NAME,NUM_ARG,CHAR_ARG,REMARK)
-VALUES (67,42,611,'1.12 Ввод показаний с пропорциональной разбивкой на график нагрузки на последние сутки',NULL,'','')
+VALUES (67,42,611,'1.12 Р’РІРѕРґ РїРѕРєР°Р·Р°РЅРёР№ СЃ РїСЂРѕРїРѕСЂС†РёРѕРЅР°Р»СЊРЅРѕР№ СЂР°Р·Р±РёРІРєРѕР№ РЅР° РіСЂР°С„РёРє РЅР°РіСЂСѓР·РєРё РЅР° РїРѕСЃР»РµРґРЅРёРµ СЃСѓС‚РєРё',NULL,'','')
 /
 
 INSERT INTO parameter
 (NPID,VVALUE,VDESCRIPTION)
-values(17,'-11','Ид группы для разложения по профилю суточного расхода')
+values(17,'-11','РРґ РіСЂСѓРїРїС‹ РґР»СЏ СЂР°Р·Р»РѕР¶РµРЅРёСЏ РїРѕ РїСЂРѕС„РёР»СЋ СЃСѓС‚РѕС‡РЅРѕРіРѕ СЂР°СЃС…РѕРґР°')
 /
 
 INSERT INTO TASKS (TASK_ID,PARENT,TASK_COD,NAME,NUM_ARG,CHAR_ARG,REMARK)
-VALUES (68,42,612,'1.13 Ввод расхода с пропорциональной разбивкой на график нагрузки на последние сутки',NULL,'','')
+VALUES (68,42,612,'1.13 Р’РІРѕРґ СЂР°СЃС…РѕРґР° СЃ РїСЂРѕРїРѕСЂС†РёРѕРЅР°Р»СЊРЅРѕР№ СЂР°Р·Р±РёРІРєРѕР№ РЅР° РіСЂР°С„РёРє РЅР°РіСЂСѓР·РєРё РЅР° РїРѕСЃР»РµРґРЅРёРµ СЃСѓС‚РєРё',NULL,'','')
 /
 commit
 /
 --15.04.2003
-insert into parameter(npid,vvalue,VDESCRIPTION) values (18,'1','Необходимость округлять остатки округления')
+insert into parameter(npid,vvalue,VDESCRIPTION) values (18,'1','РќРµРѕР±С…РѕРґРёРјРѕСЃС‚СЊ РѕРєСЂСѓРіР»СЏС‚СЊ РѕСЃС‚Р°С‚РєРё РѕРєСЂСѓРіР»РµРЅРёСЏ')
 /
 commit
 /
 
 
 INSERT INTO TASKS (TASK_ID,PARENT,TASK_COD,NAME,NUM_ARG,CHAR_ARG,REMARK)
-VALUES (73,42,614,'1.18 Ввод показаний с равномерной разбивкой на график нагрузки',NULL,'','')
+VALUES (73,42,614,'1.18 Р’РІРѕРґ РїРѕРєР°Р·Р°РЅРёР№ СЃ СЂР°РІРЅРѕРјРµСЂРЅРѕР№ СЂР°Р·Р±РёРІРєРѕР№ РЅР° РіСЂР°С„РёРє РЅР°РіСЂСѓР·РєРё',NULL,'','')
 /
 INSERT INTO TASKS (TASK_ID,PARENT,TASK_COD,NAME,NUM_ARG,CHAR_ARG,REMARK)
-VALUES (69,42,615,'1.14 Ввод показаний с равномерной разбивкой на график нагрузки на последние сутки',NULL,'','')
+VALUES (69,42,615,'1.14 Р’РІРѕРґ РїРѕРєР°Р·Р°РЅРёР№ СЃ СЂР°РІРЅРѕРјРµСЂРЅРѕР№ СЂР°Р·Р±РёРІРєРѕР№ РЅР° РіСЂР°С„РёРє РЅР°РіСЂСѓР·РєРё РЅР° РїРѕСЃР»РµРґРЅРёРµ СЃСѓС‚РєРё',NULL,'','')
 /
 INSERT INTO TASKS (TASK_ID,PARENT,TASK_COD,NAME,NUM_ARG,CHAR_ARG,REMARK)
-VALUES (70,42,616,'1.15 Ввод расхода с пропорциональной разбивкой на график нагрузки',NULL,'','')
+VALUES (70,42,616,'1.15 Р’РІРѕРґ СЂР°СЃС…РѕРґР° СЃ РїСЂРѕРїРѕСЂС†РёРѕРЅР°Р»СЊРЅРѕР№ СЂР°Р·Р±РёРІРєРѕР№ РЅР° РіСЂР°С„РёРє РЅР°РіСЂСѓР·РєРё',NULL,'','')
 /
 INSERT INTO TASKS (TASK_ID,PARENT,TASK_COD,NAME,NUM_ARG,CHAR_ARG,REMARK)
-VALUES (71,42,617,'1.16 Ввод расхода с равномерной разбивкой на график нагрузки',NULL,'','')
+VALUES (71,42,617,'1.16 Р’РІРѕРґ СЂР°СЃС…РѕРґР° СЃ СЂР°РІРЅРѕРјРµСЂРЅРѕР№ СЂР°Р·Р±РёРІРєРѕР№ РЅР° РіСЂР°С„РёРє РЅР°РіСЂСѓР·РєРё',NULL,'','')
 /
 INSERT INTO TASKS (TASK_ID,PARENT,TASK_COD,NAME,NUM_ARG,CHAR_ARG,REMARK)
-VALUES (72,42,618,'1.17 Ввод расхода с равномерной разбивкой на график нагрузки на последние сутки',NULL,'','')
+VALUES (72,42,618,'1.17 Р’РІРѕРґ СЂР°СЃС…РѕРґР° СЃ СЂР°РІРЅРѕРјРµСЂРЅРѕР№ СЂР°Р·Р±РёРІРєРѕР№ РЅР° РіСЂР°С„РёРє РЅР°РіСЂСѓР·РєРё РЅР° РїРѕСЃР»РµРґРЅРёРµ СЃСѓС‚РєРё',NULL,'','')
 /
 
 insert into calcperiod (ddate) values (trunc(sysdate))
 /
 
 --08/10/2003
-insert into recompens(nrecompens,vname,nratio) values(5,'Без учета реактива',0)
+insert into recompens(nrecompens,vname,nratio) values(5,'Р‘РµР· СѓС‡РµС‚Р° СЂРµР°РєС‚РёРІР°',0)
 /
 commit
 /
@@ -1287,7 +1287,7 @@ delete from tasks where TASK_COD in (15,12,14,16,41,20,31,32,44,45,50,61,62,70,7
 commit
 /
 
-insert into parameter (NPID,VVALUE,VDESCRIPTION) values(19,to_char(sysdate,'dd.mm.yyyy'),'Расчетные сутки')
+insert into parameter (NPID,VVALUE,VDESCRIPTION) values(19,to_char(sysdate,'dd.mm.yyyy'),'Р Р°СЃС‡РµС‚РЅС‹Рµ СЃСѓС‚РєРё')
 /
 
 delete from form_templates where CODETEMPLATE in (51,53,60,61)

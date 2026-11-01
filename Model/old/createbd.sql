@@ -1,4 +1,4 @@
--------------------------- ПОСЛЕДОВАТЕЛЬНОСТИ ------------------------------------
+-------------------------- РџРћРЎР›Р•Р”РћР’РђРўР•Р›Р¬РќРћРЎРўР ------------------------------------
 CREATE SEQUENCE KNOT_SEQ MINVALUE 1 MAXVALUE 999999999999999999999999999
   INCREMENT BY 1 START WITH 1000 CACHE 20 NOORDER NOCYCLE;
 CREATE SEQUENCE TASKS_SEQ MINVALUE 1 MAXVALUE 999999999999999999999999999
@@ -48,21 +48,21 @@ CREATE SEQUENCE comport_seq MINVALUE 1 MAXVALUE 999999999999999999999999999
 CREATE SEQUENCE journal_seq MINVALUE 1 MAXVALUE 999999999999999999999999999
   INCREMENT BY 1 START WITH 1000 CACHE 20 NOORDER NOCYCLE
 /
--------------------------- ТАБЛИЦЫ -----------------------------------------------
+-------------------------- РўРђР‘Р›РР¦Р« -----------------------------------------------
 CREATE GLOBAL TEMPORARY TABLE TEXTREPORT
   (
-  norder                       NUMBER,--ид. объекта
+  norder                       NUMBER,--РёРґ. РѕР±СЉРµРєС‚Р°
   vtext                   VARCHAR2(4000)
  )
  ON COMMIT PRESERVE ROWS
  ORGANIZATION HEAP
  CACHE
 /
-COMMENT ON TABLE TEXTREPORT IS 'Отчеты PL-Sql'
+COMMENT ON TABLE TEXTREPORT IS 'РћС‚С‡РµС‚С‹ PL-Sql'
 /
-COMMENT ON COLUMN TEXTREPORT.norder IS 'Строка'
+COMMENT ON COLUMN TEXTREPORT.norder IS 'РЎС‚СЂРѕРєР°'
 /
-COMMENT ON COLUMN TEXTREPORT.vtext IS 'Текст'
+COMMENT ON COLUMN TEXTREPORT.vtext IS 'РўРµРєСЃС‚'
 /
 
 
@@ -79,13 +79,13 @@ CREATE GLOBAL TEMPORARY TABLE makettemp
 /
 create index makettemp_IDX1 on makettemp(NSUBGROUP asc)
 /
-COMMENT ON TABLE makettemp IS 'Вспомогательная для 30817 1'
+COMMENT ON TABLE makettemp IS 'Р’СЃРїРѕРјРѕРіР°С‚РµР»СЊРЅР°СЏ РґР»СЏ 30817 1'
 /
-COMMENT ON COLUMN makettemp.ngroup IS 'Группа суммирующая'
+COMMENT ON COLUMN makettemp.ngroup IS 'Р“СЂСѓРїРїР° СЃСѓРјРјРёСЂСѓСЋС‰Р°СЏ'
 /
-COMMENT ON COLUMN makettemp.nsubgroup IS 'Подгруппа'
+COMMENT ON COLUMN makettemp.nsubgroup IS 'РџРѕРґРіСЂСѓРїРїР°'
 /
-COMMENT ON COLUMN makettemp.nsign IS 'Коеф вхождения'
+COMMENT ON COLUMN makettemp.nsign IS 'РљРѕРµС„ РІС…РѕР¶РґРµРЅРёСЏ'
 /
 
 CREATE GLOBAL TEMPORARY TABLE m30817
@@ -100,15 +100,15 @@ CREATE GLOBAL TEMPORARY TABLE m30817
  ORGANIZATION HEAP
  CACHE
 /
-COMMENT ON TABLE m30817 IS 'Вспомогательная для 30817 2'
+COMMENT ON TABLE m30817 IS 'Р’СЃРїРѕРјРѕРіР°С‚РµР»СЊРЅР°СЏ РґР»СЏ 30817 2'
 /
-COMMENT ON COLUMN m30817.ngroup IS 'Группа'
+COMMENT ON COLUMN m30817.ngroup IS 'Р“СЂСѓРїРїР°'
 /
-COMMENT ON COLUMN m30817.hour IS 'Час'
+COMMENT ON COLUMN m30817.hour IS 'Р§Р°СЃ'
 /
-COMMENT ON COLUMN m30817.kwh IS 'Расход'
+COMMENT ON COLUMN m30817.kwh IS 'Р Р°СЃС…РѕРґ'
 /
-COMMENT ON COLUMN m30817.err IS 'Ошибка округления'
+COMMENT ON COLUMN m30817.err IS 'РћС€РёР±РєР° РѕРєСЂСѓРіР»РµРЅРёСЏ'
 /
 
 -- End of DDL script for M30817
@@ -135,7 +135,7 @@ alter table round_errors
 
 
 -- Start of DDL script for HALFHOUR
--- Generated 1-дек-02  2:56:32 pm
+-- Generated 1-РґРµРє-02  2:56:32 pm
 -- from oe-RYDA:11
 
 -- View HALFHOUR
@@ -343,7 +343,7 @@ SELECT
 
 
 -- Start of DDL script for BILLEVID
--- Generated 5-янв-03  2:11:28 pm
+-- Generated 5-СЏРЅРІ-03  2:11:28 pm
 -- from oe-RYDA:1
 
 -- View BILLEVID
@@ -511,7 +511,7 @@ SELECT
 -- End of DDL script for BILLEVID
 
 -- Start of DDL script for HALFHOUREVID
--- Generated 5-янв-03  2:11:35 pm
+-- Generated 5-СЏРЅРІ-03  2:11:35 pm
 -- from oe-RYDA:1
 
 -- View HALFHOUREVID
@@ -555,7 +555,7 @@ SELECT
 -- End of DDL script for HALFHOUREVID
 
 -- Start of DDL script for MONTHSEVID
--- Generated 5-янв-03  2:11:40 pm
+-- Generated 5-СЏРЅРІ-03  2:11:40 pm
 -- from oe-RYDA:1
 
 -- View MONTHSEVID
@@ -723,7 +723,7 @@ SELECT
 -- End of DDL script for MONTHSEVID
 
 -- Start of DDL script for PROFILEEVID
--- Generated 5-янв-03  2:11:45 pm
+-- Generated 5-СЏРЅРІ-03  2:11:45 pm
 -- from oe-RYDA:1
 
 -- View PROFILEEVID
@@ -780,12 +780,12 @@ SELECT
 
 -- End of DDL script for PROFILEEVID
 
--------------------------- ПЕРВИЧНЫЕ И УНИКАЛЬНЫЕ --------------------------------
+-------------------------- РџР•Р Р’РР§РќР«Р• Р РЈРќРРљРђР›Р¬РќР«Р• --------------------------------
 
--------------------------- ИНДЕКСЫ -----------------------------------------------
--------------------------- ВТОРИЧНЫЕ ---------------------------------------------
--------------------------- КОММЕНТАРИИ ------------------------------------
--------------------------- РОЛИ ------------------------------------
--------------------------- ПРАВА ------------------------------------
+-------------------------- РРќР”Р•РљРЎР« -----------------------------------------------
+-------------------------- Р’РўРћР РР§РќР«Р• ---------------------------------------------
+-------------------------- РљРћРњРњР•РќРўРђР РР ------------------------------------
+-------------------------- Р РћР›Р ------------------------------------
+-------------------------- РџР РђР’Рђ ------------------------------------
 
 

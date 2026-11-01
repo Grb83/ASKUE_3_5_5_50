@@ -33,12 +33,12 @@ __fastcall TInteriorPLProc::TInteriorPLProc(TComponent* Owner,TSplitterForm *aSP
   try
   {
      REdit = new TRichEdit(Owner);
-     //Назначаем для него свойства
+     //РќР°Р·РЅР°С‡Р°РµРј РґР»СЏ РЅРµРіРѕ СЃРІРѕР№СЃС‚РІР°
      SplitterForm->Font=FormSetupMonitors->REdPLSQLRep->Font;
      REdit->ReadOnly = true;
      REdit->WordWrap = false;
      REdit->ScrollBars=ssBoth;
-     //e Назначаем для него свойства
+     //e РќР°Р·РЅР°С‡Р°РµРј РґР»СЏ РЅРµРіРѕ СЃРІРѕР№СЃС‚РІР°
      OnProgressBarStepBy(this);//10
   }
   catch(Exception &exception)
@@ -51,17 +51,17 @@ void __fastcall TInteriorPLProc::Place(void)
 {
   try
   {
-    //Имя
+    //РРјСЏ
     AnsiString prStr = fd->NameForm + Reconst_smes123_2 + fd->NameGroup;
-    //e Имя
+    //e РРјСЏ
     dynamic_cast<TBaseMonitorForm*>(Owner)->Caption = prStr;
     dynamic_cast<TBaseMonitorForm*>(Owner)->HelpContext = 31;
     SplitterForm->AddChild(NULL, REdit, alClient);
     OnProgressBarStepBy(this);//20
 
-    //Загружаем файл
+    //Р—Р°РіСЂСѓР¶Р°РµРј С„Р°Р№Р»
     LoadReportData(REdit);
-    //e Загружаем файл
+    //e Р—Р°РіСЂСѓР¶Р°РµРј С„Р°Р№Р»
 
     OnProgressBarStepBy(NULL);
   }catch(Exception &e){
@@ -82,8 +82,8 @@ void __fastcall TInteriorPLProc::Invalidate(int Table)
   if(Table==1 /*PROFILE*/)
   {
     dynamic_cast<TBaseMonitorForm*>(Owner)->Cursor = crHourGlass;
-    //Возможно, обновление
-    //e Возможно, обновление
+    //Р’РѕР·РјРѕР¶РЅРѕ, РѕР±РЅРѕРІР»РµРЅРёРµ
+    //e Р’РѕР·РјРѕР¶РЅРѕ, РѕР±РЅРѕРІР»РµРЅРёРµ
     dynamic_cast<TBaseMonitorForm*>(Owner)->Cursor = crDefault;
     OnProgressBarStepBy(NULL);
   }
@@ -104,11 +104,11 @@ void __fastcall TInteriorPLProc::UnivPrintRep(TComponent* Owner,int lMode,TRichE
     }
     delete PrDialog;
   }else{
-     //Печать в DOS
-       //Формируем файл в кодировке DOS
+     //РџРµС‡Р°С‚СЊ РІ DOS
+       //Р¤РѕСЂРјРёСЂСѓРµРј С„Р°Р№Р» РІ РєРѕРґРёСЂРѕРІРєРµ DOS
      AnsiString prTmp = ExtractFilePath(Application->ExeName) + DOS_PRINT_TEMP_FILE_NAME;
      WriteRepToFile(prTmp, 0,reTmp);
-       //e Формируем файл в кодировке DOS
+       //e Р¤РѕСЂРјРёСЂСѓРµРј С„Р°Р№Р» РІ РєРѕРґРёСЂРѕРІРєРµ DOS
      AnsiString S,tmpstr;
      char ADevice[256],ADriver[256],APort[256];
      UINT ADeviceMode;
@@ -148,8 +148,8 @@ void __fastcall TInteriorPLProc::UnivSaveRepToFile(TSaveDialog *aSaveDialog,TRic
    if(aSaveDialog->Execute())
    {
       if(aSaveDialog->FilterIndex == 1)
-         reTmp->Lines->SaveToFile(aSaveDialog->FileName); //rtf вариант
-      else  //Пишем в файл
+         reTmp->Lines->SaveToFile(aSaveDialog->FileName); //rtf РІР°СЂРёР°РЅС‚
+      else  //РџРёС€РµРј РІ С„Р°Р№Р»
          WriteRepToFile(aSaveDialog->FileName, 3 - aSaveDialog->FilterIndex,reTmp);
    }
 }
@@ -181,14 +181,14 @@ void __fastcall TInteriorPLProc::WriteRepToFile(AnsiString PPName, int PPPrintMo
    {
       AnsiString prMStr = reTmp->Lines->Strings[i]+"\n";
       if(!PPPrintMode){
-         //Для случая DOS производим перекодировку
+         //Р”Р»СЏ СЃР»СѓС‡Р°СЏ DOS РїСЂРѕРёР·РІРѕРґРёРј РїРµСЂРµРєРѕРґРёСЂРѕРІРєСѓ
          char prChs[5000];
          CharToOem(
             (LPCSTR)(prMStr.c_str()),	// pointer to string to translate
             (LPSTR)prChs 	// pointer to translated string
          );
          prMStr = prChs;
-         //e Для случая DOS производим перекодировку
+         //e Р”Р»СЏ СЃР»СѓС‡Р°СЏ DOS РїСЂРѕРёР·РІРѕРґРёРј РїРµСЂРµРєРѕРґРёСЂРѕРІРєСѓ
       }
 
       // static
@@ -197,15 +197,15 @@ void __fastcall TInteriorPLProc::WriteRepToFile(AnsiString PPName, int PPPrintMo
        //GRB ADD 12.11.2018
        if (PPPrintMode==-1){   //CSV
         if (isStick){
-        if (prMStr.AnsiPos("|")==0) { //нету палки - считаем что это шапка и выводим как есть
+        if (prMStr.AnsiPos("|")==0) { //РЅРµС‚Сѓ РїР°Р»РєРё - СЃС‡РёС‚Р°РµРј С‡С‚Рѕ СЌС‚Рѕ С€Р°РїРєР° Рё РІС‹РІРѕРґРёРј РєР°Рє РµСЃС‚СЊ
                 write(prLogFileH, prMStr.c_str(), strlen(prMStr.c_str()));
                 continue;
         }
-        else{   //нашли хотя бы одну палку - меняем её на разделитель ;
+        else{   //РЅР°С€Р»Рё С…РѕС‚СЏ Р±С‹ РѕРґРЅСѓ РїР°Р»РєСѓ - РјРµРЅСЏРµРј РµС‘ РЅР° СЂР°Р·РґРµР»РёС‚РµР»СЊ ;
           prMStr=StringReplace(prMStr,"|",";",Flags);
         }
-        }else{ //нету вообще во всём в тексте палок
-          prMStr=StringReplace(prMStr,":",";",Flags);//оставляем по-старому
+        }else{ //РЅРµС‚Сѓ РІРѕРѕР±С‰Рµ РІРѕ РІСЃС‘Рј РІ С‚РµРєСЃС‚Рµ РїР°Р»РѕРє
+          prMStr=StringReplace(prMStr,":",";",Flags);//РѕСЃС‚Р°РІР»СЏРµРј РїРѕ-СЃС‚Р°СЂРѕРјСѓ
         }
         }
         //END OF ADD

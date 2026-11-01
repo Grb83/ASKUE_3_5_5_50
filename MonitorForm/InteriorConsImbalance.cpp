@@ -15,7 +15,7 @@ __fastcall TConsumImbalance::TConsumImbalance(TComponent* Owner,TSplitterForm *a
 		dynamic_cast<TBaseMonitorForm*>(Owner)->MenuItemAttr->Enabled=true;
 		dynamic_cast<TBaseMonitorForm*>(Owner)->MenuItemAttr->OnClick=OnClickMenuItemAttr;
 		dynamic_cast<TBaseMonitorForm*>(Owner)->PopupMenuDU->OnPopup=OnPopupMenuDU;
-                //GRB ADD - подписываем на перерисовку
+                //GRB ADD - РїРѕРґРїРёСЃС‹РІР°РµРј РЅР° РїРµСЂРµСЂРёСЃРѕРІРєСѓ
                 ((TBaseMonitorForm*)Owner)->OnResize=TDUInterior::FormShow;
 }
 //---------------------------------------------------------------------------
@@ -120,7 +120,7 @@ void __fastcall TConsumImbalance::selectData(TOraQuery *qwInter )
       }
     }
     if(fd->CodeTemplate==ConsumImbalance_POW_F){
-      // KAS Текущую дату на название формы
+      // KAS РўРµРєСѓС‰СѓСЋ РґР°С‚Сѓ РЅР° РЅР°Р·РІР°РЅРёРµ С„РѕСЂРјС‹
       dynamic_cast<TBaseMonitorForm*>(Owner)->Caption = fd->NameGroup+Reconst_smes108_7+GetCurrentDate(qwInter);
     }else{
       switch (fd->StepProfile){
@@ -199,7 +199,7 @@ void __fastcall TConsumImbalance::selectData(TOraQuery *qwInter )
       OnProgressBarStepBy(this);
     }
     if(fd->CodeTemplate==ConsumImbalance_POW_F){
-      dynamic_cast<TBaseMonitorForm*>(Owner)->Caption=fd->NameGroup+" на "+currTime;
+      dynamic_cast<TBaseMonitorForm*>(Owner)->Caption=fd->NameGroup+" РЅР° "+currTime;
       dynamic_cast<TBaseMonitorForm*>(Owner)->PaintBoxCaption->Invalidate();
     }
   }catch(Exception &e){
@@ -226,7 +226,7 @@ void __fastcall TConsumImbalance::dataInColumns(void)
 	char ptr_hour[8];
 	bool isSumm;
 	AnsiString RowsHeight;
-	//Подготавливаем переменные поля для приема
+	//РџРѕРґРіРѕС‚Р°РІР»РёРІР°РµРј РїРµСЂРµРјРµРЅРЅС‹Рµ РїРѕР»СЏ РґР»СЏ РїСЂРёРµРјР°
 	ptr = DrawTable->StructStrings->GetArray();
     TFormSetupMonitors*psm = new TFormSetupMonitors(Application);
 	if(dynamic_cast<TBaseMonitorForm*>(Owner)->isSmallFont)
@@ -284,12 +284,12 @@ void __fastcall TConsumImbalance::dataInColumns(void)
 	DrawTable->RowsHeight=RowsHeight;
 }
 //---------------------------------------------------------------------------
-//Получает данные о считываемой таблице
+//РџРѕР»СѓС‡Р°РµС‚ РґР°РЅРЅС‹Рµ Рѕ СЃС‡РёС‚С‹РІР°РµРјРѕР№ С‚Р°Р±Р»РёС†Рµ
 void __fastcall TConsumImbalance::formDescr( void )
 {
    fd->IdGroup = GroupJump(fd->IdGroup);
 
-    //Заполняем необходимые поля описания формы
+    //Р—Р°РїРѕР»РЅСЏРµРј РЅРµРѕР±С…РѕРґРёРјС‹Рµ РїРѕР»СЏ РѕРїРёСЃР°РЅРёСЏ С„РѕСЂРјС‹
 
   dmMain->oqInterCursor->Params->Clear();
   dmMain->oqInterCursor->SQL->Text = " begin "+SchemeName+"interior_pg.Interior_formDescr_p(:par1,:par2,:par3,:par4,:par5,:par6,:par7);end;";

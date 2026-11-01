@@ -40,7 +40,7 @@ __published:	// IDE-managed Components
   void __fastcall tvMonitorsKeyDown(TObject *Sender, WORD &Key,
           TShiftState Shift);
 private:	// User declarations
-    typedef struct {  //МОНИТОРЫ
+    typedef struct {  //РњРћРќРРўРћР Р«
         long Monitor_Id;
         long MSchema;
         char Name[MON_NAME_LEN];
@@ -49,9 +49,9 @@ private:	// User declarations
     }MONITORS;
 public:		// User declarations
     __fastcall TfmMonitorList(TComponent* Owner);
-    bool __fastcall ReadTreeNode(TTreeNode* NodeParent);// Читает ветку дерева
+    bool __fastcall ReadTreeNode(TTreeNode* NodeParent);// Р§РёС‚Р°РµС‚ РІРµС‚РєСѓ РґРµСЂРµРІР°
     bool __fastcall ProvOpenMonitor(TObject *Sender,long aMonitorID);
-    bool __fastcall TabuByProperty();  // по мотивам аналогичной ф-ии в SupperMain'e - вертаем нужно ли отключать дереао с мониторами если клиент c неродным кодом предприятия (уехал на другую базу)
+    bool __fastcall TabuByProperty();  // РїРѕ РјРѕС‚РёРІР°Рј Р°РЅР°Р»РѕРіРёС‡РЅРѕР№ С„-РёРё РІ SupperMain'e - РІРµСЂС‚Р°РµРј РЅСѓР¶РЅРѕ Р»Рё РѕС‚РєР»СЋС‡Р°С‚СЊ РґРµСЂРµР°Рѕ СЃ РјРѕРЅРёС‚РѕСЂР°РјРё РµСЃР»Рё РєР»РёРµРЅС‚ c РЅРµСЂРѕРґРЅС‹Рј РєРѕРґРѕРј РїСЂРµРґРїСЂРёСЏС‚РёСЏ (СѓРµС…Р°Р» РЅР° РґСЂСѓРіСѓСЋ Р±Р°Р·Сѓ)
 
 };
 //---------------------------------------------------------------------------

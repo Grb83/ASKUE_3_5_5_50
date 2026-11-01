@@ -68,12 +68,12 @@ bool __fastcall TfmBlockMess::fmBlockMessShow(TComponent* Owner)
 void TfmBlockMess::vRead(long MeterType,long Sort_mess, long Sort_bits)
 {
 
-  oqMessage->Close();      // чтение сообщений
+  oqMessage->Close();      // С‡С‚РµРЅРёРµ СЃРѕРѕР±С‰РµРЅРёР№
   oqMessage->ParamByName("METERTYPE")->AsInteger=MeterType;
   oqMessage->ParamByName("NSORT")->AsInteger=Sort_mess;
   oqMessage->Execute();
 
-  oqBits->Close();     // чтение битов состояний
+  oqBits->Close();     // С‡С‚РµРЅРёРµ Р±РёС‚РѕРІ СЃРѕСЃС‚РѕСЏРЅРёР№
   oqBits->ParamByName("METERTYPE")->AsInteger=MeterType;
   oqBits->ParamByName("NSORT")->AsInteger=Sort_bits;
   oqBits->Execute();
@@ -203,7 +203,7 @@ void __fastcall TfmBlockMess::grMessageTitleBtnClick(TObject *Sender,
 //---------------------------------------------------------------------------
 void __fastcall TfmBlockMess::grMessageKeyPress(TObject *Sender, char &Key)
 {
-  if(Key==32)// нажатие Пробел
+  if(Key==32)// РЅР°Р¶Р°С‚РёРµ РџСЂРѕР±РµР»
     grMessageDblClick(this);
 
 }

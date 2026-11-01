@@ -20,15 +20,15 @@ TLastSaveForm *LastSaveForm;
 __fastcall TLastSaveForm::TLastSaveForm(TComponent* Owner, AnsiString Name, long mid, TAccess a)
    : TMainForm(Owner,NULL,a), Mid(mid), chig(0)
 {
-  bool lIsChan=false; //Канал
+  bool lIsChan=false; //РљР°РЅР°Р»
   if(dynamic_cast<TFormEditFiders*>(Owner)){
-        //TaskName = AnsiString("Состояние опроса для точки <")+Name+">";
+        //TaskName = AnsiString("РЎРѕСЃС‚РѕСЏРЅРёРµ РѕРїСЂРѕСЃР° РґР»СЏ С‚РѕС‡РєРё <")+Name+">";
         TaskName = AnsiString(Reconst_smes42_2)+Name+">";
         gbState->Caption=Reconst_smes42_3;
     }
     if(dynamic_cast<TfmEditRequestPlan*>(Owner)){
         lIsChan = true;
-        //TaskName = AnsiString("Состояние опроса для канала <")+Name+">";
+        //TaskName = AnsiString("РЎРѕСЃС‚РѕСЏРЅРёРµ РѕРїСЂРѕСЃР° РґР»СЏ РєР°РЅР°Р»Р° <")+Name+">";
         TaskName = AnsiString(Reconst_smes42_2)+Name+">";
         gbState->Caption=Reconst_smes42_5;
     }
@@ -98,15 +98,15 @@ void __fastcall TLastSaveForm::loadDate()
        if(accOFF >= TASK_RIGHTS_READ){
           switch (oqLastSave->FieldByName("NOFF")->AsInteger){
             case 1:
-               lbStateOFF->Caption="Отключен "+oqLastSave->FieldByName("DOFF")->AsDateTime.FormatString("dd.mm.yyyy hh:nn:ss");
+               lbStateOFF->Caption="РћС‚РєР»СЋС‡РµРЅ "+oqLastSave->FieldByName("DOFF")->AsDateTime.FormatString("dd.mm.yyyy hh:nn:ss");
                lbStateOFF->Font->Color=clBlue;
                break;
             case 0: ;
-               lbStateOFF->Caption="Включен "+oqLastSave->FieldByName("DOFF")->AsDateTime.FormatString("dd.mm.yyyy hh:nn:ss");
+               lbStateOFF->Caption="Р’РєР»СЋС‡РµРЅ "+oqLastSave->FieldByName("DOFF")->AsDateTime.FormatString("dd.mm.yyyy hh:nn:ss");
                lbStateOFF->Font->Color=clWindowText;
                break;
             default:
-               lbStateOFF->Caption="Неизвестно";
+               lbStateOFF->Caption="РќРµРёР·РІРµСЃС‚РЅРѕ";
                lbStateOFF->Font->Color=clWindowText;
           }
           AnsiString lCMD;
@@ -114,21 +114,21 @@ void __fastcall TLastSaveForm::loadDate()
           if(!oqLastSave->FieldByName("DCMDOFF")->AsString.IsEmpty()){
             switch (lcmdoff){
               case 1:
-                lCMD="на ОТКЛЮЧЕНИЕ";
+                lCMD="РЅР° РћРўРљР›Р®Р§Р•РќРР•";
                 break;
               case 2:
-                lCMD="на ВКЛЮЧЕНИЕ";
+                lCMD="РЅР° Р’РљР›Р®Р§Р•РќРР•";
                 break;
               default:
-                lCMD="ОТМЕНА";
+                lCMD="РћРўРњР•РќРђ";
                 break;
             }
-            lbCMD->Caption="Команда "+lCMD+" выдана "+oqLastSave->FieldByName("DCMDOFF")->AsDateTime.FormatString("dd.mm.yyyy hh:nn:ss");
+            lbCMD->Caption="РљРѕРјР°РЅРґР° "+lCMD+" РІС‹РґР°РЅР° "+oqLastSave->FieldByName("DCMDOFF")->AsDateTime.FormatString("dd.mm.yyyy hh:nn:ss");
             if(lcmdoff==1||lcmdoff==2){
               if(oqLastSave->FieldByName("DEXECMDOFF")->AsString.IsEmpty())
-                lbCMDState->Caption="Команда ожидает передачи роутеру.";
+                lbCMDState->Caption="РљРѕРјР°РЅРґР° РѕР¶РёРґР°РµС‚ РїРµСЂРµРґР°С‡Рё СЂРѕСѓС‚РµСЂСѓ.";
               else
-                lbCMDState->Caption="Команда передана роутеру "+oqLastSave->FieldByName("DEXECMDOFF")->AsDateTime.FormatString("dd.mm.yyyy hh:nn:ss");
+                lbCMDState->Caption="РљРѕРјР°РЅРґР° РїРµСЂРµРґР°РЅР° СЂРѕСѓС‚РµСЂСѓ "+oqLastSave->FieldByName("DEXECMDOFF")->AsDateTime.FormatString("dd.mm.yyyy hh:nn:ss");
             }else
               lbCMDState->Caption="";
           }else{

@@ -14,13 +14,13 @@
 //---------------------------------------------------------------------------
 enum WindowType {wtSaveAs, wtEdit};
 struct stMonitors
-{  //МОНИТОРЫ
+{  //РњРћРќРРўРћР Р«
 	 long Monitor_Id;
 	 long MSchema;
 	 char Name[150];
 	 long DSize;
     long HaveChild;
-    long State; // 0-не трогали 1-добавили 2-изменили
+    long State; // 0-РЅРµ С‚СЂРѕРіР°Р»Рё 1-РґРѕР±Р°РІРёР»Рё 2-РёР·РјРµРЅРёР»Рё
 };
 class TfmSaveMonitorAs : public TForm
 {
@@ -67,14 +67,14 @@ __published:	// IDE-managed Components
 private:	// User declarations
     bool __fastcall FindMonitorName(TTreeNode *aNode);
     bool TreeIsEdit;
-    long *Monitors_Del; // id тех мониторов которые удалены списка
-                              //  и необходимо удалить из таблицы
+    long *Monitors_Del; // id С‚РµС… РјРѕРЅРёС‚РѕСЂРѕРІ РєРѕС‚РѕСЂС‹Рµ СѓРґР°Р»РµРЅС‹ СЃРїРёСЃРєР°
+                              //  Рё РЅРµРѕР±С…РѕРґРёРјРѕ СѓРґР°Р»РёС‚СЊ РёР· С‚Р°Р±Р»РёС†С‹
     int Monitors_Del_Count;
     WindowType FWinType;
 public:		// User declarations
 	__fastcall TfmSaveMonitorAs(TComponent* Owner);
 	virtual __fastcall ~TfmSaveMonitorAs();
-        bool __fastcall ReadTreeNode(TTreeNode* NodeParent);// Читает ветку дерева
+        bool __fastcall ReadTreeNode(TTreeNode* NodeParent);// Р§РёС‚Р°РµС‚ РІРµС‚РєСѓ РґРµСЂРµРІР°
         void __fastcall AddInsGroup(TTreeNode *Node);
         bool __fastcall tvMonitorsSave();
         long Monitor_Id, nParent;

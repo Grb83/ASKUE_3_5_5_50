@@ -98,7 +98,7 @@ void __fastcall TFormCountParam::FormCreate(TObject *Sender)
 void __fastcall TFormCountParam::BitBtn3Click(TObject *Sender)
 {//segned
     strcpy(tBill[0].Name,TreeTable[0].Name);
-    if (!first)   //åñëè ïåðâîå îòêðûòèå - ìàññèâ åùå íå çàïîëíåí, çàïîëíÿåì
+    if (!first)   //ÐµÑÐ»Ð¸ Ð¿ÐµÑ€Ð²Ð¾Ðµ Ð¾Ñ‚ÐºÑ€Ñ‹Ñ‚Ð¸Ðµ - Ð¼Ð°ÑÑÐ¸Ð² ÐµÑ‰Ðµ Ð½Ðµ Ð·Ð°Ð¿Ð¾Ð»Ð½ÐµÐ½, Ð·Ð°Ð¿Ð¾Ð»Ð½ÑÐµÐ¼
     {
       oqMeterDemIndic->Close();
       oqMeterDemIndic->ParamByName("ddate")->AsDateTime = StrToDateTime(DateTimePicker1->Date + Edit12->Text);
@@ -276,8 +276,8 @@ void __fastcall TFormCountParam::Edit12Change(TObject *Sender)
 bool  TFormCountParam::TreeWriteNew()
 {
   double GetEnerInt;
-// Add Kas 20.11.01  Îïðåäåëÿåì åñëè åñòü ïîêàçàíèÿ ïî çàìåíÿåìîìó ñ÷åò÷èêó ñ äàòîé áîëüøå ÷åì äàòà çàìåíû
-//                   òî íå äàåì çàìåíÿòü
+// Add Kas 20.11.01  ÐžÐ¿Ñ€ÐµÐ´ÐµÐ»ÑÐµÐ¼ ÐµÑÐ»Ð¸ ÐµÑÑ‚ÑŒ Ð¿Ð¾ÐºÐ°Ð·Ð°Ð½Ð¸Ñ Ð¿Ð¾ Ð·Ð°Ð¼ÐµÐ½ÑÐµÐ¼Ð¾Ð¼Ñƒ ÑÑ‡ÐµÑ‚Ñ‡Ð¸ÐºÑƒ Ñ Ð´Ð°Ñ‚Ð¾Ð¹ Ð±Ð¾Ð»ÑŒÑˆÐµ Ñ‡ÐµÐ¼ Ð´Ð°Ñ‚Ð° Ð·Ð°Ð¼ÐµÐ½Ñ‹
+//                   Ñ‚Ð¾ Ð½Ðµ Ð´Ð°ÐµÐ¼ Ð·Ð°Ð¼ÐµÐ½ÑÑ‚ÑŒ
   char Min_DT[20], Max_DT[20], ChangeDate[16], Mtrsn[20];
   unsigned long DateCountStr = 0;
   strcpy(Mtrsn, Edit3->Text.c_str());
@@ -333,7 +333,7 @@ bool  TFormCountParam::TreeWriteNew()
     if(Application->MessageBox(StrMsgErr.c_str(), Application->Title.c_str(), MB_YESNO|MB_ICONWARNING)==IDNO)
       return false;
   }
-  //---------- Ïðèâÿçêà äàííûõ îáíîâëåíèÿ ñ÷åò÷èêà ----------------------
+  //---------- ÐŸÑ€Ð¸Ð²ÑÐ·ÐºÐ° Ð´Ð°Ð½Ð½Ñ‹Ñ… Ð¾Ð±Ð½Ð¾Ð²Ð»ÐµÐ½Ð¸Ñ ÑÑ‡ÐµÑ‚Ñ‡Ð¸ÐºÐ° ----------------------
   try{
     switch(TypeCount->Enertype){
       case 1:   meterDemIndic[0] = Edit23->Text.ToDouble(); meterNewIndic[5] = Edit24->Text.ToDouble(); meterNewIndic[0] = Edit25->Text.ToDouble(); break;

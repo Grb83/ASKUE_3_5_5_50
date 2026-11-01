@@ -29,17 +29,17 @@
 #define REG_posReactiveMinusCol "posReactiveMinusCol"
 #define REG_usevth "usevth"
 #define REG_NLS_LANGUAGE "NLS_LANGUAGE"
-#define nRUSSIAN "Русский"
-#define nENGLISH "Английский"
+#define nRUSSIAN "Р СѓСЃСЃРєРёР№"
+#define nENGLISH "РђРЅРіР»РёР№СЃРєРёР№"
 
 //---------------------------------------------------------------------------
-/*! Внутренний класс
+/*! Р’РЅСѓС‚СЂРµРЅРЅРёР№ РєР»Р°СЃСЃ
 */
 class TImportDatafilesFormPriv
 {
 public:
-  /*! Конструктор, где:
-      \param ffname - полное имя файла
+  /*! РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ, РіРґРµ:
+      \param ffname - РїРѕР»РЅРѕРµ РёРјСЏ С„Р°Р№Р»Р°
   */
   TImportDatafilesFormPriv()
     :xlMaximized(0xFFFFEFD7), xlMinimized(0xFFFFEFD4), xlNormal(0xFFFFEFD1)
@@ -52,46 +52,46 @@ public:
   { disconnectEx();
   }
 
-  /*! Присоединение к Excel'ю или запуск нового, где:
-      \param ffname - полное имя файла
+  /*! РџСЂРёСЃРѕРµРґРёРЅРµРЅРёРµ Рє Excel'СЋ РёР»Рё Р·Р°РїСѓСЃРє РЅРѕРІРѕРіРѕ, РіРґРµ:
+      \param ffname - РїРѕР»РЅРѕРµ РёРјСЏ С„Р°Р№Р»Р°
   */
   bool __fastcall connectEx(AnsiString ffname);
-  /*! Отсоединение от Excel, где:
-      \param fclose - признак закрытия Excel (default - false)
+  /*! РћС‚СЃРѕРµРґРёРЅРµРЅРёРµ РѕС‚ Excel, РіРґРµ:
+      \param fclose - РїСЂРёР·РЅР°Рє Р·Р°РєСЂС‹С‚РёСЏ Excel (default - false)
 
-      Если \b fclose равен true, то Excel закрывается и происходит
-        отсоединение от него, иначе только онсоединение.
+      Р•СЃР»Рё \b fclose СЂР°РІРµРЅ true, С‚Рѕ Excel Р·Р°РєСЂС‹РІР°РµС‚СЃСЏ Рё РїСЂРѕРёСЃС…РѕРґРёС‚
+        РѕС‚СЃРѕРµРґРёРЅРµРЅРёРµ РѕС‚ РЅРµРіРѕ, РёРЅР°С‡Рµ С‚РѕР»СЊРєРѕ РѕРЅСЃРѕРµРґРёРЅРµРЅРёРµ.
   */
   void __fastcall disconnectEx(bool fclose = false);
-  /*! Проверка на присоединение к Excel
+  /*! РџСЂРѕРІРµСЂРєР° РЅР° РїСЂРёСЃРѕРµРґРёРЅРµРЅРёРµ Рє Excel
 
-      \return true вслучае присоединения, иначе - false.
+      \return true РІСЃР»СѓС‡Р°Рµ РїСЂРёСЃРѕРµРґРёРЅРµРЅРёСЏ, РёРЅР°С‡Рµ - false.
   */
   bool __fastcall isConnected()
   { return  !(VarIsNull(excel) || VarIsNull(book));
   }
-  /*! выбор необходимой страницы Excel, где:
-      \param sheetname - Строка с наименованием необходимой страницы
+  /*! РІС‹Р±РѕСЂ РЅРµРѕР±С…РѕРґРёРјРѕР№ СЃС‚СЂР°РЅРёС†С‹ Excel, РіРґРµ:
+      \param sheetname - РЎС‚СЂРѕРєР° СЃ РЅР°РёРјРµРЅРѕРІР°РЅРёРµРј РЅРµРѕР±С…РѕРґРёРјРѕР№ СЃС‚СЂР°РЅРёС†С‹
 
-      \return true если нужная страница выбрана, иначе - false.
+      \return true РµСЃР»Рё РЅСѓР¶РЅР°СЏ СЃС‚СЂР°РЅРёС†Р° РІС‹Р±СЂР°РЅР°, РёРЅР°С‡Рµ - false.
 
-      \attention вслучае выбора страницы переменная \b sheet
-        принимает значение данной страницы, иначе ей присваивается
-        значение \b Null()
+      \attention РІСЃР»СѓС‡Р°Рµ РІС‹Р±РѕСЂР° СЃС‚СЂР°РЅРёС†С‹ РїРµСЂРµРјРµРЅРЅР°СЏ \b sheet
+        РїСЂРёРЅРёРјР°РµС‚ Р·РЅР°С‡РµРЅРёРµ РґР°РЅРЅРѕР№ СЃС‚СЂР°РЅРёС†С‹, РёРЅР°С‡Рµ РµР№ РїСЂРёСЃРІР°РёРІР°РµС‚СЃСЏ
+        Р·РЅР°С‡РµРЅРёРµ \b Null()
   */
   bool __fastcall setSheet(AnsiString sheetname);
   bool __fastcall setSheet(int sheetnum);
-  /*! Закрытие книги, где:
-      \param fclose - признак сохранения книги
+  /*! Р—Р°РєСЂС‹С‚РёРµ РєРЅРёРіРё, РіРґРµ:
+      \param fclose - РїСЂРёР·РЅР°Рє СЃРѕС…СЂР°РЅРµРЅРёСЏ РєРЅРёРіРё
   */
   void __fastcall closeBook(bool fclose);
 
-  Variant excel;    //===== Объект Excel'я
-  Variant book;     //===== Объект загруженная WorkBook
-  Variant sheet;    //===== Объект текущей страницы 
+  Variant excel;    //===== РћР±СЉРµРєС‚ Excel'СЏ
+  Variant book;     //===== РћР±СЉРµРєС‚ Р·Р°РіСЂСѓР¶РµРЅРЅР°СЏ WorkBook
+  Variant sheet;    //===== РћР±СЉРµРєС‚ С‚РµРєСѓС‰РµР№ СЃС‚СЂР°РЅРёС†С‹ 
 
-  AnsiString  fullname;   //===== Полное имя файла шаблона
-  AnsiString  fname;      //===== Только имя файла шаблона
+  AnsiString  fullname;   //===== РџРѕР»РЅРѕРµ РёРјСЏ С„Р°Р№Р»Р° С€Р°Р±Р»РѕРЅР°
+  AnsiString  fname;      //===== РўРѕР»СЊРєРѕ РёРјСЏ С„Р°Р№Р»Р° С€Р°Р±Р»РѕРЅР°
 
 private:
   const int xlMaximized;
@@ -108,7 +108,7 @@ bool __fastcall TImportDatafilesFormPriv::connectEx(AnsiString ffname)
   fullname  = ffname;
   fname     = ExtractFileName(ffname);
 
-  bool  fNew  = false;    //===== признак вновь открытого Excel
+  bool  fNew  = false;    //===== РїСЂРёР·РЅР°Рє РІРЅРѕРІСЊ РѕС‚РєСЂС‹С‚РѕРіРѕ Excel
   try
   { if (!isConnected())
     { try
@@ -231,7 +231,7 @@ inline TSL7000Params::TSL7000Params()
   posReactiveMinusRow = "4";
   posReactiveMinusCol = "1";
 
-  DataWorksheetTemplate = "DD Month YYYY \"г\".";
+  DataWorksheetTemplate = "DD Month YYYY \"Рі\".";
   NLS_LANGUAGE  = "RUSSIAN";
   TimeStep      = "Interval End";
 }
@@ -284,10 +284,10 @@ void __fastcall TImportDatafilesForm::FormShow(TObject *Sender)
    lvFilesChange(Sender, NULL, ctState);
 }
 //---------------------------------------------------------------------------
-// Загрузка выбранных файлов
+// Р—Р°РіСЂСѓР·РєР° РІС‹Р±СЂР°РЅРЅС‹С… С„Р°Р№Р»РѕРІ
 void __fastcall TImportDatafilesForm::vSave(TObject *Sender)
 {
-  if(customer_id==1&&MessageBox(Handle,"Выполнить загрузку данных?",Application->Title.c_str(),MB_YESNO | MB_ICONQUESTION | MB_DEFBUTTON1) != IDYES)
+  if(customer_id==1&&MessageBox(Handle,"Р’С‹РїРѕР»РЅРёС‚СЊ Р·Р°РіСЂСѓР·РєСѓ РґР°РЅРЅС‹С…?",Application->Title.c_str(),MB_YESNO | MB_ICONQUESTION | MB_DEFBUTTON1) != IDYES)
     return;
 
    for(int i=0; i<lvFiles->Items->Count; i++){
@@ -327,7 +327,7 @@ void __fastcall TImportDatafilesForm::vSave(TObject *Sender)
    }
 }
 //---------------------------------------------------------------------------
-// Выбор ФАЙлов
+// Р’С‹Р±РѕСЂ Р¤РђР™Р»РѕРІ
 void __fastcall TImportDatafilesForm::vNew(TObject *Sender)
 {
    TListItem*li;
@@ -345,7 +345,7 @@ void __fastcall TImportDatafilesForm::vNew(TObject *Sender)
       iaParams->Enabled = true;
 }
 //---------------------------------------------------------------------------
-// Удалить файлы
+// РЈРґР°Р»РёС‚СЊ С„Р°Р№Р»С‹
 void __fastcall TImportDatafilesForm::vDelete(TObject *Sender)
 {
    while(lvFiles->Selected){
@@ -362,7 +362,7 @@ void __fastcall TImportDatafilesForm::vDelete(TObject *Sender)
    }
 }
 //---------------------------------------------------------------------------
-// Удалить все файлы
+// РЈРґР°Р»РёС‚СЊ РІСЃРµ С„Р°Р№Р»С‹
 void __fastcall TImportDatafilesForm::vParams(TObject* Sender)
 {
    lvFiles->Items->BeginUpdate();
@@ -376,7 +376,7 @@ void __fastcall TImportDatafilesForm::vParams(TObject* Sender)
    iaCheck->Enabled = false;
 }
 //---------------------------------------------------------------------------
-// удаление пункта из списка файлов
+// СѓРґР°Р»РµРЅРёРµ РїСѓРЅРєС‚Р° РёР· СЃРїРёСЃРєР° С„Р°Р№Р»РѕРІ
 void __fastcall TImportDatafilesForm::lvFilesDeletion(TObject *Sender,
       TListItem *Item)
 {
@@ -386,7 +386,7 @@ void __fastcall TImportDatafilesForm::lvFilesDeletion(TObject *Sender,
    }
 }
 //---------------------------------------------------------------------------
-// Переопределить привязку для Focused файла
+// РџРµСЂРµРѕРїСЂРµРґРµР»РёС‚СЊ РїСЂРёРІСЏР·РєСѓ РґР»СЏ Focused С„Р°Р№Р»Р°
 void __fastcall TImportDatafilesForm::vCheck(TObject* Sender)
 {
    TListItem*li;
@@ -529,18 +529,18 @@ void __fastcall TImportDatafilesForm::lvFilesChange(TObject *Sender,
    if(Change != ctState) return;
    PARAMS*prms = Item?(PARAMS*)Item->Data:NULL;
    if(!prms) return;
-   if(prms->foc && !Item->Focused){// снятие фокуса
+   if(prms->foc && !Item->Focused){// СЃРЅСЏС‚РёРµ С„РѕРєСѓСЃР°
       mResult->Lines->Text = "";
       if(cbInterval->ItemIndex>=0){
          prms->interval = StrToInt(cbInterval->Text);
          cbInterval->ItemIndex = -1;
       }
    }
-   if(!prms->foc && Item->Focused){// установка фокуса
+   if(!prms->foc && Item->Focused){// СѓСЃС‚Р°РЅРѕРІРєР° С„РѕРєСѓСЃР°
       mResult->Lines->Text = prms->comm;
       cbInterval->ItemIndex = cbInterval->Items->IndexOf(IntToStr(prms->interval));
    }
-   if(prms->sel != Item->Selected){// изменение выбора
+   if(prms->sel != Item->Selected){// РёР·РјРµРЅРµРЅРёРµ РІС‹Р±РѕСЂР°
       if(lvFiles->Selected){
          iaCheck->Enabled = true;
          iaSave->Enabled = true;
@@ -553,7 +553,7 @@ void __fastcall TImportDatafilesForm::lvFilesChange(TObject *Sender,
    }
 }
 //---------------------------------------------------------------------------
-// Автоматическое определение соответствия с точкой учёта
+// РђРІС‚РѕРјР°С‚РёС‡РµСЃРєРѕРµ РѕРїСЂРµРґРµР»РµРЅРёРµ СЃРѕРѕС‚РІРµС‚СЃС‚РІРёСЏ СЃ С‚РѕС‡РєРѕР№ СѓС‡С‘С‚Р°
 void __fastcall TImportDatafilesForm::GetPoint(TListItem*li)
 {
    TStrings*strs = new TStringList();
@@ -609,7 +609,7 @@ void __fastcall TImportDatafilesForm::cbIntervalChange(TObject *Sender)
 {
    for(int i=0; i<lvFiles->Items->Count; i++)
       if(lvFiles->Items->Item[i]->Focused){
-      // изменение параметров выделенного файла
+      // РёР·РјРµРЅРµРЅРёРµ РїР°СЂР°РјРµС‚СЂРѕРІ РІС‹РґРµР»РµРЅРЅРѕРіРѕ С„Р°Р№Р»Р°
          lvFiles->Items->Item[i]->Focused = false;
          lvFiles->Items->Item[i]->Focused = true;
       }
@@ -693,7 +693,7 @@ void __fastcall TImportDatafilesForm::LoadSLFile(TListItem&li)
          memcpy(&params, li.Data, sizeof(params));
       else
          memset(&params, 0, sizeof(params));
-      // очистка строки результатов
+      // РѕС‡РёСЃС‚РєР° СЃС‚СЂРѕРєРё СЂРµР·СѓР»СЊС‚Р°С‚РѕРІ
       params.comm[0]=0;
       getXlsFileData(li.Caption, dayCount, &masDays);
       strcpy(dataformat, p.DataWorksheetTemplate.c_str());
@@ -888,7 +888,7 @@ void __fastcall TImportDatafilesForm::LoadMaketNEKFile(TListItem&li)
       memcpy(&params, pParams, sizeof(params));
     else
       memset(&params, 0, sizeof(params));
-    // находим как грузить, в BLOB или в CLOB
+    // РЅР°С…РѕРґРёРј РєР°Рє РіСЂСѓР·РёС‚СЊ, РІ BLOB РёР»Рё РІ CLOB
     oqLoadAsBlob->Close();
     oqLoadAsBlob->ParamByName("an_cid")->AsInteger = params.mid;
     oqLoadAsBlob->Execute();
@@ -1099,25 +1099,25 @@ void __fastcall TImportDatafilesForm::getXlsFileData(WideString FullFileName, lo
   { if (!days)
       throw Exception(Reconst_smes35_20);
     Screen->Cursor = crHourGlass;
-    /* Запуск Excel. Новый экземпляр дабы избежать конфликты и не
-    закрыть случайно уже запущенный Excel с потерей данных*/
+    /* Р—Р°РїСѓСЃРє Excel. РќРѕРІС‹Р№ СЌРєР·РµРјРїР»СЏСЂ РґР°Р±С‹ РёР·Р±РµР¶Р°С‚СЊ РєРѕРЅС„Р»РёРєС‚С‹ Рё РЅРµ
+    Р·Р°РєСЂС‹С‚СЊ СЃР»СѓС‡Р°Р№РЅРѕ СѓР¶Рµ Р·Р°РїСѓС‰РµРЅРЅС‹Р№ Excel СЃ РїРѕС‚РµСЂРµР№ РґР°РЅРЅС‹С…*/
 
     //pXlsAppl->ConnectKind = ckRunningOrNew;
     //pXlsAppl->Connect();
-    // Открытие файла
+    // РћС‚РєСЂС‹С‚РёРµ С„Р°Р№Р»Р°
     //pXlsWkbk->ConnectTo(pXlsAppl->Workbooks->Open(FullFileName));
     if (!d->connectEx(FullFileName))
       throw Exception(Reconst_smes35_21);
 
     Screen->Cursor = crHourGlass;
-    // Считывание параметров каналов
+    // РЎС‡РёС‚С‹РІР°РЅРёРµ РїР°СЂР°РјРµС‚СЂРѕРІ РєР°РЅР°Р»РѕРІ
     //for(int z=1; z<=pXlsWkbk->Worksheets->Count; z++){
     //   pXlsWksh->ConnectTo(pXlsWkbk->Worksheets->get_Item(z));
     //   if(p.TitlesWorksheet==pXlsWksh->Name)
     //      break;
     //}
     //if(p.TitlesWorksheet!=pXlsWksh->Name)
-    //   throw Exception("Ошибка в формате Excel файла : не найден управляющий лист.");
+    //   throw Exception("РћС€РёР±РєР° РІ С„РѕСЂРјР°С‚Рµ Excel С„Р°Р№Р»Р° : РЅРµ РЅР°Р№РґРµРЅ СѓРїСЂР°РІР»СЏСЋС‰РёР№ Р»РёСЃС‚.");
     if (!d->setSheet(p.TitlesWorksheet))
       throw Exception(Reconst_smes35_22);
 
@@ -1140,7 +1140,7 @@ void __fastcall TImportDatafilesForm::getXlsFileData(WideString FullFileName, lo
                                 OlePropertyGet("Value");
 
     Screen->Cursor = crHourGlass;
-    // Считывание данных из файла
+    // РЎС‡РёС‚С‹РІР°РЅРёРµ РґР°РЅРЅС‹С… РёР· С„Р°Р№Р»Р°
     //dayCount = pXlsWkbk->Worksheets->Count;
     dayCount  = d->book.OlePropertyGet("Worksheets").OlePropertyGet("Count");
     *days = new TDates[dayCount];

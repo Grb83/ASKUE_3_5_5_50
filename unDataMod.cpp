@@ -36,28 +36,28 @@ AnsiString Password;
 
 //---------------------------------------------------------------------------
 SCONNECT UsCon;
-//Надо удалить
+//РќР°РґРѕ СѓРґР°Р»РёС‚СЊ
 SROLS UserRol;
 //
-AnsiString ExFileFullName; // Переменная используется для передачи пути файла-шаблона Excel + его имя
-AnsiString ExFilePuth; // Переменная используется для передачи пути файла-шаблона Excel
+AnsiString ExFileFullName; // РџРµСЂРµРјРµРЅРЅР°СЏ РёСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ РґР»СЏ РїРµСЂРµРґР°С‡Рё РїСѓС‚Рё С„Р°Р№Р»Р°-С€Р°Р±Р»РѕРЅР° Excel + РµРіРѕ РёРјСЏ
+AnsiString ExFilePuth; // РџРµСЂРµРјРµРЅРЅР°СЏ РёСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ РґР»СЏ РїРµСЂРµРґР°С‡Рё РїСѓС‚Рё С„Р°Р№Р»Р°-С€Р°Р±Р»РѕРЅР° Excel
 AnsiString SchemeName;
 long customer_id;
-long period; //текущий период
-AnsiString ObsoleteTimeLimit;// Интервал времени после которого данные считаются устаревшими
-                             // т.е. если дата данных в curr_power отличается от максимальной даты на
-                             // ObsoleteTimeLimit то данные устарели и не выводятся
+long period; //С‚РµРєСѓС‰РёР№ РїРµСЂРёРѕРґ
+AnsiString ObsoleteTimeLimit;// РРЅС‚РµСЂРІР°Р» РІСЂРµРјРµРЅРё РїРѕСЃР»Рµ РєРѕС‚РѕСЂРѕРіРѕ РґР°РЅРЅС‹Рµ СЃС‡РёС‚Р°СЋС‚СЃСЏ СѓСЃС‚Р°СЂРµРІС€РёРјРё
+                             // С‚.Рµ. РµСЃР»Рё РґР°С‚Р° РґР°РЅРЅС‹С… РІ curr_power РѕС‚Р»РёС‡Р°РµС‚СЃСЏ РѕС‚ РјР°РєСЃРёРјР°Р»СЊРЅРѕР№ РґР°С‚С‹ РЅР°
+                             // ObsoleteTimeLimit С‚Рѕ РґР°РЅРЅС‹Рµ СѓСЃС‚Р°СЂРµР»Рё Рё РЅРµ РІС‹РІРѕРґСЏС‚СЃСЏ
 AnsiString EnterpriseName;
-int StepPROFILE; //Минимальный шаг профиля в секундах (int)(300)	//10 минут
-int LenPROFILE; //Длинна минутного профиля в секундах 28800
-int PowerProfile; // Количество строк при выводе графика нагрузки
-int PowerCoeff; // Коэффициент представления данных в мониторах
+int StepPROFILE; //РњРёРЅРёРјР°Р»СЊРЅС‹Р№ С€Р°Рі РїСЂРѕС„РёР»СЏ РІ СЃРµРєСѓРЅРґР°С… (int)(300)	//10 РјРёРЅСѓС‚
+int LenPROFILE; //Р”Р»РёРЅРЅР° РјРёРЅСѓС‚РЅРѕРіРѕ РїСЂРѕС„РёР»СЏ РІ СЃРµРєСѓРЅРґР°С… 28800
+int PowerProfile; // РљРѕР»РёС‡РµСЃС‚РІРѕ СЃС‚СЂРѕРє РїСЂРё РІС‹РІРѕРґРµ РіСЂР°С„РёРєР° РЅР°РіСЂСѓР·РєРё
+int PowerCoeff; // РљРѕСЌС„С„РёС†РёРµРЅС‚ РїСЂРµРґСЃС‚Р°РІР»РµРЅРёСЏ РґР°РЅРЅС‹С… РІ РјРѕРЅРёС‚РѕСЂР°С…
 int ShowValidity;
-int RateZona;//Тарифные зоны
-//int IsShiftRateZona; //Есть ли переход зима-лето, если есть,то 1
-int TimeZona;//Часовой пояс
-int TimeZonaMid;//Id Часовой пояс
-int IsShiftTimeZona;//Есть ли переход зима-лето, если есть,то 1
+int RateZona;//РўР°СЂРёС„РЅС‹Рµ Р·РѕРЅС‹
+//int IsShiftRateZona; //Р•СЃС‚СЊ Р»Рё РїРµСЂРµС…РѕРґ Р·РёРјР°-Р»РµС‚Рѕ, РµСЃР»Рё РµСЃС‚СЊ,С‚Рѕ 1
+int TimeZona;//Р§Р°СЃРѕРІРѕР№ РїРѕСЏСЃ
+int TimeZonaMid;//Id Р§Р°СЃРѕРІРѕР№ РїРѕСЏСЃ
+int IsShiftTimeZona;//Р•СЃС‚СЊ Р»Рё РїРµСЂРµС…РѕРґ Р·РёРјР°-Р»РµС‚Рѕ, РµСЃР»Рё РµСЃС‚СЊ,С‚Рѕ 1
 //---------------------------------------------------------------------------
 AnsiString GetRas(AnsiString spred,AnsiString scurr,AnsiString sdig,AnsiString skc,bool &conv,double &proc)
 {
@@ -155,7 +155,7 @@ void InitGlobalVariable(void)
     //LongTimeFormat="hh:mm:ss";
     DateSeparator='.';
     TimeSeparator=':';
-    // Загрузка курсоров для опрераций Drag&Drop
+    // Р—Р°РіСЂСѓР·РєР° РєСѓСЂСЃРѕСЂРѕРІ РґР»СЏ РѕРїСЂРµСЂР°С†РёР№ Drag&Drop
     Screen->Cursors[crDragCopy] = LoadCursor(HInstance, "DRAGDROPCOPY");
     Screen->Cursors[crDragUsd] = LoadCursor(HInstance, "DRAGDROPUSD");
     Screen->Cursors[crDragMain] = LoadCursor(HInstance, "DRAGDROPMAIN");
@@ -176,11 +176,11 @@ __fastcall TdmMain::TdmMain(TComponent* Owner)
 
   PointCnt=0;
 
-/*#if CHK_ALL_LIMITS==1 //Проверка ограничений
+/*#if CHK_ALL_LIMITS==1 //РџСЂРѕРІРµСЂРєР° РѕРіСЂР°РЅРёС‡РµРЅРёР№
   FLicType=GrdGetPermission(CHK_LIC_TYPE,0);
   if(FLicType<0){
     tmStatus->Enabled=true;
-    throw Exception("В доступе отказано: "+IntToStr(FLicType)+","+IntToStr(CHK_LIC_TYPE)+",0");
+    throw Exception("Р’ РґРѕСЃС‚СѓРїРµ РѕС‚РєР°Р·Р°РЅРѕ: "+IntToStr(FLicType)+","+IntToStr(CHK_LIC_TYPE)+",0");
   }
 #else*/
   /*FLicType=1;*/
@@ -223,7 +223,7 @@ void __fastcall TdmMain::DataModuleDestroy(TObject *Sender)
     try{
       quMain->SQL->Text= " begin  \
          if "+SchemeName+"common_pg.username_f is not null then  \
-           "+SchemeName+"admin_pg.fiscal_p(NULL, 3, 'Произведен выход из системы с компьютера: '||USERENV('TERMINAL')); \
+           "+SchemeName+"admin_pg.fiscal_p(NULL, 3, 'РџСЂРѕРёР·РІРµРґРµРЅ РІС‹С…РѕРґ РёР· СЃРёСЃС‚РµРјС‹ СЃ РєРѕРјРїСЊСЋС‚РµСЂР°: '||USERENV('TERMINAL')); \
            commit; \
          end if; \
         end;  " ;
@@ -328,8 +328,8 @@ void __fastcall TdmMain::UnivSaveRepToFile(TSaveDialog *aSaveDialog,TRichEdit* r
    if(aSaveDialog->Execute())
    {
       if(aSaveDialog->FilterIndex == 1)
-         reTmp->Lines->SaveToFile(aSaveDialog->FileName); //rtf вариант
-      else  //Пишем в файл
+         reTmp->Lines->SaveToFile(aSaveDialog->FileName); //rtf РІР°СЂРёР°РЅС‚
+      else  //РџРёС€РµРј РІ С„Р°Р№Р»
          WriteRepToFile(aSaveDialog->FileName, 3 - aSaveDialog->FilterIndex,reTmp);
    }
 }
@@ -349,11 +349,11 @@ void __fastcall TdmMain::UnivPrintRep(TComponent* Owner,int lMode,TRichEdit* reT
     }
     delete PrDialog;
   }else{
-     //Печать в DOS
-       //Формируем файл в кодировке DOS
+     //РџРµС‡Р°С‚СЊ РІ DOS
+       //Р¤РѕСЂРјРёСЂСѓРµРј С„Р°Р№Р» РІ РєРѕРґРёСЂРѕРІРєРµ DOS
      AnsiString prTmp = GetTmpPath() + "askue.txt";
      WriteRepToFile(prTmp, 0,reTmp);
-       //e Формируем файл в кодировке DOS
+       //e Р¤РѕСЂРјРёСЂСѓРµРј С„Р°Р№Р» РІ РєРѕРґРёСЂРѕРІРєРµ DOS
      AnsiString S,tmpstr;
      char ADevice[256],ADriver[256],APort[256];
      UINT ADeviceMode;
@@ -402,14 +402,14 @@ void __fastcall TdmMain::WriteRepToFile(AnsiString PPName, int PPPrintMode,TRich
    {
       AnsiString prMStr = reTmp->Lines->Strings[i]+"\n";
       if(!PPPrintMode){
-         //Для случая DOS производим перекодировку
+         //Р”Р»СЏ СЃР»СѓС‡Р°СЏ DOS РїСЂРѕРёР·РІРѕРґРёРј РїРµСЂРµРєРѕРґРёСЂРѕРІРєСѓ
          char prChs[5000];
          CharToOem(
             (LPCSTR)(prMStr.c_str()),	// pointer to string to translate
             (LPSTR)prChs 	// pointer to translated string
          );
          prMStr = prChs;
-         //e Для случая DOS производим перекодировку
+         //e Р”Р»СЏ СЃР»СѓС‡Р°СЏ DOS РїСЂРѕРёР·РІРѕРґРёРј РїРµСЂРµРєРѕРґРёСЂРѕРІРєСѓ
       }
       write(prLogFileH, prMStr.c_str(), strlen(prMStr.c_str()));
    }
@@ -462,7 +462,7 @@ void __fastcall TdmMain::SaveTable(TComponent* Owner,TDBGridEh *gr,AnsiString Re
 
   try{
     StringList  = new TStringList;
-    //Завголовок
+    //Р—Р°РІРіРѕР»РѕРІРѕРє
     if(!RepCaption.IsEmpty())
       StringList->Add(RepCaption);
     s="";
@@ -474,7 +474,7 @@ void __fastcall TdmMain::SaveTable(TComponent* Owner,TDBGridEh *gr,AnsiString Re
       }
     }
     StringList->Add(s);
-    //Данные
+    //Р”Р°РЅРЅС‹Рµ
     SavePlace = ds->GetBookmark();
     ds->DisableControls();
     ds->First();
@@ -574,7 +574,7 @@ bool __fastcall TdmMain::GetVerApp()
     while(!oqCursor->Eof){
       sfname=oqCursor->FieldByName("vfilename")->AsString;
       sver=oqCursor->FieldByName("vversion")->AsString;
-      oqCursor->Next();//Тут правильней
+      oqCursor->Next();//РўСѓС‚ РїСЂР°РІРёР»СЊРЅРµР№
       fname=ExtractFilePath(Application->ExeName)+ExtractFileName(sfname);
       if(FileExists(fname)){
         hFile=CreateFile(fname.c_str(),GENERIC_READ,FILE_SHARE_READ,NULL,OPEN_EXISTING,FILE_ATTRIBUTE_NORMAL,NULL);
@@ -675,15 +675,15 @@ AnsiString TdmMain::GetStr(AnsiString LongStr,int Poz,AnsiString Razdel)
 //---------------------------------------------------------------------------
 void __fastcall TdmMain::CheckLicPoint()
 {
-/*#if CHK_ALL_LIMITS==1 //Проверка ограничений
+/*#if CHK_ALL_LIMITS==1 //РџСЂРѕРІРµСЂРєР° РѕРіСЂР°РЅРёС‡РµРЅРёР№
   if(!LicType){
     int licPointType=GrdGetPermission(CHK_LIC_POINT,0);
     if(licPointType<0||licPointType>=SAA_MAXLICPOINT||PointCnt>LicPoint[licPointType]){
       tmStatus->Enabled=true;
-      Application->MessageBox("Нарушено лицензионное ограничение по количеству точек учета. Приложение будет закрыто через 1 минуту.",Application->Title.c_str(),MB_OK | MB_ICONWARNING);
+      Application->MessageBox("РќР°СЂСѓС€РµРЅРѕ Р»РёС†РµРЅР·РёРѕРЅРЅРѕРµ РѕРіСЂР°РЅРёС‡РµРЅРёРµ РїРѕ РєРѕР»РёС‡РµСЃС‚РІСѓ С‚РѕС‡РµРє СѓС‡РµС‚Р°. РџСЂРёР»РѕР¶РµРЅРёРµ Р±СѓРґРµС‚ Р·Р°РєСЂС‹С‚Рѕ С‡РµСЂРµР· 1 РјРёРЅСѓС‚Сѓ.",Application->Title.c_str(),MB_OK | MB_ICONWARNING);
     }
     if(licPointType<0)
-      throw Exception("В доступе отказано: "+IntToStr(LicType)+","+IntToStr(CHK_LIC_POINT)+",0");
+      throw Exception("Р’ РґРѕСЃС‚СѓРїРµ РѕС‚РєР°Р·Р°РЅРѕ: "+IntToStr(LicType)+","+IntToStr(CHK_LIC_POINT)+",0");
   }
 #endif*/
 }
@@ -715,13 +715,13 @@ void __fastcall TdmMain::SetCommandOff(long lmid,long lcmd)
   AnsiString s;
   switch (lcmd){
     case 1:
-      s="Отключить питание потребителя '";
+      s="РћС‚РєР»СЋС‡РёС‚СЊ РїРёС‚Р°РЅРёРµ РїРѕС‚СЂРµР±РёС‚РµР»СЏ '";
       break;
      case 2: ;
-      s="Вкллючить питание потребителя '";
+      s="Р’РєР»Р»СЋС‡РёС‚СЊ РїРёС‚Р°РЅРёРµ РїРѕС‚СЂРµР±РёС‚РµР»СЏ '";
       break;
      default:
-      s="Отменить команду Отключения/Включения для '";
+      s="РћС‚РјРµРЅРёС‚СЊ РєРѕРјР°РЅРґСѓ РћС‚РєР»СЋС‡РµРЅРёСЏ/Р’РєР»СЋС‡РµРЅРёСЏ РґР»СЏ '";
   }
   s=s+GetPointName(lmid)+"'?";
 
@@ -732,7 +732,7 @@ void __fastcall TdmMain::SetCommandOff(long lmid,long lcmd)
   oqCursor->ParamByName("lmid")->AsInteger=lmid;
   oqCursor->ParamByName("lcmd")->AsInteger=lcmd;
   oqCursor->Execute();
-  Application->MessageBox("Команда выполнена.", Application->Title.c_str(), MB_OK|MB_ICONINFORMATION);
+  Application->MessageBox("РљРѕРјР°РЅРґР° РІС‹РїРѕР»РЅРµРЅР°.", Application->Title.c_str(), MB_OK|MB_ICONINFORMATION);
 }
 //-------------------------------------------------------------------------------
 int __fastcall TdmMain::GetTaskRights(long roleid, long taskid)
@@ -754,13 +754,13 @@ int __fastcall TdmMain::GetTaskRights(long roleid, long taskid)
     oqCursorUnic->ParamByName("par3")->ParamType = ptOutput;
     oqCursorUnic->ParamByName("par3")->DataType = ftCursor;
     }catch (Exception &ex){
-        AnsiString mess = "Беда перед вызовом admin_pg.get_task_rights(:par1,:par2,:par3) с параметрами roleid="+IntToStr (roleid)+" taskid="+ IntToStr(taskid);
+        AnsiString mess = "Р‘РµРґР° РїРµСЂРµРґ РІС‹Р·РѕРІРѕРј admin_pg.get_task_rights(:par1,:par2,:par3) СЃ РїР°СЂР°РјРµС‚СЂР°РјРё roleid="+IntToStr (roleid)+" taskid="+ IntToStr(taskid);
         Application->MessageBox (mess.c_str(),Application->Title.c_str(),MB_OK);
     }
     try{
     oqCursorUnic->Execute();
     }catch (Exception &ex){
-        AnsiString mess = "Беда при вызове admin_pg.get_task_rights(:par1,:par2,:par3) с параметрами roleid="+IntToStr (roleid)+" taskid="+ IntToStr(taskid);
+        AnsiString mess = "Р‘РµРґР° РїСЂРё РІС‹Р·РѕРІРµ admin_pg.get_task_rights(:par1,:par2,:par3) СЃ РїР°СЂР°РјРµС‚СЂР°РјРё roleid="+IntToStr (roleid)+" taskid="+ IntToStr(taskid);
         Application->MessageBox (mess.c_str(),Application->Title.c_str(),MB_OK);
     }
     try{
@@ -778,7 +778,7 @@ int __fastcall TdmMain::GetTaskRights(long roleid, long taskid)
     LeaveCriticalSection(&CS);
     DeleteCriticalSection(&CS);
     }catch (Exception &ex){
-        AnsiString mess = "Беда после вызовв admin_pg.get_task_rights(:par1,:par2,:par3) с параметрами nAccess="+IntToStr (nAccess);
+        AnsiString mess = "Р‘РµРґР° РїРѕСЃР»Рµ РІС‹Р·РѕРІРІ admin_pg.get_task_rights(:par1,:par2,:par3) СЃ РїР°СЂР°РјРµС‚СЂР°РјРё nAccess="+IntToStr (nAccess);
         Application->MessageBox (mess.c_str(),Application->Title.c_str(),MB_OK);
         LeaveCriticalSection(&CS);
         DeleteCriticalSection(&CS);
@@ -786,7 +786,7 @@ int __fastcall TdmMain::GetTaskRights(long roleid, long taskid)
   }
   catch (Exception &e)
   { rCode = TASK_RIGHTS_ERROR;
-  //07.10.2021 - GRB TEMP - ловим исключения
+  //07.10.2021 - GRB TEMP - Р»РѕРІРёРј РёСЃРєР»СЋС‡РµРЅРёСЏ
   Application->ShowException(&e);
   //END TEMP
   }

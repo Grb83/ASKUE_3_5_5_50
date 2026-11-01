@@ -103,7 +103,7 @@ void __fastcall TFormEditCOMportList::TreeView1Change(TObject *Sender,
 	TTreeNode *Node)
 {
     if(TreeView1->Selected==NULL) return;
-    // снятие обработчиков
+    // СЃРЅСЏС‚РёРµ РѕР±СЂР°Р±РѕС‚С‡РёРєРѕРІ
     TComboBox*cmb;
     TRadioGroup*rg;
     TCheckBox*cb;
@@ -134,7 +134,7 @@ void __fastcall TFormEditCOMportList::TreeView1Change(TObject *Sender,
          break;
       }
    }
-   // определение типа тарифа для выделенного com-порта
+   // РѕРїСЂРµРґРµР»РµРЅРёРµ С‚РёРїР° С‚Р°СЂРёС„Р° РґР»СЏ РІС‹РґРµР»РµРЅРЅРѕРіРѕ com-РїРѕСЂС‚Р°
    for(int i=0; i<cbTariffType->Items->Count; i++){
       long pff = (long)cbTariffType->Items->Objects[i];
       if(pff == sGruop->nTariffType){
@@ -145,7 +145,7 @@ void __fastcall TFormEditCOMportList::TreeView1Change(TObject *Sender,
     if(strlen(sGruop->BYTESIZE)) RadioGroup1->ItemIndex=atoi(sGruop->BYTESIZE)-4;
     if(strlen(sGruop->PARITY))   RadioGroup3->ItemIndex=atoi(sGruop->PARITY);
     if(strlen(sGruop->STOPBITS)) RadioGroup2->ItemIndex=atoi(sGruop->STOPBITS);
-    // восстановление обработчиков
+    // РІРѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ РѕР±СЂР°Р±РѕС‚С‡РёРєРѕРІ
     for(long i=0; i<ComponentCount; i++){
         cmb=dynamic_cast<TComboBox*>(Components[i]);
         rg=dynamic_cast<TRadioGroup*>(Components[i]);
@@ -266,7 +266,7 @@ void __fastcall TFormEditCOMportList::FormShow(TObject *Sender)
   vRefresh(Sender);
 }
 //---------------------------------------------------------------------------
-//загрузка списка типов тарифа
+//Р·Р°РіСЂСѓР·РєР° СЃРїРёСЃРєР° С‚РёРїРѕРІ С‚Р°СЂРёС„Р°
 bool __fastcall TFormEditCOMportList::LoadTariffType()
 {
  try {

@@ -81,8 +81,8 @@ void __fastcall TfmCTSJournal::SelectData( void )
                 MessageGrid1->Items->Item[i]->SubItems->Strings[2]= oqCursor->FieldByName("field3")->AsDateTime.FormatString("dd.mm.yyyy hh:nn:ss");
                 if(MessageGrid1->Items->Item[i]->SubItems->Strings[3]!= oqCursor->FieldByName("field4")->AsString)
                 MessageGrid1->Items->Item[i]->SubItems->Strings[3]= oqCursor->FieldByName("field4")->AsString;
-                if(MessageGrid1->Items->Item[i]->SubItems->Strings[4]!= FloatToStr(oqCursor->FieldByName("field5")->AsFloat)+" ñåê.")
-                MessageGrid1->Items->Item[i]->SubItems->Strings[4]= FloatToStr(oqCursor->FieldByName("field5")->AsFloat)+" ñåê.";
+                if(MessageGrid1->Items->Item[i]->SubItems->Strings[4]!= FloatToStr(oqCursor->FieldByName("field5")->AsFloat)+" ÑÐµÐº.")
+                MessageGrid1->Items->Item[i]->SubItems->Strings[4]= FloatToStr(oqCursor->FieldByName("field5")->AsFloat)+" ÑÐµÐº.";
                 if(oqCursor->FieldByName("field6")->IsNull)
                   s="";
                 else
@@ -126,7 +126,7 @@ void __fastcall TfmCTSJournal::Timer1Timer(TObject *Sender)
    Timer1->Enabled=true;
 }
 //---------------------------------------------------------------------------
-/*! Îòîáðàæåíèå ïîëíîãî ñîäåðæèìîãî ÿ÷åéêè â îòäåëüíîì îêíå.
+/*! ÐžÑ‚Ð¾Ð±Ñ€Ð°Ð¶ÐµÐ½Ð¸Ðµ Ð¿Ð¾Ð»Ð½Ð¾Ð³Ð¾ ÑÐ¾Ð´ÐµÑ€Ð¶Ð¸Ð¼Ð¾Ð³Ð¾ ÑÑ‡ÐµÐ¹ÐºÐ¸ Ð² Ð¾Ñ‚Ð´ÐµÐ»ÑŒÐ½Ð¾Ð¼ Ð¾ÐºÐ½Ðµ.
 */
 void __fastcall TfmCTSJournal::MessageGrid1DblClick(
       TObject *Sender)
@@ -191,7 +191,7 @@ void __fastcall TfmCTSJournal::MessageGrid1ColumnClick(
                 LI->SubItems->AddObject(oqCursor->FieldByName("field2")->AsString,(TObject*)oqCursor->FieldByName("field1")->AsInteger);
                 LI->SubItems->Add(oqCursor->FieldByName("field3")->AsDateTime.FormatString("dd.mm.yyyy hh:nn:ss"));
                 LI->SubItems->Add(oqCursor->FieldByName("field4")->AsString);
-                LI->SubItems->Add(FloatToStr(oqCursor->FieldByName("field5")->AsFloat)+" ñåê.");
+                LI->SubItems->Add(FloatToStr(oqCursor->FieldByName("field5")->AsFloat)+" ÑÐµÐº.");
                 if(oqCursor->FieldByName("field6")->IsNull)
                   LI->SubItems->Add("");
                 else
@@ -245,7 +245,7 @@ void __fastcall TfmCTSJournal::MessageGrid1GetSubItemImage(TObject *Sender,
 void __fastcall TfmCTSJournal::acDeleteExecute(TObject *Sender)
 {
 int tmp;
-if (MessageBox(Handle,"Âû íàñòàèâàåòå íà óäàëåíèè?",Application->Title.c_str(),MB_YESNO|MB_ICONQUESTION|MB_DEFBUTTON2)==IDYES)
+if (MessageBox(Handle,"Ð’Ñ‹ Ð½Ð°ÑÑ‚Ð°Ð¸Ð²Ð°ÐµÑ‚Ðµ Ð½Ð° ÑƒÐ´Ð°Ð»ÐµÐ½Ð¸Ð¸?",Application->Title.c_str(),MB_YESNO|MB_ICONQUESTION|MB_DEFBUTTON2)==IDYES)
 {
   oqToDel->Close();
   oqToDel->ParamByName("mid")->AsInteger=(int)(MessageGrid1->ItemFocused->SubItems->Objects[0]);

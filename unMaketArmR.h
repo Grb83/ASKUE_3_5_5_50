@@ -182,13 +182,13 @@ __published:	// IDE-managed Components
 private:	// User declarations
 TfmInteriorUni *FInUn;
 struct MAKET{
-          long ObjID;       // идентификатоор объекта
-          long ObjType;     // тип объекта 0-шапка, 1-канал , 2- макет
-          char Name[130];   //Наименование
-          long Blocking;     // блокировка
-          char Error[2000]; //  ошибка
-          long Parent;      //Главный канал
-          char LastSystemCreated[20]; //Дата следующего запуска системой
+          long ObjID;       // РёРґРµРЅС‚РёС„РёРєР°С‚РѕРѕСЂ РѕР±СЉРµРєС‚Р°
+          long ObjType;     // С‚РёРї РѕР±СЉРµРєС‚Р° 0-С€Р°РїРєР°, 1-РєР°РЅР°Р» , 2- РјР°РєРµС‚
+          char Name[130];   //РќР°РёРјРµРЅРѕРІР°РЅРёРµ
+          long Blocking;     // Р±Р»РѕРєРёСЂРѕРІРєР°
+          char Error[2000]; //  РѕС€РёР±РєР°
+          long Parent;      //Р“Р»Р°РІРЅС‹Р№ РєР°РЅР°Р»
+          char LastSystemCreated[20]; //Р”Р°С‚Р° СЃР»РµРґСѓСЋС‰РµРіРѕ Р·Р°РїСѓСЃРєР° СЃРёСЃС‚РµРјРѕР№
           double nperiod;
           long ProcID;
           long nPreview;
@@ -210,7 +210,7 @@ struct MAKET{
       //  void __fastcall SaveStateWindow();
        // void __fastcall SetIsExistsState(void);
         void __fastcall SetDate(TDateTime &dfrom,TDateTime &dtill);
-                        //07.07.2020 GRB ADD - вычитка и установка режима строгости
+                        //07.07.2020 GRB ADD - РІС‹С‡РёС‚РєР° Рё СѓСЃС‚Р°РЅРѕРІРєР° СЂРµР¶РёРјР° СЃС‚СЂРѕРіРѕСЃС‚Рё
         int __fastcall getStrictRegime();
         void __fastcall setStrictRegime(bool regime);
         void __fastcall addCheckBox1OnPanel (TObject *Sender);

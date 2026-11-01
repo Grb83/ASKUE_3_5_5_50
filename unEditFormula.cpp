@@ -54,9 +54,9 @@ void __fastcall TfmEditFormula::vSave(TObject *Sender)
     oqSave->ParamByName("av_formula")->AsString=editFrmla->Text;
     oqSave->ParamByName("av_memo")->AsString=edMemo->Text;
 
-    //×àñîâîé ïåðèîä èíòåãðàöèè
+    //Ð§Ð°ÑÐ¾Ð²Ð¾Ð¹ Ð¿ÐµÑ€Ð¸Ð¾Ð´ Ð¸Ð½Ñ‚ÐµÐ³Ñ€Ð°Ñ†Ð¸Ð¸
     oqSave->ParamByName("an_NHOURERIOD")->AsInteger = (int)cbHourPeriod->Checked;
-    //ðàçáèâàòü íà 30 ìèí
+    //Ñ€Ð°Ð·Ð±Ð¸Ð²Ð°Ñ‚ÑŒ Ð½Ð° 30 Ð¼Ð¸Ð½
     oqSave->ParamByName("an_NDIVTYPE")->AsInteger = (int)cbThirty_min->Checked;
 
     int i=0;
@@ -96,17 +96,17 @@ void __fastcall TfmEditFormula::vSave(TObject *Sender)
 //-------------------------------------------------------------------------------
 bool __fastcall TfmEditFormula::vRead(void)
 {
-  //äîáàâëåíèå èä òî÷êè è âûïîëíåíèå çàïðîñà
+  //Ð´Ð¾Ð±Ð°Ð²Ð»ÐµÐ½Ð¸Ðµ Ð¸Ð´ Ñ‚Ð¾Ñ‡ÐºÐ¸ Ð¸ Ð²Ñ‹Ð¿Ð¾Ð»Ð½ÐµÐ½Ð¸Ðµ Ð·Ð°Ð¿Ñ€Ð¾ÑÐ°
   oqGetFrmla->ParamByName("an_mid")->AsInteger=id;
   oqGetFrmla->Execute();
 
- //ââîä ôîðìóëû â îêíî è êîììåíòàðèåâ
+ //Ð²Ð²Ð¾Ð´ Ñ„Ð¾Ñ€Ð¼ÑƒÐ»Ñ‹ Ð² Ð¾ÐºÐ½Ð¾ Ð¸ ÐºÐ¾Ð¼Ð¼ÐµÐ½Ñ‚Ð°Ñ€Ð¸ÐµÐ²
   editFrmla->Text=oqGetFrmla->ParamByName("av_formula")->AsString;
   edMemo->Text=oqGetFrmla->ParamByName("av_memo")->AsString;
 
-  //×àñîâîé ïåðèîä èíòåãðàöèè
+  //Ð§Ð°ÑÐ¾Ð²Ð¾Ð¹ Ð¿ÐµÑ€Ð¸Ð¾Ð´ Ð¸Ð½Ñ‚ÐµÐ³Ñ€Ð°Ñ†Ð¸Ð¸
   cbHourPeriod->Checked = (bool)oqGetFrmla->ParamByName("an_NHOURERIOD")->AsInteger;
-  //ðàçáèâàòü íà 30 ìèí
+  //Ñ€Ð°Ð·Ð±Ð¸Ð²Ð°Ñ‚ÑŒ Ð½Ð° 30 Ð¼Ð¸Ð½
   cbThirty_min->Checked = (bool)oqGetFrmla->ParamByName("an_NDIVTYPE")->AsInteger;
 
  vtArg->DisableControls();
@@ -178,7 +178,7 @@ void __fastcall TfmEditFormula::FormCreate(TObject *Sender)
 
  measst->Sort();
 
-  //çàïîëíåíèå ñïèñêà îáúåêòîâ
+  //Ð·Ð°Ð¿Ð¾Ð»Ð½ÐµÐ½Ð¸Ðµ ÑÐ¿Ð¸ÑÐºÐ° Ð¾Ð±ÑŠÐµÐºÑ‚Ð¾Ð²
   oqObjType->Execute();
 
  while (!oqObjType->Eof) {
@@ -272,7 +272,7 @@ void __fastcall TfmEditFormula::editFrmlaDragDrop(TObject *Sender,
         vtArg->Edit();
         vtArg->FieldByName("vtArgVPARAM")->AsString=oqArguments->FieldByName("VPARAM")->AsString;
         vtArg->FieldByName("vtArgVMEMO")->AsString=oqArguments->FieldByName("VMEMO")->AsString;
-        vtArg->FieldByName("vtArgVShift")->AsFloat=0; // ïî óìîë÷àíèþ
+        vtArg->FieldByName("vtArgVShift")->AsFloat=0; // Ð¿Ð¾ ÑƒÐ¼Ð¾Ð»Ñ‡Ð°Ð½Ð¸ÑŽ
         vtArg->Post();
         vtArg->Last();
       }
@@ -616,7 +616,7 @@ void __fastcall TfmEditFormula::iaEditParamsExecute(TObject *Sender)
         vtArgvtArgVNAME->AsString="P"+IntToStr(k++);
       if (vtArgvtArgVMEMO->AsString=="")
         vtArgvtArgVMEMO->AsString=sp->TreeViewMeas->Selected->Text;
-        //Äîáàâëåíèå èìåíè îáúåêòà ïî åãî ÈÄ
+        //Ð”Ð¾Ð±Ð°Ð²Ð»ÐµÐ½Ð¸Ðµ Ð¸Ð¼ÐµÐ½Ð¸ Ð¾Ð±ÑŠÐµÐºÑ‚Ð° Ð¿Ð¾ ÐµÐ³Ð¾ Ð˜Ð”
       oqPntName->ParamByName("av_param")->AsString=vtArgvtArgVPARAM->AsString;
       oqPntName->Execute();
       vtArgvtArgVPntName->AsString=oqPntName->ParamByName("av_pntname")->AsString;
@@ -640,7 +640,7 @@ void __fastcall TfmEditFormula::iaEditParamsExecute(TObject *Sender)
         vtArgvtArgVNAME->AsString="P"+IntToStr(k++);
       if (vtArgvtArgVMEMO->AsString=="")
         vtArgvtArgVMEMO->AsString=sp->TreeViewMeas->Selected->Text;
-        //Äîáàâëåíèå èìåíè îáúåêòà ïî åãî ÈÄ
+        //Ð”Ð¾Ð±Ð°Ð²Ð»ÐµÐ½Ð¸Ðµ Ð¸Ð¼ÐµÐ½Ð¸ Ð¾Ð±ÑŠÐµÐºÑ‚Ð° Ð¿Ð¾ ÐµÐ³Ð¾ Ð˜Ð”
         oqPntName->ParamByName("av_param")->AsString=vtArgvtArgVPARAM->AsString;
         oqPntName->Execute();
         vtArgvtArgVPntName->AsString=oqPntName->ParamByName("av_pntname")->AsString;
@@ -695,7 +695,7 @@ bool __fastcall TfmEditFormula::Compiling(TObject *Sender)
     oqTest->ParamByName("at_paramvalue")->Length=i;
 
   oqTest->Execute();
-  if (!oqTest->ParamByName("code")->AsInteger) //Åñëè íåò îøèáêè
+  if (!oqTest->ParamByName("code")->AsInteger) //Ð•ÑÐ»Ð¸ Ð½ÐµÑ‚ Ð¾ÑˆÐ¸Ð±ÐºÐ¸
   {
         sbResult->SimpleText=Reconst_smes69_10+oqTest->ParamByName("an_res")->AsString;
         return true;
@@ -711,7 +711,7 @@ bool __fastcall TfmEditFormula::Compiling(TObject *Sender)
 void __fastcall TfmEditFormula::tbOccurrencesShow(TObject *Sender)
 {
   if(0 == pcEditFormula->Tag)
-  { //åñëè ïåðâû ðàç îòêðûëè âêëàäêó èëè ñäåëàëè êàêèå òî èçìåíåíèÿ è íàæàëè êíîïêó ïðèìèíèòü
+  { //ÐµÑÐ»Ð¸ Ð¿ÐµÑ€Ð²Ñ‹ Ñ€Ð°Ð· Ð¾Ñ‚ÐºÑ€Ñ‹Ð»Ð¸ Ð²ÐºÐ»Ð°Ð´ÐºÑƒ Ð¸Ð»Ð¸ ÑÐ´ÐµÐ»Ð°Ð»Ð¸ ÐºÐ°ÐºÐ¸Ðµ Ñ‚Ð¾ Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ñ Ð¸ Ð½Ð°Ð¶Ð°Ð»Ð¸ ÐºÐ½Ð¾Ð¿ÐºÑƒ Ð¿Ñ€Ð¸Ð¼Ð¸Ð½Ð¸Ñ‚ÑŒ
     TreeMid->Items->Clear();
     ReadTreeMid(NULL);
     ReadTreeOccurr(NULL);
@@ -725,12 +725,12 @@ void __fastcall  TfmEditFormula::ReadTreeMid(TTreeNode* Node)
 
   if(!Node)
     oqTree->ParamByName("an_mid")->AsInteger = id;
-  else if(Node->getFirstChild()->Text == "1") //ñðàáàòûâàåò ïðè Expanding
+  else if(Node->getFirstChild()->Text == "1") //ÑÑ€Ð°Ð±Ð°Ñ‚Ñ‹Ð²Ð°ÐµÑ‚ Ð¿Ñ€Ð¸ Expanding
   { oqTree->ParamByName("an_mid")->AsInteger = (int)Node->Data;
     Node->DeleteChildren();
   }
   else
-    return; //åcëè âåòêà áûëà ïîñòðîåíà
+    return; //ÐµcÐ»Ð¸ Ð²ÐµÑ‚ÐºÐ° Ð±Ñ‹Ð»Ð° Ð¿Ð¾ÑÑ‚Ñ€Ð¾ÐµÐ½Ð°
   oqTree->Execute();
   oqTree->First();
   TTreeNode *CurrNode = NULL;
@@ -741,13 +741,13 @@ void __fastcall  TfmEditFormula::ReadTreeMid(TTreeNode* Node)
                                               (void*)oqTree->FieldByName("PARAM")->AsInteger);
     if(1 == oqTree->FieldByName("HAVECHILDE")->AsInteger)
     { TreeMid->Items->AddChildObject(CurrNode,"1", NULL);
-      nid = 94;     //èêîíêà ôóíêöèè
+      nid = 94;     //Ð¸ÐºÐ¾Ð½ÐºÐ° Ñ„ÑƒÐ½ÐºÑ†Ð¸Ð¸
     }
     else
     { if(4 == nid)
-        nid = 92;  //çåëåíûé êðóæîê
+        nid = 92;  //Ð·ÐµÐ»ÐµÐ½Ñ‹Ð¹ ÐºÑ€ÑƒÐ¶Ð¾Ðº
       else
-        nid = 93; //ñèíèé êðóæîê
+        nid = 93; //ÑÐ¸Ð½Ð¸Ð¹ ÐºÑ€ÑƒÐ¶Ð¾Ðº
     }
     CurrNode->ImageIndex    = nid;
     CurrNode->StateIndex    = nid;
@@ -769,13 +769,13 @@ void 	__fastcall TfmEditFormula::ReadTreeOccurr(TTreeNode* Node)
   if(!Node){
     oqOccurr->ParamByName("an_mid")->AsInteger = id;
     oqOccurr->ParamByName("an_param")->Clear();
- } else if(Node->getFirstChild()->Text == "1") //ñðàáàòûâàåò ïðè Expanding
+ } else if(Node->getFirstChild()->Text == "1") //ÑÑ€Ð°Ð±Ð°Ñ‚Ñ‹Ð²Ð°ÐµÑ‚ Ð¿Ñ€Ð¸ Expanding
   { oqOccurr->ParamByName("an_mid")->AsInteger = id;
     oqOccurr->ParamByName("an_param")->AsInteger = (int)Node->Data;
     Node->DeleteChildren();
   }
   else
-    return; //åcëè âåòêà áûëà ïîñòðîåíà
+    return; //ÐµcÐ»Ð¸ Ð²ÐµÑ‚ÐºÐ° Ð±Ñ‹Ð»Ð° Ð¿Ð¾ÑÑ‚Ñ€Ð¾ÐµÐ½Ð°
   oqOccurr->Execute();
   oqOccurr->First();
   TTreeNode *CurrNode = NULL;
@@ -787,13 +787,13 @@ void 	__fastcall TfmEditFormula::ReadTreeOccurr(TTreeNode* Node)
     if(1 == oqOccurr->FieldByName("HAVECHILDE")->AsInteger)
     {
       TreeOccurr->Items->AddChildObject(CurrNode,"1", NULL);
-      nid = 94;     //èêîíêà ôóíêöèè
+      nid = 94;     //Ð¸ÐºÐ¾Ð½ÐºÐ° Ñ„ÑƒÐ½ÐºÑ†Ð¸Ð¸
     }
     else
     { if(4 == nid)
-        nid = 92;  //çåëåíûé êðóæîê
+        nid = 92;  //Ð·ÐµÐ»ÐµÐ½Ñ‹Ð¹ ÐºÑ€ÑƒÐ¶Ð¾Ðº
       else
-        nid = (1 == nid)?94:93; //ñèíèé êðóæîê
+        nid = (1 == nid)?94:93; //ÑÐ¸Ð½Ð¸Ð¹ ÐºÑ€ÑƒÐ¶Ð¾Ðº
     }
     CurrNode->ImageIndex    = nid;
     CurrNode->StateIndex    = nid;

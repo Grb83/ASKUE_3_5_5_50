@@ -33,7 +33,7 @@ void __fastcall TfmSetupFilters::FormShow(TObject *Sender)
   }
 }
 //---------------------------------------------------------------------------
-bool __fastcall TfmSetupFilters::ReadNode(TTreeView* tv,TTreeNode* NodeParent)// Читает ветку дерева
+bool __fastcall TfmSetupFilters::ReadNode(TTreeView* tv,TTreeNode* NodeParent)// Р§РёС‚Р°РµС‚ РІРµС‚РєСѓ РґРµСЂРµРІР°
 {
     POINTSDIV *pData;
     TTreeNode *AddNode;
@@ -46,7 +46,7 @@ bool __fastcall TfmSetupFilters::ReadNode(TTreeView* tv,TTreeNode* NodeParent)//
         if(NodeParent && NodeParent->HasChildren)
             NodeParent->DeleteChildren();
         if(tv==tvFilter){
-            dmMain->oqCursor->ParamByName("FLAG")->AsInteger = 6;//фильтры
+            dmMain->oqCursor->ParamByName("FLAG")->AsInteger = 6;//С„РёР»СЊС‚СЂС‹
             if(!NodeParent){
                 CountFilters_Del=0;
                 dmMain->oqCursor->ParamByName("par1")->AsInteger = 0;
@@ -55,13 +55,13 @@ bool __fastcall TfmSetupFilters::ReadNode(TTreeView* tv,TTreeNode* NodeParent)//
                 dmMain->oqCursor->ParamByName("par1")->AsInteger = parmid;
             }
         }else{
-            dmMain->oqCursor->ParamByName("FLAG")->AsInteger = 7;//сообщения
+            dmMain->oqCursor->ParamByName("FLAG")->AsInteger = 7;//СЃРѕРѕР±С‰РµРЅРёСЏ
             if(!NodeParent){
                 pData=new POINTSDIV;
                 ZeroMemory(pData,sizeof(POINTSDIV));
                 strcpy(pData->Name,Reconst_smes74_1.c_str());
-                pData->Type = 0;//0 - фильтр; 1 - сообщение
-                AddNode = tv->Items->AddChildObject(NULL,pData->Name,pData); // добавляем псевдовершину
+                pData->Type = 0;//0 - С„РёР»СЊС‚СЂ; 1 - СЃРѕРѕР±С‰РµРЅРёРµ
+                AddNode = tv->Items->AddChildObject(NULL,pData->Name,pData); // РґРѕР±Р°РІР»СЏРµРј РїСЃРµРІРґРѕРІРµСЂС€РёРЅСѓ
                 AddNode->ImageIndex = 2;
                 AddNode->SelectedIndex = 2;
                 dmMain->oqCursor->ParamByName("par1")->AsInteger = 0;
@@ -175,7 +175,7 @@ try{
    if(!Src || !Src->Data) return;
    if(Dst && Dst->getFirstChild() && !Dst->getFirstChild()->Data)
       ReadNode((TTreeView*)Dst->TreeView, Dst);
-   if(Src->TreeView==tvEvent){//Тянем справа
+   if(Src->TreeView==tvEvent){//РўСЏРЅРµРј СЃРїСЂР°РІР°
       if(Src->Cut){ // Copy only child Nodes
          if(Src->HasChildren)
             copyChildNodes(Dst, Src);
@@ -194,7 +194,7 @@ try{
             tvFilter->Selected=tvFilter->Items->Item[0];
          }
       }
-   }else{// редактирование в пределах фильтров
+   }else{// СЂРµРґР°РєС‚РёСЂРѕРІР°РЅРёРµ РІ РїСЂРµРґРµР»Р°С… С„РёР»СЊС‚СЂРѕРІ
       if(Src->Cut){ // Move
          Src->MoveTo(Dst, naAddChild);
          if(!((POINTSDIV*)Src->Data)->editing)
@@ -230,8 +230,8 @@ void __fastcall TfmSetupFilters::copyChildNodes(TTreeNode*d, TTreeNode*s)
 //---------------------------------------------------------------------------
 bool __fastcall TfmSetupFilters::tvCheckDragOver(TTreeNode*accNode,TTreeNode*srcNode)
 {
-   POINTSDIV* p=NULL;//Текущее
-   POINTSDIV* s;//Перетягиваемое
+   POINTSDIV* p=NULL;//РўРµРєСѓС‰РµРµ
+   POINTSDIV* s;//РџРµСЂРµС‚СЏРіРёРІР°РµРјРѕРµ
    try{
       if(!srcNode||!srcNode->Data){
          return false;
@@ -239,19 +239,19 @@ bool __fastcall TfmSetupFilters::tvCheckDragOver(TTreeNode*accNode,TTreeNode*src
       s=(POINTSDIV*)srcNode->Data;
       if(accNode)
          p=(POINTSDIV*)accNode->Data;
-      if(srcNode->TreeView==tvEvent){//Тянем справа
-         if(!accNode){//Родитель NULL
+      if(srcNode->TreeView==tvEvent){//РўСЏРЅРµРј СЃРїСЂР°РІР°
+         if(!accNode){//Р РѕРґРёС‚РµР»СЊ NULL
             if(s->Type)
                return false;
-         }else{//Родитель не NULL
-            if(p->Type==1)// на сообщение перетягивать нельзя, только на фильтр
+         }else{//Р РѕРґРёС‚РµР»СЊ РЅРµ NULL
+            if(p->Type==1)// РЅР° СЃРѕРѕР±С‰РµРЅРёРµ РїРµСЂРµС‚СЏРіРёРІР°С‚СЊ РЅРµР»СЊР·СЏ, С‚РѕР»СЊРєРѕ РЅР° С„РёР»СЊС‚СЂ
                return false;
          }
-      }else{//С места на место
-         if(!accNode){//Родитель NULL
+      }else{//РЎ РјРµСЃС‚Р° РЅР° РјРµСЃС‚Рѕ
+         if(!accNode){//Р РѕРґРёС‚РµР»СЊ NULL
             if(s->Type||!srcNode->Parent)
                return false;
-         }else{//Родитель не NULL
+         }else{//Р РѕРґРёС‚РµР»СЊ РЅРµ NULL
             if(p->Type||srcNode->Parent==accNode||srcNode==accNode||accNode->HasAsParent(srcNode))
                return false;
          }
@@ -293,15 +293,15 @@ void __fastcall TfmSetupFilters::vSave(TObject* Sender)
           dmMain->oqCursor->ParamByName("par1")->AsInteger=PTreeTable.Id;
           dmMain->oqCursor->ParamByName("par2")->AsInteger=par_id;
           dmMain->oqCursor->ParamByName("par3")->AsString=PTreeTable.Name;
-          if (PTreeTable.Type==1) // событие
-            dmMain->oqCursor->ParamByName("par4")->AsInteger = PTreeTable.Id_event;// nevent для события
+          if (PTreeTable.Type==1) // СЃРѕР±С‹С‚РёРµ
+            dmMain->oqCursor->ParamByName("par4")->AsInteger = PTreeTable.Id_event;// nevent РґР»СЏ СЃРѕР±С‹С‚РёСЏ
           else
             dmMain->oqCursor->ParamByName("par4")->AsInteger = 0;
 
           dmMain->oqCursor->Execute();
           PTreeTable.Id=dmMain->oqCursor->ParamByName("par1")->AsInteger;
-          ((POINTSDIV*)Node->Data)->tmpId=PTreeTable.Id; // новый Id пока храним в tmpId,
-                                                         // т.к. в случае ошибки и повторном проходе цикла нам нужны старые Id
+          ((POINTSDIV*)Node->Data)->tmpId=PTreeTable.Id; // РЅРѕРІС‹Р№ Id РїРѕРєР° С…СЂР°РЅРёРј РІ tmpId,
+                                                         // С‚.Рє. РІ СЃР»СѓС‡Р°Рµ РѕС€РёР±РєРё Рё РїРѕРІС‚РѕСЂРЅРѕРј РїСЂРѕС…РѕРґРµ С†РёРєР»Р° РЅР°Рј РЅСѓР¶РЅС‹ СЃС‚Р°СЂС‹Рµ Id
         }
         Node=Node->GetNext();
     }
@@ -320,7 +320,7 @@ void __fastcall TfmSetupFilters::vSave(TObject* Sender)
     while(Node){
       if(Node->Data&&((POINTSDIV*)Node->Data)->editing){
         ((POINTSDIV*)Node->Data)->editing=0;
-        ((POINTSDIV*)Node->Data)->Id = ((POINTSDIV*)Node->Data)->tmpId; // теперь сохраняем новый Id
+        ((POINTSDIV*)Node->Data)->Id = ((POINTSDIV*)Node->Data)->tmpId; // С‚РµРїРµСЂСЊ СЃРѕС…СЂР°РЅСЏРµРј РЅРѕРІС‹Р№ Id
         //((POINTSDIV*)Node->Data)->tmpId = 0;
         }
       Node=Node->GetNext();
@@ -388,7 +388,7 @@ void __fastcall TfmSetupFilters::vDelete(TObject* Sender)
     tv=(TTreeView*)sNode->TreeView;
     try{
       realdeletion=true;
-       if (sNode->HasChildren)// читаем детей для их удаления
+       if (sNode->HasChildren)// С‡РёС‚Р°РµРј РґРµС‚РµР№ РґР»СЏ РёС… СѓРґР°Р»РµРЅРёСЏ
          ReadNode(tvFilter,sNode);
       sNode->Delete();
       realdeletion=false;
@@ -400,7 +400,7 @@ void __fastcall TfmSetupFilters::vDelete(TObject* Sender)
     if(tv&&!tv->Items->Count&&tv->OnChange)
       tv->OnChange(tv,NULL);
     if (parNode && !parNode->HasChildren)
-      tv->OnExpanded(tv,parNode);// обновляем иконку для родителя после удаления его детей
+      tv->OnExpanded(tv,parNode);// РѕР±РЅРѕРІР»СЏРµРј РёРєРѕРЅРєСѓ РґР»СЏ СЂРѕРґРёС‚РµР»СЏ РїРѕСЃР»Рµ СѓРґР°Р»РµРЅРёСЏ РµРіРѕ РґРµС‚РµР№
   }
  }
 }

@@ -195,7 +195,7 @@ void __fastcall TfmRTRNP::btnResetPacketIdClick(TObject *Sender)
   if (oqMain->RecordCount > 0 && oqMain->FieldByName("cid")->AsInteger>0)
   {
     oqQuery->ParamByName("cid")->AsInteger = oqMain->FieldByName("cid")->AsInteger;
-    if (Application->MessageBox("Ñáðîñèòü íóìåðàöèþ ïàêåòîâ?", Application->Title.c_str(), MB_YESNO|MB_ICONQUESTION|MB_DEFBUTTON2)==IDYES)
+    if (Application->MessageBox("Ð¡Ð±Ñ€Ð¾ÑÐ¸Ñ‚ÑŒ Ð½ÑƒÐ¼ÐµÑ€Ð°Ñ†Ð¸ÑŽ Ð¿Ð°ÐºÐµÑ‚Ð¾Ð²?", Application->Title.c_str(), MB_YESNO|MB_ICONQUESTION|MB_DEFBUTTON2)==IDYES)
     {
       oqQuery->Execute();
       SelectConf();

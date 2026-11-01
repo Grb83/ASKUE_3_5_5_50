@@ -10,55 +10,55 @@ class TInteriorFullDat : public TInterior
 	protected:
 
 		TDrawTable *DrawTable;
-		TStrings *NamesClones;//имена клонов
-		bool ClonePressed;//для визуализации нажатий на заголовки таблицы
-		TShiftState ShiftPressed;//для визуализации нажатий на заголовки таблицы
-		long ColPressed,RowPressed;//для визуализации нажатий на заголовки таблицы
-		long Clones;//общее количество клонов в таблице
-		TCloneItem *datOracle;//Двумерный массив.
-						 //Клоны расположены по столбцам. В столбе значения для одного клона.
+		TStrings *NamesClones;//РёРјРµРЅР° РєР»РѕРЅРѕРІ
+		bool ClonePressed;//РґР»СЏ РІРёР·СѓР°Р»РёР·Р°С†РёРё РЅР°Р¶Р°С‚РёР№ РЅР° Р·Р°РіРѕР»РѕРІРєРё С‚Р°Р±Р»РёС†С‹
+		TShiftState ShiftPressed;//РґР»СЏ РІРёР·СѓР°Р»РёР·Р°С†РёРё РЅР°Р¶Р°С‚РёР№ РЅР° Р·Р°РіРѕР»РѕРІРєРё С‚Р°Р±Р»РёС†С‹
+		long ColPressed,RowPressed;//РґР»СЏ РІРёР·СѓР°Р»РёР·Р°С†РёРё РЅР°Р¶Р°С‚РёР№ РЅР° Р·Р°РіРѕР»РѕРІРєРё С‚Р°Р±Р»РёС†С‹
+		long Clones;//РѕР±С‰РµРµ РєРѕР»РёС‡РµСЃС‚РІРѕ РєР»РѕРЅРѕРІ РІ С‚Р°Р±Р»РёС†Рµ
+		TCloneItem *datOracle;//Р”РІСѓРјРµСЂРЅС‹Р№ РјР°СЃСЃРёРІ.
+						 //РљР»РѕРЅС‹ СЂР°СЃРїРѕР»РѕР¶РµРЅС‹ РїРѕ СЃС‚РѕР»Р±С†Р°Рј. Р’ СЃС‚РѕР»Р±Рµ Р·РЅР°С‡РµРЅРёСЏ РґР»СЏ РѕРґРЅРѕРіРѕ РєР»РѕРЅР°.
 	public:
 		__fastcall TInteriorFullDat(TComponent* Owner,TSplitterForm *,TFormDescr*,Classes::TNotifyEvent );
 		virtual __fastcall ~TInteriorFullDat(void);
 
-		//Снятие со SplitterFom и размещение на SplitterFom таблицы и графика,
-		//вызываемтся при обновлении TBaseMonitorForm
+		//РЎРЅСЏС‚РёРµ СЃРѕ SplitterFom Рё СЂР°Р·РјРµС‰РµРЅРёРµ РЅР° SplitterFom С‚Р°Р±Р»РёС†С‹ Рё РіСЂР°С„РёРєР°,
+		//РІС‹Р·С‹РІР°РµРјС‚СЃСЏ РїСЂРё РѕР±РЅРѕРІР»РµРЅРёРё TBaseMonitorForm
 		virtual void __fastcall Destroy(void);
 		virtual void __fastcall Place(void);
 
-		//Установить новую компановку
+		//РЈСЃС‚Р°РЅРѕРІРёС‚СЊ РЅРѕРІСѓСЋ РєРѕРјРїР°РЅРѕРІРєСѓ
 		virtual bool __fastcall setSplit(void);
 
-		//Возвращает количесиво подколонок для формы
+		//Р’РѕР·РІСЂР°С‰Р°РµС‚ РєРѕР»РёС‡РµСЃРёРІРѕ РїРѕРґРєРѕР»РѕРЅРѕРє РґР»СЏ С„РѕСЂРјС‹
 		virtual long __fastcall SubColumns(void){return 2;};
 
-		//Возвращает имена подколонок для формы
+		//Р’РѕР·РІСЂР°С‰Р°РµС‚ РёРјРµРЅР° РїРѕРґРєРѕР»РѕРЅРѕРє РґР»СЏ С„РѕСЂРјС‹
 		virtual AnsiString __fastcall GetSubColumnsNames(int);
 
-		//Обновление данных из базы
-		//NameAlert=-1 для обновления в любом случае
+		//РћР±РЅРѕРІР»РµРЅРёРµ РґР°РЅРЅС‹С… РёР· Р±Р°Р·С‹
+		//NameAlert=-1 РґР»СЏ РѕР±РЅРѕРІР»РµРЅРёСЏ РІ Р»СЋР±РѕРј СЃР»СѓС‡Р°Рµ
 		virtual void __fastcall refreshData( int Table,TOraQuery *qwInter);
  
     void __fastcall selectData(  TOraQuery *qwInter );
 		virtual void __fastcall Invalidate( int Table );
 
-		//Получает данные о считываемой таблице
+		//РџРѕР»СѓС‡Р°РµС‚ РґР°РЅРЅС‹Рµ Рѕ СЃС‡РёС‚С‹РІР°РµРјРѕР№ С‚Р°Р±Р»РёС†Рµ
 		virtual void __fastcall formDescr( void );
 
-		//Формирует таблицу, располагая клоны по столбцам
+		//Р¤РѕСЂРјРёСЂСѓРµС‚ С‚Р°Р±Р»РёС†Сѓ, СЂР°СЃРїРѕР»Р°РіР°СЏ РєР»РѕРЅС‹ РїРѕ СЃС‚РѕР»Р±С†Р°Рј
 		virtual void __fastcall clonesInColumns(void);
 		virtual void __fastcall dataInColumns(void);
 
-    //Формирует таблицу, располагая клоны по строкам
+    //Р¤РѕСЂРјРёСЂСѓРµС‚ С‚Р°Р±Р»РёС†Сѓ, СЂР°СЃРїРѕР»Р°РіР°СЏ РєР»РѕРЅС‹ РїРѕ СЃС‚СЂРѕРєР°Рј
 	virtual void __fastcall clonesInRows(void);
 	virtual void __fastcall dataInRows(void);
 
-		//Интерпритирует счелчок пользователь на таблице,
-		//и проводит декомпозицию по группе
+		//РРЅС‚РµСЂРїСЂРёС‚РёСЂСѓРµС‚ СЃС‡РµР»С‡РѕРє РїРѕР»СЊР·РѕРІР°С‚РµР»СЊ РЅР° С‚Р°Р±Р»РёС†Рµ,
+		//Рё РїСЂРѕРІРѕРґРёС‚ РґРµРєРѕРјРїРѕР·РёС†РёСЋ РїРѕ РіСЂСѓРїРїРµ
  		virtual void __fastcall clickComposition(long ColPressed, long RowPressed  );
  		virtual void __fastcall clickDialog(long ACol, long ARow );
 
-		//Событийные обработчики
+		//РЎРѕР±С‹С‚РёР№РЅС‹Рµ РѕР±СЂР°Р±РѕС‚С‡РёРєРё
 		virtual void __fastcall OnClickPanel(System::TObject* Sender);
 		virtual void __fastcall OnKeyUp(TObject *Sender, WORD &Key,TShiftState Shift);
 
@@ -75,15 +75,15 @@ class TInteriorFullDat : public TInterior
  void __fastcall ChoiceOfTimeDiap( char *FirstDate, char *LastDate);
  void __fastcall GetColorToSell(TDrawTable*dt, TCloneItem*pClone,
    int cntClones, int cntColumns, int cntRows);
- //GRB ADD 15.07.2019  - является ли дата в pfd->DateTime днём перевода времени за monthNumber
+ //GRB ADD 15.07.2019  - СЏРІР»СЏРµС‚СЃСЏ Р»Рё РґР°С‚Р° РІ pfd->DateTime РґРЅС‘Рј РїРµСЂРµРІРѕРґР° РІСЂРµРјРµРЅРё Р·Р° monthNumber
   bool __fastcall IsDayShiftMonth (TFormDescr *pfd, int monthNumber);
   // END GRB ADD
-    //GRB ADD 26.08.2021 - два метода для автоформатирования по содержимому фиксированых колонок - исправление бага с обрезанием длинных имён в колонках
+    //GRB ADD 26.08.2021 - РґРІР° РјРµС‚РѕРґР° РґР»СЏ Р°РІС‚РѕС„РѕСЂРјР°С‚РёСЂРѕРІР°РЅРёСЏ РїРѕ СЃРѕРґРµСЂР¶РёРјРѕРјСѓ С„РёРєСЃРёСЂРѕРІР°РЅС‹С… РєРѕР»РѕРЅРѕРє - РёСЃРїСЂР°РІР»РµРЅРёРµ Р±Р°РіР° СЃ РѕР±СЂРµР·Р°РЅРёРµРј РґР»РёРЅРЅС‹С… РёРјС‘РЅ РІ РєРѕР»РѕРЅРєР°С…
   void __fastcall AutoSizeColGRB (TDrawTable* tsg, int columnIndex);
   void __fastcall AutoSizeNameOnly (TDrawTable* tsg);
-  //GRB ADD 27.08.2021 - берём из реестра размер шрифта и тип шрифта для того чтобы измерить сколько в длинну колонка с именем объекта занимает пикселей
+  //GRB ADD 27.08.2021 - Р±РµСЂС‘Рј РёР· СЂРµРµСЃС‚СЂР° СЂР°Р·РјРµСЂ С€СЂРёС„С‚Р° Рё С‚РёРї С€СЂРёС„С‚Р° РґР»СЏ С‚РѕРіРѕ С‡С‚РѕР±С‹ РёР·РјРµСЂРёС‚СЊ СЃРєРѕР»СЊРєРѕ РІ РґР»РёРЅРЅСѓ РєРѕР»РѕРЅРєР° СЃ РёРјРµРЅРµРј РѕР±СЉРµРєС‚Р° Р·Р°РЅРёРјР°РµС‚ РїРёРєСЃРµР»РµР№
   TFont * __fastcall GetActiveFont4MonitorFromReg ();
-  //GRB ADD 27.08.2021 - подхватываем ресайз формы чтобы при отобраажении колонки монитора по ширине подхватывать и перерисовывать колонку с именем объекта
+  //GRB ADD 27.08.2021 - РїРѕРґС…РІР°С‚С‹РІР°РµРј СЂРµСЃР°Р№Р· С„РѕСЂРјС‹ С‡С‚РѕР±С‹ РїСЂРё РѕС‚РѕР±СЂР°Р°Р¶РµРЅРёРё РєРѕР»РѕРЅРєРё РјРѕРЅРёС‚РѕСЂР° РїРѕ С€РёСЂРёРЅРµ РїРѕРґС…РІР°С‚С‹РІР°С‚СЊ Рё РїРµСЂРµСЂРёСЃРѕРІС‹РІР°С‚СЊ РєРѕР»РѕРЅРєСѓ СЃ РёРјРµРЅРµРј РѕР±СЉРµРєС‚Р°
   void __fastcall FormShow(TObject *Sender);
   bool __fastcall GetContainedWidthStatusFromReg();
 };

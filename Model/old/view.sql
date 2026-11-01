@@ -1,6 +1,6 @@
 
 -- Start of DDL script for BILLEVID
--- Generated 16-дек-02  10:17:08 am
+-- Generated 16-РґРµРє-02  10:17:08 am
 -- from oe-RYDA:4
 
 -- View BILLEVID
@@ -168,7 +168,7 @@ SELECT
 -- End of DDL script for BILLEVID
 
 -- Start of DDL script for BILL_FOR_TERM
--- Generated 16-дек-02  10:17:09 am
+-- Generated 16-РґРµРє-02  10:17:09 am
 -- from oe-RYDA:4
 
 -- View BILL_FOR_TERM
@@ -265,7 +265,7 @@ select
         ( p2.mid = b.mid )
         and
         (
-          --счётчик
+          --СЃС‡С‘С‚С‡РёРє
           (
             ( p2.ind = 3 )
             and
@@ -273,31 +273,31 @@ select
             and
             ( d.mid = p1.mid )
             and
-            --фикт
+            --С„РёРєС‚
             ( p3.mid = p2.mid )
-            --e фикт
+            --e С„РёРєС‚
           )
-          --e счётчик
+          --e СЃС‡С‘С‚С‡РёРє
           or
-          --индукционник
+          --РёРЅРґСѓРєС†РёРѕРЅРЅРёРє
           (
-            --инд-ник
+            --РёРЅРґ-РЅРёРє
             ( p2.ind = 3 )
-            --e инд-ник
+            --e РёРЅРґ-РЅРёРє
             and
-            --родитель - счетчик
+            --СЂРѕРґРёС‚РµР»СЊ - СЃС‡РµС‚С‡РёРє
             ( p2.parent = p3.mid )
             and
             ( p3.ind = 3 )
-            --e родитель - счетчик
+            --e СЂРѕРґРёС‚РµР»СЊ - СЃС‡РµС‚С‡РёРє
             and
-            --группа учёта
+            --РіСЂСѓРїРїР° СѓС‡С‘С‚Р°
             ( p3.parent = d.mid )
             and
             ( d.mid = p1.mid )
-            --e группа учёта
+            --e РіСЂСѓРїРїР° СѓС‡С‘С‚Р°
           )
-          --e индукционник
+          --e РёРЅРґСѓРєС†РёРѕРЅРЅРёРє
         )
         and
         ( f.mid=b.mid )
@@ -306,7 +306,7 @@ select
 -- End of DDL script for BILL_FOR_TERM
 
 -- Start of DDL script for HALFHOUR
--- Generated 16-дек-02  10:17:09 am
+-- Generated 16-РґРµРє-02  10:17:09 am
 -- from oe-RYDA:4
 
 -- View HALFHOUR
@@ -350,7 +350,7 @@ SELECT
 -- End of DDL script for HALFHOUR
 
 -- Start of DDL script for HALFHOUREVID
--- Generated 16-дек-02  10:17:10 am
+-- Generated 16-РґРµРє-02  10:17:10 am
 -- from oe-RYDA:4
 
 -- View HALFHOUREVID
@@ -394,7 +394,7 @@ SELECT
 -- End of DDL script for HALFHOUREVID
 
 -- Start of DDL script for MONTHS
--- Generated 16-дек-02  10:17:10 am
+-- Generated 16-РґРµРє-02  10:17:10 am
 -- from oe-RYDA:4
 
 -- View MONTHS
@@ -564,7 +564,7 @@ SELECT
 -- End of DDL script for MONTHS
 
 -- Start of DDL script for MONTHSEVID
--- Generated 16-дек-02  10:17:10 am
+-- Generated 16-РґРµРє-02  10:17:10 am
 -- from oe-RYDA:4
 
 -- View MONTHSEVID
@@ -732,7 +732,7 @@ SELECT
 -- End of DDL script for MONTHSEVID
 
 -- Start of DDL script for MONTH_FOR_TERM
--- Generated 16-дек-02  10:17:10 am
+-- Generated 16-РґРµРє-02  10:17:10 am
 -- from oe-RYDA:4
 
 -- View MONTH_FOR_TERM
@@ -829,7 +829,7 @@ select
         ( p2.mid = b.mid )
         and
         (
-          --счётчик
+          --СЃС‡С‘С‚С‡РёРє
           (
             ( p2.ind = 3 )
             and
@@ -837,31 +837,31 @@ select
             and
             ( d.mid = p1.mid )
             and
-            --фикт
+            --С„РёРєС‚
             ( p3.mid = p2.mid )
-            --e фикт
+            --e С„РёРєС‚
           )
-          --e счётчик
+          --e СЃС‡С‘С‚С‡РёРє
           or
-          --индукционник
+          --РёРЅРґСѓРєС†РёРѕРЅРЅРёРє
           (
-            --инд-ник
+            --РёРЅРґ-РЅРёРє
             ( p2.ind = 3 )
-            --e инд-ник
+            --e РёРЅРґ-РЅРёРє
             and
-            --родитель - счетчик
+            --СЂРѕРґРёС‚РµР»СЊ - СЃС‡РµС‚С‡РёРє
             ( p2.parent = p3.mid )
             and
             ( p3.ind = 3 )
-            --e родитель - счетчик
+            --e СЂРѕРґРёС‚РµР»СЊ - СЃС‡РµС‚С‡РёРє
             and
-            --группа учёта
+            --РіСЂСѓРїРїР° СѓС‡С‘С‚Р°
             ( p3.parent = d.mid )
             and
             ( d.mid = p1.mid )
-            --e группа учёта
+            --e РіСЂСѓРїРїР° СѓС‡С‘С‚Р°
           )
-          --e индукционник
+          --e РёРЅРґСѓРєС†РёРѕРЅРЅРёРє
         )
         and
         ( f.mid=b.mid )
@@ -870,7 +870,7 @@ select
 -- End of DDL script for MONTH_FOR_TERM
 
 -- Start of DDL script for PROFILEEVID
--- Generated 16-дек-02  10:17:11 am
+-- Generated 16-РґРµРє-02  10:17:11 am
 -- from oe-RYDA:4
 
 -- View PROFILEEVID

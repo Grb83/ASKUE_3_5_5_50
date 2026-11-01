@@ -11,7 +11,7 @@
 #include "Reconst.hpp"
 #pragma package(smart_init)
 
-const int IND_CNT=10;   // максимальное количество значений в ячейке интерьера
+const int IND_CNT=10;   // РјР°РєСЃРёРјР°Р»СЊРЅРѕРµ РєРѕР»РёС‡РµСЃС‚РІРѕ Р·РЅР°С‡РµРЅРёР№ РІ СЏС‡РµР№РєРµ РёРЅС‚РµСЂСЊРµСЂР°
 AnsiString TInterior::DateTimeFormat("dd'.'mm'.'yyyy hh':'nn':'ss");
 extern HANDLE UpdateMonitors;
 AnsiString MyFloatFormat = "###,###,##0.000;;0.00";
@@ -49,21 +49,21 @@ __fastcall TInterior::TInterior(TComponent* Owner,TSplitterForm *aSF,TFormDescr*
 /*        //-----------VNB 12.12.2008
         if(dynamic_cast<TBaseMonitorForm*>(Owner))
         {
-         if(PowerCoeff==1)  //если не делим на тысячу
+         if(PowerCoeff==1)  //РµСЃР»Рё РЅРµ РґРµР»РёРј РЅР° С‚С‹СЃСЏС‡Сѓ
          {
              AnsiString s = ((TBaseMonitorForm*)Owner)->LabelComment->Caption;
-             if( s.Pos("тыс."))
+             if( s.Pos("С‚С‹СЃ."))
              {
-              s = s.SubString(1,s.Pos("тыс.")-1)+s.SubString(s.Pos("тыс.")+ 4,s.Length());
+              s = s.SubString(1,s.Pos("С‚С‹СЃ.")-1)+s.SubString(s.Pos("С‚С‹СЃ.")+ 4,s.Length());
               ((TBaseMonitorForm*)Owner)->LabelComment->Caption = s;
               }
           }
-          if(PowerCoeff==1000)  //если делим на тысячу
+          if(PowerCoeff==1000)  //РµСЃР»Рё РґРµР»РёРј РЅР° С‚С‹СЃСЏС‡Сѓ
           {
             AnsiString s = ((TBaseMonitorForm*)Owner)->LabelComment->Caption;
-            if(s.Pos("[")&&!s.Pos("тыс."))
+            if(s.Pos("[")&&!s.Pos("С‚С‹СЃ."))
              {
-              s = s.SubString(1,s.Pos("["))+ " тыс."+s.SubString(s.Pos("[")+1,s.Length());
+              s = s.SubString(1,s.Pos("["))+ " С‚С‹СЃ."+s.SubString(s.Pos("[")+1,s.Length());
               ((TBaseMonitorForm*)Owner)->LabelComment->Caption = s;
               }
           }
@@ -71,13 +71,13 @@ __fastcall TInterior::TInterior(TComponent* Owner,TSplitterForm *aSF,TFormDescr*
 
 
  //-------------VNB end;   */
-                // Меняем единицы измерения в коментарии фомы
+                // РњРµРЅСЏРµРј РµРґРёРЅРёС†С‹ РёР·РјРµСЂРµРЅРёСЏ РІ РєРѕРјРµРЅС‚Р°СЂРёРё С„РѕРјС‹
         if(dynamic_cast<TBaseMonitorForm*>(Owner)&&
             (fd->StepProfile==TFormDescr::stpHour ||
              fd->StepProfile==TFormDescr::stpMinute))
         {
             AnsiString s = ((TBaseMonitorForm*)Owner)->LabelComment->Caption;
-            //05.02.2020 - GRB bugfix with dobled caption [квТч квтч] - I just comment a next line and add block
+            //05.02.2020 - GRB bugfix with dobled caption [РєРІРўС‡ РєРІС‚С‡] - I just comment a next line and add block
 
             //s = s.SubString(1,s.Pos("["));
             /*
@@ -103,9 +103,9 @@ __fastcall TInterior::TInterior(TComponent* Owner,TSplitterForm *aSF,TFormDescr*
             case RQ2_RQ3_POW_F:
                 s = s+((PowerCoeff==1)?Reconst_smes104_28: Reconst_smes101_3);//Reconst_smes101_3;
                 break;*/
-            case AEBO_REBO_POW_F: // 101 - Переток Активной / Реактивной энергии [МВтч/МВАрч]
+            case AEBO_REBO_POW_F: // 101 - РџРµСЂРµС‚РѕРє РђРєС‚РёРІРЅРѕР№ / Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РњР’С‚С‡/РњР’РђСЂС‡]
                 //s = s+Reconst_smes101_4;
-                //05.02.2020 - GRB bugfix with dobled caption [квТч квтч] - I just comment a next line
+                //05.02.2020 - GRB bugfix with dobled caption [РєРІРўС‡ РєРІС‚С‡] - I just comment a next line
                 //s = s+((PowerCoeff==1)?AnsiString(Reconst_smes104_27+"/"+Reconst_smes104_28): Reconst_smes101_4);//Reconst_smes101_4;
                 break;  //01/04/2014
             default: s = ((TBaseMonitorForm*)Owner)->LabelComment->Caption;
@@ -120,11 +120,11 @@ __fastcall TInterior::TInterior(TComponent* Owner,TSplitterForm *aSF,TFormDescr*
 void __fastcall TInterior::refreshForm(void)
 {
 	TFormDescr* aFD=new TFormDescr(*GetFormDescr());
-    // перед любым обновлением мониторов необходимо инициализировать кр. секцию UpdateMonitors
+    // РїРµСЂРµРґ Р»СЋР±С‹Рј РѕР±РЅРѕРІР»РµРЅРёРµРј РјРѕРЅРёС‚РѕСЂРѕРІ РЅРµРѕР±С…РѕРґРёРјРѕ РёРЅРёС†РёР°Р»РёР·РёСЂРѕРІР°С‚СЊ РєСЂ. СЃРµРєС†РёСЋ UpdateMonitors
     while(WaitForSingleObject(UpdateMonitors,0)!=WAIT_OBJECT_0)
     {
-        Application->ProcessMessages();// если не удалось иниц-ть. CS то обновить экранные формы...
-        Sleep(0);// переключить управление на другой поток, коьт занял CS
+        Application->ProcessMessages();// РµСЃР»Рё РЅРµ СѓРґР°Р»РѕСЃСЊ РёРЅРёС†-С‚СЊ. CS С‚Рѕ РѕР±РЅРѕРІРёС‚СЊ СЌРєСЂР°РЅРЅС‹Рµ С„РѕСЂРјС‹...
+        Sleep(0);// РїРµСЂРµРєР»СЋС‡РёС‚СЊ СѓРїСЂР°РІР»РµРЅРёРµ РЅР° РґСЂСѓРіРѕР№ РїРѕС‚РѕРє, РєРѕСЊС‚ Р·Р°РЅСЏР» CS
     }
     // add by KSS
     PostMessage((dynamic_cast<TWinControl*>(Owner))->Handle,WM_REFRESHFORM,0,(LPARAM)aFD);
@@ -151,9 +151,9 @@ int __fastcall TInterior::GetCountRow()
     case TFormDescr::stpHour:
     fd->DateTime.DecodeDate(&year,&month,&day);
 
-    if((IsShiftTimeZona)&&(month==10)&&( fd->DateTime.DayOfWeek()==1&&31-day<7))  //25 час
+    if((IsShiftTimeZona)&&(month==10)&&( fd->DateTime.DayOfWeek()==1&&31-day<7))  //25 С‡Р°СЃ
        i=24*(60/PowerProfile)+1*(60/PowerProfile);
-    else if((IsShiftTimeZona)&&(month==3)&&( fd->DateTime.DayOfWeek()==1&&31-day<7)) //23 час
+    else if((IsShiftTimeZona)&&(month==3)&&( fd->DateTime.DayOfWeek()==1&&31-day<7)) //23 С‡Р°СЃ
        i=24*(60/PowerProfile)-1*(60/PowerProfile);
     else
      i=24*(60/PowerProfile);
@@ -174,12 +174,12 @@ int __fastcall TInterior::GetCountRow()
     /*case TFormDescr::stpMinute: i=LenPROFILE/StepPROFILE; break;*/
     //END GRB COMMENT
     //GRB CHANGE 12.07.2019
-    //для минутного разбиения надо учиывать переход времени на зиму-лето тоже
+    //РґР»СЏ РјРёРЅСѓС‚РЅРѕРіРѕ СЂР°Р·Р±РёРµРЅРёСЏ РЅР°РґРѕ СѓС‡РёС‹РІР°С‚СЊ РїРµСЂРµС…РѕРґ РІСЂРµРјРµРЅРё РЅР° Р·РёРјСѓ-Р»РµС‚Рѕ С‚РѕР¶Рµ
     case TFormDescr::stpMinute:{
       fd->DateTime.DecodeDate(&year,&month,&day);
-      if((IsShiftTimeZona)&&(month==10)&&( fd->DateTime.DayOfWeek()==1&&31-day<7))  //25 час
+      if((IsShiftTimeZona)&&(month==10)&&( fd->DateTime.DayOfWeek()==1&&31-day<7))  //25 С‡Р°СЃ
         i=(LenPROFILE/StepPROFILE)+1*(3600/StepPROFILE);
-      else if((IsShiftTimeZona)&&(month==3)&&( fd->DateTime.DayOfWeek()==1&&31-day<7)) //23 час
+      else if((IsShiftTimeZona)&&(month==3)&&( fd->DateTime.DayOfWeek()==1&&31-day<7)) //23 С‡Р°СЃ
         i=(LenPROFILE/StepPROFILE)-1*(3600/StepPROFILE);
       else
         i=LenPROFILE/StepPROFILE;
@@ -226,11 +226,11 @@ void __fastcall TInterior::SaveMultyTableToFile(TSaveDialog *aSaveDialog)
 void __fastcall TInterior::SaveGraphToFile(TSaveDialog *aSaveDialog)
 {}
 //---------------------------------------------------------------------------
-long __fastcall TInterior::GroupJump(long value) // Для перемещения по спискам
+long __fastcall TInterior::GroupJump(long value) // Р”Р»СЏ РїРµСЂРµРјРµС‰РµРЅРёСЏ РїРѕ СЃРїРёСЃРєР°Рј
 {
   long Id_Group = value;
 
-  // Определяем что на входе группа или список
+  // РћРїСЂРµРґРµР»СЏРµРј С‡С‚Рѕ РЅР° РІС…РѕРґРµ РіСЂСѓРїРїР° РёР»Рё СЃРїРёСЃРѕРє
   if(fd->IsPoints)
     GroupIsList=1;
   else{
@@ -305,8 +305,8 @@ return (pPCode==PL_SQL_REP_F)||(pPCode==EXCEL_F)||(pPCode==EXCEL_REP_F)||(pPCode
 };
 //---------------------------------------------------------------------------
 // Add by KSS
-// Функция обновляет свойства ячеек таблицы dt в зависимости от значения nsource в массиве данных pClone
-// P.S. количество VarStrings таблицы dt должно совпадать с длиной массива pClone - cntClone
+// Р¤СѓРЅРєС†РёСЏ РѕР±РЅРѕРІР»СЏРµС‚ СЃРІРѕР№СЃС‚РІР° СЏС‡РµРµРє С‚Р°Р±Р»РёС†С‹ dt РІ Р·Р°РІРёСЃРёРјРѕСЃС‚Рё РѕС‚ Р·РЅР°С‡РµРЅРёСЏ nsource РІ РјР°СЃСЃРёРІРµ РґР°РЅРЅС‹С… pClone
+// P.S. РєРѕР»РёС‡РµСЃС‚РІРѕ VarStrings С‚Р°Р±Р»РёС†С‹ dt РґРѕР»Р¶РЅРѕ СЃРѕРІРїР°РґР°С‚СЊ СЃ РґР»РёРЅРѕР№ РјР°СЃСЃРёРІР° pClone - cntClone
 void __fastcall TInterior::setDataSourceToDrawTable(TDrawTable*dt, TCloneItem*pClone,
    int cntClones, int cntColumns, int cntRows)
 {
@@ -316,14 +316,14 @@ void __fastcall TInterior::setDataSourceToDrawTable(TDrawTable*dt, TCloneItem*pC
 
     TDrawTable::SAttrCell* pAttr;
     char Symb[4][32]={"OK"," X "," * "," ? "};
-    TColor Color [4]={clGreen,clRed,clBlue ,(TColor)RGB(255,128,0)}; //Цвет фона верхнего  RGB(255,128,0)
-    TColor ColorSimbol[4]={clWhite,clWhite,clWhite,clWhite}; //Цвет шрифта верхнего
-    char Symb1[9][32]={" N "," 1 "," 2 "," S "," P "," M "," O "," A "," П " };
-    TColor Color1[9]={(TColor)RGB(192,192,192),clGreen,clGreen,clBlue,clBlue,clBlue,clGreen,(TColor)RGB(159,255,159),clBlue};//Цвет фона нижнего
-    TColor ColorSimbol1[9]={clBlack,clWhite,clWhite,clWhite,clWhite,clWhite,clWhite,clBlack,clWhite};         //Цвет шрифта нижнего
+    TColor Color [4]={clGreen,clRed,clBlue ,(TColor)RGB(255,128,0)}; //Р¦РІРµС‚ С„РѕРЅР° РІРµСЂС…РЅРµРіРѕ  RGB(255,128,0)
+    TColor ColorSimbol[4]={clWhite,clWhite,clWhite,clWhite}; //Р¦РІРµС‚ С€СЂРёС„С‚Р° РІРµСЂС…РЅРµРіРѕ
+    char Symb1[9][32]={" N "," 1 "," 2 "," S "," P "," M "," O "," A "," Рџ " };
+    TColor Color1[9]={(TColor)RGB(192,192,192),clGreen,clGreen,clBlue,clBlue,clBlue,clGreen,(TColor)RGB(159,255,159),clBlue};//Р¦РІРµС‚ С„РѕРЅР° РЅРёР¶РЅРµРіРѕ
+    TColor ColorSimbol1[9]={clBlack,clWhite,clWhite,clWhite,clWhite,clWhite,clWhite,clBlack,clWhite};         //Р¦РІРµС‚ С€СЂРёС„С‚Р° РЅРёР¶РЅРµРіРѕ
     char Symb2[2][32]={" N "," Y "};
-    TColor Color2[2]={clRed,clGreen};//Цвет фона верхнего левого
-    TColor ColorSimbol2[2]={clWhite,clWhite};         //Цвет шрифта верхнего   левого
+    TColor Color2[2]={clRed,clGreen};//Р¦РІРµС‚ С„РѕРЅР° РІРµСЂС…РЅРµРіРѕ Р»РµРІРѕРіРѕ
+    TColor ColorSimbol2[2]={clWhite,clWhite};         //Р¦РІРµС‚ С€СЂРёС„С‚Р° РІРµСЂС…РЅРµРіРѕ   Р»РµРІРѕРіРѕ
     int flag=0;
     try{
 
@@ -349,7 +349,7 @@ void __fastcall TInterior::setDataSourceToDrawTable(TDrawTable*dt, TCloneItem*pC
         //   if(!fd->VerticalSplit&&!fd->SummGroup&&(varIndex%dt->RowCount==0))varIndex++;
            if(fd->VerticalSplit&&!fd->SummGroup&&(varIndex%(dt->ColCount-1+cntColumns)==0))varIndex+=cntColumns;
            flag=0;
-           if(pClone[ varIndex].isvalid[0]!='\0')  //проверка правильности каждого символа в строке метки качества
+           if(pClone[ varIndex].isvalid[0]!='\0')  //РїСЂРѕРІРµСЂРєР° РїСЂР°РІРёР»СЊРЅРѕСЃС‚Рё РєР°Р¶РґРѕРіРѕ СЃРёРјРІРѕР»Р° РІ СЃС‚СЂРѕРєРµ РјРµС‚РєРё РєР°С‡РµСЃС‚РІР°
            {
              if(StrToInt(pClone[ varIndex].isvalid[0])<0 ||StrToInt(pClone[ varIndex].isvalid[0])>3)
              flag=1;
@@ -480,77 +480,77 @@ AnsiString  d = "";
   switch( fd->CodeTemplate )
   {
 
- case AEBO_REBO_F :          //Переток Активной / Реактивной энергии [МВтч/МВАрч]
- case AEBO_REBO_POW_F:          //Переток Активной / Реактивной энергии [МВтч/МВАрч] Получасовки мощность
- case AEBO_REBO_SUM_F :         //Переток Активной / Реактивной энергии [МВтч/МВАрч] Суммируется по наростающей
+ case AEBO_REBO_F :          //РџРµСЂРµС‚РѕРє РђРєС‚РёРІРЅРѕР№ / Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РњР’С‚С‡/РњР’РђСЂС‡]
+ case AEBO_REBO_POW_F:          //РџРµСЂРµС‚РѕРє РђРєС‚РёРІРЅРѕР№ / Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РњР’С‚С‡/РњР’РђСЂС‡] РџРѕР»СѓС‡Р°СЃРѕРІРєРё РјРѕС‰РЅРѕСЃС‚СЊ
+ case AEBO_REBO_SUM_F :         //РџРµСЂРµС‚РѕРє РђРєС‚РёРІРЅРѕР№ / Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РњР’С‚С‡/РњР’РђСЂС‡] РЎСѓРјРјРёСЂСѓРµС‚СЃСЏ РїРѕ РЅР°СЂРѕСЃС‚Р°СЋС‰РµР№
 
               d = (PowerCoeff==1)?Reconst_smes101_6: Reconst_smes101_7;
                 break;
 
 
- case AEBO_F:                 //Переток Активной энергии [кВтч]
- case AEBO_POW_F:             //Переток Активной энергии [кВтч] Получасовки мощность
- case AEBO_SUM_F :            //Переток Активной энергии [кВтч] Суммируется по наростающей
- case AERO_F :                //Приём Активной энергии [кВтч]
- case AERO_POW_F:             //Приём Активной энергии [кВтч] Получасовки мощность
- case AERO_SUM_F :            //Приём Активной энергии [кВтч] Суммируется по наростающей
- case AEDO_F :               //Отдача Активной энергии [кВтч]
- case AEDO_POW_F:             //Отдача Активной энергии [кВтч] Получасовки мощность
- case AEDO_SUM_F :            //Отдача Активной энергии [кВтч] Суммируется по наростающей
- case AERO_DECAD_F:         //Приём Активной энергии по декадам [тыс.кВтч]
- case AEBO_DECAD_F :        //Переток Активной энергии по декадам [тыс.кВтч]
- case AERO_AERA_AERB_AERC_F:  //Активная принятая общая и по тарифам [кВтч]
- case AEDO_AEDA_AEDB_AEDC_F: //Активная отданная общая и по тарифам [кВтч]
- case AEBO_AEBA_AEBB_AEBC_F:  //Переток активной э/э (общая и по тарифам) [кВтч]
- case AERA_AERB_AERC_AERD_F:  //Активная принятая по тарифам [кВтч]
- case AEDA_AEDB_AEDC_AEDD_F:  //Активная отданная по тарифам [кВтч]
- case AERO_AEDO_F :           //Приём / Отдача Активной энергии [МВтч]
- case AERO_AEDO_POW_F:        //Приём / Отдача Активной энергии [МВтч] Получасовки мощность
- case AERO_AEDO_SUM_F :       //Приём / Отдача Активной энергии [МВтч] Суммируется по наростающей
- case BALANCE_F:           //Баланас Активной энергии [МВтч]
- case BALANCE_POW_F:        //Баланс Активной энергии (ГН, Тех.проф. - мощность)
- case BALANCE_SUM_F :       //Баланс Активной энергии (Суммируется по наростающей)
+ case AEBO_F:                 //РџРµСЂРµС‚РѕРє РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РєР’С‚С‡]
+ case AEBO_POW_F:             //РџРµСЂРµС‚РѕРє РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РєР’С‚С‡] РџРѕР»СѓС‡Р°СЃРѕРІРєРё РјРѕС‰РЅРѕСЃС‚СЊ
+ case AEBO_SUM_F :            //РџРµСЂРµС‚РѕРє РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РєР’С‚С‡] РЎСѓРјРјРёСЂСѓРµС‚СЃСЏ РїРѕ РЅР°СЂРѕСЃС‚Р°СЋС‰РµР№
+ case AERO_F :                //РџСЂРёС‘Рј РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РєР’С‚С‡]
+ case AERO_POW_F:             //РџСЂРёС‘Рј РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РєР’С‚С‡] РџРѕР»СѓС‡Р°СЃРѕРІРєРё РјРѕС‰РЅРѕСЃС‚СЊ
+ case AERO_SUM_F :            //РџСЂРёС‘Рј РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РєР’С‚С‡] РЎСѓРјРјРёСЂСѓРµС‚СЃСЏ РїРѕ РЅР°СЂРѕСЃС‚Р°СЋС‰РµР№
+ case AEDO_F :               //РћС‚РґР°С‡Р° РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РєР’С‚С‡]
+ case AEDO_POW_F:             //РћС‚РґР°С‡Р° РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РєР’С‚С‡] РџРѕР»СѓС‡Р°СЃРѕРІРєРё РјРѕС‰РЅРѕСЃС‚СЊ
+ case AEDO_SUM_F :            //РћС‚РґР°С‡Р° РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РєР’С‚С‡] РЎСѓРјРјРёСЂСѓРµС‚СЃСЏ РїРѕ РЅР°СЂРѕСЃС‚Р°СЋС‰РµР№
+ case AERO_DECAD_F:         //РџСЂРёС‘Рј РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё РїРѕ РґРµРєР°РґР°Рј [С‚С‹СЃ.РєР’С‚С‡]
+ case AEBO_DECAD_F :        //РџРµСЂРµС‚РѕРє РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё РїРѕ РґРµРєР°РґР°Рј [С‚С‹СЃ.РєР’С‚С‡]
+ case AERO_AERA_AERB_AERC_F:  //РђРєС‚РёРІРЅР°СЏ РїСЂРёРЅСЏС‚Р°СЏ РѕР±С‰Р°СЏ Рё РїРѕ С‚Р°СЂРёС„Р°Рј [РєР’С‚С‡]
+ case AEDO_AEDA_AEDB_AEDC_F: //РђРєС‚РёРІРЅР°СЏ РѕС‚РґР°РЅРЅР°СЏ РѕР±С‰Р°СЏ Рё РїРѕ С‚Р°СЂРёС„Р°Рј [РєР’С‚С‡]
+ case AEBO_AEBA_AEBB_AEBC_F:  //РџРµСЂРµС‚РѕРє Р°РєС‚РёРІРЅРѕР№ СЌ/СЌ (РѕР±С‰Р°СЏ Рё РїРѕ С‚Р°СЂРёС„Р°Рј) [РєР’С‚С‡]
+ case AERA_AERB_AERC_AERD_F:  //РђРєС‚РёРІРЅР°СЏ РїСЂРёРЅСЏС‚Р°СЏ РїРѕ С‚Р°СЂРёС„Р°Рј [РєР’С‚С‡]
+ case AEDA_AEDB_AEDC_AEDD_F:  //РђРєС‚РёРІРЅР°СЏ РѕС‚РґР°РЅРЅР°СЏ РїРѕ С‚Р°СЂРёС„Р°Рј [РєР’С‚С‡]
+ case AERO_AEDO_F :           //РџСЂРёС‘Рј / РћС‚РґР°С‡Р° РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РњР’С‚С‡]
+ case AERO_AEDO_POW_F:        //РџСЂРёС‘Рј / РћС‚РґР°С‡Р° РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РњР’С‚С‡] РџРѕР»СѓС‡Р°СЃРѕРІРєРё РјРѕС‰РЅРѕСЃС‚СЊ
+ case AERO_AEDO_SUM_F :       //РџСЂРёС‘Рј / РћС‚РґР°С‡Р° РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РњР’С‚С‡] РЎСѓРјРјРёСЂСѓРµС‚СЃСЏ РїРѕ РЅР°СЂРѕСЃС‚Р°СЋС‰РµР№
+ case BALANCE_F:           //Р‘Р°Р»Р°РЅР°СЃ РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РњР’С‚С‡]
+ case BALANCE_POW_F:        //Р‘Р°Р»Р°РЅСЃ РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё (Р“Рќ, РўРµС….РїСЂРѕС„. - РјРѕС‰РЅРѕСЃС‚СЊ)
+ case BALANCE_SUM_F :       //Р‘Р°Р»Р°РЅСЃ РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё (РЎСѓРјРјРёСЂСѓРµС‚СЃСЏ РїРѕ РЅР°СЂРѕСЃС‚Р°СЋС‰РµР№)
  case NOT_BALANCE:
- case NOT_BALANCE_AER: // 207 - Небаланс активной энергии
+ case NOT_BALANCE_AER: // 207 - РќРµР±Р°Р»Р°РЅСЃ Р°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё
             if((fd->CodeTemplate==AEBO_POW_F||fd->CodeTemplate==AERO_POW_F||fd->CodeTemplate==AEDO_POW_F||fd->CodeTemplate==AERO_AEDO_POW_F)&&(fd->StepProfile==TFormDescr::stpHour ||
              fd->StepProfile==TFormDescr::stpMinute)){
              d = (PowerCoeff==1)?Reconst_smes104_27: Reconst_smes101_2;//   Reconst_smes101_2;
             }else
               d = (PowerCoeff==1)?Reconst_smes101_8: Reconst_smes101_9;
             break;
- case REBO_F :                //Переток Реактивной энергии [кВАрч]
- case REBO_POW_F :            //Переток Реактивной энергии [кВАрч] Получасовки мощность
- case REBO_SUM_F :            //Переток Реактивной энергии [кВАрч] Суммируется по наростающей
- case RERO_F :                //Приём Реактивной энергии [кВАрч]
- case RERO_POW_F :            //Приём Реактивной энергии [кВАрч] Получасовки мощность
- case RERO_SUM_F :            //Приём Реактивной энергии [кВАрч] Суммируется по наростающей
- case REDO_F :                //Отдача реактивной энергии [кВАрч]
- case REDO_POW_F:             //Отдача реактивной энергии [кВАрч] Получасовки мощность
- case REDO_SUM_F :           //Отдача реактивной энергии [кВАрч] Суммируется по наростающей
- case RERO_RERA_RERB_RERC_F:  //Реактивная принятая общая и по тарифам [кВАрч]
- case REDO_REDA_REDB_REDC_F:  //Реактивная отданная общая и по тарифам [кВАрч]
- case REBO_REBA_REBB_REBC_F:  //Переток реактивной э/э (общая и по тарифам) [кВарч]
- case RERA_RERB_RERC_RERD_F:  //Реактивная принятая по тарифам [кВАрч]
- case REDA_REDB_REDC_REDD_F:  //Реактивная отданная по тарифам [кВАрч]
- case RERO_REDO_F :           //Приём / Отдача Реактивной энергии [МВАрч]
- case RERO_REDO_POW_F:        //Приём / Отдача Реактивной энергии [МВАрч] Получасовки мощность
- case RERO_REDO_SUM_F :       //Приём / Отдача Реактивной энергии [МВАрч] Суммируется по наростающей
- case RQ1_RQ4_F :             //Приём / Отдача Реактивной энергии при импорте активной энергии [МВАрч]
- case RQ1_RQ4_POW_F:          //Приём / Отдача Реактивной энергии при импорте активной энергии [МВАрч]  Получасовки мощность
- case RQ2_RQ3_F :             //Приём / Отдача Реактивной энергии при экспорте активной энергии [МВАрч]
- case RQ2_RQ3_POW_F:          //Приём / Отдача Реактивной энергии при экспорте активной энергии [МВАрч] Получасовки мощность
- case RE_BALANCE_F:            //Баланс Реактивной энергии
- case RE_BALANCE_POW_F:        //Баланс Реактивной энергии (ГН, Тех.проф. - мощность)
- case RE_BALANCE_SUM_F:        //Баланс Реактивной энергии (Суммируется по наростающей)
+ case REBO_F :                //РџРµСЂРµС‚РѕРє Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РєР’РђСЂС‡]
+ case REBO_POW_F :            //РџРµСЂРµС‚РѕРє Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РєР’РђСЂС‡] РџРѕР»СѓС‡Р°СЃРѕРІРєРё РјРѕС‰РЅРѕСЃС‚СЊ
+ case REBO_SUM_F :            //РџРµСЂРµС‚РѕРє Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РєР’РђСЂС‡] РЎСѓРјРјРёСЂСѓРµС‚СЃСЏ РїРѕ РЅР°СЂРѕСЃС‚Р°СЋС‰РµР№
+ case RERO_F :                //РџСЂРёС‘Рј Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РєР’РђСЂС‡]
+ case RERO_POW_F :            //РџСЂРёС‘Рј Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РєР’РђСЂС‡] РџРѕР»СѓС‡Р°СЃРѕРІРєРё РјРѕС‰РЅРѕСЃС‚СЊ
+ case RERO_SUM_F :            //РџСЂРёС‘Рј Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РєР’РђСЂС‡] РЎСѓРјРјРёСЂСѓРµС‚СЃСЏ РїРѕ РЅР°СЂРѕСЃС‚Р°СЋС‰РµР№
+ case REDO_F :                //РћС‚РґР°С‡Р° СЂРµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РєР’РђСЂС‡]
+ case REDO_POW_F:             //РћС‚РґР°С‡Р° СЂРµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РєР’РђСЂС‡] РџРѕР»СѓС‡Р°СЃРѕРІРєРё РјРѕС‰РЅРѕСЃС‚СЊ
+ case REDO_SUM_F :           //РћС‚РґР°С‡Р° СЂРµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РєР’РђСЂС‡] РЎСѓРјРјРёСЂСѓРµС‚СЃСЏ РїРѕ РЅР°СЂРѕСЃС‚Р°СЋС‰РµР№
+ case RERO_RERA_RERB_RERC_F:  //Р РµР°РєС‚РёРІРЅР°СЏ РїСЂРёРЅСЏС‚Р°СЏ РѕР±С‰Р°СЏ Рё РїРѕ С‚Р°СЂРёС„Р°Рј [РєР’РђСЂС‡]
+ case REDO_REDA_REDB_REDC_F:  //Р РµР°РєС‚РёРІРЅР°СЏ РѕС‚РґР°РЅРЅР°СЏ РѕР±С‰Р°СЏ Рё РїРѕ С‚Р°СЂРёС„Р°Рј [РєР’РђСЂС‡]
+ case REBO_REBA_REBB_REBC_F:  //РџРµСЂРµС‚РѕРє СЂРµР°РєС‚РёРІРЅРѕР№ СЌ/СЌ (РѕР±С‰Р°СЏ Рё РїРѕ С‚Р°СЂРёС„Р°Рј) [РєР’Р°СЂС‡]
+ case RERA_RERB_RERC_RERD_F:  //Р РµР°РєС‚РёРІРЅР°СЏ РїСЂРёРЅСЏС‚Р°СЏ РїРѕ С‚Р°СЂРёС„Р°Рј [РєР’РђСЂС‡]
+ case REDA_REDB_REDC_REDD_F:  //Р РµР°РєС‚РёРІРЅР°СЏ РѕС‚РґР°РЅРЅР°СЏ РїРѕ С‚Р°СЂРёС„Р°Рј [РєР’РђСЂС‡]
+ case RERO_REDO_F :           //РџСЂРёС‘Рј / РћС‚РґР°С‡Р° Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РњР’РђСЂС‡]
+ case RERO_REDO_POW_F:        //РџСЂРёС‘Рј / РћС‚РґР°С‡Р° Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РњР’РђСЂС‡] РџРѕР»СѓС‡Р°СЃРѕРІРєРё РјРѕС‰РЅРѕСЃС‚СЊ
+ case RERO_REDO_SUM_F :       //РџСЂРёС‘Рј / РћС‚РґР°С‡Р° Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РњР’РђСЂС‡] РЎСѓРјРјРёСЂСѓРµС‚СЃСЏ РїРѕ РЅР°СЂРѕСЃС‚Р°СЋС‰РµР№
+ case RQ1_RQ4_F :             //РџСЂРёС‘Рј / РћС‚РґР°С‡Р° Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё РїСЂРё РёРјРїРѕСЂС‚Рµ Р°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РњР’РђСЂС‡]
+ case RQ1_RQ4_POW_F:          //РџСЂРёС‘Рј / РћС‚РґР°С‡Р° Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё РїСЂРё РёРјРїРѕСЂС‚Рµ Р°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РњР’РђСЂС‡]  РџРѕР»СѓС‡Р°СЃРѕРІРєРё РјРѕС‰РЅРѕСЃС‚СЊ
+ case RQ2_RQ3_F :             //РџСЂРёС‘Рј / РћС‚РґР°С‡Р° Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё РїСЂРё СЌРєСЃРїРѕСЂС‚Рµ Р°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РњР’РђСЂС‡]
+ case RQ2_RQ3_POW_F:          //РџСЂРёС‘Рј / РћС‚РґР°С‡Р° Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё РїСЂРё СЌРєСЃРїРѕСЂС‚Рµ Р°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [РњР’РђСЂС‡] РџРѕР»СѓС‡Р°СЃРѕРІРєРё РјРѕС‰РЅРѕСЃС‚СЊ
+ case RE_BALANCE_F:            //Р‘Р°Р»Р°РЅСЃ Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё
+ case RE_BALANCE_POW_F:        //Р‘Р°Р»Р°РЅСЃ Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё (Р“Рќ, РўРµС….РїСЂРѕС„. - РјРѕС‰РЅРѕСЃС‚СЊ)
+ case RE_BALANCE_SUM_F:        //Р‘Р°Р»Р°РЅСЃ Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё (РЎСѓРјРјРёСЂСѓРµС‚СЃСЏ РїРѕ РЅР°СЂРѕСЃС‚Р°СЋС‰РµР№)
             if((fd->CodeTemplate==REBO_POW_F||fd->CodeTemplate==RERO_POW_F||fd->CodeTemplate==REDO_POW_F||fd->CodeTemplate==RERO_REDO_POW_F||
               fd->CodeTemplate==RQ1_RQ4_POW_F||fd->CodeTemplate==RQ2_RQ3_POW_F)&&(fd->StepProfile==TFormDescr::stpHour ||fd->StepProfile==TFormDescr::stpMinute)){
                d = (PowerCoeff==1)?Reconst_smes104_28: Reconst_smes101_3;//Reconst_smes101_3;
             }else
               d = (PowerCoeff==1)?Reconst_smes101_10: Reconst_smes101_11;
             break;
- case APBO_F :                //Мощность, лимит, отклонение [МВт]
- case RPBO_F :                //Мощность, лимит, отклонение [МВт]
-          d = " [МВт] ";
+ case APBO_F :                //РњРѕС‰РЅРѕСЃС‚СЊ, Р»РёРјРёС‚, РѕС‚РєР»РѕРЅРµРЅРёРµ [РњР’С‚]
+ case RPBO_F :                //РњРѕС‰РЅРѕСЃС‚СЊ, Р»РёРјРёС‚, РѕС‚РєР»РѕРЅРµРЅРёРµ [РњР’С‚]
+          d = " [РњР’С‚] ";
           break;
     }
 

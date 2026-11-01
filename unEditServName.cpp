@@ -29,7 +29,7 @@ void __fastcall TfmEditServName::acOkExecute(TObject *Sender)
 {
   if (edServName->Text == "")
   {
-    MessageDlg("Поле имени не может быть пустым",
+    MessageDlg("РџРѕР»Рµ РёРјРµРЅРё РЅРµ РјРѕР¶РµС‚ Р±С‹С‚СЊ РїСѓСЃС‚С‹Рј",
                mtError, TMsgDlgButtons() << mbOK, 0);
     return;
   }

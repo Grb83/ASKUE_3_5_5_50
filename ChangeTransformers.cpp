@@ -260,14 +260,14 @@ void __fastcall TChangeTransformersForm::m_btnSaveClick(TObject *Sender)
                 delete Reg;
         }
     if (Language=="UKR"){
-    aSaveDialog->Title = "Çáåðåãòè äî ôàéëà...";
-    aSaveDialog->FileName = "Àòðèáóòè òðàíñôîðìàòîðà";
-    aSaveDialog->Filter = "Òåêñòîâ³ äîêóìåíòè (*.txt)|*.txt|Ôàéë ç ðîçä³ëüíèêîì (*.csv)|*.csv|Excel-òàáëèöÿ (*.xls)|*.xls";
+    aSaveDialog->Title = "Ð—Ð±ÐµÑ€ÐµÐ³Ñ‚Ð¸ Ð´Ð¾ Ñ„Ð°Ð¹Ð»Ð°...";
+    aSaveDialog->FileName = "ÐÑ‚Ñ€Ð¸Ð±ÑƒÑ‚Ð¸ Ñ‚Ñ€Ð°Ð½ÑÑ„Ð¾Ñ€Ð¼Ð°Ñ‚Ð¾Ñ€Ð°";
+    aSaveDialog->Filter = "Ð¢ÐµÐºÑÑ‚Ð¾Ð²Ñ– Ð´Ð¾ÐºÑƒÐ¼ÐµÐ½Ñ‚Ð¸ (*.txt)|*.txt|Ð¤Ð°Ð¹Ð» Ð· Ñ€Ð¾Ð·Ð´Ñ–Ð»ÑŒÐ½Ð¸ÐºÐ¾Ð¼ (*.csv)|*.csv|Excel-Ñ‚Ð°Ð±Ð»Ð¸Ñ†Ñ (*.xls)|*.xls";
     }else{
-    aSaveDialog->Title = "Àòòðèáóòû òðàíñôîðìàòîðà...";
-    aSaveDialog->FileName = "Òàáëè÷íîå ïðîñòðàíñòâî";
+    aSaveDialog->Title = "ÐÑ‚Ñ‚Ñ€Ð¸Ð±ÑƒÑ‚Ñ‹ Ñ‚Ñ€Ð°Ð½ÑÑ„Ð¾Ñ€Ð¼Ð°Ñ‚Ð¾Ñ€Ð°...";
+    aSaveDialog->FileName = "Ð¢Ð°Ð±Ð»Ð¸Ñ‡Ð½Ð¾Ðµ Ð¿Ñ€Ð¾ÑÑ‚Ñ€Ð°Ð½ÑÑ‚Ð²Ð¾";
     aSaveDialog->DefaultExt = "csv";
-    aSaveDialog->Filter = "Òåêñòîâûå äîêóìåíòû (*.txt)|*.txt|Ôàéë ñ ðàçäåëèòåëåì (*.csv)|*.csv|Excel-òàáëèöà (*.xls)|*.xls";
+    aSaveDialog->Filter = "Ð¢ÐµÐºÑÑ‚Ð¾Ð²Ñ‹Ðµ Ð´Ð¾ÐºÑƒÐ¼ÐµÐ½Ñ‚Ñ‹ (*.txt)|*.txt|Ð¤Ð°Ð¹Ð» Ñ Ñ€Ð°Ð·Ð´ÐµÐ»Ð¸Ñ‚ÐµÐ»ÐµÐ¼ (*.csv)|*.csv|Excel-Ñ‚Ð°Ð±Ð»Ð¸Ñ†Ð° (*.xls)|*.xls";
     }
     if(aSaveDialog->Execute())
     {

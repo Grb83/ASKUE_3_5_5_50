@@ -29,12 +29,12 @@ AnsiString pct_free[MAX_ROW];
 AnsiString pct_used[MAX_ROW];
 AnsiString max[MAX_ROW];
 AnsiString usage[MAX_ROW];
-const AnsiString colNamesRus[MAX_COLUMN] = {"Наименование пространства","Использовано, %","Свободно, %","Выделено, Mb","Использовано, Mb","Cвободно, Mb","Максимум, Mb","Использовано от максимума, %"};
-const AnsiString colNamesUkr[MAX_COLUMN] = {"Найменування простору", "Використано, %", "Вільно, %","Виділено, Mb","Використано, Mb","Вільно, Mb", "Максимум, Mb","Використано від максимума, %"};
+const AnsiString colNamesRus[MAX_COLUMN] = {"РќР°РёРјРµРЅРѕРІР°РЅРёРµ РїСЂРѕСЃС‚СЂР°РЅСЃС‚РІР°","РСЃРїРѕР»СЊР·РѕРІР°РЅРѕ, %","РЎРІРѕР±РѕРґРЅРѕ, %","Р’С‹РґРµР»РµРЅРѕ, Mb","РСЃРїРѕР»СЊР·РѕРІР°РЅРѕ, Mb","CРІРѕР±РѕРґРЅРѕ, Mb","РњР°РєСЃРёРјСѓРј, Mb","РСЃРїРѕР»СЊР·РѕРІР°РЅРѕ РѕС‚ РјР°РєСЃРёРјСѓРјР°, %"};
+const AnsiString colNamesUkr[MAX_COLUMN] = {"РќР°Р№РјРµРЅСѓРІР°РЅРЅСЏ РїСЂРѕСЃС‚РѕСЂСѓ", "Р’РёРєРѕСЂРёСЃС‚Р°РЅРѕ, %", "Р’С–Р»СЊРЅРѕ, %","Р’РёРґС–Р»РµРЅРѕ, Mb","Р’РёРєРѕСЂРёСЃС‚Р°РЅРѕ, Mb","Р’С–Р»СЊРЅРѕ, Mb", "РњР°РєСЃРёРјСѓРј, Mb","Р’РёРєРѕСЂРёСЃС‚Р°РЅРѕ РІС–Рґ РјР°РєСЃРёРјСѓРјР°, %"};
 AnsiString colNames[MAX_COLUMN];
 
-const AnsiString allRowRus = "Всего:";
-const AnsiString allRowUkr = "Всього:";
+const AnsiString allRowRus = "Р’СЃРµРіРѕ:";
+const AnsiString allRowUkr = "Р’СЃСЊРѕРіРѕ:";
 class TTablespaceUsage : public TForm
 {
 __published:	// IDE-managed Components

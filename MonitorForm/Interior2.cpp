@@ -18,7 +18,7 @@ __fastcall T2Interior::~T2Interior(void)
 void __fastcall T2Interior::selectData( TOraQuery *qwInter )
 {
 	unsigned long j,selectRows,clones,rowCount;
-  AnsiString PowKoef = ""; // Êîýôôèöèåíò äëÿ ïåðåâîäà â ìîùíîñòü Äëÿ ÃÍ è Òåõ. ïðîôèëÿ
+  AnsiString PowKoef = ""; // ÐšÐ¾ÑÑ„Ñ„Ð¸Ñ†Ð¸ÐµÐ½Ñ‚ Ð´Ð»Ñ Ð¿ÐµÑ€ÐµÐ²Ð¾Ð´Ð° Ð² Ð¼Ð¾Ñ‰Ð½Ð¾ÑÑ‚ÑŒ Ð”Ð»Ñ Ð“Ð Ð¸ Ð¢ÐµÑ…. Ð¿Ñ€Ð¾Ñ„Ð¸Ð»Ñ
   int CountOnProgress=6;
 	long iClones,IdGroup;
 	AnsiString sql;// paramlist, decnsourcesec, decnsourcef,decperiod;
@@ -149,7 +149,7 @@ void __fastcall T2Interior::selectData( TOraQuery *qwInter )
 {
   AnsiString SubSelect;
   fd->IdGroup = GroupJump(fd->IdGroup);
-	//Çàïîëíÿåì íåîáõîäèìûå ïîëÿ îïèñàíèÿ ôîðìû
+	//Ð—Ð°Ð¿Ð¾Ð»Ð½ÑÐµÐ¼ Ð½ÐµÐ¾Ð±Ñ…Ð¾Ð´Ð¸Ð¼Ñ‹Ðµ Ð¿Ð¾Ð»Ñ Ð¾Ð¿Ð¸ÑÐ°Ð½Ð¸Ñ Ñ„Ð¾Ñ€Ð¼Ñ‹
 	Clones = 0;
   dmMain->oqInterCursor->Params->Clear();
   dmMain->oqInterCursor->SQL->Text=" begin "+SchemeName+"interior_pg.Interior_formDescr_p(:par1,:par2,:par3,:par4,:par5,:par6,:par7); end;";
@@ -165,7 +165,7 @@ void __fastcall T2Interior::selectData( TOraQuery *qwInter )
 
   dmMain->oqInterCursor->Execute();
 	NamesClones->Clear();
-  //24.08.2022 GRB Change - áàã ñ îáðåçàíèåì äëèííûõ èìåí êîëîíîê ïðè ñîõðàíåíèè â ôàéë - ìåíÿåì êîðîòêîå èìÿ ãðóïïû íà ïîëíîå
+  //24.08.2022 GRB Change - Ð±Ð°Ð³ Ñ Ð¾Ð±Ñ€ÐµÐ·Ð°Ð½Ð¸ÐµÐ¼ Ð´Ð»Ð¸Ð½Ð½Ñ‹Ñ… Ð¸Ð¼ÐµÐ½ ÐºÐ¾Ð»Ð¾Ð½Ð¾Ðº Ð¿Ñ€Ð¸ ÑÐ¾Ñ…Ñ€Ð°Ð½ÐµÐ½Ð¸Ð¸ Ð² Ñ„Ð°Ð¹Ð» - Ð¼ÐµÐ½ÑÐµÐ¼ ÐºÐ¾Ñ€Ð¾Ñ‚ÐºÐ¾Ðµ Ð¸Ð¼Ñ Ð³Ñ€ÑƒÐ¿Ð¿Ñ‹ Ð½Ð° Ð¿Ð¾Ð»Ð½Ð¾Ðµ
   //NamesClones->AddObject(fd->ShortNameGroup,(TObject*)fd->IdGroup);
     NamesClones->AddObject(fd->NameGroup,(TObject*)fd->IdGroup);
   while(!dmMain->oqInterCursor->Eof){
@@ -178,7 +178,7 @@ void __fastcall T2Interior::selectData( TOraQuery *qwInter )
   dmMain->oqInterCursor->Close();
 	if(!Clones){
 		fd->SummGroup=true;
-      //24.08.2022 GRB Change - áàã ñ îáðåçàíèåì äëèííûõ èìåí êîëîíîê ïðè ñîõðàíåíèè â ôàéë - ìåíÿåì êîðîòêîå èìÿ ãðóïïû íà ïîëíîå
+      //24.08.2022 GRB Change - Ð±Ð°Ð³ Ñ Ð¾Ð±Ñ€ÐµÐ·Ð°Ð½Ð¸ÐµÐ¼ Ð´Ð»Ð¸Ð½Ð½Ñ‹Ñ… Ð¸Ð¼ÐµÐ½ ÐºÐ¾Ð»Ð¾Ð½Ð¾Ðº Ð¿Ñ€Ð¸ ÑÐ¾Ñ…Ñ€Ð°Ð½ÐµÐ½Ð¸Ð¸ Ð² Ñ„Ð°Ð¹Ð» - Ð¼ÐµÐ½ÑÐµÐ¼ ÐºÐ¾Ñ€Ð¾Ñ‚ÐºÐ¾Ðµ Ð¸Ð¼Ñ Ð³Ñ€ÑƒÐ¿Ð¿Ñ‹ Ð½Ð° Ð¿Ð¾Ð»Ð½Ð¾Ðµ
     //NamesClones->AddObject(fd->ShortNameGroup,(TObject*)fd->IdGroup);
         NamesClones->AddObject(fd->NameGroup,(TObject*)fd->IdGroup);
 		Clones=1;

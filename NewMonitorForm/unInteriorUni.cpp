@@ -10,7 +10,7 @@
 #define UNVALUEROW 2
 #define FIXEDCOLUMN 4
 #include "Main.h"
-#define DIGITNUMBER 2 //количество знаков после запятой для данных в многостолбцовом макете. Значения принудительно добиваются до этого
+#define DIGITNUMBER 2 //РєРѕР»РёС‡РµСЃС‚РІРѕ Р·РЅР°РєРѕРІ РїРѕСЃР»Рµ Р·Р°РїСЏС‚РѕР№ РґР»СЏ РґР°РЅРЅС‹С… РІ РјРЅРѕРіРѕСЃС‚РѕР»Р±С†РѕРІРѕРј РјР°РєРµС‚Рµ. Р—РЅР°С‡РµРЅРёСЏ РїСЂРёРЅСѓРґРёС‚РµР»СЊРЅРѕ РґРѕР±РёРІР°СЋС‚СЃСЏ РґРѕ СЌС‚РѕРіРѕ
 
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
@@ -64,7 +64,7 @@ __fastcall TfmInteriorUni::TfmInteriorUni(TComponent* Owner,TFormDescr* aFD, boo
 //---------------------------------------------------------------------------
 __fastcall TfmInteriorUni::TfmInteriorUni(TComponent* Owner,TFormDescr* aFD, TStringList* maket, char* maketType, TStringList* maketGroupsInfo, TStringList* cloneMaketGroupsInfo, TStringList* maketListPoints, AnsiString delim)
   : TForm(Owner)
-  //конструктор копирования для сформированных/отправленных макетов + выстанавливается признак modeMaketFM новодела
+  //РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєРѕРїРёСЂРѕРІР°РЅРёСЏ РґР»СЏ СЃС„РѕСЂРјРёСЂРѕРІР°РЅРЅС‹С…/РѕС‚РїСЂР°РІР»РµРЅРЅС‹С… РјР°РєРµС‚РѕРІ + РІС‹СЃС‚Р°РЅР°РІР»РёРІР°РµС‚СЃСЏ РїСЂРёР·РЅР°Рє modeMaketFM РЅРѕРІРѕРґРµР»Р°
 {
         ReplaceRyda(this,BASE_SCHEME,SchemeName);
         FD=aFD;
@@ -79,34 +79,34 @@ __fastcall TfmInteriorUni::TfmInteriorUni(TComponent* Owner,TFormDescr* aFD, TSt
         this->maketListPoints = maketListPoints;
         this->delim = delim;
         modeMaketFM=true;
-        //TODO Для украинской версии всё это не работает, так как MaketF біло добавлено позже и ссілки на нее в UKR файле НЕТУ!
+        //TODO Р”Р»СЏ СѓРєСЂР°РёРЅСЃРєРѕР№ РІРµСЂСЃРёРё РІСЃС‘ СЌС‚Рѕ РЅРµ СЂР°Р±РѕС‚Р°РµС‚, С‚Р°Рє РєР°Рє MaketF Р±С–Р»Рѕ РґРѕР±Р°РІР»РµРЅРѕ РїРѕР·Р¶Рµ Рё СЃСЃС–Р»РєРё РЅР° РЅРµРµ РІ UKR С„Р°Р№Р»Рµ РќР•РўРЈ!
         MaketF->TopRow = false;
         if (strcmp(maketType, "30917")==0){
-          MaketF->RowCount = getRowMaketNum()+1;//c заголовком
-          MaketF->ColCount = getColMaket30917Num()+FIXEDCOLUMN;// наименование+тип измерения+код+сумма
+          MaketF->RowCount = getRowMaketNum()+1;//c Р·Р°РіРѕР»РѕРІРєРѕРј
+          MaketF->ColCount = getColMaket30917Num()+FIXEDCOLUMN;// РЅР°РёРјРµРЅРѕРІР°РЅРёРµ+С‚РёРї РёР·РјРµСЂРµРЅРёСЏ+РєРѕРґ+СЃСѓРјРјР°
           ShowScrollBar(MaketF->Handle, SB_VERT, true);
           ShowScrollBar(MaketF->Handle, SB_HORZ, true);
           MaketF->FixedCols = FIXEDCOLUMN;
         }
         if (strcmp(maketType, "30817")==0){
-          MaketF->RowCount = getRowMaketNum()+1;//c заголовком
-          MaketF->ColCount = getColMaket30817Num()+FIXEDCOLUMN;// наименование+тип измерения+код+сумма
+          MaketF->RowCount = getRowMaketNum()+1;//c Р·Р°РіРѕР»РѕРІРєРѕРј
+          MaketF->ColCount = getColMaket30817Num()+FIXEDCOLUMN;// РЅР°РёРјРµРЅРѕРІР°РЅРёРµ+С‚РёРї РёР·РјРµСЂРµРЅРёСЏ+РєРѕРґ+СЃСѓРјРјР°
           ShowScrollBar(MaketF->Handle, SB_VERT, true);
           ShowScrollBar(MaketF->Handle, SB_HORZ, true);
           MaketF->FixedCols = FIXEDCOLUMN;
         }
         if (strcmp(maketType, "30818")==0){
-          MaketF->RowCount = getRowMaketNum()+2;//c расширенным заголовком
-          MaketF->ColCount = getColMaket30818Num()+FIXEDCOLUMN;// наименование+тип измерения+код+сумма
+          MaketF->RowCount = getRowMaketNum()+2;//c СЂР°СЃС€РёСЂРµРЅРЅС‹Рј Р·Р°РіРѕР»РѕРІРєРѕРј
+          MaketF->ColCount = getColMaket30818Num()+FIXEDCOLUMN;// РЅР°РёРјРµРЅРѕРІР°РЅРёРµ+С‚РёРї РёР·РјРµСЂРµРЅРёСЏ+РєРѕРґ+СЃСѓРјРјР°
           ShowScrollBar(MaketF->Handle, SB_VERT, true);
           ShowScrollBar(MaketF->Handle, SB_HORZ, true);
           MaketF->FixedCols = FIXEDCOLUMN;
         }
-        //TODO здесь все макеты
+        //TODO Р·РґРµСЃСЊ РІСЃРµ РјР°РєРµС‚С‹
         MaketF->Visible=true;
 }
 __fastcall TfmInteriorUni::TfmInteriorUni(TComponent* Owner,TFormDescr* aFD, int _tableNumbers): TForm(Owner){
-  //конструктор для многотабличных(по умолчанию 3 колонки - A+, A-, R+) отчётов + выстанавливается признак modeManyColumn новодела, признак modeMaketFM cбрасывается
+  //РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РґР»СЏ РјРЅРѕРіРѕС‚Р°Р±Р»РёС‡РЅС‹С…(РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ 3 РєРѕР»РѕРЅРєРё - A+, A-, R+) РѕС‚С‡С‘С‚РѕРІ + РІС‹СЃС‚Р°РЅР°РІР»РёРІР°РµС‚СЃСЏ РїСЂРёР·РЅР°Рє modeManyColumn РЅРѕРІРѕРґРµР»Р°, РїСЂРёР·РЅР°Рє modeMaketFM cР±СЂР°СЃС‹РІР°РµС‚СЃСЏ
         ReplaceRyda(this,BASE_SCHEME,SchemeName);
         FD=aFD;
         ColInfo= new TList();
@@ -115,7 +115,7 @@ __fastcall TfmInteriorUni::TfmInteriorUni(TComponent* Owner,TFormDescr* aFD, int
         modeMaketFM=false;
         modeManyColumn = true;
         tableNumbers = _tableNumbers;
-        columnNumbers = 25*tableNumbers + (tableNumbers-1)+1; //по умолчанию 3 таблицы по 25 колонок в каждой + дата - итого 78 колонок (+2 пустых между таблицами)
+        columnNumbers = 25*tableNumbers + (tableNumbers-1)+1; //РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ 3 С‚Р°Р±Р»РёС†С‹ РїРѕ 25 РєРѕР»РѕРЅРѕРє РІ РєР°Р¶РґРѕР№ + РґР°С‚Р° - РёС‚РѕРіРѕ 78 РєРѕР»РѕРЅРѕРє (+2 РїСѓСЃС‚С‹С… РјРµР¶РґСѓ С‚Р°Р±Р»РёС†Р°РјРё)
         MaketF->FixedCols = 1;
         //ManForm->MainMenu1->Items->Items[0]->Items[11]->OnClick = SaveTableToFileClick;
         for (int i=0; i < ManForm->MainMenu1->Items->Items[0]->Count; i++){
@@ -125,8 +125,8 @@ __fastcall TfmInteriorUni::TfmInteriorUni(TComponent* Owner,TFormDescr* aFD, int
        ManForm->BitBtnNext->Enabled = false;
        ManForm->BitBtnPrevios->Enabled = false;
 
-       //TODO GRB По требованию Кальницкой << >> в отчёте с многотабличной формой, бо одного лишь Enabled здеь и в Monitor.cpp недостаточно, они всё равно активны, надо разобраться, но времени на это нет
-       // Побочный эффект - пропадают дальше по всем отчётам (но они там и не нужны).
+       //TODO GRB РџРѕ С‚СЂРµР±РѕРІР°РЅРёСЋ РљР°Р»СЊРЅРёС†РєРѕР№ << >> РІ РѕС‚С‡С‘С‚Рµ СЃ РјРЅРѕРіРѕС‚Р°Р±Р»РёС‡РЅРѕР№ С„РѕСЂРјРѕР№, Р±Рѕ РѕРґРЅРѕРіРѕ Р»РёС€СЊ Enabled Р·РґРµСЊ Рё РІ Monitor.cpp РЅРµРґРѕСЃС‚Р°С‚РѕС‡РЅРѕ, РѕРЅРё РІСЃС‘ СЂР°РІРЅРѕ Р°РєС‚РёРІРЅС‹, РЅР°РґРѕ СЂР°Р·РѕР±СЂР°С‚СЊСЃСЏ, РЅРѕ РІСЂРµРјРµРЅРё РЅР° СЌС‚Рѕ РЅРµС‚
+       // РџРѕР±РѕС‡РЅС‹Р№ СЌС„С„РµРєС‚ - РїСЂРѕРїР°РґР°СЋС‚ РґР°Р»СЊС€Рµ РїРѕ РІСЃРµРј РѕС‚С‡С‘С‚Р°Рј (РЅРѕ РѕРЅРё С‚Р°Рј Рё РЅРµ РЅСѓР¶РЅС‹).
        ManForm->BitBtnNext->Visible = false;
        ManForm->BitBtnPrevios->Visible = false;
 
@@ -215,28 +215,28 @@ AnsiString __fastcall TfmInteriorUni::getNamebyCode30917 (AnsiString code, TStri
 }
 //---------------------------------------------------------------------------
 
-int __fastcall TfmInteriorUni::getRowMaketNum(){   //сколько строчек в макете 30917 с данными, которые нам нужно отображать
+int __fastcall TfmInteriorUni::getRowMaketNum(){   //СЃРєРѕР»СЊРєРѕ СЃС‚СЂРѕС‡РµРє РІ РјР°РєРµС‚Рµ 30917 СЃ РґР°РЅРЅС‹РјРё, РєРѕС‚РѕСЂС‹Рµ РЅР°Рј РЅСѓР¶РЅРѕ РѕС‚РѕР±СЂР°Р¶Р°С‚СЊ
    int res = (this->maket->Count)-UNVALUEROW;
    return res;
 }
 
 //---------------------------------------------------------------------------
-int __fastcall TfmInteriorUni::getColMaket30917Num(){   //сколько столбцов в макете 30917 с данными, которые нам нужно отображать
-   int res = 48; //TODO найти сколько на самом деле ( длинна строки с данными из макета)
+int __fastcall TfmInteriorUni::getColMaket30917Num(){   //СЃРєРѕР»СЊРєРѕ СЃС‚РѕР»Р±С†РѕРІ РІ РјР°РєРµС‚Рµ 30917 СЃ РґР°РЅРЅС‹РјРё, РєРѕС‚РѕСЂС‹Рµ РЅР°Рј РЅСѓР¶РЅРѕ РѕС‚РѕР±СЂР°Р¶Р°С‚СЊ
+   int res = 48; //TODO РЅР°Р№С‚Рё СЃРєРѕР»СЊРєРѕ РЅР° СЃР°РјРѕРј РґРµР»Рµ ( РґР»РёРЅРЅР° СЃС‚СЂРѕРєРё СЃ РґР°РЅРЅС‹РјРё РёР· РјР°РєРµС‚Р°)
    return res;
 }
 //---------------------------------------------------------------------------
 int __fastcall TfmInteriorUni::getColMaket30817Num(){
-   int res = 24; //TODO найти сколько на самом деле ( длинна строки с данными из макета)
+   int res = 24; //TODO РЅР°Р№С‚Рё СЃРєРѕР»СЊРєРѕ РЅР° СЃР°РјРѕРј РґРµР»Рµ ( РґР»РёРЅРЅР° СЃС‚СЂРѕРєРё СЃ РґР°РЅРЅС‹РјРё РёР· РјР°РєРµС‚Р°)
    return res;
 }
 //---------------------------------------------------------------------------
 int __fastcall TfmInteriorUni::getColMaket30818Num(){
-   int res = 4; //TODO найти сколько на самом деле ( длинна строки с данными из макета)
+   int res = 4; //TODO РЅР°Р№С‚Рё СЃРєРѕР»СЊРєРѕ РЅР° СЃР°РјРѕРј РґРµР»Рµ ( РґР»РёРЅРЅР° СЃС‚СЂРѕРєРё СЃ РґР°РЅРЅС‹РјРё РёР· РјР°РєРµС‚Р°)
    return res;
 }
 //---------------------------------------------------------------------------
-void __fastcall TfmInteriorUni::formingMaket(){   //Выводим первую строку с обозначениями
+void __fastcall TfmInteriorUni::formingMaket(){   //Р’С‹РІРѕРґРёРј РїРµСЂРІСѓСЋ СЃС‚СЂРѕРєСѓ СЃ РѕР±РѕР·РЅР°С‡РµРЅРёСЏРјРё
         {//30817-30917 -30818
         printMaketHeader();
         if (printMaketData2())
@@ -248,11 +248,11 @@ void __fastcall TfmInteriorUni::formingMaket(){   //Выводим первую строку с обоз
 void __fastcall TfmInteriorUni::printMaketHeader(){
 char str[200];
 if (strcmp(maketType, "30818")==0){
-   MaketF->Cells[0][1] = "Наименовaние";
-   MaketF->Cells[1][1] = "Тип изм.";
-   MaketF->Cells[2][1] = "КОД";
-   MaketF->Cells[3][1] = "СУММА";
-   strcpy(str,"Показания по тарифу");
+   MaketF->Cells[0][1] = "РќР°РёРјРµРЅРѕРІaРЅРёРµ";
+   MaketF->Cells[1][1] = "РўРёРї РёР·Рј.";
+   MaketF->Cells[2][1] = "РљРћР”";
+   MaketF->Cells[3][1] = "РЎРЈРњРњРђ";
+   strcpy(str,"РџРѕРєР°Р·Р°РЅРёСЏ РїРѕ С‚Р°СЂРёС„Сѓ");
    for (int i = FIXEDCOLUMN ; i<8; i++)
         MaketF->Cells[i][0] = str;
    strcpy(str,"A");
@@ -265,13 +265,13 @@ if (strcmp(maketType, "30818")==0){
    MaketF->Cells[7][1] = str;
 }
 if (strcmp(maketType, "30817")==0){
-   strcpy(str,"Наименование");
+   strcpy(str,"РќР°РёРјРµРЅРѕРІР°РЅРёРµ");
    MaketF->Cells[0][0] = str;
-   strcpy(str,"Тип изм.");
+   strcpy(str,"РўРёРї РёР·Рј.");
    MaketF->Cells[1][0] = str;
-   strcpy(str,"КОД");
+   strcpy(str,"РљРћР”");
    MaketF->Cells[2][0] = str;
-   strcpy(str,"СУММА");
+   strcpy(str,"РЎРЈРњРњРђ");
    MaketF->Cells[3][0] = str;
    for (int i = 1; i <= 24; i++){
      strcpy (str, itoa(i,str,10));
@@ -280,13 +280,13 @@ if (strcmp(maketType, "30817")==0){
    }
 }
 if (strcmp(maketType, "30917")==0){
-   strcpy(str,"Наименование");
+   strcpy(str,"РќР°РёРјРµРЅРѕРІР°РЅРёРµ");
    MaketF->Cells[0][0] = str;
-   strcpy(str,"Тип изм.");
+   strcpy(str,"РўРёРї РёР·Рј.");
    MaketF->Cells[1][0] = str;
-   strcpy(str,"КОД");
+   strcpy(str,"РљРћР”");
    MaketF->Cells[2][0] = str;
-   strcpy(str,"СУММА");
+   strcpy(str,"РЎРЈРњРњРђ");
    MaketF->Cells[3][0] = str;
    strcpy(str,"00:30");
    MaketF->Cells[4][0] = str;
@@ -391,13 +391,13 @@ bool __fastcall TfmInteriorUni::printMaketData2(){
   bool ret = true;
   if ((strcmp(maketType, "30917")==0)||(strcmp(maketType, "30817")==0)){
    char str[200];
-   strcpy(str,"Наименование");
+   strcpy(str,"РќР°РёРјРµРЅРѕРІР°РЅРёРµ");
    MaketF->Cells[0][0] = str;
-   strcpy(str,"Тип изм.");
+   strcpy(str,"РўРёРї РёР·Рј.");
    MaketF->Cells[1][0] = str;
-   strcpy(str,"КОД");
+   strcpy(str,"РљРћР”");
    MaketF->Cells[2][0] = str;
-   strcpy(str,"СУММА");
+   strcpy(str,"РЎРЈРњРњРђ");
    MaketF->Cells[3][0] = str;
 
    if (strcmp(maketType, "30817")==0){
@@ -507,11 +507,11 @@ bool __fastcall TfmInteriorUni::printMaketData2(){
    MaketF->Cells[51][0] = str;
    }
    TStringList* NCID = new TStringList();
-   for (int i = 0; i<maketListPoints->Count; i++){ //имена групп, показатели, id
+   for (int i = 0; i<maketListPoints->Count; i++){ //РёРјРµРЅР° РіСЂСѓРїРї, РїРѕРєР°Р·Р°С‚РµР»Рё, id
       String rowParameters = maketListPoints->Strings[i];
       split (NCID,rowParameters.c_str(),delim.c_str());
    }
-   for (int j = 1; j<maket->Count-1; j++){ //собственно данные
+   for (int j = 1; j<maket->Count-1; j++){ //СЃРѕР±СЃС‚РІРµРЅРЅРѕ РґР°РЅРЅС‹Рµ
       String rowMaket = maket->Strings[j];
       TStringList* rowData = new TStringList();
       split (rowData,rowMaket.c_str(), ":");
@@ -531,7 +531,7 @@ bool __fastcall TfmInteriorUni::printMaketData2(){
           try{
           rowType = rowData->Strings[0];
           AnsiString tst = rowType;
-          tst.Delete(tst.Length(),1); //удаляем скобки по бокам
+          tst.Delete(tst.Length(),1); //СѓРґР°Р»СЏРµРј СЃРєРѕР±РєРё РїРѕ Р±РѕРєР°Рј
           tst.Delete(1,1);
           AnsiString codeNum="1";
           codeNum = tst.SubString(tst.Length(),1);
@@ -555,8 +555,8 @@ bool __fastcall TfmInteriorUni::printMaketData2(){
           if (noValidCode) {
                 /*char strNum[5];
                 itoa(j+1,strNum,10);
-                AnsiString msg = "Встретился невалидный код показателя " + tst+ " в "+ strNum+"-й строке макета";
-                Application->MessageBox(msg.c_str(),"Ошибка при при разборе макета ",MB_ICONERROR);
+                AnsiString msg = "Р’СЃС‚СЂРµС‚РёР»СЃСЏ РЅРµРІР°Р»РёРґРЅС‹Р№ РєРѕРґ РїРѕРєР°Р·Р°С‚РµР»СЏ " + tst+ " РІ "+ strNum+"-Р№ СЃС‚СЂРѕРєРµ РјР°РєРµС‚Р°";
+                Application->MessageBox(msg.c_str(),"РћС€РёР±РєР° РїСЂРё РїСЂРё СЂР°Р·Р±РѕСЂРµ РјР°РєРµС‚Р° ",MB_ICONERROR);
                 return false;*/
                 MaketF->Cells[1][j]="";
           }
@@ -582,11 +582,11 @@ bool __fastcall TfmInteriorUni::printMaketData2(){
  }//30917+30817
   if (strcmp(maketType, "30818")==0){
    char str[200];
-   MaketF->Cells[0][1] = "Наименовaние";
-   MaketF->Cells[1][1] = "Тип изм.";
-   MaketF->Cells[2][1] = "КОД";
-   MaketF->Cells[3][1] = "СУММА";
-   strcpy(str,"Показания по тарифу");
+   MaketF->Cells[0][1] = "РќР°РёРјРµРЅРѕРІaРЅРёРµ";
+   MaketF->Cells[1][1] = "РўРёРї РёР·Рј.";
+   MaketF->Cells[2][1] = "РљРћР”";
+   MaketF->Cells[3][1] = "РЎРЈРњРњРђ";
+   strcpy(str,"РџРѕРєР°Р·Р°РЅРёСЏ РїРѕ С‚Р°СЂРёС„Сѓ");
    for (int i = FIXEDCOLUMN ; i<8; i++)
         MaketF->Cells[i][0] = str;
    strcpy(str,"A");
@@ -598,12 +598,12 @@ bool __fastcall TfmInteriorUni::printMaketData2(){
    strcpy(str,"D");
    MaketF->Cells[7][1] = str;
    TStringList* NCID = new TStringList();
-   for (int i = 0; i<maketListPoints->Count; i++){ //имена групп, показатели, id
+   for (int i = 0; i<maketListPoints->Count; i++){ //РёРјРµРЅР° РіСЂСѓРїРї, РїРѕРєР°Р·Р°С‚РµР»Рё, id
       String rowParameters = maketListPoints->Strings[i];
       split (NCID,rowParameters.c_str(),delim.c_str());
    }
    //try{
-   for (int j = 1; j<maket->Count-1; j++){ //собственно данные
+   for (int j = 1; j<maket->Count-1; j++){ //СЃРѕР±СЃС‚РІРµРЅРЅРѕ РґР°РЅРЅС‹Рµ
       String rowMaket = maket->Strings[j];
       TStringList* rowData = new TStringList();
       split (rowData,rowMaket.c_str(), ":");
@@ -621,7 +621,7 @@ bool __fastcall TfmInteriorUni::printMaketData2(){
 		  try{
           rowType = rowData->Strings[0];
           AnsiString tst = rowType;
-          tst.Delete(tst.Length(),1); //удаляем скобки по бокам
+          tst.Delete(tst.Length(),1); //СѓРґР°Р»СЏРµРј СЃРєРѕР±РєРё РїРѕ Р±РѕРєР°Рј
           tst.Delete(1,1);
           AnsiString codeNum="1";
           codeNum = tst.SubString(tst.Length(),1);
@@ -654,8 +654,8 @@ bool __fastcall TfmInteriorUni::printMaketData2(){
           if (noValidCode) {
                 /*char strNum[5];
                 itoa(j+1,strNum,10);
-                AnsiString msg = "Встретился невалидный код показателя " + tst+ " в "+ strNum+"-й строке макета";
-                Application->MessageBox(msg.c_str(),"Ошибка при при разборе макета ",MB_ICONERROR);
+                AnsiString msg = "Р’СЃС‚СЂРµС‚РёР»СЃСЏ РЅРµРІР°Р»РёРґРЅС‹Р№ РєРѕРґ РїРѕРєР°Р·Р°С‚РµР»СЏ " + tst+ " РІ "+ strNum+"-Р№ СЃС‚СЂРѕРєРµ РјР°РєРµС‚Р°";
+                Application->MessageBox(msg.c_str(),"РћС€РёР±РєР° РїСЂРё РїСЂРё СЂР°Р·Р±РѕСЂРµ РјР°РєРµС‚Р° ",MB_ICONERROR);
                 return false; */
                 MaketF->Cells[1][j+1]="";
           }
@@ -682,17 +682,17 @@ bool __fastcall TfmInteriorUni::printMaketData2(){
 
 //---------------------------------------------------------------------------
 void __fastcall TfmInteriorUni::printMaketValues(){
-  for (int j = 1; j<maket->Count-1; j++){ //собственно данные
+  for (int j = 1; j<maket->Count-1; j++){ //СЃРѕР±СЃС‚РІРµРЅРЅРѕ РґР°РЅРЅС‹Рµ
       String rowMaket = maket->Strings[j];
       TStringList* rowData = new TStringList();
       split (rowData,rowMaket.c_str(), ":");
       String rowType;
       for (int k = 3; k<rowData->Count+2; k++){
          rowType = rowData->Strings[k-2];
-         if (strcmp(maketType, "30818")==0){ //на строчку ниже выводим из-за расширенного заголовка
-                MaketF->Cells[k][j+1] = rowType;//собственно значения
+         if (strcmp(maketType, "30818")==0){ //РЅР° СЃС‚СЂРѕС‡РєСѓ РЅРёР¶Рµ РІС‹РІРѕРґРёРј РёР·-Р·Р° СЂР°СЃС€РёСЂРµРЅРЅРѕРіРѕ Р·Р°РіРѕР»РѕРІРєР°
+                MaketF->Cells[k][j+1] = rowType;//СЃРѕР±СЃС‚РІРµРЅРЅРѕ Р·РЅР°С‡РµРЅРёСЏ
          }else
-         MaketF->Cells[k][j] = rowType;//собственно значения
+         MaketF->Cells[k][j] = rowType;//СЃРѕР±СЃС‚РІРµРЅРЅРѕ Р·РЅР°С‡РµРЅРёСЏ
       }
   }
 }
@@ -744,7 +744,7 @@ void __fastcall TfmInteriorUni::ClearList(TList * l)
 //---------------------------------------------------------------------------
 void __fastcall TfmInteriorUni::vRefresh(TObject *Sender)
 {
-  //GRB ADD - Многотабличный отчёт для Житомира
+  //GRB ADD - РњРЅРѕРіРѕС‚Р°Р±Р»РёС‡РЅС‹Р№ РѕС‚С‡С‘С‚ РґР»СЏ Р–РёС‚РѕРјРёСЂР°
   if (modeManyColumn){
         vRefreshTriada (Sender);
         return;
@@ -755,14 +755,14 @@ void __fastcall TfmInteriorUni::vRefresh(TObject *Sender)
   TFieldS *fInf;
   if (!modeMaketFM){
   try{
-    //сбрасываем обработчики
+    //СЃР±СЂР°СЃС‹РІР°РµРј РѕР±СЂР°Р±РѕС‚С‡РёРєРё
     isExistsMaket=false;
     vtData->OnNewRecord=NULL;
     vtData->AfterEdit=NULL;
     vtData->AfterPost=NULL;
     vtData->AfterScroll=NULL;
     vtData->DisableControls();
-    //Чистим старое
+    //Р§РёСЃС‚РёРј СЃС‚Р°СЂРѕРµ
     ClearList(ColInfo);
     ClearList(RowInfo);
     if(cntColor){
@@ -777,7 +777,7 @@ void __fastcall TfmInteriorUni::vRefresh(TObject *Sender)
     vtData->Clear();
     vtData->DeleteFields();
     vtData->Open();
-    //Вычитываем струкуру таблицы
+    //Р’С‹С‡РёС‚С‹РІР°РµРј СЃС‚СЂСѓРєСѓСЂСѓ С‚Р°Р±Р»РёС†С‹
     oqMaketInfoCol->Close();
     oqMaketInfoCol->ParamByName("nfid")->AsInteger=FD->IdFormTree;
     oqMaketInfoCol->ParamByName("nispoint")->AsInteger=FD->IsPoints;
@@ -801,7 +801,7 @@ void __fastcall TfmInteriorUni::vRefresh(TObject *Sender)
       z++;
       if(z>ColInfo->Capacity)
         ColInfo->Capacity+=50;
-      //Заполним структуру
+      //Р—Р°РїРѕР»РЅРёРј СЃС‚СЂСѓРєС‚СѓСЂСѓ
       fInf=new TFieldS;
       ColInfo->Add(fInf);
       fInf->id=oqMaketInfoCol->FieldByName("id")->AsInteger;
@@ -814,9 +814,9 @@ void __fastcall TfmInteriorUni::vRefresh(TObject *Sender)
       fInf->nlock=oqMaketInfoCol->FieldByName("nlock")->AsInteger;
       fInf->nwidth=oqMaketInfoCol->FieldByName("nwidth")->AsInteger;
       strcpy(fInf->sMasks,oqMaketInfoCol->FieldByName("vmasks")->AsString.c_str());
-      //А теперь Grid
+      //Рђ С‚РµРїРµСЂСЊ Grid
       grColumn=grData->Columns->Add();
-      grColumn->Tag=z-1;//Запоминаем порядок (а то колонки поменяют)
+      grColumn->Tag=z-1;//Р—Р°РїРѕРјРёРЅР°РµРј РїРѕСЂСЏРґРѕРє (Р° С‚Рѕ РєРѕР»РѕРЅРєРё РїРѕРјРµРЅСЏСЋС‚)
       grColumn->FieldName="Field"+IntToStr(z);
       for(int i=0;i<TitleCount;i++){
         if(i&&!fInf->Title->Strings[i].IsEmpty())
@@ -846,7 +846,7 @@ void __fastcall TfmInteriorUni::vRefresh(TObject *Sender)
       z++;
       if(z>RowInfo->Capacity)
         RowInfo->Capacity+=50;
-      //Заполним структуру
+      //Р—Р°РїРѕР»РЅРёРј СЃС‚СЂСѓРєС‚СѓСЂСѓ
       fInf=new TFieldS;
       RowInfo->Add(fInf);
       fInf->id=oqMaketInfoRow->FieldByName("id")->AsInteger;
@@ -860,7 +860,7 @@ void __fastcall TfmInteriorUni::vRefresh(TObject *Sender)
     oqMaketInfoRow->Close();
     oqMaketInfoCol->ParamByName("row_t")->AsCursor->FreeCursor();
     oqMaketInfoCol->Close();
-    //Теперь структура таблицы
+    //РўРµРїРµСЂСЊ СЃС‚СЂСѓРєС‚СѓСЂР° С‚Р°Р±Р»РёС†С‹
     pDef = pDefs->AddFieldDef();
     pDef->DataType = ftInteger;
     pDef->Name = "id";
@@ -880,12 +880,12 @@ void __fastcall TfmInteriorUni::vRefresh(TObject *Sender)
       pDef->Name = "Field"+IntToStr(i+1);
       pDef->DisplayName="Field"+IntToStr(i+1);
     }
-    //Теперь данные
+    //РўРµРїРµСЂСЊ РґР°РЅРЅС‹Рµ
     isExistsMaket=(RowInfo->Count*(ColInfo->Count-FixColCount)>0);
-    if(isExistsMaket){//Не пустой макет
-      //Заполним масив цветов
+    if(isExistsMaket){//РќРµ РїСѓСЃС‚РѕР№ РјР°РєРµС‚
+      //Р—Р°РїРѕР»РЅРёРј РјР°СЃРёРІ С†РІРµС‚РѕРІ
       CreateColorMass();
-      //Ну а теперь данные
+      //РќСѓ Р° С‚РµРїРµСЂСЊ РґР°РЅРЅС‹Рµ
       oqVal->Close();
       oqVal->ParamByName("nfid")->AsInteger=FD->IdFormTree;
       oqVal->ParamByName("nispoint")->AsInteger=FD->IsPoints;
@@ -978,11 +978,11 @@ void __fastcall TfmInteriorUni::vRefresh(TObject *Sender)
     vtData->EnableControls();
     Application->ShowException(&e);
   }
-  }//старые добрые макеты и uppd - не трогаем
-  else{ //новодел начинается тут
+  }//СЃС‚Р°СЂС‹Рµ РґРѕР±СЂС‹Рµ РјР°РєРµС‚С‹ Рё uppd - РЅРµ С‚СЂРѕРіР°РµРј
+  else{ //РЅРѕРІРѕРґРµР» РЅР°С‡РёРЅР°РµС‚СЃСЏ С‚СѓС‚
       if ((strcmp(maketType, "30917")==0)||(strcmp(maketType, "30817")==0)||(strcmp(maketType, "30818")==0)){
         formingMaket();
-      }//конец макетов 30817-30917
+      }//РєРѕРЅРµС† РјР°РєРµС‚РѕРІ 30817-30917
   }
 }
 void __fastcall TfmInteriorUni::vRefreshTriada(TObject *Sender){
@@ -1001,9 +1001,9 @@ void __fastcall TfmInteriorUni::RefreshData(TObject *Sender)
     vtData->AfterPost=NULL;
     vtData->AfterScroll=NULL;
     vtData->DisableControls();
-    //Заполним масив цветов
+    //Р—Р°РїРѕР»РЅРёРј РјР°СЃРёРІ С†РІРµС‚РѕРІ
     CreateColorMass();
-    //Ну а теперь данные
+    //РќСѓ Р° С‚РµРїРµСЂСЊ РґР°РЅРЅС‹Рµ
     oqVal->Close();
     oqVal->ParamByName("nfid")->AsInteger=FD->IdFormTree;
     oqVal->ParamByName("nispoint")->AsInteger=FD->IsPoints;
@@ -1015,7 +1015,7 @@ void __fastcall TfmInteriorUni::RefreshData(TObject *Sender)
     int z=0;
     vtData->First();
     while(!vtData->Eof){
-      if(z+1>oqVal->ParamByName("data_t")->Length){//Если структура макета изменилась
+      if(z+1>oqVal->ParamByName("data_t")->Length){//Р•СЃР»Рё СЃС‚СЂСѓРєС‚СѓСЂР° РјР°РєРµС‚Р° РёР·РјРµРЅРёР»Р°СЃСЊ
 //SAA        PostMessage(ParentForm->Handle,WM_REFRESHFORM, NULL,NULL);
         return;
       }
@@ -1106,7 +1106,7 @@ void __fastcall TfmInteriorUni::grDataDrawColumnCell(TObject *Sender,
       const TRect &Rect, int DataCol, TColumnEh *Column,
       TGridDrawState State)
 {
-  if(!isExistsMaket||!vtData->Active||!(DataCol>0&&Column->Tag+1>FixColCount)) //Только не FixCol
+  if(!isExistsMaket||!vtData->Active||!(DataCol>0&&Column->Tag+1>FixColCount)) //РўРѕР»СЊРєРѕ РЅРµ FixCol
     return;
   TFieldS *cInfo=(TFieldS *)ColInfo->Items[Column->Tag];
   TFieldS *rInfo=(TFieldS *)RowInfo->Items[vtData->FieldByName("num")->AsInteger];
@@ -1114,7 +1114,7 @@ void __fastcall TfmInteriorUni::grDataDrawColumnCell(TObject *Sender,
   AnsiString s;
   if(!Column->Field->IsNull)
     s=FormatByMask(cInfo->sMasks,rInfo->sMasks,Column->Field->AsFloat);
-  //Теперь рисуем
+  //РўРµРїРµСЂСЊ СЂРёСЃСѓРµРј
   TColor cl=FindColor(cInfo->id,rInfo->id);
   if(cl){
     grData->Canvas->Brush->Color=cl;
@@ -1159,7 +1159,7 @@ void __fastcall TfmInteriorUni::grDataTitleClick(TColumnEh *Column)
 void __fastcall TfmInteriorUni::grDataMouseDown(TObject *Sender,
       TMouseButton Button, TShiftState Shift, int X, int Y)
 {
-  //На DataCellClick писать нельзя т.к. OnEnter блокирует FrozenCols
+  //РќР° DataCellClick РїРёСЃР°С‚СЊ РЅРµР»СЊР·СЏ С‚.Рє. OnEnter Р±Р»РѕРєРёСЂСѓРµС‚ FrozenCols
   double d=0;
   if(isExistsMaket&&grData->SelectedIndex&&vtData->Active){//&&!cbInvert->Checked
     for(int i=0;i<grData->FrozenCols;i++)
@@ -1256,11 +1256,11 @@ void __fastcall TfmInteriorUni::PrintData(TObject *Sender,AnsiString sTitle)
   TarZone=oqTarZone->FieldByName("VNAME")->AsString;
   oqTarZone->Close();
 
-  //Параметры имеют другой смысл
+  //РџР°СЂР°РјРµС‚СЂС‹ РёРјРµСЋС‚ РґСЂСѓРіРѕР№ СЃРјС‹СЃР»
   bool IsTimeFields = FD->EnableControls.Contains(TFormDescr::ctrlMonth);
   bool IsSecondBound = FD->EnableControls.Contains(TFormDescr::ctrlDay);
 
-  //Если для отчета не выводится поле времени, то дата окончания - 00:00 часов следующего дня
+  //Р•СЃР»Рё РґР»СЏ РѕС‚С‡РµС‚Р° РЅРµ РІС‹РІРѕРґРёС‚СЃСЏ РїРѕР»Рµ РІСЂРµРјРµРЅРё, С‚Рѕ РґР°С‚Р° РѕРєРѕРЅС‡Р°РЅРёСЏ - 00:00 С‡Р°СЃРѕРІ СЃР»РµРґСѓСЋС‰РµРіРѕ РґРЅСЏ
 //  if(!(IsTimeFields&&IsSecondBound)) TmpDate= (TDateTime(Dt2)+1).FormatString("dd.mm.yyyy hh:nn"); //saa 07.12.2010
   if(!IsTimeFields&&!IsSecondBound) TmpDate= (TDateTime(Dt1)+1).FormatString("dd.mm.yyyy hh:nn");
   else TmpDate= TDateTime(Dt2).FormatString("dd.mm.yyyy hh:nn");
@@ -1325,12 +1325,12 @@ void __fastcall TfmInteriorUni::PrintData(TObject *Sender,AnsiString sTitle)
       pc= Reconst_smes106_29+" ("+ Reconst_smes106_31+") ";
     else
       pc= Reconst_smes106_28+" ("+ Reconst_smes106_30+") ";
-    PrintDBGridEh1->BeforeGridText->Add("Размерность данных : " + pc);
+    PrintDBGridEh1->BeforeGridText->Add("Р Р°Р·РјРµСЂРЅРѕСЃС‚СЊ РґР°РЅРЅС‹С… : " + pc);
    }
 
 
   if (oqPrint->ParamByName("an_form_date")->AsInteger)
-    PrintDBGridEh1->BeforeGridText->Add("Дата формирования отчета: " + Dt3.FormatString("dd.mm.yyyy hh:nn:ss"));
+    PrintDBGridEh1->BeforeGridText->Add("Р”Р°С‚Р° С„РѕСЂРјРёСЂРѕРІР°РЅРёСЏ РѕС‚С‡РµС‚Р°: " + Dt3.FormatString("dd.mm.yyyy hh:nn:ss"));
   
   if (usedeftitle){
     if(!sTitle.IsEmpty())
@@ -1352,8 +1352,8 @@ void __fastcall TfmInteriorUni::vSaveToFile(TObject *Sender,AnsiString sTitle)
   if(sTitle=="")
     sTitle=FD->NameGroup;
 
-  SaveTable(Owner,grData,sTitle);      //функция сохранения в файл отличается от unDataMod
-                                       //возможностью форматированного вывода чисел (опционально - 3 знака после разделителя)
+  SaveTable(Owner,grData,sTitle);      //С„СѓРЅРєС†РёСЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ РІ С„Р°Р№Р» РѕС‚Р»РёС‡Р°РµС‚СЃСЏ РѕС‚ unDataMod
+                                       //РІРѕР·РјРѕР¶РЅРѕСЃС‚СЊСЋ С„РѕСЂРјР°С‚РёСЂРѕРІР°РЅРЅРѕРіРѕ РІС‹РІРѕРґР° С‡РёСЃРµР» (РѕРїС†РёРѕРЅР°Р»СЊРЅРѕ - 3 Р·РЅР°РєР° РїРѕСЃР»Рµ СЂР°Р·РґРµР»РёС‚РµР»СЏ)
 }
 //---------------------------------------------------------------------------
 void __fastcall TfmInteriorUni::grDataEnter(TObject *Sender)
@@ -1366,7 +1366,7 @@ void __fastcall TfmInteriorUni::grDataEnter(TObject *Sender)
 //---------------------------------------------------------------------------
 AnsiString __fastcall TfmInteriorUni::FormatByMask(const AnsiString cMasks,const AnsiString rMasks,double d)
 {
-  //Форматированый вывод (строка приоритетней)
+  //Р¤РѕСЂРјР°С‚РёСЂРѕРІР°РЅС‹Р№ РІС‹РІРѕРґ (СЃС‚СЂРѕРєР° РїСЂРёРѕСЂРёС‚РµС‚РЅРµР№)
   AnsiString Format;
     if(!cMasks.IsEmpty())
       Format=cMasks;
@@ -1420,9 +1420,9 @@ void __fastcall TfmInteriorUni::CreateColorMass(void)
 //---------------------------------------------------------------------------
 void __fastcall TfmInteriorUni::grDataDblClick(TObject *Sender)
 {
-  if(!isExistsMaket||!vtData->Active||grData->SelectedIndex<0||grData->Columns->Items[grData->SelectedIndex]->Tag+1<=FixColCount) //Только не FixCol
+  if(!isExistsMaket||!vtData->Active||grData->SelectedIndex<0||grData->Columns->Items[grData->SelectedIndex]->Tag+1<=FixColCount) //РўРѕР»СЊРєРѕ РЅРµ FixCol
     return;
-  //Теперь рисуем
+  //РўРµРїРµСЂСЊ СЂРёСЃСѓРµРј
   AnsiString s=FindColorStr(((TFieldS *)ColInfo->Items[grData->Columns->Items[grData->SelectedIndex]->Tag])->id,((TFieldS *)RowInfo->Items[vtData->FieldByName("num")->AsInteger])->id);
   if(!s.Trim().IsEmpty())
     Application->MessageBox(s.c_str(),Application->Title.c_str(),MB_OK	|MB_ICONWARNING);
@@ -1430,10 +1430,10 @@ void __fastcall TfmInteriorUni::grDataDblClick(TObject *Sender)
 
 //---------------------------------------------------------------------------
 AnsiString __fastcall TfmInteriorUni::getLastPartOfNameColumn (AnsiString columnName, int numRec, bool wasGroupNameAsFirstLine){
-   //GRB FIX 17.12.2019 - плодятся новые столбцы с переносом на следующую строку в экзешнике когда у нас в исходной строке есть слещ
+   //GRB FIX 17.12.2019 - РїР»РѕРґСЏС‚СЃСЏ РЅРѕРІС‹Рµ СЃС‚РѕР»Р±С†С‹ СЃ РїРµСЂРµРЅРѕСЃРѕРј РЅР° СЃР»РµРґСѓСЋС‰СѓСЋ СЃС‚СЂРѕРєСѓ РІ СЌРєР·РµС€РЅРёРєРµ РєРѕРіРґР° Сѓ РЅР°СЃ РІ РёСЃС…РѕРґРЅРѕР№ СЃС‚СЂРѕРєРµ РµСЃС‚СЊ СЃР»РµС‰
    if (columnName.Pos("\r")!=0)
         columnName=StringReplace(columnName,"\r"," ",TReplaceFlags()<<rfReplaceAll<<rfIgnoreCase);
-   //конец заплатки
+   //РєРѕРЅРµС† Р·Р°РїР»Р°С‚РєРё
    AnsiString ret = columnName;
    TStringList* rowData = NULL;
    int length = 0;
@@ -1470,23 +1470,23 @@ AnsiString __fastcall TfmInteriorUni::getLastPartOfNameColumn (AnsiString column
    }
    }
    catch (EConvertError &ecr){
-        //ret = rowData->Strings[length-2]+ AnsiString (" ") + rowData->Strings[length-1]; //2 последних
-        ///GRB FIX 26.12.2018 - Изменил своё же изменение ради 38-й процедуры по требованию Кальницкой
-        ///TODO Это хардкод и тут надо бы передавать номер процедуры и так делать только для 38-й.
-        //GRB TEST 17.12.2019 Не годится и это решение ниже без номера процедуры
+        //ret = rowData->Strings[length-2]+ AnsiString (" ") + rowData->Strings[length-1]; //2 РїРѕСЃР»РµРґРЅРёС…
+        ///GRB FIX 26.12.2018 - РР·РјРµРЅРёР» СЃРІРѕС‘ Р¶Рµ РёР·РјРµРЅРµРЅРёРµ СЂР°РґРё 38-Р№ РїСЂРѕС†РµРґСѓСЂС‹ РїРѕ С‚СЂРµР±РѕРІР°РЅРёСЋ РљР°Р»СЊРЅРёС†РєРѕР№
+        ///TODO Р­С‚Рѕ С…Р°СЂРґРєРѕРґ Рё С‚СѓС‚ РЅР°РґРѕ Р±С‹ РїРµСЂРµРґР°РІР°С‚СЊ РЅРѕРјРµСЂ РїСЂРѕС†РµРґСѓСЂС‹ Рё С‚Р°Рє РґРµР»Р°С‚СЊ С‚РѕР»СЊРєРѕ РґР»СЏ 38-Р№.
+        //GRB TEST 17.12.2019 РќРµ РіРѕРґРёС‚СЃСЏ Рё СЌС‚Рѕ СЂРµС€РµРЅРёРµ РЅРёР¶Рµ Р±РµР· РЅРѕРјРµСЂР° РїСЂРѕС†РµРґСѓСЂС‹
         if (rowData->Strings[length-1]!=NULL){
                 ret = rowData->Strings[length-1];
                 delete rowData;
                 rowData = NULL;
                 return ret;
         } 
-        ret = rowData->Strings[length-2]+ AnsiString (" ") + rowData->Strings[length-1]; //2 последних
+        ret = rowData->Strings[length-2]+ AnsiString (" ") + rowData->Strings[length-1]; //2 РїРѕСЃР»РµРґРЅРёС…
         //END OF HARDCODE
         delete rowData;
         rowData = NULL;
         return ret;
    }
-   catch (Exception &e){ //ошибки в ходе попытки отсечения части строки
+   catch (Exception &e){ //РѕС€РёР±РєРё РІ С…РѕРґРµ РїРѕРїС‹С‚РєРё РѕС‚СЃРµС‡РµРЅРёСЏ С‡Р°СЃС‚Рё СЃС‚СЂРѕРєРё
    if (rowData!=NULL){
         delete rowData;
         rowData = NULL;
@@ -1496,8 +1496,8 @@ AnsiString __fastcall TfmInteriorUni::getLastPartOfNameColumn (AnsiString column
 }
 
 //---------------------------------------------------------------------------
-//функция сохранения в файл отличается от unDataMod
-//возможностью форматированного вывода чисел (опционально - 3 знака после разделителя)
+//С„СѓРЅРєС†РёСЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ РІ С„Р°Р№Р» РѕС‚Р»РёС‡Р°РµС‚СЃСЏ РѕС‚ unDataMod
+//РІРѕР·РјРѕР¶РЅРѕСЃС‚СЊСЋ С„РѕСЂРјР°С‚РёСЂРѕРІР°РЅРЅРѕРіРѕ РІС‹РІРѕРґР° С‡РёСЃРµР» (РѕРїС†РёРѕРЅР°Р»СЊРЅРѕ - 3 Р·РЅР°РєР° РїРѕСЃР»Рµ СЂР°Р·РґРµР»РёС‚РµР»СЏ)
 
 void __fastcall TfmInteriorUni::SaveTable(TComponent* Owner,TDBGridEh *gr,AnsiString RepCaption)
 {
@@ -1535,7 +1535,7 @@ void __fastcall TfmInteriorUni::SaveTable(TComponent* Owner,TDBGridEh *gr,AnsiSt
        sd->Title = Reconst_smes68_10;
   sd->DefaultExt = "txt";
   sd->FileName=Reconst_smes68_11;
-  sd->Filter = "Текстовые документы (*.txt)|*.txt|Файл с разделителем (*.csv)|*.csv";
+  sd->Filter = "РўРµРєСЃС‚РѕРІС‹Рµ РґРѕРєСѓРјРµРЅС‚С‹ (*.txt)|*.txt|Р¤Р°Р№Р» СЃ СЂР°Р·РґРµР»РёС‚РµР»РµРј (*.csv)|*.csv";
   sd->Options << ofOverwritePrompt;
   if(sd->Execute()){
     fname=sd->FileName;
@@ -1550,16 +1550,16 @@ void __fastcall TfmInteriorUni::SaveTable(TComponent* Owner,TDBGridEh *gr,AnsiSt
   if ((fname.Pos(".csv")!=0)||(fname.Pos(".csV")!=0)||(fname.Pos(".cSv")!=0)||(fname.Pos(".cSV")!=0)||(fname.Pos(".Csv")!=0)||(fname.Pos(".CsV")!=0)||(fname.Pos(".CSv")!=0)||(fname.Pos(".CSV")!=0)){
                 AnsiString rowData,str="";
                 TStringList* sList=new TStringList;
-                AnsiString separator = getSeparator(); //разделитель целой и дробной части
-                AnsiString delimcomma = ";";  //разделитель колонок в csv
+                AnsiString separator = getSeparator(); //СЂР°Р·РґРµР»РёС‚РµР»СЊ С†РµР»РѕР№ Рё РґСЂРѕР±РЅРѕР№ С‡Р°СЃС‚Рё
+                AnsiString delimcomma = ";";  //СЂР°Р·РґРµР»РёС‚РµР»СЊ РєРѕР»РѕРЅРѕРє РІ csv
                 if(!RepCaption.IsEmpty())
                         sList->Add(RepCaption);
-                //Вычитываем значения из MaketF
+                //Р’С‹С‡РёС‚С‹РІР°РµРј Р·РЅР°С‡РµРЅРёСЏ РёР· MaketF
 
                 for (int i = 0; i < MaketF->RowCount; i++){
                         for (int j = 0; j < MaketF->ColCount; j++){
                                rowData =  MaketF->Cells[j][i];
-                               if (i>0) //тут значения
+                               if (i>0) //С‚СѓС‚ Р·РЅР°С‡РµРЅРёСЏ
                                rowData = StringReplace(rowData,".",separator,TReplaceFlags()<<rfReplaceAll<<rfIgnoreCase);
 
                                if (rowData!="")
@@ -1570,7 +1570,7 @@ void __fastcall TfmInteriorUni::SaveTable(TComponent* Owner,TDBGridEh *gr,AnsiSt
                     sList->Add (str);
                     str="";
                 }
-                //TODO:Перезаписывать без предупреждения, если файл с таким именем существует?
+                //TODO:РџРµСЂРµР·Р°РїРёСЃС‹РІР°С‚СЊ Р±РµР· РїСЂРµРґСѓРїСЂРµР¶РґРµРЅРёСЏ, РµСЃР»Рё С„Р°Р№Р» СЃ С‚Р°РєРёРј РёРјРµРЅРµРј СЃСѓС‰РµСЃС‚РІСѓРµС‚?
                 try{
                         if (!FileExists(fname))
                                 sList->SaveToFile(fname);
@@ -1592,12 +1592,12 @@ void __fastcall TfmInteriorUni::SaveTable(TComponent* Owner,TDBGridEh *gr,AnsiSt
   // 30902 receive to txt
   try{
   StringList  = new TStringList;
-    //Заголовок
+    //Р—Р°РіРѕР»РѕРІРѕРє
     if(!RepCaption.IsEmpty())
       StringList->Add(RepCaption);
     s="";
 
-    //перегоняем из грида MaketF в TStringList и сохраняем
+    //РїРµСЂРµРіРѕРЅСЏРµРј РёР· РіСЂРёРґР° MaketF РІ TStringList Рё СЃРѕС…СЂР°РЅСЏРµРј
     for (int i = 0; i < MaketF->RowCount; i++){
         for (int j = 0; j < receive_maket_30902_col_num; j++){
                 int max_col_size = getMaxSymbolInColumn (MaketF,j);
@@ -1646,7 +1646,7 @@ void __fastcall TfmInteriorUni::SaveTable(TComponent* Owner,TDBGridEh *gr,AnsiSt
        sd->Title = Reconst_smes68_10;
   sd->DefaultExt = "txt";
   sd->FileName=Reconst_smes68_11;
-  sd->Filter =  "Текстовые документы (*.txt)|*.txt|Файл с разделителем (*.csv)|*.csv";
+  sd->Filter =  "РўРµРєСЃС‚РѕРІС‹Рµ РґРѕРєСѓРјРµРЅС‚С‹ (*.txt)|*.txt|Р¤Р°Р№Р» СЃ СЂР°Р·РґРµР»РёС‚РµР»РµРј (*.csv)|*.csv";
   sd->Options << ofOverwritePrompt;
   if(sd->Execute()){
     fname=sd->FileName;
@@ -1772,7 +1772,7 @@ void __fastcall TfmInteriorUni::SaveTable(TComponent* Owner,TDBGridEh *gr,AnsiSt
 
   try{
     StringList  = new TStringList;
-    //Заголовок
+    //Р—Р°РіРѕР»РѕРІРѕРє
     if(!RepCaption.IsEmpty())
       StringList->Add(RepCaption);
     s="";
@@ -1786,7 +1786,7 @@ void __fastcall TfmInteriorUni::SaveTable(TComponent* Owner,TDBGridEh *gr,AnsiSt
       }
     }
     StringList->Add(s);
-    //Данные
+    //Р”Р°РЅРЅС‹Рµ
     SavePlace = ds->GetBookmark();
     ds->DisableControls();
     ds->First();
@@ -1866,9 +1866,9 @@ void __fastcall TfmInteriorUni::StringGrid1DrawCell(TObject *Sender,
  }
 
  if (modeManyColumn){
-                if ((ACol==0) || (ARow<6)) //поля с датами, часами и заголовки - по центру
+                if ((ACol==0) || (ARow<6)) //РїРѕР»СЏ СЃ РґР°С‚Р°РјРё, С‡Р°СЃР°РјРё Рё Р·Р°РіРѕР»РѕРІРєРё - РїРѕ С†РµРЅС‚СЂСѓ
                 StrGridPtr->Canvas->TextOut (x,y, StrGridPtr->Cells[ACol][ARow]);
-                else{  //значения почти по правому краю
+                else{  //Р·РЅР°С‡РµРЅРёСЏ РїРѕС‡С‚Рё РїРѕ РїСЂР°РІРѕРјСѓ РєСЂР°СЋ
                  Rect.right = Rect.right-2;
                  DrawTextA(StrGridPtr->Canvas->Handle, StrGridPtr->Cells[ACol][ARow].c_str(), strlen(StrGridPtr->Cells[ACol][ARow].c_str()), &Rect,  DT_RIGHT);
                 }
@@ -1904,15 +1904,15 @@ void __fastcall TfmInteriorUni::StringGrid1DrawCell(TObject *Sender,
 }
 //---------------------------------------------------------------------------
 void __fastcall TfmInteriorUni::printHeaderManyColumn(){
-          //конструктор для многотабличных(по умолчанию 3 колонки - A+, A-, R+) отчётов + выстанавливается признак modeManyColumn новодела, признак modeMaketFM cбрасывается
+          //РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РґР»СЏ РјРЅРѕРіРѕС‚Р°Р±Р»РёС‡РЅС‹С…(РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ 3 РєРѕР»РѕРЅРєРё - A+, A-, R+) РѕС‚С‡С‘С‚РѕРІ + РІС‹СЃС‚Р°РЅР°РІР»РёРІР°РµС‚СЃСЏ РїСЂРёР·РЅР°Рє modeManyColumn РЅРѕРІРѕРґРµР»Р°, РїСЂРёР·РЅР°Рє modeMaketFM cР±СЂР°СЃС‹РІР°РµС‚СЃСЏ
         grData->Visible = false;
         modeMaketFM=false;
         modeManyColumn = true;
         MaketF->Visible=true;
         int tableNumbers = 3;
-        int columnNumbers = 25*tableNumbers + (tableNumbers-1)+1; //Получено империческим путём
+        int columnNumbers = 25*tableNumbers + (tableNumbers-1)+1; //РџРѕР»СѓС‡РµРЅРѕ РёРјРїРµСЂРёС‡РµСЃРєРёРј РїСѓС‚С‘Рј
 
-        //Вычитываем струкуру таблицы
+        //Р’С‹С‡РёС‚С‹РІР°РµРј СЃС‚СЂСѓРєСѓСЂСѓ С‚Р°Р±Р»РёС†С‹
         oqMaketInfoCol53->Close();
         oqMaketInfoCol53->ParamByName("nfid")->AsInteger=FD->IdFormTree;
         oqMaketInfoCol53->ParamByName("nispoint")->AsInteger=FD->IsPoints;
@@ -1930,10 +1930,10 @@ void __fastcall TfmInteriorUni::printHeaderManyColumn(){
         FixColCount=oqMaketInfoCol53->ParamByName("ncnfixcol")->AsInteger;
         MaketF->FixedCols = FixColCount;
         TitleCount=oqMaketInfoCol53->ParamByName("ncntitle")->AsInteger;
-        MaketF->RowCount = TitleCount;//c заголовком
+        MaketF->RowCount = TitleCount;//c Р·Р°РіРѕР»РѕРІРєРѕРј
         FooterCount=oqMaketInfoCol53->ParamByName("ncnfooter")->AsInteger;
         int z=0;
-        //Вычитываем данные о колонках - col_t1, col_t2, col_t3 и опционально col_t4
+        //Р’С‹С‡РёС‚С‹РІР°РµРј РґР°РЅРЅС‹Рµ Рѕ РєРѕР»РѕРЅРєР°С… - col_t1, col_t2, col_t3 Рё РѕРїС†РёРѕРЅР°Р»СЊРЅРѕ col_t4
         //col_t1
         oqMaketInfoCol53->Cursor=oqMaketInfoCol53->ParamByName("col_t1")->AsCursor;
         AnsiString blank1, blank2 ="";
@@ -1943,14 +1943,14 @@ void __fastcall TfmInteriorUni::printHeaderManyColumn(){
           z++;
           if(z>ColInfo->Capacity)
              ColInfo->Capacity+=50;
-          //Заполним структуру
+          //Р—Р°РїРѕР»РЅРёРј СЃС‚СЂСѓРєС‚СѓСЂСѓ
           int id =oqMaketInfoCol53->FieldByName("id")->AsInteger;
           for(int i=1;i<TitleCount;i++)  {
                 AnsiString currValue = "";
                 oqMaketInfoCol53->FieldByName("Title"+IntToStr(i))->AsString;
                 if (oqMaketInfoCol53->FieldByName("Title"+IntToStr(i))->AsString!=NULL)
                         currValue = oqMaketInfoCol53->FieldByName("Title"+IntToStr(i))->AsString;
-                if (z==1){     //1-я запись
+                if (z==1){     //1-СЏ Р·Р°РїРёСЃСЊ
                         switch (i){
                         case 1:{
                                 companyName = currValue;
@@ -1983,19 +1983,19 @@ void __fastcall TfmInteriorUni::printHeaderManyColumn(){
         oqMaketInfoCol53->Next();
         }
         //
-        MaketF->ColCount = columnNumbers;// наименование+тип измерения+код+сумма
+        MaketF->ColCount = columnNumbers;// РЅР°РёРјРµРЅРѕРІР°РЅРёРµ+С‚РёРї РёР·РјРµСЂРµРЅРёСЏ+РєРѕРґ+СЃСѓРјРјР°
         MaketF->TopRow = false;
         MaketF->Visible=true;
         clearTable();
         char str[200];
         strcpy(str,companyName.c_str());
-        MaketF->Cells[0][0] = str; //Первый стовпчик перший рядок Назва компании
+        MaketF->Cells[0][0] = str; //РџРµСЂРІС‹Р№ СЃС‚РѕРІРїС‡РёРє РїРµСЂС€РёР№ СЂСЏРґРѕРє РќР°Р·РІР° РєРѕРјРїР°РЅРёРё
         strcpy(str,blank1.c_str());
-        MaketF->Cells[0][1] = str; //Пустой другий рядок
+        MaketF->Cells[0][1] = str; //РџСѓСЃС‚РѕР№ РґСЂСѓРіРёР№ СЂСЏРґРѕРє
         strcpy(str,blank2.c_str());
-        MaketF->Cells[0][2] = str; //Пустой третий рядок
+        MaketF->Cells[0][2] = str; //РџСѓСЃС‚РѕР№ С‚СЂРµС‚РёР№ СЂСЏРґРѕРє
         strcpy(str,consumerName.c_str());
-        MaketF->Cells[0][3] = str;//Назва споживача  */
+        MaketF->Cells[0][3] = str;//РќР°Р·РІР° СЃРїРѕР¶РёРІР°С‡Р°  */
         for (int i = 0; i < 3; i++){
            switch (i){
            case 0 :{
@@ -2182,7 +2182,7 @@ void __fastcall TfmInteriorUni::printHeaderManyColumn(){
                 }
                 }
         }
-         //Строки с датами и тут же считаем сколько их будет для вывода значений
+         //РЎС‚СЂРѕРєРё СЃ РґР°С‚Р°РјРё Рё С‚СѓС‚ Р¶Рµ СЃС‡РёС‚Р°РµРј СЃРєРѕР»СЊРєРѕ РёС… Р±СѓРґРµС‚ РґР»СЏ РІС‹РІРѕРґР° Р·РЅР°С‡РµРЅРёР№
         oqMaketInfoCol53->Close();
         oqMaketInfoRow->Cursor=oqMaketInfoCol53->ParamByName("row_t")->AsCursor;
         oqMaketInfoRow->Execute();
@@ -2247,11 +2247,11 @@ void __fastcall TfmInteriorUni::printDataManyColumn(){
 
 
 //---------------------------------------------------------------------------
-//Экспорт содержимого формы в csv-файл, из которого Excel может сгенерить .xls
+//Р­РєСЃРїРѕСЂС‚ СЃРѕРґРµСЂР¶РёРјРѕРіРѕ С„РѕСЂРјС‹ РІ csv-С„Р°Р№Р», РёР· РєРѕС‚РѕСЂРѕРіРѕ Excel РјРѕР¶РµС‚ СЃРіРµРЅРµСЂРёС‚СЊ .xls
 
 void __fastcall TfmInteriorUni::SaveMultyTableToFileClick(TObject *Sender)
 {
-        AnsiString delim = ";";  //разделитель колонок в csv
+        AnsiString delim = ";";  //СЂР°Р·РґРµР»РёС‚РµР»СЊ РєРѕР»РѕРЅРѕРє РІ csv
         /*
         AnsiString char2Del = "\"";
         while (companyName.Pos(char2Del)!=0)   {
@@ -2260,21 +2260,21 @@ void __fastcall TfmInteriorUni::SaveMultyTableToFileClick(TObject *Sender)
         while (consumerName.Pos(char2Del)!=0)   {
                 consumerName.Delete(consumerName.Pos(char2Del),char2Del.Length());
         }
-        AnsiString a_name = "Компания "+companyName + " потребитель "+consumerName;
+        AnsiString a_name = "РљРѕРјРїР°РЅРёСЏ "+companyName + " РїРѕС‚СЂРµР±РёС‚РµР»СЊ "+consumerName;
         */
-        //Tак от ошибок
-        AnsiString a_name = "Отчёт";
+        //TР°Рє РѕС‚ РѕС€РёР±РѕРє
+        AnsiString a_name = "РћС‚С‡С‘С‚";
         SaveDialog1->FileName = a_name;
         if (SaveDialog1->Execute()){
                 AnsiString rowData,str="";
                 TStringList* sList=new TStringList;
                 AnsiString fileName = SaveDialog1->FileName;
-                AnsiString separator = getSeparator(); //разделитель целой и дробной части
-                //Вычитываем значения из MaketF
+                AnsiString separator = getSeparator(); //СЂР°Р·РґРµР»РёС‚РµР»СЊ С†РµР»РѕР№ Рё РґСЂРѕР±РЅРѕР№ С‡Р°СЃС‚Рё
+                //Р’С‹С‡РёС‚С‹РІР°РµРј Р·РЅР°С‡РµРЅРёСЏ РёР· MaketF
                 for (int i = 0; i < MaketF->RowCount; i++){
                         for (int j = 0; j < MaketF->ColCount; j++){
                                rowData =  MaketF->Cells[j][i];
-                               if (i>6) //тут значения
+                               if (i>6) //С‚СѓС‚ Р·РЅР°С‡РµРЅРёСЏ
                                rowData = StringReplace(rowData,".",separator,TReplaceFlags()<<rfReplaceAll<<rfIgnoreCase);
 
                                if (rowData!="")
@@ -2285,7 +2285,7 @@ void __fastcall TfmInteriorUni::SaveMultyTableToFileClick(TObject *Sender)
                     sList->Add (str);
                     str="";
                 }
-                //TODO:Перезаписывать без предупреждения, если файл с таким именем существует?
+                //TODO:РџРµСЂРµР·Р°РїРёСЃС‹РІР°С‚СЊ Р±РµР· РїСЂРµРґСѓРїСЂРµР¶РґРµРЅРёСЏ, РµСЃР»Рё С„Р°Р№Р» СЃ С‚Р°РєРёРј РёРјРµРЅРµРј СЃСѓС‰РµСЃС‚РІСѓРµС‚?
                 try{
                         if (!FileExists(fileName))
                                 sList->SaveToFile(fileName);
@@ -2322,21 +2322,21 @@ AnsiString __fastcall TfmInteriorUni::getSeparator(){
 }
 
 //---------------------------------------------------------------------------
-//GRB ADD 02.02.2019 добиваем  значение вида xx, xx.y, xx.yy до вида xx.yyy где yyy - число знаков после запятой по умолчанию digitNumber = 3
+//GRB ADD 02.02.2019 РґРѕР±РёРІР°РµРј  Р·РЅР°С‡РµРЅРёРµ РІРёРґР° xx, xx.y, xx.yy РґРѕ РІРёРґР° xx.yyy РіРґРµ yyy - С‡РёСЃР»Рѕ Р·РЅР°РєРѕРІ РїРѕСЃР»Рµ Р·Р°РїСЏС‚РѕР№ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ digitNumber = 3
 AnsiString __fastcall TfmInteriorUni::formFullValue (AnsiString row_value, AnsiString separator, int digitNumber){
   AnsiString ret = "";
   int pos = row_value.Pos(separator);
-  if (row_value=="") return ret; // на всякий случай
-  if (pos == 0){    //нету точки - добавляем её и ещё digitNumber нулей
+  if (row_value=="") return ret; // РЅР° РІСЃСЏРєРёР№ СЃР»СѓС‡Р°Р№
+  if (pos == 0){    //РЅРµС‚Сѓ С‚РѕС‡РєРё - РґРѕР±Р°РІР»СЏРµРј РµС‘ Рё РµС‰С‘ digitNumber РЅСѓР»РµР№
         ret = row_value.Insert (separator, row_value.Length()+1);
         for (int i = 0; i < digitNumber; i++ ){
            ret = ret.Insert ("0",row_value.Length()+1);
         }
-  }else{ //есть точка
+  }else{ //РµСЃС‚СЊ С‚РѕС‡РєР°
    int afterdot = row_value.Length() - pos;
    if ( afterdot >=digitNumber)
         return row_value;
-   else{  //добиваем столько сколько нужно до digitNumber нулей
+   else{  //РґРѕР±РёРІР°РµРј СЃС‚РѕР»СЊРєРѕ СЃРєРѕР»СЊРєРѕ РЅСѓР¶РЅРѕ РґРѕ digitNumber РЅСѓР»РµР№
        for (int i = afterdot ; i < digitNumber; i++ )
         ret = row_value.Insert ("0",row_value.Length()+1);
    }
@@ -2353,19 +2353,19 @@ fAutoSizeColSG (MaketF);
 //---------------------------------------------------------------------------
 
 void __fastcall TfmInteriorUni::printMaketHeader30902(){
-   //шапка макета
-   MaketF->Cells[0][0] = "Код показателя";
-   MaketF->Cells[1][0] = "День месяца";
-   MaketF->Cells[2][0] = "Сумма за сутки";
+   //С€Р°РїРєР° РјР°РєРµС‚Р°
+   MaketF->Cells[0][0] = "РљРѕРґ РїРѕРєР°Р·Р°С‚РµР»СЏ";
+   MaketF->Cells[1][0] = "Р”РµРЅСЊ РјРµСЃСЏС†Р°";
+   MaketF->Cells[2][0] = "РЎСѓРјРјР° Р·Р° СЃСѓС‚РєРё";
    for (int i = 0; i < receive_maket_30902_col_num-receive_maket_30902_fixed_col_num; i++)
-   MaketF->Cells[3+i][0] = IntToStr(i+1)+ "-й час";
-   //подвал макета
+   MaketF->Cells[3+i][0] = IntToStr(i+1)+ "-Р№ С‡Р°СЃ";
+   //РїРѕРґРІР°Р» РјР°РєРµС‚Р°
    /*int fin_row = MaketF->RowCount-1;
-   MaketF->Cells[0][fin_row] = "Код показателя";
+   MaketF->Cells[0][fin_row] = "РљРѕРґ РїРѕРєР°Р·Р°С‚РµР»СЏ";
    MaketF->Cells[1][fin_row] = "0";
-   MaketF->Cells[2][fin_row] = "Сумма за месяц";
+   MaketF->Cells[2][fin_row] = "РЎСѓРјРјР° Р·Р° РјРµСЃСЏС†";
    for (int i = 0; i < 25; i++)
-   MaketF->Cells[3+i][fin_row] ="Сумма "+ IntToStr(i+1)+ "-й час";*/
+   MaketF->Cells[3+i][fin_row] ="РЎСѓРјРјР° "+ IntToStr(i+1)+ "-Р№ С‡Р°СЃ";*/
 
 }
 //---------------------------------------------------------------------------
@@ -2381,7 +2381,7 @@ void __fastcall TfmInteriorUni::printMaketValues30902(){
   }
 }
 //---------------------------------------------------------------------------
-int __fastcall TfmInteriorUni::getBlockSize_902(){ //Определяем когда начинает повторяться 1й код в макете - считаем что это фактическое количество показателей
+int __fastcall TfmInteriorUni::getBlockSize_902(){ //РћРїСЂРµРґРµР»СЏРµРј РєРѕРіРґР° РЅР°С‡РёРЅР°РµС‚ РїРѕРІС‚РѕСЂСЏС‚СЊСЃСЏ 1Р№ РєРѕРґ РІ РјР°РєРµС‚Рµ - СЃС‡РёС‚Р°РµРј С‡С‚Рѕ СЌС‚Рѕ С„Р°РєС‚РёС‡РµСЃРєРѕРµ РєРѕР»РёС‡РµСЃС‚РІРѕ РїРѕРєР°Р·Р°С‚РµР»РµР№
         int ret = 1;
         AnsiString cod1, currCod;
         cod1 = ""; currCod = "";
@@ -2415,7 +2415,7 @@ AnsiString __fastcall TfmInteriorUni::clear_prob (AnsiString str){
         return st;
 }
 //---------------------------------------------------------------------------
-//определяем максимальную текстовку по колонке
+//РѕРїСЂРµРґРµР»СЏРµРј РјР°РєСЃРёРјР°Р»СЊРЅСѓСЋ С‚РµРєСЃС‚РѕРІРєСѓ РїРѕ РєРѕР»РѕРЅРєРµ
 int __fastcall TfmInteriorUni::getMaxSymbolInColumn (TStringGrid* tsg, int column){
         int ret = 0;
         int max = 0;
@@ -2425,7 +2425,7 @@ int __fastcall TfmInteriorUni::getMaxSymbolInColumn (TStringGrid* tsg, int colum
         return max;
 }
 //---------------------------------------------------------------------------
-//добиваем пробелами до максимума по колонке с тем чтобы цивильно форматировалось в файле
+//РґРѕР±РёРІР°РµРј РїСЂРѕР±РµР»Р°РјРё РґРѕ РјР°РєСЃРёРјСѓРјР° РїРѕ РєРѕР»РѕРЅРєРµ СЃ С‚РµРј С‡С‚РѕР±С‹ С†РёРІРёР»СЊРЅРѕ С„РѕСЂРјР°С‚РёСЂРѕРІР°Р»РѕСЃСЊ РІ С„Р°Р№Р»Рµ
 AnsiString __fastcall TfmInteriorUni::add_Prob_to_Max_Size (AnsiString row, int max_size){
         AnsiString ret = row;
         for (int i = row.Length(); i <max_size; i++)

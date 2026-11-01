@@ -1,6 +1,6 @@
 
 -- Start of DDL script for SSPOINTINLIST_PG
--- Generated 23-июл-02  6:14:44 pm
+-- Generated 23-РёСЋР»-02  6:14:44 pm
 -- from ea-SS:1
 
 -- Package body SSPOINTINLIST_PG
@@ -63,13 +63,13 @@ FROM  SSpointlist     pl
  WHERE nPointList = an_pointlist
  ;
 
--- Запись в журнал -----------
+-- Р—Р°РїРёСЃСЊ РІ Р¶СѓСЂРЅР°Р» -----------
 /*IF ln_RunLogging = 1 Then
   IF ln_NotClearLog = 1 THEN
     lv_RecordType := lv_RecordType||'Z';
   END IF;
 
-  RS.rsRoot_PG.Log_p('Добавленa ТУ в список подстанций с Ид = '||an_pointlist,
+  RS.rsRoot_PG.Log_p('Р”РѕР±Р°РІР»РµРЅa РўРЈ РІ СЃРїРёСЃРѕРє РїРѕРґСЃС‚Р°РЅС†РёР№ СЃ РРґ = '||an_pointlist,
                      'SSPOINT',
                             ssGroup_RO_PG.tGetParents_f(an_Consumer, ln_CalcStep),
                      nvl(an_fromperiod,RS.rsCommon_PG.nAccPeriod_f),
@@ -95,7 +95,7 @@ if ln_CalcStep = 0 or nvl(an_TillPeriod, 299912) < RS.rsCommon_PG.nConfAccPeriod
   end if;
 end if;*/
 ---------------Begin Sechin A.A. 20.07.2002
-    RS.rsRoot_PG.LogStep_p('Добавленa ТУ в список подстанций с Ид = '||an_pointlist,
+    RS.rsRoot_PG.LogStep_p('Р”РѕР±Р°РІР»РµРЅa РўРЈ РІ СЃРїРёСЃРѕРє РїРѕРґСЃС‚Р°РЅС†РёР№ СЃ РРґ = '||an_pointlist,
                 'SSPOINT', ssPoint_RO_PG.tGetParents_f(an_Point, 0, nvl(an_fromperiod,RS.rsCommon_PG.nAccPeriod_f)),
                 nvl(an_fromperiod,RS.rsCommon_PG.nAccPeriod_f), 0, '', ln_Ret, lri_Curr);
     if ln_Ret <0 then
@@ -185,11 +185,11 @@ SELECT pl.nrunlogging,
  WHERE nPOintList = an_pointlist
  ;
 
--- Запись в журнал -----------
+-- Р—Р°РїРёСЃСЊ РІ Р¶СѓСЂРЅР°Р» -----------
 /*IF ln_RunLogging = 1 Then
   IF ln_NotClearLog = 1 THEN lv_RecordType := lv_RecordType||'Z'; END IF;
 
-  RS.rsRoot_PG.Log_p('Удален абонент из списока с Ид = '||an_consumerlist,
+  RS.rsRoot_PG.Log_p('РЈРґР°Р»РµРЅ Р°Р±РѕРЅРµРЅС‚ РёР· СЃРїРёСЃРѕРєР° СЃ РРґ = '||an_consumerlist,
                      'SSGROUP', ssGroup_RO_PG.tGetParents_f(an_Consumer, ln_CalcStep),
                      nvl(ln_fromperiod,RS.rsCommon_PG.nAccPeriod_f), ln_CalcStep > 0, true,
                      ln_CalcStep, lv_RecordType, ln_Ret, lri_Curr);
@@ -209,7 +209,7 @@ FOR lr IN gcur_l(an_consumer, an_consumerlist, null) LOOP
     exit;
 END LOOP;*/
 ---------------Begin Sechin A.A. 20.07.2002
-    RS.rsRoot_PG.LogStep_p('Удалена ТУ из списока подстанций с Ид = '||an_pointlist,
+    RS.rsRoot_PG.LogStep_p('РЈРґР°Р»РµРЅР° РўРЈ РёР· СЃРїРёСЃРѕРєР° РїРѕРґСЃС‚Р°РЅС†РёР№ СЃ РРґ = '||an_pointlist,
                 'SSPOINT', ssPoint_RO_PG.tGetParents_f(an_Point, 0, RS.rsCommon_PG.nAccPeriod_f),
                 RS.rsCommon_PG.nAccPeriod_f, 0, '', ln_Ret, lri_Curr);
     if ln_Ret <0 then
@@ -271,11 +271,11 @@ for lr in lcur_include loop
      FROM  SSpointlist     pl
      WHERE nPointList = an_pointlist;
 
-/*    -- Запись в журнал -----------
+/*    -- Р—Р°РїРёСЃСЊ РІ Р¶СѓСЂРЅР°Р» -----------
     IF ln_RunLogging = 1 Then
       IF ln_NotClearLog = 1 THEN lv_RecordType := lv_RecordType||'Z'; END IF;
 
-      RS.rsRoot_PG.Log_p('Изменены данные по абоненту в списке с Ид = '||an_consumerlist,
+      RS.rsRoot_PG.Log_p('РР·РјРµРЅРµРЅС‹ РґР°РЅРЅС‹Рµ РїРѕ Р°Р±РѕРЅРµРЅС‚Сѓ РІ СЃРїРёСЃРєРµ СЃ РРґ = '||an_consumerlist,
                          'SSGROUP', ssGroup_RO_PG.tGetParents_f(an_Consumer, ln_CalcStep),
                          nvl(an_fromperiod,RS.rsCommon_PG.nAccPeriod_f), ln_CalcStep > 0, true,
                          ln_CalcStep, lv_RecordType, ln_Ret, lri_Curr);
@@ -300,7 +300,7 @@ for lr in lcur_include loop
            nFromPeriod = an_fromperiod_old;
 ---------------Begin Sechin A.A. 20.07.2002
 IF SQL%ROWCOUNT >0 THEN
-    RS.rsRoot_PG.LogStep_p('Изменены данные по ТУ в списке Ид = '||an_pointlist,
+    RS.rsRoot_PG.LogStep_p('РР·РјРµРЅРµРЅС‹ РґР°РЅРЅС‹Рµ РїРѕ РўРЈ РІ СЃРїРёСЃРєРµ РРґ = '||an_pointlist,
                 'SSPOINT', ssPoint_RO_PG.tGetParents_f(an_Point, 0, nvl(an_fromperiod,RS.rsCommon_PG.nAccPeriod_f)),
                 nvl(an_fromperiod,RS.rsCommon_PG.nAccPeriod_f), 0, '', ln_Ret, lri_Curr);
     if ln_Ret <0 then
@@ -407,7 +407,7 @@ ELSE
 END IF;
 EXCEPTION
     WHEN le_notvalid THEN
-        RS.rsCommon_PG.AddError_p('PointInList', SQLCode, 'Главных в списке <<'||lv_name||'>> не может быть больше одного');
+        RS.rsCommon_PG.AddError_p('PointInList', SQLCode, 'Р“Р»Р°РІРЅС‹С… РІ СЃРїРёСЃРєРµ <<'||lv_name||'>> РЅРµ РјРѕР¶РµС‚ Р±С‹С‚СЊ Р±РѕР»СЊС€Рµ РѕРґРЅРѕРіРѕ');
         an_Ret := -1;
     WHEN OTHERS THEN
         RS.rsCommon_PG.AddError_p('PointInList', SQLCode, SQLErrM);

@@ -45,7 +45,7 @@ void __fastcall TLimitPowerInterior::ChartFXGetLegend(System::TObject* Sender,
 			break;
 		case 1://Y
 //			s=Chartfx1->HText;
-//			Chartfx1->HText=AnsiString("Да-да");
+//			Chartfx1->HText=AnsiString("Р”Р°-РґР°");
 			nRes=1;
 			break;
 		default:
@@ -443,7 +443,7 @@ void __fastcall TLimitPowerInterior::formDescr( void )
 {
   fd->IdGroup = GroupJump(fd->IdGroup);
 
-	//Заполняем необходимые поля описания формы
+	//Р—Р°РїРѕР»РЅСЏРµРј РЅРµРѕР±С…РѕРґРёРјС‹Рµ РїРѕР»СЏ РѕРїРёСЃР°РЅРёСЏ С„РѕСЂРјС‹
 	Clones = 0;
 
   dmMain->oqInterCursor->Params->Clear();
@@ -721,10 +721,10 @@ AnsiString __fastcall TLimitPowerInterior::GetUnitOfEnergy()
 	switch( fd->CodeTemplate )
 	{
 	case APBO_F:
-        d = "MВт";
+        d = "MР’С‚";
         break;
     case RPBO_F:
-        d = "MВАр";
+        d = "MР’РђСЂ";
         break;
 	}
     return d;

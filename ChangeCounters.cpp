@@ -35,7 +35,7 @@ __fastcall TFormChangeCounters::TFormChangeCounters(TComponent* Owner, AnsiStrin
 }
 //---------------------------------------------------------------------------
 
-//bool __fastcall TFormChangeCounters::ReadNode(TTreeNode* NodeParent)// Читает ветку дерева Точек
+//bool __fastcall TFormChangeCounters::ReadNode(TTreeNode* NodeParent)// Р§РёС‚Р°РµС‚ РІРµС‚РєСѓ РґРµСЂРµРІР° РўРѕС‡РµРє
  bool __fastcall TFormChangeCounters::ReadNode(TObject*obj)
 {
     TTreeNode*NodeParent=dynamic_cast<TTreeNode*>(obj);
@@ -321,7 +321,7 @@ void __fastcall TFormChangeCounters::vSave(TObject* Sender)
 //------------------------------------------------------------------------------
 void __fastcall TFormChangeCounters::vFindClick(TObject *Sender)
 {
-  //GRB ADD 09.03.2021 -добавляем вызов 2-х сеттеров, определяющих контекст задачи
+  //GRB ADD 09.03.2021 -РґРѕР±Р°РІР»СЏРµРј РІС‹Р·РѕРІ 2-С… СЃРµС‚С‚РµСЂРѕРІ, РѕРїСЂРµРґРµР»СЏСЋС‰РёС… РєРѕРЅС‚РµРєСЃС‚ Р·Р°РґР°С‡Рё
   fmFP->setContext(0);
   fmFP->setGroupsAndPoints(false);
   //END ADD

@@ -83,7 +83,7 @@ private:	// User declarations
    struct stPoint
    {
       long HaveChild;
-      long Mid;                     //===== идентификатор объекта
+      long Mid;                     //===== РёРґРµРЅС‚РёС„РёРєР°С‚РѕСЂ РѕР±СЉРµРєС‚Р°
       char Name[156];
       char LongName[256];
       long Type;                    //===== 1 - enterprise,
@@ -91,24 +91,24 @@ private:	// User declarations
                                     //===== 3 - point,
                                     //===== 4 - connectionparam,
                                     //===== 5 - parallelconnection
-                                    //===== 243 - 2-хобмоточный трансформатор
-                                    //===== 244 - 3-хобмоточный трансформатор
+                                    //===== 243 - 2-С…РѕР±РјРѕС‚РѕС‡РЅС‹Р№ С‚СЂР°РЅСЃС„РѕСЂРјР°С‚РѕСЂ
+                                    //===== 244 - 3-С…РѕР±РјРѕС‚РѕС‡РЅС‹Р№ С‚СЂР°РЅСЃС„РѕСЂРјР°С‚РѕСЂ
 
-      double NKC;		                //===== NUMBER, коэффициент
-      long NType;		                //===== NUMBER, тип расчета
-      long NRECOMPENS;	            //===== NUMBER, расчет реактива
+      double NKC;		                //===== NUMBER, РєРѕСЌС„С„РёС†РёРµРЅС‚
+      long NType;		                //===== NUMBER, С‚РёРї СЂР°СЃС‡РµС‚Р°
+      long NRECOMPENS;	            //===== NUMBER, СЂР°СЃС‡РµС‚ СЂРµР°РєС‚РёРІР°
       long NNOTINCLUDECONSUMP;
-      long nconnectionparam;        //===== NUMBER, ид параметра (Type=4, 243, 244)
-      long nparallelconnection;     //===== NUMBER, ид паралельного параметра (Type=4, 243, 244)
-//      long nconnectionparam2;       //===== NUMBER, ид параметра (Type=244)
-//      long nparallelconnection2;    //===== NUMBER, ид паралельного параметра (Type=244)
-//      long nconnectionparam3;       //===== NUMBER, ид параметра (Type=244)
-//      long nparallelconnection3;    //===== NUMBER, ид паралельного параметра (Type=244)
+      long nconnectionparam;        //===== NUMBER, РёРґ РїР°СЂР°РјРµС‚СЂР° (Type=4, 243, 244)
+      long nparallelconnection;     //===== NUMBER, РёРґ РїР°СЂР°Р»РµР»СЊРЅРѕРіРѕ РїР°СЂР°РјРµС‚СЂР° (Type=4, 243, 244)
+//      long nconnectionparam2;       //===== NUMBER, РёРґ РїР°СЂР°РјРµС‚СЂР° (Type=244)
+//      long nparallelconnection2;    //===== NUMBER, РёРґ РїР°СЂР°Р»РµР»СЊРЅРѕРіРѕ РїР°СЂР°РјРµС‚СЂР° (Type=244)
+//      long nconnectionparam3;       //===== NUMBER, РёРґ РїР°СЂР°РјРµС‚СЂР° (Type=244)
+//      long nparallelconnection3;    //===== NUMBER, РёРґ РїР°СЂР°Р»РµР»СЊРЅРѕРіРѕ РїР°СЂР°РјРµС‚СЂР° (Type=244)
    };
    long *FParamCid;
    int  FParamCidCnt;
    long CurrRow;
-   bool __fastcall ReadTreeNode(TObject*obj);// Читает ветку дерева
+   bool __fastcall ReadTreeNode(TObject*obj);// Р§РёС‚Р°РµС‚ РІРµС‚РєСѓ РґРµСЂРµРІР°
    void __fastcall SetLabel(int ARow=0);
    void __fastcall SetAccess(TAccess value);
    AnsiString __fastcall GetTypeById(int i);

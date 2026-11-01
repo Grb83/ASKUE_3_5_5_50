@@ -164,25 +164,25 @@ __published:
           bool &Handled);
         void __fastcall Timer2Timer(TObject *Sender);
 private:        // private user declarations
-	typedef struct {  //МОНИТОРЫ
+	typedef struct {  //РњРћРќРРўРћР Р«
       long Monitor_Id;
       long MSchema;
     	char Name[150];
     	long DSize;
       int def;
    }MONITORSTART;
-   int CloseCnt; // счётчик попыток закрытия приложения // add by KSS
+   int CloseCnt; // СЃС‡С‘С‚С‡РёРє РїРѕРїС‹С‚РѕРє Р·Р°РєСЂС‹С‚РёСЏ РїСЂРёР»РѕР¶РµРЅРёСЏ // add by KSS
    MONITORSTART startMon[MONSHEMS];
    AnsiString conStr;
 
-  typedef struct {  //Часовой пояс
+  typedef struct {  //Р§Р°СЃРѕРІРѕР№ РїРѕСЏСЃ
       long TimeZone_Id;
       int Shift;
       int dsummer;
       AnsiString name;
    }TIMEZONESHIFT;
  int CountTimeZona;
-    typedef struct {  //Часовой пояс
+    typedef struct {  //Р§Р°СЃРѕРІРѕР№ РїРѕСЏСЃ
       long TimeZone_Id;
       int nschedulelist;
       int dsummer;

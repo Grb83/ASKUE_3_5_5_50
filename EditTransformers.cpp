@@ -18,18 +18,18 @@
 #pragma resource "*.dfm"
 TTransformersForm *TransformersForm;
 //---------------------------------------------------------------------------
-#define imCFldr 4       //!< Индекс иконки "Закрытая папка"
-#define imOFldr 5       //!< Индекс иконки "Открытая папка"
-#define imCurrent 24    //!< Индекс иконки "Измерительный трансформатор тока"
-#define imVoltage 25    //!< Индекс иконки "Измерительный трансформатор напряжения"
-#define imPower2  26    //!< Индекс иконки "Силовой двухобмоточный трансформатор"
-#define imPower3  27    //!< Индекс иконки "Силовой трехобмоточный трансформатор"
-#define imLine    21    //!< Индекс иконки "Линии"
-#define imReactor 28    //!< Индекс иконки "Реактор"
+#define imCFldr 4       //!< РРЅРґРµРєСЃ РёРєРѕРЅРєРё "Р—Р°РєСЂС‹С‚Р°СЏ РїР°РїРєР°"
+#define imOFldr 5       //!< РРЅРґРµРєСЃ РёРєРѕРЅРєРё "РћС‚РєСЂС‹С‚Р°СЏ РїР°РїРєР°"
+#define imCurrent 24    //!< РРЅРґРµРєСЃ РёРєРѕРЅРєРё "РР·РјРµСЂРёС‚РµР»СЊРЅС‹Р№ С‚СЂР°РЅСЃС„РѕСЂРјР°С‚РѕСЂ С‚РѕРєР°"
+#define imVoltage 25    //!< РРЅРґРµРєСЃ РёРєРѕРЅРєРё "РР·РјРµСЂРёС‚РµР»СЊРЅС‹Р№ С‚СЂР°РЅСЃС„РѕСЂРјР°С‚РѕСЂ РЅР°РїСЂСЏР¶РµРЅРёСЏ"
+#define imPower2  26    //!< РРЅРґРµРєСЃ РёРєРѕРЅРєРё "РЎРёР»РѕРІРѕР№ РґРІСѓС…РѕР±РјРѕС‚РѕС‡РЅС‹Р№ С‚СЂР°РЅСЃС„РѕСЂРјР°С‚РѕСЂ"
+#define imPower3  27    //!< РРЅРґРµРєСЃ РёРєРѕРЅРєРё "РЎРёР»РѕРІРѕР№ С‚СЂРµС…РѕР±РјРѕС‚РѕС‡РЅС‹Р№ С‚СЂР°РЅСЃС„РѕСЂРјР°С‚РѕСЂ"
+#define imLine    21    //!< РРЅРґРµРєСЃ РёРєРѕРЅРєРё "Р›РёРЅРёРё"
+#define imReactor 28    //!< РРЅРґРµРєСЃ РёРєРѕРЅРєРё "Р РµР°РєС‚РѕСЂ"
 //---------------------------------------------------------------------------
 //---------------------------------------------------------------------------
 //---------------------------------------------------------------------------
-/*! Внутренний класс
+/*! Р’РЅСѓС‚СЂРµРЅРЅРёР№ РєР»Р°СЃСЃ
 */
 class TTransformersFormPriv
 {
@@ -57,7 +57,7 @@ public:
   TTransformersFormPriv(TTransformersForm *AOwner);
   ~TTransformersFormPriv();
 
-  /*! Очистка данных в листе дерева
+  /*! РћС‡РёСЃС‚РєР° РґР°РЅРЅС‹С… РІ Р»РёСЃС‚Рµ РґРµСЂРµРІР°
   */
   void __fastcall clearData(TCustomTransformerLine *transline)
   { if (!transline)
@@ -87,7 +87,7 @@ public:
     }
     transline = NULL;
   }
-  /*! Очистка данных в листе дерева
+  /*! РћС‡РёСЃС‚РєР° РґР°РЅРЅС‹С… РІ Р»РёСЃС‚Рµ РґРµСЂРµРІР°
   */
   void __fastcall clearData(void *data)
   { if (!data)
@@ -95,7 +95,7 @@ public:
     clearData((TCustomTransformerLine *)data);
     data  = NULL;
   }
-  /*! Очистка данных в листе дерева
+  /*! РћС‡РёСЃС‚РєР° РґР°РЅРЅС‹С… РІ Р»РёСЃС‚Рµ РґРµСЂРµРІР°
   */
   void __fastcall clearData(TTreeNode *node)
   { if (!node)
@@ -104,19 +104,19 @@ public:
     clearData(node->Data);
     node->Data = NULL;
   }
-  //===== Очистка дерева и объектов в нем
+  //===== РћС‡РёСЃС‚РєР° РґРµСЂРµРІР° Рё РѕР±СЉРµРєС‚РѕРІ РІ РЅРµРј
   //void __fastcall clearTree(TTreeNode *node);
-  //===== Создание трансформатора\линии
+  //===== РЎРѕР·РґР°РЅРёРµ С‚СЂР°РЅСЃС„РѕСЂРјР°С‚РѕСЂР°\Р»РёРЅРёРё
   TCustomTransformerLine *
     __fastcall createTransLine(TCustomTransformerLine::TTransLineTypes ttype,
                                 const double *Values, const short *Indics, bool fnew = false);
-  //===== Создание трансформатора\линии
+  //===== РЎРѕР·РґР°РЅРёРµ С‚СЂР°РЅСЃС„РѕСЂРјР°С‚РѕСЂР°\Р»РёРЅРёРё
   TCustomTransformerLine *
     __fastcall createTransLine(TCustomTransformerLine::TTransLineTypes ttype,
                                 TCustomTransformerLine *trans, bool fnew = false);
-  //===== Создание листа
+  //===== РЎРѕР·РґР°РЅРёРµ Р»РёСЃС‚Р°
   TTreeNode * __fastcall createNode(TTreeNode *node, TCustomTransformerLine *trans);
-  //===== Запрет TAction
+  //===== Р—Р°РїСЂРµС‚ TAction
   void __fastcall disableAction(TAction *act)
   { if (!act)
       return;
@@ -124,7 +124,7 @@ public:
     act->Enabled    = false;
     act->Visible    = false;
   }
-  //===== Очистка списка удаленных элементов
+  //===== РћС‡РёСЃС‚РєР° СЃРїРёСЃРєР° СѓРґР°Р»РµРЅРЅС‹С… СЌР»РµРјРµРЅС‚РѕРІ
   void __fastcall clearRemovs()
   { TDelList  *tDL  = NULL;
     for (int i = 0; i < removs->Count; ++i)
@@ -134,13 +134,13 @@ public:
     removs->Clear();
   }
 
-  //===== Свойства и объекты для внутреннего использования
-  TList *removs;                //!< Список удаленных элементов
-  UINT  CF_TRANSFMS_TREENODE;   //!< Описание формата для буфера обмена
+  //===== РЎРІРѕР№СЃС‚РІР° Рё РѕР±СЉРµРєС‚С‹ РґР»СЏ РІРЅСѓС‚СЂРµРЅРЅРµРіРѕ РёСЃРїРѕР»СЊР·РѕРІР°РЅРёСЏ
+  TList *removs;                //!< РЎРїРёСЃРѕРє СѓРґР°Р»РµРЅРЅС‹С… СЌР»РµРјРµРЅС‚РѕРІ
+  UINT  CF_TRANSFMS_TREENODE;   //!< РћРїРёСЃР°РЅРёРµ С„РѕСЂРјР°С‚Р° РґР»СЏ Р±СѓС„РµСЂР° РѕР±РјРµРЅР°
 
-  TTransformersForm *parent;    //!< Указатель на родителя
+  TTransformersForm *parent;    //!< РЈРєР°Р·Р°С‚РµР»СЊ РЅР° СЂРѕРґРёС‚РµР»СЏ
 
-  TOperation  eOper;            //!< Тип операции над листом
+  TOperation  eOper;            //!< РўРёРї РѕРїРµСЂР°С†РёРё РЅР°Рґ Р»РёСЃС‚РѕРј
 
   __property bool editCatch   = { read  = GeteditCatch, write = SeteditCatch };
   __property AnsiString cnum  = { read  = Getcnum };
@@ -150,10 +150,10 @@ private:
   { if (Value)
     { parent->NameEdit->OnChange      = parent->onChange;
       //parent->DateMEdit->OnChange     = parent->onChange;
-      //===== Изменение параметров Измерительного трансформатора
+      //===== РР·РјРµРЅРµРЅРёРµ РїР°СЂР°РјРµС‚СЂРѕРІ РР·РјРµСЂРёС‚РµР»СЊРЅРѕРіРѕ С‚СЂР°РЅСЃС„РѕСЂРјР°С‚РѕСЂР°
       parent->mVal1Edit->OnChange     = parent->onChange;
       parent->mVal2Edit->OnChange     = parent->onChange;
-      //===== Изменение параметров 2-хобмоточного трансформатора
+      //===== РР·РјРµРЅРµРЅРёРµ РїР°СЂР°РјРµС‚СЂРѕРІ 2-С…РѕР±РјРѕС‚РѕС‡РЅРѕРіРѕ С‚СЂР°РЅСЃС„РѕСЂРјР°С‚РѕСЂР°
       parent->p2SnEdit->OnChange        = parent->onChange;
       parent->p2dPxxEdit->OnChange      = parent->onChange;
       parent->p2dPkzEdit->OnChange      = parent->onChange;
@@ -161,7 +161,7 @@ private:
       parent->p2UkzEdit->OnChange       = parent->onChange;
       parent->p2WorkHoursEdit->OnChange = parent->onChange;
       parent->p2FullHoursEdit->OnChange = parent->onChange;
-      //===== Изменение параметров 3-хобмоточного трансформатора
+      //===== РР·РјРµРЅРµРЅРёРµ РїР°СЂР°РјРµС‚СЂРѕРІ 3-С…РѕР±РјРѕС‚РѕС‡РЅРѕРіРѕ С‚СЂР°РЅСЃС„РѕСЂРјР°С‚РѕСЂР°
       parent->p3SnEdit->OnChange        = parent->onChange;
       parent->p3SuEdit->OnChange        = parent->onChange;
       parent->p3SmEdit->OnChange        = parent->onChange;
@@ -176,28 +176,28 @@ private:
       parent->p3UkzdEdit->OnChange      = parent->onChange;
       parent->p3WorkHoursEdit->OnChange = parent->onChange;
       parent->p3FullHoursEdit->OnChange = parent->onChange;
-      //===== Изменение параметров линии
+      //===== РР·РјРµРЅРµРЅРёРµ РїР°СЂР°РјРµС‚СЂРѕРІ Р»РёРЅРёРё
       parent->tlRoEdit->OnChange  = parent->onChange;
       parent->tlXoEdit->OnChange  = parent->onChange;
       parent->tlLEdit->OnChange   = parent->onChange;
       parent->tlUnEdit->OnChange  = parent->onChange;
-      //===== Изменение параметров реактора
+      //===== РР·РјРµРЅРµРЅРёРµ РїР°СЂР°РјРµС‚СЂРѕРІ СЂРµР°РєС‚РѕСЂР°
       parent->RctrUnEdit->OnChange      = parent->onChange;
       parent->RctrSnEdit->OnChange      = parent->onChange;
       parent->RctrDPEdit->OnChange      = parent->onChange;
       parent->RctrFHoursEdit->OnChange  = parent->onChange;
       parent->RctrCHoursEdit->OnChange  = parent->onChange;
-      //===== Реакция на перемещение по листам
+      //===== Р РµР°РєС†РёСЏ РЅР° РїРµСЂРµРјРµС‰РµРЅРёРµ РїРѕ Р»РёСЃС‚Р°Рј
       parent->tvTransfms->OnChange    = parent->tvTransfmsChange;
       parent->tvTransfms->OnChanging  = parent->tvTransfmsChanging;
     }
     else
     { parent->NameEdit->OnChange      = NULL;
       //parent->DateMEdit->OnChange     = NULL;
-      //===== Изменение параметров Измерительного трансформатора
+      //===== РР·РјРµРЅРµРЅРёРµ РїР°СЂР°РјРµС‚СЂРѕРІ РР·РјРµСЂРёС‚РµР»СЊРЅРѕРіРѕ С‚СЂР°РЅСЃС„РѕСЂРјР°С‚РѕСЂР°
       parent->mVal1Edit->OnChange = NULL;
       parent->mVal2Edit->OnChange = NULL;
-      //===== Изменение параметров 2-хобмоточного трансформатора
+      //===== РР·РјРµРЅРµРЅРёРµ РїР°СЂР°РјРµС‚СЂРѕРІ 2-С…РѕР±РјРѕС‚РѕС‡РЅРѕРіРѕ С‚СЂР°РЅСЃС„РѕСЂРјР°С‚РѕСЂР°
       parent->p2SnEdit->OnChange        = NULL;
       parent->p2dPxxEdit->OnChange      = NULL;
       parent->p2dPkzEdit->OnChange      = NULL;
@@ -205,7 +205,7 @@ private:
       parent->p2UkzEdit->OnChange       = NULL;
       parent->p2WorkHoursEdit->OnChange = NULL;
       parent->p2FullHoursEdit->OnChange = NULL;
-      //===== Изменение параметров 3-хобмоточного трансформатора
+      //===== РР·РјРµРЅРµРЅРёРµ РїР°СЂР°РјРµС‚СЂРѕРІ 3-С…РѕР±РјРѕС‚РѕС‡РЅРѕРіРѕ С‚СЂР°РЅСЃС„РѕСЂРјР°С‚РѕСЂР°
       parent->p3SnEdit->OnChange        = NULL;
       parent->p3SuEdit->OnChange        = NULL;
       parent->p3SmEdit->OnChange        = NULL;
@@ -220,18 +220,18 @@ private:
       parent->p3UkzdEdit->OnChange      = NULL;
       parent->p3WorkHoursEdit->OnChange = NULL;
       parent->p3FullHoursEdit->OnChange = NULL;
-      //===== Изменение параметров линии
+      //===== РР·РјРµРЅРµРЅРёРµ РїР°СЂР°РјРµС‚СЂРѕРІ Р»РёРЅРёРё
       parent->tlRoEdit->OnChange  = NULL;
       parent->tlXoEdit->OnChange  = NULL;
       parent->tlLEdit->OnChange   = NULL;
       parent->tlUnEdit->OnChange  = NULL;
-      //===== Изменение параметров реактора
+      //===== РР·РјРµРЅРµРЅРёРµ РїР°СЂР°РјРµС‚СЂРѕРІ СЂРµР°РєС‚РѕСЂР°
       parent->RctrUnEdit->OnChange      = NULL;
       parent->RctrSnEdit->OnChange      = NULL;
       parent->RctrDPEdit->OnChange      = NULL;
       parent->RctrFHoursEdit->OnChange  = NULL;
       parent->RctrCHoursEdit->OnChange  = NULL;
-      //===== Реакция на перемещение по листам
+      //===== Р РµР°РєС†РёСЏ РЅР° РїРµСЂРµРјРµС‰РµРЅРёРµ РїРѕ Р»РёСЃС‚Р°Рј
       parent->tvTransfms->OnChanging  = NULL;
       parent->tvTransfms->OnChange    = NULL;
     }
@@ -243,7 +243,7 @@ private:
   { return  " " + IntToStr(++dnum);
   }
 
-  unsigned int  dnum;   //!< номер добавляемого элемента для добавления к имени трансформатора/линии
+  unsigned int  dnum;   //!< РЅРѕРјРµСЂ РґРѕР±Р°РІР»СЏРµРјРѕРіРѕ СЌР»РµРјРµРЅС‚Р° РґР»СЏ РґРѕР±Р°РІР»РµРЅРёСЏ Рє РёРјРµРЅРё С‚СЂР°РЅСЃС„РѕСЂРјР°С‚РѕСЂР°/Р»РёРЅРёРё
 
 };
 //---------------------------------------------------------------------------
@@ -255,7 +255,7 @@ TTransformersFormPriv::TTransformersFormPriv(TTransformersForm *AOwner)
   parent  = AOwner;
 
   removs  = new TList();
-  // регистрация формата для буфера обмена
+  // СЂРµРіРёСЃС‚СЂР°С†РёСЏ С„РѕСЂРјР°С‚Р° РґР»СЏ Р±СѓС„РµСЂР° РѕР±РјРµРЅР°
   try
   { CF_TRANSFMS_TREENODE  = RegisterClipboardFormat("CF_TRANSFMS_TREENODE");
     if (!CF_TRANSFMS_TREENODE)
@@ -294,7 +294,7 @@ TTransformersFormPriv::~TTransformersFormPriv()
   }
 }
 //---------------------------------------------------------------------------
-/*! Очистка дерева и объектов в нем
+/*! РћС‡РёСЃС‚РєР° РґРµСЂРµРІР° Рё РѕР±СЉРµРєС‚РѕРІ РІ РЅРµРј
 */
 /*
 void __fastcall TTransformersFormPriv::clearTree(TTreeNode *node)
@@ -328,11 +328,11 @@ void __fastcall TTransformersFormPriv::clearTree(TTreeNode *node)
 }
 */
 //---------------------------------------------------------------------------
-/*! Создание Трансформатора и заполнение необходимых полей, где:
-    \param ttype - тип трансформатора
-    \param Values - указатель на массив значений параметров
+/*! РЎРѕР·РґР°РЅРёРµ РўСЂР°РЅСЃС„РѕСЂРјР°С‚РѕСЂР° Рё Р·Р°РїРѕР»РЅРµРЅРёРµ РЅРµРѕР±С…РѕРґРёРјС‹С… РїРѕР»РµР№, РіРґРµ:
+    \param ttype - С‚РёРї С‚СЂР°РЅСЃС„РѕСЂРјР°С‚РѕСЂР°
+    \param Values - СѓРєР°Р·Р°С‚РµР»СЊ РЅР° РјР°СЃСЃРёРІ Р·РЅР°С‡РµРЅРёР№ РїР°СЂР°РјРµС‚СЂРѕРІ
 
-    \return созданный трансформатор иначе NULL.
+    \return СЃРѕР·РґР°РЅРЅС‹Р№ С‚СЂР°РЅСЃС„РѕСЂРјР°С‚РѕСЂ РёРЅР°С‡Рµ NULL.
 */
 TCustomTransformerLine *
 __fastcall TTransformersFormPriv::createTransLine(TCustomTransformerLine::TTransLineTypes ttype,
@@ -475,11 +475,11 @@ __fastcall TTransformersFormPriv::createTransLine(TCustomTransformerLine::TTrans
   return  NULL;
 }
 //---------------------------------------------------------------------------
-/*! Создание Трансформатора на основе существующего, где:
-    \param ttype - тип трансформатора
-    \param trans - указатель на существующий трансформатор
+/*! РЎРѕР·РґР°РЅРёРµ РўСЂР°РЅСЃС„РѕСЂРјР°С‚РѕСЂР° РЅР° РѕСЃРЅРѕРІРµ СЃСѓС‰РµСЃС‚РІСѓСЋС‰РµРіРѕ, РіРґРµ:
+    \param ttype - С‚РёРї С‚СЂР°РЅСЃС„РѕСЂРјР°С‚РѕСЂР°
+    \param trans - СѓРєР°Р·Р°С‚РµР»СЊ РЅР° СЃСѓС‰РµСЃС‚РІСѓСЋС‰РёР№ С‚СЂР°РЅСЃС„РѕСЂРјР°С‚РѕСЂ
 
-    \return созданный трансформатор иначе NULL.
+    \return СЃРѕР·РґР°РЅРЅС‹Р№ С‚СЂР°РЅСЃС„РѕСЂРјР°С‚РѕСЂ РёРЅР°С‡Рµ NULL.
 */
 TCustomTransformerLine *
 __fastcall TTransformersFormPriv::createTransLine(TCustomTransformerLine::TTransLineTypes ttype,
@@ -521,11 +521,11 @@ __fastcall TTransformersFormPriv::createTransLine(TCustomTransformerLine::TTrans
   return  tTransLine;
 }
 //---------------------------------------------------------------------------
-/*! Создание листа дерева, где:
-    \param node - указатель на родительский лист
-    \param trans - указатель на добавляемый объект трансформатора
+/*! РЎРѕР·РґР°РЅРёРµ Р»РёСЃС‚Р° РґРµСЂРµРІР°, РіРґРµ:
+    \param node - СѓРєР°Р·Р°С‚РµР»СЊ РЅР° СЂРѕРґРёС‚РµР»СЊСЃРєРёР№ Р»РёСЃС‚
+    \param trans - СѓРєР°Р·Р°С‚РµР»СЊ РЅР° РґРѕР±Р°РІР»СЏРµРјС‹Р№ РѕР±СЉРµРєС‚ С‚СЂР°РЅСЃС„РѕСЂРјР°С‚РѕСЂР°
 
-    \return созданный лист или NULL
+    \return СЃРѕР·РґР°РЅРЅС‹Р№ Р»РёСЃС‚ РёР»Рё NULL
 */
 TTreeNode * __fastcall TTransformersFormPriv::createNode(TTreeNode *node,
                                                           TCustomTransformerLine *transline)
@@ -579,16 +579,16 @@ __fastcall TTransformersForm::TTransformersForm(TComponent* Owner, AnsiString Na
 {
 }
 //---------------------------------------------------------------------------
-/*! Действия при создании формы
+/*! Р”РµР№СЃС‚РІРёСЏ РїСЂРё СЃРѕР·РґР°РЅРёРё С„РѕСЂРјС‹
 */
 void __fastcall TTransformersForm::FormCreate(TObject *Sender)
 {
   d = new TTransformersFormPriv(this);
 
-  //===== Включение удаления элементов
+  //===== Р’РєР»СЋС‡РµРЅРёРµ СѓРґР°Р»РµРЅРёСЏ СЌР»РµРјРµРЅС‚РѕРІ
   ShowAction(iaDelete, true);
 
-  //===== Стартовые настройки
+  //===== РЎС‚Р°СЂС‚РѕРІС‹Рµ РЅР°СЃС‚СЂРѕР№РєРё
   mClon->Action = iaMon;
 
   if (customer_id == 1||customer_id==51)
@@ -597,7 +597,7 @@ void __fastcall TTransformersForm::FormCreate(TObject *Sender)
     tbTools->Visible    = false;
   }
 
-  //===== Установка закладок невидимыми
+  //===== РЈСЃС‚Р°РЅРѕРІРєР° Р·Р°РєР»Р°РґРѕРє РЅРµРІРёРґРёРјС‹РјРё
   for (int i = 0; i < TransformerPControl->PageCount; ++i)
     TransformerPControl->Pages[i]->TabVisible = false;
 
@@ -616,21 +616,21 @@ void __fastcall TTransformersForm::FormCreate(TObject *Sender)
   NewTransmissionLineAction->OnExecute  = NewTransLine;
   NewReactorMenuAction->OnExecute       = NewTransLine;
 
-  //===== Запрещение некоторых Действий
-  //===== Запрещение добавления стандартного нового элемента
+  //===== Р—Р°РїСЂРµС‰РµРЅРёРµ РЅРµРєРѕС‚РѕСЂС‹С… Р”РµР№СЃС‚РІРёР№
+  //===== Р—Р°РїСЂРµС‰РµРЅРёРµ РґРѕР±Р°РІР»РµРЅРёСЏ СЃС‚Р°РЅРґР°СЂС‚РЅРѕРіРѕ РЅРѕРІРѕРіРѕ СЌР»РµРјРµРЅС‚Р°
   d->disableAction(iaNew);
-  //===== Запрещение мониторинга элемента
+  //===== Р—Р°РїСЂРµС‰РµРЅРёРµ РјРѕРЅРёС‚РѕСЂРёРЅРіР° СЌР»РµРјРµРЅС‚Р°
   d->disableAction(iaMon);
-  //===== Запрещение Добавления Измерительных трансформаторов
+  //===== Р—Р°РїСЂРµС‰РµРЅРёРµ Р”РѕР±Р°РІР»РµРЅРёСЏ РР·РјРµСЂРёС‚РµР»СЊРЅС‹С… С‚СЂР°РЅСЃС„РѕСЂРјР°С‚РѕСЂРѕРІ
   d->disableAction(NewMeteringTransAction);
   d->disableAction(NewIMeteringTransAction);
   d->disableAction(NewUMeteringTransAction);
 
-  //===== Открытие данных
+  //===== РћС‚РєСЂС‹С‚РёРµ РґР°РЅРЅС‹С…
   vRefresh(Sender);
 }
 //---------------------------------------------------------------------------
-/*! Действия перед разрушением формы
+/*! Р”РµР№СЃС‚РІРёСЏ РїРµСЂРµРґ СЂР°Р·СЂСѓС€РµРЅРёРµРј С„РѕСЂРјС‹
 */
 void __fastcall TTransformersForm::FormDestroy(TObject *Sender)
 {
@@ -706,19 +706,19 @@ void __fastcall TTransformersForm::tvTransfmsChange(TObject *Sender,
   paramPanel->Visible = tTransLine->type != TCustomTransformerLine::ttNone;
 
   TransformerPControl->ActivePage = NULL;
-  //===== Разрешение просмотра монитора по данному объекту
+  //===== Р Р°Р·СЂРµС€РµРЅРёРµ РїСЂРѕСЃРјРѕС‚СЂР° РјРѕРЅРёС‚РѕСЂР° РїРѕ РґР°РЅРЅРѕРјСѓ РѕР±СЉРµРєС‚Сѓ
   iaMon->Enabled  = tTransLine->type != TCustomTransformerLine::ttNone;
 
-  //===== Заполнение необходимых полей
+  //===== Р—Р°РїРѕР»РЅРµРЅРёРµ РЅРµРѕР±С…РѕРґРёРјС‹С… РїРѕР»РµР№
   eId->Text = tTransLine->id;
   NameEdit->Text  = tTransLine->name;//tvTransfms->Selected->Text;
-  //===== Убрано т.к. временно от даты отказались
+  //===== РЈР±СЂР°РЅРѕ С‚.Рє. РІСЂРµРјРµРЅРЅРѕ РѕС‚ РґР°С‚С‹ РѕС‚РєР°Р·Р°Р»РёСЃСЊ
   //if (tTransLine->type != TCustomTransformerLine::ttNone)
   //  DateMEdit->Text = tTransLine->date;
   switch (tTransLine->type)
   { case TCustomTransformerLine::ttCurrent:
     case TCustomTransformerLine::ttVoltage:
-      //===== измерительный трансформатор
+      //===== РёР·РјРµСЂРёС‚РµР»СЊРЅС‹Р№ С‚СЂР°РЅСЃС„РѕСЂРјР°С‚РѕСЂ
       TransformerPControl->ActivePage = MeteringTransformerPage;
 
       lValueFirst->Caption  = tTransLine->type == TCustomTransformerLine::ttCurrent
@@ -739,7 +739,7 @@ void __fastcall TTransformersForm::tvTransfmsChange(TObject *Sender,
                           : AnsiString("");
       break;
     case TCustomTransformerLine::ttPower2:
-      //===== 2-хобмоточный трансформатор
+      //===== 2-С…РѕР±РјРѕС‚РѕС‡РЅС‹Р№ С‚СЂР°РЅСЃС„РѕСЂРјР°С‚РѕСЂ
       TransformerPControl->ActivePage = TwoPowerTransformerPage;
       p2Trans = (TPowerTwoTransformer *)tTransLine;
 
@@ -773,7 +773,7 @@ void __fastcall TTransformersForm::tvTransfmsChange(TObject *Sender,
                                 : AnsiString("");
       break;
     case TCustomTransformerLine::ttPower3:
-      //===== 2-хобмоточный трансформатор
+      //===== 2-С…РѕР±РјРѕС‚РѕС‡РЅС‹Р№ С‚СЂР°РЅСЃС„РѕСЂРјР°С‚РѕСЂ
       TransformerPControl->ActivePage = ThreePowerTransformerPage;
       p3Trans = (TPowerThreeTransformer *)tTransLine;
 
@@ -835,7 +835,7 @@ void __fastcall TTransformersForm::tvTransfmsChange(TObject *Sender,
                                 : AnsiString("");
       break;
     case TCustomTransformerLine::ttLine:
-      //===== линия передачи
+      //===== Р»РёРЅРёСЏ РїРµСЂРµРґР°С‡Рё
       TransformerPControl->ActivePage = TransmissionLinePage;
       tLine = (TTransmissionLine *)tTransLine;
 
@@ -857,7 +857,7 @@ void __fastcall TTransformersForm::tvTransfmsChange(TObject *Sender,
                           : AnsiString("");
       break;
       case TCustomTransformerLine::ttReactor:
-      //===== реактор
+      //===== СЂРµР°РєС‚РѕСЂ
       TransformerPControl->ActivePage = ReactorPage;
       tReact = (TReactor *)tTransLine;
 
@@ -911,12 +911,12 @@ void __fastcall TTransformersForm::tvTransfmsChanging(TObject *Sender,
     if (tTransLine->type == TCustomTransformerLine::ttNone)
       return;
     tTransLine->name  = NameEdit->Text.c_str();
-    //===== Убрано т.к. временно от даты отказались
+    //===== РЈР±СЂР°РЅРѕ С‚.Рє. РІСЂРµРјРµРЅРЅРѕ РѕС‚ РґР°С‚С‹ РѕС‚РєР°Р·Р°Р»РёСЃСЊ
     //tTransLine->date  = DateMEdit->Text.c_str();
     switch (tTransLine->type)
     { case TCustomTransformerLine::ttCurrent:
       case TCustomTransformerLine::ttVoltage:
-        //===== измерительный трансформатор
+        //===== РёР·РјРµСЂРёС‚РµР»СЊРЅС‹Р№ С‚СЂР°РЅСЃС„РѕСЂРјР°С‚РѕСЂ
         mTrans  = (TMeteringTransformer *)tTransLine;
         //===== Val1
         if (mVal1Edit->Text.Trim().Length())
@@ -935,7 +935,7 @@ void __fastcall TTransformersForm::tvTransfmsChanging(TObject *Sender,
 
         break;
       case TCustomTransformerLine::ttPower2:
-        //===== 2-хобмоточный трансформатор
+        //===== 2-С…РѕР±РјРѕС‚РѕС‡РЅС‹Р№ С‚СЂР°РЅСЃС„РѕСЂРјР°С‚РѕСЂ
         p2Trans = (TPowerTwoTransformer *)tTransLine;
         //===== Sn
         if (p2SnEdit->Text.Trim().Length())
@@ -988,7 +988,7 @@ void __fastcall TTransformersForm::tvTransfmsChanging(TObject *Sender,
           p2Trans->indFHours  = PARAM_NULL;
         break;
       case TCustomTransformerLine::ttPower3:
-        //===== 3-хобмоточный трансформатор
+        //===== 3-С…РѕР±РјРѕС‚РѕС‡РЅС‹Р№ С‚СЂР°РЅСЃС„РѕСЂРјР°С‚РѕСЂ
         p3Trans = (TPowerThreeTransformer *)tTransLine;
         //===== Sn
         if (p3SnEdit->Text.Trim().Length())
@@ -1090,7 +1090,7 @@ void __fastcall TTransformersForm::tvTransfmsChanging(TObject *Sender,
           p3Trans->indFHours  = PARAM_NULL;
         break;
       case TCustomTransformerLine::ttLine:
-        //===== линия передачи
+        //===== Р»РёРЅРёСЏ РїРµСЂРµРґР°С‡Рё
         tLine = (TTransmissionLine *)tTransLine;
         //===== Ro
         if (tlRoEdit->Text.Trim().Length())
@@ -1122,7 +1122,7 @@ void __fastcall TTransformersForm::tvTransfmsChanging(TObject *Sender,
           tLine->indUn  = PARAM_NULL;
         break;
         case TCustomTransformerLine::ttReactor:
-        //===== Реактор
+        //===== Р РµР°РєС‚РѕСЂ
         tReact = (TReactor *)tTransLine;
         //===== Un
         if (RctrUnEdit->Text.Trim().Length())
@@ -1230,7 +1230,7 @@ void __fastcall TTransformersForm::tvTransfmsExpanding(TObject *Sender,
 }
 //---------------------------------------------------------------------------
 
-/*! Сохранение изменений
+/*! РЎРѕС…СЂР°РЅРµРЅРёРµ РёР·РјРµРЅРµРЅРёР№
 */
 void __fastcall TTransformersForm::vSave(TObject* Owner)
 {
@@ -1311,34 +1311,34 @@ void __fastcall TTransformersForm::vSave(TObject* Owner)
                     "end if; "
                   "end;";
 
-  long  id,       //===== Идентификатор удаляемого трансформатора
-        parent;   //===== Идентификатор родительского объекта
+  long  id,       //===== РРґРµРЅС‚РёС„РёРєР°С‚РѕСЂ СѓРґР°Р»СЏРµРјРѕРіРѕ С‚СЂР°РЅСЃС„РѕСЂРјР°С‚РѕСЂР°
+        parent;   //===== РРґРµРЅС‚РёС„РёРєР°С‚РѕСЂ СЂРѕРґРёС‚РµР»СЊСЃРєРѕРіРѕ РѕР±СЉРµРєС‚Р°
 
-  TCustomTransformerLine  *cTransLine = NULL;   //===== Указатель на базовый трансформатор ...
-  TMeteringTransformer    mTrans;               //===== измерительный трансформатор
-  TPowerTwoTransformer    p2Trans;              //===== Силовой 2-х обмоточный
-  TPowerThreeTransformer  p3Trans;              //===== Силовой 3-х обмоточный
-  TTransmissionLine       tLine;                //===== Линия Электро Передач
-  TReactor                tReact;               //===== Реактор
+  TCustomTransformerLine  *cTransLine = NULL;   //===== РЈРєР°Р·Р°С‚РµР»СЊ РЅР° Р±Р°Р·РѕРІС‹Р№ С‚СЂР°РЅСЃС„РѕСЂРјР°С‚РѕСЂ ...
+  TMeteringTransformer    mTrans;               //===== РёР·РјРµСЂРёС‚РµР»СЊРЅС‹Р№ С‚СЂР°РЅСЃС„РѕСЂРјР°С‚РѕСЂ
+  TPowerTwoTransformer    p2Trans;              //===== РЎРёР»РѕРІРѕР№ 2-С… РѕР±РјРѕС‚РѕС‡РЅС‹Р№
+  TPowerThreeTransformer  p3Trans;              //===== РЎРёР»РѕРІРѕР№ 3-С… РѕР±РјРѕС‚РѕС‡РЅС‹Р№
+  TTransmissionLine       tLine;                //===== Р›РёРЅРёСЏ Р­Р»РµРєС‚СЂРѕ РџРµСЂРµРґР°С‡
+  TReactor                tReact;               //===== Р РµР°РєС‚РѕСЂ
 
-  TTreeNode *tNode    = NULL;                   //===== Рабочий указатель на лист
-  TTreeNode *oldNode  = tvTransfms->Selected;   //===== Указатель на старый выделенный лист
+  TTreeNode *tNode    = NULL;                   //===== Р Р°Р±РѕС‡РёР№ СѓРєР°Р·Р°С‚РµР»СЊ РЅР° Р»РёСЃС‚
+  TTreeNode *oldNode  = tvTransfms->Selected;   //===== РЈРєР°Р·Р°С‚РµР»СЊ РЅР° СЃС‚Р°СЂС‹Р№ РІС‹РґРµР»РµРЅРЅС‹Р№ Р»РёСЃС‚
 
   try
-  { // Обновление содержимого данных из экранных компонентов
+  { // РћР±РЅРѕРІР»РµРЅРёРµ СЃРѕРґРµСЂР¶РёРјРѕРіРѕ РґР°РЅРЅС‹С… РёР· СЌРєСЂР°РЅРЅС‹С… РєРѕРјРїРѕРЅРµРЅС‚РѕРІ
     tvTransfms->Selected  = NULL;
     if (tvTransfms->Selected)
       return;
-    // Сохранение изменений
+    // РЎРѕС…СЂР°РЅРµРЅРёРµ РёР·РјРµРЅРµРЅРёР№
 
 
     tNode = tvTransfms->Items->GetFirstNode();
     while (tNode)
     { cTransLine  = (TCustomTransformerLine *)tNode->Data;
       if (cTransLine && cTransLine->edit && cTransLine->type != TCustomTransformerLine::ttNone)
-      { //===== Получение ID родителя
+      { //===== РџРѕР»СѓС‡РµРЅРёРµ ID СЂРѕРґРёС‚РµР»СЏ
         parent  = ((TCustomTransformerLine *)tNode->Parent->Data)->id;
-        //===== Запись изменений по типу трансформатора
+        //===== Р—Р°РїРёСЃСЊ РёР·РјРµРЅРµРЅРёР№ РїРѕ С‚РёРїСѓ С‚СЂР°РЅСЃС„РѕСЂРјР°С‚РѕСЂР°
         switch (cTransLine->type)
         { case TCustomTransformerLine::ttCurrent:
           case TCustomTransformerLine::ttVoltage:
@@ -1535,7 +1535,7 @@ void __fastcall TTransformersForm::vSave(TObject* Owner)
       }
       tNode = tNode->GetNext();
     }
-    // Удаление удаленных
+    // РЈРґР°Р»РµРЅРёРµ СѓРґР°Р»РµРЅРЅС‹С…
     for (int i = 0; i < d->removs->Count; i++)
     { TTransformersFormPriv::TDelList *tDL  = (TTransformersFormPriv::TDelList *)d->removs->Items[i];
 
@@ -1586,12 +1586,12 @@ void __fastcall TTransformersForm::vSave(TObject* Owner)
       tNode->Selected = true;
     Application->ShowException(&e);
   }
-  // Обновление содержимого экранных компонентов
+  // РћР±РЅРѕРІР»РµРЅРёРµ СЃРѕРґРµСЂР¶РёРјРѕРіРѕ СЌРєСЂР°РЅРЅС‹С… РєРѕРјРїРѕРЅРµРЅС‚РѕРІ
   tvTransfms->Selected  = oldNode;
 }
 //---------------------------------------------------------------------------
 
-/*! Обновление данных
+/*! РћР±РЅРѕРІР»РµРЅРёРµ РґР°РЅРЅС‹С…
 */
 void __fastcall TTransformersForm::vRefresh(TObject *Sender)
 {
@@ -1606,7 +1606,7 @@ void __fastcall TTransformersForm::vRefresh(TObject *Sender)
   d->editCatch = true;
 }
 //---------------------------------------------------------------------------
-/*! Удаление объекта
+/*! РЈРґР°Р»РµРЅРёРµ РѕР±СЉРµРєС‚Р°
 */
 void __fastcall TTransformersForm::vDelete(TObject *Sender)
 {
@@ -1629,7 +1629,7 @@ void __fastcall TTransformersForm::vDelete(TObject *Sender)
   }
 }
 //---------------------------------------------------------------------------
-/*! Разрешение или запрещение пунктов меню
+/*! Р Р°Р·СЂРµС€РµРЅРёРµ РёР»Рё Р·Р°РїСЂРµС‰РµРЅРёРµ РїСѓРЅРєС‚РѕРІ РјРµРЅСЋ
 */
 void __fastcall TTransformersForm::vEditClick(TObject *Sender)
 {
@@ -1698,11 +1698,11 @@ void __fastcall TTransformersForm::vAnyEditClick(TObject* Sender)
     inherited::vAnyEditClick(Sender);
 }
 //---------------------------------------------------------------------------
-/*! Создание нового трансформатора
+/*! РЎРѕР·РґР°РЅРёРµ РЅРѕРІРѕРіРѕ С‚СЂР°РЅСЃС„РѕСЂРјР°С‚РѕСЂР°
 */
 void __fastcall TTransformersForm::NewTransLine(TObject *Sender)
 {
-  //===== Проверка на правильность вызова
+  //===== РџСЂРѕРІРµСЂРєР° РЅР° РїСЂР°РІРёР»СЊРЅРѕСЃС‚СЊ РІС‹Р·РѕРІР°
   TAction *tAction  = dynamic_cast<TAction *>(Sender);
   if (!tAction)
     return;
@@ -1717,8 +1717,8 @@ void __fastcall TTransformersForm::NewTransLine(TObject *Sender)
   if (!AllowChangeNode())//Owner, NULL))
     return;
 
-  TCustomTransformerLine  *tTransLine = NULL;   //===== Новый трансформатор
-  TTreeNode               *tNode      = NULL;   //===== Новый элемент дерева
+  TCustomTransformerLine  *tTransLine = NULL;   //===== РќРѕРІС‹Р№ С‚СЂР°РЅСЃС„РѕСЂРјР°С‚РѕСЂ
+  TTreeNode               *tNode      = NULL;   //===== РќРѕРІС‹Р№ СЌР»РµРјРµРЅС‚ РґРµСЂРµРІР°
   try
   { if (tvTransfms->Selected->HasChildren && !tvTransfms->Selected->getFirstChild())
       ReadTreeNode(tvTransfms->Selected);
@@ -1768,13 +1768,13 @@ void __fastcall TTransformersForm::NewTransLine(TObject *Sender)
   }
 }
 //---------------------------------------------------------------------------
-/*! Вычитка списка листьев дерева, где:
-    \param Owner - указатель на родителя листьев
+/*! Р’С‹С‡РёС‚РєР° СЃРїРёСЃРєР° Р»РёСЃС‚СЊРµРІ РґРµСЂРµРІР°, РіРґРµ:
+    \param Owner - СѓРєР°Р·Р°С‚РµР»СЊ РЅР° СЂРѕРґРёС‚РµР»СЏ Р»РёСЃС‚СЊРµРІ
 */
 bool __fastcall TTransformersForm::ReadTreeNode(TObject *Sender)
 {
-  TCustomTransformerLine  *tTransLine = NULL;               //===== Трансформатор
-  TTreeNode *Parent = dynamic_cast<TTreeNode *>(Sender);    //===== Родительский лист
+  TCustomTransformerLine  *tTransLine = NULL;               //===== РўСЂР°РЅСЃС„РѕСЂРјР°С‚РѕСЂ
+  TTreeNode *Parent = dynamic_cast<TTreeNode *>(Sender);    //===== Р РѕРґРёС‚РµР»СЊСЃРєРёР№ Р»РёСЃС‚
 
   try
   {
@@ -1873,12 +1873,12 @@ bool __fastcall TTransformersForm::ReadTreeNode(TObject *Sender)
   return  true;
 }
 //---------------------------------------------------------------------------
-/*! Проверка на возможность переходить на новый лист,
-    путем проверки правильности заполнения данных трансформатора, где:
-    \param Sender - Указатель на вызывающий объект
-    \param Node - Указатель на лист, с которого хотят перейти
+/*! РџСЂРѕРІРµСЂРєР° РЅР° РІРѕР·РјРѕР¶РЅРѕСЃС‚СЊ РїРµСЂРµС…РѕРґРёС‚СЊ РЅР° РЅРѕРІС‹Р№ Р»РёСЃС‚,
+    РїСѓС‚РµРј РїСЂРѕРІРµСЂРєРё РїСЂР°РІРёР»СЊРЅРѕСЃС‚Рё Р·Р°РїРѕР»РЅРµРЅРёСЏ РґР°РЅРЅС‹С… С‚СЂР°РЅСЃС„РѕСЂРјР°С‚РѕСЂР°, РіРґРµ:
+    \param Sender - РЈРєР°Р·Р°С‚РµР»СЊ РЅР° РІС‹Р·С‹РІР°СЋС‰РёР№ РѕР±СЉРµРєС‚
+    \param Node - РЈРєР°Р·Р°С‚РµР»СЊ РЅР° Р»РёСЃС‚, СЃ РєРѕС‚РѕСЂРѕРіРѕ С…РѕС‚СЏС‚ РїРµСЂРµР№С‚Рё
 
-    \return true если можно, иначе - false
+    \return true РµСЃР»Рё РјРѕР¶РЅРѕ, РёРЅР°С‡Рµ - false
 */
 bool __fastcall TTransformersForm::AllowChangeNode()
 {
@@ -1897,7 +1897,7 @@ bool __fastcall TTransformersForm::AllowChangeNode()
       NameEdit->Text  = NameEdit->Text.Trim();
       if (!NameEdit->Text.Length())
         throw Exception(Reconst_smes29_20);
-      //===== Убрано т.к. временно от даты отказались
+      //===== РЈР±СЂР°РЅРѕ С‚.Рє. РІСЂРµРјРµРЅРЅРѕ РѕС‚ РґР°С‚С‹ РѕС‚РєР°Р·Р°Р»РёСЃСЊ
       //tWC = DateMEdit;
       //TDateTime(DateMEdit->Text);
 
@@ -2009,11 +2009,11 @@ bool __fastcall TTransformersForm::AllowChangeNode()
   return  f;
 }
 //---------------------------------------------------------------------------
-/*! Разрешение операции над листом, где:
-    \param srcNode - исходный лист
-    \param dstNode - лист получатель
+/*! Р Р°Р·СЂРµС€РµРЅРёРµ РѕРїРµСЂР°С†РёРё РЅР°Рґ Р»РёСЃС‚РѕРј, РіРґРµ:
+    \param srcNode - РёСЃС…РѕРґРЅС‹Р№ Р»РёСЃС‚
+    \param dstNode - Р»РёСЃС‚ РїРѕР»СѓС‡Р°С‚РµР»СЊ
 
-    \return true вслучае разрешения, иначе - false
+    \return true РІСЃР»СѓС‡Р°Рµ СЂР°Р·СЂРµС€РµРЅРёСЏ, РёРЅР°С‡Рµ - false
 */
 bool __fastcall TTransformersForm::AcceptNode(TTreeNode *srcNode, TTreeNode *dstNode)
 {
@@ -2027,14 +2027,14 @@ bool __fastcall TTransformersForm::AcceptNode(TTreeNode *srcNode, TTreeNode *dst
       State << ssCtrl;
     if (GetKeyState(VK_SHIFT) & 0x8000)
       State << ssShift;
-    // проверка на наличие данных в точках
+    // РїСЂРѕРІРµСЂРєР° РЅР° РЅР°Р»РёС‡РёРµ РґР°РЅРЅС‹С… РІ С‚РѕС‡РєР°С…
     if (!srcNode || !srcNode->Data
         || ((TCustomTransformerLine *)srcNode->Data)->type == TCustomTransformerLine::ttNone
         || !dstNode || !dstNode->Data
         || ((TCustomTransformerLine *)dstNode->Data)->type != TCustomTransformerLine::ttNone
         || srcNode == dstNode)
       return false;
-    // анализ операции
+    // Р°РЅР°Р»РёР· РѕРїРµСЂР°С†РёРё
     if (State.Contains(ssCtrl) && !dstNode->HasAsParent(srcNode))
     { d->eOper  = TTransformersFormPriv::opCopy;
       return  true;
@@ -2051,9 +2051,9 @@ bool __fastcall TTransformersForm::AcceptNode(TTreeNode *srcNode, TTreeNode *dst
   return false;
 }
 //---------------------------------------------------------------------------
-/*! Копирование или перенос листа, где:
-    \param srcNode - исходный лист
-    \param dstNode - лист получатель
+/*! РљРѕРїРёСЂРѕРІР°РЅРёРµ РёР»Рё РїРµСЂРµРЅРѕСЃ Р»РёСЃС‚Р°, РіРґРµ:
+    \param srcNode - РёСЃС…РѕРґРЅС‹Р№ Р»РёСЃС‚
+    \param dstNode - Р»РёСЃС‚ РїРѕР»СѓС‡Р°С‚РµР»СЊ
 */
 void __fastcall TTransformersForm::changeNode(TTreeNode *srcNode, TTreeNode *dstNode)
 {
@@ -2102,9 +2102,9 @@ void __fastcall TTransformersForm::changeNode(TTreeNode *srcNode, TTreeNode *dst
   Screen->Cursor  = crDefault;//crArrow;
 }
 //---------------------------------------------------------------------------
-/*! Копирование всех дочерних листьев, где:
-    \param srcNode - исходный лист, чьих детей нужно скопировать
-    \param dstNode - лист получатель
+/*! РљРѕРїРёСЂРѕРІР°РЅРёРµ РІСЃРµС… РґРѕС‡РµСЂРЅРёС… Р»РёСЃС‚СЊРµРІ, РіРґРµ:
+    \param srcNode - РёСЃС…РѕРґРЅС‹Р№ Р»РёСЃС‚, С‡СЊРёС… РґРµС‚РµР№ РЅСѓР¶РЅРѕ СЃРєРѕРїРёСЂРѕРІР°С‚СЊ
+    \param dstNode - Р»РёСЃС‚ РїРѕР»СѓС‡Р°С‚РµР»СЊ
 */
 void __fastcall TTransformersForm::copyChildNodes(TTreeNode *srcNode, TTreeNode *dstNode)
 {
@@ -2143,7 +2143,7 @@ void __fastcall TTransformersForm::iaMonExecute(TObject *Sender)
   }
 }
 //---------------------------------------------------------------------------
-/*! Производится расчет потерь
+/*! РџСЂРѕРёР·РІРѕРґРёС‚СЃСЏ СЂР°СЃС‡РµС‚ РїРѕС‚РµСЂСЊ
 */
 void __fastcall TTransformersForm::CalcLossParamActionExecute(
       TObject *Sender)
@@ -2173,7 +2173,7 @@ void __fastcall TTransformersForm::CalcLossParamActionExecute(
     dmMain->oqCursor->ParamByName("par2")->ParamType = ptOutput;
     dmMain->oqCursor->ParamByName("par2")->DataType = ftCursor;
 
-  long  params[SELECTCOUNT];    //===== Массив идентификаторов параметров
+  long  params[SELECTCOUNT];    //===== РњР°СЃСЃРёРІ РёРґРµРЅС‚РёС„РёРєР°С‚РѕСЂРѕРІ РїР°СЂР°РјРµС‚СЂРѕРІ
   unsigned long CountStr  = 0;
 
   try
@@ -2189,7 +2189,7 @@ void __fastcall TTransformersForm::CalcLossParamActionExecute(
     }
     CountStr=i;
     if (CountStr == 0)
-      throw Exception(AnsiString("У ") +
+      throw Exception(AnsiString("РЈ ") +
                           ((tTransLine->type == TCustomTransformerLine::ttLine)
                             ? (Reconst_smes29_30)
                             : (Reconst_smes29_31)) +
@@ -2228,7 +2228,7 @@ void __fastcall TTransformersForm::CalcLossParamActionExecute(
   }
 }
 //---------------------------------------------------------------------------
-/*! Установка времени работы трансформаторов
+/*! РЈСЃС‚Р°РЅРѕРІРєР° РІСЂРµРјРµРЅРё СЂР°Р±РѕС‚С‹ С‚СЂР°РЅСЃС„РѕСЂРјР°С‚РѕСЂРѕРІ
 */
 void __fastcall TTransformersForm::SetWorkTimeActionExecute(
       TObject *Sender)

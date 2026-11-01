@@ -116,8 +116,8 @@ void __fastcall TMonitorAlert::Execute()
   	  if(Table>0){
      		CurrInterior=0;
       while(WaitForSingleObject(UpdateMonitors,0)!=WAIT_OBJECT_0){
-        Application->ProcessMessages();// если не удалось иниц-ть. CS то обновить экранные формы...
-        Sleep(0);// переключить управление на другой поток, коьт занял CS
+        Application->ProcessMessages();// РµСЃР»Рё РЅРµ СѓРґР°Р»РѕСЃСЊ РёРЅРёС†-С‚СЊ. CS С‚Рѕ РѕР±РЅРѕРІРёС‚СЊ СЌРєСЂР°РЅРЅС‹Рµ С„РѕСЂРјС‹...
+        Sleep(0);// РїРµСЂРµРєР»СЋС‡РёС‚СЊ СѓРїСЂР°РІР»РµРЅРёРµ РЅР° РґСЂСѓРіРѕР№ РїРѕС‚РѕРє, РєРѕСЊС‚ Р·Р°РЅСЏР» CS
       }
       while(CurrInterior>=0){
         EnterCriticalSection(&ListInteriorCriticalSection);
@@ -167,7 +167,7 @@ void __fastcall TMonitorAlert::Execute()
     dmMain->qwAlert->Execute();
   }catch(Exception&e){
     AnsiString s=e.Message+Reconst_smes96_1;
-    Application->MessageBox(s.c_str(),AnsiString(Application->Title+": Диспетчер мониторов").c_str(),MB_OK | MB_ICONERROR);
+    Application->MessageBox(s.c_str(),AnsiString(Application->Title+": Р”РёСЃРїРµС‚С‡РµСЂ РјРѕРЅРёС‚РѕСЂРѕРІ").c_str(),MB_OK | MB_ICONERROR);
   }
 }
 //---------------------------------------------------------------------------

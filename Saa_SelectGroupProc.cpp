@@ -25,7 +25,7 @@ __fastcall TfmSelectGroupReportProc::TfmSelectGroupReportProc(TComponent* Owner,
 //---------------------------------------------------------------------------
 void __fastcall TfmSelectGroupReportProc::FormShow(TObject *Sender)
 {
-  tvMain->Focused();		//âûáğàòü íóæíûé ïî id_Group
+  tvMain->Focused();		//Ğ²Ñ‹Ğ±Ñ€Ğ°Ñ‚ÑŒ Ğ½ÑƒĞ¶Ğ½Ñ‹Ğ¹ Ğ¿Ğ¾ id_Group
 }
 //---------------------------------------------------------------------------
 bool TfmSelectGroupReportProc::GetAllTree(TObject *Sender)
@@ -39,7 +39,7 @@ bool TfmSelectGroupReportProc::GetAllTree(TObject *Sender)
 
      dmMain->oqCursor->ParamByName("par1")->AsInteger=fd->CodeTemplate;
 
-    if((fd->CodeTemplate!=1000)&&(fd->CodeTemplate!=1100)){          // Îáû÷íûé ğåæèì
+    if((fd->CodeTemplate!=1000)&&(fd->CodeTemplate!=1100)){          // ĞĞ±Ñ‹Ñ‡Ğ½Ñ‹Ğ¹ Ñ€ĞµĞ¶Ğ¸Ğ¼
         TTreeNode *MyTreeNode1;
 
         if(fd->EnableControls.Contains(TFormDescr::ctrlPoint))
@@ -47,7 +47,7 @@ bool TfmSelectGroupReportProc::GetAllTree(TObject *Sender)
                TfmSelectReportForm::AddPoints(tvMain, NULL, 2, 2,fd->startmid);
 
         dmMain->oqCursor->ParamByName("par2")->AsInteger=fd->IdFormTree;
-        dmMain->oqCursor->ParamByName("par3")->AsInteger = SetVisualControls(this);  //Óñòàíîâêà äîñòóïíîñòè;
+        dmMain->oqCursor->ParamByName("par3")->AsInteger = SetVisualControls(this);  //Ğ£ÑÑ‚Ğ°Ğ½Ğ¾Ğ²ĞºĞ° Ğ´Ğ¾ÑÑ‚ÑƒĞ¿Ğ½Ğ¾ÑÑ‚Ğ¸;
         dmMain->oqCursor->Execute();
         while(!dmMain->oqCursor->Eof){
           MyTreeNode1=tvMain->Items->AddObject(NULL,dmMain->oqCursor->FieldByName("VNAME")->AsString,(void*)dmMain->oqCursor->FieldByName("Gid")->AsInteger);
@@ -96,10 +96,10 @@ bool TfmSelectGroupReportProc::GetAllTree(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall TfmSelectGroupReportProc::FormCreate(TObject *Sender)
 {
-  //Ïàğàìåòğû èìåşò äğóãîé ñìûñë
+  //ĞŸĞ°Ñ€Ğ°Ğ¼ĞµÑ‚Ñ€Ñ‹ Ğ¸Ğ¼ĞµÑÑ‚ Ğ´Ñ€ÑƒĞ³Ğ¾Ğ¹ ÑĞ¼Ñ‹ÑĞ»
   IsTimeFields = fd->EnableControls.Contains(TFormDescr::ctrlMonth);
   IsSecondBound = fd->EnableControls.Contains(TFormDescr::ctrlDay);
-  //e Ïàğàìåòğû èìåşò äğóãîé ñìûñë
+  //e ĞŸĞ°Ñ€Ğ°Ğ¼ĞµÑ‚Ñ€Ñ‹ Ğ¸Ğ¼ĞµÑÑ‚ Ğ´Ñ€ÑƒĞ³Ğ¾Ğ¹ ÑĞ¼Ñ‹ÑĞ»
   MEdBeg1->Visible = IsTimeFields;
   MEdBeg2->Visible = MEdBeg1->Visible;
   MEdEnd1->Visible = IsTimeFields && IsSecondBound;
@@ -220,7 +220,7 @@ void __fastcall CheckTimeInput( AnsiString PPVal, AnsiString PPNameStr )
 //---------------------------------------------------------------------------
 void __fastcall TfmSelectGroupReportProc::btOkClick(TObject *Sender)
 {
-  //Ãğàíèöû
+  //Ğ“Ñ€Ğ°Ğ½Ğ¸Ñ†Ñ‹
   AnsiString prStr;
   TDateTime prBeg,prBeg2,prEnd,prEnd2;
   if(IsSecondBound)
@@ -316,7 +316,7 @@ void __fastcall TfmSelectGroupReportProc::tvMainExpanding(TObject *Sender,
 
       quGroupProc->ParamByName("par1")->AsInteger=fd->CodeTemplate;
 
-    if((fd->CodeTemplate!=1000)&&(fd->CodeTemplate!=1100)){   // Îáû÷íûé ğåæèì
+    if((fd->CodeTemplate!=1000)&&(fd->CodeTemplate!=1100)){   // ĞĞ±Ñ‹Ñ‡Ğ½Ñ‹Ğ¹ Ñ€ĞµĞ¶Ğ¸Ğ¼
       TTreeNode *MyTreeNode1;
       MyTreeNode1=Node->getFirstChild();
       if((MyTreeNode1==NULL)||((long)MyTreeNode1->Data==0)){
@@ -342,7 +342,7 @@ void __fastcall TfmSelectGroupReportProc::tvMainExpanding(TObject *Sender,
           quGroupProc->Next();
         }
       }
-    }else{                                                    //Æóğíàë
+    }else{                                                    //Ğ–ÑƒÑ€Ğ½Ğ°Ğ»
     	TTreeNode *MyTreeNode1;
     	MyTreeNode1=Node->getFirstChild();
     	if((MyTreeNode1==NULL)||((long)MyTreeNode1->Data==0)){

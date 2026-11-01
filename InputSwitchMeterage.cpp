@@ -69,7 +69,7 @@ void __fastcall TfmInputMeterage::EditChange(TObject *Sender)
       }
 }
 //---------------------------------------------------------------------------
-void __fastcall TfmInputMeterage::bbOKClick(TObject *Sender)       //введенные данные хранятся в самих контролах
+void __fastcall TfmInputMeterage::bbOKClick(TObject *Sender)       //РІРІРµРґРµРЅРЅС‹Рµ РґР°РЅРЅС‹Рµ С…СЂР°РЅСЏС‚СЃСЏ РІ СЃР°РјРёС… РєРѕРЅС‚СЂРѕР»Р°С…
 {
 /*      bool InpMet = false;
       ModalResult = mrNone;
@@ -77,8 +77,8 @@ void __fastcall TfmInputMeterage::bbOKClick(TObject *Sender)       //введенные д
          {
             try
             {
-                  if(dynamic_cast<TMaskEdit*>(Components[i])&&((TMaskEdit*)Components[i])->Enabled) //если компонент - TMaskEdit
-                  {                                                                                 //проверить допустимость содержимого
+                  if(dynamic_cast<TMaskEdit*>(Components[i])&&((TMaskEdit*)Components[i])->Enabled) //РµСЃР»Рё РєРѕРјРїРѕРЅРµРЅС‚ - TMaskEdit
+                  {                                                                                 //РїСЂРѕРІРµСЂРёС‚СЊ РґРѕРїСѓСЃС‚РёРјРѕСЃС‚СЊ СЃРѕРґРµСЂР¶РёРјРѕРіРѕ
                      Components[i]->Tag = -1;
                      if(!(((TMaskEdit*)Components[i])->Text.IsEmpty()||Trim(((TMaskEdit*)Components[i])->Text)=="."||
                          Trim(((TMaskEdit*)Components[i])->Text)==","))
@@ -93,7 +93,7 @@ void __fastcall TfmInputMeterage::bbOKClick(TObject *Sender)       //введенные д
             catch(EConvertError &ce)
             {}
          }                                                          
-      if(!InpMet) throw Exception("Не введены показания");
+      if(!InpMet) throw Exception("РќРµ РІРІРµРґРµРЅС‹ РїРѕРєР°Р·Р°РЅРёСЏ");
       ModalResult = mrOk;*/
   bool valid  = true, is_clear = true, mes = false, warning = false;
   int count = 0;
@@ -128,7 +128,7 @@ void __fastcall TfmInputMeterage::bbOKClick(TObject *Sender)       //введенные д
    ModalResult=mrOk;
 }
 //---------------------------------------------------------------------------
-bool __fastcall TfmInputMeterage::LimitControl(TMaskEdit* me)    //проверяет диапазон ввода показаний
+bool __fastcall TfmInputMeterage::LimitControl(TMaskEdit* me)    //РїСЂРѕРІРµСЂСЏРµС‚ РґРёР°РїР°Р·РѕРЅ РІРІРѕРґР° РїРѕРєР°Р·Р°РЅРёР№
 {
          double v, v1 = -1, v2 = -1;
        v = SAATrim(me->Text).ToDouble();
@@ -211,7 +211,7 @@ bool __fastcall TfmInputMeterage::LimitControl(TMaskEdit* me)    //проверяет диа
      return true;
 }
 //---------------------------------------------------------------------------
-bool __fastcall TfmInputMeterage::WarningControl(TMaskEdit* me)    //проверяет предупредительные границы ввода показаний
+bool __fastcall TfmInputMeterage::WarningControl(TMaskEdit* me)    //РїСЂРѕРІРµСЂСЏРµС‚ РїСЂРµРґСѓРїСЂРµРґРёС‚РµР»СЊРЅС‹Рµ РіСЂР°РЅРёС†С‹ РІРІРѕРґР° РїРѕРєР°Р·Р°РЅРёР№
 {
      double v, v1 = -1, v2 = -1;
      v = SAATrim(me->Text).ToDouble();

@@ -19,7 +19,7 @@ __fastcall TInteriorExRep::TInteriorExRep(TComponent* Owner,TSplitterForm *aSP,T
 {
   if (!dynamic_cast<TWinControl *>(Owner))
   { OnProgressBarStepBy(NULL);
-    throw (Exception("TInteriorEx:: Владелец не оконный компонент."));
+    throw (Exception("TInteriorEx:: Р’Р»Р°РґРµР»РµС† РЅРµ РѕРєРѕРЅРЅС‹Р№ РєРѕРјРїРѕРЅРµРЅС‚."));
   }
   OnProgressBarStepBy(NULL);
 /*  OnProgressBarStepBy(this);//10
@@ -55,54 +55,54 @@ void __fastcall TInteriorExRep::PassParamsToExcel()
   TVariantInParam Template = TNoParam(),Template1 = TNoParam();
 
   AnsiString prStr;
-   //Присоединились к соответствующему обьекту
-  pwshs = SupperMainForm->ExcelWorkbook1->Worksheets->get_Item("Сценарий");
-  SupperMainForm->ExcelWorksheet1->ConnectTo(pwshs);      // необходимо обязательно для связи
+   //РџСЂРёСЃРѕРµРґРёРЅРёР»РёСЃСЊ Рє СЃРѕРѕС‚РІРµС‚СЃС‚РІСѓСЋС‰РµРјСѓ РѕР±СЊРµРєС‚Сѓ
+  pwshs = SupperMainForm->ExcelWorkbook1->Worksheets->get_Item("РЎС†РµРЅР°СЂРёР№");
+  SupperMainForm->ExcelWorksheet1->ConnectTo(pwshs);      // РЅРµРѕР±С…РѕРґРёРјРѕ РѕР±СЏР·Р°С‚РµР»СЊРЅРѕ РґР»СЏ СЃРІСЏР·Рё
    //e
   OnProgressBarStepBy(this);//70
 
-   //Параметр Ид группы
-     //Получили обьект для ввода параметров
+   //РџР°СЂР°РјРµС‚СЂ РРґ РіСЂСѓРїРїС‹
+     //РџРѕР»СѓС‡РёР»Рё РѕР±СЊРµРєС‚ РґР»СЏ РІРІРѕРґР° РїР°СЂР°РјРµС‚СЂРѕРІ
   Template = "C9";
   pRG = SupperMainForm->ExcelWorksheet1->Get_Range(Template,Template1);
      //e
-     //Вводим параметр
-       //Сформировали параметр даты в виде строки
+     //Р’РІРѕРґРёРј РїР°СЂР°РјРµС‚СЂ
+       //РЎС„РѕСЂРјРёСЂРѕРІР°Р»Рё РїР°СЂР°РјРµС‚СЂ РґР°С‚С‹ РІ РІРёРґРµ СЃС‚СЂРѕРєРё
   prStr = IntToStr( fd->IdGroup );
        //e
   Template=prStr;
   pRG->set_Value(Template);
-     //e Вводим параметр
-   //e Параметр Ид группы
+     //e Р’РІРѕРґРёРј РїР°СЂР°РјРµС‚СЂ
+   //e РџР°СЂР°РјРµС‚СЂ РРґ РіСЂСѓРїРїС‹
 
-   //Параметр Начало
-     //Получили обьект для ввода параметров
+   //РџР°СЂР°РјРµС‚СЂ РќР°С‡Р°Р»Рѕ
+     //РџРѕР»СѓС‡РёР»Рё РѕР±СЊРµРєС‚ РґР»СЏ РІРІРѕРґР° РїР°СЂР°РјРµС‚СЂРѕРІ
   Template = "C10";
   pRG = SupperMainForm->ExcelWorksheet1->Get_Range(Template,Template1);
      //e
-     //Вводим параметр
-       //Сформировали параметр даты в виде строки
+     //Р’РІРѕРґРёРј РїР°СЂР°РјРµС‚СЂ
+       //РЎС„РѕСЂРјРёСЂРѕРІР°Р»Рё РїР°СЂР°РјРµС‚СЂ РґР°С‚С‹ РІ РІРёРґРµ СЃС‚СЂРѕРєРё
   DateTimeToString(prStr, "dd.mm.yyyy hh:nn", fd->DateTimePar);
        //e
   Template=prStr;
   pRG->set_Value(Template);
-     //e Вводим параметр
-   //e Параметр Начало
+     //e Р’РІРѕРґРёРј РїР°СЂР°РјРµС‚СЂ
+   //e РџР°СЂР°РјРµС‚СЂ РќР°С‡Р°Р»Рѕ
 
-   //Параметр Конец
-     //Получили обьект для ввода параметров
+   //РџР°СЂР°РјРµС‚СЂ РљРѕРЅРµС†
+     //РџРѕР»СѓС‡РёР»Рё РѕР±СЊРµРєС‚ РґР»СЏ РІРІРѕРґР° РїР°СЂР°РјРµС‚СЂРѕРІ
   Template = "C11";
   pRG = SupperMainForm->ExcelWorksheet1->Get_Range(Template,Template1);
      //e
-     //Вводим параметр
-       //Сформировали параметр даты в виде строки
+     //Р’РІРѕРґРёРј РїР°СЂР°РјРµС‚СЂ
+       //РЎС„РѕСЂРјРёСЂРѕРІР°Р»Рё РїР°СЂР°РјРµС‚СЂ РґР°С‚С‹ РІ РІРёРґРµ СЃС‚СЂРѕРєРё
   DateTimeToString(prStr, "dd.mm.yyyy hh:nn", fd->DateTime);
        //e
   Template=prStr;
   pRG->set_Value(Template);
-     //e Вводим параметр
-   //e Параметр Конец
-  //e Формирование параметров
+     //e Р’РІРѕРґРёРј РїР°СЂР°РјРµС‚СЂ
+   //e РџР°СЂР°РјРµС‚СЂ РљРѕРЅРµС†
+  //e Р¤РѕСЂРјРёСЂРѕРІР°РЅРёРµ РїР°СЂР°РјРµС‚СЂРѕРІ
 };
 //---------------------------------------------------------------------------
 void __fastcall TInteriorExRep::PassParamsToExcelAndRefr()
@@ -113,23 +113,23 @@ void __fastcall TInteriorExRep::PassParamsToExcelAndRefr()
      SupperMainForm->ExcelApplication1->Workbooks->get_Item(ExcelWindowName,_getAddress(Wb));
      SupperMainForm->ExcelWorkbook1->ConnectTo(Wb);
 
-     //chig Формирование параметров
+     //chig Р¤РѕСЂРјРёСЂРѕРІР°РЅРёРµ РїР°СЂР°РјРµС‚СЂРѕРІ
      PassParamsToExcel();
-     //e Формирование параметров
+     //e Р¤РѕСЂРјРёСЂРѕРІР°РЅРёРµ РїР°СЂР°РјРµС‚СЂРѕРІ
 
      CurrentSheet = 1;
      SupperMainForm->ExcelWorkbook1->Worksheets->get_Count(&CountSheets);
-//   Запись текущей даты в ячейку
+//   Р—Р°РїРёСЃСЊ С‚РµРєСѓС‰РµР№ РґР°С‚С‹ РІ СЏС‡РµР№РєСѓ
 /*     AnsiString DateStr;
      DateTimeToString(DateStr, "dd.mm.yyyy", fd->DateTime);
-     pwshs = SupperMainForm->ExcelWorkbook1->Worksheets->get_Item("Сценарий");
-     SupperMainForm->ExcelWorksheet1->ConnectTo(pwshs);      // необходимо обязательно для связи
+     pwshs = SupperMainForm->ExcelWorkbook1->Worksheets->get_Item("РЎС†РµРЅР°СЂРёР№");
+     SupperMainForm->ExcelWorksheet1->ConnectTo(pwshs);      // РЅРµРѕР±С…РѕРґРёРјРѕ РѕР±СЏР·Р°С‚РµР»СЊРЅРѕ РґР»СЏ СЃРІСЏР·Рё
      Template = "C6";
      pRG = SupperMainForm->ExcelWorksheet1->Get_Range(Template,Template1);
      Template=DateStr;
      pRG->set_Value(Template);*/
-     pwshs = SupperMainForm->ExcelWorkbook1->Worksheets->get_Item("Имя БД");
-     SupperMainForm->ExcelWorksheet1->ConnectTo(pwshs);      // необходимо обязательно для связи
+     pwshs = SupperMainForm->ExcelWorkbook1->Worksheets->get_Item("РРјСЏ Р‘Р”");
+     SupperMainForm->ExcelWorksheet1->ConnectTo(pwshs);      // РЅРµРѕР±С…РѕРґРёРјРѕ РѕР±СЏР·Р°С‚РµР»СЊРЅРѕ РґР»СЏ СЃРІСЏР·Рё
      Template = "B4";
      pRG = SupperMainForm->ExcelWorksheet1->Get_Range(Template,Template1);
      Template=NameTNS;
@@ -138,7 +138,7 @@ void __fastcall TInteriorExRep::PassParamsToExcelAndRefr()
      pRG = SupperMainForm->ExcelWorksheet1->Get_Range(Template,Template1);
      pRG->set_Value(Template);
 //     pwshs = SupperMainForm->ExcelWorkbook1->Worksheets->get_Item(CurrentSheet);
-//     SupperMainForm->ExcelWorksheet1->ConnectTo(pwshs);      // необходимо обязательно для связи
+//     SupperMainForm->ExcelWorksheet1->ConnectTo(pwshs);      // РЅРµРѕР±С…РѕРґРёРјРѕ РѕР±СЏР·Р°С‚РµР»СЊРЅРѕ РґР»СЏ СЃРІСЏР·Рё
 //     SupperMainForm->ExcelWorksheet1->Activate(LOCALE_USER_DEFAULT);
      ActiveWs = pwshs;
 //     OnProgressBarStepBy(this);//80
@@ -146,10 +146,10 @@ void __fastcall TInteriorExRep::PassParamsToExcelAndRefr()
   }
   catch(...)
   {
-    //begin Сечин 31.07.01
+    //begin РЎРµС‡РёРЅ 31.07.01
     OnProgressBarStepBy(NULL);
     throw;
-    //end Сечин
+    //end РЎРµС‡РёРЅ
   }
   OnProgressBarStepBy(NULL);
 }
@@ -163,7 +163,7 @@ TVariantInParam Template = TNoParam(),Template1 = TNoParam();
 
   try
   {
-    dynamic_cast<TBaseMonitorForm*>(Owner)->Caption = "Отчет";//fd->NameGroup+" за " + DateToStr(fd->DateTime);
+    dynamic_cast<TBaseMonitorForm*>(Owner)->Caption = "РћС‚С‡РµС‚";//fd->NameGroup+" Р·Р° " + DateToStr(fd->DateTime);
     dynamic_cast<TBaseMonitorForm*>(Owner)->HelpContext = 31;
     SplitterForm->AddChild(NULL, ocCont, alNone/*Client*/);
 //    OnProgressBarStepBy(this);//70
@@ -188,10 +188,10 @@ TVariantInParam Template = TNoParam(),Template1 = TNoParam();
       TbPtr = SupperMainForm->ExcelApplication1->Toolbars->get_Item(i);
       TbPtr->set_Visible(false);
      }
-      ExcelWindowName = "Лист в OLEContainer";
+      ExcelWindowName = "Р›РёСЃС‚ РІ OLEContainer";
      }
      else
-      ExcelWindowName = "Лист в OLEContainer "+IntToStr(ExcelWindowsCount);
+      ExcelWindowName = "Р›РёСЃС‚ РІ OLEContainer "+IntToStr(ExcelWindowsCount);
 
      Application->ProcessMessages();
 
@@ -201,10 +201,10 @@ TVariantInParam Template = TNoParam(),Template1 = TNoParam();
   }
   catch(...)
   {
-    //begin Сечин 31.07.01
+    //begin РЎРµС‡РёРЅ 31.07.01
     OnProgressBarStepBy(NULL);
     throw;
-    //end Сечин
+    //end РЎРµС‡РёРЅ
   }
   OnProgressBarStepBy(NULL);
 }
@@ -223,7 +223,7 @@ __fastcall TInteriorExRep::~TInteriorExRep(void)
   */    ocCont->DestroyObject();
      delete ocCont;
 
-      // Когда закрывается последний монитор то закрываем и Excel
+      // РљРѕРіРґР° Р·Р°РєСЂС‹РІР°РµС‚СЃСЏ РїРѕСЃР»РµРґРЅРёР№ РјРѕРЅРёС‚РѕСЂ С‚Рѕ Р·Р°РєСЂС‹РІР°РµРј Рё Excel
      ExcelActiveWindowsCount--;
      if(!ExcelActiveWindowsCount)
      {
@@ -242,11 +242,11 @@ void __fastcall TInteriorExRep::Invalidate(int Table)
 {
   if(Table==1 /*PROFILE*/)
   {
-     // Эта форма не обновляется
+     // Р­С‚Р° С„РѕСЂРјР° РЅРµ РѕР±РЅРѕРІР»СЏРµС‚СЃСЏ
   }
 }
 //---------------------------------------------------------------------------
-// Создается временный файл-копия Excel-евского шаблона
+// РЎРѕР·РґР°РµС‚СЃСЏ РІСЂРµРјРµРЅРЅС‹Р№ С„Р°Р№Р»-РєРѕРїРёСЏ Excel-РµРІСЃРєРѕРіРѕ С€Р°Р±Р»РѕРЅР°
 void __fastcall TInteriorExRep::CreateExcelFile()
 {
   char lpBuffer[256];
@@ -258,9 +258,9 @@ void __fastcall TInteriorExRep::CreateExcelFile()
   GetTempPath(244, lpBuffer);
   if(!GetTempFileName(lpBuffer, lpPrefx, 0, lpTempFileName))
   {
-    throw(Exception("Не удалось создать временный файл."));
+    throw(Exception("РќРµ СѓРґР°Р»РѕСЃСЊ СЃРѕР·РґР°С‚СЊ РІСЂРµРјРµРЅРЅС‹Р№ С„Р°Р№Р»."));
   }
-// Нужно для Win95 +++++++++++++++++++
+// РќСѓР¶РЅРѕ РґР»СЏ Win95 +++++++++++++++++++
   ExFileName = lpTempFileName;
   strcpy(lpTempFileName, ExFileName.LowerCase().c_str());
 //++++++++++++++++++++++++++++++++++++
@@ -269,7 +269,7 @@ void __fastcall TInteriorExRep::CreateExcelFile()
   strcpy(pptr, ".xls");
   if(!CopyFile(ExFileFullName.c_str(), lpTempFileName, false))
   {
-    throw(Exception("Не удалось создать временный файл."));
+    throw(Exception("РќРµ СѓРґР°Р»РѕСЃСЊ СЃРѕР·РґР°С‚СЊ РІСЂРµРјРµРЅРЅС‹Р№ С„Р°Р№Р»."));
   }
   ExFileName = lpTempFileName;
 }
@@ -283,16 +283,16 @@ void TInteriorExRep::NextSheet()
           pwshs = SupperMainForm->ExcelWorksheet1->Get_Next();
           pwshs->get_Name(&fName);
           SName = fName;
-          if((SName!="Сценарий") & (SName!="Имя БД") & (SName!="repfilenamedlg"))
+          if((SName!="РЎС†РµРЅР°СЂРёР№") & (SName!="РРјСЏ Р‘Р”") & (SName!="repfilenamedlg"))
           {
-               SupperMainForm->ExcelWorksheet1->ConnectTo(pwshs);// необходимо обязательно для связи//
+               SupperMainForm->ExcelWorksheet1->ConnectTo(pwshs);// РЅРµРѕР±С…РѕРґРёРјРѕ РѕР±СЏР·Р°С‚РµР»СЊРЅРѕ РґР»СЏ СЃРІСЏР·Рё//
                pwshs->Activate(LOCALE_USER_DEFAULT);
                ActiveWs = pwshs;
                CurrentSheet++;
           }
  }
      ocCont->DoVerb(ovPrimary);
-     SupperMainForm->Height = SupperMainForm->Height-1; // Для того чтобы убрать ненужный скроллинг на главной форме
+     SupperMainForm->Height = SupperMainForm->Height-1; // Р”Р»СЏ С‚РѕРіРѕ С‡С‚РѕР±С‹ СѓР±СЂР°С‚СЊ РЅРµРЅСѓР¶РЅС‹Р№ СЃРєСЂРѕР»Р»РёРЅРі РЅР° РіР»Р°РІРЅРѕР№ С„РѕСЂРјРµ
      SupperMainForm->Height = SupperMainForm->Height+1;
 }
 //---------------------------------------------------------------------------
@@ -305,16 +305,16 @@ void TInteriorExRep::PreviousSheet()
           pwshs = SupperMainForm->ExcelWorksheet1->Get_Previous();
           pwshs->get_Name(&fName);
           SName = fName;
-          if((SName!="Сценарий") & (SName!="Имя БД") & (SName!="repfilenamedlg"))
+          if((SName!="РЎС†РµРЅР°СЂРёР№") & (SName!="РРјСЏ Р‘Р”") & (SName!="repfilenamedlg"))
           {
-               SupperMainForm->ExcelWorksheet1->ConnectTo(pwshs);// необходимо обязательно для связи//
+               SupperMainForm->ExcelWorksheet1->ConnectTo(pwshs);// РЅРµРѕР±С…РѕРґРёРјРѕ РѕР±СЏР·Р°С‚РµР»СЊРЅРѕ РґР»СЏ СЃРІСЏР·Рё//
                pwshs->Activate(LOCALE_USER_DEFAULT);
                ActiveWs = pwshs;
                CurrentSheet--;
           }
  }
      ocCont->DoVerb(ovPrimary);
-     SupperMainForm->Height = SupperMainForm->Height-1; // Для того чтобы убрать ненужный скроллинг на главной форме
+     SupperMainForm->Height = SupperMainForm->Height-1; // Р”Р»СЏ С‚РѕРіРѕ С‡С‚РѕР±С‹ СѓР±СЂР°С‚СЊ РЅРµРЅСѓР¶РЅС‹Р№ СЃРєСЂРѕР»Р»РёРЅРі РЅР° РіР»Р°РІРЅРѕР№ С„РѕСЂРјРµ
      SupperMainForm->Height = SupperMainForm->Height+1;
 }
 //---------------------------------------------------------------------------
@@ -335,8 +335,8 @@ void __fastcall TInteriorExRep::PrintRep()
           pwshs->get_Name(&fName);
           SName = fName;
           SName = SName.LowerCase();
-          if(!SName.Pos("служебный"))
-            if((SName!="сценарий") & (SName!="имя бд") & (SName!="repfilenamedlg"))
+          if(!SName.Pos("СЃР»СѓР¶РµР±РЅС‹Р№"))
+            if((SName!="СЃС†РµРЅР°СЂРёР№") & (SName!="РёРјСЏ Р±Рґ") & (SName!="repfilenamedlg"))
               pwshs->PrintOut(1,100,1,0,0,0,0,LOCALE_USER_DEFAULT);
   }
 }
@@ -344,9 +344,9 @@ void __fastcall TInteriorExRep::PrintRep()
 
 void __fastcall TInteriorExRep::SaveRepToFile(TSaveDialog *aSaveDialog)
 {
-      aSaveDialog->Title = "Сохранение отчета";
+      aSaveDialog->Title = "РЎРѕС…СЂР°РЅРµРЅРёРµ РѕС‚С‡РµС‚Р°";
       aSaveDialog->DefaultExt = "xls";
-      aSaveDialog->Filter = "Книга Microsoft Excel (*.xls)|*.xls";
+      aSaveDialog->Filter = "РљРЅРёРіР° Microsoft Excel (*.xls)|*.xls";
       if(aSaveDialog->Execute())
       {
          ocCont->SaveAsDocument(aSaveDialog->FileName);
@@ -359,7 +359,7 @@ void TInteriorExRep::PrintActiveSheet()
   SupperMainForm->ExcelApplication1->Workbooks->get_Item(ExcelWindowName,_getAddress(Wb));
   SupperMainForm->ExcelWorkbook1->ConnectTo(Wb);
   ActiveWs = SupperMainForm->ExcelWorkbook1->Get_ActiveSheet();
-  SupperMainForm->ExcelWorksheet1->ConnectTo(ActiveWs);      // необходимо обязательно для связи
+  SupperMainForm->ExcelWorksheet1->ConnectTo(ActiveWs);      // РЅРµРѕР±С…РѕРґРёРјРѕ РѕР±СЏР·Р°С‚РµР»СЊРЅРѕ РґР»СЏ СЃРІСЏР·Рё
   ActiveWs->PrintOut(1,100,1,0,0,0,0,LOCALE_USER_DEFAULT);
 }
 //---------------------------------------------------------------------------
@@ -368,7 +368,7 @@ void TInteriorExRep::DoVerb()
 //  SupperMainForm->AutoScroll = false;
    if(ocCont)
       ocCont->DoVerb(ovShow);
-//  SupperMainForm->Height = SupperMainForm->Height-1; // Для того чтобы убрать ненужный скроллинг на главной форме
+//  SupperMainForm->Height = SupperMainForm->Height-1; // Р”Р»СЏ С‚РѕРіРѕ С‡С‚РѕР±С‹ СѓР±СЂР°С‚СЊ РЅРµРЅСѓР¶РЅС‹Р№ СЃРєСЂРѕР»Р»РёРЅРі РЅР° РіР»Р°РІРЅРѕР№ С„РѕСЂРјРµ
 //  SupperMainForm->Height = SupperMainForm->Height+1;
    Application->ProcessMessages();
 //  SupperMainForm->AutoScroll = true;

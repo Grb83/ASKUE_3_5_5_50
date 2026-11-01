@@ -6,16 +6,16 @@ grant execute on common_pg to REMUSR;
 
 
 -- Start of DDL Script for Package RYDA.COMSRVDLL_PG
--- Generated 7-ноя-2011 15:34:46 from RYDA@tavr
+-- Generated 7-РЅРѕСЏ-2011 15:34:46 from RYDA@tavr
 
 CREATE OR REPLACE 
 PACKAGE comsrvdll_pg IS
 ------------------------------------------------------------------------------------------------------------------------
-   -- Интерфейс взаимодействия БД с Носиком А.В. для DLL plugin'ов счетчиков
-   -- дата создания 07/12/2007
+   -- РРЅС‚РµСЂС„РµР№СЃ РІР·Р°РёРјРѕРґРµР№СЃС‚РІРёСЏ Р‘Р” СЃ РќРѕСЃРёРєРѕРј Рђ.Р’. РґР»СЏ DLL plugin'РѕРІ СЃС‡РµС‚С‡РёРєРѕРІ
+   -- РґР°С‚Р° СЃРѕР·РґР°РЅРёСЏ 07/12/2007
 ------------------------------------------------------------------------------------------------------------------------
  cn_idnoswitch   CONSTANT NUMBER := 1000;
- cn_idpriority   CONSTANT NUMBER := 999;   --Фиктивный Ид для претягивания приоритетов
+ cn_idpriority   CONSTANT NUMBER := 999;   --Р¤РёРєС‚РёРІРЅС‹Р№ РРґ РґР»СЏ РїСЂРµС‚СЏРіРёРІР°РЅРёСЏ РїСЂРёРѕСЂРёС‚РµС‚РѕРІ
  cd_transnull    CONSTANT DATE   := TO_DATE ('300101', 'YYYYMM');
 
 ------------------------------------------------------------------------------------------------------------------------
@@ -25,9 +25,9 @@ PACKAGE comsrvdll_pg IS
  PRAGMA RESTRICT_REFERENCES (cd_transmin, WNDS, WNPS);
 
 ------------------------------------------------------------------------------------------------------------------------
- -- Интерфейс поддерживает следующие типы счетчиков (параметр an_type):
- --   0 - эмулятор DLL
- --   1 - эмулятор DLL
+ -- РРЅС‚РµСЂС„РµР№СЃ РїРѕРґРґРµСЂР¶РёРІР°РµС‚ СЃР»РµРґСѓСЋС‰РёРµ С‚РёРїС‹ СЃС‡РµС‚С‡РёРєРѕРІ (РїР°СЂР°РјРµС‚СЂ an_type):
+ --   0 - СЌРјСѓР»СЏС‚РѕСЂ DLL
+ --   1 - СЌРјСѓР»СЏС‚РѕСЂ DLL
  --   2 - CE-304
  --   3 - DB Link Oracle Khartep
  --   4 - DCOM Energy Vision 2
@@ -36,7 +36,7 @@ PACKAGE comsrvdll_pg IS
  --   7 - Energy-9
  --   8 - Mercury-200
  --   9 - Energy-9 v.42
- --  10 - Элвин
+ --  10 - Р­Р»РІРёРЅ
  --  11 - Alpha A1140
  --  12 - ICCP
  --  13 - Energy-9 v.29
@@ -88,7 +88,7 @@ PACKAGE comsrvdll_pg IS
  );
 
 -----------------------------------------------------------------------------------------------------------------------
-    -- Ввод поправок. at_type(i) =1 - Поправка, иначе просто расход с разбивкой на ГН
+    -- Р’РІРѕРґ РїРѕРїСЂР°РІРѕРє. at_type(i) =1 - РџРѕРїСЂР°РІРєР°, РёРЅР°С‡Рµ РїСЂРѕСЃС‚Рѕ СЂР°СЃС…РѕРґ СЃ СЂР°Р·Р±РёРІРєРѕР№ РЅР° Р“Рќ
  PROCEDURE dblink_set_correction (an_mid NUMBER, at_datefrom common_pg.tt_varchar2, at_dateto common_pg.tt_varchar2, at_er common_pg.tt_number,
  at_ed common_pg.tt_number, at_q1 common_pg.tt_number, at_q3 common_pg.tt_number, at_type common_pg.tt_number
  );
@@ -97,15 +97,15 @@ PACKAGE comsrvdll_pg IS
  PROCEDURE mark_dllmtrevent (newmid NUMBER, newev_date DATE, newtype NUMBER, FOUND OUT NUMBER, newstate NUMBER);
 
 -----------------------------------------------------------------------------------------------------------------------
- --Запись журнала
+ --Р—Р°РїРёСЃСЊ Р¶СѓСЂРЅР°Р»Р°
  PROCEDURE set_journal_dllmtr (an_mid NUMBER, an_state_cod NUMBER, av_state_descr VARCHAR2, an_event NUMBER, av_code VARCHAR2, ad_date DATE);
 
 ------------------------------------------------------------------------------------------------------------------------
---Запись обводников
+--Р—Р°РїРёСЃСЊ РѕР±РІРѕРґРЅРёРєРѕРІ
  PROCEDURE dblink_set_ov (an_switch NUMBER, at_datefrom common_pg.tt_varchar2, at_dateto common_pg.tt_varchar2, at_mid common_pg.tt_number);
 
 ------------------------------------------------------------------------------------------------------------------------
-  --Запись остальных показаний
+  --Р—Р°РїРёСЃСЊ РѕСЃС‚Р°Р»СЊРЅС‹С… РїРѕРєР°Р·Р°РЅРёР№
  PROCEDURE dblink_set_othersbill (an_mid NUMBER, ad_cdatetime common_pg.tt_varchar2, an_type common_pg.tt_number, an_er common_pg.tt_number,
  an_ed common_pg.tt_number, an_q1 common_pg.tt_number, an_q3 common_pg.tt_number, an_q2 common_pg.tt_number, an_q4 common_pg.tt_number, an_erm common_pg.tt_number,
  an_edm common_pg.tt_number, an_q1m common_pg.tt_number, an_q3m common_pg.tt_number, an_q2m common_pg.tt_number, an_q4m common_pg.tt_number
@@ -116,119 +116,119 @@ PACKAGE comsrvdll_pg IS
  --******************************           DB Link            *******************************************************--
 ------------------------------------------------------------------------------------------------------------------------
 
- -- "Открытие доступа" к счетчику (Если возвращает 0 -- счетчик отсутствует в БД)
- FUNCTION dblink_openmtraccs (an_mid NUMBER)   --Ид счетчика в БД
+ -- "РћС‚РєСЂС‹С‚РёРµ РґРѕСЃС‚СѓРїР°" Рє СЃС‡РµС‚С‡РёРєСѓ (Р•СЃР»Рё РІРѕР·РІСЂР°С‰Р°РµС‚ 0 -- СЃС‡РµС‚С‡РёРє РѕС‚СЃСѓС‚СЃС‚РІСѓРµС‚ РІ Р‘Р”)
+ FUNCTION dblink_openmtraccs (an_mid NUMBER)   --РРґ СЃС‡РµС‚С‡РёРєР° РІ Р‘Р”
   RETURN NUMBER;
 
 ------------------------------------------------------------------------------------------------------------------------
---Запрос серийного номера счетчика
- FUNCTION dblink_get_mtr_serno (an_mid NUMBER,   --Ид счетчика в БД
-                                              av_serno OUT VARCHAR2   --Серийный номер
+--Р—Р°РїСЂРѕСЃ СЃРµСЂРёР№РЅРѕРіРѕ РЅРѕРјРµСЂР° СЃС‡РµС‚С‡РёРєР°
+ FUNCTION dblink_get_mtr_serno (an_mid NUMBER,   --РРґ СЃС‡РµС‚С‡РёРєР° РІ Р‘Р”
+                                              av_serno OUT VARCHAR2   --РЎРµСЂРёР№РЅС‹Р№ РЅРѕРјРµСЂ
                                                                    )
   RETURN NUMBER;
 
 ------------------------------------------------------------------------------------------------------------------------
---Чтение текущих
- PROCEDURE dblink_get_curr_power (an_mid NUMBER,   --Ид счетчика
-                                                an_erm OUT NUMBER,   --Показания A+
-                                                                  an_edm OUT NUMBER,   --Показания A-
-                                                                                    an_q1m OUT NUMBER,   --Показания R+ или Q1
-                                                                                                      an_q3m OUT NUMBER,   --Показания R- или Q3
-                                                                                                                        an_q2m OUT NUMBER,   --Показания Q2
- an_q4m OUT NUMBER,   --Показания Q4
-                   an_freq OUT NUMBER,   --Частота
+--Р§С‚РµРЅРёРµ С‚РµРєСѓС‰РёС…
+ PROCEDURE dblink_get_curr_power (an_mid NUMBER,   --РРґ СЃС‡РµС‚С‡РёРєР°
+                                                an_erm OUT NUMBER,   --РџРѕРєР°Р·Р°РЅРёСЏ A+
+                                                                  an_edm OUT NUMBER,   --РџРѕРєР°Р·Р°РЅРёСЏ A-
+                                                                                    an_q1m OUT NUMBER,   --РџРѕРєР°Р·Р°РЅРёСЏ R+ РёР»Рё Q1
+                                                                                                      an_q3m OUT NUMBER,   --РџРѕРєР°Р·Р°РЅРёСЏ R- РёР»Рё Q3
+                                                                                                                        an_q2m OUT NUMBER,   --РџРѕРєР°Р·Р°РЅРёСЏ Q2
+ an_q4m OUT NUMBER,   --РџРѕРєР°Р·Р°РЅРёСЏ Q4
+                   an_freq OUT NUMBER,   --Р§Р°СЃС‚РѕС‚Р°
                                       an_cos_fi OUT NUMBER,   --cosF
-                                                           an_volt1 OUT NUMBER,   --Напряжение A
-                                                                               an_volt2 OUT NUMBER,   --Напряжение B
-                                                                                                   an_volt3 OUT NUMBER,   --Напряжение C
-                                                                                                                       an_curr1 OUT NUMBER,   --Ток фаза A
- an_curr2 OUT NUMBER,   --Ток фаза B
-                     an_curr3 OUT NUMBER,   --Ток фаза C
-                                         an_fiu1i1 OUT NUMBER,   --Абс значение угла тока A
-                                                              an_fiu2i2 OUT NUMBER,   --Абс значение угла тока A
-                                                                                   an_fiu3i3 OUT NUMBER,   --Абс значение угла тока A
-                                                                                                        an_fiu1u2 OUT NUMBER,   --Абс значение угла напряжения A
- an_fiu1u3 OUT NUMBER,   --Абс значение угла напряжения A
-                      an_fiu2u3 OUT NUMBER,   --Абс значение угла напряжения A
-                                           an_er OUT NUMBER,   --Тек мощность A+
-                                                            an_ed OUT NUMBER,   --Тек мощность A+
-                                                                             an_q1 OUT NUMBER,   --Тек мощность R+ или Q1
-                                                                                              an_q3 OUT NUMBER,   --Тек мощность R- или Q3
-                                                                                                               an_q2 OUT NUMBER,   --Тек мощность Q2
-                                                                                                                                an_q4 OUT NUMBER,   --Тек мощность Q4
- ad_date OUT VARCHAR2   --Дата фиксации
+                                                           an_volt1 OUT NUMBER,   --РќР°РїСЂСЏР¶РµРЅРёРµ A
+                                                                               an_volt2 OUT NUMBER,   --РќР°РїСЂСЏР¶РµРЅРёРµ B
+                                                                                                   an_volt3 OUT NUMBER,   --РќР°РїСЂСЏР¶РµРЅРёРµ C
+                                                                                                                       an_curr1 OUT NUMBER,   --РўРѕРє С„Р°Р·Р° A
+ an_curr2 OUT NUMBER,   --РўРѕРє С„Р°Р·Р° B
+                     an_curr3 OUT NUMBER,   --РўРѕРє С„Р°Р·Р° C
+                                         an_fiu1i1 OUT NUMBER,   --РђР±СЃ Р·РЅР°С‡РµРЅРёРµ СѓРіР»Р° С‚РѕРєР° A
+                                                              an_fiu2i2 OUT NUMBER,   --РђР±СЃ Р·РЅР°С‡РµРЅРёРµ СѓРіР»Р° С‚РѕРєР° A
+                                                                                   an_fiu3i3 OUT NUMBER,   --РђР±СЃ Р·РЅР°С‡РµРЅРёРµ СѓРіР»Р° С‚РѕРєР° A
+                                                                                                        an_fiu1u2 OUT NUMBER,   --РђР±СЃ Р·РЅР°С‡РµРЅРёРµ СѓРіР»Р° РЅР°РїСЂСЏР¶РµРЅРёСЏ A
+ an_fiu1u3 OUT NUMBER,   --РђР±СЃ Р·РЅР°С‡РµРЅРёРµ СѓРіР»Р° РЅР°РїСЂСЏР¶РµРЅРёСЏ A
+                      an_fiu2u3 OUT NUMBER,   --РђР±СЃ Р·РЅР°С‡РµРЅРёРµ СѓРіР»Р° РЅР°РїСЂСЏР¶РµРЅРёСЏ A
+                                           an_er OUT NUMBER,   --РўРµРє РјРѕС‰РЅРѕСЃС‚СЊ A+
+                                                            an_ed OUT NUMBER,   --РўРµРє РјРѕС‰РЅРѕСЃС‚СЊ A+
+                                                                             an_q1 OUT NUMBER,   --РўРµРє РјРѕС‰РЅРѕСЃС‚СЊ R+ РёР»Рё Q1
+                                                                                              an_q3 OUT NUMBER,   --РўРµРє РјРѕС‰РЅРѕСЃС‚СЊ R- РёР»Рё Q3
+                                                                                                               an_q2 OUT NUMBER,   --РўРµРє РјРѕС‰РЅРѕСЃС‚СЊ Q2
+                                                                                                                                an_q4 OUT NUMBER,   --РўРµРє РјРѕС‰РЅРѕСЃС‚СЊ Q4
+ ad_date OUT VARCHAR2   --Р”Р°С‚Р° С„РёРєСЃР°С†РёРё
  );
 
 ------------------------------------------------------------------------------------------------------------------------
---Чтение ГН
- PROCEDURE dblink_get_halfhour (an_mid NUMBER,   --Ид счетчика
-                                              ad_cdatetime OUT common_pg.tt_varchar2,   --массив дат в формате 'dd.mm.yyyy hh24:mi' (всегда зимнее время)
-                                                                                     an_er OUT common_pg.tt_number,   --массив расходов A+ за интеграционный период
- an_ed OUT common_pg.tt_number,   --массив расходов A- за интеграционный период
-                               an_q1 OUT common_pg.tt_number,   --массив расходов R+ или Q1 за интеграционный период
-                                                             an_q3 OUT common_pg.tt_number,   --массив расходов R- или Q3 за интеграционный период
- an_q2 OUT common_pg.tt_number,   --массив расходов Q2 за интеграционный период
-                               an_q4 OUT common_pg.tt_number,   --массив расходов Q4 за интеграционный период
-                                                             an_erm OUT common_pg.tt_number,   --массив показаний A+ за интеграционный период
- an_edm OUT common_pg.tt_number,   --массив показаний A- за интеграционный период
-                                an_q1m OUT common_pg.tt_number,   --массив показаний R+ или Q1 за интеграционный период
-                                                               an_q3m OUT common_pg.tt_number,   --массив показаний R- или Q3 за интеграционный период
- an_q2m OUT common_pg.tt_number,   --массив показаний Q2 за интеграционный период
-                                an_q4m OUT common_pg.tt_number,   --массив показаний Q4 за интеграционный период
-                                                               an_status OUT common_pg.tt_number,   --массив статусов (статусные байты счетчика)
- ad_date DATE   --Дата больше которой нобходимо выдать данные (всегда зимнее время)
+--Р§С‚РµРЅРёРµ Р“Рќ
+ PROCEDURE dblink_get_halfhour (an_mid NUMBER,   --РРґ СЃС‡РµС‚С‡РёРєР°
+                                              ad_cdatetime OUT common_pg.tt_varchar2,   --РјР°СЃСЃРёРІ РґР°С‚ РІ С„РѕСЂРјР°С‚Рµ 'dd.mm.yyyy hh24:mi' (РІСЃРµРіРґР° Р·РёРјРЅРµРµ РІСЂРµРјСЏ)
+                                                                                     an_er OUT common_pg.tt_number,   --РјР°СЃСЃРёРІ СЂР°СЃС…РѕРґРѕРІ A+ Р·Р° РёРЅС‚РµРіСЂР°С†РёРѕРЅРЅС‹Р№ РїРµСЂРёРѕРґ
+ an_ed OUT common_pg.tt_number,   --РјР°СЃСЃРёРІ СЂР°СЃС…РѕРґРѕРІ A- Р·Р° РёРЅС‚РµРіСЂР°С†РёРѕРЅРЅС‹Р№ РїРµСЂРёРѕРґ
+                               an_q1 OUT common_pg.tt_number,   --РјР°СЃСЃРёРІ СЂР°СЃС…РѕРґРѕРІ R+ РёР»Рё Q1 Р·Р° РёРЅС‚РµРіСЂР°С†РёРѕРЅРЅС‹Р№ РїРµСЂРёРѕРґ
+                                                             an_q3 OUT common_pg.tt_number,   --РјР°СЃСЃРёРІ СЂР°СЃС…РѕРґРѕРІ R- РёР»Рё Q3 Р·Р° РёРЅС‚РµРіСЂР°С†РёРѕРЅРЅС‹Р№ РїРµСЂРёРѕРґ
+ an_q2 OUT common_pg.tt_number,   --РјР°СЃСЃРёРІ СЂР°СЃС…РѕРґРѕРІ Q2 Р·Р° РёРЅС‚РµРіСЂР°С†РёРѕРЅРЅС‹Р№ РїРµСЂРёРѕРґ
+                               an_q4 OUT common_pg.tt_number,   --РјР°СЃСЃРёРІ СЂР°СЃС…РѕРґРѕРІ Q4 Р·Р° РёРЅС‚РµРіСЂР°С†РёРѕРЅРЅС‹Р№ РїРµСЂРёРѕРґ
+                                                             an_erm OUT common_pg.tt_number,   --РјР°СЃСЃРёРІ РїРѕРєР°Р·Р°РЅРёР№ A+ Р·Р° РёРЅС‚РµРіСЂР°С†РёРѕРЅРЅС‹Р№ РїРµСЂРёРѕРґ
+ an_edm OUT common_pg.tt_number,   --РјР°СЃСЃРёРІ РїРѕРєР°Р·Р°РЅРёР№ A- Р·Р° РёРЅС‚РµРіСЂР°С†РёРѕРЅРЅС‹Р№ РїРµСЂРёРѕРґ
+                                an_q1m OUT common_pg.tt_number,   --РјР°СЃСЃРёРІ РїРѕРєР°Р·Р°РЅРёР№ R+ РёР»Рё Q1 Р·Р° РёРЅС‚РµРіСЂР°С†РёРѕРЅРЅС‹Р№ РїРµСЂРёРѕРґ
+                                                               an_q3m OUT common_pg.tt_number,   --РјР°СЃСЃРёРІ РїРѕРєР°Р·Р°РЅРёР№ R- РёР»Рё Q3 Р·Р° РёРЅС‚РµРіСЂР°С†РёРѕРЅРЅС‹Р№ РїРµСЂРёРѕРґ
+ an_q2m OUT common_pg.tt_number,   --РјР°СЃСЃРёРІ РїРѕРєР°Р·Р°РЅРёР№ Q2 Р·Р° РёРЅС‚РµРіСЂР°С†РёРѕРЅРЅС‹Р№ РїРµСЂРёРѕРґ
+                                an_q4m OUT common_pg.tt_number,   --РјР°СЃСЃРёРІ РїРѕРєР°Р·Р°РЅРёР№ Q4 Р·Р° РёРЅС‚РµРіСЂР°С†РёРѕРЅРЅС‹Р№ РїРµСЂРёРѕРґ
+                                                               an_status OUT common_pg.tt_number,   --РјР°СЃСЃРёРІ СЃС‚Р°С‚СѓСЃРѕРІ (СЃС‚Р°С‚СѓСЃРЅС‹Рµ Р±Р°Р№С‚С‹ СЃС‡РµС‚С‡РёРєР°)
+ ad_date DATE   --Р”Р°С‚Р° Р±РѕР»СЊС€Рµ РєРѕС‚РѕСЂРѕР№ РЅРѕР±С…РѕРґРёРјРѕ РІС‹РґР°С‚СЊ РґР°РЅРЅС‹Рµ (РІСЃРµРіРґР° Р·РёРјРЅРµРµ РІСЂРµРјСЏ)
  );
 
 ------------------------------------------------------------------------------------------------------------------------
---Чтение ГН
- PROCEDURE dblink_get_halfhour (an_mid NUMBER,   --Ид счетчика
-                                              ad_cdatetime OUT common_pg.tt_varchar2,   --массив дат в формате 'dd.mm.yyyy hh24:mi' (всегда зимнее время)
-                                                                                     an_er OUT common_pg.tt_number,   --массив расходов A+ за интеграционный период
- an_ed OUT common_pg.tt_number,   --массив расходов A- за интеграционный период
-                               an_q1 OUT common_pg.tt_number,   --массив расходов R+ или Q1 за интеграционный период
-                                                             an_q3 OUT common_pg.tt_number,   --массив расходов R- или Q3 за интеграционный период
- an_q2 OUT common_pg.tt_number,   --массив расходов Q2 за интеграционный период
-                               an_q4 OUT common_pg.tt_number,   --массив расходов Q4 за интеграционный период
-                                                             an_erm OUT common_pg.tt_number,   --массив показаний A+ за интеграционный период
- an_edm OUT common_pg.tt_number,   --массив показаний A- за интеграционный период
-                                an_q1m OUT common_pg.tt_number,   --массив показаний R+ или Q1 за интеграционный период
-                                                               an_q3m OUT common_pg.tt_number,   --массив показаний R- или Q3 за интеграционный период
- an_q2m OUT common_pg.tt_number,   --массив показаний Q2 за интеграционный период
-                                an_q4m OUT common_pg.tt_number,   --массив показаний Q4 за интеграционный период
-                                                               an_status OUT common_pg.tt_number,   --массив статусов (статусные байты счетчика)
- an_metertype OUT common_pg.tt_number,   --массив типов счетчика
-                                      av_qm OUT common_pg.tt_varchar2,   --массив меток качества
-                                                                      ad_date DATE   --Дата больше которой нобходимо выдать данные (всегда зимнее время)
+--Р§С‚РµРЅРёРµ Р“Рќ
+ PROCEDURE dblink_get_halfhour (an_mid NUMBER,   --РРґ СЃС‡РµС‚С‡РёРєР°
+                                              ad_cdatetime OUT common_pg.tt_varchar2,   --РјР°СЃСЃРёРІ РґР°С‚ РІ С„РѕСЂРјР°С‚Рµ 'dd.mm.yyyy hh24:mi' (РІСЃРµРіРґР° Р·РёРјРЅРµРµ РІСЂРµРјСЏ)
+                                                                                     an_er OUT common_pg.tt_number,   --РјР°СЃСЃРёРІ СЂР°СЃС…РѕРґРѕРІ A+ Р·Р° РёРЅС‚РµРіСЂР°С†РёРѕРЅРЅС‹Р№ РїРµСЂРёРѕРґ
+ an_ed OUT common_pg.tt_number,   --РјР°СЃСЃРёРІ СЂР°СЃС…РѕРґРѕРІ A- Р·Р° РёРЅС‚РµРіСЂР°С†РёРѕРЅРЅС‹Р№ РїРµСЂРёРѕРґ
+                               an_q1 OUT common_pg.tt_number,   --РјР°СЃСЃРёРІ СЂР°СЃС…РѕРґРѕРІ R+ РёР»Рё Q1 Р·Р° РёРЅС‚РµРіСЂР°С†РёРѕРЅРЅС‹Р№ РїРµСЂРёРѕРґ
+                                                             an_q3 OUT common_pg.tt_number,   --РјР°СЃСЃРёРІ СЂР°СЃС…РѕРґРѕРІ R- РёР»Рё Q3 Р·Р° РёРЅС‚РµРіСЂР°С†РёРѕРЅРЅС‹Р№ РїРµСЂРёРѕРґ
+ an_q2 OUT common_pg.tt_number,   --РјР°СЃСЃРёРІ СЂР°СЃС…РѕРґРѕРІ Q2 Р·Р° РёРЅС‚РµРіСЂР°С†РёРѕРЅРЅС‹Р№ РїРµСЂРёРѕРґ
+                               an_q4 OUT common_pg.tt_number,   --РјР°СЃСЃРёРІ СЂР°СЃС…РѕРґРѕРІ Q4 Р·Р° РёРЅС‚РµРіСЂР°С†РёРѕРЅРЅС‹Р№ РїРµСЂРёРѕРґ
+                                                             an_erm OUT common_pg.tt_number,   --РјР°СЃСЃРёРІ РїРѕРєР°Р·Р°РЅРёР№ A+ Р·Р° РёРЅС‚РµРіСЂР°С†РёРѕРЅРЅС‹Р№ РїРµСЂРёРѕРґ
+ an_edm OUT common_pg.tt_number,   --РјР°СЃСЃРёРІ РїРѕРєР°Р·Р°РЅРёР№ A- Р·Р° РёРЅС‚РµРіСЂР°С†РёРѕРЅРЅС‹Р№ РїРµСЂРёРѕРґ
+                                an_q1m OUT common_pg.tt_number,   --РјР°СЃСЃРёРІ РїРѕРєР°Р·Р°РЅРёР№ R+ РёР»Рё Q1 Р·Р° РёРЅС‚РµРіСЂР°С†РёРѕРЅРЅС‹Р№ РїРµСЂРёРѕРґ
+                                                               an_q3m OUT common_pg.tt_number,   --РјР°СЃСЃРёРІ РїРѕРєР°Р·Р°РЅРёР№ R- РёР»Рё Q3 Р·Р° РёРЅС‚РµРіСЂР°С†РёРѕРЅРЅС‹Р№ РїРµСЂРёРѕРґ
+ an_q2m OUT common_pg.tt_number,   --РјР°СЃСЃРёРІ РїРѕРєР°Р·Р°РЅРёР№ Q2 Р·Р° РёРЅС‚РµРіСЂР°С†РёРѕРЅРЅС‹Р№ РїРµСЂРёРѕРґ
+                                an_q4m OUT common_pg.tt_number,   --РјР°СЃСЃРёРІ РїРѕРєР°Р·Р°РЅРёР№ Q4 Р·Р° РёРЅС‚РµРіСЂР°С†РёРѕРЅРЅС‹Р№ РїРµСЂРёРѕРґ
+                                                               an_status OUT common_pg.tt_number,   --РјР°СЃСЃРёРІ СЃС‚Р°С‚СѓСЃРѕРІ (СЃС‚Р°С‚СѓСЃРЅС‹Рµ Р±Р°Р№С‚С‹ СЃС‡РµС‚С‡РёРєР°)
+ an_metertype OUT common_pg.tt_number,   --РјР°СЃСЃРёРІ С‚РёРїРѕРІ СЃС‡РµС‚С‡РёРєР°
+                                      av_qm OUT common_pg.tt_varchar2,   --РјР°СЃСЃРёРІ РјРµС‚РѕРє РєР°С‡РµСЃС‚РІР°
+                                                                      ad_date DATE   --Р”Р°С‚Р° Р±РѕР»СЊС€Рµ РєРѕС‚РѕСЂРѕР№ РЅРѕР±С…РѕРґРёРјРѕ РІС‹РґР°С‚СЊ РґР°РЅРЅС‹Рµ (РІСЃРµРіРґР° Р·РёРјРЅРµРµ РІСЂРµРјСЏ)
  );
 
 ------------------------------------------------------------------------------------------------------------------------
---Чтение ГН
+--Р§С‚РµРЅРёРµ Р“Рќ
  PROCEDURE dblink_get_halfhour (an_mid NUMBER, ad_cdatetime OUT common_pg.tt_varchar2, an_er OUT common_pg.tt_number, an_ed OUT common_pg.tt_number,
  an_q1 OUT common_pg.tt_number, an_q3 OUT common_pg.tt_number, an_q2 OUT common_pg.tt_number, an_q4 OUT common_pg.tt_number, an_erm OUT common_pg.tt_number,
  an_edm OUT common_pg.tt_number, an_q1m OUT common_pg.tt_number, an_q3m OUT common_pg.tt_number, an_q2m OUT common_pg.tt_number, an_q4m OUT common_pg.tt_number,
- an_status OUT common_pg.tt_number, an_metertype OUT common_pg.tt_number, av_qm OUT common_pg.tt_varchar2, ad_date DATE,   --Дата, больше которой нобходимо выдать данные
- ad_change DATE   --Дата ввода, больше которой нобходимо выдать данные (допускает NULL иначе работает как union с ad_date)
+ an_status OUT common_pg.tt_number, an_metertype OUT common_pg.tt_number, av_qm OUT common_pg.tt_varchar2, ad_date DATE,   --Р”Р°С‚Р°, Р±РѕР»СЊС€Рµ РєРѕС‚РѕСЂРѕР№ РЅРѕР±С…РѕРґРёРјРѕ РІС‹РґР°С‚СЊ РґР°РЅРЅС‹Рµ
+ ad_change DATE   --Р”Р°С‚Р° РІРІРѕРґР°, Р±РѕР»СЊС€Рµ РєРѕС‚РѕСЂРѕР№ РЅРѕР±С…РѕРґРёРјРѕ РІС‹РґР°С‚СЊ РґР°РЅРЅС‹Рµ (РґРѕРїСѓСЃРєР°РµС‚ NULL РёРЅР°С‡Рµ СЂР°Р±РѕС‚Р°РµС‚ РєР°Рє union СЃ ad_date)
  );
 
 ------------------------------------------------------------------------------------------------------------------------
-  --Чтение суточных данных
- PROCEDURE dblink_get_bill (an_mid NUMBER,   --Ид счетчика
-                                          ad_cdatetime OUT common_pg.tt_varchar2,   --массив дат в формате 'dd.mm.yyyy hh24:mi'
-                                                                                 an_er OUT common_pg.tt_number,   --массив расходов A+ за интеграционный период (сутки или с момента предидущего съемча)
- an_ed OUT common_pg.tt_number,   --массив расходов A- за интеграционный период (сутки или с момента предидущего съемча)
-                               an_q1 OUT common_pg.tt_number,   --массив расходов R+ или Q1 за интеграционный период (сутки или с момента предидущего съемча)
- an_q3 OUT common_pg.tt_number,   --массив расходов R- или Q3 за интеграционный период (сутки или с момента предидущего съемча)
-                               an_q2 OUT common_pg.tt_number,   --массив расходов Q2 за интеграционный период (сутки или с момента предидущего съемча)
- an_q4 OUT common_pg.tt_number,   --массив расходов Q4 за интеграционный период (сутки или с момента предидущего съемча)
-                               an_aer OUT common_pg.tt_number,   -- ... зона 1 (Пик)
+  --Р§С‚РµРЅРёРµ СЃСѓС‚РѕС‡РЅС‹С… РґР°РЅРЅС‹С…
+ PROCEDURE dblink_get_bill (an_mid NUMBER,   --РРґ СЃС‡РµС‚С‡РёРєР°
+                                          ad_cdatetime OUT common_pg.tt_varchar2,   --РјР°СЃСЃРёРІ РґР°С‚ РІ С„РѕСЂРјР°С‚Рµ 'dd.mm.yyyy hh24:mi'
+                                                                                 an_er OUT common_pg.tt_number,   --РјР°СЃСЃРёРІ СЂР°СЃС…РѕРґРѕРІ A+ Р·Р° РёРЅС‚РµРіСЂР°С†РёРѕРЅРЅС‹Р№ РїРµСЂРёРѕРґ (СЃСѓС‚РєРё РёР»Рё СЃ РјРѕРјРµРЅС‚Р° РїСЂРµРґРёРґСѓС‰РµРіРѕ СЃСЉРµРјС‡Р°)
+ an_ed OUT common_pg.tt_number,   --РјР°СЃСЃРёРІ СЂР°СЃС…РѕРґРѕРІ A- Р·Р° РёРЅС‚РµРіСЂР°С†РёРѕРЅРЅС‹Р№ РїРµСЂРёРѕРґ (СЃСѓС‚РєРё РёР»Рё СЃ РјРѕРјРµРЅС‚Р° РїСЂРµРґРёРґСѓС‰РµРіРѕ СЃСЉРµРјС‡Р°)
+                               an_q1 OUT common_pg.tt_number,   --РјР°СЃСЃРёРІ СЂР°СЃС…РѕРґРѕРІ R+ РёР»Рё Q1 Р·Р° РёРЅС‚РµРіСЂР°С†РёРѕРЅРЅС‹Р№ РїРµСЂРёРѕРґ (СЃСѓС‚РєРё РёР»Рё СЃ РјРѕРјРµРЅС‚Р° РїСЂРµРґРёРґСѓС‰РµРіРѕ СЃСЉРµРјС‡Р°)
+ an_q3 OUT common_pg.tt_number,   --РјР°СЃСЃРёРІ СЂР°СЃС…РѕРґРѕРІ R- РёР»Рё Q3 Р·Р° РёРЅС‚РµРіСЂР°С†РёРѕРЅРЅС‹Р№ РїРµСЂРёРѕРґ (СЃСѓС‚РєРё РёР»Рё СЃ РјРѕРјРµРЅС‚Р° РїСЂРµРґРёРґСѓС‰РµРіРѕ СЃСЉРµРјС‡Р°)
+                               an_q2 OUT common_pg.tt_number,   --РјР°СЃСЃРёРІ СЂР°СЃС…РѕРґРѕРІ Q2 Р·Р° РёРЅС‚РµРіСЂР°С†РёРѕРЅРЅС‹Р№ РїРµСЂРёРѕРґ (СЃСѓС‚РєРё РёР»Рё СЃ РјРѕРјРµРЅС‚Р° РїСЂРµРґРёРґСѓС‰РµРіРѕ СЃСЉРµРјС‡Р°)
+ an_q4 OUT common_pg.tt_number,   --РјР°СЃСЃРёРІ СЂР°СЃС…РѕРґРѕРІ Q4 Р·Р° РёРЅС‚РµРіСЂР°С†РёРѕРЅРЅС‹Р№ РїРµСЂРёРѕРґ (СЃСѓС‚РєРё РёР»Рё СЃ РјРѕРјРµРЅС‚Р° РїСЂРµРґРёРґСѓС‰РµРіРѕ СЃСЉРµРјС‡Р°)
+                               an_aer OUT common_pg.tt_number,   -- ... Р·РѕРЅР° 1 (РџРёРє)
                                                               an_aed OUT common_pg.tt_number, an_aq1 OUT common_pg.tt_number, an_aq3 OUT common_pg.tt_number,
- an_aq2 OUT common_pg.tt_number, an_aq4 OUT common_pg.tt_number, an_ber OUT common_pg.tt_number,   -- ... зона 2 (День)
+ an_aq2 OUT common_pg.tt_number, an_aq4 OUT common_pg.tt_number, an_ber OUT common_pg.tt_number,   -- ... Р·РѕРЅР° 2 (Р”РµРЅСЊ)
                                                                                                 an_bed OUT common_pg.tt_number, an_bq1 OUT common_pg.tt_number,
- an_bq3 OUT common_pg.tt_number, an_bq2 OUT common_pg.tt_number, an_bq4 OUT common_pg.tt_number, an_cer OUT common_pg.tt_number,   -- ... зона 3 (Ночь)
+ an_bq3 OUT common_pg.tt_number, an_bq2 OUT common_pg.tt_number, an_bq4 OUT common_pg.tt_number, an_cer OUT common_pg.tt_number,   -- ... Р·РѕРЅР° 3 (РќРѕС‡СЊ)
  an_ced OUT common_pg.tt_number, an_cq1 OUT common_pg.tt_number, an_cq3 OUT common_pg.tt_number, an_cq2 OUT common_pg.tt_number, an_cq4 OUT common_pg.tt_number,
- an_der OUT common_pg.tt_number,   -- ... зона 4 (Резерв)
+ an_der OUT common_pg.tt_number,   -- ... Р·РѕРЅР° 4 (Р РµР·РµСЂРІ)
                                 an_ded OUT common_pg.tt_number, an_dq1 OUT common_pg.tt_number, an_dq3 OUT common_pg.tt_number, an_dq2 OUT common_pg.tt_number,
- an_dq4 OUT common_pg.tt_number, an_erm OUT common_pg.tt_number,   --массив показаний A+
+ an_dq4 OUT common_pg.tt_number, an_erm OUT common_pg.tt_number,   --РјР°СЃСЃРёРІ РїРѕРєР°Р·Р°РЅРёР№ A+
                                                                 an_edm OUT common_pg.tt_number, an_q1m OUT common_pg.tt_number, an_q3m OUT common_pg.tt_number,
  an_q2m OUT common_pg.tt_number, an_q4m OUT common_pg.tt_number, an_aerm OUT common_pg.tt_number, an_aedm OUT common_pg.tt_number, an_aq1m OUT common_pg.tt_number,
  an_aq3m OUT common_pg.tt_number, an_aq2m OUT common_pg.tt_number, an_aq4m OUT common_pg.tt_number, an_berm OUT common_pg.tt_number,
@@ -236,11 +236,11 @@ PACKAGE comsrvdll_pg IS
  an_bq4m OUT common_pg.tt_number, an_cerm OUT common_pg.tt_number, an_cedm OUT common_pg.tt_number, an_cq1m OUT common_pg.tt_number,
  an_cq3m OUT common_pg.tt_number, an_cq2m OUT common_pg.tt_number, an_cq4m OUT common_pg.tt_number, an_derm OUT common_pg.tt_number,
  an_dedm OUT common_pg.tt_number, an_dq1m OUT common_pg.tt_number, an_dq3m OUT common_pg.tt_number, an_dq2m OUT common_pg.tt_number,
- an_dq4m OUT common_pg.tt_number, ad_date DATE   --Дата больше которой нобходимо выдать данные
+ an_dq4m OUT common_pg.tt_number, ad_date DATE   --Р”Р°С‚Р° Р±РѕР»СЊС€Рµ РєРѕС‚РѕСЂРѕР№ РЅРѕР±С…РѕРґРёРјРѕ РІС‹РґР°С‚СЊ РґР°РЅРЅС‹Рµ
  );
 
 ------------------------------------------------------------------------------------------------------------------------
-  --Чтение месячных данных (описание параметров по анологии с dblink_get_bill)
+  --Р§С‚РµРЅРёРµ РјРµСЃСЏС‡РЅС‹С… РґР°РЅРЅС‹С… (РѕРїРёСЃР°РЅРёРµ РїР°СЂР°РјРµС‚СЂРѕРІ РїРѕ Р°РЅРѕР»РѕРіРёРё СЃ dblink_get_bill)
  PROCEDURE dblink_get_month (an_mid NUMBER, ad_cdatetime OUT common_pg.tt_varchar2, an_er OUT common_pg.tt_number, an_ed OUT common_pg.tt_number,
  an_q1 OUT common_pg.tt_number, an_q3 OUT common_pg.tt_number, an_q2 OUT common_pg.tt_number, an_q4 OUT common_pg.tt_number, an_aer OUT common_pg.tt_number,
  an_aed OUT common_pg.tt_number, an_aq1 OUT common_pg.tt_number, an_aq3 OUT common_pg.tt_number, an_aq2 OUT common_pg.tt_number, an_aq4 OUT common_pg.tt_number,
@@ -258,23 +258,23 @@ PACKAGE comsrvdll_pg IS
  );
 
 -----------------------------------------------------------------------------------------------------------------------
- --Чтение журнала
- PROCEDURE dblink_get_journal (an_mid NUMBER,   --Ид счетчика в БД
-                                             at_datetime OUT common_pg.tt_varchar2,   --массив дат в формате 'dd.mm.yyyy hh24:mi:ss'
- at_state_cod OUT common_pg.tt_number,   --массив кодов событий
-                                      at_state_descr OUT common_pg.tt_varchar2,   --Массив описания событий
-                                                                               at_event OUT common_pg.tt_number,   --Массив Ид событий (Использовать только для БД Хартхэп)
- at_code OUT common_pg.tt_varchar2,   --массив оригинальных кодов (коды счетчиков)
-                                   ad_date DATE   --Дата больше которой нобходимо выдать данные
+ --Р§С‚РµРЅРёРµ Р¶СѓСЂРЅР°Р»Р°
+ PROCEDURE dblink_get_journal (an_mid NUMBER,   --РРґ СЃС‡РµС‚С‡РёРєР° РІ Р‘Р”
+                                             at_datetime OUT common_pg.tt_varchar2,   --РјР°СЃСЃРёРІ РґР°С‚ РІ С„РѕСЂРјР°С‚Рµ 'dd.mm.yyyy hh24:mi:ss'
+ at_state_cod OUT common_pg.tt_number,   --РјР°СЃСЃРёРІ РєРѕРґРѕРІ СЃРѕР±С‹С‚РёР№
+                                      at_state_descr OUT common_pg.tt_varchar2,   --РњР°СЃСЃРёРІ РѕРїРёСЃР°РЅРёСЏ СЃРѕР±С‹С‚РёР№
+                                                                               at_event OUT common_pg.tt_number,   --РњР°СЃСЃРёРІ РРґ СЃРѕР±С‹С‚РёР№ (РСЃРїРѕР»СЊР·РѕРІР°С‚СЊ С‚РѕР»СЊРєРѕ РґР»СЏ Р‘Р” РҐР°СЂС‚С…СЌРї)
+ at_code OUT common_pg.tt_varchar2,   --РјР°СЃСЃРёРІ РѕСЂРёРіРёРЅР°Р»СЊРЅС‹С… РєРѕРґРѕРІ (РєРѕРґС‹ СЃС‡РµС‚С‡РёРєРѕРІ)
+                                   ad_date DATE   --Р”Р°С‚Р° Р±РѕР»СЊС€Рµ РєРѕС‚РѕСЂРѕР№ РЅРѕР±С…РѕРґРёРјРѕ РІС‹РґР°С‚СЊ РґР°РЅРЅС‹Рµ
  );
 
 ------------------------------------------------------------------------------------------------------------------------
- --Чтение обводников
+ --Р§С‚РµРЅРёРµ РѕР±РІРѕРґРЅРёРєРѕРІ
  PROCEDURE dblink_get_ov (an_switch NUMBER, at_datefrom OUT common_pg.tt_varchar2, at_dateto OUT common_pg.tt_varchar2, at_mid OUT common_pg.tt_number);
 
 ------------------------------------------------------------------------------------------------------------------------
-  --Чтение остальных показаний
-  --an_type 0 -нет данных; 1-ОВ - начало; 2-ОВ - конец; 3-замена сч снятие; 4-замена сч установка
+  --Р§С‚РµРЅРёРµ РѕСЃС‚Р°Р»СЊРЅС‹С… РїРѕРєР°Р·Р°РЅРёР№
+  --an_type 0 -РЅРµС‚ РґР°РЅРЅС‹С…; 1-РћР’ - РЅР°С‡Р°Р»Рѕ; 2-РћР’ - РєРѕРЅРµС†; 3-Р·Р°РјРµРЅР° СЃС‡ СЃРЅСЏС‚РёРµ; 4-Р·Р°РјРµРЅР° СЃС‡ СѓСЃС‚Р°РЅРѕРІРєР°
  PROCEDURE dblink_get_othersbill (an_mid NUMBER, ad_cdatetime OUT common_pg.tt_varchar2, an_type OUT common_pg.tt_number, an_er OUT common_pg.tt_number,
  an_ed OUT common_pg.tt_number, an_q1 OUT common_pg.tt_number, an_q3 OUT common_pg.tt_number, an_q2 OUT common_pg.tt_number, an_q4 OUT common_pg.tt_number,
  an_erm OUT common_pg.tt_number, an_edm OUT common_pg.tt_number, an_q1m OUT common_pg.tt_number, an_q3m OUT common_pg.tt_number, an_q2m OUT common_pg.tt_number,

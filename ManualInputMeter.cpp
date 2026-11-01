@@ -249,7 +249,7 @@ try{
 
   oqSave->Params->Clear();
       oqSave->SQL->Text="begin \
-                          "+SchemeName+"indic_pg.setindic(:par12,:par11,:par17,:par101,1,'Р.В',:par14,:par15,:par16,:par1,:par2,:par18,:par19); \
+                          "+SchemeName+"indic_pg.setindic(:par12,:par11,:par17,:par101,1,'Р .Р’',:par14,:par15,:par16,:par1,:par2,:par18,:par19); \
                          end;";
 
    vtData->First();
@@ -365,7 +365,7 @@ void __fastcall TfmManualInputMeter::vtDataemValidate(TField *Sender)
   bool ValueTest=true;
   AnsiString MesText;
 
-    //------------------------------------------------------------------Проверка
+    //------------------------------------------------------------------РџСЂРѕРІРµСЂРєР°
        if (!vtData->FieldByName("lastind")->IsNull)
         aPred=FloatToStr(vtData->FieldByName("lastind")->AsFloat);
 
@@ -396,7 +396,7 @@ void __fastcall TfmManualInputMeter::vtDataemValidate(TField *Sender)
       }
       //------------------------------------------------------------------------   end;
 
-    //-------------------------------------------------------------Проверка границ
+    //-------------------------------------------------------------РџСЂРѕРІРµСЂРєР° РіСЂР°РЅРёС†
          HourCount=p.myTime-vtData->FieldByName("lastd")->AsDateTime;
          HourCount=Ceil(HourCount*24)*StrToInt(aKC);
 
@@ -405,7 +405,7 @@ void __fastcall TfmManualInputMeter::vtDataemValidate(TField *Sender)
    if(aRas&&(aRas<vtData->FieldByName("fizmin")->AsFloat*HourCount||
      aRas>vtData->FieldByName("fizmax")->AsFloat*HourCount)){
                ValueTest=false;
-               throw Exception ("Введенные показания выходят за физические границы!");
+               throw Exception ("Р’РІРµРґРµРЅРЅС‹Рµ РїРѕРєР°Р·Р°РЅРёСЏ РІС‹С…РѕРґСЏС‚ Р·Р° С„РёР·РёС‡РµСЃРєРёРµ РіСЂР°РЅРёС†С‹!");
     }
 
    if(ValueTest&&aRas&&(aRas<vtData->FieldByName("avarmin")->AsFloat*HourCount||
@@ -415,9 +415,9 @@ void __fastcall TfmManualInputMeter::vtDataemValidate(TField *Sender)
                MaxTest=vtData->FieldByName("avarmax")->AsFloat*HourCount;
                CurrentColor=clRed;
                dbManInput->Canvas->FillRect(Rect);
-        Application->MessageBox(AnsiString("Введенные показания " + FormatFloat("0.000",aRas/(double)StrToInt(aKC))
-               + " выходят за допустимые аварийные границы: "
-               ">="+FormatFloat("0.000",MinTest) + " или "+
+        Application->MessageBox(AnsiString("Р’РІРµРґРµРЅРЅС‹Рµ РїРѕРєР°Р·Р°РЅРёСЏ " + FormatFloat("0.000",aRas/(double)StrToInt(aKC))
+               + " РІС‹С…РѕРґСЏС‚ Р·Р° РґРѕРїСѓСЃС‚РёРјС‹Рµ Р°РІР°СЂРёР№РЅС‹Рµ РіСЂР°РЅРёС†С‹: "
+               ">="+FormatFloat("0.000",MinTest) + " РёР»Рё "+
                "<=" +FormatFloat("0.000",MaxTest) ).c_str()
                ,Application->Title.c_str(),MB_OK | MB_ICONWARNING);
      }
@@ -428,9 +428,9 @@ void __fastcall TfmManualInputMeter::vtDataemValidate(TField *Sender)
                MinTest=vtData->FieldByName("predmin")->AsFloat*HourCount;
                MaxTest=vtData->FieldByName("predmax")->AsFloat*HourCount;
               CurrentColor=clRed;
-         Application->MessageBox(AnsiString("Введенные показания " + FormatFloat("0.000",aRas/(double)StrToInt(aKC))
-                + " выходят за допустимые предупредительные границы: "
-               ">="+FormatFloat("0.000",MinTest) + " или "+
+         Application->MessageBox(AnsiString("Р’РІРµРґРµРЅРЅС‹Рµ РїРѕРєР°Р·Р°РЅРёСЏ " + FormatFloat("0.000",aRas/(double)StrToInt(aKC))
+                + " РІС‹С…РѕРґСЏС‚ Р·Р° РґРѕРїСѓСЃС‚РёРјС‹Рµ РїСЂРµРґСѓРїСЂРµРґРёС‚РµР»СЊРЅС‹Рµ РіСЂР°РЅРёС†С‹: "
+               ">="+FormatFloat("0.000",MinTest) + " РёР»Рё "+
                "<=" +FormatFloat("0.000",MaxTest) ).c_str()
                 ,Application->Title.c_str(),MB_OK | MB_ICONWARNING);
            }

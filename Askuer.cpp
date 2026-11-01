@@ -138,14 +138,14 @@ WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR lpCmdLine, int)
   int Error;
   try{
   //22.08.2019 UNKEY VERSION COMMENT
-/*#if CHK_ALL_LIMITS==1 //Проверка ограничений
+/*#if CHK_ALL_LIMITS==1 //РџСЂРѕРІРµСЂРєР° РѕРіСЂР°РЅРёС‡РµРЅРёР№
      if (GrdInitPermission()<0){
-        ShowMessage("Ошибка инициализации ключа электронной защиты.");
+        ShowMessage("РћС€РёР±РєР° РёРЅРёС†РёР°Р»РёР·Р°С†РёРё РєР»СЋС‡Р° СЌР»РµРєС‚СЂРѕРЅРЅРѕР№ Р·Р°С‰РёС‚С‹.");
         return 0;
      }
 #endif */
     //END COMMENT
-    //Начали локализацию
+    //РќР°С‡Р°Р»Рё Р»РѕРєР°Р»РёР·Р°С†РёСЋ
     AnsiString Language;
     TRegistry *Reg = new TRegistry(KEY_READ);
     try{
@@ -163,16 +163,16 @@ WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR lpCmdLine, int)
     }
     if(Language=="UKR")
       LoadNewResourceModule(LANG_UKRAINIAN);
-    //Закончили локализацию
+    //Р—Р°РєРѕРЅС‡РёР»Рё Р»РѕРєР°Р»РёР·Р°С†РёСЋ
   	Application->Initialize();
     Application->UpdateFormatSettings = false;
     InitGlobalVariable();
     hTemp=CreateMutex(NULL,false,"FirstASCUER");
     Error=GetLastError();
     if(!ParamStr(5).Length()||Error!=ERROR_ALREADY_EXISTS){
-     Application->Title = "АСКУЭ";
+     Application->Title = "РђРЎРљРЈР­";
      Application->Title = Reconst_smes1_1;
-     //16.10.2020 - Это старый механизм подключения хелпа - по новому через shellExecute в каждом окне и отлове F1 в нём с именем html файла его тут нужно будет убрать
+     //16.10.2020 - Р­С‚Рѕ СЃС‚Р°СЂС‹Р№ РјРµС…Р°РЅРёР·Рј РїРѕРґРєР»СЋС‡РµРЅРёСЏ С…РµР»РїР° - РїРѕ РЅРѕРІРѕРјСѓ С‡РµСЂРµР· shellExecute РІ РєР°Р¶РґРѕРј РѕРєРЅРµ Рё РѕС‚Р»РѕРІРµ F1 РІ РЅС‘Рј СЃ РёРјРµРЅРµРј html С„Р°Р№Р»Р° РµРіРѕ С‚СѓС‚ РЅСѓР¶РЅРѕ Р±СѓРґРµС‚ СѓР±СЂР°С‚СЊ
      //Application->HelpFile = "Askue.hlp";
      //Application->HelpFile = "askue.chm";
      fmAbout = new TfmAbout(Application);
@@ -203,13 +203,13 @@ WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR lpCmdLine, int)
   HANDLE hTemp;
   int Error;
   try{
-#if CHK_ALL_LIMITS==1 //Проверка ограничений
+#if CHK_ALL_LIMITS==1 //РџСЂРѕРІРµСЂРєР° РѕРіСЂР°РЅРёС‡РµРЅРёР№
      if (GrdInitPermission()<0){
-        ShowMessage("Ошибка инициализации ключа электронной защиты.");
+        ShowMessage("РћС€РёР±РєР° РёРЅРёС†РёР°Р»РёР·Р°С†РёРё РєР»СЋС‡Р° СЌР»РµРєС‚СЂРѕРЅРЅРѕР№ Р·Р°С‰РёС‚С‹.");
         return 0;
      }
 #endif
-    //Начали локализацию
+    //РќР°С‡Р°Р»Рё Р»РѕРєР°Р»РёР·Р°С†РёСЋ
     AnsiString Language;
     TRegistry *Reg = new TRegistry(KEY_READ);
     try{
@@ -227,14 +227,14 @@ WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR lpCmdLine, int)
     }
     if(Language=="UKR")
       LoadNewResourceModule(LANG_UKRAINIAN);
-    //Закончили локализацию
+    //Р—Р°РєРѕРЅС‡РёР»Рё Р»РѕРєР°Р»РёР·Р°С†РёСЋ
   	Application->Initialize();
     Application->UpdateFormatSettings = false;
     InitGlobalVariable();
     hTemp=CreateMutex(NULL,false,"FirstASCUER");
     Error=GetLastError();
     if(!ParamStr(5).Length()||Error!=ERROR_ALREADY_EXISTS){
-     Application->Title = "АСКУЭ";
+     Application->Title = "РђРЎРљРЈР­";
      Application->Title = Reconst_smes1_1;
      Application->HelpFile = "Askue.hlp";
      fmAbout = new TfmAbout(Application);

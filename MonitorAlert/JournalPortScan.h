@@ -52,12 +52,12 @@ private:	// User declarations
   bool desc1;
   bool desc2;
   bool desc3;
-  int sort;// признак сортировки для запроса
+  int sort;// РїСЂРёР·РЅР°Рє СЃРѕСЂС‚РёСЂРѕРІРєРё РґР»СЏ Р·Р°РїСЂРѕСЃР°
 	void __fastcall SelectData( void );
   bool __fastcall RefreshData( void );
   void __fastcall SortData( void );
-  AnsiString  sqlStr;   //! Строка SQL запроса
-//  AnsiString  orderStr;   //! Строка сортировки для запроса
+  AnsiString  sqlStr;   //! РЎС‚СЂРѕРєР° SQL Р·Р°РїСЂРѕСЃР°
+//  AnsiString  orderStr;   //! РЎС‚СЂРѕРєР° СЃРѕСЂС‚РёСЂРѕРІРєРё РґР»СЏ Р·Р°РїСЂРѕСЃР°
  // int CurrentScan;
 //    THintWindow * pHintWnd;
 //    int Xpos;

@@ -41,7 +41,7 @@
 #pragma link "MemDS"
 #pragma link "Ora"
 #pragma resource "*.dfm"
-UINT CF_POINTS_TREENODE; // описание формата для буфера обмена
+UINT CF_POINTS_TREENODE; // РѕРїРёСЃР°РЅРёРµ С„РѕСЂРјР°С‚Р° РґР»СЏ Р±СѓС„РµСЂР° РѕР±РјРµРЅР°
 extern HANDLE UpdateMonitors;
 extern TSupperMainForm *SupperMainForm;
 //---------------------------------------------------------------------------
@@ -50,7 +50,7 @@ void __fastcall TFormEditFiders::vUpdate(TObject * Sender)
     TMainForm::vUpdate(Sender);
 
 
-    if(customer_id==1||customer_id==51) //Блокируем кое-что из редактирования
+    if(customer_id==1||customer_id==51) //Р‘Р»РѕРєРёСЂСѓРµРј РєРѕРµ-С‡С‚Рѕ РёР· СЂРµРґР°РєС‚РёСЂРѕРІР°РЅРёСЏ
     {
         iaNew->Enabled = false;
         iaNewCalcNode->Enabled = false;
@@ -77,13 +77,13 @@ __fastcall TFormEditFiders::TFormEditFiders(TComponent* Owner, AnsiString Name, 
      miManualInp->Delete(miManualInp->Count-1);
      miManIn  = new TMenuItem(mMon);
 
-      miManIn->Caption = "Ввод количества энергии";
+      miManIn->Caption = "Р’РІРѕРґ РєРѕР»РёС‡РµСЃС‚РІР° СЌРЅРµСЂРіРёРё";
       miManIn->OnClick = miManualInp->OnClick;
       miManualInp->Add(miManIn);
 
       miManMetr  = new TMenuItem(mMon);
 
-      miManMetr->Caption = "Ввод показаний";
+      miManMetr->Caption = "Р’РІРѕРґ РїРѕРєР°Р·Р°РЅРёР№";
 
       miManMetr->OnClick =miManualInp->OnClick;
       miManualInp->Add(miManMetr);
@@ -229,12 +229,12 @@ __fastcall TFormEditFiders::TFormEditFiders(TComponent* Owner, AnsiString Name, 
     VT_Data->FieldByName("VNAME")->DisplayLabel=Reconst_smes20_2;
     VT_Data->FieldByName("NCONNECTIONPARAM")->DisplayLabel=Reconst_smes20_3;
     VT_Data->FieldByName("MID")->DisplayLabel=Reconst_smes20_4;
-    VT_Data->FieldByName("NSN")->DisplayLabel="Sн";
+    VT_Data->FieldByName("NSN")->DisplayLabel="SРЅ";
     VT_Data->FieldByName("NSH")->DisplayLabel="Sh";
     VT_Data->FieldByName("NDELTAPIDLING")->DisplayLabel="Pxx";
-    VT_Data->FieldByName("NDELTAPSC")->DisplayLabel="Pкз";
+    VT_Data->FieldByName("NDELTAPSC")->DisplayLabel="PРєР·";
     VT_Data->FieldByName("NIIDLING")->DisplayLabel="Ixx";
-    VT_Data->FieldByName("NUSC")->DisplayLabel="Uкз";
+    VT_Data->FieldByName("NUSC")->DisplayLabel="UРєР·";
     VT_Data->FieldByName("NRO")->DisplayLabel="Ro";
     VT_Data->FieldByName("NXO")->DisplayLabel="Xo";
     VT_Data->FieldByName("NL")->DisplayLabel="L";
@@ -291,7 +291,7 @@ __fastcall TFormEditFiders::TFormEditFiders(TComponent* Owner, AnsiString Name, 
     if(cbIntgr->Items->Count)
       cbIntgr->ItemIndex=0;
 
-    //Временная зона Украины
+    //Р’СЂРµРјРµРЅРЅР°СЏ Р·РѕРЅР° РЈРєСЂР°РёРЅС‹
     dmMain->quMain->Params->Clear();
     dmMain->quMain->SQL->Text=" begin :par1:= "+SchemeName+"COMSRV_PG.get_systemtz; :par2:= "+SchemeName+"COMSRV_PG.get_systemtz_summer; end;";
     dmMain->quMain->ParamByName("par1")->DataType=ftInteger;
@@ -312,7 +312,7 @@ __fastcall TFormEditFiders::TFormEditFiders(TComponent* Owner, AnsiString Name, 
      }
 
 
-     // регистрация формата для буфера обмена
+     // СЂРµРіРёСЃС‚СЂР°С†РёСЏ С„РѕСЂРјР°С‚Р° РґР»СЏ Р±СѓС„РµСЂР° РѕР±РјРµРЅР°
     CF_POINTS_TREENODE = RegisterClipboardFormat("CF_POINTS_TREENODE");
     if(!CF_POINTS_TREENODE)
     {
@@ -328,7 +328,7 @@ __fastcall TFormEditFiders::TFormEditFiders(TComponent* Owner, AnsiString Name, 
     }
     pcMain->ActivePage  = tsParam;
     //GRB ADD 29.05.2019
-    RadioGroup1->ItemIndex = 0; //Торговая зона
+    RadioGroup1->ItemIndex = 0; //РўРѕСЂРіРѕРІР°СЏ Р·РѕРЅР°
     try{
     globalCompanyInfo = getCompanyInfoGlobal(this, &tradeZonesGlobalList);
     changePanel31Height(1);
@@ -343,15 +343,15 @@ __fastcall TFormEditFiders::~TFormEditFiders()
   try{
   delete fmFP;
   //GRB ADD 18.07.2019
-  fmFP = NULL; // на всяк случай ну как поможет от ExcessViolation
+  fmFP = NULL; // РЅР° РІСЃСЏРє СЃР»СѓС‡Р°Р№ РЅСѓ РєР°Рє РїРѕРјРѕР¶РµС‚ РѕС‚ ExcessViolation
   //GRB
   if(Clipboard()->HasFormat(CF_POINTS_TREENODE))
     Clipboard()->Clear();
     }catch (Exception &ex){
     delete fmFP;
-    fmFP = NULL; // на всяк случай ну как поможет от ExcessViolation
-    MessageBox(Handle,"Валимся в TFormEditFiders::~TFormEditFiders(). Закройте и откройте 2 раза по крестику текущую задачу",
-            "Память не удаляется",MB_OK|MB_ICONINFORMATION);
+    fmFP = NULL; // РЅР° РІСЃСЏРє СЃР»СѓС‡Р°Р№ РЅСѓ РєР°Рє РїРѕРјРѕР¶РµС‚ РѕС‚ ExcessViolation
+    MessageBox(Handle,"Р’Р°Р»РёРјСЃСЏ РІ TFormEditFiders::~TFormEditFiders(). Р—Р°РєСЂРѕР№С‚Рµ Рё РѕС‚РєСЂРѕР№С‚Рµ 2 СЂР°Р·Р° РїРѕ РєСЂРµСЃС‚РёРєСѓ С‚РµРєСѓС‰СѓСЋ Р·Р°РґР°С‡Сѓ",
+            "РџР°РјСЏС‚СЊ РЅРµ СѓРґР°Р»СЏРµС‚СЃСЏ",MB_OK|MB_ICONINFORMATION);
     }
 }
 //---------------------------------------------------------------------------
@@ -370,7 +370,7 @@ void __fastcall TFormEditFiders::FormShow(TObject *Sender)
     }else{
         Close();
     }
-    if(customer_id==1||customer_id==51) //Блокируем кое-что из редактирования
+    if(customer_id==1||customer_id==51) //Р‘Р»РѕРєРёСЂСѓРµРј РєРѕРµ-С‡С‚Рѕ РёР· СЂРµРґР°РєС‚РёСЂРѕРІР°РЅРёСЏ
     {
         TreeView1->DragMode = dmManual;
         TreeView1->OnDragDrop = NULL;
@@ -466,7 +466,7 @@ void __fastcall TFormEditFiders::TreeView1Expanding(TObject *Sender,
         ReadTreeNode(Node);
 }
 //---------------------------------------------------------------------------
-// Читает ветку дерева
+// Р§РёС‚Р°РµС‚ РІРµС‚РєСѓ РґРµСЂРµРІР°
 bool __fastcall TFormEditFiders::ReadTreeNode(TObject*obj)
 {
   TTreeNode*NodeParent=dynamic_cast<TTreeNode*>(obj);
@@ -474,7 +474,7 @@ bool __fastcall TFormEditFiders::ReadTreeNode(TObject*obj)
   TTreeNode *AddNode;
   try{
     TreeView1->Items->BeginUpdate();
-        // вычитка перечня точек
+        // РІС‹С‡РёС‚РєР° РїРµСЂРµС‡РЅСЏ С‚РѕС‡РµРє
     if(NodeParent && NodeParent->HasChildren)
       NodeParent->DeleteChildren();
     dmMain->oqCursor->Params->Clear();
@@ -546,7 +546,7 @@ bool __fastcall TFormEditFiders::ReadTreeNode(TObject*obj)
         }
         }
 
-      }else{ //не 2 и не 4 тип
+      }else{ //РЅРµ 2 Рё РЅРµ 4 С‚РёРї
          PTreeTable->eic_info.vfullname = dmMain->oqCursor->FieldByName("name")->AsString;
          PTreeTable->eic_info.vshortname = dmMain->oqCursor->FieldByName("short_name")->AsString;
          PTreeTable->eic_info.mms="";
@@ -634,11 +634,11 @@ bool __fastcall TFormEditFiders::ReadTreeNode(TObject*obj)
     }
     }catch (EAccessViolation &eav){
          delete PTreeTable;
-         MessageBox(Handle,"Не хватает памяти для работы с деревом(Валится в ReadTreeNode). Закройте и откройте 2 раза по крестику текущую задачу",
-            "Память не выделяется",MB_OK|MB_ICONINFORMATION);
+         MessageBox(Handle,"РќРµ С…РІР°С‚Р°РµС‚ РїР°РјСЏС‚Рё РґР»СЏ СЂР°Р±РѕС‚С‹ СЃ РґРµСЂРµРІРѕРј(Р’Р°Р»РёС‚СЃСЏ РІ ReadTreeNode). Р—Р°РєСЂРѕР№С‚Рµ Рё РѕС‚РєСЂРѕР№С‚Рµ 2 СЂР°Р·Р° РїРѕ РєСЂРµСЃС‚РёРєСѓ С‚РµРєСѓС‰СѓСЋ Р·Р°РґР°С‡Сѓ",
+            "РџР°РјСЏС‚СЊ РЅРµ РІС‹РґРµР»СЏРµС‚СЃСЏ",MB_OK|MB_ICONINFORMATION);
     }
     if(NodeParent){
-      AddNode = NodeParent->getFirstChild(); // *****************Вычитка счётчиков
+      AddNode = NodeParent->getFirstChild(); // *****************Р’С‹С‡РёС‚РєР° СЃС‡С‘С‚С‡РёРєРѕРІ
       if(!AddNode || AddNode->Parent!=NodeParent)
         throw Exception(Reconst_smes20_17+IntToStr(((POINTSDIV*)NodeParent->Data)->Mid));
       PTreeTable = (POINTSDIV*)AddNode->Data;
@@ -677,7 +677,7 @@ bool __fastcall TFormEditFiders::ReadTreeNode(TObject*obj)
       }
       PTreeTable->pcounter->Capacity = PTreeTable->pcounter->Count;
 
-      AddNode = NodeParent->getFirstChild(); // **************Вычитка Потерь
+      AddNode = NodeParent->getFirstChild(); // **************Р’С‹С‡РёС‚РєР° РџРѕС‚РµСЂСЊ
       if(!AddNode || AddNode->Parent!=NodeParent)
         throw Exception(Reconst_smes20_18);
       PTreeTable = (POINTSDIV*)AddNode->Data;
@@ -689,10 +689,10 @@ bool __fastcall TFormEditFiders::ReadTreeNode(TObject*obj)
       dmMain->oqCursor->ParamByName("par1")->AsInteger=((POINTSDIV*)NodeParent->Data)->Mid;
       dmMain->oqCursor->Execute();
       while(!dmMain->oqCursor->Eof){
-        bool  fFind = true;   //===== Признак найденной точки
-        AddNode     = NodeParent->getFirstChild();    //===== Позиционирование на первую точку
+        bool  fFind = true;   //===== РџСЂРёР·РЅР°Рє РЅР°Р№РґРµРЅРЅРѕР№ С‚РѕС‡РєРё
+        AddNode     = NodeParent->getFirstChild();    //===== РџРѕР·РёС†РёРѕРЅРёСЂРѕРІР°РЅРёРµ РЅР° РїРµСЂРІСѓСЋ С‚РѕС‡РєСѓ
         PTreeTable  = (POINTSDIV *)AddNode->Data;
-        //===== Перебор всех точек для нахождения нужной
+        //===== РџРµСЂРµР±РѕСЂ РІСЃРµС… С‚РѕС‡РµРє РґР»СЏ РЅР°С…РѕР¶РґРµРЅРёСЏ РЅСѓР¶РЅРѕР№
         while (PTreeTable->Mid != dmMain->oqCursor->FieldByName("MID")->AsInteger && fFind){
           PTreeTable->ploss->Capacity = PTreeTable->ploss->Count;
           AddNode = NodeParent->GetNextChild(AddNode);
@@ -785,7 +785,7 @@ bool __fastcall TFormEditFiders::ReadTreeNode(TObject*obj)
         dmMain->oqCursor->Next();
       }
       //-----------------------------------VNB 12.03.2008
-      AddNode = NodeParent->getFirstChild(); // **************Вычитка групп
+      AddNode = NodeParent->getFirstChild(); // **************Р’С‹С‡РёС‚РєР° РіСЂСѓРїРї
       if(!AddNode || AddNode->Parent!=NodeParent)
         throw Exception(Reconst_smes20_18);
       PTreeTable = (POINTSDIV*)AddNode->Data;
@@ -797,10 +797,10 @@ bool __fastcall TFormEditFiders::ReadTreeNode(TObject*obj)
       dmMain->oqCursor->ParamByName("par1")->AsInteger=((POINTSDIV*)NodeParent->Data)->Mid;
       dmMain->oqCursor->Execute();
       while(!dmMain->oqCursor->Eof){
-         bool  gFind = true;   //===== Признак найденной точки
-        AddNode     = NodeParent->getFirstChild();    //===== Позиционирование на первую точку
+         bool  gFind = true;   //===== РџСЂРёР·РЅР°Рє РЅР°Р№РґРµРЅРЅРѕР№ С‚РѕС‡РєРё
+        AddNode     = NodeParent->getFirstChild();    //===== РџРѕР·РёС†РёРѕРЅРёСЂРѕРІР°РЅРёРµ РЅР° РїРµСЂРІСѓСЋ С‚РѕС‡РєСѓ
         PTreeTable  = (POINTSDIV *)AddNode->Data;
-        //===== Перебор всех точек для нахождения нужной
+        //===== РџРµСЂРµР±РѕСЂ РІСЃРµС… С‚РѕС‡РµРє РґР»СЏ РЅР°С…РѕР¶РґРµРЅРёСЏ РЅСѓР¶РЅРѕР№
         while (PTreeTable->Mid != dmMain->oqCursor->FieldByName("mid")->AsInteger && gFind){
           AddNode = NodeParent->GetNextChild(AddNode);
           if (!AddNode || AddNode->Parent != NodeParent)
@@ -1068,7 +1068,7 @@ void __fastcall TFormEditFiders::TreeView1Changing(TObject *Sender,
 //<----------------------------
         }
 
-        //GRB ADD 21.06.2019  Глупая заплатка - на бажина кроится именно тут  Нужно вставить mms, ctype бо чего-то при вставках их обнуляют и * убирают
+        //GRB ADD 21.06.2019  Р“Р»СѓРїР°СЏ Р·Р°РїР»Р°С‚РєР° - РЅР° Р±Р°Р¶РёРЅР° РєСЂРѕРёС‚СЃСЏ РёРјРµРЅРЅРѕ С‚СѓС‚  РќСѓР¶РЅРѕ РІСЃС‚Р°РІРёС‚СЊ mms, ctype Р±Рѕ С‡РµРіРѕ-С‚Рѕ РїСЂРё РІСЃС‚Р°РІРєР°С… РёС… РѕР±РЅСѓР»СЏСЋС‚ Рё * СѓР±РёСЂР°СЋС‚
       if(PTreeTable->Type==2){
         if (Panel31->FindChildControl("EICCheckbox")){
                 TCheckBox *cbx = (TCheckBox*)Panel31->FindChildControl("EICCheckbox");
@@ -1523,7 +1523,7 @@ void __fastcall TFormEditFiders::TreeView1Change(TObject *Sender,
                 hideTradeZones();
                 break;
                }
-                case 4:{ //точка?
+                case 4:{ //С‚РѕС‡РєР°?
                 changePanel31Height (1);
                 break;
                }
@@ -1914,13 +1914,13 @@ void __fastcall TFormEditFiders::TreeView1Deletion(TObject *Sender,
     TList *ll;
     if(Node&&Node->Data){
         list=((POINTSDIV*)Node->Data)->pcounter;
-        if(list){//Счетчики
+        if(list){//РЎС‡РµС‚С‡РёРєРё
             for(long i=0;i<list->Count;i++)
                 delete (TFormCounter::POINTCOUNT *)list->Items[i];
             delete list;
         }
         list=((POINTSDIV*)Node->Data)->ploss;
-        if(list){//Потери по формуле
+        if(list){//РџРѕС‚РµСЂРё РїРѕ С„РѕСЂРјСѓР»Рµ
             for(long i=0;i<list->Count;i++){
                 ll= ((POINTLOSS *)list->Items[i])->pwtimeinfo;
                 if(ll){
@@ -1933,13 +1933,13 @@ void __fastcall TFormEditFiders::TreeView1Deletion(TObject *Sender,
             delete list;
         }
         list=((POINTSDIV*)Node->Data)->pwtimeinfo;
-        if(list){//Задано время работы
+        if(list){//Р—Р°РґР°РЅРѕ РІСЂРµРјСЏ СЂР°Р±РѕС‚С‹
             for(long i=0;i<list->Count;i++)
                 delete (TTimeInfo *)list->Items[i];
             delete list;
         }
         list=((POINTSDIV*)Node->Data)->pwcalcparam;
-        if(list){//Задано время работы
+        if(list){//Р—Р°РґР°РЅРѕ РІСЂРµРјСЏ СЂР°Р±РѕС‚С‹
             for(long i=0;i<list->Count;i++)
                 delete (TTimeInfo *)list->Items[i];
             delete list;
@@ -1981,7 +1981,7 @@ void __fastcall TFormEditFiders::vDelete(TObject *Sender)
       EditRec=true;
    }
    if(USDPointDeleted){
-/*      switch(MessageBox(Handle,"Сохранить данные перед обновлением?","Обновление данных",MB_YESNOCANCEL|MB_ICONINFORMATION)){
+/*      switch(MessageBox(Handle,"РЎРѕС…СЂР°РЅРёС‚СЊ РґР°РЅРЅС‹Рµ РїРµСЂРµРґ РѕР±РЅРѕРІР»РµРЅРёРµРј?","РћР±РЅРѕРІР»РµРЅРёРµ РґР°РЅРЅС‹С…",MB_YESNOCANCEL|MB_ICONINFORMATION)){
       case IDYES:
          vSave(this);
          break;
@@ -2176,7 +2176,7 @@ void __fastcall TFormEditFiders::SaveLoss(TTreeNode *Node)
         }
       }
     }
-    //удаление
+    //СѓРґР°Р»РµРЅРёРµ
 	//GRB ADD 16.04.2020 - test trouble ODAC
     dmMain->quMain->Params->Clear();
     //END ADD 
@@ -2245,16 +2245,16 @@ void __fastcall TFormEditFiders::vSave(TObject *Sender)
         dmMain->quMain->ParamByName("par1")->ParamType=ptInputOutput;
         dmMain->quMain->ParamByName("par1")->DataType=ftInteger;
         dmMain->quMain->ParamByName("par1")->AsInteger=PTreeTable->Mid;
-        //Тут ошибка при работе с ОДАС 6.75 - при передаче парент - ID как AsInteger он приходит в процедуру как NULL, а раньше для ОДАКа 5.7 это работало
-        //Но если поставить галку
+        //РўСѓС‚ РѕС€РёР±РєР° РїСЂРё СЂР°Р±РѕС‚Рµ СЃ РћР”РђРЎ 6.75 - РїСЂРё РїРµСЂРµРґР°С‡Рµ РїР°СЂРµРЅС‚ - ID РєР°Рє AsInteger РѕРЅ РїСЂРёС…РѕРґРёС‚ РІ РїСЂРѕС†РµРґСѓСЂСѓ РєР°Рє NULL, Р° СЂР°РЅСЊС€Рµ РґР»СЏ РћР”РђРљР° 5.7 СЌС‚Рѕ СЂР°Р±РѕС‚Р°Р»Рѕ
+        //РќРѕ РµСЃР»Рё РїРѕСЃС‚Р°РІРёС‚СЊ РіР°Р»РєСѓ
         //Problemmed code here
-        /*  if(Node->Parent && Node->Parent->Data)*/   //эта пурга осталась от старого и расскоментировать её НЕ НАДО
+        /*  if(Node->Parent && Node->Parent->Data)*/   //СЌС‚Р° РїСѓСЂРіР° РѕСЃС‚Р°Р»Р°СЃСЊ РѕС‚ СЃС‚Р°СЂРѕРіРѕ Рё СЂР°СЃСЃРєРѕРјРµРЅС‚РёСЂРѕРІР°С‚СЊ РµС‘ РќР• РќРђР”Рћ
         //dmMain->quMain->ParamByName("par2")->AsInteger=((POINTSDIV*)Node->Parent->Data)->tmpMid;
         /*   else
-        dmMain->quMain->ParamByName("par2")->Clear();*/ //тоже огрызок
+        dmMain->quMain->ParamByName("par2")->Clear();*/ //С‚РѕР¶Рµ РѕРіСЂС‹Р·РѕРє
         //End Problem
 
-        //GRB 20.10.2020 TRY 2 FIX - от этот вариант решения проблемы надо распространить среди усех вариантов
+        //GRB 20.10.2020 TRY 2 FIX - РѕС‚ СЌС‚РѕС‚ РІР°СЂРёР°РЅС‚ СЂРµС€РµРЅРёСЏ РїСЂРѕР±Р»РµРјС‹ РЅР°РґРѕ СЂР°СЃРїСЂРѕСЃС‚СЂР°РЅРёС‚СЊ СЃСЂРµРґРё СѓСЃРµС… РІР°СЂРёР°РЅС‚РѕРІ
         long test = (long) ((POINTSDIV*)Node->Parent->Data)->tmpMid;
         TOraNumber* testNumber = new TOraNumber();
         testNumber->AsInteger = ((POINTSDIV*)Node->Parent->Data)->tmpMid;
@@ -2334,7 +2334,7 @@ void __fastcall TFormEditFiders::vSave(TObject *Sender)
             AnsiString Language;
             was_first_mess = false;
             TRegistry *Reg = new TRegistry(KEY_READ);
-            AnsiString text = "Размер поля 'Имя' у элемента с mid = "+IntToStr(PTreeTable->Mid)+" превышает 120 символов.\n Рекомендуется завести поле 'Краткое имя' для корректного отображения в отчетных данных.";
+            AnsiString text = "Р Р°Р·РјРµСЂ РїРѕР»СЏ 'РРјСЏ' Сѓ СЌР»РµРјРµРЅС‚Р° СЃ mid = "+IntToStr(PTreeTable->Mid)+" РїСЂРµРІС‹С€Р°РµС‚ 120 СЃРёРјРІРѕР»РѕРІ.\n Р РµРєРѕРјРµРЅРґСѓРµС‚СЃСЏ Р·Р°РІРµСЃС‚Рё РїРѕР»Рµ 'РљСЂР°С‚РєРѕРµ РёРјСЏ' РґР»СЏ РєРѕСЂСЂРµРєС‚РЅРѕРіРѕ РѕС‚РѕР±СЂР°Р¶РµРЅРёСЏ РІ РѕС‚С‡РµС‚РЅС‹С… РґР°РЅРЅС‹С….";
             try{
                 Reg->RootKey =HKEY_LOCAL_MACHINE;
                 Reg->Access=KEY_READ;
@@ -2348,7 +2348,7 @@ void __fastcall TFormEditFiders::vSave(TObject *Sender)
             }__finally{
                 delete Reg;
             }
-            if (Language =="UKR") text = "Розмір поля 'Iм'я' у елемента з mid =  "+IntToStr(PTreeTable->Mid)+" перевищує 120 символів.\n Рекомендується завести поле 'Коротке ім'я' для коректного відображення у звітних даних";
+            if (Language =="UKR") text = "Р РѕР·РјС–СЂ РїРѕР»СЏ 'IРј'СЏ' Сѓ РµР»РµРјРµРЅС‚Р° Р· mid =  "+IntToStr(PTreeTable->Mid)+" РїРµСЂРµРІРёС‰СѓС” 120 СЃРёРјРІРѕР»С–РІ.\n Р РµРєРѕРјРµРЅРґСѓС”С‚СЊСЃСЏ Р·Р°РІРµСЃС‚Рё РїРѕР»Рµ 'РљРѕСЂРѕС‚РєРµ С–Рј'СЏ' РґР»СЏ РєРѕСЂРµРєС‚РЅРѕРіРѕ РІС–РґРѕР±СЂР°Р¶РµРЅРЅСЏ Сѓ Р·РІС–С‚РЅРёС… РґР°РЅРёС…";
             MessageBox(Handle,text.c_str(), Caption.c_str(),MB_OK);
          }
         //END ADD
@@ -2358,7 +2358,7 @@ void __fastcall TFormEditFiders::vSave(TObject *Sender)
         if (!chechVeridiAddParam){
             AnsiString Language;
             TRegistry *Reg = new TRegistry(KEY_READ);
-            AnsiString text = "Некорректный формат поля 'Параметры верификации суточных по ГН' для точки учёта с mid = "+IntToStr(PTreeTable->Mid)+"\n"+"Сохранение отменено!";
+            AnsiString text = "РќРµРєРѕСЂСЂРµРєС‚РЅС‹Р№ С„РѕСЂРјР°С‚ РїРѕР»СЏ 'РџР°СЂР°РјРµС‚СЂС‹ РІРµСЂРёС„РёРєР°С†РёРё СЃСѓС‚РѕС‡РЅС‹С… РїРѕ Р“Рќ' РґР»СЏ С‚РѕС‡РєРё СѓС‡С‘С‚Р° СЃ mid = "+IntToStr(PTreeTable->Mid)+"\n"+"РЎРѕС…СЂР°РЅРµРЅРёРµ РѕС‚РјРµРЅРµРЅРѕ!";
 
             try{
                 Reg->RootKey =HKEY_LOCAL_MACHINE;
@@ -2373,7 +2373,7 @@ void __fastcall TFormEditFiders::vSave(TObject *Sender)
             }__finally{
                 delete Reg;
             }
-            if (Language =="UKR") text = "Некоректний формат поля 'Параметри верифікації добових по ГН' для точки обліку с mid = "+IntToStr(PTreeTable->Mid)+"\n"+"Збереження скасовано!";
+            if (Language =="UKR") text = "РќРµРєРѕСЂРµРєС‚РЅРёР№ С„РѕСЂРјР°С‚ РїРѕР»СЏ 'РџР°СЂР°РјРµС‚СЂРё РІРµСЂРёС„С–РєР°С†С–С— РґРѕР±РѕРІРёС… РїРѕ Р“Рќ' РґР»СЏ С‚РѕС‡РєРё РѕР±Р»С–РєСѓ СЃ mid = "+IntToStr(PTreeTable->Mid)+"\n"+"Р—Р±РµСЂРµР¶РµРЅРЅСЏ СЃРєР°СЃРѕРІР°РЅРѕ!";
             MessageBox(Handle,text.c_str(), Caption.c_str(),MB_OK|MB_ICONINFORMATION);
         return;
          }
@@ -2408,14 +2408,14 @@ void __fastcall TFormEditFiders::vSave(TObject *Sender)
       }
       Node=Node->GetNext();
     }
-    //Удаление
+    //РЈРґР°Р»РµРЅРёРµ
     //GRB ADD 16.04.2020 - test trouble ODAC
     dmMain->quMain->Params->Clear();
     //END ADD
     dmMain->quMain->SQL->Text="begin "+SchemeName+"editfeeders_pg.del_p(:par1); end;";
     for(int i=0;i<CountPoints_Del;i++){
       //dmMain->quMain->ParamByName("par1")->AsInteger=nPoints_Del[i];
-      //GRB 20.10.2020 TRY 2 FIX - от этот вариант решения проблемы надо распространить среди усех вариантов
+      //GRB 20.10.2020 TRY 2 FIX - РѕС‚ СЌС‚РѕС‚ РІР°СЂРёР°РЅС‚ СЂРµС€РµРЅРёСЏ РїСЂРѕР±Р»РµРјС‹ РЅР°РґРѕ СЂР°СЃРїСЂРѕСЃС‚СЂР°РЅРёС‚СЊ СЃСЂРµРґРё СѓСЃРµС… РІР°СЂРёР°РЅС‚РѕРІ
         TOraNumber* testNumberDel = new TOraNumber();
         testNumberDel->AsInteger = (long) nPoints_Del[i];
         dmMain->quMain->ParamByName("par1")->AsNumber=testNumberDel;
@@ -2426,14 +2426,14 @@ void __fastcall TFormEditFiders::vSave(TObject *Sender)
                 delete testNumberDel;
       } */
     }
-    //Сохранение счетчиков
+    //РЎРѕС…СЂР°РЅРµРЅРёРµ СЃС‡РµС‚С‡РёРєРѕРІ
     Node=TreeView1->Items->GetFirstNode();
     while(Node){
      if(Node->Data&&((POINTSDIV*)Node->Data)->editcount==1)
         SaveCounter(Node);
      Node=Node->GetNext();
     }
-    //Сохранение остального
+    //РЎРѕС…СЂР°РЅРµРЅРёРµ РѕСЃС‚Р°Р»СЊРЅРѕРіРѕ
     Node=TreeView1->Items->GetFirstNode();
     while(Node){
       if(Node->Data&&((POINTSDIV*)Node->Data)->editloss==1)
@@ -2453,7 +2453,7 @@ void __fastcall TFormEditFiders::vSave(TObject *Sender)
 
    CountPoints_Del=0;
    dmMain->orases->Commit();
-   //Очистка признаков редактирования
+   //РћС‡РёСЃС‚РєР° РїСЂРёР·РЅР°РєРѕРІ СЂРµРґР°РєС‚РёСЂРѕРІР°РЅРёСЏ
    Node=TreeView1->Items->GetFirstNode();
    while(Node){
       if(Node->Data&&((POINTSDIV*)Node->Data)->editing){
@@ -2542,7 +2542,7 @@ void __fastcall TFormEditFiders::tvMainExpCol(TObject *Sender,
 bool __fastcall TFormEditFiders::AcceptNode(TTreeNode*accNode,TTreeNode*srcNode)
 {
     TShiftState State;
-    POINTSDIV* p=NULL;//Текущее
+    POINTSDIV* p=NULL;//РўРµРєСѓС‰РµРµ
 
     try{
         if(Access==accRead)
@@ -2552,13 +2552,13 @@ bool __fastcall TFormEditFiders::AcceptNode(TTreeNode*accNode,TTreeNode*srcNode)
             State<<ssCtrl;
         if(GetKeyState(VK_SHIFT)&0x8000)
             State<<ssShift;
-        // проверка на наличие данных в точках
+        // РїСЂРѕРІРµСЂРєР° РЅР° РЅР°Р»РёС‡РёРµ РґР°РЅРЅС‹С… РІ С‚РѕС‡РєР°С…
         if(!srcNode||!srcNode->Data||((POINTSDIV*)srcNode->Data)->Type==1||
             !accNode || !accNode->Data || srcNode==accNode)
             return false;
 
         p=(POINTSDIV*)accNode->Data;
-        // анализ операции
+        // Р°РЅР°Р»РёР· РѕРїРµСЂР°С†РёРё
         if(State.Contains(ssCtrl)){
             if((p->Type==2||(p->Type==4 && (((POINTSDIV*)srcNode->Data)->Type==3||((POINTSDIV*)srcNode->Data)->Type==4))) && !accNode->HasAsParent(srcNode)){
                 editOperation = opCopy;
@@ -2748,7 +2748,7 @@ void __fastcall TFormEditFiders::aNodeUpExecute(TObject *Sender)
           ptn->MoveTo(ptn->getPrevSibling(),naInsert);
           TreeView1Change(TreeView1,ptn);
         //  while(ptn->Parent&& ptn->Parent->Data&&((POINTSDIV*)ptn->Parent->Data)->Type==4)
-            ptn=ptn->Parent;//Родительский
+            ptn=ptn->Parent;//Р РѕРґРёС‚РµР»СЊСЃРєРёР№
 
           Node = ptn->getFirstChild();
 
@@ -2776,7 +2776,7 @@ void __fastcall TFormEditFiders::aNodeDownExecute(TObject *Sender)
           ptn->getNextSibling()->MoveTo(ptn,naInsert);
           TreeView1Change(TreeView1,ptn);
          // while(ptn->Parent&& ptn->Parent->Data&&((POINTSDIV*)ptn->Parent->Data)->Type==4)
-            ptn=ptn->Parent;//Родительский
+            ptn=ptn->Parent;//Р РѕРґРёС‚РµР»СЊСЃРєРёР№
             
            Node = ptn->getFirstChild();
 
@@ -2858,8 +2858,8 @@ void __fastcall TFormEditFiders::vAnyEditClick(TObject* Sender)
    }catch(Exception&e){
      Clipboard()->Close();
    }else{
-      //GRB CHANGE 10.09.2020 - по требованию Донецкой ЖД  - даём возможность работать с буфером обмена текста в форме с тем чтобы не пропала возможность использовать Сtrl+c, Ctrl+V в контексте работы с узлами дерева
-      // видимо изменение контекста клипбоарда привело к тому что стандартная обработка этого в Main.cpp вела себя некорректно
+      //GRB CHANGE 10.09.2020 - РїРѕ С‚СЂРµР±РѕРІР°РЅРёСЋ Р”РѕРЅРµС†РєРѕР№ Р–Р”  - РґР°С‘Рј РІРѕР·РјРѕР¶РЅРѕСЃС‚СЊ СЂР°Р±РѕС‚Р°С‚СЊ СЃ Р±СѓС„РµСЂРѕРј РѕР±РјРµРЅР° С‚РµРєСЃС‚Р° РІ С„РѕСЂРјРµ СЃ С‚РµРј С‡С‚РѕР±С‹ РЅРµ РїСЂРѕРїР°Р»Р° РІРѕР·РјРѕР¶РЅРѕСЃС‚СЊ РёСЃРїРѕР»СЊР·РѕРІР°С‚СЊ РЎtrl+c, Ctrl+V РІ РєРѕРЅС‚РµРєСЃС‚Рµ СЂР°Р±РѕС‚С‹ СЃ СѓР·Р»Р°РјРё РґРµСЂРµРІР°
+      // РІРёРґРёРјРѕ РёР·РјРµРЅРµРЅРёРµ РєРѕРЅС‚РµРєСЃС‚Р° РєР»РёРїР±РѕР°СЂРґР° РїСЂРёРІРµР»Рѕ Рє С‚РѕРјСѓ С‡С‚Рѕ СЃС‚Р°РЅРґР°СЂС‚РЅР°СЏ РѕР±СЂР°Р±РѕС‚РєР° СЌС‚РѕРіРѕ РІ Main.cpp РІРµР»Р° СЃРµР±СЏ РЅРµРєРѕСЂСЂРµРєС‚РЅРѕ
       /*TMainForm::vAnyEditClick(Sender);*/
       vAnyEditClickEditFiders (Sender);
       }
@@ -3019,7 +3019,7 @@ void __fastcall TFormEditFiders::SetAccess(TAccess value)
       for(int i=0; i<ComponentCount; i++){
         ed=dynamic_cast<TEdit *>(Components[i]);
         if(ed){
-          if(ed->Tag!=9)//Edit по жизни ReadOnly
+          if(ed->Tag!=9)//Edit РїРѕ Р¶РёР·РЅРё ReadOnly
              ed->ReadOnly = !wr;
           continue;
         }
@@ -3049,7 +3049,7 @@ void __fastcall TFormEditFiders::SetAccess(TAccess value)
            continue;
        }
      }
-// Блокируем все поля ввода для параметров линий и тр-ров
+// Р‘Р»РѕРєРёСЂСѓРµРј РІСЃРµ РїРѕР»СЏ РІРІРѕРґР° РґР»СЏ РїР°СЂР°РјРµС‚СЂРѕРІ Р»РёРЅРёР№ Рё С‚СЂ-СЂРѕРІ
         DBEdit1->ReadOnly=true;
         DBEdit2->ReadOnly=true;
         DBEdit3->ReadOnly=true;
@@ -3062,8 +3062,8 @@ void __fastcall TFormEditFiders::SetAccess(TAccess value)
         DBEdit15->ReadOnly=true;
    }
    }catch (Exception &ex){
-                 MessageBox(Handle,"Не хватает памяти для работы с деревом(Валится в EditFiders::SetAccess). Закройте и откройте 2 раза по крестику текущую задачу",
-            "Память не выделяется",MB_OK|MB_ICONINFORMATION);
+                 MessageBox(Handle,"РќРµ С…РІР°С‚Р°РµС‚ РїР°РјСЏС‚Рё РґР»СЏ СЂР°Р±РѕС‚С‹ СЃ РґРµСЂРµРІРѕРј(Р’Р°Р»РёС‚СЃСЏ РІ EditFiders::SetAccess). Р—Р°РєСЂРѕР№С‚Рµ Рё РѕС‚РєСЂРѕР№С‚Рµ 2 СЂР°Р·Р° РїРѕ РєСЂРµСЃС‚РёРєСѓ С‚РµРєСѓС‰СѓСЋ Р·Р°РґР°С‡Сѓ",
+            "РџР°РјСЏС‚СЊ РЅРµ РІС‹РґРµР»СЏРµС‚СЃСЏ",MB_OK|MB_ICONINFORMATION);
 
    }
 }
@@ -3155,12 +3155,12 @@ void __fastcall TFormEditFiders::btDelParamClick(TObject *Sender)
     }
     list=((TList*)VT_Data->Fields->FieldByName("NTIMEINFO")->AsInteger);
     if(list)
-    {//Задано время работы
+    {//Р—Р°РґР°РЅРѕ РІСЂРµРјСЏ СЂР°Р±РѕС‚С‹
         for(long i=0;i<list->Count;i++)
           delete (TTimeInfo *)list->Items[i];
         delete list;
     }
-    // Проверяем Если параметры не пусты то удалять можно только в задаче ТР
+    // РџСЂРѕРІРµСЂСЏРµРј Р•СЃР»Рё РїР°СЂР°РјРµС‚СЂС‹ РЅРµ РїСѓСЃС‚С‹ С‚Рѕ СѓРґР°Р»СЏС‚СЊ РјРѕР¶РЅРѕ С‚РѕР»СЊРєРѕ РІ Р·Р°РґР°С‡Рµ РўР 
     if(DBEdit1->Text.IsEmpty()&&DBEdit15->Text.IsEmpty()&&DBEdit2->Text.IsEmpty()&&DBEdit3->Text.IsEmpty())
       VT_Data->Delete();
     else
@@ -3200,7 +3200,7 @@ void __fastcall TFormEditFiders::TableAfterInsert(TDataSet *DataSet)
   VT_Data->FieldByName("NENERGYPERCENT")->Value=100;
   VT_Data->FieldByName("NRENERGYPERCENT")->Value=100;
   VT_Data->FieldByName("NPROCENT")->Value=0;
-  VT_Data->FieldByName("LINF")->AsString="О";
+  VT_Data->FieldByName("LINF")->AsString="Рћ";
   //VT_Data->FieldByName("MID")->Value=((POINTSDIV*)TreeView1->Selected->Data)->tmpMid;
   SetFormulaLossInterface();
   SetButtonLossInterface();
@@ -3561,7 +3561,7 @@ void __fastcall TFormEditFiders::btCalcParamClick(TObject *Sender)
         if(PTreeTable->editing!=2)
         PTreeTable->editing=2;
         EditRec=true;
-        //А теперь ищем текущие параметры
+        //Рђ С‚РµРїРµСЂСЊ РёС‰РµРј С‚РµРєСѓС‰РёРµ РїР°СЂР°РјРµС‚СЂС‹
         int mx=0;
         int cindex=-1;
         TTimeInfo *p;
@@ -3573,7 +3573,7 @@ void __fastcall TFormEditFiders::btCalcParamClick(TObject *Sender)
                 mx=p->nperiod;
             }
         }
-        if(cindex>-1){//Нашли текущие параметры
+        if(cindex>-1){//РќР°С€Р»Рё С‚РµРєСѓС‰РёРµ РїР°СЂР°РјРµС‚СЂС‹
             p=(TTimeInfo *)ls->Items[cindex];
             for(int i=0; i<dcnt; i++)
                 PTreeTable->indic[6+i]=p->indic[i];
@@ -3726,7 +3726,7 @@ again:
                 MB_OK|MB_ICONINFORMATION);
             goto again;
         }
-        {// проверка на интелектуальность выбранной точки
+        {// РїСЂРѕРІРµСЂРєР° РЅР° РёРЅС‚РµР»РµРєС‚СѓР°Р»СЊРЅРѕСЃС‚СЊ РІС‹Р±СЂР°РЅРЅРѕР№ С‚РѕС‡РєРё
             char smart[10]={0};
             unsigned long cnt;
 
@@ -3802,7 +3802,7 @@ inline void __fastcall TFormEditFiders::PostData(void)
       VT_Data->Post();
 }
 //---------------------------------------------------------------------------
-// просмотр всех узлов и удаление УСД ссылки на bymid
+// РїСЂРѕСЃРјРѕС‚СЂ РІСЃРµС… СѓР·Р»РѕРІ Рё СѓРґР°Р»РµРЅРёРµ РЈРЎР” СЃСЃС‹Р»РєРё РЅР° bymid
 void __fastcall TFormEditFiders::ClearUSDRef()
 {
    TTreeNode *CurItem = TreeView1->Items->GetFirstNode();
@@ -4034,16 +4034,16 @@ void __fastcall TFormEditFiders::iaMonExecute(TObject *Sender)
             if (fmSelectGroupReportUniv->ModalResult == mrOk)
             {
         	    //fmSelectReportForm->fd->CodeTemplate=1;
-                // перед любым обновлением мониторов необходимо инициализировать кр. секцию UpdateMonitors
+                // РїРµСЂРµРґ Р»СЋР±С‹Рј РѕР±РЅРѕРІР»РµРЅРёРµРј РјРѕРЅРёС‚РѕСЂРѕРІ РЅРµРѕР±С…РѕРґРёРјРѕ РёРЅРёС†РёР°Р»РёР·РёСЂРѕРІР°С‚СЊ РєСЂ. СЃРµРєС†РёСЋ UpdateMonitors
                 while(WaitForSingleObject(UpdateMonitors,0)!=WAIT_OBJECT_0)
                 {
-                    Application->ProcessMessages();// если не удалось иниц-ть. CS то обновить экранные формы...
-                    Sleep(0);// переключить управление на другой поток, коьт занял CS
+                    Application->ProcessMessages();// РµСЃР»Рё РЅРµ СѓРґР°Р»РѕСЃСЊ РёРЅРёС†-С‚СЊ. CS С‚Рѕ РѕР±РЅРѕРІРёС‚СЊ СЌРєСЂР°РЅРЅС‹Рµ С„РѕСЂРјС‹...
+                    Sleep(0);// РїРµСЂРµРєР»СЋС‡РёС‚СЊ СѓРїСЂР°РІР»РµРЅРёРµ РЅР° РґСЂСѓРіРѕР№ РїРѕС‚РѕРє, РєРѕСЊС‚ Р·Р°РЅСЏР» CS
                 }
                 // add by KSS
                 PostMessage(pMF->PageCtrlSplt->CurrentForm->Handle,WM_REFRESHFORM,0,(LPARAM)fmSelectReportForm->fd);
             }else{
-                // Повтор данного кода выбора формы
+                // РџРѕРІС‚РѕСЂ РґР°РЅРЅРѕРіРѕ РєРѕРґР° РІС‹Р±РѕСЂР° С„РѕСЂРјС‹
             }
         }
         else
@@ -4092,7 +4092,7 @@ void __fastcall TFormEditFiders::MonSelectClick(TObject *Sender)
         sfd = new TFormDescr;
 	    if(ManForm->PageCtrlSplt->CurrentForm->GetFormDescr())
     	    *sfd=*(ManForm->PageCtrlSplt->CurrentForm->GetFormDescr());
-        // Подготовка описания формы
+        // РџРѕРґРіРѕС‚РѕРІРєР° РѕРїРёСЃР°РЅРёСЏ С„РѕСЂРјС‹
         sfd->IdFormTree = fms->fid;
         sfd->CodeTemplate = fms->tmplCode;
         sfd->IdGroup = ((POINTSDIV*)TreeView1->Selected->Data)->Mid;
@@ -4148,7 +4148,7 @@ void __fastcall TFormEditFiders::MonSelectClick(TObject *Sender)
         if(*ch=='1')
           {sfd->indbird = true; sfd->bird = 0;}
 
-        // Конец подготовки
+        // РљРѕРЅРµС† РїРѕРґРіРѕС‚РѕРІРєРё
         fmSelectReportForm = new TfmSelectReportForm(this,fms->fid,sfd);
 
         if(IsCommonRepForm(sfd->CodeTemplate))
@@ -4177,11 +4177,11 @@ void __fastcall TFormEditFiders::MonSelectClick(TObject *Sender)
         if (fmSelectGroupReportUniv->ModalResult == mrOk)
         {
             //fmSelectReportForm->fd->CodeTemplate=1;
-            // перед любым обновлением мониторов необходимо инициализировать кр. секцию UpdateMonitors
+            // РїРµСЂРµРґ Р»СЋР±С‹Рј РѕР±РЅРѕРІР»РµРЅРёРµРј РјРѕРЅРёС‚РѕСЂРѕРІ РЅРµРѕР±С…РѕРґРёРјРѕ РёРЅРёС†РёР°Р»РёР·РёСЂРѕРІР°С‚СЊ РєСЂ. СЃРµРєС†РёСЋ UpdateMonitors
             while(WaitForSingleObject(UpdateMonitors,0)!=WAIT_OBJECT_0)
             {
-                Application->ProcessMessages();// если не удалось иниц-ть. CS то обновить экранные формы...
-                Sleep(0);// переключить управление на другой поток, коьт занял CS
+                Application->ProcessMessages();// РµСЃР»Рё РЅРµ СѓРґР°Р»РѕСЃСЊ РёРЅРёС†-С‚СЊ. CS С‚Рѕ РѕР±РЅРѕРІРёС‚СЊ СЌРєСЂР°РЅРЅС‹Рµ С„РѕСЂРјС‹...
+                Sleep(0);// РїРµСЂРµРєР»СЋС‡РёС‚СЊ СѓРїСЂР°РІР»РµРЅРёРµ РЅР° РґСЂСѓРіРѕР№ РїРѕС‚РѕРє, РєРѕСЊС‚ Р·Р°РЅСЏР» CS
             }
             // add by KSS
             PostMessage(ManForm->PageCtrlSplt->CurrentForm->Handle,WM_REFRESHFORM,0,(LPARAM)sfd);
@@ -4712,7 +4712,7 @@ void __fastcall TFormEditFiders::btTUClick(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall TFormEditFiders::vFindClick(TObject*)
 {
-  //GRB ADD 09.03.2021 - добавляем вызов 2х сеттеров, определяющих контекст задачи
+  //GRB ADD 09.03.2021 - РґРѕР±Р°РІР»СЏРµРј РІС‹Р·РѕРІ 2С… СЃРµС‚С‚РµСЂРѕРІ, РѕРїСЂРµРґРµР»СЏСЋС‰РёС… РєРѕРЅС‚РµРєСЃС‚ Р·Р°РґР°С‡Рё
   fmFP->setContext(0);
   fmFP->setGroupsAndPoints(false);
   //END ADD
@@ -4966,7 +4966,7 @@ void __fastcall TFormEditFiders::tbclonFormulClick(TObject *Sender)
     gdf.gid = ((POINTSDIV*)TreeView1->Selected->Data)->Mid;
     gdf.type = 1;
     sp = new TfmSelectPoint(this, &gdf);
-    sp->Caption = "Выбор источника для копирования формул";
+    sp->Caption = "Р’С‹Р±РѕСЂ РёСЃС‚РѕС‡РЅРёРєР° РґР»СЏ РєРѕРїРёСЂРѕРІР°РЅРёСЏ С„РѕСЂРјСѓР»";
     sp->HelpContext=25034;
 
     if(sp->ShowModal()==mrOk){
@@ -4982,7 +4982,7 @@ void __fastcall TFormEditFiders::tbclonFormulClick(TObject *Sender)
         }
       else
       {
-      MessageBox(this->Handle,"Не правильно выбран источник для копирования формул",(this->Caption+Reconst_smes20_66.c_str()).c_str(),MB_ICONINFORMATION);
+      MessageBox(this->Handle,"РќРµ РїСЂР°РІРёР»СЊРЅРѕ РІС‹Р±СЂР°РЅ РёСЃС‚РѕС‡РЅРёРє РґР»СЏ РєРѕРїРёСЂРѕРІР°РЅРёСЏ С„РѕСЂРјСѓР»",(this->Caption+Reconst_smes20_66.c_str()).c_str(),MB_ICONINFORMATION);
       }
      }
 
@@ -4997,14 +4997,14 @@ void __fastcall TFormEditFiders::SetAccMenuOFF(void)
   if(lacc){
     switch (((POINTSDIV*)sNode->Data)->lOFF){
       case 1:
-         lbStateOFF->Caption="Отключен "+AnsiString(((POINTSDIV*)sNode->Data)->vOFF);
+         lbStateOFF->Caption="РћС‚РєР»СЋС‡РµРЅ "+AnsiString(((POINTSDIV*)sNode->Data)->vOFF);
          loff=true;
          break;
       case 0: ;
-         lbStateOFF->Caption="Включен "+AnsiString(((POINTSDIV*)sNode->Data)->vOFF);
+         lbStateOFF->Caption="Р’РєР»СЋС‡РµРЅ "+AnsiString(((POINTSDIV*)sNode->Data)->vOFF);
          break;
       default:
-         lbStateOFF->Caption="Неизвестно";
+         lbStateOFF->Caption="РќРµРёР·РІРµСЃС‚РЅРѕ";
     }
   }else{
     lbStateOFF->Caption="";
@@ -5048,7 +5048,7 @@ void __fastcall TFormEditFiders::mnONOFFClick(TObject *Sender)
         bool bis2 = !(CompareStr (is2,"y"));
 
         TStringList* tradeZones = getTradeZones (codeZone1, codeZone2, bis1, bis2);
-        ret.tradeZoneUkr = codeZone1; //сохраняем торговые доступные торговые зоны в структуре
+        ret.tradeZoneUkr = codeZone1; //СЃРѕС…СЂР°РЅСЏРµРј С‚РѕСЂРіРѕРІС‹Рµ РґРѕСЃС‚СѓРїРЅС‹Рµ С‚РѕСЂРіРѕРІС‹Рµ Р·РѕРЅС‹ РІ СЃС‚СЂСѓРєС‚СѓСЂРµ
         ret.tradeZoneBrsht = codeZone2;
         ret.isTradeZoneUkr = bis1;
         ret.isTradeZoneBrsht = bis2;
@@ -5085,7 +5085,7 @@ TFormEditFiders::EIC_INFO TFormEditFiders::getCompanyInfoGlobal (TObject *Sender
         bool bis2 = !(CompareStr (is2,"y"));
 
         *companyList = getTradeZones(codeZone1, codeZone2, bis1, bis2);
-        ret.tradeZoneUkr = codeZone1; //сохраняем торговые доступные торговые зоны в структуре
+        ret.tradeZoneUkr = codeZone1; //СЃРѕС…СЂР°РЅСЏРµРј С‚РѕСЂРіРѕРІС‹Рµ РґРѕСЃС‚СѓРїРЅС‹Рµ С‚РѕСЂРіРѕРІС‹Рµ Р·РѕРЅС‹ РІ СЃС‚СЂСѓРєС‚СѓСЂРµ
         ret.tradeZoneBrsht = codeZone2;
         ret.isTradeZoneUkr = bis1;
         ret.isTradeZoneBrsht = bis2;
@@ -5146,8 +5146,8 @@ void __fastcall TFormEditFiders::RadioGroup1Click(TObject *Sender)
         }
   }
   //GRB ADD 15.07.2019
-  //Вот этот код ниже раскоментировать для того чтобы при дёрганьи радиогруппы иерархии mms (Торговая зона-Область учёта - Поставщик) mms для группы пользователем автоматом разрешало пересохранять без всяких дополнительных телодвижений вроде изменения имени группы
-  //Так заковыристо сделано, поскольку в RadioGroup1Click мы попадаем не только по клику юзера но и при движении по mms-иерархии при раскрытии дерева и там разрешать изменения НЕ НАДО
+  //Р’РѕС‚ СЌС‚РѕС‚ РєРѕРґ РЅРёР¶Рµ СЂР°СЃРєРѕРјРµРЅС‚РёСЂРѕРІР°С‚СЊ РґР»СЏ С‚РѕРіРѕ С‡С‚РѕР±С‹ РїСЂРё РґС‘СЂРіР°РЅСЊРё СЂР°РґРёРѕРіСЂСѓРїРїС‹ РёРµСЂР°СЂС…РёРё mms (РўРѕСЂРіРѕРІР°СЏ Р·РѕРЅР°-РћР±Р»Р°СЃС‚СЊ СѓС‡С‘С‚Р° - РџРѕСЃС‚Р°РІС‰РёРє) mms РґР»СЏ РіСЂСѓРїРїС‹ РїРѕР»СЊР·РѕРІР°С‚РµР»РµРј Р°РІС‚РѕРјР°С‚РѕРј СЂР°Р·СЂРµС€Р°Р»Рѕ РїРµСЂРµСЃРѕС…СЂР°РЅСЏС‚СЊ Р±РµР· РІСЃСЏРєРёС… РґРѕРїРѕР»РЅРёС‚РµР»СЊРЅС‹С… С‚РµР»РѕРґРІРёР¶РµРЅРёР№ РІСЂРѕРґРµ РёР·РјРµРЅРµРЅРёСЏ РёРјРµРЅРё РіСЂСѓРїРїС‹
+  //РўР°Рє Р·Р°РєРѕРІС‹СЂРёСЃС‚Рѕ СЃРґРµР»Р°РЅРѕ, РїРѕСЃРєРѕР»СЊРєСѓ РІ RadioGroup1Click РјС‹ РїРѕРїР°РґР°РµРј РЅРµ С‚РѕР»СЊРєРѕ РїРѕ РєР»РёРєСѓ СЋР·РµСЂР° РЅРѕ Рё РїСЂРё РґРІРёР¶РµРЅРёРё РїРѕ mms-РёРµСЂР°СЂС…РёРё РїСЂРё СЂР°СЃРєСЂС‹С‚РёРё РґРµСЂРµРІР° Рё С‚Р°Рј СЂР°Р·СЂРµС€Р°С‚СЊ РёР·РјРµРЅРµРЅРёСЏ РќР• РќРђР”Рћ
   TRadioGroup* whoSend=dynamic_cast<TRadioGroup*>(Sender);
   if (whoSend)
         EditRec = true;
@@ -5162,8 +5162,8 @@ void __fastcall TFormEditFiders::EICCheckboxClick (TObject *Sender){
         if (Panel31->FindChildControl("EICCheckbox")){
                 TCheckBox* cbx = static_cast<TCheckBox*>(Sender);
                 bool status = cbx->Checked;
-				//GRB ADD 31.01.2020 - баг при уборе или добавлении галки тут же не устанавливается кнопка сохранить активной
-                if ((cbx->Focused())&&(status==false)){ //чувак клацнул по чекбоксу который был до этого включён
+				//GRB ADD 31.01.2020 - Р±Р°Рі РїСЂРё СѓР±РѕСЂРµ РёР»Рё РґРѕР±Р°РІР»РµРЅРёРё РіР°Р»РєРё С‚СѓС‚ Р¶Рµ РЅРµ СѓСЃС‚Р°РЅР°РІР»РёРІР°РµС‚СЃСЏ РєРЅРѕРїРєР° СЃРѕС…СЂР°РЅРёС‚СЊ Р°РєС‚РёРІРЅРѕР№
+                if ((cbx->Focused())&&(status==false)){ //С‡СѓРІР°Рє РєР»Р°С†РЅСѓР» РїРѕ С‡РµРєР±РѕРєСЃСѓ РєРѕС‚РѕСЂС‹Р№ Р±С‹Р» РґРѕ СЌС‚РѕРіРѕ РІРєР»СЋС‡С‘РЅ
                         EditRec = true;
                 }
                 if (status){
@@ -5182,8 +5182,8 @@ void __fastcall TFormEditFiders::addEICCheckBoxOnPanel (TObject *Sender){
             int old_height = Panel31->Height;
             cbx->Parent = Panel31;
             cbx->Name = "EICCheckbox";
-            //Начали локализацию
-            //GRB ADD 22.08.2019 - правим бажок с локализацией динамики
+            //РќР°С‡Р°Р»Рё Р»РѕРєР°Р»РёР·Р°С†РёСЋ
+            //GRB ADD 22.08.2019 - РїСЂР°РІРёРј Р±Р°Р¶РѕРє СЃ Р»РѕРєР°Р»РёР·Р°С†РёРµР№ РґРёРЅР°РјРёРєРё
             AnsiString Language;
             TRegistry *Reg = new TRegistry(KEY_READ);
             try{
@@ -5199,10 +5199,10 @@ void __fastcall TFormEditFiders::addEICCheckBoxOnPanel (TObject *Sender){
             }__finally{
                 delete Reg;
             }
-            if (Language =="UKR") cbx->Caption = "Структура комерційного обліку";
+            if (Language =="UKR") cbx->Caption = "РЎС‚СЂСѓРєС‚СѓСЂР° РєРѕРјРµСЂС†С–Р№РЅРѕРіРѕ РѕР±Р»С–РєСѓ";
             else
             //END ADD 
-            cbx->Caption = "Структура коммерческого учёта";
+            cbx->Caption = "РЎС‚СЂСѓРєС‚СѓСЂР° РєРѕРјРјРµСЂС‡РµСЃРєРѕРіРѕ СѓС‡С‘С‚Р°";
             cbx->Width = 240;
             cbx->Left = 5;
             cbx->Top = old_height + 10;
@@ -5220,8 +5220,8 @@ void __fastcall TFormEditFiders::removeEICCheckBoxOnPanel (TObject *Sender){
 //---------------------------------------------------------------------------
 
 void __fastcall TFormEditFiders::RadioGroup2Click(TObject *Sender){
-//считаем что чел будет точку а не группу добавлять
- //05.07.2019 GRB Comment - по требованию кальницкой
+//СЃС‡РёС‚Р°РµРј С‡С‚Рѕ С‡РµР» Р±СѓРґРµС‚ С‚РѕС‡РєСѓ Р° РЅРµ РіСЂСѓРїРїСѓ РґРѕР±Р°РІР»СЏС‚СЊ
+ //05.07.2019 GRB Comment - РїРѕ С‚СЂРµР±РѕРІР°РЅРёСЋ РєР°Р»СЊРЅРёС†РєРѕР№
  Edit28->Text = "";
  //END COMMENT
  TTreeNode *sNode=TreeView1->Selected;
@@ -5277,7 +5277,7 @@ void __fastcall TFormEditFiders::ComboBox1Change(TObject *Sender)
         bool bis2 = !(CompareStr (is2,"y"));
 
         TStringList* tradeZones = getTradeZones (codeZone1, codeZone2, bis1, bis2);
-        ret.tradeZoneUkr = codeZone1; //сохраняем торговые доступные торговые зоны в структуре
+        ret.tradeZoneUkr = codeZone1; //СЃРѕС…СЂР°РЅСЏРµРј С‚РѕСЂРіРѕРІС‹Рµ РґРѕСЃС‚СѓРїРЅС‹Рµ С‚РѕСЂРіРѕРІС‹Рµ Р·РѕРЅС‹ РІ СЃС‚СЂСѓРєС‚СѓСЂРµ
         ret.tradeZoneBrsht = codeZone2;
         ret.isTradeZoneUkr = bis1;
         ret.isTradeZoneBrsht = bis2;
@@ -5295,15 +5295,15 @@ void __fastcall TFormEditFiders::ComboBox1Change(TObject *Sender)
 void __fastcall TFormEditFiders::changePanel31Height(int state){
         switch (state){
         case 1:{
-        Panel31->Height = PANEL31_HEIGHT_SMALL;// начальное состояние
+        Panel31->Height = PANEL31_HEIGHT_SMALL;// РЅР°С‡Р°Р»СЊРЅРѕРµ СЃРѕСЃС‚РѕСЏРЅРёРµ
         break;
         }
         case 2:{
-        Panel31->Height = PANEL31_HEIGHT_WITH_CHECKBOX;// показывать чекбокс переключения
+        Panel31->Height = PANEL31_HEIGHT_WITH_CHECKBOX;// РїРѕРєР°Р·С‹РІР°С‚СЊ С‡РµРєР±РѕРєСЃ РїРµСЂРµРєР»СЋС‡РµРЅРёСЏ
         break;
         }
         case 3:{
-        Panel31->Height = PANEL31_HEIGHT_ALL;//с mms полями
+        Panel31->Height = PANEL31_HEIGHT_ALL;//СЃ mms РїРѕР»СЏРјРё
         break;
         }
         }
@@ -5324,9 +5324,9 @@ int __fastcall TFormEditFiders::getPanel31HeightState (){
   }
 }
 //---------------------------------------------------------------------------
-//10.09.2020 GRB ADD: Поскольку смена контекса регистрации формата для буфера обмена с пользовательского для дерева CF_POINTS_TREENODE на стандартный текстовый CF_TEXT
-// при смене фокуса с дерева нихрена не помогла, то теперь обрабатывать ctrl+c, ctrl+v, ctrl-x(удаление выделенного фрагмента из эдита с помещением его в Сlipboard), ctrl-z(циклическое прохождение всего что там было)
-//для эдитов с панели эдитфидерс будет самописный код
+//10.09.2020 GRB ADD: РџРѕСЃРєРѕР»СЊРєСѓ СЃРјРµРЅР° РєРѕРЅС‚РµРєСЃР° СЂРµРіРёСЃС‚СЂР°С†РёРё С„РѕСЂРјР°С‚Р° РґР»СЏ Р±СѓС„РµСЂР° РѕР±РјРµРЅР° СЃ РїРѕР»СЊР·РѕРІР°С‚РµР»СЊСЃРєРѕРіРѕ РґР»СЏ РґРµСЂРµРІР° CF_POINTS_TREENODE РЅР° СЃС‚Р°РЅРґР°СЂС‚РЅС‹Р№ С‚РµРєСЃС‚РѕРІС‹Р№ CF_TEXT
+// РїСЂРё СЃРјРµРЅРµ С„РѕРєСѓСЃР° СЃ РґРµСЂРµРІР° РЅРёС…СЂРµРЅР° РЅРµ РїРѕРјРѕРіР»Р°, С‚Рѕ С‚РµРїРµСЂСЊ РѕР±СЂР°Р±Р°С‚С‹РІР°С‚СЊ ctrl+c, ctrl+v, ctrl-x(СѓРґР°Р»РµРЅРёРµ РІС‹РґРµР»РµРЅРЅРѕРіРѕ С„СЂР°РіРјРµРЅС‚Р° РёР· СЌРґРёС‚Р° СЃ РїРѕРјРµС‰РµРЅРёРµРј РµРіРѕ РІ РЎlipboard), ctrl-z(С†РёРєР»РёС‡РµСЃРєРѕРµ РїСЂРѕС…РѕР¶РґРµРЅРёРµ РІСЃРµРіРѕ С‡С‚Рѕ С‚Р°Рј Р±С‹Р»Рѕ)
+//РґР»СЏ СЌРґРёС‚РѕРІ СЃ РїР°РЅРµР»Рё СЌРґРёС‚С„РёРґРµСЂСЃ Р±СѓРґРµС‚ СЃР°РјРѕРїРёСЃРЅС‹Р№ РєРѕРґ
 
 void __fastcall TFormEditFiders::vAnyEditClickEditFiders(TObject *Sender){
   TCustomEdit *pEdit;
@@ -5353,7 +5353,7 @@ void __fastcall TFormEditFiders::vAnyEditClickEditFiders(TObject *Sender){
           //END BLOCK
 	  GlobalUnlock(clipbuffer);
 	  SetClipboardData(CF_TEXT,clipbuffer);
-          //а теперь вырезаем  выделенную часть из самого эдита
+          //Р° С‚РµРїРµСЂСЊ РІС‹СЂРµР·Р°РµРј  РІС‹РґРµР»РµРЅРЅСѓСЋ С‡Р°СЃС‚СЊ РёР· СЃР°РјРѕРіРѕ СЌРґРёС‚Р°
           pEdit->Text = StringReplace( pEdit->Text, pEdit->SelText, "", TReplaceFlags( ));
       }
       if (pMenu->Tag==2){//clrt+s
@@ -5376,7 +5376,7 @@ void __fastcall TFormEditFiders::vAnyEditClickEditFiders(TObject *Sender){
 	  bufferPaste = (char*)GlobalLock( hData );
 	  fromClipboard = bufferPaste;
 	  GlobalUnlock( hData );
-          //pEdit->Text = fromClipboard;  //так неправильно
+          //pEdit->Text = fromClipboard;  //С‚Р°Рє РЅРµРїСЂР°РІРёР»СЊРЅРѕ
           modifyEdit (pEdit, fromClipboard);
       }
       if (pMenu->Tag==4){//ctrl+z
@@ -5391,13 +5391,13 @@ void __fastcall TFormEditFiders::vAnyEditClickEditFiders(TObject *Sender){
   {
   }
 }
-//вставляем из клипбоарда в позицию курсора точку эдита
+//РІСЃС‚Р°РІР»СЏРµРј РёР· РєР»РёРїР±РѕР°СЂРґР° РІ РїРѕР·РёС†РёСЋ РєСѓСЂСЃРѕСЂР° С‚РѕС‡РєСѓ СЌРґРёС‚Р°
 //---------------------------------------------------------------------------
 void __fastcall TFormEditFiders:: modifyEdit(TCustomEdit * TCE, AnsiString toEdit){
         int selStart = TCE->SelStart;
         int sizeToEdit = toEdit.Length();
         AnsiString newValueOfEdit = TCE->Text.Insert (toEdit,selStart+1);
-        //GRB ADD 12.08.2021 - пробуем не дать
+        //GRB ADD 12.08.2021 - РїСЂРѕР±СѓРµРј РЅРµ РґР°С‚СЊ
         int wasFieldLength = TCE->Text.Length();
         TEdit* te = (TEdit*)TCE;
         int maxLength = te->MaxLength;
@@ -5439,7 +5439,7 @@ void __fastcall TFormEditFiders:: modifyEdit(TCustomEdit * TCE, AnsiString toEdi
          }
         //end ADD
         TCE->Text = newValueOfEdit;
-        //и переводим курсор за позицию вставленного
+        //Рё РїРµСЂРµРІРѕРґРёРј РєСѓСЂСЃРѕСЂ Р·Р° РїРѕР·РёС†РёСЋ РІСЃС‚Р°РІР»РµРЅРЅРѕРіРѕ
         TCE->SetFocus();
         TCE->SelStart = selStart+toEdit.Length();
 }

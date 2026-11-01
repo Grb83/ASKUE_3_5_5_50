@@ -35,7 +35,7 @@ __fastcall TfmFindPoint::TfmFindPoint(TComponent* Owner,bool isGroup)
 //---------------------------------------------------------------------------
 void __fastcall TfmFindPoint::bbOkClick(TObject *Sender)
 {
-  //Старый вариант поиска с выбором по одному узлу по каждому нажатию на кнопку "Найти" - оставим для истории
+  //РЎС‚Р°СЂС‹Р№ РІР°СЂРёР°РЅС‚ РїРѕРёСЃРєР° СЃ РІС‹Р±РѕСЂРѕРј РїРѕ РѕРґРЅРѕРјСѓ СѓР·Р»Сѓ РїРѕ РєР°Р¶РґРѕРјСѓ РЅР°Р¶Р°С‚РёСЋ РЅР° РєРЅРѕРїРєСѓ "РќР°Р№С‚Рё" - РѕСЃС‚Р°РІРёРј РґР»СЏ РёСЃС‚РѕСЂРёРё
   /*dmMain->quMain->Params->Clear();
   dmMain->quMain->SQL->Text="begin :par5:="+SchemeName+"editfeeders_pg.findpoint(:par1, :par2, :par3, :par4,:par6,:par7,:par8,:par9); end;";
   dmMain->quMain->ParamByName("par1")->AsInteger=iFound;
@@ -44,14 +44,14 @@ void __fastcall TfmFindPoint::bbOkClick(TObject *Sender)
   dmMain->quMain->ParamByName("par4")->AsString=Edit3->Text;
   dmMain->quMain->ParamByName("par6")->AsString=Edit4->Text;
   if(IsGroup)
-    if (cid == 0)   // вернется id группы
+    if (cid == 0)   // РІРµСЂРЅРµС‚СЃСЏ id РіСЂСѓРїРїС‹
       dmMain->quMain->ParamByName("par7")->AsInteger=1;
-    else            // вернется id канала
+    else            // РІРµСЂРЅРµС‚СЃСЏ id РєР°РЅР°Р»Р°
       dmMain->quMain->ParamByName("par7")->AsInteger=2;
   else
-    if (cid == 0)   // вернется id группы
+    if (cid == 0)   // РІРµСЂРЅРµС‚СЃСЏ id РіСЂСѓРїРїС‹
       dmMain->quMain->ParamByName("par7")->Clear();
-    else            // вернется id канала
+    else            // РІРµСЂРЅРµС‚СЃСЏ id РєР°РЅР°Р»Р°
       dmMain->quMain->ParamByName("par7")->AsInteger=2;
   dmMain->quMain->ParamByName("par8")->AsString=Edit5->Text;
   dmMain->quMain->ParamByName("par5")->DataType=ftInteger;
@@ -65,7 +65,7 @@ void __fastcall TfmFindPoint::bbOkClick(TObject *Sender)
    MessageBox(Handle,Reconst_smes32_1.c_str(),Application->Title.c_str(),MB_OK|MB_ICONINFORMATION); */
 
    //GRB 18.02.2021 REWRITE
-   //02.04.2021 - Для исправления бага с переключкой с 000 на без них и назад в контексте дерева групп и точек;
+   //02.04.2021 - Р”Р»СЏ РёСЃРїСЂР°РІР»РµРЅРёСЏ Р±Р°РіР° СЃ РїРµСЂРµРєР»СЋС‡РєРѕР№ СЃ 000 РЅР° Р±РµР· РЅРёС… Рё РЅР°Р·Р°Рґ РІ РєРѕРЅС‚РµРєСЃС‚Рµ РґРµСЂРµРІР° РіСЂСѓРїРї Рё С‚РѕС‡РµРє;
    if (GroupsAndPoints){
         myContext = 0;
         myAddContext = 0;
@@ -73,19 +73,19 @@ void __fastcall TfmFindPoint::bbOkClick(TObject *Sender)
    Edit6->Text = "0"+pageDelim+"0";
    AnsiString lang = getCurrLang();
    bool isAnyFieldSet = isAnyTextFieldSet();
-   if (isAnyFieldSet){  //есть хотя бы одно введённое поле
-        bool in_obj = false;// проверяем введённую комбинацию на доп.контексты
-        if (isAnyAddedContext(&in_obj)){ // есть *** в полях
+   if (isAnyFieldSet){  //РµСЃС‚СЊ С…РѕС‚СЏ Р±С‹ РѕРґРЅРѕ РІРІРµРґС‘РЅРЅРѕРµ РїРѕР»Рµ
+        bool in_obj = false;// РїСЂРѕРІРµСЂСЏРµРј РІРІРµРґС‘РЅРЅСѓСЋ РєРѕРјР±РёРЅР°С†РёСЋ РЅР° РґРѕРї.РєРѕРЅС‚РµРєСЃС‚С‹
+        if (isAnyAddedContext(&in_obj)){ // РµСЃС‚СЊ *** РІ РїРѕР»СЏС…
            if (!isOnlyOneAddedContext()){
-                AnsiString messageNoGo = "Допустимо использование *** не более, чем в одном поле поиска!";
-                if (lang == "UKR") messageNoGo = "Припустимо використання *** не більше, чим в одному полі пошуку!";
+                AnsiString messageNoGo = "Р”РѕРїСѓСЃС‚РёРјРѕ РёСЃРїРѕР»СЊР·РѕРІР°РЅРёРµ *** РЅРµ Р±РѕР»РµРµ, С‡РµРј РІ РѕРґРЅРѕРј РїРѕР»Рµ РїРѕРёСЃРєР°!";
+                if (lang == "UKR") messageNoGo = "РџСЂРёРїСѓСЃС‚РёРјРѕ РІРёРєРѕСЂРёСЃС‚Р°РЅРЅСЏ *** РЅРµ Р±С–Р»СЊС€Рµ, С‡РёРј РІ РѕРґРЅРѕРјСѓ РїРѕР»С– РїРѕС€СѓРєСѓ!";
                 MessageBox(Handle,messageNoGo.c_str(),Application->Title.c_str(),MB_OK|MB_ICONINFORMATION);
                 return;
            }
            if (in_obj){
-                //тут обрабатывать будем доп.контекст когда *** в ид.объекта торчит
-                //Делаем приобразование контексту 1->11, 2->22, 3->33
-                //int test = myContext + (myContext*10); так херово
+                //С‚СѓС‚ РѕР±СЂР°Р±Р°С‚С‹РІР°С‚СЊ Р±СѓРґРµРј РґРѕРї.РєРѕРЅС‚РµРєСЃС‚ РєРѕРіРґР° *** РІ РёРґ.РѕР±СЉРµРєС‚Р° С‚РѕСЂС‡РёС‚
+                //Р”РµР»Р°РµРј РїСЂРёРѕР±СЂР°Р·РѕРІР°РЅРёРµ РєРѕРЅС‚РµРєСЃС‚Сѓ 1->11, 2->22, 3->33
+                //int test = myContext + (myContext*10); С‚Р°Рє С…РµСЂРѕРІРѕ
                 int test = myContext;
                 switch (test){
                 case 1: { myAddContext = 11; break;}
@@ -94,22 +94,22 @@ void __fastcall TfmFindPoint::bbOkClick(TObject *Sender)
                 defalut:{ myAddContext = 0;}
                 }
                 myContext = test;
-                //сделали
+                //СЃРґРµР»Р°Р»Рё
            }else{
-                //А тут доп контекст для плана рассылки макетов и прочее такое если ещё будет
-                //MessageBox(Handle,"Доп.контекст в Плане Рассылки макетов",Application->Title.c_str(),MB_OK|MB_ICONINFORMATION);
+                //Рђ С‚СѓС‚ РґРѕРї РєРѕРЅС‚РµРєСЃС‚ РґР»СЏ РїР»Р°РЅР° СЂР°СЃСЃС‹Р»РєРё РјР°РєРµС‚РѕРІ Рё РїСЂРѕС‡РµРµ С‚Р°РєРѕРµ РµСЃР»Рё РµС‰С‘ Р±СѓРґРµС‚
+                //MessageBox(Handle,"Р”РѕРї.РєРѕРЅС‚РµРєСЃС‚ РІ РџР»Р°РЅРµ Р Р°СЃСЃС‹Р»РєРё РјР°РєРµС‚РѕРІ",Application->Title.c_str(),MB_OK|MB_ICONINFORMATION);
                 //return;
                 myAddContext = 0;
            }
 
-        }else{  // нету *** в полях
+        }else{  // РЅРµС‚Сѓ *** РІ РїРѕР»СЏС…
                 myAddContext = 0;
         }
-        if ((GroupsAndPoints)&&((myContext == 0)||(myContext == 1))) {//дерево групп и точек
-        int _tripleNullContext = wereTripleNullInContext();//а эту проверку нужно делать только когда мы в дереве групп и точек!
+        if ((GroupsAndPoints)&&((myContext == 0)||(myContext == 1))) {//РґРµСЂРµРІРѕ РіСЂСѓРїРї Рё С‚РѕС‡РµРє
+        int _tripleNullContext = wereTripleNullInContext();//Р° СЌС‚Сѓ РїСЂРѕРІРµСЂРєСѓ РЅСѓР¶РЅРѕ РґРµР»Р°С‚СЊ С‚РѕР»СЊРєРѕ РєРѕРіРґР° РјС‹ РІ РґРµСЂРµРІРµ РіСЂСѓРїРї Рё С‚РѕС‡РµРє!
           if (_tripleNullContext==-1){
-                AnsiString messageNoGo1 = "Ключ поиска 000 должен быть либо в поле 'ид. объекта', либо в поле 'ид. точки(доп.)', но не в обоих сразу!";
-                if (lang == "UKR") messageNoGo1 = "Ключ пошука 000 має бути або у полі 'ід. об`єкту' або у полі 'ід. точки (доп.)', але не в обох відразу!";
+                AnsiString messageNoGo1 = "РљР»СЋС‡ РїРѕРёСЃРєР° 000 РґРѕР»Р¶РµРЅ Р±С‹С‚СЊ Р»РёР±Рѕ РІ РїРѕР»Рµ 'РёРґ. РѕР±СЉРµРєС‚Р°', Р»РёР±Рѕ РІ РїРѕР»Рµ 'РёРґ. С‚РѕС‡РєРё(РґРѕРї.)', РЅРѕ РЅРµ РІ РѕР±РѕРёС… СЃСЂР°Р·Сѓ!";
+                if (lang == "UKR") messageNoGo1 = "РљР»СЋС‡ РїРѕС€СѓРєР° 000 РјР°С” Р±СѓС‚Рё Р°Р±Рѕ Сѓ РїРѕР»С– 'С–Рґ. РѕР±`С”РєС‚Сѓ' Р°Р±Рѕ Сѓ РїРѕР»С– 'С–Рґ. С‚РѕС‡РєРё (РґРѕРї.)', Р°Р»Рµ РЅРµ РІ РѕР±РѕС… РІС–РґСЂР°Р·Сѓ!";
                   MessageBox(Handle,messageNoGo1.c_str(),Application->Title.c_str(),MB_OK|MB_ICONINFORMATION);
                   return;
           }
@@ -121,11 +121,11 @@ void __fastcall TfmFindPoint::bbOkClick(TObject *Sender)
                 myContext = 1;
           }
           if (_tripleNullContext==0){
-                myAddContext = 0;     // тут блин вопрос 0 или 1?
+                myAddContext = 0;     // С‚СѓС‚ Р±Р»РёРЅ РІРѕРїСЂРѕСЃ 0 РёР»Рё 1?
           }
         }
-        //обычный контекст
-        //15.04.2021 - старый хелп для фильтров в контексте
+        //РѕР±С‹С‡РЅС‹Р№ РєРѕРЅС‚РµРєСЃС‚
+        //15.04.2021 - СЃС‚Р°СЂС‹Р№ С…РµР»Рї РґР»СЏ С„РёР»СЊС‚СЂРѕРІ РІ РєРѕРЅС‚РµРєСЃС‚Рµ
         long size =  0;
         if (oldFind){
         findAllNodes();
@@ -139,8 +139,8 @@ void __fastcall TfmFindPoint::bbOkClick(TObject *Sender)
         }
         bool find = setInitialPaging (findedId);
    }else{
-   AnsiString needMinOne = "Нужно задать хотя бы одно поле для поиска";
-   if (lang == "UKR") needMinOne = "Треба задати хоча б одне поле для пошука";
+   AnsiString needMinOne = "РќСѓР¶РЅРѕ Р·Р°РґР°С‚СЊ С…РѕС‚СЏ Р±С‹ РѕРґРЅРѕ РїРѕР»Рµ РґР»СЏ РїРѕРёСЃРєР°";
+   if (lang == "UKR") needMinOne = "РўСЂРµР±Р° Р·Р°РґР°С‚Рё С…РѕС‡Р° Р± РѕРґРЅРµ РїРѕР»Рµ РґР»СЏ РїРѕС€СѓРєР°";
    MessageBox(Handle,needMinOne.c_str(),Application->Title.c_str(),MB_OK|MB_ICONINFORMATION);
    }
 }
@@ -161,36 +161,36 @@ void __fastcall TfmFindPoint::UpDown1ChangingEx(TObject *Sender,
   AllowChange = false;
   const int offset = pageDelim.Length();
   AnsiString sValue = Edit6->Text;
-  sValue.Delete(sValue.Pos(pageDelim), sValue.Length());//удаляем всё до
+  sValue.Delete(sValue.Pos(pageDelim), sValue.Length());//СѓРґР°Р»СЏРµРј РІСЃС‘ РґРѕ
   bool was_move = false;
-  if(Direction == 1){   //вправо
+  if(Direction == 1){   //РІРїСЂР°РІРѕ
     if (StrToInt(sValue) < UpDown1->Max){
     was_move = true;
     Edit6->Text = IntToStr(StrToInt(sValue)+UpDown1->Increment)+pageDelim+IntToStr (UpDown1->Max);
     sValue = IntToStr (StrToInt(sValue)+UpDown1->Increment);
     }
     }
-  if(Direction == 0){ //влево
+  if(Direction == 0){ //РІР»РµРІРѕ
     if (StrToInt(sValue)>UpDown1->Min){
     was_move = true;
     Edit6->Text = IntToStr(StrToInt(sValue)-UpDown1->Increment)+pageDelim+IntToStr (UpDown1->Max);
     sValue = IntToStr (StrToInt(sValue)-UpDown1->Increment);
     }
     }
-   //открываем текущий, если в хранилище id что-то есть
+   //РѕС‚РєСЂС‹РІР°РµРј С‚РµРєСѓС‰РёР№, РµСЃР»Рё РІ С…СЂР°РЅРёР»РёС‰Рµ id С‡С‚Рѕ-С‚Рѕ РµСЃС‚СЊ
    if ((findedId->Count!=0)&&(was_move)){
       int pos = StrToInt(sValue);
       AnsiString s_curr_id = findedId->Strings[pos-1];
       long i_curr_id = StrToInt64 (s_curr_id);
       if (i_curr_id) {
       if (!GroupsAndPoints)
-        PostMessage( (dynamic_cast<TWinControl*>(Owner))->Handle,WM_SETACTIVENODE,(WPARAM)0,(LPARAM)i_curr_id);    //Мотаем если не группы и точки вместе
+        PostMessage( (dynamic_cast<TWinControl*>(Owner))->Handle,WM_SETACTIVENODE,(WPARAM)0,(LPARAM)i_curr_id);    //РњРѕС‚Р°РµРј РµСЃР»Рё РЅРµ РіСЂСѓРїРїС‹ Рё С‚РѕС‡РєРё РІРјРµСЃС‚Рµ
       else{
-        int _tripleNullContext = wereTripleNullInContext();//а эту проверку нужно делать только когда мы в дереве групп и точек!   //если вместе
+        int _tripleNullContext = wereTripleNullInContext();//Р° СЌС‚Сѓ РїСЂРѕРІРµСЂРєСѓ РЅСѓР¶РЅРѕ РґРµР»Р°С‚СЊ С‚РѕР»СЊРєРѕ РєРѕРіРґР° РјС‹ РІ РґРµСЂРµРІРµ РіСЂСѓРїРї Рё С‚РѕС‡РµРє!   //РµСЃР»Рё РІРјРµСЃС‚Рµ
         if (_tripleNullContext==2)
-                PostMessage( (dynamic_cast<TWinControl*>(Owner))->Handle,WM_SETACTIVENODE,(WPARAM)1,(LPARAM)i_curr_id); //ищем по группе
+                PostMessage( (dynamic_cast<TWinControl*>(Owner))->Handle,WM_SETACTIVENODE,(WPARAM)1,(LPARAM)i_curr_id); //РёС‰РµРј РїРѕ РіСЂСѓРїРїРµ
         else
-                PostMessage( (dynamic_cast<TWinControl*>(Owner))->Handle,WM_SETACTIVENODE,(WPARAM)0,(LPARAM)i_curr_id);  //ищем там по точке
+                PostMessage( (dynamic_cast<TWinControl*>(Owner))->Handle,WM_SETACTIVENODE,(WPARAM)0,(LPARAM)i_curr_id);  //РёС‰РµРј С‚Р°Рј РїРѕ С‚РѕС‡РєРµ
       }
    }
 
@@ -209,14 +209,14 @@ void __fastcall TfmFindPoint::findAllNodes(){
         dmMain->quMain->ParamByName("par4")->AsString=Edit3->Text;
         dmMain->quMain->ParamByName("par6")->AsString=/*Edit4->Text;*/Edit9->Text;
         if(IsGroup)
-                if (cid == 0)   // вернется id группы
+                if (cid == 0)   // РІРµСЂРЅРµС‚СЃСЏ id РіСЂСѓРїРїС‹
                         dmMain->quMain->ParamByName("par7")->AsInteger=1;
-                else            // вернется id канала
+                else            // РІРµСЂРЅРµС‚СЃСЏ id РєР°РЅР°Р»Р°
                         dmMain->quMain->ParamByName("par7")->AsInteger=2;
         else
-                if (cid == 0)   // вернется id группы
+                if (cid == 0)   // РІРµСЂРЅРµС‚СЃСЏ id РіСЂСѓРїРїС‹
                         dmMain->quMain->ParamByName("par7")->Clear();
-                else            // вернется id канала
+                else            // РІРµСЂРЅРµС‚СЃСЏ id РєР°РЅР°Р»Р°
                         dmMain->quMain->ParamByName("par7")->AsInteger=2;
         dmMain->quMain->ParamByName("par8")->AsString=Edit5->Text;
         dmMain->quMain->ParamByName("par5")->DataType=ftInteger;
@@ -233,13 +233,13 @@ long __fastcall TfmFindPoint::findAllNodesCur (){
         findedId->Clear();
         dmMain->quMain->Params->Clear();
         //dmMain->quMain->SQL->Text="begin "+SchemeName+"editfeeders_pg.findpoint2(:an_pointtype, :av_name, :av_code, :av_mtrsn,:av_pmid,:av_canal,:av_account, :av_shortname, :av_note, :av_gid, :acur_t); end;";
-        //изменение av_gid удаляем за ненадобностью
+        //РёР·РјРµРЅРµРЅРёРµ av_gid СѓРґР°Р»СЏРµРј Р·Р° РЅРµРЅР°РґРѕР±РЅРѕСЃС‚СЊСЋ
         dmMain->quMain->SQL->Text="begin "+SchemeName+"editfeeders_pg.findpoint(:an_pointtype, :av_pmid, :av_name, :av_shortname, :av_code, :av_mtrsn,:av_canal,:av_account,  :av_note, :av_vcode, :av_vimportcode, :acur_t); end;";
         dmMain->quMain->ParamByName("av_name")->AsString=Edit1->Text;
         dmMain->quMain->ParamByName("av_code")->AsString=Edit2->Text;
         dmMain->quMain->ParamByName("av_mtrsn")->AsString=Edit3->Text;
-        if (GroupsAndPoints){  ///дерева групп и точек
-        if ( (wereTripleNullInContext() == 1) ) {//случай 000 в контексте  дерева групп и точек
+        if (GroupsAndPoints){  ///РґРµСЂРµРІР° РіСЂСѓРїРї Рё С‚РѕС‡РµРє
+        if ( (wereTripleNullInContext() == 1) ) {//СЃР»СѓС‡Р°Р№ 000 РІ РєРѕРЅС‚РµРєСЃС‚Рµ  РґРµСЂРµРІР° РіСЂСѓРїРї Рё С‚РѕС‡РµРє
                 dmMain->quMain->ParamByName("av_pmid")->AsString=Edit4->Text;
 
         }
@@ -293,7 +293,7 @@ long __fastcall TfmFindPoint::findAllNodesCur (){
                 ShowMessage (ex.Message.c_str());
                 return 0;
         }
-        try{// делаем обработку на отсутствие editfeeders_pg.findpoint2 в БД - если нет то дёргаем старую editfeeders_pg.findpoint в цикле
+        try{// РґРµР»Р°РµРј РѕР±СЂР°Р±РѕС‚РєСѓ РЅР° РѕС‚СЃСѓС‚СЃС‚РІРёРµ editfeeders_pg.findpoint2 РІ Р‘Р” - РµСЃР»Рё РЅРµС‚ С‚Рѕ РґС‘СЂРіР°РµРј СЃС‚Р°СЂСѓСЋ editfeeders_pg.findpoint РІ С†РёРєР»Рµ
         dmMain->quMain->Execute();
         } catch (EOraError &ex){
          //findAllNodes();
@@ -314,14 +314,14 @@ bool __fastcall TfmFindPoint::setInitialPaging(TStringList* findedId){
     UpDown1->Max = findedId->Count;
     Edit6->Text = IntToStr (UpDown1->Min) + pageDelim + IntToStr (UpDown1->Max);
     UpDown1->Enabled = true;
-    //А тут раскрываем 1-й элемент сразу
+    //Рђ С‚СѓС‚ СЂР°СЃРєСЂС‹РІР°РµРј 1-Р№ СЌР»РµРјРµРЅС‚ СЃСЂР°Р·Сѓ
     AnsiString s_first_id = findedId->Strings[0];
     long i_first_id = StrToInt64 (s_first_id);
 
     if (!GroupsAndPoints)
-        PostMessage( (dynamic_cast<TWinControl*>(Owner))->Handle,WM_SETACTIVENODE,(WPARAM)0,(LPARAM)i_first_id);    //Мотаем если не группы и точки вместе
+        PostMessage( (dynamic_cast<TWinControl*>(Owner))->Handle,WM_SETACTIVENODE,(WPARAM)0,(LPARAM)i_first_id);    //РњРѕС‚Р°РµРј РµСЃР»Рё РЅРµ РіСЂСѓРїРїС‹ Рё С‚РѕС‡РєРё РІРјРµСЃС‚Рµ
       else{
-        int _tripleNullContext = wereTripleNullInContext();//а эту проверку нужно делать только когда мы в дереве групп и точек!   //если вместе
+        int _tripleNullContext = wereTripleNullInContext();//Р° СЌС‚Сѓ РїСЂРѕРІРµСЂРєСѓ РЅСѓР¶РЅРѕ РґРµР»Р°С‚СЊ С‚РѕР»СЊРєРѕ РєРѕРіРґР° РјС‹ РІ РґРµСЂРµРІРµ РіСЂСѓРїРї Рё С‚РѕС‡РµРє!   //РµСЃР»Рё РІРјРµСЃС‚Рµ
         if (_tripleNullContext==2)
                 PostMessage( (dynamic_cast<TWinControl*>(Owner))->Handle,WM_SETACTIVENODE,(WPARAM)1,(LPARAM)i_first_id);
         else
@@ -332,7 +332,7 @@ bool __fastcall TfmFindPoint::setInitialPaging(TStringList* findedId){
     Edit6->Text = "0" + pageDelim + "0";
     MessageBox(Handle,Reconst_smes32_1.c_str(),Application->Title.c_str(),MB_OK|MB_ICONINFORMATION);
   }
-  //GRB ADD - фиксим бажик с нахождением чего-то после того как нашелся 1 элемент 09.03.2021
+  //GRB ADD - С„РёРєСЃРёРј Р±Р°Р¶РёРє СЃ РЅР°С…РѕР¶РґРµРЅРёРµРј С‡РµРіРѕ-С‚Рѕ РїРѕСЃР»Рµ С‚РѕРіРѕ РєР°Рє РЅР°С€РµР»СЃСЏ 1 СЌР»РµРјРµРЅС‚ 09.03.2021
   if ((findedId->Count == 0)|| (findedId->Count == 1))
      UpDown1->Enabled = false;
   if (findedId->Count > 1)
@@ -343,47 +343,47 @@ bool __fastcall TfmFindPoint::setInitialPaging(TStringList* findedId){
 //---------------------------------------------------------------------------
 bool __fastcall TfmFindPoint::isAnyTextFieldSet(){
    bool ret = false;
-   if (!Edit1->Text.IsEmpty()){ //Наименование
+   if (!Edit1->Text.IsEmpty()){ //РќР°РёРјРµРЅРѕРІР°РЅРёРµ
         ret = true;
         return ret;
    }
-   if (!Edit7->Text.IsEmpty()){ //Краткое имя
+   if (!Edit7->Text.IsEmpty()){ //РљСЂР°С‚РєРѕРµ РёРјСЏ
         ret = true;
         return ret;
    }
-   if (!Edit8->Text.IsEmpty()){ //Примечание
+   if (!Edit8->Text.IsEmpty()){ //РџСЂРёРјРµС‡Р°РЅРёРµ
         ret = true;
         return ret;
    }
-   if (!Edit3->Text.IsEmpty()){ //Номер счётчика
+   if (!Edit3->Text.IsEmpty()){ //РќРѕРјРµСЂ СЃС‡С‘С‚С‡РёРєР°
         ret = true;
         return ret;
    }
-   if (!Edit9->Text.IsEmpty()){ //Ид. объекта
+   if (!Edit9->Text.IsEmpty()){ //РРґ. РѕР±СЉРµРєС‚Р°
         ret = true;
         return ret;
    }
-   if (!Edit5->Text.IsEmpty()){ //Связной номер
+   if (!Edit5->Text.IsEmpty()){ //РЎРІСЏР·РЅРѕР№ РЅРѕРјРµСЂ
         ret = true;
         return ret;
    }
-   if (!Edit2->Text.IsEmpty()){ //Код точки
+   if (!Edit2->Text.IsEmpty()){ //РљРѕРґ С‚РѕС‡РєРё
         ret = true;
         return ret;
    }
-   if (!Edit25->Text.IsEmpty()){ //Лиц. счёт
+   if (!Edit25->Text.IsEmpty()){ //Р›РёС†. СЃС‡С‘С‚
         ret = true;
         return ret;
    }
-   if (!Edit4->Text.IsEmpty()){ //Ид.точки (доп)
+   if (!Edit4->Text.IsEmpty()){ //РРґ.С‚РѕС‡РєРё (РґРѕРї)
         ret = true;
         return ret;
    }
-   if (!Edit10->Text.IsEmpty()){ //Связной код импорта
+   if (!Edit10->Text.IsEmpty()){ //РЎРІСЏР·РЅРѕР№ РєРѕРґ РёРјРїРѕСЂС‚Р°
         ret = true;
         return ret;
    }
-   if (!Edit11->Text.IsEmpty()){ //Код строки в макете
+   if (!Edit11->Text.IsEmpty()){ //РљРѕРґ СЃС‚СЂРѕРєРё РІ РјР°РєРµС‚Рµ
         ret = true;
         return ret;
    }
@@ -394,48 +394,48 @@ bool __fastcall TfmFindPoint::isAnyTextFieldSet(){
 bool __fastcall TfmFindPoint::isAnyAddedContext(bool *in_idobj){
    bool ret = false;
    *in_idobj = false;
-   if (CompareText(Edit1->Text,addedContext)==0){ //Наименование
+   if (CompareText(Edit1->Text,addedContext)==0){ //РќР°РёРјРµРЅРѕРІР°РЅРёРµ
         ret = true;
         return ret;
    }
-   if (CompareText(Edit7->Text,addedContext)==0){ //Краткое имя
+   if (CompareText(Edit7->Text,addedContext)==0){ //РљСЂР°С‚РєРѕРµ РёРјСЏ
         ret = true;
         return ret;
    }
-   if (CompareText(Edit8->Text,addedContext)==0){ //Примечание
+   if (CompareText(Edit8->Text,addedContext)==0){ //РџСЂРёРјРµС‡Р°РЅРёРµ
         ret = true;
         return ret;
    }
-   if (CompareText(Edit3->Text,addedContext)==0){ //Номер счётчика
+   if (CompareText(Edit3->Text,addedContext)==0){ //РќРѕРјРµСЂ СЃС‡С‘С‚С‡РёРєР°
         ret = true;
         return ret;
    }
-   if (CompareText(Edit9->Text,addedContext)==0){ //Ид. объекта
+   if (CompareText(Edit9->Text,addedContext)==0){ //РРґ. РѕР±СЉРµРєС‚Р°
         ret = true;
         *in_idobj = true;
         return ret;
    }
-   if (CompareText(Edit5->Text,addedContext)==0){ //Связной номер
+   if (CompareText(Edit5->Text,addedContext)==0){ //РЎРІСЏР·РЅРѕР№ РЅРѕРјРµСЂ
         ret = true;
         return ret;
    }
-   if (CompareText(Edit2->Text,addedContext)==0){ //Код точки
+   if (CompareText(Edit2->Text,addedContext)==0){ //РљРѕРґ С‚РѕС‡РєРё
         ret = true;
         return ret;
    }
-   if (CompareText(Edit25->Text,addedContext)==0){ //Лиц. счёт
+   if (CompareText(Edit25->Text,addedContext)==0){ //Р›РёС†. СЃС‡С‘С‚
         ret = true;
         return ret;
    }
-   if (CompareText(Edit4->Text,addedContext)==0){ //Ид.точки (доп)
+   if (CompareText(Edit4->Text,addedContext)==0){ //РРґ.С‚РѕС‡РєРё (РґРѕРї)
         ret = true;
         return ret;
    }
-   if (CompareText(Edit10->Text,addedContext)==0){ //Связной код импорта
+   if (CompareText(Edit10->Text,addedContext)==0){ //РЎРІСЏР·РЅРѕР№ РєРѕРґ РёРјРїРѕСЂС‚Р°
         ret = true;
         return ret;
    }
-   if (CompareText(Edit11->Text,addedContext)==0){ //Код строки в макете
+   if (CompareText(Edit11->Text,addedContext)==0){ //РљРѕРґ СЃС‚СЂРѕРєРё РІ РјР°РєРµС‚Рµ
         ret = true;
         return ret;
    }
@@ -447,37 +447,37 @@ bool __fastcall TfmFindPoint::isAnyAddedContext(bool *in_idobj){
 bool __fastcall TfmFindPoint::isOnlyOneAddedContext(){
    bool ret = false;
    int countedAddedContext = 0;
-   if (CompareText(Edit1->Text,addedContext)==0){ //Наименование
+   if (CompareText(Edit1->Text,addedContext)==0){ //РќР°РёРјРµРЅРѕРІР°РЅРёРµ
        countedAddedContext++;
    }
-   if (CompareText(Edit7->Text,addedContext)==0){ //Краткое имя
+   if (CompareText(Edit7->Text,addedContext)==0){ //РљСЂР°С‚РєРѕРµ РёРјСЏ
         countedAddedContext++;
    }
-   if (CompareText(Edit8->Text,addedContext)==0){ //Примечание
+   if (CompareText(Edit8->Text,addedContext)==0){ //РџСЂРёРјРµС‡Р°РЅРёРµ
         countedAddedContext++;
    }
-   if (CompareText(Edit3->Text,addedContext)==0){ //Номер счётчика
+   if (CompareText(Edit3->Text,addedContext)==0){ //РќРѕРјРµСЂ СЃС‡С‘С‚С‡РёРєР°
         countedAddedContext++;
    }
-   if (CompareText(Edit9->Text,addedContext)==0){ //Ид. объекта
+   if (CompareText(Edit9->Text,addedContext)==0){ //РРґ. РѕР±СЉРµРєС‚Р°
         countedAddedContext++;
    }
-   if (CompareText(Edit5->Text,addedContext)==0){ //Связной номер
+   if (CompareText(Edit5->Text,addedContext)==0){ //РЎРІСЏР·РЅРѕР№ РЅРѕРјРµСЂ
         countedAddedContext++;
    }
-   if (CompareText(Edit2->Text,addedContext)==0){ //Код точки
+   if (CompareText(Edit2->Text,addedContext)==0){ //РљРѕРґ С‚РѕС‡РєРё
         countedAddedContext++;
    }
-   if (CompareText(Edit25->Text,addedContext)==0){ //Лиц. счёт
+   if (CompareText(Edit25->Text,addedContext)==0){ //Р›РёС†. СЃС‡С‘С‚
         countedAddedContext++;
    }
-   if (CompareText(Edit4->Text,addedContext)==0){ //Ид.точки (доп)
+   if (CompareText(Edit4->Text,addedContext)==0){ //РРґ.С‚РѕС‡РєРё (РґРѕРї)
         countedAddedContext++;
    }
-   if (CompareText(Edit10->Text,addedContext)==0){ //Связной код импорта
+   if (CompareText(Edit10->Text,addedContext)==0){ //РЎРІСЏР·РЅРѕР№ РєРѕРґ РёРјРїРѕСЂС‚Р°
         countedAddedContext++;
    }
-   if (CompareText(Edit11->Text,addedContext)==0){ //Код строки в макете
+   if (CompareText(Edit11->Text,addedContext)==0){ //РљРѕРґ СЃС‚СЂРѕРєРё РІ РјР°РєРµС‚Рµ
         countedAddedContext++;
    }
    if (countedAddedContext == 1)
@@ -495,18 +495,18 @@ void __fastcall TfmFindPoint::setGroupsAndPoints (bool groupsAndPoints){
 //---------------------------------------------------------------------------
 
 int __fastcall TfmFindPoint::wereTripleNullInContext(){
-        int ret_code = -1; //гипотеза nogo
+        int ret_code = -1; //РіРёРїРѕС‚РµР·Р° nogo
         if ( (CompareText(Edit9->Text,tripleNullContext)==0)&&(CompareText(Edit4->Text,tripleNullContext)==0))
-                return ret_code;  //невозможный контекст - nogo
+                return ret_code;  //РЅРµРІРѕР·РјРѕР¶РЅС‹Р№ РєРѕРЅС‚РµРєСЃС‚ - nogo
         if (CompareText(Edit9->Text,tripleNullContext)==0){
-                ret_code = 1;   //000 в id объекта
+                ret_code = 1;   //000 РІ id РѕР±СЉРµРєС‚Р°
                 return ret_code;
         }
         if (CompareText(Edit4->Text,tripleNullContext)==0){
-                ret_code = 2;  //000 в id точки
+                ret_code = 2;  //000 РІ id С‚РѕС‡РєРё
                 return ret_code;
         }
-        ret_code = 0;   //не нашли такого
+        ret_code = 0;   //РЅРµ РЅР°С€Р»Рё С‚Р°РєРѕРіРѕ
         return ret_code;
 }
 //---------------------------------------------------------------------------
@@ -546,10 +546,10 @@ void __fastcall TfmFindPoint::unshapeElementByDefault (TEdit* elem){
   elem->Repaint();
 }
 //---------------------------------------------------------------------------
-void __fastcall TfmFindPoint::correctParamsProcForTaskContext(Integer task_context, Integer add_task_context, bool groops_and_points, AnsiString lang){  //cм окончательную редакцию вовыной таблицы контекстов для задачи
-  if ((task_context == NULL) && (!groops_and_points) ) return; //- для дерева точек разрешено всё
-  if (!groops_and_points){// для несоставных деревьев
-        if ((task_context == 1) &&(add_task_context!=11)){   //группы учёта - разрешено ид объекта наименование и короткое имя
+void __fastcall TfmFindPoint::correctParamsProcForTaskContext(Integer task_context, Integer add_task_context, bool groops_and_points, AnsiString lang){  //cРј РѕРєРѕРЅС‡Р°С‚РµР»СЊРЅСѓСЋ СЂРµРґР°РєС†РёСЋ РІРѕРІС‹РЅРѕР№ С‚Р°Р±Р»РёС†С‹ РєРѕРЅС‚РµРєСЃС‚РѕРІ РґР»СЏ Р·Р°РґР°С‡Рё
+  if ((task_context == NULL) && (!groops_and_points) ) return; //- РґР»СЏ РґРµСЂРµРІР° С‚РѕС‡РµРє СЂР°Р·СЂРµС€РµРЅРѕ РІСЃС‘
+  if (!groops_and_points){// РґР»СЏ РЅРµСЃРѕСЃС‚Р°РІРЅС‹С… РґРµСЂРµРІСЊРµРІ
+        if ((task_context == 1) &&(add_task_context!=11)){   //РіСЂСѓРїРїС‹ СѓС‡С‘С‚Р° - СЂР°Р·СЂРµС€РµРЅРѕ РёРґ РѕР±СЉРµРєС‚Р° РЅР°РёРјРµРЅРѕРІР°РЅРёРµ Рё РєРѕСЂРѕС‚РєРѕРµ РёРјСЏ
                 dmMain->quMain->ParamByName("av_code")->AsString= "";
                 dmMain->quMain->ParamByName("av_mtrsn")->AsString="";
                 dmMain->quMain->ParamByName("av_canal")->AsString="";
@@ -558,15 +558,15 @@ void __fastcall TfmFindPoint::correctParamsProcForTaskContext(Integer task_conte
                 dmMain->quMain->ParamByName("av_vimportcode")->AsString="";
                 dmMain->quMain->ParamByName("av_vcode")->AsString = "";
                 if ((Edit9->Text.IsEmpty()) && (Edit1->Text.IsEmpty()) && (Edit7->Text.IsEmpty())){
-                 AnsiString mes = "Нужно задать хотя бы одно из поисковых полей 'Ид.объекта', 'Наименование', 'Краткое имя'";
+                 AnsiString mes = "РќСѓР¶РЅРѕ Р·Р°РґР°С‚СЊ С…РѕС‚СЏ Р±С‹ РѕРґРЅРѕ РёР· РїРѕРёСЃРєРѕРІС‹С… РїРѕР»РµР№ 'РРґ.РѕР±СЉРµРєС‚Р°', 'РќР°РёРјРµРЅРѕРІР°РЅРёРµ', 'РљСЂР°С‚РєРѕРµ РёРјСЏ'";
                  if (CompareStr(lang,"UKR")==0)
-                        mes = "Треба задати хоча б одне з пошукових полів 'Ід.об'єкта', 'Найменування', 'Коротке ім'я'";
+                        mes = "РўСЂРµР±Р° Р·Р°РґР°С‚Рё С…РѕС‡Р° Р± РѕРґРЅРµ Р· РїРѕС€СѓРєРѕРІРёС… РїРѕР»С–РІ 'Р†Рґ.РѕР±'С”РєС‚Р°', 'РќР°Р№РјРµРЅСѓРІР°РЅРЅСЏ', 'РљРѕСЂРѕС‚РєРµ С–Рј'СЏ'";
                  throw Exception (mes);
                 }
 
                 return;
         }
-        if (add_task_context==11){// группы учёта в которые входит ТУ - разрешено ид объекта и код точки
+        if (add_task_context==11){// РіСЂСѓРїРїС‹ СѓС‡С‘С‚Р° РІ РєРѕС‚РѕСЂС‹Рµ РІС…РѕРґРёС‚ РўРЈ - СЂР°Р·СЂРµС€РµРЅРѕ РёРґ РѕР±СЉРµРєС‚Р° Рё РєРѕРґ С‚РѕС‡РєРё
                 dmMain->quMain->ParamByName("av_name")->AsString="";
                 dmMain->quMain->ParamByName("av_shortname")->AsString = "";
                 dmMain->quMain->ParamByName("av_mtrsn")->AsString="";
@@ -575,21 +575,21 @@ void __fastcall TfmFindPoint::correctParamsProcForTaskContext(Integer task_conte
                 dmMain->quMain->ParamByName("av_note")->AsString="";
                 dmMain->quMain->ParamByName("av_vimportcode")->AsString="";
                 dmMain->quMain->ParamByName("av_vcode")->AsString = "";
-                //13.04.2021 GRB FIX по просьбе Кальницкой - Излишне строгая проверка тк в Edit9 ***, а надо проверять Edit4
+                //13.04.2021 GRB FIX РїРѕ РїСЂРѕСЃСЊР±Рµ РљР°Р»СЊРЅРёС†РєРѕР№ - РР·Р»РёС€РЅРµ СЃС‚СЂРѕРіР°СЏ РїСЂРѕРІРµСЂРєР° С‚Рє РІ Edit9 ***, Р° РЅР°РґРѕ РїСЂРѕРІРµСЂСЏС‚СЊ Edit4
                 //if ((Edit9->Text.IsEmpty()) && (Edit2->Text.IsEmpty())){
                  if ((Edit4->Text.IsEmpty()) && (Edit2->Text.IsEmpty())){
-                 AnsiString mes = "Нужно задать хотя бы одно из поисковых полей 'Ид.объекта', 'Код точки'";
+                 AnsiString mes = "РќСѓР¶РЅРѕ Р·Р°РґР°С‚СЊ С…РѕС‚СЏ Р±С‹ РѕРґРЅРѕ РёР· РїРѕРёСЃРєРѕРІС‹С… РїРѕР»РµР№ 'РРґ.РѕР±СЉРµРєС‚Р°', 'РљРѕРґ С‚РѕС‡РєРё'";
                  if (CompareStr(lang,"UKR")==0)
-                        mes = "Треба задати хоча б одне з пошукових полів 'Ід.об'єкта', 'Код точки'";
+                        mes = "РўСЂРµР±Р° Р·Р°РґР°С‚Рё С…РѕС‡Р° Р± РѕРґРЅРµ Р· РїРѕС€СѓРєРѕРІРёС… РїРѕР»С–РІ 'Р†Рґ.РѕР±'С”РєС‚Р°', 'РљРѕРґ С‚РѕС‡РєРё'";
                  throw Exception (mes);
                 }
                 if ((Edit2->Text.Pos("*")!=0) ||(Edit2->Text.Pos("%")!=0)){
-                 AnsiString mes = "Уберите все символы '*' или '%' из поискового поля 'Код точки'";
+                 AnsiString mes = "РЈР±РµСЂРёС‚Рµ РІСЃРµ СЃРёРјРІРѕР»С‹ '*' РёР»Рё '%' РёР· РїРѕРёСЃРєРѕРІРѕРіРѕ РїРѕР»СЏ 'РљРѕРґ С‚РѕС‡РєРё'";
                  if (CompareStr(lang,"UKR")==0)
-                        mes = "Приберіть всі символи '*' або '%' з пошукового поля 'Код точки'";
+                        mes = "РџСЂРёР±РµСЂС–С‚СЊ РІСЃС– СЃРёРјРІРѕР»Рё '*' Р°Р±Рѕ '%' Р· РїРѕС€СѓРєРѕРІРѕРіРѕ РїРѕР»СЏ 'РљРѕРґ С‚РѕС‡РєРё'";
                  throw Exception (mes);
                 }
-                if (!Edit4->Text.IsEmpty()){ //есть что-то в ид доп точки
+                if (!Edit4->Text.IsEmpty()){ //РµСЃС‚СЊ С‡С‚Рѕ-С‚Рѕ РІ РёРґ РґРѕРї С‚РѕС‡РєРё
                    dmMain->quMain->ParamByName("av_pmid")->AsString = Edit4->Text;
                 }else{
                    dmMain->quMain->ParamByName("av_pmid")->AsString = "";
@@ -598,7 +598,7 @@ void __fastcall TfmFindPoint::correctParamsProcForTaskContext(Integer task_conte
                 return;
 
         }
-        if ((task_context == 2) &&(add_task_context!=22)){  //Канал опроса
+        if ((task_context == 2) &&(add_task_context!=22)){  //РљР°РЅР°Р» РѕРїСЂРѕСЃР°
                 dmMain->quMain->ParamByName("av_shortname")->AsString = "";
                 dmMain->quMain->ParamByName("av_code")->AsString= "";
                 dmMain->quMain->ParamByName("av_mtrsn")->AsString="";
@@ -608,15 +608,15 @@ void __fastcall TfmFindPoint::correctParamsProcForTaskContext(Integer task_conte
                 dmMain->quMain->ParamByName("av_vcode")->AsString = "";
 
                 if ((Edit9->Text.IsEmpty()) && (Edit1->Text.IsEmpty()) && (Edit8->Text.IsEmpty())){
-                 AnsiString mes = "Нужно задать хотя бы одно из поисковых полей 'Ид.объекта', 'Наименование', 'Примечание'";
+                 AnsiString mes = "РќСѓР¶РЅРѕ Р·Р°РґР°С‚СЊ С…РѕС‚СЏ Р±С‹ РѕРґРЅРѕ РёР· РїРѕРёСЃРєРѕРІС‹С… РїРѕР»РµР№ 'РРґ.РѕР±СЉРµРєС‚Р°', 'РќР°РёРјРµРЅРѕРІР°РЅРёРµ', 'РџСЂРёРјРµС‡Р°РЅРёРµ'";
                  if (CompareStr(lang,"UKR")==0)
-                        mes = "Треба задати хоча б одне з пошукових полів 'Ід.об'єкта', 'Найменування', 'Примітка'";
+                        mes = "РўСЂРµР±Р° Р·Р°РґР°С‚Рё С…РѕС‡Р° Р± РѕРґРЅРµ Р· РїРѕС€СѓРєРѕРІРёС… РїРѕР»С–РІ 'Р†Рґ.РѕР±'С”РєС‚Р°', 'РќР°Р№РјРµРЅСѓРІР°РЅРЅСЏ', 'РџСЂРёРјС–С‚РєР°'";
                  throw Exception (mes);
                  }
 
                 return;
          }
-        if (add_task_context==22){  //Каналы опроса ТУ
+        if (add_task_context==22){  //РљР°РЅР°Р»С‹ РѕРїСЂРѕСЃР° РўРЈ
                 dmMain->quMain->ParamByName("av_name")->AsString="";
                 dmMain->quMain->ParamByName("av_shortname")->AsString = "";
                 dmMain->quMain->ParamByName("av_mtrsn")->AsString="";
@@ -626,26 +626,26 @@ void __fastcall TfmFindPoint::correctParamsProcForTaskContext(Integer task_conte
                 dmMain->quMain->ParamByName("av_vimportcode")->AsString="";
                 dmMain->quMain->ParamByName("av_vcode")->AsString = "";
                 if ((Edit9->Text.IsEmpty()) && (Edit2->Text.IsEmpty())){
-                 AnsiString mes = "Нужно задать хотя бы одно из поисковых полей 'Ид.объекта', 'Код точки'";
+                 AnsiString mes = "РќСѓР¶РЅРѕ Р·Р°РґР°С‚СЊ С…РѕС‚СЏ Р±С‹ РѕРґРЅРѕ РёР· РїРѕРёСЃРєРѕРІС‹С… РїРѕР»РµР№ 'РРґ.РѕР±СЉРµРєС‚Р°', 'РљРѕРґ С‚РѕС‡РєРё'";
                  if (CompareStr(lang,"UKR")==0)
-                        mes = "Треба задати хоча б одне з пошукових полів 'Ід.об'єкта', 'Код точки'";
+                        mes = "РўСЂРµР±Р° Р·Р°РґР°С‚Рё С…РѕС‡Р° Р± РѕРґРЅРµ Р· РїРѕС€СѓРєРѕРІРёС… РїРѕР»С–РІ 'Р†Рґ.РѕР±'С”РєС‚Р°', 'РљРѕРґ С‚РѕС‡РєРё'";
                  throw Exception (mes);
                 }
                 if ((Edit2->Text.Pos("*")!=0) ||(Edit2->Text.Pos("%")!=0)){
-                 AnsiString mes = "Уберите все символы '*' или '%' из поискового поля 'Код точки'";
+                 AnsiString mes = "РЈР±РµСЂРёС‚Рµ РІСЃРµ СЃРёРјРІРѕР»С‹ '*' РёР»Рё '%' РёР· РїРѕРёСЃРєРѕРІРѕРіРѕ РїРѕР»СЏ 'РљРѕРґ С‚РѕС‡РєРё'";
                  if (CompareStr(lang,"UKR")==0)
-                        mes = "Приберіть всі символи '*' або '%' з пошукового поля 'Код точки', 'Код точки'";
+                        mes = "РџСЂРёР±РµСЂС–С‚СЊ РІСЃС– СЃРёРјРІРѕР»Рё '*' Р°Р±Рѕ '%' Р· РїРѕС€СѓРєРѕРІРѕРіРѕ РїРѕР»СЏ 'РљРѕРґ С‚РѕС‡РєРё', 'РљРѕРґ С‚РѕС‡РєРё'";
                  throw Exception (mes);
 
                 }
-                if (!Edit4->Text.IsEmpty()){ //есть что-то в ид доп точки
+                if (!Edit4->Text.IsEmpty()){ //РµСЃС‚СЊ С‡С‚Рѕ-С‚Рѕ РІ РёРґ РґРѕРї С‚РѕС‡РєРё
                    dmMain->quMain->ParamByName("av_pmid")->AsString = Edit4->Text;
                 }else{
                    dmMain->quMain->ParamByName("av_pmid")->AsString = "";
                 }
                 return;
          }
-         if (((task_context==22)&&(add_task_context==0))){// пришли из фильтра по каналам в оперативном опросе
+         if (((task_context==22)&&(add_task_context==0))){// РїСЂРёС€Р»Рё РёР· С„РёР»СЊС‚СЂР° РїРѕ РєР°РЅР°Р»Р°Рј РІ РѕРїРµСЂР°С‚РёРІРЅРѕРј РѕРїСЂРѕСЃРµ
                 dmMain->quMain->ParamByName("av_name")->AsString="";
                 dmMain->quMain->ParamByName("av_shortname")->AsString = "";
                 dmMain->quMain->ParamByName("av_mtrsn")->AsString="";
@@ -655,21 +655,21 @@ void __fastcall TfmFindPoint::correctParamsProcForTaskContext(Integer task_conte
                 dmMain->quMain->ParamByName("av_vimportcode")->AsString="";
                 dmMain->quMain->ParamByName("av_vcode")->AsString = "";
                 if ((Edit9->Text.IsEmpty()) && (Edit2->Text.IsEmpty())){
-                 AnsiString mes = "Нужно задать хотя бы одно из поисковых полей 'Ид.объекта', 'Код точки'";
+                 AnsiString mes = "РќСѓР¶РЅРѕ Р·Р°РґР°С‚СЊ С…РѕС‚СЏ Р±С‹ РѕРґРЅРѕ РёР· РїРѕРёСЃРєРѕРІС‹С… РїРѕР»РµР№ 'РРґ.РѕР±СЉРµРєС‚Р°', 'РљРѕРґ С‚РѕС‡РєРё'";
                  if (CompareStr(lang,"UKR")==0)
-                        mes = "Треба задати хоча б одне з пошукових полів 'Ід.об'єкта', 'Код точки'";
+                        mes = "РўСЂРµР±Р° Р·Р°РґР°С‚Рё С…РѕС‡Р° Р± РѕРґРЅРµ Р· РїРѕС€СѓРєРѕРІРёС… РїРѕР»С–РІ 'Р†Рґ.РѕР±'С”РєС‚Р°', 'РљРѕРґ С‚РѕС‡РєРё'";
                  throw Exception (mes);
                 }
                 if ((Edit2->Text.Pos("*")!=0) ||(Edit2->Text.Pos("%")!=0)){
-                 AnsiString mes = "Уберите все символы '*' или '%' из поискового поля 'Код точки'";
+                 AnsiString mes = "РЈР±РµСЂРёС‚Рµ РІСЃРµ СЃРёРјРІРѕР»С‹ '*' РёР»Рё '%' РёР· РїРѕРёСЃРєРѕРІРѕРіРѕ РїРѕР»СЏ 'РљРѕРґ С‚РѕС‡РєРё'";
                  if (CompareStr(lang,"UKR")==0)
-                        mes = "Приберіть всі символи '*' або '%' з пошукового поля 'Код точки', 'Код точки'";
+                        mes = "РџСЂРёР±РµСЂС–С‚СЊ РІСЃС– СЃРёРјРІРѕР»Рё '*' Р°Р±Рѕ '%' Р· РїРѕС€СѓРєРѕРІРѕРіРѕ РїРѕР»СЏ 'РљРѕРґ С‚РѕС‡РєРё', 'РљРѕРґ С‚РѕС‡РєРё'";
                  throw Exception (mes);
 
                 }
                 return;
          }
-         if ((task_context == 3) &&(add_task_context!=33)){  //Каналы рассылки
+         if ((task_context == 3) &&(add_task_context!=33)){  //РљР°РЅР°Р»С‹ СЂР°СЃСЃС‹Р»РєРё
                 dmMain->quMain->ParamByName("av_shortname")->AsString = "";
                 dmMain->quMain->ParamByName("av_code")->AsString= "";
                 dmMain->quMain->ParamByName("av_mtrsn")->AsString="";
@@ -678,14 +678,14 @@ void __fastcall TfmFindPoint::correctParamsProcForTaskContext(Integer task_conte
                 dmMain->quMain->ParamByName("av_vimportcode")->AsString="";
                 dmMain->quMain->ParamByName("av_vcode")->AsString = "";
                 if ((Edit9->Text.IsEmpty()) && (Edit1->Text.IsEmpty()) && (Edit8->Text.IsEmpty())){
-                 AnsiString mes = "Нужно задать хотя бы одно из поисковых полей 'Ид.объекта', 'Наименование', 'Примечание'";
+                 AnsiString mes = "РќСѓР¶РЅРѕ Р·Р°РґР°С‚СЊ С…РѕС‚СЏ Р±С‹ РѕРґРЅРѕ РёР· РїРѕРёСЃРєРѕРІС‹С… РїРѕР»РµР№ 'РРґ.РѕР±СЉРµРєС‚Р°', 'РќР°РёРјРµРЅРѕРІР°РЅРёРµ', 'РџСЂРёРјРµС‡Р°РЅРёРµ'";
                  if (CompareStr(lang,"UKR")==0)
-                        mes = "Треба задати хоча б одне з пошукових полів 'Ід.об'єкта', 'Найменування', 'Примітка'";
+                        mes = "РўСЂРµР±Р° Р·Р°РґР°С‚Рё С…РѕС‡Р° Р± РѕРґРЅРµ Р· РїРѕС€СѓРєРѕРІРёС… РїРѕР»С–РІ 'Р†Рґ.РѕР±'С”РєС‚Р°', 'РќР°Р№РјРµРЅСѓРІР°РЅРЅСЏ', 'РџСЂРёРјС–С‚РєР°'";
                  throw Exception (mes);
                 }
                 return;
          }
-          if (add_task_context==33){  //Каналы рассылки доп контекст
+          if (add_task_context==33){  //РљР°РЅР°Р»С‹ СЂР°СЃСЃС‹Р»РєРё РґРѕРї РєРѕРЅС‚РµРєСЃС‚
                 dmMain->quMain->ParamByName("av_shortname")->AsString = "";
                 dmMain->quMain->ParamByName("av_code")->AsString= "";
                 dmMain->quMain->ParamByName("av_mtrsn")->AsString="";
@@ -694,26 +694,26 @@ void __fastcall TfmFindPoint::correctParamsProcForTaskContext(Integer task_conte
                 dmMain->quMain->ParamByName("av_vimportcode")->AsString="";
                 dmMain->quMain->ParamByName("av_vcode")->AsString = "";
                 if ((Edit9->Text.IsEmpty()) && (Edit1->Text.IsEmpty()) && (Edit8->Text.IsEmpty())){
-                 AnsiString mes = "Нужно задать хотя бы одно из поисковых полей 'Ид.объекта', 'Наименование', 'Примечание'";
+                 AnsiString mes = "РќСѓР¶РЅРѕ Р·Р°РґР°С‚СЊ С…РѕС‚СЏ Р±С‹ РѕРґРЅРѕ РёР· РїРѕРёСЃРєРѕРІС‹С… РїРѕР»РµР№ 'РРґ.РѕР±СЉРµРєС‚Р°', 'РќР°РёРјРµРЅРѕРІР°РЅРёРµ', 'РџСЂРёРјРµС‡Р°РЅРёРµ'";
                  if (CompareStr(lang,"UKR")==0)
-                        mes = "Треба задати хоча б одне з пошукових полів 'Ід.об'єкта', 'Найменування', 'Примітка'";
+                        mes = "РўСЂРµР±Р° Р·Р°РґР°С‚Рё С…РѕС‡Р° Р± РѕРґРЅРµ Р· РїРѕС€СѓРєРѕРІРёС… РїРѕР»С–РІ 'Р†Рґ.РѕР±'С”РєС‚Р°', 'РќР°Р№РјРµРЅСѓРІР°РЅРЅСЏ', 'РџСЂРёРјС–С‚РєР°'";
                  throw Exception (mes);
                 }
                 if ((Edit2->Text.Pos("*")!=0) ||(Edit2->Text.Pos("%")!=0) || (Edit8->Text.Pos("*")!=0) || (Edit8->Text.Pos("%")!=0)){
-                 AnsiString mes = "Уберите все символы '*' или '%' из поисковых полей 'Код точки','Примечание'";
+                 AnsiString mes = "РЈР±РµСЂРёС‚Рµ РІСЃРµ СЃРёРјРІРѕР»С‹ '*' РёР»Рё '%' РёР· РїРѕРёСЃРєРѕРІС‹С… РїРѕР»РµР№ 'РљРѕРґ С‚РѕС‡РєРё','РџСЂРёРјРµС‡Р°РЅРёРµ'";
                  if (CompareStr(lang,"UKR")==0)
-                        mes = "Приберіть всі символи '*' або '%' з пошукових полів 'Код точки','Примітка'";
+                        mes = "РџСЂРёР±РµСЂС–С‚СЊ РІСЃС– СЃРёРјРІРѕР»Рё '*' Р°Р±Рѕ '%' Р· РїРѕС€СѓРєРѕРІРёС… РїРѕР»С–РІ 'РљРѕРґ С‚РѕС‡РєРё','РџСЂРёРјС–С‚РєР°'";
                  throw Exception (mes);
 
                 }
-                if (!Edit4->Text.IsEmpty()){ //есть что-то в ид доп точки
+                if (!Edit4->Text.IsEmpty()){ //РµСЃС‚СЊ С‡С‚Рѕ-С‚Рѕ РІ РёРґ РґРѕРї С‚РѕС‡РєРё
                    dmMain->quMain->ParamByName("av_pmid")->AsString = Edit4->Text;
                 }else{
                    dmMain->quMain->ParamByName("av_pmid")->AsString = "";
                 }
                 return;
           }
-  }else{ //для деревьев групп и точек
+  }else{ //РґР»СЏ РґРµСЂРµРІСЊРµРІ РіСЂСѓРїРї Рё С‚РѕС‡РµРє
     if (task_context==1){
         dmMain->quMain->ParamByName("av_code")->AsString= "";
         dmMain->quMain->ParamByName("av_mtrsn")->AsString="";
@@ -723,9 +723,9 @@ void __fastcall TfmFindPoint::correctParamsProcForTaskContext(Integer task_conte
         dmMain->quMain->ParamByName("av_vimportcode")->AsString="";
         dmMain->quMain->ParamByName("av_vcode")->AsString = "";
         if ((Edit9->Text.IsEmpty()) && (Edit1->Text.IsEmpty()) && (Edit7->Text.IsEmpty())){
-                 AnsiString mes = "Нужно задать хотя бы одно из поисковых полей 'Ид.объекта', 'Наименование', 'Краткое имя'";
+                 AnsiString mes = "РќСѓР¶РЅРѕ Р·Р°РґР°С‚СЊ С…РѕС‚СЏ Р±С‹ РѕРґРЅРѕ РёР· РїРѕРёСЃРєРѕРІС‹С… РїРѕР»РµР№ 'РРґ.РѕР±СЉРµРєС‚Р°', 'РќР°РёРјРµРЅРѕРІР°РЅРёРµ', 'РљСЂР°С‚РєРѕРµ РёРјСЏ'";
                  if (CompareStr(lang,"UKR")==0)
-                        mes = "Треба задати хоча б одне з пошукових полів 'Ід.об'єкта', 'Найменування', 'Коротке ім'я'";
+                        mes = "РўСЂРµР±Р° Р·Р°РґР°С‚Рё С…РѕС‡Р° Р± РѕРґРЅРµ Р· РїРѕС€СѓРєРѕРІРёС… РїРѕР»С–РІ 'Р†Рґ.РѕР±'С”РєС‚Р°', 'РќР°Р№РјРµРЅСѓРІР°РЅРЅСЏ', 'РљРѕСЂРѕС‚РєРµ С–Рј'СЏ'";
                  throw Exception (mes);
         }
         return;
@@ -767,7 +767,7 @@ Edit11->Clear();
 Edit6->Clear();
 unshapeElementByDefault(Edit6);
 Edit6->Text = "0"+pageDelim+"0";
-//02.04.2021 - Для исправления бага с переключкой с 000 на без них и назад в контексте дерева групп и точек;
+//02.04.2021 - Р”Р»СЏ РёСЃРїСЂР°РІР»РµРЅРёСЏ Р±Р°РіР° СЃ РїРµСЂРµРєР»СЋС‡РєРѕР№ СЃ 000 РЅР° Р±РµР· РЅРёС… Рё РЅР°Р·Р°Рґ РІ РєРѕРЅС‚РµРєСЃС‚Рµ РґРµСЂРµРІР° РіСЂСѓРїРї Рё С‚РѕС‡РµРє;
 if (GroupsAndPoints){
         myContext = 0;
         myAddContext = 0;

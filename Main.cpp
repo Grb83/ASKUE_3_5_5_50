@@ -71,8 +71,8 @@ __fastcall TMainForm::TMainForm(TComponent* Owner, AnsiString Name, TAccess acc)
 //----------------------------------------------------------------------------
 __fastcall TMainForm::~TMainForm()
 {
-  // Öèêëè÷åñêîå óäàëåíèå âñåõ ïîäïóíêòîâ ìåíþ mMon
-  // ñ ó÷åòîì âûäêëêííîé ïàìÿòè â ïîëå Tag
+  // Ð¦Ð¸ÐºÐ»Ð¸Ñ‡ÐµÑÐºÐ¾Ðµ ÑƒÐ´Ð°Ð»ÐµÐ½Ð¸Ðµ Ð²ÑÐµÑ… Ð¿Ð¾Ð´Ð¿ÑƒÐ½ÐºÑ‚Ð¾Ð² Ð¼ÐµÐ½ÑŽ mMon
+  // Ñ ÑƒÑ‡ÐµÑ‚Ð¾Ð¼ Ð²Ñ‹Ð´ÐºÐ»ÐºÐ½Ð½Ð¾Ð¹ Ð¿Ð°Ð¼ÑÑ‚Ð¸ Ð² Ð¿Ð¾Ð»Ðµ Tag
   if (mMon->Count != 0)
   { TMenuItem *mi = mMon->Items[0];
     while (mMon->Count != 0)
@@ -153,7 +153,7 @@ void __fastcall TMainForm::iaCloseExecute(TObject *Sender)
   Close();
 }
 //---------------------------------------------------------------------------
-//ìåòîäû îáðàáîòêè ñâîéñòâà EditRec - ïðèçíàê ðåäàêòèðîâàíèÿ çàïèñåé èç ÁÄ
+//Ð¼ÐµÑ‚Ð¾Ð´Ñ‹ Ð¾Ð±Ñ€Ð°Ð±Ð¾Ñ‚ÐºÐ¸ ÑÐ²Ð¾Ð¹ÑÑ‚Ð²Ð° EditRec - Ð¿Ñ€Ð¸Ð·Ð½Ð°Ðº Ñ€ÐµÐ´Ð°ÐºÑ‚Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ñ Ð·Ð°Ð¿Ð¸ÑÐµÐ¹ Ð¸Ð· Ð‘Ð”
 void __fastcall TMainForm::SetEditRec(bool value)
 {
   if (FEditRec == value)
@@ -219,8 +219,8 @@ void __fastcall TMainForm::SetAccess(TAccess value)
   if (!wr)
     iaSave->Enabled = wr;
     }catch (Exception &ex){
-      MessageBox(Handle,"Íå õâàòàåò ïàìÿòè äëÿ ðàáîòû ñ äåðåâîì(Âàëèòñÿ â Main.cpp::SetAccess). Çàêðîéòå è îòêðîéòå 2 ðàçà ïî êðåñòèêó òåêóùóþ çàäà÷ó",
-            "Ïàìÿòü íå âûäåëÿåòñÿ",MB_OK|MB_ICONINFORMATION);
+      MessageBox(Handle,"ÐÐµ Ñ…Ð²Ð°Ñ‚Ð°ÐµÑ‚ Ð¿Ð°Ð¼ÑÑ‚Ð¸ Ð´Ð»Ñ Ñ€Ð°Ð±Ð¾Ñ‚Ñ‹ Ñ Ð´ÐµÑ€ÐµÐ²Ð¾Ð¼(Ð’Ð°Ð»Ð¸Ñ‚ÑÑ Ð² Main.cpp::SetAccess). Ð—Ð°ÐºÑ€Ð¾Ð¹Ñ‚Ðµ Ð¸ Ð¾Ñ‚ÐºÑ€Ð¾Ð¹Ñ‚Ðµ 2 Ñ€Ð°Ð·Ð° Ð¿Ð¾ ÐºÑ€ÐµÑÑ‚Ð¸ÐºÑƒ Ñ‚ÐµÐºÑƒÑ‰ÑƒÑŽ Ð·Ð°Ð´Ð°Ñ‡Ñƒ",
+            "ÐŸÐ°Ð¼ÑÑ‚ÑŒ Ð½Ðµ Ð²Ñ‹Ð´ÐµÐ»ÑÐµÑ‚ÑÑ",MB_OK|MB_ICONINFORMATION);
     }
 }
 //---------------------------------------------------------------------------
@@ -248,8 +248,8 @@ void __fastcall TMainForm::FormCloseQuery(TObject *Sender, bool &CanClose)
   }
   CanClose  = true;
   }catch (Exception &ex){
-        MessageBox(Handle,"Âàëèòñÿ â Main.cpp::FormCloseQuery. Çàêðîéòå è îòêðîéòå 2 ðàçà ïî êðåñòèêó òåêóùóþ çàäà÷ó",
-            "Ïàìÿòü íå âûäåëÿåòñÿ",MB_OK|MB_ICONINFORMATION);
+        MessageBox(Handle,"Ð’Ð°Ð»Ð¸Ñ‚ÑÑ Ð² Main.cpp::FormCloseQuery. Ð—Ð°ÐºÑ€Ð¾Ð¹Ñ‚Ðµ Ð¸ Ð¾Ñ‚ÐºÑ€Ð¾Ð¹Ñ‚Ðµ 2 Ñ€Ð°Ð·Ð° Ð¿Ð¾ ÐºÑ€ÐµÑÑ‚Ð¸ÐºÑƒ Ñ‚ÐµÐºÑƒÑ‰ÑƒÑŽ Ð·Ð°Ð´Ð°Ñ‡Ñƒ",
+            "ÐŸÐ°Ð¼ÑÑ‚ÑŒ Ð½Ðµ Ð²Ñ‹Ð´ÐµÐ»ÑÐµÑ‚ÑÑ",MB_OK|MB_ICONINFORMATION);
   }
 }
 //---------------------------------------------------------------------------
@@ -259,7 +259,7 @@ void __fastcall TMainForm::vUpdate(TObject * Sender)
     ((TAction *)Sender)->Enabled  = false;
 }
 //---------------------------------------------------------------------------
-// äîáàâëåíèå ïóíêòîâ â ìåíþ pm - ïåðå÷åíü òî÷åê, äëÿ êîòîðûõ òî÷êà ñ èä mid ÿâëÿåòñÿ ÓÑÄ
+// Ð´Ð¾Ð±Ð°Ð²Ð»ÐµÐ½Ð¸Ðµ Ð¿ÑƒÐ½ÐºÑ‚Ð¾Ð² Ð² Ð¼ÐµÐ½ÑŽ pm - Ð¿ÐµÑ€ÐµÑ‡ÐµÐ½ÑŒ Ñ‚Ð¾Ñ‡ÐµÐº, Ð´Ð»Ñ ÐºÐ¾Ñ‚Ð¾Ñ€Ñ‹Ñ… Ñ‚Ð¾Ñ‡ÐºÐ° Ñ Ð¸Ð´ mid ÑÐ²Ð»ÑÐµÑ‚ÑÑ Ð£Ð¡Ð”
 void __fastcall TMainForm::getUSDList(TPopupMenu* pm, long mid, Classes::TNotifyEvent&OnClick)
 {
   dmMain->oqCursor->Params->Clear();
@@ -303,10 +303,10 @@ void __fastcall TMainForm::repl_delimiters(char*source, const char* byrepl)
   }
 }
 //---------------------------------------------------------------------------
-// ïîèñê óçëà ñ èä = id è óñòàíîâêà Selected íà íåì â äåðåâå òî÷åê tv. OnReadNode - ïðîöåäóðà ÷òåíèÿ âåòâè äåðåâà tv
+// Ð¿Ð¾Ð¸ÑÐº ÑƒÐ·Ð»Ð° Ñ Ð¸Ð´ = id Ð¸ ÑƒÑÑ‚Ð°Ð½Ð¾Ð²ÐºÐ° Selected Ð½Ð° Ð½ÐµÐ¼ Ð² Ð´ÐµÑ€ÐµÐ²Ðµ Ñ‚Ð¾Ñ‡ÐµÐº tv. OnReadNode - Ð¿Ñ€Ð¾Ñ†ÐµÐ´ÑƒÑ€Ð° Ñ‡Ñ‚ÐµÐ½Ð¸Ñ Ð²ÐµÑ‚Ð²Ð¸ Ð´ÐµÑ€ÐµÐ²Ð° tv
 void __fastcall TMainForm::FindNode(TTreeView*tv, long id, TReadTreeNode&OnReadNode,TGetNodeId&GetNodeId, char*sql)
 {
-    // Çàïðîñ - ïóòü ê òî÷êå :1 íà÷èíàÿ ñ êîðåííîãî óçëà
+    // Ð—Ð°Ð¿Ñ€Ð¾Ñ - Ð¿ÑƒÑ‚ÑŒ Ðº Ñ‚Ð¾Ñ‡ÐºÐµ :1 Ð½Ð°Ñ‡Ð¸Ð½Ð°Ñ Ñ ÐºÐ¾Ñ€ÐµÐ½Ð½Ð¾Ð³Ð¾ ÑƒÐ·Ð»Ð°
     AnsiString sqlText = "begin "+SchemeName+"un_main_pg.find_node(:par1,:par2); end;";;
     long parmid=id;
     long pointsTree[MAXCOUNTLEVEL];
@@ -406,12 +406,12 @@ void __fastcall TMainForm::SetPopupMenu(TObject *Sender, int id,AnsiString Point
 
        prBChs= taBeg.FormatString("dd.mm.yyyy hh:nn:ss");
        prEChs= taEnd.FormatString("dd.mm.yyyy hh:nn:ss");
-      //ñîçäàíèå îáúåêòà ôîðìû è åâî ïåðâîíà÷àëüíàÿ íàñòðîéêà
+      //ÑÐ¾Ð·Ð´Ð°Ð½Ð¸Ðµ Ð¾Ð±ÑŠÐµÐºÑ‚Ð° Ñ„Ð¾Ñ€Ð¼Ñ‹ Ð¸ ÐµÐ²Ð¾ Ð¿ÐµÑ€Ð²Ð¾Ð½Ð°Ñ‡Ð°Ð»ÑŒÐ½Ð°Ñ Ð½Ð°ÑÑ‚Ñ€Ð¾Ð¹ÐºÐ°
       ManForm = new TManForm(SupperMainForm);
       ManForm->OnProgressBarStepBy=SupperMainForm->ProgressBarStepBy;
       TBaseMonitorForm *p=new TBaseMonitorForm(ManForm->PageCtrlSplt,ManForm->OnProgressBarStepBy);
       ManForm->PageCtrlSplt->AddChild(p,alTop);
-      //âûçîâ ïðîöåäóðû
+      //Ð²Ñ‹Ð·Ð¾Ð² Ð¿Ñ€Ð¾Ñ†ÐµÐ´ÑƒÑ€Ñ‹
       if (fms->tmplCode == PL_SQL_REP_F){
 
         dmMain->oqCursor->Params->Clear();
@@ -426,7 +426,7 @@ void __fastcall TMainForm::SetPopupMenu(TObject *Sender, int id,AnsiString Point
          dmMain->oqCursor->Execute();
 
       }
-      //çàïîëíåíèå ïåðåäàâàåìîé ñòðóêòóðû
+      //Ð·Ð°Ð¿Ð¾Ð»Ð½ÐµÐ½Ð¸Ðµ Ð¿ÐµÑ€ÐµÐ´Ð°Ð²Ð°ÐµÐ¼Ð¾Ð¹ ÑÑ‚Ñ€ÑƒÐºÑ‚ÑƒÑ€Ñ‹
       fd->IdFormTree = fms->fid;
       fd->NameForm = fms->name;
       fd->CodeTemplate = fms->tmplCode;
@@ -439,7 +439,7 @@ void __fastcall TMainForm::SetPopupMenu(TObject *Sender, int id,AnsiString Point
       fd->DateTimePar = taBeg;
       fd->startmid = fms->startmid;
       fd->NameGroup = PointName;
-      //óñòàíàâëèâàåì ðàçðåøåííûå êîìïîíåíòû
+      //ÑƒÑÑ‚Ð°Ð½Ð°Ð²Ð»Ð¸Ð²Ð°ÐµÐ¼ Ñ€Ð°Ð·Ñ€ÐµÑˆÐµÐ½Ð½Ñ‹Ðµ ÐºÐ¾Ð¼Ð¿Ð¾Ð½ÐµÐ½Ñ‚Ñ‹
       fd->EnableControls.Clear();
       char*ch = &fms->enablecontrols[0];
       if(*ch=='1') fd->EnableControls<<TFormDescr::ctrlGroup;

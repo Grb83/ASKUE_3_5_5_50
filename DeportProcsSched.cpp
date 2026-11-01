@@ -32,7 +32,7 @@ void __fastcall TfmDeportProcsSched::ReadProcesses(TTreeNode *ParentNode, bool a
   int ind;
   stProcesses *PProcesses;
   TListItem *LI;
-  // óæå ïðî÷èòàíóþ âåòêó äåðåâà íå ÷èòàåì
+  // ÑƒÐ¶Ðµ Ð¿Ñ€Ð¾Ñ‡Ð¸Ñ‚Ð°Ð½ÑƒÑŽ Ð²ÐµÑ‚ÐºÑƒ Ð´ÐµÑ€ÐµÐ²Ð° Ð½Ðµ Ñ‡Ð¸Ñ‚Ð°ÐµÐ¼
   if (addfolders&&ParentNode&&ParentNode->getFirstChild()&&ParentNode->getFirstChild()->Data)
     return;
   lvProcess->OnChange = NULL;
@@ -80,17 +80,17 @@ void __fastcall TfmDeportProcsSched::ReadProcesses(TTreeNode *ParentNode, bool a
        strcpy(PProcesses->vProcedure,dmMain->oqCursor->FieldByName("vProcedure")->AsString.c_str());
        strcpy(PProcesses->vLastCreated,dmMain->oqCursor->FieldByName("vLastCreated")->AsString.c_str());
 
-       if (dmMain->oqCursor->FieldByName("isfolder")->AsInteger==1){ // ñòðîèì âåòêó äåðåâà ïàïîê
+       if (dmMain->oqCursor->FieldByName("isfolder")->AsInteger==1){ // ÑÑ‚Ñ€Ð¾Ð¸Ð¼ Ð²ÐµÑ‚ÐºÑƒ Ð´ÐµÑ€ÐµÐ²Ð° Ð¿Ð°Ð¿Ð¾Ðº
          if (addfolders){
            addNode = ProcessTree->Items->AddChildObject(ParentNode, PProcesses->vName, PProcesses);
            ind = GetFolderInd(addNode, PProcesses->nBlock);
            addNode->ImageIndex = ind;
            addNode->SelectedIndex = ind;
-           if(dmMain->oqCursor->FieldByName("HaveChild")->AsInteger){  // ïðîâåðêà íà íàëè÷èå äî÷åðíèõ
+           if(dmMain->oqCursor->FieldByName("HaveChild")->AsInteger){  // Ð¿Ñ€Ð¾Ð²ÐµÑ€ÐºÐ° Ð½Ð° Ð½Ð°Ð»Ð¸Ñ‡Ð¸Ðµ Ð´Ð¾Ñ‡ÐµÑ€Ð½Ð¸Ñ…
              ProcessTree->Items->AddChildObject(addNode,"",(void*)0);
            }
          }
-       }else{  // ñòðîèì ñïèñîê ñîäåðæèìîãî ïàïêè â äåðåâå
+       }else{  // ÑÑ‚Ñ€Ð¾Ð¸Ð¼ ÑÐ¿Ð¸ÑÐ¾Ðº ÑÐ¾Ð´ÐµÑ€Ð¶Ð¸Ð¼Ð¾Ð³Ð¾ Ð¿Ð°Ð¿ÐºÐ¸ Ð² Ð´ÐµÑ€ÐµÐ²Ðµ
          if (ProcessTree->Selected==ParentNode){
            LI = lvProcess->Items->Add();
            LI->ImageIndex = PProcesses->nBlock;

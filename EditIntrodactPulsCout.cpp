@@ -144,7 +144,7 @@ void __fastcall TFormIntrodactPulsCount::vRefresh(TObject* Sender)
 void __fastcall TFormIntrodactPulsCount::vSave(TObject* Sender)
 {
   TBookmark Book;
-    if(!EditRec) //íåò ðåäàêòèðîâàíèÿ
+    if(!EditRec) //Ð½ÐµÑ‚ Ñ€ÐµÐ´Ð°ÐºÑ‚Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ñ
     return;
   try{
     VT1->DisableControls();

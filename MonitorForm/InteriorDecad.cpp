@@ -9,7 +9,7 @@
 __fastcall TDecadInterior::TDecadInterior(TComponent* Owner,TSplitterForm *aSP,
 	TFormDescr *aFD,Classes::TNotifyEvent OnProgr,bool B_and_W ):TDUInterior(Owner,aSP,aFD,OnProgr,B_and_W)
 {
-                //GRB ADD - подписываем на перерисовку
+                //GRB ADD - РїРѕРґРїРёСЃС‹РІР°РµРј РЅР° РїРµСЂРµСЂРёСЃРѕРІРєСѓ
                 ((TBaseMonitorForm*)Owner)->OnResize=TDUInterior::FormShow;
 }
 //---------------------------------------------------------------------------
@@ -22,14 +22,14 @@ void __fastcall TDecadInterior::Place(void)
 	int i;
    try
    {
-		//Создаем таблицу
-		//Укладываем таблицу в SplitterForm
+		//РЎРѕР·РґР°РµРј С‚Р°Р±Р»РёС†Сѓ
+		//РЈРєР»Р°РґС‹РІР°РµРј С‚Р°Р±Р»РёС†Сѓ РІ SplitterForm
 		DrawTable=new TDrawTable(Owner);
 
 		SplitterForm->AddChild(NULL,DrawTable,alRight);
 		SplitterForm->SplitFormResize(NULL);
 
-//======== Форматирование таблицы
+//======== Р¤РѕСЂРјР°С‚РёСЂРѕРІР°РЅРёРµ С‚Р°Р±Р»РёС†С‹
 
       TPopupMenu *pPopup=
 		   (dynamic_cast<TBaseMonitorForm*>(Owner))->PopupMenuDU;
@@ -50,15 +50,15 @@ void __fastcall TDecadInterior::Place(void)
 		DrawTable->ColCount=1+SubColumns();
 		DrawTable->RowCount=Clones+1;
 
-// -------------- Для печати -----------------------------------------------------------------------
-                //столбцы для названий точек(времени) и и подколонок
+// -------------- Р”Р»СЏ РїРµС‡Р°С‚Рё -----------------------------------------------------------------------
+                //СЃС‚РѕР»Р±С†С‹ РґР»СЏ РЅР°Р·РІР°РЅРёР№ С‚РѕС‡РµРє(РІСЂРµРјРµРЅРё) Рё Рё РїРѕРґРєРѕР»РѕРЅРѕРє
       ColumnsCaption->Clear();
       VT_PrintData->Close();
       VT_PrintData->Clear();
       VT_PrintData->FieldDefs->Clear();
       VT_PrintData->FieldDefs->Add("RowName", ftString, 50, false);
       VT_PrintData->FieldDefs->Add("SubRowName", ftString, 30, false);
-      for(int CC = 1; CC<=SubColumns(); CC++) // RowCount+1 - Столбцы для данных
+      for(int CC = 1; CC<=SubColumns(); CC++) // RowCount+1 - РЎС‚РѕР»Р±С†С‹ РґР»СЏ РґР°РЅРЅС‹С…
       {
          VT_PrintData->FieldDefs->Add("Data"+IntToStr(CC), ftString, 20, false);
       }
@@ -106,7 +106,7 @@ void __fastcall TDecadInterior::dataInColumns(void)
 	int iClones,jColumns;
 	char *ptr;
 	TDrawTable::SAttrCell* pAtr;
-	//Подготавливаем переменные поля для приема
+	//РџРѕРґРіРѕС‚Р°РІР»РёРІР°РµРј РїРµСЂРµРјРµРЅРЅС‹Рµ РїРѕР»СЏ РґР»СЏ РїСЂРёРµРјР°
 	ptr=DrawTable->StructStrings->GetArray();
         VT_PrintData->First();//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 	for( iClones=0 ; iClones<Clones ; ++iClones )
@@ -162,8 +162,8 @@ static int SizeFields[]={LenFloat,LenFloat,LenFloat};
    delete psm;
 }
 //---------------------------------------------------------------------------
-//Обновление данных из базы
-//NameAlert=-1 для обновления в любом случае
+//РћР±РЅРѕРІР»РµРЅРёРµ РґР°РЅРЅС‹С… РёР· Р±Р°Р·С‹
+//NameAlert=-1 РґР»СЏ РѕР±РЅРѕРІР»РµРЅРёСЏ РІ Р»СЋР±РѕРј СЃР»СѓС‡Р°Рµ
 void __fastcall TDecadInterior::refreshData( int Table,TOraQuery *qwInter )
 {
 	if(Table==TABLE_BILL)
@@ -182,12 +182,12 @@ void __fastcall TDecadInterior::Invalidate( int Table )
 }
 //---------------------------------------------------------------------------
 
-//Получает данные о считываемой таблице
+//РџРѕР»СѓС‡Р°РµС‚ РґР°РЅРЅС‹Рµ Рѕ СЃС‡РёС‚С‹РІР°РµРјРѕР№ С‚Р°Р±Р»РёС†Рµ
 void __fastcall TDecadInterior::formDescr( void )
 {
   fd->IdGroup = GroupJump(fd->IdGroup);
 
-	//Заполняем необходимые поля описания формы
+	//Р—Р°РїРѕР»РЅСЏРµРј РЅРµРѕР±С…РѕРґРёРјС‹Рµ РїРѕР»СЏ РѕРїРёСЃР°РЅРёСЏ С„РѕСЂРјС‹
   Clones = 0;
   dmMain->oqInterCursor->Params->Clear();
   dmMain->oqInterCursor->SQL->Text="begin "+SchemeName+"interior_pg.Interior_formDescr_p(:par1,:par2,:par3,:par4,:par5,:par6,:par7); end;";
@@ -326,8 +326,8 @@ void __fastcall TDecadInterior::clickComposition(long ACol, long ARow )
   long IdGroup,j;
 	IdGroup=0;
 	if(ARow==1){
-    if(fd->IdGroup==fd->IdGroupJump){//***************** Для списков
-      fd->IdGroup = fd->IdGroupList; // Перешли на предприятие
+    if(fd->IdGroup==fd->IdGroupJump){//***************** Р”Р»СЏ СЃРїРёСЃРєРѕРІ
+      fd->IdGroup = fd->IdGroupList; // РџРµСЂРµС€Р»Рё РЅР° РїСЂРµРґРїСЂРёСЏС‚РёРµ
       fd->IdGroupJump = 0;
       fd->IdGroupList = 0;
     }
@@ -346,7 +346,7 @@ void __fastcall TDecadInterior::clickComposition(long ACol, long ARow )
     dmMain->oqInterCursor->Close();
   }else{
     IdGroup=(long)NamesClones->Objects[ARow-1];
-    //***************** Для списков *********************************************************************************
+    //***************** Р”Р»СЏ СЃРїРёСЃРєРѕРІ *********************************************************************************
     IdGroup = GroupJump(IdGroup);
     if(!IdGroup)
       return;
@@ -386,16 +386,16 @@ void __fastcall TDecadInterior::PrintTable()
    switch( fd->StepProfile )
    {
 	case TFormDescr::stpMonth:
-	   RepTitle=fd->NameGroup+" за "+fd->DateTime.FormatString("yyyy 'г.'");
+	   RepTitle=fd->NameGroup+" Р·Р° "+fd->DateTime.FormatString("yyyy 'Рі.'");
 		break;
    case TFormDescr::stpDay:
-		RepTitle=fd->NameGroup+" за "+fd->DateTime.FormatString("mmmm'.'");
+		RepTitle=fd->NameGroup+" Р·Р° "+fd->DateTime.FormatString("mmmm'.'");
 		break;
 	case TFormDescr::stpHour:
-		RepTitle=fd->NameGroup+" за "+fd->DateTime.FormatString("ddddd");
+		RepTitle=fd->NameGroup+" Р·Р° "+fd->DateTime.FormatString("ddddd");
 		break;
 	case TFormDescr::stpMinute:
-		RepTitle=fd->NameGroup+" на "+fd->DateTime.FormatString("ddddd")+" c "+fd->DateTime.FormatString("t");
+		RepTitle=fd->NameGroup+" РЅР° "+fd->DateTime.FormatString("ddddd")+" c "+fd->DateTime.FormatString("t");
 		break;
    }
    TFormSetupMonitors*psm = new TFormSetupMonitors(Application);

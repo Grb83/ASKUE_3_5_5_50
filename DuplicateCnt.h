@@ -55,16 +55,16 @@ private:	// User declarations
         AnsiString strTo;
      //   AnsiString* strName;
      //   long m_mid;//mid of parent point
-        long SortCol;//столбец по которому сортируем таблицу
+        long SortCol;//СЃС‚РѕР»Р±РµС† РїРѕ РєРѕС‚РѕСЂРѕРјСѓ СЃРѕСЂС‚РёСЂСѓРµРј С‚Р°Р±Р»РёС†Сѓ
         //1 - Name
         //2 - dateStart
         //3 - dateEnd
         //4 - Comment(Memo)
         //5 - UserName
         //6 - Input date
-        int PredTopLeft;//самый первый видимый столбец таблицы
-                //(для синхронизации HeaderControl и StringGrid при горизонтальном скролле)
-        bool SortAsc;//Направление сортировки(true-возрастание,false-убывание)
+        int PredTopLeft;//СЃР°РјС‹Р№ РїРµСЂРІС‹Р№ РІРёРґРёРјС‹Р№ СЃС‚РѕР»Р±РµС† С‚Р°Р±Р»РёС†С‹
+                //(РґР»СЏ СЃРёРЅС…СЂРѕРЅРёР·Р°С†РёРё HeaderControl Рё StringGrid РїСЂРё РіРѕСЂРёР·РѕРЅС‚Р°Р»СЊРЅРѕРј СЃРєСЂРѕР»Р»Рµ)
+        bool SortAsc;//РќР°РїСЂР°РІР»РµРЅРёРµ СЃРѕСЂС‚РёСЂРѕРІРєРё(true-РІРѕР·СЂР°СЃС‚Р°РЅРёРµ,false-СѓР±С‹РІР°РЅРёРµ)
         bool TableIsEmpty;//if true table empty
 
         POINTSTREEDEF RootPoint;
@@ -80,7 +80,7 @@ protected:
         void __fastcall vRefresh(TObject* Sender);
         void __fastcall vParams(TObject* Sender);
         void __fastcall vDelete(TObject* Sender);
-        void __fastcall vCheck(TObject* Sender);//Редактировать
+        void __fastcall vCheck(TObject* Sender);//Р РµРґР°РєС‚РёСЂРѕРІР°С‚СЊ
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TfmDuplicateCnt *fmDuplicateCnt;

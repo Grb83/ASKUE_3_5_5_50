@@ -1,6 +1,6 @@
 declare
-lv_deftablespace varchar2(256) default 'USERS';---Табл пространство (если такого нет, то нужно заменить на существующее)
-lv_tmptablespace varchar2(256) default 'TEMP';---Табл пространство (если такого нет, то нужно заменить на существующее)
+lv_deftablespace varchar2(256) default 'USERS';---РўР°Р±Р» РїСЂРѕСЃС‚СЂР°РЅСЃС‚РІРѕ (РµСЃР»Рё С‚Р°РєРѕРіРѕ РЅРµС‚, С‚Рѕ РЅСѓР¶РЅРѕ Р·Р°РјРµРЅРёС‚СЊ РЅР° СЃСѓС‰РµСЃС‚РІСѓСЋС‰РµРµ)
+lv_tmptablespace varchar2(256) default 'TEMP';---РўР°Р±Р» РїСЂРѕСЃС‚СЂР°РЅСЃС‚РІРѕ (РµСЃР»Рё С‚Р°РєРѕРіРѕ РЅРµС‚, С‚Рѕ РЅСѓР¶РЅРѕ Р·Р°РјРµРЅРёС‚СЊ РЅР° СЃСѓС‰РµСЃС‚РІСѓСЋС‰РµРµ)
 ln_count NUMBER;
 begin
  for lc in (select 1 ntype,u.USR,p.PASSWORD from users u,userpass p where u.user_id=p.user_id and upper(u.USR) not in (select username from all_users)

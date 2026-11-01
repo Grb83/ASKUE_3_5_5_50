@@ -16,7 +16,7 @@ __fastcall T6Interior::~T6Interior(void)
 //---------------------------------------------------------------------------
 void __fastcall T6Interior::selectData( TOraQuery *qwInter )
 {
- /* для обрезки допустимого баланса
+ /* РґР»СЏ РѕР±СЂРµР·РєРё РґРѕРїСѓСЃС‚РёРјРѕРіРѕ Р±Р°Р»Р°РЅСЃР°
   TOraQuery *qwInter2;
   qwInter2=new TOraQuery(Owner);
   qwInter2->Session=dmMain->orases;
@@ -68,7 +68,7 @@ void __fastcall T6Interior::selectData( TOraQuery *qwInter )
     TempDatOracle=new struct TempStruct[rowCount];
     ind = new short[rowCount*IND_CNT];
     qwInter->Params->Clear();
-    if(fd->CodeTemplate== NOT_BALANCE|| fd->CodeTemplate== NOT_BALANCE_AER)// 207 - Небаланс активной энергии)
+    if(fd->CodeTemplate== NOT_BALANCE|| fd->CodeTemplate== NOT_BALANCE_AER)// 207 - РќРµР±Р°Р»Р°РЅСЃ Р°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё)
       qwInter->SQL->Text=" begin "+SchemeName+"interior_pg.Interior4_notbalanse_p(:par7,:par8,:par9,:par10,:par11,:par12,:par13,:par1,:par2,:par3,:par4,:par5,:par6,:par14); end;";
     else
       qwInter->SQL->Text=" begin "+SchemeName+"interior_pg.Interior4_selectData_p(:par7,:par8,:par9,:par10,:par11,:par12,:par13,:par1,:par2,:par3,:par4,:par5,:par6,:par14); end;";
@@ -244,8 +244,8 @@ AnsiString __fastcall T6Interior::GetSubColumnsNames(int n)
 	case RERO_RERA_RERB_RERC_F:
 	case REDO_REDA_REDB_REDC_F:
     // add KAS 20.04.2002
-	case AEBO_AEBA_AEBB_AEBC_F: // 921 Переток активной э/э (общая и по тарифам) [кВтч]
-	case REBO_REBA_REBB_REBC_F: //941 Переток реактивной э/э (общая и по тарифам) [кВарч]
+	case AEBO_AEBA_AEBB_AEBC_F: // 921 РџРµСЂРµС‚РѕРє Р°РєС‚РёРІРЅРѕР№ СЌ/СЌ (РѕР±С‰Р°СЏ Рё РїРѕ С‚Р°СЂРёС„Р°Рј) [РєР’С‚С‡]
+	case REBO_REBA_REBB_REBC_F: //941 РџРµСЂРµС‚РѕРє СЂРµР°РєС‚РёРІРЅРѕР№ СЌ/СЌ (РѕР±С‰Р°СЏ Рё РїРѕ С‚Р°СЂРёС„Р°Рј) [РєР’Р°СЂС‡]
     // end add
         return staticNameColumns1[n];
 

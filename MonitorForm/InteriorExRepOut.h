@@ -11,7 +11,7 @@ class TInteriorExRepOut : public TInterior
   public:
     __fastcall TInteriorExRepOut(TComponent* Owner,TSplitterForm *,TFormDescr*,Classes::TNotifyEvent );
     virtual __fastcall ~TInteriorExRepOut(void);
-    virtual void __fastcall Invalidate(int Table) {}; // Эта форма не обновляется
+    virtual void __fastcall Invalidate(int Table) {}; // Р­С‚Р° С„РѕСЂРјР° РЅРµ РѕР±РЅРѕРІР»СЏРµС‚СЃСЏ
     virtual void __fastcall Place(void);
   private:
     TInteriorExRepOutPriv *d;

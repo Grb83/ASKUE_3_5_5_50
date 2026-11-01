@@ -66,19 +66,19 @@ __published:	// IDE-managed Components
 private:	// User declarations
     typedef struct {
         long Id;
-        long tmpId; // для хранения новых Id
+        long tmpId; // РґР»СЏ С…СЂР°РЅРµРЅРёСЏ РЅРѕРІС‹С… Id
         long Type;
         long HaveChild;
         char Name[256];
         char PointInfo[256];
-        long editing;// 0 -Не трогали, 1-трогали
+        long editing;// 0 -РќРµ С‚СЂРѕРіР°Р»Рё, 1-С‚СЂРѕРіР°Р»Рё
         long Id_event;
     }POINTSDIV;
-    long CountFilters_Del; // Кол-во удаляемых фильтров
-    long nFilters_Del[10000]; // id тех фильтров, которые удалены из дерева
-                              //  и необходимо удалить из таблицы FILTERS
+    long CountFilters_Del; // РљРѕР»-РІРѕ СѓРґР°Р»СЏРµРјС‹С… С„РёР»СЊС‚СЂРѕРІ
+    long nFilters_Del[10000]; // id С‚РµС… С„РёР»СЊС‚СЂРѕРІ, РєРѕС‚РѕСЂС‹Рµ СѓРґР°Р»РµРЅС‹ РёР· РґРµСЂРµРІР°
+                              //  Рё РЅРµРѕР±С…РѕРґРёРјРѕ СѓРґР°Р»РёС‚СЊ РёР· С‚Р°Р±Р»РёС†С‹ FILTERS
     bool realdeletion;
-  bool __fastcall ReadNode(TTreeView* tv,TTreeNode* NodeParent);// Читает ветку дерева Фильтров или Сообщений
+  bool __fastcall ReadNode(TTreeView* tv,TTreeNode* NodeParent);// Р§РёС‚Р°РµС‚ РІРµС‚РєСѓ РґРµСЂРµРІР° Р¤РёР»СЊС‚СЂРѕРІ РёР»Рё РЎРѕРѕР±С‰РµРЅРёР№
   void __fastcall changeNode(TTreeNode*,TTreeNode*);
   void __fastcall copyChildNodes(TTreeNode*, TTreeNode*);
   bool __fastcall tvCheckDragOver(TTreeNode*,TTreeNode*);

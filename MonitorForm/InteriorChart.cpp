@@ -28,7 +28,7 @@ __fastcall TChartInterior::TChartInterior(TComponent* Owner,TSplitterForm *aSP,
 		  	default:
 			  	throw(Exception(Reconst_smes107_1));
   		}
-		//Çàãðóæàåì èç áàçû ïîëíîå îïèñàíèå òàáëèöû
+		//Ð—Ð°Ð³Ñ€ÑƒÐ¶Ð°ÐµÐ¼ Ð¸Ð· Ð±Ð°Ð·Ñ‹ Ð¿Ð¾Ð»Ð½Ð¾Ðµ Ð¾Ð¿Ð¸ÑÐ°Ð½Ð¸Ðµ Ñ‚Ð°Ð±Ð»Ð¸Ñ†Ñ‹
 	    formDescr();
   		OnProgressBarStepBy(this);//10
 
@@ -63,7 +63,7 @@ __fastcall TChartInterior::~TChartInterior(void)
     delete pChart;
 }
 //---------------------------------------------------------------------------
-		//Ñíÿòèå ñî SplitterFom òàáëèöû è ãðàôèêà, âûçûâàåìòñÿ ïðè îáíîâëåíèè TBaseMonitorForm
+		//Ð¡Ð½ÑÑ‚Ð¸Ðµ ÑÐ¾ SplitterFom Ñ‚Ð°Ð±Ð»Ð¸Ñ†Ñ‹ Ð¸ Ð³Ñ€Ð°Ñ„Ð¸ÐºÐ°, Ð²Ñ‹Ð·Ñ‹Ð²Ð°ÐµÐ¼Ñ‚ÑÑ Ð¿Ñ€Ð¸ Ð¾Ð±Ð½Ð¾Ð²Ð»ÐµÐ½Ð¸Ð¸ TBaseMonitorForm
 void __fastcall TChartInterior::Destroy(void)
 {
 	SplitterForm->RemoveChild(pChart);
@@ -73,12 +73,12 @@ void __fastcall TChartInterior::Place(void)
 {
 try
 {
-   //Ñîçäàåì ãðàôèê
+   //Ð¡Ð¾Ð·Ð´Ð°ÐµÐ¼ Ð³Ñ€Ð°Ñ„Ð¸Ðº
 	pChart=NULL;
 	pChart=new TChart(Owner);
    pChart->Enabled=true;
 	pChart->Parent=dynamic_cast<TWinControl*>(Owner);
-	//Ïðîâîäèì íà÷àëüíóþ íàñòðîéêó êîìïîíåíòà TChart
+	//ÐŸÑ€Ð¾Ð²Ð¾Ð´Ð¸Ð¼ Ð½Ð°Ñ‡Ð°Ð»ÑŒÐ½ÑƒÑŽ Ð½Ð°ÑÑ‚Ñ€Ð¾Ð¹ÐºÑƒ ÐºÐ¾Ð¼Ð¿Ð¾Ð½ÐµÐ½Ñ‚Ð° TChart
 	pChart->View3D=false;
    pChart->Legend->Visible=true;
    pChart->Legend->ColorWidth = 35;
@@ -87,10 +87,10 @@ try
    pChart->Show();
    switch(fd->CodeTemplate)
    {
-   case APRO_C: // 10 - Àêòèâíàÿ ìîùíîñòü
+   case APRO_C: // 10 - ÐÐºÑ‚Ð¸Ð²Ð½Ð°Ñ Ð¼Ð¾Ñ‰Ð½Ð¾ÑÑ‚ÑŒ
       pChart->LeftAxis->Title->Caption = Reconst_smes107_5;
       break;
-   case RPRO_C: // 20 - Ðåàêòèâíàÿ ìîùíîñòü
+   case RPRO_C: // 20 - Ð ÐµÐ°ÐºÑ‚Ð¸Ð²Ð½Ð°Ñ Ð¼Ð¾Ñ‰Ð½Ð¾ÑÑ‚ÑŒ
       pChart->LeftAxis->Title->Caption = Reconst_smes107_6;
       break;
    }
@@ -111,14 +111,14 @@ catch(Exception &e)
 }
 }
 //---------------------------------------------------------------------------
-		//Âîçâðàùàåò êîëè÷åñèâî ïîäêîëîíîê äëÿ ôîðìû
+		//Ð’Ð¾Ð·Ð²Ñ€Ð°Ñ‰Ð°ÐµÑ‚ ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÐ¸Ð²Ð¾ Ð¿Ð¾Ð´ÐºÐ¾Ð»Ð¾Ð½Ð¾Ðº Ð´Ð»Ñ Ñ„Ð¾Ñ€Ð¼Ñ‹
 long __fastcall TChartInterior::SubColumns(void)
 {
 	return 1;
 }
 //---------------------------------------------------------------------------
-		//Îáíîâëåíèå äàííûõ èç áàçû
-		//NameAlert=-1 äëÿ îáíîâëåíèÿ â ëþáîì ñëó÷àå
+		//ÐžÐ±Ð½Ð¾Ð²Ð»ÐµÐ½Ð¸Ðµ Ð´Ð°Ð½Ð½Ñ‹Ñ… Ð¸Ð· Ð±Ð°Ð·Ñ‹
+		//NameAlert=-1 Ð´Ð»Ñ Ð¾Ð±Ð½Ð¾Ð²Ð»ÐµÐ½Ð¸Ñ Ð² Ð»ÑŽÐ±Ð¾Ð¼ ÑÐ»ÑƒÑ‡Ð°Ðµ
 void __fastcall TChartInterior::refreshData( int Table,TOraQuery *qwInter  )
 {
 	if(Table==TABLE_PROFILE)
@@ -215,11 +215,11 @@ void __fastcall TChartInterior::selectData( TOraQuery *qwInter  )
 	}
 }
 //---------------------------------------------------------------------------
-		//Ïîëó÷àåò äàííûå î ñ÷èòûâàåìîé òàáëèöå
+		//ÐŸÐ¾Ð»ÑƒÑ‡Ð°ÐµÑ‚ Ð´Ð°Ð½Ð½Ñ‹Ðµ Ð¾ ÑÑ‡Ð¸Ñ‚Ñ‹Ð²Ð°ÐµÐ¼Ð¾Ð¹ Ñ‚Ð°Ð±Ð»Ð¸Ñ†Ðµ
 void __fastcall TChartInterior::formDescr( void )
 {
   fd->IdGroup = GroupJump(fd->IdGroup);
- 	//Çàïîëíÿåì íåîáõîäèìûå ïîëÿ îïèñàíèÿ ôîðìû
+ 	//Ð—Ð°Ð¿Ð¾Ð»Ð½ÑÐµÐ¼ Ð½ÐµÐ¾Ð±Ñ…Ð¾Ð´Ð¸Ð¼Ñ‹Ðµ Ð¿Ð¾Ð»Ñ Ð¾Ð¿Ð¸ÑÐ°Ð½Ð¸Ñ Ñ„Ð¾Ñ€Ð¼Ñ‹
 	Clones = 0;
   dmMain->oqInterCursor->Params->Clear();
   dmMain->oqInterCursor->SQL->Text="begin "+SchemeName+"interior_pg.Interior_formDescr_p(:par1,:par2,:par3,:par4,:par5,:par6,:par7); end;";
@@ -246,7 +246,7 @@ void __fastcall TChartInterior::formDescr( void )
 
 }
 //---------------------------------------------------------------------------
-		//Ñòðîèò ëèíåéíûé ãðàôèê äëÿ óêàçàííîãî êëîíà
+		//Ð¡Ñ‚Ñ€Ð¾Ð¸Ñ‚ Ð»Ð¸Ð½ÐµÐ¹Ð½Ñ‹Ð¹ Ð³Ñ€Ð°Ñ„Ð¸Ðº Ð´Ð»Ñ ÑƒÐºÐ°Ð·Ð°Ð½Ð½Ð¾Ð³Ð¾ ÐºÐ»Ð¾Ð½Ð°
 void __fastcall TChartInterior::ChartFXLines(long AClone)
 {
     const CntPROFILE = LenPROFILE/StepPROFILE+100;
@@ -260,7 +260,7 @@ void __fastcall TChartInterior::ChartFXLines(long AClone)
 
     try{
         fDate = new TDateTime[CntPROFILE];
-   pChart->Legend->Visible=true;//Ñ ëåãåíäîé
+   pChart->Legend->Visible=true;//Ð¡ Ð»ÐµÐ³ÐµÐ½Ð´Ð¾Ð¹
 
    for(int i=0; i<pChart->SeriesCount(); i++)
        pChart->Series[i]->Active = false;

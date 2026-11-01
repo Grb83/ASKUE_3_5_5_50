@@ -14,21 +14,21 @@
 TfmDuplicateCnt *fmDuplicateCnt;
 
 /*
-Модули:
+РњРѕРґСѓР»Рё:
 
 DuplicatedCnt                                    
 DuplicatedCnt_PS_TU
 DuplicatedCnt_InputParams
 
-Проект находится тут:
+РџСЂРѕРµРєС‚ РЅР°С…РѕРґРёС‚СЃСЏ С‚СѓС‚:
 "D:\DATA [Kalak]\Serj\PROJECTS\askueold"
 
-Бэкапы хранятся тут:
+Р‘СЌРєР°РїС‹ С…СЂР°РЅСЏС‚СЃСЏ С‚СѓС‚:
 "D:\DATA [Kalak]\Serj\PROJECTS\BackUp"
 
-Изменения в проекте:
-1. Project/Options/Linker Max stack size: 0x00900000 //для рекурсивных функций
-2. Стрелки указывающие напрвления сортировки: bmp/ARW_DN.ico, bmp/ARW_UP.ico
+РР·РјРµРЅРµРЅРёСЏ РІ РїСЂРѕРµРєС‚Рµ:
+1. Project/Options/Linker Max stack size: 0x00900000 //РґР»СЏ СЂРµРєСѓСЂСЃРёРІРЅС‹С… С„СѓРЅРєС†РёР№
+2. РЎС‚СЂРµР»РєРё СѓРєР°Р·С‹РІР°СЋС‰РёРµ РЅР°РїСЂРІР»РµРЅРёСЏ СЃРѕСЂС‚РёСЂРѕРІРєРё: bmp/ARW_DN.ico, bmp/ARW_UP.ico
 */
 
 //---------------------------------------------------------------------------
@@ -60,10 +60,10 @@ __fastcall TfmDuplicateCnt::~TfmDuplicateCnt()
 
 void __fastcall TfmDuplicateCnt::FormCreate(TObject *Sender)
 {
-        SortCol=2;//2 - Дата_начала - сортировка по умолчанию
+        SortCol=2;//2 - Р”Р°С‚Р°_РЅР°С‡Р°Р»Р° - СЃРѕСЂС‚РёСЂРѕРІРєР° РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
         SortAsc=true;
         hcHead->Sections->Items[SortCol-1]->ImageIndex=SortAsc;
-        vParams((TObject*)(int)1);//первый запуск, если отмена в окне выбора параметров, то закрываем полностью
+        vParams((TObject*)(int)1);//РїРµСЂРІС‹Р№ Р·Р°РїСѓСЃРє, РµСЃР»Рё РѕС‚РјРµРЅР° РІ РѕРєРЅРµ РІС‹Р±РѕСЂР° РїР°СЂР°РјРµС‚СЂРѕРІ, С‚Рѕ Р·Р°РєСЂС‹РІР°РµРј РїРѕР»РЅРѕСЃС‚СЊСЋ
         FormResize(Sender);
 }
 //---------------------------------------------------------------------------
@@ -75,7 +75,7 @@ void __fastcall TfmDuplicateCnt::FormResize(TObject *Sender)
 
 }
 //---------------------------------------------------------------------------
-//синхронизируем ширину столбцов таблицы и заголовка
+//СЃРёРЅС…СЂРѕРЅРёР·РёСЂСѓРµРј С€РёСЂРёРЅСѓ СЃС‚РѕР»Р±С†РѕРІ С‚Р°Р±Р»РёС†С‹ Рё Р·Р°РіРѕР»РѕРІРєР°
 void __fastcall TfmDuplicateCnt::hcHeadSectionResize(
       THeaderControl *HeaderControl, THeaderSection *Section)
 {
@@ -87,17 +87,17 @@ void __fastcall TfmDuplicateCnt::hcHeadSectionResize(
 void __fastcall TfmDuplicateCnt::hcHeadSectionClick(
       THeaderControl *HeaderControl, THeaderSection *Section)
 {
-        //кликнули по заголовку - выбираем по какому столбцу сортировать
-        if(SortCol==Section->Index+1)//выбрали тот же столбец - сортировка в обратном напрвлении
+        //РєР»РёРєРЅСѓР»Рё РїРѕ Р·Р°РіРѕР»РѕРІРєСѓ - РІС‹Р±РёСЂР°РµРј РїРѕ РєР°РєРѕРјСѓ СЃС‚РѕР»Р±С†Сѓ СЃРѕСЂС‚РёСЂРѕРІР°С‚СЊ
+        if(SortCol==Section->Index+1)//РІС‹Р±СЂР°Р»Рё С‚РѕС‚ Р¶Рµ СЃС‚РѕР»Р±РµС† - СЃРѕСЂС‚РёСЂРѕРІРєР° РІ РѕР±СЂР°С‚РЅРѕРј РЅР°РїСЂРІР»РµРЅРёРё
         {
                 SortAsc=!SortAsc;
                 Section->ImageIndex=SortAsc;
         }
-        else{//сортируем другой столбец
+        else{//СЃРѕСЂС‚РёСЂСѓРµРј РґСЂСѓРіРѕР№ СЃС‚РѕР»Р±РµС†
                 hcHead->Sections->Items[SortCol-1]->ImageIndex=-1;
                 SortCol=Section->Index+1;
                 Section->ImageIndex=1;
-                SortAsc=true;//изначально по неубыванию
+                SortAsc=true;//РёР·РЅР°С‡Р°Р»СЊРЅРѕ РїРѕ РЅРµСѓР±С‹РІР°РЅРёСЋ
         }
         vRefresh(this);
 }
@@ -137,12 +137,12 @@ void __fastcall TfmDuplicateCnt::FillTable()
                                           where p.mid = f.mid and nmainpoint > 0) \
                             and u.user_id = c.user_id";
 
-        //если пользователь выбрал "все записи", то по дате не ищем(иначе не будут находиться пустые поля)
+        //РµСЃР»Рё РїРѕР»СЊР·РѕРІР°С‚РµР»СЊ РІС‹Р±СЂР°Р» "РІСЃРµ Р·Р°РїРёСЃРё", С‚Рѕ РїРѕ РґР°С‚Рµ РЅРµ РёС‰РµРј(РёРЅР°С‡Рµ РЅРµ Р±СѓРґСѓС‚ РЅР°С…РѕРґРёС‚СЊСЃСЏ РїСѓСЃС‚С‹Рµ РїРѕР»СЏ)
         if(!((strFrom=="01.01.1900")&&(strTo=="31.12.9999")))//for selecting NULL fields
                 sqlMain+=" AND c.dstart >= to_date('"+strFrom+"','dd.mm.yyyy') AND c.dend <= to_date('"+strTo+"','dd.mm.yyyy')";
 
 
-        sqlMain+=" ORDER BY "+IntToStr(SortCol);//сортируем по выбранному столбцу
+        sqlMain+=" ORDER BY "+IntToStr(SortCol);//СЃРѕСЂС‚РёСЂСѓРµРј РїРѕ РІС‹Р±СЂР°РЅРЅРѕРјСѓ СЃС‚РѕР»Р±С†Сѓ
         if(!SortAsc)sqlMain+=" DESC";//descending sorting
 
         dmMain->quMain->Params->Clear();
@@ -220,7 +220,7 @@ void __fastcall TfmDuplicateCnt::vParams(TObject* Sender)
         {
             if((int)Sender==1)
                Close();
-        }//если первый запуск, то закрываем окно
+        }//РµСЃР»Рё РїРµСЂРІС‹Р№ Р·Р°РїСѓСЃРє, С‚Рѕ Р·Р°РєСЂС‹РІР°РµРј РѕРєРЅРѕ
         delete InPar;
 }
 //---------------------------------------------------------------------------
@@ -255,9 +255,9 @@ void __fastcall TfmDuplicateCnt::AddEdit(bool onEdit)
                                 PS_TU->dtpTo->Date=Date();
                         }
                         PS_TU->mmComment->Text = sgTable->Cells[3][sgTable->Row];
-                        PS_TU->RootPoint.Gid = (long)(sgTable->Objects[0][sgTable->Row]);//мид редактируемой точки
+                        PS_TU->RootPoint.Gid = (long)(sgTable->Objects[0][sgTable->Row]);//РјРёРґ СЂРµРґР°РєС‚РёСЂСѓРµРјРѕР№ С‚РѕС‡РєРё
                         PS_TU->RootPoint.Type = 1;
-                        strncpy(PS_TU->RootPoint.Name,(sgTable->Cells[0][sgTable->Row]).c_str(),148);//имя редактируемой точки
+                        strncpy(PS_TU->RootPoint.Name,(sgTable->Cells[0][sgTable->Row]).c_str(),148);//РёРјСЏ СЂРµРґР°РєС‚РёСЂСѓРµРјРѕР№ С‚РѕС‡РєРё
                 }
                 else
                 {
@@ -319,13 +319,13 @@ void __fastcall TfmDuplicateCnt ::vRefresh(TObject* Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TfmDuplicateCnt::vCheck(TObject* Sender)//Редактировать
+void __fastcall TfmDuplicateCnt::vCheck(TObject* Sender)//Р РµРґР°РєС‚РёСЂРѕРІР°С‚СЊ
 {
         AddEdit(true);
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TfmDuplicateCnt::vNew(TObject* Sender)//Добавить
+void __fastcall TfmDuplicateCnt::vNew(TObject* Sender)//Р”РѕР±Р°РІРёС‚СЊ
 {
         AddEdit(false);
 }
@@ -361,7 +361,7 @@ void __fastcall TfmDuplicateCnt::vDelete(TObject* Sender)
         sgTable->SetFocus();
 }
 //---------------------------------------------------------------------------
-//функция синхронизирует столбцы заголовка и таблицы при горизонтальной прокрутке
+//С„СѓРЅРєС†РёСЏ СЃРёРЅС…СЂРѕРЅРёР·РёСЂСѓРµС‚ СЃС‚РѕР»Р±С†С‹ Р·Р°РіРѕР»РѕРІРєР° Рё С‚Р°Р±Р»РёС†С‹ РїСЂРё РіРѕСЂРёР·РѕРЅС‚Р°Р»СЊРЅРѕР№ РїСЂРѕРєСЂСѓС‚РєРµ
 
 void __fastcall TfmDuplicateCnt::sgTableTopLeftChanged(TObject *Sender)
 {

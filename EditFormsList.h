@@ -125,12 +125,12 @@ __published:	// IDE-managed Components
           TShiftState Shift);
   void __fastcall btParamClick(TObject *Sender);
 private:	// User declarations
-    typedef struct { //Вспомогательная структура
+    typedef struct { //Р’СЃРїРѕРјРѕРіР°С‚РµР»СЊРЅР°СЏ СЃС‚СЂСѓРєС‚СѓСЂР°
         long Id;
         char Name[200];
         long editing;
     }AUXDIV;
-    typedef struct { //Структура для вытяжки шаблонов
+    typedef struct { //РЎС‚СЂСѓРєС‚СѓСЂР° РґР»СЏ РІС‹С‚СЏР¶РєРё С€Р°Р±Р»РѕРЅРѕРІ
         long Id;
         long CodeTamplate;
         char Name[200];
@@ -147,20 +147,20 @@ private:	// User declarations
         long Mid;
         char MidName[150];
     }POINTSDIV;
-    typedef struct { //Вспомогательная структура
+    typedef struct { //Р’СЃРїРѕРјРѕРіР°С‚РµР»СЊРЅР°СЏ СЃС‚СЂСѓРєС‚СѓСЂР°
         TRadioButton *rb;
         TCheckBox *cb;
     }RADCHECK;
-    long nForms_Del[10000]; // id тех форм которые удалены из дерева
-                              //  и необходимо удалить из таблицы groups
-    long CountForms_Del; // Кол-во удаляемых форм
+    long nForms_Del[10000]; // id С‚РµС… С„РѕСЂРј РєРѕС‚РѕСЂС‹Рµ СѓРґР°Р»РµРЅС‹ РёР· РґРµСЂРµРІР°
+                              //  Рё РЅРµРѕР±С…РѕРґРёРјРѕ СѓРґР°Р»РёС‚СЊ РёР· С‚Р°Р±Р»РёС†С‹ groups
+    long CountForms_Del; // РљРѕР»-РІРѕ СѓРґР°Р»СЏРµРјС‹С… С„РѕСЂРј
     long CurrentSchema;
     long OldSchemaIndex;
     TTreeNode* SelectedNode;
     bool realdeletion;
     RADCHECK eProf[4];
-    bool __fastcall ReadNode(TTreeView* tv,TTreeNode* NodeParent);// Читает ветку дерева форм или шаблонов
-    void __fastcall ReadGroupNode(TTreeNode* NodeParent);// Читает ветку дерева групп
+    bool __fastcall ReadNode(TTreeView* tv,TTreeNode* NodeParent);// Р§РёС‚Р°РµС‚ РІРµС‚РєСѓ РґРµСЂРµРІР° С„РѕСЂРј РёР»Рё С€Р°Р±Р»РѕРЅРѕРІ
+    void __fastcall ReadGroupNode(TTreeNode* NodeParent);// Р§РёС‚Р°РµС‚ РІРµС‚РєСѓ РґРµСЂРµРІР° РіСЂСѓРїРї
     bool __fastcall GetShemas(void);
     bool __fastcall GetGroups(void);
     void __fastcall ReloadData(void);

@@ -100,7 +100,7 @@ void __fastcall TJournalInteriorSys::selectData( TOraQuery *qwInter )
   selectRows=i;
   OnProgressBarStepBy(this);//60
 
-// -------------- Для печати -----------------------------------------------------------------------
+// -------------- Р”Р»СЏ РїРµС‡Р°С‚Рё -----------------------------------------------------------------------
   VT_PrintData->DisableControls();
   VT_PrintData->Clear();
   OnProgressBarStepBy(this);//70
@@ -144,7 +144,7 @@ void __fastcall TJournalInteriorSys::MessageGridDrawColumnCell(
 //---------------------------------------------------------------------------
 long TJournalInteriorSys::GetIndexPicture(long i)
 {
-    switch(i){ // установить имидж
+    switch(i){ // СѓСЃС‚Р°РЅРѕРІРёС‚СЊ РёРјРёРґР¶
     case -10:  return 3;
     case -100: return 4;
     case -200: return 5;

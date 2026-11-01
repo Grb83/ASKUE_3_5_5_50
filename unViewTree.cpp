@@ -76,12 +76,12 @@ void 	__fastcall TfmViewTree::ReadTreeOccurr(TTreeNode* Node)
 
     dmMain->oqCursor->ParamByName("par2")->Clear();
   }
-  else if(Node->getFirstChild()->Text == "1") //âûçûâàåòñÿ ïðè Expanding
+  else if(Node->getFirstChild()->Text == "1") //Ð²Ñ‹Ð·Ñ‹Ð²Ð°ÐµÑ‚ÑÑ Ð¿Ñ€Ð¸ Expanding
   {
     //GRB ADD 21.02.2020
     {
     oraID->AsInteger = id;
-    //ÒÓÒ ÂÛËÅÒÛ!
+    //Ð¢Ð£Ð¢ Ð’Ð«Ð›Ð•Ð¢Ð«!
     dmMain->oqCursor->ParamByName("par1")->AsNumber=oraID;
     nodeData->AsInteger = (int)Node->Data;
     dmMain->oqCursor->ParamByName("par2")->AsNumber = nodeData;
@@ -93,7 +93,7 @@ void 	__fastcall TfmViewTree::ReadTreeOccurr(TTreeNode* Node)
     Node->DeleteChildren();
   }
   else
-    return; //åñëè âñå ïîñòðîåíî
+    return; //ÐµÑÐ»Ð¸ Ð²ÑÐµ Ð¿Ð¾ÑÑ‚Ñ€Ð¾ÐµÐ½Ð¾
     //GRB ADD 21.02.2020
    {
    oraFlag->AsInteger = flag;

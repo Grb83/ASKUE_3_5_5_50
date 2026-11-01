@@ -60,7 +60,7 @@ void __fastcall TfmRefCounter::vRefresh(TObject *Sender)
 void __fastcall TfmRefCounter::btSaveClick(TObject *Sender)
 {
   vSave(this);
-  vRefresh(this); //îáíîâëÿåì òàáëèöó
+  vRefresh(this); //Ð¾Ð±Ð½Ð¾Ð²Ð»ÑÐµÐ¼ Ñ‚Ð°Ð±Ð»Ð¸Ñ†Ñƒ
 }
 //---------------------------------------------------------------------------
 
@@ -126,12 +126,12 @@ void __fastcall TfmRefCounter::SaveTable(TComponent* Owner,TDBGridEh *gr,AnsiStr
     Application->MessageBox(Reconst_smes6_2.c_str(),Application->Title.c_str(),MB_OK | MB_ICONSTOP);
     return;
   }
-  sd->Title       = "Îòêðûòü";
+  sd->Title       = "ÐžÑ‚ÐºÑ€Ñ‹Ñ‚ÑŒ";
   sd->DefaultExt  = "txt";
   sd->FileName    = RepCaption;
   //sd->Filter      = "*.txt";
   //21.07.2022 GRB CHANGE
-  sd->Filter = "Òåêñòîâûå äîêóìåíòû (*.txt)|*.txt|Êíèãà Microsoft Excel (*.xls)|*.xls|Âñå ôàéëû (*.*)|*.*";
+  sd->Filter = "Ð¢ÐµÐºÑÑ‚Ð¾Ð²Ñ‹Ðµ Ð´Ð¾ÐºÑƒÐ¼ÐµÐ½Ñ‚Ñ‹ (*.txt)|*.txt|ÐšÐ½Ð¸Ð³Ð° Microsoft Excel (*.xls)|*.xls|Ð’ÑÐµ Ñ„Ð°Ð¹Ð»Ñ‹ (*.*)|*.*";
   sd->Options << ofOverwritePrompt;
   if(sd->Execute())
     fname=sd->FileName;
@@ -143,7 +143,7 @@ void __fastcall TfmRefCounter::SaveTable(TComponent* Owner,TDBGridEh *gr,AnsiStr
 
   try{
     StringList  = new TStringList;
-    //Çàâãîëîâîê
+    //Ð—Ð°Ð²Ð³Ð¾Ð»Ð¾Ð²Ð¾Ðº
     if(!RepCaption.IsEmpty())
       StringList->Add(RepCaption);
     s="";
@@ -155,7 +155,7 @@ void __fastcall TfmRefCounter::SaveTable(TComponent* Owner,TDBGridEh *gr,AnsiStr
       }
     }
     StringList->Add(s);
-    //Äàííûå
+    //Ð”Ð°Ð½Ð½Ñ‹Ðµ
     SavePlace = ds->GetBookmark();
     ds->DisableControls();
     ds->First();

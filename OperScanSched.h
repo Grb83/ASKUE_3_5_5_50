@@ -86,11 +86,11 @@ __published:	// IDE-managed Components
   void __fastcall sbDelPointClick(TObject *Sender);
         void __fastcall grChannelsColumnMoved(TObject *Sender,
           int FromIndex, int ToIndex);
-  //19.07.2022 GRB ADD сохзранение в файл
+  //19.07.2022 GRB ADD СЃРѕС…Р·СЂР°РЅРµРЅРёРµ РІ С„Р°Р№Р»
   void __fastcall SaveTableToFile (TObject *Sender);
 
 private:	// User declarations
-  AnsiString  orderStr;   // Строка сортировки для запроса
+  AnsiString  orderStr;   // РЎС‚СЂРѕРєР° СЃРѕСЂС‚РёСЂРѕРІРєРё РґР»СЏ Р·Р°РїСЂРѕСЃР°
   bool wasSwapColumn;
 public:		// User declarations
   __fastcall TfmOperScanSched(TComponent* Owner,int Mid,AnsiString Name,int CMid,AnsiString CName,int IfPoint);
@@ -102,7 +102,7 @@ public:		// User declarations
   void __fastcall SchChRefresh();
  // static void __fastcall OperScanSchedShow(void);
     static void __fastcall OperScanSchedShow(int Mid=0,AnsiString Name="",int CMid=0,AnsiString CName="",int IfPoint=-1);
-    // IfPoint=-1 без фильтров, IfPoint=1 фильтр по точкам, IfPoint=0 фильтр по точкам и каналам , IfPoint=2 фильтр по каналам
+    // IfPoint=-1 Р±РµР· С„РёР»СЊС‚СЂРѕРІ, IfPoint=1 С„РёР»СЊС‚СЂ РїРѕ С‚РѕС‡РєР°Рј, IfPoint=0 С„РёР»СЊС‚СЂ РїРѕ С‚РѕС‡РєР°Рј Рё РєР°РЅР°Р»Р°Рј , IfPoint=2 С„РёР»СЊС‚СЂ РїРѕ РєР°РЅР°Р»Р°Рј
  };
 
 

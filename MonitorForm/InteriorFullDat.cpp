@@ -21,18 +21,18 @@ try
 		NamesClones=new TStringList();
 
 
-		//Загружаем из базы полное описание таблицы
+		//Р—Р°РіСЂСѓР¶Р°РµРј РёР· Р±Р°Р·С‹ РїРѕР»РЅРѕРµ РѕРїРёСЃР°РЅРёРµ С‚Р°Р±Р»РёС†С‹
 		OnProgressBarStepBy(NULL);//0
 		formDescr();
 		OnProgressBarStepBy(this);//10
 
 
    	datOracle = new TCloneItem[(Clones+1)*SubColumns()*(RowCount+2)];
-		//Загружаем из базы данные
+		//Р—Р°РіСЂСѓР¶Р°РµРј РёР· Р±Р°Р·С‹ РґР°РЅРЅС‹Рµ
 
     selectData( dmMain->oqInterCursor );
 		OnProgressBarStepBy(this);//30
-    //GRB ADD - подписываем на перерисовку
+    //GRB ADD - РїРѕРґРїРёСЃС‹РІР°РµРј РЅР° РїРµСЂРµСЂРёСЃРѕРІРєСѓ
     ((TBaseMonitorForm*)Owner)->OnResize=FormShow;
 
 }
@@ -62,7 +62,7 @@ __fastcall TInteriorFullDat::~TInteriorFullDat(void)
 	if(datOracle) delete [] datOracle;
 }
 //---------------------------------------------------------------------------
-//Снятие со SplitterFom таблицы и графика, вызываемтся при обновлении TBaseMonitorForm
+//РЎРЅСЏС‚РёРµ СЃРѕ SplitterFom С‚Р°Р±Р»РёС†С‹ Рё РіСЂР°С„РёРєР°, РІС‹Р·С‹РІР°РµРјС‚СЃСЏ РїСЂРё РѕР±РЅРѕРІР»РµРЅРёРё TBaseMonitorForm
 void __fastcall TInteriorFullDat::Destroy(void)
 {
 	SplitterForm->RemoveChild(DrawTable);
@@ -75,13 +75,13 @@ void __fastcall TInteriorFullDat::Place(void)
     {
         psm = new TFormSetupMonitors(Application);
 
-		//Создаем таблицу
+		//РЎРѕР·РґР°РµРј С‚Р°Р±Р»РёС†Сѓ
 		DrawTable=new TDrawTable(Owner);
-		//Укладываем таблицу  в SplitterForm
+		//РЈРєР»Р°РґС‹РІР°РµРј С‚Р°Р±Р»РёС†Сѓ  РІ SplitterForm
 		SplitterForm->AddChild(NULL,DrawTable,alRight);
     SplitterForm->SplitFormResize(NULL);
 
-	        // ======== Форматирование таблицы
+	        // ======== Р¤РѕСЂРјР°С‚РёСЂРѕРІР°РЅРёРµ С‚Р°Р±Р»РёС†С‹
 		TPopupMenu *pPopup=
 		   (dynamic_cast<TBaseMonitorForm*>(Owner))->PopupMenu;
 		DrawTable->PopupMenu=pPopup;
@@ -128,16 +128,16 @@ void __fastcall TInteriorFullDat::Place(void)
         //chig
         if (fd->IsMemParActualForClones)
         {
-            //Восстановление состояния скроллинга
+            //Р’РѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ СЃРѕСЃС‚РѕСЏРЅРёСЏ СЃРєСЂРѕР»Р»РёРЅРіР°
             DrawTable->TopRow = fd->TableTopRow;
-            //e Восстановление состояния скроллинга
+            //e Р’РѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ СЃРѕСЃС‚РѕСЏРЅРёСЏ СЃРєСЂРѕР»Р»РёРЅРіР°
             fd->IsMemParActualForClones = FALSE;
         }
         if ( fd->IsMemParActualForProf )
         {
-            //Восстановление состояния скроллинга
+            //Р’РѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ СЃРѕСЃС‚РѕСЏРЅРёСЏ СЃРєСЂРѕР»Р»РёРЅРіР°
             DrawTable->LeftCol = fd->TableLeftCol;
-            //e Восстановление состояния скроллинга
+            //e Р’РѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ СЃРѕСЃС‚РѕСЏРЅРёСЏ СЃРєСЂРѕР»Р»РёРЅРіР°
             fd->IsMemParActualForProf = FALSE;
         }
         //e
@@ -169,11 +169,11 @@ void __fastcall TInteriorFullDat::dataInColumns(void)
 	int iClones, jColumns;
 	char *ptr, tmpData[20];
 	TCloneItem* ptrDatOracle;
-    //Подготавливаем переменные поля для приема
+    //РџРѕРґРіРѕС‚Р°РІР»РёРІР°РµРј РїРµСЂРµРјРµРЅРЅС‹Рµ РїРѕР»СЏ РґР»СЏ РїСЂРёРµРјР°
     if(fd->SummGroup)
 	    clones++;
 
-    //столбцы для названий точек(времени) и и подколонок
+    //СЃС‚РѕР»Р±С†С‹ РґР»СЏ РЅР°Р·РІР°РЅРёР№ С‚РѕС‡РµРє(РІСЂРµРјРµРЅРё) Рё Рё РїРѕРґРєРѕР»РѕРЅРѕРє
     ColumnsCaption->Clear();
     VT_PrintData->Close();
     VT_PrintData->Clear();
@@ -181,7 +181,7 @@ void __fastcall TInteriorFullDat::dataInColumns(void)
     VT_PrintData->FieldDefs->Clear();
     VT_PrintData->FieldDefs->Add("RowName", ftString, 50, false);
     VT_PrintData->FieldDefs->Add("SubRowName", ftString, 30, false);
-    for(int CC = 1; CC<=clones; CC++) // RowCount+1 - Столбцы для данных
+    for(int CC = 1; CC<=clones; CC++) // RowCount+1 - РЎС‚РѕР»Р±С†С‹ РґР»СЏ РґР°РЅРЅС‹С…
         VT_PrintData->FieldDefs->Add("Data"+IntToStr(CC), ftString, 20, false);
     VT_PrintData->FieldDefs->EndUpdate();
     VT_PrintData->Open();
@@ -292,7 +292,7 @@ void __fastcall TInteriorFullDat::clonesInColumns(void)
 
     DrawTable->FixedRows=2+(columns>1?1:0);
 
-	//Подготавливаем переменные поля для приема
+	//РџРѕРґРіРѕС‚Р°РІР»РёРІР°РµРј РїРµСЂРµРјРµРЅРЅС‹Рµ РїРѕР»СЏ РґР»СЏ РїСЂРёРµРјР°
 	int *TempStruct=new int[clones*columns];
 
 	for(iClones=0;iClones<clones*columns;++iClones)
@@ -301,7 +301,7 @@ void __fastcall TInteriorFullDat::clonesInColumns(void)
 	dataInColumns();
 	delete []TempStruct;
 
-	//Добавляем заголовки клонов
+	//Р”РѕР±Р°РІР»СЏРµРј Р·Р°РіРѕР»РѕРІРєРё РєР»РѕРЅРѕРІ
 
 	DrawTable->StaticStrings->Clear();
 	if(fd->SummGroup){
@@ -312,13 +312,13 @@ void __fastcall TInteriorFullDat::clonesInColumns(void)
 	   DrawTable->StaticStrings->Add(NamesClones->Strings[iClones]);
            ColumnsCaption->Add(NamesClones->Strings[iClones]);
         }
-	//Добавляем заголовки колонок под клонами
+	//Р”РѕР±Р°РІР»СЏРµРј Р·Р°РіРѕР»РѕРІРєРё РєРѕР»РѕРЅРѕРє РїРѕРґ РєР»РѕРЅР°РјРё
     VT_PrintData->First();
     if(columns>1)
 	    for( iClones=1; iClones<=clones ; ++iClones )
 		    for( jColumns=0; jColumns<columns ; ++jColumns )
 			    DrawTable->StaticStrings->Add(GetSubColumnsNames(jColumns));
-    //Добавляем нумерацию профиля
+    //Р”РѕР±Р°РІР»СЏРµРј РЅСѓРјРµСЂР°С†РёСЋ РїСЂРѕС„РёР»СЏ
 	TDateTime tempDate;
 	AnsiString formatDate;
 	AnsiString formatDateSum;
@@ -347,12 +347,12 @@ void __fastcall TInteriorFullDat::clonesInColumns(void)
 		break;
 	case TFormDescr::stpHour:
 		hour=1;
-    if(RowCount>24*(60/PowerProfile))//25 час
+    if(RowCount>24*(60/PowerProfile))//25 С‡Р°СЃ
     {
     stepProfile=1.0/(RowCount-60/PowerProfile);
     tempDate=TDateTime(year,month,day)+hour/(double)(RowCount-60/PowerProfile);
     }
-    else if(RowCount<24*(60/PowerProfile))//23 час
+    else if(RowCount<24*(60/PowerProfile))//23 С‡Р°СЃ
     {
     stepProfile=1.0/(RowCount+60/PowerProfile);
     tempDate=TDateTime(year,month,day)+hour/(double)(RowCount+60/PowerProfile);
@@ -372,7 +372,7 @@ void __fastcall TInteriorFullDat::clonesInColumns(void)
 		stepProfile=StepPROFILE*1.157407407407e-5;
 		formatDate="t";
 		formatDateSum=Reconst_smes105_4;
-                //GRB COMMENT 15.07.2019 - баг с построением от произвольной минуты (0:30) -> (0:14:24+3 мин = 17 мин) при нажатии на точку в графике профиля - фиксим аналогично как в Interior2xDrawTableChart.cpp
+                //GRB COMMENT 15.07.2019 - Р±Р°Рі СЃ РїРѕСЃС‚СЂРѕРµРЅРёРµРј РѕС‚ РїСЂРѕРёР·РІРѕР»СЊРЅРѕР№ РјРёРЅСѓС‚С‹ (0:30) -> (0:14:24+3 РјРёРЅ = 17 РјРёРЅ) РїСЂРё РЅР°Р¶Р°С‚РёРё РЅР° С‚РѕС‡РєСѓ РІ РіСЂР°С„РёРєРµ РїСЂРѕС„РёР»СЏ - С„РёРєСЃРёРј Р°РЅР°Р»РѕРіРёС‡РЅРѕ РєР°Рє РІ Interior2xDrawTableChart.cpp
                 tempDate=TDateTime(year,month,day)+hour/24.0+minute/1440.0+stepProfile;
                 //END GRB
                 //GRB ADD
@@ -411,13 +411,13 @@ void __fastcall TInteriorFullDat::clonesInColumns(void)
      if((IsShiftTimeZona)&&(IsDayShiftMonth(fd,10))&&!ind&&(hour==(4-TimeZona))
       && (minute==(StepPROFILE/60)))
        {
-           ind=60/(StepPROFILE/60);   //25 час
+           ind=60/(StepPROFILE/60);   //25 С‡Р°СЃ
            tempDate=tempDate-ind*stepProfile;
        }
      /*if((IsShiftTimeZona)&&(IsDayShiftMonth(fd,3))&&!ind&&(hour==(3-TimeZona))
       && (minute==(StepPROFILE/60)))
        {
-           ind=60/(StepPROFILE/60);   //23 час
+           ind=60/(StepPROFILE/60);   //23 С‡Р°СЃ
            tempDate=tempDate+ind*stepProfile;
 
        }*/
@@ -427,7 +427,7 @@ void __fastcall TInteriorFullDat::clonesInColumns(void)
 
 
        {
-           ind=60/PowerProfile;     //25 час
+           ind=60/PowerProfile;     //25 С‡Р°СЃ
            tempDate=tempDate-ind*stepProfile;
 
        }
@@ -436,15 +436,15 @@ void __fastcall TInteriorFullDat::clonesInColumns(void)
       && minute==(PowerProfile==60?0:PowerProfile)))
 
        {
-           ind=60/PowerProfile;     //23 час
+           ind=60/PowerProfile;     //23 С‡Р°СЃ
            tempDate=tempDate+ind*stepProfile;
 
        }
 
     }
     }
-	//Формируем описание структуры для шапки всей таблицы опираясь
-	//на количество клонов. Шапка занимает две строки.
+	//Р¤РѕСЂРјРёСЂСѓРµРј РѕРїРёСЃР°РЅРёРµ СЃС‚СЂСѓРєС‚СѓСЂС‹ РґР»СЏ С€Р°РїРєРё РІСЃРµР№ С‚Р°Р±Р»РёС†С‹ РѕРїРёСЂР°СЏСЃСЊ
+	//РЅР° РєРѕР»РёС‡РµСЃС‚РІРѕ РєР»РѕРЅРѕРІ. РЁР°РїРєР° Р·Р°РЅРёРјР°РµС‚ РґРІРµ СЃС‚СЂРѕРєРё.
 	DrawTable->TabStrings->Clear();
 	AnsiString temp;
 	if( columns>1)
@@ -488,8 +488,8 @@ void __fastcall TInteriorFullDat::clonesInColumns(void)
 		DrawTable-> TabStrings->Add(temp);
 	}
 
-	//Формируем описание структуры для переменных строк всей таблицы опираясь
-	//на количество клонов.
+	//Р¤РѕСЂРјРёСЂСѓРµРј РѕРїРёСЃР°РЅРёРµ СЃС‚СЂСѓРєС‚СѓСЂС‹ РґР»СЏ РїРµСЂРµРјРµРЅРЅС‹С… СЃС‚СЂРѕРє РІСЃРµР№ С‚Р°Р±Р»РёС†С‹ РѕРїРёСЂР°СЏСЃСЊ
+	//РЅР° РєРѕР»РёС‡РµСЃС‚РІРѕ РєР»РѕРЅРѕРІ.
 	iClones=1;
 	if(fd->SummGroup)
 	{
@@ -574,7 +574,7 @@ void __fastcall TInteriorFullDat::dataInRows(void)
 	TCloneItem *ptrDataOra;
     long ptrDatOracle;
 
-    //столбцы для названий точек(времени) и и подколонок
+    //СЃС‚РѕР»Р±С†С‹ РґР»СЏ РЅР°Р·РІР°РЅРёР№ С‚РѕС‡РµРє(РІСЂРµРјРµРЅРё) Рё Рё РїРѕРґРєРѕР»РѕРЅРѕРє
     ColumnsCaption->Clear();
     VT_PrintData->Close();
     VT_PrintData->Clear();
@@ -582,12 +582,12 @@ void __fastcall TInteriorFullDat::dataInRows(void)
     VT_PrintData->FieldDefs->Clear();
     VT_PrintData->FieldDefs->Add("RowName", ftString, 50, false);
     VT_PrintData->FieldDefs->Add("SubRowName", ftString, 30, false);
-    for(int CC = 1; CC<=RowCount+1; CC++) // RowCount+1 - Столбцы для данных
+    for(int CC = 1; CC<=RowCount+1; CC++) // RowCount+1 - РЎС‚РѕР»Р±С†С‹ РґР»СЏ РґР°РЅРЅС‹С…
        VT_PrintData->FieldDefs->Add("Data"+IntToStr(CC), ftString, 20, false);
 
     VT_PrintData->FieldDefs->EndUpdate();
     VT_PrintData->Open();
-	//Подготавливаем переменные поля для приема
+	//РџРѕРґРіРѕС‚Р°РІР»РёРІР°РµРј РїРµСЂРµРјРµРЅРЅС‹Рµ РїРѕР»СЏ РґР»СЏ РїСЂРёРµРјР°
 	if(fd->SummGroup)
 	    clones++;
     ptr = DrawTable->StructStrings->GetArray();
@@ -651,7 +651,7 @@ void __fastcall TInteriorFullDat::dataInRows(void)
     }
 
 
-    // Заполняем таблицу для QR
+    // Р—Р°РїРѕР»РЅСЏРµРј С‚Р°Р±Р»РёС†Сѓ РґР»СЏ QR
     int m = 0;
 
     for( jColumns=0; jColumns < (clones-m)*columns ; ++jColumns )
@@ -715,7 +715,7 @@ void __fastcall TInteriorFullDat::clonesInRows(void)
  else
     DrawTable->FixedRows=1;
 
-    //Подготавливаем переменные поля для приема
+    //РџРѕРґРіРѕС‚Р°РІР»РёРІР°РµРј РїРµСЂРµРјРµРЅРЅС‹Рµ РїРѕР»СЏ РґР»СЏ РїСЂРёРµРјР°
 	int *TempStruct=new int[RowCount+1];
 
 	for(iClones=0;iClones<=RowCount;++iClones)
@@ -724,7 +724,7 @@ void __fastcall TInteriorFullDat::clonesInRows(void)
 	dataInRows();
 	delete []TempStruct;
 
-	//Добавляем нумерацию профиля
+	//Р”РѕР±Р°РІР»СЏРµРј РЅСѓРјРµСЂР°С†РёСЋ РїСЂРѕС„РёР»СЏ
 	TDateTime tempDate;
 	AnsiString formatDate;
 	AnsiString formatDateSum;
@@ -752,12 +752,12 @@ void __fastcall TInteriorFullDat::clonesInRows(void)
 		break;
 	case TFormDescr::stpHour:
   hour=1;
-    if(RowCount>24*(60/PowerProfile)) //25 час
+    if(RowCount>24*(60/PowerProfile)) //25 С‡Р°СЃ
     {
     stepProfile=1.0/(RowCount-60/PowerProfile);
     tempDate=TDateTime(year,month,day)+hour/(double)(RowCount-60/PowerProfile);
     }
-    else if(RowCount<24*(60/PowerProfile)) //23 час
+    else if(RowCount<24*(60/PowerProfile)) //23 С‡Р°СЃ
     {
     stepProfile=1.0/(RowCount+60/PowerProfile);
     tempDate=TDateTime(year,month,day)+hour/(double)(RowCount+60/PowerProfile);
@@ -776,8 +776,8 @@ void __fastcall TInteriorFullDat::clonesInRows(void)
 		fd->DateTime.DecodeTime(&hour, &minute, &sec, &msec);
 		stepProfile=StepPROFILE*1.157407407407e-5;
 		formatDate="t";
-		formatDateSum="'Итого'";
-                //GRB COMMENT 15.07.2019 - баг с построением от произвольной минуты (0:30) -> (0:14:24+3 мин = 17 мин) при нажатии на точку в графике профиля - фиксим аналогично как в Interior2xDrawTableChart.cpp
+		formatDateSum="'РС‚РѕРіРѕ'";
+                //GRB COMMENT 15.07.2019 - Р±Р°Рі СЃ РїРѕСЃС‚СЂРѕРµРЅРёРµРј РѕС‚ РїСЂРѕРёР·РІРѕР»СЊРЅРѕР№ РјРёРЅСѓС‚С‹ (0:30) -> (0:14:24+3 РјРёРЅ = 17 РјРёРЅ) РїСЂРё РЅР°Р¶Р°С‚РёРё РЅР° С‚РѕС‡РєСѓ РІ РіСЂР°С„РёРєРµ РїСЂРѕС„РёР»СЏ - С„РёРєСЃРёРј Р°РЅР°Р»РѕРіРёС‡РЅРѕ РєР°Рє РІ Interior2xDrawTableChart.cpp
                 tempDate=TDateTime(year,month,day)+hour/24.0+minute/1440.0+stepProfile;
                 //END GRB
                 //GRB ADD
@@ -804,13 +804,13 @@ void __fastcall TInteriorFullDat::clonesInRows(void)
      if((IsShiftTimeZona)&&(IsDayShiftMonth(fd,10))&&!ind&&(hour==(4-TimeZona))
       && (minute==(StepPROFILE/60)))
        {
-           ind=60/(StepPROFILE/60);   //25 час
+           ind=60/(StepPROFILE/60);   //25 С‡Р°СЃ
            tempDate=tempDate-ind*stepProfile;
        }
      /*if((IsShiftTimeZona)&&(IsDayShiftMonth(fd,3))&&!ind&&(hour==(3-TimeZona))
       && (minute==(StepPROFILE/60)))
        {
-           ind=60/(StepPROFILE/60);   //23 час
+           ind=60/(StepPROFILE/60);   //23 С‡Р°СЃ
            tempDate=tempDate+ind*stepProfile;
 
        }*/
@@ -819,7 +819,7 @@ void __fastcall TInteriorFullDat::clonesInRows(void)
       && minute==(PowerProfile==60?0:PowerProfile)))
 
        {
-           ind=60/PowerProfile;   //25 час
+           ind=60/PowerProfile;   //25 С‡Р°СЃ
            tempDate=tempDate-ind*stepProfile;
 
        }
@@ -827,13 +827,13 @@ void __fastcall TInteriorFullDat::clonesInRows(void)
       && minute==(PowerProfile==60?0:PowerProfile)))
 
        {
-           ind=60/PowerProfile;   //23 час
+           ind=60/PowerProfile;   //23 С‡Р°СЃ
            tempDate=tempDate+ind*stepProfile;
 
        }
     }
     }
-	//Добавляем заголовки клонов
+	//Р”РѕР±Р°РІР»СЏРµРј Р·Р°РіРѕР»РѕРІРєРё РєР»РѕРЅРѕРІ
     VT_PrintData->First();
 	if(fd->SummGroup)
 	{
@@ -857,7 +857,7 @@ void __fastcall TInteriorFullDat::clonesInRows(void)
 	for( iClones=1; iClones<=Clones ; ++iClones )
 	{
 	    DrawTable->StaticStrings->Add(NamesClones->Strings[iClones]);
-        //Добавляем заголовки колонок под клонами
+        //Р”РѕР±Р°РІР»СЏРµРј Р·Р°РіРѕР»РѕРІРєРё РєРѕР»РѕРЅРѕРє РїРѕРґ РєР»РѕРЅР°РјРё
 		if(columns>1)
             for( jColumns=0; jColumns<columns ; ++jColumns )
             {
@@ -875,8 +875,8 @@ void __fastcall TInteriorFullDat::clonesInRows(void)
         }
     }
 
-    //Формируем описание структуры для шапки всей таблицы опираясь
-	//на количество клонов. Шапка занимает две строки.
+    //Р¤РѕСЂРјРёСЂСѓРµРј РѕРїРёСЃР°РЅРёРµ СЃС‚СЂСѓРєС‚СѓСЂС‹ РґР»СЏ С€Р°РїРєРё РІСЃРµР№ С‚Р°Р±Р»РёС†С‹ РѕРїРёСЂР°СЏСЃСЊ
+	//РЅР° РєРѕР»РёС‡РµСЃС‚РІРѕ РєР»РѕРЅРѕРІ. РЁР°РїРєР° Р·Р°РЅРёРјР°РµС‚ РґРІРµ СЃС‚СЂРѕРєРё.
 	DrawTable->TabStrings->Clear();
     AnsiString temp;
 	if(columns>1)
@@ -964,8 +964,8 @@ void __fastcall TInteriorFullDat::clonesInRows(void)
     DrawTable->UpdateTabStrings();
 }
 //---------------------------------------------------------------------------
-//Обновление данных из базы
-//NameAlert=-1 для обновления в любом случае
+//РћР±РЅРѕРІР»РµРЅРёРµ РґР°РЅРЅС‹С… РёР· Р±Р°Р·С‹
+//NameAlert=-1 РґР»СЏ РѕР±РЅРѕРІР»РµРЅРёСЏ РІ Р»СЋР±РѕРј СЃР»СѓС‡Р°Рµ
 void __fastcall TInteriorFullDat::refreshData( int Table,TOraQuery *qwInter )
 {
 
@@ -989,12 +989,12 @@ void __fastcall TInteriorFullDat::Invalidate(int Table)
 
 //---------------------------------------------------------------------------
 
-//Получает данные о считываемой таблице
+//РџРѕР»СѓС‡Р°РµС‚ РґР°РЅРЅС‹Рµ Рѕ СЃС‡РёС‚С‹РІР°РµРјРѕР№ С‚Р°Р±Р»РёС†Рµ
 void __fastcall TInteriorFullDat::formDescr( void )
 {
   AnsiString SubSelect;
   fd->IdGroup = GroupJump(fd->IdGroup);
-	//Заполняем необходимые поля описания формы
+	//Р—Р°РїРѕР»РЅСЏРµРј РЅРµРѕР±С…РѕРґРёРјС‹Рµ РїРѕР»СЏ РѕРїРёСЃР°РЅРёСЏ С„РѕСЂРјС‹
 
 
 	Clones = 0;
@@ -1192,7 +1192,7 @@ bool __fastcall TInteriorFullDat::setSplit(void)
 //---------------------------------------------------------------------------
 AnsiString __fastcall TInteriorFullDat::GetSubColumnsNames(int n)
 {
-	static AnsiString staticNameColumns[]={"Дата","Время"};
+	static AnsiString staticNameColumns[]={"Р”Р°С‚Р°","Р’СЂРµРјСЏ"};
 	return staticNameColumns[n];
 }
 //---------------------------------------------------------------------------
@@ -1202,7 +1202,7 @@ void __fastcall TInteriorFullDat::clickDialog(long ACol, long ARow )
 //---------------------------------------------------------------------------
 void __fastcall TInteriorFullDat::clickComposition(long ColPressed, long RowPressed  )
 {
-  if(ColPressed==0){//разложение по профилю
+  if(ColPressed==0){//СЂР°Р·Р»РѕР¶РµРЅРёРµ РїРѕ РїСЂРѕС„РёР»СЋ
     if( DrawTable )
       fd->TableTopRow = DrawTable->TopRow;
     fd->IsMemParActualForClones = TRUE;
@@ -1213,7 +1213,7 @@ void __fastcall TInteriorFullDat::clickComposition(long ColPressed, long RowPres
 		if(SubColumns()==1)
 			RowPressed++;
     RowPressed--;
-		if(RowPressed>=2){//Декомпозиция по профилю
+		if(RowPressed>=2){//Р”РµРєРѕРјРїРѕР·РёС†РёСЏ РїРѕ РїСЂРѕС„РёР»СЋ
       switch(fd->StepProfile){
         case TFormDescr::stpMonth:
           if(fd->EnableControls.Contains(TFormDescr::ctrlDay)){
@@ -1239,7 +1239,7 @@ void __fastcall TInteriorFullDat::clickComposition(long ColPressed, long RowPres
         case TFormDescr::stpMinute:
           break;
       }
-		}else{//Композиция по профилю
+		}else{//РљРѕРјРїРѕР·РёС†РёСЏ РїРѕ РїСЂРѕС„РёР»СЋ
   		switch(fd->StepProfile){
     		case TFormDescr::stpMonth:
 		    	break;
@@ -1267,7 +1267,7 @@ void __fastcall TInteriorFullDat::clickComposition(long ColPressed, long RowPres
       }
     }
 	} //end if(ColPressed==0)
-	if( RowPressed==0 && fd->EnableControls.Contains(TFormDescr::ctrlGroup)){  	//Разложение по клонам
+	if( RowPressed==0 && fd->EnableControls.Contains(TFormDescr::ctrlGroup)){  	//Р Р°Р·Р»РѕР¶РµРЅРёРµ РїРѕ РєР»РѕРЅР°Рј
     long IdGroup,j;
     if( DrawTable )
       fd->TableLeftCol = DrawTable->LeftCol;
@@ -1279,8 +1279,8 @@ void __fastcall TInteriorFullDat::clickComposition(long ColPressed, long RowPres
 
     IdGroup=0;
     if(ColPressed==0){
-      if(fd->IdGroup==fd->IdGroupJump){//***************** Для списков
-        fd->IdGroup = fd->IdGroupList; // Перешли на предприятие
+      if(fd->IdGroup==fd->IdGroupJump){//***************** Р”Р»СЏ СЃРїРёСЃРєРѕРІ
+        fd->IdGroup = fd->IdGroupList; // РџРµСЂРµС€Р»Рё РЅР° РїСЂРµРґРїСЂРёСЏС‚РёРµ
         fd->IdGroupJump = 0;
         fd->IdGroupList = 0;
       }
@@ -1305,7 +1305,7 @@ void __fastcall TInteriorFullDat::clickComposition(long ColPressed, long RowPres
     }else
       IdGroup=(long)NamesClones->Objects[ColPressed];
 
-    //***************** Для списков *********************************************************************************
+    //***************** Р”Р»СЏ СЃРїРёСЃРєРѕРІ *********************************************************************************
     IdGroup = GroupJump(IdGroup);
     if(!IdGroup)
       return;
@@ -1325,7 +1325,7 @@ void __fastcall TInteriorFullDat::clickComposition(long ColPressed, long RowPres
     dmMain->qwInter->ParamByName("par5")->AsInteger=fd->GetPeriodForYearFinish(fd->DateTime);
     dmMain->qwInter->ParamByName("par6")->AsInteger=fd->GetPeriod(fd->DateTime);
     dmMain->qwInter->Execute();
-    if( !dmMain->qwInter->Eof ){// Вставка
+    if( !dmMain->qwInter->Eof ){// Р’СЃС‚Р°РІРєР°
       fd->NameGroup=dmMain->qwInter->FieldByName("Name")->AsString;
     	fd->ShortNameGroup=dmMain->qwInter->FieldByName("ShortName")->AsString;
 	    fd->IdGroup=IdGroup;
@@ -1378,8 +1378,8 @@ void __fastcall TInteriorFullDat::DrawTableMouseDown(TObject *Sender,
 	leftShift<<ssLeft;
 	rightShift<<ssRight;
 
-	if( (Button==mbLeft && Shift==leftShift )||//нажата только левая кнопка мыши
-		(Button==mbRight && Shift==rightShift) )//нажата только правая кнопка мыши
+	if( (Button==mbLeft && Shift==leftShift )||//РЅР°Р¶Р°С‚Р° С‚РѕР»СЊРєРѕ Р»РµРІР°СЏ РєРЅРѕРїРєР° РјС‹С€Рё
+		(Button==mbRight && Shift==rightShift) )//РЅР°Р¶Р°С‚Р° С‚РѕР»СЊРєРѕ РїСЂР°РІР°СЏ РєРЅРѕРїРєР° РјС‹С€Рё
 		;
 	else
 	{
@@ -1499,23 +1499,23 @@ void __fastcall TInteriorFullDat::DrawTableMouseUp(TObject *Sender,
 		Sender->InvalidCell( ColPressed, RowPressed );
 		if( ACol==ColPressed && ARow==RowPressed )
 		{
-			//Произошел щелчок по разложению профиля или клона
+			//РџСЂРѕРёР·РѕС€РµР» С‰РµР»С‡РѕРє РїРѕ СЂР°Р·Р»РѕР¶РµРЅРёСЋ РїСЂРѕС„РёР»СЏ РёР»Рё РєР»РѕРЅР°
 			if( !fd->VerticalSplit )
 			{
 				ColPressed=ARow;
 				RowPressed=ACol;
 			}
 			if( ShiftPressed == ( TShiftState()<<ssLeft ))
-				//Вывод диалога
+				//Р’С‹РІРѕРґ РґРёР°Р»РѕРіР°
 				clickDialog(ColPressed, RowPressed );
 			else
-				//Композиция или декомпозиция
+				//РљРѕРјРїРѕР·РёС†РёСЏ РёР»Рё РґРµРєРѕРјРїРѕР·РёС†РёСЏ
 				clickComposition(ColPressed, RowPressed );
 		}
 	}
 	ClonePressed=false;
 	}
-	else//Если клон не нажимался
+	else//Р•СЃР»Рё РєР»РѕРЅ РЅРµ РЅР°Р¶РёРјР°Р»СЃСЏ
 		if( ShiftPressed == ( TShiftState()<<ssRight ) && Sender->PopupMenu )
 		{
 			POINT p;
@@ -1648,9 +1648,9 @@ void __fastcall TInteriorFullDat::GetColorToSell(TDrawTable*dt, TCloneItem*pClon
 }
 //-------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------
-//GRB ADD 15.07.2019  - является ли дата в pfd->DateTime днём перевода времени за monthNumber
+//GRB ADD 15.07.2019  - СЏРІР»СЏРµС‚СЃСЏ Р»Рё РґР°С‚Р° РІ pfd->DateTime РґРЅС‘Рј РїРµСЂРµРІРѕРґР° РІСЂРµРјРµРЅРё Р·Р° monthNumber
 //-------------------------------------------------------------------------------
-bool __fastcall TInteriorFullDat::IsDayShiftMonth (TFormDescr *pfd, int monthNumber){      //Октаябрь - 10, Март - 3
+bool __fastcall TInteriorFullDat::IsDayShiftMonth (TFormDescr *pfd, int monthNumber){      //РћРєС‚Р°СЏР±СЂСЊ - 10, РњР°СЂС‚ - 3
    unsigned short year,month,day;
    pfd->DateTime.DecodeDate( &year, &month, &day);
 
@@ -1664,7 +1664,7 @@ bool __fastcall TInteriorFullDat::IsDayShiftMonth (TFormDescr *pfd, int monthNum
 //-------------------------------------------------------------------------------
 //---------------------------------------------------------------------------
 //-------------------------------------------------------------------------------
-//GRB ADD 26.08.2021 - два метода для автоформатирования по содержимому фиксированых колонок - исправление бага с обрезанием длинных имён в колонках
+//GRB ADD 26.08.2021 - РґРІР° РјРµС‚РѕРґР° РґР»СЏ Р°РІС‚РѕС„РѕСЂРјР°С‚РёСЂРѕРІР°РЅРёСЏ РїРѕ СЃРѕРґРµСЂР¶РёРјРѕРјСѓ С„РёРєСЃРёСЂРѕРІР°РЅС‹С… РєРѕР»РѕРЅРѕРє - РёСЃРїСЂР°РІР»РµРЅРёРµ Р±Р°РіР° СЃ РѕР±СЂРµР·Р°РЅРёРµРј РґР»РёРЅРЅС‹С… РёРјС‘РЅ РІ РєРѕР»РѕРЅРєР°С…
 //---------------------------------------------------------------------------
 void __fastcall  TInteriorFullDat::AutoSizeColGRB (TDrawTable* tsg, int columnIndex){
         int i,w,WMax;
@@ -1715,7 +1715,7 @@ TFont * __fastcall TInteriorFullDat::GetActiveFont4MonitorFromReg (){
 
     }catch (Exception &ex){
         delete psm;
-        //Смелое предположение - так типа по дефолту
+        //РЎРјРµР»РѕРµ РїСЂРµРґРїРѕР»РѕР¶РµРЅРёРµ - С‚Р°Рє С‚РёРїР° РїРѕ РґРµС„РѕР»С‚Сѓ
         retFont->Name = "MS Sans Serif";
         retFont->Size = 8;
         return retFont;

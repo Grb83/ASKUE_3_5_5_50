@@ -50,21 +50,21 @@ private:	// User declarations
     char BEM[20];
     char CEM[20];
     char DEM[20];
-    char EM_N[20]; //Новые показания
-    char AEM_N[20]; //Новые показания
-    char BEM_N[20]; //Новые показания
-    char CEM_N[20]; //Новые показания
-    char DEM_N[20]; //Новые показания
-    char E_N[20];  //Новый расход
-    char AE_N[20];  //Новый расход
-    char BE_N[20];  //Новый расход
-    char CE_N[20];  //Новый расход
-    char DE_N[20];  //Новый расход
+    char EM_N[20]; //РќРѕРІС‹Рµ РїРѕРєР°Р·Р°РЅРёСЏ
+    char AEM_N[20]; //РќРѕРІС‹Рµ РїРѕРєР°Р·Р°РЅРёСЏ
+    char BEM_N[20]; //РќРѕРІС‹Рµ РїРѕРєР°Р·Р°РЅРёСЏ
+    char CEM_N[20]; //РќРѕРІС‹Рµ РїРѕРєР°Р·Р°РЅРёСЏ
+    char DEM_N[20]; //РќРѕРІС‹Рµ РїРѕРєР°Р·Р°РЅРёСЏ
+    char E_N[20];  //РќРѕРІС‹Р№ СЂР°СЃС…РѕРґ
+    char AE_N[20];  //РќРѕРІС‹Р№ СЂР°СЃС…РѕРґ
+    char BE_N[20];  //РќРѕРІС‹Р№ СЂР°СЃС…РѕРґ
+    char CE_N[20];  //РќРѕРІС‹Р№ СЂР°СЃС…РѕРґ
+    char DE_N[20];  //РќРѕРІС‹Р№ СЂР°СЃС…РѕРґ
     bool editRecord;
   }POINTLASTINPUT;
   POINTLASTINPUT pointLastInput[MAXINPUT];
-  long prov;	// Состояние проверки 0-Не проводилась, 1-проводилась (сохранять нельзя), 2-проводилась (сохранять можно)
-  unsigned long CountStr; // Количество строчек в результате запроса
+  long prov;	// РЎРѕСЃС‚РѕСЏРЅРёРµ РїСЂРѕРІРµСЂРєРё 0-РќРµ РїСЂРѕРІРѕРґРёР»Р°СЃСЊ, 1-РїСЂРѕРІРѕРґРёР»Р°СЃСЊ (СЃРѕС…СЂР°РЅСЏС‚СЊ РЅРµР»СЊР·СЏ), 2-РїСЂРѕРІРѕРґРёР»Р°СЃСЊ (СЃРѕС…СЂР°РЅСЏС‚СЊ РјРѕР¶РЅРѕ)
+  unsigned long CountStr; // РљРѕР»РёС‡РµСЃС‚РІРѕ СЃС‚СЂРѕС‡РµРє РІ СЂРµР·СѓР»СЊС‚Р°С‚Рµ Р·Р°РїСЂРѕСЃР°
    void __fastcall SetAccess(TAccess value){TMainForm::SetAccess(value);}
 public:		// User declarations
   __fastcall TFormVITInput(TComponent* Owner, AnsiString, TAccess = accDenied);

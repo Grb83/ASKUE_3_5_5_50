@@ -4,7 +4,7 @@
 CREATE OR REPLACE 
 PACKAGE pgok_pg IS
  ------------------------------------------------------------------------------------------------------------------------
- --Копирование данных из таблиц с ПГОК в получасовки
+ --РљРѕРїРёСЂРѕРІР°РЅРёРµ РґР°РЅРЅС‹С… РёР· С‚Р°Р±Р»РёС† СЃ РџР“РћРљ РІ РїРѕР»СѓС‡Р°СЃРѕРІРєРё
  PROCEDURE copy_pgok_data(an_maket NUMBER, ad_date DATE);
  ------------------------------------------------------------------------------------------------------------------------ 
 
@@ -20,19 +20,19 @@ END; -- Package spec PGOK_PG
 CREATE OR REPLACE 
 PACKAGE BODY pgok_pg IS
  ------------------------------------------------------------------------------------------------------------------------
- --Копирование данных из таблиц с ПГОК в получасовки
+ --РљРѕРїРёСЂРѕРІР°РЅРёРµ РґР°РЅРЅС‹С… РёР· С‚Р°Р±Р»РёС† СЃ РџР“РћРљ РІ РїРѕР»СѓС‡Р°СЃРѕРІРєРё
  PROCEDURE copy_pgok_data(an_maket NUMBER, ad_date DATE) IS
   cn_step   CONSTANT NUMBER              := 1 / 48;
   ld_date            DATE                DEFAULT TRUNC(ad_date);
   ln_rn              NUMBER DEFAULT 3;
   lc0                common_pg.tcur;
   lc1                common_pg.tcur;
-  ln_val_k           NUMBER;    -- значение выхода в тоннах
-  ln_val_u           NUMBER;    -- значение удельного выхода
-  ln_val_r           NUMBER;    -- значение расхода в кВт
-  ln_mid_k           NUMBER;    -- mid точки с выходом (kонцентратом)
-  ln_mid_u           NUMBER;    -- mid соответствующей точки с уд. выходом
-  ln_ras_gid         NUMBER;    -- gid секции с расходом, из которой берутся данные
+  ln_val_k           NUMBER;    -- Р·РЅР°С‡РµРЅРёРµ РІС‹С…РѕРґР° РІ С‚РѕРЅРЅР°С…
+  ln_val_u           NUMBER;    -- Р·РЅР°С‡РµРЅРёРµ СѓРґРµР»СЊРЅРѕРіРѕ РІС‹С…РѕРґР°
+  ln_val_r           NUMBER;    -- Р·РЅР°С‡РµРЅРёРµ СЂР°СЃС…РѕРґР° РІ РєР’С‚
+  ln_mid_k           NUMBER;    -- mid С‚РѕС‡РєРё СЃ РІС‹С…РѕРґРѕРј (kРѕРЅС†РµРЅС‚СЂР°С‚РѕРј)
+  ln_mid_u           NUMBER;    -- mid СЃРѕРѕС‚РІРµС‚СЃС‚РІСѓСЋС‰РµР№ С‚РѕС‡РєРё СЃ СѓРґ. РІС‹С…РѕРґРѕРј
+  ln_ras_gid         NUMBER;    -- gid СЃРµРєС†РёРё СЃ СЂР°СЃС…РѕРґРѕРј, РёР· РєРѕС‚РѕСЂРѕР№ Р±РµСЂСѓС‚СЃСЏ РґР°РЅРЅС‹Рµ
   ln_section         NUMBER;
   ln_section_u       NUMBER;
   lv_table           VARCHAR2 (256);
@@ -68,7 +68,7 @@ PACKAGE BODY pgok_pg IS
 
 --dbms_output.put_line(chr(13)||'ln_section='||ln_section);   
    IF ln_section IS NULL THEN
-     raise_application_error(-20001,'Не найден номер секции в коде точки '||ln_mid_k);
+     raise_application_error(-20001,'РќРµ РЅР°Р№РґРµРЅ РЅРѕРјРµСЂ СЃРµРєС†РёРё РІ РєРѕРґРµ С‚РѕС‡РєРё '||ln_mid_k);
    END IF;
    
    IF ln_section BETWEEN 1 AND 8 THEN
@@ -76,7 +76,7 @@ PACKAGE BODY pgok_pg IS
    ELSIF ln_section BETWEEN 10 AND 15 THEN
       lv_table := ' RYDA_OF2 ';
    ELSE   
-      raise_application_error(-20001,'Номер секции в коде точки '||ln_mid_k||' выходит за границы возможных.'); 
+      raise_application_error(-20001,'РќРѕРјРµСЂ СЃРµРєС†РёРё РІ РєРѕРґРµ С‚РѕС‡РєРё '||ln_mid_k||' РІС‹С…РѕРґРёС‚ Р·Р° РіСЂР°РЅРёС†С‹ РІРѕР·РјРѕР¶РЅС‹С….'); 
    END IF; 
 --dbms_output.put_line('----------------- '||lv_table);
    BEGIN
@@ -100,33 +100,33 @@ PACKAGE BODY pgok_pg IS
  
        EXIT WHEN lc1%NOTFOUND;
 --dbms_output.put_line('ld_date='||to_char(ld_date,'dd.mm.yy hh24:mi:ss')||chr(13)||' ln_val_k='||ln_val_k||' ln_val_r='||ln_val_r);
-       -- вставка выхода в тоннах
+       -- РІСЃС‚Р°РІРєР° РІС‹С…РѕРґР° РІ С‚РѕРЅРЅР°С…
        IF (ln_val_k IS NOT NULL) THEN
           ln_temp := TRUNC (ln_val_k/2, 0);          
---dbms_output.put_line('вставка первой половины '||ln_temp||'_точки '||ln_mid_k);       
+--dbms_output.put_line('РІСЃС‚Р°РІРєР° РїРµСЂРІРѕР№ РїРѕР»РѕРІРёРЅС‹ '||ln_temp||'_С‚РѕС‡РєРё '||ln_mid_k);       
           das_pg.ins_halfhourtmp (ln_mid_k, util_pg.to_unlocaltime_if_new (ld_date-1/48), NULL, ln_temp, NULL, NULL, NULL, NULL, NULL,NULL, NULL, NULL);
           ln_temp := ln_val_k - ln_temp;
---dbms_output.put_line('вставка второй половины '||ln_temp||'_точки '||ln_mid_k);       
+--dbms_output.put_line('РІСЃС‚Р°РІРєР° РІС‚РѕСЂРѕР№ РїРѕР»РѕРІРёРЅС‹ '||ln_temp||'_С‚РѕС‡РєРё '||ln_mid_k);       
           das_pg.ins_halfhourtmp (ln_mid_k, util_pg.to_unlocaltime_if_new (ld_date), NULL, ln_temp, NULL, NULL, NULL, NULL, NULL,NULL, NULL, NULL);
---dbms_output.put_line('конец вставки ВЫВОДА'); 
+--dbms_output.put_line('РєРѕРЅРµС† РІСЃС‚Р°РІРєРё Р’Р«Р’РћР”Рђ'); 
        END IF;
       
-       -- подсчет удельного расхода в кВтч/т
+       -- РїРѕРґСЃС‡РµС‚ СѓРґРµР»СЊРЅРѕРіРѕ СЂР°СЃС…РѕРґР° РІ РєР’С‚С‡/С‚
        IF ln_val_k IS NOT NULL AND ln_val_r IS NOT NULL AND ln_val_k<>0 THEN
          ln_val_u := trunc(ln_val_r/ln_val_k,ln_rn);
        ELSE  
          ln_val_u := NULL;   
        END IF;
 --dbms_output.put_line(' ln_val_u='||ln_val_u);       
-       -- вставка выхода в тоннах
+       -- РІСЃС‚Р°РІРєР° РІС‹С…РѕРґР° РІ С‚РѕРЅРЅР°С…
        IF (ln_val_u IS NOT NULL) THEN
           ln_temp := TRUNC (ln_val_u/2, 0);  
---dbms_output.put_line('_вставка первой половины '||ln_temp||'_точки '||ln_mid_u);         
+--dbms_output.put_line('_РІСЃС‚Р°РІРєР° РїРµСЂРІРѕР№ РїРѕР»РѕРІРёРЅС‹ '||ln_temp||'_С‚РѕС‡РєРё '||ln_mid_u);         
           das_pg.ins_halfhourtmp (ln_mid_u, util_pg.to_unlocaltime_if_new (ld_date-1/48), NULL, ln_temp, NULL, NULL, NULL, NULL, NULL,NULL, NULL, NULL);
           ln_temp := ln_val_u - ln_temp;
---dbms_output.put_line('_вставка второй половины '||ln_temp||'_точки '||ln_mid_u);         
+--dbms_output.put_line('_РІСЃС‚Р°РІРєР° РІС‚РѕСЂРѕР№ РїРѕР»РѕРІРёРЅС‹ '||ln_temp||'_С‚РѕС‡РєРё '||ln_mid_u);         
           das_pg.ins_halfhourtmp (ln_mid_u, util_pg.to_unlocaltime_if_new (ld_date), NULL, ln_temp, NULL, NULL, NULL, NULL, NULL,NULL, NULL, NULL);          
---dbms_output.put_line('конец вставки УДЕЛЬНЫХ'); 
+--dbms_output.put_line('РєРѕРЅРµС† РІСЃС‚Р°РІРєРё РЈР”Р•Р›Р¬РќР«РҐ'); 
        END IF;
     
      END LOOP;
@@ -137,7 +137,7 @@ PACKAGE BODY pgok_pg IS
       IF lc1%ISOPEN THEN
        CLOSE lc1;
       END IF;
---dbms_output.put_line('---------------------------- ЗАЛЕТ! ');      
+--dbms_output.put_line('---------------------------- Р—РђР›Р•Рў! ');      
    END;
  
   END LOOP;
@@ -160,9 +160,9 @@ END;
 
 
 -- End of DDL Script for Package Body RYDA.PGOK_PG
---Только для АСКУЭ ПГОК
+--РўРѕР»СЊРєРѕ РґР»СЏ РђРЎРљРЈР­ РџР“РћРљ
  insert into deportprocedures (nprocedure, vname, vprocedure, nperiod, ntype, vmemo)
- values (59, 'Загрузка данных выработки','ryda.pgok_pg.copy_pgok_data', 1, 1, 'Загрузка данных выработки')
+ values (59, 'Р—Р°РіСЂСѓР·РєР° РґР°РЅРЅС‹С… РІС‹СЂР°Р±РѕС‚РєРё','ryda.pgok_pg.copy_pgok_data', 1, 1, 'Р—Р°РіСЂСѓР·РєР° РґР°РЅРЅС‹С… РІС‹СЂР°Р±РѕС‚РєРё')
  /
  commit
  /
@@ -173,8 +173,8 @@ END;
 CREATE OR REPLACE 
 PACKAGE BODY uniinterior_pg IS
 ------------------------------------------------------------------------------------------------------------------------
-  -- пакет по представленипю данных макетов в сетке
-  -- дата создания 09/10/2006 Сечин А.А.
+  -- РїР°РєРµС‚ РїРѕ РїСЂРµРґСЃС‚Р°РІР»РµРЅРёРїСЋ РґР°РЅРЅС‹С… РјР°РєРµС‚РѕРІ РІ СЃРµС‚РєРµ
+  -- РґР°С‚Р° СЃРѕР·РґР°РЅРёСЏ 09/10/2006 РЎРµС‡РёРЅ Рђ.Рђ.
 ------------------------------------------------------------------------------------------------------------------------
  FUNCTION f_gettypeproc (an_fid NUMBER)
   RETURN VARCHAR2 IS
@@ -189,7 +189,7 @@ PACKAGE BODY uniinterior_pg IS
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
---Цвет по типу параметра
+--Р¦РІРµС‚ РїРѕ С‚РёРїСѓ РїР°СЂР°РјРµС‚СЂР°
  FUNCTION f_color (an_paramtype NUMBER)
   RETURN NUMBER IS
  BEGIN
@@ -197,12 +197,12 @@ PACKAGE BODY uniinterior_pg IS
  END;
 
  ------------------------------------------------------------------------------------------------------------------------
---Блокировка вывода итоговых цифр
+--Р‘Р»РѕРєРёСЂРѕРІРєР° РІС‹РІРѕРґР° РёС‚РѕРіРѕРІС‹С… С†РёС„СЂ
  FUNCTION f_locksum (an_fid NUMBER)
   RETURN NUMBER IS
   ln_ret   NUMBER;
  BEGIN
-  SELECT NVL (DECODE (MAX (vvalue), '1', 1, 0), 0)   -- 0 значит не блокировать
+  SELECT NVL (DECODE (MAX (vvalue), '1', 1, 0), 0)   -- 0 Р·РЅР°С‡РёС‚ РЅРµ Р±Р»РѕРєРёСЂРѕРІР°С‚СЊ
     INTO ln_ret
     FROM addformparamval
    WHERE mid = an_fid AND nsort = -5;
@@ -211,34 +211,34 @@ PACKAGE BODY uniinterior_pg IS
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
-  -- Возвращает информацию по колонкам таблицы для макета
+  -- Р’РѕР·РІСЂР°С‰Р°РµС‚ РёРЅС„РѕСЂРјР°С†РёСЋ РїРѕ РєРѕР»РѕРЅРєР°Рј С‚Р°Р±Р»РёС†С‹ РґР»СЏ РјР°РєРµС‚Р°
  PROCEDURE getmaketinfo (an_fid NUMBER, an_ispoint NUMBER, an_id NUMBER, ad_from DATE, ad_till DATE, an_cnfixcol OUT NUMBER, an_cntitle OUT NUMBER,
  an_cnfooter OUT NUMBER, col_t OUT common_pg.tcur, row_t OUT common_pg.tcur
  ) IS
    /*
-  an_fid         - Ид формы
-  an_ispoint      - Признак точки
-  an_id           - Ид (точки или группы)
-  ad_from         - Дата с
-  ad_till         - Дата по
-  an_cnfixcol --количество фикс колонок
-  an_cntitle --количество строк в заголовке
-  col_t -- информация по колонкам таблицы - курсор, строка которого есть
-   id - идентификатор колонки
-   Title1, Title2, ... (=an_cntitle) - наименование
-   TitleCl - цвет заголовка
-   TitleAl - выравнивание заголовка
-   DataCl - цвет данных
-   DataAl - выравнивание данных
-   nlock - блокировка редактирования
-   nwidth - ширина колонки (если<=0 то auto)
-   vmasks - маска колонки (может быть NULL)
-  row_t -- информация по строкам таблицы - курсор, строка которого есть
-   id - идентификатор сторки
-   Title1, Title2, ... (=an_cnfixcol) - наименование
-   DataCl - цвет данных
-   nlock - блокировка редактирования
-   vmasks - маска строки (может быть NULL)
+  an_fid         - РРґ С„РѕСЂРјС‹
+  an_ispoint      - РџСЂРёР·РЅР°Рє С‚РѕС‡РєРё
+  an_id           - РРґ (С‚РѕС‡РєРё РёР»Рё РіСЂСѓРїРїС‹)
+  ad_from         - Р”Р°С‚Р° СЃ
+  ad_till         - Р”Р°С‚Р° РїРѕ
+  an_cnfixcol --РєРѕР»РёС‡РµСЃС‚РІРѕ С„РёРєСЃ РєРѕР»РѕРЅРѕРє
+  an_cntitle --РєРѕР»РёС‡РµСЃС‚РІРѕ СЃС‚СЂРѕРє РІ Р·Р°РіРѕР»РѕРІРєРµ
+  col_t -- РёРЅС„РѕСЂРјР°С†РёСЏ РїРѕ РєРѕР»РѕРЅРєР°Рј С‚Р°Р±Р»РёС†С‹ - РєСѓСЂСЃРѕСЂ, СЃС‚СЂРѕРєР° РєРѕС‚РѕСЂРѕРіРѕ РµСЃС‚СЊ
+   id - РёРґРµРЅС‚РёС„РёРєР°С‚РѕСЂ РєРѕР»РѕРЅРєРё
+   Title1, Title2, ... (=an_cntitle) - РЅР°РёРјРµРЅРѕРІР°РЅРёРµ
+   TitleCl - С†РІРµС‚ Р·Р°РіРѕР»РѕРІРєР°
+   TitleAl - РІС‹СЂР°РІРЅРёРІР°РЅРёРµ Р·Р°РіРѕР»РѕРІРєР°
+   DataCl - С†РІРµС‚ РґР°РЅРЅС‹С…
+   DataAl - РІС‹СЂР°РІРЅРёРІР°РЅРёРµ РґР°РЅРЅС‹С…
+   nlock - Р±Р»РѕРєРёСЂРѕРІРєР° СЂРµРґР°РєС‚РёСЂРѕРІР°РЅРёСЏ
+   nwidth - С€РёСЂРёРЅР° РєРѕР»РѕРЅРєРё (РµСЃР»Рё<=0 С‚Рѕ auto)
+   vmasks - РјР°СЃРєР° РєРѕР»РѕРЅРєРё (РјРѕР¶РµС‚ Р±С‹С‚СЊ NULL)
+  row_t -- РёРЅС„РѕСЂРјР°С†РёСЏ РїРѕ СЃС‚СЂРѕРєР°Рј С‚Р°Р±Р»РёС†С‹ - РєСѓСЂСЃРѕСЂ, СЃС‚СЂРѕРєР° РєРѕС‚РѕСЂРѕРіРѕ РµСЃС‚СЊ
+   id - РёРґРµРЅС‚РёС„РёРєР°С‚РѕСЂ СЃС‚РѕСЂРєРё
+   Title1, Title2, ... (=an_cnfixcol) - РЅР°РёРјРµРЅРѕРІР°РЅРёРµ
+   DataCl - С†РІРµС‚ РґР°РЅРЅС‹С…
+   nlock - Р±Р»РѕРєРёСЂРѕРІРєР° СЂРµРґР°РєС‚РёСЂРѕРІР°РЅРёСЏ
+   vmasks - РјР°СЃРєР° СЃС‚СЂРѕРєРё (РјРѕР¶РµС‚ Р±С‹С‚СЊ NULL)
    */
   lv_proc      VARCHAR2 (256);
   ln_locksum   NUMBER         DEFAULT f_locksum (an_fid);
@@ -255,71 +255,71 @@ PACKAGE BODY uniinterior_pg IS
    an_cnfooter := 1;
 
    OPEN col_t FOR
-    SELECT -1 ID, 'Наименование присоединения' title1, '' title2, cn_btnface titlecl, cn_left titleal, cn_btnface datacl, cn_left dataal, 1 nlock, 200 nwidth,
+    SELECT -1 ID, 'РќР°РёРјРµРЅРѕРІР°РЅРёРµ РїСЂРёСЃРѕРµРґРёРЅРµРЅРёСЏ' title1, '' title2, cn_btnface titlecl, cn_left titleal, cn_btnface datacl, cn_left dataal, 1 nlock, 200 nwidth,
            '' vmasks
       FROM DUAL
     UNION ALL
-    SELECT -2 ID, '№ счетчика' title1, '' title2, cn_btnface titlecl, cn_left titleal, cn_btnface datacl, cn_right dataal, 1 nlock, 70 nwidth, '' vmasks
+    SELECT -2 ID, 'в„– СЃС‡РµС‚С‡РёРєР°' title1, '' title2, cn_btnface titlecl, cn_left titleal, cn_btnface datacl, cn_right dataal, 1 nlock, 70 nwidth, '' vmasks
       FROM DUAL
     UNION ALL
-    SELECT -2 ID, 'Коеф.' title1, '' title2, cn_btnface titlecl, cn_left titleal, cn_btnface datacl, cn_right dataal, 1 nlock, 50 nwidth, '' vmasks
+    SELECT -2 ID, 'РљРѕРµС„.' title1, '' title2, cn_btnface titlecl, cn_left titleal, cn_btnface datacl, cn_right dataal, 1 nlock, 50 nwidth, '' vmasks
       FROM DUAL
     UNION ALL
-    SELECT 1 ID, 'Актив (+)' title1, 'Конечные показания' title2, cn_btnface titlecl, cn_left titleal, cn_white datacl, cn_right dataal, 1 nlock, 70 nwidth,
+    SELECT 1 ID, 'РђРєС‚РёРІ (+)' title1, 'РљРѕРЅРµС‡РЅС‹Рµ РїРѕРєР°Р·Р°РЅРёСЏ' title2, cn_btnface titlecl, cn_left titleal, cn_white datacl, cn_right dataal, 1 nlock, 70 nwidth,
            '' vmasks
       FROM DUAL
     UNION ALL
-    SELECT 2 ID, 'Актив (+)' title1, 'Начальные показания' title2, cn_btnface titlecl, cn_left titleal, cn_white datacl, cn_right dataal, 1 nlock, 70 nwidth,
+    SELECT 2 ID, 'РђРєС‚РёРІ (+)' title1, 'РќР°С‡Р°Р»СЊРЅС‹Рµ РїРѕРєР°Р·Р°РЅРёСЏ' title2, cn_btnface titlecl, cn_left titleal, cn_white datacl, cn_right dataal, 1 nlock, 70 nwidth,
            '' vmasks
       FROM DUAL
     UNION ALL
-    SELECT 3 ID, 'Актив (+)' title1, 'Разность' title2, cn_btnface titlecl, cn_left titleal, cn_white datacl, cn_right dataal, 1 nlock, 70 nwidth, '' vmasks
+    SELECT 3 ID, 'РђРєС‚РёРІ (+)' title1, 'Р Р°Р·РЅРѕСЃС‚СЊ' title2, cn_btnface titlecl, cn_left titleal, cn_white datacl, cn_right dataal, 1 nlock, 70 nwidth, '' vmasks
       FROM DUAL
     UNION ALL
-    SELECT 4 ID, 'Актив (+)' title1, 'Расход энергии' title2, cn_btnface titlecl, cn_left titleal, cn_aqua datacl, cn_right dataal, 1 nlock, 70 nwidth, '' vmasks
+    SELECT 4 ID, 'РђРєС‚РёРІ (+)' title1, 'Р Р°СЃС…РѕРґ СЌРЅРµСЂРіРёРё' title2, cn_btnface titlecl, cn_left titleal, cn_aqua datacl, cn_right dataal, 1 nlock, 70 nwidth, '' vmasks
       FROM DUAL
     UNION ALL
-    SELECT 21 ID, 'Актив (-)' title1, 'Конечные показания' title2, cn_btnface titlecl, cn_left titleal, cn_white datacl, cn_right dataal, 1 nlock, 70 nwidth,
+    SELECT 21 ID, 'РђРєС‚РёРІ (-)' title1, 'РљРѕРЅРµС‡РЅС‹Рµ РїРѕРєР°Р·Р°РЅРёСЏ' title2, cn_btnface titlecl, cn_left titleal, cn_white datacl, cn_right dataal, 1 nlock, 70 nwidth,
            '' vmasks
       FROM DUAL
     UNION ALL
-    SELECT 22 ID, 'Актив (-)' title1, 'Начальные показания' title2, cn_btnface titlecl, cn_left titleal, cn_white datacl, cn_right dataal, 1 nlock, 70 nwidth,
+    SELECT 22 ID, 'РђРєС‚РёРІ (-)' title1, 'РќР°С‡Р°Р»СЊРЅС‹Рµ РїРѕРєР°Р·Р°РЅРёСЏ' title2, cn_btnface titlecl, cn_left titleal, cn_white datacl, cn_right dataal, 1 nlock, 70 nwidth,
            '' vmasks
       FROM DUAL
     UNION ALL
-    SELECT 23 ID, 'Актив (-)' title1, 'Разность' title2, cn_btnface titlecl, cn_left titleal, cn_white datacl, cn_right dataal, 1 nlock, 70 nwidth, '' vmasks
+    SELECT 23 ID, 'РђРєС‚РёРІ (-)' title1, 'Р Р°Р·РЅРѕСЃС‚СЊ' title2, cn_btnface titlecl, cn_left titleal, cn_white datacl, cn_right dataal, 1 nlock, 70 nwidth, '' vmasks
       FROM DUAL
     UNION ALL
-    SELECT 24 ID, 'Актив (-)' title1, 'Расход энергии' title2, cn_btnface titlecl, cn_left titleal, cn_aqua datacl, cn_right dataal, 1 nlock, 70 nwidth, '' vmasks
+    SELECT 24 ID, 'РђРєС‚РёРІ (-)' title1, 'Р Р°СЃС…РѕРґ СЌРЅРµСЂРіРёРё' title2, cn_btnface titlecl, cn_left titleal, cn_aqua datacl, cn_right dataal, 1 nlock, 70 nwidth, '' vmasks
       FROM DUAL
     UNION ALL
-    SELECT 31 ID, 'Реактив (+)' title1, 'Конечные показания' title2, cn_btnface titlecl, cn_left titleal, cn_white datacl, cn_right dataal, 1 nlock, 70 nwidth,
+    SELECT 31 ID, 'Р РµР°РєС‚РёРІ (+)' title1, 'РљРѕРЅРµС‡РЅС‹Рµ РїРѕРєР°Р·Р°РЅРёСЏ' title2, cn_btnface titlecl, cn_left titleal, cn_white datacl, cn_right dataal, 1 nlock, 70 nwidth,
            '' vmasks
       FROM DUAL
     UNION ALL
-    SELECT 32 ID, 'Реактив (+)' title1, 'Начальные показания' title2, cn_btnface titlecl, cn_left titleal, cn_white datacl, cn_right dataal, 1 nlock, 70 nwidth,
+    SELECT 32 ID, 'Р РµР°РєС‚РёРІ (+)' title1, 'РќР°С‡Р°Р»СЊРЅС‹Рµ РїРѕРєР°Р·Р°РЅРёСЏ' title2, cn_btnface titlecl, cn_left titleal, cn_white datacl, cn_right dataal, 1 nlock, 70 nwidth,
            '' vmasks
       FROM DUAL
     UNION ALL
-    SELECT 33 ID, 'Реактив (+)' title1, 'Разность' title2, cn_btnface titlecl, cn_left titleal, cn_white datacl, cn_right dataal, 1 nlock, 70 nwidth, '' vmasks
+    SELECT 33 ID, 'Р РµР°РєС‚РёРІ (+)' title1, 'Р Р°Р·РЅРѕСЃС‚СЊ' title2, cn_btnface titlecl, cn_left titleal, cn_white datacl, cn_right dataal, 1 nlock, 70 nwidth, '' vmasks
       FROM DUAL
     UNION ALL
-    SELECT 34 ID, 'Реактив (+)' title1, 'Расход энергии' title2, cn_btnface titlecl, cn_left titleal, cn_aqua datacl, cn_right dataal, 1 nlock, 70 nwidth,
+    SELECT 34 ID, 'Р РµР°РєС‚РёРІ (+)' title1, 'Р Р°СЃС…РѕРґ СЌРЅРµСЂРіРёРё' title2, cn_btnface titlecl, cn_left titleal, cn_aqua datacl, cn_right dataal, 1 nlock, 70 nwidth,
            '' vmasks
       FROM DUAL
     UNION ALL
-    SELECT 41 ID, 'Реактив (-)' title1, 'Конечные показания' title2, cn_btnface titlecl, cn_left titleal, cn_white datacl, cn_right dataal, 1 nlock, 70 nwidth,
+    SELECT 41 ID, 'Р РµР°РєС‚РёРІ (-)' title1, 'РљРѕРЅРµС‡РЅС‹Рµ РїРѕРєР°Р·Р°РЅРёСЏ' title2, cn_btnface titlecl, cn_left titleal, cn_white datacl, cn_right dataal, 1 nlock, 70 nwidth,
            '' vmasks
       FROM DUAL
     UNION ALL
-    SELECT 42 ID, 'Реактив (-)' title1, 'Начальные показания' title2, cn_btnface titlecl, cn_left titleal, cn_white datacl, cn_right dataal, 1 nlock, 70 nwidth,
+    SELECT 42 ID, 'Р РµР°РєС‚РёРІ (-)' title1, 'РќР°С‡Р°Р»СЊРЅС‹Рµ РїРѕРєР°Р·Р°РЅРёСЏ' title2, cn_btnface titlecl, cn_left titleal, cn_white datacl, cn_right dataal, 1 nlock, 70 nwidth,
            '' vmasks
       FROM DUAL
     UNION ALL
-    SELECT 43 ID, 'Реактив (-)' title1, 'Разность' title2, cn_btnface titlecl, cn_left titleal, cn_white datacl, cn_right dataal, 1 nlock, 70 nwidth, '' vmasks
+    SELECT 43 ID, 'Р РµР°РєС‚РёРІ (-)' title1, 'Р Р°Р·РЅРѕСЃС‚СЊ' title2, cn_btnface titlecl, cn_left titleal, cn_white datacl, cn_right dataal, 1 nlock, 70 nwidth, '' vmasks
       FROM DUAL
     UNION ALL
-    SELECT 44 ID, 'Реактив (-)' title1, 'Расход энергии' title2, cn_btnface titlecl, cn_left titleal, cn_aqua datacl, cn_right dataal, 1 nlock, 70 nwidth,
+    SELECT 44 ID, 'Р РµР°РєС‚РёРІ (-)' title1, 'Р Р°СЃС…РѕРґ СЌРЅРµСЂРіРёРё' title2, cn_btnface titlecl, cn_left titleal, cn_aqua datacl, cn_right dataal, 1 nlock, 70 nwidth,
            '' vmasks
       FROM DUAL;
 
@@ -335,7 +335,7 @@ PACKAGE BODY uniinterior_pg IS
                                 START WITH mid = an_id) AND f.mid = m.mid(+) AND m.entype(+) = 7 AND f.mid = p.mid(+) AND p.PARENT = pa.mid(+)
              ORDER BY pa.NAME, pa.mid, p.NAME, p.mid)
      UNION ALL
-     SELECT -1 ID, 'Итого расход:' title1, '' title2, '' title3, cn_yellow datacl, cn_right dataal, 0 nlock, '' vmasks
+     SELECT -1 ID, 'РС‚РѕРіРѕ СЂР°СЃС…РѕРґ:' title1, '' title2, '' title3, cn_yellow datacl, cn_right dataal, 0 nlock, '' vmasks
        FROM DUAL;
    ELSE
     OPEN row_t FOR
@@ -353,7 +353,7 @@ PACKAGE BODY uniinterior_pg IS
                       AND g.mid = f.mid AND f.mid = m.mid(+) AND m.entype(+) = 7 AND f.mid = p.mid(+) AND p.PARENT = pa.mid(+)
              ORDER BY util_pg.allnumber_f (util_pg.get_param (g.vparam, 1, ';')), pa.NAME, pa.mid, p.NAME, p.mid)
      UNION ALL
-     SELECT -1 ID, 'Итого расход:' title1, '' title2, '' title3, cn_yellow datacl, cn_right dataal, 0 nlock, '' vmasks
+     SELECT -1 ID, 'РС‚РѕРіРѕ СЂР°СЃС…РѕРґ:' title1, '' title2, '' title3, cn_yellow datacl, cn_right dataal, 0 nlock, '' vmasks
        FROM DUAL;
    END IF;
   ------------------------------- addded by Kondakov A.G. 07.10.2008
@@ -366,38 +366,38 @@ PACKAGE BODY uniinterior_pg IS
      FROM DUAL;
 
    OPEN col_t FOR
-    SELECT -1 ID, '№ п/п' title1, '' title2, cn_btnface titlecl, cn_left titleal, cn_btnface datacl, cn_center dataal, 1 nlock, 30 nwidth, '' vmasks
+    SELECT -1 ID, 'в„– Рї/Рї' title1, '' title2, cn_btnface titlecl, cn_left titleal, cn_btnface datacl, cn_center dataal, 1 nlock, 30 nwidth, '' vmasks
       FROM DUAL
     UNION ALL
-    SELECT -2 ID, 'Назва л_н_ї' title1, '' title2, cn_btnface titlecl, cn_left titleal, cn_btnface datacl, cn_left dataal, 1 nlock, 300 nwidth, '' vmasks
+    SELECT -2 ID, 'РќР°Р·РІР° Р»_РЅ_С—' title1, '' title2, cn_btnface titlecl, cn_left titleal, cn_btnface datacl, cn_left dataal, 1 nlock, 300 nwidth, '' vmasks
       FROM DUAL
     UNION ALL
-    SELECT -2 ID, '№ л_чильника' title1, '' title2, cn_btnface titlecl, cn_left titleal, cn_btnface datacl, cn_right dataal, 1 nlock, 90 nwidth, '' vmasks
+    SELECT -2 ID, 'в„– Р»_С‡РёР»СЊРЅРёРєР°' title1, '' title2, cn_btnface titlecl, cn_left titleal, cn_btnface datacl, cn_right dataal, 1 nlock, 90 nwidth, '' vmasks
       FROM DUAL
     UNION ALL
-    SELECT -2 ID, 'Напрямок перетоку' title1, '' title2, cn_btnface titlecl, cn_right titleal, cn_btnface datacl, cn_right dataal, 1 nlock, 55 nwidth, '' vmasks
+    SELECT -2 ID, 'РќР°РїСЂСЏРјРѕРє РїРµСЂРµС‚РѕРєСѓ' title1, '' title2, cn_btnface titlecl, cn_right titleal, cn_btnface datacl, cn_right dataal, 1 nlock, 55 nwidth, '' vmasks
       FROM DUAL
     UNION ALL
-    SELECT 1 ID, 'Показання л_чильника' title1, 'на 0 г. 1-го числа зв_тного м_сяця' title2, cn_btnface titlecl, cn_left titleal, cn_white datacl, cn_right dataal,
+    SELECT 1 ID, 'РџРѕРєР°Р·Р°РЅРЅСЏ Р»_С‡РёР»СЊРЅРёРєР°' title1, 'РЅР° 0 Рі. 1-РіРѕ С‡РёСЃР»Р° Р·РІ_С‚РЅРѕРіРѕ Рј_СЃСЏС†СЏ' title2, cn_btnface titlecl, cn_left titleal, cn_white datacl, cn_right dataal,
            1 nlock, 100 nwidth, '' vmasks
       FROM DUAL
     UNION ALL
-    SELECT 2 ID, 'Показання л_чильника' title1, 'на 24 г. останнього числа зв_тного м_сяця' title2, cn_btnface titlecl, cn_left titleal, cn_white datacl,
+    SELECT 2 ID, 'РџРѕРєР°Р·Р°РЅРЅСЏ Р»_С‡РёР»СЊРЅРёРєР°' title1, 'РЅР° 24 Рі. РѕСЃС‚Р°РЅРЅСЊРѕРіРѕ С‡РёСЃР»Р° Р·РІ_С‚РЅРѕРіРѕ Рј_СЃСЏС†СЏ' title2, cn_btnface titlecl, cn_left titleal, cn_white datacl,
            cn_right dataal, 1 nlock, 100 nwidth, '' vmasks
       FROM DUAL
     UNION ALL
-    SELECT 3 ID, 'Р_зниця показник_в л_чильник_в' title1, '' title2, cn_btnface titlecl, cn_left titleal, cn_white datacl, cn_right dataal, 1 nlock, 100 nwidth,
+    SELECT 3 ID, 'Р _Р·РЅРёС†СЏ РїРѕРєР°Р·РЅРёРє_РІ Р»_С‡РёР»СЊРЅРёРє_РІ' title1, '' title2, cn_btnface titlecl, cn_left titleal, cn_white datacl, cn_right dataal, 1 nlock, 100 nwidth,
            '' vmasks
       FROM DUAL
     UNION ALL
-    SELECT 4 ID, 'Коеф_ц_єнт л_чильника' title1, '' title2, cn_btnface titlecl, cn_left titleal, cn_white datacl, cn_right dataal, 1 nlock, 85 nwidth, '' vmasks
+    SELECT 4 ID, 'РљРѕРµС„_С†_С”РЅС‚ Р»_С‡РёР»СЊРЅРёРєР°' title1, '' title2, cn_btnface titlecl, cn_left titleal, cn_white datacl, cn_right dataal, 1 nlock, 85 nwidth, '' vmasks
       FROM DUAL
     UNION ALL
-    SELECT 5 ID, 'К_л-ть електроенерг_ї обл_кованої л_чильником кВт/г.' title1, '' title2, cn_btnface titlecl, cn_left titleal, cn_white datacl, cn_right dataal,
+    SELECT 5 ID, 'Рљ_Р»-С‚СЊ РµР»РµРєС‚СЂРѕРµРЅРµСЂРі_С— РѕР±Р»_РєРѕРІР°РЅРѕС— Р»_С‡РёР»СЊРЅРёРєРѕРј РєР’С‚/Рі.' title1, '' title2, cn_btnface titlecl, cn_left titleal, cn_white datacl, cn_right dataal,
            1 nlock, 120 nwidth, '' vmasks
       FROM DUAL
     UNION ALL
-    SELECT 6 ID, 'Прим_тка' title1, '' title2, cn_btnface titlecl, cn_left titleal, cn_white datacl, cn_right dataal, 0 nlock, 120 nwidth, '' vmasks
+    SELECT 6 ID, 'РџСЂРёРј_С‚РєР°' title1, '' title2, cn_btnface titlecl, cn_left titleal, cn_white datacl, cn_right dataal, 0 nlock, 120 nwidth, '' vmasks
       FROM DUAL;
 
    IF an_ispoint = 1 THEN
@@ -409,24 +409,24 @@ PACKAGE BODY uniinterior_pg IS
                       meters m,
                       points p,
                       points pa,
-                      (SELECT ROWNUM r, DECODE (ROWNUM, 1, 'прийом', 'в_ддача') t
+                      (SELECT ROWNUM r, DECODE (ROWNUM, 1, 'РїСЂРёР№РѕРј', 'РІ_РґРґР°С‡Р°') t
                          FROM dict
                         WHERE ROWNUM <= 2) d
                 WHERE f.mid IN (SELECT     mid
                                       FROM points
                                 CONNECT BY PRIOR mid = PARENT
                                 START WITH mid = an_id) AND f.mid = m.mid(+) AND m.entype(+) = 7 AND f.mid = p.mid(+) AND p.PARENT = pa.mid(+)
-             ORDER BY pa.NAME, pa.mid, p.NAME, p.mid, d.t) t   -- сортировка по d.t значит - сначала отдача, потом прием
+             ORDER BY pa.NAME, pa.mid, p.NAME, p.mid, d.t) t   -- СЃРѕСЂС‚РёСЂРѕРІРєР° РїРѕ d.t Р·РЅР°С‡РёС‚ - СЃРЅР°С‡Р°Р»Р° РѕС‚РґР°С‡Р°, РїРѕС‚РѕРј РїСЂРёРµРј
      UNION ALL
-     SELECT '' title1, -1 ID, '' title2, 'Разом:' title3, 'в_ддача' title4, cn_yellow datacl, cn_right dataal, 0 nlock, '' vmasks
+     SELECT '' title1, -1 ID, '' title2, 'Р Р°Р·РѕРј:' title3, 'РІ_РґРґР°С‡Р°' title4, cn_yellow datacl, cn_right dataal, 0 nlock, '' vmasks
        FROM DUAL
       WHERE ln_locksum = 0
      UNION ALL
-     SELECT '' title1, -1 ID, '' title2, '' title3, 'прийом' title4, cn_yellow datacl, cn_right dataal, 0 nlock, '' vmasks
+     SELECT '' title1, -1 ID, '' title2, '' title3, 'РїСЂРёР№РѕРј' title4, cn_yellow datacl, cn_right dataal, 0 nlock, '' vmasks
        FROM DUAL
       WHERE ln_locksum = 0
      UNION ALL
-     SELECT '' title1, -1 ID, '' title2, '' title3, 'сальдо' title4, cn_yellow datacl, cn_right dataal, 0 nlock, '' vmasks
+     SELECT '' title1, -1 ID, '' title2, '' title3, 'СЃР°Р»СЊРґРѕ' title4, cn_yellow datacl, cn_right dataal, 0 nlock, '' vmasks
        FROM DUAL
       WHERE ln_locksum = 0;
    ELSE
@@ -439,7 +439,7 @@ PACKAGE BODY uniinterior_pg IS
                       meters m,
                       points p,
                       points pa,
-                      (SELECT ROWNUM r, DECODE (ROWNUM, 1, 'прийом', 'в_ддача') t
+                      (SELECT ROWNUM r, DECODE (ROWNUM, 1, 'РїСЂРёР№РѕРј', 'РІ_РґРґР°С‡Р°') t
                          FROM dict
                         WHERE ROWNUM <= 2) d
                 WHERE g.gid IN (
@@ -450,17 +450,17 @@ PACKAGE BODY uniinterior_pg IS
                        START WITH gid = an_id
                                   AND (TO_CHAR (ad_from, 'yyyymm') <= NVL (ntillperiod, 299912) AND TO_CHAR (ad_till, 'yyyymm') >= NVL (nfromperiod, 160501)))
                       AND g.mid = f.mid AND f.mid = m.mid(+) AND m.entype(+) = 7 AND f.mid = p.mid(+) AND p.PARENT = pa.mid(+)
-             ORDER BY util_pg.allnumber_f (util_pg.get_param (g.vparam, 1, ';')), pa.NAME, pa.mid, p.NAME, p.mid, d.t) t   -- сортировка по d.t значит - сначала отдача, потом прием
+             ORDER BY util_pg.allnumber_f (util_pg.get_param (g.vparam, 1, ';')), pa.NAME, pa.mid, p.NAME, p.mid, d.t) t   -- СЃРѕСЂС‚РёСЂРѕРІРєР° РїРѕ d.t Р·РЅР°С‡РёС‚ - СЃРЅР°С‡Р°Р»Р° РѕС‚РґР°С‡Р°, РїРѕС‚РѕРј РїСЂРёРµРј
      UNION ALL
-     SELECT '' title1, -1 ID, '' title2, 'Разом:' title3, 'в_ддача' title4, cn_yellow datacl, cn_right dataal, 0 nlock, '' vmasks
+     SELECT '' title1, -1 ID, '' title2, 'Р Р°Р·РѕРј:' title3, 'РІ_РґРґР°С‡Р°' title4, cn_yellow datacl, cn_right dataal, 0 nlock, '' vmasks
        FROM DUAL
       WHERE ln_locksum = 0
      UNION ALL
-     SELECT '' title1, -1 ID, '' title2, '' title3, 'прийом' title4, cn_yellow datacl, cn_right dataal, 0 nlock, '' vmasks
+     SELECT '' title1, -1 ID, '' title2, '' title3, 'РїСЂРёР№РѕРј' title4, cn_yellow datacl, cn_right dataal, 0 nlock, '' vmasks
        FROM DUAL
       WHERE ln_locksum = 0
      UNION ALL
-     SELECT '' title1, -1 ID, '' title2, '' title3, 'сальдо' title4, cn_yellow datacl, cn_right dataal, 0 nlock, '' vmasks
+     SELECT '' title1, -1 ID, '' title2, '' title3, 'СЃР°Р»СЊРґРѕ' title4, cn_yellow datacl, cn_right dataal, 0 nlock, '' vmasks
        FROM DUAL
       WHERE ln_locksum = 0;
    END IF;
@@ -476,36 +476,36 @@ PACKAGE BODY uniinterior_pg IS
    END IF;
 
    OPEN col_t FOR
-    SELECT -3 ID, 'Наименование ПС' title1, '' title2, '1' title3, cn_btnface titlecl, cn_right titleal, cn_btnface datacl, cn_left dataal, 1 nlock, 200 nwidth,
+    SELECT -3 ID, 'РќР°РёРјРµРЅРѕРІР°РЅРёРµ РџРЎ' title1, '' title2, '1' title3, cn_btnface titlecl, cn_right titleal, cn_btnface datacl, cn_left dataal, 1 nlock, 200 nwidth,
            '' vmasks
       FROM DUAL
     UNION ALL
-    SELECT -2 ID, 'Присоединение' title1, '' title2, '2' title3, cn_btnface titlecl, cn_right titleal, cn_btnface datacl, cn_left dataal, 1 nlock, 180 nwidth,
+    SELECT -2 ID, 'РџСЂРёСЃРѕРµРґРёРЅРµРЅРёРµ' title1, '' title2, '2' title3, cn_btnface titlecl, cn_right titleal, cn_btnface datacl, cn_left dataal, 1 nlock, 180 nwidth,
            '' vmasks
       FROM DUAL
     UNION ALL
-    SELECT -1 ID, '№ счетчика' title1, '' title2, '3' title3, cn_btnface titlecl, cn_right titleal, cn_btnface datacl, cn_right dataal, 1 nlock, 70 nwidth,
+    SELECT -1 ID, 'в„– СЃС‡РµС‚С‡РёРєР°' title1, '' title2, '3' title3, cn_btnface titlecl, cn_right titleal, cn_btnface datacl, cn_right dataal, 1 nlock, 70 nwidth,
            '' vmasks
       FROM DUAL
     UNION ALL
-    SELECT 1 ID, 'Показания счетчика' title1, '24-00 час. последнего дня отчетного месяца' title2, '4' title3, cn_btnface titlecl, cn_left titleal, cn_white datacl,
+    SELECT 1 ID, 'РџРѕРєР°Р·Р°РЅРёСЏ СЃС‡РµС‚С‡РёРєР°' title1, '24-00 С‡Р°СЃ. РїРѕСЃР»РµРґРЅРµРіРѕ РґРЅСЏ РѕС‚С‡РµС‚РЅРѕРіРѕ РјРµСЃСЏС†Р°' title2, '4' title3, cn_btnface titlecl, cn_left titleal, cn_white datacl,
            cn_right dataal, 1 nlock, 95 nwidth, '' vmasks
       FROM DUAL
     UNION ALL
-    SELECT 2 ID, 'Показания счетчика' title1, '00-00 час. первого дня отчетного месяца' title2, '5' title3, cn_btnface titlecl, cn_left titleal, cn_white datacl,
+    SELECT 2 ID, 'РџРѕРєР°Р·Р°РЅРёСЏ СЃС‡РµС‚С‡РёРєР°' title1, '00-00 С‡Р°СЃ. РїРµСЂРІРѕРіРѕ РґРЅСЏ РѕС‚С‡РµС‚РЅРѕРіРѕ РјРµСЃСЏС†Р°' title2, '5' title3, cn_btnface titlecl, cn_left titleal, cn_white datacl,
            cn_right dataal, 1 nlock, 95 nwidth, '' vmasks
       FROM DUAL
     UNION ALL
-    SELECT 3 ID, 'Разность' title1, '' title2, '6' title3, cn_btnface titlecl, cn_left titleal, cn_white datacl, cn_right dataal, 1 nlock, 95 nwidth, '' vmasks
+    SELECT 3 ID, 'Р Р°Р·РЅРѕСЃС‚СЊ' title1, '' title2, '6' title3, cn_btnface titlecl, cn_left titleal, cn_white datacl, cn_right dataal, 1 nlock, 95 nwidth, '' vmasks
       FROM DUAL
     UNION ALL
-    SELECT 4 ID, 'Коэффициент' title1, '' title2, '7' title3, cn_btnface titlecl, cn_left titleal, cn_white datacl, cn_right dataal, 1 nlock, 75 nwidth, '' vmasks
+    SELECT 4 ID, 'РљРѕСЌС„С„РёС†РёРµРЅС‚' title1, '' title2, '7' title3, cn_btnface titlecl, cn_left titleal, cn_white datacl, cn_right dataal, 1 nlock, 75 nwidth, '' vmasks
       FROM DUAL
     UNION ALL
-    SELECT 5 ID, 'Поступление' title1, '' title2, '8' title3, cn_btnface titlecl, cn_left titleal, cn_white datacl, cn_right dataal, 1 nlock, 95 nwidth, '' vmasks
+    SELECT 5 ID, 'РџРѕСЃС‚СѓРїР»РµРЅРёРµ' title1, '' title2, '8' title3, cn_btnface titlecl, cn_left titleal, cn_white datacl, cn_right dataal, 1 nlock, 95 nwidth, '' vmasks
       FROM DUAL
     UNION ALL
-    SELECT 6 ID, 'Отдача' title1, '' title2, '9' title3, cn_btnface titlecl, cn_left titleal, cn_white datacl, cn_right dataal, 1 nlock, 95 nwidth, '' vmasks
+    SELECT 6 ID, 'РћС‚РґР°С‡Р°' title1, '' title2, '9' title3, cn_btnface titlecl, cn_left titleal, cn_white datacl, cn_right dataal, 1 nlock, 95 nwidth, '' vmasks
       FROM DUAL;
 
    IF an_ispoint = 1 THEN
@@ -524,18 +524,18 @@ PACKAGE BODY uniinterior_pg IS
                                       FROM points
                                 CONNECT BY PRIOR mid = PARENT
                                 START WITH mid = an_id) AND f.mid = m.mid(+) AND m.entype(+) = 7 AND f.mid = p.mid(+) AND p.PARENT = pa.mid(+)
-             ORDER BY pa.NAME, pa.mid, p.NAME, p.mid, d.r) t   -- сортировка по d.r значит - сначала прием, потом отдача
+             ORDER BY pa.NAME, pa.mid, p.NAME, p.mid, d.r) t   -- СЃРѕСЂС‚РёСЂРѕРІРєР° РїРѕ d.r Р·РЅР°С‡РёС‚ - СЃРЅР°С‡Р°Р»Р° РїСЂРёРµРј, РїРѕС‚РѕРј РѕС‚РґР°С‡Р°
      UNION ALL
-     SELECT -1 ID, 'Итого расход:' title1, 'за период' title2, 'кВт*ч' title3, cn_yellow datacl, cn_right dataal, 0 nlock, '' vmasks
+     SELECT -1 ID, 'РС‚РѕРіРѕ СЂР°СЃС…РѕРґ:' title1, 'Р·Р° РїРµСЂРёРѕРґ' title2, 'РєР’С‚*С‡' title3, cn_yellow datacl, cn_right dataal, 0 nlock, '' vmasks
        FROM DUAL
      UNION ALL
-     SELECT -1 ID, '' title1, '' title2, 'т.кВт*ч' title3, cn_yellow datacl, cn_right dataal, 0 nlock, '' vmasks
+     SELECT -1 ID, '' title1, '' title2, 'С‚.РєР’С‚*С‡' title3, cn_yellow datacl, cn_right dataal, 0 nlock, '' vmasks
        FROM DUAL
      UNION ALL
-     SELECT -1 ID, '' title1, 'сальдо переток' title2, 'кВт*ч' title3, cn_yellow datacl, cn_right dataal, 0 nlock, '' vmasks
+     SELECT -1 ID, '' title1, 'СЃР°Р»СЊРґРѕ РїРµСЂРµС‚РѕРє' title2, 'РєР’С‚*С‡' title3, cn_yellow datacl, cn_right dataal, 0 nlock, '' vmasks
        FROM DUAL
      UNION ALL
-     SELECT -1 ID, '' title1, '' title2, 'т.кВт*ч' title3, cn_yellow datacl, cn_right dataal, 0 nlock, '' vmasks
+     SELECT -1 ID, '' title1, '' title2, 'С‚.РєР’С‚*С‡' title3, cn_yellow datacl, cn_right dataal, 0 nlock, '' vmasks
        FROM DUAL;
    ELSE
     OPEN row_t FOR
@@ -569,18 +569,18 @@ PACKAGE BODY uniinterior_pg IS
                       util_pg.get_param (g.vparam, 2),
                       g.NAME,
                       g.mid,
-                      d.r) t   -- сортировка по d.r значит - сначала прием, потом отдача
+                      d.r) t   -- СЃРѕСЂС‚РёСЂРѕРІРєР° РїРѕ d.r Р·РЅР°С‡РёС‚ - СЃРЅР°С‡Р°Р»Р° РїСЂРёРµРј, РїРѕС‚РѕРј РѕС‚РґР°С‡Р°
      UNION ALL
-     SELECT -1 ID, 'Итого расход:' title1, 'за период' title2, 'кВт*ч' title3, cn_yellow datacl, cn_right dataal, 0 nlock, '' vmasks
+     SELECT -1 ID, 'РС‚РѕРіРѕ СЂР°СЃС…РѕРґ:' title1, 'Р·Р° РїРµСЂРёРѕРґ' title2, 'РєР’С‚*С‡' title3, cn_yellow datacl, cn_right dataal, 0 nlock, '' vmasks
        FROM DUAL
      UNION ALL
-     SELECT -1 ID, '' title1, '' title2, 'т.кВт*ч' title3, cn_yellow datacl, cn_right dataal, 0 nlock, '' vmasks
+     SELECT -1 ID, '' title1, '' title2, 'С‚.РєР’С‚*С‡' title3, cn_yellow datacl, cn_right dataal, 0 nlock, '' vmasks
        FROM DUAL
      UNION ALL
-     SELECT -1 ID, '' title1, 'сальдо переток' title2, 'кВт*ч' title3, cn_yellow datacl, cn_right dataal, 0 nlock, '' vmasks
+     SELECT -1 ID, '' title1, 'СЃР°Р»СЊРґРѕ РїРµСЂРµС‚РѕРє' title2, 'РєР’С‚*С‡' title3, cn_yellow datacl, cn_right dataal, 0 nlock, '' vmasks
        FROM DUAL
      UNION ALL
-     SELECT -1 ID, '' title1, '' title2, 'т.кВт*ч' title3, cn_yellow datacl, cn_right dataal, 0 nlock, '' vmasks
+     SELECT -1 ID, '' title1, '' title2, 'С‚.РєР’С‚*С‡' title3, cn_yellow datacl, cn_right dataal, 0 nlock, '' vmasks
        FROM DUAL;
    END IF;
   ------------------------------- addded by Kondakov A.G. 08.10.2008
@@ -595,57 +595,57 @@ PACKAGE BODY uniinterior_pg IS
    END IF;
 
    OPEN col_t FOR
-    SELECT -2 ID, 'Найм. ПС' title1, '' title2, '' title3, cn_btnface titlecl, cn_right titleal, cn_btnface datacl, cn_left dataal, 1 nlock, 180 nwidth, '' vmasks
+    SELECT -2 ID, 'РќР°Р№Рј. РџРЎ' title1, '' title2, '' title3, cn_btnface titlecl, cn_right titleal, cn_btnface datacl, cn_left dataal, 1 nlock, 180 nwidth, '' vmasks
       FROM DUAL
     UNION ALL
-    SELECT -1 ID, 'Клас напруги' title1, '' title2, 'кВ' title3, cn_btnface titlecl, cn_right titleal, cn_btnface datacl, cn_center dataal, 1 nlock, 50 nwidth,
+    SELECT -1 ID, 'РљР»Р°СЃ РЅР°РїСЂСѓРіРё' title1, '' title2, 'РєР’' title3, cn_btnface titlecl, cn_right titleal, cn_btnface datacl, cn_center dataal, 1 nlock, 50 nwidth,
            '' vmasks
       FROM DUAL
     UNION ALL
-    SELECT 0 ID, 'Баланс по меж_ балансової належност_ ПС' title1, 'Прийом' title2, 'тис.кВт.г' title3, cn_btnface titlecl, cn_right titleal, cn_white datacl,
+    SELECT 0 ID, 'Р‘Р°Р»Р°РЅСЃ РїРѕ РјРµР¶_ Р±Р°Р»Р°РЅСЃРѕРІРѕС— РЅР°Р»РµР¶РЅРѕСЃС‚_ РџРЎ' title1, 'РџСЂРёР№РѕРј' title2, 'С‚РёСЃ.РєР’С‚.Рі' title3, cn_btnface titlecl, cn_right titleal, cn_white datacl,
            cn_right dataal, 1 nlock, 90 nwidth, '' vmasks
       FROM DUAL
     UNION ALL
-    SELECT 1 ID, 'Баланс по меж_ балансової належност_ ПС' title1, 'В_ддача' title2, 'тис.кВт.г' title3, cn_btnface titlecl, cn_right titleal, cn_white datacl,
+    SELECT 1 ID, 'Р‘Р°Р»Р°РЅСЃ РїРѕ РјРµР¶_ Р±Р°Р»Р°РЅСЃРѕРІРѕС— РЅР°Р»РµР¶РЅРѕСЃС‚_ РџРЎ' title1, 'Р’_РґРґР°С‡Р°' title2, 'С‚РёСЃ.РєР’С‚.Рі' title3, cn_btnface titlecl, cn_right titleal, cn_white datacl,
            cn_right dataal, 1 nlock, 90 nwidth, '' vmasks
       FROM DUAL
     UNION ALL
-    SELECT 2 ID, 'Баланс по меж_ балансової належност_ ПС' title1, 'Нбфакт.' title2, 'тис.кВт.г' title3, cn_btnface titlecl, cn_right titleal, cn_white datacl,
+    SELECT 2 ID, 'Р‘Р°Р»Р°РЅСЃ РїРѕ РјРµР¶_ Р±Р°Р»Р°РЅСЃРѕРІРѕС— РЅР°Р»РµР¶РЅРѕСЃС‚_ РџРЎ' title1, 'РќР±С„Р°РєС‚.' title2, 'С‚РёСЃ.РєР’С‚.Рі' title3, cn_btnface titlecl, cn_right titleal, cn_white datacl,
            cn_right dataal, 1 nlock, 70 nwidth, '' vmasks
       FROM DUAL
     UNION ALL
-    SELECT 2 ID, 'Баланс по меж_ балансової належност_ ПС' title1, 'Нбфакт.' title2, '%' title3, cn_btnface titlecl, cn_right titleal, cn_white datacl,
+    SELECT 2 ID, 'Р‘Р°Р»Р°РЅСЃ РїРѕ РјРµР¶_ Р±Р°Р»Р°РЅСЃРѕРІРѕС— РЅР°Р»РµР¶РЅРѕСЃС‚_ РџРЎ' title1, 'РќР±С„Р°РєС‚.' title2, '%' title3, cn_btnface titlecl, cn_right titleal, cn_white datacl,
            cn_right dataal, 1 nlock, 60 nwidth, '' vmasks
       FROM DUAL
     UNION ALL
-    SELECT 3 ID, 'Баланс по меж_ балансової належност_ ПС' title1, 'Нбдоп.' title2, '%' title3, cn_btnface titlecl, cn_right titleal, cn_white datacl,
+    SELECT 3 ID, 'Р‘Р°Р»Р°РЅСЃ РїРѕ РјРµР¶_ Р±Р°Р»Р°РЅСЃРѕРІРѕС— РЅР°Р»РµР¶РЅРѕСЃС‚_ РџРЎ' title1, 'РќР±РґРѕРї.' title2, '%' title3, cn_btnface titlecl, cn_right titleal, cn_white datacl,
            cn_right dataal, 1 nlock, 60 nwidth, '' vmasks
       FROM DUAL
     UNION ALL
-    SELECT 0 ID, 'СН---->ПЛ 110(150 кВ)' title1, 'Прийом' title2, 'тис.кВт.г' title3, cn_btnface titlecl, cn_right titleal, cn_white datacl, cn_right dataal,
+    SELECT 0 ID, 'РЎРќ---->РџР› 110(150 РєР’)' title1, 'РџСЂРёР№РѕРј' title2, 'С‚РёСЃ.РєР’С‚.Рі' title3, cn_btnface titlecl, cn_right titleal, cn_white datacl, cn_right dataal,
            1 nlock, 90 nwidth, '' vmasks
       FROM DUAL
     UNION ALL
-    SELECT 1 ID, 'СН---->ПЛ 110(150 кВ)' title1, 'В_ддача' title2, 'тис.кВт.г' title3, cn_btnface titlecl, cn_right titleal, cn_white datacl, cn_right dataal,
+    SELECT 1 ID, 'РЎРќ---->РџР› 110(150 РєР’)' title1, 'Р’_РґРґР°С‡Р°' title2, 'С‚РёСЃ.РєР’С‚.Рі' title3, cn_btnface titlecl, cn_right titleal, cn_white datacl, cn_right dataal,
            1 nlock, 90 nwidth, '' vmasks
       FROM DUAL
     UNION ALL
-    SELECT 2 ID, 'СН---->ПЛ 110(150 кВ)' title1, 'Нбфакт.' title2, 'тис.кВт.г' title3, cn_btnface titlecl, cn_right titleal, cn_white datacl, cn_right dataal,
+    SELECT 2 ID, 'РЎРќ---->РџР› 110(150 РєР’)' title1, 'РќР±С„Р°РєС‚.' title2, 'С‚РёСЃ.РєР’С‚.Рі' title3, cn_btnface titlecl, cn_right titleal, cn_white datacl, cn_right dataal,
            1 nlock, 70 nwidth, '' vmasks
       FROM DUAL
     UNION ALL
-    SELECT 3 ID, 'СН---->ПЛ 110(150 кВ)' title1, 'Нбфакт.' title2, '%' title3, cn_btnface titlecl, cn_right titleal, cn_white datacl, cn_right dataal, 1 nlock,
+    SELECT 3 ID, 'РЎРќ---->РџР› 110(150 РєР’)' title1, 'РќР±С„Р°РєС‚.' title2, '%' title3, cn_btnface titlecl, cn_right titleal, cn_white datacl, cn_right dataal, 1 nlock,
            60 nwidth, '' vmasks
       FROM DUAL
     UNION ALL
-    SELECT 3 ID, 'СН---->ПЛ 110(150 кВ)' title1, 'Нбдоп.' title2, '%' title3, cn_btnface titlecl, cn_right titleal, cn_white datacl, cn_right dataal, 1 nlock,
+    SELECT 3 ID, 'РЎРќ---->РџР› 110(150 РєР’)' title1, 'РќР±РґРѕРї.' title2, '%' title3, cn_btnface titlecl, cn_right titleal, cn_white datacl, cn_right dataal, 1 nlock,
            60 nwidth, '' vmasks
       FROM DUAL
     UNION ALL
-    SELECT 5 ID, 'ВП' title1, '' title2, 'тис.кВт.г' title3, cn_btnface titlecl, cn_left titleal, cn_white datacl, cn_right dataal, 1 nlock, 90 nwidth, '' vmasks
+    SELECT 5 ID, 'Р’Рџ' title1, '' title2, 'С‚РёСЃ.РєР’С‚.Рі' title3, cn_btnface titlecl, cn_left titleal, cn_white datacl, cn_right dataal, 1 nlock, 90 nwidth, '' vmasks
       FROM DUAL
     UNION ALL
-    SELECT 6 ID, 'ГП' title1, '' title2, 'тис.кВт.г' title3, cn_btnface titlecl, cn_left titleal, cn_white datacl, cn_right dataal, 1 nlock, 90 nwidth, '' vmasks
+    SELECT 6 ID, 'Р“Рџ' title1, '' title2, 'С‚РёСЃ.РєР’С‚.Рі' title3, cn_btnface titlecl, cn_left titleal, cn_white datacl, cn_right dataal, 1 nlock, 90 nwidth, '' vmasks
       FROM DUAL;
 
    IF an_ispoint <> 1 THEN
@@ -661,9 +661,9 @@ PACKAGE BODY uniinterior_pg IS
                       g1.NAME,
                       util_pg.allnumber_f (util_pg.get_param (g2.vparam, 1, ';')),
                       g2.NAME,
-                      g2.gid) t   -- сортировка по d.r значит - сначала прием, потом отдача
+                      g2.gid) t   -- СЃРѕСЂС‚РёСЂРѕРІРєР° РїРѕ d.r Р·РЅР°С‡РёС‚ - СЃРЅР°С‡Р°Р»Р° РїСЂРёРµРј, РїРѕС‚РѕРј РѕС‚РґР°С‡Р°
      UNION ALL
-     SELECT -1 ID, 'Итого:' title1, '' title2, cn_yellow datacl, cn_right dataal, 0 nlock, '' vmasks
+     SELECT -1 ID, 'РС‚РѕРіРѕ:' title1, '' title2, cn_yellow datacl, cn_right dataal, 0 nlock, '' vmasks
        FROM DUAL
       WHERE ln_locksum = 0;
    END IF;
@@ -679,34 +679,34 @@ PACKAGE BODY uniinterior_pg IS
    END IF;
 
    OPEN col_t FOR
-    SELECT 0 ID, 'Наименование фидера' title1, '' title2, cn_btnface titlecl, cn_center titleal, cn_btnface datacl, cn_left dataal, 1 nlock, 220 nwidth, '' vmasks
+    SELECT 0 ID, 'РќР°РёРјРµРЅРѕРІР°РЅРёРµ С„РёРґРµСЂР°' title1, '' title2, cn_btnface titlecl, cn_center titleal, cn_btnface datacl, cn_left dataal, 1 nlock, 220 nwidth, '' vmasks
       FROM DUAL
     UNION ALL
     SELECT 0 ID, '' title1, '' title2, cn_btnface titlecl, cn_center titleal, cn_btnface datacl, cn_center dataal, 1 nlock, 15 nwidth, '' vmasks
       FROM DUAL
     UNION ALL
-    SELECT -2 ID, '№ счетчика' title1, '' title2, cn_btnface titlecl, cn_right titleal, cn_btnface datacl, cn_right dataal, 1 nlock, 75 nwidth, '' vmasks
+    SELECT -2 ID, 'в„– СЃС‡РµС‚С‡РёРєР°' title1, '' title2, cn_btnface titlecl, cn_right titleal, cn_btnface datacl, cn_right dataal, 1 nlock, 75 nwidth, '' vmasks
       FROM DUAL
     UNION ALL
-    SELECT 1 ID, 'Показания счетчиков' title1, 'конец периода' title2, cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_right dataal, 1 nlock, 95 nwidth,
+    SELECT 1 ID, 'РџРѕРєР°Р·Р°РЅРёСЏ СЃС‡РµС‚С‡РёРєРѕРІ' title1, 'РєРѕРЅРµС† РїРµСЂРёРѕРґР°' title2, cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_right dataal, 1 nlock, 95 nwidth,
            '' vmasks
       FROM DUAL
     UNION ALL
-    SELECT 2 ID, 'Показания счетчиков' title1, 'начало периода' title2, cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_right dataal, 1 nlock, 95 nwidth,
+    SELECT 2 ID, 'РџРѕРєР°Р·Р°РЅРёСЏ СЃС‡РµС‚С‡РёРєРѕРІ' title1, 'РЅР°С‡Р°Р»Рѕ РїРµСЂРёРѕРґР°' title2, cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_right dataal, 1 nlock, 95 nwidth,
            '' vmasks
       FROM DUAL
     UNION ALL
-    SELECT 3 ID, 'Разница показаний' title1, '' title2, cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_right dataal, 1 nlock, 95 nwidth, '' vmasks
+    SELECT 3 ID, 'Р Р°Р·РЅРёС†Р° РїРѕРєР°Р·Р°РЅРёР№' title1, '' title2, cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_right dataal, 1 nlock, 95 nwidth, '' vmasks
       FROM DUAL
     UNION ALL
-    SELECT 4 ID, 'Расчетный коэф-т' title1, '' title2, cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_right dataal, 1 nlock, 75 nwidth, '' vmasks
+    SELECT 4 ID, 'Р Р°СЃС‡РµС‚РЅС‹Р№ РєРѕСЌС„-С‚' title1, '' title2, cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_right dataal, 1 nlock, 75 nwidth, '' vmasks
       FROM DUAL
     UNION ALL
-    SELECT 5 ID, 'Выработка без недоучета, кВт*час' title1, '' title2, cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_right dataal, 1 nlock, 95 nwidth,
+    SELECT 5 ID, 'Р’С‹СЂР°Р±РѕС‚РєР° Р±РµР· РЅРµРґРѕСѓС‡РµС‚Р°, РєР’С‚*С‡Р°СЃ' title1, '' title2, cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_right dataal, 1 nlock, 95 nwidth,
            '' vmasks
       FROM DUAL
     UNION ALL
-    SELECT 6 ID, 'Недоучет' title1, '' title2, cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_right dataal, 0 nlock, 95 nwidth, '' vmasks
+    SELECT 6 ID, 'РќРµРґРѕСѓС‡РµС‚' title1, '' title2, cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_right dataal, 0 nlock, 95 nwidth, '' vmasks
       FROM DUAL;
 
    IF an_ispoint = 1 THEN
@@ -724,17 +724,17 @@ PACKAGE BODY uniinterior_pg IS
                                       FROM points
                                 CONNECT BY PRIOR mid = PARENT
                                 START WITH mid = an_id) AND f.mid = m.mid(+) AND m.entype(+) = 7 AND f.mid = p.mid(+) AND p.PARENT = pa.mid(+)
-             ORDER BY pa.NAME, pa.mid, p.NAME, p.mid, d.t)   -- сортировка по d.t значит - сначала прием, потом отдача
+             ORDER BY pa.NAME, pa.mid, p.NAME, p.mid, d.t)   -- СЃРѕСЂС‚РёСЂРѕРІРєР° РїРѕ d.t Р·РЅР°С‡РёС‚ - СЃРЅР°С‡Р°Р»Р° РїСЂРёРµРј, РїРѕС‚РѕРј РѕС‚РґР°С‡Р°
      UNION ALL
-     SELECT -1 ID, 'Итого:' title1, '' title2, 'прием' title3, cn_yellow datacl, cn_right dataal, 0 nlock, '' vmasks
+     SELECT -1 ID, 'РС‚РѕРіРѕ:' title1, '' title2, 'РїСЂРёРµРј' title3, cn_yellow datacl, cn_right dataal, 0 nlock, '' vmasks
        FROM DUAL
       WHERE ln_locksum = 0
      UNION ALL
-     SELECT -1 ID, '' title1, '' title2, 'отдача' title3, cn_yellow datacl, cn_right dataal, 0 nlock, '' vmasks
+     SELECT -1 ID, '' title1, '' title2, 'РѕС‚РґР°С‡Р°' title3, cn_yellow datacl, cn_right dataal, 0 nlock, '' vmasks
        FROM DUAL
       WHERE ln_locksum = 0
      UNION ALL
-     SELECT -1 ID, '' title1, '' title2, 'сальдо' title3, cn_yellow datacl, cn_right dataal, 0 nlock, '' vmasks
+     SELECT -1 ID, '' title1, '' title2, 'СЃР°Р»СЊРґРѕ' title3, cn_yellow datacl, cn_right dataal, 0 nlock, '' vmasks
        FROM DUAL
       WHERE ln_locksum = 0;
    ELSE
@@ -759,17 +759,17 @@ PACKAGE BODY uniinterior_pg IS
                                   AND (TO_CHAR (ad_from, 'yyyymm') <= NVL (ntillperiod, 299912) AND TO_CHAR (ad_till, 'yyyymm') >= NVL (nfromperiod, 160501)))
                       AND g.mid = f.mid AND f.mid = m.mid(+) AND m.entype(+) = 7 AND f.mid = p.mid(+) AND p.PARENT = pa.mid(+)
              --AND (g.npartly IS NULL OR d.r = DECODE (g.npartly, 1, DECODE (g.inverted, 'y', 2, 1), DECODE (g.inverted, 'y', 1, 2)))
-             ORDER BY util_pg.allnumber_f (util_pg.get_param (g.vparam, 1, ';')), pa.NAME, pa.mid, p.NAME, p.mid, d.t)   -- сортировка по d.t значит - сначала прием, потом отдача
+             ORDER BY util_pg.allnumber_f (util_pg.get_param (g.vparam, 1, ';')), pa.NAME, pa.mid, p.NAME, p.mid, d.t)   -- СЃРѕСЂС‚РёСЂРѕРІРєР° РїРѕ d.t Р·РЅР°С‡РёС‚ - СЃРЅР°С‡Р°Р»Р° РїСЂРёРµРј, РїРѕС‚РѕРј РѕС‚РґР°С‡Р°
      UNION ALL
-     SELECT -1 ID, 'Итого:' title1, '' title2, 'прием' title3, cn_yellow datacl, cn_right dataal, 0 nlock, '' vmasks
+     SELECT -1 ID, 'РС‚РѕРіРѕ:' title1, '' title2, 'РїСЂРёРµРј' title3, cn_yellow datacl, cn_right dataal, 0 nlock, '' vmasks
        FROM DUAL
       WHERE ln_locksum = 0
      UNION ALL
-     SELECT -1 ID, '' title1, '' title2, 'отдача' title3, cn_yellow datacl, cn_right dataal, 0 nlock, '' vmasks
+     SELECT -1 ID, '' title1, '' title2, 'РѕС‚РґР°С‡Р°' title3, cn_yellow datacl, cn_right dataal, 0 nlock, '' vmasks
        FROM DUAL
       WHERE ln_locksum = 0
      UNION ALL
-     SELECT -1 ID, '' title1, '' title2, 'сальдо' title3, cn_yellow datacl, cn_right dataal, 0 nlock, '' vmasks
+     SELECT -1 ID, '' title1, '' title2, 'СЃР°Р»СЊРґРѕ' title3, cn_yellow datacl, cn_right dataal, 0 nlock, '' vmasks
        FROM DUAL
       WHERE ln_locksum = 0;
    END IF;
@@ -785,33 +785,33 @@ PACKAGE BODY uniinterior_pg IS
    END IF;
 
    OPEN col_t FOR
-    SELECT 0 ID, 'Присоединение' title1, '' title2, cn_btnface titlecl, cn_right titleal, cn_btnface datacl, cn_left dataal, 1 nlock, 220 nwidth, '' vmasks
+    SELECT 0 ID, 'РџСЂРёСЃРѕРµРґРёРЅРµРЅРёРµ' title1, '' title2, cn_btnface titlecl, cn_right titleal, cn_btnface datacl, cn_left dataal, 1 nlock, 220 nwidth, '' vmasks
       FROM DUAL
     UNION ALL
     SELECT 0 ID, '' title1, '' title2, cn_btnface titlecl, cn_center titleal, cn_btnface datacl, cn_center dataal, 1 nlock, 15 nwidth, '' vmasks
       FROM DUAL
     UNION ALL
-    SELECT -2 ID, 'Серийный № осн. счетчика' title1, '' title2, cn_btnface titlecl, cn_right titleal, cn_white datacl, cn_right dataal, 1 nlock, 75 nwidth,
+    SELECT -2 ID, 'РЎРµСЂРёР№РЅС‹Р№ в„– РѕСЃРЅ. СЃС‡РµС‚С‡РёРєР°' title1, '' title2, cn_btnface titlecl, cn_right titleal, cn_white datacl, cn_right dataal, 1 nlock, 75 nwidth,
            '' vmasks
       FROM DUAL
     UNION ALL
-    SELECT 1 ID, 'Расход, кВт*ч' title1, '' title2, cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_right dataal, 1 nlock, 95 nwidth, '' vmasks
+    SELECT 1 ID, 'Р Р°СЃС…РѕРґ, РєР’С‚*С‡' title1, '' title2, cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_right dataal, 1 nlock, 95 nwidth, '' vmasks
       FROM DUAL
     UNION ALL
     SELECT 2 ID, '' title1, '' title2, cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_right dataal, 1 nlock, 10 nwidth, '' vmasks
       FROM DUAL
     UNION ALL
-    SELECT 3 ID, 'Серийный № дубл. счетчика' title1, '' title2, cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_right dataal, 1 nlock, 75 nwidth,
+    SELECT 3 ID, 'РЎРµСЂРёР№РЅС‹Р№ в„– РґСѓР±Р». СЃС‡РµС‚С‡РёРєР°' title1, '' title2, cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_right dataal, 1 nlock, 75 nwidth,
            '' vmasks
       FROM DUAL
     UNION ALL
-    SELECT 4 ID, 'Расход, кВт*ч' title1, '' title2, cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_right dataal, 1 nlock, 95 nwidth, '' vmasks
+    SELECT 4 ID, 'Р Р°СЃС…РѕРґ, РєР’С‚*С‡' title1, '' title2, cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_right dataal, 1 nlock, 95 nwidth, '' vmasks
       FROM DUAL
     UNION ALL
-    SELECT 5 ID, 'Разница' title1, 'кВт*ч' title2, cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_right dataal, 1 nlock, 95 nwidth, '' vmasks
+    SELECT 5 ID, 'Р Р°Р·РЅРёС†Р°' title1, 'РєР’С‚*С‡' title2, cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_right dataal, 1 nlock, 95 nwidth, '' vmasks
       FROM DUAL
     UNION ALL
-    SELECT 6 ID, 'Разница' title1, '%' title2, cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_right dataal, 0 nlock, 95 nwidth, '' vmasks
+    SELECT 6 ID, 'Р Р°Р·РЅРёС†Р°' title1, '%' title2, cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_right dataal, 0 nlock, 95 nwidth, '' vmasks
       FROM DUAL;
 
    IF an_ispoint = 1 THEN
@@ -832,17 +832,17 @@ PACKAGE BODY uniinterior_pg IS
                                 CONNECT BY PRIOR mid = PARENT
                                 START WITH mid = an_id) AND p.mid = f.mid AND f.mid = m.mid(+) AND m.entype(+) = 7 AND p.PARENT = pa.mid(+)   -------
                       AND p.mid = fd.nmainpoint AND fd.mid = md.mid(+) AND md.entype(+) = 7
-             ORDER BY pa.mid, p.NAME, p.mid, d.t)   -- сортировка по d.t значит - сначала прием, потом отдача
+             ORDER BY pa.mid, p.NAME, p.mid, d.t)   -- СЃРѕСЂС‚РёСЂРѕРІРєР° РїРѕ d.t Р·РЅР°С‡РёС‚ - СЃРЅР°С‡Р°Р»Р° РїСЂРёРµРј, РїРѕС‚РѕРј РѕС‚РґР°С‡Р°
      UNION ALL
-     SELECT -1 ID, 'Итого:  прием' title1, '' title2, cn_yellow datacl, cn_right dataal, 0 nlock, '' vmasks
+     SELECT -1 ID, 'РС‚РѕРіРѕ:  РїСЂРёРµРј' title1, '' title2, cn_yellow datacl, cn_right dataal, 0 nlock, '' vmasks
        FROM DUAL
       WHERE ln_locksum = 0
      UNION ALL
-     SELECT -1 ID, 'отдача' title1, '' title2, cn_yellow datacl, cn_right dataal, 0 nlock, '' vmasks
+     SELECT -1 ID, 'РѕС‚РґР°С‡Р°' title1, '' title2, cn_yellow datacl, cn_right dataal, 0 nlock, '' vmasks
        FROM DUAL
       WHERE ln_locksum = 0
      UNION ALL
-     SELECT -1 ID, 'сальдо' title1, '' title2, cn_yellow datacl, cn_right dataal, 0 nlock, '' vmasks
+     SELECT -1 ID, 'СЃР°Р»СЊРґРѕ' title1, '' title2, cn_yellow datacl, cn_right dataal, 0 nlock, '' vmasks
        FROM DUAL
       WHERE ln_locksum = 0;
    ELSE
@@ -869,17 +869,17 @@ PACKAGE BODY uniinterior_pg IS
                       AND g.mid = f.mid AND f.mid = p.mid /*(+)*/ AND p.PARENT = pa.mid(+) AND f.mid = m.mid(+) AND m.entype(+) = 7 AND p.mid = fd.nmainpoint
                       AND fd.mid = md.mid(+) AND md.entype(+) = 7
              --AND (g.npartly IS NULL OR d.r = DECODE (g.npartly, 1, DECODE (g.inverted, 'y', 2, 1), DECODE (g.inverted, 'y', 1, 2)))
-             ORDER BY util_pg.allnumber_f (util_pg.get_param (g.vparam, 1, ';')), pa.NAME, pa.mid, p.NAME, p.mid, d.t)   -- сортировка по d.t значит - сначала прием, потом отдача
+             ORDER BY util_pg.allnumber_f (util_pg.get_param (g.vparam, 1, ';')), pa.NAME, pa.mid, p.NAME, p.mid, d.t)   -- СЃРѕСЂС‚РёСЂРѕРІРєР° РїРѕ d.t Р·РЅР°С‡РёС‚ - СЃРЅР°С‡Р°Р»Р° РїСЂРёРµРј, РїРѕС‚РѕРј РѕС‚РґР°С‡Р°
      UNION ALL
-     SELECT -1 ID, 'Итого:  прием' title1, '' title2, cn_yellow datacl, cn_right dataal, 0 nlock, '' vmasks
+     SELECT -1 ID, 'РС‚РѕРіРѕ:  РїСЂРёРµРј' title1, '' title2, cn_yellow datacl, cn_right dataal, 0 nlock, '' vmasks
        FROM DUAL
       WHERE ln_locksum = 0
      UNION ALL
-     SELECT -1 ID, 'отдача' title1, '' title2, cn_yellow datacl, cn_right dataal, 0 nlock, '' vmasks
+     SELECT -1 ID, 'РѕС‚РґР°С‡Р°' title1, '' title2, cn_yellow datacl, cn_right dataal, 0 nlock, '' vmasks
        FROM DUAL
       WHERE ln_locksum = 0
      UNION ALL
-     SELECT -1 ID, 'сальдо' title1, '' title2, cn_yellow datacl, cn_right dataal, 0 nlock, '' vmasks
+     SELECT -1 ID, 'СЃР°Р»СЊРґРѕ' title1, '' title2, cn_yellow datacl, cn_right dataal, 0 nlock, '' vmasks
        FROM DUAL
       WHERE ln_locksum = 0;
    END IF;
@@ -895,25 +895,25 @@ PACKAGE BODY uniinterior_pg IS
    END IF;
 
    OPEN col_t FOR
-    SELECT 0 ID, '№ п/п' title1, '' title2, cn_btnface titlecl, cn_center titleal, cn_btnface datacl, cn_left dataal, 1 nlock, 30 nwidth, '' vmasks
+    SELECT 0 ID, 'в„– Рї/Рї' title1, '' title2, cn_btnface titlecl, cn_center titleal, cn_btnface datacl, cn_left dataal, 1 nlock, 30 nwidth, '' vmasks
       FROM DUAL
     UNION ALL
-    SELECT -1 ID, 'Объект' title1, '' title2, cn_btnface titlecl, cn_right titleal, cn_btnface datacl, cn_left dataal, 1 nlock, 200 nwidth, '' vmasks
+    SELECT -1 ID, 'РћР±СЉРµРєС‚' title1, '' title2, cn_btnface titlecl, cn_right titleal, cn_btnface datacl, cn_left dataal, 1 nlock, 200 nwidth, '' vmasks
       FROM DUAL
     UNION ALL
-    SELECT -2 ID, 'Параметр суточный' title1, '' title2, cn_btnface titlecl, cn_right titleal, cn_btnface datacl, cn_left dataal, 1 nlock, 200 nwidth, '' vmasks
+    SELECT -2 ID, 'РџР°СЂР°РјРµС‚СЂ СЃСѓС‚РѕС‡РЅС‹Р№' title1, '' title2, cn_btnface titlecl, cn_right titleal, cn_btnface datacl, cn_left dataal, 1 nlock, 200 nwidth, '' vmasks
       FROM DUAL
     UNION ALL
-    SELECT 1 ID, 'Факт. зн.' title1, '' title2, cn_btnface titlecl, cn_right titleal, cn_white datacl, cn_right dataal, 1 nlock, 105 nwidth, '' vmasks
+    SELECT 1 ID, 'Р¤Р°РєС‚. Р·РЅ.' title1, '' title2, cn_btnface titlecl, cn_right titleal, cn_white datacl, cn_right dataal, 1 nlock, 105 nwidth, '' vmasks
       FROM DUAL
     UNION ALL
-    SELECT 2 ID, 'Инт.зн.' title1, '' title2, cn_btnface titlecl, cn_right titleal, cn_white datacl, cn_right dataal, 1 nlock, 105 nwidth, '' vmasks
+    SELECT 2 ID, 'РРЅС‚.Р·РЅ.' title1, '' title2, cn_btnface titlecl, cn_right titleal, cn_white datacl, cn_right dataal, 1 nlock, 105 nwidth, '' vmasks
       FROM DUAL
     UNION ALL
-    SELECT 3 ID, 'Откл.' title1, '' title2, cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_left dataal, 1 nlock, 60 nwidth, '' vmasks
+    SELECT 3 ID, 'РћС‚РєР».' title1, '' title2, cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_left dataal, 1 nlock, 60 nwidth, '' vmasks
       FROM DUAL
     UNION ALL
-    SELECT 3 ID, 'Откл. %' title1, '' title2, cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_left dataal, 1 nlock, 60 nwidth, '' vmasks
+    SELECT 3 ID, 'РћС‚РєР». %' title1, '' title2, cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_left dataal, 1 nlock, 60 nwidth, '' vmasks
       FROM DUAL;
 
    IF an_ispoint <> 1 THEN
@@ -938,7 +938,7 @@ PACKAGE BODY uniinterior_pg IS
                       NVL (util_pg.get_param (g1.vparam, 2), g1.NAME),
                       g1.gid) t
      UNION ALL
-     SELECT -1 ID, '' title1, '' title2, 'Итого:' title3, cn_yellow datacl, cn_left dataal, 0 nlock, '' vmasks
+     SELECT -1 ID, '' title1, '' title2, 'РС‚РѕРіРѕ:' title3, cn_yellow datacl, cn_left dataal, 0 nlock, '' vmasks
        FROM DUAL;
    END IF;
   ------------------------------- addded by Kondakov A.G. 14.10.2008
@@ -953,19 +953,19 @@ PACKAGE BODY uniinterior_pg IS
    END IF;
 
    OPEN col_t FOR
-    SELECT 0 ID, '№' title1, '' title2, cn_btnface titlecl, cn_center titleal, cn_btnface datacl, cn_left dataal, 1 nlock, 20 nwidth, '' vmasks
+    SELECT 0 ID, 'в„–' title1, '' title2, cn_btnface titlecl, cn_center titleal, cn_btnface datacl, cn_left dataal, 1 nlock, 20 nwidth, '' vmasks
       FROM DUAL
     UNION ALL
-    SELECT -2 ID, 'Наменование перетока' title1, '' title2, cn_btnface titlecl, cn_right titleal, cn_btnface datacl, cn_left dataal, 1 nlock, 235 nwidth, '' vmasks
+    SELECT -2 ID, 'РќР°РјРµРЅРѕРІР°РЅРёРµ РїРµСЂРµС‚РѕРєР°' title1, '' title2, cn_btnface titlecl, cn_right titleal, cn_btnface datacl, cn_left dataal, 1 nlock, 235 nwidth, '' vmasks
       FROM DUAL
     UNION ALL
-    SELECT 1 ID, 'Прием' title1, 'тыс.кВтч' title2, cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_right dataal, 1 nlock, 95 nwidth, '' vmasks
+    SELECT 1 ID, 'РџСЂРёРµРј' title1, 'С‚С‹СЃ.РєР’С‚С‡' title2, cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_right dataal, 1 nlock, 95 nwidth, '' vmasks
       FROM DUAL
     UNION ALL
-    SELECT 2 ID, 'Отдача' title1, 'тыс.кВтч' title2, cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_right dataal, 1 nlock, 95 nwidth, '' vmasks
+    SELECT 2 ID, 'РћС‚РґР°С‡Р°' title1, 'С‚С‹СЃ.РєР’С‚С‡' title2, cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_right dataal, 1 nlock, 95 nwidth, '' vmasks
       FROM DUAL
     UNION ALL
-    SELECT 3 ID, 'Сальдо' title1, 'тыс.кВтч' title2, cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_right dataal, 1 nlock, 95 nwidth, '' vmasks
+    SELECT 3 ID, 'РЎР°Р»СЊРґРѕ' title1, 'С‚С‹СЃ.РєР’С‚С‡' title2, cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_right dataal, 1 nlock, 95 nwidth, '' vmasks
       FROM DUAL;
 
    IF an_ispoint <> 1 THEN
@@ -983,32 +983,32 @@ PACKAGE BODY uniinterior_pg IS
                                      AND (TO_CHAR (ad_from, 'yyyymm') <= NVL (ntillperiod, 299912) AND TO_CHAR (ad_till, 'yyyymm') >= NVL (nfromperiod, 160501)))
              ORDER BY util_pg.allnumber_f (util_pg.get_param (g.vparam, 1, ';')), g.PARENT, g.NAME, g.gid) t
      UNION ALL
-     SELECT -1 ID, '' title1, 'Итого:' title2, cn_yellow datacl, cn_left dataal, 0 nlock, '' vmasks
+     SELECT -1 ID, '' title1, 'РС‚РѕРіРѕ:' title2, cn_yellow datacl, cn_left dataal, 0 nlock, '' vmasks
        FROM DUAL;
    END IF;
-  ------------------------------- addded by Круглова 13.10.2008
+  ------------------------------- addded by РљСЂСѓРіР»РѕРІР° 13.10.2008
   ELSIF lv_proc = cv_proc9 THEN
    an_cnfixcol := 2;
    an_cntitle := 1;
    an_cnfooter := 2;
 
    OPEN col_t FOR
-    SELECT 0 ID, '№' title1, cn_btnface titlecl, cn_center titleal, cn_btnface datacl, cn_left dataal, 1 nlock, 45 nwidth, '' vmasks
+    SELECT 0 ID, 'в„–' title1, cn_btnface titlecl, cn_center titleal, cn_btnface datacl, cn_left dataal, 1 nlock, 45 nwidth, '' vmasks
       FROM DUAL
     UNION ALL
-    SELECT -2 ID, 'Составляющие баланса' title1, cn_btnface titlecl, cn_right titleal, cn_btnface datacl, cn_left dataal, 1 nlock, 260 nwidth, '' vmasks
+    SELECT -2 ID, 'РЎРѕСЃС‚Р°РІР»СЏСЋС‰РёРµ Р±Р°Р»Р°РЅСЃР°' title1, cn_btnface titlecl, cn_right titleal, cn_btnface datacl, cn_left dataal, 1 nlock, 260 nwidth, '' vmasks
       FROM DUAL
     UNION ALL
-    SELECT 1 ID, 'Поступление в сеть' title1, cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_right dataal, 1 nlock, 120 nwidth, '' vmasks
+    SELECT 1 ID, 'РџРѕСЃС‚СѓРїР»РµРЅРёРµ РІ СЃРµС‚СЊ' title1, cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_right dataal, 1 nlock, 120 nwidth, '' vmasks
       FROM DUAL
     UNION ALL
-    SELECT 2 ID, 'Отпуск в сети' title1, cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_right dataal, 1 nlock, 120 nwidth, '' vmasks
+    SELECT 2 ID, 'РћС‚РїСѓСЃРє РІ СЃРµС‚Рё' title1, cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_right dataal, 1 nlock, 120 nwidth, '' vmasks
       FROM DUAL
     UNION ALL
-    SELECT 3 ID, 'Сальдо' title1, cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_right dataal, 1 nlock, 120 nwidth, '' vmasks
+    SELECT 3 ID, 'РЎР°Р»СЊРґРѕ' title1, cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_right dataal, 1 nlock, 120 nwidth, '' vmasks
       FROM DUAL;
 
-   utilrep_pg.f_preparesortbyl_n;   --У нас особая сортировка
+   utilrep_pg.f_preparesortbyl_n;   --РЈ РЅР°СЃ РѕСЃРѕР±Р°СЏ СЃРѕСЂС‚РёСЂРѕРІРєР°
 
    OPEN row_t FOR
     SELECT     gid ID, DECODE (LEVEL, 1, '1.' || TO_CHAR (utilrep_pg.f_makeindex (ROWNUM, gid, an_id)), '') title1, LPAD (' ', 2 * (LEVEL - 1)) || NAME title2,
@@ -1017,10 +1017,10 @@ PACKAGE BODY uniinterior_pg IS
     CONNECT BY PRIOR gid = PARENT
     START WITH PARENT = an_id
     UNION ALL
-    SELECT   -1 ID, '' title1, 'Итого' title2, cn_yellow datacl, cn_left dataal, 0 nlock, '' vmasks, 1000000000 srt
+    SELECT   -1 ID, '' title1, 'РС‚РѕРіРѕ' title2, cn_yellow datacl, cn_left dataal, 0 nlock, '' vmasks, 1000000000 srt
         FROM DUAL
     UNION ALL
-    SELECT   -2 ID, '' title1, 'Потери, %' title2, cn_yellow datacl, cn_left dataal, 0 nlock, '' vmasks, 1000000001 srt
+    SELECT   -2 ID, '' title1, 'РџРѕС‚РµСЂРё, %' title2, cn_yellow datacl, cn_left dataal, 0 nlock, '' vmasks, 1000000001 srt
         FROM DUAL
     ORDER BY 8;
 --------------------------------- VNB 5.02.2009
@@ -1030,16 +1030,16 @@ PACKAGE BODY uniinterior_pg IS
 
    
    OPEN col_t FOR
-     SELECT   1 ID, 'Наименование' title1, '' title2, cn_btnface titlecl, cn_center titleal, cn_btnface datacl, cn_left dataal, 1 nlock, 240 nwidth, '' vmasks
+     SELECT   1 ID, 'РќР°РёРјРµРЅРѕРІР°РЅРёРµ' title1, '' title2, cn_btnface titlecl, cn_center titleal, cn_btnface datacl, cn_left dataal, 1 nlock, 240 nwidth, '' vmasks
         FROM DUAL
     UNION ALL
-    SELECT   2 ID, ' Прием / Отдача Сальдо ' title1, '' title2, cn_btnface titlecl, cn_center titleal, cn_btnface datacl, cn_left dataal, 1 nlock, 50 nwidth, '' vmasks
+    SELECT   2 ID, ' РџСЂРёРµРј / РћС‚РґР°С‡Р° РЎР°Р»СЊРґРѕ ' title1, '' title2, cn_btnface titlecl, cn_center titleal, cn_btnface datacl, cn_left dataal, 1 nlock, 50 nwidth, '' vmasks
         FROM DUAL
     UNION ALL
-    SELECT   3 ID, 'Сумма' title1, '' title2, cn_btnface titlecl, cn_center titleal, cn_yellow datacl, cn_right dataal, 1 nlock, 90 nwidth, '' vmasks
+    SELECT   3 ID, 'РЎСѓРјРјР°' title1, '' title2, cn_btnface titlecl, cn_center titleal, cn_yellow datacl, cn_right dataal, 1 nlock, 90 nwidth, '' vmasks
         FROM DUAL
     UNION ALL
-    SELECT   t.ID + 4, 'Показания за' || ' ' || TO_CHAR (ad_from, 'dd.mm.yyyy') title1, DECODE(t.ID,25,'25:00',TO_CHAR (TO_DATE (DECODE (t.ID, 24, 0, t.ID), 'hh24'), 'hh24:mi')) title2,
+    SELECT   t.ID + 4, 'РџРѕРєР°Р·Р°РЅРёСЏ Р·Р°' || ' ' || TO_CHAR (ad_from, 'dd.mm.yyyy') title1, DECODE(t.ID,25,'25:00',TO_CHAR (TO_DATE (DECODE (t.ID, 24, 0, t.ID), 'hh24'), 'hh24:mi')) title2,
              cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_right dataal, 1 nlock, 60 nwidth, '' vmasks
         FROM (SELECT ROWNUM ID
                 FROM dict
@@ -1053,69 +1053,69 @@ PACKAGE BODY uniinterior_pg IS
     SELECT tt.gid ID, decode(nvl(tt.npartly,0),1,tt.name,2,tt.name,decode(tt.sort,1,tt.name,' ')) title1, tt.title2, tt.datacl, 0 nlock, '' vmasks
  
       FROM (
-          SELECT   NVL (mid, 0) mid, PARENT, nvl(util_pg.get_shortname_f(short_name,mid),util_pg.get_name_f(name,mid))name, ' Прием ' title2, 1 sort, (gid * 10 + 1) gid, npartly, cn_white datacl
-          --  SELECT   NVL (mid, 0) mid, PARENT, NAME, ' Прием ' title2, 1 sort, (gid * 10 + 1) gid, npartly, cn_white datacl
+          SELECT   NVL (mid, 0) mid, PARENT, nvl(util_pg.get_shortname_f(short_name,mid),util_pg.get_name_f(name,mid))name, ' РџСЂРёРµРј ' title2, 1 sort, (gid * 10 + 1) gid, npartly, cn_white datacl
+          --  SELECT   NVL (mid, 0) mid, PARENT, NAME, ' РџСЂРёРµРј ' title2, 1 sort, (gid * 10 + 1) gid, npartly, cn_white datacl
                 FROM GROUPS g
                WHERE gid IN (SELECT     gid
                                    FROM GROUPS
                              CONNECT BY PRIOR gid = PARENT
                              START WITH PARENT = an_id) AND mid > 0 AND (g.npartly IS NULL OR g.npartly = 1)
             UNION ALL
-           -- SELECT   NVL (mid, 0) mid, PARENT, DECODE (NVL (mid, 0), 0, '', NAME) NAME, ' Отдача ' title2, 2 sort, (gid * 10 + 2) gid, npartly, cn_white datacl
-           SELECT   NVL (mid, 0) mid, PARENT, nvl(util_pg.get_shortname_f(short_name,mid),util_pg.get_name_f(name,mid)) NAME, ' Отдача ' title2, 2 sort, (gid * 10 + 2) gid, npartly, cn_white datacl
+           -- SELECT   NVL (mid, 0) mid, PARENT, DECODE (NVL (mid, 0), 0, '', NAME) NAME, ' РћС‚РґР°С‡Р° ' title2, 2 sort, (gid * 10 + 2) gid, npartly, cn_white datacl
+           SELECT   NVL (mid, 0) mid, PARENT, nvl(util_pg.get_shortname_f(short_name,mid),util_pg.get_name_f(name,mid)) NAME, ' РћС‚РґР°С‡Р° ' title2, 2 sort, (gid * 10 + 2) gid, npartly, cn_white datacl
                 FROM GROUPS g
                WHERE gid IN (SELECT     gid
                                    FROM GROUPS
                              CONNECT BY PRIOR gid = PARENT
                              START WITH PARENT = an_id) AND mid > 0 AND (g.npartly IS NULL OR g.npartly = 2)
             UNION ALL
-         --   SELECT   NVL (mid, 0) mid, PARENT, DECODE (NVL (mid, 0), 0, '',  NAME) NAME, ' Сальдо' title2, 3 sort, (gid * 10) gid, npartly, cn_aqua datacl
-            SELECT   NVL (mid, 0) mid, PARENT,nvl(util_pg.get_shortname_f(short_name,mid),util_pg.get_name_f(name,mid)) NAME, ' Сальдо' title2, 3 sort, (gid * 10) gid, npartly, cn_aqua datacl
+         --   SELECT   NVL (mid, 0) mid, PARENT, DECODE (NVL (mid, 0), 0, '',  NAME) NAME, ' РЎР°Р»СЊРґРѕ' title2, 3 sort, (gid * 10) gid, npartly, cn_aqua datacl
+            SELECT   NVL (mid, 0) mid, PARENT,nvl(util_pg.get_shortname_f(short_name,mid),util_pg.get_name_f(name,mid)) NAME, ' РЎР°Р»СЊРґРѕ' title2, 3 sort, (gid * 10) gid, npartly, cn_aqua datacl
                 FROM GROUPS g
                WHERE gid IN (SELECT     gid
                                    FROM GROUPS
                              CONNECT BY PRIOR gid = PARENT
                              START WITH PARENT = an_id) AND mid > 0 AND (npartly IS NULL)
             ORDER BY 2, 3, 5) tt;
- ------------------------------- added by Круглова 24.02.2009------------------
-------------------------------- eddited by Круглова 10.03.2009------------------            
+ ------------------------------- added by РљСЂСѓРіР»РѕРІР° 24.02.2009------------------
+------------------------------- eddited by РљСЂСѓРіР»РѕРІР° 10.03.2009------------------            
   ELSIF lv_proc = cv_proc11 THEN
    an_cnfixcol := 3;
    an_cntitle := 2;
    an_cnfooter := 0;
 
    OPEN col_t FOR
-    SELECT -1 ID, 'Наименование объекта' title1, '' title2, cn_btnface titlecl, cn_center titleal, cn_btnface datacl, cn_left dataal, 1 nlock, 150 nwidth, '' vmasks
+    SELECT -1 ID, 'РќР°РёРјРµРЅРѕРІР°РЅРёРµ РѕР±СЉРµРєС‚Р°' title1, '' title2, cn_btnface titlecl, cn_center titleal, cn_btnface datacl, cn_left dataal, 1 nlock, 150 nwidth, '' vmasks
       FROM DUAL
       UNION ALL
-    SELECT 0 ID, 'Наименование точки' title1, '' title2, cn_btnface titlecl, cn_center titleal, cn_btnface datacl, cn_left dataal, 1 nlock, 180 nwidth, '' vmasks
+    SELECT 0 ID, 'РќР°РёРјРµРЅРѕРІР°РЅРёРµ С‚РѕС‡РєРё' title1, '' title2, cn_btnface titlecl, cn_center titleal, cn_btnface datacl, cn_left dataal, 1 nlock, 180 nwidth, '' vmasks
       FROM DUAL
       UNION ALL
-    SELECT 0 ID, 'Дата' title1, '' title2, cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_center dataal, 1 nlock, 108 nwidth, '' vmasks
+    SELECT 0 ID, 'Р”Р°С‚Р°' title1, '' title2, cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_center dataal, 1 nlock, 108 nwidth, '' vmasks
       FROM DUAL
       UNION ALL
-    SELECT 1 ID, 'Линейное напряжение, В' title1, 'Ua' title2, cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_center dataal, 1 nlock, 80 nwidth, '' vmasks
+    SELECT 1 ID, 'Р›РёРЅРµР№РЅРѕРµ РЅР°РїСЂСЏР¶РµРЅРёРµ, Р’' title1, 'Ua' title2, cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_center dataal, 1 nlock, 80 nwidth, '' vmasks
       FROM DUAL
       UNION ALL
-    SELECT 2 ID, 'Линейное напряжение, В' title1, 'Ub' title2, cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_center dataal, 1 nlock, 80 nwidth, '' vmasks
+    SELECT 2 ID, 'Р›РёРЅРµР№РЅРѕРµ РЅР°РїСЂСЏР¶РµРЅРёРµ, Р’' title1, 'Ub' title2, cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_center dataal, 1 nlock, 80 nwidth, '' vmasks
       FROM DUAL
       UNION ALL
-    SELECT 3 ID, 'Линейное напряжение, В' title1, 'Uc' title2, cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_center dataal, 1 nlock, 80 nwidth, '' vmasks
+    SELECT 3 ID, 'Р›РёРЅРµР№РЅРѕРµ РЅР°РїСЂСЏР¶РµРЅРёРµ, Р’' title1, 'Uc' title2, cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_center dataal, 1 nlock, 80 nwidth, '' vmasks
       FROM DUAL
       UNION ALL
-    SELECT 4 ID, 'Ток, А' title1, 'Ia' title2, cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_center dataal, 1 nlock, 50 nwidth, '' vmasks
+    SELECT 4 ID, 'РўРѕРє, Рђ' title1, 'Ia' title2, cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_center dataal, 1 nlock, 50 nwidth, '' vmasks
       FROM DUAL
       UNION ALL
-    SELECT 5 ID, 'Ток, А' title1, 'Ib' title2, cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_center dataal, 1 nlock, 50 nwidth, '' vmasks
+    SELECT 5 ID, 'РўРѕРє, Рђ' title1, 'Ib' title2, cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_center dataal, 1 nlock, 50 nwidth, '' vmasks
       FROM DUAL
       UNION ALL
-    SELECT 6 ID, 'Ток, А' title1, 'Ic' title2, cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_center dataal, 1 nlock, 50 nwidth, '' vmasks
+    SELECT 6 ID, 'РўРѕРє, Рђ' title1, 'Ic' title2, cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_center dataal, 1 nlock, 50 nwidth, '' vmasks
       FROM DUAL
       UNION ALL
-    SELECT 7 ID, 'Частота напряжения сети, Гц' title1, '' title2, cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_center dataal, 1 nlock, 150 nwidth, '' vmasks
+    SELECT 7 ID, 'Р§Р°СЃС‚РѕС‚Р° РЅР°РїСЂСЏР¶РµРЅРёСЏ СЃРµС‚Рё, Р“С†' title1, '' title2, cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_center dataal, 1 nlock, 150 nwidth, '' vmasks
       FROM DUAL
       UNION ALL
-    SELECT 8 ID, 'Фазовый сдвиг' title1, '' title2, cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_center dataal, 1 nlock, 80 nwidth, '' vmasks
+    SELECT 8 ID, 'Р¤Р°Р·РѕРІС‹Р№ СЃРґРІРёРі' title1, '' title2, cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_center dataal, 1 nlock, 80 nwidth, '' vmasks
       FROM DUAL;
    OPEN row_t FOR
 
@@ -1159,30 +1159,30 @@ SELECT g1.name parent,g.name name, g.mid, TO_DATE('','DD.MM.YYYY HH24:MI:SS') dt
     groups g1
     WHERE g1.gid=g.parent 
     ORDER BY 1,2;*/
- ------------------------------- added by Круглова 24.02.2009------------------
-------------------------------- edite by Круглова 10.03.2009------------------
+ ------------------------------- added by РљСЂСѓРіР»РѕРІР° 24.02.2009------------------
+------------------------------- edite by РљСЂСѓРіР»РѕРІР° 10.03.2009------------------
   ELSIF lv_proc = cv_proc12 THEN
    an_cnfixcol := 3;
    an_cntitle := 2;
    an_cnfooter := 0;
 
    OPEN col_t FOR
-    SELECT -2 ID, 'Наименование объекта' title1, '' title2, cn_btnface titlecl, cn_center titleal, cn_btnface datacl, cn_left dataal, 1 nlock, 150 nwidth, '' vmasks
+    SELECT -2 ID, 'РќР°РёРјРµРЅРѕРІР°РЅРёРµ РѕР±СЉРµРєС‚Р°' title1, '' title2, cn_btnface titlecl, cn_center titleal, cn_btnface datacl, cn_left dataal, 1 nlock, 150 nwidth, '' vmasks
       FROM DUAL
       UNION ALL
-    SELECT -1 ID, 'Наименование точки' title1, '' title2, cn_btnface titlecl, cn_center titleal, cn_btnface datacl, cn_left dataal, 1 nlock, 200 nwidth, '' vmasks
+    SELECT -1 ID, 'РќР°РёРјРµРЅРѕРІР°РЅРёРµ С‚РѕС‡РєРё' title1, '' title2, cn_btnface titlecl, cn_center titleal, cn_btnface datacl, cn_left dataal, 1 nlock, 200 nwidth, '' vmasks
       FROM DUAL
       UNION ALL
-    SELECT 0 ID, '№ устр. учета' title1, '' title2, cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_center dataal, 1 nlock, 130 nwidth, '' vmasks
+    SELECT 0 ID, 'в„– СѓСЃС‚СЂ. СѓС‡РµС‚Р°' title1, '' title2, cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_center dataal, 1 nlock, 130 nwidth, '' vmasks
       FROM DUAL
       UNION ALL
-    SELECT 1 ID, 'Показания' title1, 'Активная энергия, кВтч' title2, cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_left dataal, 1 nlock, 120 nwidth, '' vmasks
+    SELECT 1 ID, 'РџРѕРєР°Р·Р°РЅРёСЏ' title1, 'РђРєС‚РёРІРЅР°СЏ СЌРЅРµСЂРіРёСЏ, РєР’С‚С‡' title2, cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_left dataal, 1 nlock, 120 nwidth, '' vmasks
       FROM DUAL
       UNION ALL
-    SELECT 2 ID, 'Показания' title1, 'Реактивная энергия, кВАрч' title2, cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_left dataal, 1 nlock, 120 nwidth, '' vmasks
+    SELECT 2 ID, 'РџРѕРєР°Р·Р°РЅРёСЏ' title1, 'Р РµР°РєС‚РёРІРЅР°СЏ СЌРЅРµСЂРіРёСЏ, РєР’РђСЂС‡' title2, cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_left dataal, 1 nlock, 120 nwidth, '' vmasks
       FROM DUAL
       UNION ALL
-    SELECT 3 ID, 'Показания' title1, 'Генерация, кВАрч' title2, cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_left dataal, 1 nlock, 120 nwidth, '' vmasks
+    SELECT 3 ID, 'РџРѕРєР°Р·Р°РЅРёСЏ' title1, 'Р“РµРЅРµСЂР°С†РёСЏ, РєР’РђСЂС‡' title2, cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_left dataal, 1 nlock, 120 nwidth, '' vmasks
       FROM DUAL;
 
    OPEN row_t FOR
@@ -1194,23 +1194,23 @@ SELECT g1.name parent,g.name name, g.mid, TO_DATE('','DD.MM.YYYY HH24:MI:SS') dt
         WHERE mid>0 CONNECT BY PRIOR gid=parent START WITH parent=an_id) g,groups g1, meters m
         WHERE g1.gid=g.parent AND m.mid=g.mid
         ORDER BY 1,2);
-------------------------------- added by Круглова 24.02.2009--------------------
+------------------------------- added by РљСЂСѓРіР»РѕРІР° 24.02.2009--------------------
   ELSIF lv_proc = cv_proc13 THEN
    an_cnfixcol := 2;
    an_cntitle := 1;
    an_cnfooter := 0;
 
    OPEN col_t FOR
-    SELECT -1 ID, 'Наименование объекта' title1,  cn_btnface titlecl, cn_center titleal, cn_btnface datacl, cn_left dataal, 1 nlock, 150 nwidth, '' vmasks
+    SELECT -1 ID, 'РќР°РёРјРµРЅРѕРІР°РЅРёРµ РѕР±СЉРµРєС‚Р°' title1,  cn_btnface titlecl, cn_center titleal, cn_btnface datacl, cn_left dataal, 1 nlock, 150 nwidth, '' vmasks
       FROM DUAL
       UNION ALL
-    SELECT 0 ID, 'Наименование точки' title1,  cn_btnface titlecl, cn_center titleal, cn_btnface datacl, cn_left dataal, 1 nlock, 200 nwidth, '' vmasks
+    SELECT 0 ID, 'РќР°РёРјРµРЅРѕРІР°РЅРёРµ С‚РѕС‡РєРё' title1,  cn_btnface titlecl, cn_center titleal, cn_btnface datacl, cn_left dataal, 1 nlock, 200 nwidth, '' vmasks
       FROM DUAL
       UNION ALL
-    SELECT 1 ID, 'Расход по точке, кВтч' title1,  cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_center dataal, 1 nlock, 130 nwidth, '' vmasks
+    SELECT 1 ID, 'Р Р°СЃС…РѕРґ РїРѕ С‚РѕС‡РєРµ, РєР’С‚С‡' title1,  cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_center dataal, 1 nlock, 130 nwidth, '' vmasks
       FROM DUAL
       UNION ALL
-    SELECT 2 ID, 'Расход по группе, кВтч' title1,  cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_center dataal, 1 nlock, 120 nwidth, '' vmasks
+    SELECT 2 ID, 'Р Р°СЃС…РѕРґ РїРѕ РіСЂСѓРїРїРµ, РєР’С‚С‡' title1,  cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_center dataal, 1 nlock, 120 nwidth, '' vmasks
       FROM DUAL;
       
     OPEN row_t FOR
@@ -1221,38 +1221,38 @@ SELECT g1.name parent,g.name name, g.mid, TO_DATE('','DD.MM.YYYY HH24:MI:SS') dt
         WHERE g1.gid=g.parent 
         ORDER BY 1,2;
         
--------------------------- added by Круглова 24.02.2009--------------------
+-------------------------- added by РљСЂСѓРіР»РѕРІР° 24.02.2009--------------------
   ELSIF lv_proc = cv_proc14 THEN
    an_cnfixcol := 4;
    an_cntitle := 2;
    an_cnfooter := 0;
 
    OPEN col_t FOR
-    SELECT -1 ID, '№ п/п' title1, '' title2,  cn_btnface titlecl, cn_center titleal, cn_btnface datacl, cn_center dataal, 1 nlock, 25 nwidth, '' vmasks
+    SELECT -1 ID, 'в„– Рї/Рї' title1, '' title2,  cn_btnface titlecl, cn_center titleal, cn_btnface datacl, cn_center dataal, 1 nlock, 25 nwidth, '' vmasks
       FROM DUAL
       UNION ALL
-    SELECT 0 ID, 'Название точки' title1, '' title2,  cn_btnface titlecl, cn_center titleal, cn_btnface datacl, cn_left dataal, 1 nlock, 200 nwidth, '' vmasks
+    SELECT 0 ID, 'РќР°Р·РІР°РЅРёРµ С‚РѕС‡РєРё' title1, '' title2,  cn_btnface titlecl, cn_center titleal, cn_btnface datacl, cn_left dataal, 1 nlock, 200 nwidth, '' vmasks
       FROM DUAL
       UNION ALL
-    SELECT 1 ID, '№ устр. учета' title1, '' title2,  cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_center dataal, 1 nlock, 130 nwidth, '' vmasks
+    SELECT 1 ID, 'в„– СѓСЃС‚СЂ. СѓС‡РµС‚Р°' title1, '' title2,  cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_center dataal, 1 nlock, 130 nwidth, '' vmasks
       FROM DUAL
       UNION ALL
-    SELECT 2 ID, 'Вид э/э' title1, '' title2, cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_center dataal, 1 nlock, 60 nwidth, '' vmasks
+    SELECT 2 ID, 'Р’РёРґ СЌ/СЌ' title1, '' title2, cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_center dataal, 1 nlock, 60 nwidth, '' vmasks
       FROM DUAL
     UNION ALL
-    SELECT 3 ID, 'Показания счетчика' title1, 'наст.' title2, cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_center dataal, 1 nlock, 100 nwidth, '' vmasks
+    SELECT 3 ID, 'РџРѕРєР°Р·Р°РЅРёСЏ СЃС‡РµС‚С‡РёРєР°' title1, 'РЅР°СЃС‚.' title2, cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_center dataal, 1 nlock, 100 nwidth, '' vmasks
       FROM DUAL
     UNION ALL
-    SELECT 4 ID, 'Показания счетчика' title1, 'пред.' title2, cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_center dataal, 1 nlock, 100 nwidth, '' vmasks
+    SELECT 4 ID, 'РџРѕРєР°Р·Р°РЅРёСЏ СЃС‡РµС‚С‡РёРєР°' title1, 'РїСЂРµРґ.' title2, cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_center dataal, 1 nlock, 100 nwidth, '' vmasks
       FROM DUAL
     UNION ALL
-    SELECT 5 ID, 'Разность' title1, '' title2,  cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_center dataal, 1 nlock, 100 nwidth, '' vmasks
+    SELECT 5 ID, 'Р Р°Р·РЅРѕСЃС‚СЊ' title1, '' title2,  cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_center dataal, 1 nlock, 100 nwidth, '' vmasks
       FROM DUAL
     UNION ALL
-    SELECT 6 ID, 'К-т' title1, '' title2, cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_center dataal, 1 nlock, 100 nwidth, '' vmasks
+    SELECT 6 ID, 'Рљ-С‚' title1, '' title2, cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_center dataal, 1 nlock, 100 nwidth, '' vmasks
       FROM DUAL
     UNION ALL
-    SELECT 7 ID, 'Расход э/э по т.у.' title1, '' title2, cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_center dataal, 1 nlock, 120 nwidth, '' vmasks
+    SELECT 7 ID, 'Р Р°СЃС…РѕРґ СЌ/СЌ РїРѕ С‚.Сѓ.' title1, '' title2, cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_center dataal, 1 nlock, 120 nwidth, '' vmasks
       FROM DUAL;
       
     OPEN row_t FOR
@@ -1271,8 +1271,8 @@ SELECT g1.name parent,g.name name, g.mid, TO_DATE('','DD.MM.YYYY HH24:MI:SS') dt
         
         ))tt, meters m WHERE m.mid=tt.mid ORDER BY 1, 2, 3);
 
--------------------------- added by Круглова 24.02.2009--------------------
-------------------------------- edited by Круглова 04.03.2009------------------
+-------------------------- added by РљСЂСѓРіР»РѕРІР° 24.02.2009--------------------
+------------------------------- edited by РљСЂСѓРіР»РѕРІР° 04.03.2009------------------
   ELSIF lv_proc = cv_proc15 THEN
    an_cnfixcol := 2;
    an_cntitle := 2;
@@ -1284,15 +1284,15 @@ SELECT g1.name parent,g.name name, g.mid, TO_DATE('','DD.MM.YYYY HH24:MI:SS') dt
     SELECT -2 ID, '' title1,'' title2, cn_btnface titlecl, cn_center titleal, cn_btnface datacl, cn_center dataal, 1 nlock, 25 nwidth, '' vmasks
       FROM DUAL
       UNION ALL
-    SELECT -1 ID, 'ДАТА' title1,'' title2, cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_center dataal, 1 nlock, 70 nwidth, '' vmasks
+    SELECT -1 ID, 'Р”РђРўРђ' title1,'' title2, cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_center dataal, 1 nlock, 70 nwidth, '' vmasks
       FROM DUAL
     UNION ALL
     SELECT 0 ID, parent title1,name title2, cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_left dataal, 1 nlock, 70 nwidth, '' vmasks FROM
      (SELECT g1.name parent,g.name name, g.mid, g.g FROM 
-     (SELECT name ||' Показ.сч.' name,parent, mid,1 g FROM groups
+     (SELECT name ||' РџРѕРєР°Р·.СЃС‡.' name,parent, mid,1 g FROM groups
         WHERE mid>0 CONNECT BY PRIOR gid=parent START WITH parent=an_id
         UNION ALL
-SELECT 'Расход' name, parent,mid, 2 g FROM groups
+SELECT 'Р Р°СЃС…РѕРґ' name, parent,mid, 2 g FROM groups
         WHERE mid>0 CONNECT BY PRIOR gid=parent START WITH parent=an_id
         
         ORDER BY 3,4) g,groups g1
@@ -1305,69 +1305,69 @@ SELECT 'Расход' name, parent,mid, 2 g FROM groups
         WHERE g1.gid=g.parent 
         ORDER BY 1,2);*/
         /*UNION ALL
-        SELECT  ''name,'ИТОГО' parent FROM dual;*/
+        SELECT  ''name,'РРўРћР“Рћ' parent FROM dual;*/
 
 
    OPEN row_t FOR
    SELECT ROWNUM ID, TO_CHAR (ROWNUM) title1, TO_CHAR((ad_from+ROWNUM-1),'DD.MM.YYYY') title2, cn_white datacl, 0 nlock, '' vmasks, 1000000000 srt FROM dual CONNECT BY ROWNUM <= interv;
-------------------------------- added by Круглова 30.03.2009------------------
-------------------------------- edited by Круглова 31.03.2009------------------
+------------------------------- added by РљСЂСѓРіР»РѕРІР° 30.03.2009------------------
+------------------------------- edited by РљСЂСѓРіР»РѕРІР° 31.03.2009------------------
   ELSIF lv_proc = cv_proc16 THEN
    an_cnfixcol := 2;
    an_cntitle := 2;
    an_cnfooter := 0;
    
    IF (TO_CHAR(ad_from,'HH24'))<20 AND(TO_CHAR(ad_from,'HH24'))>=8 THEN
-        smena:=TO_DATE('01-янв-2009 08:00','DD-MON-YYYY HH24:MI');
+        smena:=TO_DATE('01-СЏРЅРІ-2009 08:00','DD-MON-YYYY HH24:MI');
    ELSE 
-        smena:=TO_DATE('01-янв-2009 20:00','DD-MON-YYYY HH24:MI');
+        smena:=TO_DATE('01-СЏРЅРІ-2009 20:00','DD-MON-YYYY HH24:MI');
    END IF;
  
     
    OPEN col_t FOR
-    SELECT -1 ID, '№ п/п' title1, '' title2,  cn_btnface titlecl, cn_center titleal, cn_btnface datacl, cn_center dataal, 1 nlock, 50 nwidth, '' vmasks
+    SELECT -1 ID, 'в„– Рї/Рї' title1, '' title2,  cn_btnface titlecl, cn_center titleal, cn_btnface datacl, cn_center dataal, 1 nlock, 50 nwidth, '' vmasks
       FROM DUAL
       UNION ALL
-    SELECT 0 ID, 'Наименование показателя' title1, '' title2,  cn_btnface titlecl, cn_center titleal, cn_btnface datacl, cn_left dataal, 1 nlock, 200 nwidth, '' vmasks
+    SELECT 0 ID, 'РќР°РёРјРµРЅРѕРІР°РЅРёРµ РїРѕРєР°Р·Р°С‚РµР»СЏ' title1, '' title2,  cn_btnface titlecl, cn_center titleal, cn_btnface datacl, cn_left dataal, 1 nlock, 200 nwidth, '' vmasks
       FROM DUAL
     UNION ALL
-    SELECT 1 ID, 'Час смены' title1, TO_CHAR(smena+0.042,'HH24')||':00' title2,  cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_left dataal, 1 nlock, 50 nwidth, '' vmasks
+    SELECT 1 ID, 'Р§Р°СЃ СЃРјРµРЅС‹' title1, TO_CHAR(smena+0.042,'HH24')||':00' title2,  cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_left dataal, 1 nlock, 50 nwidth, '' vmasks
       FROM DUAL
     UNION ALL
-    SELECT 1 ID, 'Час смены' title1, TO_CHAR(smena+(0.042*2),'HH24')||':00' title2,  cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_left dataal, 1 nlock, 50 nwidth, '' vmasks
+    SELECT 1 ID, 'Р§Р°СЃ СЃРјРµРЅС‹' title1, TO_CHAR(smena+(0.042*2),'HH24')||':00' title2,  cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_left dataal, 1 nlock, 50 nwidth, '' vmasks
       FROM DUAL
     UNION ALL
-    SELECT 1 ID, 'Час смены' title1, TO_CHAR(smena+(0.042*3),'HH24')||':00' title2,  cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_left dataal, 1 nlock, 50 nwidth, '' vmasks
+    SELECT 1 ID, 'Р§Р°СЃ СЃРјРµРЅС‹' title1, TO_CHAR(smena+(0.042*3),'HH24')||':00' title2,  cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_left dataal, 1 nlock, 50 nwidth, '' vmasks
       FROM DUAL
     UNION ALL
-    SELECT 1 ID, 'Час смены' title1, TO_CHAR(smena+(0.042*4),'HH24')||':00' title2,  cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_left dataal, 1 nlock, 50 nwidth, '' vmasks
+    SELECT 1 ID, 'Р§Р°СЃ СЃРјРµРЅС‹' title1, TO_CHAR(smena+(0.042*4),'HH24')||':00' title2,  cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_left dataal, 1 nlock, 50 nwidth, '' vmasks
       FROM DUAL
     UNION ALL
-    SELECT 1 ID, 'Час смены' title1, TO_CHAR(smena+(0.042*5),'HH24')||':00' title2,  cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_left dataal, 1 nlock, 50 nwidth, '' vmasks
+    SELECT 1 ID, 'Р§Р°СЃ СЃРјРµРЅС‹' title1, TO_CHAR(smena+(0.042*5),'HH24')||':00' title2,  cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_left dataal, 1 nlock, 50 nwidth, '' vmasks
       FROM DUAL
     UNION ALL
-    SELECT 1 ID, 'Час смены' title1, TO_CHAR(smena+(0.042*6),'HH24')||':00' title2,  cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_left dataal, 1 nlock, 50 nwidth, '' vmasks
+    SELECT 1 ID, 'Р§Р°СЃ СЃРјРµРЅС‹' title1, TO_CHAR(smena+(0.042*6),'HH24')||':00' title2,  cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_left dataal, 1 nlock, 50 nwidth, '' vmasks
       FROM DUAL
     UNION ALL
-    SELECT 1 ID, 'Час смены' title1, TO_CHAR(smena+(0.042*7),'HH24')||':00' title2,  cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_left dataal, 1 nlock, 50 nwidth, '' vmasks
+    SELECT 1 ID, 'Р§Р°СЃ СЃРјРµРЅС‹' title1, TO_CHAR(smena+(0.042*7),'HH24')||':00' title2,  cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_left dataal, 1 nlock, 50 nwidth, '' vmasks
       FROM DUAL
     UNION ALL
-    SELECT 1 ID, 'Час смены' title1, TO_CHAR(smena+(0.042*8),'HH24')||':00' title2,  cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_left dataal, 1 nlock, 50 nwidth, '' vmasks
+    SELECT 1 ID, 'Р§Р°СЃ СЃРјРµРЅС‹' title1, TO_CHAR(smena+(0.042*8),'HH24')||':00' title2,  cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_left dataal, 1 nlock, 50 nwidth, '' vmasks
       FROM DUAL
     UNION ALL
-    SELECT 1 ID, 'Час смены' title1, TO_CHAR(smena+(0.042*9),'HH24')||':00' title2,  cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_left dataal, 1 nlock, 50 nwidth, '' vmasks
+    SELECT 1 ID, 'Р§Р°СЃ СЃРјРµРЅС‹' title1, TO_CHAR(smena+(0.042*9),'HH24')||':00' title2,  cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_left dataal, 1 nlock, 50 nwidth, '' vmasks
       FROM DUAL
     UNION ALL
-    SELECT 1 ID, 'Час смены' title1, TO_CHAR(smena+(0.042*10),'HH24')||':00' title2,  cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_left dataal, 1 nlock, 50 nwidth, '' vmasks
+    SELECT 1 ID, 'Р§Р°СЃ СЃРјРµРЅС‹' title1, TO_CHAR(smena+(0.042*10),'HH24')||':00' title2,  cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_left dataal, 1 nlock, 50 nwidth, '' vmasks
       FROM DUAL
     UNION ALL
-    SELECT 1 ID, 'Час смены' title1, TO_CHAR(smena+(0.042*11),'HH24')||':00' title2,  cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_left dataal, 1 nlock, 50 nwidth, '' vmasks
+    SELECT 1 ID, 'Р§Р°СЃ СЃРјРµРЅС‹' title1, TO_CHAR(smena+(0.042*11),'HH24')||':00' title2,  cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_left dataal, 1 nlock, 50 nwidth, '' vmasks
       FROM DUAL
     UNION ALL
-    SELECT 1 ID, 'Час смены' title1, TO_CHAR(smena+(0.042*12),'HH24')||':00' title2,  cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_left dataal, 1 nlock, 50 nwidth, '' vmasks
+    SELECT 1 ID, 'Р§Р°СЃ СЃРјРµРЅС‹' title1, TO_CHAR(smena+(0.042*12),'HH24')||':00' title2,  cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_left dataal, 1 nlock, 50 nwidth, '' vmasks
       FROM DUAL
     UNION ALL  
-    SELECT 2 ID, 'Всего за смену' title1, '' title2,  cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_left dataal, 1 nlock, 60 nwidth, '' vmasks
+    SELECT 2 ID, 'Р’СЃРµРіРѕ Р·Р° СЃРјРµРЅСѓ' title1, '' title2,  cn_btnface titlecl, cn_center titleal, cn_white datacl, cn_left dataal, 1 nlock, 60 nwidth, '' vmasks
       FROM DUAL;
     
     OPEN row_t FOR    
@@ -1386,13 +1386,13 @@ SELECT 'Расход' name, parent,mid, 2 g FROM groups
      ORDER SIBLINGS BY NVL(util_pg.get_param (vparam, 1), NAME);
     
     
-  ELSE   --***********  Заглушка ****************
+  ELSE   --***********  Р—Р°РіР»СѓС€РєР° ****************
    an_cnfixcol := 0;
    an_cntitle := 1;
    an_cnfooter := 0;
 
    OPEN col_t FOR
-    SELECT -1 ID, 'Назва показникa' title1, cn_btnface titlecl, cn_left titleal, cn_btnface datacl, cn_left dataal, 1 nlock, 150 nwidth, '' vmasks
+    SELECT -1 ID, 'РќР°Р·РІР° РїРѕРєР°Р·РЅРёРєa' title1, cn_btnface titlecl, cn_left titleal, cn_btnface datacl, cn_left dataal, 1 nlock, 150 nwidth, '' vmasks
       FROM DUAL;
 
    OPEN row_t FOR
@@ -1403,7 +1403,7 @@ SELECT 'Расход' name, parent,mid, 2 g FROM groups
  END;
 
 ----------------------------------------------------------------
--- Возвращает содержимое макета
+-- Р’РѕР·РІСЂР°С‰Р°РµС‚ СЃРѕРґРµСЂР¶РёРјРѕРµ РјР°РєРµС‚Р°
  PROCEDURE getmaketvalue (an_fid NUMBER, an_ispoint NUMBER, an_id NUMBER, ad_from DATE, ad_till DATE, data_t OUT common_pg.tt_number) IS
   ln_col            NUMBER;
   ln_row            NUMBER;
@@ -1520,22 +1520,22 @@ SELECT 'Расход' name, parent,mid, 2 g FROM groups
                                   CONNECT BY PRIOR mid = PARENT
                                   START WITH mid = an_id) AND f.mid = p.mid(+) AND p.PARENT = pa.mid(+)
                ORDER BY pa.NAME, pa.mid, p.NAME, p.mid) LOOP
-     -- отдача A-  -- согласно сортировке по d.t в getmaketinfo - сначала отдача, потом прием
+     -- РѕС‚РґР°С‡Р° A-  -- СЃРѕРіР»Р°СЃРЅРѕ СЃРѕСЂС‚РёСЂРѕРІРєРµ РїРѕ d.t РІ getmaketinfo - СЃРЅР°С‡Р°Р»Р° РѕС‚РґР°С‡Р°, РїРѕС‚РѕРј РїСЂРёРµРј
      data_t (data_t.COUNT + 1) := util_pg.get_meterage_vch2 (lc.mid, ad_from, 2, 0);
      data_t (data_t.COUNT + 1) := util_pg.get_meterage_vch2 (lc.mid, ad_till, 2, 0);
      data_t (data_t.COUNT + 1) := util_pg.indicoverturn (data_t (data_t.COUNT) - data_t (data_t.COUNT - 1), NULL);
      data_t (data_t.COUNT + 1) := lc.kc;
      data_t (data_t.COUNT + 1) := data_t (data_t.COUNT - 1) * lc.kc;
-     lt_tmp (1) := lt_tmp (1) + NVL (data_t (data_t.COUNT), 0);   -- суммируем отдачу
-     data_t (data_t.COUNT + 1) := NULL;   -- прымитка
-     -- прием А+
+     lt_tmp (1) := lt_tmp (1) + NVL (data_t (data_t.COUNT), 0);   -- СЃСѓРјРјРёСЂСѓРµРј РѕС‚РґР°С‡Сѓ
+     data_t (data_t.COUNT + 1) := NULL;   -- РїСЂС‹РјРёС‚РєР°
+     -- РїСЂРёРµРј Рђ+
      data_t (data_t.COUNT + 1) := util_pg.get_meterage_vch2 (lc.mid, ad_from, 1, 0);
      data_t (data_t.COUNT + 1) := util_pg.get_meterage_vch2 (lc.mid, ad_till, 1, 0);
      data_t (data_t.COUNT + 1) := util_pg.indicoverturn (data_t (data_t.COUNT) - data_t (data_t.COUNT - 1), NULL);
      data_t (data_t.COUNT + 1) := lc.kc;
      data_t (data_t.COUNT + 1) := data_t (data_t.COUNT - 1) * lc.kc;
-     lt_tmp (0) := lt_tmp (0) + NVL (data_t (data_t.COUNT), 0);   -- суммируем прием
-     data_t (data_t.COUNT + 1) := NULL;   -- прымитка
+     lt_tmp (0) := lt_tmp (0) + NVL (data_t (data_t.COUNT), 0);   -- СЃСѓРјРјРёСЂСѓРµРј РїСЂРёРµРј
+     data_t (data_t.COUNT + 1) := NULL;   -- РїСЂС‹РјРёС‚РєР°
     END LOOP;
    ELSE
     FOR lc IN (SELECT   p.mid, DECODE(SIGN(NVL (f.metkc, 1)-1),1,NVL (f.metkc, 1),NVL (f.kc, 1)) kc, g.inverted, g.npartly
@@ -1549,7 +1549,7 @@ SELECT 'Расход' name, parent,mid, 2 g FROM groups
                                     AND (TO_CHAR (ad_from, 'yyyymm') <= NVL (ntillperiod, 299912) AND TO_CHAR (ad_till, 'yyyymm') >= NVL (nfromperiod, 160501)))
                         AND g.mid = f.mid AND f.mid = p.mid(+) AND p.PARENT = pa.mid(+)
                ORDER BY util_pg.allnumber_f (util_pg.get_param (g.vparam, 1, ';')), pa.NAME, pa.mid, p.NAME, p.mid) LOOP
-     FOR i IN REVERSE 1 .. 2 LOOP   -- здесь задается порядок отдачи/приема
+     FOR i IN REVERSE 1 .. 2 LOOP   -- Р·РґРµСЃСЊ Р·Р°РґР°РµС‚СЃСЏ РїРѕСЂСЏРґРѕРє РѕС‚РґР°С‡Рё/РїСЂРёРµРјР°
       IF lc.inverted = 'y' THEN
        IF i = 1 THEN
         temp_i := 2;
@@ -1569,16 +1569,16 @@ SELECT 'Расход' name, parent,mid, 2 g FROM groups
       data_t (data_t.COUNT + 1) := util_pg.indicoverturn (data_t (data_t.COUNT) - data_t (data_t.COUNT - 1), NULL);
       data_t (data_t.COUNT + 1) := lc.kc;
       data_t (data_t.COUNT + 1) := data_t (data_t.COUNT - 1) * lc.kc;
-      lt_tmp (i - 1) := lt_tmp (i - 1) + NVL (data_t (data_t.COUNT), 0);   -- суммируем отдачу или прием
-      data_t (data_t.COUNT + 1) := NULL;   -- прымитка
+      lt_tmp (i - 1) := lt_tmp (i - 1) + NVL (data_t (data_t.COUNT), 0);   -- СЃСѓРјРјРёСЂСѓРµРј РѕС‚РґР°С‡Сѓ РёР»Рё РїСЂРёРµРј
+      data_t (data_t.COUNT + 1) := NULL;   -- РїСЂС‹РјРёС‚РєР°
      END LOOP;
     END LOOP;
    END IF;
 
-   IF ln_locksum = 0 THEN   -- вывод итоговых показателей
+   IF ln_locksum = 0 THEN   -- РІС‹РІРѕРґ РёС‚РѕРіРѕРІС‹С… РїРѕРєР°Р·Р°С‚РµР»РµР№
     data_t (data_t.COUNT + 5) := lt_tmp (1);
     data_t (data_t.COUNT + 10) := lt_tmp (0);
-    data_t (data_t.COUNT + 15) := lt_tmp (0) - lt_tmp (1);   -- прием - отдача
+    data_t (data_t.COUNT + 15) := lt_tmp (0) - lt_tmp (1);   -- РїСЂРёРµРј - РѕС‚РґР°С‡Р°
    END IF;
   ------------------------------- addded by Kondakov A.G. 08.10.2008
   ELSIF lv_proc = cv_proc3 THEN
@@ -1590,19 +1590,19 @@ SELECT 'Расход' name, parent,mid, 2 g FROM groups
                                   CONNECT BY PRIOR mid = PARENT
                                   START WITH mid = an_id) AND f.mid = p.mid(+) AND p.PARENT = pa.mid(+)
                ORDER BY pa.NAME, pa.mid, p.NAME, p.mid) LOOP
-     -- прием А+ -- согласно сортировке по d.t в getmaketinfo - сначала прием, потом отдача
+     -- РїСЂРёРµРј Рђ+ -- СЃРѕРіР»Р°СЃРЅРѕ СЃРѕСЂС‚РёСЂРѕРІРєРµ РїРѕ d.t РІ getmaketinfo - СЃРЅР°С‡Р°Р»Р° РїСЂРёРµРј, РїРѕС‚РѕРј РѕС‚РґР°С‡Р°
      data_t (data_t.COUNT + 1) := util_pg.get_meterage_vch2 (lc.mid, ad_till, 1, 0);
      data_t (data_t.COUNT + 1) := util_pg.get_meterage_vch2 (lc.mid, ad_from, 1, 0);
      data_t (data_t.COUNT + 1) := util_pg.indicoverturn (data_t (data_t.COUNT-1) - data_t (data_t.COUNT), NULL);
      data_t (data_t.COUNT + 1) := lc.kc;
      data_t (data_t.COUNT + 1) := data_t (data_t.COUNT - 1) * lc.kc;
-     data_t (data_t.COUNT + 1) := NULL;   -- тут отдачи нет
-     -- отдача A-
+     data_t (data_t.COUNT + 1) := NULL;   -- С‚СѓС‚ РѕС‚РґР°С‡Рё РЅРµС‚
+     -- РѕС‚РґР°С‡Р° A-
      data_t (data_t.COUNT + 1) := util_pg.get_meterage_vch2 (lc.mid, ad_till, 2, 0);
      data_t (data_t.COUNT + 1) := util_pg.get_meterage_vch2 (lc.mid, ad_from, 2, 0);
      data_t (data_t.COUNT + 1) := util_pg.indicoverturn (data_t (data_t.COUNT-1) - data_t (data_t.COUNT), NULL);
      data_t (data_t.COUNT + 1) := lc.kc;
-     data_t (data_t.COUNT + 1) := NULL;   -- тут приема нет
+     data_t (data_t.COUNT + 1) := NULL;   -- С‚СѓС‚ РїСЂРёРµРјР° РЅРµС‚
      data_t (data_t.COUNT + 1) := data_t (data_t.COUNT - 2) * lc.kc;
     END LOOP;
    ELSE
@@ -1625,7 +1625,7 @@ SELECT 'Расход' name, parent,mid, 2 g FROM groups
                         util_pg.get_param (g.vparam, 2),
                         g.NAME,
                         g.mid) LOOP
-     FOR i IN 1 .. 2 LOOP   -- согласно сортировке по d.t в getmaketinfo - сначала прием, потом отдача
+     FOR i IN 1 .. 2 LOOP   -- СЃРѕРіР»Р°СЃРЅРѕ СЃРѕСЂС‚РёСЂРѕРІРєРµ РїРѕ d.t РІ getmaketinfo - СЃРЅР°С‡Р°Р»Р° РїСЂРёРµРј, РїРѕС‚РѕРј РѕС‚РґР°С‡Р°
       IF lc.inverted = 'y' THEN
        IF i = 1 THEN
         temp_i := 2;
@@ -1647,27 +1647,27 @@ SELECT 'Расход' name, parent,mid, 2 g FROM groups
 
       IF i = 1 THEN
        data_t (data_t.COUNT + 1) := data_t (data_t.COUNT - 1) * lc.kc;
-       data_t (data_t.COUNT + 1) := NULL;   -- тут отдачи нет
+       data_t (data_t.COUNT + 1) := NULL;   -- С‚СѓС‚ РѕС‚РґР°С‡Рё РЅРµС‚
       ELSE
-       data_t (data_t.COUNT + 1) := NULL;   -- тут приема нет
+       data_t (data_t.COUNT + 1) := NULL;   -- С‚СѓС‚ РїСЂРёРµРјР° РЅРµС‚
        data_t (data_t.COUNT + 1) := data_t (data_t.COUNT - 2) * lc.kc;
       END IF;
      END LOOP;
     END LOOP;
    END IF;
 
-   -- добавление сумм внизу
-   temp_i := 6;   -- число значений в строке
-   temp_data_t_cnt := data_t.COUNT / temp_i;   -- число суммируемых строк
+   -- РґРѕР±Р°РІР»РµРЅРёРµ СЃСѓРјРј РІРЅРёР·Сѓ
+   temp_i := 6;   -- С‡РёСЃР»Рѕ Р·РЅР°С‡РµРЅРёР№ РІ СЃС‚СЂРѕРєРµ
+   temp_data_t_cnt := data_t.COUNT / temp_i;   -- С‡РёСЃР»Рѕ СЃСѓРјРјРёСЂСѓРµРјС‹С… СЃС‚СЂРѕРє
 
-   FOR s IN 1 .. 4 LOOP   --  число итоговых строк
+   FOR s IN 1 .. 4 LOOP   --  С‡РёСЃР»Рѕ РёС‚РѕРіРѕРІС‹С… СЃС‚СЂРѕРє
     data_t (data_t.COUNT + 1) := NULL;
     data_t (data_t.COUNT + 1) := NULL;
     data_t (data_t.COUNT + 1) := NULL;
     data_t (data_t.COUNT + 1) := NULL;
 
     IF s = 1 THEN
-     FOR i IN 1 .. 2 LOOP   -- 1 - прием  2 - отдача
+     FOR i IN 1 .. 2 LOOP   -- 1 - РїСЂРёРµРј  2 - РѕС‚РґР°С‡Р°
       temp_summ (i - 1) := 0;
       temp_k := 0;
 
@@ -1680,25 +1680,25 @@ SELECT 'Расход' name, parent,mid, 2 g FROM groups
       END LOOP;
 
       IF temp_k = 1 THEN
-       data_t (data_t.COUNT + 1) := temp_summ (i - 1);   -- кВт*ч
+       data_t (data_t.COUNT + 1) := temp_summ (i - 1);   -- РєР’С‚*С‡
       ELSE
-       data_t (data_t.COUNT + 1) := NULL;   -- суммировать было нечего
+       data_t (data_t.COUNT + 1) := NULL;   -- СЃСѓРјРјРёСЂРѕРІР°С‚СЊ Р±С‹Р»Рѕ РЅРµС‡РµРіРѕ
       END IF;
      END LOOP;
     ELSIF s = 2 THEN
-     data_t (data_t.COUNT + 1) := data_t (data_t.COUNT - temp_i + 1) / 1000;   -- т.кВт*ч прием
-     data_t (data_t.COUNT + 1) := data_t (data_t.COUNT - temp_i + 1) / 1000;   -- т.кВт*ч отдача
+     data_t (data_t.COUNT + 1) := data_t (data_t.COUNT - temp_i + 1) / 1000;   -- С‚.РєР’С‚*С‡ РїСЂРёРµРј
+     data_t (data_t.COUNT + 1) := data_t (data_t.COUNT - temp_i + 1) / 1000;   -- С‚.РєР’С‚*С‡ РѕС‚РґР°С‡Р°
     ELSIF s = 3 THEN
      temp_k := data_t (data_t.COUNT - 2 * temp_i + 1) - data_t (data_t.COUNT - 2 * temp_i + 2);
 
-     IF temp_k < 0 THEN   -- сальдо переток кВт*ч
+     IF temp_k < 0 THEN   -- СЃР°Р»СЊРґРѕ РїРµСЂРµС‚РѕРє РєР’С‚*С‡
       data_t (data_t.COUNT + 1) := NULL;
       data_t (data_t.COUNT + 1) := (-1) * temp_k;
      ELSE
       data_t (data_t.COUNT + 1) := temp_k;
       data_t (data_t.COUNT + 1) := NULL;
      END IF;
-    ELSIF s = 4 THEN   -- сальдо переток т.кВт*ч
+    ELSIF s = 4 THEN   -- СЃР°Р»СЊРґРѕ РїРµСЂРµС‚РѕРє С‚.РєР’С‚*С‡
      data_t (data_t.COUNT + 1) := data_t (data_t.COUNT - temp_i + 1) / 1000;
      data_t (data_t.COUNT + 1) := data_t (data_t.COUNT - temp_i + 1) / 1000;
     END IF;
@@ -1742,7 +1742,7 @@ SELECT 'Расход' name, parent,mid, 2 g FROM groups
                                START WITH gid = lc1.gid) AND g.mid = h.mid AND h.date_time > ad_from AND h.date_time <= ad_till);
 
       IF lc1.cln = 11 OR lc1.cln = 12 THEN
-       lt_tmp (lc1.cln - 11) := lt_tmp (lc1.cln - 11) + data_t (temp_i * 12 + lc1.cln);   -- суммируем
+       lt_tmp (lc1.cln - 11) := lt_tmp (lc1.cln - 11) + data_t (temp_i * 12 + lc1.cln);   -- СЃСѓРјРјРёСЂСѓРµРј
       END IF;
      END LOOP;*/
      FOR lc1 IN (SELECT TO_NUMBER (util_pg.get_param (vparam, 1)) cln, gid
@@ -1775,14 +1775,14 @@ SELECT 'Расход' name, parent,mid, 2 g FROM groups
                                     WHERE mid IS NOT NULL
                                CONNECT BY PRIOR gid = PARENT
                                START WITH gid = lc1.gid) AND g.mid = h.mid AND h.date_time > ad_from AND h.date_time <= ad_till);
-        lt_tmp (lc1.cln - 3) := lt_tmp (lc1.cln - 3) + data_t (temp_i * 12 + lc1.cln + 8);   -- суммируем
+        lt_tmp (lc1.cln - 3) := lt_tmp (lc1.cln - 3) + data_t (temp_i * 12 + lc1.cln + 8);   -- СЃСѓРјРјРёСЂСѓРµРј
       END IF; 
      END LOOP;
 
      temp_i := temp_i + 1;
     END LOOP;
 
-    IF ln_locksum = 0 THEN   -- вывод итоговых показателей
+    IF ln_locksum = 0 THEN   -- РІС‹РІРѕРґ РёС‚РѕРіРѕРІС‹С… РїРѕРєР°Р·Р°С‚РµР»РµР№
      temp_i := temp_i + 1;
      data_t (temp_i * 12 - 1) := lt_tmp (0);
      data_t (temp_i * 12) := lt_tmp (1);
@@ -1801,22 +1801,22 @@ SELECT 'Расход' name, parent,mid, 2 g FROM groups
                                   CONNECT BY PRIOR mid = PARENT
                                   START WITH mid = an_id) AND f.mid = p.mid(+) AND p.PARENT = pa.mid(+)
                ORDER BY pa.NAME, pa.mid, p.NAME, p.mid) LOOP
-     -- прием A+  -- согласно сортировке по d.t в getmaketinfo - сначала прием, потом отдача
+     -- РїСЂРёРµРј A+  -- СЃРѕРіР»Р°СЃРЅРѕ СЃРѕСЂС‚РёСЂРѕРІРєРµ РїРѕ d.t РІ getmaketinfo - СЃРЅР°С‡Р°Р»Р° РїСЂРёРµРј, РїРѕС‚РѕРј РѕС‚РґР°С‡Р°
      data_t (data_t.COUNT + 1) := util_pg.get_meterage_vch2 (lc.mid, ad_till, 1, 0);
      data_t (data_t.COUNT + 1) := util_pg.get_meterage_vch2 (lc.mid, ad_from, 1, 0);
      data_t (data_t.COUNT + 1) := util_pg.indicoverturn (data_t (data_t.COUNT - 1) - data_t (data_t.COUNT), NULL);
      data_t (data_t.COUNT + 1) := lc.kc;
      data_t (data_t.COUNT + 1) := data_t (data_t.COUNT - 1) * lc.kc;
-     lt_tmp (0) := lt_tmp (0) + NVL (data_t (data_t.COUNT), 0);   -- суммируем прием
-     data_t (data_t.COUNT + 1) := 0;   -- недоучет
-     -- отдача А-
+     lt_tmp (0) := lt_tmp (0) + NVL (data_t (data_t.COUNT), 0);   -- СЃСѓРјРјРёСЂСѓРµРј РїСЂРёРµРј
+     data_t (data_t.COUNT + 1) := 0;   -- РЅРµРґРѕСѓС‡РµС‚
+     -- РѕС‚РґР°С‡Р° Рђ-
      data_t (data_t.COUNT + 1) := util_pg.get_meterage_vch2 (lc.mid, ad_till, 2, 0);
      data_t (data_t.COUNT + 1) := util_pg.get_meterage_vch2 (lc.mid, ad_from, 2, 0);
      data_t (data_t.COUNT + 1) := util_pg.indicoverturn (data_t (data_t.COUNT - 1) - data_t (data_t.COUNT), NULL);
      data_t (data_t.COUNT + 1) := lc.kc;
      data_t (data_t.COUNT + 1) := data_t (data_t.COUNT - 1) * lc.kc;
-     lt_tmp (1) := lt_tmp (1) + NVL (data_t (data_t.COUNT), 0);   -- суммируем отдачу
-     data_t (data_t.COUNT + 1) := 0;   -- недоучет
+     lt_tmp (1) := lt_tmp (1) + NVL (data_t (data_t.COUNT), 0);   -- СЃСѓРјРјРёСЂСѓРµРј РѕС‚РґР°С‡Сѓ
+     data_t (data_t.COUNT + 1) := 0;   -- РЅРµРґРѕСѓС‡РµС‚
     END LOOP;
    ELSE
     FOR lc IN (SELECT   p.mid, DECODE(SIGN(NVL (f.metkc, 1)-1),1,NVL (f.metkc, 1),NVL (f.kc, 1)) kc, g.inverted, g.npartly
@@ -1830,7 +1830,7 @@ SELECT 'Расход' name, parent,mid, 2 g FROM groups
                                     AND (TO_CHAR (ad_from, 'yyyymm') <= NVL (ntillperiod, 299912) AND TO_CHAR (ad_till, 'yyyymm') >= NVL (nfromperiod, 160501)))
                         AND g.mid = f.mid AND f.mid = p.mid(+) AND p.PARENT = pa.mid(+)
                ORDER BY util_pg.allnumber_f (util_pg.get_param (g.vparam, 1, ';')), pa.NAME, pa.mid, p.NAME, p.mid) LOOP
-     FOR i IN 1 .. 2 LOOP   -- согласно сортировке по d.t в getmaketinfo - сначала прием, потом отдача (без реверса)
+     FOR i IN 1 .. 2 LOOP   -- СЃРѕРіР»Р°СЃРЅРѕ СЃРѕСЂС‚РёСЂРѕРІРєРµ РїРѕ d.t РІ getmaketinfo - СЃРЅР°С‡Р°Р»Р° РїСЂРёРµРј, РїРѕС‚РѕРј РѕС‚РґР°С‡Р° (Р±РµР· СЂРµРІРµСЂСЃР°)
       IF lc.inverted = 'y' THEN
        IF i = 1 THEN
         temp_i := 2;
@@ -1850,23 +1850,23 @@ SELECT 'Расход' name, parent,mid, 2 g FROM groups
       data_t (data_t.COUNT + 1) := util_pg.indicoverturn (data_t (data_t.COUNT - 1) - data_t (data_t.COUNT), NULL);
       data_t (data_t.COUNT + 1) := lc.kc;
       data_t (data_t.COUNT + 1) := data_t (data_t.COUNT - 1) * lc.kc;
-      lt_tmp (i - 1) := lt_tmp (i - 1) + NVL (data_t (data_t.COUNT), 0);   -- суммируем прием или отдачу
-      data_t (data_t.COUNT + 1) := 0;   -- недоучет
+      lt_tmp (i - 1) := lt_tmp (i - 1) + NVL (data_t (data_t.COUNT), 0);   -- СЃСѓРјРјРёСЂСѓРµРј РїСЂРёРµРј РёР»Рё РѕС‚РґР°С‡Сѓ
+      data_t (data_t.COUNT + 1) := 0;   -- РЅРµРґРѕСѓС‡РµС‚
      END LOOP;
     END LOOP;
    END IF;
 
-   IF ln_locksum = 0 THEN   -- вывод итоговых показателей
+   IF ln_locksum = 0 THEN   -- РІС‹РІРѕРґ РёС‚РѕРіРѕРІС‹С… РїРѕРєР°Р·Р°С‚РµР»РµР№
     data_t (data_t.COUNT + 5) := lt_tmp (0);
     data_t (data_t.COUNT + 10) := lt_tmp (1);
-    data_t (data_t.COUNT + 15) := lt_tmp (0) - lt_tmp (1);   -- прием - отдача
+    data_t (data_t.COUNT + 15) := lt_tmp (0) - lt_tmp (1);   -- РїСЂРёРµРј - РѕС‚РґР°С‡Р°
    END IF;
   ------------------------------- addded by Kondakov A.G. 13.10.2008
   ELSIF lv_proc = cv_proc6 THEN
-   lt_tmp (0) := 0;   -- A+ осн
-   lt_tmp (1) := 0;   -- А- осн
-   lt_tmp (2) := 0;   -- А+ дубл
-   lt_tmp (3) := 0;   -- А- дубл
+   lt_tmp (0) := 0;   -- A+ РѕСЃРЅ
+   lt_tmp (1) := 0;   -- Рђ- РѕСЃРЅ
+   lt_tmp (2) := 0;   -- Рђ+ РґСѓР±Р»
+   lt_tmp (3) := 0;   -- Рђ- РґСѓР±Р»
 
    IF an_ispoint = 1 THEN
     FOR lc IN (SELECT   p.mid, d.r, d.t, util_pg.allnumber_f(m.mtrsn) mtrsn, NVL (f.kc, 1) kc, h.er, h.ed, util_pg.allnumber_f(md.mtrsn) mtrsn_d, NVL (fd.kc, 1) kc_d, hd.er er_d,
@@ -2004,13 +2004,13 @@ SELECT 'Расход' name, parent,mid, 2 g FROM groups
     END LOOP;
    END IF;
 
-   IF ln_locksum = 0 THEN   -- вывод итоговых показателей
+   IF ln_locksum = 0 THEN   -- РІС‹РІРѕРґ РёС‚РѕРіРѕРІС‹С… РїРѕРєР°Р·Р°С‚РµР»РµР№
     data_t (data_t.COUNT + 2) := lt_tmp (0);
     data_t (data_t.COUNT + 4) := lt_tmp (2);
     data_t (data_t.COUNT + 7) := lt_tmp (1);
     data_t (data_t.COUNT + 9) := lt_tmp (3);
-    data_t (data_t.COUNT + 12) := lt_tmp (0) - lt_tmp (1);   -- прием - отдача
-    data_t (data_t.COUNT + 14) := lt_tmp (2) - lt_tmp (3);   -- прием - отдача
+    data_t (data_t.COUNT + 12) := lt_tmp (0) - lt_tmp (1);   -- РїСЂРёРµРј - РѕС‚РґР°С‡Р°
+    data_t (data_t.COUNT + 14) := lt_tmp (2) - lt_tmp (3);   -- РїСЂРёРµРј - РѕС‚РґР°С‡Р°
    END IF;
   ------------------------------- addded by Kondakov A.G. 14.10.2008
   ELSIF lv_proc = cv_proc7 THEN
@@ -2066,7 +2066,7 @@ SELECT 'Расход' name, parent,mid, 2 g FROM groups
     END LOOP;
    END IF;
 
-   IF ln_locksum = 0 THEN   -- вывод итоговых показателей
+   IF ln_locksum = 0 THEN   -- РІС‹РІРѕРґ РёС‚РѕРіРѕРІС‹С… РїРѕРєР°Р·Р°С‚РµР»РµР№
     data_t (data_t.COUNT + 1) := lt_tmp (0);
     data_t (data_t.COUNT + 1) := lt_tmp (1);
    END IF;
@@ -2106,11 +2106,11 @@ SELECT 'Расход' name, parent,mid, 2 g FROM groups
     END LOOP;
    END IF;
 
-   IF ln_locksum = 0 THEN   -- вывод итоговых показателей
+   IF ln_locksum = 0 THEN   -- РІС‹РІРѕРґ РёС‚РѕРіРѕРІС‹С… РїРѕРєР°Р·Р°С‚РµР»РµР№
     data_t (data_t.COUNT + 1) := lt_tmp (0);
     data_t (data_t.COUNT + 1) := lt_tmp (1);
    END IF;
-  ------------------------------- added by Круглова 13.11.2008
+  ------------------------------- added by РљСЂСѓРіР»РѕРІР° 13.11.2008
   ELSIF lv_proc = cv_proc9 THEN
    FOR i IN 1 .. 3 LOOP
     temp_summ (i) := 0;
@@ -2303,8 +2303,8 @@ SELECT 'Расход' name, parent,mid, 2 g FROM groups
      END IF;
     END IF;
    END LOOP;
-------------------------------- added by Круглова 24.02.2009------------------
-------------------------------- eddited by Круглова 10.03.2009------------------
+------------------------------- added by РљСЂСѓРіР»РѕРІР° 24.02.2009------------------
+------------------------------- eddited by РљСЂСѓРіР»РѕРІР° 10.03.2009------------------
   ELSIF lv_proc = cv_proc11 THEN  
   
   FOR lc IN 
@@ -2317,7 +2317,7 @@ SELECT 'Расход' name, parent,mid, 2 g FROM groups
   
   LOOP
   temp_i:=0;
-  tmp_date1:='01-янв-1900';
+  tmp_date1:='01-СЏРЅРІ-1900';
   
   SELECT max(date_time) into tmp_date1 from curr_power_arch WHERE mid=lc.mid AND date_time<=ad_from;
  
@@ -2405,8 +2405,8 @@ SELECT 'Расход' name, parent,mid, 2 g FROM groups
   data_t(data_t.count+1):=TO_CHAR(tmp_date1,'HH24.MI');*/
   END LOOP;
  RETURN;
-------------------------------- added by Круглова 24.02.2009------------------
-------------------------------- edited by Круглова 10.03.2009------------------
+------------------------------- added by РљСЂСѓРіР»РѕРІР° 24.02.2009------------------
+------------------------------- edited by РљСЂСѓРіР»РѕРІР° 10.03.2009------------------
 ELSIF lv_proc = cv_proc12 THEN
   FOR lc IN (SELECT g1.name pname, g.name name,g.mid, m.mtrsn meter FROM 
      (SELECT name,parent,mid FROM groups
@@ -2415,7 +2415,7 @@ ELSIF lv_proc = cv_proc12 THEN
         ORDER BY 1,2) LOOP
   temp_i:=data_t.COUNT;
   temp_k:=0;
-  tmp_date1:='01-янв-1900';
+  tmp_date1:='01-СЏРЅРІ-1900';
   
   SELECT max(date_time) into tmp_date1 from profile WHERE mid=lc.mid AND TO_DATE(date_time,'DD.MM.YYYY HH24:MI:SS')<=TO_DATE(ad_from,'DD.MM.YYYY HH24:MI:SS') AND TO_DATE(date_time,'DD.MM.YYYY HH24:MI:SS')>=TO_DATE((ad_from-0.02083),'DD.MM.YYYY HH24:MI:SS');
   
@@ -2452,7 +2452,7 @@ ELSIF lv_proc = cv_proc12 THEN
   END IF;
 END LOOP;
 RETURN;
-  ------------------------------- added by Круглова 24.02.2009------------------
+  ------------------------------- added by РљСЂСѓРіР»РѕРІР° 24.02.2009------------------
 ELSIF lv_proc = cv_proc13 THEN
 temp_k:=0;
 
@@ -2492,7 +2492,7 @@ SELECT ROUND (NVL (SUM (util_pg.sld (h.mid, h.er * DECODE (g.npartly, 2, 0, 1), 
     pr_par:=lc.parent;                 
     END LOOP;
 RETURN;
-  ------------------------------- added by Круглова 24.02.2009------------------
+  ------------------------------- added by РљСЂСѓРіР»РѕРІР° 24.02.2009------------------
   -------------------------------edited by Kruglova 18.03.2009------------------
 ELSIF lv_proc = cv_proc14 THEN
   
@@ -2508,7 +2508,7 @@ FOR lc IN  (SELECT DISTINCT t.name, t.gID, m.mtrsn, m.mid FROM
         
         select max(date_time) INTO tmp_date2
         FROM halfhour WHERE mid=lc.mid AND date_time<=ad_till;
-        --актив
+        --Р°РєС‚РёРІ
         SELECT COUNT (ERM) INTO temp_i FROM halfhour WHERE mid=lc.mid AND date_time=tmp_date2;
         IF temp_i=0 THEN
         data_t(data_t.count+1):=0;
@@ -2537,7 +2537,7 @@ FOR lc IN  (SELECT DISTINCT t.name, t.gID, m.mtrsn, m.mid FROM
         
         data_t(data_t.count+1):=data_t(data_t.count)*data_t(data_t.count-1);
         
-        --реактив
+        --СЂРµР°РєС‚РёРІ
         SELECT COUNT (q1M) INTO temp_i FROM halfhour WHERE mid=lc.mid AND date_time=tmp_date2;
         IF temp_i=0 THEN
         data_t(data_t.count+1):=0;
@@ -2564,8 +2564,8 @@ FOR lc IN  (SELECT DISTINCT t.name, t.gID, m.mtrsn, m.mid FROM
 
         END LOOP;
 RETURN;
-------------------------------- added by Круглова 24.02.2009------------------
-------------------------------- edited by Круглова 04.03.2009------------------
+------------------------------- added by РљСЂСѓРіР»РѕРІР° 24.02.2009------------------
+------------------------------- edited by РљСЂСѓРіР»РѕРІР° 04.03.2009------------------
 ELSIF lv_proc = cv_proc15 THEN
 SELECT ABS(TO_DATE(ad_till,'DD.MM.YYYY HH24:MI:SS') - TO_DATE(ad_from,'DD.MM.YYYY HH24:MI:SS')) INTO interv from DUAL;
    interv:=interv+1;
@@ -2605,8 +2605,8 @@ SELECT ABS(TO_DATE(ad_till,'DD.MM.YYYY HH24:MI:SS') - TO_DATE(ad_from,'DD.MM.YYY
      END LOOP; 
  END LOOP;
 RETURN;
-------------------------------- added by Круглова 30.03.2009------------------
-------------------------------- edited by Круглова 31.03.2009------------------
+------------------------------- added by РљСЂСѓРіР»РѕРІР° 30.03.2009------------------
+------------------------------- edited by РљСЂСѓРіР»РѕРІР° 31.03.2009------------------
 ELSIF lv_proc = cv_proc16 THEN
 
    IF (TO_CHAR(ad_from,'HH24'))>=8 AND (TO_CHAR(ad_from,'HH24'))<20 THEN
@@ -2637,7 +2637,7 @@ FOR lc IN (SELECT gid, NAME
                     AND h.DATE_TIME > tmp_date1 + (i-1)/24
                     AND h.DATE_TIME <= tmp_date1 + i/24;
             END LOOP; 
-            -- находим сумму за сутки (по строчке)
+            -- РЅР°С…РѕРґРёРј СЃСѓРјРјСѓ Р·Р° СЃСѓС‚РєРё (РїРѕ СЃС‚СЂРѕС‡РєРµ)
             data_t(data_t.count+1):=data_t(data_t.count);            
             FOR i IN 2..12
             LOOP
@@ -2653,13 +2653,13 @@ FOR lc IN (SELECT gid, NAME
 RETURN;
 -------------------------------------------------------------------------------
 
-  ELSE   --***********  Заглушка ****************
+  ELSE   --***********  Р—Р°РіР»СѓС€РєР° ****************
    RETURN;
   END IF;
  END;
 
 ----------------------------------------------------------------
--- Возвращает данные для графического представления состава макета (если график не поддерхивается возвращает 0)
+-- Р’РѕР·РІСЂР°С‰Р°РµС‚ РґР°РЅРЅС‹Рµ РґР»СЏ РіСЂР°С„РёС‡РµСЃРєРѕРіРѕ РїСЂРµРґСЃС‚Р°РІР»РµРЅРёСЏ СЃРѕСЃС‚Р°РІР° РјР°РєРµС‚Р° (РµСЃР»Рё РіСЂР°С„РёРє РЅРµ РїРѕРґРґРµСЂС…РёРІР°РµС‚СЃСЏ РІРѕР·РІСЂР°С‰Р°РµС‚ 0)
  FUNCTION getmaketgrafvalue (an_fid NUMBER, an_ispoint NUMBER, an_id NUMBER, ad_from DATE, ad_till DATE, an_col NUMBER, an_row NUMBER, av_title OUT VARCHAR2,
  av_xtitle OUT VARCHAR2, av_ytitle OUT VARCHAR2, x_t OUT common_pg.tt_number, y_t OUT common_pg.tt_number
  )
@@ -2686,11 +2686,11 @@ RETURN;
      FROM GROUPS
     WHERE gid = ln_gid;
 
-   av_xtitle := 'Час.';
-   av_ytitle := 'тКВтч.';
+   av_xtitle := 'Р§Р°СЃ.';
+   av_ytitle := 'С‚РљР’С‚С‡.';
 
 ------------------------------------------------------
-   IF (ln_sort = 0) THEN   --Сальдо
+   IF (ln_sort = 0) THEN   --РЎР°Р»СЊРґРѕ
    temp_i := y_t.COUNT;
     FOR lc1 IN (SELECT DECODE (NVL (tt.npartly, 0), 0, tt.cparam, NULL) cparam, NVL (tt.npartly, 0) npartly,tt.bgroup
                   FROM (SELECT   util_pg.get_num_dt (date_time - 1 / 86400, nsource, 1 / 24, 0, interior_pg.get_hourtimezone) bgroup,
@@ -2724,12 +2724,12 @@ RETURN;
      x_t (temp_i + 1) := lc2.ID;
     END LOOP;
     ln_flag:=0;
-    av_title := 'Сальдо за' || ' ' || TO_CHAR (ad_from, 'dd.mm.yyyy') || ' по ' || av_title || '.';
+    av_title := 'РЎР°Р»СЊРґРѕ Р·Р°' || ' ' || TO_CHAR (ad_from, 'dd.mm.yyyy') || ' РїРѕ ' || av_title || '.';
     RETURN y_t.COUNT;
     
 ----------------------------------------------
 
-   ELSIF (ln_sort = 1) THEN   --прием
+   ELSIF (ln_sort = 1) THEN   --РїСЂРёРµРј
    temp_i := y_t.COUNT;
     FOR lc1 IN (SELECT DECODE (NVL (tt.npartly, 0), 2, NULL, tt.aparam) aparam,tt.bgroup
                   FROM (SELECT   util_pg.get_num_dt (date_time - 1 / 86400, nsource, 1 / 24, 0, interior_pg.get_hourtimezone) bgroup,
@@ -2762,11 +2762,11 @@ RETURN;
       END LOOP;
   
    ln_flag:=0;
-    av_title := 'Прием за' || ' ' || TO_CHAR (ad_from, 'dd.mm.yyyy') || ' по ' || av_title || '.';
+    av_title := 'РџСЂРёРµРј Р·Р°' || ' ' || TO_CHAR (ad_from, 'dd.mm.yyyy') || ' РїРѕ ' || av_title || '.';
     RETURN y_t.COUNT;
 -----------------------------------------------------------------
  
-   ELSIF (ln_sort = 2) THEN   --отдача
+   ELSIF (ln_sort = 2) THEN   --РѕС‚РґР°С‡Р°
     temp_i := y_t.COUNT;
     FOR lc1 IN (SELECT DECODE (NVL (tt.npartly, 0), 1, NULL, tt.bparam) bparam,tt.bgroup
                   FROM (SELECT   util_pg.get_num_dt (date_time - 1 / 86400, nsource, 1 / 24, 0, interior_pg.get_hourtimezone) bgroup,
@@ -2799,18 +2799,18 @@ RETURN;
       END LOOP;
 
     ln_flag:=0;
-    av_title := 'Отдача за' || ' ' || TO_CHAR (ad_from, 'dd.mm.yyyy') || ' по ' || av_title || '.';
+    av_title := 'РћС‚РґР°С‡Р° Р·Р°' || ' ' || TO_CHAR (ad_from, 'dd.mm.yyyy') || ' РїРѕ ' || av_title || '.';
     RETURN y_t.COUNT;
 -----------------------------------------------------------------
    END IF;
 --------------------------------------------------------------END VNB
-  ELSE   --***********  Заглушка ****************
+  ELSE   --***********  Р—Р°РіР»СѓС€РєР° ****************
    RETURN 0;
   END IF;
  END;
 
 ----------------------------------------------------------------
--- Сохраняет содержимое макета
+-- РЎРѕС…СЂР°РЅСЏРµС‚ СЃРѕРґРµСЂР¶РёРјРѕРµ РјР°РєРµС‚Р°
  PROCEDURE savemaketvalue (an_fid NUMBER, an_ispoint NUMBER, an_id NUMBER, ad_from DATE, ad_till DATE, an_col NUMBER, an_row NUMBER, an_value NUMBER) IS
   lv_proc   VARCHAR2 (256);
  BEGIN
@@ -2818,7 +2818,7 @@ RETURN;
 
   IF lv_proc = cv_proc1 THEN
    NULL;
-  ELSE   --***********  Заглушка ****************
+  ELSE   --***********  Р—Р°РіР»СѓС€РєР° ****************
    NULL;
   END IF;
  END;
@@ -2834,7 +2834,7 @@ RETURN;
     SELECT 0 ncol, 0 nrow, 0 ncolor, '' vinfo
       FROM DUAL
      WHERE 1 = 2;
-  ELSE   --***********  Заглушка ****************
+  ELSE   --***********  Р—Р°РіР»СѓС€РєР° ****************
    OPEN ret_t FOR
     SELECT 0 ncol, 0 nrow, 0 ncolor, '' vinfo
       FROM DUAL
@@ -2843,7 +2843,7 @@ RETURN;
  END;
 
 ----------------------------------------------------------------
--- Возвращает множитель 1 или 0 при учете признака частичного вхождения
+-- Р’РѕР·РІСЂР°С‰Р°РµС‚ РјРЅРѕР¶РёС‚РµР»СЊ 1 РёР»Рё 0 РїСЂРё СѓС‡РµС‚Рµ РїСЂРёР·РЅР°РєР° С‡Р°СЃС‚РёС‡РЅРѕРіРѕ РІС…РѕР¶РґРµРЅРёСЏ
  FUNCTION get_koef_npartly (an_npartly NUMBER, an_i NUMBER, an_inverted VARCHAR2)
   RETURN NUMBER IS
  BEGIN
@@ -2897,7 +2897,7 @@ RETURN;
  END;
 
 --------------------------------------------------------------------------------------------------------------------------------
---Что печатать в заголовках
+--Р§С‚Рѕ РїРµС‡Р°С‚Р°С‚СЊ РІ Р·Р°РіРѕР»РѕРІРєР°С…
  PROCEDURE get_reportinfo (an_fid NUMBER, an_usedeftitle OUT NUMBER, an_usedefphr OUT NUMBER, ab_before IN OUT BLOB, ab_after IN OUT BLOB) IS
  BEGIN
   ab_before := NULL;
@@ -2927,9 +2927,9 @@ RETURN;
  END;
 
 -------------------------------------------------------------------------------
-FUNCTION get_number (an_id NUMBER, an_parent NUMBER)--функция возвращает номер п/п (cv_proc 16)
+FUNCTION get_number (an_id NUMBER, an_parent NUMBER)--С„СѓРЅРєС†РёСЏ РІРѕР·РІСЂР°С‰Р°РµС‚ РЅРѕРјРµСЂ Рї/Рї (cv_proc 16)
   RETURN NUMBER IS
---Определяет номер текущей строки, если PARENT не NULL, и определяет номер родителя, если PARENT NULL  
+--РћРїСЂРµРґРµР»СЏРµС‚ РЅРѕРјРµСЂ С‚РµРєСѓС‰РµР№ СЃС‚СЂРѕРєРё, РµСЃР»Рё PARENT РЅРµ NULL, Рё РѕРїСЂРµРґРµР»СЏРµС‚ РЅРѕРјРµСЂ СЂРѕРґРёС‚РµР»СЏ, РµСЃР»Рё PARENT NULL  
   NUM NUMBER DEFAULT 0;
   PAR NUMBER;
   PAR2 NUMBER;
@@ -2973,10 +2973,10 @@ END;   -- Package Body uniinterior_pg
 CREATE OR REPLACE 
 PACKAGE BODY diagram_pg IS
  ------------------------------------------------------------------------------------------------------------------------
-   -- пакет для работы с диаграмами и схемами сети
-   -- дата создания 12/06/2004 Сечин А.А.
+   -- РїР°РєРµС‚ РґР»СЏ СЂР°Р±РѕС‚С‹ СЃ РґРёР°РіСЂР°РјР°РјРё Рё СЃС…РµРјР°РјРё СЃРµС‚Рё
+   -- РґР°С‚Р° СЃРѕР·РґР°РЅРёСЏ 12/06/2004 РЎРµС‡РёРЅ Рђ.Рђ.
  ------------------------------------------------------------------------------------------------------------------------
- -- Процедура используется для схемы сети (Modus) Возвращает значение цвет и направление по ид объекта
+ -- РџСЂРѕС†РµРґСѓСЂР° РёСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ РґР»СЏ СЃС…РµРјС‹ СЃРµС‚Рё (Modus) Р’РѕР·РІСЂР°С‰Р°РµС‚ Р·РЅР°С‡РµРЅРёРµ С†РІРµС‚ Рё РЅР°РїСЂР°РІР»РµРЅРёРµ РїРѕ РёРґ РѕР±СЉРµРєС‚Р°
  /*
 declare
 an_value NUMBER;
@@ -2995,40 +2995,40 @@ end;
   lv_type                  VARCHAR2 (32);
   ln_id                    NUMBER;
   lv_prop                  VARCHAR2 (32);
-  lv_objtable              VARCHAR2 (32);   --Таблица ограничения по объектам
-  lv_datatable             VARCHAR2 (32);   --Таблица с данными
-  lv_inverted              VARCHAR2 (32);   --Признак инверсии
-  lv_partly_er             VARCHAR2 (32);   --Частичное вхождение A+
-  lv_partly_ed             VARCHAR2 (32);   --Частичное вхождение A-
-  lv_objsubsel             VARCHAR2 (512);   --Ограничение по объектам
-  lv_datsubsel             VARCHAR2 (512);   --Ограничение по дате
-  lv_what                  VARCHAR2 (512);   --Что тянем
-  lv_sql                   VARCHAR2 (4000);   --Конечный SQL
-  lv_obsolescence          VARCHAR2 (512);   --Устаревание данных
+  lv_objtable              VARCHAR2 (32);   --РўР°Р±Р»РёС†Р° РѕРіСЂР°РЅРёС‡РµРЅРёСЏ РїРѕ РѕР±СЉРµРєС‚Р°Рј
+  lv_datatable             VARCHAR2 (32);   --РўР°Р±Р»РёС†Р° СЃ РґР°РЅРЅС‹РјРё
+  lv_inverted              VARCHAR2 (32);   --РџСЂРёР·РЅР°Рє РёРЅРІРµСЂСЃРёРё
+  lv_partly_er             VARCHAR2 (32);   --Р§Р°СЃС‚РёС‡РЅРѕРµ РІС…РѕР¶РґРµРЅРёРµ A+
+  lv_partly_ed             VARCHAR2 (32);   --Р§Р°СЃС‚РёС‡РЅРѕРµ РІС…РѕР¶РґРµРЅРёРµ A-
+  lv_objsubsel             VARCHAR2 (512);   --РћРіСЂР°РЅРёС‡РµРЅРёРµ РїРѕ РѕР±СЉРµРєС‚Р°Рј
+  lv_datsubsel             VARCHAR2 (512);   --РћРіСЂР°РЅРёС‡РµРЅРёРµ РїРѕ РґР°С‚Рµ
+  lv_what                  VARCHAR2 (512);   --Р§С‚Рѕ С‚СЏРЅРµРј
+  lv_sql                   VARCHAR2 (4000);   --РљРѕРЅРµС‡РЅС‹Р№ SQL
+  lv_obsolescence          VARCHAR2 (512);   --РЈСЃС‚Р°СЂРµРІР°РЅРёРµ РґР°РЅРЅС‹С…
   ln_ret                   NUMBER;
   ln_ret1                  NUMBER;
-  lv_dat                   VARCHAR2 (32);   --Устаревание данных
-  ld_date                  DATE;   --Дата показа (NULL когда текущие)
+  lv_dat                   VARCHAR2 (32);   --РЈСЃС‚Р°СЂРµРІР°РЅРёРµ РґР°РЅРЅС‹С…
+  ld_date                  DATE;   --Р”Р°С‚Р° РїРѕРєР°Р·Р° (NULL РєРѕРіРґР° С‚РµРєСѓС‰РёРµ)
   ln_arrow                 NUMBER;
  BEGIN
-  --Занулили от греха подальше
+  --Р—Р°РЅСѓР»РёР»Рё РѕС‚ РіСЂРµС…Р° РїРѕРґР°Р»СЊС€Рµ
   an_value := 0;
   an_arrow := cn_modus_arrow_null;
   an_color := cn_cl_green;
   an_type := 0;
-  --Разобрали входную строку
+  --Р Р°Р·РѕР±СЂР°Р»Рё РІС…РѕРґРЅСѓСЋ СЃС‚СЂРѕРєСѓ
   lv_type := TRIM (UPPER (util_pg.get_param (av_id, 1, '.')));
   ln_id := TRIM (util_pg.get_param (av_id, 2, '.'));
   lv_prop := TRIM (UPPER (util_pg.get_param (av_id, 3, '.')));
 
-  --Сейчас умеем не только тек мощность
+  --РЎРµР№С‡Р°СЃ СѓРјРµРµРј РЅРµ С‚РѕР»СЊРєРѕ С‚РµРє РјРѕС‰РЅРѕСЃС‚СЊ
   IF SUBSTR (lv_prop, LENGTH (lv_prop), 1) = '_' THEN
    lv_datatable := cv_halfhour;
    ld_date := util_pg.trunchh24_2 (NVL (ad_date, SYSDATE - 10 / 1440));
    lv_datsubsel := ' and p.date_time=to_date(''' || TO_CHAR (ld_date, 'dd.mm.yyyy hh24:mi:ss') || ''',''dd.mm.yyyy hh24:mi:ss'') ';
    lv_dat := '_';
    lv_prop := SUBSTR (lv_prop, 1, LENGTH (lv_prop) - 1);
-  ELSIF lv_prop = 'EB' THEN   --С начала смены
+  ELSIF lv_prop = 'EB' THEN   --РЎ РЅР°С‡Р°Р»Р° СЃРјРµРЅС‹
    lv_datatable := cv_halfhour;
    ld_date := NVL (ad_date, SYSDATE);
 
@@ -3075,17 +3075,17 @@ end;
    ELSE
     lv_objsubsel := 'and G.mid = ' || ln_id || ' ';
    END IF;
-  ELSIF lv_type = 'DATE' THEN   --Дата
+  ELSIF lv_type = 'DATE' THEN   --Р”Р°С‚Р°
    an_value := util_pg.trunchh24_2 (NVL (ad_date, SYSDATE - 10 / 1440)) - TO_DATE ('18991230', 'YYYYMMDD');
    an_type := 1;
    RETURN;
-  ELSIF lv_type = 'SYSDATE' THEN   --Дата
+  ELSIF lv_type = 'SYSDATE' THEN   --Р”Р°С‚Р°
    an_value := SYSDATE - TO_DATE ('18991230', 'YYYYMMDD');
    an_type := 1;
    RETURN;
   END IF;
 
-  --Выясняем что нам нужно
+  --Р’С‹СЏСЃРЅСЏРµРј С‡С‚Рѕ РЅР°Рј РЅСѓР¶РЅРѕ
   IF lv_prop = 'ER' THEN
    lv_what := 'sum(' || lv_obsolescence || '(DECODE(' || lv_inverted || ',''y'',nvl(P.ed' || lv_partly_ed || ',0),nvl(P.er' || lv_partly_er || ',0))))';
   ELSIF lv_prop = 'ED' THEN
@@ -3098,27 +3098,27 @@ end;
    lv_what := 'sum(' || lv_obsolescence || '(DECODE(' || lv_inverted || ',''y'',nvl(P.q4,0),nvl(P.q2,0))))';
   ELSIF lv_prop = 'Q4' THEN
    lv_what := 'sum(' || lv_obsolescence || '(DECODE(' || lv_inverted || ',''y'',nvl(P.q2,0),nvl(P.q4,0))))';
-  ELSIF lv_prop = 'Q12' THEN   --Свернутые Q1+Q2
+  ELSIF lv_prop = 'Q12' THEN   --РЎРІРµСЂРЅСѓС‚С‹Рµ Q1+Q2
    lv_what :=
     'sum(' || lv_obsolescence || '(DECODE(' || lv_inverted || ',''y'',nvl(P.q3,0),nvl(P.q1,0))))+sum(' || lv_obsolescence || '(DECODE(' || lv_inverted
     || ',''y'',nvl(P.q4,0),nvl(P.q2,0))))';
-  ELSIF lv_prop = 'Q34' THEN   --Свернутые Q3+Q4
+  ELSIF lv_prop = 'Q34' THEN   --РЎРІРµСЂРЅСѓС‚С‹Рµ Q3+Q4
    lv_what :=
     'sum(' || lv_obsolescence || '(DECODE(' || lv_inverted || ',''y'',nvl(P.q1,0),nvl(P.q3,0))))+sum(' || lv_obsolescence || '(DECODE(' || lv_inverted
     || ',''y'',nvl(P.q2,0),nvl(P.q4,0))))';
-  ELSIF lv_prop = 'E' THEN   --Переток ER-ED
+  ELSIF lv_prop = 'E' THEN   --РџРµСЂРµС‚РѕРє ER-ED
    lv_what :=
     'sum(' || lv_obsolescence || '(-util_pg.sld(P.mid,nvl(P.er' || lv_partly_er || ',0),nvl(P.ed' || lv_partly_ed || ',0))*DECODE(' || lv_inverted
     || ',''y'',1,-1)))';
-  ELSIF lv_prop = 'EB' THEN   --Переток ER-ED (с начала смены)
+  ELSIF lv_prop = 'EB' THEN   --РџРµСЂРµС‚РѕРє ER-ED (СЃ РЅР°С‡Р°Р»Р° СЃРјРµРЅС‹)
    lv_what :=
     'sum(' || lv_obsolescence || '(-util_pg.sld(P.mid,nvl(P.er' || lv_partly_er || ',0),nvl(P.ed' || lv_partly_ed || ',0))*DECODE(' || lv_inverted
     || ',''y'',1,-1)))';
-  ELSIF lv_prop = 'Q' THEN   --Переток (Q1-Q3)+(Q2-Q4)
+  ELSIF lv_prop = 'Q' THEN   --РџРµСЂРµС‚РѕРє (Q1-Q3)+(Q2-Q4)
    lv_what :=
     'sum(' || lv_obsolescence || '(-util_pg.sld(P.mid,nvl(P.q1,0),nvl(P.q3,0))*DECODE(' || lv_inverted || ',''y'',1,-1)))+sum(' || lv_obsolescence
     || '(-util_pg.sld(P.mid,nvl(P.q2,0),nvl(P.q4,0))*DECODE(' || lv_inverted || ',''y'',1,-1)))';
-  ELSIF lv_prop IN ('PROC', 'BALANCEP') THEN   --Небаланс в%
+  ELSIF lv_prop IN ('PROC', 'BALANCEP') THEN   --РќРµР±Р°Р»Р°РЅСЃ РІ%
    ln_ret := get_modusinfo_byid (lv_type || '.' || ln_id || '.' || 'ER' || lv_dat);
    ln_ret1 := get_modusinfo_byid (lv_type || '.' || ln_id || '.' || 'ED' || lv_dat);
 
@@ -3127,17 +3127,17 @@ end;
    ELSE
     ln_ret := GREATEST (ln_ret, ln_ret1);
    END IF;
-  ELSIF lv_type = 'GID' AND lv_prop = 'ADBALANCE' THEN   --Допустимый небаланс
+  ELSIF lv_type = 'GID' AND lv_prop = 'ADBALANCE' THEN   --Р”РѕРїСѓСЃС‚РёРјС‹Р№ РЅРµР±Р°Р»Р°РЅСЃ
    an_value := ROUND (util_pg.get_ad_balance (ln_id, ld_date - 1 / 48, ld_date, NULL) / 1000, 3);
    RETURN;
-  ELSIF lv_type = 'GID' AND lv_prop = 'ADBALANCEP' THEN   --Допустимый небаланс в%
+  ELSIF lv_type = 'GID' AND lv_prop = 'ADBALANCEP' THEN   --Р”РѕРїСѓСЃС‚РёРјС‹Р№ РЅРµР±Р°Р»Р°РЅСЃ РІ%
    an_value := util_pg.get_ad_balance (ln_id, ld_date - 1 / 48, ld_date, 1);
    RETURN;
-  ELSIF lv_type = 'GID' AND lv_prop = 'BALANCEDIF' THEN   --Разность факт небаланса и допустим небаланса
+  ELSIF lv_type = 'GID' AND lv_prop = 'BALANCEDIF' THEN   --Р Р°Р·РЅРѕСЃС‚СЊ С„Р°РєС‚ РЅРµР±Р°Р»Р°РЅСЃР° Рё РґРѕРїСѓСЃС‚РёРј РЅРµР±Р°Р»Р°РЅСЃР°
    ln_ret := get_modusinfo_byid (lv_type || '.' || ln_id || '.' || 'E' || lv_dat);
    ln_ret1 := get_modusinfo_byid (lv_type || '.' || ln_id || '.' || 'ADBALANCE' || lv_dat);
    ln_ret := SIGN (ln_ret) * GREATEST (ABS (ln_ret) - ln_ret1, 0);
-  ELSIF lv_type = 'GID' AND lv_prop = 'BALANCEDIFP' THEN   --Разность факт небаланса и допустим небаланса в %
+  ELSIF lv_type = 'GID' AND lv_prop = 'BALANCEDIFP' THEN   --Р Р°Р·РЅРѕСЃС‚СЊ С„Р°РєС‚ РЅРµР±Р°Р»Р°РЅСЃР° Рё РґРѕРїСѓСЃС‚РёРј РЅРµР±Р°Р»Р°РЅСЃР° РІ %
    ln_ret := get_modusinfo_byid (lv_type || '.' || ln_id || '.' || 'BALANCEP' || lv_dat);
    ln_ret1 := get_modusinfo_byid (lv_type || '.' || ln_id || '.' || 'ADBALANCEP' || lv_dat);
    ln_ret := SIGN (ln_ret) * GREATEST (ABS (ln_ret) - ln_ret1, 0);
@@ -3166,11 +3166,11 @@ end;
   an_value := ln_ret;
  EXCEPTION
   WHEN OTHERS THEN
-   raise_application_error (-20001, 'diagram_pg.get_modusinfo_byid: ИД=''' || av_id || ''' ' || CHR (10) || SQLERRM);
+   raise_application_error (-20001, 'diagram_pg.get_modusinfo_byid: РР”=''' || av_id || ''' ' || CHR (10) || SQLERRM);
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
-  -- Процедура используется для схемы сети (Modus) Возвращает значение цвет и направление по ид объекта
+  -- РџСЂРѕС†РµРґСѓСЂР° РёСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ РґР»СЏ СЃС…РµРјС‹ СЃРµС‚Рё (Modus) Р’РѕР·РІСЂР°С‰Р°РµС‚ Р·РЅР°С‡РµРЅРёРµ С†РІРµС‚ Рё РЅР°РїСЂР°РІР»РµРЅРёРµ РїРѕ РёРґ РѕР±СЉРµРєС‚Р°
  FUNCTION get_modusinfo_byid (av_id VARCHAR2)
   RETURN NUMBER IS
   ln_value   NUMBER;
@@ -3183,7 +3183,7 @@ end;
  END;
 
 ------------------------------------------------------------------------------------------------------------------------
-   -- Используется для автоопределения даты (последняя получасовка)
+   -- РСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ РґР»СЏ Р°РІС‚РѕРѕРїСЂРµРґРµР»РµРЅРёСЏ РґР°С‚С‹ (РїРѕСЃР»РµРґРЅСЏСЏ РїРѕР»СѓС‡Р°СЃРѕРІРєР°)
  PROCEDURE get_modusinfo_byid (av_id VARCHAR2, an_value OUT NUMBER, an_arrow OUT NUMBER, an_color OUT NUMBER, an_type OUT NUMBER) IS
   ln_value   NUMBER;
   ln_arrow   NUMBER;
@@ -3207,7 +3207,7 @@ END;   -- Package Body diagram_pg
 CREATE OR REPLACE 
 PACKAGE BODY pgok_pg IS
  ------------------------------------------------------------------------------------------------------------------------
- --Копирование данных из таблиц с ПГОК в получасовки
+ --РљРѕРїРёСЂРѕРІР°РЅРёРµ РґР°РЅРЅС‹С… РёР· С‚Р°Р±Р»РёС† СЃ РџР“РћРљ РІ РїРѕР»СѓС‡Р°СЃРѕРІРєРё
  PROCEDURE copy_pgok_data(an_maket NUMBER, ad_date DATE) IS
   cn_step   CONSTANT NUMBER              := 1 / 48;
   ld_date            DATE                DEFAULT TRUNC(ad_date-1);
@@ -3215,12 +3215,12 @@ PACKAGE BODY pgok_pg IS
   ln_rn              NUMBER DEFAULT 3;
   lc0                common_pg.tcur;
   lc1                common_pg.tcur;
-  ln_val_k           NUMBER;    -- значение выхода в тоннах
-  ln_val_u           NUMBER;    -- значение удельного выхода
-  ln_val_r           NUMBER;    -- значение расхода в кВт
-  ln_mid_k           NUMBER;    -- mid точки с выходом (kонцентратом)
-  ln_mid_u           NUMBER;    -- mid соответствующей точки с уд. выходом
-  ln_ras_gid         NUMBER;    -- gid секции с расходом, из которой берутся данные
+  ln_val_k           NUMBER;    -- Р·РЅР°С‡РµРЅРёРµ РІС‹С…РѕРґР° РІ С‚РѕРЅРЅР°С…
+  ln_val_u           NUMBER;    -- Р·РЅР°С‡РµРЅРёРµ СѓРґРµР»СЊРЅРѕРіРѕ РІС‹С…РѕРґР°
+  ln_val_r           NUMBER;    -- Р·РЅР°С‡РµРЅРёРµ СЂР°СЃС…РѕРґР° РІ РєР’С‚
+  ln_mid_k           NUMBER;    -- mid С‚РѕС‡РєРё СЃ РІС‹С…РѕРґРѕРј (kРѕРЅС†РµРЅС‚СЂР°С‚РѕРј)
+  ln_mid_u           NUMBER;    -- mid СЃРѕРѕС‚РІРµС‚СЃС‚РІСѓСЋС‰РµР№ С‚РѕС‡РєРё СЃ СѓРґ. РІС‹С…РѕРґРѕРј
+  ln_ras_gid         NUMBER;    -- gid СЃРµРєС†РёРё СЃ СЂР°СЃС…РѕРґРѕРј, РёР· РєРѕС‚РѕСЂРѕР№ Р±РµСЂСѓС‚СЃСЏ РґР°РЅРЅС‹Рµ
   ln_section         NUMBER;
   ln_section_u       NUMBER;
   lv_table           VARCHAR2 (256);
@@ -3256,7 +3256,7 @@ PACKAGE BODY pgok_pg IS
 
 --dbms_output.put_line(chr(13)||'ln_section='||ln_section);   
    IF ln_section IS NULL THEN
-     raise_application_error(-20001,'Не найден номер секции в коде точки '||ln_mid_k);
+     raise_application_error(-20001,'РќРµ РЅР°Р№РґРµРЅ РЅРѕРјРµСЂ СЃРµРєС†РёРё РІ РєРѕРґРµ С‚РѕС‡РєРё '||ln_mid_k);
    END IF;
    
    IF ln_section BETWEEN 1 AND 8 THEN
@@ -3264,7 +3264,7 @@ PACKAGE BODY pgok_pg IS
    ELSIF ln_section BETWEEN 10 AND 15 THEN
       lv_table := ' RYDA_OF2 ';
    ELSE   
-      raise_application_error(-20001,'Номер секции в коде точки '||ln_mid_k||' выходит за границы возможных.'); 
+      raise_application_error(-20001,'РќРѕРјРµСЂ СЃРµРєС†РёРё РІ РєРѕРґРµ С‚РѕС‡РєРё '||ln_mid_k||' РІС‹С…РѕРґРёС‚ Р·Р° РіСЂР°РЅРёС†С‹ РІРѕР·РјРѕР¶РЅС‹С….'); 
    END IF; 
 --dbms_output.put_line('----------------- '||lv_table);
    BEGIN
@@ -3288,33 +3288,33 @@ PACKAGE BODY pgok_pg IS
  
        EXIT WHEN lc1%NOTFOUND;
 --dbms_output.put_line('ld_date='||to_char(ld_date,'dd.mm.yy hh24:mi:ss')||chr(13)||' ln_val_k='||ln_val_k||' ln_val_r='||ln_val_r);
-       -- вставка выхода в тоннах
+       -- РІСЃС‚Р°РІРєР° РІС‹С…РѕРґР° РІ С‚РѕРЅРЅР°С…
        IF (ln_val_k IS NOT NULL) THEN
           ln_temp := TRUNC (ln_val_k/2, 0);          
---dbms_output.put_line('вставка первой половины '||ln_temp||'_точки '||ln_mid_k);       
+--dbms_output.put_line('РІСЃС‚Р°РІРєР° РїРµСЂРІРѕР№ РїРѕР»РѕРІРёРЅС‹ '||ln_temp||'_С‚РѕС‡РєРё '||ln_mid_k);       
           das_pg.ins_halfhourtmp (ln_mid_k, util_pg.to_unlocaltime_if_new (ld_tmp-1/48), NULL, ln_temp, NULL, NULL, NULL, NULL, NULL,NULL, NULL, NULL);
           ln_temp := ln_val_k - ln_temp;
---dbms_output.put_line('вставка второй половины '||ln_temp||'_точки '||ln_mid_k);       
+--dbms_output.put_line('РІСЃС‚Р°РІРєР° РІС‚РѕСЂРѕР№ РїРѕР»РѕРІРёРЅС‹ '||ln_temp||'_С‚РѕС‡РєРё '||ln_mid_k);       
           das_pg.ins_halfhourtmp (ln_mid_k, util_pg.to_unlocaltime_if_new (ld_tmp), NULL, ln_temp, NULL, NULL, NULL, NULL, NULL,NULL, NULL, NULL);
---dbms_output.put_line('конец вставки ВЫВОДА'); 
+--dbms_output.put_line('РєРѕРЅРµС† РІСЃС‚Р°РІРєРё Р’Р«Р’РћР”Рђ'); 
        END IF;
       
-       -- подсчет удельного расхода в кВтч/т
+       -- РїРѕРґСЃС‡РµС‚ СѓРґРµР»СЊРЅРѕРіРѕ СЂР°СЃС…РѕРґР° РІ РєР’С‚С‡/С‚
        IF ln_val_k IS NOT NULL AND ln_val_r IS NOT NULL AND ln_val_k<>0 THEN
          ln_val_u := trunc(ln_val_r/ln_val_k,ln_rn);
        ELSE  
          ln_val_u := NULL;   
        END IF;
 --dbms_output.put_line(' ln_val_u='||ln_val_u);       
-       -- вставка выхода в тоннах
+       -- РІСЃС‚Р°РІРєР° РІС‹С…РѕРґР° РІ С‚РѕРЅРЅР°С…
        IF (ln_val_u IS NOT NULL) THEN
           ln_temp := TRUNC (ln_val_u/2, 0);  
---dbms_output.put_line('_вставка первой половины '||ln_temp||'_точки '||ln_mid_u);         
+--dbms_output.put_line('_РІСЃС‚Р°РІРєР° РїРµСЂРІРѕР№ РїРѕР»РѕРІРёРЅС‹ '||ln_temp||'_С‚РѕС‡РєРё '||ln_mid_u);         
           das_pg.ins_halfhourtmp (ln_mid_u, util_pg.to_unlocaltime_if_new (ld_tmp-1/48), NULL, ln_temp, NULL, NULL, NULL, NULL, NULL,NULL, NULL, NULL);
           ln_temp := ln_val_u - ln_temp;
---dbms_output.put_line('_вставка второй половины '||ln_temp||'_точки '||ln_mid_u);         
+--dbms_output.put_line('_РІСЃС‚Р°РІРєР° РІС‚РѕСЂРѕР№ РїРѕР»РѕРІРёРЅС‹ '||ln_temp||'_С‚РѕС‡РєРё '||ln_mid_u);         
           das_pg.ins_halfhourtmp (ln_mid_u, util_pg.to_unlocaltime_if_new (ld_tmp), NULL, ln_temp, NULL, NULL, NULL, NULL, NULL,NULL, NULL, NULL);          
---dbms_output.put_line('конец вставки УДЕЛЬНЫХ'); 
+--dbms_output.put_line('РєРѕРЅРµС† РІСЃС‚Р°РІРєРё РЈР”Р•Р›Р¬РќР«РҐ'); 
        END IF;
     
      END LOOP;
@@ -3325,7 +3325,7 @@ PACKAGE BODY pgok_pg IS
       IF lc1%ISOPEN THEN
        CLOSE lc1;
       END IF;
---dbms_output.put_line('---------------------------- ЗАЛЕТ! ');      
+--dbms_output.put_line('---------------------------- Р—РђР›Р•Рў! ');      
    END;
  
   END LOOP;

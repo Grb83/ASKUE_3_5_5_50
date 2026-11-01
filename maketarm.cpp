@@ -21,7 +21,7 @@
 #pragma resource "*.dfm"
 TfmMaketArm *fmMaketArm;
 bool isViewedMaket = false;
-const AnsiString delim = L"\u2665"; //единый непечатный разделитель для строк хранилищ вида TStringList, хранящих частичную информацию о сформированных макетах, обход ограничения о записи структуры строк
+const AnsiString delim = L"\u2665"; //РµРґРёРЅС‹Р№ РЅРµРїРµС‡Р°С‚РЅС‹Р№ СЂР°Р·РґРµР»РёС‚РµР»СЊ РґР»СЏ СЃС‚СЂРѕРє С…СЂР°РЅРёР»РёС‰ РІРёРґР° TStringList, С…СЂР°РЅСЏС‰РёС… С‡Р°СЃС‚РёС‡РЅСѓСЋ РёРЅС„РѕСЂРјР°С†РёСЋ Рѕ СЃС„РѕСЂРјРёСЂРѕРІР°РЅРЅС‹С… РјР°РєРµС‚Р°С…, РѕР±С…РѕРґ РѕРіСЂР°РЅРёС‡РµРЅРёСЏ Рѕ Р·Р°РїРёСЃРё СЃС‚СЂСѓРєС‚СѓСЂС‹ СЃС‚СЂРѕРє
 
 //---------------------------------------------------------------------------
 __fastcall TfmMaketArm::TfmMaketArm(TComponent* Owner, AnsiString Name, TAccess a)
@@ -48,7 +48,7 @@ TStringList* __fastcall TfmMaketArm::getMaketFile(){
   TDateTime dt=Now();
   int ObjID;
   TStringList* retMaket = new TStringList();
-  bool isLoadMaket=false;//Просмотреть сформированный макет
+  bool isLoadMaket=false;//РџСЂРѕСЃРјРѕС‚СЂРµС‚СЊ СЃС„РѕСЂРјРёСЂРѕРІР°РЅРЅС‹Р№ РјР°РєРµС‚
   try{
     edExit(NULL);
     if(!((MAKET*)Node->Data)->IsMaket&&!oqMaketArm->RecordCount)
@@ -114,7 +114,7 @@ TStringList* __fastcall TfmMaketArm::getMaketFile(){
 
 }
 //---------------------------------------------------------------------------
-AnsiString __fastcall TfmMaketArm::getMaketType(TStringList* maket){ //-1 - ошибка разбора заголовка типа макета
+AnsiString __fastcall TfmMaketArm::getMaketType(TStringList* maket){ //-1 - РѕС€РёР±РєР° СЂР°Р·Р±РѕСЂР° Р·Р°РіРѕР»РѕРІРєР° С‚РёРїР° РјР°РєРµС‚Р°
   AnsiString ret="";
   const AnsiString startPos = "((//";
   const int offset = startPos.Length();
@@ -199,7 +199,7 @@ void __fastcall TfmMaketArm::FormShow(TObject *Sender)
   sNode= Node = MaketsTree->Items->AddObject(NULL,pData->Name,pData);
   pData=new MAKET;
   ZeroMemory(pData, sizeof(*pData));
-  strcpy(pData->Name,AnsiString("УППД").c_str());
+  strcpy(pData->Name,AnsiString("РЈРџРџР”").c_str());
   pData->ObjID=0;
   pData->IsMaket=0;
   pNode= uNode = MaketsTree->Items->AddObject(NULL,pData->Name,pData);
@@ -276,16 +276,16 @@ bool __fastcall TfmMaketArm::ReadTreeNode(TTreeNode *ParentNode)
 
         if(pData->IsMaket==1){
           switch (pData->ObjType){
-          case 0: // папка
+          case 0: // РїР°РїРєР°
             ind = GetFolderInd(addNode, pData->Blocking);
             break;
-          case 1: // макет
+          case 1: // РјР°РєРµС‚
             if(!AnsiString(pData->Error).Trim().IsEmpty())
               ind = (pData->Blocking)?imBlMaketErr:imMaketErr;
             else
               ind = (pData->Blocking)?imBlMaket:imMaket;
             break;
-          case 2: // канал
+          case 2: // РєР°РЅР°Р»
             ind = (pData->Blocking)?imChanelCL:imChanelOp;
             break;
           }
@@ -294,7 +294,7 @@ bool __fastcall TfmMaketArm::ReadTreeNode(TTreeNode *ParentNode)
         }
         addNode->ImageIndex = ind;
         addNode->SelectedIndex = ind;
-        if(dmMain->quMain->FieldByName("HaveChild")->AsInteger){  // проверка на наличие дочерних
+        if(dmMain->quMain->FieldByName("HaveChild")->AsInteger){  // РїСЂРѕРІРµСЂРєР° РЅР° РЅР°Р»РёС‡РёРµ РґРѕС‡РµСЂРЅРёС…
           MaketsTree->Items->AddChildObject(addNode,"",(void*)0);
         }
         dmMain->quMain->Next();
@@ -329,14 +329,14 @@ void __fastcall TfmMaketArm::MaketsTreeChange(TObject *Sender, TTreeNode *Node)
   tbOperWork->Enabled=true;
   tbPreview->Enabled=false;
   //GRB change
-  tbOperWork->Caption="Оперативная работа с данными сформированными для передачи по каналу УППД";
-  tbOperWork->Hint="Оперативная работа с данными сформированными для передачи по каналу УППД";
+  tbOperWork->Caption="РћРїРµСЂР°С‚РёРІРЅР°СЏ СЂР°Р±РѕС‚Р° СЃ РґР°РЅРЅС‹РјРё СЃС„РѕСЂРјРёСЂРѕРІР°РЅРЅС‹РјРё РґР»СЏ РїРµСЂРµРґР°С‡Рё РїРѕ РєР°РЅР°Р»Сѓ РЈРџРџР”";
+  tbOperWork->Hint="РћРїРµСЂР°С‚РёРІРЅР°СЏ СЂР°Р±РѕС‚Р° СЃ РґР°РЅРЅС‹РјРё СЃС„РѕСЂРјРёСЂРѕРІР°РЅРЅС‹РјРё РґР»СЏ РїРµСЂРµРґР°С‡Рё РїРѕ РєР°РЅР°Р»Сѓ РЈРџРџР”";
   isViewedMaket = false;
   //end of GRB change
-  tbRun->Hint="Выполнить формирование данных для передачи по каналу УППД";
-  tbLoadMaket->Hint="Просмотреть сформированные данные для передачи по каналу УППД";
-  tbSendM->Hint="Отправить сформированные данные по каналу УППД";
-  MessageGrid->Columns->Items[2]->Title->Caption="Объект";
+  tbRun->Hint="Р’С‹РїРѕР»РЅРёС‚СЊ С„РѕСЂРјРёСЂРѕРІР°РЅРёРµ РґР°РЅРЅС‹С… РґР»СЏ РїРµСЂРµРґР°С‡Рё РїРѕ РєР°РЅР°Р»Сѓ РЈРџРџР”";
+  tbLoadMaket->Hint="РџСЂРѕСЃРјРѕС‚СЂРµС‚СЊ СЃС„РѕСЂРјРёСЂРѕРІР°РЅРЅС‹Рµ РґР°РЅРЅС‹Рµ РґР»СЏ РїРµСЂРµРґР°С‡Рё РїРѕ РєР°РЅР°Р»Сѓ РЈРџРџР”";
+  tbSendM->Hint="РћС‚РїСЂР°РІРёС‚СЊ СЃС„РѕСЂРјРёСЂРѕРІР°РЅРЅС‹Рµ РґР°РЅРЅС‹Рµ РїРѕ РєР°РЅР°Р»Сѓ РЈРџРџР”";
+  MessageGrid->Columns->Items[2]->Title->Caption="РћР±СЉРµРєС‚";
   MessageGrid->Columns->Items[3]->Visible=false;
   MessageGrid->Columns->Items[5]->Visible=false;
   MessageGrid->Columns->Items[7]->Visible=false;
@@ -344,15 +344,15 @@ void __fastcall TfmMaketArm::MaketsTreeChange(TObject *Sender, TTreeNode *Node)
   //tbOperWork->Enabled=false;   COMMENTED BY GRB
   tbPreview->Enabled=(oqMaketArm->RecordCount||((MAKET*)sNode->Data)->ObjType);//true;
   //GRB change
-  tbOperWork->Caption="Оперативная работа со сформированным макетом";
-  tbOperWork->Hint="Оперативная работа со сформированным макетом";
+  tbOperWork->Caption="РћРїРµСЂР°С‚РёРІРЅР°СЏ СЂР°Р±РѕС‚Р° СЃРѕ СЃС„РѕСЂРјРёСЂРѕРІР°РЅРЅС‹Рј РјР°РєРµС‚РѕРј";
+  tbOperWork->Hint="РћРїРµСЂР°С‚РёРІРЅР°СЏ СЂР°Р±РѕС‚Р° СЃРѕ СЃС„РѕСЂРјРёСЂРѕРІР°РЅРЅС‹Рј РјР°РєРµС‚РѕРј";
   tbOperWork->Enabled=true;
   isViewedMaket = true;
   //end of GRB change
-  tbRun->Hint="Выполнить формирование данных для макета";
-  tbLoadMaket->Hint="Просмотреть сформированный макет";
-  tbSendM->Hint="Отправить сформированный макет";
-  MessageGrid->Columns->Items[2]->Title->Caption="Макет";
+  tbRun->Hint="Р’С‹РїРѕР»РЅРёС‚СЊ С„РѕСЂРјРёСЂРѕРІР°РЅРёРµ РґР°РЅРЅС‹С… РґР»СЏ РјР°РєРµС‚Р°";
+  tbLoadMaket->Hint="РџСЂРѕСЃРјРѕС‚СЂРµС‚СЊ СЃС„РѕСЂРјРёСЂРѕРІР°РЅРЅС‹Р№ РјР°РєРµС‚";
+  tbSendM->Hint="РћС‚РїСЂР°РІРёС‚СЊ СЃС„РѕСЂРјРёСЂРѕРІР°РЅРЅС‹Р№ РјР°РєРµС‚";
+  MessageGrid->Columns->Items[2]->Title->Caption="РњР°РєРµС‚";
   MessageGrid->Columns->Items[3]->Visible=true;
   MessageGrid->Columns->Items[5]->Visible=true;
   MessageGrid->Columns->Items[7]->Visible=true;
@@ -497,7 +497,7 @@ void __fastcall TfmMaketArm::tbMaketClick(TObject *Sender)
   AnsiString sql,sProc,ObjName;
   TDateTime dt=Now();
   int ObjID;
-  bool isLoadMaket=(((TControl*)Sender)->Tag==1);//Просмотреть сформированный макет
+  bool isLoadMaket=(((TControl*)Sender)->Tag==1);//РџСЂРѕСЃРјРѕС‚СЂРµС‚СЊ СЃС„РѕСЂРјРёСЂРѕРІР°РЅРЅС‹Р№ РјР°РєРµС‚
   try{
     edExit(NULL);
     if(!((MAKET*)Node->Data)->IsMaket&&!oqMaketArm->RecordCount)
@@ -597,7 +597,7 @@ void __fastcall TfmMaketArm::tbSaveClick(TObject *Sender)
   if(MaketInfa->ActivePage==Maket)
     TInteriorPLProc::UnivSaveRepToFile(SaveDialog1,reMaket);
   if((MaketInfa->ActivePage==OperWork) &&FInUn)
-    FInUn->vSaveToFile(this,oqMaketArm->FieldByName("maket")->AsString+" за "+oqMaketArm->FieldByName("period")->AsString);
+    FInUn->vSaveToFile(this,oqMaketArm->FieldByName("maket")->AsString+" Р·Р° "+oqMaketArm->FieldByName("period")->AsString);
 }
 //---------------------------------------------------------------------------
 void __fastcall TfmMaketArm::tbPrintClick(TObject *Sender)
@@ -607,7 +607,7 @@ void __fastcall TfmMaketArm::tbPrintClick(TObject *Sender)
   if(MaketInfa->ActivePage==Journal)
     PrintGrid();
   if((MaketInfa->ActivePage==OperWork) &&FInUn)
-    FInUn->PrintData(this,oqMaketArm->FieldByName("maket")->AsString+" за "+oqMaketArm->FieldByName("period")->AsString);
+    FInUn->PrintData(this,oqMaketArm->FieldByName("maket")->AsString+" Р·Р° "+oqMaketArm->FieldByName("period")->AsString);
 }
 //---------------------------------------------------------------------------
 void __fastcall TfmMaketArm::PrintGrid(void)
@@ -686,7 +686,7 @@ void __fastcall TfmMaketArm::SaveTable(TComponent* Owner,TDBGridEh *gr,AnsiStrin
 
   try{
     StringList  = new TStringList;
-    //Завголовок
+    //Р—Р°РІРіРѕР»РѕРІРѕРє
     if(!RepCaption.IsEmpty())
       StringList->Add(RepCaption);
     s="";
@@ -698,7 +698,7 @@ void __fastcall TfmMaketArm::SaveTable(TComponent* Owner,TDBGridEh *gr,AnsiStrin
       }
     }
     StringList->Add(s);
-    //Данные
+    //Р”Р°РЅРЅС‹Рµ
     SavePlace = ds->GetBookmark();
     ds->DisableControls();
     ds->First();
@@ -812,18 +812,18 @@ void __fastcall TfmMaketArm::MessageGridTitleClick(TColumnEh *Column)
 
 void __fastcall TfmMaketArm::tbOperWorkClick(TObject *Sender)
 {
-  lbMaketName->Caption=oqMaketArm->FieldByName("maket")->AsString+" за "+oqMaketArm->FieldByName("period")->AsString;
+  lbMaketName->Caption=oqMaketArm->FieldByName("maket")->AsString+" Р·Р° "+oqMaketArm->FieldByName("period")->AsString;
   if(!oqMaketArm->FieldByName("dsend")->AsString.IsEmpty()){
     switch (oqMaketArm->Fields->FieldByName("nState")->AsInteger){
       case 1:
-        lbMaketName->Caption=lbMaketName->Caption+" Передан: "+oqMaketArm->FieldByName("dsend")->AsString;
+        lbMaketName->Caption=lbMaketName->Caption+" РџРµСЂРµРґР°РЅ: "+oqMaketArm->FieldByName("dsend")->AsString;
         break;
       case 2:
-        lbMaketName->Caption=lbMaketName->Caption+" Ошибка передачи: "+oqMaketArm->FieldByName("dsend")->AsString;
+        lbMaketName->Caption=lbMaketName->Caption+" РћС€РёР±РєР° РїРµСЂРµРґР°С‡Рё: "+oqMaketArm->FieldByName("dsend")->AsString;
         break;
     }
   }else
-    lbMaketName->Caption=lbMaketName->Caption+" Готов к передаче";
+    lbMaketName->Caption=lbMaketName->Caption+" Р“РѕС‚РѕРІ Рє РїРµСЂРµРґР°С‡Рµ";
 
   SetLabelState(lbMaketState,imMaketState);
 
@@ -862,7 +862,7 @@ if(!oqMaketArm->RecordCount)  return;
         cloneMaketGroupsInfo = getGroupsInfoByMaketId (getMaketId());
 
         /*for (int i = 0; i < maketGroupsInfo->Count; i++ ){
-        Application->MessageBox (maketGroupsInfo->Strings[i].c_str(), "Группы", MB_OK);
+        Application->MessageBox (maketGroupsInfo->Strings[i].c_str(), "Р“СЂСѓРїРїС‹", MB_OK);
         } */
 
         maketListPoints = new TStringList();
@@ -879,14 +879,14 @@ if(!oqMaketArm->RecordCount)  return;
         }
 
         /*for (int k = 0; k < maketListPoints->Count; k++){
-          Application->MessageBox (maketListPoints->Strings[k].c_str(), "Точки", MB_OK);
+          Application->MessageBox (maketListPoints->Strings[k].c_str(), "РўРѕС‡РєРё", MB_OK);
         }
 
         AnsiString str = "";
         for (int i = 0; i < maket->Count; i++){
            str+= (maket->Strings[i]+"\r\n");
         }
-        Application->MessageBox(str.c_str(), "Макетище", MB_OK);*/
+        Application->MessageBox(str.c_str(), "РњР°РєРµС‚РёС‰Рµ", MB_OK);*/
    }else{
         fd->IdGroup=oqMaketArm->Fields->FieldByName("noperation")->AsInteger;
         fd->IsPoints=0;
@@ -894,7 +894,7 @@ if(!oqMaketArm->RecordCount)  return;
    //end of GRB ADDEDED
    fd->bird=0;
    fd->dateTimePar=oqMaketArm->Fields->FieldByName("Period")->AsDateTime;  //dfrom
-   if (isViewedMaket){ //сформированный/отправленный макет которому вз-ие с бд уже не нужно, всё получено выше
+   if (isViewedMaket){ //СЃС„РѕСЂРјРёСЂРѕРІР°РЅРЅС‹Р№/РѕС‚РїСЂР°РІР»РµРЅРЅС‹Р№ РјР°РєРµС‚ РєРѕС‚РѕСЂРѕРјСѓ РІР·-РёРµ СЃ Р±Рґ СѓР¶Рµ РЅРµ РЅСѓР¶РЅРѕ, РІСЃС‘ РїРѕР»СѓС‡РµРЅРѕ РІС‹С€Рµ
         FInUn = new TfmInteriorUni(Owner,fd,maket,maketType.c_str(),maketGroupsInfo,cloneMaketGroupsInfo,maketListPoints,delim);
    }else{
         FInUn = new TfmInteriorUni(Owner,fd);
@@ -962,8 +962,8 @@ void __fastcall TfmMaketArm::tbDelClick(TObject *Sender)
     if(MessageGrid->SelectedRows->Count > 1)
       str=Reconst_smes71_22;
     else
-      str="Удалить информацию об отправке "+oqMaketArm->FieldByName("maket")->AsString+
-          " за "+oqMaketArm->FieldByName("period")->AsString+"?";
+      str="РЈРґР°Р»РёС‚СЊ РёРЅС„РѕСЂРјР°С†РёСЋ РѕР± РѕС‚РїСЂР°РІРєРµ "+oqMaketArm->FieldByName("maket")->AsString+
+          " Р·Р° "+oqMaketArm->FieldByName("period")->AsString+"?";
 
     if( oqMaketArm->Fields->FieldByName("nState")->AsInteger!=1 &&
     Application->MessageBox(str.c_str(), Application->Title.c_str(), MB_YESNO|MB_ICONQUESTION|MB_DEFBUTTON2)==IDYES){
@@ -996,7 +996,7 @@ void __fastcall TfmMaketArm::SetLabelState(TLabel *lb,TImage *img)
   if(oqMaketArm->RecordCount){
     int i=28;
     switch(oqMaketArm->Fields->FieldByName("nState")->AsInteger){
-      case 0: //Предупр
+      case 0: //РџСЂРµРґСѓРїСЂ
         break;
       case 1: //OK
         i+=1;
@@ -1015,7 +1015,7 @@ void __fastcall TfmMaketArm::SetLabelState(TLabel *lb,TImage *img)
 
 //---------------------------------------------------------------------------
 
-//19.02.2020 - GRB ADD - Заплатка запрещающая перенос местами 1-го столбца таблицы (со статусом) с любым - иначе летит исключение по несовпадению типов в DrawCell
+//19.02.2020 - GRB ADD - Р—Р°РїР»Р°С‚РєР° Р·Р°РїСЂРµС‰Р°СЋС‰Р°СЏ РїРµСЂРµРЅРѕСЃ РјРµСЃС‚Р°РјРё 1-РіРѕ СЃС‚РѕР»Р±С†Р° С‚Р°Р±Р»РёС†С‹ (СЃРѕ СЃС‚Р°С‚СѓСЃРѕРј) СЃ Р»СЋР±С‹Рј - РёРЅР°С‡Рµ Р»РµС‚РёС‚ РёСЃРєР»СЋС‡РµРЅРёРµ РїРѕ РЅРµСЃРѕРІРїР°РґРµРЅРёСЋ С‚РёРїРѕРІ РІ DrawCell
 void __fastcall TfmMaketArm::MessageGridColumnMoved(TObject *Sender,
       int FromIndex, int ToIndex)
 {

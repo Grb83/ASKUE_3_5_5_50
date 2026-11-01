@@ -194,9 +194,9 @@ typedef struct smater{
    int Id;
    char Name[148];
    char DATE_TIME[20];
-   char SMART[4];	//VARCHAR2(1), признак интел. счетчика
+   char SMART[4];	//VARCHAR2(1), РїСЂРёР·РЅР°Рє РёРЅС‚РµР». СЃС‡РµС‚С‡РёРєР°
    char MTRSN[20];		//
-   char DIGITS[20]; //рарядность
+   char DIGITS[20]; //СЂР°СЂСЏРґРЅРѕСЃС‚СЊ
    char MTYPE[50];
    int MCURRENT;
    int MPOWER;

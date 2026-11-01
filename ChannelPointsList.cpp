@@ -18,8 +18,8 @@
 const MaxCountRow = 100;
 const FirstVisibleCol = 1;
 long numPointInSubTree = 0;
-const char* messageWarning ="Число точек опроса в окне просмотра после добавления будет превышать 500, и какая-то часть старых либо новых добавленных точек может не появиться в нём.\nДобавлять всё равно?";
-const char* messageTitle = "Предупреждение: Переполнение окна просмотра";
+const char* messageWarning ="Р§РёСЃР»Рѕ С‚РѕС‡РµРє РѕРїСЂРѕСЃР° РІ РѕРєРЅРµ РїСЂРѕСЃРјРѕС‚СЂР° РїРѕСЃР»Рµ РґРѕР±Р°РІР»РµРЅРёСЏ Р±СѓРґРµС‚ РїСЂРµРІС‹С€Р°С‚СЊ 500, Рё РєР°РєР°СЏ-С‚Рѕ С‡Р°СЃС‚СЊ СЃС‚Р°СЂС‹С… Р»РёР±Рѕ РЅРѕРІС‹С… РґРѕР±Р°РІР»РµРЅРЅС‹С… С‚РѕС‡РµРє РјРѕР¶РµС‚ РЅРµ РїРѕСЏРІРёС‚СЊСЃСЏ РІ РЅС‘Рј.\nР”РѕР±Р°РІР»СЏС‚СЊ РІСЃС‘ СЂР°РІРЅРѕ?";
+const char* messageTitle = "РџСЂРµРґСѓРїСЂРµР¶РґРµРЅРёРµ: РџРµСЂРµРїРѕР»РЅРµРЅРёРµ РѕРєРЅР° РїСЂРѕСЃРјРѕС‚СЂР°";
 //---------------------------------------------------------------------------
 __fastcall TfmChannelPointsList::TfmChannelPointsList(TComponent* Owner, long Cid, long aIdProtocol, TAccess a)
         : TMainForm(Owner,NULL,a),CurrRow(0)
@@ -80,7 +80,7 @@ __fastcall TfmChannelPointsList::TfmChannelPointsList(TComponent* Owner, long Ci
 
      grColumn=grPoints->Columns->Add();
     // grColumn->Title->Caption=Reconst_smes6_1;
-     grColumn->Title->Caption="Наименование(подстанция/фидер)";
+     grColumn->Title->Caption="РќР°РёРјРµРЅРѕРІР°РЅРёРµ(РїРѕРґСЃС‚Р°РЅС†РёСЏ/С„РёРґРµСЂ)";
      grColumn->Title->Alignment=taCenter;
      grColumn->FieldName="name";
      grColumn->Color=clBtnFace;
@@ -106,14 +106,14 @@ __fastcall TfmChannelPointsList::TfmChannelPointsList(TComponent* Owner, long Ci
 
 
      grColumn=grCod->Columns->Add();
-     grColumn->Title->Caption="Наименование атрибута";
+     grColumn->Title->Caption="РќР°РёРјРµРЅРѕРІР°РЅРёРµ Р°С‚СЂРёР±СѓС‚Р°";
      grColumn->FieldName="vdescr";
      grColumn->Color=clBtnFace;
      grColumn->ReadOnly=true;
      grColumn->Width=grCod->Width/2;
      grColumn->Title->Alignment=taCenter;
      grColumn=grCod->Columns->Add();
-     grColumn->Title->Caption="Значение атрибута";
+     grColumn->Title->Caption="Р—РЅР°С‡РµРЅРёРµ Р°С‚СЂРёР±СѓС‚Р°";
      grColumn->FieldName="vvalue";
      grColumn->Width=grCod->Width/2;
      grColumn->Title->Alignment=taCenter;
@@ -154,7 +154,7 @@ __fastcall TfmChannelPointsList::TfmChannelPointsList(TComponent* Owner, long Ci
   /* sgPointsList->Cells[FirstVisibleCol+0][0] = Reconst_smes6_1;
    sgPointsList->Cells[FirstVisibleCol+1][0] = Reconst_smes6_2; */
 
-   //Выясняем что отображать    importcode или связной номер
+   //Р’С‹СЏСЃРЅСЏРµРј С‡С‚Рѕ РѕС‚РѕР±СЂР°Р¶Р°С‚СЊ    importcode РёР»Рё СЃРІСЏР·РЅРѕР№ РЅРѕРјРµСЂ
    oqChPointsList->Params->Clear();
    oqChPointsList->SQL->Text="begin :par2:="+SchemeName+"channels_pg.is_viewimportcode(:par1); end;";
    oqChPointsList->ParamByName("par1")->AsInteger=aIdProtocol;
@@ -186,17 +186,17 @@ __fastcall TfmChannelPointsList::TfmChannelPointsList(TComponent* Owner, long Ci
        Label2->Visible = false;
        eImportCode->Visible = false; */
        sgPointsList->Cells[FirstVisibleCol+2][0] = Reconst_smes6_4;
-       sgPointsList->Cells[FirstVisibleCol+3][0] = "Доп.связ.№";
-       sgPointsList->Cells[FirstVisibleCol+4][0] = "Выбор св.№";
+       sgPointsList->Cells[FirstVisibleCol+3][0] = "Р”РѕРї.СЃРІСЏР·.в„–";
+       sgPointsList->Cells[FirstVisibleCol+4][0] = "Р’С‹Р±РѕСЂ СЃРІ.в„–";
    }
 
    sgPointsList->Cells[FirstVisibleCol+0][0] = Reconst_smes6_1;
    sgPointsList->Cells[FirstVisibleCol+1][0] = Reconst_smes6_2;
 
-   sgPointsList->Cells[FirstVisibleCol+PlusDopCanal+3][0] = "А(+)";
-   sgPointsList->Cells[FirstVisibleCol+PlusDopCanal+4][0] = "Р(+)";
-   sgPointsList->Cells[FirstVisibleCol+PlusDopCanal+5][0] = "А(-)";
-   sgPointsList->Cells[FirstVisibleCol+PlusDopCanal+6][0] = "Р(-)";
+   sgPointsList->Cells[FirstVisibleCol+PlusDopCanal+3][0] = "Рђ(+)";
+   sgPointsList->Cells[FirstVisibleCol+PlusDopCanal+4][0] = "Р (+)";
+   sgPointsList->Cells[FirstVisibleCol+PlusDopCanal+5][0] = "Рђ(-)";
+   sgPointsList->Cells[FirstVisibleCol+PlusDopCanal+6][0] = "Р (-)";
    sgPointsList->Cells[FirstVisibleCol+PlusDopCanal+7][0] = Reconst_smes6_5;
    sgPointsList->Cells[FirstVisibleCol+PlusDopCanal+8][0] = Reconst_smes6_6;
    sgPointsList->Cells[FirstVisibleCol+PlusDopCanal+9][0] = Reconst_smes6_7;
@@ -561,12 +561,12 @@ void __fastcall TfmChannelPointsList::SavePoints()
      }
      oqSave->Execute();
 
-      // сохранение изменений для точек...
+      // СЃРѕС…СЂР°РЅРµРЅРёРµ РёР·РјРµРЅРµРЅРёР№ РґР»СЏ С‚РѕС‡РµРє...
       for(int i=0; i<sgPointsList->RowCount; i++)
      if(sgPointsList->Objects[0][i]){
 
 
-    // вызов update_p-2
+    // РІС‹Р·РѕРІ update_p-2
    oqChPointsList->Params->Clear();
    oqChPointsList->SQL->Text="begin "+SchemeName+"editfeeders_pg.upd_p(:par1,:par2,:par3,:par4,:par5,:par6,:par7,:par8,:par9,\
             :par10,:par11,:par12,:par13,:par14,:par15,:par16,:par17); end; ";
@@ -649,7 +649,7 @@ void __fastcall TfmChannelPointsList::SavePoints()
 
 }
 //---------------------------------------------------------------------------
-// Читает ветку дерева
+// Р§РёС‚Р°РµС‚ РІРµС‚РєСѓ РґРµСЂРµРІР°
 bool __fastcall TfmChannelPointsList::ReadTreeNode(TObject*obj)
 {
    TTreeNode*NodeParent=dynamic_cast<TTreeNode*>(obj);
@@ -918,7 +918,7 @@ void __fastcall TfmChannelPointsList::sgPointsListDragDrop(TObject *Sender,
 }
 
 //---------------------------------------------------------------------------
-// Предварительный рассчёт количества новых точек учёта в добавляемом поддереве проходом в глубину
+// РџСЂРµРґРІР°СЂРёС‚РµР»СЊРЅС‹Р№ СЂР°СЃСЃС‡С‘С‚ РєРѕР»РёС‡РµСЃС‚РІР° РЅРѕРІС‹С… С‚РѕС‡РµРє СѓС‡С‘С‚Р° РІ РґРѕР±Р°РІР»СЏРµРјРѕРј РїРѕРґРґРµСЂРµРІРµ РїСЂРѕС…РѕРґРѕРј РІ РіР»СѓР±РёРЅСѓ
 long __fastcall TfmChannelPointsList::getNumPointsInSubTree(TObject *Sender, TObject *Source, int X, int Y){
    TTreeNode* currnode = Source==tvPoints?tvPoints->Selected:(TTreeNode*)Source;
    if(DragData->Type==3){
@@ -942,7 +942,7 @@ long __fastcall TfmChannelPointsList::getNumPointsInSubTree(TObject *Sender, TOb
 }
 
 //---------------------------------------------------------------------------
-// Рассчёт количества любых узлов на подуровне (не нужно)
+// Р Р°СЃСЃС‡С‘С‚ РєРѕР»РёС‡РµСЃС‚РІР° Р»СЋР±С‹С… СѓР·Р»РѕРІ РЅР° РїРѕРґСѓСЂРѕРІРЅРµ (РЅРµ РЅСѓР¶РЅРѕ)
 long getNumPointInGroup (TTreeNode* parnode){
         TTreeNode* currnode = parnode;
         long retNum = 0;
@@ -992,7 +992,7 @@ void __fastcall TfmChannelPointsList::sgPointsListSelectCell(TObject *Sender,
    eAMinus->Text     = sgPointsList->Cells[FirstVisibleCol+PlusDopCanal+5][ARow];
    eRMinus->Text     = sgPointsList->Cells[FirstVisibleCol+PlusDopCanal+6][ARow];
    eTag->Text        = sgPointsList->Cells[FirstVisibleCol+PlusDopCanal+7][ARow];
-   //GRB CHANGE 21.09.2021 Заплатка размножения пробелов в USD и доп информации
+   //GRB CHANGE 21.09.2021 Р—Р°РїР»Р°С‚РєР° СЂР°Р·РјРЅРѕР¶РµРЅРёСЏ РїСЂРѕР±РµР»РѕРІ РІ USD Рё РґРѕРї РёРЅС„РѕСЂРјР°С†РёРё
    /*eAddInfo->Text    = sgPointsList->Cells[FirstVisibleCol+PlusDopCanal+8][ARow];
    eUSD->Text        = sgPointsList->Cells[FirstVisibleCol+PlusDopCanal+9][ARow];*/
    //GRB ADD 21.09.2021

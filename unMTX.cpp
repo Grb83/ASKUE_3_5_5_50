@@ -63,7 +63,7 @@ void __fastcall TfmMTX::btnDeleteMeterClick(TObject *Sender)
   {
     OraQuery->ParamByName("mid")->AsInteger = oqMain->FieldByName("mid")->AsInteger;
     OraQuery->ParamByName("order")->AsInteger = oqSlave->FieldByName("norder")->AsInteger;
-    if (Application->MessageBox("Óäàëèòü âûáðàííîå óñòðîéñòâî?", Application->Title.c_str(), MB_YESNO|MB_ICONQUESTION|MB_DEFBUTTON2)==IDYES)
+    if (Application->MessageBox("Ð£Ð´Ð°Ð»Ð¸Ñ‚ÑŒ Ð²Ñ‹Ð±Ñ€Ð°Ð½Ð½Ð¾Ðµ ÑƒÑÑ‚Ñ€Ð¾Ð¹ÑÑ‚Ð²Ð¾?", Application->Title.c_str(), MB_YESNO|MB_ICONQUESTION|MB_DEFBUTTON2)==IDYES)
     {
       OraQuery->Execute();
       SelectDet();
@@ -178,7 +178,7 @@ void __fastcall TfmMTX::btnDeleteRouterClick(TObject *Sender)
   {
     OraQuery->ParamByName("mid")->AsInteger = oqMain->FieldByName("mid")->AsInteger;
     OraQuery->ParamByName("order")->Clear();
-    if (Application->MessageBox("Óäàëèòü âñå óñòðîéñòâà ðîóòåðà?", Application->Title.c_str(), MB_YESNO|MB_ICONQUESTION|MB_DEFBUTTON2)==IDYES)
+    if (Application->MessageBox("Ð£Ð´Ð°Ð»Ð¸Ñ‚ÑŒ Ð²ÑÐµ ÑƒÑÑ‚Ñ€Ð¾Ð¹ÑÑ‚Ð²Ð° Ñ€Ð¾ÑƒÑ‚ÐµÑ€Ð°?", Application->Title.c_str(), MB_YESNO|MB_ICONQUESTION|MB_DEFBUTTON2)==IDYES)
     {
       OraQuery->Execute();
       SelectConf();

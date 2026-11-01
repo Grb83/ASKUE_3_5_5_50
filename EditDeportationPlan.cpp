@@ -40,7 +40,7 @@ __fastcall TfmEditDeportationPlan::~TfmEditDeportationPlan()
 }
 //---------------------------------------------------------------------------
 
-bool __fastcall TfmEditDeportationPlan::ReadChannels(TObject*obj)// ×èòàåò ñïèñîê êàíàëîâ
+bool __fastcall TfmEditDeportationPlan::ReadChannels(TObject*obj)// Ð§Ð¸Ñ‚Ð°ÐµÑ‚ ÑÐ¿Ð¸ÑÐ¾Ðº ÐºÐ°Ð½Ð°Ð»Ð¾Ð²
 {
   stChannel *PChannel = NULL;
   TTreeNode *TN = NULL;
@@ -55,7 +55,7 @@ bool __fastcall TfmEditDeportationPlan::ReadChannels(TObject*obj)// ×èòàåò ñïèñî
       dmMain->quMain->ParamByName("par2")->DataType = ftCursor;
       dmMain->quMain->Execute();
     }
-    else //âûçûâàåòñÿ ïðè Expanding
+    else //Ð²Ñ‹Ð·Ñ‹Ð²Ð°ÐµÑ‚ÑÑ Ð¿Ñ€Ð¸ Expanding
     { dmMain->quMain->ParamByName("par1")->AsInteger = getNodeId(obj);
       dmMain->quMain->ParamByName("par2")->ParamType = ptOutput;
       dmMain->quMain->ParamByName("par2")->DataType = ftCursor;
@@ -106,11 +106,11 @@ bool __fastcall TfmEditDeportationPlan::ReadChannels(TObject*obj)// ×èòàåò ñïèñî
       TN = tvChannelsList->Items->AddChildObject(Node, PChannel->Name, PChannel);
       PChannel->IsFolder   = (bool)dmMain->quMain->FieldByName("ISFOLDER")->AsInteger;
       PChannel->HaveChilde = (bool)dmMain->quMain->FieldByName("HAVECHILD")->AsInteger;
-      //ïîñòðîåíèå ïàïêè
+      //Ð¿Ð¾ÑÑ‚Ñ€Ð¾ÐµÐ½Ð¸Ðµ Ð¿Ð°Ð¿ÐºÐ¸
       if(PChannel->IsFolder)
-      { if(PChannel->HaveChilde)//åñòü äåòè
+      { if(PChannel->HaveChilde)//ÐµÑÑ‚ÑŒ Ð´ÐµÑ‚Ð¸
           tvChannelsList->Items->AddChildObject(TN, "1", NULL);
-        //íåò äåòåé
+        //Ð½ÐµÑ‚ Ð´ÐµÑ‚ÐµÐ¹
         TN->ImageIndex = (PChannel->Block)?6:4;
       }
       else
@@ -142,10 +142,10 @@ bool __fastcall TfmEditDeportationPlan::GetCombo(TComboBox *cb)
     dmMain->quMain->ParamByName("par1")->ParamType = ptOutput;
     dmMain->quMain->ParamByName("par1")->DataType = ftCursor;
     if(cb==cbProc_id)
-      dmMain->quMain->ParamByName("Flag")->AsInteger = 0;//Ñïèñîê ìàêåòîâ
+      dmMain->quMain->ParamByName("Flag")->AsInteger = 0;//Ð¡Ð¿Ð¸ÑÐ¾Ðº Ð¼Ð°ÐºÐµÑ‚Ð¾Ð²
     if(cb==cbMainChannel)
     { cb->Items->Add("");
-      dmMain->quMain->ParamByName("Flag")->AsInteger = 1;//Ñïèñîê îñí. êàíàëîâ
+      dmMain->quMain->ParamByName("Flag")->AsInteger = 1;//Ð¡Ð¿Ð¸ÑÐ¾Ðº Ð¾ÑÐ½. ÐºÐ°Ð½Ð°Ð»Ð¾Ð²
     }
     dmMain->quMain->Execute();
     while(!dmMain->quMain->Eof)
@@ -176,12 +176,12 @@ void __fastcall TfmEditDeportationPlan::tvChannelsListChanging(TObject *Sender,
     Control=(TWinControl*)eName;
     if(eName->Text.IsEmpty())
       throw Exception(Reconst_smes19_1);
-    if(SelChannel->IsFolder)//ïàïêà
-    { //Îáíîâëÿåì äàííûå
+    if(SelChannel->IsFolder)//Ð¿Ð°Ð¿ÐºÐ°
+    { //ÐžÐ±Ð½Ð¾Ð²Ð»ÑÐµÐ¼ Ð´Ð°Ð½Ð½Ñ‹Ðµ
       strcpy(SelChannel->Name, eName->Text.c_str());
       SelChannel->Block = chbBlocking->Checked;
     }
-    else //êàíàëû
+    else //ÐºÐ°Ð½Ð°Ð»Ñ‹
     { strcpy(SelChannel->Name,eName->Text.c_str());
       strcpy(SelChannel->Note,mNote->Text.c_str());
       strcpy(SelChannel->SendParam,eSendParam->Text.c_str());
@@ -278,7 +278,7 @@ void __fastcall TfmEditDeportationPlan::tvChannelsListChange(TObject *Sender,
    lbId->Text = (SelChannel->NDeportation>0)?IntToStr(SelChannel->NDeportation):AnsiString("");
    chbBlocking->Checked = SelChannel->Block;
    if(!SelChannel->IsFolder)
-   { //Êàíàëà
+   { //ÐšÐ°Ð½Ð°Ð»Ð°
      Panel10->Height  = 95;
      Panel24->Visible = true;
      Panel11->Visible = true;
@@ -302,7 +302,7 @@ void __fastcall TfmEditDeportationPlan::tvChannelsListChange(TObject *Sender,
      rgDataDeportationMode->ItemIndex = SelChannel->DataDeportationMode;
    }//end if
    else//Folder
-   { //ñêðûâàåì âñå íåíóæíîå
+   { //ÑÐºÑ€Ñ‹Ð²Ð°ÐµÐ¼ Ð²ÑÐµ Ð½ÐµÐ½ÑƒÐ¶Ð½Ð¾Ðµ
      Label2->Visible  = false;
      mNote->Visible   = false;
      Panel11->Visible = false;
@@ -327,7 +327,7 @@ void __fastcall TfmEditDeportationPlan::ControlChange(TObject *Sender)
    if(tvChannelsList->Selected&&ChangeControl)
    {
       EditRec = true;
-      if(!is_changing&&!SelChannel->editing) //     21.05.2013 is_changing äîáàâèë Ñå÷èí ÷òîá íå ñîõðàíÿëîñü ïåðâûé ýëåìåíò 
+      if(!is_changing&&!SelChannel->editing) //     21.05.2013 is_changing Ð´Ð¾Ð±Ð°Ð²Ð¸Ð» Ð¡ÐµÑ‡Ð¸Ð½ Ñ‡Ñ‚Ð¾Ð± Ð½Ðµ ÑÐ¾Ñ…Ñ€Ð°Ð½ÑÐ»Ð¾ÑÑŒ Ð¿ÐµÑ€Ð²Ñ‹Ð¹ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚ 
         SelChannel->editing=2;
         //SelChannel->editing = SelChannel->editing==1?1:2;
       if(Sender==(TObject*)eName)
@@ -470,7 +470,7 @@ void __fastcall TfmEditDeportationPlan::vSave(TObject *Sender)
   stChannel Channel;
   short indic[4];
   try{
-    //15.04.2020 - GRB ADD - dmMain->quMain->Params->Clear(); áåç ýòîãî ïîä ODAC 6.7 âìåñòî ñòðîê ïðèõîäÿò ïóñòûøêè
+    //15.04.2020 - GRB ADD - dmMain->quMain->Params->Clear(); Ð±ÐµÐ· ÑÑ‚Ð¾Ð³Ð¾ Ð¿Ð¾Ð´ ODAC 6.7 Ð²Ð¼ÐµÑÑ‚Ð¾ ÑÑ‚Ñ€Ð¾Ðº Ð¿Ñ€Ð¸Ñ…Ð¾Ð´ÑÑ‚ Ð¿ÑƒÑÑ‚Ñ‹ÑˆÐºÐ¸
     dmMain->quMain->Params->Clear();
     //END ADD
     dmMain->quMain->SQL->Text="begin \
@@ -514,7 +514,7 @@ void __fastcall TfmEditDeportationPlan::vSave(TObject *Sender)
           dmMain->quMain->ParamByName("par11")->AsInteger=Channel.Retries_Tout;
           dmMain->quMain->ParamByName("par12")->AsInteger=Channel.Retries;
           dmMain->quMain->ParamByName("par13")->AsString=Channel.SendParam;
-          if(Node->Parent && Node->Parent->Data)//Ðîäèòåëü
+          if(Node->Parent && Node->Parent->Data)//Ð Ð¾Ð´Ð¸Ñ‚ÐµÐ»ÑŒ
             if(((stChannel*)Node->Parent->Data)->tmpNDeportation)
               dmMain->quMain->ParamByName("par14")->AsInteger = ((stChannel*)Node->Parent->Data)->tmpNDeportation;
             else
@@ -643,7 +643,7 @@ void __fastcall TfmEditDeportationPlan::mMonClick(TObject *Sender)
 
 void __fastcall TfmEditDeportationPlan::iaFindExecute(TObject *Sender)
 {
-  //GRB ADD 09.03.2021 -äîáàâëÿåì âûçîâ 2-õ ñåòòåðîâ, îïðåäåëÿþùèõ êîíòåêñò çàäà÷è
+  //GRB ADD 09.03.2021 -Ð´Ð¾Ð±Ð°Ð²Ð»ÑÐµÐ¼ Ð²Ñ‹Ð·Ð¾Ð² 2-Ñ… ÑÐµÑ‚Ñ‚ÐµÑ€Ð¾Ð², Ð¾Ð¿Ñ€ÐµÐ´ÐµÐ»ÑÑŽÑ‰Ð¸Ñ… ÐºÐ¾Ð½Ñ‚ÐµÐºÑÑ‚ Ð·Ð°Ð´Ð°Ñ‡Ð¸
   fmFP->setContext(3);
   fmFP->setGroupsAndPoints(false);
   //END ADD

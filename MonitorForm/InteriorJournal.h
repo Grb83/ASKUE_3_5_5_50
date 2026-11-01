@@ -24,21 +24,21 @@ public:
   virtual void __fastcall OnClickMenuItemAttr(TObject *Sender);
   virtual void __fastcall SaveTableToFile(TSaveDialog *aSaveDialog);
   virtual void __fastcall MessageGridTitleClick(TColumnEh *Column);
-  //GRB ADD 25.02.2020 - фикс бага с вылетом по смене колонок с первой (тут и у наследника - InteriorJournalSys.cpp)
+  //GRB ADD 25.02.2020 - С„РёРєСЃ Р±Р°РіР° СЃ РІС‹Р»РµС‚РѕРј РїРѕ СЃРјРµРЅРµ РєРѕР»РѕРЅРѕРє СЃ РїРµСЂРІРѕР№ (С‚СѓС‚ Рё Сѓ РЅР°СЃР»РµРґРЅРёРєР° - InteriorJournalSys.cpp)
   virtual void __fastcall MessageGridColumnMoved(TObject *Sender,
           int FromIndex, int ToIndex);
 
 protected:
     TDataSource *dsMessage;
     TDBGridEh *MessageGrid;
-  /*  typedef struct {  //ЖУРНАЛ  ОПЕРАТОРА
+  /*  typedef struct {  //Р–РЈР РќРђР›  РћРџР•Р РђРўРћР Рђ
 	    char Date_Time[20];
         char Name[150];
         char Message[518];
         long Task_Job;
     }MYJOURNAL;  */
 	unsigned long selectRows;
-  AnsiString  orderStr;   //! Строка сортировки для запроса
+  AnsiString  orderStr;   //! РЎС‚СЂРѕРєР° СЃРѕСЂС‚РёСЂРѕРІРєРё РґР»СЏ Р·Р°РїСЂРѕСЃР°
 private:
 };
 //---------------------------------------------------------------------------

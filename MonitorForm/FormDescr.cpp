@@ -16,15 +16,15 @@ __fastcall TFormDescr::TFormDescr()
 	PercentSplit=0;
 	SummGroup=false;
   ZeroMemory(FAddParam,sizeof(FAddParam));
-//  Эту строчечку изменил КАС по просьбе Вештака И.А. для того чтобы при открытии форма разворачивалась горизонтально.
-//  Изменение этой строки взад не повлияет на работоспособность программы, системы и в целом всей "рыночной" экономики страны
+//  Р­С‚Сѓ СЃС‚СЂРѕС‡РµС‡РєСѓ РёР·РјРµРЅРёР» РљРђРЎ РїРѕ РїСЂРѕСЃСЊР±Рµ Р’РµС€С‚Р°РєР° Р.Рђ. РґР»СЏ С‚РѕРіРѕ С‡С‚РѕР±С‹ РїСЂРё РѕС‚РєСЂС‹С‚РёРё С„РѕСЂРјР° СЂР°Р·РІРѕСЂР°С‡РёРІР°Р»Р°СЃСЊ РіРѕСЂРёР·РѕРЅС‚Р°Р»СЊРЅРѕ.
+//  РР·РјРµРЅРµРЅРёРµ СЌС‚РѕР№ СЃС‚СЂРѕРєРё РІР·Р°Рґ РЅРµ РїРѕРІР»РёСЏРµС‚ РЅР° СЂР°Р±РѕС‚РѕСЃРїРѕСЃРѕР±РЅРѕСЃС‚СЊ РїСЂРѕРіСЂР°РјРјС‹, СЃРёСЃС‚РµРјС‹ Рё РІ С†РµР»РѕРј РІСЃРµР№ "СЂС‹РЅРѕС‡РЅРѕР№" СЌРєРѕРЅРѕРјРёРєРё СЃС‚СЂР°РЅС‹
 
-//  27.06.2002 Кстати это изменение всетаки повлияло на работу некоторых форм
+//  27.06.2002 РљСЃС‚Р°С‚Рё СЌС‚Рѕ РёР·РјРµРЅРµРЅРёРµ РІСЃРµС‚Р°РєРё РїРѕРІР»РёСЏР»Рѕ РЅР° СЂР°Р±РѕС‚Сѓ РЅРµРєРѕС‚РѕСЂС‹С… С„РѕСЂРј
 
 //  Copyright 2001
 	VerticalSplit= false;
-//        false;//true;   // А вот собственно сама СТРОЧЕЧКА Всего лишь true на false заменил
-//добавлено для панели "Перечень отображаемых данных"
+//        false;//true;   // Рђ РІРѕС‚ СЃРѕР±СЃС‚РІРµРЅРЅРѕ СЃР°РјР° РЎРўР РћР§Р•Р§РљРђ Р’СЃРµРіРѕ Р»РёС€СЊ true РЅР° false Р·Р°РјРµРЅРёР»
+//РґРѕР±Р°РІР»РµРЅРѕ РґР»СЏ РїР°РЅРµР»Рё "РџРµСЂРµС‡РµРЅСЊ РѕС‚РѕР±СЂР°Р¶Р°РµРјС‹С… РґР°РЅРЅС‹С…"
         indbird = false;
         bird = 0;
         startmid=0;
@@ -131,7 +131,7 @@ bool __fastcall TFormDescr::LoadFormDescr( TStream* istream )
     if(isNewMonitor < 0){
         if(-isNewMonitor == (long)sizeof(fdInit))
             istream->ReadBuffer((fdInit*)this, -isNewMonitor);
-        else{ // Добавить код при изменении структуры
+        else{ // Р”РѕР±Р°РІРёС‚СЊ РєРѕРґ РїСЂРё РёР·РјРµРЅРµРЅРёРё СЃС‚СЂСѓРєС‚СѓСЂС‹
           switch (-isNewMonitor){
             case INITSIZE07022006:
               istream->ReadBuffer((fdInit*)this, INITSIZE07022006);
@@ -150,7 +150,7 @@ bool __fastcall TFormDescr::LoadFormDescr( TStream* istream )
         }
         return true;
     }
-    try{ // Загрузка монитора старого варианта
+    try{ // Р—Р°РіСЂСѓР·РєР° РјРѕРЅРёС‚РѕСЂР° СЃС‚Р°СЂРѕРіРѕ РІР°СЂРёР°РЅС‚Р°
 		double a;
 		char buf[256];
 		long len;
@@ -172,17 +172,17 @@ bool __fastcall TFormDescr::LoadFormDescr( TStream* istream )
 		istream->ReadBuffer( &StepProfile, sizeof(TStepProfie) );
 
 		//chig
-		//Верхняя граница времени
+		//Р’РµСЂС…РЅСЏСЏ РіСЂР°РЅРёС†Р° РІСЂРµРјРµРЅРё
 		istream->ReadBuffer( &a, sizeof(double) );
 		DateTimePar=a;
-		//e Верхняя граница времени
-		//Настройки цветов
+		//e Р’РµСЂС…РЅСЏСЏ РіСЂР°РЅРёС†Р° РІСЂРµРјРµРЅРё
+		//РќР°СЃС‚СЂРѕР№РєРё С†РІРµС‚РѕРІ
 		for ( int i = 0; i < MAXGRAFICPICTURE; i++ )
 		{
   			istream->ReadBuffer( &( ColorAttr[ i ].PointId ), sizeof( ColorAttr[ i ].PointId ) );
   			istream->ReadBuffer( &( ColorAttr[ i ].Color ), sizeof( ColorAttr[ i ].Color ) );
    		}
-		//e Настройки цветов
+		//e РќР°СЃС‚СЂРѕР№РєРё С†РІРµС‚РѕРІ
 		istream->ReadBuffer( &IsMemParActualForClones, sizeof( IsMemParActualForClones ) );
 		istream->ReadBuffer( &IsMemParActualForProf, sizeof( IsMemParActualForProf ) );
 		istream->ReadBuffer( &TableTopRow, sizeof( TableTopRow ) );
@@ -250,7 +250,7 @@ bool __fastcall TFormDescr::LoadFormDescr( TStream* istream )
 		}
 
 		//chig
-		//Имя процедуры
+		//РРјСЏ РїСЂРѕС†РµРґСѓСЂС‹
 		buf[0]=0;
 		istream->ReadBuffer( &len, sizeof(long) );
 		istream->ReadBuffer( buf, min(len,256l) );
@@ -262,7 +262,7 @@ bool __fastcall TFormDescr::LoadFormDescr( TStream* istream )
 			istream->ReadBuffer( buf, min(len,256l) );
 			len-=256;
 		}
-		//e Имя процедуры
+		//e РРјСЏ РїСЂРѕС†РµРґСѓСЂС‹
 		//e chig
 
 		istream->ReadBuffer( &len, sizeof(long) );
@@ -279,14 +279,14 @@ bool __fastcall TFormDescr::LoadFormDescr( TStream* istream )
 			EnableControls<<ctrlCalendar;
 		if( len & 0x00000020)
 			EnableControls<<ctrlGroup;
- // определение режима отображения панели "тип отображаемых данных"
+ // РѕРїСЂРµРґРµР»РµРЅРёРµ СЂРµР¶РёРјР° РѕС‚РѕР±СЂР°Р¶РµРЅРёСЏ РїР°РЅРµР»Рё "С‚РёРї РѕС‚РѕР±СЂР°Р¶Р°РµРјС‹С… РґР°РЅРЅС‹С…"
                 if( len & 0x00000007)
                         indbird = true;
 
 		CeilingIdGroup = IdGroup;
 		IdGroupList = 0;
 		IdGroupJump = 0;
-        // Инициализация дополнительных полей
+        // РРЅРёС†РёР°Р»РёР·Р°С†РёСЏ РґРѕРїРѕР»РЅРёС‚РµР»СЊРЅС‹С… РїРѕР»РµР№
         IsPoints = false;
 	}
 	catch(Exception &e)
@@ -298,8 +298,8 @@ bool __fastcall TFormDescr::LoadFormDescr( TStream* istream )
 //---------------------------------------------------------------------------
 void TFormDescr::strGroup(char *str)
 {
-// Вставка кода по сохранению порядка расположения подгрупп при их вводе
-// KAS  Закоментировал чтобы не убирало цифры перед названиями
+// Р’СЃС‚Р°РІРєР° РєРѕРґР° РїРѕ СЃРѕС…СЂР°РЅРµРЅРёСЋ РїРѕСЂСЏРґРєР° СЂР°СЃРїРѕР»РѕР¶РµРЅРёСЏ РїРѕРґРіСЂСѓРїРї РїСЂРё РёС… РІРІРѕРґРµ
+// KAS  Р—Р°РєРѕРјРµРЅС‚РёСЂРѕРІР°Р» С‡С‚РѕР±С‹ РЅРµ СѓР±РёСЂР°Р»Рѕ С†РёС„СЂС‹ РїРµСЂРµРґ РЅР°Р·РІР°РЅРёСЏРјРё
 /*    	char buf[160],c;
         buf[0]='\0';
         strcpy(buf,str);

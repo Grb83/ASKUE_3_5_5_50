@@ -31,7 +31,7 @@ void __fastcall TfmMonitorList::FormClose(TObject *Sender, TCloseAction &Action)
     fmMonitorList = NULL;
 }
 //---------------------------------------------------------------------------
-bool __fastcall TfmMonitorList::ReadTreeNode(TTreeNode* NodeParent)// ×èòàåò âåòêó äåðåâà
+bool __fastcall TfmMonitorList::ReadTreeNode(TTreeNode* NodeParent)// Ð§Ð¸Ñ‚Ð°ÐµÑ‚ Ð²ÐµÑ‚ÐºÑƒ Ð´ÐµÑ€ÐµÐ²Ð°
 {
     MONITORS *PTreeMonitors;
     TTreeNode *AddNode;
@@ -165,7 +165,7 @@ bool __fastcall TfmMonitorList::TabuByProperty(){
     int eq = 0;
     dmMain->oqCursor->Params->Clear();
     char asql[76];
-    int code_base = 101;      // ÒODO - Õàðäêîä êîä ÝÄÐÏÎ ïðåäïðèÿòèÿ
+    int code_base = 101;      // Ð¢ODO - Ð¥Ð°Ñ€Ð´ÐºÐ¾Ð´ ÐºÐ¾Ð´ Ð­Ð”Ð ÐŸÐž Ð¿Ñ€ÐµÐ´Ð¿Ñ€Ð¸ÑÑ‚Ð¸Ñ
     //dmMain->oqCursor->SQL->Text="begin SELECT e.cod INTO :c_cod FROM RYDA.enterprise e WHERE e.mid=1000; end;";
     asql[24] = ':';
     asql[31] = 'F';

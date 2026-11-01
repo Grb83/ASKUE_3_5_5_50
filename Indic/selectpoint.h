@@ -18,7 +18,7 @@
 #include "Ora.hpp"
 #include <DB.hpp>
 //---------------------------------------------------------------------------
-struct strGROUPDATAFORM{ // Выбор данных пользователем
+struct strGROUPDATAFORM{ // Р’С‹Р±РѕСЂ РґР°РЅРЅС‹С… РїРѕР»СЊР·РѕРІР°С‚РµР»РµРј
    long gid;
    int entype[6];
    TDateTime myTime;
@@ -92,7 +92,7 @@ __published:	// IDE-managed Components
   void __fastcall TreeViewMeasDeletion(TObject *Sender, TTreeNode *Node);
  
 private:	// User declarations
-	struct POINTSTREEDEF{ //дерево обьектов учета
+	struct POINTSTREEDEF{ //РґРµСЂРµРІРѕ РѕР±СЊРµРєС‚РѕРІ СѓС‡РµС‚Р°
       long Gid;
       long Type;
       long HaveChild;
@@ -102,7 +102,7 @@ private:	// User declarations
       TList *pmeas;
    //   int Sort;
 	};
-  struct MEASURES{ //дерево типов измерений
+  struct MEASURES{ //РґРµСЂРµРІРѕ С‚РёРїРѕРІ РёР·РјРµСЂРµРЅРёР№
       long Mid;
       long Type;
       char Name[64];

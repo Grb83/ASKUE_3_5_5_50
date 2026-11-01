@@ -14,10 +14,10 @@
 #include <ImgList.hpp>
 #include <Menus.hpp>
 //---------------------------------------------------------------------------
-/* шаблон двухсвязного списка */
+/* С€Р°Р±Р»РѕРЅ РґРІСѓС…СЃРІСЏР·РЅРѕРіРѕ СЃРїРёСЃРєР° */
 //---------------------------------------------------------------------------
-// класс T - должен иметь конструктор по умолчанию!!!
-template <class T> class ChainedList /* шаблон двухсвязного списка */
+// РєР»Р°СЃСЃ T - РґРѕР»Р¶РµРЅ РёРјРµС‚СЊ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ!!!
+template <class T> class ChainedList /* С€Р°Р±Р»РѕРЅ РґРІСѓС…СЃРІСЏР·РЅРѕРіРѕ СЃРїРёСЃРєР° */
 {
    struct TChainedListItem{
       T data;
@@ -47,7 +47,7 @@ public:
    }
    T& operator[](int i){
       get(i);
-      if(!curritm) throw("Ошибка: выход индекса за границу списка.");
+      if(!curritm) throw("РћС€РёР±РєР°: РІС‹С…РѕРґ РёРЅРґРµРєСЃР° Р·Р° РіСЂР°РЅРёС†Сѓ СЃРїРёСЃРєР°.");
       return curritm->data;
    }
    void Clear(void){
@@ -113,17 +113,17 @@ public:
       TChainedListItem *b = get(j);
       if(!a || !b || a==b) return;
       TChainedListItem tmp;
-      // вставка tmp вместо a
+      // РІСЃС‚Р°РІРєР° tmp РІРјРµСЃС‚Рѕ a
       tmp.next = a->next;
       tmp.prev = a->prev;
       if(a->prev) a->prev->next = &tmp;
       if(a->next) a->next->prev = &tmp;
-      // вставка a вместо b
+      // РІСЃС‚Р°РІРєР° a РІРјРµСЃС‚Рѕ b
       a->next = b->next;
       a->prev = b->prev;
       if(b->next) b->next->prev = a;
       if(b->prev) b->prev->next = a;
-      // вставка b вместо tmp
+      // РІСЃС‚Р°РІРєР° b РІРјРµСЃС‚Рѕ tmp
       b->next = tmp.next;
       b->prev = tmp.prev;
       if(tmp.next) tmp.next->prev = b;
@@ -148,7 +148,7 @@ __published:	// IDE-managed Components
    void __fastcall cbTariffTypeEnter(TObject *Sender);
 private:
    typedef struct {
-      short editing; // 0 -Не трогали, 1-вставка, 2-обновление
+      short editing; // 0 -РќРµ С‚СЂРѕРіР°Р»Рё, 1-РІСЃС‚Р°РІРєР°, 2-РѕР±РЅРѕРІР»РµРЅРёРµ
       char kData[50];
       char bData[50];
       double Value;

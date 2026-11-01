@@ -16,21 +16,21 @@ private:
     void __fastcall ResizeScaleOfSecondGraph(long ARow, TChartSeries **pSeries);
     void __fastcall ScaleOfGraph(bool fCode, int ColGraph, int MaxRowCount, long AClone, TLineSeries **pSeries, TDateTime *fDate, AnsiString LabelDateFormat);
     void __fastcall ScaleOfTwoGraph(bool fCode, int MaxRowCount, long AClone, TLineSeries **pSeries, TDateTime *fDate, AnsiString LabelDateFormat);
-    int SV; //переменная хранит информацию об отражении метки качества. читает из реестра (0 - не выводить, 1 - метка кач данных, 2 - метка качества электроэнергии)
+    int SV; //РїРµСЂРµРјРµРЅРЅР°СЏ С…СЂР°РЅРёС‚ РёРЅС„РѕСЂРјР°С†РёСЋ РѕР± РѕС‚СЂР°Р¶РµРЅРёРё РјРµС‚РєРё РєР°С‡РµСЃС‚РІР°. С‡РёС‚Р°РµС‚ РёР· СЂРµРµСЃС‚СЂР° (0 - РЅРµ РІС‹РІРѕРґРёС‚СЊ, 1 - РјРµС‚РєР° РєР°С‡ РґР°РЅРЅС‹С…, 2 - РјРµС‚РєР° РєР°С‡РµСЃС‚РІР° СЌР»РµРєС‚СЂРѕСЌРЅРµСЂРіРёРё)
     TfmDetailPoint*Dp;
  protected:
     TDrawTable *DrawTable;
     TChart *pChart;
     TChart *pSecondChart;
-	TStrings *NamesClones;      //имена клонов
+	TStrings *NamesClones;      //РёРјРµРЅР° РєР»РѕРЅРѕРІ
     bool *fNumClones;
     bool fPlace;
-	bool ClonePressed;          //для визуализации нажатий на заголовки таблицы
-	TShiftState ShiftPressed;   //для визуализации нажатий на заголовки таблицы
-	long ColPressed,RowPressed; //для визуализации нажатий на заголовки таблицы
-	long Clones;                //общее количество клонов в таблице
-	TCloneItem *datOracle;      //Двумерный массив всегда содержащий суммарный клон и столбец
-					            //Клоны расположены по столбцам.
+	bool ClonePressed;          //РґР»СЏ РІРёР·СѓР°Р»РёР·Р°С†РёРё РЅР°Р¶Р°С‚РёР№ РЅР° Р·Р°РіРѕР»РѕРІРєРё С‚Р°Р±Р»РёС†С‹
+	TShiftState ShiftPressed;   //РґР»СЏ РІРёР·СѓР°Р»РёР·Р°С†РёРё РЅР°Р¶Р°С‚РёР№ РЅР° Р·Р°РіРѕР»РѕРІРєРё С‚Р°Р±Р»РёС†С‹
+	long ColPressed,RowPressed; //РґР»СЏ РІРёР·СѓР°Р»РёР·Р°С†РёРё РЅР°Р¶Р°С‚РёР№ РЅР° Р·Р°РіРѕР»РѕРІРєРё С‚Р°Р±Р»РёС†С‹
+	long Clones;                //РѕР±С‰РµРµ РєРѕР»РёС‡РµСЃС‚РІРѕ РєР»РѕРЅРѕРІ РІ С‚Р°Р±Р»РёС†Рµ
+	TCloneItem *datOracle;      //Р”РІСѓРјРµСЂРЅС‹Р№ РјР°СЃСЃРёРІ РІСЃРµРіРґР° СЃРѕРґРµСЂР¶Р°С‰РёР№ СЃСѓРјРјР°СЂРЅС‹Р№ РєР»РѕРЅ Рё СЃС‚РѕР»Р±РµС†
+					            //РљР»РѕРЅС‹ СЂР°СЃРїРѕР»РѕР¶РµРЅС‹ РїРѕ СЃС‚РѕР»Р±С†Р°Рј.
     bool IsColorAssigned( int PPInd );
     void AssignColor( int PPInd );
     TColor ColorByClonId( int PPInd );
@@ -39,62 +39,62 @@ public:
     __fastcall T2xDrawTableChartInterior(TComponent* Owner,TSplitterForm *,TFormDescr*,Classes::TNotifyEvent );
 	virtual __fastcall ~T2xDrawTableChartInterior(void);
 
-	//Выдача fd , с возможность проведения предварительной коррекции
+	//Р’С‹РґР°С‡Р° fd , СЃ РІРѕР·РјРѕР¶РЅРѕСЃС‚СЊ РїСЂРѕРІРµРґРµРЅРёСЏ РїСЂРµРґРІР°СЂРёС‚РµР»СЊРЅРѕР№ РєРѕСЂСЂРµРєС†РёРё
 	virtual TFormDescr* __fastcall GetFormDescr(void);
 
-	//Снятие со SplitterFom и размещение на SplitterFom таблицы и графика,
-	//вызываемтся при обновлении TBaseMonitorForm
+	//РЎРЅСЏС‚РёРµ СЃРѕ SplitterFom Рё СЂР°Р·РјРµС‰РµРЅРёРµ РЅР° SplitterFom С‚Р°Р±Р»РёС†С‹ Рё РіСЂР°С„РёРєР°,
+	//РІС‹Р·С‹РІР°РµРјС‚СЃСЏ РїСЂРё РѕР±РЅРѕРІР»РµРЅРёРё TBaseMonitorForm
 	void __fastcall Destroy(void);
 	virtual void __fastcall Place(void);
 
-	//Установить новую компановку
+	//РЈСЃС‚Р°РЅРѕРІРёС‚СЊ РЅРѕРІСѓСЋ РєРѕРјРїР°РЅРѕРІРєСѓ
 	virtual bool __fastcall setSplit(void);
 
-	//Возвращает количесиво подколонок для формы
+	//Р’РѕР·РІСЂР°С‰Р°РµС‚ РєРѕР»РёС‡РµСЃРёРІРѕ РїРѕРґРєРѕР»РѕРЅРѕРє РґР»СЏ С„РѕСЂРјС‹
 	virtual long __fastcall SubColumns(void);
 
-	//Возвращает имена подколонок для формы
+	//Р’РѕР·РІСЂР°С‰Р°РµС‚ РёРјРµРЅР° РїРѕРґРєРѕР»РѕРЅРѕРє РґР»СЏ С„РѕСЂРјС‹
 
  virtual AnsiString __fastcall GetSubColumnsNames(int);
 
-	//Обновление данных из базы
-	//NameAlert=-1 для обновления в любом случае
+	//РћР±РЅРѕРІР»РµРЅРёРµ РґР°РЅРЅС‹С… РёР· Р±Р°Р·С‹
+	//NameAlert=-1 РґР»СЏ РѕР±РЅРѕРІР»РµРЅРёСЏ РІ Р»СЋР±РѕРј СЃР»СѓС‡Р°Рµ
 	virtual void __fastcall Invalidate( int Table );
 	virtual void __fastcall refreshData( int Table,TOraQuery *qwInter );
 	virtual void __fastcall selectData( TOraQuery *qwInter );
 
-	//Получает данные о считываемой таблице
+	//РџРѕР»СѓС‡Р°РµС‚ РґР°РЅРЅС‹Рµ Рѕ СЃС‡РёС‚С‹РІР°РµРјРѕР№ С‚Р°Р±Р»РёС†Рµ
 	virtual void __fastcall formDescr( void );
 
-	//Формирует таблицу, располагая клоны по столбцам
+	//Р¤РѕСЂРјРёСЂСѓРµС‚ С‚Р°Р±Р»РёС†Сѓ, СЂР°СЃРїРѕР»Р°РіР°СЏ РєР»РѕРЅС‹ РїРѕ СЃС‚РѕР»Р±С†Р°Рј
 	virtual void __fastcall clonesInColumns(void);
 	virtual void __fastcall dataInColumns(void);
 
-	//Формирует таблицу, располагая клоны по строкам
+	//Р¤РѕСЂРјРёСЂСѓРµС‚ С‚Р°Р±Р»РёС†Сѓ, СЂР°СЃРїРѕР»Р°РіР°СЏ РєР»РѕРЅС‹ РїРѕ СЃС‚СЂРѕРєР°Рј
 	virtual void __fastcall clonesInRows(void);
 	virtual void __fastcall dataInRows(void);
 
-	//Строит столбцевой график для указанного профиля
+	//РЎС‚СЂРѕРёС‚ СЃС‚РѕР»Р±С†РµРІРѕР№ РіСЂР°С„РёРє РґР»СЏ СѓРєР°Р·Р°РЅРЅРѕРіРѕ РїСЂРѕС„РёР»СЏ
 	virtual void __fastcall ChartFXColumns(long ARow);
 
-	//Строит линейный график для указанного клона
+	//РЎС‚СЂРѕРёС‚ Р»РёРЅРµР№РЅС‹Р№ РіСЂР°С„РёРє РґР»СЏ СѓРєР°Р·Р°РЅРЅРѕРіРѕ РєР»РѕРЅР°
 	virtual void __fastcall ChartFXLines(long AClone);
 
-	//Интерпритирует счелчок пользователь на таблице,
-	//полагая что клоны расположены по столбцам
-	//и проводит композицию или декомпозицию
+	//РРЅС‚РµСЂРїСЂРёС‚РёСЂСѓРµС‚ СЃС‡РµР»С‡РѕРє РїРѕР»СЊР·РѕРІР°С‚РµР»СЊ РЅР° С‚Р°Р±Р»РёС†Рµ,
+	//РїРѕР»Р°РіР°СЏ С‡С‚Рѕ РєР»РѕРЅС‹ СЂР°СЃРїРѕР»РѕР¶РµРЅС‹ РїРѕ СЃС‚РѕР»Р±С†Р°Рј
+	//Рё РїСЂРѕРІРѕРґРёС‚ РєРѕРјРїРѕР·РёС†РёСЋ РёР»Рё РґРµРєРѕРјРїРѕР·РёС†РёСЋ
 	virtual void __fastcall clickComposition(long ACol, long ARow );
 
-	//Интерпритирует счелчок пользователь на таблице,
-	//полагая что клоны расположены по столбцам
-	//и строит график профиля или распределения
+	//РРЅС‚РµСЂРїСЂРёС‚РёСЂСѓРµС‚ СЃС‡РµР»С‡РѕРє РїРѕР»СЊР·РѕРІР°С‚РµР»СЊ РЅР° С‚Р°Р±Р»РёС†Рµ,
+	//РїРѕР»Р°РіР°СЏ С‡С‚Рѕ РєР»РѕРЅС‹ СЂР°СЃРїРѕР»РѕР¶РµРЅС‹ РїРѕ СЃС‚РѕР»Р±С†Р°Рј
+	//Рё СЃС‚СЂРѕРёС‚ РіСЂР°С„РёРє РїСЂРѕС„РёР»СЏ РёР»Рё СЂР°СЃРїСЂРµРґРµР»РµРЅРёСЏ
 	virtual void __fastcall clickGraphics(long ACol, long ARow );
 
-	//Событийные обработчики
+	//РЎРѕР±С‹С‚РёР№РЅС‹Рµ РѕР±СЂР°Р±РѕС‚С‡РёРєРё
 	void __fastcall OnClickPanel(System::TObject* Sender);
 	void __fastcall OnKeyUp(TObject *Sender, WORD &Key,TShiftState Shift);
 	void __fastcall ChartFXLinesClick(TObject *Sender);
-  void __fastcall IsValidClick(TObject *Sender);//Достоверность
+  void __fastcall IsValidClick(TObject *Sender);//Р”РѕСЃС‚РѕРІРµСЂРЅРѕСЃС‚СЊ
 	virtual void __fastcall PopupMenuBaseFormPopup(TObject *Sender);
 	virtual void __fastcall DrawTableMouseDown(TObject *Sender,TMouseButton Button,
 		TShiftState Shift, int X, int Y);
@@ -113,15 +113,15 @@ public:
     void __fastcall IncreaseScaleValue( double & PPYMinVal, double & PPYMaxVal );
     //e
   void __fastcall ShowDetailPoint(long ColPressed, long RowPressed );
-  //GRB ADD 12.07.2019  - является ли дата в pfd->DateTime днём перевода времени за monthNumber
+  //GRB ADD 12.07.2019  - СЏРІР»СЏРµС‚СЃСЏ Р»Рё РґР°С‚Р° РІ pfd->DateTime РґРЅС‘Рј РїРµСЂРµРІРѕРґР° РІСЂРµРјРµРЅРё Р·Р° monthNumber
   bool __fastcall IsDayShiftMonth (TFormDescr *pfd, int monthNumber);
   // END GRB ADD
-  //GRB ADD 26.08.2021 - два метода для автоформатирования по содержимому фиксированых колонок - исправление бага с обрезанием длинных имён в колонках
+  //GRB ADD 26.08.2021 - РґРІР° РјРµС‚РѕРґР° РґР»СЏ Р°РІС‚РѕС„РѕСЂРјР°С‚РёСЂРѕРІР°РЅРёСЏ РїРѕ СЃРѕРґРµСЂР¶РёРјРѕРјСѓ С„РёРєСЃРёСЂРѕРІР°РЅС‹С… РєРѕР»РѕРЅРѕРє - РёСЃРїСЂР°РІР»РµРЅРёРµ Р±Р°РіР° СЃ РѕР±СЂРµР·Р°РЅРёРµРј РґР»РёРЅРЅС‹С… РёРјС‘РЅ РІ РєРѕР»РѕРЅРєР°С…
   void __fastcall AutoSizeColGRB (TDrawTable* tsg, int columnIndex);
   void __fastcall AutoSizeNameOnly (TDrawTable* tsg);
-  //GRB ADD 27.08.2021 - берём из реестра размер шрифта и тип шрифта для того чтобы измерить сколько в длинну колонка с именем объекта занимает пикселей
+  //GRB ADD 27.08.2021 - Р±РµСЂС‘Рј РёР· СЂРµРµСЃС‚СЂР° СЂР°Р·РјРµСЂ С€СЂРёС„С‚Р° Рё С‚РёРї С€СЂРёС„С‚Р° РґР»СЏ С‚РѕРіРѕ С‡С‚РѕР±С‹ РёР·РјРµСЂРёС‚СЊ СЃРєРѕР»СЊРєРѕ РІ РґР»РёРЅРЅСѓ РєРѕР»РѕРЅРєР° СЃ РёРјРµРЅРµРј РѕР±СЉРµРєС‚Р° Р·Р°РЅРёРјР°РµС‚ РїРёРєСЃРµР»РµР№
   TFont * __fastcall GetActiveFont4MonitorFromReg ();
-  //GRB ADD 27.08.2021 - подхватываем ресайз формы чтобы при отобраажении колонки монитора по ширине подхватывать и перерисовывать колонку с именем объекта
+  //GRB ADD 27.08.2021 - РїРѕРґС…РІР°С‚С‹РІР°РµРј СЂРµСЃР°Р№Р· С„РѕСЂРјС‹ С‡С‚РѕР±С‹ РїСЂРё РѕС‚РѕР±СЂР°Р°Р¶РµРЅРёРё РєРѕР»РѕРЅРєРё РјРѕРЅРёС‚РѕСЂР° РїРѕ С€РёСЂРёРЅРµ РїРѕРґС…РІР°С‚С‹РІР°С‚СЊ Рё РїРµСЂРµСЂРёСЃРѕРІС‹РІР°С‚СЊ РєРѕР»РѕРЅРєСѓ СЃ РёРјРµРЅРµРј РѕР±СЉРµРєС‚Р°
   void __fastcall FormShow(TObject *Sender);
   bool __fastcall GetContainedWidthStatusFromReg();
 protected:

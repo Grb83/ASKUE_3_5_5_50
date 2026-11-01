@@ -164,7 +164,7 @@ private:	// User declarations
   TStringList* cloneMaketGroupsInfo;
   TStringList* maketListPoints;
   AnsiString delim;
-  // Тут секция с переменными и методами для работы с многостолбцовым макетом
+  // РўСѓС‚ СЃРµРєС†РёСЏ СЃ РїРµСЂРµРјРµРЅРЅС‹РјРё Рё РјРµС‚РѕРґР°РјРё РґР»СЏ СЂР°Р±РѕС‚С‹ СЃ РјРЅРѕРіРѕСЃС‚РѕР»Р±С†РѕРІС‹Рј РјР°РєРµС‚РѕРј
   bool modeManyColumn;
   int tableNumbers;
   int columnNumbers; //
@@ -188,12 +188,12 @@ public:		// User declarations
   void __fastcall vRefresh(TObject *Sender);
   void __fastcall vSaveToFile(TObject *Sender,AnsiString sTitle=AnsiString(""));
   void __fastcall PrintData(TObject *Sender,AnsiString sTitle=AnsiString(""));
-  //21.12.2108 GRB ADD - Для тестового вывода 3-х таблиц
+  //21.12.2108 GRB ADD - Р”Р»СЏ С‚РµСЃС‚РѕРІРѕРіРѕ РІС‹РІРѕРґР° 3-С… С‚Р°Р±Р»РёС†
   void __fastcall vRefreshTriada(TObject *Sender);
   void __fastcall SaveMultyTableToFileClick (TObject *Sender);
   AnsiString __fastcall getSeparator ();
   AnsiString __fastcall formFullValue(AnsiString row_value, AnsiString separator, int digitNumber);
-  // Тут секция с переменными и методами для работы с принятым макетом 30902
+  // РўСѓС‚ СЃРµРєС†РёСЏ СЃ РїРµСЂРµРјРµРЅРЅС‹РјРё Рё РјРµС‚РѕРґР°РјРё РґР»СЏ СЂР°Р±РѕС‚С‹ СЃ РїСЂРёРЅСЏС‚С‹Рј РјР°РєРµС‚РѕРј 30902
  bool mode30902_receive;
  TStringList *maketRow;
  int block_size_902;

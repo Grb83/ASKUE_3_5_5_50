@@ -48,7 +48,7 @@ private:	// User declarations
    }TASKLIST;
    void __fastcall RunTask(AnsiString Name, int Id, int);
 public:		// User declarations
-   bool __fastcall ReadTreeNode(TTreeNode* NodeParent);// Читает ветку дерева
+   bool __fastcall ReadTreeNode(TTreeNode* NodeParent);// Р§РёС‚Р°РµС‚ РІРµС‚РєСѓ РґРµСЂРµРІР°
 	__fastcall TTaskMenuForm(TComponent* Owner);
 protected:
    __fastcall ~TTaskMenuForm();

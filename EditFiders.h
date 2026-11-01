@@ -28,8 +28,8 @@
 
 #define COUNTNULLLOSS  16
 #define COUNTNULLPOINTS  8
-#define UKRAINE_ZONE "Торговая зона Украина"
-#define BURSHTIN_ZONE "Торговая зона Бурштын"
+#define UKRAINE_ZONE "РўРѕСЂРіРѕРІР°СЏ Р·РѕРЅР° РЈРєСЂР°РёРЅР°"
+#define BURSHTIN_ZONE "РўРѕСЂРіРѕРІР°СЏ Р·РѕРЅР° Р‘СѓСЂС€С‚С‹РЅ"
 #define UKRAINE_ZONE_CODE "62Y-MGA-00000--W"
 #define BURSHTIN_ZONE_CODE "62Y-MGA-00001--S"
 #define PANEL31_HEIGHT_SMALL 49
@@ -400,15 +400,15 @@ __published:	// IDE-managed Components
   TEdit *lbId;
   TLabel *lbCapStateOFF;
   TLabel *lbStateOFF;
-        TOraQuery *oqGetCompanyInfo; //запрос на выборку данных из базы о кодах и названиях торговых зон
-        TEdit *Edit28; //Поле ввода EIC-кода для обобщённой точки учёта (у которой с_type = 4)
-        TLabel *Label46;// "Код EIC" для точки
-        TRadioGroup *RadioGroup2; //Выбор входит или нет точка в EIC на форме редактирования точки (2-я закладка Основные Параметры) ItemIndex = 0 - не входит, 1 - входит
-        TRadioGroup *RadioGroup1; //Выбор с_type при вводе группы с EIC и показ пользователю иерархии при просмотре группы. ItemIndex = 0 - торговая зона, 1 - область учёта, 2 - потребитель.
-        TEdit *Edit26;  //Поле ввода EIC-кода для группы учёта (у которой с_type = [1,2,3])
-        TLabel *Label41; //Код EIC
-        TComboBox *ComboBox1;// Выбор имени торговой зоны Украина-Бурштын при вводе группы с c_type = 1. В обработчике оnChange для него меняется код торговой зоны в Edit26 и Enabled меняется на false.
-        TLabel *Label44; // "Торговая зона"
+        TOraQuery *oqGetCompanyInfo; //Р·Р°РїСЂРѕСЃ РЅР° РІС‹Р±РѕСЂРєСѓ РґР°РЅРЅС‹С… РёР· Р±Р°Р·С‹ Рѕ РєРѕРґР°С… Рё РЅР°Р·РІР°РЅРёСЏС… С‚РѕСЂРіРѕРІС‹С… Р·РѕРЅ
+        TEdit *Edit28; //РџРѕР»Рµ РІРІРѕРґР° EIC-РєРѕРґР° РґР»СЏ РѕР±РѕР±С‰С‘РЅРЅРѕР№ С‚РѕС‡РєРё СѓС‡С‘С‚Р° (Сѓ РєРѕС‚РѕСЂРѕР№ СЃ_type = 4)
+        TLabel *Label46;// "РљРѕРґ EIC" РґР»СЏ С‚РѕС‡РєРё
+        TRadioGroup *RadioGroup2; //Р’С‹Р±РѕСЂ РІС…РѕРґРёС‚ РёР»Рё РЅРµС‚ С‚РѕС‡РєР° РІ EIC РЅР° С„РѕСЂРјРµ СЂРµРґР°РєС‚РёСЂРѕРІР°РЅРёСЏ С‚РѕС‡РєРё (2-СЏ Р·Р°РєР»Р°РґРєР° РћСЃРЅРѕРІРЅС‹Рµ РџР°СЂР°РјРµС‚СЂС‹) ItemIndex = 0 - РЅРµ РІС…РѕРґРёС‚, 1 - РІС…РѕРґРёС‚
+        TRadioGroup *RadioGroup1; //Р’С‹Р±РѕСЂ СЃ_type РїСЂРё РІРІРѕРґРµ РіСЂСѓРїРїС‹ СЃ EIC Рё РїРѕРєР°Р· РїРѕР»СЊР·РѕРІР°С‚РµР»СЋ РёРµСЂР°СЂС…РёРё РїСЂРё РїСЂРѕСЃРјРѕС‚СЂРµ РіСЂСѓРїРїС‹. ItemIndex = 0 - С‚РѕСЂРіРѕРІР°СЏ Р·РѕРЅР°, 1 - РѕР±Р»Р°СЃС‚СЊ СѓС‡С‘С‚Р°, 2 - РїРѕС‚СЂРµР±РёС‚РµР»СЊ.
+        TEdit *Edit26;  //РџРѕР»Рµ РІРІРѕРґР° EIC-РєРѕРґР° РґР»СЏ РіСЂСѓРїРїС‹ СѓС‡С‘С‚Р° (Сѓ РєРѕС‚РѕСЂРѕР№ СЃ_type = [1,2,3])
+        TLabel *Label41; //РљРѕРґ EIC
+        TComboBox *ComboBox1;// Р’С‹Р±РѕСЂ РёРјРµРЅРё С‚РѕСЂРіРѕРІРѕР№ Р·РѕРЅС‹ РЈРєСЂР°РёРЅР°-Р‘СѓСЂС€С‚С‹РЅ РїСЂРё РІРІРѕРґРµ РіСЂСѓРїРїС‹ СЃ c_type = 1. Р’ РѕР±СЂР°Р±РѕС‚С‡РёРєРµ РѕnChange РґР»СЏ РЅРµРіРѕ РјРµРЅСЏРµС‚СЃСЏ РєРѕРґ С‚РѕСЂРіРѕРІРѕР№ Р·РѕРЅС‹ РІ Edit26 Рё Enabled РјРµРЅСЏРµС‚СЃСЏ РЅР° false.
+        TLabel *Label44; // "РўРѕСЂРіРѕРІР°СЏ Р·РѕРЅР°"
    //END ADD
     void __fastcall TreeView1Expanding(TObject *Sender, TTreeNode *Node,
            bool &AllowExpansion);
@@ -494,23 +494,23 @@ __published:	// IDE-managed Components
   void __fastcall mnONOFFClick(TObject *Sender);
   //GRB ADD 30.05.2019
 
-  void __fastcall RadioGroup1Click(TObject *Sender);//выбор для группы иерархии вхождения в mms (1 - торговая зона, 2 - область учёта, 3 - поставщик)
-  void __fastcall EICCheckboxClick (TObject *Sender);//обработчик динамического чекбокса управляющего признаком вхождения в EIC
-  void __fastcall addEICCheckBoxOnPanel (TObject *Sender); //добавляем checkbox(если нету) на панель динамикой
-  void __fastcall removeEICCheckBoxOnPanel (TObject *Sender);//убираем checkbox(если есть) с панели динамикой
-        void __fastcall RadioGroup2Click(TObject *Sender);//выбор для точки признака вхождения/не вхождения в EIC
-  TStringList* __fastcall getTradeZones (AnsiString codeZone1, AnsiString codeZone2, bool is1, bool is2); // собираем список торговых зон (Украина-Бурштын по вытянутому из базы в oqGetCompanyInfo)
-  void __fastcall hideTradeZones();//скрываем комбо-бокс с торговыми зонами если это не торговые зоны
-  void __fastcall showTradeZones();//показываем комбо-бокс с торговыми зонами если стоим на "торговой зоне" в радиогруппе1
-  AnsiString __fastcall getCodeZoneByName (AnsiString zoneName); // код торговой зоны (Украина-Бурштын) по её имени. Берётся не из базы а из констант, потенциальная дыра если будут другие торговые зоны
-  void __fastcall changePanel31Height(int state);//меняет ширину панели при переходе в дереве на группу в 3 возможных состояния - [1 - имя и краткое имя(49px), 2 - оно же + чекбокс ММС EICCheckbox - 85 px, 3 - всю формаму с полями EIC - 289 px
-  int __fastcall getPanel31HeightState (); //по аналогии с предыдущей вертает какое текущее состояние у панели - [1,2,3]
-  void __fastcall ComboBox1Change(TObject *Sender);// подтяжка кода торговой зоны в поле кода для выбранной зоны при переключении
+  void __fastcall RadioGroup1Click(TObject *Sender);//РІС‹Р±РѕСЂ РґР»СЏ РіСЂСѓРїРїС‹ РёРµСЂР°СЂС…РёРё РІС…РѕР¶РґРµРЅРёСЏ РІ mms (1 - С‚РѕСЂРіРѕРІР°СЏ Р·РѕРЅР°, 2 - РѕР±Р»Р°СЃС‚СЊ СѓС‡С‘С‚Р°, 3 - РїРѕСЃС‚Р°РІС‰РёРє)
+  void __fastcall EICCheckboxClick (TObject *Sender);//РѕР±СЂР°Р±РѕС‚С‡РёРє РґРёРЅР°РјРёС‡РµСЃРєРѕРіРѕ С‡РµРєР±РѕРєСЃР° СѓРїСЂР°РІР»СЏСЋС‰РµРіРѕ РїСЂРёР·РЅР°РєРѕРј РІС…РѕР¶РґРµРЅРёСЏ РІ EIC
+  void __fastcall addEICCheckBoxOnPanel (TObject *Sender); //РґРѕР±Р°РІР»СЏРµРј checkbox(РµСЃР»Рё РЅРµС‚Сѓ) РЅР° РїР°РЅРµР»СЊ РґРёРЅР°РјРёРєРѕР№
+  void __fastcall removeEICCheckBoxOnPanel (TObject *Sender);//СѓР±РёСЂР°РµРј checkbox(РµСЃР»Рё РµСЃС‚СЊ) СЃ РїР°РЅРµР»Рё РґРёРЅР°РјРёРєРѕР№
+        void __fastcall RadioGroup2Click(TObject *Sender);//РІС‹Р±РѕСЂ РґР»СЏ С‚РѕС‡РєРё РїСЂРёР·РЅР°РєР° РІС…РѕР¶РґРµРЅРёСЏ/РЅРµ РІС…РѕР¶РґРµРЅРёСЏ РІ EIC
+  TStringList* __fastcall getTradeZones (AnsiString codeZone1, AnsiString codeZone2, bool is1, bool is2); // СЃРѕР±РёСЂР°РµРј СЃРїРёСЃРѕРє С‚РѕСЂРіРѕРІС‹С… Р·РѕРЅ (РЈРєСЂР°РёРЅР°-Р‘СѓСЂС€С‚С‹РЅ РїРѕ РІС‹С‚СЏРЅСѓС‚РѕРјСѓ РёР· Р±Р°Р·С‹ РІ oqGetCompanyInfo)
+  void __fastcall hideTradeZones();//СЃРєСЂС‹РІР°РµРј РєРѕРјР±Рѕ-Р±РѕРєСЃ СЃ С‚РѕСЂРіРѕРІС‹РјРё Р·РѕРЅР°РјРё РµСЃР»Рё СЌС‚Рѕ РЅРµ С‚РѕСЂРіРѕРІС‹Рµ Р·РѕРЅС‹
+  void __fastcall showTradeZones();//РїРѕРєР°Р·С‹РІР°РµРј РєРѕРјР±Рѕ-Р±РѕРєСЃ СЃ С‚РѕСЂРіРѕРІС‹РјРё Р·РѕРЅР°РјРё РµСЃР»Рё СЃС‚РѕРёРј РЅР° "С‚РѕСЂРіРѕРІРѕР№ Р·РѕРЅРµ" РІ СЂР°РґРёРѕРіСЂСѓРїРїРµ1
+  AnsiString __fastcall getCodeZoneByName (AnsiString zoneName); // РєРѕРґ С‚РѕСЂРіРѕРІРѕР№ Р·РѕРЅС‹ (РЈРєСЂР°РёРЅР°-Р‘СѓСЂС€С‚С‹РЅ) РїРѕ РµС‘ РёРјРµРЅРё. Р‘РµСЂС‘С‚СЃСЏ РЅРµ РёР· Р±Р°Р·С‹ Р° РёР· РєРѕРЅСЃС‚Р°РЅС‚, РїРѕС‚РµРЅС†РёР°Р»СЊРЅР°СЏ РґС‹СЂР° РµСЃР»Рё Р±СѓРґСѓС‚ РґСЂСѓРіРёРµ С‚РѕСЂРіРѕРІС‹Рµ Р·РѕРЅС‹
+  void __fastcall changePanel31Height(int state);//РјРµРЅСЏРµС‚ С€РёСЂРёРЅСѓ РїР°РЅРµР»Рё РїСЂРё РїРµСЂРµС…РѕРґРµ РІ РґРµСЂРµРІРµ РЅР° РіСЂСѓРїРїСѓ РІ 3 РІРѕР·РјРѕР¶РЅС‹С… СЃРѕСЃС‚РѕСЏРЅРёСЏ - [1 - РёРјСЏ Рё РєСЂР°С‚РєРѕРµ РёРјСЏ(49px), 2 - РѕРЅРѕ Р¶Рµ + С‡РµРєР±РѕРєСЃ РњРњРЎ EICCheckbox - 85 px, 3 - РІСЃСЋ С„РѕСЂРјР°РјСѓ СЃ РїРѕР»СЏРјРё EIC - 289 px
+  int __fastcall getPanel31HeightState (); //РїРѕ Р°РЅР°Р»РѕРіРёРё СЃ РїСЂРµРґС‹РґСѓС‰РµР№ РІРµСЂС‚Р°РµС‚ РєР°РєРѕРµ С‚РµРєСѓС‰РµРµ СЃРѕСЃС‚РѕСЏРЅРёРµ Сѓ РїР°РЅРµР»Рё - [1,2,3]
+  void __fastcall ComboBox1Change(TObject *Sender);// РїРѕРґС‚СЏР¶РєР° РєРѕРґР° С‚РѕСЂРіРѕРІРѕР№ Р·РѕРЅС‹ РІ РїРѕР»Рµ РєРѕРґР° РґР»СЏ РІС‹Р±СЂР°РЅРЅРѕР№ Р·РѕРЅС‹ РїСЂРё РїРµСЂРµРєР»СЋС‡РµРЅРёРё
 
   //END ADD
   private:	// User declarations
     //GRB ADD 30.05.2019
-  //структура, использующаяся в 2-х контекстах - для вычитки спецификации предприятия - тогда используются все поля - и для добавки mms информации в элемент дерева - тогда в ней заполняются ТОЛЬКО поля veic_code, c_type, mms
+  //СЃС‚СЂСѓРєС‚СѓСЂР°, РёСЃРїРѕР»СЊР·СѓСЋС‰Р°СЏСЃСЏ РІ 2-С… РєРѕРЅС‚РµРєСЃС‚Р°С… - РґР»СЏ РІС‹С‡РёС‚РєРё СЃРїРµС†РёС„РёРєР°С†РёРё РїСЂРµРґРїСЂРёСЏС‚РёСЏ - С‚РѕРіРґР° РёСЃРїРѕР»СЊР·СѓСЋС‚СЃСЏ РІСЃРµ РїРѕР»СЏ - Рё РґР»СЏ РґРѕР±Р°РІРєРё mms РёРЅС„РѕСЂРјР°С†РёРё РІ СЌР»РµРјРµРЅС‚ РґРµСЂРµРІР° - С‚РѕРіРґР° РІ РЅРµР№ Р·Р°РїРѕР»РЅСЏСЋС‚СЃСЏ РўРћР›Р¬РљРћ РїРѕР»СЏ veic_code, c_type, mms
   struct EIC_INFO{
   AnsiString vfullname;
   AnsiString vshortname;
@@ -523,9 +523,9 @@ __published:	// IDE-managed Components
   bool isTradeZoneBrsht;
   };
   //EIC_INFO getCompanyInfo (TObject *Sender);
-  EIC_INFO getCompanyInfoGlobal (TObject *Sender, TStringList** companyList); //формирует как globalCompanyInfo в начале работы так и tradeZonesGlobalList для ComboBox1
-  EIC_INFO globalCompanyInfo; // хранит единожды вытянутое при помощи getCompanyInfoGlobal
-  TStringList* tradeZonesGlobalList;  // хранит единожды вытянутый списк торговых зон при помощи getCompanyInfoGlobal
+  EIC_INFO getCompanyInfoGlobal (TObject *Sender, TStringList** companyList); //С„РѕСЂРјРёСЂСѓРµС‚ РєР°Рє globalCompanyInfo РІ РЅР°С‡Р°Р»Рµ СЂР°Р±РѕС‚С‹ С‚Р°Рє Рё tradeZonesGlobalList РґР»СЏ ComboBox1
+  EIC_INFO globalCompanyInfo; // С…СЂР°РЅРёС‚ РµРґРёРЅРѕР¶РґС‹ РІС‹С‚СЏРЅСѓС‚РѕРµ РїСЂРё РїРѕРјРѕС‰Рё getCompanyInfoGlobal
+  TStringList* tradeZonesGlobalList;  // С…СЂР°РЅРёС‚ РµРґРёРЅРѕР¶РґС‹ РІС‹С‚СЏРЅСѓС‚С‹Р№ СЃРїРёСЃРє С‚РѕСЂРіРѕРІС‹С… Р·РѕРЅ РїСЂРё РїРѕРјРѕС‰Рё getCompanyInfoGlobal
   //END ADD
     TVirtualTable *VT_Data;
     struct DELLOSSINFO{
@@ -533,45 +533,45 @@ __published:	// IDE-managed Components
         long mid;
         DELLOSSINFO(){ZeroMemory(this,sizeof(*this));}
     };
-    struct POINTSDIV{ //дерево обьектов учета
+    struct POINTSDIV{ //РґРµСЂРµРІРѕ РѕР±СЊРµРєС‚РѕРІ СѓС‡РµС‚Р°
         long Mid;
         long tmpMid;
-        long Type; //= 1 - enterprise, 2-station, 3-point , 4-точка учета
+        long Type; //= 1 - enterprise, 2-station, 3-point , 4-С‚РѕС‡РєР° СѓС‡РµС‚Р°
         char Name[148];
         char Short_Name[48];
-        long ER_POSITION;	//NUMBER, активная принятая энергия
-        long Q1_POSITION;	//NUMBER, реактивная принятая энергия
-        long ED_POSITION;	//NUMBER, активная отданая энергия
-        long Q3_POSITION;	//NUMBER, реактивная отданая энергия
-        long SMART;	//VARCHAR2(1), признак интел. счетчика
-        long Q1234;	//VARCHAR2(1),реактивная энергия по квадрантам
-        int CANAL;		//NUMBER, канал
-        char CELLNUM[10];	    //NUMBER, номер ячейки
-        double POWER1;		//NUMBER, напряжение перв
-        double POWER2;		//NUMBER, напряжение втор
-        double CURRENT1;	//NUMBER, А перв
-        double CURRENT2;	//NUMBER, А втор
-        double KC;		    //NUMBER, расчетный коэф.
-        double MeterKC;		    //NUMBER, коэф. счетчика
-        long nabs;            //заземленная нейтраль
+        long ER_POSITION;	//NUMBER, Р°РєС‚РёРІРЅР°СЏ РїСЂРёРЅСЏС‚Р°СЏ СЌРЅРµСЂРіРёСЏ
+        long Q1_POSITION;	//NUMBER, СЂРµР°РєС‚РёРІРЅР°СЏ РїСЂРёРЅСЏС‚Р°СЏ СЌРЅРµСЂРіРёСЏ
+        long ED_POSITION;	//NUMBER, Р°РєС‚РёРІРЅР°СЏ РѕС‚РґР°РЅР°СЏ СЌРЅРµСЂРіРёСЏ
+        long Q3_POSITION;	//NUMBER, СЂРµР°РєС‚РёРІРЅР°СЏ РѕС‚РґР°РЅР°СЏ СЌРЅРµСЂРіРёСЏ
+        long SMART;	//VARCHAR2(1), РїСЂРёР·РЅР°Рє РёРЅС‚РµР». СЃС‡РµС‚С‡РёРєР°
+        long Q1234;	//VARCHAR2(1),СЂРµР°РєС‚РёРІРЅР°СЏ СЌРЅРµСЂРіРёСЏ РїРѕ РєРІР°РґСЂР°РЅС‚Р°Рј
+        int CANAL;		//NUMBER, РєР°РЅР°Р»
+        char CELLNUM[10];	    //NUMBER, РЅРѕРјРµСЂ СЏС‡РµР№РєРё
+        double POWER1;		//NUMBER, РЅР°РїСЂСЏР¶РµРЅРёРµ РїРµСЂРІ
+        double POWER2;		//NUMBER, РЅР°РїСЂСЏР¶РµРЅРёРµ РІС‚РѕСЂ
+        double CURRENT1;	//NUMBER, Рђ РїРµСЂРІ
+        double CURRENT2;	//NUMBER, Рђ РІС‚РѕСЂ
+        double KC;		    //NUMBER, СЂР°СЃС‡РµС‚РЅС‹Р№ РєРѕСЌС„.
+        double MeterKC;		    //NUMBER, РєРѕСЌС„. СЃС‡РµС‚С‡РёРєР°
+        long nabs;            //Р·Р°Р·РµРјР»РµРЅРЅР°СЏ РЅРµР№С‚СЂР°Р»СЊ
         long Tag;
-        char v_info[256]; // Доп. инфо. используется для L&G
-        long editing;// 0 -Не трогали, 1-трогали и скопировали, 2-трогали и не скопировали
+        char v_info[256]; // Р”РѕРї. РёРЅС„Рѕ. РёСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ РґР»СЏ L&G
+        long editing;// 0 -РќРµ С‚СЂРѕРіР°Р»Рё, 1-С‚СЂРѕРіР°Р»Рё Рё СЃРєРѕРїРёСЂРѕРІР°Р»Рё, 2-С‚СЂРѕРіР°Р»Рё Рё РЅРµ СЃРєРѕРїРёСЂРѕРІР°Р»Рё
         TList *pcounter;
         int editcount;
-        long ncalcbill;       //верифицировать суточные
-        long ncalcmonth;      //верифицировать месячные
-        long ninverted;//инверсия
-        long nDataWithOB;//Данные с учетом ОВ
-        long nswitch;//Обходник
-        long NLockSwitch;//не переходит на ОВ
-        long nlosstype;//Тип потерь
-        double nwh;//Время работы
-        double nfh;//Полное время работы
-        double nlineloss;//Потери в линии
-        double ntraloss;//Потери актив в трансформаторе
-        double ntrrloss;//Потери реактив в трансформаторе
-        short indic[COUNTNULLPOINTS];//    Флаги для контроля Tag,nfh, nwh, nlineloss, ntraloss, ntrrloss,ncurrpower,nmonthconsumpt
+        long ncalcbill;       //РІРµСЂРёС„РёС†РёСЂРѕРІР°С‚СЊ СЃСѓС‚РѕС‡РЅС‹Рµ
+        long ncalcmonth;      //РІРµСЂРёС„РёС†РёСЂРѕРІР°С‚СЊ РјРµСЃСЏС‡РЅС‹Рµ
+        long ninverted;//РёРЅРІРµСЂСЃРёСЏ
+        long nDataWithOB;//Р”Р°РЅРЅС‹Рµ СЃ СѓС‡РµС‚РѕРј РћР’
+        long nswitch;//РћР±С…РѕРґРЅРёРє
+        long NLockSwitch;//РЅРµ РїРµСЂРµС…РѕРґРёС‚ РЅР° РћР’
+        long nlosstype;//РўРёРї РїРѕС‚РµСЂСЊ
+        double nwh;//Р’СЂРµРјСЏ СЂР°Р±РѕС‚С‹
+        double nfh;//РџРѕР»РЅРѕРµ РІСЂРµРјСЏ СЂР°Р±РѕС‚С‹
+        double nlineloss;//РџРѕС‚РµСЂРё РІ Р»РёРЅРёРё
+        double ntraloss;//РџРѕС‚РµСЂРё Р°РєС‚РёРІ РІ С‚СЂР°РЅСЃС„РѕСЂРјР°С‚РѕСЂРµ
+        double ntrrloss;//РџРѕС‚РµСЂРё СЂРµР°РєС‚РёРІ РІ С‚СЂР°РЅСЃС„РѕСЂРјР°С‚РѕСЂРµ
+        short indic[COUNTNULLPOINTS];//    Р¤Р»Р°РіРё РґР»СЏ РєРѕРЅС‚СЂРѕР»СЏ Tag,nfh, nwh, nlineloss, ntraloss, ntrrloss,ncurrpower,nmonthconsumpt
         TList *ploss;
         DELLOSSINFO delloss[32];
         long countdelloss;
@@ -580,44 +580,44 @@ __published:	// IDE-managed Components
         long ncalcpointtype;
         TList *pwtimeinfo;
         int edittimeinfo;
-        long USDMid;// mid точки, которая является УСД для данной
-        char USDText[256];// текст, информация о точке
-        bool fUSD; // признак того, что точка является УСД для других точек
+        long USDMid;// mid С‚РѕС‡РєРё, РєРѕС‚РѕСЂР°СЏ СЏРІР»СЏРµС‚СЃСЏ РЈРЎР” РґР»СЏ РґР°РЅРЅРѕР№
+        char USDText[256];// С‚РµРєСЃС‚, РёРЅС„РѕСЂРјР°С†РёСЏ Рѕ С‚РѕС‡РєРµ
+        bool fUSD; // РїСЂРёР·РЅР°Рє С‚РѕРіРѕ, С‡С‚Рѕ С‚РѕС‡РєР° СЏРІР»СЏРµС‚СЃСЏ РЈРЎР” РґР»СЏ РґСЂСѓРіРёС… С‚РѕС‡РµРє
         long nblock;
-        double ncurrpower;//Установленная мощнотсь
-        double nmonthconsumpt;//Среднемесячный расход
+        double ncurrpower;//РЈСЃС‚Р°РЅРѕРІР»РµРЅРЅР°СЏ РјРѕС‰РЅРѕС‚СЃСЊ
+        double nmonthconsumpt;//РЎСЂРµРґРЅРµРјРµСЃСЏС‡РЅС‹Р№ СЂР°СЃС…РѕРґ
         TList *pwcalcparam;
         int editcalcparam;
-        long DataAbsence; // Сигнализация отсутствия данных
-        long CommControl; // Коммерческий контроль
+        long DataAbsence; // РЎРёРіРЅР°Р»РёР·Р°С†РёСЏ РѕС‚СЃСѓС‚СЃС‚РІРёСЏ РґР°РЅРЅС‹С…
+        long CommControl; // РљРѕРјРјРµСЂС‡РµСЃРєРёР№ РєРѕРЅС‚СЂРѕР»СЊ
         short indCommControl;
-        long TechControl; // Технический контроль
+        long TechControl; // РўРµС…РЅРёС‡РµСЃРєРёР№ РєРѕРЅС‚СЂРѕР»СЊ
         short indTechControl;
-        long nMainPoint;      // Признак дублирующей точки
-        char MainText[256];// текст, информация о основной точке
-        long Group; //ид расчет группы
-        char GroupText[256];//расчет группа
-        bool fMain; // признак того, что точка является основной для других точек
-        char verifyParam[256];// Параметры верификации
-        char AddParams[512];// Доп. параметры
-        char ImportCode[64];// связной код импорта
-        char vCode[32];// код точки
+        long nMainPoint;      // РџСЂРёР·РЅР°Рє РґСѓР±Р»РёСЂСѓСЋС‰РµР№ С‚РѕС‡РєРё
+        char MainText[256];// С‚РµРєСЃС‚, РёРЅС„РѕСЂРјР°С†РёСЏ Рѕ РѕСЃРЅРѕРІРЅРѕР№ С‚РѕС‡РєРµ
+        long Group; //РёРґ СЂР°СЃС‡РµС‚ РіСЂСѓРїРїС‹
+        char GroupText[256];//СЂР°СЃС‡РµС‚ РіСЂСѓРїРїР°
+        bool fMain; // РїСЂРёР·РЅР°Рє С‚РѕРіРѕ, С‡С‚Рѕ С‚РѕС‡РєР° СЏРІР»СЏРµС‚СЃСЏ РѕСЃРЅРѕРІРЅРѕР№ РґР»СЏ РґСЂСѓРіРёС… С‚РѕС‡РµРє
+        char verifyParam[256];// РџР°СЂР°РјРµС‚СЂС‹ РІРµСЂРёС„РёРєР°С†РёРё
+        char AddParams[512];// Р”РѕРї. РїР°СЂР°РјРµС‚СЂС‹
+        char ImportCode[64];// СЃРІСЏР·РЅРѕР№ РєРѕРґ РёРјРїРѕСЂС‚Р°
+        char vCode[32];// РєРѕРґ С‚РѕС‡РєРё
         long nblocktime;
-        char verifyDay[32];// Параметры верификации суточных
-        double classTN; //Класс точности TN
-        double classTT; // Класс точности TT
-        int ntimezonew, ntimezones;//временной пояс зимой и летом
-        long OppositeMid;// id, информация о противоположной точке
-        char Opposite[256];// текст, информация о противоположной точке
-        int norder;//порядок в дереве по умолчанию 0
-        char formula [100];//Измерения вычисляемые по формулам
-        char vsource [32];// Наименование источника
-        int integr;//Период интеграции
-        long  rescanal;//Дополнительный связной номер
-        char vnote[256]; //Примечание
-        char vaccount[32];// Лиц счет
-        int lOFF;//Признак отключения  реле питания потребителя     1-отключен -0 включен иначе неизвестно 
-        char vOFF[32];// Дата отключения  реле питания потребителя
+        char verifyDay[32];// РџР°СЂР°РјРµС‚СЂС‹ РІРµСЂРёС„РёРєР°С†РёРё СЃСѓС‚РѕС‡РЅС‹С…
+        double classTN; //РљР»Р°СЃСЃ С‚РѕС‡РЅРѕСЃС‚Рё TN
+        double classTT; // РљР»Р°СЃСЃ С‚РѕС‡РЅРѕСЃС‚Рё TT
+        int ntimezonew, ntimezones;//РІСЂРµРјРµРЅРЅРѕР№ РїРѕСЏСЃ Р·РёРјРѕР№ Рё Р»РµС‚РѕРј
+        long OppositeMid;// id, РёРЅС„РѕСЂРјР°С†РёСЏ Рѕ РїСЂРѕС‚РёРІРѕРїРѕР»РѕР¶РЅРѕР№ С‚РѕС‡РєРµ
+        char Opposite[256];// С‚РµРєСЃС‚, РёРЅС„РѕСЂРјР°С†РёСЏ Рѕ РїСЂРѕС‚РёРІРѕРїРѕР»РѕР¶РЅРѕР№ С‚РѕС‡РєРµ
+        int norder;//РїРѕСЂСЏРґРѕРє РІ РґРµСЂРµРІРµ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ 0
+        char formula [100];//РР·РјРµСЂРµРЅРёСЏ РІС‹С‡РёСЃР»СЏРµРјС‹Рµ РїРѕ С„РѕСЂРјСѓР»Р°Рј
+        char vsource [32];// РќР°РёРјРµРЅРѕРІР°РЅРёРµ РёСЃС‚РѕС‡РЅРёРєР°
+        int integr;//РџРµСЂРёРѕРґ РёРЅС‚РµРіСЂР°С†РёРё
+        long  rescanal;//Р”РѕРїРѕР»РЅРёС‚РµР»СЊРЅС‹Р№ СЃРІСЏР·РЅРѕР№ РЅРѕРјРµСЂ
+        char vnote[256]; //РџСЂРёРјРµС‡Р°РЅРёРµ
+        char vaccount[32];// Р›РёС† СЃС‡РµС‚
+        int lOFF;//РџСЂРёР·РЅР°Рє РѕС‚РєР»СЋС‡РµРЅРёСЏ  СЂРµР»Рµ РїРёС‚Р°РЅРёСЏ РїРѕС‚СЂРµР±РёС‚РµР»СЏ     1-РѕС‚РєР»СЋС‡РµРЅ -0 РІРєР»СЋС‡РµРЅ РёРЅР°С‡Рµ РЅРµРёР·РІРµСЃС‚РЅРѕ 
+        char vOFF[32];// Р”Р°С‚Р° РѕС‚РєР»СЋС‡РµРЅРёСЏ  СЂРµР»Рµ РїРёС‚Р°РЅРёСЏ РїРѕС‚СЂРµР±РёС‚РµР»СЏ
         //GRB ADD 30.05.2019
         EIC_INFO eic_info;
         POINTSDIV(){ZeroMemory(this,sizeof(*this));}
@@ -643,7 +643,7 @@ __published:	// IDE-managed Components
         long nfullhours;
         long nnotincludeconsump;
         long nparallelconnection;
-        short indic[COUNTNULLLOSS];//    Флаги для контроля vname - nfullhours,nparallelconnection
+        short indic[COUNTNULLLOSS];//    Р¤Р»Р°РіРё РґР»СЏ РєРѕРЅС‚СЂРѕР»СЏ vname - nfullhours,nparallelconnection
         long editing;
         TList *pwtimeinfo;
         int edittimeinfo;
@@ -652,18 +652,18 @@ __published:	// IDE-managed Components
         long pMid;
         char linf[COUNTNULLLOSS];
         POINTLOSS(){ZeroMemory(this,sizeof(*this));}
-    }; //Потери по формуле
+    }; //РџРѕС‚РµСЂРё РїРѕ С„РѕСЂРјСѓР»Рµ
       TMenuItem* miManIn;
       TMenuItem* miManMetr;
-    long nPoints_Del[10000]; // id тех групп которые удалены из дерева
-                                //  и необходимо удалить из таблицы POINTS
-    long CountPoints_Del; // Кол-во удаляемых групп
+    long nPoints_Del[10000]; // id С‚РµС… РіСЂСѓРїРї РєРѕС‚РѕСЂС‹Рµ СѓРґР°Р»РµРЅС‹ РёР· РґРµСЂРµРІР°
+                                //  Рё РЅРµРѕР±С…РѕРґРёРјРѕ СѓРґР°Р»РёС‚СЊ РёР· С‚Р°Р±Р»РёС†С‹ POINTS
+    long CountPoints_Del; // РљРѕР»-РІРѕ СѓРґР°Р»СЏРµРјС‹С… РіСЂСѓРїРї
     bool realdeletion;
-    bool USDPointDeleted; // Признак удаления точки УСД
+    bool USDPointDeleted; // РџСЂРёР·РЅР°Рє СѓРґР°Р»РµРЅРёСЏ С‚РѕС‡РєРё РЈРЎР”
     long TypeNewNode;
-    int TimeZoneUkrW;//Сдвиг Украины зимой
-    int TimeZoneUkrS;//Сдвиг Украины летом
-    bool __fastcall ReadTreeNode(TObject*pTreeNode);// Читает ветку дерева
+    int TimeZoneUkrW;//РЎРґРІРёРі РЈРєСЂР°РёРЅС‹ Р·РёРјРѕР№
+    int TimeZoneUkrS;//РЎРґРІРёРі РЈРєСЂР°РёРЅС‹ Р»РµС‚РѕРј
+    bool __fastcall ReadTreeNode(TObject*pTreeNode);// Р§РёС‚Р°РµС‚ РІРµС‚РєСѓ РґРµСЂРµРІР°
     void __fastcall tvDragDrop(TTreeNode* Node, BOOL onKey = FALSE);
     void __fastcall ShowCounter(TTreeNode *Node);
     void __fastcall SaveCounter(TTreeNode *Node);
@@ -712,10 +712,10 @@ protected:
     void __fastcall getMainList(TPopupMenu* pm, long mid, Classes::TNotifyEvent& OnClick);
     void __fastcall getListOpposite(TPopupMenu* pm, long mid, Classes::TNotifyEvent& OnClick);
     void __fastcall vUpdate(TObject * Sender);
-	//GRB ADD 10.09.2020 - Пытаемся сделать отдельно корректную работу с клипбоардом Сtrl+С, Ctrl+V, Ctrl+X по тексту в эдитах и отмену Сtrl+Z c выделением Сtrl+A в эдитах формы
+	//GRB ADD 10.09.2020 - РџС‹С‚Р°РµРјСЃСЏ СЃРґРµР»Р°С‚СЊ РѕС‚РґРµР»СЊРЅРѕ РєРѕСЂСЂРµРєС‚РЅСѓСЋ СЂР°Р±РѕС‚Сѓ СЃ РєР»РёРїР±РѕР°СЂРґРѕРј РЎtrl+РЎ, Ctrl+V, Ctrl+X РїРѕ С‚РµРєСЃС‚Сѓ РІ СЌРґРёС‚Р°С… Рё РѕС‚РјРµРЅСѓ РЎtrl+Z c РІС‹РґРµР»РµРЅРёРµРј РЎtrl+A РІ СЌРґРёС‚Р°С… С„РѕСЂРјС‹
     void __fastcall vAnyEditClickEditFiders(TObject *Sender);
     void __fastcall modifyEdit(TCustomEdit * TCE, AnsiString toEdit);
-	//GRB ADD 02.07.2021 - Проверяем
+	//GRB ADD 02.07.2021 - РџСЂРѕРІРµСЂСЏРµРј
     bool __fastcall checkVerifyDailyByFormat(AnsiString checkParam);
     bool __fastcall checkFloat (AnsiString s, double d);
 };

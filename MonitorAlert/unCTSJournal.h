@@ -60,12 +60,12 @@ private:	// User declarations
   bool desc3;
   bool desc4;
   bool desc5;
-  int sort;// признак сортировки для запроса
+  int sort;// РїСЂРёР·РЅР°Рє СЃРѕСЂС‚РёСЂРѕРІРєРё РґР»СЏ Р·Р°РїСЂРѕСЃР°
 	void __fastcall SelectData( void );
   bool __fastcall RefreshData( void );
   void __fastcall SortData( void );
 	unsigned long m_ulNumberSelectedRows;
-  AnsiString  sqlStr;   //! Строка SQL запроса
+  AnsiString  sqlStr;   //! РЎС‚СЂРѕРєР° SQL Р·Р°РїСЂРѕСЃР°
 
 public:		// User declarations
 	__fastcall TfmCTSJournal(TComponent* Owner);

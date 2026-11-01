@@ -20,7 +20,7 @@
 #pragma link "Ora"
 #pragma resource "*.dfm"
 extern HANDLE UpdateMonitors;
-UINT CF_GROUPS_TREENODE; // описание формата для буфера обмена
+UINT CF_GROUPS_TREENODE; // РѕРїРёСЃР°РЅРёРµ С„РѕСЂРјР°С‚Р° РґР»СЏ Р±СѓС„РµСЂР° РѕР±РјРµРЅР°
 
 //---------------------------------------------------------------------------
 __fastcall TFormEditGropsList::TFormEditGropsList(TComponent* Owner, AnsiString Name, TAccess a)
@@ -56,7 +56,7 @@ void __fastcall TFormEditGropsList::FormShow(TObject *Sender)
       Close();
    }
 
-  if(customer_id==1) //Блокируем редактирование
+  if(customer_id==1) //Р‘Р»РѕРєРёСЂСѓРµРј СЂРµРґР°РєС‚РёСЂРѕРІР°РЅРёРµ
   {
        tvGroup->DragMode = dmManual;
        tvGroup->OnDragDrop = NULL;
@@ -106,7 +106,7 @@ void __fastcall TFormEditGropsList::tvExpanding(TObject *Sender,
   }
 }
 //---------------------------------------------------------------------------
-bool __fastcall TFormEditGropsList::ReadNode(TTreeView* tv,TTreeNode* NodeParent)// Читает ветку дерева Групп
+bool __fastcall TFormEditGropsList::ReadNode(TTreeView* tv,TTreeNode* NodeParent)// Р§РёС‚Р°РµС‚ РІРµС‚РєСѓ РґРµСЂРµРІР° Р“СЂСѓРїРї
 {
 
     short indicator1[10];
@@ -228,7 +228,7 @@ bool __fastcall TFormEditGropsList::ReadNode(TTreeView* tv,TTreeNode* NodeParent
 
 
 
-        // Вычитка лимитов
+        // Р’С‹С‡РёС‚РєР° Р»РёРјРёС‚РѕРІ
         if(tv==tvGroup)
         {
            dmMain->oqCursor->Params->Clear();
@@ -298,7 +298,7 @@ bool __fastcall TFormEditGropsList::ReadNode(TTreeView* tv,TTreeNode* NodeParent
                             throw Exception(Reconst_smes22_11);
                         PTreeTable = (POINTSDIV*)AddNode->Data;
                     }
-                    // Добавление лимита к группе PTreeTable
+                    // Р”РѕР±Р°РІР»РµРЅРёРµ Р»РёРјРёС‚Р° Рє РіСЂСѓРїРїРµ PTreeTable
                     if(!PTreeTable->plim)
                         PTreeTable->plim = new TList;
                     PLimTable->indcons=indicator1[2];
@@ -815,8 +815,8 @@ bool __fastcall TFormEditGropsList::tvCheckDragOver(TTreeNode*accNode,TTreeNode*
    if(Access==accRead){
       return false;
    }
-   POINTSDIV* p=NULL;//Текущее
-   POINTSDIV* s;//Перетягиваемое
+   POINTSDIV* p=NULL;//РўРµРєСѓС‰РµРµ
+   POINTSDIV* s;//РџРµСЂРµС‚СЏРіРёРІР°РµРјРѕРµ
    try{
       if(!srcNode||!srcNode->Data){
          return false;
@@ -824,19 +824,19 @@ bool __fastcall TFormEditGropsList::tvCheckDragOver(TTreeNode*accNode,TTreeNode*
       s=(POINTSDIV*)srcNode->Data;
       if(accNode)
          p=(POINTSDIV*)accNode->Data;
-      if(srcNode->TreeView==tvPoint){//Тянем справа
-         if(!accNode){//Родитель NULL
+      if(srcNode->TreeView==tvPoint){//РўСЏРЅРµРј СЃРїСЂР°РІР°
+         if(!accNode){//Р РѕРґРёС‚РµР»СЊ NULL
             if(s->Type)
                return false;
-         }else{//Родитель не NULL
+         }else{//Р РѕРґРёС‚РµР»СЊ РЅРµ NULL
             if(p->Type)
                return false;
          }
-      }else{//С места на место
-         if(!accNode){//Родитель NULL
+      }else{//РЎ РјРµСЃС‚Р° РЅР° РјРµСЃС‚Рѕ
+         if(!accNode){//Р РѕРґРёС‚РµР»СЊ NULL
             if(s->Type||!srcNode->Parent)
                return false;
-         }else{//Родитель не NULL
+         }else{//Р РѕРґРёС‚РµР»СЊ РЅРµ NULL
             if(p->Type||srcNode->Parent==accNode||srcNode==accNode||accNode->HasAsParent(srcNode))
                return false;
          }
@@ -1181,7 +1181,7 @@ try{
    if(!Src || !Src->Data) return;
    if(Dst && Dst->getFirstChild() && !Dst->getFirstChild()->Data)
       ReadNode((TTreeView*)Dst->TreeView, Dst);
-   if(Src->TreeView==tvPoint){//Тянем справа
+   if(Src->TreeView==tvPoint){//РўСЏРЅРµРј СЃРїСЂР°РІР°
       if(Src->Cut){ // Copy only child Nodes
          if(Src->HasChildren)
             copyChildNodes(Dst, Src);
@@ -1204,7 +1204,7 @@ try{
             tvGroup->Selected=tvGroup->Items->Item[0];
          }
       }
-   }else{// редактирование в пределах групп
+   }else{// СЂРµРґР°РєС‚РёСЂРѕРІР°РЅРёРµ РІ РїСЂРµРґРµР»Р°С… РіСЂСѓРїРї
       if(Src->Cut){ // Move
          Src->MoveTo(Dst, naAddChild);
          if(!((POINTSDIV*)Src->Data)->editing)
@@ -1446,7 +1446,7 @@ void __fastcall TFormEditGropsList::mMonClick(TObject *Sender)
         sfd = new TFormDescr;
 	    if(ManForm->PageCtrlSplt->CurrentForm->GetFormDescr())
     	    *sfd=*(ManForm->PageCtrlSplt->CurrentForm->GetFormDescr());
-        // Подготовка описания формы
+        // РџРѕРґРіРѕС‚РѕРІРєР° РѕРїРёСЃР°РЅРёСЏ С„РѕСЂРјС‹
         sfd->IdFormTree = fms->fid;
         sfd->CodeTemplate = fms->tmplCode;
         sfd->IdGroup = fms->gid;
@@ -1502,7 +1502,7 @@ void __fastcall TFormEditGropsList::mMonClick(TObject *Sender)
         if(*ch=='1')
           {sfd->indbird = true; sfd->bird = 0; sfd->startmid=0;}
 
-        // Конец подготовки
+        // РљРѕРЅРµС† РїРѕРґРіРѕС‚РѕРІРєРё
         fmSelectReportForm = new TfmSelectReportForm(this,fms->fid,sfd);
 
         if(IsCommonRepForm(sfd->CodeTemplate))
@@ -1531,11 +1531,11 @@ void __fastcall TFormEditGropsList::mMonClick(TObject *Sender)
         if (fmSelectGroupReportUniv->ModalResult == mrOk)
         {
             //fmSelectReportForm->fd->CodeTemplate=1;
-            // перед любым обновлением мониторов необходимо инициализировать кр. секцию UpdateMonitors
+            // РїРµСЂРµРґ Р»СЋР±С‹Рј РѕР±РЅРѕРІР»РµРЅРёРµРј РјРѕРЅРёС‚РѕСЂРѕРІ РЅРµРѕР±С…РѕРґРёРјРѕ РёРЅРёС†РёР°Р»РёР·РёСЂРѕРІР°С‚СЊ РєСЂ. СЃРµРєС†РёСЋ UpdateMonitors
             while(WaitForSingleObject(UpdateMonitors,0)!=WAIT_OBJECT_0)
             {
-                Application->ProcessMessages();// если не удалось иниц-ть. CS то обновить экранные формы...
-                Sleep(0);// переключить управление на другой поток, коьт занял CS
+                Application->ProcessMessages();// РµСЃР»Рё РЅРµ СѓРґР°Р»РѕСЃСЊ РёРЅРёС†-С‚СЊ. CS С‚Рѕ РѕР±РЅРѕРІРёС‚СЊ СЌРєСЂР°РЅРЅС‹Рµ С„РѕСЂРјС‹...
+                Sleep(0);// РїРµСЂРµРєР»СЋС‡РёС‚СЊ СѓРїСЂР°РІР»РµРЅРёРµ РЅР° РґСЂСѓРіРѕР№ РїРѕС‚РѕРє, РєРѕСЊС‚ Р·Р°РЅСЏР» CS
             }
             // add by KSS
             PostMessage(ManForm->PageCtrlSplt->CurrentForm->Handle,WM_REFRESHFORM,0,(LPARAM)sfd);
@@ -1649,7 +1649,7 @@ void __fastcall TFormEditGropsList::bbPeriodClick(TObject *Sender)  //VNB 14.02.
 void __fastcall TFormEditGropsList::sbFindClick(TObject *Sender)
 {
  fmFP=new TfmFindPoint(this,true);
- //GRB ADD 09.03.2021 -добавляем вызов 2-х сеттеров, определяющих контекст задачи
+ //GRB ADD 09.03.2021 -РґРѕР±Р°РІР»СЏРµРј РІС‹Р·РѕРІ 2-С… СЃРµС‚С‚РµСЂРѕРІ, РѕРїСЂРµРґРµР»СЏСЋС‰РёС… РєРѕРЅС‚РµРєСЃС‚ Р·Р°РґР°С‡Рё
  fmFP->setContext(1);
  fmFP->setGroupsAndPoints(false);
  //end add
@@ -1663,7 +1663,7 @@ void __fastcall TFormEditGropsList::WM_SetActiveNode(TMessage& Message)
 //---------------------------------------------------------------------------
 void __fastcall TFormEditGropsList::FindNodeGroup(long id)
 {
-    // Запрос - путь к точке :1 начиная с коренного узла
+    // Р—Р°РїСЂРѕСЃ - РїСѓС‚СЊ Рє С‚РѕС‡РєРµ :1 РЅР°С‡РёРЅР°СЏ СЃ РєРѕСЂРµРЅРЅРѕРіРѕ СѓР·Р»Р°
 
     long parmid=id;
     long pointsTree[MAXCOUNTLEVEL];
@@ -1773,13 +1773,13 @@ void __fastcall TFormEditGropsList::GrbInit()
      miManualInp->Delete(miManualInp->Count-1);
      miManIn  = new TMenuItem(mMon);
 
-      miManIn->Caption = "Ввод количества энергии";
+      miManIn->Caption = "Р’РІРѕРґ РєРѕР»РёС‡РµСЃС‚РІР° СЌРЅРµСЂРіРёРё";
       miManIn->OnClick = miManualInp->OnClick;
       miManualInp->Add(miManIn);
 
       miManMetr  = new TMenuItem(mMon);
 
-      miManMetr->Caption = "Ввод показаний";
+      miManMetr->Caption = "Р’РІРѕРґ РїРѕРєР°Р·Р°РЅРёР№";
 
       miManMetr->OnClick =miManualInp->OnClick;
       miManualInp->Add(miManMetr);
@@ -1851,7 +1851,7 @@ void __fastcall TFormEditGropsList::GrbInit()
    VT_Data->FieldByName("EndEveningT")->DisplayLabel=Reconst_smes22_8;
    //end add by NNV
    VT_Data->FieldByName("DateLim")->OnValidate=DATEValidate;
-   // регистрация формата для буфера обмена
+   // СЂРµРіРёСЃС‚СЂР°С†РёСЏ С„РѕСЂРјР°С‚Р° РґР»СЏ Р±СѓС„РµСЂР° РѕР±РјРµРЅР°
    CF_GROUPS_TREENODE = RegisterClipboardFormat("CF_GROUPS_TREENODE");
    if(!CF_GROUPS_TREENODE)
    {

@@ -4,21 +4,21 @@
 //---------------------------------------------------------------------------
 #include  <systdate.h>
 //---------------------------------------------------------------------------
-#define SELECTCOUNT 100   //!< Êîëè÷åñòâî âûáèðàåìûõ çàïèñåé èç áàçû
+#define SELECTCOUNT 100   //!< ÐšÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ Ð²Ñ‹Ð±Ð¸Ñ€Ð°ÐµÐ¼Ñ‹Ñ… Ð·Ð°Ð¿Ð¸ÑÐµÐ¹ Ð¸Ð· Ð±Ð°Ð·Ñ‹
 
-#define NAME_LEN      256   //!< Äëèííà ñòðîêè èìåíè
-#define DATE_LEN      50    //!< Äëèííà ñòðîêè äàòû
-#define PARAM_COUNT   14    //!< Ìàêñèìàëüíîå êîëè÷åñòâî ïàðàìåòðîâ òðàíñôîðìàòîðîâ è ëèíèé
-#define PARAM_NULL    -1    //!< Ïðèçíàê NULL'îâñêîãî çíà÷åíèÿ ïðè âû÷èòêå/çàïèñè â ÁÄ
-#define PARAM_NOTNULL 0     //!< Ïðèçíàê íå NULL'îâñêîãî çíà÷åíèÿ ïðè âû÷èòêå/çàïèñè â ÁÄ
+#define NAME_LEN      256   //!< Ð”Ð»Ð¸Ð½Ð½Ð° ÑÑ‚Ñ€Ð¾ÐºÐ¸ Ð¸Ð¼ÐµÐ½Ð¸
+#define DATE_LEN      50    //!< Ð”Ð»Ð¸Ð½Ð½Ð° ÑÑ‚Ñ€Ð¾ÐºÐ¸ Ð´Ð°Ñ‚Ñ‹
+#define PARAM_COUNT   14    //!< ÐœÐ°ÐºÑÐ¸Ð¼Ð°Ð»ÑŒÐ½Ð¾Ðµ ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ Ð¿Ð°Ñ€Ð°Ð¼ÐµÑ‚Ñ€Ð¾Ð² Ñ‚Ñ€Ð°Ð½ÑÑ„Ð¾Ñ€Ð¼Ð°Ñ‚Ð¾Ñ€Ð¾Ð² Ð¸ Ð»Ð¸Ð½Ð¸Ð¹
+#define PARAM_NULL    -1    //!< ÐŸÑ€Ð¸Ð·Ð½Ð°Ðº NULL'Ð¾Ð²ÑÐºÐ¾Ð³Ð¾ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ñ Ð¿Ñ€Ð¸ Ð²Ñ‹Ñ‡Ð¸Ñ‚ÐºÐµ/Ð·Ð°Ð¿Ð¸ÑÐ¸ Ð² Ð‘Ð”
+#define PARAM_NOTNULL 0     //!< ÐŸÑ€Ð¸Ð·Ð½Ð°Ðº Ð½Ðµ NULL'Ð¾Ð²ÑÐºÐ¾Ð³Ð¾ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ñ Ð¿Ñ€Ð¸ Ð²Ñ‹Ñ‡Ð¸Ñ‚ÐºÐµ/Ð·Ð°Ð¿Ð¸ÑÐ¸ Ð² Ð‘Ð”
 //---------------------------------------------------------------------------
-#define  WM_DATA_TASK_LIST  (WM_USER + 4) //Ñîîáùåíèå -îòîáðàçèòü ñïèñîê çàäà÷
+#define  WM_DATA_TASK_LIST  (WM_USER + 4) //Ð¡Ð¾Ð¾Ð±Ñ‰ÐµÐ½Ð¸Ðµ -Ð¾Ñ‚Ð¾Ð±Ñ€Ð°Ð·Ð¸Ñ‚ÑŒ ÑÐ¿Ð¸ÑÐ¾Ðº Ð·Ð°Ð´Ð°Ñ‡
 #define  WM_CREATEMONITOR (WM_USER + 40)
 #define  WM_UPDATE_SPEED_BUTTON (WM_USER+50)//
 
 #include "Reconst.hpp"
 //---------------------------------------------------------------------------
-/*! Èíôîðìàöèÿ äëÿ ðàñ÷åòà ïîòåðü ïî ôîðìóëå
+/*! Ð˜Ð½Ñ„Ð¾Ñ€Ð¼Ð°Ñ†Ð¸Ñ Ð´Ð»Ñ Ñ€Ð°ÑÑ‡ÐµÑ‚Ð° Ð¿Ð¾Ñ‚ÐµÑ€ÑŒ Ð¿Ð¾ Ñ„Ð¾Ñ€Ð¼ÑƒÐ»Ðµ
 */
 typedef struct __ttimeinfo
 { long    nperiod;
@@ -27,10 +27,10 @@ typedef struct __ttimeinfo
   double  f3;
   short   indic[3];
   __ttimeinfo()
-  { nperiod   = 0;    //!< Ïåðèîä
-    f1        = 0;    //!< Âðåìÿ ðàáîòû
-    f2        = 0;    //!< Ïîëíîå âðåìÿ ðàáîòû
-    f3        = 0;    //!< Ïîëíîå âðåìÿ ðàáîòû
+  { nperiod   = 0;    //!< ÐŸÐµÑ€Ð¸Ð¾Ð´
+    f1        = 0;    //!< Ð’Ñ€ÐµÐ¼Ñ Ñ€Ð°Ð±Ð¾Ñ‚Ñ‹
+    f2        = 0;    //!< ÐŸÐ¾Ð»Ð½Ð¾Ðµ Ð²Ñ€ÐµÐ¼Ñ Ñ€Ð°Ð±Ð¾Ñ‚Ñ‹
+    f3        = 0;    //!< ÐŸÐ¾Ð»Ð½Ð¾Ðµ Ð²Ñ€ÐµÐ¼Ñ Ñ€Ð°Ð±Ð¾Ñ‚Ñ‹
     indic[0]  = 0;    //!<
     indic[1]  = 0;    //!<
     indic[2]  = 0;    //!<
@@ -40,25 +40,25 @@ typedef struct __ttimeinfo
 //---------------------------------------------------------------------------
 /*
   Table [POINTS]
-  Èìåíà òðàíñôîðìàòîðîâ è ëèíèéé
-  Field [IND] - ñïðàâî÷íèê èç Table [DICT_OBJ_TYPES]
+  Ð˜Ð¼ÐµÐ½Ð° Ñ‚Ñ€Ð°Ð½ÑÑ„Ð¾Ñ€Ð¼Ð°Ñ‚Ð¾Ñ€Ð¾Ð² Ð¸ Ð»Ð¸Ð½Ð¸Ð¹Ð¹
+  Field [IND] - ÑÐ¿Ñ€Ð°Ð²Ð¾Ñ‡Ð½Ð¸Ðº Ð¸Ð· Table [DICT_OBJ_TYPES]
 */
 
-/*! Áàçîâûé êëàññ òðàíñôîðìàòîðîâ è ëèíèé
+/*! Ð‘Ð°Ð·Ð¾Ð²Ñ‹Ð¹ ÐºÐ»Ð°ÑÑ Ñ‚Ñ€Ð°Ð½ÑÑ„Ð¾Ñ€Ð¼Ð°Ñ‚Ð¾Ñ€Ð¾Ð² Ð¸ Ð»Ð¸Ð½Ð¸Ð¹
 */
 class TCustomTransformerLine
 {
 public:
-  /*! Ïåðå÷åíü òèïîâ òðàíñôîðìàòîðîâ è ëèíèé
+  /*! ÐŸÐµÑ€ÐµÑ‡ÐµÐ½ÑŒ Ñ‚Ð¸Ð¿Ð¾Ð² Ñ‚Ñ€Ð°Ð½ÑÑ„Ð¾Ñ€Ð¼Ð°Ñ‚Ð¾Ñ€Ð¾Ð² Ð¸ Ð»Ð¸Ð½Ð¸Ð¹
   */
   typedef enum
-  { ttNone    = 0x00,   //!< Íå òð-ð
-    ttCurrent = 0x01,   //!< Èçì. òð-ð òîêà
-    ttVoltage = 0x02,   //!< Èçì. òð-ð íàïðÿæåíèÿ
-    ttPower2  = 0x03,   //!< Ñèëîâîé òð-ð äâóõîáìîòî÷íûé
-    ttPower3  = 0x04,   //!< Ñèëîâîé òð-ð òðåõîáìîòî÷íûé
-    ttLine    = 0x05,    //!< Ëèíèÿ
-    ttReactor = 0x06    //!< Ðåàêòîð
+  { ttNone    = 0x00,   //!< ÐÐµ Ñ‚Ñ€-Ñ€
+    ttCurrent = 0x01,   //!< Ð˜Ð·Ð¼. Ñ‚Ñ€-Ñ€ Ñ‚Ð¾ÐºÐ°
+    ttVoltage = 0x02,   //!< Ð˜Ð·Ð¼. Ñ‚Ñ€-Ñ€ Ð½Ð°Ð¿Ñ€ÑÐ¶ÐµÐ½Ð¸Ñ
+    ttPower2  = 0x03,   //!< Ð¡Ð¸Ð»Ð¾Ð²Ð¾Ð¹ Ñ‚Ñ€-Ñ€ Ð´Ð²ÑƒÑ…Ð¾Ð±Ð¼Ð¾Ñ‚Ð¾Ñ‡Ð½Ñ‹Ð¹
+    ttPower3  = 0x04,   //!< Ð¡Ð¸Ð»Ð¾Ð²Ð¾Ð¹ Ñ‚Ñ€-Ñ€ Ñ‚Ñ€ÐµÑ…Ð¾Ð±Ð¼Ð¾Ñ‚Ð¾Ñ‡Ð½Ñ‹Ð¹
+    ttLine    = 0x05,    //!< Ð›Ð¸Ð½Ð¸Ñ
+    ttReactor = 0x06    //!< Ð ÐµÐ°ÐºÑ‚Ð¾Ñ€
   } TTransLineTypes;
 
   __fastcall TCustomTransformerLine(TTransLineTypes ttype = ttNone)
@@ -86,15 +86,15 @@ public:
     return  *this;
   }
 
-  long  id;         //!< Èä òðàíñôîðìàòîðà èëè mid ïîäñòàíöèè
-  long  type;       //!< Òèï òðàíñôîðìàòîðà \sa TTransLineTypes
-  bool  edit;       //!< Ïðèçíàê ðåäàêòèðîâàíèÿ
+  long  id;         //!< Ð˜Ð´ Ñ‚Ñ€Ð°Ð½ÑÑ„Ð¾Ñ€Ð¼Ð°Ñ‚Ð¾Ñ€Ð° Ð¸Ð»Ð¸ mid Ð¿Ð¾Ð´ÑÑ‚Ð°Ð½Ñ†Ð¸Ð¸
+  long  type;       //!< Ð¢Ð¸Ð¿ Ñ‚Ñ€Ð°Ð½ÑÑ„Ð¾Ñ€Ð¼Ð°Ñ‚Ð¾Ñ€Ð° \sa TTransLineTypes
+  bool  edit;       //!< ÐŸÑ€Ð¸Ð·Ð½Ð°Ðº Ñ€ÐµÐ´Ð°ÐºÑ‚Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ñ
 
   __property char *name   = {read = Getname, write = Setname};
   __property char *date   = {read = Getdate, write = Setdate};
 
-  char  dname[NAME_LEN];  //!< Íàçâàíèå
-  char  ddate[DATE_LEN];  //!< äàòà óñòàíîâêè
+  char  dname[NAME_LEN];  //!< ÐÐ°Ð·Ð²Ð°Ð½Ð¸Ðµ
+  char  ddate[DATE_LEN];  //!< Ð´Ð°Ñ‚Ð° ÑƒÑÑ‚Ð°Ð½Ð¾Ð²ÐºÐ¸
 
 private:
 
@@ -114,7 +114,7 @@ private:
   }
 };
 //---------------------------------------------------------------------------
-//Ðåàêòîð
+//Ð ÐµÐ°ÐºÑ‚Ð¾Ñ€
 
 class TReactor : public TCustomTransformerLine
 {
@@ -142,7 +142,7 @@ public:
       return  *this;
 
     inherited::operator =(Other);
-    //===== ïàðàìåòðû çàïèñûâàþòñÿ â òàáëèöó CONNECTIONPARAM
+    //===== Ð¿Ð°Ñ€Ð°Ð¼ÐµÑ‚Ñ€Ñ‹ Ð·Ð°Ð¿Ð¸ÑÑ‹Ð²Ð°ÑŽÑ‚ÑÑ Ð² Ñ‚Ð°Ð±Ð»Ð¸Ñ†Ñƒ CONNECTIONPARAM
     Un        = Other.Un;     //===== Un
     indUn     = Other.indUn;
     Sn        = Other.Sn;     //===== Sn
@@ -157,20 +157,20 @@ public:
     return  *this;
   }
 
-  double  Un;       //!< Íîìèíàëüíîå íàïðÿæåíèå
-  short   indUn;    //!< Ïðèçíàê çíà÷åíèÿ NULL \sa PARAM_NULL \sa PARAM_NOTNULL
-  double  Sn;       //!< Íîìèíàëüíàÿ ìîùíîñòü
-  short   indSn;    //!< Ïðèçíàê çíà÷åíèÿ NULL \sa PARAM_NULL \sa PARAM_NOTNULL
-  double  DP;        //!< Ïîòåðè ìîùíîñòè
-  short   indDP;     //!< Ïðèçíàê çíà÷åíèÿ NULL \sa PARAM_NULL \sa PARAM_NOTNULL
-  double  FHours;    //!< Ôàêòè÷åñêîå ÷èñëî ÷àñîâ ðàáîòû ðåàêòîðà
-  short   indFHours;    //!< Ïðèçíàê çíà÷åíèÿ NULL \sa PARAM_NULL \sa PARAM_NOTNULL
-  double  CHours;    //!< Êàëåíäàðíîå ÷èñëî ÷àñîâ ðàáîòû ðåàêòîðà
-  short   indCHours;    //!< Ïðèçíàê çíà÷åíèÿ NULL \sa PARAM_NULL \sa PARAM_NOTNULL
+  double  Un;       //!< ÐÐ¾Ð¼Ð¸Ð½Ð°Ð»ÑŒÐ½Ð¾Ðµ Ð½Ð°Ð¿Ñ€ÑÐ¶ÐµÐ½Ð¸Ðµ
+  short   indUn;    //!< ÐŸÑ€Ð¸Ð·Ð½Ð°Ðº Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ñ NULL \sa PARAM_NULL \sa PARAM_NOTNULL
+  double  Sn;       //!< ÐÐ¾Ð¼Ð¸Ð½Ð°Ð»ÑŒÐ½Ð°Ñ Ð¼Ð¾Ñ‰Ð½Ð¾ÑÑ‚ÑŒ
+  short   indSn;    //!< ÐŸÑ€Ð¸Ð·Ð½Ð°Ðº Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ñ NULL \sa PARAM_NULL \sa PARAM_NOTNULL
+  double  DP;        //!< ÐŸÐ¾Ñ‚ÐµÑ€Ð¸ Ð¼Ð¾Ñ‰Ð½Ð¾ÑÑ‚Ð¸
+  short   indDP;     //!< ÐŸÑ€Ð¸Ð·Ð½Ð°Ðº Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ñ NULL \sa PARAM_NULL \sa PARAM_NOTNULL
+  double  FHours;    //!< Ð¤Ð°ÐºÑ‚Ð¸Ñ‡ÐµÑÐºÐ¾Ðµ Ñ‡Ð¸ÑÐ»Ð¾ Ñ‡Ð°ÑÐ¾Ð² Ñ€Ð°Ð±Ð¾Ñ‚Ñ‹ Ñ€ÐµÐ°ÐºÑ‚Ð¾Ñ€Ð°
+  short   indFHours;    //!< ÐŸÑ€Ð¸Ð·Ð½Ð°Ðº Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ñ NULL \sa PARAM_NULL \sa PARAM_NOTNULL
+  double  CHours;    //!< ÐšÐ°Ð»ÐµÐ½Ð´Ð°Ñ€Ð½Ð¾Ðµ Ñ‡Ð¸ÑÐ»Ð¾ Ñ‡Ð°ÑÐ¾Ð² Ñ€Ð°Ð±Ð¾Ñ‚Ñ‹ Ñ€ÐµÐ°ÐºÑ‚Ð¾Ñ€Ð°
+  short   indCHours;    //!< ÐŸÑ€Ð¸Ð·Ð½Ð°Ðº Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ñ NULL \sa PARAM_NULL \sa PARAM_NOTNULL
 };
 
 //---------------------------------------------------------------------------
-/*! Ëèíèÿ
+/*! Ð›Ð¸Ð½Ð¸Ñ
 */
 class TTransmissionLine : public TCustomTransformerLine
 {
@@ -198,7 +198,7 @@ public:
       return  *this;
 
     inherited::operator =(Other);
-    //===== ïàðàìåòðû çàïèñûâàþòñÿ â òàáëèöó CONNECTIONPARAM
+    //===== Ð¿Ð°Ñ€Ð°Ð¼ÐµÑ‚Ñ€Ñ‹ Ð·Ð°Ð¿Ð¸ÑÑ‹Ð²Ð°ÑŽÑ‚ÑÑ Ð² Ñ‚Ð°Ð±Ð»Ð¸Ñ†Ñƒ CONNECTIONPARAM
     Ro    = Other.Ro;     //===== NRO
     indRo = Other.indRo;
     Xo    = Other.Xo;     //===== NXO
@@ -211,17 +211,17 @@ public:
     return  *this;
   }
 
-  double  Ro;       //!< Àêòèâíîå ñîïðîòèâëåíèå
-  short   indRo;    //!< Ïðèçíàê çíà÷åíèÿ NULL \sa PARAM_NULL \sa PARAM_NOTNULL
-  double  Xo;       //!< Ðåàêòèâíîå ñîïðîòèâëåíèå
-  short   indXo;    //!< Ïðèçíàê çíà÷åíèÿ NULL \sa PARAM_NULL \sa PARAM_NOTNULL
-  double  L;        //!< Äëèííà ëèíèè
-  short   indL;     //!< Ïðèçíàê çíà÷åíèÿ NULL \sa PARAM_NULL \sa PARAM_NOTNULL
-  double  Un;       //!< Íîìèíàëüíîå íàïðÿæåíèå
-  short   indUn;    //!< Ïðèçíàê çíà÷åíèÿ NULL \sa PARAM_NULL \sa PARAM_NOTNULL
+  double  Ro;       //!< ÐÐºÑ‚Ð¸Ð²Ð½Ð¾Ðµ ÑÐ¾Ð¿Ñ€Ð¾Ñ‚Ð¸Ð²Ð»ÐµÐ½Ð¸Ðµ
+  short   indRo;    //!< ÐŸÑ€Ð¸Ð·Ð½Ð°Ðº Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ñ NULL \sa PARAM_NULL \sa PARAM_NOTNULL
+  double  Xo;       //!< Ð ÐµÐ°ÐºÑ‚Ð¸Ð²Ð½Ð¾Ðµ ÑÐ¾Ð¿Ñ€Ð¾Ñ‚Ð¸Ð²Ð»ÐµÐ½Ð¸Ðµ
+  short   indXo;    //!< ÐŸÑ€Ð¸Ð·Ð½Ð°Ðº Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ñ NULL \sa PARAM_NULL \sa PARAM_NOTNULL
+  double  L;        //!< Ð”Ð»Ð¸Ð½Ð½Ð° Ð»Ð¸Ð½Ð¸Ð¸
+  short   indL;     //!< ÐŸÑ€Ð¸Ð·Ð½Ð°Ðº Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ñ NULL \sa PARAM_NULL \sa PARAM_NOTNULL
+  double  Un;       //!< ÐÐ¾Ð¼Ð¸Ð½Ð°Ð»ÑŒÐ½Ð¾Ðµ Ð½Ð°Ð¿Ñ€ÑÐ¶ÐµÐ½Ð¸Ðµ
+  short   indUn;    //!< ÐŸÑ€Ð¸Ð·Ð½Ð°Ðº Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ñ NULL \sa PARAM_NULL \sa PARAM_NOTNULL
 };
 //---------------------------------------------------------------------------
-/*! Èçìåðèòåëüíûé òðàíñôîðìàòîð
+/*! Ð˜Ð·Ð¼ÐµÑ€Ð¸Ñ‚ÐµÐ»ÑŒÐ½Ñ‹Ð¹ Ñ‚Ñ€Ð°Ð½ÑÑ„Ð¾Ñ€Ð¼Ð°Ñ‚Ð¾Ñ€
 */
 class TMeteringTransformer  : public TCustomTransformerLine
 {
@@ -257,13 +257,13 @@ public:
     return  *this;
   }
 
-  double  Val1;       //!< Ïåðâè÷íûé òîê èëè íàïðÿæåíèå
-  short   indVal1;    //!< Ïðèçíàê çíà÷åíèÿ NULL \sa PARAM_NULL \sa PARAM_NOTNULL
-  double  Val2;       //!< Âòîðè÷íûé òîê èëè íàïðÿæåíèå
-  short   indVal2;    //!< Ïðèçíàê çíà÷åíèÿ NULL \sa PARAM_NULL \sa PARAM_NOTNULL
+  double  Val1;       //!< ÐŸÐµÑ€Ð²Ð¸Ñ‡Ð½Ñ‹Ð¹ Ñ‚Ð¾Ðº Ð¸Ð»Ð¸ Ð½Ð°Ð¿Ñ€ÑÐ¶ÐµÐ½Ð¸Ðµ
+  short   indVal1;    //!< ÐŸÑ€Ð¸Ð·Ð½Ð°Ðº Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ñ NULL \sa PARAM_NULL \sa PARAM_NOTNULL
+  double  Val2;       //!< Ð’Ñ‚Ð¾Ñ€Ð¸Ñ‡Ð½Ñ‹Ð¹ Ñ‚Ð¾Ðº Ð¸Ð»Ð¸ Ð½Ð°Ð¿Ñ€ÑÐ¶ÐµÐ½Ð¸Ðµ
+  short   indVal2;    //!< ÐŸÑ€Ð¸Ð·Ð½Ð°Ðº Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ñ NULL \sa PARAM_NULL \sa PARAM_NOTNULL
 };
 //---------------------------------------------------------------------------
-/*! Ñèëîâîé òðàíñôîðìàòîð 2-õ îáìîòî÷íûé
+/*! Ð¡Ð¸Ð»Ð¾Ð²Ð¾Ð¹ Ñ‚Ñ€Ð°Ð½ÑÑ„Ð¾Ñ€Ð¼Ð°Ñ‚Ð¾Ñ€ 2-Ñ… Ð¾Ð±Ð¼Ð¾Ñ‚Ð¾Ñ‡Ð½Ñ‹Ð¹
 */
 class TPowerTwoTransformer  : public TCustomTransformerLine
 {
@@ -297,7 +297,7 @@ public:
       return  *this;
 
     inherited::operator =(Other);
-    //===== ïàðàìåòðû çàïèñûâàþòñÿ â òàáëèöó CONNECTIONPARAM
+    //===== Ð¿Ð°Ñ€Ð°Ð¼ÐµÑ‚Ñ€Ñ‹ Ð·Ð°Ð¿Ð¸ÑÑ‹Ð²Ð°ÑŽÑ‚ÑÑ Ð² Ñ‚Ð°Ð±Ð»Ð¸Ñ†Ñƒ CONNECTIONPARAM
     Sn        = Other.Sn;       //NSN
     indSn     = Other.indSn;
     dPxx      = Other.dPxx;     //NDELTAPIDLING
@@ -316,23 +316,23 @@ public:
     return  *this;
   }
 
-  double  Sn;           //!< Íîìèíàëüíàÿ ìîùíîñòü êÂÀ
-  short   indSn;        //!< Ïðèçíàê çíà÷åíèÿ NULL \sa PARAM_NULL \sa PARAM_NOTNULL
-  double  dPxx;         //!< Ïîòåðè õîëîñòîãî õîäà êÂò
-  short   inddPxx;      //!< Ïðèçíàê çíà÷åíèÿ NULL \sa PARAM_NULL \sa PARAM_NOTNULL
-  double  dPkz;         //!< Ïîòåðè êîðîòêîãî çàìûêàíèÿ êÂò
-  short   inddPkz;      //!< Ïðèçíàê çíà÷åíèÿ NULL \sa PARAM_NULL \sa PARAM_NOTNULL
-  double  Ixx;          //!< Òîê õîëîñòîãî õîäà %
-  short   indIxx;       //!< Ïðèçíàê çíà÷åíèÿ NULL \sa PARAM_NULL \sa PARAM_NOTNULL
-  double  Ukz;          //!< Íàïðÿæåíèå êîðîòêîãî çàìûêàíèÿ %
-  short   indUkz;       //!< Ïðèçíàê çíà÷åíèÿ NULL \sa PARAM_NULL \sa PARAM_NOTNULL
-  double  WHours;       //!< Íîìèíàëüíîå âðåìÿ ðàáîòû
-  short   indWHours;    //!< Ïðèçíàê çíà÷åíèÿ NULL \sa PARAM_NULL \sa PARAM_NOTNULL
-  double  FHours;       //!< Íîìèíàëüíîå ïîëíîå âðåìÿ
-  short   indFHours;    //!< Ïðèçíàê çíà÷åíèÿ NULL \sa PARAM_NULL \sa PARAM_NOTNULL
+  double  Sn;           //!< ÐÐ¾Ð¼Ð¸Ð½Ð°Ð»ÑŒÐ½Ð°Ñ Ð¼Ð¾Ñ‰Ð½Ð¾ÑÑ‚ÑŒ ÐºÐ’Ð
+  short   indSn;        //!< ÐŸÑ€Ð¸Ð·Ð½Ð°Ðº Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ñ NULL \sa PARAM_NULL \sa PARAM_NOTNULL
+  double  dPxx;         //!< ÐŸÐ¾Ñ‚ÐµÑ€Ð¸ Ñ…Ð¾Ð»Ð¾ÑÑ‚Ð¾Ð³Ð¾ Ñ…Ð¾Ð´Ð° ÐºÐ’Ñ‚
+  short   inddPxx;      //!< ÐŸÑ€Ð¸Ð·Ð½Ð°Ðº Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ñ NULL \sa PARAM_NULL \sa PARAM_NOTNULL
+  double  dPkz;         //!< ÐŸÐ¾Ñ‚ÐµÑ€Ð¸ ÐºÐ¾Ñ€Ð¾Ñ‚ÐºÐ¾Ð³Ð¾ Ð·Ð°Ð¼Ñ‹ÐºÐ°Ð½Ð¸Ñ ÐºÐ’Ñ‚
+  short   inddPkz;      //!< ÐŸÑ€Ð¸Ð·Ð½Ð°Ðº Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ñ NULL \sa PARAM_NULL \sa PARAM_NOTNULL
+  double  Ixx;          //!< Ð¢Ð¾Ðº Ñ…Ð¾Ð»Ð¾ÑÑ‚Ð¾Ð³Ð¾ Ñ…Ð¾Ð´Ð° %
+  short   indIxx;       //!< ÐŸÑ€Ð¸Ð·Ð½Ð°Ðº Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ñ NULL \sa PARAM_NULL \sa PARAM_NOTNULL
+  double  Ukz;          //!< ÐÐ°Ð¿Ñ€ÑÐ¶ÐµÐ½Ð¸Ðµ ÐºÐ¾Ñ€Ð¾Ñ‚ÐºÐ¾Ð³Ð¾ Ð·Ð°Ð¼Ñ‹ÐºÐ°Ð½Ð¸Ñ %
+  short   indUkz;       //!< ÐŸÑ€Ð¸Ð·Ð½Ð°Ðº Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ñ NULL \sa PARAM_NULL \sa PARAM_NOTNULL
+  double  WHours;       //!< ÐÐ¾Ð¼Ð¸Ð½Ð°Ð»ÑŒÐ½Ð¾Ðµ Ð²Ñ€ÐµÐ¼Ñ Ñ€Ð°Ð±Ð¾Ñ‚Ñ‹
+  short   indWHours;    //!< ÐŸÑ€Ð¸Ð·Ð½Ð°Ðº Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ñ NULL \sa PARAM_NULL \sa PARAM_NOTNULL
+  double  FHours;       //!< ÐÐ¾Ð¼Ð¸Ð½Ð°Ð»ÑŒÐ½Ð¾Ðµ Ð¿Ð¾Ð»Ð½Ð¾Ðµ Ð²Ñ€ÐµÐ¼Ñ
+  short   indFHours;    //!< ÐŸÑ€Ð¸Ð·Ð½Ð°Ðº Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ñ NULL \sa PARAM_NULL \sa PARAM_NOTNULL
 };
 //---------------------------------------------------------------------------
-/*! Ñèëîâîé òðàíñôîðìàòîð 3-õ îáìîòî÷íûé
+/*! Ð¡Ð¸Ð»Ð¾Ð²Ð¾Ð¹ Ñ‚Ñ€Ð°Ð½ÑÑ„Ð¾Ñ€Ð¼Ð°Ñ‚Ð¾Ñ€ 3-Ñ… Ð¾Ð±Ð¼Ð¾Ñ‚Ð¾Ñ‡Ð½Ñ‹Ð¹
 */
 class TPowerThreeTransformer  : public TCustomTransformerLine
 {
@@ -372,67 +372,67 @@ public:
       return  *this;
 
     inherited::operator =(Other);
-    //===== ïàðàìåòðû çàïèñûâàþòñÿ â òàáëèöó CONNECTIONPARAM
-    Sn        = Other.Sn;       //NSN ãäå NWINDING=1
+    //===== Ð¿Ð°Ñ€Ð°Ð¼ÐµÑ‚Ñ€Ñ‹ Ð·Ð°Ð¿Ð¸ÑÑ‹Ð²Ð°ÑŽÑ‚ÑÑ Ð² Ñ‚Ð°Ð±Ð»Ð¸Ñ†Ñƒ CONNECTIONPARAM
+    Sn        = Other.Sn;       //NSN Ð³Ð´Ðµ NWINDING=1
     indSn     = Other.indSn;
-    Su        = Other.Su;       //NSH ãäå NWINDING=1
+    Su        = Other.Su;       //NSH Ð³Ð´Ðµ NWINDING=1
     indSu     = Other.indSu;
-    Sm        = Other.Sm;       //NSH ãäå NWINDING=2
+    Sm        = Other.Sm;       //NSH Ð³Ð´Ðµ NWINDING=2
     indSm     = Other.indSm;
-    Sd        = Other.Sd;       //NSH ãäå NWINDING=3
+    Sd        = Other.Sd;       //NSH Ð³Ð´Ðµ NWINDING=3
     indSd     = Other.indSd;
-    dPxx      = Other.dPxx;     //NDELTAPIDLING ãäå NWINDING=1
+    dPxx      = Other.dPxx;     //NDELTAPIDLING Ð³Ð´Ðµ NWINDING=1
     inddPxx   = Other.inddPxx;
-    dPkzu     = Other.dPkzu;    //NDELTAPSC ãäå NWINDING=1
+    dPkzu     = Other.dPkzu;    //NDELTAPSC Ð³Ð´Ðµ NWINDING=1
     inddPkzu  = Other.inddPkzu;
-    dPkzm     = Other.dPkzm;    //NDELTAPSC ãäå NWINDING=2
+    dPkzm     = Other.dPkzm;    //NDELTAPSC Ð³Ð´Ðµ NWINDING=2
     inddPkzm  = Other.inddPkzm;
-    dPkzd     = Other.dPkzd;    //NDELTAPSC ãäå NWINDING=3
+    dPkzd     = Other.dPkzd;    //NDELTAPSC Ð³Ð´Ðµ NWINDING=3
     inddPkzd  = Other.inddPkzd;
-    Ixx       = Other.Ixx;      //NIIDLING ãäå NWINDING=1
+    Ixx       = Other.Ixx;      //NIIDLING Ð³Ð´Ðµ NWINDING=1
     indIxx    = Other.indIxx;
-    Ukzu      = Other.Ukzu;     //NUSC ãäå NWINDING=1
+    Ukzu      = Other.Ukzu;     //NUSC Ð³Ð´Ðµ NWINDING=1
     indUkzu   = Other.indUkzu;
-    Ukzm      = Other.Ukzm;     //NUSC ãäå NWINDING=2
+    Ukzm      = Other.Ukzm;     //NUSC Ð³Ð´Ðµ NWINDING=2
     indUkzm   = Other.indUkzm;
-    Ukzd      = Other.Ukzd;     //NUSC ãäå NWINDING=3
+    Ukzd      = Other.Ukzd;     //NUSC Ð³Ð´Ðµ NWINDING=3
     indUkzd   = Other.indUkzd;
-    WHours    = Other.WHours;   //NWORKINGHOURS ãäå NWINDING=1
+    WHours    = Other.WHours;   //NWORKINGHOURS Ð³Ð´Ðµ NWINDING=1
     indWHours = Other.indWHours;
-    FHours    = Other.FHours;   //NFULLHOURS ãäå NWINDING=1
+    FHours    = Other.FHours;   //NFULLHOURS Ð³Ð´Ðµ NWINDING=1
     indFHours = Other.indFHours;
 
     return  *this;
   }
 
-  double  Sn;           //!< Íîìèíàëüíàÿ ìîùíîñòü êÂÀ
-  short   indSn;        //!< Ïðèçíàê çíà÷åíèÿ NULL \sa PARAM_NULL \sa PARAM_NOTNULL
-  double  Su;           //!< Íîìèíàëüíàÿ ìîùíîñòü âåðõíåé îáìîòêè êÂÀ
-  short   indSu;        //!< Ïðèçíàê çíà÷åíèÿ NULL \sa PARAM_NULL \sa PARAM_NOTNULL
-  double  Sm;           //!< Íîìèíàëüíàÿ ìîùíîñòü ñðåäíåé îáìîòêè êÂÀ
-  short   indSm;        //!< Ïðèçíàê çíà÷åíèÿ NULL \sa PARAM_NULL \sa PARAM_NOTNULL
-  double  Sd;           //!< Íîìèíàëüíàÿ ìîùíîñòü íèæíåé îáìîòêè êÂÀ
-  short   indSd;        //!< Ïðèçíàê çíà÷åíèÿ NULL \sa PARAM_NULL \sa PARAM_NOTNULL
-  double  dPxx;         //!< Ïîòåðè õîëîñòîãî õîäà êÂò
-  short   inddPxx;      //!< Ïðèçíàê çíà÷åíèÿ NULL \sa PARAM_NULL \sa PARAM_NOTNULL
-  double  dPkzu;        //!< Ïîòåðè êîðîòêîãî çàìûêàíèÿ âåðõíåé îáìîòêè êÂò
-  short   inddPkzu;     //!< Ïðèçíàê çíà÷åíèÿ NULL \sa PARAM_NULL \sa PARAM_NOTNULL
-  double  dPkzm;        //!< Ïîòåðè êîðîòêîãî çàìûêàíèÿ ñðåäíåé îáìîòêè êÂò
-  short   inddPkzm;     //!< Ïðèçíàê çíà÷åíèÿ NULL \sa PARAM_NULL \sa PARAM_NOTNULL
-  double  dPkzd;        //!< Ïîòåðè êîðîòêîãî çàìûêàíèÿ íèæíåé îáìîòêè êÂò
-  short   inddPkzd;     //!< Ïðèçíàê çíà÷åíèÿ NULL \sa PARAM_NULL \sa PARAM_NOTNULL
-  double  Ixx;          //!< Òîê õîëîñòîãî õîäà %
-  short   indIxx;       //!< Ïðèçíàê çíà÷åíèÿ NULL \sa PARAM_NULL \sa PARAM_NOTNULL
-  double  Ukzu;         //!< Íàïðÿæåíèå êîðîòêîãî çàìûêàíèÿ âåðõíåé îáìîòêè %
-  short   indUkzu;      //!< Ïðèçíàê çíà÷åíèÿ NULL \sa PARAM_NULL \sa PARAM_NOTNULL
-  double  Ukzm;         //!< Íàïðÿæåíèå êîðîòêîãî çàìûêàíèÿ ñðåäíåé îáìîòêè %
-  short   indUkzm;      //!< Ïðèçíàê çíà÷åíèÿ NULL \sa PARAM_NULL \sa PARAM_NOTNULL
-  double  Ukzd;         //!< Íàïðÿæåíèå êîðîòêîãî çàìûêàíèÿ íèæíåé îáìîòêè %
-  short   indUkzd;      //!< Ïðèçíàê çíà÷åíèÿ NULL \sa PARAM_NULL \sa PARAM_NOTNULL
-  double  WHours;       //!< Íîìèíàëüíîå âðåìÿ ðàáîòû
-  short   indWHours;    //!< Ïðèçíàê çíà÷åíèÿ NULL \sa PARAM_NULL \sa PARAM_NOTNULL
-  double  FHours;       //!< Íîìèíàëüíîå ïîëíîå âðåìÿ
-  short   indFHours;    //!< Ïðèçíàê çíà÷åíèÿ NULL \sa PARAM_NULL \sa PARAM_NOTNULL
+  double  Sn;           //!< ÐÐ¾Ð¼Ð¸Ð½Ð°Ð»ÑŒÐ½Ð°Ñ Ð¼Ð¾Ñ‰Ð½Ð¾ÑÑ‚ÑŒ ÐºÐ’Ð
+  short   indSn;        //!< ÐŸÑ€Ð¸Ð·Ð½Ð°Ðº Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ñ NULL \sa PARAM_NULL \sa PARAM_NOTNULL
+  double  Su;           //!< ÐÐ¾Ð¼Ð¸Ð½Ð°Ð»ÑŒÐ½Ð°Ñ Ð¼Ð¾Ñ‰Ð½Ð¾ÑÑ‚ÑŒ Ð²ÐµÑ€Ñ…Ð½ÐµÐ¹ Ð¾Ð±Ð¼Ð¾Ñ‚ÐºÐ¸ ÐºÐ’Ð
+  short   indSu;        //!< ÐŸÑ€Ð¸Ð·Ð½Ð°Ðº Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ñ NULL \sa PARAM_NULL \sa PARAM_NOTNULL
+  double  Sm;           //!< ÐÐ¾Ð¼Ð¸Ð½Ð°Ð»ÑŒÐ½Ð°Ñ Ð¼Ð¾Ñ‰Ð½Ð¾ÑÑ‚ÑŒ ÑÑ€ÐµÐ´Ð½ÐµÐ¹ Ð¾Ð±Ð¼Ð¾Ñ‚ÐºÐ¸ ÐºÐ’Ð
+  short   indSm;        //!< ÐŸÑ€Ð¸Ð·Ð½Ð°Ðº Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ñ NULL \sa PARAM_NULL \sa PARAM_NOTNULL
+  double  Sd;           //!< ÐÐ¾Ð¼Ð¸Ð½Ð°Ð»ÑŒÐ½Ð°Ñ Ð¼Ð¾Ñ‰Ð½Ð¾ÑÑ‚ÑŒ Ð½Ð¸Ð¶Ð½ÐµÐ¹ Ð¾Ð±Ð¼Ð¾Ñ‚ÐºÐ¸ ÐºÐ’Ð
+  short   indSd;        //!< ÐŸÑ€Ð¸Ð·Ð½Ð°Ðº Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ñ NULL \sa PARAM_NULL \sa PARAM_NOTNULL
+  double  dPxx;         //!< ÐŸÐ¾Ñ‚ÐµÑ€Ð¸ Ñ…Ð¾Ð»Ð¾ÑÑ‚Ð¾Ð³Ð¾ Ñ…Ð¾Ð´Ð° ÐºÐ’Ñ‚
+  short   inddPxx;      //!< ÐŸÑ€Ð¸Ð·Ð½Ð°Ðº Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ñ NULL \sa PARAM_NULL \sa PARAM_NOTNULL
+  double  dPkzu;        //!< ÐŸÐ¾Ñ‚ÐµÑ€Ð¸ ÐºÐ¾Ñ€Ð¾Ñ‚ÐºÐ¾Ð³Ð¾ Ð·Ð°Ð¼Ñ‹ÐºÐ°Ð½Ð¸Ñ Ð²ÐµÑ€Ñ…Ð½ÐµÐ¹ Ð¾Ð±Ð¼Ð¾Ñ‚ÐºÐ¸ ÐºÐ’Ñ‚
+  short   inddPkzu;     //!< ÐŸÑ€Ð¸Ð·Ð½Ð°Ðº Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ñ NULL \sa PARAM_NULL \sa PARAM_NOTNULL
+  double  dPkzm;        //!< ÐŸÐ¾Ñ‚ÐµÑ€Ð¸ ÐºÐ¾Ñ€Ð¾Ñ‚ÐºÐ¾Ð³Ð¾ Ð·Ð°Ð¼Ñ‹ÐºÐ°Ð½Ð¸Ñ ÑÑ€ÐµÐ´Ð½ÐµÐ¹ Ð¾Ð±Ð¼Ð¾Ñ‚ÐºÐ¸ ÐºÐ’Ñ‚
+  short   inddPkzm;     //!< ÐŸÑ€Ð¸Ð·Ð½Ð°Ðº Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ñ NULL \sa PARAM_NULL \sa PARAM_NOTNULL
+  double  dPkzd;        //!< ÐŸÐ¾Ñ‚ÐµÑ€Ð¸ ÐºÐ¾Ñ€Ð¾Ñ‚ÐºÐ¾Ð³Ð¾ Ð·Ð°Ð¼Ñ‹ÐºÐ°Ð½Ð¸Ñ Ð½Ð¸Ð¶Ð½ÐµÐ¹ Ð¾Ð±Ð¼Ð¾Ñ‚ÐºÐ¸ ÐºÐ’Ñ‚
+  short   inddPkzd;     //!< ÐŸÑ€Ð¸Ð·Ð½Ð°Ðº Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ñ NULL \sa PARAM_NULL \sa PARAM_NOTNULL
+  double  Ixx;          //!< Ð¢Ð¾Ðº Ñ…Ð¾Ð»Ð¾ÑÑ‚Ð¾Ð³Ð¾ Ñ…Ð¾Ð´Ð° %
+  short   indIxx;       //!< ÐŸÑ€Ð¸Ð·Ð½Ð°Ðº Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ñ NULL \sa PARAM_NULL \sa PARAM_NOTNULL
+  double  Ukzu;         //!< ÐÐ°Ð¿Ñ€ÑÐ¶ÐµÐ½Ð¸Ðµ ÐºÐ¾Ñ€Ð¾Ñ‚ÐºÐ¾Ð³Ð¾ Ð·Ð°Ð¼Ñ‹ÐºÐ°Ð½Ð¸Ñ Ð²ÐµÑ€Ñ…Ð½ÐµÐ¹ Ð¾Ð±Ð¼Ð¾Ñ‚ÐºÐ¸ %
+  short   indUkzu;      //!< ÐŸÑ€Ð¸Ð·Ð½Ð°Ðº Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ñ NULL \sa PARAM_NULL \sa PARAM_NOTNULL
+  double  Ukzm;         //!< ÐÐ°Ð¿Ñ€ÑÐ¶ÐµÐ½Ð¸Ðµ ÐºÐ¾Ñ€Ð¾Ñ‚ÐºÐ¾Ð³Ð¾ Ð·Ð°Ð¼Ñ‹ÐºÐ°Ð½Ð¸Ñ ÑÑ€ÐµÐ´Ð½ÐµÐ¹ Ð¾Ð±Ð¼Ð¾Ñ‚ÐºÐ¸ %
+  short   indUkzm;      //!< ÐŸÑ€Ð¸Ð·Ð½Ð°Ðº Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ñ NULL \sa PARAM_NULL \sa PARAM_NOTNULL
+  double  Ukzd;         //!< ÐÐ°Ð¿Ñ€ÑÐ¶ÐµÐ½Ð¸Ðµ ÐºÐ¾Ñ€Ð¾Ñ‚ÐºÐ¾Ð³Ð¾ Ð·Ð°Ð¼Ñ‹ÐºÐ°Ð½Ð¸Ñ Ð½Ð¸Ð¶Ð½ÐµÐ¹ Ð¾Ð±Ð¼Ð¾Ñ‚ÐºÐ¸ %
+  short   indUkzd;      //!< ÐŸÑ€Ð¸Ð·Ð½Ð°Ðº Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ñ NULL \sa PARAM_NULL \sa PARAM_NOTNULL
+  double  WHours;       //!< ÐÐ¾Ð¼Ð¸Ð½Ð°Ð»ÑŒÐ½Ð¾Ðµ Ð²Ñ€ÐµÐ¼Ñ Ñ€Ð°Ð±Ð¾Ñ‚Ñ‹
+  short   indWHours;    //!< ÐŸÑ€Ð¸Ð·Ð½Ð°Ðº Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ñ NULL \sa PARAM_NULL \sa PARAM_NOTNULL
+  double  FHours;       //!< ÐÐ¾Ð¼Ð¸Ð½Ð°Ð»ÑŒÐ½Ð¾Ðµ Ð¿Ð¾Ð»Ð½Ð¾Ðµ Ð²Ñ€ÐµÐ¼Ñ
+  short   indFHours;    //!< ÐŸÑ€Ð¸Ð·Ð½Ð°Ðº Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ñ NULL \sa PARAM_NULL \sa PARAM_NOTNULL
 };
 //---------------------------------------------------------------------------
 #endif  //ASKUETYPES_H

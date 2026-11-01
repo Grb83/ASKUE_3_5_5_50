@@ -10,37 +10,37 @@
 #include "MonitorForm.h"
 #include "Reconst.hpp"
 
-#define NA      0           // смещение Мощности А
-#define NR      1           // смещение Мощности D
-#define anF     2           // смещение фи
-#define COSF    3           // смещение косинуса фи
-#define UA      4           // смещение напряжения А
-#define UB      5           // смещение напряжения D
-#define UC      6           // смещение напряжения C
-#define anUA    7           // смещение угла напряжения А
-#define anUB    8           // смещение угла напряжения B
-#define anUC    9           // смещение угла напряжения C
-#define IA      10          // смещение тока А
-#define IB      11          // смещение тока B
-#define IC      12          // смещение тока C
-#define anIA    13          // смещение угла тока А
-#define anIB    14          // смещение угла тока B
-#define anIC    15          // смещение угла тока C
+#define NA      0           // СЃРјРµС‰РµРЅРёРµ РњРѕС‰РЅРѕСЃС‚Рё Рђ
+#define NR      1           // СЃРјРµС‰РµРЅРёРµ РњРѕС‰РЅРѕСЃС‚Рё D
+#define anF     2           // СЃРјРµС‰РµРЅРёРµ С„Рё
+#define COSF    3           // СЃРјРµС‰РµРЅРёРµ РєРѕСЃРёРЅСѓСЃР° С„Рё
+#define UA      4           // СЃРјРµС‰РµРЅРёРµ РЅР°РїСЂСЏР¶РµРЅРёСЏ Рђ
+#define UB      5           // СЃРјРµС‰РµРЅРёРµ РЅР°РїСЂСЏР¶РµРЅРёСЏ D
+#define UC      6           // СЃРјРµС‰РµРЅРёРµ РЅР°РїСЂСЏР¶РµРЅРёСЏ C
+#define anUA    7           // СЃРјРµС‰РµРЅРёРµ СѓРіР»Р° РЅР°РїСЂСЏР¶РµРЅРёСЏ Рђ
+#define anUB    8           // СЃРјРµС‰РµРЅРёРµ СѓРіР»Р° РЅР°РїСЂСЏР¶РµРЅРёСЏ B
+#define anUC    9           // СЃРјРµС‰РµРЅРёРµ СѓРіР»Р° РЅР°РїСЂСЏР¶РµРЅРёСЏ C
+#define IA      10          // СЃРјРµС‰РµРЅРёРµ С‚РѕРєР° Рђ
+#define IB      11          // СЃРјРµС‰РµРЅРёРµ С‚РѕРєР° B
+#define IC      12          // СЃРјРµС‰РµРЅРёРµ С‚РѕРєР° C
+#define anIA    13          // СЃРјРµС‰РµРЅРёРµ СѓРіР»Р° С‚РѕРєР° Рђ
+#define anIB    14          // СЃРјРµС‰РµРЅРёРµ СѓРіР»Р° С‚РѕРєР° B
+#define anIC    15          // СЃРјРµС‰РµРЅРёРµ СѓРіР»Р° С‚РѕРєР° C
 #define zU1U2    16
 #define zU1U3    17
 #define zU2U3    18
 #define zU1I1    19
 #define zU2I2    20
 #define zU3I3    21
-#define FR       22          // смещение частоты
-#define OBSOLETE 23          // смещение достоверности
+#define FR       22          // СЃРјРµС‰РµРЅРёРµ С‡Р°СЃС‚РѕС‚С‹
+#define OBSOLETE 23          // СЃРјРµС‰РµРЅРёРµ РґРѕСЃС‚РѕРІРµСЂРЅРѕСЃС‚Рё
 int y;
 const double INCREASE_SCALE_VALUE = 6;
 double  dNA, dNR, dFR, dCOSF, dUA, dUB, dUC, dAnUA,
           dAnUB, dAnUC, dIA, dIB, dIC, dAnIA, dAnIB, dAnIC;
 
 //---------------------------------------------------------------------------
-//Текущие значения и параметры качества электроэнергии (КСС)
+//РўРµРєСѓС‰РёРµ Р·РЅР°С‡РµРЅРёСЏ Рё РїР°СЂР°РјРµС‚СЂС‹ РєР°С‡РµСЃС‚РІР° СЌР»РµРєС‚СЂРѕСЌРЅРµСЂРіРёРё (РљРЎРЎ)
 __fastcall TDU2ChartInteriorGRB::TDU2ChartInteriorGRB(TComponent* Owner,TSplitterForm *aSP,TFormDescr *aFD,Classes::TNotifyEvent OnProgr)
     :T1Interior(Owner,aSP,aFD,OnProgr)
 {
@@ -115,7 +115,7 @@ void __fastcall TDU2ChartInteriorGRB::formDescr( void )
   vtDU2Data = new TVirtualTable(this);
   char  datest[20],
         dateen[20];
-  //Заполняем необходимые поля описания формы
+  //Р—Р°РїРѕР»РЅСЏРµРј РЅРµРѕР±С…РѕРґРёРјС‹Рµ РїРѕР»СЏ РѕРїРёСЃР°РЅРёСЏ С„РѕСЂРјС‹
 	Clones  = 0;
 
   unsigned short  year,
@@ -142,7 +142,7 @@ void __fastcall TDU2ChartInteriorGRB::formDescr( void )
 
 	NamesClones->Clear();
   NamesClones->Add("01.01.0001 00:00");
-  // названия строк таблицы получаем теперь здесь
+  // РЅР°Р·РІР°РЅРёСЏ СЃС‚СЂРѕРє С‚Р°Р±Р»РёС†С‹ РїРѕР»СѓС‡Р°РµРј С‚РµРїРµСЂСЊ Р·РґРµСЃСЊ
   dmMain->oqInterCursor->Params->Clear();
   dmMain->oqInterCursor->SQL->Text="begin "+SchemeName+"interior_pg.InteriorDU2Chart_selectData_p(:par1,:par2,:par3,:par4,:par5,:par6,:par7,:par8); end;";
   dmMain->oqInterCursor->ParamByName("par8")->ParamType=ptOutput;
@@ -186,14 +186,14 @@ void __fastcall TDU2ChartInteriorGRB::selectData( TOraQuery *qwInter )
   char  date[20];
 
 	try
-  { //Инициализация массива
+  { //РРЅРёС†РёР°Р»РёР·Р°С†РёСЏ РјР°СЃСЃРёРІР°
     unsigned long clones  = Clones + 1;
     for (int i = 0; i < SubColumns() * (Clones + 1) * (RowCount + 1); i++){
       datOracle[i].val  = -MAXFLOAT;
       datOracle[i].isvalid[0] = '\0';
     }
-    // KAS Текущую дату на название формы
-    dynamic_cast<TBaseMonitorForm *>(Owner)->Caption  = fd->NameGroup + " на " + GetCurrentDate(qwInter);
+    // KAS РўРµРєСѓС‰СѓСЋ РґР°С‚Сѓ РЅР° РЅР°Р·РІР°РЅРёРµ С„РѕСЂРјС‹
+    dynamic_cast<TBaseMonitorForm *>(Owner)->Caption  = fd->NameGroup + " РЅР° " + GetCurrentDate(qwInter);
    for (iClones = 1; iClones <= Clones; ++iClones)
 	  { strcpy(date, NamesClones->Strings[iClones].c_str());
 
@@ -309,7 +309,7 @@ void __fastcall TDU2ChartInteriorGRB::clonesInRows(void)
     DrawTable->RowCount++;
   DrawTable->FixedRows  = 2;
 
-  //Подготавливаем переменные поля для приема
+  //РџРѕРґРіРѕС‚Р°РІР»РёРІР°РµРј РїРµСЂРµРјРµРЅРЅС‹Рµ РїРѕР»СЏ РґР»СЏ РїСЂРёРµРјР°
 	int *TempStruct = new int[RowCount];
 	for (iClones = 0; iClones < RowCount; iClones++)
     TempStruct[iClones] = LenFloat;
@@ -320,7 +320,7 @@ DrawTable->TabStrings->Add("$ m0x9 0x100F c15 b #$ m0x5 0x100F #$#$#$#$#$#$#$#$#
 	dataInRows();
 	delete  TempStruct;
 
-	//Добавляем нумерацию профиля
+	//Р”РѕР±Р°РІР»СЏРµРј РЅСѓРјРµСЂР°С†РёСЋ РїСЂРѕС„РёР»СЏ
 	TDateTime tempDate;
 	AnsiString  formatDate;
 	AnsiString  formatDateSum;
@@ -348,11 +348,11 @@ DrawTable->TabStrings->Add("$ m0x9 0x100F c15 b #$ m0x5 0x100F #$#$#$#$#$#$#$#$#
    DrawTable->StaticStrings->Add(GetSubColumnsNames(jColumns));
    ColumnsCaption->Add(GetSubColumnsNames(jColumns));
   }
-	//Добавляем заголовки клонов
+	//Р”РѕР±Р°РІР»СЏРµРј Р·Р°РіРѕР»РѕРІРєРё РєР»РѕРЅРѕРІ
   VT_PrintData->First();
 	for (iClones = 0; iClones < Clones ; ++iClones)
 	{ DrawTable->StaticStrings->Add(NamesClones->Strings[iClones + 1]);
-    //Добавляем заголовки колонок под клонами
+    //Р”РѕР±Р°РІР»СЏРµРј Р·Р°РіРѕР»РѕРІРєРё РєРѕР»РѕРЅРѕРє РїРѕРґ РєР»РѕРЅР°РјРё
     VT_PrintData->Edit();
     VT_PrintData->Fields->FieldByName("RowName")->AsString  = NamesClones->Strings[iClones + 1];
     VT_PrintData->Next();
@@ -364,14 +364,14 @@ DrawTable->TabStrings->Add("$ m0x9 0x100F c15 b #$ m0x5 0x100F #$#$#$#$#$#$#$#$#
 //inline char** __fastcall TDU2ChartInterior::GetSubColumnsNames(void)
 inline AnsiString __fastcall TDU2ChartInteriorGRB::GetSubColumnsNames(int n)
 {
-  AnsiString  names[]  = {"", "P A [МВт]", "P Q [МВАр]", Reconst_smes111_13, "сos(Ф)",
-                      "Uа [В]", "Ub [В]", "Uc [В]",
+  AnsiString  names[]  = {"", "P A [РњР’С‚]", "P Q [РњР’РђСЂ]", Reconst_smes111_13, "СЃos(Р¤)",
+                      "UР° [Р’]", "Ub [Р’]", "Uc [Р’]",
                       Reconst_smes111_14, Reconst_smes111_15, Reconst_smes111_16,
-                      "Ia [А]", "Ib [А]", "Ic [А]",
+                      "Ia [Рђ]", "Ib [Рђ]", "Ic [Рђ]",
                       Reconst_smes111_17, Reconst_smes111_18, Reconst_smes111_19,
                       Reconst_smes111_20, Reconst_smes111_21, Reconst_smes111_22,
                       Reconst_smes111_23, Reconst_smes111_24, Reconst_smes111_25,
-                      "F [Гц]"};
+                      "F [Р“С†]"};
   return  names[n];
 }
 //---------------------------------------------------------------------------
@@ -386,7 +386,7 @@ void __fastcall TDU2ChartInteriorGRB::dataInRows(void)
 	TCloneItem  *ptrDatOracle,
               *ptrDataOra;
 
-  //столбцы для названий точек(времени) и и подколонок
+  //СЃС‚РѕР»Р±С†С‹ РґР»СЏ РЅР°Р·РІР°РЅРёР№ С‚РѕС‡РµРє(РІСЂРµРјРµРЅРё) Рё Рё РїРѕРґРєРѕР»РѕРЅРѕРє
   ColumnsCaption->Clear();
   VT_PrintData->Close();
   VT_PrintData->Clear();
@@ -395,7 +395,7 @@ void __fastcall TDU2ChartInteriorGRB::dataInRows(void)
   for (int CC = 0; CC < RowCount; CC++)
     VT_PrintData->FieldDefs->Add("Data" + IntToStr(CC), ftString, 20, false);
   VT_PrintData->Open();
-  //Подготавливаем переменные поля для приема
+  //РџРѕРґРіРѕС‚Р°РІР»РёРІР°РµРј РїРµСЂРµРјРµРЅРЅС‹Рµ РїРѕР»СЏ РґР»СЏ РїСЂРёРµРјР°
   ptr = DrawTable->StructStrings->GetArray();
   for (jColumns = 1; jColumns <= Clones; jColumns++){
     VT_PrintData->Append();
@@ -414,7 +414,7 @@ void __fastcall TDU2ChartInteriorGRB::dataInRows(void)
 
 void __fastcall TDU2ChartInteriorGRB::Place()
 {
-  //GRB - 26.11.2020 Место под отрисовку нового pChartGRB1, StringGrid1
+  //GRB - 26.11.2020 РњРµСЃС‚Рѕ РїРѕРґ РѕС‚СЂРёСЃРѕРІРєСѓ РЅРѕРІРѕРіРѕ pChartGRB1, StringGrid1
     try
     {
     pChartGRB1  = NULL;
@@ -422,7 +422,7 @@ void __fastcall TDU2ChartInteriorGRB::Place()
     pChartGRB1->OnMouseDown               = NULL;
     pChartGRB1->OnMouseMove               = NULL;
     pChartGRB1->Enabled                   = true;
-    //Проводим начальную настройку компонента TChart 1
+    //РџСЂРѕРІРѕРґРёРј РЅР°С‡Р°Р»СЊРЅСѓСЋ РЅР°СЃС‚СЂРѕР№РєСѓ РєРѕРјРїРѕРЅРµРЅС‚Р° TChart 1
     pChartGRB1->View3D                   = false;
     pChartGRB1->Legend->Visible          = false;
     pChartGRB1->Legend->ColorWidth       = 35;
@@ -437,30 +437,30 @@ void __fastcall TDU2ChartInteriorGRB::Place()
         objName = getObjectName(1);
     AnsiString caption1 = "";
     if (Language == "UKR"){
-    caption1 = "Векторна діаграма якості електроенергії, дані по об'єкту: '"+ fd->NameGroup +"' за дату "+objName +" з профілем ";
+    caption1 = "Р’РµРєС‚РѕСЂРЅР° РґС–Р°РіСЂР°РјР° СЏРєРѕСЃС‚С– РµР»РµРєС‚СЂРѕРµРЅРµСЂРіС–С—, РґР°РЅС– РїРѕ РѕР±'С”РєС‚Сѓ: '"+ fd->NameGroup +"' Р·Р° РґР°С‚Сѓ "+objName +" Р· РїСЂРѕС„С–Р»РµРј ";
     switch (fd->StepProfile){
     case TFormDescr::stpDay:
-      caption1+=" за місяц.";
+      caption1+=" Р·Р° РјС–СЃСЏС†.";
       break;
     case TFormDescr::stpHour:
-      caption1+=" за добу.";
+      caption1+=" Р·Р° РґРѕР±Сѓ.";
       break;
     case TFormDescr::stpMonth:
-      caption1+=" за рік.";
+      caption1+=" Р·Р° СЂС–Рє.";
       break;
     }
     }else {
-    caption1 = "Векторная диаграмма качества электроэнергии, данные по объекту: '"+ fd->NameGroup +"' за дату "+objName +" с профилем ";
+    caption1 = "Р’РµРєС‚РѕСЂРЅР°СЏ РґРёР°РіСЂР°РјРјР° РєР°С‡РµСЃС‚РІР° СЌР»РµРєС‚СЂРѕСЌРЅРµСЂРіРёРё, РґР°РЅРЅС‹Рµ РїРѕ РѕР±СЉРµРєС‚Сѓ: '"+ fd->NameGroup +"' Р·Р° РґР°С‚Сѓ "+objName +" СЃ РїСЂРѕС„РёР»РµРј ";
 
       switch (fd->StepProfile){
     case TFormDescr::stpDay:
-      caption1+=" за месяц.";
+      caption1+=" Р·Р° РјРµСЃСЏС†.";
       break;
     case TFormDescr::stpHour:
-      caption1+=" за сутки.";
+      caption1+=" Р·Р° СЃСѓС‚РєРё.";
       break;
     case TFormDescr::stpMonth:
-      caption1+=" за год.";
+      caption1+=" Р·Р° РіРѕРґ.";
       break;
       }
   }
@@ -501,14 +501,14 @@ void __fastcall TDU2ChartInteriorGRB::Place()
 		throw(Exception(Reconst_smes111_26));
   }
   OnProgressBarStepBy(NULL);
-  //END GRB - Конец
+  //END GRB - РљРѕРЅРµС†
 
   TFormSetupMonitors*psm;
   try
   { psm = new TFormSetupMonitors(Application);
-    //Создаем график 1
-    //Создаем таблицу
-    //Укладываем таблицу и графики в SplitterForm
+    //РЎРѕР·РґР°РµРј РіСЂР°С„РёРє 1
+    //РЎРѕР·РґР°РµРј С‚Р°Р±Р»РёС†Сѓ
+    //РЈРєР»Р°РґС‹РІР°РµРј С‚Р°Р±Р»РёС†Сѓ Рё РіСЂР°С„РёРєРё РІ SplitterForm
     DrawTable = new TDrawTable(Owner);
     DrawTable->OnDrawCell = DrawTableDrawCell;
     DrawTable->Options << goRowSizing;
@@ -521,7 +521,7 @@ void __fastcall TDU2ChartInteriorGRB::Place()
     SplitterForm->Splitter->OnClick = OnClickPanel;
     SplitterForm->Splitter->Tag     = fd->PercentSplit;
     SplitterForm->SplitFormResize(NULL);
-    // Форматирование таблицы
+    // Р¤РѕСЂРјР°С‚РёСЂРѕРІР°РЅРёРµ С‚Р°Р±Р»РёС†С‹
     DrawTable->OnEnter        = OnClickPanel;
     DrawTable->OnMouseDown    = DrawTableMouseDown;
     DrawTable->OnMouseMove    = DrawTableMouseMove;
@@ -550,21 +550,21 @@ void __fastcall TDU2ChartInteriorGRB::Place()
 					                        AnsiString("#") + psm->EditBWWidthDigit->Text;
 			clonesInRows();
                 }
-    // Строим график по умолчанию
+    // РЎС‚СЂРѕРёРј РіСЂР°С„РёРє РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
     ChartFXColumns(1);
     OnProgressBarStepBy(this);//80
     if (fd->IsMemParActualForClones)
-    { //Восстановление состояния скроллинга
+    { //Р’РѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ СЃРѕСЃС‚РѕСЏРЅРёСЏ СЃРєСЂРѕР»Р»РёРЅРіР°
       if (DrawTable)
         DrawTable->TopRow = fd->TableTopRow;
-      //e Восстановление состояния скроллинга
+      //e Р’РѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ СЃРѕСЃС‚РѕСЏРЅРёСЏ СЃРєСЂРѕР»Р»РёРЅРіР°
       fd->IsMemParActualForClones = FALSE;
     }
     if (fd->IsMemParActualForProf)
-    { //Восстановление состояния скроллинга
+    { //Р’РѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ СЃРѕСЃС‚РѕСЏРЅРёСЏ СЃРєСЂРѕР»Р»РёРЅРіР°
       if (DrawTable)
         DrawTable->LeftCol  = fd->TableLeftCol;
-      //e Восстановление состояния скроллинга
+      //e Р’РѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ СЃРѕСЃС‚РѕСЏРЅРёСЏ СЃРєСЂРѕР»Р»РёРЅРіР°
       fd->IsMemParActualForProf = FALSE;
     }
     //26.08.2021 GRB ADD
@@ -576,7 +576,7 @@ void __fastcall TDU2ChartInteriorGRB::Place()
   { SplitterForm->RemoveChild(DrawTable);
 		SplitterForm->RemoveChild(pChart1);
 		SplitterForm->RemoveChild(pChart);
-                //22.12.2020 0 GRB ADD - ремувим и тут
+                //22.12.2020 0 GRB ADD - СЂРµРјСѓРІРёРј Рё С‚СѓС‚
                 SplitterForm->RemoveChild (pChartGRB1);
                 SplitterForm->RemoveChild (StringGrid1);
                 //22.12.2020 end ADD
@@ -587,7 +587,7 @@ void __fastcall TDU2ChartInteriorGRB::Place()
 			delete  pChart1;
 		if (pChart)
 			delete  pChart;
-                //22.12.2020 - GRB ADD - надо корректно удалять своё
+                //22.12.2020 - GRB ADD - РЅР°РґРѕ РєРѕСЂСЂРµРєС‚РЅРѕ СѓРґР°Р»СЏС‚СЊ СЃРІРѕС‘
                 if (pChartGRB1)
 			delete  pChartGRB1;
                 if (StringGrid1)
@@ -609,11 +609,11 @@ void __fastcall TDU2ChartInteriorGRB::Place()
 
 void __fastcall TDU2ChartInteriorGRB::clickGraphics(long ColPressed, long RowPressed)
 {
-	if (ColPressed == 1)//разложение по группам
+	if (ColPressed == 1)//СЂР°Р·Р»РѕР¶РµРЅРёРµ РїРѕ РіСЂСѓРїРїР°Рј
 	{
         return;
 	}
-	if (RowPressed == 0)//построение профиля
+	if (RowPressed == 0)//РїРѕСЃС‚СЂРѕРµРЅРёРµ РїСЂРѕС„РёР»СЏ
 	{
         ChartFXColumns(ColPressed - 1);
 	}
@@ -705,7 +705,7 @@ void __fastcall TDU2ChartInteriorGRB::ChartFXLines(long AClone)
 
 void __fastcall TDU2ChartInteriorGRB::ChartFXColumns(long ARow)
 {
-// Удаление серий с графика
+// РЈРґР°Р»РµРЅРёРµ СЃРµСЂРёР№ СЃ РіСЂР°С„РёРєР°
   while (pChartGRB1->SeriesCount()>0)
   { TChartSeries  *cs = pChartGRB1->Series[0];
     cs->ParentChart = NULL;
@@ -714,7 +714,7 @@ void __fastcall TDU2ChartInteriorGRB::ChartFXColumns(long ARow)
   for(int i=0; i<pChartGRB1->SeriesList->Count; i++)
       pChartGRB1->Series[i]->Active = false;
   pChartGRB1->SeriesList->Clear();
-  //Вычитка активных данных и отрисовка всего добра
+  //Р’С‹С‡РёС‚РєР° Р°РєС‚РёРІРЅС‹С… РґР°РЅРЅС‹С… Рё РѕС‚СЂРёСЃРѕРІРєР° РІСЃРµРіРѕ РґРѕР±СЂР°
   try{
   objName = getObjectName(ARow);
   }catch (Exception &ex){
@@ -789,39 +789,39 @@ void __fastcall TDU2ChartInteriorGRB::OnPopupClick(TObject* Sender)
 void __fastcall TDU2ChartInteriorGRB::StringGrid1DrawCell(TObject *Sender, int ACol,
       int ARow, const TRect &Rect, TGridDrawState State)
 {
-  if (ACol == 0 && ARow!=0 &&ARow < 8 ) //коодинаты ячейки которой нужно изменить цвет
+  if (ACol == 0 && ARow!=0 &&ARow < 8 ) //РєРѕРѕРґРёРЅР°С‚С‹ СЏС‡РµР№РєРё РєРѕС‚РѕСЂРѕР№ РЅСѓР¶РЅРѕ РёР·РјРµРЅРёС‚СЊ С†РІРµС‚
   {
     StringGrid1->Canvas->Brush->Color = clYellow;
     StringGrid1->Canvas->FillRect(Rect);
   }
-  if (ACol == 0 && ARow==1 &&ARow < 8 ) //коодинаты ячейки которой нужно изменить цвет
+  if (ACol == 0 && ARow==1 &&ARow < 8 ) //РєРѕРѕРґРёРЅР°С‚С‹ СЏС‡РµР№РєРё РєРѕС‚РѕСЂРѕР№ РЅСѓР¶РЅРѕ РёР·РјРµРЅРёС‚СЊ С†РІРµС‚
   {
     StringGrid1->Canvas->Brush->Color =  (TColor)RGB(255,215,28);/*clOlive*/;
     StringGrid1->Canvas->FillRect(Rect);
   }
-  if (ACol == 0 && ARow==8 ) //коодинаты ячейки которой нужно изменить цвет
+  if (ACol == 0 && ARow==8 ) //РєРѕРѕРґРёРЅР°С‚С‹ СЏС‡РµР№РєРё РєРѕС‚РѕСЂРѕР№ РЅСѓР¶РЅРѕ РёР·РјРµРЅРёС‚СЊ С†РІРµС‚
   {
     StringGrid1->Canvas->Brush->Color = clLime;
     StringGrid1->Canvas->FillRect(Rect);
   }
 
-  if (ACol == 0 && ARow >8 &&ARow<=14 ) //коодинаты ячейки которой нужно изменить цвет
+  if (ACol == 0 && ARow >8 &&ARow<=14 ) //РєРѕРѕРґРёРЅР°С‚С‹ СЏС‡РµР№РєРё РєРѕС‚РѕСЂРѕР№ РЅСѓР¶РЅРѕ РёР·РјРµРЅРёС‚СЊ С†РІРµС‚
   {
     StringGrid1->Canvas->Brush->Color = clGreen;
     StringGrid1->Canvas->FillRect(Rect);
   }
-    if (ACol == 0 && ARow==15) //коодинаты ячейки которой нужно изменить цвет
+    if (ACol == 0 && ARow==15) //РєРѕРѕРґРёРЅР°С‚С‹ СЏС‡РµР№РєРё РєРѕС‚РѕСЂРѕР№ РЅСѓР¶РЅРѕ РёР·РјРµРЅРёС‚СЊ С†РІРµС‚
   {
     StringGrid1->Canvas->Brush->Color = (TColor)0x8010FF;
     StringGrid1->Canvas->FillRect(Rect);
   }
 
-  if (ACol == 0 && ARow >15 &&ARow<22 ) //коодинаты ячейки которой нужно изменить цвет
+  if (ACol == 0 && ARow >15 &&ARow<22 ) //РєРѕРѕРґРёРЅР°С‚С‹ СЏС‡РµР№РєРё РєРѕС‚РѕСЂРѕР№ РЅСѓР¶РЅРѕ РёР·РјРµРЅРёС‚СЊ С†РІРµС‚
   {
     StringGrid1->Canvas->Brush->Color = clRed;
     StringGrid1->Canvas->FillRect(Rect);
   }
-  if (ACol == 0 && ARow == 28 ) //коодинаты ячейки которой нужно изменить цвет
+  if (ACol == 0 && ARow == 28 ) //РєРѕРѕРґРёРЅР°С‚С‹ СЏС‡РµР№РєРё РєРѕС‚РѕСЂРѕР№ РЅСѓР¶РЅРѕ РёР·РјРµРЅРёС‚СЊ С†РІРµС‚
   {
     StringGrid1->Canvas->Brush->Color = clBlue;
     StringGrid1->Canvas->FillRect(Rect);
@@ -832,7 +832,7 @@ void __fastcall TDU2ChartInteriorGRB::StringGrid1DrawCell(TObject *Sender, int A
   StringGrid1->Canvas->TextRect( Rect, Rect.left+2, Rect.top+2, uStr);
   StringGrid1->Canvas->FrameRect(Rect);
   }
-  //Отключаем (пытаемся) эффект выделения активной ячейки при попытке перерисовки при нажати на строку DrawCell
+  //РћС‚РєР»СЋС‡Р°РµРј (РїС‹С‚Р°РµРјСЃСЏ) СЌС„С„РµРєС‚ РІС‹РґРµР»РµРЅРёСЏ Р°РєС‚РёРІРЅРѕР№ СЏС‡РµР№РєРё РїСЂРё РїРѕРїС‹С‚РєРµ РїРµСЂРµСЂРёСЃРѕРІРєРё РїСЂРё РЅР°Р¶Р°С‚Рё РЅР° СЃС‚СЂРѕРєСѓ DrawCell
    if (State.Contains(Grids::gdSelected)){
       if (activ_data.obsolete==0)
       StringGrid1->Canvas->Brush->Color=clWhite;
@@ -876,86 +876,86 @@ void __fastcall TDU2ChartInteriorGRB::fAutoSizeColSG(TStringGrid* StringGrid) {
 //---------------------------------------------------------------------------
  void __fastcall TDU2ChartInteriorGRB::writeParamsToTable(){
 if (Language == "UKR"){
-StringGrid1->Cells [1][0] = "Параметри якості";
-StringGrid1->Cells [2][0] = "Значення";
+StringGrid1->Cells [1][0] = "РџР°СЂР°РјРµС‚СЂРё СЏРєРѕСЃС‚С–";
+StringGrid1->Cells [2][0] = "Р—РЅР°С‡РµРЅРЅСЏ";
 
-StringGrid1->Cells [1][1] = "Напруга, Ua (В):";
-StringGrid1->Cells [1][2] = "Струм, Ia (A):";
-StringGrid1->Cells [1][3] =" Кут Ф (гр.):";
-StringGrid1->Cells [1][4] =" cos(Ф):";
+StringGrid1->Cells [1][1] = "РќР°РїСЂСѓРіР°, Ua (Р’):";
+StringGrid1->Cells [1][2] = "РЎС‚СЂСѓРј, Ia (A):";
+StringGrid1->Cells [1][3] =" РљСѓС‚ Р¤ (РіСЂ.):";
+StringGrid1->Cells [1][4] =" cos(Р¤):";
 
-StringGrid1->Cells [1][5] = "Активна потужність (кВт):";
-StringGrid1->Cells [1][6] = "Реактивна потужність (кВар):";
-StringGrid1->Cells [1][7] = "Повна потужність (кВА):";
+StringGrid1->Cells [1][5] = "РђРєС‚РёРІРЅР° РїРѕС‚СѓР¶РЅС–СЃС‚СЊ (РєР’С‚):";
+StringGrid1->Cells [1][6] = "Р РµР°РєС‚РёРІРЅР° РїРѕС‚СѓР¶РЅС–СЃС‚СЊ (РєР’Р°СЂ):";
+StringGrid1->Cells [1][7] = "РџРѕРІРЅР° РїРѕС‚СѓР¶РЅС–СЃС‚СЊ (РєР’Рђ):";
 
-StringGrid1->Cells [1][8] = "Напруга, Ub (В):";
-StringGrid1->Cells [1][9] = "Струм, Ib (A):";
-StringGrid1->Cells [1][10] =" Кут Ф (гр.):";
-StringGrid1->Cells [1][11] =" cos(Ф):";
+StringGrid1->Cells [1][8] = "РќР°РїСЂСѓРіР°, Ub (Р’):";
+StringGrid1->Cells [1][9] = "РЎС‚СЂСѓРј, Ib (A):";
+StringGrid1->Cells [1][10] =" РљСѓС‚ Р¤ (РіСЂ.):";
+StringGrid1->Cells [1][11] =" cos(Р¤):";
 
-StringGrid1->Cells [1][12] = "Активна потужність (кВт):";
-StringGrid1->Cells [1][13] = "Реактивна потужність (кВар):";
-StringGrid1->Cells [1][14] = "Повна потужність (кВА):";
+StringGrid1->Cells [1][12] = "РђРєС‚РёРІРЅР° РїРѕС‚СѓР¶РЅС–СЃС‚СЊ (РєР’С‚):";
+StringGrid1->Cells [1][13] = "Р РµР°РєС‚РёРІРЅР° РїРѕС‚СѓР¶РЅС–СЃС‚СЊ (РєР’Р°СЂ):";
+StringGrid1->Cells [1][14] = "РџРѕРІРЅР° РїРѕС‚СѓР¶РЅС–СЃС‚СЊ (РєР’Рђ):";
 
-StringGrid1->Cells [1][15] = "Напруга, Uc (C):";
-StringGrid1->Cells [1][16] = "Струм, Ic (A):";
-StringGrid1->Cells [1][17] =" Кут Ф(гр.):";
-StringGrid1->Cells [1][18] =" cos(Ф):";
-StringGrid1->Cells [1][19] = "Активна потужність (кВт):";
-StringGrid1->Cells [1][20] = "Реактивна потужність (кВар):";
-StringGrid1->Cells [1][21] = "Повна потужність (кВА):";
+StringGrid1->Cells [1][15] = "РќР°РїСЂСѓРіР°, Uc (C):";
+StringGrid1->Cells [1][16] = "РЎС‚СЂСѓРј, Ic (A):";
+StringGrid1->Cells [1][17] =" РљСѓС‚ Р¤(РіСЂ.):";
+StringGrid1->Cells [1][18] =" cos(Р¤):";
+StringGrid1->Cells [1][19] = "РђРєС‚РёРІРЅР° РїРѕС‚СѓР¶РЅС–СЃС‚СЊ (РєР’С‚):";
+StringGrid1->Cells [1][20] = "Р РµР°РєС‚РёРІРЅР° РїРѕС‚СѓР¶РЅС–СЃС‚СЊ (РєР’Р°СЂ):";
+StringGrid1->Cells [1][21] = "РџРѕРІРЅР° РїРѕС‚СѓР¶РЅС–СЃС‚СЊ (РєР’Рђ):";
 
-StringGrid1->Cells [1][22] = "Частота F (Гц):";
-//StringGrid1->Cells [1][23] = "Сумма по фазам";
-StringGrid1->Cells [1][23] = "Активна потужність (кВт):";
-StringGrid1->Cells [1][24] = "Реактивна потужність (кВар):";
-StringGrid1->Cells [1][25] = "Повна потужність (кВА):";
-StringGrid1->Cells [1][26] = "Кут Ф(гр.):";
-StringGrid1->Cells [1][27] = "cos(Ф):";
-StringGrid1->Cells [1][28] = "Достовірність:";
+StringGrid1->Cells [1][22] = "Р§Р°СЃС‚РѕС‚Р° F (Р“С†):";
+//StringGrid1->Cells [1][23] = "РЎСѓРјРјР° РїРѕ С„Р°Р·Р°Рј";
+StringGrid1->Cells [1][23] = "РђРєС‚РёРІРЅР° РїРѕС‚СѓР¶РЅС–СЃС‚СЊ (РєР’С‚):";
+StringGrid1->Cells [1][24] = "Р РµР°РєС‚РёРІРЅР° РїРѕС‚СѓР¶РЅС–СЃС‚СЊ (РєР’Р°СЂ):";
+StringGrid1->Cells [1][25] = "РџРѕРІРЅР° РїРѕС‚СѓР¶РЅС–СЃС‚СЊ (РєР’Рђ):";
+StringGrid1->Cells [1][26] = "РљСѓС‚ Р¤(РіСЂ.):";
+StringGrid1->Cells [1][27] = "cos(Р¤):";
+StringGrid1->Cells [1][28] = "Р”РѕСЃС‚РѕРІС–СЂРЅС–СЃС‚СЊ:";
 
 }
 else{
-StringGrid1->Cells [1][0] = "Параметры качества";
-StringGrid1->Cells [2][0] = "Значения";
+StringGrid1->Cells [1][0] = "РџР°СЂР°РјРµС‚СЂС‹ РєР°С‡РµСЃС‚РІР°";
+StringGrid1->Cells [2][0] = "Р—РЅР°С‡РµРЅРёСЏ";
 
-StringGrid1->Cells [1][1] = "Напряжение, Ua (В):";
-StringGrid1->Cells [1][2] = "Ток, Ia (A):";
-StringGrid1->Cells [1][3] =" Угол Ф (гр.):";
-StringGrid1->Cells [1][4] =" cos(Ф):";
+StringGrid1->Cells [1][1] = "РќР°РїСЂСЏР¶РµРЅРёРµ, Ua (Р’):";
+StringGrid1->Cells [1][2] = "РўРѕРє, Ia (A):";
+StringGrid1->Cells [1][3] =" РЈРіРѕР» Р¤ (РіСЂ.):";
+StringGrid1->Cells [1][4] =" cos(Р¤):";
 
-StringGrid1->Cells [1][5] = "Активная мощность (кВт):";
-StringGrid1->Cells [1][6] = "Реактивная мощность (кВар):";
-StringGrid1->Cells [1][7] = "Полная мощность (кВА):";
+StringGrid1->Cells [1][5] = "РђРєС‚РёРІРЅР°СЏ РјРѕС‰РЅРѕСЃС‚СЊ (РєР’С‚):";
+StringGrid1->Cells [1][6] = "Р РµР°РєС‚РёРІРЅР°СЏ РјРѕС‰РЅРѕСЃС‚СЊ (РєР’Р°СЂ):";
+StringGrid1->Cells [1][7] = "РџРѕР»РЅР°СЏ РјРѕС‰РЅРѕСЃС‚СЊ (РєР’Рђ):";
 
-StringGrid1->Cells [1][8] = "Напряжение, Ub (В):";
-StringGrid1->Cells [1][9] = "Ток, Ib (A):";
-StringGrid1->Cells [1][10] =" Угол Ф (гр.):";
-StringGrid1->Cells [1][11] =" cos(Ф):";
+StringGrid1->Cells [1][8] = "РќР°РїСЂСЏР¶РµРЅРёРµ, Ub (Р’):";
+StringGrid1->Cells [1][9] = "РўРѕРє, Ib (A):";
+StringGrid1->Cells [1][10] =" РЈРіРѕР» Р¤ (РіСЂ.):";
+StringGrid1->Cells [1][11] =" cos(Р¤):";
 
-StringGrid1->Cells [1][12] = "Активная мощность (кВт):";
-StringGrid1->Cells [1][13] = "Реактивная мощность (кВар):";
-StringGrid1->Cells [1][14] = "Полная мощность (кВА):";
+StringGrid1->Cells [1][12] = "РђРєС‚РёРІРЅР°СЏ РјРѕС‰РЅРѕСЃС‚СЊ (РєР’С‚):";
+StringGrid1->Cells [1][13] = "Р РµР°РєС‚РёРІРЅР°СЏ РјРѕС‰РЅРѕСЃС‚СЊ (РєР’Р°СЂ):";
+StringGrid1->Cells [1][14] = "РџРѕР»РЅР°СЏ РјРѕС‰РЅРѕСЃС‚СЊ (РєР’Рђ):";
 
-StringGrid1->Cells [1][15] = "Напряжение, Uc (C):";
-StringGrid1->Cells [1][16] = "Ток, Ic (A):";
-StringGrid1->Cells [1][17] =" Угол Ф(гр.):";
-StringGrid1->Cells [1][18] =" cos(Ф):";
-StringGrid1->Cells [1][19] = "Активная мощность (кВт):";
-StringGrid1->Cells [1][20] = "Реактивная мощность (кВар):";
-StringGrid1->Cells [1][21] = "Полная мощность (кВА):";
+StringGrid1->Cells [1][15] = "РќР°РїСЂСЏР¶РµРЅРёРµ, Uc (C):";
+StringGrid1->Cells [1][16] = "РўРѕРє, Ic (A):";
+StringGrid1->Cells [1][17] =" РЈРіРѕР» Р¤(РіСЂ.):";
+StringGrid1->Cells [1][18] =" cos(Р¤):";
+StringGrid1->Cells [1][19] = "РђРєС‚РёРІРЅР°СЏ РјРѕС‰РЅРѕСЃС‚СЊ (РєР’С‚):";
+StringGrid1->Cells [1][20] = "Р РµР°РєС‚РёРІРЅР°СЏ РјРѕС‰РЅРѕСЃС‚СЊ (РєР’Р°СЂ):";
+StringGrid1->Cells [1][21] = "РџРѕР»РЅР°СЏ РјРѕС‰РЅРѕСЃС‚СЊ (РєР’Рђ):";
 
-StringGrid1->Cells [1][22] = "Частота F (Гц):";
-//StringGrid1->Cells [1][23] = "Сумма по фазам";
-StringGrid1->Cells [1][23] = "Активная мощность (кВт):";
-StringGrid1->Cells [1][24] = "Реактивная мощность (кВар):";
-StringGrid1->Cells [1][25] = "Полная мощность (кВА):";
-StringGrid1->Cells [1][26] = "Угол Ф(гр.):";
-StringGrid1->Cells [1][27] = "cos(Ф):";
-StringGrid1->Cells [1][28] = "Достоверность:";
+StringGrid1->Cells [1][22] = "Р§Р°СЃС‚РѕС‚Р° F (Р“С†):";
+//StringGrid1->Cells [1][23] = "РЎСѓРјРјР° РїРѕ С„Р°Р·Р°Рј";
+StringGrid1->Cells [1][23] = "РђРєС‚РёРІРЅР°СЏ РјРѕС‰РЅРѕСЃС‚СЊ (РєР’С‚):";
+StringGrid1->Cells [1][24] = "Р РµР°РєС‚РёРІРЅР°СЏ РјРѕС‰РЅРѕСЃС‚СЊ (РєР’Р°СЂ):";
+StringGrid1->Cells [1][25] = "РџРѕР»РЅР°СЏ РјРѕС‰РЅРѕСЃС‚СЊ (РєР’Рђ):";
+StringGrid1->Cells [1][26] = "РЈРіРѕР» Р¤(РіСЂ.):";
+StringGrid1->Cells [1][27] = "cos(Р¤):";
+StringGrid1->Cells [1][28] = "Р”РѕСЃС‚РѕРІРµСЂРЅРѕСЃС‚СЊ:";
 }
 double cos1, cos2, cos3; cos1 = cos2 = cos3 = 0;
-//Тут и ниже так проверяем на отсутствие данных в измеренных значениях >=0 (-3.4e38), а X!=X проверка на NAN в рассчитаных которые получаются из него
+//РўСѓС‚ Рё РЅРёР¶Рµ С‚Р°Рє РїСЂРѕРІРµСЂСЏРµРј РЅР° РѕС‚СЃСѓС‚СЃС‚РІРёРµ РґР°РЅРЅС‹С… РІ РёР·РјРµСЂРµРЅРЅС‹С… Р·РЅР°С‡РµРЅРёСЏС… >=0 (-3.4e38), Р° X!=X РїСЂРѕРІРµСЂРєР° РЅР° NAN РІ СЂР°СЃСЃС‡РёС‚Р°РЅС‹С… РєРѕС‚РѕСЂС‹Рµ РїРѕР»СѓС‡Р°СЋС‚СЃСЏ РёР· РЅРµРіРѕ
 if (activ_data.ua>=0)
         StringGrid1->Cells [2][1] = AnsiString().sprintf("%0.3f",activ_data.ua);//activ_data.ua;
 else
@@ -965,7 +965,7 @@ if (activ_data.ia >= 0)
 else
         StringGrid1->Cells [2][2] = "";
 
-double phi1_rad = (activ_data.U1I1*M_PI)/180;  //угол в радианах, косинус работает с ним
+double phi1_rad = (activ_data.U1I1*M_PI)/180;  //СѓРіРѕР» РІ СЂР°РґРёР°РЅР°С…, РєРѕСЃРёРЅСѓСЃ СЂР°Р±РѕС‚Р°РµС‚ СЃ РЅРёРј
 double phi1_grad = activ_data.U1I1;
 if (fabs(phi1_grad)<361)
 StringGrid1->Cells [2][3] = FormatFloat("0.000",phi1_grad);
@@ -1003,7 +1003,7 @@ if (activ_data.ib >= 0)
 StringGrid1->Cells [2][9] = AnsiString().sprintf("%0.3f",activ_data.ib);//activ_data.ib;
 else
 StringGrid1->Cells [2][9] = "";
-double phi2_rad = (activ_data.U2I2*M_PI)/180;  //угол в радианах, косинус работает с ним
+double phi2_rad = (activ_data.U2I2*M_PI)/180;  //СѓРіРѕР» РІ СЂР°РґРёР°РЅР°С…, РєРѕСЃРёРЅСѓСЃ СЂР°Р±РѕС‚Р°РµС‚ СЃ РЅРёРј
 double phi2_grad = activ_data.U2I2;
 if (fabs (phi2_grad)<361)
 StringGrid1->Cells [2][10] = FormatFloat("0.000",phi2_grad);
@@ -1038,7 +1038,7 @@ StringGrid1->Cells [2][16] = AnsiString().sprintf("%0.3f",activ_data.ic);//activ
 else
 StringGrid1->Cells [2][16] = "";
 
-double phi3_rad = (activ_data.U3I3*M_PI)/180;  //угол в радианах, косинус работает с ним
+double phi3_rad = (activ_data.U3I3*M_PI)/180;  //СѓРіРѕР» РІ СЂР°РґРёР°РЅР°С…, РєРѕСЃРёРЅСѓСЃ СЂР°Р±РѕС‚Р°РµС‚ СЃ РЅРёРј
 double phi3_grad = activ_data.U3I3;
 if (fabs(phi3_grad)<361)
 StringGrid1->Cells [2][17] = FormatFloat("0.000",phi3_grad);
@@ -1094,31 +1094,31 @@ StringGrid1->Cells [2][27] = "";
 
 if (Language == "UKR"){
 if (activ_data.obsolete==1){
-StringGrid1->Cells [2][28] = "Недостовірно";//activ_data.cosf;
+StringGrid1->Cells [2][28] = "РќРµРґРѕСЃС‚РѕРІС–СЂРЅРѕ";//activ_data.cosf;
 }
 else
-StringGrid1->Cells [2][28] = "Достовірно";//activ_data.cosf;
+StringGrid1->Cells [2][28] = "Р”РѕСЃС‚РѕРІС–СЂРЅРѕ";//activ_data.cosf;
 
 }
 else{
 if (activ_data.obsolete==1){
-StringGrid1->Cells [2][28] = "Не достоверно";//activ_data.cosf;
+StringGrid1->Cells [2][28] = "РќРµ РґРѕСЃС‚РѕРІРµСЂРЅРѕ";//activ_data.cosf;
 }
 else
-StringGrid1->Cells [2][28] = "Достоверно";//activ_data.cosf;
+StringGrid1->Cells [2][28] = "Р”РѕСЃС‚РѕРІРµСЂРЅРѕ";//activ_data.cosf;
 }
 fAutoSizeColSG(StringGrid1);
 }
 //---------------------------------------------------------------------------
 void __fastcall TDU2ChartInteriorGRB::pChart1BeforeDraw(TObject *Sender)
 {
-//TODO 05.08.2020 Тут мы будем выводить подписи к стрелкам на диаграмму после её построения с пересчётом координат от середины диаграммы к фактическим декартовым x;y с учётом сдвига в рабочей области
-// и фон
+//TODO 05.08.2020 РўСѓС‚ РјС‹ Р±СѓРґРµРј РІС‹РІРѕРґРёС‚СЊ РїРѕРґРїРёСЃРё Рє СЃС‚СЂРµР»РєР°Рј РЅР° РґРёР°РіСЂР°РјРјСѓ РїРѕСЃР»Рµ РµС‘ РїРѕСЃС‚СЂРѕРµРЅРёСЏ СЃ РїРµСЂРµСЃС‡С‘С‚РѕРј РєРѕРѕСЂРґРёРЅР°С‚ РѕС‚ СЃРµСЂРµРґРёРЅС‹ РґРёР°РіСЂР°РјРјС‹ Рє С„Р°РєС‚РёС‡РµСЃРєРёРј РґРµРєР°СЂС‚РѕРІС‹Рј x;y СЃ СѓС‡С‘С‚РѕРј СЃРґРІРёРіР° РІ СЂР°Р±РѕС‡РµР№ РѕР±Р»Р°СЃС‚Рё
+// Рё С„РѕРЅ
 drawTitleDiagramm();
 }
 //---------------------------------------------------------------------------
 void __fastcall TDU2ChartInteriorGRB::drawTitleDiagramm(){
-//TODO 05.08.2020 Тут будем перерисовывать "прицел" вместо фонового bmp файлика с учётом фактических текущих координат диаграммы
+//TODO 05.08.2020 РўСѓС‚ Р±СѓРґРµРј РїРµСЂРµСЂРёСЃРѕРІС‹РІР°С‚СЊ "РїСЂРёС†РµР»" РІРјРµСЃС‚Рѕ С„РѕРЅРѕРІРѕРіРѕ bmp С„Р°Р№Р»РёРєР° СЃ СѓС‡С‘С‚РѕРј С„Р°РєС‚РёС‡РµСЃРєРёС… С‚РµРєСѓС‰РёС… РєРѕРѕСЂРґРёРЅР°С‚ РґРёР°РіСЂР°РјРјС‹
         const int x1 = getX1();
         const int y1 = getY1();
         int x2 = getX2();
@@ -1130,40 +1130,40 @@ void __fastcall TDU2ChartInteriorGRB::drawTitleDiagramm(){
         const int y4 = y3;
         int center_x = (x1+x2)/2+2-1;
         int center_y = (y1+y3)/2+25+1;
-        //21.12.2020 - GRB делаем центр круга по меньшей координате
+        //21.12.2020 - GRB РґРµР»Р°РµРј С†РµРЅС‚СЂ РєСЂСѓРіР° РїРѕ РјРµРЅСЊС€РµР№ РєРѕРѕСЂРґРёРЅР°С‚Рµ
         int min_dim = (center_x < center_y)? center_x: center_y;
         center_x = min_dim;
         //end add
         pChartGRB1->Canvas->Font->Size = 12;
 
-        pChartGRB1->Canvas->Line (center_x, y1+3, center_x, y1+13); //рисуем рисочки на всей области диаграммы
+        pChartGRB1->Canvas->Line (center_x, y1+3, center_x, y1+13); //СЂРёСЃСѓРµРј СЂРёСЃРѕС‡РєРё РЅР° РІСЃРµР№ РѕР±Р»Р°СЃС‚Рё РґРёР°РіСЂР°РјРјС‹
         pChartGRB1->Canvas->Line (center_x, y4-3, center_x, y4-13);
         pChartGRB1->Canvas->Line (x1+3, center_y, x1+13, center_y);
         pChartGRB1->Canvas->Line (x4-3,center_y, x4-13,center_y);
 
-        //рисуем продолжения линий
+        //СЂРёСЃСѓРµРј РїСЂРѕРґРѕР»Р¶РµРЅРёСЏ Р»РёРЅРёР№
         pChartGRB1->Canvas->Line(center_x,y1+23,center_x, y3-23);
         pChartGRB1->Canvas->Line(x1+23,center_y,x4-23, center_y);
-        //рисуем большой круг
+        //СЂРёСЃСѓРµРј Р±РѕР»СЊС€РѕР№ РєСЂСѓРі
         double radius_big = 5*center_y/6;
         if (center_x < center_y){
                 radius_big = 5*center_x/6;
         }
         pChartGRB1->Canvas->Ellipse(center_x - radius_big, center_y - radius_big, center_x + radius_big, center_y + radius_big);
-        //выводим отсечки углов на большом круге
+        //РІС‹РІРѕРґРёРј РѕС‚СЃРµС‡РєРё СѓРіР»РѕРІ РЅР° Р±РѕР»СЊС€РѕРј РєСЂСѓРіРµ
         //TColor oldColor = pChartGRB1->Canvas->Brush->Color;
         pChartGRB1->Canvas->Brush->Color = (TColor) 0xF0F0F0 ;
         pChartGRB1->Canvas->Font->Size = 12;
-        /*Test - отсечки выводим на старом круге подшаманенном немного*/
+        /*Test - РѕС‚СЃРµС‡РєРё РІС‹РІРѕРґРёРј РЅР° СЃС‚Р°СЂРѕРј РєСЂСѓРіРµ РїРѕРґС€Р°РјР°РЅРµРЅРЅРѕРј РЅРµРјРЅРѕРіРѕ*/
         int pseudo_center_x = center_x;
         int pseudo_center_y = center_y;
 
-        //21.12.2020 - GRB делаем центр круга по меньшей координате
+        //21.12.2020 - GRB РґРµР»Р°РµРј С†РµРЅС‚СЂ РєСЂСѓРіР° РїРѕ РјРµРЅСЊС€РµР№ РєРѕРѕСЂРґРёРЅР°С‚Рµ
         //int min_dim2 = (pseudo_center_x < pseudo_center_y)? pseudo_center_x: pseudo_center_y;
         pseudo_center_x = min_dim;
         //end add
         for (int i = 0; i<12; i++){
-                int j = 30*(i+1); //угол
+                int j = 30*(i+1); //СѓРіРѕР»
                 coordArcAngle [i] = getCoord4CaptionOnRound (center_x, center_y, radius_big ,j);
                 switch (i){
                 case 0:{
@@ -1226,12 +1226,12 @@ void __fastcall TDU2ChartInteriorGRB::drawTitleDiagramm(){
                 }
          }
           //Test
-         //рисуем малый круг
+         //СЂРёСЃСѓРµРј РјР°Р»С‹Р№ РєСЂСѓРі
          double radius_small = (center_y)/2;
          if (center_x<center_y)
                 radius_small = (center_x)/2;
          pChartGRB1->Canvas->Ellipse(center_x-radius_small,center_y-radius_small,center_x+radius_small,center_y+radius_small);
-         //рисуем подписи к графикам
+         //СЂРёСЃСѓРµРј РїРѕРґРїРёСЃРё Рє РіСЂР°С„РёРєР°Рј
          drawCaptionLines(captionVector);
 }
 //---------------------------------------------------------------------------
@@ -1257,12 +1257,12 @@ int __fastcall TDU2ChartInteriorGRB::getY3(){
 //---------------------------------------------------------------------------
 coord2x __fastcall TDU2ChartInteriorGRB::getCoord4CaptionOnRound (int x0, int y0, int Radius, int degree){
         coord2x ret = {0,0};
-        ret.x= x0+Radius*cos(((90-degree) * M_PI / 180)); // отсечка на degree град
+        ret.x= x0+Radius*cos(((90-degree) * M_PI / 180)); // РѕС‚СЃРµС‡РєР° РЅР° degree РіСЂР°Рґ
         ret.y= y0-Radius*sin(((90-degree) * M_PI / 180));
         return ret;
 }
 //---------------------------------------------------------------------------
-//TODO отрисовка подписей к стрелкам на канве - не получилось
+//TODO РѕС‚СЂРёСЃРѕРІРєР° РїРѕРґРїРёСЃРµР№ Рє СЃС‚СЂРµР»РєР°Рј РЅР° РєР°РЅРІРµ - РЅРµ РїРѕР»СѓС‡РёР»РѕСЃСЊ
 void __fastcall TDU2ChartInteriorGRB::drawCaptionLines (endVectorCoord* array_line){
        const int x1 = getX1();
         const int y1 = getY1();
@@ -1273,7 +1273,7 @@ void __fastcall TDU2ChartInteriorGRB::drawCaptionLines (endVectorCoord* array_li
         const int y3 = getY3();
         int center_x = (x1+x2)/2-1;
         int center_y = (y1+y3)/2+25+1;
-        //21.12.2020 - GRB делаем центр круга по меньшей координате
+        //21.12.2020 - GRB РґРµР»Р°РµРј С†РµРЅС‚СЂ РєСЂСѓРіР° РїРѕ РјРµРЅСЊС€РµР№ РєРѕРѕСЂРґРёРЅР°С‚Рµ
         int min_dim = (center_x < center_y)? center_x: center_y;
         center_x = min_dim;
         //end add
@@ -1288,13 +1288,13 @@ void __fastcall TDU2ChartInteriorGRB::drawCaptionLines (endVectorCoord* array_li
      for (int i = 0; i < VECTOR_NUMS; i++){
         endVectorCoord curr = array_line[i];
         pChartGRB1->Canvas->Font->Color = curr.color;
-        if (fabs(curr.coord.x)<0.001 && fabs(curr.coord.y)<0.001)//пропускаем нули
+        if (fabs(curr.coord.x)<0.001 && fabs(curr.coord.y)<0.001)//РїСЂРѕРїСѓСЃРєР°РµРј РЅСѓР»Рё
                 continue;
         pChartGRB1->Canvas->TextOutA(center_x+curr.coord.x, center_y-curr.coord.y,curr.name);
         int widthOld = pChartGRB1->Canvas->Pen->Width;
         pChartGRB1->Canvas->Pen->Width = 2;
         pChartGRB1->Canvas->Pen->Color = curr.color;
-        //Вместо линии рисуем стрелу
+        //Р’РјРµСЃС‚Рѕ Р»РёРЅРёРё СЂРёСЃСѓРµРј СЃС‚СЂРµР»Сѓ
         //pChartGRB1->Canvas->Line (center_x, center_y, center_x+curr.coord.x,center_y-curr.coord.y);
         DrawLine ((pChartGRB1->Canvas),center_x, center_y, center_x+curr.coord.x,center_y-curr.coord.y,20,10);
         pChartGRB1->Canvas->Pen->Width = widthOld;
@@ -1307,7 +1307,7 @@ void __fastcall TDU2ChartInteriorGRB::drawCaptionLines (endVectorCoord* array_li
 }
 //---------------------------------------------------------------------------
 void __fastcall TDU2ChartInteriorGRB::InitValue(){
- // Получить параметры из таблицы
+ // РџРѕР»СѓС‡РёС‚СЊ РїР°СЂР°РјРµС‚СЂС‹ РёР· С‚Р°Р±Р»РёС†С‹
   dNA   = activ_data.na;
   dNR   = activ_data.nr;
   dFR   = activ_data.freq;
@@ -1337,7 +1337,7 @@ void __fastcall TDU2ChartInteriorGRB::placeChart(){
   TArrowSeries *pArrow1;
 
   if (pChartGRB1->Parent == NULL)
-  /* Настройка графика*/
+  /* РќР°СЃС‚СЂРѕР№РєР° РіСЂР°С„РёРєР°*/
   pChartGRB1->SeriesList->Clear();
   pArrow1 = new TArrowSeries(pChartGRB1);
   pChartGRB1->Legend->Visible              = false;
@@ -1412,7 +1412,7 @@ void __fastcall TDU2ChartInteriorGRB::placeChart(){
         }
       }
     }
-   //21.12.2020 GRB Своя нормировка для кругов
+   //21.12.2020 GRB РЎРІРѕСЏ РЅРѕСЂРјРёСЂРѕРІРєР° РґР»СЏ РєСЂСѓРіРѕРІ
   const int x1 = getX1();
   const int y1 = getY1();
   int x2 = getX2();
@@ -1428,7 +1428,7 @@ void __fastcall TDU2ChartInteriorGRB::placeChart(){
   double norma_big = 1;
   double norma_small = 1;
 
-   //приводим вектора напряжения
+   //РїСЂРёРІРѕРґРёРј РІРµРєС‚РѕСЂР° РЅР°РїСЂСЏР¶РµРЅРёСЏ
    double xBig11 = coordArcAngle[11].x;
    double yBig11 = coordArcAngle[11].y;
    /*double xBig6 = coordArcAngle[6].x;
@@ -1442,7 +1442,7 @@ void __fastcall TDU2ChartInteriorGRB::placeChart(){
         norma_big = 1;
 
   //end ADD
-  /* расчёт коэффициента для приведения токов к напряжению */
+  /* СЂР°СЃС‡С‘С‚ РєРѕСЌС„С„РёС†РёРµРЅС‚Р° РґР»СЏ РїСЂРёРІРµРґРµРЅРёСЏ С‚РѕРєРѕРІ Рє РЅР°РїСЂСЏР¶РµРЅРёСЋ */
   if (dIA >= dIB && dIA >= dIC && dIA>0){
     kfcI2U  = dUA / dIA;
   }else{
@@ -1460,7 +1460,7 @@ void __fastcall TDU2ChartInteriorGRB::placeChart(){
   dIB *= kfcI2U;//*5/6;
   dIC *= kfcI2U;//*5/6;
 
-     //приводим вектора тока
+     //РїСЂРёРІРѕРґРёРј РІРµРєС‚РѕСЂР° С‚РѕРєР°
    double vectorMinLen = (center_y)/2;
    if (center_x<center_y)
         vectorMinLen = (center_x)/2;
@@ -1472,7 +1472,7 @@ void __fastcall TDU2ChartInteriorGRB::placeChart(){
   /*END ADD*/
 
   double  x, y;
-  //===== Добавлено ко всем углам 90 градусов
+  //===== Р”РѕР±Р°РІР»РµРЅРѕ РєРѕ РІСЃРµРј СѓРіР»Р°Рј 90 РіСЂР°РґСѓСЃРѕРІ
   if (dUA != -MAXFLOAT && dAnUA != -MAXFLOAT)
   { x = norma_big*dUA * cos((dAnUA + 90) * M_PI / 180);
     y = norma_big*dUA * sin((dAnUA + 90) * M_PI / 180);
@@ -1539,7 +1539,7 @@ void __fastcall TDU2ChartInteriorGRB::placeChart(){
   }
   //===== 22.4.2005 Fr+izyuk A.M. Finish
   YMinVal = -YMaxVal;
-  // Настройка масштаба по умолчанию
+  // РќР°СЃС‚СЂРѕР№РєР° РјР°СЃС€С‚Р°Р±Р° РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
   IncreaseScaleValue(YMinVal, YMaxVal);
   pChartGRB1->LeftAxis->Minimum      = -MAXFLOAT;
   pChartGRB1->BottomAxis->Minimum    = -MAXFLOAT;
@@ -1554,31 +1554,31 @@ void __fastcall TDU2ChartInteriorGRB::placeChart(){
   AnsiString caption2 = "";
 
   if (Language == "UKR"){
-  caption1 = "Дані по об'єкту '"+ fd->NameGroup +"' за дату "+objName +" з профілем ";
-  caption2 = "Векторна діаграма";
+  caption1 = "Р”Р°РЅС– РїРѕ РѕР±'С”РєС‚Сѓ '"+ fd->NameGroup +"' Р·Р° РґР°С‚Сѓ "+objName +" Р· РїСЂРѕС„С–Р»РµРј ";
+  caption2 = "Р’РµРєС‚РѕСЂРЅР° РґС–Р°РіСЂР°РјР°";
   switch (fd->StepProfile){
     case TFormDescr::stpDay:
-      caption1+=" за місяць";
+      caption1+=" Р·Р° РјС–СЃСЏС†СЊ";
       break;
     case TFormDescr::stpHour:
-      caption1+=" за добу";
+      caption1+=" Р·Р° РґРѕР±Сѓ";
       break;
     case TFormDescr::stpMonth:
-      caption1+=" за рік";
+      caption1+=" Р·Р° СЂС–Рє";
       break;
   }
   }else{
-  caption1 = "Данные по объекту '"+ fd->NameGroup +"' за дату "+objName +" с профилем ";
-  caption2 = "Векторная диаграмма";
+  caption1 = "Р”Р°РЅРЅС‹Рµ РїРѕ РѕР±СЉРµРєС‚Сѓ '"+ fd->NameGroup +"' Р·Р° РґР°С‚Сѓ "+objName +" СЃ РїСЂРѕС„РёР»РµРј ";
+  caption2 = "Р’РµРєС‚РѕСЂРЅР°СЏ РґРёР°РіСЂР°РјРјР°";
    switch (fd->StepProfile){
     case TFormDescr::stpDay:
-      caption1+=" за месяц";
+      caption1+=" Р·Р° РјРµСЃСЏС†";
       break;
     case TFormDescr::stpHour:
-      caption1+=" за сутки";
+      caption1+=" Р·Р° СЃСѓС‚РєРё";
       break;
     case TFormDescr::stpMonth:
-      caption1+=" за год";
+      caption1+=" Р·Р° РіРѕРґ";
       break;
   }
   }
@@ -1590,7 +1590,7 @@ void __fastcall TDU2ChartInteriorGRB::placeChart(){
 //---------------------------------------------------------------------------
 void __fastcall TDU2ChartInteriorGRB::IncreaseScaleValue( double & PPYMinVal, double & PPYMaxVal )
 {
-     //Только для profile
+     //РўРѕР»СЊРєРѕ РґР»СЏ profile
      if
      (
        ( PPYMinVal < 0 )
@@ -1628,7 +1628,7 @@ void __fastcall TDU2ChartInteriorGRB::SaveGraphToFile(TSaveDialog *aSaveDialog)
           pChartGRB1->BufferedDisplay = true;
           bm->SaveToFile(aSaveDialog->FileName);
         }*/
-        //07.12.2020 GRB rewrite - выводим картикой не только диаграмму но и стринггрид с поясняловкой
+        //07.12.2020 GRB rewrite - РІС‹РІРѕРґРёРј РєР°СЂС‚РёРєРѕР№ РЅРµ С‚РѕР»СЊРєРѕ РґРёР°РіСЂР°РјРјСѓ РЅРѕ Рё СЃС‚СЂРёРЅРіРіСЂРёРґ СЃ РїРѕСЏСЃРЅСЏР»РѕРІРєРѕР№
         try{
          int maxHeight = pChartGRB1->Height;
          if (StringGrid1->Height > pChartGRB1->Height)
@@ -1677,7 +1677,7 @@ AnsiString __fastcall TDU2ChartInteriorGRB::getSeparator(){
 //---------------------------------------------------------------------------
 void __fastcall TDU2ChartInteriorGRB::SaveTableToFile(TSaveDialog *aSaveDialog)
 {
-    //07.12.2020 GRB - COMMENT Т.к у нас в картинку идёт стринггрид с диаграммой в файл будем писать таблицу
+    //07.12.2020 GRB - COMMENT Рў.Рє Сѓ РЅР°СЃ РІ РєР°СЂС‚РёРЅРєСѓ РёРґС‘С‚ СЃС‚СЂРёРЅРіРіСЂРёРґ СЃ РґРёР°РіСЂР°РјРјРѕР№ РІ С„Р°Р№Р» Р±СѓРґРµРј РїРёСЃР°С‚СЊ С‚Р°Р±Р»РёС†Сѓ
     /*aSaveDialog->Title = Reconst_smes111_33;
     aSaveDialog->FileName = Reconst_smes105_22;
     aSaveDialog->DefaultExt = "txt";
@@ -1730,14 +1730,14 @@ void __fastcall TDU2ChartInteriorGRB::SaveTableToFile(TSaveDialog *aSaveDialog)
 void __fastcall TDU2ChartInteriorGRB::OnClickPanel(System::TObject* Sender)
 {
 	(dynamic_cast<TBaseMonitorForm*>(Owner))->FormActivate(Sender);
-        //GRB ADD 20.09.2021 Фиксим баг с возвращением к исходным размером при ресайзе диаграмм
+        //GRB ADD 20.09.2021 Р¤РёРєСЃРёРј Р±Р°Рі СЃ РІРѕР·РІСЂР°С‰РµРЅРёРµРј Рє РёСЃС…РѕРґРЅС‹Рј СЂР°Р·РјРµСЂРѕРј РїСЂРё СЂРµСЃР°Р№Р·Рµ РґРёР°РіСЂР°РјРј
         if (GetContainedWidthStatusFromReg())
                 AutoSizeNameOnly (DrawTable);
         //END ADD
 }
 
 void __fastcall TDU2ChartInteriorGRB::moveRowToActiveData(int ARow){
-   // Получить параметры из таблицы
+   // РџРѕР»СѓС‡РёС‚СЊ РїР°СЂР°РјРµС‚СЂС‹ РёР· С‚Р°Р±Р»РёС†С‹
   	TCloneItem  *ptr,*pDatOracle,*ptrDatOracle;
   ptrDatOracle = datOracle+Clones+1+ARow;
   activ_data.na = (ptrDatOracle + NA *(Clones + 1))->val;
@@ -1785,8 +1785,8 @@ AnsiString __fastcall TDU2ChartInteriorGRB::getObjectName (int aRow){
 void __fastcall TDU2ChartInteriorGRB::DrawTableDrawCell(TObject *Sender, int ACol,
       int ARow, const TRect &Rect, TGridDrawState State)
 {
-   //Тут была попытка (неудачная) выводить желтым цветом фон последней нажатой строчки DrawTable, с тем чтобы пользователь мог понимать на чём он стоит и к чему диаграмма
-   //может вернусь к ней
+   //РўСѓС‚ Р±С‹Р»Р° РїРѕРїС‹С‚РєР° (РЅРµСѓРґР°С‡РЅР°СЏ) РІС‹РІРѕРґРёС‚СЊ Р¶РµР»С‚С‹Рј С†РІРµС‚РѕРј С„РѕРЅ РїРѕСЃР»РµРґРЅРµР№ РЅР°Р¶Р°С‚РѕР№ СЃС‚СЂРѕС‡РєРё DrawTable, СЃ С‚РµРј С‡С‚РѕР±С‹ РїРѕР»СЊР·РѕРІР°С‚РµР»СЊ РјРѕРі РїРѕРЅРёРјР°С‚СЊ РЅР° С‡С‘Рј РѕРЅ СЃС‚РѕРёС‚ Рё Рє С‡РµРјСѓ РґРёР°РіСЂР°РјРјР°
+   //РјРѕР¶РµС‚ РІРµСЂРЅСѓСЃСЊ Рє РЅРµР№
    /*if (State.Contains(gdFocused))
       DrawTable->Canvas->Brush->Color = clYellow;
 
@@ -1804,9 +1804,9 @@ return ret;
 void __fastcall TDU2ChartInteriorGRB::DrawLine(TCanvas3D* Canvas, double x0, double y0, double x1, double y1, double ArrowAngle, int ArrowLen){
 
 ArrowAngle = ArrowAngle*M_PI/180;
-//Длина основной линии
+//Р”Р»РёРЅР° РѕСЃРЅРѕРІРЅРѕР№ Р»РёРЅРёРё
 int Len = sqrt((x0-x1)*(x0-x1) + (y0-y1)*(y0-y1));
-//Угол наклона основной линии
+//РЈРіРѕР» РЅР°РєР»РѕРЅР° РѕСЃРЅРѕРІРЅРѕР№ Р»РёРЅРёРё
 double Angle;
 if(x0==x1 && y0<y1){
 Angle = M_PI/2;
@@ -1833,15 +1833,15 @@ else if(x0>x1 && y0>y1){
 Angle = 2*M_PI+asin( (y1-y0)/Len);
 }
 
-int x2 = x1 + ArrowLen * cos(Angle+ArrowAngle); // конец первого лепестка по X
-int y2 = y1 - ArrowLen * sin(Angle+ArrowAngle); // конец первого лепестка по Y
+int x2 = x1 + ArrowLen * cos(Angle+ArrowAngle); // РєРѕРЅРµС† РїРµСЂРІРѕРіРѕ Р»РµРїРµСЃС‚РєР° РїРѕ X
+int y2 = y1 - ArrowLen * sin(Angle+ArrowAngle); // РєРѕРЅРµС† РїРµСЂРІРѕРіРѕ Р»РµРїРµСЃС‚РєР° РїРѕ Y
 
-int x3 = x1 + ArrowLen * cos(Angle-ArrowAngle); // конец второго лепестка по X
-int y3 = y1 - ArrowLen * sin(Angle-ArrowAngle); // конец конец второго лепестка по Y
-// рисуем саму линию
+int x3 = x1 + ArrowLen * cos(Angle-ArrowAngle); // РєРѕРЅРµС† РІС‚РѕСЂРѕРіРѕ Р»РµРїРµСЃС‚РєР° РїРѕ X
+int y3 = y1 - ArrowLen * sin(Angle-ArrowAngle); // РєРѕРЅРµС† РєРѕРЅРµС† РІС‚РѕСЂРѕРіРѕ Р»РµРїРµСЃС‚РєР° РїРѕ Y
+// СЂРёСЃСѓРµРј СЃР°РјСѓ Р»РёРЅРёСЋ
 Canvas->MoveTo(x0,y0);
 Canvas->LineTo(x1,y1);
-//Рисуем лепестки
+//Р РёСЃСѓРµРј Р»РµРїРµСЃС‚РєРё
 TPoint points[3];
 points[0] = Point(x1,y1);
 points[1] = Point(x2,y2);
@@ -1857,7 +1857,7 @@ void __fastcall TDU2ChartInteriorGRB::FormShow(TObject *Sender){
 }
 //---------------------------------------------------------------------------
 //-------------------------------------------------------------------------------
-//GRB ADD 26.08.2021 - два метода для автоформатирования по содержимому фиксированых колонок - исправление бага с обрезанием длинных имён в колонках
+//GRB ADD 26.08.2021 - РґРІР° РјРµС‚РѕРґР° РґР»СЏ Р°РІС‚РѕС„РѕСЂРјР°С‚РёСЂРѕРІР°РЅРёСЏ РїРѕ СЃРѕРґРµСЂР¶РёРјРѕРјСѓ С„РёРєСЃРёСЂРѕРІР°РЅС‹С… РєРѕР»РѕРЅРѕРє - РёСЃРїСЂР°РІР»РµРЅРёРµ Р±Р°РіР° СЃ РѕР±СЂРµР·Р°РЅРёРµРј РґР»РёРЅРЅС‹С… РёРјС‘РЅ РІ РєРѕР»РѕРЅРєР°С…
 //---------------------------------------------------------------------------
 void __fastcall  TDU2ChartInteriorGRB::AutoSizeColGRB (TDrawTable* tsg, int columnIndex){
         int i,w,WMax;
@@ -1908,7 +1908,7 @@ TFont * __fastcall TDU2ChartInteriorGRB::GetActiveFont4MonitorFromReg (){
 
     }catch (Exception &ex){
         delete psm;
-        //Смелое предположение - так типа по дефолту
+        //РЎРјРµР»РѕРµ РїСЂРµРґРїРѕР»РѕР¶РµРЅРёРµ - С‚Р°Рє С‚РёРїР° РїРѕ РґРµС„РѕР»С‚Сѓ
         retFont->Name = "MS Sans Serif";
         retFont->Size = 8;
         return retFont;

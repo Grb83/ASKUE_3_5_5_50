@@ -91,26 +91,26 @@ __published:	// IDE-managed Components
   void __fastcall tvChannelsListDragDrop(TObject *Sender, TObject *Source,
           int X, int Y);
 private:	// User declarations
-   struct stChannel{ // Атрибуты канала
-      long NDeportation;//       Ид канала                          N
-      bool HaveChilde;   //  Наличие детей
-      bool IsFolder;     //Признак папки
+   struct stChannel{ // РђС‚СЂРёР±СѓС‚С‹ РєР°РЅР°Р»Р°
+      long NDeportation;//       РРґ РєР°РЅР°Р»Р°                          N
+      bool HaveChilde;   //  РќР°Р»РёС‡РёРµ РґРµС‚РµР№
+      bool IsFolder;     //РџСЂРёР·РЅР°Рє РїР°РїРєРё
 
-      char Name[128];//          Название                           N
-      char Note[256];//         Примечание                          Y
-      long Proc_id;//         Процедура создающая макет             Y
-      long DataDeportationMode;// Способ отсылки                    N
-      char Address[2000];//       адрес отсылки файла              N
-      long Parent; //            Главный канал                      Y
-      char From[6]; //          Начало начало отсылки (hh24:mi)     Y
-      char Till[6]; //            Окончание      (hh24:mi)          Y
-      long Retries;      //      Кол попыток соединения             N
-      long Retries_Tout; //      Пауза между попытками              N
-      long Block;         //     Блокировка                         N
-      short indicator[4];//    Флаги для контроля Proc_id, NPARENT, DFrom, DTill
-      long editing;// 0 -Не трогали, 1-добавили, 2-редактировали
-      long tmpNDeportation;//    Нужно при сохранении
-      char SendParam[2000];//          Название                           N
+      char Name[128];//          РќР°Р·РІР°РЅРёРµ                           N
+      char Note[256];//         РџСЂРёРјРµС‡Р°РЅРёРµ                          Y
+      long Proc_id;//         РџСЂРѕС†РµРґСѓСЂР° СЃРѕР·РґР°СЋС‰Р°СЏ РјР°РєРµС‚             Y
+      long DataDeportationMode;// РЎРїРѕСЃРѕР± РѕС‚СЃС‹Р»РєРё                    N
+      char Address[2000];//       Р°РґСЂРµСЃ РѕС‚СЃС‹Р»РєРё С„Р°Р№Р»Р°              N
+      long Parent; //            Р“Р»Р°РІРЅС‹Р№ РєР°РЅР°Р»                      Y
+      char From[6]; //          РќР°С‡Р°Р»Рѕ РЅР°С‡Р°Р»Рѕ РѕС‚СЃС‹Р»РєРё (hh24:mi)     Y
+      char Till[6]; //            РћРєРѕРЅС‡Р°РЅРёРµ      (hh24:mi)          Y
+      long Retries;      //      РљРѕР» РїРѕРїС‹С‚РѕРє СЃРѕРµРґРёРЅРµРЅРёСЏ             N
+      long Retries_Tout; //      РџР°СѓР·Р° РјРµР¶РґСѓ РїРѕРїС‹С‚РєР°РјРё              N
+      long Block;         //     Р‘Р»РѕРєРёСЂРѕРІРєР°                         N
+      short indicator[4];//    Р¤Р»Р°РіРё РґР»СЏ РєРѕРЅС‚СЂРѕР»СЏ Proc_id, NPARENT, DFrom, DTill
+      long editing;// 0 -РќРµ С‚СЂРѕРіР°Р»Рё, 1-РґРѕР±Р°РІРёР»Рё, 2-СЂРµРґР°РєС‚РёСЂРѕРІР°Р»Рё
+      long tmpNDeportation;//    РќСѓР¶РЅРѕ РїСЂРё СЃРѕС…СЂР°РЅРµРЅРёРё
+      char SendParam[2000];//          РќР°Р·РІР°РЅРёРµ                           N
    };
    long __fastcall getNodeId(TObject*obj){
         TTreeNode*tn=dynamic_cast<TTreeNode*>(obj);
@@ -120,11 +120,11 @@ private:	// User declarations
    TfmFindPoint *fmFP;
    bool ChangeControl;
    stChannel *SelChannel;
-   long *nChannels_Del; // id тех каналов которые удалены списка
-                              //  и необходимо удалить из таблицы каналов
+   long *nChannels_Del; // id С‚РµС… РєР°РЅР°Р»РѕРІ РєРѕС‚РѕСЂС‹Рµ СѓРґР°Р»РµРЅС‹ СЃРїРёСЃРєР°
+                              //  Рё РЅРµРѕР±С…РѕРґРёРјРѕ СѓРґР°Р»РёС‚СЊ РёР· С‚Р°Р±Р»РёС†С‹ РєР°РЅР°Р»РѕРІ
    int Channels_Del_Count;
    bool __fastcall GetCombo(TComboBox *cb);
-   bool __fastcall ReadChannels(TObject*obj); // Читает список каналов
+   bool __fastcall ReadChannels(TObject*obj); // Р§РёС‚Р°РµС‚ СЃРїРёСЃРѕРє РєР°РЅР°Р»РѕРІ
    void __fastcall SetAccess(TAccess value);
    void __fastcall changeNode(TTreeNode*, TTreeNode*);
    void __fastcall copyChildNodes(TTreeNode*,TTreeNode*);

@@ -17,7 +17,7 @@
 #define MAXPOINT	1000//from selectpoint.cpp
 //---------------------------------------------------------------------------
 
-typedef struct { //дерево обьектов учета
+typedef struct { //РґРµСЂРµРІРѕ РѕР±СЊРµРєС‚РѕРІ СѓС‡РµС‚Р°
                 long Gid;
                 long Type;
                 long HaveChild;

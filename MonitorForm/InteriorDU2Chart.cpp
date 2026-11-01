@@ -13,7 +13,7 @@
 
 int y;
 //---------------------------------------------------------------------------
-//Текущие значения и параметры качества электроэнергии (КСС)
+//РўРµРєСѓС‰РёРµ Р·РЅР°С‡РµРЅРёСЏ Рё РїР°СЂР°РјРµС‚СЂС‹ РєР°С‡РµСЃС‚РІР° СЌР»РµРєС‚СЂРѕСЌРЅРµСЂРіРёРё (РљРЎРЎ)
 __fastcall TDU2ChartInterior::TDU2ChartInterior(TComponent* Owner,TSplitterForm *aSP,TFormDescr *aFD,Classes::TNotifyEvent OnProgr)
     :T1Interior(Owner,aSP,aFD,OnProgr)
 {
@@ -26,7 +26,7 @@ __fastcall TDU2ChartInterior::TDU2ChartInterior(TComponent* Owner,TSplitterForm 
   tBMForm->ChartFXColumns->OnClick    = NULL;
   tBMForm->ByGroup->OnClick           = NULL;
   tBMForm->ByProfile->OnClick         = NULL;
-  //GRB ADD - подписываем на перерисовку
+  //GRB ADD - РїРѕРґРїРёСЃС‹РІР°РµРј РЅР° РїРµСЂРµСЂРёСЃРѕРІРєСѓ
   ((TBaseMonitorForm*)Owner)->OnResize=FormShow;
 }
 //---------------------------------------------------------------------------
@@ -47,7 +47,7 @@ void __fastcall TDU2ChartInterior::formDescr( void )
   vtDU2Data = new TVirtualTable(this);
   char  datest[20],
         dateen[20];
-  //Заполняем необходимые поля описания формы
+  //Р—Р°РїРѕР»РЅСЏРµРј РЅРµРѕР±С…РѕРґРёРјС‹Рµ РїРѕР»СЏ РѕРїРёСЃР°РЅРёСЏ С„РѕСЂРјС‹
 	Clones  = 0;
 
   unsigned short  year,
@@ -75,7 +75,7 @@ void __fastcall TDU2ChartInterior::formDescr( void )
 	NamesClones->Clear();
   NamesClones->Add("01.01.0001 00:00");
 
-  // названия строк таблицы получаем теперь здесь
+  // РЅР°Р·РІР°РЅРёСЏ СЃС‚СЂРѕРє С‚Р°Р±Р»РёС†С‹ РїРѕР»СѓС‡Р°РµРј С‚РµРїРµСЂСЊ Р·РґРµСЃСЊ
   dmMain->oqInterCursor->Params->Clear();
   dmMain->oqInterCursor->SQL->Text="begin "+SchemeName+"interior_pg.InteriorDU2Chart_selectData_p(:par1,:par2,:par3,:par4,:par5,:par6,:par7,:par8); end;";
   dmMain->oqInterCursor->ParamByName("par8")->ParamType=ptOutput;
@@ -116,15 +116,15 @@ void __fastcall TDU2ChartInterior::selectData( TOraQuery *qwInter )
   char  date[20];
 
 	try
-  { //Инициализация массива
+  { //РРЅРёС†РёР°Р»РёР·Р°С†РёСЏ РјР°СЃСЃРёРІР°
     unsigned long clones  = Clones + 1;
     for (int i = 0; i < SubColumns() * (Clones + 1) * (RowCount + 1); i++){
       datOracle[i].val  = -MAXFLOAT;
       datOracle[i].isvalid[0] = '\0';
     }
-    // KAS Текущую дату на название формы
+    // KAS РўРµРєСѓС‰СѓСЋ РґР°С‚Сѓ РЅР° РЅР°Р·РІР°РЅРёРµ С„РѕСЂРјС‹
 
-    dynamic_cast<TBaseMonitorForm *>(Owner)->Caption  = fd->NameGroup + " на " + GetCurrentDate(qwInter);
+    dynamic_cast<TBaseMonitorForm *>(Owner)->Caption  = fd->NameGroup + " РЅР° " + GetCurrentDate(qwInter);
    
    for (iClones = 1; iClones <= Clones; ++iClones)
 	  { strcpy(date, NamesClones->Strings[iClones].c_str());
@@ -209,7 +209,7 @@ void __fastcall TDU2ChartInterior::clonesInRows(void)
     DrawTable->RowCount++;
   DrawTable->FixedRows  = 2;
 
-  //Подготавливаем переменные поля для приема
+  //РџРѕРґРіРѕС‚Р°РІР»РёРІР°РµРј РїРµСЂРµРјРµРЅРЅС‹Рµ РїРѕР»СЏ РґР»СЏ РїСЂРёРµРјР°
 	int *TempStruct = new int[RowCount];
 	for (iClones = 0; iClones < RowCount; iClones++)
     TempStruct[iClones] = LenFloat;
@@ -221,7 +221,7 @@ DrawTable->TabStrings->Add("$ m0x9 0x100F c15 b #$ m0x5 0x100F #$#$#$#$#$#$#$#$#
 	dataInRows();
 	delete  TempStruct;
 
-	//Добавляем нумерацию профиля
+	//Р”РѕР±Р°РІР»СЏРµРј РЅСѓРјРµСЂР°С†РёСЋ РїСЂРѕС„РёР»СЏ
 	TDateTime tempDate;
 	AnsiString  formatDate;
 	AnsiString  formatDateSum;
@@ -251,11 +251,11 @@ DrawTable->TabStrings->Add("$ m0x9 0x100F c15 b #$ m0x5 0x100F #$#$#$#$#$#$#$#$#
   //DrawTable->StaticStrings->Add(GetSubColumnsNames()[jColumns]);
   //  ColumnsCaption->Add(GetSubColumnsNames()[jColumns]);
   }
-	//Добавляем заголовки клонов
+	//Р”РѕР±Р°РІР»СЏРµРј Р·Р°РіРѕР»РѕРІРєРё РєР»РѕРЅРѕРІ
   VT_PrintData->First();
 	for (iClones = 0; iClones < Clones ; ++iClones)
 	{ DrawTable->StaticStrings->Add(NamesClones->Strings[iClones + 1]);
-    //Добавляем заголовки колонок под клонами
+    //Р”РѕР±Р°РІР»СЏРµРј Р·Р°РіРѕР»РѕРІРєРё РєРѕР»РѕРЅРѕРє РїРѕРґ РєР»РѕРЅР°РјРё
     VT_PrintData->Edit();
     VT_PrintData->Fields->FieldByName("RowName")->AsString  = NamesClones->Strings[iClones + 1];
     VT_PrintData->Next();
@@ -267,14 +267,14 @@ DrawTable->TabStrings->Add("$ m0x9 0x100F c15 b #$ m0x5 0x100F #$#$#$#$#$#$#$#$#
 //inline char** __fastcall TDU2ChartInterior::GetSubColumnsNames(void)
 inline AnsiString __fastcall TDU2ChartInterior::GetSubColumnsNames(int n)
 {
-  AnsiString  names[]  = {"", "P A [МВт]", "P Q [МВАр]", Reconst_smes111_13, "сos(Ф)",
-                      "Uа [В]", "Ub [В]", "Uc [В]",
+  AnsiString  names[]  = {"", "P A [РњР’С‚]", "P Q [РњР’РђСЂ]", Reconst_smes111_13, "СЃos(Р¤)",
+                      "UР° [Р’]", "Ub [Р’]", "Uc [Р’]",
                       Reconst_smes111_14, Reconst_smes111_15, Reconst_smes111_16,
-                      "Ia [А]", "Ib [А]", "Ic [А]",
+                      "Ia [Рђ]", "Ib [Рђ]", "Ic [Рђ]",
                       Reconst_smes111_17, Reconst_smes111_18, Reconst_smes111_19,
                       Reconst_smes111_20, Reconst_smes111_21, Reconst_smes111_22,
                       Reconst_smes111_23, Reconst_smes111_24, Reconst_smes111_25,
-                      "F [Гц]"};
+                      "F [Р“С†]"};
   return  names[n];
 }
 //---------------------------------------------------------------------------
@@ -289,7 +289,7 @@ void __fastcall TDU2ChartInterior::dataInRows(void)
 	TCloneItem  *ptrDatOracle,
               *ptrDataOra;
 
-  //столбцы для названий точек(времени) и и подколонок
+  //СЃС‚РѕР»Р±С†С‹ РґР»СЏ РЅР°Р·РІР°РЅРёР№ С‚РѕС‡РµРє(РІСЂРµРјРµРЅРё) Рё Рё РїРѕРґРєРѕР»РѕРЅРѕРє
   ColumnsCaption->Clear();
   VT_PrintData->Close();
   VT_PrintData->Clear();
@@ -298,7 +298,7 @@ void __fastcall TDU2ChartInterior::dataInRows(void)
   for (int CC = 0; CC < RowCount; CC++)
     VT_PrintData->FieldDefs->Add("Data" + IntToStr(CC), ftString, 20, false);
   VT_PrintData->Open();
-  //Подготавливаем переменные поля для приема
+  //РџРѕРґРіРѕС‚Р°РІР»РёРІР°РµРј РїРµСЂРµРјРµРЅРЅС‹Рµ РїРѕР»СЏ РґР»СЏ РїСЂРёРµРјР°
   ptr = DrawTable->StructStrings->GetArray();
   for (jColumns = 1; jColumns <= Clones; jColumns++){
     VT_PrintData->Append();
@@ -320,14 +320,14 @@ void __fastcall TDU2ChartInterior::Place(void)
   TFormSetupMonitors*psm;
   try
   { psm = new TFormSetupMonitors(Application);
-		//Создаем график 1
+		//РЎРѕР·РґР°РµРј РіСЂР°С„РёРє 1
 		pChart  = NULL;
 		pChart  = new TChart(Owner);
     pChart->OnMouseDown               = ChartMouseDown;
     pChart->OnMouseMove               = ChartMouseMove;
     pChart->Enabled                   = true;
 		pChart->Parent                    = dynamic_cast<TWinControl*>(Owner);
-		//Проводим начальную настройку компонента TChart 1
+		//РџСЂРѕРІРѕРґРёРј РЅР°С‡Р°Р»СЊРЅСѓСЋ РЅР°СЃС‚СЂРѕР№РєСѓ РєРѕРјРїРѕРЅРµРЅС‚Р° TChart 1
 		pChart->View3D                    = false;
     pChart->Legend->Visible           = true;
     pChart->Legend->ColorWidth        = 35;
@@ -335,14 +335,14 @@ void __fastcall TDU2ChartInterior::Place(void)
     pChart->AllowPanning              = pmNone;
     pChart->LeftAxis->Title->Caption  = GetUnitOfEnergy();
     pChart->Show();
-		//Создаем график 2
+		//РЎРѕР·РґР°РµРј РіСЂР°С„РёРє 2
 		pChart1 = NULL;
 		pChart1 = new TChart(Owner);
     pChart1->OnMouseDown              = ChartMouseDown;
     pChart1->OnMouseMove              = ChartMouseMove;
     pChart1->Enabled                  = true;
 		pChart1->Parent                   = dynamic_cast<TWinControl *>(Owner);
-		//Проводим начальную настройку компонента TChart 2
+		//РџСЂРѕРІРѕРґРёРј РЅР°С‡Р°Р»СЊРЅСѓСЋ РЅР°СЃС‚СЂРѕР№РєСѓ РєРѕРјРїРѕРЅРµРЅС‚Р° TChart 2
 		pChart1->View3D                   = false;
     pChart1->Legend->Visible          = true;
     pChart1->Legend->ColorWidth       = 35;
@@ -350,8 +350,8 @@ void __fastcall TDU2ChartInterior::Place(void)
     pChart1->AllowPanning             = pmNone;
     pChart1->LeftAxis->Title->Caption = GetUnitOfEnergy();
     pChart1->Show();
-		//Создаем таблицу
-		//Укладываем таблицу и графики в SplitterForm
+		//РЎРѕР·РґР°РµРј С‚Р°Р±Р»РёС†Сѓ
+		//РЈРєР»Р°РґС‹РІР°РµРј С‚Р°Р±Р»РёС†Сѓ Рё РіСЂР°С„РёРєРё РІ SplitterForm
 		DrawTable = new TDrawTable(Owner);
 
 		SplitterForm->AddChild(NULL, DrawTable, alRight);
@@ -361,7 +361,7 @@ void __fastcall TDU2ChartInterior::Place(void)
 		SplitterForm->Splitter->OnClick = OnClickPanel;
 		SplitterForm->Splitter->Tag     = fd->PercentSplit;
 		SplitterForm->SplitFormResize(NULL);
-    // Форматирование таблицы
+    // Р¤РѕСЂРјР°С‚РёСЂРѕРІР°РЅРёРµ С‚Р°Р±Р»РёС†С‹
 		DrawTable->OnEnter        = OnClickPanel;
 		DrawTable->OnMouseDown    = DrawTableMouseDown;
 		DrawTable->OnMouseMove    = DrawTableMouseMove;
@@ -391,30 +391,30 @@ void __fastcall TDU2ChartInterior::Place(void)
 					                        AnsiString("#") + psm->EditBWWidthDigit->Text;
 			clonesInRows();
 		}
-    //VNB 8.01.2009 Судя по всему в этом мониторе метки качества нет
+    //VNB 8.01.2009 РЎСѓРґСЏ РїРѕ РІСЃРµРјСѓ РІ СЌС‚РѕРј РјРѕРЅРёС‚РѕСЂРµ РјРµС‚РєРё РєР°С‡РµСЃС‚РІР° РЅРµС‚
    // setDataSourceToDrawTable(DrawTable,datOracle,Clones+1,SubColumns(),RowCount+1);
 
-    // Строим график по умолчанию
+    // РЎС‚СЂРѕРёРј РіСЂР°С„РёРє РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
     ChartFXColumns(1);
 		OnProgressBarStepBy(this);//80
 
     //chig
     if (fd->IsMemParActualForClones)
-    { //Восстановление состояния скроллинга
+    { //Р’РѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ СЃРѕСЃС‚РѕСЏРЅРёСЏ СЃРєСЂРѕР»Р»РёРЅРіР°
       if (DrawTable)
         DrawTable->TopRow = fd->TableTopRow;
-      //e Восстановление состояния скроллинга
+      //e Р’РѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ СЃРѕСЃС‚РѕСЏРЅРёСЏ СЃРєСЂРѕР»Р»РёРЅРіР°
       fd->IsMemParActualForClones = FALSE;
     }
     if (fd->IsMemParActualForProf)
-    { //Восстановление состояния скроллинга
+    { //Р’РѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ СЃРѕСЃС‚РѕСЏРЅРёСЏ СЃРєСЂРѕР»Р»РёРЅРіР°
       if (DrawTable)
         DrawTable->LeftCol  = fd->TableLeftCol;
-      //e Восстановление состояния скроллинга
+      //e Р’РѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ СЃРѕСЃС‚РѕСЏРЅРёСЏ СЃРєСЂРѕР»Р»РёРЅРіР°
       fd->IsMemParActualForProf = FALSE;
     }
     //e
-    //GRB ADD - подписываем на перерисовку
+    //GRB ADD - РїРѕРґРїРёСЃС‹РІР°РµРј РЅР° РїРµСЂРµСЂРёСЃРѕРІРєСѓ
     ((TBaseMonitorForm*)Owner)->OnResize=FormShow;
   }
   catch(Exception &e)
@@ -441,10 +441,10 @@ void __fastcall TDU2ChartInterior::Place(void)
 
 void __fastcall TDU2ChartInterior::clickGraphics(long ColPressed, long RowPressed)
 {
-	if (ColPressed == 1)//разложение по группам
+	if (ColPressed == 1)//СЂР°Р·Р»РѕР¶РµРЅРёРµ РїРѕ РіСЂСѓРїРїР°Рј
 	{ ChartFXLines(RowPressed);
 	}
-	if (RowPressed == 0)//построение профиля
+	if (RowPressed == 0)//РїРѕСЃС‚СЂРѕРµРЅРёРµ РїСЂРѕС„РёР»СЏ
 	{ ChartFXColumns(ColPressed - 1);
 	}
 }
@@ -537,23 +537,23 @@ void __fastcall TDU2ChartInterior::ChartFXLines(long AClone)
 
 void __fastcall TDU2ChartInterior::ChartFXColumns(long ARow)
 {
-#define NA      0           // смещение Мощности А
-#define NR      1           // смещение Мощности D
-#define anF     2           // смещение фи
-#define COSF    3           // смещение косинуса фи
-#define UA      4           // смещение напряжения А
-#define UB      5           // смещение напряжения D
-#define UC      6           // смещение напряжения C
-#define anUA    7           // смещение угла напряжения А
-#define anUB    8           // смещение угла напряжения B
-#define anUC    9           // смещение угла напряжения C
-#define IA      10          // смещение тока А
-#define IB      11          // смещение тока B
-#define IC      12          // смещение тока C
-#define anIA    13          // смещение угла тока А
-#define anIB    14          // смещение угла тока B
-#define anIC    15          // смещение угла тока C
-#define FR      16          // смещение частоты
+#define NA      0           // СЃРјРµС‰РµРЅРёРµ РњРѕС‰РЅРѕСЃС‚Рё Рђ
+#define NR      1           // СЃРјРµС‰РµРЅРёРµ РњРѕС‰РЅРѕСЃС‚Рё D
+#define anF     2           // СЃРјРµС‰РµРЅРёРµ С„Рё
+#define COSF    3           // СЃРјРµС‰РµРЅРёРµ РєРѕСЃРёРЅСѓСЃР° С„Рё
+#define UA      4           // СЃРјРµС‰РµРЅРёРµ РЅР°РїСЂСЏР¶РµРЅРёСЏ Рђ
+#define UB      5           // СЃРјРµС‰РµРЅРёРµ РЅР°РїСЂСЏР¶РµРЅРёСЏ D
+#define UC      6           // СЃРјРµС‰РµРЅРёРµ РЅР°РїСЂСЏР¶РµРЅРёСЏ C
+#define anUA    7           // СЃРјРµС‰РµРЅРёРµ СѓРіР»Р° РЅР°РїСЂСЏР¶РµРЅРёСЏ Рђ
+#define anUB    8           // СЃРјРµС‰РµРЅРёРµ СѓРіР»Р° РЅР°РїСЂСЏР¶РµРЅРёСЏ B
+#define anUC    9           // СЃРјРµС‰РµРЅРёРµ СѓРіР»Р° РЅР°РїСЂСЏР¶РµРЅРёСЏ C
+#define IA      10          // СЃРјРµС‰РµРЅРёРµ С‚РѕРєР° Рђ
+#define IB      11          // СЃРјРµС‰РµРЅРёРµ С‚РѕРєР° B
+#define IC      12          // СЃРјРµС‰РµРЅРёРµ С‚РѕРєР° C
+#define anIA    13          // СЃРјРµС‰РµРЅРёРµ СѓРіР»Р° С‚РѕРєР° Рђ
+#define anIB    14          // СЃРјРµС‰РµРЅРёРµ СѓРіР»Р° С‚РѕРєР° B
+#define anIC    15          // СЃРјРµС‰РµРЅРёРµ СѓРіР»Р° С‚РѕРєР° C
+#define FR      16          // СЃРјРµС‰РµРЅРёРµ С‡Р°СЃС‚РѕС‚С‹
   TCloneItem  *ptrDatOracle;
   double  kfcI2U = 1;
   double  XMaxVal;
@@ -561,7 +561,7 @@ void __fastcall TDU2ChartInterior::ChartFXColumns(long ARow)
           dAnUB, dAnUC, dIA, dIB, dIC, dAnIA, dAnIB, dAnIC;
   TArrowSeries  *pArrow,
                 *pArrow1;
-  // Настройка графика
+  // РќР°СЃС‚СЂРѕР№РєР° РіСЂР°С„РёРєР°
   while (pChart->SeriesCount()>0)
   { TChartSeries  *cs = pChart->Series[0];
     cs->ParentChart = NULL;
@@ -590,7 +590,7 @@ void __fastcall TDU2ChartInterior::ChartFXColumns(long ARow)
   pArrow->ColorEachPoint      = true;
   pArrow->Pointer->Pen->Width = 2;
 
-  // Получить параметры из таблицы
+  // РџРѕР»СѓС‡РёС‚СЊ РїР°СЂР°РјРµС‚СЂС‹ РёР· С‚Р°Р±Р»РёС†С‹
   ptrDatOracle = datOracle+Clones+1+ARow;
   dNA   = (ptrDatOracle + NA *(Clones + 1))->val;
   dNR   = (ptrDatOracle + NR *(Clones + 1))->val;
@@ -609,7 +609,7 @@ void __fastcall TDU2ChartInterior::ChartFXColumns(long ARow)
   dAnIB = (ptrDatOracle + anIB * (Clones + 1))->val;
   dAnIC = (ptrDatOracle + anIC * (Clones + 1))->val;
 
-  // расчёт коэффициента для приведения токов к напряжению
+  // СЂР°СЃС‡С‘С‚ РєРѕСЌС„С„РёС†РёРµРЅС‚Р° РґР»СЏ РїСЂРёРІРµРґРµРЅРёСЏ С‚РѕРєРѕРІ Рє РЅР°РїСЂСЏР¶РµРЅРёСЋ
   if (dIA >= dIB && dIA >= dIC && dIA>0){
     kfcI2U  = dUA / dIA;
   }else{
@@ -636,7 +636,7 @@ void __fastcall TDU2ChartInterior::ChartFXColumns(long ARow)
   { pArrow->Title = "";
     pChart->Title->Text->Text = "";
   }
-  // Вырисовка векторного графика
+  // Р’С‹СЂРёСЃРѕРІРєР° РІРµРєС‚РѕСЂРЅРѕРіРѕ РіСЂР°С„РёРєР°
   if (dNA != -MAXFLOAT)
    // pArrow->AddArrow(0, 0, dNA, 0, GetSubColumnsNames()[NA + 1], clTeeColor);
    pArrow->AddArrow(0, 0, dNA, 0, GetSubColumnsNames(NA + 1), (TColor)clTeeColor);
@@ -656,7 +656,7 @@ void __fastcall TDU2ChartInterior::ChartFXColumns(long ARow)
       else
         YMaxVal = 10;
   YMinVal = -YMaxVal;
-  // Настройка масштаба по умолчанию
+  // РќР°СЃС‚СЂРѕР№РєР° РјР°СЃС€С‚Р°Р±Р° РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
   IncreaseScaleValue(YMinVal, YMaxVal);
   pChart->LeftAxis->Minimum     = -MAXFLOAT;
   pChart->BottomAxis->Minimum   = -MAXFLOAT;
@@ -669,7 +669,7 @@ void __fastcall TDU2ChartInterior::ChartFXColumns(long ARow)
 
   if (pChart1->Parent == NULL)
     SplitterForm->AddChild(pChart, pChart1, alRight);
-  // Настройка графика
+  // РќР°СЃС‚СЂРѕР№РєР° РіСЂР°С„РёРєР°
   pChart1->SeriesList->Clear();
   pArrow1 = new TArrowSeries(pChart1);
   pChart1->Legend->Visible              = true;
@@ -697,7 +697,7 @@ void __fastcall TDU2ChartInterior::ChartFXColumns(long ARow)
 
   double  x, y;
   //===== 22.4.2005 Frizyuk A.M. Start
-  //===== Добавлено ко всем углам 90 градусов
+  //===== Р”РѕР±Р°РІР»РµРЅРѕ РєРѕ РІСЃРµРј СѓРіР»Р°Рј 90 РіСЂР°РґСѓСЃРѕРІ
   if (dUA != -MAXFLOAT && dAnUA != -MAXFLOAT)
   { x = dUA * cos((dAnUA + 90) * M_PI / 180);
     y = dUA * sin((dAnUA + 90) * M_PI / 180);
@@ -747,7 +747,7 @@ void __fastcall TDU2ChartInterior::ChartFXColumns(long ARow)
   }
   //===== 22.4.2005 Frizyuk A.M. Finish
   YMinVal = -YMaxVal;
-  // Настройка масштаба по умолчанию
+  // РќР°СЃС‚СЂРѕР№РєР° РјР°СЃС€С‚Р°Р±Р° РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
   IncreaseScaleValue(YMinVal, YMaxVal);
   pChart1->LeftAxis->Minimum      = -MAXFLOAT;
   pChart1->BottomAxis->Minimum    = -MAXFLOAT;
@@ -830,7 +830,7 @@ void __fastcall TDU2ChartInterior::SaveTableToFile(TSaveDialog *aSaveDialog)
 }
 //---------------------------------------------------------------------------
 //-------------------------------------------------------------------------------
-//GRB ADD 26.08.2021 - два метода для автоформатирования по содержимому фиксированых колонок - исправление бага с обрезанием длинных имён в колонках
+//GRB ADD 26.08.2021 - РґРІР° РјРµС‚РѕРґР° РґР»СЏ Р°РІС‚РѕС„РѕСЂРјР°С‚РёСЂРѕРІР°РЅРёСЏ РїРѕ СЃРѕРґРµСЂР¶РёРјРѕРјСѓ С„РёРєСЃРёСЂРѕРІР°РЅС‹С… РєРѕР»РѕРЅРѕРє - РёСЃРїСЂР°РІР»РµРЅРёРµ Р±Р°РіР° СЃ РѕР±СЂРµР·Р°РЅРёРµРј РґР»РёРЅРЅС‹С… РёРјС‘РЅ РІ РєРѕР»РѕРЅРєР°С…
 //---------------------------------------------------------------------------
 void __fastcall  TDU2ChartInterior::AutoSizeColGRB (TDrawTable* tsg, int columnIndex){
         int i,w,WMax;
@@ -881,7 +881,7 @@ TFont * __fastcall TDU2ChartInterior::GetActiveFont4MonitorFromReg (){
 
     }catch (Exception &ex){
         delete psm;
-        //Смелое предположение - так типа по дефолту
+        //РЎРјРµР»РѕРµ РїСЂРµРґРїРѕР»РѕР¶РµРЅРёРµ - С‚Р°Рє С‚РёРїР° РїРѕ РґРµС„РѕР»С‚Сѓ
         retFont->Name = "MS Sans Serif";
         retFont->Size = 8;
         return retFont;

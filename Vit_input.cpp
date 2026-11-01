@@ -69,7 +69,7 @@ void __fastcall TFormVITInput::DrawTable1KeyDown(TObject *Sender, WORD &Key,
         case VK_LEFT: // VK_LEFT:
                       if( DrawTable1->Col==4 )
                       {
-                          ACol=7;		// 7-в случае ввода по тарифу D
+                          ACol=7;		// 7-РІ СЃР»СѓС‡Р°Рµ РІРІРѕРґР° РїРѕ С‚Р°СЂРёС„Сѓ D
                           if(DrawTable1->Row != 2)
                                ARow=DrawTable1->Row-2;
                           else
@@ -88,7 +88,7 @@ void __fastcall TFormVITInput::DrawTable1KeyDown(TObject *Sender, WORD &Key,
                       break;
         case VK_RIGHT: // VK_RIGHT:
                       if( DrawTable1->Col==7 )
-                      {// 8-в случае ввода по тарифу D
+                      {// 8-РІ СЃР»СѓС‡Р°Рµ РІРІРѕРґР° РїРѕ С‚Р°СЂРёС„Сѓ D
                           ACol=4;
                           if(DrawTable1->Row != DrawTable1->RowCount-1)
                                ARow=DrawTable1->Row+2;
@@ -298,13 +298,13 @@ void TFormVITInput::MainProc(TObject *Sender)
     i++;
     }
      CountStr=i;
-//	Получение данных в структуру для вывода данных
+//	РџРѕР»СѓС‡РµРЅРёРµ РґР°РЅРЅС‹С… РІ СЃС‚СЂСѓРєС‚СѓСЂСѓ РґР»СЏ РІС‹РІРѕРґР° РґР°РЅРЅС‹С…
     DrawTable1->RowCount=1+2*CountStr;
     DrawTable1->ColCount=10;
     DrawTable1->RowsHeight="#25#35#35";
     DrawTable1->ColsWidth="#-160#50#50#110#85#85#85#85#0#120";
     DrawTable1->TabStrings->Add("B C40 T25 M0x5 0xF$#$##$#$#$#$#$#$#$");
-    // в случае ввода по тарифу D
+    // РІ СЃР»СѓС‡Р°Рµ РІРІРѕРґР° РїРѕ С‚Р°СЂРёС„Сѓ D
     //DrawTable1->ColsWidth="#160#55#125#95#95#95#95#95#-80";
     //DrawTable1->TabStrings->Add("B C40 T17 M0x5 0xF$##$#$#$#$#$#$#$");
     DrawTable1->StaticStrings->Add(Reconst_smes81_3);
@@ -314,7 +314,7 @@ void TFormVITInput::MainProc(TObject *Sender)
     DrawTable1->StaticStrings->Add("A");
     DrawTable1->StaticStrings->Add("B");
     DrawTable1->StaticStrings->Add("C");
-    DrawTable1->StaticStrings->Add("D");// в случае ввода по тарифу D
+    DrawTable1->StaticStrings->Add("D");// РІ СЃР»СѓС‡Р°Рµ РІРІРѕРґР° РїРѕ С‚Р°СЂРёС„Сѓ D
     DrawTable1->StaticStrings->Add(Reconst_smes81_7);
     static int VarDescr[]={20,20,20,20,20};
     DrawTable1->StructStrings->Rebuild(CountStr,5,VarDescr);
@@ -330,7 +330,7 @@ void TFormVITInput::MainProc(TObject *Sender)
       DrawTable1->StaticStrings->Add(pointLastInput[i].AEM);
       DrawTable1->StaticStrings->Add(pointLastInput[i].BEM);
       DrawTable1->StaticStrings->Add(pointLastInput[i].CEM);
-      DrawTable1->StaticStrings->Add(pointLastInput[i].DEM);// в случае ввода по тарифу D
+      DrawTable1->StaticStrings->Add(pointLastInput[i].DEM);// РІ СЃР»СѓС‡Р°Рµ РІРІРѕРґР° РїРѕ С‚Р°СЂРёС„Сѓ D
       if(AnsiString(pointLastInput[i].E_N).IsEmpty()&&AnsiString(pointLastInput[i].AE_N).IsEmpty()&&
          AnsiString(pointLastInput[i].BE_N).IsEmpty()&&AnsiString(pointLastInput[i].CE_N).IsEmpty())
       	DrawTable1->StaticStrings->Add("");
@@ -339,13 +339,13 @@ void TFormVITInput::MainProc(TObject *Sender)
                                        "A:"+AnsiString(pointLastInput[i].AE_N)+";\n"+
                                        "B:"+AnsiString(pointLastInput[i].BE_N)+"; "+
                                        "C:"+AnsiString(pointLastInput[i].CE_N)+"; ");
-    	DrawTable1->StaticStrings->Add("тек.");
+    	DrawTable1->StaticStrings->Add("С‚РµРє.");
       DrawTable1->StaticStrings->Add(pointPOL.myTime.FormatString("dd.mm.yyyy hh:nn"));
       DrawTable1->VarStrings->Add(pointLastInput[i].EM_N);
       DrawTable1->VarStrings->Add(pointLastInput[i].AEM_N);
       DrawTable1->VarStrings->Add(pointLastInput[i].BEM_N);
       DrawTable1->VarStrings->Add(pointLastInput[i].CEM_N);
-      DrawTable1->VarStrings->Add(pointLastInput[i].DEM_N);// в случае ввода по тарифу D
+      DrawTable1->VarStrings->Add(pointLastInput[i].DEM_N);// РІ СЃР»СѓС‡Р°Рµ РІРІРѕРґР° РїРѕ С‚Р°СЂРёС„Сѓ D
     }
     if(CountStr){
     	DrawTable1->UpdateTabStrings();
@@ -367,7 +367,7 @@ void TFormVITInput::MainProc(TObject *Sender)
   }
 }
 //---------------------------------------------------------------------------
-//Проверить
+//РџСЂРѕРІРµСЂРёС‚СЊ
 void __fastcall TFormVITInput::vCheck(TObject* Sender)
 {
   AnsiString sras,scurr;
@@ -380,12 +380,12 @@ void __fastcall TFormVITInput::vCheck(TObject* Sender)
   long redcell,redcellz,j=-1,z=0,notallpok;
   AnsiString srasS;
 
-  if(prov||!CountStr)//была проверка или нет записей
+  if(prov||!CountStr)//Р±С‹Р»Р° РїСЂРѕРІРµСЂРєР° РёР»Рё РЅРµС‚ Р·Р°РїРёСЃРµР№
     return;
 
   try{
     Screen->Cursor=crHourGlass;
-    prov=2;//Можно сохранять
+    prov=2;//РњРѕР¶РЅРѕ СЃРѕС…СЂР°РЅСЏС‚СЊ
     for(j=0;j <(long)CountStr ;j++){
       if(!pointLastInput[j].editRecord)
         continue;
@@ -492,9 +492,9 @@ void __fastcall TFormVITInput::vSave(TObject* Sender)
 	char seldat[20];
   POINTLASTINPUT pLI;
   static char *insupd = "begin \
-                           ryda.indic_pg.setindic(:par12,to_date(:par11, 'dd.mm.yyyy hh24:mi'),:par17,'Р.В',:par14,:par15,:par16,:par1,:par2,:par3,:par4,:par5,:par6,:par7,:par8,:par9,:par10); \
+                           ryda.indic_pg.setindic(:par12,to_date(:par11, 'dd.mm.yyyy hh24:mi'),:par17,'Р .Р’',:par14,:par15,:par16,:par1,:par2,:par3,:par4,:par5,:par6,:par7,:par8,:par9,:par10); \
                          end;";
-  if(!EditRec||!CountStr)//нет редактирования или нет записей
+  if(!EditRec||!CountStr)//РЅРµС‚ СЂРµРґР°РєС‚РёСЂРѕРІР°РЅРёСЏ РёР»Рё РЅРµС‚ Р·Р°РїРёСЃРµР№
     return;
   if(!prov){
     MessageBox(Handle,Reconst_smes81_15.c_str(),

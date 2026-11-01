@@ -499,33 +499,33 @@ try{
                 delete Reg;
 }
 if (Language=="UKR"){
-    SaveDialog1->Title = "Зберегти до файла...";
-    SaveDialog1->FileName = "План виконання фонових процесів";
+    SaveDialog1->Title = "Р—Р±РµСЂРµРіС‚Рё РґРѕ С„Р°Р№Р»Р°...";
+    SaveDialog1->FileName = "РџР»Р°РЅ РІРёРєРѕРЅР°РЅРЅСЏ С„РѕРЅРѕРІРёС… РїСЂРѕС†РµСЃС–РІ";
     SaveDialog1->DefaultExt = "xls";
-    SaveDialog1->Filter = "Excel-таблиця (*.xls)|*.xls|Файл з роздільником (*.csv)|*.csv|Текстові документи (*.txt)|*.txt";
+    SaveDialog1->Filter = "Excel-С‚Р°Р±Р»РёС†СЏ (*.xls)|*.xls|Р¤Р°Р№Р» Р· СЂРѕР·РґС–Р»СЊРЅРёРєРѕРј (*.csv)|*.csv|РўРµРєСЃС‚РѕРІС– РґРѕРєСѓРјРµРЅС‚Рё (*.txt)|*.txt";
     }else{
-    SaveDialog1->Title = "Сохранить в файл...";
-    SaveDialog1->FileName = "План выполнения фоновых процессов";
+    SaveDialog1->Title = "РЎРѕС…СЂР°РЅРёС‚СЊ РІ С„Р°Р№Р»...";
+    SaveDialog1->FileName = "РџР»Р°РЅ РІС‹РїРѕР»РЅРµРЅРёСЏ С„РѕРЅРѕРІС‹С… РїСЂРѕС†РµСЃСЃРѕРІ";
     SaveDialog1->DefaultExt = "xls";
-    SaveDialog1->Filter = "Excel-таблица (*.xls)|*.xls|Файл с разделителем (*.csv)|*.csv|Текстовые документы (*.txt)|*.txt";
+    SaveDialog1->Filter = "Excel-С‚Р°Р±Р»РёС†Р° (*.xls)|*.xls|Р¤Р°Р№Р» СЃ СЂР°Р·РґРµР»РёС‚РµР»РµРј (*.csv)|*.csv|РўРµРєСЃС‚РѕРІС‹Рµ РґРѕРєСѓРјРµРЅС‚С‹ (*.txt)|*.txt";
     }
 SaveDialog1->Options << ofOverwritePrompt;
-SaveDialog1->FileName = this->Caption+ "_от_"+Date().CurrentDate();
+SaveDialog1->FileName = this->Caption+ "_РѕС‚_"+Date().CurrentDate();
 if (SaveDialog1->Execute()){
-                //GRB FIX 24.12.2022 - заменили разделитель колонок в csv-файле с запятой, на более естественный для Excel'я точку с запятой - и ниже по тексту файла меняем ;  на . в названиях колонок и данных
+                //GRB FIX 24.12.2022 - Р·Р°РјРµРЅРёР»Рё СЂР°Р·РґРµР»РёС‚РµР»СЊ РєРѕР»РѕРЅРѕРє РІ csv-С„Р°Р№Р»Рµ СЃ Р·Р°РїСЏС‚РѕР№, РЅР° Р±РѕР»РµРµ РµСЃС‚РµСЃС‚РІРµРЅРЅС‹Р№ РґР»СЏ Excel'СЏ С‚РѕС‡РєСѓ СЃ Р·Р°РїСЏС‚РѕР№ - Рё РЅРёР¶Рµ РїРѕ С‚РµРєСЃС‚Сѓ С„Р°Р№Р»Р° РјРµРЅСЏРµРј ;  РЅР° . РІ РЅР°Р·РІР°РЅРёСЏС… РєРѕР»РѕРЅРѕРє Рё РґР°РЅРЅС‹С…
                 AnsiString delim = ";";
                 AnsiString rowData,str="";
                 TStringList* sList=new TStringList;
                 AnsiString fileName = SaveDialog1->FileName;
-                //Вычитываем заголовки TListView первой строкой
+                //Р’С‹С‡РёС‚С‹РІР°РµРј Р·Р°РіРѕР»РѕРІРєРё TListView РїРµСЂРІРѕР№ СЃС‚СЂРѕРєРѕР№
                 for(int i=0/*1*/;i<lvProcess->Columns->Count;i++){
                         if (i==0){
-                        if (Language=="UKR") rowData = "Стан запуску";
-                        else rowData = "Состояние запуска";
+                        if (Language=="UKR") rowData = "РЎС‚Р°РЅ Р·Р°РїСѓСЃРєСѓ";
+                        else rowData = "РЎРѕСЃС‚РѕСЏРЅРёРµ Р·Р°РїСѓСЃРєР°";
                         }
                         else
                         rowData = lvProcess->Columns->Items[i]->Caption;
-                        //экранируем(меняем на точки) точку с запятой(разделитель) (GRB FIX от 09.04.2019 - раньше была запятая), чтобы не появлялись фейковые столбцы
+                        //СЌРєСЂР°РЅРёСЂСѓРµРј(РјРµРЅСЏРµРј РЅР° С‚РѕС‡РєРё) С‚РѕС‡РєСѓ СЃ Р·Р°РїСЏС‚РѕР№(СЂР°Р·РґРµР»РёС‚РµР»СЊ) (GRB FIX РѕС‚ 09.04.2019 - СЂР°РЅСЊС€Рµ Р±С‹Р»Р° Р·Р°РїСЏС‚Р°СЏ), С‡С‚РѕР±С‹ РЅРµ РїРѕСЏРІР»СЏР»РёСЃСЊ С„РµР№РєРѕРІС‹Рµ СЃС‚РѕР»Р±С†С‹
                         rowData = StringReplace(rowData,";",".",TReplaceFlags()<<rfReplaceAll<<rfIgnoreCase);
                         str = str + rowData;
                         if (i!=lvProcess->Columns->Count-1) str = str+delim;
@@ -533,24 +533,24 @@ if (SaveDialog1->Execute()){
                 sList->Add (str);
                 str = "";
                 rowData ="";
-                //Вычитываем значения из TListView
+                //Р’С‹С‡РёС‚С‹РІР°РµРј Р·РЅР°С‡РµРЅРёСЏ РёР· TListView
                 for (int i = 0; i < lvProcess->Items->Count; i++){
                         for (int j = 0; j < lvProcess->Items->Item[i]->SubItems->Count; j++){
                                if (j==0){
                                rowData =  lvProcess->Items->Item[i]->ImageIndex;
                                         if (StrToInt(rowData)==0){
-                                        if (Language=="UKR") rowData = "Працює";
-                                        else rowData = "Запущен";
+                                        if (Language=="UKR") rowData = "РџСЂР°С†СЋС”";
+                                        else rowData = "Р—Р°РїСѓС‰РµРЅ";
                                         }
                                         else{
-                                        if (Language=="UKR") rowData = "Заблоковано";
-                                        else rowData = "Заблокированый";
+                                        if (Language=="UKR") rowData = "Р—Р°Р±Р»РѕРєРѕРІР°РЅРѕ";
+                                        else rowData = "Р—Р°Р±Р»РѕРєРёСЂРѕРІР°РЅС‹Р№";
                                         }
                                         str = str + rowData;
                                         str = str + delim;
                                }
                                rowData =  lvProcess->Items->Item[i]->SubItems->Strings[j];
-                               //экранируем(меняем на точки) точки с запятой(разделитель) (GRB FIX от 24.12.2022 - раньше была запятая), чтобы не появлялись фейковые столбцы
+                               //СЌРєСЂР°РЅРёСЂСѓРµРј(РјРµРЅСЏРµРј РЅР° С‚РѕС‡РєРё) С‚РѕС‡РєРё СЃ Р·Р°РїСЏС‚РѕР№(СЂР°Р·РґРµР»РёС‚РµР»СЊ) (GRB FIX РѕС‚ 24.12.2022 - СЂР°РЅСЊС€Рµ Р±С‹Р»Р° Р·Р°РїСЏС‚Р°СЏ), С‡С‚РѕР±С‹ РЅРµ РїРѕСЏРІР»СЏР»РёСЃСЊ С„РµР№РєРѕРІС‹Рµ СЃС‚РѕР»Р±С†С‹
                                rowData =  StringReplace(rowData,";",".",TReplaceFlags()<<rfReplaceAll<<rfIgnoreCase);
                                str = str + rowData;
                                if (j != lvProcess->Items->Item[i]->SubItems->Count-1) str = str + delim;
@@ -558,7 +558,7 @@ if (SaveDialog1->Execute()){
                     sList->Add (str);
                     str="";
                 }
-                //TODO:Перезаписывать без предупреждения, если файл с таким именем существует?
+                //TODO:РџРµСЂРµР·Р°РїРёСЃС‹РІР°С‚СЊ Р±РµР· РїСЂРµРґСѓРїСЂРµР¶РґРµРЅРёСЏ, РµСЃР»Рё С„Р°Р№Р» СЃ С‚Р°РєРёРј РёРјРµРЅРµРј СЃСѓС‰РµСЃС‚РІСѓРµС‚?
                 try{
                         if (!FileExists(fileName))
                                 sList->SaveToFile(fileName);

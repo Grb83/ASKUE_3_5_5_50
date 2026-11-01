@@ -81,16 +81,16 @@ public: 	// User declarations
 
   long Parent;
   struct SPrior
-    {      // структура таблицы пользователей
-    long mid;             //ид объекта
-    short ntype;          //  1-зеленая, 0-дата папка, 2-синяя
-    long norder;         //приоритет
-    AnsiString vname;     //название
+    {      // СЃС‚СЂСѓРєС‚СѓСЂР° С‚Р°Р±Р»РёС†С‹ РїРѕР»СЊР·РѕРІР°С‚РµР»РµР№
+    long mid;             //РёРґ РѕР±СЉРµРєС‚Р°
+    short ntype;          //  1-Р·РµР»РµРЅР°СЏ, 0-РґР°С‚Р° РїР°РїРєР°, 2-СЃРёРЅСЏСЏ
+    long norder;         //РїСЂРёРѕСЂРёС‚РµС‚
+    AnsiString vname;     //РЅР°Р·РІР°РЅРёРµ
     TDateTime dstart;
     TDateTime dend;
     TDateTime olddstart;
     TDateTime olddend;
-    int editing; //1-перестановка, 2-изменение времени,3-добавление нового
+    int editing; //1-РїРµСЂРµСЃС‚Р°РЅРѕРІРєР°, 2-РёР·РјРµРЅРµРЅРёРµ РІСЂРµРјРµРЅРё,3-РґРѕР±Р°РІР»РµРЅРёРµ РЅРѕРІРѕРіРѕ
     SPrior(){
     mid=0;
     ntype=0;

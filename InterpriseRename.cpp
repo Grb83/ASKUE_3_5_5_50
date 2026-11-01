@@ -28,11 +28,11 @@ void __fastcall TFormIntrpriseReneme::ReadData(void)
 {
   AnsiString pName,pSName;
   int pCod;
-  //GRB ADD 27.05.2019 - çàäà÷à ñ îáìåíîì ìàêåòàìè â ôîðìàòå xml - Ýíåðãîðûíîê - äîáàâëÿåì Êîä òîðãîâîé çîíû è Êîä òî÷êè ó÷¸òà
+  //GRB ADD 27.05.2019 - Ð·Ð°Ð´Ð°Ñ‡Ð° Ñ Ð¾Ð±Ð¼ÐµÐ½Ð¾Ð¼ Ð¼Ð°ÐºÐµÑ‚Ð°Ð¼Ð¸ Ð² Ñ„Ð¾Ñ€Ð¼Ð°Ñ‚Ðµ xml - Ð­Ð½ÐµÑ€Ð³Ð¾Ñ€Ñ‹Ð½Ð¾Ðº - Ð´Ð¾Ð±Ð°Ð²Ð»ÑÐµÐ¼ ÐšÐ¾Ð´ Ñ‚Ð¾Ñ€Ð³Ð¾Ð²Ð¾Ð¹ Ð·Ð¾Ð½Ñ‹ Ð¸ ÐšÐ¾Ð´ Ñ‚Ð¾Ñ‡ÐºÐ¸ ÑƒÑ‡Ñ‘Ñ‚Ð°
   AnsiString EICCode,fullName, shortName;
-  AnsiString tradeZoneCod1, tradeZoneCod2; // íàçâàíèÿ êîäîâ - ïîäòÿãèâàåì èç áàçû
+  AnsiString tradeZoneCod1, tradeZoneCod2; // Ð½Ð°Ð·Ð²Ð°Ð½Ð¸Ñ ÐºÐ¾Ð´Ð¾Ð² - Ð¿Ð¾Ð´Ñ‚ÑÐ³Ð¸Ð²Ð°ÐµÐ¼ Ð¸Ð· Ð±Ð°Ð·Ñ‹
 
-  AnsiString tradeZone1, tradeZone2;// ïðèçíàêè ïðèíàäëåæíîñòè ê çîíàì 0 - íåò, 1 - äà
+  AnsiString tradeZone1, tradeZone2;// Ð¿Ñ€Ð¸Ð·Ð½Ð°ÐºÐ¸ Ð¿Ñ€Ð¸Ð½Ð°Ð´Ð»ÐµÐ¶Ð½Ð¾ÑÑ‚Ð¸ Ðº Ð·Ð¾Ð½Ð°Ð¼ 0 - Ð½ÐµÑ‚, 1 - Ð´Ð°
   tradeZone1 = "y";
   tradeZone2 = "n";
   tradeZoneCod1 = tradeZoneCod2 = EICCode = fullName = shortName = "";
@@ -56,7 +56,7 @@ void __fastcall TFormIntrpriseReneme::ReadData(void)
   dmMain->oqCursor->ParamByName("par3")->Size=2000;
   dmMain->oqCursor->ParamByName("par4")->ParamType=ptOutput;
   dmMain->oqCursor->ParamByName("par4")->DataType=ftInteger;
-  //GRB ADD 04.06.2019 íîâûå ïàðàìåòû
+  //GRB ADD 04.06.2019 Ð½Ð¾Ð²Ñ‹Ðµ Ð¿Ð°Ñ€Ð°Ð¼ÐµÑ‚Ñ‹
   dmMain->oqCursor->ParamByName("par5")->ParamType=ptOutput;
   dmMain->oqCursor->ParamByName("par5")->DataType=ftString;
   dmMain->oqCursor->ParamByName("par6")->ParamType=ptOutput;
@@ -79,13 +79,13 @@ void __fastcall TFormIntrpriseReneme::ReadData(void)
   pName =dmMain->oqCursor->ParamByName("par2")->AsString;
   pSName = dmMain->oqCursor->ParamByName("par3")->AsString;
   pCod = dmMain->oqCursor->ParamByName("par4")->AsInteger;
-  //GRB ADD 04.06.2019 - çàäà÷à ñ îáìåíîì ìàêåòàìè â ôîðìàòå xml - Ýíåðãîðûíîê - äîáàâëÿåì Êîä òîðãîâîé çîíû è Êîä òî÷êè ó÷¸òà
+  //GRB ADD 04.06.2019 - Ð·Ð°Ð´Ð°Ñ‡Ð° Ñ Ð¾Ð±Ð¼ÐµÐ½Ð¾Ð¼ Ð¼Ð°ÐºÐµÑ‚Ð°Ð¼Ð¸ Ð² Ñ„Ð¾Ñ€Ð¼Ð°Ñ‚Ðµ xml - Ð­Ð½ÐµÑ€Ð³Ð¾Ñ€Ñ‹Ð½Ð¾Ðº - Ð´Ð¾Ð±Ð°Ð²Ð»ÑÐµÐ¼ ÐšÐ¾Ð´ Ñ‚Ð¾Ñ€Ð³Ð¾Ð²Ð¾Ð¹ Ð·Ð¾Ð½Ñ‹ Ð¸ ÐšÐ¾Ð´ Ñ‚Ð¾Ñ‡ÐºÐ¸ ÑƒÑ‡Ñ‘Ñ‚Ð°
   EICCode = dmMain->oqCursor->ParamByName("par5")->AsString;
   fullName = dmMain->oqCursor->ParamByName("par6")->AsString;
   shortName = dmMain->oqCursor->ParamByName("par7")->AsString;
-  tradeZoneCod1 = dmMain->oqCursor->ParamByName("par8")->AsString; //êîäà çîí
+  tradeZoneCod1 = dmMain->oqCursor->ParamByName("par8")->AsString; //ÐºÐ¾Ð´Ð° Ð·Ð¾Ð½
   tradeZoneCod2 = dmMain->oqCursor->ParamByName("par9")->AsString;
-  tradeZone1 = dmMain->oqCursor->ParamByName("par10")->AsString;  //ïðèçíàêè y/n
+  tradeZone1 = dmMain->oqCursor->ParamByName("par10")->AsString;  //Ð¿Ñ€Ð¸Ð·Ð½Ð°ÐºÐ¸ y/n
   tradeZone2 = dmMain->oqCursor->ParamByName("par11")->AsString;
   //END ADD
   Edit1->Text=pName;
@@ -93,7 +93,7 @@ void __fastcall TFormIntrpriseReneme::ReadData(void)
 
   if(!IntToStr(pCod).IsEmpty())
     Edit3->Text=IntToStr(pCod);
-  //GRB ADD 27.05.2019 - çàäà÷à ñ îáìåíîì ìàêåòàìè â ôîðìàòå xml - Ýíåðãîðûíîê - äîáàâëÿåì Êîä òîðãîâîé çîíû è Êîä òî÷êè ó÷¸òà
+  //GRB ADD 27.05.2019 - Ð·Ð°Ð´Ð°Ñ‡Ð° Ñ Ð¾Ð±Ð¼ÐµÐ½Ð¾Ð¼ Ð¼Ð°ÐºÐµÑ‚Ð°Ð¼Ð¸ Ð² Ñ„Ð¾Ñ€Ð¼Ð°Ñ‚Ðµ xml - Ð­Ð½ÐµÑ€Ð³Ð¾Ñ€Ñ‹Ð½Ð¾Ðº - Ð´Ð¾Ð±Ð°Ð²Ð»ÑÐµÐ¼ ÐšÐ¾Ð´ Ñ‚Ð¾Ñ€Ð³Ð¾Ð²Ð¾Ð¹ Ð·Ð¾Ð½Ñ‹ Ð¸ ÐšÐ¾Ð´ Ñ‚Ð¾Ñ‡ÐºÐ¸ ÑƒÑ‡Ñ‘Ñ‚Ð°
   //GRB ADD 04.06.2019
   if (CompareStr (tradeZone1,"y") == 0){
      CheckBox1->Checked = true;
@@ -120,14 +120,14 @@ void __fastcall TFormIntrpriseReneme::vSave(TObject *Sender)
   if(!EditRec)
     return;
   try{
-     //GRB ADD 28.05.2019 - äîáàâèë ïðîâåðêó íà òî ÷òî õîòÿ áû îäèí ÷åêáîêñ óñòàíîâëåí
+     //GRB ADD 28.05.2019 - Ð´Ð¾Ð±Ð°Ð²Ð¸Ð» Ð¿Ñ€Ð¾Ð²ÐµÑ€ÐºÑƒ Ð½Ð° Ñ‚Ð¾ Ñ‡Ñ‚Ð¾ Ñ…Ð¾Ñ‚Ñ Ð±Ñ‹ Ð¾Ð´Ð¸Ð½ Ñ‡ÐµÐºÐ±Ð¾ÐºÑ ÑƒÑÑ‚Ð°Ð½Ð¾Ð²Ð»ÐµÐ½
    if (((CheckBox1->Checked) || (CheckBox2->Checked)) == false ){
        Application->MessageBox(Reconst_smes41_1.c_str(),"ERROR!",MB_OK	|MB_ICONSTOP);
        return;
    }
   //GRB REM 28.05.2019
   //if(Edit1->Text.IsEmpty()||Edit2->Text.IsEmpty())
-   //GRB UPD 28.05.2019 - äîáàâèë ïðîâåðêó íà ïóñòîòó 3-õ EIC ïîëåé (äàòà è òàê åñòü âñåãäà ñåãîäíÿøíÿÿ)
+   //GRB UPD 28.05.2019 - Ð´Ð¾Ð±Ð°Ð²Ð¸Ð» Ð¿Ñ€Ð¾Ð²ÐµÑ€ÐºÑƒ Ð½Ð° Ð¿ÑƒÑÑ‚Ð¾Ñ‚Ñƒ 3-Ñ… EIC Ð¿Ð¾Ð»ÐµÐ¹ (Ð´Ð°Ñ‚Ð° Ð¸ Ñ‚Ð°Ðº ÐµÑÑ‚ÑŒ Ð²ÑÐµÐ³Ð´Ð° ÑÐµÐ³Ð¾Ð´Ð½ÑÑˆÐ½ÑÑ)
    if(Edit1->Text.IsEmpty()||Edit2->Text.IsEmpty()||Edit6->Text.IsEmpty()||Edit7->Text.IsEmpty()||Edit8->Text.IsEmpty())
    {
        Application->MessageBox(Reconst_smes41_1.c_str(),"ERROR!",MB_OK	|MB_ICONSTOP);
@@ -135,7 +135,7 @@ void __fastcall TFormIntrpriseReneme::vSave(TObject *Sender)
    }
   else{
     dmMain->oqCursor->Params->Clear();
-    //GRB REM 27.05.2019 - çàäà÷à ñ îáìåíîì ìàêåòàìè â ôîðìàòå xml - Ýíåðãîðûíîê - äîáàâëÿåì Êîä òîðãîâîé çîíû è Êîä òî÷êè ó÷¸òà, äîáàâëÿåì 2 íîâûõ ïàðàìåòðà
+    //GRB REM 27.05.2019 - Ð·Ð°Ð´Ð°Ñ‡Ð° Ñ Ð¾Ð±Ð¼ÐµÐ½Ð¾Ð¼ Ð¼Ð°ÐºÐµÑ‚Ð°Ð¼Ð¸ Ð² Ñ„Ð¾Ñ€Ð¼Ð°Ñ‚Ðµ xml - Ð­Ð½ÐµÑ€Ð³Ð¾Ñ€Ñ‹Ð½Ð¾Ðº - Ð´Ð¾Ð±Ð°Ð²Ð»ÑÐµÐ¼ ÐšÐ¾Ð´ Ñ‚Ð¾Ñ€Ð³Ð¾Ð²Ð¾Ð¹ Ð·Ð¾Ð½Ñ‹ Ð¸ ÐšÐ¾Ð´ Ñ‚Ð¾Ñ‡ÐºÐ¸ ÑƒÑ‡Ñ‘Ñ‚Ð°, Ð´Ð¾Ð±Ð°Ð²Ð»ÑÐµÐ¼ 2 Ð½Ð¾Ð²Ñ‹Ñ… Ð¿Ð°Ñ€Ð°Ð¼ÐµÑ‚Ñ€Ð°
     //dmMain->oqCursor->SQL->Text="begin "+SchemeName+"editfeedergroup_pg.interprise_p(:par1,:par2,:par3,:par4); end;";
     //GRB ADD 27.05.2019
     dmMain->oqCursor->SQL->Text="begin "+SchemeName+"editfeedergroup_pg.interprise_p(:par1,:par2,:par3,:par4,:par5,:par6,:par7,:par8,:par9); end;";
@@ -150,18 +150,18 @@ void __fastcall TFormIntrpriseReneme::vSave(TObject *Sender)
        else
        dmMain->oqCursor->ParamByName("par4")->Clear();
     //GRB ADD  27.05.2019
-    dmMain->oqCursor->ParamByName("par5")->AsString = Edit6->Text;  //Êîä ÅÈÑ
-    dmMain->oqCursor->ParamByName("par6")->AsString = Edit7->Text;  //Íàèìåíîâàíèå
-    dmMain->oqCursor->ParamByName("par7")->AsString = Edit8->Text;  //Êîðîòêîå èìÿ
+    dmMain->oqCursor->ParamByName("par5")->AsString = Edit6->Text;  //ÐšÐ¾Ð´ Ð•Ð˜Ð¡
+    dmMain->oqCursor->ParamByName("par6")->AsString = Edit7->Text;  //ÐÐ°Ð¸Ð¼ÐµÐ½Ð¾Ð²Ð°Ð½Ð¸Ðµ
+    dmMain->oqCursor->ParamByName("par7")->AsString = Edit8->Text;  //ÐšÐ¾Ñ€Ð¾Ñ‚ÐºÐ¾Ðµ Ð¸Ð¼Ñ
 
     if (CheckBox1->Checked)
-    dmMain->oqCursor->ParamByName("par8")->AsString = "y";  //Íàõîäèòñÿ â òîðãîâîé çîíû Óêðàèíû
+    dmMain->oqCursor->ParamByName("par8")->AsString = "y";  //ÐÐ°Ñ…Ð¾Ð´Ð¸Ñ‚ÑÑ Ð² Ñ‚Ð¾Ñ€Ð³Ð¾Ð²Ð¾Ð¹ Ð·Ð¾Ð½Ñ‹ Ð£ÐºÑ€Ð°Ð¸Ð½Ñ‹
     else
-    dmMain->oqCursor->ParamByName("par8")->AsString = "n";  //Íå Íàõîäèòñÿ â òîðãîâîé çîíû Óêðàèíû
+    dmMain->oqCursor->ParamByName("par8")->AsString = "n";  //ÐÐµ ÐÐ°Ñ…Ð¾Ð´Ð¸Ñ‚ÑÑ Ð² Ñ‚Ð¾Ñ€Ð³Ð¾Ð²Ð¾Ð¹ Ð·Ð¾Ð½Ñ‹ Ð£ÐºÑ€Ð°Ð¸Ð½Ñ‹
     if (CheckBox2->Checked)
-    dmMain->oqCursor->ParamByName("par9")->AsString = "y";  //Êîä òîðãîâîé çîíû Áóðøòûí
+    dmMain->oqCursor->ParamByName("par9")->AsString = "y";  //ÐšÐ¾Ð´ Ñ‚Ð¾Ñ€Ð³Ð¾Ð²Ð¾Ð¹ Ð·Ð¾Ð½Ñ‹ Ð‘ÑƒÑ€ÑˆÑ‚Ñ‹Ð½
     else
-    dmMain->oqCursor->ParamByName("par9")->AsString = "n";  //Íå Íàõîäèòñÿ â òîðãîâîé çîíû Áóðøòûí
+    dmMain->oqCursor->ParamByName("par9")->AsString = "n";  //ÐÐµ ÐÐ°Ñ…Ð¾Ð´Ð¸Ñ‚ÑÑ Ð² Ñ‚Ð¾Ñ€Ð³Ð¾Ð²Ð¾Ð¹ Ð·Ð¾Ð½Ñ‹ Ð‘ÑƒÑ€ÑˆÑ‚Ñ‹Ð½
 
 
     //END ADD
@@ -262,14 +262,14 @@ void __fastcall TFormIntrpriseReneme::m_btnSaveClick(TObject *Sender)
                 delete Reg;
         }
     if (Language=="UKR"){
-    aSaveDialog->Title = "Çáåðåãòè äî ôàéëà...";
-    aSaveDialog->FileName = "Ñïåöèô³êàö³ÿ ï³äïðèºìñòâà";
-    aSaveDialog->Filter = "Òåêñòîâ³ äîêóìåíòè (*.txt)|*.txt|Ôàéë ç ðîçä³ëüíèêîì (*.csv)|*.csv|Excel-òàáëèöÿ (*.xls)|*.xls";
+    aSaveDialog->Title = "Ð—Ð±ÐµÑ€ÐµÐ³Ñ‚Ð¸ Ð´Ð¾ Ñ„Ð°Ð¹Ð»Ð°...";
+    aSaveDialog->FileName = "Ð¡Ð¿ÐµÑ†Ð¸Ñ„Ñ–ÐºÐ°Ñ†Ñ–Ñ Ð¿Ñ–Ð´Ð¿Ñ€Ð¸Ñ”Ð¼ÑÑ‚Ð²Ð°";
+    aSaveDialog->Filter = "Ð¢ÐµÐºÑÑ‚Ð¾Ð²Ñ– Ð´Ð¾ÐºÑƒÐ¼ÐµÐ½Ñ‚Ð¸ (*.txt)|*.txt|Ð¤Ð°Ð¹Ð» Ð· Ñ€Ð¾Ð·Ð´Ñ–Ð»ÑŒÐ½Ð¸ÐºÐ¾Ð¼ (*.csv)|*.csv|Excel-Ñ‚Ð°Ð±Ð»Ð¸Ñ†Ñ (*.xls)|*.xls";
     }else{
-    aSaveDialog->Title = "Ñîõðàíèòü â ôàéë...";
-    aSaveDialog->FileName = "Ñïåöèôèêàöèÿ ïðåäïðèÿòèÿ";
+    aSaveDialog->Title = "Ð¡Ð¾Ñ…Ñ€Ð°Ð½Ð¸Ñ‚ÑŒ Ð² Ñ„Ð°Ð¹Ð»...";
+    aSaveDialog->FileName = "Ð¡Ð¿ÐµÑ†Ð¸Ñ„Ð¸ÐºÐ°Ñ†Ð¸Ñ Ð¿Ñ€ÐµÐ´Ð¿Ñ€Ð¸ÑÑ‚Ð¸Ñ";
     aSaveDialog->DefaultExt = "csv";
-    aSaveDialog->Filter = "Òåêñòîâûå äîêóìåíòû (*.txt)|*.txt|Ôàéë ñ ðàçäåëèòåëåì (*.csv)|*.csv|Excel-òàáëèöà (*.xls)|*.xls";
+    aSaveDialog->Filter = "Ð¢ÐµÐºÑÑ‚Ð¾Ð²Ñ‹Ðµ Ð´Ð¾ÐºÑƒÐ¼ÐµÐ½Ñ‚Ñ‹ (*.txt)|*.txt|Ð¤Ð°Ð¹Ð» Ñ Ñ€Ð°Ð·Ð´ÐµÐ»Ð¸Ñ‚ÐµÐ»ÐµÐ¼ (*.csv)|*.csv|Excel-Ñ‚Ð°Ð±Ð»Ð¸Ñ†Ð° (*.xls)|*.xls";
     }
     if(aSaveDialog->Execute())
     {

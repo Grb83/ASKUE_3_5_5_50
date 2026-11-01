@@ -9,7 +9,7 @@
 #include "Saa_SelectGroup.h"
 #include "selectpoint.h"
 #include "CopySchemaParams.h"
-#include "Saa_SelectGroup.h" // только для ручного копирования привязанных файлов Add by KSS
+#include "Saa_SelectGroup.h" // С‚РѕР»СЊРєРѕ РґР»СЏ СЂСѓС‡РЅРѕРіРѕ РєРѕРїРёСЂРѕРІР°РЅРёСЏ РїСЂРёРІСЏР·Р°РЅРЅС‹С… С„Р°Р№Р»РѕРІ Add by KSS
 #include "unSpecParam.h"
 #include "Reconst.hpp"
 #pragma link "DBAccess"
@@ -60,7 +60,7 @@ bool __fastcall TFormEditFormList::GetShemas(void)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TFormEditFormList::ReadGroupNode(TTreeNode* NodeParent)// Читает ветку дерева групп
+void __fastcall TFormEditFormList::ReadGroupNode(TTreeNode* NodeParent)// Р§РёС‚Р°РµС‚ РІРµС‚РєСѓ РґРµСЂРµРІР° РіСЂСѓРїРї
 {
     AUXDIV *PTreeTable;
     TTreeNode *AddNode;
@@ -157,12 +157,12 @@ void __fastcall TFormEditFormList::tvFormChange(TObject *Sender,
             }
       }
       repform = PTreeTable&&(
-        PTreeTable->CodeTamplate==EXCEL_F ||        //Универсальная форма отображения данных
-        PTreeTable->CodeTamplate==EXCEL_REP_F ||    //Универсальная форма отображения отчетов
-        PTreeTable->CodeTamplate==SCHEMA_OP_FORM || //Оперативная форма отображения схемы сети // Add by KSS
-        PTreeTable->CodeTamplate==MODUS_OP_FORM || //Оперативная форма отображения схемы сети От МОДУСа // Add by KSS
-        PTreeTable->CodeTamplate==EXCEL_OP_FORM || //Оперативная форма без маштабирования
-        PTreeTable->CodeTamplate==EXCEL_REP_OUT_F   //Универсальная форма отображения отчетов во внешнем Excel'e
+        PTreeTable->CodeTamplate==EXCEL_F ||        //РЈРЅРёРІРµСЂСЃР°Р»СЊРЅР°СЏ С„РѕСЂРјР° РѕС‚РѕР±СЂР°Р¶РµРЅРёСЏ РґР°РЅРЅС‹С…
+        PTreeTable->CodeTamplate==EXCEL_REP_F ||    //РЈРЅРёРІРµСЂСЃР°Р»СЊРЅР°СЏ С„РѕСЂРјР° РѕС‚РѕР±СЂР°Р¶РµРЅРёСЏ РѕС‚С‡РµС‚РѕРІ
+        PTreeTable->CodeTamplate==SCHEMA_OP_FORM || //РћРїРµСЂР°С‚РёРІРЅР°СЏ С„РѕСЂРјР° РѕС‚РѕР±СЂР°Р¶РµРЅРёСЏ СЃС…РµРјС‹ СЃРµС‚Рё // Add by KSS
+        PTreeTable->CodeTamplate==MODUS_OP_FORM || //РћРїРµСЂР°С‚РёРІРЅР°СЏ С„РѕСЂРјР° РѕС‚РѕР±СЂР°Р¶РµРЅРёСЏ СЃС…РµРјС‹ СЃРµС‚Рё РћС‚ РњРћР”РЈРЎР° // Add by KSS
+        PTreeTable->CodeTamplate==EXCEL_OP_FORM || //РћРїРµСЂР°С‚РёРІРЅР°СЏ С„РѕСЂРјР° Р±РµР· РјР°С€С‚Р°Р±РёСЂРѕРІР°РЅРёСЏ
+        PTreeTable->CodeTamplate==EXCEL_REP_OUT_F   //РЈРЅРёРІРµСЂСЃР°Р»СЊРЅР°СЏ С„РѕСЂРјР° РѕС‚РѕР±СЂР°Р¶РµРЅРёСЏ РѕС‚С‡РµС‚РѕРІ РІРѕ РІРЅРµС€РЅРµРј Excel'e
         );
       if(PTreeTable){
          edName->Text=PTreeTable->Name;
@@ -199,9 +199,9 @@ void __fastcall TFormEditFormList::tvFormChange(TObject *Sender,
          eDuplPoint->Text="";
       }
       //cbPoint->Visible = (PTreeTable&&PTreeTable->NewEnableControls[6]=='1');
-      //cbRegime->Visible = (PTreeTable&&PTreeTable->NewEnableControls[7]=='1'); // возможность выбора отображения панели "перечень отображаемых данных"
+      //cbRegime->Visible = (PTreeTable&&PTreeTable->NewEnableControls[7]=='1'); // РІРѕР·РјРѕР¶РЅРѕСЃС‚СЊ РІС‹Р±РѕСЂР° РѕС‚РѕР±СЂР°Р¶РµРЅРёСЏ РїР°РЅРµР»Рё "РїРµСЂРµС‡РµРЅСЊ РѕС‚РѕР±СЂР°Р¶Р°РµРјС‹С… РґР°РЅРЅС‹С…"
       cbPoint->Checked = (PTreeTable&&PTreeTable->EnableControls[6]=='1');
-      //cbRegime->Checked = (PTreeTable&&PTreeTable->EnableControls[7]=='1');//выбрано или нет отображение панели "перечень отображаемых данных"
+      //cbRegime->Checked = (PTreeTable&&PTreeTable->EnableControls[7]=='1');//РІС‹Р±СЂР°РЅРѕ РёР»Рё РЅРµС‚ РѕС‚РѕР±СЂР°Р¶РµРЅРёРµ РїР°РЅРµР»Рё "РїРµСЂРµС‡РµРЅСЊ РѕС‚РѕР±СЂР°Р¶Р°РµРјС‹С… РґР°РЅРЅС‹С…"
       cbRegime->Checked = false;
       aRight->Enabled=((Access==accWrite)&&(PTreeTable&&tvGroup->Selected&&PTreeTable->CodeTamplate&&pgControl->ActivePage==tsGroup));
       aLoadFile->Enabled=(PTreeTable&&repform);
@@ -229,11 +229,11 @@ void __fastcall TFormEditFormList::tvFormChange(TObject *Sender,
          Panel10->Height = 96;
          PnlTimePnl->Enabled=false;
       }
-         //делаем видмымым
+         //РґРµР»Р°РµРј РІРёРґРјС‹РјС‹Рј
 
       lbPLProc->Visible = PTreeTable&&IsCommonRepForm( PTreeTable->CodeTamplate );
       edPLProc->Visible = PTreeTable&&IsCommonRepForm( PTreeTable->CodeTamplate );
-         //e делаем видмымым
+         //e РґРµР»Р°РµРј РІРёРґРјС‹РјС‹Рј
       if(Access==accWrite) paAll->Enabled = PTreeTable;
     }catch (Exception &exception){
   	   Application->ShowException(&exception);
@@ -621,13 +621,13 @@ void __fastcall TFormEditFormList::edTextChange(TObject *Sender)
     return;
   POINTSDIV* p=(POINTSDIV*)sNode->Data;
   if(!Sender->Tag)
-  {//Назхвание
+  {//РќР°Р·С…РІР°РЅРёРµ
     strcpy(p->Name,Sender->Text.c_str());
     sNode->Text=Sender->Text;
   }
-  else if ( 1 == Sender->Tag )//Комментарий
+  else if ( 1 == Sender->Tag )//РљРѕРјРјРµРЅС‚Р°СЂРёР№
     strcpy(p->Comment,Sender->Text.c_str());
-  else if ( 2 == Sender->Tag )//Процедура
+  else if ( 2 == Sender->Tag )//РџСЂРѕС†РµРґСѓСЂР°
     strcpy(p->pLProc,Sender->Text.c_str());
 
   if(!p->editing)
@@ -644,8 +644,8 @@ void __fastcall TFormEditFormList::cbCtrClick(TObject *Sender)
     return;
   POINTSDIV* p=(POINTSDIV*)sNode->Data;
   p->EnableControls[Sender->Tag]=(Sender->Checked)?'1':'0';
-  //Только для выбора точек
-  if(Sender==cbCheckPoints){ //Запускаем окно изменения точек
+  //РўРѕР»СЊРєРѕ РґР»СЏ РІС‹Р±РѕСЂР° С‚РѕС‡РµРє
+  if(Sender==cbCheckPoints){ //Р—Р°РїСѓСЃРєР°РµРј РѕРєРЅРѕ РёР·РјРµРЅРµРЅРёСЏ С‚РѕС‡РµРє
     btnMainSelectClick(Sender);
   }
   if(!p->editing)
@@ -780,7 +780,7 @@ void __fastcall TFormEditFormList::tvTempStartDrag(TObject *Sender,
 bool __fastcall TFormEditFormList::tvCheckDragOver(TTreeNode* Node,TTreeNode* MovNode)
 {
     if(Access==accRead) return false;
-    POINTSDIV* s;//Перетягиваемое
+    POINTSDIV* s;//РџРµСЂРµС‚СЏРіРёРІР°РµРјРѕРµ
     try{
         if((!Node||(Node&&Node->TreeView==tvForm))&&MovNode&&MovNode->TreeView==tvForm)
         if(!Node||(Node!=MovNode->Parent&&MovNode!=Node))
@@ -883,7 +883,7 @@ void __fastcall TFormEditFormList::SetAccess(TAccess value)
 }
 //---------------------------------------------------------------------------
 
-bool __fastcall TFormEditFormList::ReadNode(TTreeView* tv,TTreeNode* NodeParent)// Читает ветку дерева форм или шаблонов
+bool __fastcall TFormEditFormList::ReadNode(TTreeView* tv,TTreeNode* NodeParent)// Р§РёС‚Р°РµС‚ РІРµС‚РєСѓ РґРµСЂРµРІР° С„РѕСЂРј РёР»Рё С€Р°Р±Р»РѕРЅРѕРІ
 {
  
     POINTSDIV *PTreeTable;
@@ -933,10 +933,10 @@ bool __fastcall TFormEditFormList::ReadNode(TTreeView* tv,TTreeNode* NodeParent)
            if(!dmMain->oqCursor->FieldByName("midname")->IsNull)
            strcpy(PTreeTable->MidName,dmMain->oqCursor->FieldByName("midname")->AsString.c_str());
 
-            //Латка для птичек "выбор точек" и "перечень отображаемых данных"
+            //Р›Р°С‚РєР° РґР»СЏ РїС‚РёС‡РµРє "РІС‹Р±РѕСЂ С‚РѕС‡РµРє" Рё "РїРµСЂРµС‡РµРЅСЊ РѕС‚РѕР±СЂР°Р¶Р°РµРјС‹С… РґР°РЅРЅС‹С…"
                 if(tv!=tvForm){
                         PTreeTable->EnableControls[6]='0'; PTreeTable->EnableControls[7]='0';}
-           //Окончание латки для птичек "выбор точек" и "перечень отображаемых данных"
+           //РћРєРѕРЅС‡Р°РЅРёРµ Р»Р°С‚РєРё РґР»СЏ РїС‚РёС‡РµРє "РІС‹Р±РѕСЂ С‚РѕС‡РµРє" Рё "РїРµСЂРµС‡РµРЅСЊ РѕС‚РѕР±СЂР°Р¶Р°РµРјС‹С… РґР°РЅРЅС‹С…"
 
                 AddNode = tv->Items->AddChildObject(NodeParent,PTreeTable->Name,PTreeTable);
                 if(PTreeTable->CodeTamplate){
@@ -960,7 +960,7 @@ bool __fastcall TFormEditFormList::ReadNode(TTreeView* tv,TTreeNode* NodeParent)
 
              dmMain->oqCursor->Next();
         }
-        // Вычитка групп
+        // Р’С‹С‡РёС‚РєР° РіСЂСѓРїРї
         if(tv==tvForm && NodeParent){
            dmMain->oqCursor->Params->Clear();
            dmMain->oqCursor->SQL->Text="begin "+SchemeName+"interior_pg.EditFormList_ReadNode2_p(:par1,:par2);end;";
@@ -988,7 +988,7 @@ bool __fastcall TFormEditFormList::ReadNode(TTreeView* tv,TTreeNode* NodeParent)
                             throw Exception(Reconst_smes21_20);
                         PTreeTable = (POINTSDIV*)AddNode->Data;
                     }
-                    // Добавление группы в список
+                    // Р”РѕР±Р°РІР»РµРЅРёРµ РіСЂСѓРїРїС‹ РІ СЃРїРёСЃРѕРє
                     tn=tvGroup->Items->Item[0];
                     while(tn){
                         if(((AUXDIV*)tn->Data)->Id==GidTable->Id)
@@ -1027,13 +1027,13 @@ void __fastcall TFormEditFormList::vClone(TObject *Sender)
         //GRB ADD 16.04.2020 - test trouble ODAC
         dmMain->quMain->Params->Clear();
         //END ADD 
-        // Дублирование перечня форм
+        // Р”СѓР±Р»РёСЂРѕРІР°РЅРёРµ РїРµСЂРµС‡РЅСЏ С„РѕСЂРј
         dmMain->quMain->SQL->Text=sql;
         id1 = (long)cbSchema->Items->Objects[cbSchema->ItemIndex];
         id2 = (long)fcp->cbSchemaName->Items->Objects[fcp->cbSchemaName->ItemIndex];
         groupCopy = fcp->cbGroupCopy->Checked?1:0;
-        // Так как штатным копирование файла ограничения в размере 32 кБ,
-        // то мы копировать будем вручную (см. код ниже -> Копирование привязанных файлов)
+        // РўР°Рє РєР°Рє С€С‚Р°С‚РЅС‹Рј РєРѕРїРёСЂРѕРІР°РЅРёРµ С„Р°Р№Р»Р° РѕРіСЂР°РЅРёС‡РµРЅРёСЏ РІ СЂР°Р·РјРµСЂРµ 32 РєР‘,
+        // С‚Рѕ РјС‹ РєРѕРїРёСЂРѕРІР°С‚СЊ Р±СѓРґРµРј РІСЂСѓС‡РЅСѓСЋ (СЃРј. РєРѕРґ РЅРёР¶Рµ -> РљРѕРїРёСЂРѕРІР°РЅРёРµ РїСЂРёРІСЏР·Р°РЅРЅС‹С… С„Р°Р№Р»РѕРІ)
         fileCopy = 0;
         dmMain->quMain->ParamByName("par1")->AsInteger=id1;
         dmMain->quMain->ParamByName("par2")->AsInteger=id2;
@@ -1042,7 +1042,7 @@ void __fastcall TFormEditFormList::vClone(TObject *Sender)
         dmMain->quMain->Execute();
 
         // ====================================================================
-        // Копирование привязанных файлов
+        // РљРѕРїРёСЂРѕРІР°РЅРёРµ РїСЂРёРІСЏР·Р°РЅРЅС‹С… С„Р°Р№Р»РѕРІ
         if(fcp->cbFileCopy->Checked)
         try
         {
@@ -1052,7 +1052,7 @@ void __fastcall TFormEditFormList::vClone(TObject *Sender)
          
             FIDS *pFid;
             TList *listIds = new TList();
-            // Вычитка информации какие файлы куда копировать
+            // Р’С‹С‡РёС‚РєР° РёРЅС„РѕСЂРјР°С†РёРё РєР°РєРёРµ С„Р°Р№Р»С‹ РєСѓРґР° РєРѕРїРёСЂРѕРІР°С‚СЊ
        
                 dmMain->oqCursor->Params->Clear();
                 dmMain->oqCursor->SQL->Text="begin "+SchemeName+"interior_pg.EditFormList_vClone_p(:par1,:par2,:par3);end;";
@@ -1071,7 +1071,7 @@ void __fastcall TFormEditFormList::vClone(TObject *Sender)
                 dmMain->oqCursor->Next();
 
             }
-            // Копирование файлов
+            // РљРѕРїРёСЂРѕРІР°РЅРёРµ С„Р°Р№Р»РѕРІ
             char *fileBody;
             for(int i=0; i<listIds->Count; i++)
                 WriteFile_Ex_to_DB(((FIDS*)listIds->Items[i])->fid_dst,
@@ -1082,7 +1082,7 @@ void __fastcall TFormEditFormList::vClone(TObject *Sender)
         }catch(Exception&e){
             Application->ShowException(&e);
         }
-        // Копирование привязанных файлов (Конец)
+        // РљРѕРїРёСЂРѕРІР°РЅРёРµ РїСЂРёРІСЏР·Р°РЅРЅС‹С… С„Р°Р№Р»РѕРІ (РљРѕРЅРµС†)
         // ====================================================================
        
     }
@@ -1172,7 +1172,7 @@ void __fastcall TFormEditFormList::btnMainSelectClick(TObject *Sender)
     if(sp->ShowModal()==mrOk){
       isedit=true;
       p->Mid=gdf.gid;
-      if(gdf.gid){//Не псевдоточка
+      if(gdf.gid){//РќРµ РїСЃРµРІРґРѕС‚РѕС‡РєР°
         eDuplPoint->Text=gdf.Name;
       }else{
         eDuplPoint->Text="";

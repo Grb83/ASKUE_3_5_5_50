@@ -34,7 +34,7 @@ void __fastcall TfmSelectGroupReport::tvMainChange(TObject *Sender, TTreeNode *N
 //---------------------------------------------------------------------------
 void __fastcall TfmSelectGroupReport::FormShow(TObject *Sender)
 {
-  tvMain->Focused();		//âûáðàòü íóæíûé ïî id_Group
+  tvMain->Focused();		//Ð²Ñ‹Ð±Ñ€Ð°Ñ‚ÑŒ Ð½ÑƒÐ¶Ð½Ñ‹Ð¹ Ð¿Ð¾ id_Group
   fmFP=new TfmFindPoint(this);
   if (fd->IdFormTree == 1013){
         ToolButton1->Enabled = false;
@@ -54,10 +54,10 @@ bool TfmSelectGroupReport::GetAllTree(TObject *Sender)
 
      oqCursor1->ParamByName("par1")->AsInteger=fd->CodeTemplate;
 
-  if ((fd->CodeTemplate!=1000)&&(fd->CodeTemplate!=1100)){          // Îáû÷íûé ðåæèì
+  if ((fd->CodeTemplate!=1000)&&(fd->CodeTemplate!=1100)){          // ÐžÐ±Ñ‹Ñ‡Ð½Ñ‹Ð¹ Ñ€ÐµÐ¶Ð¸Ð¼
     TTreeNode *MyTreeNode1;
 
-    // Äëÿ ìàêåòîâ! Ìàòü èõ!
+    // Ð”Ð»Ñ Ð¼Ð°ÐºÐµÑ‚Ð¾Ð²! ÐœÐ°Ñ‚ÑŒ Ð¸Ñ…!
     if(fd->CodeTemplate==MAKET_F){
         oqCursor1->ParamByName("par2")->Clear();
         oqCursor1->ParamByName("par3")->Clear();
@@ -124,9 +124,9 @@ bool TfmSelectGroupReport::GetAllTree(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall TfmSelectGroupReport::FormCreate(TObject *Sender)
 {
-  // óñòàíîâêà ðåæûìîâ îòîáðàæåíèÿ êîìïîíåíòîâ ôîðìû  ============================
+  // ÑƒÑÑ‚Ð°Ð½Ð¾Ð²ÐºÐ° Ñ€ÐµÐ¶Ñ‹Ð¼Ð¾Ð² Ð¾Ñ‚Ð¾Ð±Ñ€Ð°Ð¶ÐµÐ½Ð¸Ñ ÐºÐ¾Ð¼Ð¿Ð¾Ð½ÐµÐ½Ñ‚Ð¾Ð² Ñ„Ð¾Ñ€Ð¼Ñ‹  ============================
   Panel11->Enabled = true;
-  //óñòàíàâëèâàåì â âèäèìûé ðåæûì ïàíåëü "ïåðå÷åíü îòîáðàæàåìûõ äàííûõ"
+  //ÑƒÑÑ‚Ð°Ð½Ð°Ð²Ð»Ð¸Ð²Ð°ÐµÐ¼ Ð² Ð²Ð¸Ð´Ð¸Ð¼Ñ‹Ð¹ Ñ€ÐµÐ¶Ñ‹Ð¼ Ð¿Ð°Ð½ÐµÐ»ÑŒ "Ð¿ÐµÑ€ÐµÑ‡ÐµÐ½ÑŒ Ð¾Ñ‚Ð¾Ð±Ñ€Ð°Ð¶Ð°ÐµÐ¼Ñ‹Ñ… Ð´Ð°Ð½Ð½Ñ‹Ñ…"
   if(fd->indbird){
     GroupBox1->Visible = true;
     switch(fd->bird){
@@ -194,7 +194,7 @@ void __fastcall TfmSelectGroupReport::btOkClick(TObject *Sender)
           fd->StepProfile =(TFormDescr::EStepProfile) GetStepProfile(ar_RGroup[rg1->ItemIndex]);
         if(fd->StepProfile==TFormDescr::stpMinute)
           fd->DateTime = (int)fd->DateTime;
-        if ((fd->CodeTemplate!=1000)&&(fd->CodeTemplate!=1100)){   // Îáû÷íûé ðåæèì (íå æóðíàëû)
+        if ((fd->CodeTemplate!=1000)&&(fd->CodeTemplate!=1100)){   // ÐžÐ±Ñ‹Ñ‡Ð½Ñ‹Ð¹ Ñ€ÐµÐ¶Ð¸Ð¼ (Ð½Ðµ Ð¶ÑƒÑ€Ð½Ð°Ð»Ñ‹)
 
          dmMain->oqCursor->Params->Clear();
          dmMain->oqCursor->SQL->Text="begin "+SchemeName+"saa_select_pg.SelectGroupReport_btOkClick2_p(:par1,:par2,:par3); end;";
@@ -286,7 +286,7 @@ void __fastcall TfmSelectGroupReport::tvMainExpanding(TObject *Sender, TTreeNode
 {
   int ii;
   try{
-    if((fd->CodeTemplate!=1000)&&(fd->CodeTemplate!=1100)){   // Îáû÷íûé ðåæèì
+    if((fd->CodeTemplate!=1000)&&(fd->CodeTemplate!=1100)){   // ÐžÐ±Ñ‹Ñ‡Ð½Ñ‹Ð¹ Ñ€ÐµÐ¶Ð¸Ð¼
       TTreeNode *MyTreeNode1;
       MyTreeNode1=Node->getFirstChild();
       if((MyTreeNode1==NULL)||((long)MyTreeNode1->Data==0)){
@@ -317,7 +317,7 @@ void __fastcall TfmSelectGroupReport::tvMainExpanding(TObject *Sender, TTreeNode
           dmMain->oqCursor->Next();
         }
       }
-    }else{                                                    //Æóðíàë
+    }else{                                                    //Ð–ÑƒÑ€Ð½Ð°Ð»
       TTreeNode *MyTreeNode1;
       MyTreeNode1=Node->getFirstChild();
       if((MyTreeNode1==NULL)||((long)MyTreeNode1->Data==0)){
@@ -366,7 +366,7 @@ void __fastcall TfmSelectGroupReport::tvMainDblClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 // Add KAS 24.02.2001 ***********************************************************
-// Ïðîâåðÿåò åñòü ëè ôàéë íà äèñêå
+// ÐŸÑ€Ð¾Ð²ÐµÑ€ÑÐµÑ‚ ÐµÑÑ‚ÑŒ Ð»Ð¸ Ñ„Ð°Ð¹Ð» Ð½Ð° Ð´Ð¸ÑÐºÐµ
 AnsiString Control_Exist_File(long FID)
 {
     long IdForm = FID;
@@ -398,7 +398,7 @@ AnsiString Control_Exist_File(long FID)
    }
    else{
         char *ptrCh = fDateChange;
-        // Ðàçáèðàåì äàòó ôàéëà â áàçå
+        // Ð Ð°Ð·Ð±Ð¸Ñ€Ð°ÐµÐ¼ Ð´Ð°Ñ‚Ñƒ Ñ„Ð°Ð¹Ð»Ð° Ð² Ð±Ð°Ð·Ðµ
         if(!sscanf(ptrCh," %u",&dwLowDateTime))
             throw Exception(Reconst_smes55_17);
 
@@ -407,7 +407,7 @@ AnsiString Control_Exist_File(long FID)
             throw Exception(Reconst_smes55_17);
 
 
-        //Èùåì ôàéë
+        //Ð˜Ñ‰ÐµÐ¼ Ñ„Ð°Ð¹Ð»
         ExFileFullName = ExFilePuth + fName;
         //===== 06.07.2005 Frizyuk A.M. Start
         if (tFileListCnt)
@@ -455,20 +455,20 @@ AnsiString Control_Exist_File(long FID)
 
             if((dwLowDateTime!=lpLastWriteTimeFile.dwLowDateTime) || (dwHighDateTime!=lpLastWriteTimeFile.dwHighDateTime))
             {
-                // âûêà÷èâàåì ôàéë
+                // Ð²Ñ‹ÐºÐ°Ñ‡Ð¸Ð²Ð°ÐµÐ¼ Ñ„Ð°Ð¹Ð»
                 ReadFile_Ex_from_DB(IdForm, fSize, ExFileFullName, dwLowDateTime, dwHighDateTime);
             }
         }
         else
         {
-            // âûêà÷èâàåì ôàéë
+            // Ð²Ñ‹ÐºÐ°Ñ‡Ð¸Ð²Ð°ÐµÐ¼ Ñ„Ð°Ð¹Ð»
             ReadFile_Ex_from_DB(IdForm, fSize, ExFileFullName, dwLowDateTime, dwHighDateTime);
         }
     }
     return ExFileFullName;
 }
 //---------------------------------------------------------------------------
-// ×èòàåò òåêñò ôàéëà èç ÁÄ è ñîçäàåò ýòîò ôàéë íà äèñêå ñ èìåíåì FileName
+// Ð§Ð¸Ñ‚Ð°ÐµÑ‚ Ñ‚ÐµÐºÑÑ‚ Ñ„Ð°Ð¹Ð»Ð° Ð¸Ð· Ð‘Ð” Ð¸ ÑÐ¾Ð·Ð´Ð°ÐµÑ‚ ÑÑ‚Ð¾Ñ‚ Ñ„Ð°Ð¹Ð» Ð½Ð° Ð´Ð¸ÑÐºÐµ Ñ Ð¸Ð¼ÐµÐ½ÐµÐ¼ FileName
 void ReadFile_Ex_from_DB(long FID, long F_Size, AnsiString FileName, DWORD dwLowDateTime, DWORD dwHighDateTime)
 {
   LPTSTR lpMsgBuf;
@@ -491,7 +491,7 @@ void ReadFile_Ex_from_DB(long FID, long F_Size, AnsiString FileName, DWORD dwLow
 	if(dmMain->oqFormsEX->Eof){
     throw Exception(Reconst_smes55_19);
   }else{
-          // Ñîçäàåì ôàéë íà äèñêå
+          // Ð¡Ð¾Ð·Ð´Ð°ÐµÐ¼ Ñ„Ð°Ð¹Ð» Ð½Ð° Ð´Ð¸ÑÐºÐµ
   //  ch = new char[F_Size];
   //  memcpy(ch,oqMonitorFILEBODY->Value.c_str(),F_Size);
     hFile=CreateFile(FileName.c_str(),GENERIC_WRITE,FILE_SHARE_READ,NULL,
@@ -522,7 +522,7 @@ void ReadFile_Ex_from_DB(long FID, long F_Size, AnsiString FileName, DWORD dwLow
   }
 }
 //---------------------------------------------------------------------------
-int WriteFile_Ex_to_DB(long FID, AnsiString FileName, bool autoReplace) // Çàêà÷èâàåò ôàéë FileName â áàçó
+int WriteFile_Ex_to_DB(long FID, AnsiString FileName, bool autoReplace) // Ð—Ð°ÐºÐ°Ñ‡Ð¸Ð²Ð°ÐµÑ‚ Ñ„Ð°Ð¹Ð» FileName Ð² Ð±Ð°Ð·Ñƒ
 {
   LPTSTR lpMsgBuf;
   long F_Size;
@@ -538,7 +538,7 @@ int WriteFile_Ex_to_DB(long FID, AnsiString FileName, bool autoReplace) // Çàêà÷
   char fName[25];
   char fDateChange[25];
 
-    // Îòêðûâàåì ôàéë
+    // ÐžÑ‚ÐºÑ€Ñ‹Ð²Ð°ÐµÐ¼ Ñ„Ð°Ð¹Ð»
   try{
     hFile=CreateFile(FileName.c_str(),GENERIC_READ,FILE_SHARE_READ,NULL,
         OPEN_EXISTING,FILE_ATTRIBUTE_NORMAL,NULL);
@@ -561,7 +561,7 @@ int WriteFile_Ex_to_DB(long FID, AnsiString FileName, bool autoReplace) // Çàêà÷
     ch = new char[F_Size];
     ReadFile(hFile,ch,F_Size,&k,NULL);
     CloseHandle(hFile);
-    // Ïðîâåðÿåì åñòü ëè â áàçå ôàéë äëÿ ýòîé ôîðìû
+    // ÐŸÑ€Ð¾Ð²ÐµÑ€ÑÐµÐ¼ ÐµÑÑ‚ÑŒ Ð»Ð¸ Ð² Ð±Ð°Ð·Ðµ Ñ„Ð°Ð¹Ð» Ð´Ð»Ñ ÑÑ‚Ð¾Ð¹ Ñ„Ð¾Ñ€Ð¼Ñ‹
  
     dmMain->oqCursor->Params->Clear();
     dmMain->oqCursor->SQL->Text="begin "+SchemeName+"saa_select_pg.SelectGroupReport_FileName_p(:par1,:par2);end;";
@@ -580,7 +580,7 @@ int WriteFile_Ex_to_DB(long FID, AnsiString FileName, bool autoReplace) // Çàêà÷
     dmMain->quMain->Params->Clear();
     //END ADD 
     if(!dmMain->oqCursor->Eof){
-        if(autoReplace || MessageDlg(Reconst_smes55_21+fNameStr+Reconst_smes55_22+FileName+"?",mtConfirmation, TMsgDlgButtons() << mbYes << mbNo, 0) == mrYes){ // Çàìåíÿåì ôàéë
+        if(autoReplace || MessageDlg(Reconst_smes55_21+fNameStr+Reconst_smes55_22+FileName+"?",mtConfirmation, TMsgDlgButtons() << mbYes << mbNo, 0) == mrYes){ // Ð—Ð°Ð¼ÐµÐ½ÑÐµÐ¼ Ñ„Ð°Ð¹Ð»
           dmMain->quMain->SQL->Text="UPDATE "+SchemeName+"FORMS_EX SET FNAME=:par2, FDATECHANGE=:par3, FSIZE=:par4, FILEBODY=:par5 WHERE FID=:par1";
           dmMain->quMain->ParamByName("par1")->AsInteger= FID;
           dmMain->quMain->ParamByName("par2")->AsString = fName;
@@ -591,7 +591,7 @@ int WriteFile_Ex_to_DB(long FID, AnsiString FileName, bool autoReplace) // Çàêà÷
           res = 2;
         }
     }else{
-        // Çàíîñèì ôàéë â áàçó
+        // Ð—Ð°Ð½Ð¾ÑÐ¸Ð¼ Ñ„Ð°Ð¹Ð» Ð² Ð±Ð°Ð·Ñƒ
         dmMain->quMain->SQL->Text="INSERT INTO "+SchemeName+"FORMS_EX (FID, FNAME, FDATECHANGE, FSIZE, FILEBODY) VALUES(:par1, :par2, :par3, :par4, :par5)";
         dmMain->quMain->ParamByName("par1")->AsInteger= FID;
         dmMain->quMain->ParamByName("par2")->AsString = fName;
@@ -624,11 +624,11 @@ void __fastcall TfmSelectGroupReport::FormKeyDown(TObject *Sender,
 //---------------------------------------------------------------------------
 void __fastcall TfmSelectGroupReport::acFindExecute(TObject *Sender)
 {
-//GRB ADD 09.03.2021 -äîáàâëÿåì âûçîâ 2-õ ñåòòåðîâ, îïðåäåëÿþùèõ êîíòåêñò çàäà÷è
- fmFP->setContext(0);//è íå íîëü è íå îäèí à âíóòðè ôàéíäïîèíòà ïî ïåðåäàííîìó GroupsAndPoints ñòàâèòü êîíòåêñò ïî 000 òàê èëè ñÿê íó èëè 0
+//GRB ADD 09.03.2021 -Ð´Ð¾Ð±Ð°Ð²Ð»ÑÐµÐ¼ Ð²Ñ‹Ð·Ð¾Ð² 2-Ñ… ÑÐµÑ‚Ñ‚ÐµÑ€Ð¾Ð², Ð¾Ð¿Ñ€ÐµÐ´ÐµÐ»ÑÑŽÑ‰Ð¸Ñ… ÐºÐ¾Ð½Ñ‚ÐµÐºÑÑ‚ Ð·Ð°Ð´Ð°Ñ‡Ð¸
+ fmFP->setContext(0);//Ð¸ Ð½Ðµ Ð½Ð¾Ð»ÑŒ Ð¸ Ð½Ðµ Ð¾Ð´Ð¸Ð½ Ð° Ð²Ð½ÑƒÑ‚Ñ€Ð¸ Ñ„Ð°Ð¹Ð½Ð´Ð¿Ð¾Ð¸Ð½Ñ‚Ð° Ð¿Ð¾ Ð¿ÐµÑ€ÐµÐ´Ð°Ð½Ð½Ð¾Ð¼Ñƒ GroupsAndPoints ÑÑ‚Ð°Ð²Ð¸Ñ‚ÑŒ ÐºÐ¾Ð½Ñ‚ÐµÐºÑÑ‚ Ð¿Ð¾ 000 Ñ‚Ð°Ðº Ð¸Ð»Ð¸ ÑÑÐº Ð½Ñƒ Ð¸Ð»Ð¸ 0
  fmFP->setGroupsAndPoints(true);
  //end add
- //Çàäà÷è 1 íà áàçå êàëèíà
+ //Ð—Ð°Ð´Ð°Ñ‡Ð¸ 1 Ð½Ð° Ð±Ð°Ð·Ðµ ÐºÐ°Ð»Ð¸Ð½Ð°
  //GRB ADD 16.04.2021
  if ((fd->IdFormTree == 1001)||(fd->IdFormTree == 1123)||(fd->IdFormTree == 1009)||(fd->IdFormTree == 1002)||(fd->IdFormTree == 1066)
         ||(fd->IdFormTree == 2145)||(fd->IdFormTree == 2146)||(fd->IdFormTree == 2147)||(fd->IdFormTree == 2148)){
@@ -684,13 +684,13 @@ if ((fd->IdFormTree == 2239)||(fd->IdFormTree == 2240)){
   fmFP->ShowModal();
 }
 //---------------------------------------------------------------------------
-//óñòàíîâêà àêòèâíîãî óçëà ïðè ïîèñêå ôîðìû
+//ÑƒÑÑ‚Ð°Ð½Ð¾Ð²ÐºÐ° Ð°ÐºÑ‚Ð¸Ð²Ð½Ð¾Ð³Ð¾ ÑƒÐ·Ð»Ð° Ð¿Ñ€Ð¸ Ð¿Ð¾Ð¸ÑÐºÐµ Ñ„Ð¾Ñ€Ð¼Ñ‹
   void __fastcall TfmSelectGroupReport::WM_SetActiveNode(TMessage& Message)
 {
   fd->IdGroup = (long)(Message.LParam);
  //GRB ADD 16.04.2021
  bool wasfd_IsPoints = fd->IsPoints;
- //Çàäà÷à 1
+ //Ð—Ð°Ð´Ð°Ñ‡Ð° 1
  if ((fd->IdFormTree == 1001)||(fd->IdFormTree == 1123)||(fd->IdFormTree == 1009)||(fd->IdFormTree == 1002)||(fd->IdFormTree == 1066)
         ||(fd->IdFormTree == 2145)||(fd->IdFormTree == 2146)||(fd->IdFormTree == 2147)||(fd->IdFormTree == 2148)){
           int whereFind = (long)(Message.WParam);
@@ -707,7 +707,7 @@ if ((fd->IdFormTree == 2239)||(fd->IdFormTree == 2240)){
                 return;
           }
         }
-        //çàäà÷à 2.1-2.4
+        //Ð·Ð°Ð´Ð°Ñ‡Ð° 2.1-2.4
    if ((fd->IdFormTree == 1122)||(fd->IdFormTree == 1080)||(fd->IdFormTree == 1068)||(fd->IdFormTree == 1067)){
              int whereFind = (long)(Message.WParam);
           if (whereFind==0){

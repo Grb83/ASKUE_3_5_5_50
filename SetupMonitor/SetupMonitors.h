@@ -114,11 +114,11 @@ private:	// User declarations
    TLineSeries* pLine;
    TBarSeries* pBar;
    TPieSeries* pPie;
-   //14.09.2021 GRB ADD - флаг использования режима отрисовки колонки с именем группы по ширине самого длинного элемента
+   //14.09.2021 GRB ADD - С„Р»Р°Рі РёСЃРїРѕР»СЊР·РѕРІР°РЅРёСЏ СЂРµР¶РёРјР° РѕС‚СЂРёСЃРѕРІРєРё РєРѕР»РѕРЅРєРё СЃ РёРјРµРЅРµРј РіСЂСѓРїРїС‹ РїРѕ С€РёСЂРёРЅРµ СЃР°РјРѕРіРѕ РґР»РёРЅРЅРѕРіРѕ СЌР»РµРјРµРЅС‚Р°
    bool isContainedWidth;
 
 public:		// User declarations
-   int kindOfADddBalanceDiag;//Вид отображаемого дополнительного графика на форме баланса
+   int kindOfADddBalanceDiag;//Р’РёРґ РѕС‚РѕР±СЂР°Р¶Р°РµРјРѕРіРѕ РґРѕРїРѕР»РЅРёС‚РµР»СЊРЅРѕРіРѕ РіСЂР°С„РёРєР° РЅР° С„РѕСЂРјРµ Р±Р°Р»Р°РЅСЃР°
  
    TDrawTable::SAttrCell::TDataSource dsMan;
    TDrawTable::SAttrCell::TDataSource dsClear;

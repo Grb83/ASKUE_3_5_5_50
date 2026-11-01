@@ -70,7 +70,7 @@ void __fastcall TFormCounter::MainProc(TObject *Sender)
 
 void __fastcall TFormCounter::FormShow(TObject *Sender)
 {
-  if(customer_id==1||Access==accRead||customer_id==51){ //Áëîêèðóåì ðåäàêòèðîâàíèå
+  if(customer_id==1||Access==accRead||customer_id==51){ //Ð‘Ð»Ð¾ÐºÐ¸Ñ€ÑƒÐµÐ¼ Ñ€ÐµÐ´Ð°ÐºÑ‚Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ðµ
      editRecord=false;
 
      btOk->Enabled = false;
@@ -108,7 +108,7 @@ void __fastcall TFormCounter::btSaveClick(TObject *Sender)
     while(!VT1->Eof){
       POINTCOUNT *PCountTable=new POINTCOUNT;
       memcpy(PCountTable,&TreeTable[i],sizeof(POINTCOUNT));
-      //GRB CHANGE 21.08.2020 - fix áàã ñ äîðèñîâêîé ñòðîêè äðóãèì ïîëåì - îòñóòñòâóåò íóëë-òåðìèíåéòåä ñèìâîë ñòðîêè â êîíöå - ïðîáóåì çàìåíòü strcpy íà strncpy, è ñìîòðèì ÷òî åñëè âûëàçèò çà ôàêòè÷åñêèé ðàçìåð â áàçå îòñåêàåì åãî è íàñèëüñòâåííî äîïèñûâàåì â êîíåö áóôåðà /0
+      //GRB CHANGE 21.08.2020 - fix Ð±Ð°Ð³ Ñ Ð´Ð¾Ñ€Ð¸ÑÐ¾Ð²ÐºÐ¾Ð¹ ÑÑ‚Ñ€Ð¾ÐºÐ¸ Ð´Ñ€ÑƒÐ³Ð¸Ð¼ Ð¿Ð¾Ð»ÐµÐ¼ - Ð¾Ñ‚ÑÑƒÑ‚ÑÑ‚Ð²ÑƒÐµÑ‚ Ð½ÑƒÐ»Ð»-Ñ‚ÐµÑ€Ð¼Ð¸Ð½ÐµÐ¹Ñ‚ÐµÐ´ ÑÐ¸Ð¼Ð²Ð¾Ð» ÑÑ‚Ñ€Ð¾ÐºÐ¸ Ð² ÐºÐ¾Ð½Ñ†Ðµ - Ð¿Ñ€Ð¾Ð±ÑƒÐµÐ¼ Ð·Ð°Ð¼ÐµÐ½Ñ‚ÑŒ strcpy Ð½Ð° strncpy, Ð¸ ÑÐ¼Ð¾Ñ‚Ñ€Ð¸Ð¼ Ñ‡Ñ‚Ð¾ ÐµÑÐ»Ð¸ Ð²Ñ‹Ð»Ð°Ð·Ð¸Ñ‚ Ð·Ð° Ñ„Ð°ÐºÑ‚Ð¸Ñ‡ÐµÑÐºÐ¸Ð¹ Ñ€Ð°Ð·Ð¼ÐµÑ€ Ð² Ð±Ð°Ð·Ðµ Ð¾Ñ‚ÑÐµÐºÐ°ÐµÐ¼ ÐµÐ³Ð¾ Ð¸ Ð½Ð°ÑÐ¸Ð»ÑŒÑÑ‚Ð²ÐµÐ½Ð½Ð¾ Ð´Ð¾Ð¿Ð¸ÑÑ‹Ð²Ð°ÐµÐ¼ Ð² ÐºÐ¾Ð½ÐµÑ† Ð±ÑƒÑ„ÐµÑ€Ð° /0
       strcpy(PCountTable->Name,VT1->Fields->FieldByName("VName")->AsString.c_str());
       strcpy(PCountTable->date_count,(DateToStr(VT1->Fields->FieldByName("date_count")->AsDateTime)).c_str());
       if (strlen(VT1->Fields->FieldByName("MTRSN")->AsString.c_str())>20){

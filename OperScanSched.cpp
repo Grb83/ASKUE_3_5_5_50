@@ -75,7 +75,7 @@ void __fastcall TfmOperScanSched::FormCreate(TObject *Sender)
 //----------------------------------------------------------------------------
 void __fastcall TfmOperScanSched::SchChRefresh()
 {
-  //Формируем массив каналов для текущей роли
+  //Р¤РѕСЂРјРёСЂСѓРµРј РјР°СЃСЃРёРІ РєР°РЅР°Р»РѕРІ РґР»СЏ С‚РµРєСѓС‰РµР№ СЂРѕР»Рё
 
   oqChannels->Params->Clear();
   oqChannels->SQL->Text="begin "+SchemeName+"operscan_pg.get_channels_for_role(:par1,:par2,:par3,:par4,:par5); end;";
@@ -97,7 +97,7 @@ void __fastcall TfmOperScanSched::SchChRefresh()
   grChannels->Columns->Items[6]->FieldName="vuser";
   grChannels->Columns->Items[7]->FieldName="com_id";
   grChannels->Columns->Items[8]->FieldName="prname";
-  //GRB ADD 27.02.2020 - локализация имён колонок на лету
+  //GRB ADD 27.02.2020 - Р»РѕРєР°Р»РёР·Р°С†РёСЏ РёРјС‘РЅ РєРѕР»РѕРЅРѕРє РЅР° Р»РµС‚Сѓ
   AnsiString Language;
   TRegistry *Reg = new TRegistry(KEY_READ);
   try{
@@ -118,39 +118,39 @@ void __fastcall TfmOperScanSched::SchChRefresh()
   for (int i=2; i < 9; i++) {
         switch (i){
         case 2:{
-        grChannels->Columns->Items[i]->Title->Caption = "Канал";
+        grChannels->Columns->Items[i]->Title->Caption = "РљР°РЅР°Р»";
         break;
         }
         case 3:{
-        if (Language == "UKR") grChannels->Columns->Items[i]->Title->Caption = "Початок";
+        if (Language == "UKR") grChannels->Columns->Items[i]->Title->Caption = "РџРѕС‡Р°С‚РѕРє";
         else
-        grChannels->Columns->Items[i]->Title->Caption = "Начало";
+        grChannels->Columns->Items[i]->Title->Caption = "РќР°С‡Р°Р»Рѕ";
         break;
         }
         case 4:{
-        if (Language == "UKR") grChannels->Columns->Items[i]->Title->Caption = "Кінець";
+        if (Language == "UKR") grChannels->Columns->Items[i]->Title->Caption = "РљС–РЅРµС†СЊ";
         else
-        grChannels->Columns->Items[i]->Title->Caption = "Конец";
+        grChannels->Columns->Items[i]->Title->Caption = "РљРѕРЅРµС†";
         break;
         }
         case 5:{
-        if (Language == "UKR") grChannels->Columns->Items[i]->Title->Caption = "Період";
+        if (Language == "UKR") grChannels->Columns->Items[i]->Title->Caption = "РџРµСЂС–РѕРґ";
         else
-        grChannels->Columns->Items[i]->Title->Caption = "Период";
+        grChannels->Columns->Items[i]->Title->Caption = "РџРµСЂРёРѕРґ";
         break;
         }
         case 6:{
-        if (Language == "UKR") grChannels->Columns->Items[i]->Title->Caption = "Ініціатор";
+        if (Language == "UKR") grChannels->Columns->Items[i]->Title->Caption = "Р†РЅС–С†С–Р°С‚РѕСЂ";
         else
-        grChannels->Columns->Items[i]->Title->Caption = "Инициатор";
+        grChannels->Columns->Items[i]->Title->Caption = "РРЅРёС†РёР°С‚РѕСЂ";
         break;
         }
         case 7:{
-        grChannels->Columns->Items[i]->Title->Caption = "Порт";
+        grChannels->Columns->Items[i]->Title->Caption = "РџРѕСЂС‚";
         break;
         }
         case 8:{
-        grChannels->Columns->Items[i]->Title->Caption = "Протокол";
+        grChannels->Columns->Items[i]->Title->Caption = "РџСЂРѕС‚РѕРєРѕР»";
         break;
         }
         }
@@ -158,7 +158,7 @@ void __fastcall TfmOperScanSched::SchChRefresh()
   oqChannels->DisableControls();
   oqChannels->Execute();
 
-  // заполняем таблицу
+  // Р·Р°РїРѕР»РЅСЏРµРј С‚Р°Р±Р»РёС†Сѓ
   while(!oqChannels->Eof){
 
       strcpy(TableChannList[oqChannels->FieldByName("rn")->AsInteger].Name,oqChannels->FieldByName("vname")->AsString.c_str());
@@ -240,7 +240,7 @@ void __fastcall TfmOperScanSched::ScanDeactivate()
   }
 }
 //---------------------------------------------------------------------------
-//                 Формирование таблицы каналов для данной схемы
+//                 Р¤РѕСЂРјРёСЂРѕРІР°РЅРёРµ С‚Р°Р±Р»РёС†С‹ РєР°РЅР°Р»РѕРІ РґР»СЏ РґР°РЅРЅРѕР№ СЃС…РµРјС‹
 //void __fastcall TfmOperScanSched::OperScanSchedShow(void)
 void __fastcall TfmOperScanSched::OperScanSchedShow(int Mid,AnsiString Name,int CMid,AnsiString CName,int IfPoint)
 {
@@ -254,7 +254,7 @@ void __fastcall TfmOperScanSched::OperScanSchedShow(int Mid,AnsiString Name,int 
 
   if(!dmMain->oqCursor->Eof){
     AnsiString prStr = CurrScanSchId;
-    //Схема назначена
+    //РЎС…РµРјР° РЅР°Р·РЅР°С‡РµРЅР°
     if( prStr=="")
       Application->MessageBox(Reconst_smes47_1.c_str(),Application->Title.c_str(),MB_OK | MB_ICONWARNING);
     else{
@@ -274,7 +274,7 @@ void __fastcall TfmOperScanSched::btCloseClick(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall TfmOperScanSched::btPointClick(TObject *Sender)
 {
-  //Производим действия по заданию оперативного опроса
+  //РџСЂРѕРёР·РІРѕРґРёРј РґРµР№СЃС‚РІРёСЏ РїРѕ Р·Р°РґР°РЅРёСЋ РѕРїРµСЂР°С‚РёРІРЅРѕРіРѕ РѕРїСЂРѕСЃР°
   TDataSet *pDS = grChannels->DataSource->DataSet;
   if (grChannels->SelectedRows->Count>0 && pDS->RecordCount){
     pDS->GotoBookmark((void *)grChannels->SelectedRows->Items[0].c_str());
@@ -294,7 +294,7 @@ void __fastcall TfmOperScanSched::spbFilterClick(TObject *Sender)
 {
   GROUPDATAFORM gdf;
   gdf.gid = eFilter->Tag;
-  gdf.type = 10; // было раньше 2 для каналов с типом протокола "Файл"
+  gdf.type = 10; // Р±С‹Р»Рѕ СЂР°РЅСЊС€Рµ 2 РґР»СЏ РєР°РЅР°Р»РѕРІ СЃ С‚РёРїРѕРј РїСЂРѕС‚РѕРєРѕР»Р° "Р¤Р°Р№Р»"
 
   TfmSelectPoint*sp = new TfmSelectPoint(this, &gdf);
   if(sp->ShowModal()==mrOk){
@@ -308,7 +308,7 @@ void __fastcall TfmOperScanSched::spbFilterClick(TObject *Sender)
 void __fastcall TfmOperScanSched::spbDelFilterClick(TObject *Sender)
 {
   eFilter->Tag = 1;
-  eFilter->Text = "Все";
+  eFilter->Text = "Р’СЃРµ";
   SchChRefresh();
 }
 //---------------------------------------------------------------------------
@@ -421,7 +421,7 @@ void __fastcall TfmOperScanSched::sbPointClick(TObject *Sender)
 void __fastcall TfmOperScanSched::sbDelPointClick(TObject *Sender)
 {
   ePoint->Tag = 1000;
-  ePoint->Text = "Все";
+  ePoint->Text = "Р’СЃРµ";
   SchChRefresh();
 }
 //---------------------------------------------------------------------------
@@ -460,14 +460,14 @@ void __fastcall TfmOperScanSched::SaveTableToFile(TObject *Sender)
     try{
     mem = new TStringList;
     mem->Clear();
-    // добавляем информацию для имён колонок
+    // РґРѕР±Р°РІР»СЏРµРј РёРЅС„РѕСЂРјР°С†РёСЋ РґР»СЏ РёРјС‘РЅ РєРѕР»РѕРЅРѕРє
     AnsiString sline = "";
     for(int col = 0; col < grChannels->FieldCount; ++col)
     {
         sline += grChannels->Fields[col]->DisplayLabel + (char)9;
     }
     mem->Add(sline);
-    // получаем данные из mem
+    // РїРѕР»СѓС‡Р°РµРј РґР°РЅРЅС‹Рµ РёР· mem
     for(int row = 0; row < grChannels->DataSource->DataSet->RecordCount; ++row)
     {
         sline = "";
@@ -478,12 +478,12 @@ void __fastcall TfmOperScanSched::SaveTableToFile(TObject *Sender)
         grChannels->DataSource->DataSet->Next();
     }
 
-    // копируем данные в clipboard
+    // РєРѕРїРёСЂСѓРµРј РґР°РЅРЅС‹Рµ РІ clipboard
     if (SaveDialog1->Execute())
         mem->SaveToFile(SaveDialog1->FileName);
     delete mem;
     mem = NULL;
-    // ... тут закрываешь Excel
+    // ... С‚СѓС‚ Р·Р°РєСЂС‹РІР°РµС€СЊ Excel
     grChannels->DataSource->DataSet->GotoBookmark(bm);
     grChannels->DataSource->DataSet->FreeBookmark(bm);
     grChannels->DataSource->DataSet->EnableControls();

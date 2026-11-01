@@ -47,13 +47,13 @@ private:	// User declarations
       char Digits[20];
       char Date_time[20];
       char EM[20];
-      char EM_N[20]; //Новые показания
-      char E_N[20];  //Новый расход
+      char EM_N[20]; //РќРѕРІС‹Рµ РїРѕРєР°Р·Р°РЅРёСЏ
+      char E_N[20];  //РќРѕРІС‹Р№ СЂР°СЃС…РѕРґ
       bool editRecord;
    }POINTLASTINPUT;
    POINTLASTINPUT pointLastInput[MAXINPUT];
-   long prov;	// Состояние проверки 0-Не проводилась, 1-проводилась (сохранять нельзя), 2-проводилась (сохранять можно)
-   unsigned long CountStr; // Количество строчек в результате запроса
+   long prov;	// РЎРѕСЃС‚РѕСЏРЅРёРµ РїСЂРѕРІРµСЂРєРё 0-РќРµ РїСЂРѕРІРѕРґРёР»Р°СЃСЊ, 1-РїСЂРѕРІРѕРґРёР»Р°СЃСЊ (СЃРѕС…СЂР°РЅСЏС‚СЊ РЅРµР»СЊР·СЏ), 2-РїСЂРѕРІРѕРґРёР»Р°СЃСЊ (СЃРѕС…СЂР°РЅСЏС‚СЊ РјРѕР¶РЅРѕ)
+   unsigned long CountStr; // РљРѕР»РёС‡РµСЃС‚РІРѕ СЃС‚СЂРѕС‡РµРє РІ СЂРµР·СѓР»СЊС‚Р°С‚Рµ Р·Р°РїСЂРѕСЃР°
    long ttable;
    AnsiString tname;
    AnsiString addwhere;

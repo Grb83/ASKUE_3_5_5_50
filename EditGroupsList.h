@@ -131,7 +131,7 @@ private:	// User declarations
         long techbron;
         long nSum;
         long inverted;
-        long editing;// 0 -Не трогали, 1-трогали
+        long editing;// 0 -РќРµ С‚СЂРѕРіР°Р»Рё, 1-С‚СЂРѕРіР°Р»Рё
         long editlim;
         TList *plim;
         long tmpId;
@@ -144,9 +144,9 @@ private:	// User declarations
     typedef struct{
         int id;
         char date_limit[16];
-        double limcons;//потребление
-        double limcarm;//лимит утро
-        double limcape;//лимит вечер
+        double limcons;//РїРѕС‚СЂРµР±Р»РµРЅРёРµ
+        double limcarm;//Р»РёРјРёС‚ СѓС‚СЂРѕ
+        double limcape;//Р»РёРјРёС‚ РІРµС‡РµСЂ
         //add by NNV
         char stmot [20];
         char enmot [20];
@@ -169,10 +169,10 @@ private:	// User declarations
     void __fastcall WM_SetActiveNode(TMessage& Message);
     void __fastcall FindNodeGroup(long id);
     int reccount;
-    long nGroups_Del[10000]; // id тех групп которые удалены из дерева
-                              //  и необходимо удалить из таблицы groups
-    long CountGroups_Del; // Кол-во удаляемых групп
-    bool __fastcall ReadNode(TTreeView* tv,TTreeNode* NodeParent);// Читает ветку дерева Точек или Групп
+    long nGroups_Del[10000]; // id С‚РµС… РіСЂСѓРїРї РєРѕС‚РѕСЂС‹Рµ СѓРґР°Р»РµРЅС‹ РёР· РґРµСЂРµРІР°
+                              //  Рё РЅРµРѕР±С…РѕРґРёРјРѕ СѓРґР°Р»РёС‚СЊ РёР· С‚Р°Р±Р»РёС†С‹ groups
+    long CountGroups_Del; // РљРѕР»-РІРѕ СѓРґР°Р»СЏРµРјС‹С… РіСЂСѓРїРї
+    bool __fastcall ReadNode(TTreeView* tv,TTreeNode* NodeParent);// Р§РёС‚Р°РµС‚ РІРµС‚РєСѓ РґРµСЂРµРІР° РўРѕС‡РµРє РёР»Рё Р“СЂСѓРїРї
     bool __fastcall SaveLimits(TTreeNode *Node);
     void __fastcall SetEvents(bool b);
     void __fastcall ShowTable(TTreeNode *Node);

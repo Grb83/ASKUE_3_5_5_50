@@ -9,13 +9,13 @@
 #pragma package(smart_init)
 //---------------------------------------------------------------------------
 
-/*! Внутренний класс
+/*! Р’РЅСѓС‚СЂРµРЅРЅРёР№ РєР»Р°СЃСЃ
 */
 class TInteriorExRepOutPriv
 {
 public:
-  /*! Конструктор, где:
-      \param ffname - полное имя файла
+  /*! РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ, РіРґРµ:
+      \param ffname - РїРѕР»РЅРѕРµ РёРјСЏ С„Р°Р№Р»Р°
   */
   TInteriorExRepOutPriv(AnsiString ffname)
     :xlMaximized(0xFFFFEFD7), xlMinimized(0xFFFFEFD4), xlNormal(0xFFFFEFD1)
@@ -29,63 +29,63 @@ public:
   { disconnectEx();
   }
 
-  /*! Присоединение к Excel'ю или запуск нового
+  /*! РџСЂРёСЃРѕРµРґРёРЅРµРЅРёРµ Рє Excel'СЋ РёР»Рё Р·Р°РїСѓСЃРє РЅРѕРІРѕРіРѕ
   */
   bool __fastcall connectEx();
-  /*! Отсоединение от Excel, где:
-      \param fclose - признак закрытия Excel (default - false)
+  /*! РћС‚СЃРѕРµРґРёРЅРµРЅРёРµ РѕС‚ Excel, РіРґРµ:
+      \param fclose - РїСЂРёР·РЅР°Рє Р·Р°РєСЂС‹С‚РёСЏ Excel (default - false)
 
-      Если \b fclose равен true, то Excel закрывается и происходит
-        отсоединение от него, иначе только онсоединение.
+      Р•СЃР»Рё \b fclose СЂР°РІРµРЅ true, С‚Рѕ Excel Р·Р°РєСЂС‹РІР°РµС‚СЃСЏ Рё РїСЂРѕРёСЃС…РѕРґРёС‚
+        РѕС‚СЃРѕРµРґРёРЅРµРЅРёРµ РѕС‚ РЅРµРіРѕ, РёРЅР°С‡Рµ С‚РѕР»СЊРєРѕ РѕРЅСЃРѕРµРґРёРЅРµРЅРёРµ.
   */
   void __fastcall disconnectEx(bool fclose = false);
-  /*! Передача фокуса и управления в Excel
+  /*! РџРµСЂРµРґР°С‡Р° С„РѕРєСѓСЃР° Рё СѓРїСЂР°РІР»РµРЅРёСЏ РІ Excel
   */
   void __fastcall SwitchToExcel();
-  /*! Отбражение Excel'а
+  /*! РћС‚Р±СЂР°Р¶РµРЅРёРµ Excel'Р°
   */
   bool __fastcall visibleEx();
-  /*! Проверка на присоединение к Excel
+  /*! РџСЂРѕРІРµСЂРєР° РЅР° РїСЂРёСЃРѕРµРґРёРЅРµРЅРёРµ Рє Excel
 
-      \return true вслучае присоединения, иначе - false.
+      \return true РІСЃР»СѓС‡Р°Рµ РїСЂРёСЃРѕРµРґРёРЅРµРЅРёСЏ, РёРЅР°С‡Рµ - false.
   */
   bool __fastcall isConnected()
   { return  !(VarIsNull(excel) || VarIsNull(book));
   }
-  /*! выбор необходимой страницы Excel, где:
-      \param sheetname - Строка с наименованием необходимой страницы
+  /*! РІС‹Р±РѕСЂ РЅРµРѕР±С…РѕРґРёРјРѕР№ СЃС‚СЂР°РЅРёС†С‹ Excel, РіРґРµ:
+      \param sheetname - РЎС‚СЂРѕРєР° СЃ РЅР°РёРјРµРЅРѕРІР°РЅРёРµРј РЅРµРѕР±С…РѕРґРёРјРѕР№ СЃС‚СЂР°РЅРёС†С‹
 
-      \return true если нужная страница выбрана, иначе - false.
+      \return true РµСЃР»Рё РЅСѓР¶РЅР°СЏ СЃС‚СЂР°РЅРёС†Р° РІС‹Р±СЂР°РЅР°, РёРЅР°С‡Рµ - false.
 
-      \attention вслучае выбора страницы переменная \b sheet
-        принимает значение данной страницы, иначе ей присваивается
-        значение \b Null()
+      \attention РІСЃР»СѓС‡Р°Рµ РІС‹Р±РѕСЂР° СЃС‚СЂР°РЅРёС†С‹ РїРµСЂРµРјРµРЅРЅР°СЏ \b sheet
+        РїСЂРёРЅРёРјР°РµС‚ Р·РЅР°С‡РµРЅРёРµ РґР°РЅРЅРѕР№ СЃС‚СЂР°РЅРёС†С‹, РёРЅР°С‡Рµ РµР№ РїСЂРёСЃРІР°РёРІР°РµС‚СЃСЏ
+        Р·РЅР°С‡РµРЅРёРµ \b Null()
   */
   bool __fastcall setSheet(AnsiString sheetname);
   /*! \overload
-      Выбор необходимой страницы по индексу, где:
-      \param sheetnum - индекс необходимой страницы
+      Р’С‹Р±РѕСЂ РЅРµРѕР±С…РѕРґРёРјРѕР№ СЃС‚СЂР°РЅРёС†С‹ РїРѕ РёРЅРґРµРєСЃСѓ, РіРґРµ:
+      \param sheetnum - РёРЅРґРµРєСЃ РЅРµРѕР±С…РѕРґРёРјРѕР№ СЃС‚СЂР°РЅРёС†С‹
   */
   bool __fastcall setSheet(int sheetnum);
-  /*! Активация страницы, где:
-      \param sheetnum - индекс необходимой страницы
+  /*! РђРєС‚РёРІР°С†РёСЏ СЃС‚СЂР°РЅРёС†С‹, РіРґРµ:
+      \param sheetnum - РёРЅРґРµРєСЃ РЅРµРѕР±С…РѕРґРёРјРѕР№ СЃС‚СЂР°РЅРёС†С‹
 
-      \return true если нужная страница выбрана, иначе - false.
+      \return true РµСЃР»Рё РЅСѓР¶РЅР°СЏ СЃС‚СЂР°РЅРёС†Р° РІС‹Р±СЂР°РЅР°, РёРЅР°С‡Рµ - false.
 
-      \attention вслучае активации страницы переменная \b sheet
-        принимает значение данной страницы, иначе ей присваивается
-        значение \b Null()
+      \attention РІСЃР»СѓС‡Р°Рµ Р°РєС‚РёРІР°С†РёРё СЃС‚СЂР°РЅРёС†С‹ РїРµСЂРµРјРµРЅРЅР°СЏ \b sheet
+        РїСЂРёРЅРёРјР°РµС‚ Р·РЅР°С‡РµРЅРёРµ РґР°РЅРЅРѕР№ СЃС‚СЂР°РЅРёС†С‹, РёРЅР°С‡Рµ РµР№ РїСЂРёСЃРІР°РёРІР°РµС‚СЃСЏ
+        Р·РЅР°С‡РµРЅРёРµ \b Null()
   */
   bool __fastcall activateSheet(int sheetnum);
 
-  Variant excel;    //===== Объект Excel'я
-  Variant book;     //===== Объект загруженная WorkBook
-  Variant sheet;    //===== Объект текущей страницы
+  Variant excel;    //===== РћР±СЉРµРєС‚ Excel'СЏ
+  Variant book;     //===== РћР±СЉРµРєС‚ Р·Р°РіСЂСѓР¶РµРЅРЅР°СЏ WorkBook
+  Variant sheet;    //===== РћР±СЉРµРєС‚ С‚РµРєСѓС‰РµР№ СЃС‚СЂР°РЅРёС†С‹
 
-  AnsiString  fullname;   //===== Полное имя файла шаблона
-  AnsiString  fname;      //===== Только имя файла шаблона
+  AnsiString  fullname;   //===== РџРѕР»РЅРѕРµ РёРјСЏ С„Р°Р№Р»Р° С€Р°Р±Р»РѕРЅР°
+  AnsiString  fname;      //===== РўРѕР»СЊРєРѕ РёРјСЏ С„Р°Р№Р»Р° С€Р°Р±Р»РѕРЅР°
 
-  int sheetindex;   //===== Индекс текущей страницы
+  int sheetindex;   //===== РРЅРґРµРєСЃ С‚РµРєСѓС‰РµР№ СЃС‚СЂР°РЅРёС†С‹
 
   void __fastcall RunMacros(AnsiString aMacrosName);
 
@@ -103,7 +103,7 @@ bool __fastcall TInteriorExRepOutPriv::connectEx()
 {
   if (isConnected())
     return  true;
-  bool  fNew  = false;    //===== признак вновь открытого Excel
+  bool  fNew  = false;    //===== РїСЂРёР·РЅР°Рє РІРЅРѕРІСЊ РѕС‚РєСЂС‹С‚РѕРіРѕ Excel
   try
   { try
     { excel = Variant::GetActiveObject("Excel.Application");
@@ -155,7 +155,7 @@ void __fastcall TInteriorExRepOutPriv::disconnectEx(bool fclose)
 //---------------------------------------------------------------------------
 static BOOL CALLBACK EnumWindowsProc(HWND hwnd, LPARAM lParam)
 {
-  //Процедура для перечисления открытых окон в Windows и нахождение окна с "Отчеты (АСКУЭ)"
+  //РџСЂРѕС†РµРґСѓСЂР° РґР»СЏ РїРµСЂРµС‡РёСЃР»РµРЅРёСЏ РѕС‚РєСЂС‹С‚С‹С… РѕРєРѕРЅ РІ Windows Рё РЅР°С…РѕР¶РґРµРЅРёРµ РѕРєРЅР° СЃ "РћС‚С‡РµС‚С‹ (РђРЎРљРЈР­)"
   static char WinName[15];
   if (GetWindowText(hwnd, WinName, sizeof(WinName)) && strcmp(Reconst_smes115_5.c_str(), WinName) == 0)
   { if (GetClassName(hwnd, WinName, sizeof(WinName)) && strcmp("XLMAIN", WinName) == 0)
@@ -207,9 +207,9 @@ bool __fastcall TInteriorExRepOutPriv::setSheet(AnsiString sheetname)
       return  false;
 
 
-    Variant tVar  = book.OlePropertyGet("Worksheets");    //===== Доступ к листам
-    int tCnt  = tVar.OlePropertyGet("Count");             //===== Количество листов
-    //===== Перебор всех листов в поисках необходимого
+    Variant tVar  = book.OlePropertyGet("Worksheets");    //===== Р”РѕСЃС‚СѓРї Рє Р»РёСЃС‚Р°Рј
+    int tCnt  = tVar.OlePropertyGet("Count");             //===== РљРѕР»РёС‡РµСЃС‚РІРѕ Р»РёСЃС‚РѕРІ
+    //===== РџРµСЂРµР±РѕСЂ РІСЃРµС… Р»РёСЃС‚РѕРІ РІ РїРѕРёСЃРєР°С… РЅРµРѕР±С…РѕРґРёРјРѕРіРѕ
     for (int i = 1; i <= tCnt; ++i){
       if (tVar.OlePropertyGet("Item", Variant(i)).OlePropertyGet("Name") == sheetname){
         sheet = tVar.OlePropertyGet("Item", Variant(i));
@@ -246,7 +246,7 @@ bool __fastcall TInteriorExRepOutPriv::activateSheet(int sheetnum)
       return  false;
 
     AnsiString  tName = sheet.OlePropertyGet("Name");
-    if ((tName != "Сценарий") && (tName != "Имя БД") && (tName != "repfilenamedlg"))
+    if ((tName != "РЎС†РµРЅР°СЂРёР№") && (tName != "РРјСЏ Р‘Р”") && (tName != "repfilenamedlg"))
     { sheet.OleProcedure("Activate");
       sheetindex  = sheet.OlePropertyGet("Index");
     }
@@ -274,8 +274,8 @@ void __fastcall TInteriorExRepOutPriv::RunMacros(AnsiString aMacrosName)
 //---------------------------------------------------------------------------
 //---------------------------------------------------------------------------
 
-/*! Интерьер для генерации отчета во внешнем Excel'e
-    Сделан по аналогии TInteriorExRep
+/*! РРЅС‚РµСЂСЊРµСЂ РґР»СЏ РіРµРЅРµСЂР°С†РёРё РѕС‚С‡РµС‚Р° РІРѕ РІРЅРµС€РЅРµРј Excel'e
+    РЎРґРµР»Р°РЅ РїРѕ Р°РЅР°Р»РѕРіРёРё TInteriorExRep
 */
 
 __fastcall TInteriorExRepOut::TInteriorExRepOut(TComponent* Owner,TSplitterForm *aSP,TFormDescr* aFD,Classes::TNotifyEvent OnProgr):
@@ -312,15 +312,15 @@ __fastcall TInteriorExRepOut::TInteriorExRepOut(TComponent* Owner,TSplitterForm 
 void __fastcall TInteriorExRepOut::PassParamsToExcel()
 {
   try
-  { //===== Присоедининяемся к необходимому листу
-    if (!d->setSheet("Сценарий"))
+  { //===== РџСЂРёСЃРѕРµРґРёРЅРёРЅСЏРµРјСЃСЏ Рє РЅРµРѕР±С…РѕРґРёРјРѕРјСѓ Р»РёСЃС‚Сѓ
+    if (!d->setSheet("РЎС†РµРЅР°СЂРёР№"))
       throw Exception(Reconst_smes113_4);
 
-    //===== Заносим Ид группы в ячейку С9
+    //===== Р—Р°РЅРѕСЃРёРј РРґ РіСЂСѓРїРїС‹ РІ СЏС‡РµР№РєСѓ РЎ9
     d->sheet.OlePropertyGet("Cells", 9, 3).OlePropertySet("Value", Variant(fd->IdGroup));
-    //===== Заносим дату начала в ячейку С10
+    //===== Р—Р°РЅРѕСЃРёРј РґР°С‚Сѓ РЅР°С‡Р°Р»Р° РІ СЏС‡РµР№РєСѓ РЎ10
     d->sheet.OlePropertyGet("Cells", 10, 3).OlePropertySet("Value", WideString(FormatDateTime("dd.mm.yyyy hh:nn", fd->DateTimePar)));
-    //===== Заносим дату конца в ячейку C11
+    //===== Р—Р°РЅРѕСЃРёРј РґР°С‚Сѓ РєРѕРЅС†Р° РІ СЏС‡РµР№РєСѓ C11
     d->sheet.OlePropertyGet("Cells", 11, 3).OlePropertySet("Value", WideString(FormatDateTime("dd.mm.yyyy hh:nn", fd->DateTime)));
   }
   catch (Exception &e)
@@ -332,17 +332,17 @@ void __fastcall TInteriorExRepOut::PassParamsToExcel()
 void __fastcall TInteriorExRepOut::PassParamsToExcelAndRefr()
 {
   try
-  { //===== Формирование параметров
+  { //===== Р¤РѕСЂРјРёСЂРѕРІР°РЅРёРµ РїР°СЂР°РјРµС‚СЂРѕРІ
     PassParamsToExcel();
 
-    //===== Присоедининяемся к необходимому листу
-    if (!d->setSheet("Имя БД"))
+    //===== РџСЂРёСЃРѕРµРґРёРЅРёРЅСЏРµРјСЃСЏ Рє РЅРµРѕР±С…РѕРґРёРјРѕРјСѓ Р»РёСЃС‚Сѓ
+    if (!d->setSheet("РРјСЏ Р‘Р”"))
       throw Exception(Reconst_smes113_5);
 
-    //===== Запись строки связи с БД в ячейку B4
+    //===== Р—Р°РїРёСЃСЊ СЃС‚СЂРѕРєРё СЃРІСЏР·Рё СЃ Р‘Р” РІ СЏС‡РµР№РєСѓ B4
     d->sheet.OlePropertyGet("Cells", 4, 2).OlePropertySet("Value", WideString(dmMain->orases->Server));
-    //===== Инициация запуска генерации отчета
-    //===== Запись в ячейку B7 любых данных
+    //===== РРЅРёС†РёР°С†РёСЏ Р·Р°РїСѓСЃРєР° РіРµРЅРµСЂР°С†РёРё РѕС‚С‡РµС‚Р°
+    //===== Р—Р°РїРёСЃСЊ РІ СЏС‡РµР№РєСѓ B7 Р»СЋР±С‹С… РґР°РЅРЅС‹С…
      d->sheet.OlePropertyGet("Range", "B7").OleProcedure("Clear");
 //    d->activateSheet(1);
   }
@@ -355,7 +355,7 @@ void __fastcall TInteriorExRepOut::PassParamsToExcelAndRefr()
 void __fastcall TInteriorExRepOut::Place(void)
 {
   try
-  { //===== Если не подключились, то делать нечего ;-)
+  { //===== Р•СЃР»Рё РЅРµ РїРѕРґРєР»СЋС‡РёР»РёСЃСЊ, С‚Рѕ РґРµР»Р°С‚СЊ РЅРµС‡РµРіРѕ ;-)
     if (!d->connectEx())
       throw Exception(Reconst_smes115_8);
 

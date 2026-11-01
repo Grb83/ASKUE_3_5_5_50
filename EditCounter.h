@@ -58,7 +58,7 @@ public:
     struct POINTCOUNT{
         long mid;
         long id;
-        //GRB ADD - Удваиваем данные
+        //GRB ADD - РЈРґРІР°РёРІР°РµРј РґР°РЅРЅС‹Рµ
         char date_count[16];
         char Name[148];
         char MTRSN[21];

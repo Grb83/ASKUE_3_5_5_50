@@ -1,6 +1,6 @@
 SELECT   gid, vparam
                  FROM GROUPS
-                WHERE LOWER (vparam) LIKE 'баланс%'
+                WHERE LOWER (vparam) LIKE 'Р±Р°Р»Р°РЅСЃ%'
              ORDER BY NAME, gid
              
 select t.name,t.dat,t.sld,t.lim,t.sld-t.lim dif,t.gid from 

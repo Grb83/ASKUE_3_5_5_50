@@ -54,7 +54,7 @@ void __fastcall TFormSwitchOV::Read_OV_Journal()
   }
 }
 //---------------------------------------------------------------------------
-void __fastcall TFormSwitchOV::Read_OV_Switch()//(const AnsiString FilterStr, int order, int dir)    //çàïîëíÿåò ãðèä æóðíàëà ïåðåêëþ÷åíèé
+void __fastcall TFormSwitchOV::Read_OV_Switch()//(const AnsiString FilterStr, int order, int dir)    //Ð·Ð°Ð¿Ð¾Ð»Ð½ÑÐµÑ‚ Ð³Ñ€Ð¸Ð´ Ð¶ÑƒÑ€Ð½Ð°Ð»Ð° Ð¿ÐµÑ€ÐµÐºÐ»ÑŽÑ‡ÐµÐ½Ð¸Ð¹
 {
   TWinControl *aControl;
   AnsiString sqlStr;
@@ -76,7 +76,7 @@ void __fastcall TFormSwitchOV::Read_OV_Switch()//(const AnsiString FilterStr, in
     oqSwitchOV->ParamByName("filter_str")->AsString = FilterStr;
     oqSwitchOV->ParamByName("direct")->AsInteger = 1;
 
-    //--------------------------------çàïîëíåíèå èç Êóðñîðà--------------------------------------------------------
+    //--------------------------------Ð·Ð°Ð¿Ð¾Ð»Ð½ÐµÐ½Ð¸Ðµ Ð¸Ð· ÐšÑƒÑ€ÑÐ¾Ñ€Ð°--------------------------------------------------------
 /*    SelectSwitch->ParamByName("DFROM")->AsString = dtFrom->Date.FormatString("dd.mm.yyyy")+" "+edFrom->Text+":00";
     SelectSwitch->ParamByName("DTILL")->AsString = dtTill->Date.FormatString("dd.mm.yyyy")+" "+edTill->Text+":00";*/
     //-------------------------------------------------------------------------------------------------------------
@@ -107,11 +107,11 @@ void __fastcall TFormSwitchOV::Read_OV_Switch()//(const AnsiString FilterStr, in
   Read_OV_Journal();
 }
 //---------------------------------------------------------------------------
-void __fastcall TFormSwitchOV::AddEdit(bool onEdit)  //âûçûâàåòñÿ ïðè Action iaNew è ðåäàêòèðîâàíèè. Äîáàâëÿåò/ðåäàêòèðóåò çàïèñü
-{                                                    //(âûçûâàåò ôîðìó âûáîðà îáâîäíèêà è òî÷êè)
-   bool CanSelect, isError = false;                  //â ñëó÷àå ModalResult == mrOk - âíîñèò äàííûå â ÁÄ
-   long ID;                                          //â êîíñòðóêòîðå ñîçäàåò ôîðìó ââîäà ïàðàìåòðîâ
-   long NSWITCH;                                     //è çàïîëíÿåò êîìáîáîêñû ôîðìû
+void __fastcall TFormSwitchOV::AddEdit(bool onEdit)  //Ð²Ñ‹Ð·Ñ‹Ð²Ð°ÐµÑ‚ÑÑ Ð¿Ñ€Ð¸ Action iaNew Ð¸ Ñ€ÐµÐ´Ð°ÐºÑ‚Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ð¸. Ð”Ð¾Ð±Ð°Ð²Ð»ÑÐµÑ‚/Ñ€ÐµÐ´Ð°ÐºÑ‚Ð¸Ñ€ÑƒÐµÑ‚ Ð·Ð°Ð¿Ð¸ÑÑŒ
+{                                                    //(Ð²Ñ‹Ð·Ñ‹Ð²Ð°ÐµÑ‚ Ñ„Ð¾Ñ€Ð¼Ñƒ Ð²Ñ‹Ð±Ð¾Ñ€Ð° Ð¾Ð±Ð²Ð¾Ð´Ð½Ð¸ÐºÐ° Ð¸ Ñ‚Ð¾Ñ‡ÐºÐ¸)
+   bool CanSelect, isError = false;                  //Ð² ÑÐ»ÑƒÑ‡Ð°Ðµ ModalResult == mrOk - Ð²Ð½Ð¾ÑÐ¸Ñ‚ Ð´Ð°Ð½Ð½Ñ‹Ðµ Ð² Ð‘Ð”
+   long ID;                                          //Ð² ÐºÐ¾Ð½ÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€Ðµ ÑÐ¾Ð·Ð´Ð°ÐµÑ‚ Ñ„Ð¾Ñ€Ð¼Ñƒ Ð²Ð²Ð¾Ð´Ð° Ð¿Ð°Ñ€Ð°Ð¼ÐµÑ‚Ñ€Ð¾Ð²
+   long NSWITCH;                                     //Ð¸ Ð·Ð°Ð¿Ð¾Ð»Ð½ÑÐµÑ‚ ÐºÐ¾Ð¼Ð±Ð¾Ð±Ð¾ÐºÑÑ‹ Ñ„Ð¾Ñ€Ð¼Ñ‹
    char DSWITCH[20];
    double ERM, EDM, Q1M, Q2M, Q3M, Q4M;
    long Mid;
@@ -125,7 +125,7 @@ void __fastcall TFormSwitchOV::AddEdit(bool onEdit)  //âûçûâàåòñÿ ïðè Action iaN
    {
     f->cbOV->Enabled = false;
 
-    if (((oqStateOV->FieldByName("POINTNAME")->AsString != "Â ðåçåðâå")&&(PageControl1->ActivePageIndex==0))||
+    if (((oqStateOV->FieldByName("POINTNAME")->AsString != "Ð’ Ñ€ÐµÐ·ÐµÑ€Ð²Ðµ")&&(PageControl1->ActivePageIndex==0))||
         (oqSwitchOV->FieldByName("DESCAPE")->IsNull)&&(PageControl1->ActivePageIndex==1))
     {
      f->cbPoints->Enabled = false;
@@ -154,27 +154,27 @@ void __fastcall TFormSwitchOV::AddEdit(bool onEdit)  //âûçûâàåòñÿ ïðè Action iaN
                 f->cbOV->ItemIndex = f->cbOV->Items->IndexOfObject((TObject*)oqStateOV->FieldByName("mid")->AsInteger);
                 f->cbOVChange(this);
              }
-            if(onEdit)//â ñëó÷àå ðåäàêòèðîâàíèÿ
+            if(onEdit)//Ð² ÑÐ»ÑƒÑ‡Ð°Ðµ Ñ€ÐµÐ´Ð°ÐºÑ‚Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ñ
             {
                f->Caption = Reconst_smes61_4;
                if (PageControl1->ActivePageIndex == 1)
                {
                 if (!oqSwitchOV->FieldByName("DSWITCH")->IsNull)
-                 f->meDateSwitch->Text = FormatDateTime("dd.mm.yyyy hh:nn",oqSwitchOV->FieldByName("DSWITCH")->AsDateTime); //çàïîëíÿåì äàòû âêëþ÷åíèÿ è âûêëþ÷åíèÿ
+                 f->meDateSwitch->Text = FormatDateTime("dd.mm.yyyy hh:nn",oqSwitchOV->FieldByName("DSWITCH")->AsDateTime); //Ð·Ð°Ð¿Ð¾Ð»Ð½ÑÐµÐ¼ Ð´Ð°Ñ‚Ñ‹ Ð²ÐºÐ»ÑŽÑ‡ÐµÐ½Ð¸Ñ Ð¸ Ð²Ñ‹ÐºÐ»ÑŽÑ‡ÐµÐ½Ð¸Ñ
                 if (!oqSwitchOV->FieldByName("DESCAPE")->IsNull)
                 f->meDateSwitchOff->Text = FormatDateTime("dd.mm.yyyy hh:nn",oqSwitchOV->FieldByName("DESCAPE")->AsDateTime);
                 if (!f->FillPointQuery->Locate("mid",oqSwitchOV->FieldByName("pmid")->AsInteger,TLocateOptions() << loCaseInsensitive))
                   f->cbPoints->Items->AddObject(oqSwitchOV->FieldByName("PointName")->AsString, (TObject*)oqSwitchOV->FieldByName("pmid")->AsInteger);
                 f->cbPoints->ItemIndex = f->cbPoints->Items->IndexOfObject((TObject*)oqSwitchOV->FieldByName("pmid")->AsInteger);
 
-                //òóò çàïîëíÿåòñÿ ñîäåðæèìîå ôîðìû ïàðàìåòðîâ (íà÷àëüíûå)
+                //Ñ‚ÑƒÑ‚ Ð·Ð°Ð¿Ð¾Ð»Ð½ÑÐµÑ‚ÑÑ ÑÐ¾Ð´ÐµÑ€Ð¶Ð¸Ð¼Ð¾Ðµ Ñ„Ð¾Ñ€Ð¼Ñ‹ Ð¿Ð°Ñ€Ð°Ð¼ÐµÑ‚Ñ€Ð¾Ð² (Ð½Ð°Ñ‡Ð°Ð»ÑŒÐ½Ñ‹Ðµ)
                 f->InputMet->meERM->Text = oqSwitchOV->FieldByName("ERM")->AsFloat<0 ? AnsiString(""):oqSwitchOV->FieldByName("ERM")->AsString;
                 f->InputMet->meEDM->Text = oqSwitchOV->FieldByName("EDM")->AsFloat<0 ? AnsiString(""):oqSwitchOV->FieldByName("EDM")->AsString;
                 f->InputMet->meQ1M->Text = oqSwitchOV->FieldByName("Q1M")->AsFloat<0 ? AnsiString(""):oqSwitchOV->FieldByName("Q1M")->AsString;
                 f->InputMet->meQ2M->Text = oqSwitchOV->FieldByName("Q2M")->AsFloat<0 ? AnsiString(""):oqSwitchOV->FieldByName("Q2M")->AsString;
                 f->InputMet->meQ3M->Text = oqSwitchOV->FieldByName("Q3M")->AsFloat<0 ? AnsiString(""):oqSwitchOV->FieldByName("Q3M")->AsString;
                 f->InputMet->meQ4M->Text = oqSwitchOV->FieldByName("Q4M")->AsFloat<0 ? AnsiString(""):oqSwitchOV->FieldByName("Q4M")->AsString;
-                //(êîíå÷íûå)
+                //(ÐºÐ¾Ð½ÐµÑ‡Ð½Ñ‹Ðµ)
                 f->InputMet->meERMLast->Text = oqSwitchOV->FieldByName("ERME")->AsFloat<0 ? AnsiString(""):oqSwitchOV->FieldByName("ERME")->AsString;
                 f->InputMet->meEDMLast->Text = oqSwitchOV->FieldByName("EDME")->AsFloat<0 ? AnsiString(""):oqSwitchOV->FieldByName("EDME")->AsString;
                 f->InputMet->meQ1Last->Text = oqSwitchOV->FieldByName("Q1ME")->AsFloat<0 ? AnsiString(""):oqSwitchOV->FieldByName("Q1ME")->AsString;
@@ -183,8 +183,8 @@ void __fastcall TFormSwitchOV::AddEdit(bool onEdit)  //âûçûâàåòñÿ ïðè Action iaN
                 f->InputMet->meQ4Last->Text = oqSwitchOV->FieldByName("Q4ME")->AsFloat<0 ? AnsiString(""):oqSwitchOV->FieldByName("Q4ME")->AsString;
 
                 ID = oqSwitchOV->FieldByName("ID")->AsInteger;
-               }else{  //òîæå äëÿ òåêóùèõ
-                 if(oqStateOV->FieldByName("POINTNAME")->AsString != "Â ðåçåðâå"){
+               }else{  //Ñ‚Ð¾Ð¶Ðµ Ð´Ð»Ñ Ñ‚ÐµÐºÑƒÑ‰Ð¸Ñ…
+                 if(oqStateOV->FieldByName("POINTNAME")->AsString != "Ð’ Ñ€ÐµÐ·ÐµÑ€Ð²Ðµ"){
                    f->meDateSwitch->Text = oqStateOV->FieldByName("SwBegin")->IsNull ? AnsiString("") :  oqStateOV->FieldByName("SwBegin")->AsDateTime.FormatString("dd.mm.yyyy hh:nn");
                    f->meDateSwitchOff->Text = oqStateOV->FieldByName("SwEnd")->IsNull ? AnsiString("") :  oqStateOV->FieldByName("SwEnd")->AsDateTime.FormatString("dd.mm.yyyy hh:nn");
                  }
@@ -194,7 +194,7 @@ void __fastcall TFormSwitchOV::AddEdit(bool onEdit)  //âûçûâàåòñÿ ïðè Action iaN
                  f->cbPoints->ItemIndex = f->cbPoints->Items->IndexOfObject((TObject*)oqStateOV->FieldByName("pmid")->AsInteger);
                  ID = oqStateOV->FieldByName("ID")->AsInteger;
                }
-            }else{ //onEdit  ò.å. â ñëó÷àå äîáàâëåíèÿ íîâûõ çàïèñåé
+            }else{ //onEdit  Ñ‚.Ðµ. Ð² ÑÐ»ÑƒÑ‡Ð°Ðµ Ð´Ð¾Ð±Ð°Ð²Ð»ÐµÐ½Ð¸Ñ Ð½Ð¾Ð²Ñ‹Ñ… Ð·Ð°Ð¿Ð¸ÑÐµÐ¹
                if (PageControl1->ActivePageIndex == 1)
                  NSWITCH = oqSwitchOV->FieldByName("nSwitch")->AsInteger;
                else
@@ -211,7 +211,7 @@ void __fastcall TFormSwitchOV::AddEdit(bool onEdit)  //âûçûâàåòñÿ ïðè Action iaN
             }
             if (PageControl1->ActivePageIndex == 0)
             {
-             if (oqStateOV->FieldByName("PointName")->AsString != "Â ðåçåðâå")
+             if (oqStateOV->FieldByName("PointName")->AsString != "Ð’ Ñ€ÐµÐ·ÐµÑ€Ð²Ðµ")
                f->SetPointByMID(oqStateOV->FieldByName("MID")->AsInteger);
             }
          }
@@ -226,7 +226,7 @@ void __fastcall TFormSwitchOV::AddEdit(bool onEdit)  //âûçûâàåòñÿ ïðè Action iaN
          f->ShowModal();
          if(f->ModalResult == mrOk)
          {TOraStoredProc* Proc;
-          if (onEdit)   //èçìåíåíèå èëè äîáàâëåíèå çàïèñè
+          if (onEdit)   //Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ðµ Ð¸Ð»Ð¸ Ð´Ð¾Ð±Ð°Ð²Ð»ÐµÐ½Ð¸Ðµ Ð·Ð°Ð¿Ð¸ÑÐ¸
           {
            TDateTime a,b;
            if (!(f->meDateSwitchOff->Text == "  .  .       :  "))
@@ -248,8 +248,8 @@ void __fastcall TFormSwitchOV::AddEdit(bool onEdit)  //âûçûâàåòñÿ ïðè Action iaN
            }
     //common_pg.userid_f
            Proc = SwUpdateProc;
-           Proc->ParamByName("an_id")->AsInteger = ID;    // ID ñòîðîêè
-           Proc->ParamByName("an_switch")->AsInteger = (long)f->cbOV->Items->Objects[f->cbOV->ItemIndex];      //ID îáâîäíèêà
+           Proc->ParamByName("an_id")->AsInteger = ID;    // ID ÑÑ‚Ð¾Ñ€Ð¾ÐºÐ¸
+           Proc->ParamByName("an_switch")->AsInteger = (long)f->cbOV->Items->Objects[f->cbOV->ItemIndex];      //ID Ð¾Ð±Ð²Ð¾Ð´Ð½Ð¸ÐºÐ°
            if ((int)b) Proc->ParamByName("ad_switch")->AsDateTime = b; else Proc->ParamByName("ad_switchLast")->Clear();
            if ((int)a) Proc->ParamByName("ad_switchLast")->AsDateTime = a; else Proc->ParamByName("ad_switchLast")->Clear();
            Proc->ParamByName("an_mid")->AsInteger = (long)f->cbPoints->Items->Objects[f->cbPoints->ItemIndex];
@@ -323,9 +323,9 @@ void __fastcall TFormSwitchOV::AddEdit(bool onEdit)  //âûçûâàåòñÿ ïðè Action iaN
            {
             a = NULL;
            }
-           //Proc->ParamByName("an_id")->AsInteger = ID;    // ID ñòîðîêè
-           Proc->ParamByName("an_switch")->AsInteger = (long)f->cbOV->Items->Objects[f->cbOV->ItemIndex];      //ID îáâîäíèêà
-           Proc->ParamByName("ad_switch")->AsDateTime = StrToDateTime(f->meDateSwitch->Text); //äàòà ââîäà
+           //Proc->ParamByName("an_id")->AsInteger = ID;    // ID ÑÑ‚Ð¾Ñ€Ð¾ÐºÐ¸
+           Proc->ParamByName("an_switch")->AsInteger = (long)f->cbOV->Items->Objects[f->cbOV->ItemIndex];      //ID Ð¾Ð±Ð²Ð¾Ð´Ð½Ð¸ÐºÐ°
+           Proc->ParamByName("ad_switch")->AsDateTime = StrToDateTime(f->meDateSwitch->Text); //Ð´Ð°Ñ‚Ð° Ð²Ð²Ð¾Ð´Ð°
            if ((int)a) Proc->ParamByName("ad_escape")->AsDateTime = a;
            else Proc->ParamByName("ad_escape")->Clear();
            Proc->ParamByName("an_mid")->AsInteger = (long)f->cbPoints->Items->Objects[f->cbPoints->ItemIndex];
@@ -391,7 +391,7 @@ void __fastcall TFormSwitchOV::AddEdit(bool onEdit)  //âûçûâàåòñÿ ïðè Action iaN
          }
 
          /*{
-            dmMain->quMain->SQL->Text=sql;  //âûçîâ ïðîöåäóðû ðåäàêòèðîâàíèÿ èëè äîáàâëåíèÿ
+            dmMain->quMain->SQL->Text=sql;  //Ð²Ñ‹Ð·Ð¾Ð² Ð¿Ñ€Ð¾Ñ†ÐµÐ´ÑƒÑ€Ñ‹ Ñ€ÐµÐ´Ð°ÐºÑ‚Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ñ Ð¸Ð»Ð¸ Ð´Ð¾Ð±Ð°Ð²Ð»ÐµÐ½Ð¸Ñ
             NSWITCH = (long)f->cbOV->Items->Objects[f->cbOV->ItemIndex];
             strcpy(DSWITCH, f->meDateSwitch->Text.c_str());
             indic[0] = f->InputMet->meERM->Tag;
@@ -433,7 +433,7 @@ void __fastcall TFormSwitchOV::AddEdit(bool onEdit)  //âûçûâàåòñÿ ïðè Action iaN
             dmMain->quMain->Execute();
 
             dmMain->orases->Commit();*/
-            if (f->ModalResult == mrOk) Read_OV_Switch(); //îáíîâëÿåò òàáëèöó
+            if (f->ModalResult == mrOk) Read_OV_Switch(); //Ð¾Ð±Ð½Ð¾Ð²Ð»ÑÐµÑ‚ Ñ‚Ð°Ð±Ð»Ð¸Ñ†Ñƒ
 
          break;
 
@@ -446,11 +446,11 @@ void __fastcall TFormSwitchOV::AddEdit(bool onEdit)  //âûçûâàåòñÿ ïðè Action iaN
    delete f;
 }
 //---------------------------------------------------------------------------
-void __fastcall TFormSwitchOV::vDelete(TObject *Sender)    //óäàëåíèå çàïèñè ïðîèñõîäèò òóò
+void __fastcall TFormSwitchOV::vDelete(TObject *Sender)    //ÑƒÐ´Ð°Ð»ÐµÐ½Ð¸Ðµ Ð·Ð°Ð¿Ð¸ÑÐ¸ Ð¿Ñ€Ð¾Ð¸ÑÑ…Ð¾Ð´Ð¸Ñ‚ Ñ‚ÑƒÑ‚
 {
     if(SwitchOVGridEh->RowCount&&Application->MessageBox(AnsiString(Reconst_smes61_6+
         oqSwitchOV->FieldByName("SWITCHNAME")->AsString+" -> "+
-        oqSwitchOV->FieldByName("POINTNAME")->AsString+" > íà "+
+        oqSwitchOV->FieldByName("POINTNAME")->AsString+" > Ð½Ð° "+
         oqSwitchOV->FieldByName("DSWITCH")->AsString+"?").c_str(),
        Application->Title.c_str(),MB_YESNO|MB_ICONQUESTION|MB_DEFBUTTON2)==IDYES)
     {
@@ -480,7 +480,7 @@ void __fastcall TFormSwitchOV::vNew(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 void __fastcall TFormSwitchOV::SetAccess(TAccess value)
-{                           //óñòàíàâëèâàåò äîñòóï ê êîíòðîëàì
+{                           //ÑƒÑÑ‚Ð°Ð½Ð°Ð²Ð»Ð¸Ð²Ð°ÐµÑ‚ Ð´Ð¾ÑÑ‚ÑƒÐ¿ Ðº ÐºÐ¾Ð½Ñ‚Ñ€Ð¾Ð»Ð°Ð¼
    if(FAccess != value){
       TMainForm::SetAccess(value);
       wr_rights = value==accWrite;
@@ -585,7 +585,7 @@ void __fastcall TFormSwitchOV::PageControl1Change(TObject *Sender)
 void __fastcall TFormSwitchOV::StateOVDSDataChange(TObject *Sender,
       TField *Field)
 {
-//   iaParams->Enabled = (Access==accWrite&&oqStateOV->FieldByName("SwBegin")->AsString != "");        //----------------------------ÒÓÒ
+//   iaParams->Enabled = (Access==accWrite&&oqStateOV->FieldByName("SwBegin")->AsString != "");        //----------------------------Ð¢Ð£Ð¢
 }
 //---------------------------------------------------------------------------
 void __fastcall TFormSwitchOV::SwitchOVGridEhTitleBtnClick(TObject *Sender,
@@ -624,10 +624,10 @@ void __fastcall TFormSwitchOV::SwitchOVGridEhTitleBtnClick(TObject *Sender,
 //---------------------------------------------------------------------------
 void __fastcall TFormSwitchOV::oqSwitchOVAfterScroll(TDataSet *DataSet)
 {
-  Label4->Caption = "Ð ïòð:";
-  Label6->Caption = "Ð ãåí:";
-  Label20->Caption = "Ð ïòð::";
-  Label21->Caption = "Ð ãåí:";
+  Label4->Caption = "Ð  Ð¿Ñ‚Ñ€:";
+  Label6->Caption = "Ð  Ð³ÐµÐ½:";
+  Label20->Caption = "Ð  Ð¿Ñ‚Ñ€::";
+  Label21->Caption = "Ð  Ð³ÐµÐ½:";
   DBText1->Caption = "";
   DBText2->Caption = "";
   DBText3->Caption = "";
@@ -781,9 +781,9 @@ void __fastcall TFormSwitchOV::SwitchOVGridEhDrawColumnCell(
     SwitchOVGridEh->DefaultDrawColumnCell(Rect,DataCol,Column,State);
   /*if (DataCol == 5){
     if(oqSwitchOV->FieldByName("NSWITCH")->AsInteger == oqSwitchOV->FieldByName("nmid")->AsInteger)
-      SwitchOVGridEh->Canvas->TextRect(Rect,Rect.Left+2,Rect.Top+2,"Âîçâðàò");
+      SwitchOVGridEh->Canvas->TextRect(Rect,Rect.Left+2,Rect.Top+2,"Ð’Ð¾Ð·Ð²Ñ€Ð°Ñ‚");
     else
-      SwitchOVGridEh->Canvas->TextRect(Rect,Rect.Left+2,Rect.Top+2,"Ïåðåêëþ÷åíèå");
+      SwitchOVGridEh->Canvas->TextRect(Rect,Rect.Left+2,Rect.Top+2,"ÐŸÐµÑ€ÐµÐºÐ»ÑŽÑ‡ÐµÐ½Ð¸Ðµ");
   }                                                                                */
 }
 //---------------------------------------------------------------------------
@@ -826,7 +826,7 @@ void __fastcall TFormSwitchOV::oqSwitchOVDESCAPEGetText(TField *Sender,
 void __fastcall TFormSwitchOV::oqStateOVAfterScroll(TDataSet *DataSet)
 {
   if(PageControl1->ActivePageIndex==0)
-   if(oqStateOV->FieldByName("POINTNAME")->AsString != "Â ðåçåðâå")
+   if(oqStateOV->FieldByName("POINTNAME")->AsString != "Ð’ Ñ€ÐµÐ·ÐµÑ€Ð²Ðµ")
     {
      iaNew->Enabled = false;
      iaParams->Enabled = true && wr_rights;
@@ -862,7 +862,7 @@ void __fastcall TFormSwitchOV::SaveTable(TComponent* Owner,TDBGridEh *gr,AnsiStr
   this->SaveDialog1->Title = RepCaption+"...";
   this->SaveDialog1->DefaultExt = "txt";
   this->SaveDialog1->FileName=RepCaption;
-  this->SaveDialog1->Filter = "Òåêñòîâ³ äîêóìåíòè (*.txt)|*.txt|Ôàéë ç ðîçä³ëüíèêîì (*.csv)|*.csv|Excel-òàáëèöÿ (*.xls)|*.xls";
+  this->SaveDialog1->Filter = "Ð¢ÐµÐºÑÑ‚Ð¾Ð²Ñ– Ð´Ð¾ÐºÑƒÐ¼ÐµÐ½Ñ‚Ð¸ (*.txt)|*.txt|Ð¤Ð°Ð¹Ð» Ð· Ñ€Ð¾Ð·Ð´Ñ–Ð»ÑŒÐ½Ð¸ÐºÐ¾Ð¼ (*.csv)|*.csv|Excel-Ñ‚Ð°Ð±Ð»Ð¸Ñ†Ñ (*.xls)|*.xls";
   if(this->SaveDialog1->Execute()){
     fname=this->SaveDialog1->FileName;
     }
@@ -875,7 +875,7 @@ void __fastcall TFormSwitchOV::SaveTable(TComponent* Owner,TDBGridEh *gr,AnsiStr
 
   try{
     StringList  = new TStringList;
-    //Çàâãîëîâîê
+    //Ð—Ð°Ð²Ð³Ð¾Ð»Ð¾Ð²Ð¾Ðº
     if(!RepCaption.IsEmpty())
       StringList->Add(RepCaption);
     s="";
@@ -887,7 +887,7 @@ void __fastcall TFormSwitchOV::SaveTable(TComponent* Owner,TDBGridEh *gr,AnsiStr
       }
     }
     StringList->Add(s);
-    //Äàííûå
+    //Ð”Ð°Ð½Ð½Ñ‹Ðµ
     SavePlace = ds->GetBookmark();
     ds->DisableControls();
     ds->First();

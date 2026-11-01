@@ -19,7 +19,7 @@ void __fastcall T1Interior::selectData( TOraQuery *qwInter )
   unsigned long j,selectRows,clones,rowCount;
 	unsigned short year, month, day;
 	unsigned short hour, minute, sec, msec;
-  AnsiString PowKoef = ""; // Êîýôôèöèåíò äëÿ ïåðåâîäà â ìîùíîñòü Äëÿ ÃÍ è Òåõ. ïðîôèëÿ
+  AnsiString PowKoef = ""; // ÐšÐ¾ÑÑ„Ñ„Ð¸Ñ†Ð¸ÐµÐ½Ñ‚ Ð´Ð»Ñ Ð¿ÐµÑ€ÐµÐ²Ð¾Ð´Ð° Ð² Ð¼Ð¾Ñ‰Ð½Ð¾ÑÑ‚ÑŒ Ð”Ð»Ñ Ð“Ð Ð¸ Ð¢ÐµÑ…. Ð¿Ñ€Ð¾Ñ„Ð¸Ð»Ñ
 
 	int CountOnProgress=6;
 	long iClones,IdGroup;
@@ -60,7 +60,7 @@ void __fastcall T1Interior::selectData( TOraQuery *qwInter )
           }
         break;
     }
-    //e //chig - ïåðåâîðîò â ðàçíîñòè!!!!
+    //e //chig - Ð¿ÐµÑ€ÐµÐ²Ð¾Ñ€Ð¾Ñ‚ Ð² Ñ€Ð°Ð·Ð½Ð¾ÑÑ‚Ð¸!!!!
     fd->DateTime.DecodeDate(&year, &month, &day);
     // ChoiceOfTimeDiap(grouping, FirstDate, LastDate);
     ChoiceOfTimeDiap(FirstDate, LastDate);

@@ -31,78 +31,78 @@ CREATE GLOBAL TEMPORARY TABLE HALFHOUROPT  (
 ;
 
 comment on table HALFHOUROPT is
-'Получасовки';
+'РџРѕР»СѓС‡Р°СЃРѕРІРєРё';
 
 comment on column HALFHOUROPT.MID is
-'Ид точки';
+'РРґ С‚РѕС‡РєРё';
 
 comment on column HALFHOUROPT.DATE_TIME is
-'Дата показаний';
+'Р”Р°С‚Р° РїРѕРєР°Р·Р°РЅРёР№';
 
 comment on column HALFHOUROPT.NSOURCE is
-'Код источника';
+'РљРѕРґ РёСЃС‚РѕС‡РЅРёРєР°';
 
 comment on column HALFHOUROPT.ER is
-'Расход А пр';
+'Р Р°СЃС…РѕРґ Рђ РїСЂ';
 
 comment on column HALFHOUROPT.Q1 is
-'Расход Q1';
+'Р Р°СЃС…РѕРґ Q1';
 
 comment on column HALFHOUROPT.ED is
-'Расход А от';
+'Р Р°СЃС…РѕРґ Рђ РѕС‚';
 
 comment on column HALFHOUROPT.Q3 is
-'Расход Q3';
+'Р Р°СЃС…РѕРґ Q3';
 
 comment on column HALFHOUROPT.Q2 is
-'Расход Q2';
+'Р Р°СЃС…РѕРґ Q2';
 
 comment on column HALFHOUROPT.Q4 is
-'Расход Q4';
+'Р Р°СЃС…РѕРґ Q4';
 
 comment on column HALFHOUROPT.ERM is
-'Показания А пр';
+'РџРѕРєР°Р·Р°РЅРёСЏ Рђ РїСЂ';
 
 comment on column HALFHOUROPT.Q1M is
-'Показания Q1';
+'РџРѕРєР°Р·Р°РЅРёСЏ Q1';
 
 comment on column HALFHOUROPT.EDM is
-'Показания А от';
+'РџРѕРєР°Р·Р°РЅРёСЏ Рђ РѕС‚';
 
 comment on column HALFHOUROPT.Q3M is
-'Показания Q3';
+'РџРѕРєР°Р·Р°РЅРёСЏ Q3';
 
 comment on column HALFHOUROPT.Q2M is
-'Показания Q2';
+'РџРѕРєР°Р·Р°РЅРёСЏ Q2';
 
 comment on column HALFHOUROPT.Q4M is
-'Показания Q4';
+'РџРѕРєР°Р·Р°РЅРёСЏ Q4';
 
 comment on column HALFHOUROPT.STATUS is
-'Статус';
+'РЎС‚Р°С‚СѓСЃ';
 
 comment on column HALFHOUROPT.NSWITCH is
-'Ид обводника';
+'РРґ РѕР±РІРѕРґРЅРёРєР°';
 
 comment on column HALFHOUROPT.NEXCEPTCALC is
-'Исключен из расчета';
+'РСЃРєР»СЋС‡РµРЅ РёР· СЂР°СЃС‡РµС‚Р°';
 
 comment on column HALFHOUROPT.DCLOSED is
-'Дата закрытия суток';
+'Р”Р°С‚Р° Р·Р°РєСЂС‹С‚РёСЏ СЃСѓС‚РѕРє';
 
 comment on column HALFHOUROPT.NKC is
-'Коеф счетчика';
+'РљРѕРµС„ СЃС‡РµС‚С‡РёРєР°';
 
 comment on column HALFHOUROPT.ER_MTRSN is
-'Номер счетчика';
+'РќРѕРјРµСЂ СЃС‡РµС‚С‡РёРєР°';
 
 comment on column HALFHOUROPT.DENTER is
-'Дата попадания';
+'Р”Р°С‚Р° РїРѕРїР°РґР°РЅРёСЏ';
 
 comment on column HALFHOUROPT.VQM is
-'Метка качества';
+'РњРµС‚РєР° РєР°С‡РµСЃС‚РІР°';
 
 comment on column HALFHOUROPT.NMETERTYPE is
-'Тип счетчика';
+'РўРёРї СЃС‡РµС‚С‡РёРєР°';
 
 

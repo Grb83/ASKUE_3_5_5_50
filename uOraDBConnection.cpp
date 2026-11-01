@@ -40,7 +40,7 @@ bool DoConnect(TOraSession* OraSession)
 
   if(OraSession->Connected)
     return true;
-  //проверяем параметры командной строки
+  //РїСЂРѕРІРµСЂСЏРµРј РїР°СЂР°РјРµС‚СЂС‹ РєРѕРјР°РЅРґРЅРѕР№ СЃС‚СЂРѕРєРё
   OraSession->ConnectString="";
   try{
     if(ParamCount()>=3){
@@ -59,7 +59,7 @@ bool DoConnect(TOraSession* OraSession)
   }
   if (OraSession->Connected)
     return true;
-  //выводим форму ввода параметров соединения
+  //РІС‹РІРѕРґРёРј С„РѕСЂРјСѓ РІРІРѕРґР° РїР°СЂР°РјРµС‚СЂРѕРІ СЃРѕРµРґРёРЅРµРЅРёСЏ
   if (fmConnect->ShowModal() == mrOk){
     OraSession->Server    = fmConnect->dbName;
     NameUser=fmConnect->dbUser;
@@ -77,9 +77,9 @@ bool DoConnect(TOraSession* OraSession)
   // start added by KAG
   if (error.AnsiPos("ORA-01017")!=0)
   {
-    AnsiString mess = "\n Выполнена попытка несанкционированного входа в систему от имени '"+OraSession->Username+"'";
+    AnsiString mess = "\n Р’С‹РїРѕР»РЅРµРЅР° РїРѕРїС‹С‚РєР° РЅРµСЃР°РЅРєС†РёРѕРЅРёСЂРѕРІР°РЅРЅРѕРіРѕ РІС…РѕРґР° РІ СЃРёСЃС‚РµРјСѓ РѕС‚ РёРјРµРЅРё '"+OraSession->Username+"'";
     char *names[256]  = {mess.c_str()};
-    HANDLE hEventSource = RegisterEventSource(NULL,"АРМ АСКУЭ");
+    HANDLE hEventSource = RegisterEventSource(NULL,"РђР Рњ РђРЎРљРЈР­");
     ReportEvent(hEventSource, // handle returned by RegisterEventSource
         EVENTLOG_AUDIT_FAILURE,  // event type to log
         0, // event category
@@ -90,7 +90,7 @@ bool DoConnect(TOraSession* OraSession)
         (LPCTSTR*)names, // array of strings to merge with message
         NULL // address of binary data
     );
-    DeregisterEventSource(hEventSource);// Отключаемся от журнала событий
+    DeregisterEventSource(hEventSource);// РћС‚РєР»СЋС‡Р°РµРјСЃСЏ РѕС‚ Р¶СѓСЂРЅР°Р»Р° СЃРѕР±С‹С‚РёР№
   }
   // end added by KAG
 

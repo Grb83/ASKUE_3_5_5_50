@@ -23,7 +23,7 @@ __fastcall TfmSaveMonitorAs::~TfmSaveMonitorAs()
     if(Monitors_Del) delete[] Monitors_Del;
 }
 //---------------------------------------------------------------------------
-bool __fastcall TfmSaveMonitorAs::ReadTreeNode(TTreeNode* NodeParent)// Читает ветку дерева
+bool __fastcall TfmSaveMonitorAs::ReadTreeNode(TTreeNode* NodeParent)// Р§РёС‚Р°РµС‚ РІРµС‚РєСѓ РґРµСЂРµРІР°
 {
 
   stMonitors *PTreeMonitors;
@@ -253,7 +253,7 @@ void __fastcall TfmSaveMonitorAs::bbEditClick(TObject *Sender)
 
 void __fastcall TfmSaveMonitorAs::btOkClick(TObject *Sender)
 {
-    if(!tvMonitorsSave()) return;// Сохраняем дерево
+    if(!tvMonitorsSave()) return;// РЎРѕС…СЂР°РЅСЏРµРј РґРµСЂРµРІРѕ
     TTreeNode *ParentNode;
     if(FWinType==wtSaveAs)
     {

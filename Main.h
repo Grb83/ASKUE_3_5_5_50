@@ -138,7 +138,7 @@ public:         // public user declarations
         long techbron;
         long nSum;
         long inverted;
-        long editing;// 0 -Не трогали, 1-трогали
+        long editing;// 0 -РќРµ С‚СЂРѕРіР°Р»Рё, 1-С‚СЂРѕРіР°Р»Рё
         long editlim;
         TList *plim;
         long tmpId;

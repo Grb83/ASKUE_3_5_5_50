@@ -28,14 +28,14 @@ try
 			dynamic_cast<TBaseMonitorForm*>(Owner)->Tag=1;
 			dynamic_cast<TForm*>(Owner)->Color=clWindow;
 		}
-		//Загружаем из базы полное описание таблицы
+		//Р—Р°РіСЂСѓР¶Р°РµРј РёР· Р±Р°Р·С‹ РїРѕР»РЅРѕРµ РѕРїРёСЃР°РЅРёРµ С‚Р°Р±Р»РёС†С‹
 		OnProgressBarStepBy(NULL);//0
 		formDescr();
 		OnProgressBarStepBy(this);//10
 
 		datOracle=new TCloneItem[ Clones*SubColumns() ];
 
-		//Загружаем из базы данные
+		//Р—Р°РіСЂСѓР¶Р°РµРј РёР· Р±Р°Р·С‹ РґР°РЅРЅС‹Рµ
 		/*
 		OnProgressBarStepBy(NULL);//20
 		OnProgressBarStepBy(NULL);//70
@@ -47,7 +47,7 @@ try
 		//selectData( dmMain->qwInter );
     selectData( dmMain->oqInterCursor );
 		OnProgressBarStepBy(this);//30
-    //GRB ADD - подписываем на перерисовку
+    //GRB ADD - РїРѕРґРїРёСЃС‹РІР°РµРј РЅР° РїРµСЂРµСЂРёСЃРѕРІРєСѓ
     ((TBaseMonitorForm*)Owner)->OnResize=FormShow;
 }
 catch(Exception &e)
@@ -76,7 +76,7 @@ __fastcall TDUInterior::~TDUInterior(void)
 	if(datOracle) delete [] datOracle;
 }
 //---------------------------------------------------------------------------
-//Снятие со SplitterFom таблицы и графика, вызываемтся при обновлении TBaseMonitorForm
+//РЎРЅСЏС‚РёРµ СЃРѕ SplitterFom С‚Р°Р±Р»РёС†С‹ Рё РіСЂР°С„РёРєР°, РІС‹Р·С‹РІР°РµРјС‚СЃСЏ РїСЂРё РѕР±РЅРѕРІР»РµРЅРёРё TBaseMonitorForm
 void __fastcall TDUInterior::Destroy(void)
 {
 	SplitterForm->RemoveChild(DrawTable);
@@ -87,14 +87,14 @@ void __fastcall TDUInterior::Place(void)
     int i;
     try
     {
-        //Создаем таблицу
-	    //Укладываем таблицу в SplitterForm
+        //РЎРѕР·РґР°РµРј С‚Р°Р±Р»РёС†Сѓ
+	    //РЈРєР»Р°РґС‹РІР°РµРј С‚Р°Р±Р»РёС†Сѓ РІ SplitterForm
 	    DrawTable=new TDrawTable(Owner);
 
         SplitterForm->AddChild(NULL,DrawTable,alRight);
         SplitterForm->SplitFormResize(NULL);
 
-        //======== Форматирование таблицы
+        //======== Р¤РѕСЂРјР°С‚РёСЂРѕРІР°РЅРёРµ С‚Р°Р±Р»РёС†С‹
 
 	    TPopupMenu *pPopup=
             (dynamic_cast<TBaseMonitorForm*>(Owner))->PopupMenuDU;
@@ -115,15 +115,15 @@ void __fastcall TDUInterior::Place(void)
     	DrawTable->ColCount=1+SubColumns();
 	    DrawTable->RowCount=Clones+1;
 
-        // -------------- Для печати -----------------------------------------------------------------------
-        //столбцы для названий точек(времени) и и подколонок
+        // -------------- Р”Р»СЏ РїРµС‡Р°С‚Рё -----------------------------------------------------------------------
+        //СЃС‚РѕР»Р±С†С‹ РґР»СЏ РЅР°Р·РІР°РЅРёР№ С‚РѕС‡РµРє(РІСЂРµРјРµРЅРё) Рё Рё РїРѕРґРєРѕР»РѕРЅРѕРє
         ColumnsCaption->Clear();
         VT_PrintData->Close();
         VT_PrintData->Clear();
         VT_PrintData->FieldDefs->Clear();
         VT_PrintData->FieldDefs->Add("RowName", ftString, 50, false);
         VT_PrintData->FieldDefs->Add("SubRowName", ftString, 30, false);
-        for(int CC = 1; CC<=SubColumns(); CC++) // RowCount+1 - Столбцы для данных
+        for(int CC = 1; CC<=SubColumns(); CC++) // RowCount+1 - РЎС‚РѕР»Р±С†С‹ РґР»СЏ РґР°РЅРЅС‹С…
         {
             VT_PrintData->FieldDefs->Add("Data"+IntToStr(CC), ftString, 20, false);
         }
@@ -170,7 +170,7 @@ void __fastcall TDUInterior::dataInColumns(void)
 	char *ptr;
         AnsiString Date;
 	TDrawTable::SAttrCell* pAtr;
-	//Подготавливаем переменные поля для приема
+	//РџРѕРґРіРѕС‚Р°РІР»РёРІР°РµРј РїРµСЂРµРјРµРЅРЅС‹Рµ РїРѕР»СЏ РґР»СЏ РїСЂРёРµРјР°
 	ptr=DrawTable->StructStrings->GetArray();
         VT_PrintData->First();//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 	for( iClones=0 ; iClones<Clones ; ++iClones )
@@ -273,8 +273,8 @@ void __fastcall TDUInterior::clonesInColumns(void)
 	//dataInColumns();
 }
 //---------------------------------------------------------------------------
-//Обновление данных из базы
-//NameAlert=-1 для обновления в любом случае
+//РћР±РЅРѕРІР»РµРЅРёРµ РґР°РЅРЅС‹С… РёР· Р±Р°Р·С‹
+//NameAlert=-1 РґР»СЏ РѕР±РЅРѕРІР»РµРЅРёСЏ РІ Р»СЋР±РѕРј СЃР»СѓС‡Р°Рµ
 void __fastcall TDUInterior::refreshData( int Table,TOraQuery *qwInter )
 {
 	if(Table==TABLE_CURR_POWER)
@@ -294,7 +294,7 @@ void __fastcall TDUInterior::Invalidate( int Table )
 }
 //---------------------------------------------------------------------------
 
-//Получает данные о считываемой таблице
+//РџРѕР»СѓС‡Р°РµС‚ РґР°РЅРЅС‹Рµ Рѕ СЃС‡РёС‚С‹РІР°РµРјРѕР№ С‚Р°Р±Р»РёС†Рµ
 void __fastcall TDUInterior::formDescr( void )
 {
   fd->IdGroup = GroupJump(fd->IdGroup);
@@ -405,7 +405,7 @@ bool __fastcall TDUInterior::setSplit(void)
 //---------------------------------------------------------------------------
 AnsiString __fastcall TDUInterior::GetSubColumnsNames(int n)
 {
-	static AnsiString staticNameColumns[]={"",Reconst_smes110_8,/*"План/Лимит","Отклонение",*/Reconst_smes110_11};
+	static AnsiString staticNameColumns[]={"",Reconst_smes110_8,/*"РџР»Р°РЅ/Р›РёРјРёС‚","РћС‚РєР»РѕРЅРµРЅРёРµ",*/Reconst_smes110_11};
 	return staticNameColumns[n];
 }
 //---------------------------------------------------------------------------
@@ -417,8 +417,8 @@ void __fastcall TDUInterior::clickComposition(long ACol, long ARow )
 {
   long IdGroup=0,j;
   if(ARow==0){
-    if(fd->IdGroup==fd->IdGroupJump){//***************** Для списков
-      fd->IdGroup = fd->IdGroupList; // Перешли на предприятие
+    if(fd->IdGroup==fd->IdGroupJump){//***************** Р”Р»СЏ СЃРїРёСЃРєРѕРІ
+      fd->IdGroup = fd->IdGroupList; // РџРµСЂРµС€Р»Рё РЅР° РїСЂРµРґРїСЂРёСЏС‚РёРµ
       fd->IdGroupJump = 0;
       fd->IdGroupList = 0;
     }
@@ -438,7 +438,7 @@ void __fastcall TDUInterior::clickComposition(long ACol, long ARow )
   }else{
     long TempIdGroup;
 		IdGroup=(long)NamesClones->Objects[ARow-1];
-    //***************** Для списков *********************************************************************************
+    //***************** Р”Р»СЏ СЃРїРёСЃРєРѕРІ *********************************************************************************
     IdGroup = GroupJump(IdGroup);
     if(!IdGroup)
       return;
@@ -487,7 +487,7 @@ void __fastcall TDUInterior::OnClickMenuItemMainGroup(TObject *Sender)
 	clickComposition(0, 0 );
 }
 //---------------------------------------------------------------------------
-void __fastcall TDUInterior::OnPopupMenuDU(TObject *Sender) /*Отображение всплывающего контекстного меню*/
+void __fastcall TDUInterior::OnPopupMenuDU(TObject *Sender) /*РћС‚РѕР±СЂР°Р¶РµРЅРёРµ РІСЃРїР»С‹РІР°СЋС‰РµРіРѕ РєРѕРЅС‚РµРєСЃС‚РЅРѕРіРѕ РјРµРЅСЋ*/
 {
 	if( dynamic_cast<TBaseMonitorForm*>(Owner) )
 	{
@@ -508,7 +508,7 @@ void __fastcall TDUInterior::OnPopupMenuDU(TObject *Sender) /*Отображение всплыв
 void __fastcall TDUInterior::OnClickPanel(System::TObject* Sender)
 {
     TBaseMonitorForm*bmn = dynamic_cast<TBaseMonitorForm*>(Owner);
-    //GRB CHANGE 20.09.2021 Фиксим баг с возвращением к исходным размером при ресайзе диаграмм
+    //GRB CHANGE 20.09.2021 Р¤РёРєСЃРёРј Р±Р°Рі СЃ РІРѕР·РІСЂР°С‰РµРЅРёРµРј Рє РёСЃС…РѕРґРЅС‹Рј СЂР°Р·РјРµСЂРѕРј РїСЂРё СЂРµСЃР°Р№Р·Рµ РґРёР°РіСЂР°РјРј
     //if(bmn) bmn->FormActivate(Sender);
     if (bmn){
         bmn->FormActivate(Sender);
@@ -544,8 +544,8 @@ void __fastcall TDUInterior::DrawTableMouseDown(TObject *Sender,
 	leftShift<<ssLeft;
 	rightShift<<ssRight;
 
-	if( (Button==mbLeft && Shift==leftShift )||//нажата только левая кнопка мыши
-		(Button==mbRight && Shift==rightShift) )//нажата только правая кнопка мыши
+	if( (Button==mbLeft && Shift==leftShift )||//РЅР°Р¶Р°С‚Р° С‚РѕР»СЊРєРѕ Р»РµРІР°СЏ РєРЅРѕРїРєР° РјС‹С€Рё
+		(Button==mbRight && Shift==rightShift) )//РЅР°Р¶Р°С‚Р° С‚РѕР»СЊРєРѕ РїСЂР°РІР°СЏ РєРЅРѕРїРєР° РјС‹С€Рё
 		;
 	else
 	{
@@ -665,23 +665,23 @@ void __fastcall TDUInterior::DrawTableMouseUp(TObject *Sender,
 		Sender->InvalidCell( ColPressed, RowPressed );
 		if( ACol==ColPressed && ARow==RowPressed )
 		{
-			//Произошел щелчок по разложению профиля или клона
+			//РџСЂРѕРёР·РѕС€РµР» С‰РµР»С‡РѕРє РїРѕ СЂР°Р·Р»РѕР¶РµРЅРёСЋ РїСЂРѕС„РёР»СЏ РёР»Рё РєР»РѕРЅР°
 			if( !fd->VerticalSplit )
 			{
 				ColPressed=ARow;
 				RowPressed=ACol;
 			}
 			if( ShiftPressed == ( TShiftState()<<ssLeft ))
-				//Вывод диалога
+				//Р’С‹РІРѕРґ РґРёР°Р»РѕРіР°
 				clickDialog(ColPressed, RowPressed );
 			else
-				//Композиция или декомпозиция
+				//РљРѕРјРїРѕР·РёС†РёСЏ РёР»Рё РґРµРєРѕРјРїРѕР·РёС†РёСЏ
 				clickComposition(ColPressed, RowPressed );
 		}
 	}
 	ClonePressed=false;
 	}
-	else//Если клон не нажимался
+	else//Р•СЃР»Рё РєР»РѕРЅ РЅРµ РЅР°Р¶РёРјР°Р»СЃСЏ
 		if( ShiftPressed == ( TShiftState()<<ssRight ) && Sender->PopupMenu )
 		{
 			POINT p;
@@ -723,7 +723,7 @@ void __fastcall TDUInterior::SaveTableToFile(TSaveDialog *aSaveDialog)
 }
 //---------------------------------------------------------------------------
 //-------------------------------------------------------------------------------
-//GRB ADD 26.08.2021 - два метода для автоформатирования по содержимому фиксированых колонок - исправление бага с обрезанием длинных имён в колонках
+//GRB ADD 26.08.2021 - РґРІР° РјРµС‚РѕРґР° РґР»СЏ Р°РІС‚РѕС„РѕСЂРјР°С‚РёСЂРѕРІР°РЅРёСЏ РїРѕ СЃРѕРґРµСЂР¶РёРјРѕРјСѓ С„РёРєСЃРёСЂРѕРІР°РЅС‹С… РєРѕР»РѕРЅРѕРє - РёСЃРїСЂР°РІР»РµРЅРёРµ Р±Р°РіР° СЃ РѕР±СЂРµР·Р°РЅРёРµРј РґР»РёРЅРЅС‹С… РёРјС‘РЅ РІ РєРѕР»РѕРЅРєР°С…
 //---------------------------------------------------------------------------
 void __fastcall  TDUInterior::AutoSizeColGRB (TDrawTable* tsg, int columnIndex){
         int i,w,WMax;
@@ -774,7 +774,7 @@ TFont * __fastcall TDUInterior::GetActiveFont4MonitorFromReg (){
 
     }catch (Exception &ex){
         delete psm;
-        //Смелое предположение - так типа по дефолту
+        //РЎРјРµР»РѕРµ РїСЂРµРґРїРѕР»РѕР¶РµРЅРёРµ - С‚Р°Рє С‚РёРїР° РїРѕ РґРµС„РѕР»С‚Сѓ
         retFont->Name = "MS Sans Serif";
         retFont->Size = 8;
         return retFont;

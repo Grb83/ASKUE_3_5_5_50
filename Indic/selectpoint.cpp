@@ -84,7 +84,7 @@ if(pointPOL->type== 4){
    }
 }
 //---------------------------------------------------------------------------
-// ×èòàåò âåòêó äåðåâà Òî÷åê
+// Ð§Ð¸Ñ‚Ð°ÐµÑ‚ Ð²ÐµÑ‚ÐºÑƒ Ð´ÐµÑ€ÐµÐ²Ð° Ð¢Ð¾Ñ‡ÐµÐº
 bool __fastcall TfmSelectPoint::ReadNode(TObject* Sender, TObject* ParentNode, long type)
 {
    TTreeView*tv = (TTreeView*)Sender;
@@ -98,31 +98,31 @@ bool __fastcall TfmSelectPoint::ReadNode(TObject* Sender, TObject* ParentNode, l
         dmMain->oqCursor->ParamByName("par3")->ParamType = ptOutput;
         dmMain->oqCursor->ParamByName("par3")->DataType = ftCursor;
         switch (type){
-        case 4://Âñå ãðóïïû ó÷åòà
+        case 4://Ð’ÑÐµ Ð³Ñ€ÑƒÐ¿Ð¿Ñ‹ ÑƒÑ‡ÐµÑ‚Ð°
           dmMain->oqCursor->ParamByName("FLAG")->AsInteger = 1;
            break;
-        case 2://Êàíàëû ñ òèïîì ïðîòîêîëà: ôàéë
+        case 2://ÐšÐ°Ð½Ð°Ð»Ñ‹ Ñ Ñ‚Ð¸Ð¿Ð¾Ð¼ Ð¿Ñ€Ð¾Ñ‚Ð¾ÐºÐ¾Ð»Ð°: Ñ„Ð°Ð¹Ð»
           dmMain->oqCursor->ParamByName("FLAG")->AsInteger = 2;
           break;
-        case 3://Âñå òî÷êè ó÷åòà
+        case 3://Ð’ÑÐµ Ñ‚Ð¾Ñ‡ÐºÐ¸ ÑƒÑ‡ÐµÑ‚Ð°
           dmMain->oqCursor->ParamByName("FLAG")->AsInteger = 3;
           break;
-        case 0://Ãðóïïû íà÷èíàÿ ñ ãðóïïû ðàçáèâêè
+        case 0://Ð“Ñ€ÑƒÐ¿Ð¿Ñ‹ Ð½Ð°Ñ‡Ð¸Ð½Ð°Ñ Ñ Ð³Ñ€ÑƒÐ¿Ð¿Ñ‹ Ñ€Ð°Ð·Ð±Ð¸Ð²ÐºÐ¸
           dmMain->oqCursor->ParamByName("FLAG")->AsInteger = 4;
           break;
-        case 7://Ôèëüòðû
+        case 7://Ð¤Ð¸Ð»ÑŒÑ‚Ñ€Ñ‹
           dmMain->oqCursor->ParamByName("FLAG")->AsInteger = 6;
           break;
-        case 6://Òî÷êè+Ãðóïïû+Òðàíñôîðìàòîðû
+        case 6://Ð¢Ð¾Ñ‡ÐºÐ¸+Ð“Ñ€ÑƒÐ¿Ð¿Ñ‹+Ð¢Ñ€Ð°Ð½ÑÑ„Ð¾Ñ€Ð¼Ð°Ñ‚Ð¾Ñ€Ñ‹
           dmMain->oqCursor->ParamByName("FLAG")->AsInteger = 8;
           break;
-        case 9: //Òî÷êè ó÷åòà áåç òðàíñôîðìàòîðîâ
+        case 9: //Ð¢Ð¾Ñ‡ÐºÐ¸ ÑƒÑ‡ÐµÑ‚Ð° Ð±ÐµÐ· Ñ‚Ñ€Ð°Ð½ÑÑ„Ð¾Ñ€Ð¼Ð°Ñ‚Ð¾Ñ€Ð¾Ð²
           dmMain->oqCursor->ParamByName("FLAG")->AsInteger = 9;
           break;
-        case 10: //Âñå êàíàëû, äîñòóïíûå ïî ïðàâàì äëÿ þçåðà
+        case 10: //Ð’ÑÐµ ÐºÐ°Ð½Ð°Ð»Ñ‹, Ð´Ð¾ÑÑ‚ÑƒÐ¿Ð½Ñ‹Ðµ Ð¿Ð¾ Ð¿Ñ€Ð°Ð²Ð°Ð¼ Ð´Ð»Ñ ÑŽÐ·ÐµÑ€Ð°
           dmMain->oqCursor->ParamByName("FLAG")->AsInteger = 10;
           break;
-        default://Òî÷êè ó÷åòà
+        default://Ð¢Ð¾Ñ‡ÐºÐ¸ ÑƒÑ‡ÐµÑ‚Ð°
           dmMain->oqCursor->ParamByName("FLAG")->AsInteger = 5;
            }
      if(type==6)
@@ -134,7 +134,7 @@ bool __fastcall TfmSelectPoint::ReadNode(TObject* Sender, TObject* ParentNode, l
 
 
       if(!parNode){
-         if(type==3){//Äîáàâèòü ïñåâäîâåðøèíó
+         if(type==3){//Ð”Ð¾Ð±Ð°Ð²Ð¸Ñ‚ÑŒ Ð¿ÑÐµÐ²Ð´Ð¾Ð²ÐµÑ€ÑˆÐ¸Ð½Ñƒ
            pData = new POINTSTREEDEF;
            ZeroMemory(pData,sizeof(POINTSTREEDEF));
            pData->HaveChild=1;
@@ -228,7 +228,7 @@ bool __fastcall TfmSelectPoint::ReadNodeMeas(TObject* Sender,TTreeNode *sNode)
    TTreeNode* Node;
    AnsiString s= TdmMain::GetStr(pointPOL->Meas,2,".");
 
-   ///////////////// åñëè âûáðàíû ñóòî÷íûå/ìåñÿ÷íûå ïîêàçàíèÿ
+   ///////////////// ÐµÑÐ»Ð¸ Ð²Ñ‹Ð±Ñ€Ð°Ð½Ñ‹ ÑÑƒÑ‚Ð¾Ñ‡Ð½Ñ‹Ðµ/Ð¼ÐµÑÑÑ‡Ð½Ñ‹Ðµ Ð¿Ð¾ÐºÐ°Ð·Ð°Ð½Ð¸Ñ
    AnsiString Temp=pointPOL->Meas;
    while (Temp.Pos(".")!=0)
   {
@@ -300,14 +300,14 @@ void __fastcall TfmSelectPoint::FindCurrNode(TObject*Sender, long mid, long type
 
       if (type==0||type==4||(type==6&&IsPoint==0))
         dmMain->oqCursor->ParamByName("FLAG")->AsInteger=1;
-      else if (type==10) // äëÿ êàíàëîâ
+      else if (type==10) // Ð´Ð»Ñ ÐºÐ°Ð½Ð°Ð»Ð¾Ð²
         dmMain->oqCursor->ParamByName("FLAG")->AsInteger=4;
       else
         dmMain->oqCursor->ParamByName("FLAG")->AsInteger=2;
 
 
       dmMain->oqCursor->ParamByName("par1")->AsInteger=parmid;
-      //GRB ADD 15.04.2021 - Äëÿ äåðåâà ôîðìóë
+      //GRB ADD 15.04.2021 - Ð”Ð»Ñ Ð´ÐµÑ€ÐµÐ²Ð° Ñ„Ð¾Ñ€Ð¼ÑƒÐ»
       if ((type == 6)&&(IsPoint==1)){
         dmMain->oqCursor->ParamByName("FLAG")->AsInteger=1;
       }
@@ -326,7 +326,7 @@ void __fastcall TfmSelectPoint::FindCurrNode(TObject*Sender, long mid, long type
       CountStr= i;
       
       Node=tv->Items->GetFirstNode();
-      if(type==3)//ïðîñêàêèâàåì äëÿ ïñåâäîòî÷êè
+      if(type==3)//Ð¿Ñ€Ð¾ÑÐºÐ°ÐºÐ¸Ð²Ð°ÐµÐ¼ Ð´Ð»Ñ Ð¿ÑÐµÐ²Ð´Ð¾Ñ‚Ð¾Ñ‡ÐºÐ¸
         Node=Node->getFirstChild();
       for(long i=(long)CountStr-1;i>=0;i--)
       { while(Node)
@@ -428,8 +428,8 @@ void __fastcall TfmSelectPoint::btOkClick(TObject *Sender)
 void __fastcall TfmSelectPoint::vFindClick(TObject *Sender)
 {
   // edited by KAG 04.03.2010
-  //15.04.2021 GRB ADD äîáàâèë äëÿ ðåäàêòîðà ôîðìóë (êîíòåêñò ãðóïï è òî÷åê ïðîâåðêó íà òèï 6 - âûçîâû èäóò èç UnEditFormula.cpp )
-  if (pointPOL->type == 10){ // äåðåâî êàíàëîâ
+  //15.04.2021 GRB ADD Ð´Ð¾Ð±Ð°Ð²Ð¸Ð» Ð´Ð»Ñ Ñ€ÐµÐ´Ð°ÐºÑ‚Ð¾Ñ€Ð° Ñ„Ð¾Ñ€Ð¼ÑƒÐ» (ÐºÐ¾Ð½Ñ‚ÐµÐºÑÑ‚ Ð³Ñ€ÑƒÐ¿Ð¿ Ð¸ Ñ‚Ð¾Ñ‡ÐµÐº Ð¿Ñ€Ð¾Ð²ÐµÑ€ÐºÑƒ Ð½Ð° Ñ‚Ð¸Ð¿ 6 - Ð²Ñ‹Ð·Ð¾Ð²Ñ‹ Ð¸Ð´ÑƒÑ‚ Ð¸Ð· UnEditFormula.cpp )
+  if (pointPOL->type == 10){ // Ð´ÐµÑ€ÐµÐ²Ð¾ ÐºÐ°Ð½Ð°Ð»Ð¾Ð²
     /*fmFP->setContext(22);
     fmFP->setGroupsAndPoints(false);
     fmFP->SetChannel(1);
@@ -440,10 +440,10 @@ void __fastcall TfmSelectPoint::vFindClick(TObject *Sender)
     fmFP->setOldFind (1);
     }
   else{
-    //GRB ADD 09.03.2021 -äîáàâëÿåì âûçîâ 2-õ ñåòòåðîâ, îïðåäåëÿþùèõ êîíòåêñò çàäà÷è
-    //GRB ADD 15.04.2021 - äîáàâëÿåì êîíòåêñò äëÿ äåðåâà ãðóïï è òî÷åê (ïðèõîäèò èç UnEditFormula.cpp)
-    //GRB ADD 15.04.2021 - è ñþäà æå äîáàâëÿåì êîíòåêñò äëÿ ãðóïï ïî ìîëîòêó â çàäà÷å 2.1
-    //GRB ADD 15.04.2021 - è ñþäà æå äëÿ 4-õ ôèëüòðîâ ïî âåðõíèì êíîïêàì ñòàðûé ïîèñê
+    //GRB ADD 09.03.2021 -Ð´Ð¾Ð±Ð°Ð²Ð»ÑÐµÐ¼ Ð²Ñ‹Ð·Ð¾Ð² 2-Ñ… ÑÐµÑ‚Ñ‚ÐµÑ€Ð¾Ð², Ð¾Ð¿Ñ€ÐµÐ´ÐµÐ»ÑÑŽÑ‰Ð¸Ñ… ÐºÐ¾Ð½Ñ‚ÐµÐºÑÑ‚ Ð·Ð°Ð´Ð°Ñ‡Ð¸
+    //GRB ADD 15.04.2021 - Ð´Ð¾Ð±Ð°Ð²Ð»ÑÐµÐ¼ ÐºÐ¾Ð½Ñ‚ÐµÐºÑÑ‚ Ð´Ð»Ñ Ð´ÐµÑ€ÐµÐ²Ð° Ð³Ñ€ÑƒÐ¿Ð¿ Ð¸ Ñ‚Ð¾Ñ‡ÐµÐº (Ð¿Ñ€Ð¸Ñ…Ð¾Ð´Ð¸Ñ‚ Ð¸Ð· UnEditFormula.cpp)
+    //GRB ADD 15.04.2021 - Ð¸ ÑÑŽÐ´Ð° Ð¶Ðµ Ð´Ð¾Ð±Ð°Ð²Ð»ÑÐµÐ¼ ÐºÐ¾Ð½Ñ‚ÐµÐºÑÑ‚ Ð´Ð»Ñ Ð³Ñ€ÑƒÐ¿Ð¿ Ð¿Ð¾ Ð¼Ð¾Ð»Ð¾Ñ‚ÐºÑƒ Ð² Ð·Ð°Ð´Ð°Ñ‡Ðµ 2.1
+    //GRB ADD 15.04.2021 - Ð¸ ÑÑŽÐ´Ð° Ð¶Ðµ Ð´Ð»Ñ 4-Ñ… Ñ„Ð¸Ð»ÑŒÑ‚Ñ€Ð¾Ð² Ð¿Ð¾ Ð²ÐµÑ€Ñ…Ð½Ð¸Ð¼ ÐºÐ½Ð¾Ð¿ÐºÐ°Ð¼ ÑÑ‚Ð°Ñ€Ñ‹Ð¹ Ð¿Ð¾Ð¸ÑÐº
     if ((pointPOL->type == 3)||(pointPOL->type == 7)){
     fmFP->setOldFind (1);
     fmFP->setContext(0);

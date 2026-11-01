@@ -68,8 +68,8 @@ __published:	// IDE-managed Components
 private:	// User declarations
 	int GetIndexPicture(int i);
 	int GetIndexPictureJournal(int i);
-	int SetVisualControls(TObject *Sender); // Обеспечивает доступность элементов и
-	int ar_RGroup[4];                                     //возвращает загрузку более 2-го уровня, 200 - если загружаем
+	int SetVisualControls(TObject *Sender); // РћР±РµСЃРїРµС‡РёРІР°РµС‚ РґРѕСЃС‚СѓРїРЅРѕСЃС‚СЊ СЌР»РµРјРµРЅС‚РѕРІ Рё
+	int ar_RGroup[4];                                     //РІРѕР·РІСЂР°С‰Р°РµС‚ Р·Р°РіСЂСѓР·РєСѓ Р±РѕР»РµРµ 2-РіРѕ СѓСЂРѕРІРЅСЏ, 200 - РµСЃР»Рё Р·Р°РіСЂСѓР¶Р°РµРј
 	bool GetAllTree(TObject *Sender);
   HCURSOR hCursor;
 	TFormDescr *fd;

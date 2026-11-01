@@ -60,13 +60,13 @@ private:	// User declarations
   void __fastcall ReadNode(TTreeNode* ParentNode);
 public:		// User declarations
   struct SFunction
-    {      // структура таблицы пользователей
-    long nid;             //ид объекта
-    long nparent;         //ид родителя
-    short ntype;          //  0-папка, 1-формула, 2-функция
-    AnsiString vname;     //название
-    AnsiString vvalue;    //содержание
-    AnsiString vmemo;     //описание
+    {      // СЃС‚СЂСѓРєС‚СѓСЂР° С‚Р°Р±Р»РёС†С‹ РїРѕР»СЊР·РѕРІР°С‚РµР»РµР№
+    long nid;             //РёРґ РѕР±СЉРµРєС‚Р°
+    long nparent;         //РёРґ СЂРѕРґРёС‚РµР»СЏ
+    short ntype;          //  0-РїР°РїРєР°, 1-С„РѕСЂРјСѓР»Р°, 2-С„СѓРЅРєС†РёСЏ
+    AnsiString vname;     //РЅР°Р·РІР°РЅРёРµ
+    AnsiString vvalue;    //СЃРѕРґРµСЂР¶Р°РЅРёРµ
+    AnsiString vmemo;     //РѕРїРёСЃР°РЅРёРµ
     SFunction(){nid=0;nparent=0;ntype=0;vname="";vvalue="";vmemo="";}
     };
 

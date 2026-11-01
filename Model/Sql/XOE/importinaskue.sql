@@ -1,6 +1,6 @@
 
 -- Start of DDL script for IMPORTINASKUE_PG
--- Generated 17-мар-03  11:58:47 am
+-- Generated 17-РјР°СЂ-03  11:58:47 am
 -- from ea-ASKUE:10
 
 -- Package IMPORTINASKUE_PG
@@ -8,12 +8,12 @@
 CREATE OR REPLACE
 PACKAGE importinaskue_pg IS
  ---------------------------------------------------------------------------------------------
- PROCEDURE importobjects_p; --Импорт объектов
- PROCEDURE importlimit_p; --Импорт лимитов
- PROCEDURE importdebt_p; --Импорт долгов
+ PROCEDURE importobjects_p; --РРјРїРѕСЂС‚ РѕР±СЉРµРєС‚РѕРІ
+ PROCEDURE importlimit_p; --РРјРїРѕСЂС‚ Р»РёРјРёС‚РѕРІ
+ PROCEDURE importdebt_p; --РРјРїРѕСЂС‚ РґРѕР»РіРѕРІ
 ---------------------------------------------------------------------------------------------
  PROCEDURE importimmediate_p(an_type NUMBER);
- --an_type =1  группы,an_type =2  лимиты,an_type =3  долги
+ --an_type =1  РіСЂСѓРїРїС‹,an_type =2  Р»РёРјРёС‚С‹,an_type =3  РґРѕР»РіРё
 ---------------------------------------------------------------------------------------------
 END; -- Package spec
 /
@@ -39,8 +39,8 @@ PACKAGE BODY importinaskue_pg IS
  TYPE tt_idg IS TABLE OF tr_idg
   INDEX BY BINARY_INTEGER;
  -------------------------------------------------------------------------------------------
- gd_now    DATE; -- Текущее время (sysdate)
- gn_now    NUMBER; -- Текущее время (sysdate)
+ gd_now    DATE; -- РўРµРєСѓС‰РµРµ РІСЂРµРјСЏ (sysdate)
+ gn_now    NUMBER; -- РўРµРєСѓС‰РµРµ РІСЂРµРјСЏ (sysdate)
  gn_mid    NUMBER;
  gn_gid    NUMBER;
  gn_gidp   NUMBER;
@@ -85,15 +85,15 @@ PACKAGE BODY importinaskue_pg IS
   SELECT MAX(gid)
     INTO gn_gid
     FROM groups@askue
-   WHERE parent IS NULL AND name = 'Группы АСРПП';
+   WHERE parent IS NULL AND name = 'Р“СЂСѓРїРїС‹ РђРЎР РџРџ';
   SELECT MAX(gid)
     INTO gn_gidp
     FROM groups@askue
-   WHERE parent IS NULL AND name = 'Точки АСРПП';
+   WHERE parent IS NULL AND name = 'РўРѕС‡РєРё РђРЎР РџРџ';
   SELECT MAX(gid)
     INTO gn_gidl
     FROM groups@askue
-   WHERE parent IS NULL AND name = 'Списки АСРПП';
+   WHERE parent IS NULL AND name = 'РЎРїРёСЃРєРё РђРЎР РџРџ';
   gd_now := SYSDATE;
   gn_now := TO_CHAR(gd_now, 'YYYYMM');
  END;
@@ -133,7 +133,7 @@ PACKAGE BODY importinaskue_pg IS
   ln_isaskue NUMBER;
   ln_cn      NUMBER;
  BEGIN
-  -------------------------------- Удаляем лишнее
+  -------------------------------- РЈРґР°Р»СЏРµРј Р»РёС€РЅРµРµ
   DELETE FROM pointimportinaskue
         WHERE npoint IN (SELECT npoint
                            FROM pointimportinaskue
@@ -157,9 +157,9 @@ PACKAGE BODY importinaskue_pg IS
                                                   AND gn_now BETWEEN nfromperiod AND NVL(ntillperiod, 299912))
                                 AND gn_now BETWEEN NVL(nfromperiod, 0) AND NVL(ntillperiod, 299912)
                                 AND NVL(vgroupchar, ' ') NOT IN ('D', 'S'));
-  ------------------------------- По точкам
+  ------------------------------- РџРѕ С‚РѕС‡РєР°Рј
   FOR lc IN lcur_sellog LOOP
-   IF lc.nclass = 6 THEN --точки
+   IF lc.nclass = 6 THEN --С‚РѕС‡РєРё
     SELECT MAX(nisaskue)
       INTO ln_isaskue
       FROM ss.sspointi pi, ss.sspoint p
@@ -208,7 +208,7 @@ PACKAGE BODY importinaskue_pg IS
        SELECT npoint, gn_order
          FROM pointimportinaskue);
     END IF;
-   ELSIF lc.nclass = 1 THEN ------------------------------- По группам
+   ELSIF lc.nclass = 1 THEN ------------------------------- РџРѕ РіСЂСѓРїРїР°Рј
     SELECT MAX(nisaskue)
       INTO ln_isaskue
       FROM ss.ssgroupi g
@@ -313,7 +313,7 @@ PACKAGE BODY importinaskue_pg IS
     SELECT npoint, gn_order
       FROM points@askue
      WHERE npoint IS NOT NULL);
-  ----------------------А теперь изменения по точке записали в группы
+  ----------------------Рђ С‚РµРїРµСЂСЊ РёР·РјРµРЅРµРЅРёСЏ РїРѕ С‚РѕС‡РєРµ Р·Р°РїРёСЃР°Р»Рё РІ РіСЂСѓРїРїС‹
   INSERT INTO groupimportinaskue
               (ngroup)
    (SELECT g.ngroup
@@ -492,7 +492,7 @@ END;
  END;
  --------------------------------------------------------------------------------------------
  PROCEDURE importpoint_p(an_point NUMBER) IS
-  ln_daycount          NUMBER        DEFAULT TO_NUMBER(TO_CHAR(LAST_DAY(TO_DATE(gn_now, 'YYYYMM')), 'DD')); --Кол-во дней в месяце
+  ln_daycount          NUMBER        DEFAULT TO_NUMBER(TO_CHAR(LAST_DAY(TO_DATE(gn_now, 'YYYYMM')), 'DD')); --РљРѕР»-РІРѕ РґРЅРµР№ РІ РјРµСЃСЏС†Рµ
   CURSOR lcur_sel IS
    SELECT     npoint, nparent
          FROM ss.sspointi
@@ -523,20 +523,20 @@ END;
   ln_q1_position       NUMBER;
   ln_ed_position       NUMBER;
   ln_q3_position       NUMBER;
-  ln_smart             NUMBER; --Интеллектуал
-  ln_q1234             NUMBER; --Квадранты
-  lv_cellnum           VARCHAR2(256); --Номер ячейки
-  ln_power             NUMBER; --Мощность
-  ln_power2            NUMBER; --Мощность
-  ln_current1          NUMBER; --Напряжение перв
-  ln_current2          NUMBER; --Напряжение вторич
-  ln_kc                NUMBER; --Коэфф
+  ln_smart             NUMBER; --РРЅС‚РµР»Р»РµРєС‚СѓР°Р»
+  ln_q1234             NUMBER; --РљРІР°РґСЂР°РЅС‚С‹
+  lv_cellnum           VARCHAR2(256); --РќРѕРјРµСЂ СЏС‡РµР№РєРё
+  ln_power             NUMBER; --РњРѕС‰РЅРѕСЃС‚СЊ
+  ln_power2            NUMBER; --РњРѕС‰РЅРѕСЃС‚СЊ
+  ln_current1          NUMBER; --РќР°РїСЂСЏР¶РµРЅРёРµ РїРµСЂРІ
+  ln_current2          NUMBER; --РќР°РїСЂСЏР¶РµРЅРёРµ РІС‚РѕСЂРёС‡
+  ln_kc                NUMBER; --РљРѕСЌС„С„
   lv_smart             VARCHAR2(32);
-  ln_linewastepercent  NUMBER; --Потери в линии
-  ln_actwastepercent   NUMBER; --Потери акт в тр-ре
-  ln_reactwastepercent NUMBER; --Потери реакт в тр-ре
-  ln_workinghours      NUMBER; --время работы
-  ln_fullhours         NUMBER; --полное время
+  ln_linewastepercent  NUMBER; --РџРѕС‚РµСЂРё РІ Р»РёРЅРёРё
+  ln_actwastepercent   NUMBER; --РџРѕС‚РµСЂРё Р°РєС‚ РІ С‚СЂ-СЂРµ
+  ln_reactwastepercent NUMBER; --РџРѕС‚РµСЂРё СЂРµР°РєС‚ РІ С‚СЂ-СЂРµ
+  ln_workinghours      NUMBER; --РІСЂРµРјСЏ СЂР°Р±РѕС‚С‹
+  ln_fullhours         NUMBER; --РїРѕР»РЅРѕРµ РІСЂРµРјСЏ
  ----------------------
  BEGIN
   FOR lc IN lcur_sel LOOP
@@ -551,7 +551,7 @@ END;
    END IF;
   END LOOP;
   IF b THEN
-   raise_application_error(-20009, 'Ошибка рекурсивного поднятия до первого уровня', TRUE);
+   raise_application_error(-20009, 'РћС€РёР±РєР° СЂРµРєСѓСЂСЃРёРІРЅРѕРіРѕ РїРѕРґРЅСЏС‚РёСЏ РґРѕ РїРµСЂРІРѕРіРѕ СѓСЂРѕРІРЅСЏ', TRUE);
   END IF;
   lt_id(cn + 1).mid := gn_mid;
   SELECT DECODE(npoint_folder, 3, 0, 1)
@@ -559,7 +559,7 @@ END;
     FROM ss.sspoint
    WHERE npoint = an_point;
   FOR i IN REVERSE 1 .. cn LOOP
-   IF  i = 1 AND ln_folder = 0 THEN --Точка
+   IF  i = 1 AND ln_folder = 0 THEN --РўРѕС‡РєР°
     SELECT pi.vname, pi.vshortname, DECODE(SUBSTR(TO_CHAR(pi.nmeasurables, '0000'), 2, 1), '1', 1, 0) er,
            DECODE(SUBSTR(TO_CHAR(pi.nmeasurables, '0000'), 3, 1), '1', 1, 0) q1,
            DECODE(SUBSTR(TO_CHAR(pi.nmeasurables, '0000'), 4, 1), '1', 1, 0) ed,
@@ -622,7 +622,7 @@ END;
      ln_actwastepercent, ln_reactwastepercent, gettypereact_f(lt_id(i).npoint, gn_now));
     importworktimeinfo_p(lt_id(i).npoint, lt_id(i).mid);
     importconnparam(lt_id(i).npoint, lt_id(i).mid);
-   ELSE --Папка
+   ELSE --РџР°РїРєР°
     IF lt_id(i).mid IS NULL THEN --Ins
      SELECT vname, vshortname
        INTO lv_name, lv_short_name
@@ -740,7 +740,7 @@ END;
      WHERE npoint = lc.npoint;
     IF lt_id(cn).mid IS NULL THEN
      RETURN;
-    --     raise_application_error(-20009, 'Ошибка получения ид точки в БД АСКУЭ по ngroup=' || lc.ngroup || '.', TRUE);
+    --     raise_application_error(-20009, 'РћС€РёР±РєР° РїРѕР»СѓС‡РµРЅРёСЏ РёРґ С‚РѕС‡РєРё РІ Р‘Р” РђРЎРљРЈР­ РїРѕ ngroup=' || lc.ngroup || '.', TRUE);
     END IF;
    ELSE
     lt_id(cn).mid := NULL;
@@ -751,12 +751,12 @@ END;
   END LOOP;
   IF b THEN
    RETURN;
-  --   raise_application_error(-20009, 'Ошибка рекурсивного поднятия до первого уровня', TRUE);
+  --   raise_application_error(-20009, 'РћС€РёР±РєР° СЂРµРєСѓСЂСЃРёРІРЅРѕРіРѕ РїРѕРґРЅСЏС‚РёСЏ РґРѕ РїРµСЂРІРѕРіРѕ СѓСЂРѕРІРЅСЏ', TRUE);
   END IF;
   lt_id(cn + 1).gid := gn_gid;
   FOR i IN REVERSE 1 .. cn LOOP
    IF lt_id(i).gid IS NULL OR i = 1 THEN
-    IF lt_id(i).npoint IS NULL THEN --Группа
+    IF lt_id(i).npoint IS NULL THEN --Р“СЂСѓРїРїР°
      SELECT NVL(gi.vname, g.vname), NVL(gi.vshortname, g.vshortname), 0, gi.nemergencyreserve, gi.ntechnologyreserve,
             DECODE(g.vgroupkind, 'C', 1, 0) ncons
        INTO lv_name, lv_short_name, ln_inverted, ln_emergencyreserve, ln_technologyreserve,
@@ -765,7 +765,7 @@ END;
       WHERE g.ngroup = lt_id(i).ngroup
         AND g.ngroup = gi.ngroup(+)
         AND gn_now BETWEEN gi.nfromperiod (+) AND NVL(gi.ntillperiod(+), 299912);
-    ELSE --Точка
+    ELSE --РўРѕС‡РєР°
      SELECT NVL(g.vname, pi.vname), NVL(g.vshortname, pi.vshortname), DECODE(SIGN(g.ndirection), -1, 1, 0),
             DECODE(1, 2, 1, NULL), DECODE(1, 2, 1, NULL), 0
        INTO lv_name, lv_short_name, ln_inverted,
@@ -997,7 +997,7 @@ END;
   NULL;
  END;
  ---------------------------------------------------------------------------------------------
- PROCEDURE importobjects_p --Импорт объектов
+ PROCEDURE importobjects_p --РРјРїРѕСЂС‚ РѕР±СЉРµРєС‚РѕРІ
                            IS
   lv_err VARCHAR2(2000);
   ln_job NUMBER         DEFAULT 1;
@@ -1025,7 +1025,7 @@ END;
    COMMIT;
  END;
  ---------------------------------------------------------------------------------------------
- PROCEDURE importlimit_p --Импорт лимитов
+ PROCEDURE importlimit_p --РРјРїРѕСЂС‚ Р»РёРјРёС‚РѕРІ
                          IS
   lv_err  VARCHAR2(2000);
   ln_flag NUMBER;
@@ -1058,7 +1058,7 @@ END;
   NULL;
  END;
  ---------------------------------------------------------------------------------------------
- PROCEDURE importdebt_p --Импорт долгов
+ PROCEDURE importdebt_p --РРјРїРѕСЂС‚ РґРѕР»РіРѕРІ
                         IS
   lv_err               VARCHAR2(2000);
   ln_deb               NUMBER;
@@ -1166,11 +1166,11 @@ END;
   lv_ret := ss.sspointcalc_pg.f_gettypepot(an_point, an_period);
   IF lv_ret = '%' THEN
    RETURN 1;
-  ELSIF lv_ret = 'Фп' THEN
+  ELSIF lv_ret = 'Р¤Рї' THEN
    RETURN 2;
   ELSIF lv_ret = '%2' THEN
    RETURN 3;
-  ELSIF lv_ret = 'Ф' THEN
+  ELSIF lv_ret = 'Р¤' THEN
    RETURN 4;
   END IF;
   RETURN 0;

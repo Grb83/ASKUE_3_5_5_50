@@ -132,7 +132,7 @@ void __fastcall TfmTree::tvFunctionsExpanding(TObject *Sender,
   }
 }
 //---------------------------------------------------------------------------
-// Читает ветку дерева Точек
+// Р§РёС‚Р°РµС‚ РІРµС‚РєСѓ РґРµСЂРµРІР° РўРѕС‡РµРє
 void __fastcall TfmTree::ReadNode(TTreeNode* parNode)
 {
   TTreeNode* Node;

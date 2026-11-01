@@ -44,20 +44,20 @@ private:	// User declarations
         char KC[20];
         char Digits[20];
         char Date_time[20];
-        char E[20];     //Старый расход
-        char AE[20];     //Старый расход
-        char BE[20];     //Старый расход
-        char CE[20];     //Старый расход
-        char DE[20];     //Старый расход
-        char E_N[20];  //Новый расход
-        char AE_N[20];  //Новый расход
-        char BE_N[20];  //Новый расход
-        char CE_N[20];  //Новый расход
-        char DE_N[20];  //Новый расход
+        char E[20];     //РЎС‚Р°СЂС‹Р№ СЂР°СЃС…РѕРґ
+        char AE[20];     //РЎС‚Р°СЂС‹Р№ СЂР°СЃС…РѕРґ
+        char BE[20];     //РЎС‚Р°СЂС‹Р№ СЂР°СЃС…РѕРґ
+        char CE[20];     //РЎС‚Р°СЂС‹Р№ СЂР°СЃС…РѕРґ
+        char DE[20];     //РЎС‚Р°СЂС‹Р№ СЂР°СЃС…РѕРґ
+        char E_N[20];  //РќРѕРІС‹Р№ СЂР°СЃС…РѕРґ
+        char AE_N[20];  //РќРѕРІС‹Р№ СЂР°СЃС…РѕРґ
+        char BE_N[20];  //РќРѕРІС‹Р№ СЂР°СЃС…РѕРґ
+        char CE_N[20];  //РќРѕРІС‹Р№ СЂР°СЃС…РѕРґ
+        char DE_N[20];  //РќРѕРІС‹Р№ СЂР°СЃС…РѕРґ
         bool editRecord;
     }POINTLASTINPUT;
     POINTLASTINPUT pointLastInput[MAXINPUT];
-    unsigned long CountStr; // Количество строчек в результате запросаs
+    unsigned long CountStr; // РљРѕР»РёС‡РµСЃС‚РІРѕ СЃС‚СЂРѕС‡РµРє РІ СЂРµР·СѓР»СЊС‚Р°С‚Рµ Р·Р°РїСЂРѕСЃР°s
     long prov;
   	bool __fastcall CheckRas(void);
     void __fastcall SetAccess(TAccess value);

@@ -1,22 +1,22 @@
 -- Start of DDL Script for Package Body RYDA.EDITGROUPSPARAM_PG
--- Generated 14-апр-2008 15:02:45 from RYDA@askue
+-- Generated 14-Р°РїСЂ-2008 15:02:45 from RYDA@askue
 
 CREATE OR REPLACE 
 PACKAGE editgroupsparam_pg IS
-   -- Процедура вставки АСРПП
+   -- РџСЂРѕС†РµРґСѓСЂР° РІСЃС‚Р°РІРєРё РђРЎР РџРџ
  PROCEDURE ins_p_a(
-  an_gid               NUMBER, -- Ид группы
-  an_fromperiod        NUMBER, --Период с
-  an_tillperiod        NUMBER, --Период по
-  an_class             NUMBER -- Класс напряжения
+  an_gid               NUMBER, -- РРґ РіСЂСѓРїРїС‹
+  an_fromperiod        NUMBER, --РџРµСЂРёРѕРґ СЃ
+  an_tillperiod        NUMBER, --РџРµСЂРёРѕРґ РїРѕ
+  an_class             NUMBER -- РљР»Р°СЃСЃ РЅР°РїСЂСЏР¶РµРЅРёСЏ
                                  );
  ------------------------------------------------------------------------------------------------------------------------
-   -- Процедура обновления данных АСРПП
+   -- РџСЂРѕС†РµРґСѓСЂР° РѕР±РЅРѕРІР»РµРЅРёСЏ РґР°РЅРЅС‹С… РђРЎР РџРџ
  PROCEDURE upd_p_a(
-  an_gid               NUMBER, -- Ид группы
-  an_fromperiod        NUMBER, --Период с
-  an_tillperiod        NUMBER, --Период по
-  an_class             NUMBER -- Класс напряжения
+  an_gid               NUMBER, -- РРґ РіСЂСѓРїРїС‹
+  an_fromperiod        NUMBER, --РџРµСЂРёРѕРґ СЃ
+  an_tillperiod        NUMBER, --РџРµСЂРёРѕРґ РїРѕ
+  an_class             NUMBER -- РљР»Р°СЃСЃ РЅР°РїСЂСЏР¶РµРЅРёСЏ
                              );
 END;
 /
@@ -28,12 +28,12 @@ GRANT EXECUTE ON editgroupsparam_pg TO askue_work
 CREATE OR REPLACE 
 PACKAGE BODY editgroupsparam_pg IS
  ------------------------------------------------------------------------------------------------------------------------
-   -- Процедура обновления данных (общая)
+   -- РџСЂРѕС†РµРґСѓСЂР° РѕР±РЅРѕРІР»РµРЅРёСЏ РґР°РЅРЅС‹С… (РѕР±С‰Р°СЏ)
  PROCEDURE upd_p_a(
-  an_gid               NUMBER, -- Ид группы
-  an_fromperiod        NUMBER, --Период с
-  an_tillperiod        NUMBER, --Период по
-  an_class             NUMBER -- Класс напряжения
+  an_gid               NUMBER, -- РРґ РіСЂСѓРїРїС‹
+  an_fromperiod        NUMBER, --РџРµСЂРёРѕРґ СЃ
+  an_tillperiod        NUMBER, --РџРµСЂРёРѕРґ РїРѕ
+  an_class             NUMBER -- РљР»Р°СЃСЃ РЅР°РїСЂСЏР¶РµРЅРёСЏ
                              ) IS
  BEGIN
    UPDATE groupsparam
@@ -41,20 +41,20 @@ PACKAGE BODY editgroupsparam_pg IS
     WHERE gid = an_gid;
  EXCEPTION
   WHEN OTHERS THEN
-   raise_application_error(-20001, 'editgroupsparam_pg.upd_p_a: Ошибка обновления доп.информации по группе ' || CHR(10) || SQLERRM(SQLCODE));
+   raise_application_error(-20001, 'editgroupsparam_pg.upd_p_a: РћС€РёР±РєР° РѕР±РЅРѕРІР»РµРЅРёСЏ РґРѕРї.РёРЅС„РѕСЂРјР°С†РёРё РїРѕ РіСЂСѓРїРїРµ ' || CHR(10) || SQLERRM(SQLCODE));
  END;
 
  PROCEDURE ins_p_a(
-  an_gid               NUMBER, -- Ид группы
-  an_fromperiod        NUMBER, --Период с
-  an_tillperiod        NUMBER, --Период по
-  an_class             NUMBER -- Класс напряжения
+  an_gid               NUMBER, -- РРґ РіСЂСѓРїРїС‹
+  an_fromperiod        NUMBER, --РџРµСЂРёРѕРґ СЃ
+  an_tillperiod        NUMBER, --РџРµСЂРёРѕРґ РїРѕ
+  an_class             NUMBER -- РљР»Р°СЃСЃ РЅР°РїСЂСЏР¶РµРЅРёСЏ
                              ) IS
  BEGIN
    INSERT INTO groupsparam VALUES (an_gid, an_fromperiod, an_tillperiod, an_class);
  EXCEPTION
   WHEN OTHERS THEN
-   raise_application_error(-20001, 'editgroupsparam_pg.ins_p_a: Ошибка вставки доп.информации по группе ' || CHR(10) || SQLERRM(SQLCODE));
+   raise_application_error(-20001, 'editgroupsparam_pg.ins_p_a: РћС€РёР±РєР° РІСЃС‚Р°РІРєРё РґРѕРї.РёРЅС„РѕСЂРјР°С†РёРё РїРѕ РіСЂСѓРїРїРµ ' || CHR(10) || SQLERRM(SQLCODE));
  END;
  
 END;  -- Package body

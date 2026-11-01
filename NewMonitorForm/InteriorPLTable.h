@@ -18,7 +18,7 @@ class TInteriorPLTable : public TInterior
   public:
 
     __fastcall TInteriorPLTable(TComponent* Owner,TSplitterForm *,TFormDescr*,Classes::TNotifyEvent );
-    //GRB ADD 23.01.2019 - тестовый вывод 3-х таблиц подряд в одном окне
+    //GRB ADD 23.01.2019 - С‚РµСЃС‚РѕРІС‹Р№ РІС‹РІРѕРґ 3-С… С‚Р°Р±Р»РёС† РїРѕРґСЂСЏРґ РІ РѕРґРЅРѕРј РѕРєРЅРµ
     __fastcall TInteriorPLTable(TComponent* Owner,TSplitterForm *,TFormDescr*,Classes::TNotifyEvent, int tableNumber );
 
     virtual __fastcall ~TInteriorPLTable(void);

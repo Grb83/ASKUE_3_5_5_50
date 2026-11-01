@@ -129,19 +129,19 @@ __published:	// IDE-managed Components
 private:	// User declarations
     TfmInteriorUni *FInUn;
     struct MAKET{
-        long ObjID;       // идентификатоор объекта
-        long ObjType;     // тип объекта 0-шапка, 1-макет, 2-канал
-        char Name[130];   //Наименование
-        long Blocking;     // блокировка
-        char Error[2000]; //  ошибка
-        long Parent;      //Главный канал
-        char LastSystemCreated[20]; //Дата следующего запуска системой
+        long ObjID;       // РёРґРµРЅС‚РёС„РёРєР°С‚РѕРѕСЂ РѕР±СЉРµРєС‚Р°
+        long ObjType;     // С‚РёРї РѕР±СЉРµРєС‚Р° 0-С€Р°РїРєР°, 1-РјР°РєРµС‚, 2-РєР°РЅР°Р»
+        char Name[130];   //РќР°РёРјРµРЅРѕРІР°РЅРёРµ
+        long Blocking;     // Р±Р»РѕРєРёСЂРѕРІРєР°
+        char Error[2000]; //  РѕС€РёР±РєР°
+        long Parent;      //Р“Р»Р°РІРЅС‹Р№ РєР°РЅР°Р»
+        char LastSystemCreated[20]; //Р”Р°С‚Р° СЃР»РµРґСѓСЋС‰РµРіРѕ Р·Р°РїСѓСЃРєР° СЃРёСЃС‚РµРјРѕР№
         int  nPeriod;
-        int IsMaket; //Макет=1,Канал УППД=0;
+        int IsMaket; //РњР°РєРµС‚=1,РљР°РЅР°Р» РЈРџРџР”=0;
         MAKET(){ ZeroMemory(this,sizeof(*this));}
     };
     struct DEPORTINFO{
-       int  state;              //-0-создан 1-отослан 2-ошибка
+       int  state;              //-0-СЃРѕР·РґР°РЅ 1-РѕС‚РѕСЃР»Р°РЅ 2-РѕС€РёР±РєР°
        int  nMaket;
        char Period[20];
        char Maket[130];
@@ -152,7 +152,7 @@ private:	// User declarations
        int  nDelay;
        char IsFull[32];
        char Sender[130];
-       char Error[2000];              //  ошибка
+       char Error[2000];              //  РѕС€РёР±РєР°
        int  nPeriod;
     };
     bool isChange;
@@ -168,7 +168,7 @@ private:	// User declarations
     int __fastcall getMaketId();
     TStringList* __fastcall getMaketFile();
     TStringList* __fastcall getGroupsInfoByMaketId(int maketId);
-    TStringList* __fastcall getPointsNameAndPointsIDByGroupId(AnsiString groupId); //Имя и mid точек в списке разделяются :
+    TStringList* __fastcall getPointsNameAndPointsIDByGroupId(AnsiString groupId); //РРјСЏ Рё mid С‚РѕС‡РµРє РІ СЃРїРёСЃРєРµ СЂР°Р·РґРµР»СЏСЋС‚СЃСЏ :
 
     AnsiString __fastcall getMaketType (TStringList*);
     void split(TStringList* lout, char* str, const char* separator){

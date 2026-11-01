@@ -57,7 +57,7 @@ void __fastcall TFormVITInputDelta::DrawTable1KeyDown(TObject *Sender,
 	switch(Key){
     case 37: // VK_LEFT:
       if( DrawTable1->Col==4 ){
-        ACol=7;		// 7-в случае ввода по тарифу D
+        ACol=7;		// 7-РІ СЃР»СѓС‡Р°Рµ РІРІРѕРґР° РїРѕ С‚Р°СЂРёС„Сѓ D
         if(DrawTable1->Row != 2)
           ARow=DrawTable1->Row-2;
         else
@@ -74,7 +74,7 @@ void __fastcall TFormVITInputDelta::DrawTable1KeyDown(TObject *Sender,
       }
       break;
     case 39: // VK_RIGHT:
-      if( DrawTable1->Col==7 ){// 7-в случае ввода по тарифу D
+      if( DrawTable1->Col==7 ){// 7-РІ СЃР»СѓС‡Р°Рµ РІРІРѕРґР° РїРѕ С‚Р°СЂРёС„Сѓ D
         ACol=4;
         if(DrawTable1->Row != DrawTable1->RowCount-1)
           ARow=DrawTable1->Row+2;
@@ -327,12 +327,12 @@ bool __fastcall TFormVITInputDelta::CheckRas(void)
   TDrawTable::SAttrCell *pRas;
   long j=-1,z=0;
 
-  if(prov||!CountStr)//была проверка или нет записей
+  if(prov||!CountStr)//Р±С‹Р»Р° РїСЂРѕРІРµСЂРєР° РёР»Рё РЅРµС‚ Р·Р°РїРёСЃРµР№
     return true;
 
   try{
     Screen->Cursor=crHourGlass;
-    prov=2;//Можно сохранять
+    prov=2;//РњРѕР¶РЅРѕ СЃРѕС…СЂР°РЅСЏС‚СЊ
     for(j=0;j <(long)CountStr ;j++){
       if(!pointLastInput[j].editRecord)
         continue;
@@ -394,9 +394,9 @@ void __fastcall TFormVITInputDelta::vSave(TObject* Sender)
 	char seldat[20];
     POINTLASTINPUT pLI;
     static char *insupd = "begin \
-                           ryda.indic_pg.setdebit(:par12,to_date(:par11, 'dd.mm.yyyy hh24:mi'),:par17,5,'Р.В',:par14,:par15,:par16,:par6,:par7,:par8,:par9,:par10); \
+                           ryda.indic_pg.setdebit(:par12,to_date(:par11, 'dd.mm.yyyy hh24:mi'),:par17,5,'Р .Р’',:par14,:par15,:par16,:par6,:par7,:par8,:par9,:par10); \
                          end;";
-    if(!EditRec||!CountStr||!CheckRas())//нет редактирования или нет записей
+    if(!EditRec||!CountStr||!CheckRas())//РЅРµС‚ СЂРµРґР°РєС‚РёСЂРѕРІР°РЅРёСЏ РёР»Рё РЅРµС‚ Р·Р°РїРёСЃРµР№
         return;
 
   try{

@@ -24,7 +24,7 @@ void __fastcall TfmDepartmens::BitBtn3Click(TObject *Sender)
 unsigned long row;
 row = StringGridDep->RowCount;
     StringGridDep->RowCount = row + 1;
-    StringGridDep->Cells[1][row] = "<Новое подразделение>";
+    StringGridDep->Cells[1][row] = "<РќРѕРІРѕРµ РїРѕРґСЂР°Р·РґРµР»РµРЅРёРµ>";
     StringGridDep->Cells[0][row] = "99999";
     StringGridDep->Cells[2][row] = "-1";
     StringGridDep->Cells[3][row] = "3";
@@ -74,7 +74,7 @@ void __fastcall TfmDepartmens::SaveChanged()
             }
             if(!lb_modify)
             {
-                Application->MessageBox("Столбец сортировки должен иметь цифрорвой формат. Данные не будут сохранены", Application->Title.c_str(), MB_OK | MB_ICONASTERISK);
+                Application->MessageBox("РЎС‚РѕР»Р±РµС† СЃРѕСЂС‚РёСЂРѕРІРєРё РґРѕР»Р¶РµРЅ РёРјРµС‚СЊ С†РёС„СЂРѕСЂРІРѕР№ С„РѕСЂРјР°С‚. Р”Р°РЅРЅС‹Рµ РЅРµ Р±СѓРґСѓС‚ СЃРѕС…СЂР°РЅРµРЅС‹", Application->Title.c_str(), MB_OK | MB_ICONASTERISK);
             }
             else
             {
@@ -104,7 +104,7 @@ void __fastcall TfmDepartmens::SaveChanged()
             }
             if(!lb_modify)
             {
-                Application->MessageBox("Столбец сортировки должен иметь цифрорвой формат. Данные не будут сохранены", Application->Title.c_str(), MB_OK | MB_ICONASTERISK);
+                Application->MessageBox("РЎС‚РѕР»Р±РµС† СЃРѕСЂС‚РёСЂРѕРІРєРё РґРѕР»Р¶РµРЅ РёРјРµС‚СЊ С†РёС„СЂРѕСЂРІРѕР№ С„РѕСЂРјР°С‚. Р”Р°РЅРЅС‹Рµ РЅРµ Р±СѓРґСѓС‚ СЃРѕС…СЂР°РЅРµРЅС‹", Application->Title.c_str(), MB_OK | MB_ICONASTERISK);
             }
             else
             {
@@ -138,7 +138,7 @@ void __fastcall TfmDepartmens::SaveChanged()
         }
     }
 
-    // Удаление
+    // РЈРґР°Р»РµРЅРёРµ
     for (long i=1; i<=il_Count; i++)
     {
         //GRB ADD 16.04.2020 - test trouble ODAC
@@ -211,10 +211,10 @@ l = StrToInt(StringGridDep->Cells[3][row]);
 //---------------------------------------------------------------------------
 void __fastcall TfmDepartmens::Retrieve()
 {
-  stStorDepat StorDep[1000];// Структура для вытяжки хранимых процедур
+  stStorDepat StorDep[1000];// РЎС‚СЂСѓРєС‚СѓСЂР° РґР»СЏ РІС‹С‚СЏР¶РєРё С…СЂР°РЅРёРјС‹С… РїСЂРѕС†РµРґСѓСЂ
  // int state;
   unsigned long CountStr = 0;
-  // вытягиваем данные
+  // РІС‹С‚СЏРіРёРІР°РµРј РґР°РЅРЅС‹Рµ
    //GRB ADD 16.04.2020 - test trouble ODAC
    dmMain->quMain->Params->Clear();
    //END ADD 
@@ -245,14 +245,14 @@ void __fastcall TfmDepartmens::Retrieve()
    }
    else
    {
-             Application->MessageBox("Не существует ни одного подразделения. Будет добавлено новое подразделение", Application->Title.c_str(), MB_OK | MB_ICONASTERISK);
-             StringGridDep->Cells[1][1] = "<Новое подразделение>";
+             Application->MessageBox("РќРµ СЃСѓС‰РµСЃС‚РІСѓРµС‚ РЅРё РѕРґРЅРѕРіРѕ РїРѕРґСЂР°Р·РґРµР»РµРЅРёСЏ. Р‘СѓРґРµС‚ РґРѕР±Р°РІР»РµРЅРѕ РЅРѕРІРѕРµ РїРѕРґСЂР°Р·РґРµР»РµРЅРёРµ", Application->Title.c_str(), MB_OK | MB_ICONASTERISK);
+             StringGridDep->Cells[1][1] = "<РќРѕРІРѕРµ РїРѕРґСЂР°Р·РґРµР»РµРЅРёРµ>";
              StringGridDep->Cells[0][1] = "99999";
              StringGridDep->Cells[2][1] = "-1";
              StringGridDep->Cells[3][1] = "3";
    }
-             StringGridDep->Cells[1][0] = "Наименование подразделения";
-             StringGridDep->Cells[0][0] = "Сорт.";
+             StringGridDep->Cells[1][0] = "РќР°РёРјРµРЅРѕРІР°РЅРёРµ РїРѕРґСЂР°Р·РґРµР»РµРЅРёСЏ";
+             StringGridDep->Cells[0][0] = "РЎРѕСЂС‚.";
              StringGridDep->Cells[2][0] = "-1";
              StringGridDep->Cells[3][0] = "1";
    il_Count = 0;
@@ -299,7 +299,7 @@ for (long i=1; i<=CountStr; i++)
          if  (ll_change>1)
          {
                  CanClose = false;
-                 int st = Application->MessageBox("Сохранить изменения?", Application->Title.c_str(), MB_YESNOCANCEL | MB_ICONQUESTION);
+                 int st = Application->MessageBox("РЎРѕС…СЂР°РЅРёС‚СЊ РёР·РјРµРЅРµРЅРёСЏ?", Application->Title.c_str(), MB_YESNOCANCEL | MB_ICONQUESTION);
                  if(st==IDYES)
                  {
                    SaveChanged();

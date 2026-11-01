@@ -167,7 +167,7 @@ SELECT
  FROM RYDA.BILLOLD WHERE NEXCEPTCALC IS NULL and nsource>0
 /
 
-COMMENT ON TABLE bill IS 'Реальные суточные измерения'
+COMMENT ON TABLE bill IS 'Р РµР°Р»СЊРЅС‹Рµ СЃСѓС‚РѕС‡РЅС‹Рµ РёР·РјРµСЂРµРЅРёСЏ'
 /
 
 
@@ -598,7 +598,7 @@ SELECT
  FROM RYDA.BILLOLD WHERE NEXCEPTCALC IS NULL and nsource>0
 /
 
-COMMENT ON TABLE bill_l IS 'Реальные суточные измерения с потерями'
+COMMENT ON TABLE bill_l IS 'Р РµР°Р»СЊРЅС‹Рµ СЃСѓС‚РѕС‡РЅС‹Рµ РёР·РјРµСЂРµРЅРёСЏ СЃ РїРѕС‚РµСЂСЏРјРё'
 /
 
 
@@ -770,7 +770,7 @@ SELECT
  FROM RYDA.BILLOLD WHERE NEXCEPTCALC IS NULL and nsource>0
 /
 
-COMMENT ON TABLE bill_ol IS 'Реальные суточные измерения только потери'
+COMMENT ON TABLE bill_ol IS 'Р РµР°Р»СЊРЅС‹Рµ СЃСѓС‚РѕС‡РЅС‹Рµ РёР·РјРµСЂРµРЅРёСЏ С‚РѕР»СЊРєРѕ РїРѕС‚РµСЂРё'
 /
 
 
@@ -822,7 +822,7 @@ SELECT
  FROM RYDA.HALFHOUROLD WHERE NEXCEPTCALC IS NULL and nsource>0
 /
 
-COMMENT ON TABLE halfhour IS 'График нагрузки'
+COMMENT ON TABLE halfhour IS 'Р“СЂР°С„РёРє РЅР°РіСЂСѓР·РєРё'
 /
 
 
@@ -917,7 +917,7 @@ SELECT
  FROM RYDA.HALFHOUROLD WHERE NEXCEPTCALC IS NULL and nsource>0
 /
 
-COMMENT ON TABLE halfhour_l IS 'График нагрузки с потерями'
+COMMENT ON TABLE halfhour_l IS 'Р“СЂР°С„РёРє РЅР°РіСЂСѓР·РєРё СЃ РїРѕС‚РµСЂСЏРјРё'
 /
 
 
@@ -969,7 +969,7 @@ SELECT
  FROM RYDA.HALFHOUROLD WHERE NEXCEPTCALC IS NULL and nsource>0
 /
 
-COMMENT ON TABLE halfhour_ol IS 'График нагрузки только потери'
+COMMENT ON TABLE halfhour_ol IS 'Р“СЂР°С„РёРє РЅР°РіСЂСѓР·РєРё С‚РѕР»СЊРєРѕ РїРѕС‚РµСЂРё'
 /
 
 

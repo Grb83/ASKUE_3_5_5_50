@@ -8,7 +8,7 @@
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 //---------------------------------------------------------------------------
-/*! Для обеспечения простоты работы с Excel в Интерьерах
+/*! Р”Р»СЏ РѕР±РµСЃРїРµС‡РµРЅРёСЏ РїСЂРѕСЃС‚РѕС‚С‹ СЂР°Р±РѕС‚С‹ СЃ Excel РІ РРЅС‚РµСЂСЊРµСЂР°С…
 */
 class TInteriorExRepPriv
 {
@@ -21,68 +21,68 @@ public:
   ~TInteriorExRepPriv()
   { disconnectEx();
   }
-  /*! Отсоединение от книги и листа в Excel
+  /*! РћС‚СЃРѕРµРґРёРЅРµРЅРёРµ РѕС‚ РєРЅРёРіРё Рё Р»РёСЃС‚Р° РІ Excel
   */
   void __fastcall disconnectEx()
   { book      = Null();
     sheet     = Null();
     currsheet = Null();
   }
-  /*! Проверка на присоединение к Excel
+  /*! РџСЂРѕРІРµСЂРєР° РЅР° РїСЂРёСЃРѕРµРґРёРЅРµРЅРёРµ Рє Excel
 
-      \return true вслучае присоединения, иначе - false.
+      \return true РІСЃР»СѓС‡Р°Рµ РїСЂРёСЃРѕРµРґРёРЅРµРЅРёСЏ, РёРЅР°С‡Рµ - false.
   */
   bool __fastcall isConnected()
   { return  !VarIsNull(book);
   }
-  /*! Установка рабочей книги, где:
-      \param container - Указатель на контейнер, содержащий объект Excel
+  /*! РЈСЃС‚Р°РЅРѕРІРєР° СЂР°Р±РѕС‡РµР№ РєРЅРёРіРё, РіРґРµ:
+      \param container - РЈРєР°Р·Р°С‚РµР»СЊ РЅР° РєРѕРЅС‚РµР№РЅРµСЂ, СЃРѕРґРµСЂР¶Р°С‰РёР№ РѕР±СЉРµРєС‚ Excel
 
-      \return true если установка прошла успешно, иначе - false.
+      \return true РµСЃР»Рё СѓСЃС‚Р°РЅРѕРІРєР° РїСЂРѕС€Р»Р° СѓСЃРїРµС€РЅРѕ, РёРЅР°С‡Рµ - false.
 
-      \attention вслучае установки рабочей книги переменная \b book
-        принимает значение рабочей книги, иначе ей присваивается
-        значение \b Null()
+      \attention РІСЃР»СѓС‡Р°Рµ СѓСЃС‚Р°РЅРѕРІРєРё СЂР°Р±РѕС‡РµР№ РєРЅРёРіРё РїРµСЂРµРјРµРЅРЅР°СЏ \b book
+        РїСЂРёРЅРёРјР°РµС‚ Р·РЅР°С‡РµРЅРёРµ СЂР°Р±РѕС‡РµР№ РєРЅРёРіРё, РёРЅР°С‡Рµ РµР№ РїСЂРёСЃРІР°РёРІР°РµС‚СЃСЏ
+        Р·РЅР°С‡РµРЅРёРµ \b Null()
   */
   bool __fastcall setBook(TOleContainer *container);
-  /*! Выбор необходимой страницы Excel, где:
-      \param sheetname - Строка с наименованием необходимой страницы
+  /*! Р’С‹Р±РѕСЂ РЅРµРѕР±С…РѕРґРёРјРѕР№ СЃС‚СЂР°РЅРёС†С‹ Excel, РіРґРµ:
+      \param sheetname - РЎС‚СЂРѕРєР° СЃ РЅР°РёРјРµРЅРѕРІР°РЅРёРµРј РЅРµРѕР±С…РѕРґРёРјРѕР№ СЃС‚СЂР°РЅРёС†С‹
 
-      \return true если нужная страница выбрана, иначе - false.
+      \return true РµСЃР»Рё РЅСѓР¶РЅР°СЏ СЃС‚СЂР°РЅРёС†Р° РІС‹Р±СЂР°РЅР°, РёРЅР°С‡Рµ - false.
 
-      \attention вслучае выбора страницы переменная \b sheet
-        принимает значение данной страницы, иначе ей присваивается
-        значение \b Null()
+      \attention РІСЃР»СѓС‡Р°Рµ РІС‹Р±РѕСЂР° СЃС‚СЂР°РЅРёС†С‹ РїРµСЂРµРјРµРЅРЅР°СЏ \b sheet
+        РїСЂРёРЅРёРјР°РµС‚ Р·РЅР°С‡РµРЅРёРµ РґР°РЅРЅРѕР№ СЃС‚СЂР°РЅРёС†С‹, РёРЅР°С‡Рµ РµР№ РїСЂРёСЃРІР°РёРІР°РµС‚СЃСЏ
+        Р·РЅР°С‡РµРЅРёРµ \b Null()
   */
   bool __fastcall setSheet(AnsiString sheetname);
   /*! \overload
-      Выбор необходимой страницы по индексу, где:
-      \param sheetnum - индекс необходимой страницы
+      Р’С‹Р±РѕСЂ РЅРµРѕР±С…РѕРґРёРјРѕР№ СЃС‚СЂР°РЅРёС†С‹ РїРѕ РёРЅРґРµРєСЃСѓ, РіРґРµ:
+      \param sheetnum - РёРЅРґРµРєСЃ РЅРµРѕР±С…РѕРґРёРјРѕР№ СЃС‚СЂР°РЅРёС†С‹
   */
   bool __fastcall setSheet(int sheetnum);
-  /*! Активация страницы, где:
-      \param sheetnum - индекс необходимой страницы
+  /*! РђРєС‚РёРІР°С†РёСЏ СЃС‚СЂР°РЅРёС†С‹, РіРґРµ:
+      \param sheetnum - РёРЅРґРµРєСЃ РЅРµРѕР±С…РѕРґРёРјРѕР№ СЃС‚СЂР°РЅРёС†С‹
 
-      \return true если нужная страница выбрана, иначе - false.
+      \return true РµСЃР»Рё РЅСѓР¶РЅР°СЏ СЃС‚СЂР°РЅРёС†Р° РІС‹Р±СЂР°РЅР°, РёРЅР°С‡Рµ - false.
 
-      \attention вслучае активации страницы переменная \b sheet
-        принимает значение данной страницы, иначе ей присваивается
-        значение \b Null()
+      \attention РІСЃР»СѓС‡Р°Рµ Р°РєС‚РёРІР°С†РёРё СЃС‚СЂР°РЅРёС†С‹ РїРµСЂРµРјРµРЅРЅР°СЏ \b sheet
+        РїСЂРёРЅРёРјР°РµС‚ Р·РЅР°С‡РµРЅРёРµ РґР°РЅРЅРѕР№ СЃС‚СЂР°РЅРёС†С‹, РёРЅР°С‡Рµ РµР№ РїСЂРёСЃРІР°РёРІР°РµС‚СЃСЏ
+        Р·РЅР°С‡РµРЅРёРµ \b Null()
   */
   bool __fastcall activateSheet(int sheetnum);
-  /*! Получение количества страниц в книге
+  /*! РџРѕР»СѓС‡РµРЅРёРµ РєРѕР»РёС‡РµСЃС‚РІР° СЃС‚СЂР°РЅРёС† РІ РєРЅРёРіРµ
 
-      \return количество страниц в книге.
+      \return РєРѕР»РёС‡РµСЃС‚РІРѕ СЃС‚СЂР°РЅРёС† РІ РєРЅРёРіРµ.
   */
   int __fastcall sheetCount()
   { return  book.OlePropertyGet("Worksheets").OlePropertyGet("Count");
   }
 
-  Variant book;         //===== Объект загруженная WorkBook
-  Variant sheet;        //===== Объект текущей страницы
-  Variant currsheet;    //===== Текущая страница
+  Variant book;         //===== РћР±СЉРµРєС‚ Р·Р°РіСЂСѓР¶РµРЅРЅР°СЏ WorkBook
+  Variant sheet;        //===== РћР±СЉРµРєС‚ С‚РµРєСѓС‰РµР№ СЃС‚СЂР°РЅРёС†С‹
+  Variant currsheet;    //===== РўРµРєСѓС‰Р°СЏ СЃС‚СЂР°РЅРёС†Р°
 
-  int sheetindex;   //===== Индекс текущей страницы
+  int sheetindex;   //===== РРЅРґРµРєСЃ С‚РµРєСѓС‰РµР№ СЃС‚СЂР°РЅРёС†С‹
 
 private:
   const int xlAutoActivate;
@@ -93,7 +93,7 @@ private:
 //---------------------------------------------------------------------------
 bool __fastcall TInteriorExRepPriv::setBook(TOleContainer *container)
 {
-  /*  Неизвестна необходимость применения этих свойств
+  /*  РќРµРёР·РІРµСЃС‚РЅР° РЅРµРѕР±С…РѕРґРёРјРѕСЃС‚СЊ РїСЂРёРјРµРЅРµРЅРёСЏ СЌС‚РёС… СЃРІРѕР№СЃС‚РІ
     SupperMainForm->ExcelApplication1->Set_Visible(LOCALE_USER_DEFAULT,false);
     SupperMainForm->ExcelApplication1->Set_DisplayAlerts(LOCALE_USER_DEFAULT, false);
 
@@ -124,9 +124,9 @@ bool __fastcall TInteriorExRepPriv::setSheet(AnsiString sheetname)
   { if (!isConnected())
       return  false;
 
-    Variant tVar  = book.OlePropertyGet("Worksheets");    //===== Доступ к листам
-    int tCnt  = tVar.OlePropertyGet("Count");             //===== Количество листов
-    //===== Перебор всех листов в поисках необходимого
+    Variant tVar  = book.OlePropertyGet("Worksheets");    //===== Р”РѕСЃС‚СѓРї Рє Р»РёСЃС‚Р°Рј
+    int tCnt  = tVar.OlePropertyGet("Count");             //===== РљРѕР»РёС‡РµСЃС‚РІРѕ Р»РёСЃС‚РѕРІ
+    //===== РџРµСЂРµР±РѕСЂ РІСЃРµС… Р»РёСЃС‚РѕРІ РІ РїРѕРёСЃРєР°С… РЅРµРѕР±С…РѕРґРёРјРѕРіРѕ
     for (int i = 1; i <= tCnt; ++i){
       if (tVar.OlePropertyGet("Item", Variant(i)).OlePropertyGet("Name") == sheetname){
         sheet = tVar.OlePropertyGet("Item", Variant(i));
@@ -211,18 +211,18 @@ __fastcall TInteriorExRep::TInteriorExRep(TComponent* Owner,TSplitterForm *aSP,T
 void __fastcall TInteriorExRep::PassParamsToExcel()
 {
   try
-  { //===== Присоедининяемся к необходимому листу
+  { //===== РџСЂРёСЃРѕРµРґРёРЅРёРЅСЏРµРјСЃСЏ Рє РЅРµРѕР±С…РѕРґРёРјРѕРјСѓ Р»РёСЃС‚Сѓ
     if (!d->setSheet(Reconst_smes93_2))
       throw Exception(Reconst_smes93_13);
 
     OnProgressBarStepBy(this);
 
-    //===== Заносим Ид группы в ячейку С9
+    //===== Р—Р°РЅРѕСЃРёРј РРґ РіСЂСѓРїРїС‹ РІ СЏС‡РµР№РєСѓ РЎ9
     d->sheet.OlePropertyGet("Cells", 9, 3).OlePropertySet("Value", Variant(fd->IdGroup));
 
-    //===== Заносим дату начала в ячейку С10
+    //===== Р—Р°РЅРѕСЃРёРј РґР°С‚Сѓ РЅР°С‡Р°Р»Р° РІ СЏС‡РµР№РєСѓ РЎ10
     d->sheet.OlePropertyGet("Cells", 10, 3).OlePropertySet("Value", WideString(FormatDateTime("dd.mm.yyyy hh:nn", fd->DateTimePar)));
-    //===== Заносим дату конца в ячейку C11
+    //===== Р—Р°РЅРѕСЃРёРј РґР°С‚Сѓ РєРѕРЅС†Р° РІ СЏС‡РµР№РєСѓ C11
     d->sheet.OlePropertyGet("Cells", 11, 3).OlePropertySet("Value", WideString(FormatDateTime("dd.mm.yyyy hh:nn", fd->DateTime)));
   }
   catch (Exception &e)
@@ -234,7 +234,7 @@ void __fastcall TInteriorExRep::PassParamsToExcel()
 void __fastcall TInteriorExRep::PassParamsToExcelAndRefr()
 {
   try
-  { //===== Формирование параметров
+  { //===== Р¤РѕСЂРјРёСЂРѕРІР°РЅРёРµ РїР°СЂР°РјРµС‚СЂРѕРІ
   //GRB ADD 06.11.2019
     d->book.OlePropertyGet("Application").OlePropertySet("ScreenUpdating", false);
     ocCont->OleObject.OlePropertyGet("Application").OlePropertySet("ScreenUpdating",false);
@@ -242,14 +242,14 @@ void __fastcall TInteriorExRep::PassParamsToExcelAndRefr()
     PassParamsToExcel();
 
 
-    //===== Присоедининяемся к необходимому листу
+    //===== РџСЂРёСЃРѕРµРґРёРЅРёРЅСЏРµРјСЃСЏ Рє РЅРµРѕР±С…РѕРґРёРјРѕРјСѓ Р»РёСЃС‚Сѓ
     if (!d->setSheet(Reconst_smes93_3))
       throw Exception(Reconst_smes93_14);
 
-    //===== Запись строки связи с БД в ячейку B4
+    //===== Р—Р°РїРёСЃСЊ СЃС‚СЂРѕРєРё СЃРІСЏР·Рё СЃ Р‘Р” РІ СЏС‡РµР№РєСѓ B4
     d->sheet.OlePropertyGet("Cells", 4, 2).OlePropertySet("Value", WideString(dmMain->orases->Server));
-    //===== Инициация запуска генерации отчета
-    //===== Запись в ячейку B7 любых данных
+    //===== РРЅРёС†РёР°С†РёСЏ Р·Р°РїСѓСЃРєР° РіРµРЅРµСЂР°С†РёРё РѕС‚С‡РµС‚Р°
+    //===== Р—Р°РїРёСЃСЊ РІ СЏС‡РµР№РєСѓ B7 Р»СЋР±С‹С… РґР°РЅРЅС‹С…
     d->sheet.OlePropertyGet("Cells", 7, 2).OlePropertySet("Value", WideString("B7"));
     d->activateSheet(1);
     //GRB ADD 06.11.2019
@@ -303,11 +303,11 @@ __fastcall TInteriorExRep::~TInteriorExRep(void)
 void __fastcall TInteriorExRep::Invalidate(int Table)
 {
   if (Table == 1 /*PROFILE*/)
-  { // Эта форма не обновляется
+  { // Р­С‚Р° С„РѕСЂРјР° РЅРµ РѕР±РЅРѕРІР»СЏРµС‚СЃСЏ
   }
 }
 //---------------------------------------------------------------------------
-// Создается временный файл-копия Excel-евского шаблона
+// РЎРѕР·РґР°РµС‚СЃСЏ РІСЂРµРјРµРЅРЅС‹Р№ С„Р°Р№Р»-РєРѕРїРёСЏ Excel-РµРІСЃРєРѕРіРѕ С€Р°Р±Р»РѕРЅР°
 /*
 void __fastcall TInteriorExRep::CreateExcelFile()
 {
@@ -320,9 +320,9 @@ void __fastcall TInteriorExRep::CreateExcelFile()
   lpBuffer[0] = 0;
   GetTempPath(244, lpBuffer);
   if (!GetTempFileName(lpBuffer, lpPrefx, 0, lpTempFileName))
-    throw Exception("Не удалось создать временный файл.");
+    throw Exception("РќРµ СѓРґР°Р»РѕСЃСЊ СЃРѕР·РґР°С‚СЊ РІСЂРµРјРµРЅРЅС‹Р№ С„Р°Р№Р».");
 
-  // Нужно для Win95 +++++++++++++++++++
+  // РќСѓР¶РЅРѕ РґР»СЏ Win95 +++++++++++++++++++
   ExFileName  = lpTempFileName;
   strcpy(lpTempFileName, ExFileName.LowerCase().c_str());
   //++++++++++++++++++++++++++++++++++++
@@ -330,7 +330,7 @@ void __fastcall TInteriorExRep::CreateExcelFile()
   pptr  = strstr(lpTempFileName, p);
   strcpy(pptr, ".xls");
   if (!CopyFile(ExFileFullName.c_str(), lpTempFileName, false))
-    throw Exception("Не удалось создать временный файл.");
+    throw Exception("РќРµ СѓРґР°Р»РѕСЃСЊ СЃРѕР·РґР°С‚СЊ РІСЂРµРјРµРЅРЅС‹Р№ С„Р°Р№Р».");
   ExFileName  = lpTempFileName;
 }
 */
@@ -344,15 +344,15 @@ void TInteriorExRep::NextSheet()
     pwshs = SupperMainForm->ExcelWorksheet1->Get_Next();
     pwshs->get_Name(&fName);
     SName = fName;
-    if ((SName!="Сценарий") & (SName!="Имя БД") & (SName!="repfilenamedlg"))
-    { SupperMainForm->ExcelWorksheet1->ConnectTo(pwshs);// необходимо обязательно для связи//
+    if ((SName!="РЎС†РµРЅР°СЂРёР№") & (SName!="РРјСЏ Р‘Р”") & (SName!="repfilenamedlg"))
+    { SupperMainForm->ExcelWorksheet1->ConnectTo(pwshs);// РЅРµРѕР±С…РѕРґРёРјРѕ РѕР±СЏР·Р°С‚РµР»СЊРЅРѕ РґР»СЏ СЃРІСЏР·Рё//
       pwshs->Activate(LOCALE_USER_DEFAULT);
       ActiveWs = pwshs;
       CurrentSheet++;
     }
   }
   ocCont->DoVerb(ovPrimary);
-  SupperMainForm->Height = SupperMainForm->Height-1; // Для того чтобы убрать ненужный скроллинг на главной форме
+  SupperMainForm->Height = SupperMainForm->Height-1; // Р”Р»СЏ С‚РѕРіРѕ С‡С‚РѕР±С‹ СѓР±СЂР°С‚СЊ РЅРµРЅСѓР¶РЅС‹Р№ СЃРєСЂРѕР»Р»РёРЅРі РЅР° РіР»Р°РІРЅРѕР№ С„РѕСЂРјРµ
   SupperMainForm->Height = SupperMainForm->Height+1;
 */
   try
@@ -361,7 +361,7 @@ void TInteriorExRep::NextSheet()
         ocCont->DoVerb(ovPrimary);
     }
 
-    //SupperMainForm->Height = SupperMainForm->Height-1; // Для того чтобы убрать ненужный скроллинг на главной форме
+    //SupperMainForm->Height = SupperMainForm->Height-1; // Р”Р»СЏ С‚РѕРіРѕ С‡С‚РѕР±С‹ СѓР±СЂР°С‚СЊ РЅРµРЅСѓР¶РЅС‹Р№ СЃРєСЂРѕР»Р»РёРЅРі РЅР° РіР»Р°РІРЅРѕР№ С„РѕСЂРјРµ
     //SupperMainForm->Height = SupperMainForm->Height+1;
   }
   catch (Exception &e)
@@ -378,15 +378,15 @@ void TInteriorExRep::PreviousSheet()
     pwshs = SupperMainForm->ExcelWorksheet1->Get_Previous();
     pwshs->get_Name(&fName);
     SName = fName;
-    if ((SName!="Сценарий") & (SName!="Имя БД") & (SName!="repfilenamedlg"))
-    { SupperMainForm->ExcelWorksheet1->ConnectTo(pwshs);// необходимо обязательно для связи//
+    if ((SName!="РЎС†РµРЅР°СЂРёР№") & (SName!="РРјСЏ Р‘Р”") & (SName!="repfilenamedlg"))
+    { SupperMainForm->ExcelWorksheet1->ConnectTo(pwshs);// РЅРµРѕР±С…РѕРґРёРјРѕ РѕР±СЏР·Р°С‚РµР»СЊРЅРѕ РґР»СЏ СЃРІСЏР·Рё//
       pwshs->Activate(LOCALE_USER_DEFAULT);
       ActiveWs = pwshs;
       CurrentSheet--;
     }
   }
   ocCont->DoVerb(ovPrimary);
-  SupperMainForm->Height  = SupperMainForm->Height-1; // Для того чтобы убрать ненужный скроллинг на главной форме
+  SupperMainForm->Height  = SupperMainForm->Height-1; // Р”Р»СЏ С‚РѕРіРѕ С‡С‚РѕР±С‹ СѓР±СЂР°С‚СЊ РЅРµРЅСѓР¶РЅС‹Р№ СЃРєСЂРѕР»Р»РёРЅРі РЅР° РіР»Р°РІРЅРѕР№ С„РѕСЂРјРµ
   SupperMainForm->Height  = SupperMainForm->Height+1;
 */
   try
@@ -394,7 +394,7 @@ void TInteriorExRep::PreviousSheet()
     { if (d->activateSheet(d->sheetindex - 1))
         ocCont->DoVerb(ovPrimary);
     }
-    //SupperMainForm->Height = SupperMainForm->Height-1; // Для того чтобы убрать ненужный скроллинг на главной форме
+    //SupperMainForm->Height = SupperMainForm->Height-1; // Р”Р»СЏ С‚РѕРіРѕ С‡С‚РѕР±С‹ СѓР±СЂР°С‚СЊ РЅРµРЅСѓР¶РЅС‹Р№ СЃРєСЂРѕР»Р»РёРЅРі РЅР° РіР»Р°РІРЅРѕР№ С„РѕСЂРјРµ
     //SupperMainForm->Height = SupperMainForm->Height+1;
   }
   catch (Exception &e)
@@ -414,18 +414,18 @@ void __fastcall TInteriorExRep::PrintRep()
   AnsiString SName;
   SupperMainForm->ExcelApplication1->Workbooks->get_Item(ExcelWindowName,_getAddress(Wb));
   SupperMainForm->ExcelWorkbook1->ConnectTo(Wb);
-  // печать текущего листа (Add by KSS)
+  // РїРµС‡Р°С‚СЊ С‚РµРєСѓС‰РµРіРѕ Р»РёСЃС‚Р° (Add by KSS)
   pwshs = SupperMainForm->ExcelWorkbook1->ActiveSheet;
   pwshs->PrintOut(1,100,1,0,0,0,0,LOCALE_USER_DEFAULT);
 
-  //печать всех листов
+  //РїРµС‡Р°С‚СЊ РІСЃРµС… Р»РёСЃС‚РѕРІ
   //for (int i = 1; i<=CountSheets; i++)
   //{ pwshs = SupperMainForm->ExcelWorkbook1->Worksheets->get_Item(i);
   //  pwshs->get_Name(&fName);
   //  SName = fName;
   //  SName = SName.LowerCase();
-  //  if (!SName.Pos("служебный"))
-  //    if ((SName!="сценарий") & (SName!="имя бд") & (SName!="repfilenamedlg"))
+  //  if (!SName.Pos("СЃР»СѓР¶РµР±РЅС‹Р№"))
+  //    if ((SName!="СЃС†РµРЅР°СЂРёР№") & (SName!="РёРјСЏ Р±Рґ") & (SName!="repfilenamedlg"))
   //      pwshs->PrintOut(1,100,1,0,0,0,0,LOCALE_USER_DEFAULT);
   //}
 */
@@ -450,7 +450,7 @@ void TInteriorExRep::PrintActiveSheet()
   SupperMainForm->ExcelApplication1->Workbooks->get_Item(ExcelWindowName,_getAddress(Wb));
   SupperMainForm->ExcelWorkbook1->ConnectTo(Wb);
   ActiveWs = SupperMainForm->ExcelWorkbook1->Get_ActiveSheet();
-  SupperMainForm->ExcelWorksheet1->ConnectTo(ActiveWs);      // необходимо обязательно для связи
+  SupperMainForm->ExcelWorksheet1->ConnectTo(ActiveWs);      // РЅРµРѕР±С…РѕРґРёРјРѕ РѕР±СЏР·Р°С‚РµР»СЊРЅРѕ РґР»СЏ СЃРІСЏР·Рё
   ActiveWs->PrintOut(1,100,1,0,0,0,0,LOCALE_USER_DEFAULT);
 */
   try{
@@ -466,7 +466,7 @@ void TInteriorExRep::DoVerb()
   try
   { //SupperMainForm->AutoScroll  = false;
     ocCont->DoVerb(ovShow);
-    //SupperMainForm->Height  = SupperMainForm->Height - 1; // Для того чтобы убрать ненужный скроллинг на главной форме
+    //SupperMainForm->Height  = SupperMainForm->Height - 1; // Р”Р»СЏ С‚РѕРіРѕ С‡С‚РѕР±С‹ СѓР±СЂР°С‚СЊ РЅРµРЅСѓР¶РЅС‹Р№ СЃРєСЂРѕР»Р»РёРЅРі РЅР° РіР»Р°РІРЅРѕР№ С„РѕСЂРјРµ
     //SupperMainForm->Height  = SupperMainForm->Height + 1;
     Application->ProcessMessages();
     //SupperMainForm->AutoScroll = true;

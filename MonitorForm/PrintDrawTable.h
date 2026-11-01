@@ -102,7 +102,7 @@ public:		// User declarations
                                             TVirtualTable *aVT_PrintData, int aColumhNameWidth, int aColumnWidth, int aRepType, TFormDescr *fd);
         void __fastcall SaveTableToFile(AnsiString aTitle, AnsiString aComment, TStrings *aColumnsCaption,
                                             TVirtualTable *aVT_PrintData, int aColumhNameWidth, int aColumnWidth, int aRepType, AnsiString aFileName, WORD aFlags);
-        // aFlags - 0х0 - Разделители Tab шапка не печатается
+        // aFlags - 0С…0 - Р Р°Р·РґРµР»РёС‚РµР»Рё Tab С€Р°РїРєР° РЅРµ РїРµС‡Р°С‚Р°РµС‚СЃСЏ
 
 
 };

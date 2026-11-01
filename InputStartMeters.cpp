@@ -110,7 +110,7 @@ try{
 
 
      if ( vtData->FieldByName("ddate")->IsNull&&(!vtData->FieldByName("em")->IsNull||!vtData->FieldByName("e")->IsNull)){
-        MessageBox(Handle, "Ââåäèòå äàòó.", Application->Title.c_str(),MB_OK|MB_ICONWARNING);
+        MessageBox(Handle, "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð´Ð°Ñ‚Ñƒ.", Application->Title.c_str(),MB_OK|MB_ICONWARNING);
          vtData->Edit();
          vtData->FieldByName("IsEdit")->AsInteger=0;
          vtData->EnableControls();

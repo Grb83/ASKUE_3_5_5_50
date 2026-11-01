@@ -36,12 +36,12 @@ __fastcall TfmMaketArmR::TfmMaketArmR(TComponent* Owner,AnsiString Name, TAccess
   }
  ((TColumnEh *)MessageGrid->Columns->Items[2])->Title->SortMarker=smDownEh;
   addCheckBox1OnPanel(this);
-   //07.07.2020 - GRB ADD - вычитка режима "строгости" для разбора макетов - 1 - принимать и "мусор", 2 - принимать лишь макеты с валидными данными
-  int rCode = dmMain->GetTaskRights(UsCon.Role_Id, 102);  //есть ли права на запись
+   //07.07.2020 - GRB ADD - РІС‹С‡РёС‚РєР° СЂРµР¶РёРјР° "СЃС‚СЂРѕРіРѕСЃС‚Рё" РґР»СЏ СЂР°Р·Р±РѕСЂР° РјР°РєРµС‚РѕРІ - 1 - РїСЂРёРЅРёРјР°С‚СЊ Рё "РјСѓСЃРѕСЂ", 2 - РїСЂРёРЅРёРјР°С‚СЊ Р»РёС€СЊ РјР°РєРµС‚С‹ СЃ РІР°Р»РёРґРЅС‹РјРё РґР°РЅРЅС‹РјРё
+  int rCode = dmMain->GetTaskRights(UsCon.Role_Id, 102);  //РµСЃС‚СЊ Р»Рё РїСЂР°РІР° РЅР° Р·Р°РїРёСЃСЊ
   //21.07.2020 - remove with block bellow
-  //CheckBox1->Enabled = false; //засериваем тогда
+  //CheckBox1->Enabled = false; //Р·Р°СЃРµСЂРёРІР°РµРј С‚РѕРіРґР°
   //21.07.2020 - BLOCK
-  if (rCode != accWrite){  //раз прав нету - значит серить галку
+  if (rCode != accWrite){  //СЂР°Р· РїСЂР°РІ РЅРµС‚Сѓ - Р·РЅР°С‡РёС‚ СЃРµСЂРёС‚СЊ РіР°Р»РєСѓ
      TCheckBox *exist =(TCheckBox *) Panel7->FindChildControl("CheckBox1");
      if (exist){
          exist->Enabled = false;
@@ -60,9 +60,9 @@ __fastcall TfmMaketArmR::TfmMaketArmR(TComponent* Owner,AnsiString Name, TAccess
   }
   //END BLOCK
   }
-  catch (Exception &ex){// в базе нету такой записи с npid = 66 или ещё что
+  catch (Exception &ex){// РІ Р±Р°Р·Рµ РЅРµС‚Сѓ С‚Р°РєРѕР№ Р·Р°РїРёСЃРё СЃ npid = 66 РёР»Рё РµС‰С‘ С‡С‚Рѕ
         //21.07.2020 - remove with block bellow
-        //CheckBox1->Enabled = false; //засериваем тогда
+        //CheckBox1->Enabled = false; //Р·Р°СЃРµСЂРёРІР°РµРј С‚РѕРіРґР°
         //21.07.2020 BLOCK
         TCheckBox *exist =(TCheckBox *) Panel7->FindChildControl("CheckBox1");
         if (exist){
@@ -71,7 +71,7 @@ __fastcall TfmMaketArmR::TfmMaketArmR(TComponent* Owner,AnsiString Name, TAccess
         //END BLOCK
   }
   btnSave->Enabled = false;
-  btnSave->OnClick = btnSaveClick;//а вот так криво сделано а не в панели чтобы не размножались oldCreateOrderы
+  btnSave->OnClick = btnSaveClick;//Р° РІРѕС‚ С‚Р°Рє РєСЂРёРІРѕ СЃРґРµР»Р°РЅРѕ Р° РЅРµ РІ РїР°РЅРµР»Рё С‡С‚РѕР±С‹ РЅРµ СЂР°Р·РјРЅРѕР¶Р°Р»РёСЃСЊ oldCreateOrderС‹
   //END ADD
 }
 //---------------------------------------------------------------------------
@@ -499,7 +499,7 @@ void __fastcall TfmMaketArmR::MessageGridDrawColumnCell(TObject *Sender,
   if(oqDeportInfo->RecordCount){
     int i=108;
     switch(Column->Field->AsInteger){
-      case 0: //Предупр
+      case 0: //РџСЂРµРґСѓРїСЂ
       case 3:
       case 5:
         break;
@@ -678,7 +678,7 @@ void __fastcall TfmMaketArmR::tbLoadFromFileClick(TObject *Sender)
   bool is_blob=false;
   try{
     if(OpenDialog1->Execute()){
-      // находим как грузить, в BLOB или в CLOB
+      // РЅР°С…РѕРґРёРј РєР°Рє РіСЂСѓР·РёС‚СЊ, РІ BLOB РёР»Рё РІ CLOB
       oqVspom->Params->Clear();
       oqVspom->SQL->Text="begin :loadblob := "+SchemeName+"COMSRVFILE_PG.is_blobchannel(:an_cid); end;";
       oqVspom->ParamByName("an_cid")->AsInteger = ((MAKET*)DeportsTree->Selected->Data)->ObjID;
@@ -809,7 +809,7 @@ void __fastcall TfmMaketArmR::SetLabelState(TLabel *lb,TImage *img)
   if(oqDeportInfo->RecordCount){
     int i=108;
     switch(oqDeportInfo->FieldByName("nstate")->AsInteger){
-      case 0: //Предупр
+      case 0: //РџСЂРµРґСѓРїСЂ
       case 3:
       case 5:
         break;
@@ -955,7 +955,7 @@ void __fastcall TfmMaketArmR::SaveTable(TComponent* Owner,TDBGridEh *gr,AnsiStri
 
   try{
     StringList  = new TStringList;
-    //Завголовок
+    //Р—Р°РІРіРѕР»РѕРІРѕРє
     if(!RepCaption.IsEmpty())
       StringList->Add(RepCaption);
     s="";
@@ -967,7 +967,7 @@ void __fastcall TfmMaketArmR::SaveTable(TComponent* Owner,TDBGridEh *gr,AnsiStri
       }
     }
     StringList->Add(s);
-    //Данные
+    //Р”Р°РЅРЅС‹Рµ
     SavePlace = ds->GetBookmark();
     ds->DisableControls();
     ds->First();
@@ -1062,7 +1062,7 @@ if(!oqDeportInfo->RecordCount)  return;
    SetEnabledControls();
 }
 //-----------------------------------------------------------------------------------
-//19.02.2020 - GRB ADD - Заплатка запрещающая перенос местами 1-го столбца таблицы (со статусом) с любым - иначе летит исключение по несовпадению типов в DrawCell
+//19.02.2020 - GRB ADD - Р—Р°РїР»Р°С‚РєР° Р·Р°РїСЂРµС‰Р°СЋС‰Р°СЏ РїРµСЂРµРЅРѕСЃ РјРµСЃС‚Р°РјРё 1-РіРѕ СЃС‚РѕР»Р±С†Р° С‚Р°Р±Р»РёС†С‹ (СЃРѕ СЃС‚Р°С‚СѓСЃРѕРј) СЃ Р»СЋР±С‹Рј - РёРЅР°С‡Рµ Р»РµС‚РёС‚ РёСЃРєР»СЋС‡РµРЅРёРµ РїРѕ РЅРµСЃРѕРІРїР°РґРµРЅРёСЋ С‚РёРїРѕРІ РІ DrawCell
 void __fastcall TfmMaketArmR::MessageGridColumnMoved(TObject *Sender,
       int FromIndex, int ToIndex)
 {
@@ -1076,7 +1076,7 @@ void __fastcall TfmMaketArmR::MessageGridColumnMoved(TObject *Sender,
         }
 
 }
-//07.07.2020 - GRB ADD Вычитка установленного в БД параметра строгости как значения чекбокса по умолчанию
+//07.07.2020 - GRB ADD Р’С‹С‡РёС‚РєР° СѓСЃС‚Р°РЅРѕРІР»РµРЅРЅРѕРіРѕ РІ Р‘Р” РїР°СЂР°РјРµС‚СЂР° СЃС‚СЂРѕРіРѕСЃС‚Рё РєР°Рє Р·РЅР°С‡РµРЅРёСЏ С‡РµРєР±РѕРєСЃР° РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
 int __fastcall TfmMaketArmR::getStrictRegime(){
      int ret = -1;
       dmMain->quMain->Close();
@@ -1089,13 +1089,13 @@ int __fastcall TfmMaketArmR::getStrictRegime(){
         ret=dmMain->quMain->ParamByName ("par1")->AsInteger;
       }
       else{
-       ret = 1;///???? зачем
-       throw (Exception ("Отсутствует параметр строгости приёма макетов таблице"+SchemeName+".Parameter. Выполнение задачи невозможно"));
+       ret = 1;///???? Р·Р°С‡РµРј
+       throw (Exception ("РћС‚СЃСѓС‚СЃС‚РІСѓРµС‚ РїР°СЂР°РјРµС‚СЂ СЃС‚СЂРѕРіРѕСЃС‚Рё РїСЂРёС‘РјР° РјР°РєРµС‚РѕРІ С‚Р°Р±Р»РёС†Рµ"+SchemeName+".Parameter. Р’С‹РїРѕР»РЅРµРЅРёРµ Р·Р°РґР°С‡Рё РЅРµРІРѕР·РјРѕР¶РЅРѕ"));
       }
       return ret;
 }
 //---------------------------------------------------------------------------
-//07.07.2020 - GRB ADD Передача в БД параметра строгости как значения чекбокса
+//07.07.2020 - GRB ADD РџРµСЂРµРґР°С‡Р° РІ Р‘Р” РїР°СЂР°РјРµС‚СЂР° СЃС‚СЂРѕРіРѕСЃС‚Рё РєР°Рє Р·РЅР°С‡РµРЅРёСЏ С‡РµРєР±РѕРєСЃР°
 void __fastcall TfmMaketArmR::setStrictRegime(bool regime){
        //21.07.2020 - remove with block bellow
        //bool mode_maket = CheckBox1->Checked;
@@ -1123,13 +1123,13 @@ void __fastcall TfmMaketArmR::setStrictRegime(bool regime){
          exist->Checked= !mode_maket;
         }
        //end block
-          AnsiString str = "Не могу вызвать admin_pg.rubbish_m. "+ex.Message;
+          AnsiString str = "РќРµ РјРѕРіСѓ РІС‹Р·РІР°С‚СЊ admin_pg.rubbish_m. "+ex.Message;
           Application->MessageBox(str.c_str(),
                             NULL, NULL);
 
         }
 }
-//07.07.2020 - GRB ADD По нажатию на кнопку "сохранить" посылаем на базу выбранный юзером на чекбоксе уровень строгости
+//07.07.2020 - GRB ADD РџРѕ РЅР°Р¶Р°С‚РёСЋ РЅР° РєРЅРѕРїРєСѓ "СЃРѕС…СЂР°РЅРёС‚СЊ" РїРѕСЃС‹Р»Р°РµРј РЅР° Р±Р°Р·Сѓ РІС‹Р±СЂР°РЅРЅС‹Р№ СЋР·РµСЂРѕРј РЅР° С‡РµРєР±РѕРєСЃРµ СѓСЂРѕРІРµРЅСЊ СЃС‚СЂРѕРіРѕСЃС‚Рё
 //---------------------------------------------------------------------------
 void __fastcall TfmMaketArmR::btnSaveClick(TObject *Sender)
 {
@@ -1153,7 +1153,7 @@ void __fastcall TfmMaketArmR::addCheckBox1OnPanel (TObject *Sender){
             TCheckBox *cbx = new TCheckBox (Sender);
             cbx->Parent = Panel7;
             cbx->Name = "CheckBox1";
-            //Начали локализацию
+            //РќР°С‡Р°Р»Рё Р»РѕРєР°Р»РёР·Р°С†РёСЋ
             AnsiString Language;
             TRegistry *Reg = new TRegistry(KEY_READ);
             try{
@@ -1169,9 +1169,9 @@ void __fastcall TfmMaketArmR::addCheckBox1OnPanel (TObject *Sender){
             }__finally{
                 delete Reg;
             }
-            if (Language =="UKR") cbx->Caption = "Заборонити прийом 'чужих' макетів";
+            if (Language =="UKR") cbx->Caption = "Р—Р°Р±РѕСЂРѕРЅРёС‚Рё РїСЂРёР№РѕРј 'С‡СѓР¶РёС…' РјР°РєРµС‚С–РІ";
             else
-            cbx->Caption = "Запретить приём 'чужих' макетов";
+            cbx->Caption = "Р—Р°РїСЂРµС‚РёС‚СЊ РїСЂРёС‘Рј 'С‡СѓР¶РёС…' РјР°РєРµС‚РѕРІ";
             cbx->Width = 241;
             cbx->Left = 384;
             cbx->Top = 9;
@@ -1180,7 +1180,7 @@ void __fastcall TfmMaketArmR::addCheckBox1OnPanel (TObject *Sender){
             }
 }
 //---------------------------------------------------------------------------
-//07.07.2020 - GRB ADD Нажатие на чекбокс "строгости" разрешает нажимать на кнопку "Сохранить"
+//07.07.2020 - GRB ADD РќР°Р¶Р°С‚РёРµ РЅР° С‡РµРєР±РѕРєСЃ "СЃС‚СЂРѕРіРѕСЃС‚Рё" СЂР°Р·СЂРµС€Р°РµС‚ РЅР°Р¶РёРјР°С‚СЊ РЅР° РєРЅРѕРїРєСѓ "РЎРѕС…СЂР°РЅРёС‚СЊ"
 //---------------------------------------------------------------------------
 
 void __fastcall TfmMaketArmR::CheckBox1Click(TObject *Sender)

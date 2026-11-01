@@ -54,8 +54,8 @@ __published:	// IDE-managed Components
         void __fastcall MessageGridColumnMoved(TObject *Sender,
           int FromIndex, int ToIndex);
 private:	// User declarations
-  AnsiString  sqlStr;   //! Строка SQL запроса
-  AnsiString  orderStr;   //! Строка сортировки для запроса
+  AnsiString  sqlStr;   //! РЎС‚СЂРѕРєР° SQL Р·Р°РїСЂРѕСЃР°
+  AnsiString  orderStr;   //! РЎС‚СЂРѕРєР° СЃРѕСЂС‚РёСЂРѕРІРєРё РґР»СЏ Р·Р°РїСЂРѕСЃР°
 	void __fastcall SelectData( void );
 	unsigned long m_ulNumberSelectedRows;
     THintWindow * pHintWnd;

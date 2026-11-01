@@ -14,37 +14,37 @@ class TDecadInterior : public TDUInterior
 		__fastcall TDecadInterior(TComponent* Owner,TSplitterForm *,TFormDescr*,Classes::TNotifyEvent,bool B_and_W );
 		virtual __fastcall ~TDecadInterior(void);
 
-		//Снятие со SplitterFom и размещение на SplitterFom таблицы и графика,
-		//вызываемтся при обновлении TBaseMonitorForm
+		//РЎРЅСЏС‚РёРµ СЃРѕ SplitterFom Рё СЂР°Р·РјРµС‰РµРЅРёРµ РЅР° SplitterFom С‚Р°Р±Р»РёС†С‹ Рё РіСЂР°С„РёРєР°,
+		//РІС‹Р·С‹РІР°РµРјС‚СЃСЏ РїСЂРё РѕР±РЅРѕРІР»РµРЅРёРё TBaseMonitorForm
 //		virtual void __fastcall Destroy(void);
 		virtual void __fastcall Place(void);
 /*
-		//Установить новую компановку
+		//РЈСЃС‚Р°РЅРѕРІРёС‚СЊ РЅРѕРІСѓСЋ РєРѕРјРїР°РЅРѕРІРєСѓ
 		virtual bool __fastcall setSplit(void);
                                                      */
-		//Возвращает количесиво подколонок для формы
+		//Р’РѕР·РІСЂР°С‰Р°РµС‚ РєРѕР»РёС‡РµСЃРёРІРѕ РїРѕРґРєРѕР»РѕРЅРѕРє РґР»СЏ С„РѕСЂРјС‹
 		virtual long __fastcall SubColumns(void){return 3;};
 
-		///Возвращает имена подколонок для формы
+		///Р’РѕР·РІСЂР°С‰Р°РµС‚ РёРјРµРЅР° РїРѕРґРєРѕР»РѕРЅРѕРє РґР»СЏ С„РѕСЂРјС‹
 		virtual AnsiString __fastcall GetSubColumnsNames(int);
 
-	     	//Обновление данных из базы
-		//NameAlert=-1 для обновления в любом случае
+	     	//РћР±РЅРѕРІР»РµРЅРёРµ РґР°РЅРЅС‹С… РёР· Р±Р°Р·С‹
+		//NameAlert=-1 РґР»СЏ РѕР±РЅРѕРІР»РµРЅРёСЏ РІ Р»СЋР±РѕРј СЃР»СѓС‡Р°Рµ
 		virtual void __fastcall refreshData( int Table,TOraQuery *qwInter );
 	     	virtual void __fastcall selectData( TOraQuery *qwInter );
 	     	virtual void __fastcall Invalidate( int Table );
-		//Получает данные о считываемой таблице
+		//РџРѕР»СѓС‡Р°РµС‚ РґР°РЅРЅС‹Рµ Рѕ СЃС‡РёС‚С‹РІР°РµРјРѕР№ С‚Р°Р±Р»РёС†Рµ
 		virtual void __fastcall formDescr( void );
            
-		//Формирует таблицу, располагая клоны по столбцам
+		//Р¤РѕСЂРјРёСЂСѓРµС‚ С‚Р°Р±Р»РёС†Сѓ, СЂР°СЃРїРѕР»Р°РіР°СЏ РєР»РѕРЅС‹ РїРѕ СЃС‚РѕР»Р±С†Р°Рј
 		virtual void __fastcall clonesInColumns(void);
 	     	virtual void __fastcall dataInColumns(void);
              
-		//Интерпритирует счелчок пользователь на таблице,
-		//и проводит декомпозицию по группе
+		//РРЅС‚РµСЂРїСЂРёС‚РёСЂСѓРµС‚ СЃС‡РµР»С‡РѕРє РїРѕР»СЊР·РѕРІР°С‚РµР»СЊ РЅР° С‚Р°Р±Р»РёС†Рµ,
+		//Рё РїСЂРѕРІРѕРґРёС‚ РґРµРєРѕРјРїРѕР·РёС†РёСЋ РїРѕ РіСЂСѓРїРїРµ
 		virtual void __fastcall clickComposition(long ACol, long ARow );
 
-	   /*	//Событийные обработчики
+	   /*	//РЎРѕР±С‹С‚РёР№РЅС‹Рµ РѕР±СЂР°Р±РѕС‚С‡РёРєРё
 		void __fastcall OnClickPanel(System::TObject* Sender);
 		void __fastcall OnKeyUp(TObject *Sender, WORD &Key,TShiftState Shift);
 		void __fastcall OnClickMenuItemGroup(TObject *Sender);

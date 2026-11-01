@@ -134,8 +134,8 @@ void __fastcall TTablespaceUsage::fAutoSizeColSG(TStringGrid* StringGrid) {
       i++;
       oqTablespaceUsage->Next();
     }
-     //Начали локализацию
-     //GRB ADD 20.09.2019 - локализуем шапку таблицы
+     //РќР°С‡Р°Р»Рё Р»РѕРєР°Р»РёР·Р°С†РёСЋ
+     //GRB ADD 20.09.2019 - Р»РѕРєР°Р»РёР·СѓРµРј С€Р°РїРєСѓ С‚Р°Р±Р»РёС†С‹
      AnsiString Language;
      TRegistry *Reg = new TRegistry(KEY_READ);
      try{
@@ -159,7 +159,7 @@ void __fastcall TTablespaceUsage::fAutoSizeColSG(TStringGrid* StringGrid) {
         colNames[i] = colNamesUkr[i];
        allRow = allRowUkr;
      }
-     //закончили локализацию шапки
+     //Р·Р°РєРѕРЅС‡РёР»Рё Р»РѕРєР°Р»РёР·Р°С†РёСЋ С€Р°РїРєРё
     for (int i = 0; i < MAX_COLUMN; i++){
         StringGrid1->Cells [i][0] = colNames[i];
     }
@@ -212,14 +212,14 @@ void __fastcall TTablespaceUsage::SaveTableToFile(TObject *Sender)
                 delete Reg;
         }
     if (Language=="UKR"){
-    aSaveDialog->Title = "Зберегти до файла...";
-    aSaveDialog->FileName = "Табличний простір";
-    aSaveDialog->Filter = "Текстові документи (*.txt)|*.txt|Файл з роздільником (*.csv)|*.csv|Excel-таблиця (*.xls)|*.xls";
+    aSaveDialog->Title = "Р—Р±РµСЂРµРіС‚Рё РґРѕ С„Р°Р№Р»Р°...";
+    aSaveDialog->FileName = "РўР°Р±Р»РёС‡РЅРёР№ РїСЂРѕСЃС‚С–СЂ";
+    aSaveDialog->Filter = "РўРµРєСЃС‚РѕРІС– РґРѕРєСѓРјРµРЅС‚Рё (*.txt)|*.txt|Р¤Р°Р№Р» Р· СЂРѕР·РґС–Р»СЊРЅРёРєРѕРј (*.csv)|*.csv|Excel-С‚Р°Р±Р»РёС†СЏ (*.xls)|*.xls";
     }else{
-    aSaveDialog->Title = "Сохранить в файл...";
-    aSaveDialog->FileName = "Табличное пространство";
+    aSaveDialog->Title = "РЎРѕС…СЂР°РЅРёС‚СЊ РІ С„Р°Р№Р»...";
+    aSaveDialog->FileName = "РўР°Р±Р»РёС‡РЅРѕРµ РїСЂРѕСЃС‚СЂР°РЅСЃС‚РІРѕ";
     aSaveDialog->DefaultExt = "csv";
-    aSaveDialog->Filter = "Текстовые документы (*.txt)|*.txt|Файл с разделителем (*.csv)|*.csv|Excel-таблица (*.xls)|*.xls";
+    aSaveDialog->Filter = "РўРµРєСЃС‚РѕРІС‹Рµ РґРѕРєСѓРјРµРЅС‚С‹ (*.txt)|*.txt|Р¤Р°Р№Р» СЃ СЂР°Р·РґРµР»РёС‚РµР»РµРј (*.csv)|*.csv|Excel-С‚Р°Р±Р»РёС†Р° (*.xls)|*.xls";
     }
     if(aSaveDialog->Execute())
     {

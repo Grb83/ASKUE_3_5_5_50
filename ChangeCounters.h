@@ -55,17 +55,17 @@ __published:	// IDE-managed Components
   void __fastcall btInputClick(TObject *Sender);
   void __fastcall bbDelClick(TObject *Sender);
 private:	// User declarations
-   typedef struct { //дерево обьектов учета
+   typedef struct { //РґРµСЂРµРІРѕ РѕР±СЊРµРєС‚РѕРІ СѓС‡РµС‚Р°
       long Mid;
-      long Type; //= 1 - enterprise, 2-station, 3-point, 4-точка учета
+      long Type; //= 1 - enterprise, 2-station, 3-point, 4-С‚РѕС‡РєР° СѓС‡РµС‚Р°
       char Name[148];
-      long ER_POSITION;	//NUMBER, активная принятая энергия
-      long Q1_POSITION;	//NUMBER, реактивная принятая энергия
-      long ED_POSITION;	//NUMBER, активная отданая энергия
-      long Q3_POSITION;	//NUMBER, реактивная отданая энергия
-      long SMART;	//VARCHAR2(1), признак интел. счетчика
-      double KC;		    //NUMBER, расчетный коэф.
-      long editing;// Есть дети
+      long ER_POSITION;	//NUMBER, Р°РєС‚РёРІРЅР°СЏ РїСЂРёРЅСЏС‚Р°СЏ СЌРЅРµСЂРіРёСЏ
+      long Q1_POSITION;	//NUMBER, СЂРµР°РєС‚РёРІРЅР°СЏ РїСЂРёРЅСЏС‚Р°СЏ СЌРЅРµСЂРіРёСЏ
+      long ED_POSITION;	//NUMBER, Р°РєС‚РёРІРЅР°СЏ РѕС‚РґР°РЅР°СЏ СЌРЅРµСЂРіРёСЏ
+      long Q3_POSITION;	//NUMBER, СЂРµР°РєС‚РёРІРЅР°СЏ РѕС‚РґР°РЅР°СЏ СЌРЅРµСЂРіРёСЏ
+      long SMART;	//VARCHAR2(1), РїСЂРёР·РЅР°Рє РёРЅС‚РµР». СЃС‡РµС‚С‡РёРєР°
+      double KC;		    //NUMBER, СЂР°СЃС‡РµС‚РЅС‹Р№ РєРѕСЌС„.
+      long editing;// Р•СЃС‚СЊ РґРµС‚Рё
    }POINTSDIV;
    //----------------------------------VNB 13.05.08
    typedef struct {
@@ -79,7 +79,7 @@ private:	// User declarations
    //-----------------------------------------------
    TCheckBox *cb[5];
    long olditemindex;
- //  bool __fastcall ReadNode(TTreeNode* NodeParent);// Читает ветку дерева Точек
+ //  bool __fastcall ReadNode(TTreeNode* NodeParent);// Р§РёС‚Р°РµС‚ РІРµС‚РєСѓ РґРµСЂРµРІР° РўРѕС‡РµРє
    bool __fastcall ReadNode(TObject*obj);
   
    void __fastcall SetAccess(TAccess value);

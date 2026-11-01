@@ -253,7 +253,7 @@ void TFormVITInputDeltaExcel::MainProc(TObject *Sender)
     }
      CountStr=i;
 
-    //	Получение данных в структуру для вывода данных
+    //	РџРѕР»СѓС‡РµРЅРёРµ РґР°РЅРЅС‹С… РІ СЃС‚СЂСѓРєС‚СѓСЂСѓ РґР»СЏ РІС‹РІРѕРґР° РґР°РЅРЅС‹С…
     DrawTable1->FixedRows=1;
     DrawTable1->RowCount=1+CountStr;
     DrawTable1->ColCount=6;
@@ -296,7 +296,7 @@ void TFormVITInputDeltaExcel::MainProc(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 void __fastcall TFormVITInputDeltaExcel::vSave(TObject* Sender)
-{  // Сохранить
+{  // РЎРѕС…СЂР°РЅРёС‚СЊ
    if(pointPOL.usestep){
       newSave(Sender);
       return;
@@ -307,9 +307,9 @@ void __fastcall TFormVITInputDeltaExcel::vSave(TObject* Sender)
   AnsiString scurr;
   TDrawTable::SAttrCell *pCur;
   static char *insupd = "begin \
-                          ryda.indic_pg.setdebit(:par12,to_date(:par11, 'dd.mm.yyyy hh24:mi'),:par17,:par101,'Р.В',:par14,:par15,:par16,:par2); \
+                          ryda.indic_pg.setdebit(:par12,to_date(:par11, 'dd.mm.yyyy hh24:mi'),:par17,:par101,'Р .Р’',:par14,:par15,:par16,:par2); \
                          end;";
-  if(!EditRec||!CountStr)//нет редактирования или нет записей
+  if(!EditRec||!CountStr)//РЅРµС‚ СЂРµРґР°РєС‚РёСЂРѕРІР°РЅРёСЏ РёР»Рё РЅРµС‚ Р·Р°РїРёСЃРµР№
     return;
 
   try{
@@ -470,7 +470,7 @@ void __fastcall TFormVITInputDeltaExcel::newMainProc(TObject*Sender, AnsiString 
       i++;
      }
      CountStr=i;
-    //	Получение данных в структуру для вывода данных
+    //	РџРѕР»СѓС‡РµРЅРёРµ РґР°РЅРЅС‹С… РІ СЃС‚СЂСѓРєС‚СѓСЂСѓ РґР»СЏ РІС‹РІРѕРґР° РґР°РЅРЅС‹С…
       DrawTable1->RowCount=4+RCount;
       DrawTable1->ColCount=1+CountStr;
       AnsiString strs = "#120";
@@ -532,7 +532,7 @@ void __fastcall TFormVITInputDeltaExcel::newMainProc(TObject*Sender, AnsiString 
 
 void __fastcall TFormVITInputDeltaExcel::newSave(TObject*)
 {
-   if(!EditRec||!CountStr)//нет редактирования или нет записей
+   if(!EditRec||!CountStr)//РЅРµС‚ СЂРµРґР°РєС‚РёСЂРѕРІР°РЅРёСЏ РёР»Рё РЅРµС‚ Р·Р°РїРёСЃРµР№
    return;
 
    long i = -1, j = -1;
@@ -542,7 +542,7 @@ void __fastcall TFormVITInputDeltaExcel::newSave(TObject*)
    AnsiString scurr;
    TDrawTable::SAttrCell *pCur;
    static char *insupd="begin \
-                           ryda.indic_pg.setdebit(:par12,to_date(:par11, 'dd.mm.yyyy hh24:mi'),:par17,:par101,'Р.В',:par14,:par15,:par16,:par2); \
+                           ryda.indic_pg.setdebit(:par12,to_date(:par11, 'dd.mm.yyyy hh24:mi'),:par17,:par101,'Р .Р’',:par14,:par15,:par16,:par2); \
                         end;";
    try{
 

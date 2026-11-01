@@ -20,7 +20,7 @@ public:
     void __fastcall OnClickMenuItemAttr(TObject *Sender);
   virtual void __fastcall SaveTableToFile(TSaveDialog *aSaveDialog);
 private:
- /*   typedef struct {  //∆”–Õ¿À  —»—“≈Ã€
+ /*   typedef struct {  //–ñ–£–†–ù–ê–õ  –°–ò–°–¢–ï–ú–´
 	    char Date_Time[20];
         char Name[150];
         char State_Descr[518];

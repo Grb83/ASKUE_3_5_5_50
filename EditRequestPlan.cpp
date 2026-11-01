@@ -18,7 +18,7 @@
 #pragma link "MemDS"
 #pragma link "Ora"
 #pragma resource "*.dfm"
-UINT CF_CHANNELS_TREENODE; // îïèñàíèå ôîðìàòà äëÿ áóôåðà îáìåíà
+UINT CF_CHANNELS_TREENODE; // Ð¾Ð¿Ð¸ÑÐ°Ð½Ð¸Ðµ Ñ„Ð¾Ñ€Ð¼Ð°Ñ‚Ð° Ð´Ð»Ñ Ð±ÑƒÑ„ÐµÑ€Ð° Ð¾Ð±Ð¼ÐµÐ½Ð°
 //---------------------------------------------------------------------------
 __fastcall TfmEditRequestPlan::TfmEditRequestPlan(TComponent* Owner, AnsiString Name, TAccess a)
   : TMainForm(Owner, Name, a),ChangeControl(true)
@@ -37,7 +37,7 @@ __fastcall TfmEditRequestPlan::TfmEditRequestPlan(TComponent* Owner, AnsiString 
 
    nPoints_Del = NULL;
    Points_Del_Count = 0;
-   // ðåãèñòðàöèÿ ôîðìàòà äëÿ áóôåðà îáìåíà
+   // Ñ€ÐµÐ³Ð¸ÑÑ‚Ñ€Ð°Ñ†Ð¸Ñ Ñ„Ð¾Ñ€Ð¼Ð°Ñ‚Ð° Ð´Ð»Ñ Ð±ÑƒÑ„ÐµÑ€Ð° Ð¾Ð±Ð¼ÐµÐ½Ð°
    CF_CHANNELS_TREENODE = RegisterClipboardFormat("CF_CHANNELS_TREENODE");
    if(!CF_CHANNELS_TREENODE)
    {
@@ -94,7 +94,7 @@ void __fastcall TfmEditRequestPlan::FormShow(TObject *Sender)
     Close();
 }
 //---------------------------------------------------------------------------
-// ×èòàåò ñïèñîê êàíàëîâ
+// Ð§Ð¸Ñ‚Ð°ÐµÑ‚ ÑÐ¿Ð¸ÑÐ¾Ðº ÐºÐ°Ð½Ð°Ð»Ð¾Ð²
 bool __fastcall TfmEditRequestPlan::ReadChannelNode(TObject*obj)
 {
    stChannel *PChannel;
@@ -369,7 +369,7 @@ void __fastcall TfmEditRequestPlan::tvChannelsListChanging(TObject *Sender,
 
 //    Control=(TWinControl *)eBill_Data_Dept;
     SelChannel->NBILLDATA = chbBill_Data->Checked;
-//    if(chbBill_Data->Checked&&eBill_Data_Dept->Text.IsEmpty()) throw Exception("Âûáðàíî ÷òåíèå êîììåð÷åñêèõ äàííûåõ íî íå óêàçàíà ãëóáèíà âû÷åòêè.");
+//    if(chbBill_Data->Checked&&eBill_Data_Dept->Text.IsEmpty()) throw Exception("Ð’Ñ‹Ð±Ñ€Ð°Ð½Ð¾ Ñ‡Ñ‚ÐµÐ½Ð¸Ðµ ÐºÐ¾Ð¼Ð¼ÐµÑ€Ñ‡ÐµÑÐºÐ¸Ñ… Ð´Ð°Ð½Ð½Ñ‹ÐµÑ… Ð½Ð¾ Ð½Ðµ ÑƒÐºÐ°Ð·Ð°Ð½Ð° Ð³Ð»ÑƒÐ±Ð¸Ð½Ð° Ð²Ñ‹Ñ‡ÐµÑ‚ÐºÐ¸.");
     if(!eBill_Data_Dept->Text.IsEmpty())
     {
        SelChannel->NBILLDATADEPTH = eBill_Data_Dept->Text.ToInt();
@@ -380,7 +380,7 @@ void __fastcall TfmEditRequestPlan::tvChannelsListChanging(TObject *Sender,
 
 //    Control=(TWinControl *)eCurr_Data_Dept;
     SelChannel->NCURRDATA = chbCurr_Data->Checked;
-//    if(chbCurr_Data->Checked&&eCurr_Data_Dept->Text.IsEmpty()) throw Exception("Âûáðàíî ÷òåíèå òåõíè÷åñêèõ äàííûåõ íî íå óêàçàíà ãëóáèíà âû÷åòêè.");
+//    if(chbCurr_Data->Checked&&eCurr_Data_Dept->Text.IsEmpty()) throw Exception("Ð’Ñ‹Ð±Ñ€Ð°Ð½Ð¾ Ñ‡Ñ‚ÐµÐ½Ð¸Ðµ Ñ‚ÐµÑ…Ð½Ð¸Ñ‡ÐµÑÐºÐ¸Ñ… Ð´Ð°Ð½Ð½Ñ‹ÐµÑ… Ð½Ð¾ Ð½Ðµ ÑƒÐºÐ°Ð·Ð°Ð½Ð° Ð³Ð»ÑƒÐ±Ð¸Ð½Ð° Ð²Ñ‹Ñ‡ÐµÑ‚ÐºÐ¸.");
     if(!eCurr_Data_Dept->Text.IsEmpty())
     {
        SelChannel->NCURRDATADEPTH = eCurr_Data_Dept->Text.ToInt();
@@ -556,9 +556,9 @@ void __fastcall TfmEditRequestPlan::ControlChange(TObject *Sender)
    if (tvChannelsList->Selected && Sender==(TObject*)cbProtocol_id && cbProtocol_id->ItemIndex!=-1)
    {
      if ((long)cbProtocol_id->Items->Objects[cbProtocol_id->ItemIndex] == 37)
-       cbBlockingTime->Caption = "Ðó÷íàÿ &çàãðóçêà ìàêåòîâ";
+       cbBlockingTime->Caption = "Ð ÑƒÑ‡Ð½Ð°Ñ &Ð·Ð°Ð³Ñ€ÑƒÐ·ÐºÐ° Ð¼Ð°ÐºÐµÑ‚Ð¾Ð²";
      else
-       cbBlockingTime->Caption = "Áëîêèðîâêà êîððåêöèè &âðåìåíè";
+       cbBlockingTime->Caption = "Ð‘Ð»Ð¾ÐºÐ¸Ñ€Ð¾Ð²ÐºÐ° ÐºÐ¾Ñ€Ñ€ÐµÐºÑ†Ð¸Ð¸ &Ð²Ñ€ÐµÐ¼ÐµÐ½Ð¸";
    }
 }
 //---------------------------------------------------------------------------
@@ -934,13 +934,13 @@ void __fastcall TfmEditRequestPlan::SetAccess(TAccess value)
         iaBlock->Enabled = wr;
         iaUnblock->Enabled = wr;
         paEdit->Enabled = wr;
-        // âûêëþ÷åíèå ðåàêöèè ñèñòåìû íà èçìåíåíèå ñîäåðæèìîãî ïîëÿ
-        // íà âðåìÿ èçìåíåíèÿ ñâîéñòâà PasswordChar
+        // Ð²Ñ‹ÐºÐ»ÑŽÑ‡ÐµÐ½Ð¸Ðµ Ñ€ÐµÐ°ÐºÑ†Ð¸Ð¸ ÑÐ¸ÑÑ‚ÐµÐ¼Ñ‹ Ð½Ð° Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ðµ ÑÐ¾Ð´ÐµÑ€Ð¶Ð¸Ð¼Ð¾Ð³Ð¾ Ð¿Ð¾Ð»Ñ
+        // Ð½Ð° Ð²Ñ€ÐµÐ¼Ñ Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ñ ÑÐ²Ð¾Ð¹ÑÑ‚Ð²Ð° PasswordChar
         TNotifyEvent change = eUsdPassword->OnChange;
         eUsdPassword->OnChange = NULL;
         eUsdPassword->PasswordChar = wr?0:'*';
         eUsdPassword->OnChange = change;
-        // îáíîâëåíèå äëÿ ñîäåðæèìîãî PasswordChar
+        // Ð¾Ð±Ð½Ð¾Ð²Ð»ÐµÐ½Ð¸Ðµ Ð´Ð»Ñ ÑÐ¾Ð´ÐµÑ€Ð¶Ð¸Ð¼Ð¾Ð³Ð¾ PasswordChar
 //        if(wr) vRefresh(this);
     }
 }
@@ -1236,13 +1236,13 @@ void __fastcall TfmEditRequestPlan::aQuickExecute(TObject *Sender)
   AnsiString sql;
   try{
    if(SelChannel&&SelChannel->Cid>0){
-     if(IsOperStart(SelChannel->Cid)){ //Îïåðàòèâíûé îïðîñ çàïóùåí è ìû îñòàíàâëèâàåì
+     if(IsOperStart(SelChannel->Cid)){ //ÐžÐ¿ÐµÑ€Ð°Ñ‚Ð¸Ð²Ð½Ñ‹Ð¹ Ð¾Ð¿Ñ€Ð¾Ñ Ð·Ð°Ð¿ÑƒÑ‰ÐµÐ½ Ð¸ Ð¼Ñ‹ Ð¾ÑÑ‚Ð°Ð½Ð°Ð²Ð»Ð¸Ð²Ð°ÐµÐ¼
         if(Application->MessageBox(AnsiString(Reconst_smes26_25).c_str(), Application->Title.c_str(), MB_YESNO|MB_ICONQUESTION|MB_DEFBUTTON1)==IDYES){
           oqEditReqPlan->SQL->Text=AnsiString("begin "+SchemeName+"operscan_pg.deactive_p(")+IntToStr(SelChannel->Cid)+AnsiString("); commit; end;");
           oqEditReqPlan->Execute();
 
         }
-     }else{//Çàïóñêàåì îïåðàòèâíûé îïðîñ
+     }else{//Ð—Ð°Ð¿ÑƒÑÐºÐ°ÐµÐ¼ Ð¾Ð¿ÐµÑ€Ð°Ñ‚Ð¸Ð²Ð½Ñ‹Ð¹ Ð¾Ð¿Ñ€Ð¾Ñ
        f= new TfmOperScanSchedEd(this);
        f->edPeriod->Text = SelChannel->CYCLE_TOUT;
        f->MEdEnd->Text = TDateTime(Now()+ 1.0/24.0).FormatString("hh:nn");
@@ -1289,7 +1289,7 @@ void __fastcall TfmEditRequestPlan::mMonClick(TObject *Sender)
 
 void __fastcall TfmEditRequestPlan::iaFindExecute(TObject *Sender)
 {
-  //GRB ADD 09.03.2021 -äîáàâëÿåì âûçîâ 2-õ ñåòòåðîâ, îïðåäåëÿþùèõ êîíòåêñò çàäà÷è
+  //GRB ADD 09.03.2021 -Ð´Ð¾Ð±Ð°Ð²Ð»ÑÐµÐ¼ Ð²Ñ‹Ð·Ð¾Ð² 2-Ñ… ÑÐµÑ‚Ñ‚ÐµÑ€Ð¾Ð², Ð¾Ð¿Ñ€ÐµÐ´ÐµÐ»ÑÑŽÑ‰Ð¸Ñ… ÐºÐ¾Ð½Ñ‚ÐµÐºÑÑ‚ Ð·Ð°Ð´Ð°Ñ‡Ð¸
  fmFP->setContext(2);
  fmFP->setGroupsAndPoints(false);
  //end add

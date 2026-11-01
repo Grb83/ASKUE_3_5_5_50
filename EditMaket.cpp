@@ -12,7 +12,7 @@
 #pragma link "MemDS"
 #pragma link "Ora"
 #pragma resource "*.dfm"
-UINT CF_MAKETS_TREENODE; // îïèñàíèå ôîðìàòà äëÿ áóôåðà îáìåíà
+UINT CF_MAKETS_TREENODE; // Ð¾Ð¿Ð¸ÑÐ°Ð½Ð¸Ðµ Ñ„Ð¾Ñ€Ð¼Ð°Ñ‚Ð° Ð´Ð»Ñ Ð±ÑƒÑ„ÐµÑ€Ð° Ð¾Ð±Ð¼ÐµÐ½Ð°
 extern HANDLE UpdateMonitors;
 //extern TSupperMainForm *SupperMainForm;
 //---------------------------------------------------------------------------
@@ -32,7 +32,7 @@ TEditMaketForm::MAKET::MAKET(TMType type)
     }
 }
 //---------------------------------------------------------------------------
-//èíèöèàëèçàöèÿ äàííûõ ôîðìû
+//Ð¸Ð½Ð¸Ñ†Ð¸Ð°Ð»Ð¸Ð·Ð°Ñ†Ð¸Ñ Ð´Ð°Ð½Ð½Ñ‹Ñ… Ñ„Ð¾Ñ€Ð¼Ñ‹
 __fastcall TEditMaketForm::TEditMaketForm(TComponent* Owner, AnsiString Name, TAccess a)
    : TMainForm(Owner, Name, a)
 {
@@ -48,7 +48,7 @@ __fastcall TEditMaketForm::TEditMaketForm(TComponent* Owner, AnsiString Name, TA
     ShowAction(iaDelete);
     ShowAction(iaClone);
     MaketListTVChange(MaketListTV,MaketListTV->Selected);
-    // ðåãèñòðàöèÿ ôîðìàòà äëÿ áóôåðà îáìåíà
+    // Ñ€ÐµÐ³Ð¸ÑÑ‚Ñ€Ð°Ñ†Ð¸Ñ Ñ„Ð¾Ñ€Ð¼Ð°Ñ‚Ð° Ð´Ð»Ñ Ð±ÑƒÑ„ÐµÑ€Ð° Ð¾Ð±Ð¼ÐµÐ½Ð°
     CF_MAKETS_TREENODE = RegisterClipboardFormat("CF_MAKETS_TREENODE");
     if(!CF_MAKETS_TREENODE)
     {
@@ -92,7 +92,7 @@ void __fastcall TEditMaketForm::vUpdate(TObject*Sender)
       ((TAction*)Sender)->Enabled = false;
 }
 //---------------------------------------------------------------------------
-//óñòàíîâêà íà÷àëüíîãî ñîñòîÿíèÿ ôîðìû ïðè åãî îòîáðàæåíèè
+//ÑƒÑÑ‚Ð°Ð½Ð¾Ð²ÐºÐ° Ð½Ð°Ñ‡Ð°Ð»ÑŒÐ½Ð¾Ð³Ð¾ ÑÐ¾ÑÑ‚Ð¾ÑÐ½Ð¸Ñ Ñ„Ð¾Ñ€Ð¼Ñ‹ Ð¿Ñ€Ð¸ ÐµÐ³Ð¾ Ð¾Ñ‚Ð¾Ð±Ñ€Ð°Ð¶ÐµÐ½Ð¸Ð¸
 void __fastcall TEditMaketForm::FormShow(TObject *Sender)
 {
     if(ReadTreeNode(MaketListTV,NULL)&&ReadTreeNode(PointsTV,NULL)&&LoadFormationFunc())
@@ -119,7 +119,7 @@ void __fastcall TEditMaketForm::FormShow(TObject *Sender)
     plSubGroup->Top = 27;
 }
 //---------------------------------------------------------------------------
-//çàãðóçêà ñïèñêà ôóíêöèé äëÿ ìàêåòîâ
+//Ð·Ð°Ð³Ñ€ÑƒÐ·ÐºÐ° ÑÐ¿Ð¸ÑÐºÐ° Ñ„ÑƒÐ½ÐºÑ†Ð¸Ð¹ Ð´Ð»Ñ Ð¼Ð°ÐºÐµÑ‚Ð¾Ð²
 bool __fastcall TEditMaketForm::LoadFormationFunc()
 {
   try{
@@ -140,8 +140,8 @@ bool __fastcall TEditMaketForm::LoadFormationFunc()
   return true;
 }
 //---------------------------------------------------------------------------
-//îñâîáîæäåíèå ïàìÿòè ïðè óíè÷òîæåíèè ôîðìû
-//èíèöèàëèçàöèÿ ãðóïïû ôëàæêîâ CheckBox - òèïà èçìåðåíèÿ äëÿ âñåé ãðóïïû
+//Ð¾ÑÐ²Ð¾Ð±Ð¾Ð¶Ð´ÐµÐ½Ð¸Ðµ Ð¿Ð°Ð¼ÑÑ‚Ð¸ Ð¿Ñ€Ð¸ ÑƒÐ½Ð¸Ñ‡Ñ‚Ð¾Ð¶ÐµÐ½Ð¸Ð¸ Ñ„Ð¾Ñ€Ð¼Ñ‹
+//Ð¸Ð½Ð¸Ñ†Ð¸Ð°Ð»Ð¸Ð·Ð°Ñ†Ð¸Ñ Ð³Ñ€ÑƒÐ¿Ð¿Ñ‹ Ñ„Ð»Ð°Ð¶ÐºÐ¾Ð² CheckBox - Ñ‚Ð¸Ð¿Ð° Ð¸Ð·Ð¼ÐµÑ€ÐµÐ½Ð¸Ñ Ð´Ð»Ñ Ð²ÑÐµÐ¹ Ð³Ñ€ÑƒÐ¿Ð¿Ñ‹
 void __fastcall TEditMaketForm::GetCGB()
 {
  try {
@@ -170,7 +170,7 @@ void __fastcall TEditMaketForm::GetCGB()
     Application->ShowException(&exception);
  }
 }
-//óñòàíîâêà ããðóïïû ôëàæêîâ äëÿ òèïà èçìåðåíèÿ â ãðóïïå (ìîäèôèêàöèÿ âñåõ DimType òî÷åê â ãðóïïå)
+//ÑƒÑÑ‚Ð°Ð½Ð¾Ð²ÐºÐ° Ð³Ð³Ñ€ÑƒÐ¿Ð¿Ñ‹ Ñ„Ð»Ð°Ð¶ÐºÐ¾Ð² Ð´Ð»Ñ Ñ‚Ð¸Ð¿Ð° Ð¸Ð·Ð¼ÐµÑ€ÐµÐ½Ð¸Ñ Ð² Ð³Ñ€ÑƒÐ¿Ð¿Ðµ (Ð¼Ð¾Ð´Ð¸Ñ„Ð¸ÐºÐ°Ñ†Ð¸Ñ Ð²ÑÐµÑ… DimType Ñ‚Ð¾Ñ‡ÐµÐº Ð² Ð³Ñ€ÑƒÐ¿Ð¿Ðµ)
 void __fastcall TEditMaketForm::SetCGB(TDimention value, TCheckBoxState s)
 {
    if(!MaketListTV->Selected) return;
@@ -203,7 +203,7 @@ void __fastcall TEditMaketForm::SetCGB(TDimention value, TCheckBoxState s)
    cbQOvfw->OnClick = CheckedClick;
 }
 //---------------------------------------------------------------------------
-//îïðåäåëÿåò âíåøíèé âèä ôîðìû ïðè ðàçíûõ âûáðàííûõ òèïàõ óçëîâ
+//Ð¾Ð¿Ñ€ÐµÐ´ÐµÐ»ÑÐµÑ‚ Ð²Ð½ÐµÑˆÐ½Ð¸Ð¹ Ð²Ð¸Ð´ Ñ„Ð¾Ñ€Ð¼Ñ‹ Ð¿Ñ€Ð¸ Ñ€Ð°Ð·Ð½Ñ‹Ñ… Ð²Ñ‹Ð±Ñ€Ð°Ð½Ð½Ñ‹Ñ… Ñ‚Ð¸Ð¿Ð°Ñ… ÑƒÐ·Ð»Ð¾Ð²
 void __fastcall TEditMaketForm::SetSelType(TMType value)
 {
    if(FSelType != value) {
@@ -313,7 +313,7 @@ void __fastcall TEditMaketForm::SetSelType(TMType value)
    }
 }
 //---------------------------------------------------------------------------
-//ñîõðàíåíèå èçìåíåíèé â ÁÄ
+//ÑÐ¾Ñ…Ñ€Ð°Ð½ÐµÐ½Ð¸Ðµ Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ð¹ Ð² Ð‘Ð”
 void __fastcall TEditMaketForm::vSave(TObject *Sender)
 {
     bool b=true;
@@ -551,7 +551,7 @@ void __fastcall TEditMaketForm::PointsTVExpanding(TObject *Sender,
    ReadTreeNode((TTreeView*)Sender,Node);
 }
 //---------------------------------------------------------------------------
-//ñ÷èòûâàíèå âåòêè äåðåâà
+//ÑÑ‡Ð¸Ñ‚Ñ‹Ð²Ð°Ð½Ð¸Ðµ Ð²ÐµÑ‚ÐºÐ¸ Ð´ÐµÑ€ÐµÐ²Ð°
 bool __fastcall TEditMaketForm::ReadTreeNode(TTreeView *tv, TTreeNode *ParentNode)
 {
   TTreeNode *addNode;
@@ -562,7 +562,7 @@ bool __fastcall TEditMaketForm::ReadTreeNode(TTreeView *tv, TTreeNode *ParentNod
       ParentNode->DeleteChildren();
     }
     dmMain->quMain->Params->Clear();
-    if(tv==MaketListTV){ // äåðåâî ìàêåòîâ
+    if(tv==MaketListTV){ // Ð´ÐµÑ€ÐµÐ²Ð¾ Ð¼Ð°ÐºÐµÑ‚Ð¾Ð²
       dmMain->quMain->SQL->Text="begin ryda.makets_pg.getmakettree(:an_id,:an_type,:acur_t); end;";
       dmMain->quMain->ParamByName("acur_t")->ParamType=ptOutput;
       dmMain->quMain->ParamByName("acur_t")->DataType=ftCursor;
@@ -573,7 +573,7 @@ bool __fastcall TEditMaketForm::ReadTreeNode(TTreeView *tv, TTreeNode *ParentNod
         dmMain->quMain->ParamByName("an_id")->AsInteger=((MAKET*)ParentNode->Data)->Mid;
         dmMain->quMain->ParamByName("an_type")->AsInteger=((MAKET*)ParentNode->Data)->Type;
       }
-    }else{ // äåðåâî òî÷åê
+    }else{ // Ð´ÐµÑ€ÐµÐ²Ð¾ Ñ‚Ð¾Ñ‡ÐµÐº
       dmMain->quMain->SQL->Text="begin ryda.makets_pg.getpointstree(:an_id,:acur_t); end;";
       dmMain->quMain->ParamByName("acur_t")->ParamType=ptOutput;
       dmMain->quMain->ParamByName("acur_t")->DataType=ftCursor;
@@ -648,7 +648,7 @@ bool __fastcall TEditMaketForm::ReadTreeNode(TTreeView *tv, TTreeNode *ParentNod
         strcpy(pData->Short_Name,dmMain->quMain->FieldByName("short_name")->AsString.c_str());
       }
       addNode = tv->Items->AddChildObject(ParentNode, pData->Name, pData);
-      if(tv==MaketListTV){  // âûáîð ïèêòîãðàììû (è ïîäãîíêà DimType äëÿ òî÷êè)
+      if(tv==MaketListTV){  // Ð²Ñ‹Ð±Ð¾Ñ€ Ð¿Ð¸ÐºÑ‚Ð¾Ð³Ñ€Ð°Ð¼Ð¼Ñ‹ (Ð¸ Ð¿Ð¾Ð´Ð³Ð¾Ð½ÐºÐ° DimType Ð´Ð»Ñ Ñ‚Ð¾Ñ‡ÐºÐ¸)
         int ind;
         switch(pData->Type) {
           case mtMaket:
@@ -688,7 +688,7 @@ bool __fastcall TEditMaketForm::ReadTreeNode(TTreeView *tv, TTreeNode *ParentNod
         addNode->SelectedIndex=(pData->Type==3)?imPoint:imFolder;
       }
       pData->tmpMid = pData->Mid;
-      if(pData->editing){  // ïðîâåðêà íà íàëè÷èå äî÷åðíèõ
+      if(pData->editing){  // Ð¿Ñ€Ð¾Ð²ÐµÑ€ÐºÐ° Ð½Ð° Ð½Ð°Ð»Ð¸Ñ‡Ð¸Ðµ Ð´Ð¾Ñ‡ÐµÑ€Ð½Ð¸Ñ…
         tv->Items->AddChildObject(addNode,"",(void*)0);
         pData->editing=0;
       }
@@ -703,7 +703,7 @@ bool __fastcall TEditMaketForm::ReadTreeNode(TTreeView *tv, TTreeNode *ParentNod
    return true;
 }
 //---------------------------------------------------------------------------
-//ïðîâåðêà âîçìîæíîñòè ïðè¸ìà óçëà pNode óçëîì aNode ïðè ïåðåìåùåíèè (êîïèðîâàíèè)
+//Ð¿Ñ€Ð¾Ð²ÐµÑ€ÐºÐ° Ð²Ð¾Ð·Ð¼Ð¾Ð¶Ð½Ð¾ÑÑ‚Ð¸ Ð¿Ñ€Ð¸Ñ‘Ð¼Ð° ÑƒÐ·Ð»Ð° pNode ÑƒÐ·Ð»Ð¾Ð¼ aNode Ð¿Ñ€Ð¸ Ð¿ÐµÑ€ÐµÐ¼ÐµÑ‰ÐµÐ½Ð¸Ð¸ (ÐºÐ¾Ð¿Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ð¸)
 bool __fastcall TEditMaketForm::CheckAcceptNode(TTreeNode* aNode, TTreeNode* pNode)
 {
    if(Access==accRead)
@@ -712,20 +712,20 @@ bool __fastcall TEditMaketForm::CheckAcceptNode(TTreeNode* aNode, TTreeNode* pNo
       if(/*!aNode||!aNode->Data||*/!pNode||!pNode->Data||aNode==pNode||aNode == pNode->Parent)
          return false;
       MAKET* movM = (MAKET*)pNode->Data;
-      if (aNode && aNode->Data){ // åñëè òÿíåì â óçåë äåðåâà
+      if (aNode && aNode->Data){ // ÐµÑÐ»Ð¸ Ñ‚ÑÐ½ÐµÐ¼ Ð² ÑƒÐ·ÐµÐ» Ð´ÐµÑ€ÐµÐ²Ð°
         MAKET* accM = (MAKET*)aNode->Data;
-        if(movM->Type==3){ // òÿíåì òî÷êó
+        if(movM->Type==3){ // Ñ‚ÑÐ½ÐµÐ¼ Ñ‚Ð¾Ñ‡ÐºÑƒ
            if(accM->Type==2) return true;
            if(accM->Type==1) return true;
-        }else if(movM->Type==2){ // òÿíåì ãðóïïó
+        }else if(movM->Type==2){ // Ñ‚ÑÐ½ÐµÐ¼ Ð³Ñ€ÑƒÐ¿Ð¿Ñƒ
            if(accM->Type==1||accM->Type==2) return true;
            if(accM->Type==4 && aNode->Parent==pNode->Parent) return true;
         }else if((movM->Type==4)&&(accM->Type==4)) return true;
-        else if (movM->Type==1 && accM->Type==6) return true; // ìàêåò â ïàïêó
-        else if (movM->Type==6 && accM->Type==6) return true; // ïàïêó â ïàïêó
-      }else{ // òÿíåì â íèêóäà
+        else if (movM->Type==1 && accM->Type==6) return true; // Ð¼Ð°ÐºÐµÑ‚ Ð² Ð¿Ð°Ð¿ÐºÑƒ
+        else if (movM->Type==6 && accM->Type==6) return true; // Ð¿Ð°Ð¿ÐºÑƒ Ð² Ð¿Ð°Ð¿ÐºÑƒ
+      }else{ // Ñ‚ÑÐ½ÐµÐ¼ Ð² Ð½Ð¸ÐºÑƒÐ´Ð°
         if ((movM->Type==1||movM->Type==6) && !aNode)
-          return true; // ìàêåò èëè ïàïêó â íèêóäà
+          return true; // Ð¼Ð°ÐºÐµÑ‚ Ð¸Ð»Ð¸ Ð¿Ð°Ð¿ÐºÑƒ Ð² Ð½Ð¸ÐºÑƒÐ´Ð°
       }
       return false;
    }catch(Exception &e){
@@ -743,7 +743,7 @@ void __fastcall TEditMaketForm::MaketListTVDragOver(TObject *Sender,
       Accept = false;
 }
 //---------------------------------------------------------------------------
-//èçìåíåíèå âûäåëåííîãî óçëà â äåðåâå (îáíîâëåíèå èíôîðìàöèè âî âêëàäêå ïàðàìåòðîâ)
+//Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ðµ Ð²Ñ‹Ð´ÐµÐ»ÐµÐ½Ð½Ð¾Ð³Ð¾ ÑƒÐ·Ð»Ð° Ð² Ð´ÐµÑ€ÐµÐ²Ðµ (Ð¾Ð±Ð½Ð¾Ð²Ð»ÐµÐ½Ð¸Ðµ Ð¸Ð½Ñ„Ð¾Ñ€Ð¼Ð°Ñ†Ð¸Ð¸ Ð²Ð¾ Ð²ÐºÐ»Ð°Ð´ÐºÐµ Ð¿Ð°Ñ€Ð°Ð¼ÐµÑ‚Ñ€Ð¾Ð²)
 void __fastcall TEditMaketForm::MaketListTVChange(TObject *Sender,
       TTreeNode *Node)
 {
@@ -762,7 +762,7 @@ void __fastcall TEditMaketForm::MaketListTVChange(TObject *Sender,
         pData = (MAKET*)Node->Data;
         SelType = pData->Type;
     }
-    for(int i=0;i<ComponentCount;i++)//ñíÿòèå îáðàáîò÷èêîâ âèäèìûõ ýëåìåíòîâ
+    for(int i=0;i<ComponentCount;i++)//ÑÐ½ÑÑ‚Ð¸Ðµ Ð¾Ð±Ñ€Ð°Ð±Ð¾Ñ‚Ñ‡Ð¸ÐºÐ¾Ð² Ð²Ð¸Ð´Ð¸Ð¼Ñ‹Ñ… ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð¾Ð²
     {
         ed=dynamic_cast<TEdit*>(Components[i]);
         cb=dynamic_cast<TCheckBox*>(Components[i]);
@@ -784,13 +784,13 @@ void __fastcall TEditMaketForm::MaketListTVChange(TObject *Sender,
     }
     if(!pData)
       return;
-    // óñòàíîâêà äîñòóïíîñòè äåéñòâèé
+    // ÑƒÑÑ‚Ð°Ð½Ð¾Ð²ÐºÐ° Ð´Ð¾ÑÑ‚ÑƒÐ¿Ð½Ð¾ÑÑ‚Ð¸ Ð´ÐµÐ¹ÑÑ‚Ð²Ð¸Ð¹
     iaNewFolder->Enabled = pData->Type == mtMaket || pData->Type == mtFolder;   // !Node->Parent
     iaNew->Enabled = !Node->Parent || pData->Type == mtFolder || pData->Type == mtMaket;
     iaClone->Enabled = pData->Type == mtMaket;
     btChanel->Enabled = pData->Type == mtMaket;
     btSign->Enabled = pData->Type == mtMaket;
-    // îáíîâëåíèå äàííûõ âèäèìûõ ýëåìåíòîâ
+    // Ð¾Ð±Ð½Ð¾Ð²Ð»ÐµÐ½Ð¸Ðµ Ð´Ð°Ð½Ð½Ñ‹Ñ… Ð²Ð¸Ð´Ð¸Ð¼Ñ‹Ñ… ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð¾Ð²
     eName->Text = pData->Name;
     eMid->Text = IntToStr(pData->Mid);
     switch(pData->Type) {
@@ -832,7 +832,7 @@ void __fastcall TEditMaketForm::MaketListTVChange(TObject *Sender,
         cbBlocking->Checked = pData->Blocking;
         break;
     }
-    for(int i=0;i<ComponentCount;i++) {//óñòàíîâêà îáðàáîò÷èêîâ âèäèìûõ ýëåìåíòîâ
+    for(int i=0;i<ComponentCount;i++) {//ÑƒÑÑ‚Ð°Ð½Ð¾Ð²ÐºÐ° Ð¾Ð±Ñ€Ð°Ð±Ð¾Ñ‚Ñ‡Ð¸ÐºÐ¾Ð² Ð²Ð¸Ð´Ð¸Ð¼Ñ‹Ñ… ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð¾Ð²
         ed=dynamic_cast<TEdit*>(Components[i]);
         cb=dynamic_cast<TCheckBox*>(Components[i]);
         rg=dynamic_cast<TRadioGroup*>(Components[i]);
@@ -854,7 +854,7 @@ void __fastcall TEditMaketForm::MaketListTVChange(TObject *Sender,
     }
 }
 //---------------------------------------------------------------------------
-//ñîõðàíåíèå èçìåíåíèé ïàðàìåòðîâ òåêóùåãî óçëà ïðè åãî èçìåíåíèè íà äðóãîé
+//ÑÐ¾Ñ…Ñ€Ð°Ð½ÐµÐ½Ð¸Ðµ Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ð¹ Ð¿Ð°Ñ€Ð°Ð¼ÐµÑ‚Ñ€Ð¾Ð² Ñ‚ÐµÐºÑƒÑ‰ÐµÐ³Ð¾ ÑƒÐ·Ð»Ð° Ð¿Ñ€Ð¸ ÐµÐ³Ð¾ Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ð¸ Ð½Ð° Ð´Ñ€ÑƒÐ³Ð¾Ð¹
 void __fastcall TEditMaketForm::MaketListTVChanging(TObject *Sender,
       TTreeNode *Node, bool &AllowChange)
 {
@@ -1152,7 +1152,7 @@ void __fastcall TEditMaketForm::cbDragDrop(TObject *Sender,
    else if(cbDst==cbQMinus)   setNum = dmQMinus;
    else if(cbDst==cbQOvfw)    setNum = dmQ;
 
-//   ReadTreeNode(MaketListTV, MaketListTV->Selected); - íå íóæíî ò.ê. ñ÷èòûâíå áûëî ïðè îïðåäåëíèè ñîñòîÿíèé CheckBox-îâ
+//   ReadTreeNode(MaketListTV, MaketListTV->Selected); - Ð½Ðµ Ð½ÑƒÐ¶Ð½Ð¾ Ñ‚.Ðº. ÑÑ‡Ð¸Ñ‚Ñ‹Ð²Ð½Ðµ Ð±Ñ‹Ð»Ð¾ Ð¿Ñ€Ð¸ Ð¾Ð¿Ñ€ÐµÐ´ÐµÐ»Ð½Ð¸Ð¸ ÑÐ¾ÑÑ‚Ð¾ÑÐ½Ð¸Ð¹ CheckBox-Ð¾Ð²
    TTreeNode*tn = MaketListTV->Selected->getFirstChild();
    MAKET*pData;
    while(tn){
@@ -1189,12 +1189,12 @@ bool __fastcall TEditMaketForm::MoveNode(TTreeNode*mNode, TTreeNode*aNode)
    TTreeNode*tn;
    if(!aNode){
      pData = (MAKET*)mNode->Data;
-     if(pData->Type==mtFolder || pData->Type==mtMaket){  // òÿíåì â íèêóäà ïàïêó èëè ìàêåò
+     if(pData->Type==mtFolder || pData->Type==mtMaket){  // Ñ‚ÑÐ½ÐµÐ¼ Ð² Ð½Ð¸ÐºÑƒÐ´Ð° Ð¿Ð°Ð¿ÐºÑƒ Ð¸Ð»Ð¸ Ð¼Ð°ÐºÐµÑ‚
        tn = mNode->Parent;
        mNode->MoveTo(NULL, naAddChild);
        pData->nGroup = 0;
        if(!pData->editing) pData->editing = 1;
-       if (tn && !tn->HasChildren) // äëÿ áûâøåãî ðîäèòåëÿ-ïàïêè îñòàâøåãîñÿ áåç äåòåé íàäî ïåðåðèñîâàòü èêîíêó
+       if (tn && !tn->HasChildren) // Ð´Ð»Ñ Ð±Ñ‹Ð²ÑˆÐµÐ³Ð¾ Ñ€Ð¾Ð´Ð¸Ñ‚ÐµÐ»Ñ-Ð¿Ð°Ð¿ÐºÐ¸ Ð¾ÑÑ‚Ð°Ð²ÑˆÐµÐ³Ð¾ÑÑ Ð±ÐµÐ· Ð´ÐµÑ‚ÐµÐ¹ Ð½Ð°Ð´Ð¾ Ð¿ÐµÑ€ÐµÑ€Ð¸ÑÐ¾Ð²Ð°Ñ‚ÑŒ Ð¸ÐºÐ¾Ð½ÐºÑƒ
          MaketListTVExpanded(tn->TreeView,tn);
        if(!EditRec) EditRec = true;
        return true;
@@ -1233,7 +1233,7 @@ bool __fastcall TEditMaketForm::MoveNode(TTreeNode*mNode, TTreeNode*aNode)
          aNode = tn;
       }
 
-      if(!(pData->Type==mtGroup && ((MAKET*)aNode->Data)->Type==mtMaket)){ // ãðóïïó ïåðåíîñèìóþ â ìàêåò íå óäàëàåì!
+      if(!(pData->Type==mtGroup && ((MAKET*)aNode->Data)->Type==mtMaket)){ // Ð³Ñ€ÑƒÐ¿Ð¿Ñƒ Ð¿ÐµÑ€ÐµÐ½Ð¾ÑÐ¸Ð¼ÑƒÑŽ Ð² Ð¼Ð°ÐºÐµÑ‚ Ð½Ðµ ÑƒÐ´Ð°Ð»Ð°ÐµÐ¼!
         nNodes_Del[CountNodes_Del].Type = pData->Type;
         nNodes_Del[CountNodes_Del].Mid = pData->Mid;
         switch(pData->Type)
@@ -1249,7 +1249,7 @@ bool __fastcall TEditMaketForm::MoveNode(TTreeNode*mNode, TTreeNode*aNode)
         }
         CountNodes_Del++;
       }
-      switch(pData->Type) // ïðè ïåðåíîñå çàìåíÿåì èä ðîäèòåëÿ íà íîâûé
+      switch(pData->Type) // Ð¿Ñ€Ð¸ Ð¿ÐµÑ€ÐµÐ½Ð¾ÑÐµ Ð·Ð°Ð¼ÐµÐ½ÑÐµÐ¼ Ð¸Ð´ Ñ€Ð¾Ð´Ð¸Ñ‚ÐµÐ»Ñ Ð½Ð° Ð½Ð¾Ð²Ñ‹Ð¹
       {
         case mtPoint:
           pData->GroupId = ((MAKET*)aNode->Data)->Mid;
@@ -1265,9 +1265,9 @@ bool __fastcall TEditMaketForm::MoveNode(TTreeNode*mNode, TTreeNode*aNode)
       mNode->MoveTo(aNode, naAddChild);
       pData->nGroup = ((MAKET*)aNode->Data)->Mid;
       if(!pData->editing) pData->editing = 1;
-      if (tn && !tn->HasChildren) // äëÿ áûâøåãî ðîäèòåëÿ-ïàïêè îñòàâøåãîñÿ áåç äåòåé íàäî ïåðåðèñîâàòü èêîíêó
+      if (tn && !tn->HasChildren) // Ð´Ð»Ñ Ð±Ñ‹Ð²ÑˆÐµÐ³Ð¾ Ñ€Ð¾Ð´Ð¸Ñ‚ÐµÐ»Ñ-Ð¿Ð°Ð¿ÐºÐ¸ Ð¾ÑÑ‚Ð°Ð²ÑˆÐµÐ³Ð¾ÑÑ Ð±ÐµÐ· Ð´ÐµÑ‚ÐµÐ¹ Ð½Ð°Ð´Ð¾ Ð¿ÐµÑ€ÐµÑ€Ð¸ÑÐ¾Ð²Ð°Ñ‚ÑŒ Ð¸ÐºÐ¾Ð½ÐºÑƒ
         MaketListTVExpanded(tn->TreeView,tn);
-      MaketListTVExpanded(aNode->TreeView,aNode); // äëÿ íîâîãî ðîäèòåëÿ-ïàïêè íàäî òîæå ïåðåðèñîâàòü èêîíêó
+      MaketListTVExpanded(aNode->TreeView,aNode); // Ð´Ð»Ñ Ð½Ð¾Ð²Ð¾Ð³Ð¾ Ñ€Ð¾Ð´Ð¸Ñ‚ÐµÐ»Ñ-Ð¿Ð°Ð¿ÐºÐ¸ Ð½Ð°Ð´Ð¾ Ñ‚Ð¾Ð¶Ðµ Ð¿ÐµÑ€ÐµÑ€Ð¸ÑÐ¾Ð²Ð°Ñ‚ÑŒ Ð¸ÐºÐ¾Ð½ÐºÑƒ
    }else
     {
       if(aNode->HasChildren && !aNode->getFirstChild()->Data)
@@ -1277,7 +1277,7 @@ bool __fastcall TEditMaketForm::MoveNode(TTreeNode*mNode, TTreeNode*aNode)
          tn->MoveTo(aNode, naAddChild);
          if(!((MAKET*)tn->Data)->editing)
             ((MAKET*)tn->Data)->editing = 1;
-         tn = tn->getNextSibling(); ///// ñå÷èí äîáàâèë íàóãàä
+         tn = tn->getNextSibling(); ///// ÑÐµÑ‡Ð¸Ð½ Ð´Ð¾Ð±Ð°Ð²Ð¸Ð» Ð½Ð°ÑƒÐ³Ð°Ð´
       }
       realdeletion = true;
       mNode->Delete();
@@ -1292,7 +1292,7 @@ bool __fastcall TEditMaketForm::CopyNode(TTreeNode*cNode, TTreeNode*aNode)
 {
    TTreeNode*tn;
    if (!aNode){
-     if (((MAKET*)cNode->Data)->Type==mtFolder||((MAKET*)cNode->Data)->Type==mtMaket){ // êîïèðóåì â íèêóäà ïàïêó èëè ìàêåò
+     if (((MAKET*)cNode->Data)->Type==mtFolder||((MAKET*)cNode->Data)->Type==mtMaket){ // ÐºÐ¾Ð¿Ð¸Ñ€ÑƒÐµÐ¼ Ð² Ð½Ð¸ÐºÑƒÐ´Ð° Ð¿Ð°Ð¿ÐºÑƒ Ð¸Ð»Ð¸ Ð¼Ð°ÐºÐµÑ‚
         MAKET *pData = new MAKET;
         memcpy(pData, cNode->Data, sizeof(MAKET));
         pData->Mid = pData->tmpMid = 0;
@@ -1312,7 +1312,7 @@ bool __fastcall TEditMaketForm::CopyNode(TTreeNode*cNode, TTreeNode*aNode)
         tn->ImageIndex = ind;
         tn->SelectedIndex = ind;
         pData->editing = 1;
-        if(cNode->HasChildren)  //êîíòðîëü äîáàâëåíèÿ äî÷åðíèõ óçëîâ
+        if(cNode->HasChildren)  //ÐºÐ¾Ð½Ñ‚Ñ€Ð¾Ð»ÑŒ Ð´Ð¾Ð±Ð°Ð²Ð»ÐµÐ½Ð¸Ñ Ð´Ð¾Ñ‡ÐµÑ€Ð½Ð¸Ñ… ÑƒÐ·Ð»Ð¾Ð²
           CopyChildPoints(tn, cNode);
         if(!EditRec) EditRec = true;
         return true;
@@ -1345,7 +1345,7 @@ bool __fastcall TEditMaketForm::CopyNode(TTreeNode*cNode, TTreeNode*aNode)
          aNode = tn;
       }
 
-      switch(pData->Type){  // çàìåíÿåì èä ðîäèòåëÿ íîâîé êîïèè óçëà íà èä íîâîãî ðîäèòåëÿ
+      switch(pData->Type){  // Ð·Ð°Ð¼ÐµÐ½ÑÐµÐ¼ Ð¸Ð´ Ñ€Ð¾Ð´Ð¸Ñ‚ÐµÐ»Ñ Ð½Ð¾Ð²Ð¾Ð¹ ÐºÐ¾Ð¿Ð¸Ð¸ ÑƒÐ·Ð»Ð° Ð½Ð° Ð¸Ð´ Ð½Ð¾Ð²Ð¾Ð³Ð¾ Ñ€Ð¾Ð´Ð¸Ñ‚ÐµÐ»Ñ
           case mtPoint:
             pData->GroupId = ((MAKET*)aNode->Data)->Mid;
             break;
@@ -1361,7 +1361,7 @@ bool __fastcall TEditMaketForm::CopyNode(TTreeNode*cNode, TTreeNode*aNode)
       }
       tn = MaketListTV->Items->AddChildObject(aNode, pData->Name, pData);
       int ind;
-      switch(pData->Type){ // âûñòàâëÿåì èíäåêñ èêîíêè óçëà
+      switch(pData->Type){ // Ð²Ñ‹ÑÑ‚Ð°Ð²Ð»ÑÐµÐ¼ Ð¸Ð½Ð´ÐµÐºÑ Ð¸ÐºÐ¾Ð½ÐºÐ¸ ÑƒÐ·Ð»Ð°
         case mtPoint:
          if(!pData->DimType)
             pData->DimType = dmA;
@@ -1392,7 +1392,7 @@ bool __fastcall TEditMaketForm::CopyNode(TTreeNode*cNode, TTreeNode*aNode)
       tn->SelectedIndex = ind;
       pData->editing = 1;
    }else tn = aNode;
-   if(cNode->HasChildren&&(((MAKET*)cNode->Data)->Type!=mtPoint))  //êîíòðîëü äîáàâëåíèÿ äî÷åðíèõ óçëîâ
+   if(cNode->HasChildren&&(((MAKET*)cNode->Data)->Type!=mtPoint))  //ÐºÐ¾Ð½Ñ‚Ñ€Ð¾Ð»ÑŒ Ð´Ð¾Ð±Ð°Ð²Ð»ÐµÐ½Ð¸Ñ Ð´Ð¾Ñ‡ÐµÑ€Ð½Ð¸Ñ… ÑƒÐ·Ð»Ð¾Ð²
       CopyChildPoints(tn, cNode);
    if(!EditRec) EditRec = true;
    return true;
@@ -1417,7 +1417,7 @@ void __fastcall TEditMaketForm::CopyChildPoints(TTreeNode *d, TTreeNode *s)
             pData = new MAKET;
             memcpy(pData, tn->Data, sizeof(MAKET));
             tmp = MaketListTV->Items->AddChildObjectFirst(d, pData->Name, pData);
-            // íàñòðîéêà íà÷àëüíîãî ñîñòîÿíèÿ
+            // Ð½Ð°ÑÑ‚Ñ€Ð¾Ð¹ÐºÐ° Ð½Ð°Ñ‡Ð°Ð»ÑŒÐ½Ð¾Ð³Ð¾ ÑÐ¾ÑÑ‚Ð¾ÑÐ½Ð¸Ñ
             tmp->ImageIndex = tn->ImageIndex;
             tmp->SelectedIndex = tn->SelectedIndex;
             pData->editing = 1;
@@ -1426,7 +1426,7 @@ void __fastcall TEditMaketForm::CopyChildPoints(TTreeNode *d, TTreeNode *s)
             else
                 pData->DimType = dmAPlus;
 
-            // Êîïèðîâàíèå èç äåðåâà òî÷åê
+            // ÐšÐ¾Ð¿Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ðµ Ð¸Ð· Ð´ÐµÑ€ÐµÐ²Ð° Ñ‚Ð¾Ñ‡ÐµÐº
             if(s->TreeView == PointsTV)
             {
                 pData->KC = 1;
@@ -1449,7 +1449,7 @@ void __fastcall TEditMaketForm::CopyChildPoints(TTreeNode *d, TTreeNode *s)
     }
 }
 //---------------------------------------------------------------------------
-//äîáàâëåíèå íîâîãî ìàêåòà
+//Ð´Ð¾Ð±Ð°Ð²Ð»ÐµÐ½Ð¸Ðµ Ð½Ð¾Ð²Ð¾Ð³Ð¾ Ð¼Ð°ÐºÐµÑ‚Ð°
 void __fastcall TEditMaketForm::vNew(TObject* Sender)
 {
     try{
@@ -1501,7 +1501,7 @@ void __fastcall TEditMaketForm::vNew(TObject* Sender)
     }
 }
 //---------------------------------------------------------------------------
-//óäàëåíèå óçëà èç äåðåâà
+//ÑƒÐ´Ð°Ð»ÐµÐ½Ð¸Ðµ ÑƒÐ·Ð»Ð° Ð¸Ð· Ð´ÐµÑ€ÐµÐ²Ð°
 void __fastcall TEditMaketForm::vDelete(TObject* Sender)
 {
     TTreeNode *sNode=MaketListTV->Selected;
@@ -1645,7 +1645,7 @@ inline void __fastcall TEditMaketForm::changeNode(TTreeNode*Dst, TTreeNode*Src)
    if(!Src->Cut && Src->TreeView==MaketListTV && ((Dst&&((MAKET*)Dst->Data)->Type!=4) || !Dst))
    {// Copy
       CopyNode(Src, Dst);
-   }else{//Ïåðåíîñ
+   }else{//ÐŸÐµÑ€ÐµÐ½Ð¾Ñ
       if(Src->TreeView==PointsTV){
          CopyNode(Src, Dst);
       }else
@@ -1677,7 +1677,7 @@ void __fastcall TEditMaketForm::vClone(TObject *Sender)
         oqClone->Execute();
         int imaket=oqClone->ParamByName("new_m")->AsInteger;
         vRefresh(this);
-        // ïîñëå îáíîâëåíèÿ äåðåâà íàäî íàéòè êëîíèðîâàííûé óçåë è ñòàòü íà íåãî
+        // Ð¿Ð¾ÑÐ»Ðµ Ð¾Ð±Ð½Ð¾Ð²Ð»ÐµÐ½Ð¸Ñ Ð´ÐµÑ€ÐµÐ²Ð° Ð½Ð°Ð´Ð¾ Ð½Ð°Ð¹Ñ‚Ð¸ ÐºÐ»Ð¾Ð½Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð½Ñ‹Ð¹ ÑƒÐ·ÐµÐ» Ð¸ ÑÑ‚Ð°Ñ‚ÑŒ Ð½Ð° Ð½ÐµÐ³Ð¾
         TTreeNode * tn=MaketListTV->Items->GetFirstNode();
         while(tn){
           if((MAKET*)tn->Data&&((MAKET*)tn->Data)->Type==mtMaket&&((MAKET*)tn->Data)->Mid==imaket){

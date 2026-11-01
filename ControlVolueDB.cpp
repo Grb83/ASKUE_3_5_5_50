@@ -203,15 +203,15 @@ void __fastcall TFormControlVolueDB::SaveTableToFile(TComponent* Owner,TDBGridEh
                 delete Reg;
         }
     if (Language=="UKR"){
-    aSaveDialog->Title = "Çáåðåãòè äî ôàéëà...";
-    aSaveDialog->FileName = "Êîíòðîëü âì³ñòó ÁÄ";
+    aSaveDialog->Title = "Ð—Ð±ÐµÑ€ÐµÐ³Ñ‚Ð¸ Ð´Ð¾ Ñ„Ð°Ð¹Ð»Ð°...";
+    aSaveDialog->FileName = "ÐšÐ¾Ð½Ñ‚Ñ€Ð¾Ð»ÑŒ Ð²Ð¼Ñ–ÑÑ‚Ñƒ Ð‘Ð”";
     aSaveDialog->DefaultExt = "xls";
-    aSaveDialog->Filter = "Excel-òàáëèöÿ (*.xls)|*.xls|Ôàéë ç ðîçä³ëüíèêîì (*.csv)|*.csv|Òåêñòîâ³ äîêóìåíòè (*.txt)|*.txt";
+    aSaveDialog->Filter = "Excel-Ñ‚Ð°Ð±Ð»Ð¸Ñ†Ñ (*.xls)|*.xls|Ð¤Ð°Ð¹Ð» Ð· Ñ€Ð¾Ð·Ð´Ñ–Ð»ÑŒÐ½Ð¸ÐºÐ¾Ð¼ (*.csv)|*.csv|Ð¢ÐµÐºÑÑ‚Ð¾Ð²Ñ– Ð´Ð¾ÐºÑƒÐ¼ÐµÐ½Ñ‚Ð¸ (*.txt)|*.txt";
     }else{
-    aSaveDialog->Title = "Ñîõðàíèòü â ôàéë...";
-    aSaveDialog->FileName = "Êîíòðîëü îáú¸ìà ÁÄ";
+    aSaveDialog->Title = "Ð¡Ð¾Ñ…Ñ€Ð°Ð½Ð¸Ñ‚ÑŒ Ð² Ñ„Ð°Ð¹Ð»...";
+    aSaveDialog->FileName = "ÐšÐ¾Ð½Ñ‚Ñ€Ð¾Ð»ÑŒ Ð¾Ð±ÑŠÑ‘Ð¼Ð° Ð‘Ð”";
     aSaveDialog->DefaultExt = "xls";
-    aSaveDialog->Filter = "Excel-òàáëèöà (*.xls)|*.xls|Ôàéë ñ ðàçäåëèòåëåì (*.csv)|*.csv|Òåêñòîâûå äîêóìåíòû (*.txt)|*.txt";
+    aSaveDialog->Filter = "Excel-Ñ‚Ð°Ð±Ð»Ð¸Ñ†Ð° (*.xls)|*.xls|Ð¤Ð°Ð¹Ð» Ñ Ñ€Ð°Ð·Ð´ÐµÐ»Ð¸Ñ‚ÐµÐ»ÐµÐ¼ (*.csv)|*.csv|Ð¢ÐµÐºÑÑ‚Ð¾Ð²Ñ‹Ðµ Ð´Ð¾ÐºÑƒÐ¼ÐµÐ½Ñ‚Ñ‹ (*.txt)|*.txt";
     }
     aSaveDialog->Options << ofOverwritePrompt;
     if(aSaveDialog->Execute())
@@ -227,7 +227,7 @@ void __fastcall TFormControlVolueDB::SaveTableToFile(TComponent* Owner,TDBGridEh
     }
     try{
     StringList  = new TStringList;
-    //Çàâãîëîâîê
+    //Ð—Ð°Ð²Ð³Ð¾Ð»Ð¾Ð²Ð¾Ðº
     if(!RepCaption.IsEmpty())
       StringList->Add(RepCaption);
     s="";
@@ -239,7 +239,7 @@ void __fastcall TFormControlVolueDB::SaveTableToFile(TComponent* Owner,TDBGridEh
       }
     }
     StringList->Add(s);
-    //Äàííûå
+    //Ð”Ð°Ð½Ð½Ñ‹Ðµ
     SavePlace = ds->GetBookmark();
     ds->DisableControls();
     ds->First();
@@ -251,8 +251,8 @@ void __fastcall TFormControlVolueDB::SaveTableToFile(TComponent* Owner,TDBGridEh
           if(!s.IsEmpty())
             s += tab;
           if (gr->Columns->Items[i]->FieldName == "Arc"){
-            if (StrToInt (gr->Columns->Items[i]->Field->AsString)==1)  s += "Äà";
-            else s += "Íåò";
+            if (StrToInt (gr->Columns->Items[i]->Field->AsString)==1)  s += "Ð”Ð°";
+            else s += "ÐÐµÑ‚";
             }
           else
             s += gr->Columns->Items[i]->Field->AsString;

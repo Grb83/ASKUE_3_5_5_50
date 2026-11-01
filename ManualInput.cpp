@@ -27,8 +27,8 @@ __fastcall TfmManualInput::TfmManualInput(TComponent* Owner,AnsiString Name, lon
  ReplaceRyda(this,BASE_SCHEME,SchemeName);
  EditSum=false;
  INV=false;
- isEditFeeders=rezerv;   //Вызов из контекстного меню
- TestMid=ttable;         // Передаваемый mid
+ isEditFeeders=rezerv;   //Р’С‹Р·РѕРІ РёР· РєРѕРЅС‚РµРєСЃС‚РЅРѕРіРѕ РјРµРЅСЋ
+ TestMid=ttable;         // РџРµСЂРµРґР°РІР°РµРјС‹Р№ mid
  iaCopySAA->OnExecute    = vCopyClick;
  iaPasteSAA->OnExecute    = vPasteClick;
  Access=a;
@@ -163,11 +163,11 @@ void __fastcall TfmManualInput::vParams(TObject* Sender)
   int ind=0;
  	unsigned short year,month,day,hour, minute, sec, msec;
 
-   //-----------------------------------   наполнение колонок фиксированных
+   //-----------------------------------   РЅР°РїРѕР»РЅРµРЅРёРµ РєРѕР»РѕРЅРѕРє С„РёРєСЃРёСЂРѕРІР°РЅРЅС‹С…
    AnsiString NamePoint1;
    TFieldDefs *pDefs = vtData->FieldDefs;
     TFieldDef *pDef=NULL;
-    //Теперь структура таблицы
+    //РўРµРїРµСЂСЊ СЃС‚СЂСѓРєС‚СѓСЂР° С‚Р°Р±Р»РёС†С‹
     pDef = pDefs->AddFieldDef();
     pDef->DataType = ftFloat;
     pDef->Name = "mid";
@@ -195,7 +195,7 @@ void __fastcall TfmManualInput::vParams(TObject* Sender)
     pDef->DataType = ftInteger;
     pDef->Name = "KC";
     pDef->DisplayName="KC";
-  //-------------------------------------границы
+  //-------------------------------------РіСЂР°РЅРёС†С‹
     pDef = pDefs->AddFieldDef();
     pDef->DataType = ftFloat;
     pDef->Name = "predmin";
@@ -258,9 +258,9 @@ void __fastcall TfmManualInput::vParams(TObject* Sender)
   default: PowerProfile=60;break;
   }
 
-    if((IsShiftTimeZona)&&(month==10)&&( p.myTime.DayOfWeek()==1&&31-day<7))  //25 час
+    if((IsShiftTimeZona)&&(month==10)&&( p.myTime.DayOfWeek()==1&&31-day<7))  //25 С‡Р°СЃ
        ColCount=24*(60/PowerProfile)+1*(60/PowerProfile);
-    else if((IsShiftTimeZona)&&(month==3)&&( p.myTime.DayOfWeek()==1&&31-day<7)) //23 час
+    else if((IsShiftTimeZona)&&(month==3)&&( p.myTime.DayOfWeek()==1&&31-day<7)) //23 С‡Р°СЃ
        ColCount=24*(60/PowerProfile)-1*(60/PowerProfile);
     else
      ColCount=24*(60/PowerProfile);
@@ -269,12 +269,12 @@ void __fastcall TfmManualInput::vParams(TObject* Sender)
 
     hour=1;
     stepProfile=1.0/ColCount;
-     if(ColCount>24*(60/PowerProfile))//25 час
+     if(ColCount>24*(60/PowerProfile))//25 С‡Р°СЃ
     {
     stepProfile=1.0/(ColCount-60/PowerProfile);
     tempDate=TDateTime(year,month,day)+hour/(double)(ColCount-60/PowerProfile);
     }
-    else if(ColCount<24*(60/PowerProfile))//23 час
+    else if(ColCount<24*(60/PowerProfile))//23 С‡Р°СЃ
     {
     stepProfile=1.0/(ColCount+60/PowerProfile);
     tempDate=TDateTime(year,month,day)+hour/(double)(ColCount+60/PowerProfile);
@@ -287,7 +287,7 @@ void __fastcall TfmManualInput::vParams(TObject* Sender)
    	formatDate="t";
 		formatDateSum="dd/mm/yyyy";
 
-  if(!INV){  // не инверсия
+  if(!INV){  // РЅРµ РёРЅРІРµСЂСЃРёСЏ
 
     for(int i=0; i<ColCount+1; i++){
       pDef = pDefs->AddFieldDef();
@@ -296,7 +296,7 @@ void __fastcall TfmManualInput::vParams(TObject* Sender)
       pDef->DisplayName="Field"+IntToStr(i);
 
       }
-  }else{    //  инверсия
+  }else{    //  РёРЅРІРµСЂСЃРёСЏ
      //-----------------------
      for(int i=0; i<RowCount; i++){
       pDef = pDefs->AddFieldDef();
@@ -314,7 +314,7 @@ void __fastcall TfmManualInput::vParams(TObject* Sender)
 
    vtData->Open();
 
- if(!INV){  // не инверсия
+ if(!INV){  // РЅРµ РёРЅРІРµСЂСЃРёСЏ
    oqReadRow->Open();
    oqReadRow->First();
     RowCount=0;
@@ -375,7 +375,7 @@ void __fastcall TfmManualInput::vParams(TObject* Sender)
 
           }
 
-       //фиксированные колонки
+       //С„РёРєСЃРёСЂРѕРІР°РЅРЅС‹Рµ РєРѕР»РѕРЅРєРё
   for(int i=0;i<4;i++)
   {
   grColumn=dbManInput->Columns->Add();
@@ -424,7 +424,7 @@ void __fastcall TfmManualInput::vParams(TObject* Sender)
 
     for(int z=1;z<ColCount+1;z++){
       grColumn=dbManInput->Columns->Add();
-      grColumn->Tag=z+(dbManInput->FrozenCols)-2;//Запоминаем порядок (а то колонки поменяют)
+      grColumn->Tag=z+(dbManInput->FrozenCols)-2;//Р—Р°РїРѕРјРёРЅР°РµРј РїРѕСЂСЏРґРѕРє (Р° С‚Рѕ РєРѕР»РѕРЅРєРё РїРѕРјРµРЅСЏСЋС‚)
       grColumn->Title->Caption=tempDate.FormatString(formatDate);
       grColumn->FieldName="Field"+IntToStr(z);
       grColumn->Footer->ValueType=fvtSum;
@@ -439,7 +439,7 @@ void __fastcall TfmManualInput::vParams(TObject* Sender)
       && minute==(PowerProfile==60?0:PowerProfile)))
 
        {
-           ind=60/PowerProfile;   //25 час
+           ind=60/PowerProfile;   //25 С‡Р°СЃ
            tempDate=tempDate-ind*stepProfile;
 
        }
@@ -447,7 +447,7 @@ void __fastcall TfmManualInput::vParams(TObject* Sender)
       && minute==(PowerProfile==60?0:PowerProfile)))
 
        {
-           ind=60/PowerProfile;   //23 час
+           ind=60/PowerProfile;   //23 С‡Р°СЃ
            tempDate=tempDate+ind*stepProfile;
 
        }
@@ -467,7 +467,7 @@ void __fastcall TfmManualInput::vParams(TObject* Sender)
        if(TCount>1) dbManInput->FooterRowCount=0;
        else dbManInput->FooterRowCount=1;
 
-    }else{    //  инверсия
+    }else{    //  РёРЅРІРµСЂСЃРёСЏ
 
 
       GetColumnNameInv();
@@ -489,7 +489,7 @@ void __fastcall TfmManualInput::vParams(TObject* Sender)
       && minute==(PowerProfile==60?0:PowerProfile)))
 
        {
-           ind=60/PowerProfile;   //25 час
+           ind=60/PowerProfile;   //25 С‡Р°СЃ
            tempDate=tempDate-ind*stepProfile;
 
        }
@@ -497,7 +497,7 @@ void __fastcall TfmManualInput::vParams(TObject* Sender)
       && minute==(PowerProfile==60?0:PowerProfile)))
 
        {
-           ind=60/PowerProfile;   //23 час
+           ind=60/PowerProfile;   //23 С‡Р°СЃ
            tempDate=tempDate+ind*stepProfile;
 
        }
@@ -517,12 +517,12 @@ void __fastcall TfmManualInput::vParams(TObject* Sender)
      dbManInput->Columns->EndUpdate();
 
    //------------------------------------------------------------------------------------------
-    Caption = TaskName+" за "+p.myTime.FormatString("dd.mm.yyyy");
+    Caption = TaskName+" Р·Р° "+p.myTime.FormatString("dd.mm.yyyy");
 
 }
 
 //---------------------------------------------------------------------------
-void __fastcall TfmManualInput::GetColumnNameInv()     //  инверсия
+void __fastcall TfmManualInput::GetColumnNameInv()     //  РёРЅРІРµСЂСЃРёСЏ
 {
  TColumnEh *grColumn;
 
@@ -644,7 +644,7 @@ void __fastcall TfmManualInput::ReadData()
     oqReadData->Execute();
 
 
-  if(!INV)    // не инверсия
+  if(!INV)    // РЅРµ РёРЅРІРµСЂСЃРёСЏ
 
    {
    vtData->First();
@@ -671,7 +671,7 @@ void __fastcall TfmManualInput::ReadData()
           // }
 
      }
-   }else{    //  инверсия
+   }else{    //  РёРЅРІРµСЂСЃРёСЏ
 
  /*  for(int k=0;k<RowCount;k++)
            {
@@ -718,8 +718,8 @@ void __fastcall TfmManualInput::ReadData()
    
 
 }
-/*Old Version before 26.01.2021 - Commented by GRB - тут был баг проявлявшийся в копировании за предыдущую дату - размножался по последнему показателю последней точки данные за точку где-то в середине
-  Разрулить это красиво я не смог - написал заплатку с getLastMid() и этот случай рассматривал отдельно - на всякий случай оставляю старую версию процедуры если где ещё стрельнет
+/*Old Version before 26.01.2021 - Commented by GRB - С‚СѓС‚ Р±С‹Р» Р±Р°Рі РїСЂРѕСЏРІР»СЏРІС€РёР№СЃСЏ РІ РєРѕРїРёСЂРѕРІР°РЅРёРё Р·Р° РїСЂРµРґС‹РґСѓС‰СѓСЋ РґР°С‚Сѓ - СЂР°Р·РјРЅРѕР¶Р°Р»СЃСЏ РїРѕ РїРѕСЃР»РµРґРЅРµРјСѓ РїРѕРєР°Р·Р°С‚РµР»СЋ РїРѕСЃР»РµРґРЅРµР№ С‚РѕС‡РєРё РґР°РЅРЅС‹Рµ Р·Р° С‚РѕС‡РєСѓ РіРґРµ-С‚Рѕ РІ СЃРµСЂРµРґРёРЅРµ
+  Р Р°Р·СЂСѓР»РёС‚СЊ СЌС‚Рѕ РєСЂР°СЃРёРІРѕ СЏ РЅРµ СЃРјРѕРі - РЅР°РїРёСЃР°Р» Р·Р°РїР»Р°С‚РєСѓ СЃ getLastMid() Рё СЌС‚РѕС‚ СЃР»СѓС‡Р°Р№ СЂР°СЃСЃРјР°С‚СЂРёРІР°Р» РѕС‚РґРµР»СЊРЅРѕ - РЅР° РІСЃСЏРєРёР№ СЃР»СѓС‡Р°Р№ РѕСЃС‚Р°РІР»СЏСЋ СЃС‚Р°СЂСѓСЋ РІРµСЂСЃРёСЋ РїСЂРѕС†РµРґСѓСЂС‹ РµСЃР»Рё РіРґРµ РµС‰С‘ СЃС‚СЂРµР»СЊРЅРµС‚
 */
 //-----------------------------------------------------------------------
 
@@ -863,7 +863,7 @@ void __fastcall TfmManualInput::ReadData()
 //---------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------
-// GRB 26.01.2021 - REWRITE - исправление бага сверху
+// GRB 26.01.2021 - REWRITE - РёСЃРїСЂР°РІР»РµРЅРёРµ Р±Р°РіР° СЃРІРµСЂС…Сѓ
 void __fastcall TfmManualInput::CopyData()
 {
  double stepProfile;
@@ -884,26 +884,26 @@ void __fastcall TfmManualInput::CopyData()
   case 3: Step=24*(60/5);break;
   default: Step=24;break;
   }
-    oqReadData->ParamByName("par1")->AsInteger= p.mid ;    //с чего копируем
+    oqReadData->ParamByName("par1")->AsInteger= p.mid ;    //СЃ С‡РµРіРѕ РєРѕРїРёСЂСѓРµРј
     oqReadData->ParamByName("par2")->AsInteger= p.entype[0];
     oqReadData->ParamByName("par3")->AsInteger= p.entype[1];
     oqReadData->ParamByName("par4")->AsInteger= p.entype[2];
     oqReadData->ParamByName("par5")->AsInteger= p.entype[3];
     oqReadData->ParamByName("par6")->AsInteger= p.entype[4];
     oqReadData->ParamByName("par7")->AsInteger= p.entype[5];
-    oqReadData->ParamByName("par8")->AsInteger= 1/*p.ifpoint*/; //28.01.2021 GRB - для работы в дереве групп тут меняем было p.ifpoint
+    oqReadData->ParamByName("par8")->AsInteger= 1/*p.ifpoint*/; //28.01.2021 GRB - РґР»СЏ СЂР°Р±РѕС‚С‹ РІ РґРµСЂРµРІРµ РіСЂСѓРїРї С‚СѓС‚ РјРµРЅСЏРµРј Р±С‹Р»Рѕ p.ifpoint
     oqReadData->ParamByName("par9")->AsString = p.myTime.FormatString("dd.mm.yyyy hh:nn:ss");
     oqReadData->ParamByName("par10")->AsInteger= Step;
     oqReadData->ParamByName("par11")->AsInteger= ColCount+1;
     oqReadData->ParamByName("par12")->AsString = tp.myTime.FormatString("dd.mm.yyyy hh:nn:ss");
     oqReadData->ParamByName("par13")->Length=(ColCount+1)*RowCount;
-    oqReadData->ParamByName("par14")->AsInteger= TestMid;   //на что копируем
+    oqReadData->ParamByName("par14")->AsInteger= TestMid;   //РЅР° С‡С‚Рѕ РєРѕРїРёСЂСѓРµРј
 
 
     oqReadData->Execute();
 
 
-  if(!INV)    // не инверсия
+  if(!INV)    // РЅРµ РёРЅРІРµСЂСЃРёСЏ
 
    {
      int t=0;
@@ -917,7 +917,7 @@ void __fastcall TfmManualInput::CopyData()
               {
          vtData->Edit();
          vtData->FieldByName("IsEdit")->AsInteger=1;
-        //26.01.2021 - Тут начинается ветка для проблемной последней точки в списке
+        //26.01.2021 - РўСѓС‚ РЅР°С‡РёРЅР°РµС‚СЃСЏ РІРµС‚РєР° РґР»СЏ РїСЂРѕР±Р»РµРјРЅРѕР№ РїРѕСЃР»РµРґРЅРµР№ С‚РѕС‡РєРё РІ СЃРїРёСЃРєРµ
           if ((last_mid_grb>-1)&&(TestMid==vtData->FieldByName("mid")->AsFloat)&&(last_mid_grb == vtData->FieldByName("mid")->AsFloat)){
           //if (t>3) break;
           for(int i=0;i<ColCount+1;i++){
@@ -929,7 +929,7 @@ void __fastcall TfmManualInput::CopyData()
                  } else
                 vtData->FieldByName("Field"+IntToStr(i)) ->Clear();
               }
-          }else//тут все остальные
+          }else//С‚СѓС‚ РІСЃРµ РѕСЃС‚Р°Р»СЊРЅС‹Рµ
           for(int i=0;i<ColCount+1;i++)
                {
                vtData->Edit();
@@ -945,14 +945,14 @@ void __fastcall TfmManualInput::CopyData()
                 }
              t++;
            }
-           //09.02.2020 - GRB COMMENT MEGA FIX - вот из за этого и были все проблемы с копированием последней точки и точек с не всеми 1 по матрице в версии Сечина
+           //09.02.2020 - GRB COMMENT MEGA FIX - РІРѕС‚ РёР· Р·Р° СЌС‚РѕРіРѕ Рё Р±С‹Р»Рё РІСЃРµ РїСЂРѕР±Р»РµРјС‹ СЃ РєРѕРїРёСЂРѕРІР°РЅРёРµРј РїРѕСЃР»РµРґРЅРµР№ С‚РѕС‡РєРё Рё С‚РѕС‡РµРє СЃ РЅРµ РІСЃРµРјРё 1 РїРѕ РјР°С‚СЂРёС†Рµ РІ РІРµСЂСЃРёРё РЎРµС‡РёРЅР°
            /*else   vtData->Next();*/
            //END COMMENT
             vtData->Next();
 
     }
 
-   }else{    //  инверсия
+   }else{    //  РёРЅРІРµСЂСЃРёСЏ
 
   /* for(int k=0;k<RowCount;k++)
            {
@@ -1011,7 +1011,7 @@ void __fastcall TfmManualInput::CopyData()
         vtData->GotoBookmark(SavePlace);
      vtData->FreeBookmark(SavePlace);
 
-  }    //  инверсия
+  }    //  РёРЅРІРµСЂСЃРёСЏ
    
 
 }
@@ -1060,7 +1060,7 @@ TBookmark __fastcall TfmManualInput::TestEditMid(TVirtualTable *tvtData,TBookmar
        }
 }
 //---------------------------------------------------------------------------
-// Сохранить
+// РЎРѕС…СЂР°РЅРёС‚СЊ
 void __fastcall TfmManualInput::vSave
 (TObject* Sender)
 {
@@ -1104,7 +1104,7 @@ if ((!INV&&!SaveCheck())||(INV&&!SaveInvCheck()))
   oqSave->Params->Clear();
   oqSave->SQL->Text="begin "+SchemeName+"MANUAL_IN_PG.Save_Data_p(:par1,:par2,:par3,:par4,:par5,:par7,:par6);end; ";
   vtData->First();
- if(!INV){  //не инверсия
+ if(!INV){  //РЅРµ РёРЅРІРµСЂСЃРёСЏ
   while(!vtData->Eof)
   {
 
@@ -1185,7 +1185,7 @@ if ((!INV&&!SaveCheck())||(INV&&!SaveInvCheck()))
   
   dmMain->orases->Commit();
 
- }else{   // инверсия
+ }else{   // РёРЅРІРµСЂСЃРёСЏ
 
 
   //-----------------------------------------------------------------------
@@ -1351,7 +1351,7 @@ TBookmark SavePlace;
 
  }
 //-----------------------------------------------------------------------------------------
- void __fastcall TfmManualInput::PCheck()  //не инверсия
+ void __fastcall TfmManualInput::PCheck()  //РЅРµ РёРЅРІРµСЂСЃРёСЏ
 {
 vtData->AfterPost=NULL;
 double Sum=0;
@@ -1375,17 +1375,17 @@ int Index=0;
             vtData->Post();
            }  */
       }
-    if(cbConst->Checked)   // суточный расход - константа
+    if(cbConst->Checked)   // СЃСѓС‚РѕС‡РЅС‹Р№ СЂР°СЃС…РѕРґ - РєРѕРЅСЃС‚Р°РЅС‚Р°
 
      {
 
     if(
 
       vtData->FieldByName("Field0")->AsFloat!=vtData->FieldByName("Field0_old")->AsFloat)
-       {   //Ввод суточного расхода,когда суточный расход константа
+       {   //Р’РІРѕРґ СЃСѓС‚РѕС‡РЅРѕРіРѕ СЂР°СЃС…РѕРґР°,РєРѕРіРґР° СЃСѓС‚РѕС‡РЅС‹Р№ СЂР°СЃС…РѕРґ РєРѕРЅСЃС‚Р°РЅС‚Р°
 
          //-------------------------------------------------------------------
-         //Возврат массива данных разбитых на сутки
+         //Р’РѕР·РІСЂР°С‚ РјР°СЃСЃРёРІР° РґР°РЅРЅС‹С… СЂР°Р·Р±РёС‚С‹С… РЅР° СЃСѓС‚РєРё
          Check(vtData->FieldByName("mid")->AsFloat,vtData->FieldByName("nmeasure")->AsInteger,
          vtData->FieldByName("mtrsn")->AsString,vtData->FieldByName("KC")->AsFloat,vtData->FieldByName("Field0")->AsFloat,1);
 
@@ -1395,8 +1395,8 @@ int Index=0;
       vtData->FieldByName("Field0_old")->AsFloat=vtData->FieldByName("Field0")->AsFloat;
       }
 
-    }   //if(cbConst->Checked) // суточный расход - константа
-   else  //Ввод данных для часов в сутках  когда суточный расход - - можно изменять  start    //if(!cbConst->Checked)
+    }   //if(cbConst->Checked) // СЃСѓС‚РѕС‡РЅС‹Р№ СЂР°СЃС…РѕРґ - РєРѕРЅСЃС‚Р°РЅС‚Р°
+   else  //Р’РІРѕРґ РґР°РЅРЅС‹С… РґР»СЏ С‡Р°СЃРѕРІ РІ СЃСѓС‚РєР°С…  РєРѕРіРґР° СЃСѓС‚РѕС‡РЅС‹Р№ СЂР°СЃС…РѕРґ - - РјРѕР¶РЅРѕ РёР·РјРµРЅСЏС‚СЊ  start    //if(!cbConst->Checked)
     {
 
      vtData->Edit();
@@ -1445,7 +1445,7 @@ double Sum;
            vtData->Last();
           Sum=Sum-vtData->FieldByName("Field"+IntToStr(i))->AsFloat;
 
-   if(cbConst->Checked)   // суточный расход - константа
+   if(cbConst->Checked)   // СЃСѓС‚РѕС‡РЅС‹Р№ СЂР°СЃС…РѕРґ - РєРѕРЅСЃС‚Р°РЅС‚Р°
     {
         vtData->Last();
 
@@ -1453,10 +1453,10 @@ double Sum;
           vtData->FieldByName("Field"+IntToStr(i))->AsFloat!=
          ((MAXMIN*)dbManInput->Columns->Items[i+1]->Tag)->old)
 
-        {   //Ввод суточного расхода,когда суточный расход константа
+        {   //Р’РІРѕРґ СЃСѓС‚РѕС‡РЅРѕРіРѕ СЂР°СЃС…РѕРґР°,РєРѕРіРґР° СЃСѓС‚РѕС‡РЅС‹Р№ СЂР°СЃС…РѕРґ РєРѕРЅСЃС‚Р°РЅС‚Р°
 
            //-------------------------------------------------------------------
-           //Возврат массива данных разбитых на сутки
+           //Р’РѕР·РІСЂР°С‚ РјР°СЃСЃРёРІР° РґР°РЅРЅС‹С… СЂР°Р·Р±РёС‚С‹С… РЅР° СЃСѓС‚РєРё
         /*    Check(oqReadRow->FieldByName("mid")->AsFloat,oqReadRow->FieldByName("nmeasure")->AsInteger,
            oqReadRow->FieldByName("mtrsn")->AsString,oqReadRow->FieldByName("KC")->AsFloat,
             vtData->FieldByName("Field"+IntToStr(i))->AsFloat,i);  */
@@ -1477,7 +1477,7 @@ double Sum;
    
 
   }  //if(cbConst->Checked)
-   else  //Ввод данных для часов в сутках  когда суточный расход - - можно изменять  start    //if(!cbConst->Checked)
+   else  //Р’РІРѕРґ РґР°РЅРЅС‹С… РґР»СЏ С‡Р°СЃРѕРІ РІ СЃСѓС‚РєР°С…  РєРѕРіРґР° СЃСѓС‚РѕС‡РЅС‹Р№ СЂР°СЃС…РѕРґ - - РјРѕР¶РЅРѕ РёР·РјРµРЅСЏС‚СЊ  start    //if(!cbConst->Checked)
     {
 
        vtData->Last();
@@ -1505,14 +1505,14 @@ double Sum;
 
 }
 //-------------------------------------------------------------------------------
-// Проверить
+// РџСЂРѕРІРµСЂРёС‚СЊ
 void __fastcall TfmManualInput::vCheck(TObject* Sender)
 {
   btCheckClick(this);
 }
 //---------------------------------------------------------------------------
 
-// Возврат данных при разбивке на сутки
+// Р’РѕР·РІСЂР°С‚ РґР°РЅРЅС‹С… РїСЂРё СЂР°Р·Р±РёРІРєРµ РЅР° СЃСѓС‚РєРё
 void __fastcall TfmManualInput::Check(double mid ,int nmeasure,AnsiString mtrsn,double kc, double Field0,int Col)
 
 {
@@ -1585,7 +1585,7 @@ int Index=0;
 AnsiString s;
 TRect Rect;
 
- if(!cbConst->Checked)return true;  // суточный расход - константа
+ if(!cbConst->Checked)return true;  // СЃСѓС‚РѕС‡РЅС‹Р№ СЂР°СЃС…РѕРґ - РєРѕРЅСЃС‚Р°РЅС‚Р°
 
         vtData->First();
   while(!vtData->Eof)
@@ -1597,7 +1597,7 @@ TRect Rect;
 
       }
 
-              //Ввод данных для часов в сутках  когда суточный расход - константа  start
+              //Р’РІРѕРґ РґР°РЅРЅС‹С… РґР»СЏ С‡Р°СЃРѕРІ РІ СЃСѓС‚РєР°С…  РєРѕРіРґР° СЃСѓС‚РѕС‡РЅС‹Р№ СЂР°СЃС…РѕРґ - РєРѕРЅСЃС‚Р°РЅС‚Р°  start
          if (StrToFloat(FormatFloat("0.000",Sum))!=StrToFloat(FormatFloat("0.000",vtData->FieldByName("Field0")->AsFloat)))
         {
          /*  s=FormatFloat("0.000",vtData->FieldByName("Field0")->AsFloat);
@@ -1633,7 +1633,7 @@ double Sum;
 AnsiString s;
 TRect Rect;
 
-if(!cbConst->Checked)return true;  // суточный расход - константа
+if(!cbConst->Checked)return true;  // СЃСѓС‚РѕС‡РЅС‹Р№ СЂР°СЃС…РѕРґ - РєРѕРЅСЃС‚Р°РЅС‚Р°
 
 for(int i=0;i<RowCount;i++)
   {
@@ -1692,7 +1692,7 @@ void __fastcall TfmManualInput::dbManInputDrawColumnCell(TObject *Sender,
 
         }
 
-              //Ввод данных для часов в сутках  когда суточный расход - константа  start
+              //Р’РІРѕРґ РґР°РЅРЅС‹С… РґР»СЏ С‡Р°СЃРѕРІ РІ СЃСѓС‚РєР°С…  РєРѕРіРґР° СЃСѓС‚РѕС‡РЅС‹Р№ СЂР°СЃС…РѕРґ - РєРѕРЅСЃС‚Р°РЅС‚Р°  start
          if (StrToFloat(FormatFloat("0.000",Sum))!=StrToFloat(FormatFloat("0.000",vtData->FieldByName("Field0")->AsFloat)))
         {
            s=FloatToStr(vtData->FieldByName("Field0")->AsFloat);
@@ -1776,10 +1776,10 @@ AnsiString s;
                 if(flag)
                {
 
-                if(Application->MessageBox(AnsiString("Введенные показания " + FormatFloat("0.000",TestSender)
-               + " выходят за физические границы: "
-               ">="+FormatFloat("0.000",MinTest) + " или "+
-               "<=" +FormatFloat("0.000",MaxTest)+"\n\r Продолжить сохранение?" ).c_str()
+                if(Application->MessageBox(AnsiString("Р’РІРµРґРµРЅРЅС‹Рµ РїРѕРєР°Р·Р°РЅРёСЏ " + FormatFloat("0.000",TestSender)
+               + " РІС‹С…РѕРґСЏС‚ Р·Р° С„РёР·РёС‡РµСЃРєРёРµ РіСЂР°РЅРёС†С‹: "
+               ">="+FormatFloat("0.000",MinTest) + " РёР»Рё "+
+               "<=" +FormatFloat("0.000",MaxTest)+"\n\r РџСЂРѕРґРѕР»Р¶РёС‚СЊ СЃРѕС…СЂР°РЅРµРЅРёРµ?" ).c_str()
                ,Application->Title.c_str(),MB_YESNOCANCEL| MB_ICONQUESTION| MB_DEFBUTTON1)==IDYES){
                TestMes=false;
                return true;
@@ -1805,10 +1805,10 @@ AnsiString s;
 
                if(flag)
                {
-                if(Application->MessageBox(AnsiString("Введенные показания " + FormatFloat("0.000",TestSender)
-               + " выходят за аварийные границы: "
-               ">="+FormatFloat("0.000",MinTest) + " или "+
-               "<=" +FormatFloat("0.000",MaxTest)+"\n\r Продолжить сохранение?" ).c_str()
+                if(Application->MessageBox(AnsiString("Р’РІРµРґРµРЅРЅС‹Рµ РїРѕРєР°Р·Р°РЅРёСЏ " + FormatFloat("0.000",TestSender)
+               + " РІС‹С…РѕРґСЏС‚ Р·Р° Р°РІР°СЂРёР№РЅС‹Рµ РіСЂР°РЅРёС†С‹: "
+               ">="+FormatFloat("0.000",MinTest) + " РёР»Рё "+
+               "<=" +FormatFloat("0.000",MaxTest)+"\n\r РџСЂРѕРґРѕР»Р¶РёС‚СЊ СЃРѕС…СЂР°РЅРµРЅРёРµ?" ).c_str()
                ,Application->Title.c_str(),MB_YESNOCANCEL| MB_ICONQUESTION| MB_DEFBUTTON1)==IDYES){
                 TestMes=false;
                return true;
@@ -1832,10 +1832,10 @@ AnsiString s;
 
                 if(flag)
                {
-                if(Application->MessageBox(AnsiString("Введенные показания " + FormatFloat("0.000",TestSender)
-               + " выходят за предупредительные границы: "
-               ">="+FormatFloat("0.000",MinTest) + " или "+
-               "<=" +FormatFloat("0.000",MaxTest)+"\n\r Продолжить сохранение?" ).c_str()
+                if(Application->MessageBox(AnsiString("Р’РІРµРґРµРЅРЅС‹Рµ РїРѕРєР°Р·Р°РЅРёСЏ " + FormatFloat("0.000",TestSender)
+               + " РІС‹С…РѕРґСЏС‚ Р·Р° РїСЂРµРґСѓРїСЂРµРґРёС‚РµР»СЊРЅС‹Рµ РіСЂР°РЅРёС†С‹: "
+               ">="+FormatFloat("0.000",MinTest) + " РёР»Рё "+
+               "<=" +FormatFloat("0.000",MaxTest)+"\n\r РџСЂРѕРґРѕР»Р¶РёС‚СЊ СЃРѕС…СЂР°РЅРµРЅРёРµ?" ).c_str()
                ,Application->Title.c_str(),MB_YESNOCANCEL| MB_ICONQUESTION| MB_DEFBUTTON1)==IDYES){
                 TestMes=false;
                return true;
@@ -2349,7 +2349,7 @@ if(INV&&vtData->Modified&& vtData->State == dsEdit)
 
 void __fastcall TfmManualInput::ToolButton4Click(TObject *Sender)
 {
-     //Считаем сколько строк
+     //РЎС‡РёС‚Р°РµРј СЃРєРѕР»СЊРєРѕ СЃС‚СЂРѕРє
     oqReadRow->Open();
     oqReadRow->First();
     int dim = (RowCount>0?(RowCount/*-1*/):0);
@@ -2361,7 +2361,7 @@ void __fastcall TfmManualInput::ToolButton4Click(TObject *Sender)
         oqReadRow->Next();
     }
     oqReadRow->Close();
-    //Теперь копипаст кода сохранения c изменениями в части инверсии
+    //РўРµРїРµСЂСЊ РєРѕРїРёРїР°СЃС‚ РєРѕРґР° СЃРѕС…СЂР°РЅРµРЅРёСЏ c РёР·РјРµРЅРµРЅРёСЏРјРё РІ С‡Р°СЃС‚Рё РёРЅРІРµСЂСЃРёРё
     for (int j = 0; j < dim; j++ ){
     try{
     tp=p;
@@ -2387,7 +2387,7 @@ void __fastcall TfmManualInput::ToolButton4Click(TObject *Sender)
      	Application->ShowException(&exception);
    }
    }
-    //удаляем своё
+    //СѓРґР°Р»СЏРµРј СЃРІРѕС‘
     delete [] array;
     array = NULL;
 }
@@ -2414,7 +2414,7 @@ void __fastcall TfmManualInput::ToolButton6Click(TObject *Sender)
      fm->plSupMain->Visible=true;
      if(fm->ShowModal()==mrOk){
         TDateTime datefrom = fm->DateTime;
-             //Считаем сколько строк
+             //РЎС‡РёС‚Р°РµРј СЃРєРѕР»СЊРєРѕ СЃС‚СЂРѕРє
         oqReadRow->Open();
         oqReadRow->First();
         int dim = (RowCount>0?(RowCount/*-1*/):0);
@@ -2426,7 +2426,7 @@ void __fastcall TfmManualInput::ToolButton6Click(TObject *Sender)
                 oqReadRow->Next();
         }
         oqReadRow->Close();
-        //Теперь копипаст кода сохранения c изменениями в части инверсии
+        //РўРµРїРµСЂСЊ РєРѕРїРёРїР°СЃС‚ РєРѕРґР° СЃРѕС…СЂР°РЅРµРЅРёСЏ c РёР·РјРµРЅРµРЅРёСЏРјРё РІ С‡Р°СЃС‚Рё РёРЅРІРµСЂСЃРёРё
         for (int j = 0; j < dim; j++ ){
         try{
         tp=p;
@@ -2452,7 +2452,7 @@ void __fastcall TfmManualInput::ToolButton6Click(TObject *Sender)
      	        Application->ShowException(&exception);
         }
      }
-    //удаляем своё
+    //СѓРґР°Р»СЏРµРј СЃРІРѕС‘
     delete [] array;
     array = NULL;
     }

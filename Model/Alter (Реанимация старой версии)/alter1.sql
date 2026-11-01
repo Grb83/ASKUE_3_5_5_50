@@ -1,5 +1,5 @@
 -------------------------------------------
------*********  АСКУЭ    ************------
+-----*********  РђРЎРљРЈР­    ************------
 -------------------------------------------
 
 
@@ -20,16 +20,16 @@ create table PARAMETER
 )
 /
 
-comment on table PARAMETER is 'Параметры системы'
+comment on table PARAMETER is 'РџР°СЂР°РјРµС‚СЂС‹ СЃРёСЃС‚РµРјС‹'
 /
 
-comment on column PARAMETER.NPID is 'Идентификатор параметра'
+comment on column PARAMETER.NPID is 'РРґРµРЅС‚РёС„РёРєР°С‚РѕСЂ РїР°СЂР°РјРµС‚СЂР°'
 /
 
-comment on column PARAMETER.VVALUE is 'Значение параметра'
+comment on column PARAMETER.VVALUE is 'Р—РЅР°С‡РµРЅРёРµ РїР°СЂР°РјРµС‚СЂР°'
 /
 
-comment on column PARAMETER.VDESCRIPTION is 'Комментарий'
+comment on column PARAMETER.VDESCRIPTION is 'РљРѕРјРјРµРЅС‚Р°СЂРёР№'
 /
 
 -- ============================================================
@@ -44,16 +44,16 @@ create table DEPARTMENTS
 )
 /
 
-comment on table DEPARTMENTS is 'Подразделения'
+comment on table DEPARTMENTS is 'РџРѕРґСЂР°Р·РґРµР»РµРЅРёСЏ'
 /
 
-comment on column DEPARTMENTS.NDEPARTMENT is 'Ид подразделения'
+comment on column DEPARTMENTS.NDEPARTMENT is 'РРґ РїРѕРґСЂР°Р·РґРµР»РµРЅРёСЏ'
 /
 
-comment on column DEPARTMENTS.VNAME is 'Название'
+comment on column DEPARTMENTS.VNAME is 'РќР°Р·РІР°РЅРёРµ'
 /
 
-comment on column DEPARTMENTS.NSORT is 'Сортировка'
+comment on column DEPARTMENTS.NSORT is 'РЎРѕСЂС‚РёСЂРѕРІРєР°'
 /
 
 
@@ -76,13 +76,13 @@ create table GROUPTYPES
 )
 /
 
-comment on table GROUPTYPES is 'Типы групп'
+comment on table GROUPTYPES is 'РўРёРїС‹ РіСЂСѓРїРї'
 /
 
-comment on column GROUPTYPES.NGROUPTYPE is 'Ид типа группы'
+comment on column GROUPTYPES.NGROUPTYPE is 'РРґ С‚РёРїР° РіСЂСѓРїРїС‹'
 /
 
-comment on column GROUPTYPES.VNAME is 'Название'
+comment on column GROUPTYPES.VNAME is 'РќР°Р·РІР°РЅРёРµ'
 /
 
 
@@ -105,19 +105,19 @@ create table PROCEDURES
 )
 /
 
-comment on table PROCEDURES is 'Отчетные процедуры'
+comment on table PROCEDURES is 'РћС‚С‡РµС‚РЅС‹Рµ РїСЂРѕС†РµРґСѓСЂС‹'
 /
 
-comment on column PROCEDURES.NPROCEDURE is 'Ид процедуры'
+comment on column PROCEDURES.NPROCEDURE is 'РРґ РїСЂРѕС†РµРґСѓСЂС‹'
 /
 
-comment on column PROCEDURES.VPROCDURE is 'Процедура'
+comment on column PROCEDURES.VPROCDURE is 'РџСЂРѕС†РµРґСѓСЂР°'
 /
 
-comment on column PROCEDURES.VNAME is 'Название'
+comment on column PROCEDURES.VNAME is 'РќР°Р·РІР°РЅРёРµ'
 /
 
-comment on column PROCEDURES.NORDER is 'Порядок выполнения'
+comment on column PROCEDURES.NORDER is 'РџРѕСЂСЏРґРѕРє РІС‹РїРѕР»РЅРµРЅРёСЏ'
 /
 
 
@@ -153,34 +153,34 @@ create table REPORTGROUPS
 )
 /
 
-comment on table REPORTGROUPS is 'Отчетные группы'
+comment on table REPORTGROUPS is 'РћС‚С‡РµС‚РЅС‹Рµ РіСЂСѓРїРїС‹'
 /
 
-comment on column REPORTGROUPS.NREPORTGROUP is 'Ид группы'
+comment on column REPORTGROUPS.NREPORTGROUP is 'РРґ РіСЂСѓРїРїС‹'
 /
 
-comment on column REPORTGROUPS.NPARENT is 'Ид родителя'
+comment on column REPORTGROUPS.NPARENT is 'РРґ СЂРѕРґРёС‚РµР»СЏ'
 /
 
-comment on column REPORTGROUPS.VNAME is 'Название'
+comment on column REPORTGROUPS.VNAME is 'РќР°Р·РІР°РЅРёРµ'
 /
 
-comment on column REPORTGROUPS.NGROUPTYPE is 'Ид типа группы'
+comment on column REPORTGROUPS.NGROUPTYPE is 'РРґ С‚РёРїР° РіСЂСѓРїРїС‹'
 /
 
-comment on column REPORTGROUPS.VGROUPKIND is 'Вид группы Главная или Состовляющая'
+comment on column REPORTGROUPS.VGROUPKIND is 'Р’РёРґ РіСЂСѓРїРїС‹ Р“Р»Р°РІРЅР°СЏ РёР»Рё РЎРѕСЃС‚РѕРІР»СЏСЋС‰Р°СЏ'
 /
 
-comment on column REPORTGROUPS.NPROCEDURE is 'Ид процедуры'
+comment on column REPORTGROUPS.NPROCEDURE is 'РРґ РїСЂРѕС†РµРґСѓСЂС‹'
 /
 
-comment on column REPORTGROUPS.NDEPARTMENT is 'Ид подразделения'
+comment on column REPORTGROUPS.NDEPARTMENT is 'РРґ РїРѕРґСЂР°Р·РґРµР»РµРЅРёСЏ'
 /
 
-comment on column REPORTGROUPS.MID is 'Ид точки'
+comment on column REPORTGROUPS.MID is 'РРґ С‚РѕС‡РєРё'
 /
 
-comment on column REPORTGROUPS.NCOEF is 'Коэф вхождения точки'
+comment on column REPORTGROUPS.NCOEF is 'РљРѕСЌС„ РІС…РѕР¶РґРµРЅРёСЏ С‚РѕС‡РєРё'
 /
 
 
@@ -246,52 +246,52 @@ create table REPORTS
 )
 /
 
-comment on table REPORTS is 'Отчеты'
+comment on table REPORTS is 'РћС‚С‡РµС‚С‹'
 /
 
-comment on column REPORTS.NREPORTGROUP is 'Ид группы'
+comment on column REPORTS.NREPORTGROUP is 'РРґ РіСЂСѓРїРїС‹'
 /
 
-comment on column REPORTS.NPERIOD is 'Период'
+comment on column REPORTS.NPERIOD is 'РџРµСЂРёРѕРґ'
 /
 
-comment on column REPORTS.NORDER is 'Сортировка'
+comment on column REPORTS.NORDER is 'РЎРѕСЂС‚РёСЂРѕРІРєР°'
 /
 
-comment on column REPORTS.VF1 is 'Поле 1'
+comment on column REPORTS.VF1 is 'РџРѕР»Рµ 1'
 /
 
-comment on column REPORTS.VF2 is 'Поле 2'
+comment on column REPORTS.VF2 is 'РџРѕР»Рµ 2'
 /
 
-comment on column REPORTS.VF3 is 'Поле 3'
+comment on column REPORTS.VF3 is 'РџРѕР»Рµ 3'
 /
 
-comment on column REPORTS.VF4 is 'Поле 4'
+comment on column REPORTS.VF4 is 'РџРѕР»Рµ 4'
 /
 
-comment on column REPORTS.VF5 is 'Поле 5'
+comment on column REPORTS.VF5 is 'РџРѕР»Рµ 5'
 /
 
-comment on column REPORTS.VF6 is 'Поле 6'
+comment on column REPORTS.VF6 is 'РџРѕР»Рµ 6'
 /
 
-comment on column REPORTS.VF7 is 'Поле 7'
+comment on column REPORTS.VF7 is 'РџРѕР»Рµ 7'
 /
 
-comment on column REPORTS.VF8 is 'Поле 8'
+comment on column REPORTS.VF8 is 'РџРѕР»Рµ 8'
 /
 
-comment on column REPORTS.VF9 is 'Поле 9'
+comment on column REPORTS.VF9 is 'РџРѕР»Рµ 9'
 /
 
-comment on column REPORTS.VF10 is 'Поле 10'
+comment on column REPORTS.VF10 is 'РџРѕР»Рµ 10'
 /
 
-comment on column REPORTS.VF11 is 'Поле 11'
+comment on column REPORTS.VF11 is 'РџРѕР»Рµ 11'
 /
 
-comment on column REPORTS.VF12 is 'Поле 12'
+comment on column REPORTS.VF12 is 'РџРѕР»Рµ 12'
 /
 
 
@@ -312,25 +312,25 @@ create table DETTURNOVER
 )
 /
 
-comment on table DETTURNOVER is 'Расчет по подразделениям'
+comment on table DETTURNOVER is 'Р Р°СЃС‡РµС‚ РїРѕ РїРѕРґСЂР°Р·РґРµР»РµРЅРёСЏРј'
 /
 
-comment on column DETTURNOVER.NDEPARTMENT is 'Ид подразделения'
+comment on column DETTURNOVER.NDEPARTMENT is 'РРґ РїРѕРґСЂР°Р·РґРµР»РµРЅРёСЏ'
 /
 
-comment on column DETTURNOVER.NPERIOD is 'Период'
+comment on column DETTURNOVER.NPERIOD is 'РџРµСЂРёРѕРґ'
 /
 
-comment on column DETTURNOVER.NAMOUNTER is 'Расход Акт пр'
+comment on column DETTURNOVER.NAMOUNTER is 'Р Р°СЃС…РѕРґ РђРєС‚ РїСЂ'
 /
 
-comment on column DETTURNOVER.NAMOUNTQ1 is 'Расход Реакт пр'
+comment on column DETTURNOVER.NAMOUNTQ1 is 'Р Р°СЃС…РѕРґ Р РµР°РєС‚ РїСЂ'
 /
 
-comment on column DETTURNOVER.NAMOUNTED is 'Расход Акт отд'
+comment on column DETTURNOVER.NAMOUNTED is 'Р Р°СЃС…РѕРґ РђРєС‚ РѕС‚Рґ'
 /
 
-comment on column DETTURNOVER.NAMOUNTQ3 is 'Расход Реактив ген'
+comment on column DETTURNOVER.NAMOUNTQ3 is 'Р Р°СЃС…РѕРґ Р РµР°РєС‚РёРІ РіРµРЅ'
 /
 
 
@@ -414,7 +414,7 @@ nmonth_calc                NUMBER DEFAULT 0
 
 -- End of DDL script for MANUAL_PTS
 ---------------------------------------------------------------------------
---- Создание таблицы с часами включения наружного освещения
+--- РЎРѕР·РґР°РЅРёРµ С‚Р°Р±Р»РёС†С‹ СЃ С‡Р°СЃР°РјРё РІРєР»СЋС‡РµРЅРёСЏ РЅР°СЂСѓР¶РЅРѕРіРѕ РѕСЃРІРµС‰РµРЅРёСЏ
 ---------------------------------------------------------------------------
 CREATE TABLE ryda.manual_light_limit(
   nmonth                      NUMBER NOT NULL,
@@ -422,14 +422,14 @@ CREATE TABLE ryda.manual_light_limit(
   CONSTRAINT manual_light_limit_pk PRIMARY KEY (nmonth)
  )
 /
-COMMENT ON TABLE ryda.manual_light_limit IS 'Часы горения наружного освещения (по месяцам)'
+COMMENT ON TABLE ryda.manual_light_limit IS 'Р§Р°СЃС‹ РіРѕСЂРµРЅРёСЏ РЅР°СЂСѓР¶РЅРѕРіРѕ РѕСЃРІРµС‰РµРЅРёСЏ (РїРѕ РјРµСЃСЏС†Р°Рј)'
 /
-COMMENT ON COLUMN ryda.manual_light_limit.nmonth IS 'Месяц по порядку'
+COMMENT ON COLUMN ryda.manual_light_limit.nmonth IS 'РњРµСЃСЏС† РїРѕ РїРѕСЂСЏРґРєСѓ'
 /
-COMMENT ON COLUMN ryda.manual_light_limit.nlimit IS 'Число часов горения наружного освещения'
+COMMENT ON COLUMN ryda.manual_light_limit.nlimit IS 'Р§РёСЃР»Рѕ С‡Р°СЃРѕРІ РіРѕСЂРµРЅРёСЏ РЅР°СЂСѓР¶РЅРѕРіРѕ РѕСЃРІРµС‰РµРЅРёСЏ'
 /
 
--- Вставка значений
+-- Р’СЃС‚Р°РІРєР° Р·РЅР°С‡РµРЅРёР№
 INSERT INTO ryda.manual_light_limit (nmonth, nlimit) VALUES(1,435)
 /
 INSERT INTO ryda.manual_light_limit (nmonth, nlimit) VALUES(2,358)
@@ -519,13 +519,13 @@ create table EXPORT_BILL
 )
 /
 
-comment on table EXPORT_BILL is 'Экспорт суточных'
+comment on table EXPORT_BILL is 'Р­РєСЃРїРѕСЂС‚ СЃСѓС‚РѕС‡РЅС‹С…'
 /
 
-comment on column EXPORT_BILL.MID is 'Ид точки'
+comment on column EXPORT_BILL.MID is 'РРґ С‚РѕС‡РєРё'
 /
 
-comment on column EXPORT_BILL.DATE_TIME is 'Дата'
+comment on column EXPORT_BILL.DATE_TIME is 'Р”Р°С‚Р°'
 /
 
 
@@ -540,13 +540,13 @@ create table EXPORT_HOUR
 )
 /
 
-comment on table EXPORT_HOUR is 'Экспорт получасовок'
+comment on table EXPORT_HOUR is 'Р­РєСЃРїРѕСЂС‚ РїРѕР»СѓС‡Р°СЃРѕРІРѕРє'
 /
 
-comment on column EXPORT_HOUR.MID is 'Ид точки'
+comment on column EXPORT_HOUR.MID is 'РРґ С‚РѕС‡РєРё'
 /
 
-comment on column EXPORT_HOUR.DATE_TIME is 'Дата'
+comment on column EXPORT_HOUR.DATE_TIME is 'Р”Р°С‚Р°'
 /
 
 
@@ -561,13 +561,13 @@ create table EXPORT_PROF
 )
 /
 
-comment on table EXPORT_PROF is 'Экспорт профиля'
+comment on table EXPORT_PROF is 'Р­РєСЃРїРѕСЂС‚ РїСЂРѕС„РёР»СЏ'
 /
 
-comment on column EXPORT_PROF.MID is 'Ид точки'
+comment on column EXPORT_PROF.MID is 'РРґ С‚РѕС‡РєРё'
 /
 
-comment on column EXPORT_PROF.DATE_TIME is 'Дата'
+comment on column EXPORT_PROF.DATE_TIME is 'Р”Р°С‚Р°'
 /
 
 
@@ -618,52 +618,52 @@ create table EXPORT_GROUPS
 )
 /
 
-comment on table EXPORT_GROUPS is 'Экспортирование данных'
+comment on table EXPORT_GROUPS is 'Р­РєСЃРїРѕСЂС‚РёСЂРѕРІР°РЅРёРµ РґР°РЅРЅС‹С…'
 /
 
-comment on column EXPORT_GROUPS.GID is 'Ид группы'
+comment on column EXPORT_GROUPS.GID is 'РРґ РіСЂСѓРїРїС‹'
 /
 
-comment on column EXPORT_GROUPS.PARENT is 'Ид родителя'
+comment on column EXPORT_GROUPS.PARENT is 'РРґ СЂРѕРґРёС‚РµР»СЏ'
 /
 
-comment on column EXPORT_GROUPS.NAME is 'Название'
+comment on column EXPORT_GROUPS.NAME is 'РќР°Р·РІР°РЅРёРµ'
 /
 
-comment on column EXPORT_GROUPS.SHORT_NAME is 'Краткое название'
+comment on column EXPORT_GROUPS.SHORT_NAME is 'РљСЂР°С‚РєРѕРµ РЅР°Р·РІР°РЅРёРµ'
 /
 
-comment on column EXPORT_GROUPS.MID is 'Ид точки'
+comment on column EXPORT_GROUPS.MID is 'РРґ С‚РѕС‡РєРё'
 /
 
-comment on column EXPORT_GROUPS.INVERTED is 'Признак инверсии'
+comment on column EXPORT_GROUPS.INVERTED is 'РџСЂРёР·РЅР°Рє РёРЅРІРµСЂСЃРёРё'
 /
 
-comment on column EXPORT_GROUPS.GROUP_TOTAL is 'Признак суммирования'
+comment on column EXPORT_GROUPS.GROUP_TOTAL is 'РџСЂРёР·РЅР°Рє СЃСѓРјРјРёСЂРѕРІР°РЅРёСЏ'
 /
 
-comment on column EXPORT_GROUPS.ISBILL is 'Экспорт суток'
+comment on column EXPORT_GROUPS.ISBILL is 'Р­РєСЃРїРѕСЂС‚ СЃСѓС‚РѕРє'
 /
 
-comment on column EXPORT_GROUPS.BILLSZ is 'Экспорт суток (размер)'
+comment on column EXPORT_GROUPS.BILLSZ is 'Р­РєСЃРїРѕСЂС‚ СЃСѓС‚РѕРє (СЂР°Р·РјРµСЂ)'
 /
 
-comment on column EXPORT_GROUPS.ISHOUR is 'Экспорт получасовок'
+comment on column EXPORT_GROUPS.ISHOUR is 'Р­РєСЃРїРѕСЂС‚ РїРѕР»СѓС‡Р°СЃРѕРІРѕРє'
 /
 
-comment on column EXPORT_GROUPS.HOURSZ is 'Экспорт получасовок (размер)'
+comment on column EXPORT_GROUPS.HOURSZ is 'Р­РєСЃРїРѕСЂС‚ РїРѕР»СѓС‡Р°СЃРѕРІРѕРє (СЂР°Р·РјРµСЂ)'
 /
 
-comment on column EXPORT_GROUPS.ISPROF is 'Экспорт профиля'
+comment on column EXPORT_GROUPS.ISPROF is 'Р­РєСЃРїРѕСЂС‚ РїСЂРѕС„РёР»СЏ'
 /
 
-comment on column EXPORT_GROUPS.PROFSZ is 'Экспорт профиля (размер)'
+comment on column EXPORT_GROUPS.PROFSZ is 'Р­РєСЃРїРѕСЂС‚ РїСЂРѕС„РёР»СЏ (СЂР°Р·РјРµСЂ)'
 /
 
-comment on column EXPORT_GROUPS.ISJOURNAL is 'Экспорт журнала'
+comment on column EXPORT_GROUPS.ISJOURNAL is 'Р­РєСЃРїРѕСЂС‚ Р¶СѓСЂРЅР°Р»Р°'
 /
 
-comment on column EXPORT_GROUPS.JOURNALSZ is 'Экспорт журнала (размер)'
+comment on column EXPORT_GROUPS.JOURNALSZ is 'Р­РєСЃРїРѕСЂС‚ Р¶СѓСЂРЅР°Р»Р° (СЂР°Р·РјРµСЂ)'
 /
 
 
@@ -711,22 +711,22 @@ create table LAST_EXPORT
 )
 /
 
-comment on table LAST_EXPORT is 'Последние экспортированные данные'
+comment on table LAST_EXPORT is 'РџРѕСЃР»РµРґРЅРёРµ СЌРєСЃРїРѕСЂС‚РёСЂРѕРІР°РЅРЅС‹Рµ РґР°РЅРЅС‹Рµ'
 /
 
-comment on column LAST_EXPORT.MID is 'Ид точки'
+comment on column LAST_EXPORT.MID is 'РРґ С‚РѕС‡РєРё'
 /
 
-comment on column LAST_EXPORT.BILL is 'Экспорт суток'
+comment on column LAST_EXPORT.BILL is 'Р­РєСЃРїРѕСЂС‚ СЃСѓС‚РѕРє'
 /
 
-comment on column LAST_EXPORT.HALFHOUR is 'Экспорт получасовок'
+comment on column LAST_EXPORT.HALFHOUR is 'Р­РєСЃРїРѕСЂС‚ РїРѕР»СѓС‡Р°СЃРѕРІРѕРє'
 /
 
-comment on column LAST_EXPORT.PROFILE is 'Экспорт профиля'
+comment on column LAST_EXPORT.PROFILE is 'Р­РєСЃРїРѕСЂС‚ РїСЂРѕС„РёР»СЏ'
 /
 
-comment on column LAST_EXPORT.MONTHS is 'Экспорт месячных'
+comment on column LAST_EXPORT.MONTHS is 'Р­РєСЃРїРѕСЂС‚ РјРµСЃСЏС‡РЅС‹С…'
 /
 
 
@@ -775,37 +775,37 @@ ALTER TABLE RYDA.feeders ADD
    nCQ3C                       NUMBER,
    nCQ3D                       NUMBER)
 /
-COMMENT ON COLUMN RYDA.feeders.nCRA IS 'Коэфф. тарифа А по активу для тарификации по режимным суткам'
+COMMENT ON COLUMN RYDA.feeders.nCRA IS 'РљРѕСЌС„С„. С‚Р°СЂРёС„Р° Рђ РїРѕ Р°РєС‚РёРІСѓ РґР»СЏ С‚Р°СЂРёС„РёРєР°С†РёРё РїРѕ СЂРµР¶РёРјРЅС‹Рј СЃСѓС‚РєР°Рј'
 /
-COMMENT ON COLUMN RYDA.feeders.nCRB IS 'Коэфф. тарифа В по активу для тарификации по режимным суткам'
+COMMENT ON COLUMN RYDA.feeders.nCRB IS 'РљРѕСЌС„С„. С‚Р°СЂРёС„Р° Р’ РїРѕ Р°РєС‚РёРІСѓ РґР»СЏ С‚Р°СЂРёС„РёРєР°С†РёРё РїРѕ СЂРµР¶РёРјРЅС‹Рј СЃСѓС‚РєР°Рј'
 /
-COMMENT ON COLUMN RYDA.feeders.nCRC IS 'Коэфф. тарифа С по активу для тарификации по режимным суткам'
+COMMENT ON COLUMN RYDA.feeders.nCRC IS 'РљРѕСЌС„С„. С‚Р°СЂРёС„Р° РЎ РїРѕ Р°РєС‚РёРІСѓ РґР»СЏ С‚Р°СЂРёС„РёРєР°С†РёРё РїРѕ СЂРµР¶РёРјРЅС‹Рј СЃСѓС‚РєР°Рј'
 /
-COMMENT ON COLUMN RYDA.feeders.nCRD IS 'Коэфф. тарифа D по активу для тарификации по режимным суткам'
+COMMENT ON COLUMN RYDA.feeders.nCRD IS 'РљРѕСЌС„С„. С‚Р°СЂРёС„Р° D РїРѕ Р°РєС‚РёРІСѓ РґР»СЏ С‚Р°СЂРёС„РёРєР°С†РёРё РїРѕ СЂРµР¶РёРјРЅС‹Рј СЃСѓС‚РєР°Рј'
 /
-COMMENT ON COLUMN RYDA.feeders.nCDA IS 'Коэфф. тарифа А по ген. актива для тарификации по режимным суткам'
+COMMENT ON COLUMN RYDA.feeders.nCDA IS 'РљРѕСЌС„С„. С‚Р°СЂРёС„Р° Рђ РїРѕ РіРµРЅ. Р°РєС‚РёРІР° РґР»СЏ С‚Р°СЂРёС„РёРєР°С†РёРё РїРѕ СЂРµР¶РёРјРЅС‹Рј СЃСѓС‚РєР°Рј'
 /
-COMMENT ON COLUMN RYDA.feeders.nCDB IS 'Коэфф. тарифа В по ген. актива для тарификации по режимным суткам'
+COMMENT ON COLUMN RYDA.feeders.nCDB IS 'РљРѕСЌС„С„. С‚Р°СЂРёС„Р° Р’ РїРѕ РіРµРЅ. Р°РєС‚РёРІР° РґР»СЏ С‚Р°СЂРёС„РёРєР°С†РёРё РїРѕ СЂРµР¶РёРјРЅС‹Рј СЃСѓС‚РєР°Рј'
 /
-COMMENT ON COLUMN RYDA.feeders.nCDC IS 'Коэфф. тарифа С по ген. актива для тарификации по режимным суткам'
+COMMENT ON COLUMN RYDA.feeders.nCDC IS 'РљРѕСЌС„С„. С‚Р°СЂРёС„Р° РЎ РїРѕ РіРµРЅ. Р°РєС‚РёРІР° РґР»СЏ С‚Р°СЂРёС„РёРєР°С†РёРё РїРѕ СЂРµР¶РёРјРЅС‹Рј СЃСѓС‚РєР°Рј'
 /
-COMMENT ON COLUMN RYDA.feeders.nCDD IS 'Коэфф. тарифа D по ген. актива для тарификации по режимным суткам'
+COMMENT ON COLUMN RYDA.feeders.nCDD IS 'РљРѕСЌС„С„. С‚Р°СЂРёС„Р° D РїРѕ РіРµРЅ. Р°РєС‚РёРІР° РґР»СЏ С‚Р°СЂРёС„РёРєР°С†РёРё РїРѕ СЂРµР¶РёРјРЅС‹Рј СЃСѓС‚РєР°Рј'
 /
-COMMENT ON COLUMN RYDA.feeders.nCQ1A IS 'Коэфф. тарифа А по реактиву для тарификации по режимным суткам'
+COMMENT ON COLUMN RYDA.feeders.nCQ1A IS 'РљРѕСЌС„С„. С‚Р°СЂРёС„Р° Рђ РїРѕ СЂРµР°РєС‚РёРІСѓ РґР»СЏ С‚Р°СЂРёС„РёРєР°С†РёРё РїРѕ СЂРµР¶РёРјРЅС‹Рј СЃСѓС‚РєР°Рј'
 /
-COMMENT ON COLUMN RYDA.feeders.nCQ1B IS 'Коэфф. тарифа В по реактиву для тарификации по режимным суткам'
+COMMENT ON COLUMN RYDA.feeders.nCQ1B IS 'РљРѕСЌС„С„. С‚Р°СЂРёС„Р° Р’ РїРѕ СЂРµР°РєС‚РёРІСѓ РґР»СЏ С‚Р°СЂРёС„РёРєР°С†РёРё РїРѕ СЂРµР¶РёРјРЅС‹Рј СЃСѓС‚РєР°Рј'
 /
-COMMENT ON COLUMN RYDA.feeders.nCQ1C IS 'Коэфф. тарифа С по реактиву для тарификации по режимным суткам'
+COMMENT ON COLUMN RYDA.feeders.nCQ1C IS 'РљРѕСЌС„С„. С‚Р°СЂРёС„Р° РЎ РїРѕ СЂРµР°РєС‚РёРІСѓ РґР»СЏ С‚Р°СЂРёС„РёРєР°С†РёРё РїРѕ СЂРµР¶РёРјРЅС‹Рј СЃСѓС‚РєР°Рј'
 /
-COMMENT ON COLUMN RYDA.feeders.nCQ1D IS 'Коэфф. тарифа D по реактиву для тарификации по режимным суткам'
+COMMENT ON COLUMN RYDA.feeders.nCQ1D IS 'РљРѕСЌС„С„. С‚Р°СЂРёС„Р° D РїРѕ СЂРµР°РєС‚РёРІСѓ РґР»СЏ С‚Р°СЂРёС„РёРєР°С†РёРё РїРѕ СЂРµР¶РёРјРЅС‹Рј СЃСѓС‚РєР°Рј'
 /
-COMMENT ON COLUMN RYDA.feeders.nCQ3A IS 'Коэфф. тарифа А по ген. реактива для тарификации по режимным суткам'
+COMMENT ON COLUMN RYDA.feeders.nCQ3A IS 'РљРѕСЌС„С„. С‚Р°СЂРёС„Р° Рђ РїРѕ РіРµРЅ. СЂРµР°РєС‚РёРІР° РґР»СЏ С‚Р°СЂРёС„РёРєР°С†РёРё РїРѕ СЂРµР¶РёРјРЅС‹Рј СЃСѓС‚РєР°Рј'
 /
-COMMENT ON COLUMN RYDA.feeders.nCQ3B IS 'Коэфф. тарифа В по ген. реактива для тарификации по режимным суткам'
+COMMENT ON COLUMN RYDA.feeders.nCQ3B IS 'РљРѕСЌС„С„. С‚Р°СЂРёС„Р° Р’ РїРѕ РіРµРЅ. СЂРµР°РєС‚РёРІР° РґР»СЏ С‚Р°СЂРёС„РёРєР°С†РёРё РїРѕ СЂРµР¶РёРјРЅС‹Рј СЃСѓС‚РєР°Рј'
 /
-COMMENT ON COLUMN RYDA.feeders.nCQ3C IS 'Коэфф. тарифа С по ген. реактива для тарификации по режимным суткам'
+COMMENT ON COLUMN RYDA.feeders.nCQ3C IS 'РљРѕСЌС„С„. С‚Р°СЂРёС„Р° РЎ РїРѕ РіРµРЅ. СЂРµР°РєС‚РёРІР° РґР»СЏ С‚Р°СЂРёС„РёРєР°С†РёРё РїРѕ СЂРµР¶РёРјРЅС‹Рј СЃСѓС‚РєР°Рј'
 /
-COMMENT ON COLUMN RYDA.feeders.nCQ3D IS 'Коэфф. тарифа D по ген. реактива для тарификации по режимным суткам'
+COMMENT ON COLUMN RYDA.feeders.nCQ3D IS 'РљРѕСЌС„С„. С‚Р°СЂРёС„Р° D РїРѕ РіРµРЅ. СЂРµР°РєС‚РёРІР° РґР»СЏ С‚Р°СЂРёС„РёРєР°С†РёРё РїРѕ СЂРµР¶РёРјРЅС‹Рј СЃСѓС‚РєР°Рј'
 /
 
 
@@ -859,82 +859,82 @@ create table CHANNELS
 )
 /
 
-comment on table CHANNELS is 'КаналыNew'
+comment on table CHANNELS is 'РљР°РЅР°Р»С‹New'
 /
 
-comment on column CHANNELS.CID is 'Ид канала'
+comment on column CHANNELS.CID is 'РРґ РєР°РЅР°Р»Р°'
 /
 
-comment on column CHANNELS.VNAME is 'Название'
+comment on column CHANNELS.VNAME is 'РќР°Р·РІР°РЅРёРµ'
 /
 
-comment on column CHANNELS.VNOTE is 'Примечание'
+comment on column CHANNELS.VNOTE is 'РџСЂРёРјРµС‡Р°РЅРёРµ'
 /
 
-comment on column CHANNELS.PROTOCOL_ID is 'Ид протокола'
+comment on column CHANNELS.PROTOCOL_ID is 'РРґ РїСЂРѕС‚РѕРєРѕР»Р°'
 /
 
-comment on column CHANNELS.COM_ID is 'Ид компорта'
+comment on column CHANNELS.COM_ID is 'РРґ РєРѕРјРїРѕСЂС‚Р°'
 /
 
-comment on column CHANNELS.INIT_STR is 'Строка инициализации'
+comment on column CHANNELS.INIT_STR is 'РЎС‚СЂРѕРєР° РёРЅРёС†РёР°Р»РёР·Р°С†РёРё'
 /
 
-comment on column CHANNELS.ADDR is 'Коммуникационый адресс'
+comment on column CHANNELS.ADDR is 'РљРѕРјРјСѓРЅРёРєР°С†РёРѕРЅС‹Р№ Р°РґСЂРµСЃСЃ'
 /
 
-comment on column CHANNELS.CYCLE_TOUT is 'Пауза между циклами'
+comment on column CHANNELS.CYCLE_TOUT is 'РџР°СѓР·Р° РјРµР¶РґСѓ С†РёРєР»Р°РјРё'
 /
 
-comment on column CHANNELS.RETRIES is 'Кол попыток соединения'
+comment on column CHANNELS.RETRIES is 'РљРѕР» РїРѕРїС‹С‚РѕРє СЃРѕРµРґРёРЅРµРЅРёСЏ'
 /
 
-comment on column CHANNELS.RETRIES_TOUT is 'Пауза между попытками'
+comment on column CHANNELS.RETRIES_TOUT is 'РџР°СѓР·Р° РјРµР¶РґСѓ РїРѕРїС‹С‚РєР°РјРё'
 /
 
-comment on column CHANNELS.BLOCKING is 'Блокировка'
+comment on column CHANNELS.BLOCKING is 'Р‘Р»РѕРєРёСЂРѕРІРєР°'
 /
 
-comment on column CHANNELS.CALLER_NAME is 'Название опросчика'
+comment on column CHANNELS.CALLER_NAME is 'РќР°Р·РІР°РЅРёРµ РѕРїСЂРѕСЃС‡РёРєР°'
 /
 
-comment on column CHANNELS.NBILLDATA is 'Коммерческие'
+comment on column CHANNELS.NBILLDATA is 'РљРѕРјРјРµСЂС‡РµСЃРєРёРµ'
 /
 
-comment on column CHANNELS.NBILLDATADEPTH is 'Коммерческие глубина'
+comment on column CHANNELS.NBILLDATADEPTH is 'РљРѕРјРјРµСЂС‡РµСЃРєРёРµ РіР»СѓР±РёРЅР°'
 /
 
-comment on column CHANNELS.NCURRDATA is 'Текущие'
+comment on column CHANNELS.NCURRDATA is 'РўРµРєСѓС‰РёРµ'
 /
 
-comment on column CHANNELS.NCURRDATADEPTH is 'Текущие глубина'
+comment on column CHANNELS.NCURRDATADEPTH is 'РўРµРєСѓС‰РёРµ РіР»СѓР±РёРЅР°'
 /
 
-comment on column CHANNELS.NNETPARAM is 'Параметры сети'
+comment on column CHANNELS.NNETPARAM is 'РџР°СЂР°РјРµС‚СЂС‹ СЃРµС‚Рё'
 /
 
-comment on column CHANNELS.NJOURNAL is 'Журнал событий'
+comment on column CHANNELS.NJOURNAL is 'Р–СѓСЂРЅР°Р» СЃРѕР±С‹С‚РёР№'
 /
 
-comment on column CHANNELS.DSTART is 'Начало опроса'
+comment on column CHANNELS.DSTART is 'РќР°С‡Р°Р»Рѕ РѕРїСЂРѕСЃР°'
 /
 
-comment on column CHANNELS.DEND is 'Окончание'
+comment on column CHANNELS.DEND is 'РћРєРѕРЅС‡Р°РЅРёРµ'
 /
 
-comment on column CHANNELS.NDAY is 'День'
+comment on column CHANNELS.NDAY is 'Р”РµРЅСЊ'
 /
 
-comment on column CHANNELS.NPARENT is 'Главный канал'
+comment on column CHANNELS.NPARENT is 'Р“Р»Р°РІРЅС‹Р№ РєР°РЅР°Р»'
 /
 
-comment on column CHANNELS.IS_DEAD is 'Служебная 1'
+comment on column CHANNELS.IS_DEAD is 'РЎР»СѓР¶РµР±РЅР°СЏ 1'
 /
 
-comment on column CHANNELS.WAS_DEAD is 'Служебная 2'
+comment on column CHANNELS.WAS_DEAD is 'РЎР»СѓР¶РµР±РЅР°СЏ 2'
 /
 
-comment on column CHANNELS.NREADY is 'Служебная 3'
+comment on column CHANNELS.NREADY is 'РЎР»СѓР¶РµР±РЅР°СЏ 3'
 /
 
 
@@ -973,13 +973,13 @@ create table CHANPOINT
 )
 /
 
-comment on table CHANPOINT is 'Точки каналов'
+comment on table CHANPOINT is 'РўРѕС‡РєРё РєР°РЅР°Р»РѕРІ'
 /
 
-comment on column CHANPOINT.MID is 'Ид точки'
+comment on column CHANPOINT.MID is 'РРґ С‚РѕС‡РєРё'
 /
 
-comment on column CHANPOINT.CID is 'Ид канала'
+comment on column CHANPOINT.CID is 'РРґ РєР°РЅР°Р»Р°'
 /
 
 
@@ -1020,7 +1020,7 @@ ALTER TABLE RYDA.GROUPS ADD
 /
 
  COMMENT ON COLUMN RYDA.GROUPS.NGROUP IS
-'Ид группы прома'
+'РРґ РіСЂСѓРїРїС‹ РїСЂРѕРјР°'
 /
 
 CREATE UNIQUE INDEX RYDA.GROUPS_IDX2
@@ -1032,7 +1032,7 @@ ON RYDA.GROUPS
 
 
 -- Start of DDL script for POINTS
--- Generated 16-июл-02  3:38:42 pm
+-- Generated 16-РёСЋР»-02  3:38:42 pm
 -- from ems-RYDA:2
 
 -- Table POINTS
@@ -1045,7 +1045,7 @@ alter TABLE points add
 
 -- Comments for POINTS
 
-COMMENT ON COLUMN points.npoint IS 'Ид точки прома'
+COMMENT ON COLUMN points.npoint IS 'РРґ С‚РѕС‡РєРё РїСЂРѕРјР°'
 /
 -- Indexes for POINTS
 
@@ -1065,7 +1065,7 @@ ALTER TABLE RYDA.FEEDERS ADD
    VINFO                      VARCHAR2(256))
 /
  COMMENT ON COLUMN RYDA.FEEDERS.VINFO IS
-'Доп информация'
+'Р”РѕРї РёРЅС„РѕСЂРјР°С†РёСЏ'
 /
 
 -- ============================================================
@@ -1089,22 +1089,22 @@ create table TRAFFIC
 )
 /
 
-comment on table TRAFFIC is 'Трафик'
+comment on table TRAFFIC is 'РўСЂР°С„РёРє'
 /
 
-comment on column TRAFFIC.CID is 'Ид канала'
+comment on column TRAFFIC.CID is 'РРґ РєР°РЅР°Р»Р°'
 /
 
-comment on column TRAFFIC.DSTART is 'Дата начала'
+comment on column TRAFFIC.DSTART is 'Р”Р°С‚Р° РЅР°С‡Р°Р»Р°'
 /
 
-comment on column TRAFFIC.DEND is 'Дата окончания'
+comment on column TRAFFIC.DEND is 'Р”Р°С‚Р° РѕРєРѕРЅС‡Р°РЅРёСЏ'
 /
 
-comment on column TRAFFIC.NSEND is 'Отпущено байт'
+comment on column TRAFFIC.NSEND is 'РћС‚РїСѓС‰РµРЅРѕ Р±Р°Р№С‚'
 /
 
-comment on column TRAFFIC.NRECEIVED is 'Получено байт'
+comment on column TRAFFIC.NRECEIVED is 'РџРѕР»СѓС‡РµРЅРѕ Р±Р°Р№С‚'
 /
 
 
@@ -1119,13 +1119,13 @@ alter table groups add(
     NLIMITMCAPE  NUMBER                 null
 )
 /
-comment on column GROUPS.NLIMITCONS is 'Лимит потребления'
+comment on column GROUPS.NLIMITCONS is 'Р›РёРјРёС‚ РїРѕС‚СЂРµР±Р»РµРЅРёСЏ'
 /
 
-comment on column GROUPS.NLIMITMCAPM is 'Лимит мощности утро'
+comment on column GROUPS.NLIMITMCAPM is 'Р›РёРјРёС‚ РјРѕС‰РЅРѕСЃС‚Рё СѓС‚СЂРѕ'
 /
 
-comment on column GROUPS.NLIMITMCAPE is 'Лимит мощности вечер'
+comment on column GROUPS.NLIMITMCAPE is 'Р›РёРјРёС‚ РјРѕС‰РЅРѕСЃС‚Рё РІРµС‡РµСЂ'
 /
 -- ============================================================
 --   Table: FEEDERS
@@ -1137,13 +1137,13 @@ alter table FEEDERS add
 )
 /
 
-comment on column FEEDERS.POWER is 'Мощность первич кВ'
+comment on column FEEDERS.POWER is 'РњРѕС‰РЅРѕСЃС‚СЊ РїРµСЂРІРёС‡ РєР’'
 /
 
-comment on column FEEDERS.POWER2 is 'Мощность вторич кВ'
+comment on column FEEDERS.POWER2 is 'РњРѕС‰РЅРѕСЃС‚СЊ РІС‚РѕСЂРёС‡ РєР’'
 /
 
-comment on column FEEDERS.METKC is 'Коеф прошитый в счет'
+comment on column FEEDERS.METKC is 'РљРѕРµС„ РїСЂРѕС€РёС‚С‹Р№ РІ СЃС‡РµС‚'
 /
 
 -- ============================================================
@@ -1173,37 +1173,37 @@ create table LGSTATUS
 )
 /
 
-comment on table LGSTATUS is 'Статус счетчиков типа LG'
+comment on table LGSTATUS is 'РЎС‚Р°С‚СѓСЃ СЃС‡РµС‚С‡РёРєРѕРІ С‚РёРїР° LG'
 /
 
-comment on column LGSTATUS.MID is 'Ид точки'
+comment on column LGSTATUS.MID is 'РРґ С‚РѕС‡РєРё'
 /
 
-comment on column LGSTATUS.DATE_TIME is 'Дата'
+comment on column LGSTATUS.DATE_TIME is 'Р”Р°С‚Р°'
 /
 
-comment on column LGSTATUS.T is 'Коррекция часов'
+comment on column LGSTATUS.T is 'РљРѕСЂСЂРµРєС†РёСЏ С‡Р°СЃРѕРІ'
 /
 
-comment on column LGSTATUS.U is 'Пропадание питания'
+comment on column LGSTATUS.U is 'РџСЂРѕРїР°РґР°РЅРёРµ РїРёС‚Р°РЅРёСЏ'
 /
 
-comment on column LGSTATUS.S is 'Смена сезона'
+comment on column LGSTATUS.S is 'РЎРјРµРЅР° СЃРµР·РѕРЅР°'
 /
 
-comment on column LGSTATUS.M is 'Параметризация'
+comment on column LGSTATUS.M is 'РџР°СЂР°РјРµС‚СЂРёР·Р°С†РёСЏ'
 /
 
-comment on column LGSTATUS.KT is 'Смена зоны'
+comment on column LGSTATUS.KT is 'РЎРјРµРЅР° Р·РѕРЅС‹'
 /
 
-comment on column LGSTATUS.L1 is 'Фаза A'
+comment on column LGSTATUS.L1 is 'Р¤Р°Р·Р° A'
 /
 
-comment on column LGSTATUS.L2 is 'Фаза B'
+comment on column LGSTATUS.L2 is 'Р¤Р°Р·Р° B'
 /
 
-comment on column LGSTATUS.L3 is 'Фаза C'
+comment on column LGSTATUS.L3 is 'Р¤Р°Р·Р° C'
 /
 
 
@@ -1235,49 +1235,49 @@ create table CURR_POWER_ARCH
 )
 /
 
-comment on table CURR_POWER_ARCH is 'Архив параметров сети'
+comment on table CURR_POWER_ARCH is 'РђСЂС…РёРІ РїР°СЂР°РјРµС‚СЂРѕРІ СЃРµС‚Рё'
 /
 
-comment on column CURR_POWER_ARCH.MID is 'Ид точки'
+comment on column CURR_POWER_ARCH.MID is 'РРґ С‚РѕС‡РєРё'
 /
 
-comment on column CURR_POWER_ARCH.DATE_TIME is 'Дата'
+comment on column CURR_POWER_ARCH.DATE_TIME is 'Р”Р°С‚Р°'
 /
 
-comment on column CURR_POWER_ARCH.ER is 'Мощность актив'
+comment on column CURR_POWER_ARCH.ER is 'РњРѕС‰РЅРѕСЃС‚СЊ Р°РєС‚РёРІ'
 /
 
-comment on column CURR_POWER_ARCH.Q1 is 'Мощность реактив'
+comment on column CURR_POWER_ARCH.Q1 is 'РњРѕС‰РЅРѕСЃС‚СЊ СЂРµР°РєС‚РёРІ'
 /
 
-comment on column CURR_POWER_ARCH.ED is 'Мощность актив отд'
+comment on column CURR_POWER_ARCH.ED is 'РњРѕС‰РЅРѕСЃС‚СЊ Р°РєС‚РёРІ РѕС‚Рґ'
 /
 
-comment on column CURR_POWER_ARCH.Q3 is 'Мощность реактив отд'
+comment on column CURR_POWER_ARCH.Q3 is 'РњРѕС‰РЅРѕСЃС‚СЊ СЂРµР°РєС‚РёРІ РѕС‚Рґ'
 /
 
-comment on column CURR_POWER_ARCH.FREQ is 'Частота'
+comment on column CURR_POWER_ARCH.FREQ is 'Р§Р°СЃС‚РѕС‚Р°'
 /
 
 comment on column CURR_POWER_ARCH.COSF is 'COSF'
 /
 
-comment on column CURR_POWER_ARCH.VOLT is 'Напряжение A'
+comment on column CURR_POWER_ARCH.VOLT is 'РќР°РїСЂСЏР¶РµРЅРёРµ A'
 /
 
-comment on column CURR_POWER_ARCH.CURRENTO is 'Ток A'
+comment on column CURR_POWER_ARCH.CURRENTO is 'РўРѕРє A'
 /
 
-comment on column CURR_POWER_ARCH.VOLT2 is 'Напряжение B'
+comment on column CURR_POWER_ARCH.VOLT2 is 'РќР°РїСЂСЏР¶РµРЅРёРµ B'
 /
 
-comment on column CURR_POWER_ARCH.VOLT3 is 'Напряжение C'
+comment on column CURR_POWER_ARCH.VOLT3 is 'РќР°РїСЂСЏР¶РµРЅРёРµ C'
 /
 
-comment on column CURR_POWER_ARCH.CURR2 is 'Ток B'
+comment on column CURR_POWER_ARCH.CURR2 is 'РўРѕРє B'
 /
 
-comment on column CURR_POWER_ARCH.CURR3 is 'Ток C'
+comment on column CURR_POWER_ARCH.CURR3 is 'РўРѕРє C'
 /
 
 
@@ -1298,7 +1298,7 @@ alter table HALFHOUR add
 )
 /
 
-comment on column HALFHOUR.STATUS is 'Статус'
+comment on column HALFHOUR.STATUS is 'РЎС‚Р°С‚СѓСЃ'
 /
 
 ALTER TABLE RYDA.PARAMETER MODIFY
@@ -1339,34 +1339,34 @@ create table DEPORTPROCEDURES
 )
 /
 
-comment on table DEPORTPROCEDURES is 'Процедуры рассылки'
+comment on table DEPORTPROCEDURES is 'РџСЂРѕС†РµРґСѓСЂС‹ СЂР°СЃСЃС‹Р»РєРё'
 /
 
-comment on column DEPORTPROCEDURES.NPROCEDURE is 'Ид процедуры'
+comment on column DEPORTPROCEDURES.NPROCEDURE is 'РРґ РїСЂРѕС†РµРґСѓСЂС‹'
 /
 
-comment on column DEPORTPROCEDURES.VNAME is 'Примечание'
+comment on column DEPORTPROCEDURES.VNAME is 'РџСЂРёРјРµС‡Р°РЅРёРµ'
 /
 
-comment on column DEPORTPROCEDURES.VPROCEDURE is 'Процедура'
+comment on column DEPORTPROCEDURES.VPROCEDURE is 'РџСЂРѕС†РµРґСѓСЂР°'
 /
 
-comment on column DEPORTPROCEDURES.NPERIOD is 'Периодичность формирования'
+comment on column DEPORTPROCEDURES.NPERIOD is 'РџРµСЂРёРѕРґРёС‡РЅРѕСЃС‚СЊ С„РѕСЂРјРёСЂРѕРІР°РЅРёСЏ'
 /
 
-comment on column DEPORTPROCEDURES.NSHIFT is 'Сдвиг старта формирования мин'
+comment on column DEPORTPROCEDURES.NSHIFT is 'РЎРґРІРёРі СЃС‚Р°СЂС‚Р° С„РѕСЂРјРёСЂРѕРІР°РЅРёСЏ РјРёРЅ'
 /
 
-comment on column DEPORTPROCEDURES.NCYCLE is 'Выполнять невыполненые вовремя'
+comment on column DEPORTPROCEDURES.NCYCLE is 'Р’С‹РїРѕР»РЅСЏС‚СЊ РЅРµРІС‹РїРѕР»РЅРµРЅС‹Рµ РІРѕРІСЂРµРјСЏ'
 /
 
-comment on column DEPORTPROCEDURES.NBLOCK is 'Блокировка'
+comment on column DEPORTPROCEDURES.NBLOCK is 'Р‘Р»РѕРєРёСЂРѕРІРєР°'
 /
 
-comment on column DEPORTPROCEDURES.DOLDCREATED is 'Дата последнего создания'
+comment on column DEPORTPROCEDURES.DOLDCREATED is 'Р”Р°С‚Р° РїРѕСЃР»РµРґРЅРµРіРѕ СЃРѕР·РґР°РЅРёСЏ'
 /
 
-comment on column DEPORTPROCEDURES.VERROR is 'Ошибка'
+comment on column DEPORTPROCEDURES.VERROR is 'РћС€РёР±РєР°'
 /
 
 
@@ -1399,43 +1399,43 @@ create table DEPORTATION
 )
 /
 
-comment on table DEPORTATION is 'Каналы рассылки'
+comment on table DEPORTATION is 'РљР°РЅР°Р»С‹ СЂР°СЃСЃС‹Р»РєРё'
 /
 
-comment on column DEPORTATION.NDEPORTATION is 'Ид канала'
+comment on column DEPORTATION.NDEPORTATION is 'РРґ РєР°РЅР°Р»Р°'
 /
 
-comment on column DEPORTATION.VNAME is 'Название'
+comment on column DEPORTATION.VNAME is 'РќР°Р·РІР°РЅРёРµ'
 /
 
-comment on column DEPORTATION.VNOTE is 'Примечание'
+comment on column DEPORTATION.VNOTE is 'РџСЂРёРјРµС‡Р°РЅРёРµ'
 /
 
-comment on column DEPORTATION.NPROCEDURE is 'Ид процедуры'
+comment on column DEPORTATION.NPROCEDURE is 'РРґ РїСЂРѕС†РµРґСѓСЂС‹'
 /
 
-comment on column DEPORTATION.NTYPE is 'Тип отсылки'
+comment on column DEPORTATION.NTYPE is 'РўРёРї РѕС‚СЃС‹Р»РєРё'
 /
 
-comment on column DEPORTATION.VADDRESS is 'Адрес'
+comment on column DEPORTATION.VADDRESS is 'РђРґСЂРµСЃ'
 /
 
-comment on column DEPORTATION.NPARENT is 'Ид основного канала'
+comment on column DEPORTATION.NPARENT is 'РРґ РѕСЃРЅРѕРІРЅРѕРіРѕ РєР°РЅР°Р»Р°'
 /
 
-comment on column DEPORTATION.DFROM is 'Отсылать с'
+comment on column DEPORTATION.DFROM is 'РћС‚СЃС‹Р»Р°С‚СЊ СЃ'
 /
 
-comment on column DEPORTATION.DTILL is 'Отсылать по'
+comment on column DEPORTATION.DTILL is 'РћС‚СЃС‹Р»Р°С‚СЊ РїРѕ'
 /
 
-comment on column DEPORTATION.NBLOCK is 'Блокировка'
+comment on column DEPORTATION.NBLOCK is 'Р‘Р»РѕРєРёСЂРѕРІРєР°'
 /
 
-comment on column DEPORTATION.NRETRIES_TOUT is 'Пауза между попытками мин'
+comment on column DEPORTATION.NRETRIES_TOUT is 'РџР°СѓР·Р° РјРµР¶РґСѓ РїРѕРїС‹С‚РєР°РјРё РјРёРЅ'
 /
 
-comment on column DEPORTATION.NRETRIES is 'Количество попыток'
+comment on column DEPORTATION.NRETRIES is 'РљРѕР»РёС‡РµСЃС‚РІРѕ РїРѕРїС‹С‚РѕРє'
 /
 
 
@@ -1473,25 +1473,25 @@ create table DEPORTFILES
 )
 /
 
-comment on table DEPORTFILES is 'Файлы рассылки'
+comment on table DEPORTFILES is 'Р¤Р°Р№Р»С‹ СЂР°СЃСЃС‹Р»РєРё'
 /
 
-comment on column DEPORTFILES.NDEPORTATION is 'Ид канала'
+comment on column DEPORTFILES.NDEPORTATION is 'РРґ РєР°РЅР°Р»Р°'
 /
 
-comment on column DEPORTFILES.DDATE is 'Дата'
+comment on column DEPORTFILES.DDATE is 'Р”Р°С‚Р°'
 /
 
-comment on column DEPORTFILES.VFILE is 'Файл'
+comment on column DEPORTFILES.VFILE is 'Р¤Р°Р№Р»'
 /
 
-comment on column DEPORTFILES.VFILENAME is 'Название файла'
+comment on column DEPORTFILES.VFILENAME is 'РќР°Р·РІР°РЅРёРµ С„Р°Р№Р»Р°'
 /
 
-comment on column DEPORTFILES.NSTATE is 'Состояние'
+comment on column DEPORTFILES.NSTATE is 'РЎРѕСЃС‚РѕСЏРЅРёРµ'
 /
 
-comment on column DEPORTFILES.VERROR is 'Ошибка'
+comment on column DEPORTFILES.VERROR is 'РћС€РёР±РєР°'
 /
 
 
@@ -1535,7 +1535,7 @@ create table JOBS
 )
 /
 
-comment on table JOBS is 'Фоновые работы (JOB)'
+comment on table JOBS is 'Р¤РѕРЅРѕРІС‹Рµ СЂР°Р±РѕС‚С‹ (JOB)'
 /
 
 comment on column JOBS.NJOB is 'NJOB'
@@ -1563,25 +1563,25 @@ ALTER TABLE RYDA.MAXHOURS MODIFY
    EVENING_END                NOT NULL)
 /
 
-comment on table MAXHOURS is 'Часы максимальной нагрузки'
+comment on table MAXHOURS is 'Р§Р°СЃС‹ РјР°РєСЃРёРјР°Р»СЊРЅРѕР№ РЅР°РіСЂСѓР·РєРё'
 /
 
-comment on column MAXHOURS.MAXHOUR_ID is 'Ид'
+comment on column MAXHOURS.MAXHOUR_ID is 'РРґ'
 /
 
-comment on column MAXHOURS.DATE_TIME is 'Дата ввода в действие'
+comment on column MAXHOURS.DATE_TIME is 'Р”Р°С‚Р° РІРІРѕРґР° РІ РґРµР№СЃС‚РІРёРµ'
 /
 
-comment on column MAXHOURS.MORNING_START is 'Утро нач'
+comment on column MAXHOURS.MORNING_START is 'РЈС‚СЂРѕ РЅР°С‡'
 /
 
-comment on column MAXHOURS.MORNING_END is 'Утро кон'
+comment on column MAXHOURS.MORNING_END is 'РЈС‚СЂРѕ РєРѕРЅ'
 /
 
-comment on column MAXHOURS.EVENING_START is 'Вечер нач'
+comment on column MAXHOURS.EVENING_START is 'Р’РµС‡РµСЂ РЅР°С‡'
 /
 
-comment on column MAXHOURS.EVENING_END is 'Вечер кон'
+comment on column MAXHOURS.EVENING_END is 'Р’РµС‡РµСЂ РєРѕРЅ'
 /
 
 
@@ -1605,22 +1605,22 @@ create table GROUPLIMIT
 )
 /
 
-comment on table GROUPLIMIT is 'Лимиты групп'
+comment on table GROUPLIMIT is 'Р›РёРјРёС‚С‹ РіСЂСѓРїРї'
 /
 
-comment on column GROUPLIMIT.GID is 'Ид группы'
+comment on column GROUPLIMIT.GID is 'РРґ РіСЂСѓРїРїС‹'
 /
 
-comment on column GROUPLIMIT.DSTART is 'Дата ввода в действие'
+comment on column GROUPLIMIT.DSTART is 'Р”Р°С‚Р° РІРІРѕРґР° РІ РґРµР№СЃС‚РІРёРµ'
 /
 
-comment on column GROUPLIMIT.NLIMITCONS is 'Лимит потребления кВтч'
+comment on column GROUPLIMIT.NLIMITCONS is 'Р›РёРјРёС‚ РїРѕС‚СЂРµР±Р»РµРЅРёСЏ РєР’С‚С‡'
 /
 
-comment on column GROUPLIMIT.NLIMITCAPM is 'Лимит мощности утро кВт'
+comment on column GROUPLIMIT.NLIMITCAPM is 'Р›РёРјРёС‚ РјРѕС‰РЅРѕСЃС‚Рё СѓС‚СЂРѕ РєР’С‚'
 /
 
-comment on column GROUPLIMIT.NLIMITCAPE is 'Лимит мощности вечер кВт'
+comment on column GROUPLIMIT.NLIMITCAPE is 'Р›РёРјРёС‚ РјРѕС‰РЅРѕСЃС‚Рё РІРµС‡РµСЂ РєР’С‚'
 /
 
 -- ============================================================
@@ -1654,7 +1654,7 @@ alter table FEEDERS add
 )
 /
 
-comment on column FEEDERS.NABC is 'Заземленная нейтраль'
+comment on column FEEDERS.NABC is 'Р—Р°Р·РµРјР»РµРЅРЅР°СЏ РЅРµР№С‚СЂР°Р»СЊ'
 /
 
 alter table GROUPS add
@@ -1664,10 +1664,10 @@ alter table GROUPS add
 )
 /
 
-comment on column GROUPS.NEMERGENCYRESERVE is 'Аварийная бронь'
+comment on column GROUPS.NEMERGENCYRESERVE is 'РђРІР°СЂРёР№РЅР°СЏ Р±СЂРѕРЅСЊ'
 /
 
-comment on column GROUPS.NTECHNOLOGYRESERVE is 'Технологическая бронь'
+comment on column GROUPS.NTECHNOLOGYRESERVE is 'РўРµС…РЅРѕР»РѕРіРёС‡РµСЃРєР°СЏ Р±СЂРѕРЅСЊ'
 /
 
 
@@ -1690,19 +1690,19 @@ create table VERSION
 )
 /
 
-comment on table VERSION is 'Версия приложения'
+comment on table VERSION is 'Р’РµСЂСЃРёСЏ РїСЂРёР»РѕР¶РµРЅРёСЏ'
 /
 
-comment on column VERSION.VFILENAME is 'Название файла'
+comment on column VERSION.VFILENAME is 'РќР°Р·РІР°РЅРёРµ С„Р°Р№Р»Р°'
 /
 
-comment on column VERSION.NFILESIZE is 'Размер файла'
+comment on column VERSION.NFILESIZE is 'Р Р°Р·РјРµСЂ С„Р°Р№Р»Р°'
 /
 
-comment on column VERSION.VVERSION is 'Версия'
+comment on column VERSION.VVERSION is 'Р’РµСЂСЃРёСЏ'
 /
 
-comment on column VERSION.FILEBODY is 'Тело'
+comment on column VERSION.FILEBODY is 'РўРµР»Рѕ'
 /
 
 
@@ -1728,25 +1728,25 @@ create table USPD
 )
 /
 
-comment on table USPD is 'УСПД'
+comment on table USPD is 'РЈРЎРџР”'
 /
 
-comment on column USPD.mid is 'Ид УСПД'
+comment on column USPD.mid is 'РРґ РЈРЎРџР”'
 /
 
-comment on column USPD.MTRSN is 'Номер'
+comment on column USPD.MTRSN is 'РќРѕРјРµСЂ'
 /
 
-comment on column USPD.DATE_TIME is 'Дата установки'
+comment on column USPD.DATE_TIME is 'Р”Р°С‚Р° СѓСЃС‚Р°РЅРѕРІРєРё'
 /
 
-comment on column USPD.MTYPE is 'Тип'
+comment on column USPD.MTYPE is 'РўРёРї'
 /
 
-comment on column USPD.CANAL is 'Ком адрес'
+comment on column USPD.CANAL is 'РљРѕРј Р°РґСЂРµСЃ'
 /
 
-comment on column USPD.VPASSWORD is 'Пароль'
+comment on column USPD.VPASSWORD is 'РџР°СЂРѕР»СЊ'
 /
 
 
@@ -1762,16 +1762,16 @@ create table USPDMATRIX
 )
 /
 
-comment on table USPDMATRIX is 'Матрица УСПД'
+comment on table USPDMATRIX is 'РњР°С‚СЂРёС†Р° РЈРЎРџР”'
 /
 
-comment on column USPDMATRIX.mid is 'Ид УСПД'
+comment on column USPDMATRIX.mid is 'РРґ РЈРЎРџР”'
 /
 
-comment on column USPDMATRIX.LID is 'Ид измерения'
+comment on column USPDMATRIX.LID is 'РРґ РёР·РјРµСЂРµРЅРёСЏ'
 /
 
-comment on column USPDMATRIX.NPOS is 'Позиция'
+comment on column USPDMATRIX.NPOS is 'РџРѕР·РёС†РёСЏ'
 /
 
 
@@ -1808,7 +1808,7 @@ alter table CHANNELS add
         constraint CKC_NNOTREADCURR_CHANNELS check (NNOTREADCURR in (0,1))
 )
 /
-comment on column CHANNELS.NNOTREADCURR is 'Не читать тек сутки'
+comment on column CHANNELS.NNOTREADCURR is 'РќРµ С‡РёС‚Р°С‚СЊ С‚РµРє СЃСѓС‚РєРё'
 /
 
 grant select on version to askuever
@@ -1821,7 +1821,7 @@ ALTER TABLE journal add
  )
 /
 
-COMMENT ON COLUMN journal.submit IS 'Служебный'
+COMMENT ON COLUMN journal.submit IS 'РЎР»СѓР¶РµР±РЅС‹Р№'
 /
 
 
@@ -1839,7 +1839,7 @@ ALTER TABLE RYDA.CHANPOINT ADD
 /
 
  COMMENT ON COLUMN RYDA.CHANPOINT.NSKIP IS
-'Пропускать'
+'РџСЂРѕРїСѓСЃРєР°С‚СЊ'
 /
 
 ALTER TABLE RYDA.LAST_SAVE ADD
@@ -1848,7 +1848,7 @@ ALTER TABLE RYDA.LAST_SAVE ADD
 /
 
  COMMENT ON COLUMN RYDA.LAST_SAVE.TRIAL IS
-'Попытка'
+'РџРѕРїС‹С‚РєР°'
 /
 
 
@@ -1866,76 +1866,76 @@ alter table CURR_POWER add
 )
 /
 
-comment on table CURR_POWER is 'Текущие'
+comment on table CURR_POWER is 'РўРµРєСѓС‰РёРµ'
 /
 
-comment on column CURR_POWER.MID is 'Ид точки'
+comment on column CURR_POWER.MID is 'РРґ С‚РѕС‡РєРё'
 /
 
-comment on column CURR_POWER.DATE_TIME is 'Дата'
+comment on column CURR_POWER.DATE_TIME is 'Р”Р°С‚Р°'
 /
 
-comment on column CURR_POWER.OBSOLETE is 'Достоверность'
+comment on column CURR_POWER.OBSOLETE is 'Р”РѕСЃС‚РѕРІРµСЂРЅРѕСЃС‚СЊ'
 /
 
-comment on column CURR_POWER.ER is 'Мощность А'
+comment on column CURR_POWER.ER is 'РњРѕС‰РЅРѕСЃС‚СЊ Рђ'
 /
 
-comment on column CURR_POWER.Q1 is 'Мощность Р'
+comment on column CURR_POWER.Q1 is 'РњРѕС‰РЅРѕСЃС‚СЊ Р '
 /
 
-comment on column CURR_POWER.ED is 'Мощность А отд'
+comment on column CURR_POWER.ED is 'РњРѕС‰РЅРѕСЃС‚СЊ Рђ РѕС‚Рґ'
 /
 
-comment on column CURR_POWER.Q3 is 'Мощность Р отд'
+comment on column CURR_POWER.Q3 is 'РњРѕС‰РЅРѕСЃС‚СЊ Р  РѕС‚Рґ'
 /
 
-comment on column CURR_POWER.FREQ is 'Частота'
+comment on column CURR_POWER.FREQ is 'Р§Р°СЃС‚РѕС‚Р°'
 /
 
 comment on column CURR_POWER.COSF is 'COSF'
 /
 
-comment on column CURR_POWER.VOLT is 'Напряжение A'
+comment on column CURR_POWER.VOLT is 'РќР°РїСЂСЏР¶РµРЅРёРµ A'
 /
 
-comment on column CURR_POWER.CURRENTO is 'Ток A'
+comment on column CURR_POWER.CURRENTO is 'РўРѕРє A'
 /
 
-comment on column CURR_POWER.VOLT2 is 'Напряжение B'
+comment on column CURR_POWER.VOLT2 is 'РќР°РїСЂСЏР¶РµРЅРёРµ B'
 /
 
-comment on column CURR_POWER.VOLT3 is 'Напряжение C'
+comment on column CURR_POWER.VOLT3 is 'РќР°РїСЂСЏР¶РµРЅРёРµ C'
 /
 
-comment on column CURR_POWER.CURR2 is 'Ток B'
+comment on column CURR_POWER.CURR2 is 'РўРѕРє B'
 /
 
-comment on column CURR_POWER.CURR3 is 'Ток C'
+comment on column CURR_POWER.CURR3 is 'РўРѕРє C'
 /
 
-comment on column CURR_POWER.ERM is 'Показания А'
+comment on column CURR_POWER.ERM is 'РџРѕРєР°Р·Р°РЅРёСЏ Рђ'
 /
 
-comment on column CURR_POWER.EDM is 'Показания А отд'
+comment on column CURR_POWER.EDM is 'РџРѕРєР°Р·Р°РЅРёСЏ Рђ РѕС‚Рґ'
 /
 
-comment on column CURR_POWER.Q1M is 'Показания Р'
+comment on column CURR_POWER.Q1M is 'РџРѕРєР°Р·Р°РЅРёСЏ Р '
 /
 
-comment on column CURR_POWER.Q3M is 'Показания Р отд'
+comment on column CURR_POWER.Q3M is 'РџРѕРєР°Р·Р°РЅРёСЏ Р  РѕС‚Рґ'
 /
 
-comment on column CURR_POWER.Q2 is 'Мощность Р 2'
+comment on column CURR_POWER.Q2 is 'РњРѕС‰РЅРѕСЃС‚СЊ Р  2'
 /
 
-comment on column CURR_POWER.Q4 is 'Мощность Р 4'
+comment on column CURR_POWER.Q4 is 'РњРѕС‰РЅРѕСЃС‚СЊ Р  4'
 /
 
-comment on column CURR_POWER.Q2M is 'Показания Р 2'
+comment on column CURR_POWER.Q2M is 'РџРѕРєР°Р·Р°РЅРёСЏ Р  2'
 /
 
-comment on column CURR_POWER.Q4M is 'Показания Р 4'
+comment on column CURR_POWER.Q4M is 'РџРѕРєР°Р·Р°РЅРёСЏ Р  4'
 /
 
 --------- 18.09.2002
@@ -1958,16 +1958,16 @@ create table EA_EVENTS
 )
 /
 
-comment on table EA_EVENTS is 'Событие по счетчику'
+comment on table EA_EVENTS is 'РЎРѕР±С‹С‚РёРµ РїРѕ СЃС‡РµС‚С‡РёРєСѓ'
 /
 
-comment on column EA_EVENTS.mid is 'Ид точки'
+comment on column EA_EVENTS.mid is 'РРґ С‚РѕС‡РєРё'
 /
 
-comment on column EA_EVENTS.evdate is 'Дата события'
+comment on column EA_EVENTS.evdate is 'Р”Р°С‚Р° СЃРѕР±С‹С‚РёСЏ'
 /
 
-comment on column EA_EVENTS.evtype is 'Тип события'
+comment on column EA_EVENTS.evtype is 'РўРёРї СЃРѕР±С‹С‚РёСЏ'
 /
 
 
@@ -1992,10 +1992,10 @@ alter table FEEDERS add
 )
 /
 
-comment on column FEEDERS.NCALCBILL is 'Вычислять суточные'
+comment on column FEEDERS.NCALCBILL is 'Р’С‹С‡РёСЃР»СЏС‚СЊ СЃСѓС‚РѕС‡РЅС‹Рµ'
 /
 
-comment on column FEEDERS.NCALCMONTHS is 'Вычислять месячные'
+comment on column FEEDERS.NCALCMONTHS is 'Р’С‹С‡РёСЃР»СЏС‚СЊ РјРµСЃСЏС‡РЅС‹Рµ'
 /
 
 
@@ -2033,22 +2033,22 @@ create table DEPORTPROCEDURES
 )
 /
 
-comment on table DEPORTPROCEDURES is 'Процедуры рассылки'
+comment on table DEPORTPROCEDURES is 'РџСЂРѕС†РµРґСѓСЂС‹ СЂР°СЃСЃС‹Р»РєРё'
 /
 
-comment on column DEPORTPROCEDURES.NPROCEDURE is 'Ид процедуры'
+comment on column DEPORTPROCEDURES.NPROCEDURE is 'РРґ РїСЂРѕС†РµРґСѓСЂС‹'
 /
 
-comment on column DEPORTPROCEDURES.VNAME is 'Примечание'
+comment on column DEPORTPROCEDURES.VNAME is 'РџСЂРёРјРµС‡Р°РЅРёРµ'
 /
 
-comment on column DEPORTPROCEDURES.VPROCEDURE is 'Процедура'
+comment on column DEPORTPROCEDURES.VPROCEDURE is 'РџСЂРѕС†РµРґСѓСЂР°'
 /
 
-comment on column DEPORTPROCEDURES.NPERIOD is 'Периодичность формирования'
+comment on column DEPORTPROCEDURES.NPERIOD is 'РџРµСЂРёРѕРґРёС‡РЅРѕСЃС‚СЊ С„РѕСЂРјРёСЂРѕРІР°РЅРёСЏ'
 /
 
-comment on column DEPORTPROCEDURES.NSHIFT is 'Сдвиг старта формирования мин'
+comment on column DEPORTPROCEDURES.NSHIFT is 'РЎРґРІРёРі СЃС‚Р°СЂС‚Р° С„РѕСЂРјРёСЂРѕРІР°РЅРёСЏ РјРёРЅ'
 /
 
 
@@ -2077,31 +2077,31 @@ create table MAKETS
 )
 /
 
-comment on table MAKETS is 'Макеты'
+comment on table MAKETS is 'РњР°РєРµС‚С‹'
 /
 
-comment on column MAKETS.NMAKET is 'Ид макета'
+comment on column MAKETS.NMAKET is 'РРґ РјР°РєРµС‚Р°'
 /
 
-comment on column MAKETS.NPROCEDURE is 'Ид процедуры'
+comment on column MAKETS.NPROCEDURE is 'РРґ РїСЂРѕС†РµРґСѓСЂС‹'
 /
 
-comment on column MAKETS.VNAME is 'Название'
+comment on column MAKETS.VNAME is 'РќР°Р·РІР°РЅРёРµ'
 /
 
-comment on column MAKETS.VNOTE is 'Примечание'
+comment on column MAKETS.VNOTE is 'РџСЂРёРјРµС‡Р°РЅРёРµ'
 /
 
-comment on column MAKETS.NBLOCK is 'Блокировка'
+comment on column MAKETS.NBLOCK is 'Р‘Р»РѕРєРёСЂРѕРІРєР°'
 /
 
-comment on column MAKETS.NCYCLE is 'Выполнять невыполненые вовремя'
+comment on column MAKETS.NCYCLE is 'Р’С‹РїРѕР»РЅСЏС‚СЊ РЅРµРІС‹РїРѕР»РЅРµРЅС‹Рµ РІРѕРІСЂРµРјСЏ'
 /
 
-comment on column MAKETS.DOLDCREATED is 'Дата последнего создания'
+comment on column MAKETS.DOLDCREATED is 'Р”Р°С‚Р° РїРѕСЃР»РµРґРЅРµРіРѕ СЃРѕР·РґР°РЅРёСЏ'
 /
 
-comment on column MAKETS.VERROR is 'Ошибка'
+comment on column MAKETS.VERROR is 'РћС€РёР±РєР°'
 /
 
 
@@ -2131,22 +2131,22 @@ create table MAKETGROUPS
 )
 /
 
-comment on table MAKETGROUPS is 'Группы макетов'
+comment on table MAKETGROUPS is 'Р“СЂСѓРїРїС‹ РјР°РєРµС‚РѕРІ'
 /
 
-comment on column MAKETGROUPS.NGROUP is 'Ид группы'
+comment on column MAKETGROUPS.NGROUP is 'РРґ РіСЂСѓРїРїС‹'
 /
 
-comment on column MAKETGROUPS.NMAKET is 'Ид макета'
+comment on column MAKETGROUPS.NMAKET is 'РРґ РјР°РєРµС‚Р°'
 /
 
-comment on column MAKETGROUPS.VCODE is 'Код строки в макете'
+comment on column MAKETGROUPS.VCODE is 'РљРѕРґ СЃС‚СЂРѕРєРё РІ РјР°РєРµС‚Рµ'
 /
 
-comment on column MAKETGROUPS.VNAME is 'Название'
+comment on column MAKETGROUPS.VNAME is 'РќР°Р·РІР°РЅРёРµ'
 /
 
-comment on column MAKETGROUPS.VNOTE is 'Примечание'
+comment on column MAKETGROUPS.VNOTE is 'РџСЂРёРјРµС‡Р°РЅРёРµ'
 /
 
 
@@ -2185,43 +2185,43 @@ create table DEPORTATION
 )
 /
 
-comment on table DEPORTATION is 'Каналы рассылки'
+comment on table DEPORTATION is 'РљР°РЅР°Р»С‹ СЂР°СЃСЃС‹Р»РєРё'
 /
 
-comment on column DEPORTATION.NDEPORTATION is 'Ид канала'
+comment on column DEPORTATION.NDEPORTATION is 'РРґ РєР°РЅР°Р»Р°'
 /
 
-comment on column DEPORTATION.VNAME is 'Название'
+comment on column DEPORTATION.VNAME is 'РќР°Р·РІР°РЅРёРµ'
 /
 
-comment on column DEPORTATION.VNOTE is 'Примечание'
+comment on column DEPORTATION.VNOTE is 'РџСЂРёРјРµС‡Р°РЅРёРµ'
 /
 
-comment on column DEPORTATION.NMAKET is 'Ид макета'
+comment on column DEPORTATION.NMAKET is 'РРґ РјР°РєРµС‚Р°'
 /
 
-comment on column DEPORTATION.NTYPE is 'Тип отсылки'
+comment on column DEPORTATION.NTYPE is 'РўРёРї РѕС‚СЃС‹Р»РєРё'
 /
 
-comment on column DEPORTATION.VADDRESS is 'Адрес'
+comment on column DEPORTATION.VADDRESS is 'РђРґСЂРµСЃ'
 /
 
-comment on column DEPORTATION.NPARENT is 'Ид основного канала'
+comment on column DEPORTATION.NPARENT is 'РРґ РѕСЃРЅРѕРІРЅРѕРіРѕ РєР°РЅР°Р»Р°'
 /
 
-comment on column DEPORTATION.DFROM is 'Отсылать с'
+comment on column DEPORTATION.DFROM is 'РћС‚СЃС‹Р»Р°С‚СЊ СЃ'
 /
 
-comment on column DEPORTATION.DTILL is 'Отсылать по'
+comment on column DEPORTATION.DTILL is 'РћС‚СЃС‹Р»Р°С‚СЊ РїРѕ'
 /
 
-comment on column DEPORTATION.NBLOCK is 'Блокировка'
+comment on column DEPORTATION.NBLOCK is 'Р‘Р»РѕРєРёСЂРѕРІРєР°'
 /
 
-comment on column DEPORTATION.NRETRIES_TOUT is 'Пауза между попытками мин'
+comment on column DEPORTATION.NRETRIES_TOUT is 'РџР°СѓР·Р° РјРµР¶РґСѓ РїРѕРїС‹С‚РєР°РјРё РјРёРЅ'
 /
 
-comment on column DEPORTATION.NRETRIES is 'Количество попыток'
+comment on column DEPORTATION.NRETRIES is 'РљРѕР»РёС‡РµСЃС‚РІРѕ РїРѕРїС‹С‚РѕРє'
 /
 
 
@@ -2259,25 +2259,25 @@ create table DEPORTFILES
 )
 /
 
-comment on table DEPORTFILES is 'Файлы рассылки'
+comment on table DEPORTFILES is 'Р¤Р°Р№Р»С‹ СЂР°СЃСЃС‹Р»РєРё'
 /
 
-comment on column DEPORTFILES.NDEPORTATION is 'Ид канала'
+comment on column DEPORTFILES.NDEPORTATION is 'РРґ РєР°РЅР°Р»Р°'
 /
 
-comment on column DEPORTFILES.DDATE is 'Дата'
+comment on column DEPORTFILES.DDATE is 'Р”Р°С‚Р°'
 /
 
-comment on column DEPORTFILES.VFILE is 'Файл'
+comment on column DEPORTFILES.VFILE is 'Р¤Р°Р№Р»'
 /
 
-comment on column DEPORTFILES.VFILENAME is 'Название файла'
+comment on column DEPORTFILES.VFILENAME is 'РќР°Р·РІР°РЅРёРµ С„Р°Р№Р»Р°'
 /
 
-comment on column DEPORTFILES.NSTATE is 'Состояние'
+comment on column DEPORTFILES.NSTATE is 'РЎРѕСЃС‚РѕСЏРЅРёРµ'
 /
 
-comment on column DEPORTFILES.VERROR is 'Ошибка'
+comment on column DEPORTFILES.VERROR is 'РћС€РёР±РєР°'
 /
 
 
@@ -2301,19 +2301,19 @@ create table MAKETPOINTS
 )
 /
 
-comment on table MAKETPOINTS is 'Точки макетов'
+comment on table MAKETPOINTS is 'РўРѕС‡РєРё РјР°РєРµС‚РѕРІ'
 /
 
-comment on column MAKETPOINTS.NGROUP is 'Ид группы'
+comment on column MAKETPOINTS.NGROUP is 'РРґ РіСЂСѓРїРїС‹'
 /
 
-comment on column MAKETPOINTS.MID is 'Ид точки'
+comment on column MAKETPOINTS.MID is 'РРґ С‚РѕС‡РєРё'
 /
 
-comment on column MAKETPOINTS.NKC is 'Коеф вхождения'
+comment on column MAKETPOINTS.NKC is 'РљРѕРµС„ РІС…РѕР¶РґРµРЅРёСЏ'
 /
 
-comment on column MAKETPOINTS.NTYPE is 'Тип измерения'
+comment on column MAKETPOINTS.NTYPE is 'РўРёРї РёР·РјРµСЂРµРЅРёСЏ'
 /
 
 
@@ -2377,16 +2377,16 @@ create table LG_READOUT
 )
 /
 
-comment on table LG_READOUT is 'Файл LG'
+comment on table LG_READOUT is 'Р¤Р°Р№Р» LG'
 /
 
-comment on column LG_READOUT.MID is 'Ид точки'
+comment on column LG_READOUT.MID is 'РРґ С‚РѕС‡РєРё'
 /
 
-comment on column LG_READOUT.DATE_TIME is 'Дата считывания'
+comment on column LG_READOUT.DATE_TIME is 'Р”Р°С‚Р° СЃС‡РёС‚С‹РІР°РЅРёСЏ'
 /
 
-comment on column LG_READOUT.VDATA is 'Данные считывания'
+comment on column LG_READOUT.VDATA is 'Р”Р°РЅРЅС‹Рµ СЃС‡РёС‚С‹РІР°РЅРёСЏ'
 /
 
 
@@ -2426,10 +2426,10 @@ create table man_inp_hhour
 )
 /
 
-comment on table man_inp_hhour is 'Показания индукционников'
+comment on table man_inp_hhour is 'РџРѕРєР°Р·Р°РЅРёСЏ РёРЅРґСѓРєС†РёРѕРЅРЅРёРєРѕРІ'
 /
 
-comment on column man_inp_hhour.MID is 'Ид точки'
+comment on column man_inp_hhour.MID is 'РРґ С‚РѕС‡РєРё'
 /
 
 comment on column man_inp_hhour.DATE_TIME is 'DATE_TIME'
@@ -2496,16 +2496,16 @@ create table LG_LOADPROF
 )
 /
 
-comment on table LG_LOADPROF is 'Файл ГН LG'
+comment on table LG_LOADPROF is 'Р¤Р°Р№Р» Р“Рќ LG'
 /
 
-comment on column LG_LOADPROF.MID is 'Ид точки'
+comment on column LG_LOADPROF.MID is 'РРґ С‚РѕС‡РєРё'
 /
 
-comment on column LG_LOADPROF.DATE_TIME is 'Дата считывания ГН'
+comment on column LG_LOADPROF.DATE_TIME is 'Р”Р°С‚Р° СЃС‡РёС‚С‹РІР°РЅРёСЏ Р“Рќ'
 /
 
-comment on column LG_LOADPROF.VDATA is 'Данные считывания ГН'
+comment on column LG_LOADPROF.VDATA is 'Р”Р°РЅРЅС‹Рµ СЃС‡РёС‚С‹РІР°РЅРёСЏ Р“Рќ'
 /
 
 
@@ -2528,7 +2528,7 @@ ALTER TABLE RYDA.TRAFFIC ADD
 /
 
  COMMENT ON COLUMN RYDA.TRAFFIC.DOPEN IS
-'Дата открытия порта'
+'Р”Р°С‚Р° РѕС‚РєСЂС‹С‚РёСЏ РїРѕСЂС‚Р°'
 /
 
 
@@ -2566,25 +2566,25 @@ insert into TRAFFIC select cid,dstart,dstart,DEND,NSEND,NRECEIVED from TRAFFIC1
 drop table TRAFFIC1 cascade constraints
 /
 
-comment on table TRAFFIC is 'Трафик'
+comment on table TRAFFIC is 'РўСЂР°С„РёРє'
 /
 
-comment on column TRAFFIC.CID is 'Ид канала'
+comment on column TRAFFIC.CID is 'РРґ РєР°РЅР°Р»Р°'
 /
 
-comment on column TRAFFIC.DOPEN is 'Дата открытия порта'
+comment on column TRAFFIC.DOPEN is 'Р”Р°С‚Р° РѕС‚РєСЂС‹С‚РёСЏ РїРѕСЂС‚Р°'
 /
 
-comment on column TRAFFIC.DSTART is 'Дата начала'
+comment on column TRAFFIC.DSTART is 'Р”Р°С‚Р° РЅР°С‡Р°Р»Р°'
 /
 
-comment on column TRAFFIC.DEND is 'Дата окончания'
+comment on column TRAFFIC.DEND is 'Р”Р°С‚Р° РѕРєРѕРЅС‡Р°РЅРёСЏ'
 /
 
-comment on column TRAFFIC.NSEND is 'Отпущено байт'
+comment on column TRAFFIC.NSEND is 'РћС‚РїСѓС‰РµРЅРѕ Р±Р°Р№С‚'
 /
 
-comment on column TRAFFIC.NRECEIVED is 'Получено байт'
+comment on column TRAFFIC.NRECEIVED is 'РџРѕР»СѓС‡РµРЅРѕ Р±Р°Р№С‚'
 /
 
 
@@ -2614,13 +2614,13 @@ create table OPERSCANSCHEMAS
 )
 /
 
-comment on table OPERSCANSCHEMAS is 'Схемы оперативного опроса'
+comment on table OPERSCANSCHEMAS is 'РЎС…РµРјС‹ РѕРїРµСЂР°С‚РёРІРЅРѕРіРѕ РѕРїСЂРѕСЃР°'
 /
 
-comment on column OPERSCANSCHEMAS.NOPERSCANSCHEMAS is 'Ид схемы опер опроса'
+comment on column OPERSCANSCHEMAS.NOPERSCANSCHEMAS is 'РРґ СЃС…РµРјС‹ РѕРїРµСЂ РѕРїСЂРѕСЃР°'
 /
 
-comment on column OPERSCANSCHEMAS.VNAME is 'Название'
+comment on column OPERSCANSCHEMAS.VNAME is 'РќР°Р·РІР°РЅРёРµ'
 /
 
 
@@ -2639,19 +2639,19 @@ alter table ROLES add
 )
 /
 
-comment on table ROLES is 'Роли'
+comment on table ROLES is 'Р РѕР»Рё'
 /
 
-comment on column ROLES.ROLE_ID is 'Ид роли'
+comment on column ROLES.ROLE_ID is 'РРґ СЂРѕР»Рё'
 /
 
-comment on column ROLES.NAME is 'Название'
+comment on column ROLES.NAME is 'РќР°Р·РІР°РЅРёРµ'
 /
 
-comment on column ROLES.MONITOR is 'Ид схемы просмотра'
+comment on column ROLES.MONITOR is 'РРґ СЃС…РµРјС‹ РїСЂРѕСЃРјРѕС‚СЂР°'
 /
 
-comment on column ROLES.NOPERSCANSCHEMAS is 'Ид схемы опер опроса'
+comment on column ROLES.NOPERSCANSCHEMAS is 'РРґ СЃС…РµРјС‹ РѕРїРµСЂ РѕРїСЂРѕСЃР°'
 /
 
 -- ============================================================
@@ -2671,13 +2671,13 @@ create table SCHEMCHANNELS
 )
 /
 
-comment on table SCHEMCHANNELS is 'Схемы Каналы'
+comment on table SCHEMCHANNELS is 'РЎС…РµРјС‹ РљР°РЅР°Р»С‹'
 /
 
-comment on column SCHEMCHANNELS.NOPERSCANSCHEMAS is 'Ид схемы опер опроса'
+comment on column SCHEMCHANNELS.NOPERSCANSCHEMAS is 'РРґ СЃС…РµРјС‹ РѕРїРµСЂ РѕРїСЂРѕСЃР°'
 /
 
-comment on column SCHEMCHANNELS.CID is 'Ид канала'
+comment on column SCHEMCHANNELS.CID is 'РРґ РєР°РЅР°Р»Р°'
 /
 
 
@@ -2721,31 +2721,31 @@ alter table CHANNELS add
 )
 /
 
-comment on table CHANNELS is 'Каналы опроса приборов учета'
+comment on table CHANNELS is 'РљР°РЅР°Р»С‹ РѕРїСЂРѕСЃР° РїСЂРёР±РѕСЂРѕРІ СѓС‡РµС‚Р°'
 /
 
-comment on column CHANNELS.VUSER is 'Пользователь'
+comment on column CHANNELS.VUSER is 'РџРѕР»СЊР·РѕРІР°С‚РµР»СЊ'
 /
 
-comment on column CHANNELS.CYCLE_TOUT2 is 'Пауза между циклами 2'
+comment on column CHANNELS.CYCLE_TOUT2 is 'РџР°СѓР·Р° РјРµР¶РґСѓ С†РёРєР»Р°РјРё 2'
 /
 
-comment on column CHANNELS.BLOCKING2 is 'Блокировка 2'
+comment on column CHANNELS.BLOCKING2 is 'Р‘Р»РѕРєРёСЂРѕРІРєР° 2'
 /
 
-comment on column CHANNELS.DSTART2 is 'Начало опроса2'
+comment on column CHANNELS.DSTART2 is 'РќР°С‡Р°Р»Рѕ РѕРїСЂРѕСЃР°2'
 /
 
-comment on column CHANNELS.DEND2 is 'Окончание2'
+comment on column CHANNELS.DEND2 is 'РћРєРѕРЅС‡Р°РЅРёРµ2'
 /
 
-comment on column CHANNELS.NPARENT2 is 'Главный канал2'
+comment on column CHANNELS.NPARENT2 is 'Р“Р»Р°РІРЅС‹Р№ РєР°РЅР°Р»2'
 /
 
-comment on column CHANNELS.NNOTREADCURR2 is 'Не читать тек сутки2'
+comment on column CHANNELS.NNOTREADCURR2 is 'РќРµ С‡РёС‚Р°С‚СЊ С‚РµРє СЃСѓС‚РєРё2'
 /
 
-comment on column CHANNELS.NKIND is 'Режим работы канала'
+comment on column CHANNELS.NKIND is 'Р РµР¶РёРј СЂР°Р±РѕС‚С‹ РєР°РЅР°Р»Р°'
 /
 
 -- ============================================================
@@ -2787,16 +2787,16 @@ alter table GROUPS add
 )
 /
 
-comment on column GROUPS.NROOT1 is 'Служебная 1'
+comment on column GROUPS.NROOT1 is 'РЎР»СѓР¶РµР±РЅР°СЏ 1'
 /
 
-comment on column GROUPS.NROOT2 is 'Служебная 2'
+comment on column GROUPS.NROOT2 is 'РЎР»СѓР¶РµР±РЅР°СЏ 2'
 /
 
-comment on column GROUPS.NEMERGENCYRESERVE is 'Аварийная бронь'
+comment on column GROUPS.NEMERGENCYRESERVE is 'РђРІР°СЂРёР№РЅР°СЏ Р±СЂРѕРЅСЊ'
 /
 
-comment on column GROUPS.NTECHNOLOGYRESERVE is 'Технологическая бронь'
+comment on column GROUPS.NTECHNOLOGYRESERVE is 'РўРµС…РЅРѕР»РѕРіРёС‡РµСЃРєР°СЏ Р±СЂРѕРЅСЊ'
 /
 
 
@@ -2829,13 +2829,13 @@ create table BILL_CALC
 )
 /
 
-comment on table BILL_CALC is 'Расчет суточных'
+comment on table BILL_CALC is 'Р Р°СЃС‡РµС‚ СЃСѓС‚РѕС‡РЅС‹С…'
 /
 
-comment on column BILL_CALC.MID is 'Ид точки'
+comment on column BILL_CALC.MID is 'РРґ С‚РѕС‡РєРё'
 /
 
-comment on column BILL_CALC.DATE_TIME is 'Дата'
+comment on column BILL_CALC.DATE_TIME is 'Р”Р°С‚Р°'
 /
 
 
@@ -2855,7 +2855,7 @@ alter table RATES add
 /
 
 
-comment on column RATES.ENDTIME is 'Дата окончания'
+comment on column RATES.ENDTIME is 'Р”Р°С‚Р° РѕРєРѕРЅС‡Р°РЅРёСЏ'
 /
 
 
@@ -2876,7 +2876,7 @@ ALTER TABLE RYDA.FORMS ADD
 /
 
  COMMENT ON COLUMN RYDA.FORMS.VPROCNAME IS
-'Хранимая процедура'
+'РҐСЂР°РЅРёРјР°СЏ РїСЂРѕС†РµРґСѓСЂР°'
 /
 
 alter table FEEDERS add
@@ -2886,13 +2886,13 @@ alter table FEEDERS add
 )
 /
 
-comment on column FEEDERS.NCALCBILL is 'Верифицировать суточные'
+comment on column FEEDERS.NCALCBILL is 'Р’РµСЂРёС„РёС†РёСЂРѕРІР°С‚СЊ СЃСѓС‚РѕС‡РЅС‹Рµ'
 /
 
-comment on column FEEDERS.NCALCMONTHS is 'Верифицировать месячные'
+comment on column FEEDERS.NCALCMONTHS is 'Р’РµСЂРёС„РёС†РёСЂРѕРІР°С‚СЊ РјРµСЃСЏС‡РЅС‹Рµ'
 /
 
-comment on column FEEDERS.NINVERTED is 'Инверсия'
+comment on column FEEDERS.NINVERTED is 'РРЅРІРµСЂСЃРёСЏ'
 /
 
 -- ============================================================
@@ -2904,7 +2904,7 @@ alter table TRAFFIC add
 )
 /
 
-comment on column TRAFFIC.VUSER is 'Пользователь'
+comment on column TRAFFIC.VUSER is 'РџРѕР»СЊР·РѕРІР°С‚РµР»СЊ'
 /
 
 
@@ -2922,31 +2922,31 @@ alter table COMPORTS add
 )
 /
 
-comment on table COMPORTS is 'Ком порты'
+comment on table COMPORTS is 'РљРѕРј РїРѕСЂС‚С‹'
 /
 
-comment on column COMPORTS.COM_ID is 'Ид компорта'
+comment on column COMPORTS.COM_ID is 'РРґ РєРѕРјРїРѕСЂС‚Р°'
 /
 
-comment on column COMPORTS.NAME is 'Название'
+comment on column COMPORTS.NAME is 'РќР°Р·РІР°РЅРёРµ'
 /
 
-comment on column COMPORTS.BAUDRATE is 'Скорость'
+comment on column COMPORTS.BAUDRATE is 'РЎРєРѕСЂРѕСЃС‚СЊ'
 /
 
-comment on column COMPORTS.BYTESIZE is 'Разрядность'
+comment on column COMPORTS.BYTESIZE is 'Р Р°Р·СЂСЏРґРЅРѕСЃС‚СЊ'
 /
 
-comment on column COMPORTS.PARITY is 'Контроль четности'
+comment on column COMPORTS.PARITY is 'РљРѕРЅС‚СЂРѕР»СЊ С‡РµС‚РЅРѕСЃС‚Рё'
 /
 
-comment on column COMPORTS.STOPBITS is 'Кол стоповых бит'
+comment on column COMPORTS.STOPBITS is 'РљРѕР» СЃС‚РѕРїРѕРІС‹С… Р±РёС‚'
 /
 
-comment on column COMPORTS.DLASTEVENT is 'Дата посл события'
+comment on column COMPORTS.DLASTEVENT is 'Р”Р°С‚Р° РїРѕСЃР» СЃРѕР±С‹С‚РёСЏ'
 /
 
-comment on column COMPORTS.VLASTEVENT is 'Последнее событие'
+comment on column COMPORTS.VLASTEVENT is 'РџРѕСЃР»РµРґРЅРµРµ СЃРѕР±С‹С‚РёРµ'
 /
 
 -- ============================================================
@@ -2962,19 +2962,19 @@ create table COMPORTEVENTS
 )
 /
 
-comment on table COMPORTEVENTS is 'События по компорту (журнал)'
+comment on table COMPORTEVENTS is 'РЎРѕР±С‹С‚РёСЏ РїРѕ РєРѕРјРїРѕСЂС‚Сѓ (Р¶СѓСЂРЅР°Р»)'
 /
 
-comment on column COMPORTEVENTS.NORDER is 'Ид события'
+comment on column COMPORTEVENTS.NORDER is 'РРґ СЃРѕР±С‹С‚РёСЏ'
 /
 
-comment on column COMPORTEVENTS.COM_ID is 'Ид компорта'
+comment on column COMPORTEVENTS.COM_ID is 'РРґ РєРѕРјРїРѕСЂС‚Р°'
 /
 
-comment on column COMPORTEVENTS.DLASTEVENT is 'Дата cобытия'
+comment on column COMPORTEVENTS.DLASTEVENT is 'Р”Р°С‚Р° cРѕР±С‹С‚РёСЏ'
 /
 
-comment on column COMPORTEVENTS.VLASTEVENT is 'Cобытие'
+comment on column COMPORTEVENTS.VLASTEVENT is 'CРѕР±С‹С‚РёРµ'
 /
 
 
@@ -3009,28 +3009,28 @@ alter table MONITORS add
 )
 /
 
-comment on table MONITORS is 'Мониторы'
+comment on table MONITORS is 'РњРѕРЅРёС‚РѕСЂС‹'
 /
 
-comment on column MONITORS.MONITOR_ID is 'Ид монитора'
+comment on column MONITORS.MONITOR_ID is 'РРґ РјРѕРЅРёС‚РѕСЂР°'
 /
 
-comment on column MONITORS.NPARENT is 'Родитель'
+comment on column MONITORS.NPARENT is 'Р РѕРґРёС‚РµР»СЊ'
 /
 
-comment on column MONITORS.MSCHEMA is 'Схема'
+comment on column MONITORS.MSCHEMA is 'РЎС…РµРјР°'
 /
 
-comment on column MONITORS.NAME is 'Название'
+comment on column MONITORS.NAME is 'РќР°Р·РІР°РЅРёРµ'
 /
 
-comment on column MONITORS.DSIZE is 'Размер'
+comment on column MONITORS.DSIZE is 'Р Р°Р·РјРµСЂ'
 /
 
-comment on column MONITORS.DFILE is 'Сам монитор'
+comment on column MONITORS.DFILE is 'РЎР°Рј РјРѕРЅРёС‚РѕСЂ'
 /
 
-comment on column MONITORS.IS_DEFAULT is 'По умолчанию'
+comment on column MONITORS.IS_DEFAULT is 'РџРѕ СѓРјРѕР»С‡Р°РЅРёСЋ'
 /
 
 
@@ -3072,10 +3072,10 @@ alter table GROUPS add
 )
 /
 
-comment on column GROUPS.NDEB is 'Долг'
+comment on column GROUPS.NDEB is 'Р”РѕР»Рі'
 /
 
-comment on column GROUPS.NDEBRESTR is 'Долг с реструкторизацией'
+comment on column GROUPS.NDEBRESTR is 'Р”РѕР»Рі СЃ СЂРµСЃС‚СЂСѓРєС‚РѕСЂРёР·Р°С†РёРµР№'
 /
 
 -- ============================================================
@@ -3165,10 +3165,10 @@ create table BILLORG
 )
 /
 
-comment on table BILLORG is 'Суточные первичка'
+comment on table BILLORG is 'РЎСѓС‚РѕС‡РЅС‹Рµ РїРµСЂРІРёС‡РєР°'
 /
 
-comment on column BILLORG.MID is 'Ид точки'
+comment on column BILLORG.MID is 'РРґ С‚РѕС‡РєРё'
 /
 
 comment on column BILLORG.DATE_TIME is 'DATE_TIME'
@@ -3399,7 +3399,7 @@ comment on column BILLORG.DQ4M is 'DQ4M'
 comment on column BILLORG.DQ4 is 'DQ4'
 /
 
-comment on column BILLORG.NWASTEABS is 'Служебный1'
+comment on column BILLORG.NWASTEABS is 'РЎР»СѓР¶РµР±РЅС‹Р№1'
 /
 
 -- ============================================================
@@ -3470,18 +3470,18 @@ create index LG_LOADPROF_IDX1 on LG_LOADPROF (DATE_TIME asc)
 
 CREATE GLOBAL TEMPORARY TABLE TEXTREPORT
   (
-  norder                       NUMBER,--ид. объекта
+  norder                       NUMBER,--РёРґ. РѕР±СЉРµРєС‚Р°
   vtext                   VARCHAR2(4000)
  )
  ON COMMIT PRESERVE ROWS
  ORGANIZATION HEAP
  CACHE
 /
-COMMENT ON TABLE TEXTREPORT IS 'Отчеты PL-Sql'
+COMMENT ON TABLE TEXTREPORT IS 'РћС‚С‡РµС‚С‹ PL-Sql'
 /
-COMMENT ON COLUMN TEXTREPORT.norder IS 'Строка'
+COMMENT ON COLUMN TEXTREPORT.norder IS 'РЎС‚СЂРѕРєР°'
 /
-COMMENT ON COLUMN TEXTREPORT.vtext IS 'Текст'
+COMMENT ON COLUMN TEXTREPORT.vtext IS 'РўРµРєСЃС‚'
 /
 
 
@@ -3498,13 +3498,13 @@ alter table DEPORTPROCEDURES add
 )
 /
 
-comment on column DEPORTPROCEDURES.NTYPE is 'Тип процедуры'
+comment on column DEPORTPROCEDURES.NTYPE is 'РўРёРї РїСЂРѕС†РµРґСѓСЂС‹'
 /
 
-comment on column DEPORTPROCEDURES.VPARAM is 'Параметр'
+comment on column DEPORTPROCEDURES.VPARAM is 'РџР°СЂР°РјРµС‚СЂ'
 /
 
-comment on column DEPORTPROCEDURES.VMEMO is 'Описание'
+comment on column DEPORTPROCEDURES.VMEMO is 'РћРїРёСЃР°РЅРёРµ'
 /
 
 
@@ -3520,7 +3520,7 @@ alter table FEEDERS add
 )
 /
 
-comment on column FEEDERS.NSWITCH is 'Признак обводника'
+comment on column FEEDERS.NSWITCH is 'РџСЂРёР·РЅР°Рє РѕР±РІРѕРґРЅРёРєР°'
 /
 
 rename HALFHOUR to HALFHOUROLD
@@ -3540,13 +3540,13 @@ alter table HALFHOUROLD add
 )
 /
 
-comment on column HALFHOUROLD.NSOURCE is 'Код источника'
+comment on column HALFHOUROLD.NSOURCE is 'РљРѕРґ РёСЃС‚РѕС‡РЅРёРєР°'
 /
 
-comment on column HALFHOUROLD.NSWITCH is 'Ид обводника'
+comment on column HALFHOUROLD.NSWITCH is 'РРґ РѕР±РІРѕРґРЅРёРєР°'
 /
 
-comment on column HALFHOUROLD.NEXCEPTCALC is 'Исключен из расчета'
+comment on column HALFHOUROLD.NEXCEPTCALC is 'РСЃРєР»СЋС‡РµРЅ РёР· СЂР°СЃС‡РµС‚Р°'
 /
 
 -- ============================================================
@@ -3740,28 +3740,28 @@ create table SWITCHES
 )
 /
 
-comment on table SWITCHES is 'Переключение обводвых'
+comment on table SWITCHES is 'РџРµСЂРµРєР»СЋС‡РµРЅРёРµ РѕР±РІРѕРґРІС‹С…'
 /
 
-comment on column SWITCHES.ID is 'Ид строки'
+comment on column SWITCHES.ID is 'РРґ СЃС‚СЂРѕРєРё'
 /
 
-comment on column SWITCHES.NSWITCH is 'Ид обводника'
+comment on column SWITCHES.NSWITCH is 'РРґ РѕР±РІРѕРґРЅРёРєР°'
 /
 
-comment on column SWITCHES.DSWITCH is 'Дата переключения'
+comment on column SWITCHES.DSWITCH is 'Р”Р°С‚Р° РїРµСЂРµРєР»СЋС‡РµРЅРёСЏ'
 /
 
-comment on column SWITCHES.MID is 'Ид точки'
+comment on column SWITCHES.MID is 'РРґ С‚РѕС‡РєРё'
 /
 
-comment on column SWITCHES.ERM is 'Показание'
+comment on column SWITCHES.ERM is 'РџРѕРєР°Р·Р°РЅРёРµ'
 /
 
-comment on column SWITCHES.DENTER is 'Дата ввода'
+comment on column SWITCHES.DENTER is 'Р”Р°С‚Р° РІРІРѕРґР°'
 /
 
-comment on column SWITCHES.USER_ID is 'Ид пользователя'
+comment on column SWITCHES.USER_ID is 'РРґ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ'
 /
 
 
@@ -3846,7 +3846,7 @@ SELECT
  FROM RYDA.HALFHOUROLD WHERE NEXCEPTCALC IS NULL
 /
 
-comment on column DEPORTPROCEDURES.VNAME is 'Название'
+comment on column DEPORTPROCEDURES.VNAME is 'РќР°Р·РІР°РЅРёРµ'
 /
 
 create unique index DEPORTPROCEDURES_UNI2 on DEPORTPROCEDURES (VNAME asc)
@@ -3885,19 +3885,19 @@ create table LG_READOUT
 )
 /
 
-comment on table LG_READOUT is 'Файл LG'
+comment on table LG_READOUT is 'Р¤Р°Р№Р» LG'
 /
 
-comment on column LG_READOUT.MID is 'Ид точки'
+comment on column LG_READOUT.MID is 'РРґ С‚РѕС‡РєРё'
 /
 
-comment on column LG_READOUT.DATE_TIME is 'Дата считывания'
+comment on column LG_READOUT.DATE_TIME is 'Р”Р°С‚Р° СЃС‡РёС‚С‹РІР°РЅРёСЏ'
 /
 
-comment on column LG_READOUT.NSORT is 'Строка'
+comment on column LG_READOUT.NSORT is 'РЎС‚СЂРѕРєР°'
 /
 
-comment on column LG_READOUT.VDATA is 'Данные считывания'
+comment on column LG_READOUT.VDATA is 'Р”Р°РЅРЅС‹Рµ СЃС‡РёС‚С‹РІР°РЅРёСЏ'
 /
 
 
@@ -3920,19 +3920,19 @@ create table LG_LOADPROF
 )
 /
 
-comment on table LG_LOADPROF is 'Файл ГН LG'
+comment on table LG_LOADPROF is 'Р¤Р°Р№Р» Р“Рќ LG'
 /
 
-comment on column LG_LOADPROF.MID is 'Ид точки'
+comment on column LG_LOADPROF.MID is 'РРґ С‚РѕС‡РєРё'
 /
 
-comment on column LG_LOADPROF.DATE_TIME is 'Дата считывания ГН'
+comment on column LG_LOADPROF.DATE_TIME is 'Р”Р°С‚Р° СЃС‡РёС‚С‹РІР°РЅРёСЏ Р“Рќ'
 /
 
-comment on column LG_LOADPROF.NSORT is 'Строка'
+comment on column LG_LOADPROF.NSORT is 'РЎС‚СЂРѕРєР°'
 /
 
-comment on column LG_LOADPROF.VDATA is 'Данные считывания ГН'
+comment on column LG_LOADPROF.VDATA is 'Р”Р°РЅРЅС‹Рµ СЃС‡РёС‚С‹РІР°РЅРёСЏ Р“Рќ'
 /
 
 
@@ -3967,52 +3967,52 @@ create table SWITCHES
 )
 /
 
-comment on table SWITCHES is 'Переключение обводвых'
+comment on table SWITCHES is 'РџРµСЂРµРєР»СЋС‡РµРЅРёРµ РѕР±РІРѕРґРІС‹С…'
 /
 
-comment on column SWITCHES.ID is 'Ид строки'
+comment on column SWITCHES.ID is 'РРґ СЃС‚СЂРѕРєРё'
 /
 
-comment on column SWITCHES.NSWITCH is 'Ид обводника'
+comment on column SWITCHES.NSWITCH is 'РРґ РѕР±РІРѕРґРЅРёРєР°'
 /
 
-comment on column SWITCHES.DSWITCH is 'Дата переключения'
+comment on column SWITCHES.DSWITCH is 'Р”Р°С‚Р° РїРµСЂРµРєР»СЋС‡РµРЅРёСЏ'
 /
 
-comment on column SWITCHES.DESCAPE is 'Дата окончания'
+comment on column SWITCHES.DESCAPE is 'Р”Р°С‚Р° РѕРєРѕРЅС‡Р°РЅРёСЏ'
 /
 
-comment on column SWITCHES.MID is 'Ид точки'
+comment on column SWITCHES.MID is 'РРґ С‚РѕС‡РєРё'
 /
 
-comment on column SWITCHES.DENTER is 'Дата ввода'
+comment on column SWITCHES.DENTER is 'Р”Р°С‚Р° РІРІРѕРґР°'
 /
 
-comment on column SWITCHES.USER_ID is 'Ид пользователя'
+comment on column SWITCHES.USER_ID is 'РРґ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ'
 /
 
-comment on column SWITCHES.ERM is 'Показание A пр'
+comment on column SWITCHES.ERM is 'РџРѕРєР°Р·Р°РЅРёРµ A РїСЂ'
 /
 
-comment on column SWITCHES.EDM is 'Показание A от'
+comment on column SWITCHES.EDM is 'РџРѕРєР°Р·Р°РЅРёРµ A РѕС‚'
 /
 
-comment on column SWITCHES.Q1M is 'Показание Q1'
+comment on column SWITCHES.Q1M is 'РџРѕРєР°Р·Р°РЅРёРµ Q1'
 /
 
-comment on column SWITCHES.Q2M is 'Показание Q2'
+comment on column SWITCHES.Q2M is 'РџРѕРєР°Р·Р°РЅРёРµ Q2'
 /
 
-comment on column SWITCHES.Q3M is 'Показание Q3'
+comment on column SWITCHES.Q3M is 'РџРѕРєР°Р·Р°РЅРёРµ Q3'
 /
 
-comment on column SWITCHES.Q4M is 'Показание Q4'
+comment on column SWITCHES.Q4M is 'РџРѕРєР°Р·Р°РЅРёРµ Q4'
 /
 
-comment on column SWITCHES.NSTATE is 'Состояние расчета'
+comment on column SWITCHES.NSTATE is 'РЎРѕСЃС‚РѕСЏРЅРёРµ СЂР°СЃС‡РµС‚Р°'
 /
 
-comment on column SWITCHES.VERROR is 'Текст ошибки'
+comment on column SWITCHES.VERROR is 'РўРµРєСЃС‚ РѕС€РёР±РєРё'
 /
 
 
@@ -4084,28 +4084,28 @@ create table AVERRATE
 )
 /
 
-comment on table AVERRATE is 'Долевые коеффициенты'
+comment on table AVERRATE is 'Р”РѕР»РµРІС‹Рµ РєРѕРµС„С„РёС†РёРµРЅС‚С‹'
 /
 
-comment on column AVERRATE.NHH is 'Сдвиг часа'
+comment on column AVERRATE.NHH is 'РЎРґРІРёРі С‡Р°СЃР°'
 /
 
-comment on column AVERRATE.NER is 'Коеф А пр'
+comment on column AVERRATE.NER is 'РљРѕРµС„ Рђ РїСЂ'
 /
 
-comment on column AVERRATE.NED is 'Коеф А отд'
+comment on column AVERRATE.NED is 'РљРѕРµС„ Рђ РѕС‚Рґ'
 /
 
-comment on column AVERRATE.NQ1 is 'Коеф Q1'
+comment on column AVERRATE.NQ1 is 'РљРѕРµС„ Q1'
 /
 
-comment on column AVERRATE.NQ2 is 'Коеф Q2'
+comment on column AVERRATE.NQ2 is 'РљРѕРµС„ Q2'
 /
 
-comment on column AVERRATE.NQ3 is 'Коеф Q3'
+comment on column AVERRATE.NQ3 is 'РљРѕРµС„ Q3'
 /
 
-comment on column AVERRATE.NQ4 is 'Коеф Q4'
+comment on column AVERRATE.NQ4 is 'РљРѕРµС„ Q4'
 /
 
 
@@ -4134,55 +4134,55 @@ create table HALFHOURTMP
 )
 /
 
-comment on table HALFHOURTMP is 'Получасовки временные'
+comment on table HALFHOURTMP is 'РџРѕР»СѓС‡Р°СЃРѕРІРєРё РІСЂРµРјРµРЅРЅС‹Рµ'
 /
 
-comment on column HALFHOURTMP.MID is 'Ид точки'
+comment on column HALFHOURTMP.MID is 'РРґ С‚РѕС‡РєРё'
 /
 
-comment on column HALFHOURTMP.DATE_TIME is 'Дата показаний'
+comment on column HALFHOURTMP.DATE_TIME is 'Р”Р°С‚Р° РїРѕРєР°Р·Р°РЅРёР№'
 /
 
-comment on column HALFHOURTMP.NSOURCE is 'Код источника'
+comment on column HALFHOURTMP.NSOURCE is 'РљРѕРґ РёСЃС‚РѕС‡РЅРёРєР°'
 /
 
-comment on column HALFHOURTMP.ER is 'Расход А пр'
+comment on column HALFHOURTMP.ER is 'Р Р°СЃС…РѕРґ Рђ РїСЂ'
 /
 
-comment on column HALFHOURTMP.Q1 is 'Расход Q1'
+comment on column HALFHOURTMP.Q1 is 'Р Р°СЃС…РѕРґ Q1'
 /
 
-comment on column HALFHOURTMP.ED is 'Расход А от'
+comment on column HALFHOURTMP.ED is 'Р Р°СЃС…РѕРґ Рђ РѕС‚'
 /
 
-comment on column HALFHOURTMP.Q3 is 'Расход Q3'
+comment on column HALFHOURTMP.Q3 is 'Р Р°СЃС…РѕРґ Q3'
 /
 
-comment on column HALFHOURTMP.Q2 is 'Расход Q2'
+comment on column HALFHOURTMP.Q2 is 'Р Р°СЃС…РѕРґ Q2'
 /
 
-comment on column HALFHOURTMP.Q4 is 'Расход Q4'
+comment on column HALFHOURTMP.Q4 is 'Р Р°СЃС…РѕРґ Q4'
 /
 
-comment on column HALFHOURTMP.ERM is 'Показания А пр'
+comment on column HALFHOURTMP.ERM is 'РџРѕРєР°Р·Р°РЅРёСЏ Рђ РїСЂ'
 /
 
-comment on column HALFHOURTMP.Q1M is 'Показания Q1'
+comment on column HALFHOURTMP.Q1M is 'РџРѕРєР°Р·Р°РЅРёСЏ Q1'
 /
 
-comment on column HALFHOURTMP.EDM is 'Показания А от'
+comment on column HALFHOURTMP.EDM is 'РџРѕРєР°Р·Р°РЅРёСЏ Рђ РѕС‚'
 /
 
-comment on column HALFHOURTMP.Q3M is 'Показания Q3'
+comment on column HALFHOURTMP.Q3M is 'РџРѕРєР°Р·Р°РЅРёСЏ Q3'
 /
 
-comment on column HALFHOURTMP.Q2M is 'Показания Q2'
+comment on column HALFHOURTMP.Q2M is 'РџРѕРєР°Р·Р°РЅРёСЏ Q2'
 /
 
-comment on column HALFHOURTMP.Q4M is 'Показания Q4'
+comment on column HALFHOURTMP.Q4M is 'РџРѕРєР°Р·Р°РЅРёСЏ Q4'
 /
 
-comment on column HALFHOURTMP.STATUS is 'Статус'
+comment on column HALFHOURTMP.STATUS is 'РЎС‚Р°С‚СѓСЃ'
 /
 
 
@@ -4205,7 +4205,7 @@ alter table bill add
     NSOURCE      NUMBER(10)
 )
 /
-comment on column HALFHOUROLD.NSOURCE is 'Код источника'
+comment on column HALFHOUROLD.NSOURCE is 'РљРѕРґ РёСЃС‚РѕС‡РЅРёРєР°'
 /
 
 alter table MONTHSORG drop constraint MONTHS_PK
@@ -4216,7 +4216,7 @@ alter table MONTHSORG add
     constraint MONTHS_PK primary key (MID, DATE_TIME, NSOURCE)
 )
 /
-comment on column MONTHSORG.NSOURCE is 'Код источника'
+comment on column MONTHSORG.NSOURCE is 'РљРѕРґ РёСЃС‚РѕС‡РЅРёРєР°'
 /
 
 
@@ -4229,7 +4229,7 @@ alter table BILLORG add
     constraint BILL2_PK primary key (MID, DATE_TIME, NSOURCE)
 )
 /
-comment on column BILLORG.NSOURCE is 'Код источника'
+comment on column BILLORG.NSOURCE is 'РљРѕРґ РёСЃС‚РѕС‡РЅРёРєР°'
 /
 
 
@@ -4254,25 +4254,25 @@ alter table DEPORTPROCEDURES drop column NSHIFT
 alter table DEPORTPROCEDURES drop column VPARAM
 /
 
-comment on table DEPORTPROCEDURES is 'Фоновые процедуры'
+comment on table DEPORTPROCEDURES is 'Р¤РѕРЅРѕРІС‹Рµ РїСЂРѕС†РµРґСѓСЂС‹'
 /
 
-comment on column DEPORTPROCEDURES.NPROCEDURE is 'Ид процедуры'
+comment on column DEPORTPROCEDURES.NPROCEDURE is 'РРґ РїСЂРѕС†РµРґСѓСЂС‹'
 /
 
-comment on column DEPORTPROCEDURES.VNAME is 'Название'
+comment on column DEPORTPROCEDURES.VNAME is 'РќР°Р·РІР°РЅРёРµ'
 /
 
-comment on column DEPORTPROCEDURES.VPROCEDURE is 'Процедура'
+comment on column DEPORTPROCEDURES.VPROCEDURE is 'РџСЂРѕС†РµРґСѓСЂР°'
 /
 
-comment on column DEPORTPROCEDURES.NPERIOD is 'Периодичность формирования'
+comment on column DEPORTPROCEDURES.NPERIOD is 'РџРµСЂРёРѕРґРёС‡РЅРѕСЃС‚СЊ С„РѕСЂРјРёСЂРѕРІР°РЅРёСЏ'
 /
 
-comment on column DEPORTPROCEDURES.NTYPE is 'Тип процедуры'
+comment on column DEPORTPROCEDURES.NTYPE is 'РўРёРї РїСЂРѕС†РµРґСѓСЂС‹'
 /
 
-comment on column DEPORTPROCEDURES.VMEMO is 'Описание'
+comment on column DEPORTPROCEDURES.VMEMO is 'РћРїРёСЃР°РЅРёРµ'
 /
 
 -- ============================================================
@@ -4292,37 +4292,37 @@ alter table MAKETS add
 )
 /
 
-comment on table MAKETS is 'Задания'
+comment on table MAKETS is 'Р—Р°РґР°РЅРёСЏ'
 /
 
-comment on column MAKETS.NMAKET is 'Ид макета'
+comment on column MAKETS.NMAKET is 'РРґ РјР°РєРµС‚Р°'
 /
 
-comment on column MAKETS.NPROCEDURE is 'Ид процедуры'
+comment on column MAKETS.NPROCEDURE is 'РРґ РїСЂРѕС†РµРґСѓСЂС‹'
 /
 
-comment on column MAKETS.VNAME is 'Название'
+comment on column MAKETS.VNAME is 'РќР°Р·РІР°РЅРёРµ'
 /
 
-comment on column MAKETS.VNOTE is 'Примечание'
+comment on column MAKETS.VNOTE is 'РџСЂРёРјРµС‡Р°РЅРёРµ'
 /
 
-comment on column MAKETS.NBLOCK is 'Блокировка'
+comment on column MAKETS.NBLOCK is 'Р‘Р»РѕРєРёСЂРѕРІРєР°'
 /
 
-comment on column MAKETS.NCYCLE is 'Выполнять невыполненые вовремя'
+comment on column MAKETS.NCYCLE is 'Р’С‹РїРѕР»РЅСЏС‚СЊ РЅРµРІС‹РїРѕР»РЅРµРЅС‹Рµ РІРѕРІСЂРµРјСЏ'
 /
 
-comment on column MAKETS.NSHIFT is 'Сдвиг старта формирования мин'
+comment on column MAKETS.NSHIFT is 'РЎРґРІРёРі СЃС‚Р°СЂС‚Р° С„РѕСЂРјРёСЂРѕРІР°РЅРёСЏ РјРёРЅ'
 /
 
-comment on column MAKETS.VPARAM is 'Параметр'
+comment on column MAKETS.VPARAM is 'РџР°СЂР°РјРµС‚СЂ'
 /
 
-comment on column MAKETS.DOLDCREATED is 'Дата последнего создания'
+comment on column MAKETS.DOLDCREATED is 'Р”Р°С‚Р° РїРѕСЃР»РµРґРЅРµРіРѕ СЃРѕР·РґР°РЅРёСЏ'
 /
 
-comment on column MAKETS.VERROR is 'Ошибка'
+comment on column MAKETS.VERROR is 'РћС€РёР±РєР°'
 /
 
 
@@ -4338,16 +4338,16 @@ alter table ROLE_TASK add
 )
 /
 
-comment on table ROLE_TASK is 'Доступные задачи'
+comment on table ROLE_TASK is 'Р”РѕСЃС‚СѓРїРЅС‹Рµ Р·Р°РґР°С‡Рё'
 /
 
-comment on column ROLE_TASK.ROLE_ID is 'Ид роли'
+comment on column ROLE_TASK.ROLE_ID is 'РРґ СЂРѕР»Рё'
 /
 
-comment on column ROLE_TASK.TASK_ID is 'Ид задачи'
+comment on column ROLE_TASK.TASK_ID is 'РРґ Р·Р°РґР°С‡Рё'
 /
 
-comment on column ROLE_TASK.NACC is 'Полный доступ'
+comment on column ROLE_TASK.NACC is 'РџРѕР»РЅС‹Р№ РґРѕСЃС‚СѓРї'
 /
 
 -- ============================================================
@@ -4371,13 +4371,13 @@ create table ITEKCOEFF
 )
 /
 
-comment on table ITEKCOEFF is 'Коефициенты ИТЭК'
+comment on table ITEKCOEFF is 'РљРѕРµС„РёС†РёРµРЅС‚С‹ РРўР­Рљ'
 /
 
-comment on column ITEKCOEFF.MID is 'Ид точки'
+comment on column ITEKCOEFF.MID is 'РРґ С‚РѕС‡РєРё'
 /
 
-comment on column ITEKCOEFF.DATE_TIME is 'Дата'
+comment on column ITEKCOEFF.DATE_TIME is 'Р”Р°С‚Р°'
 /
 
 comment on column ITEKCOEFF.KER is 'KER'
@@ -4405,7 +4405,7 @@ ALTER USER RYDA IDENTIFIED BY ORACLE81634
 
 
 -- Start of DDL script for BILLEVID
--- Generated 5-янв-03  2:11:28 pm
+-- Generated 5-СЏРЅРІ-03  2:11:28 pm
 -- from oe-RYDA:1
 
 -- View BILLEVID
@@ -4573,7 +4573,7 @@ SELECT
 -- End of DDL script for BILLEVID
 
 -- Start of DDL script for HALFHOUREVID
--- Generated 5-янв-03  2:11:35 pm
+-- Generated 5-СЏРЅРІ-03  2:11:35 pm
 -- from oe-RYDA:1
 
 -- View HALFHOUREVID
@@ -4617,7 +4617,7 @@ SELECT
 -- End of DDL script for HALFHOUREVID
 
 -- Start of DDL script for MONTHSEVID
--- Generated 5-янв-03  2:11:40 pm
+-- Generated 5-СЏРЅРІ-03  2:11:40 pm
 -- from oe-RYDA:1
 
 -- View MONTHSEVID
@@ -4785,7 +4785,7 @@ SELECT
 -- End of DDL script for MONTHSEVID
 
 -- Start of DDL script for PROFILEEVID
--- Generated 5-янв-03  2:11:45 pm
+-- Generated 5-СЏРЅРІ-03  2:11:45 pm
 -- from oe-RYDA:1
 
 -- View PROFILEEVID
@@ -4850,7 +4850,7 @@ SELECT
 --   DBMS name:      ORACLE Version 7.3
 --   Created on:     08.01.2003  14:17
 -- ============================================================
-/* --Только ХЭС
+/* --РўРѕР»СЊРєРѕ РҐР­РЎ
 rename MAKETFORMULAS to MAKETFORMULAS_TMP
 /
 */
@@ -4866,19 +4866,19 @@ create table MAKETFORMULAS
 )
 /
 
-comment on table MAKETFORMULAS is 'Вычисляемые группы в макете'
+comment on table MAKETFORMULAS is 'Р’С‹С‡РёСЃР»СЏРµРјС‹Рµ РіСЂСѓРїРїС‹ РІ РјР°РєРµС‚Рµ'
 /
 
-comment on column MAKETFORMULAS.NGROUP is 'Ид группы'
+comment on column MAKETFORMULAS.NGROUP is 'РРґ РіСЂСѓРїРїС‹'
 /
 
-comment on column MAKETFORMULAS.NSUBGROUP is 'Ид подгруппы'
+comment on column MAKETFORMULAS.NSUBGROUP is 'РРґ РїРѕРґРіСЂСѓРїРїС‹'
 /
 
-comment on column MAKETFORMULAS.NSIGN is 'Знак'
+comment on column MAKETFORMULAS.NSIGN is 'Р—РЅР°Рє'
 /
 
-/* --Только ХЭС
+/* --РўРѕР»СЊРєРѕ РҐР­РЎ
 insert into MAKETFORMULAS
 select g1.ngroup,g2.ngroup,f.NSIGN from MAKETFORMULAS_TMP f,maketgroups g1,maketgroups g2
 where f.NMAKET=1060 and g1.NMAKET=1060 and g2.NMAKET=1060 and f.GROUPCODE=g1.vcode and f.SUBGROUPCODE=g2.vcode
@@ -4917,13 +4917,13 @@ CREATE GLOBAL TEMPORARY TABLE makettemp
 /
 create index makettemp_IDX1 on makettemp(NSUBGROUP asc)
 /
-COMMENT ON TABLE makettemp IS 'Вспомогательная для 30817 1'
+COMMENT ON TABLE makettemp IS 'Р’СЃРїРѕРјРѕРіР°С‚РµР»СЊРЅР°СЏ РґР»СЏ 30817 1'
 /
-COMMENT ON COLUMN makettemp.ngroup IS 'Группа суммирующая'
+COMMENT ON COLUMN makettemp.ngroup IS 'Р“СЂСѓРїРїР° СЃСѓРјРјРёСЂСѓСЋС‰Р°СЏ'
 /
-COMMENT ON COLUMN makettemp.nsubgroup IS 'Подгруппа'
+COMMENT ON COLUMN makettemp.nsubgroup IS 'РџРѕРґРіСЂСѓРїРїР°'
 /
-COMMENT ON COLUMN makettemp.nsign IS 'Коеф вхождения'
+COMMENT ON COLUMN makettemp.nsign IS 'РљРѕРµС„ РІС…РѕР¶РґРµРЅРёСЏ'
 /
 
 CREATE GLOBAL TEMPORARY TABLE m30817
@@ -4938,15 +4938,15 @@ CREATE GLOBAL TEMPORARY TABLE m30817
  ORGANIZATION HEAP
  CACHE
 /
-COMMENT ON TABLE m30817 IS 'Вспомогательная для 30817 2'
+COMMENT ON TABLE m30817 IS 'Р’СЃРїРѕРјРѕРіР°С‚РµР»СЊРЅР°СЏ РґР»СЏ 30817 2'
 /
-COMMENT ON COLUMN m30817.ngroup IS 'Группа'
+COMMENT ON COLUMN m30817.ngroup IS 'Р“СЂСѓРїРїР°'
 /
-COMMENT ON COLUMN m30817.hour IS 'Час'
+COMMENT ON COLUMN m30817.hour IS 'Р§Р°СЃ'
 /
-COMMENT ON COLUMN m30817.kwh IS 'Расход'
+COMMENT ON COLUMN m30817.kwh IS 'Р Р°СЃС…РѕРґ'
 /
-COMMENT ON COLUMN m30817.err IS 'Ошибка округления'
+COMMENT ON COLUMN m30817.err IS 'РћС€РёР±РєР° РѕРєСЂСѓРіР»РµРЅРёСЏ'
 /
 
 -- End of DDL script for M30817
@@ -4967,14 +4967,14 @@ COMMENT ON COLUMN m30817.err IS 'Ошибка округления'
 create table PARALLELCONNECTION
 (
     NPARALLELCONNECTION  NUMBER(10)             not null,
-    VUSETYPE             VARCHAR2(1)            default 'С' not null
+    VUSETYPE             VARCHAR2(1)            default 'РЎ' not null
         constraint CKC_VUSETYPE_SSPARALL check (
             VUSETYPE in ('C','W')),
     constraint PK_PARALLELCONNECTION primary key (NPARALLELCONNECTION)
 )
 /
 
-comment on table PARALLELCONNECTION is 'Параллельное присоединение'
+comment on table PARALLELCONNECTION is 'РџР°СЂР°Р»Р»РµР»СЊРЅРѕРµ РїСЂРёСЃРѕРµРґРёРЅРµРЅРёРµ'
 /
 
 comment on column PARALLELCONNECTION.NPARALLELCONNECTION is 'NPARALLELCONNECTION'
@@ -5019,13 +5019,13 @@ create table CONNECTIONPARAM
 )
 /
 
-comment on table     CONNECTIONPARAM                 is 'Парам присоединения'
+comment on table     CONNECTIONPARAM                 is 'РџР°СЂР°Рј РїСЂРёСЃРѕРµРґРёРЅРµРЅРёСЏ'
 /
 
 comment on column     CONNECTIONPARAM                .NCONNECTIONPARAM is 'NCONNECTIONPARAM'
 /
 
-comment on column     CONNECTIONPARAM                .MID is 'Ид точки'
+comment on column     CONNECTIONPARAM                .MID is 'РРґ С‚РѕС‡РєРё'
 /
 
 comment on column     CONNECTIONPARAM                .VNAME is 'VNAME'
@@ -5046,7 +5046,7 @@ comment on column     CONNECTIONPARAM                .NDELTAPSC is 'NDELTAPSC'
 comment on column     CONNECTIONPARAM                .NIIDLING is 'NIIDLING'
 /
 
-comment on column     CONNECTIONPARAM                .NUSC is 'Uкз% /'
+comment on column     CONNECTIONPARAM                .NUSC is 'UРєР·% /'
 /
 
 comment on column     CONNECTIONPARAM                .NRO is 'NRO'
@@ -5093,10 +5093,10 @@ alter table FEEDERS add
 )
 /
 
-comment on column FEEDERS.NWORKINGHOURS is 'Часы работы'
+comment on column FEEDERS.NWORKINGHOURS is 'Р§Р°СЃС‹ СЂР°Р±РѕС‚С‹'
 /
 
-comment on column FEEDERS.NFULLHOURS is 'Полные часы работы'
+comment on column FEEDERS.NFULLHOURS is 'РџРѕР»РЅС‹Рµ С‡Р°СЃС‹ СЂР°Р±РѕС‚С‹'
 /
 
 
@@ -5115,10 +5115,10 @@ create table POINTFULLHOURS
 )
 /
 
-comment on table     POINTFULLHOURS                  is 'Время работы точки учета'
+comment on table     POINTFULLHOURS                  is 'Р’СЂРµРјСЏ СЂР°Р±РѕС‚С‹ С‚РѕС‡РєРё СѓС‡РµС‚Р°'
 /
 
-comment on column     POINTFULLHOURS                 .MID is 'Ид точки'
+comment on column     POINTFULLHOURS                 .MID is 'РРґ С‚РѕС‡РєРё'
 /
 
 comment on column     POINTFULLHOURS                 .NACCPERIOD is 'NACCPERIOD'
@@ -5146,7 +5146,7 @@ create table CONNECTIONPARAMFULLHOURS
 )
 /
 
-comment on table     CONNECTIONPARAMFULLHOURS        is 'Время работы присоединения'
+comment on table     CONNECTIONPARAMFULLHOURS        is 'Р’СЂРµРјСЏ СЂР°Р±РѕС‚С‹ РїСЂРёСЃРѕРµРґРёРЅРµРЅРёСЏ'
 /
 
 comment on column     CONNECTIONPARAMFULLHOURS       .NCONNECTIONPARAM is 'NCONNECTIONPARAM'
@@ -5158,7 +5158,7 @@ comment on column     CONNECTIONPARAMFULLHOURS       .NACCPERIOD is 'NACCPERIOD'
 comment on column     CONNECTIONPARAMFULLHOURS       .NFULLHOURS is 'NFULLHOURS'
 /
 
-comment on column     CONNECTIONPARAMFULLHOURS       .NWORKINGHOURS is 'Кол часов работы в месяц /'
+comment on column     CONNECTIONPARAMFULLHOURS       .NWORKINGHOURS is 'РљРѕР» С‡Р°СЃРѕРІ СЂР°Р±РѕС‚С‹ РІ РјРµСЃСЏС† /'
 /
 
 
@@ -5176,13 +5176,13 @@ create table SHAREDCONNECTIONPARAM
 )
 /
 
-comment on table     SHAREDCONNECTIONPARAM           is 'Парам присоединения долев потерь'
+comment on table     SHAREDCONNECTIONPARAM           is 'РџР°СЂР°Рј РїСЂРёСЃРѕРµРґРёРЅРµРЅРёСЏ РґРѕР»РµРІ РїРѕС‚РµСЂСЊ'
 /
 
 comment on column     SHAREDCONNECTIONPARAM          .NCONNECTIONPARAM is 'NCONNECTIONPARAM'
 /
 
-comment on column     SHAREDCONNECTIONPARAM          .MID is 'Ид точки'
+comment on column     SHAREDCONNECTIONPARAM          .MID is 'РРґ С‚РѕС‡РєРё'
 /
 
 comment on column     SHAREDCONNECTIONPARAM          .NNOTINCLUDECONSUMP is 'NNOTINCLUDECONSUMP'
@@ -5232,7 +5232,7 @@ alter table FEEDERS add
 )
 /
 
-comment on column FEEDERS.NWASTEPERCENTCALC is 'Тип потерь'
+comment on column FEEDERS.NWASTEPERCENTCALC is 'РўРёРї РїРѕС‚РµСЂСЊ'
 /
 
 
@@ -5258,25 +5258,25 @@ create table CHECK_RESULTS
 )
 /
 
-comment on table CHECK_RESULTS is 'Результаты верификации'
+comment on table CHECK_RESULTS is 'Р РµР·СѓР»СЊС‚Р°С‚С‹ РІРµСЂРёС„РёРєР°С†РёРё'
 /
 
-comment on column CHECK_RESULTS.NPROCEDURE is 'Ид процедуры'
+comment on column CHECK_RESULTS.NPROCEDURE is 'РРґ РїСЂРѕС†РµРґСѓСЂС‹'
 /
 
-comment on column CHECK_RESULTS.DDATE is 'Дата'
+comment on column CHECK_RESULTS.DDATE is 'Р”Р°С‚Р°'
 /
 
-comment on column CHECK_RESULTS.MID is 'Точка учета'
+comment on column CHECK_RESULTS.MID is 'РўРѕС‡РєР° СѓС‡РµС‚Р°'
 /
 
-comment on column CHECK_RESULTS.VPARAM is 'Параметр'
+comment on column CHECK_RESULTS.VPARAM is 'РџР°СЂР°РјРµС‚СЂ'
 /
 
-comment on column CHECK_RESULTS.NMUSTBE is 'Первое значение'
+comment on column CHECK_RESULTS.NMUSTBE is 'РџРµСЂРІРѕРµ Р·РЅР°С‡РµРЅРёРµ'
 /
 
-comment on column CHECK_RESULTS.NINDEED is 'Второе значение'
+comment on column CHECK_RESULTS.NINDEED is 'Р’С‚РѕСЂРѕРµ Р·РЅР°С‡РµРЅРёРµ'
 /
 
 
@@ -5322,7 +5322,7 @@ alter table HALFHOUROLD add
 )
 /
 
-comment on column HALFHOUROLD.DCLOSED is 'Дата закрытия суток'
+comment on column HALFHOUROLD.DCLOSED is 'Р”Р°С‚Р° Р·Р°РєСЂС‹С‚РёСЏ СЃСѓС‚РѕРє'
 /
 
 -- ============================================================
@@ -5343,16 +5343,16 @@ create table CHECK_STATUS
 )
 /
 
-comment on table CHECK_STATUS is 'Результаты несостоявшихся верификаций'
+comment on table CHECK_STATUS is 'Р РµР·СѓР»СЊС‚Р°С‚С‹ РЅРµСЃРѕСЃС‚РѕСЏРІС€РёС…СЃСЏ РІРµСЂРёС„РёРєР°С†РёР№'
 /
 
-comment on column CHECK_STATUS.NPROCEDURE is 'Ид процедуры'
+comment on column CHECK_STATUS.NPROCEDURE is 'РРґ РїСЂРѕС†РµРґСѓСЂС‹'
 /
 
-comment on column CHECK_STATUS.DDATE is 'Период верификации'
+comment on column CHECK_STATUS.DDATE is 'РџРµСЂРёРѕРґ РІРµСЂРёС„РёРєР°С†РёРё'
 /
 
-comment on column CHECK_STATUS.VTEXT is 'Результат верификации'
+comment on column CHECK_STATUS.VTEXT is 'Р РµР·СѓР»СЊС‚Р°С‚ РІРµСЂРёС„РёРєР°С†РёРё'
 /
 
 
@@ -5393,25 +5393,25 @@ alter table DB_TERM add
 )
 /
 
-comment on table DB_TERM is 'Контроль объема БД'
+comment on table DB_TERM is 'РљРѕРЅС‚СЂРѕР»СЊ РѕР±СЉРµРјР° Р‘Р”'
 /
 
-comment on column DB_TERM.TABLE_NAME is 'Название таблицы'
+comment on column DB_TERM.TABLE_NAME is 'РќР°Р·РІР°РЅРёРµ С‚Р°Р±Р»РёС†С‹'
 /
 
-comment on column DB_TERM.DATA_NAME is 'Комментарий'
+comment on column DB_TERM.DATA_NAME is 'РљРѕРјРјРµРЅС‚Р°СЂРёР№'
 /
 
-comment on column DB_TERM.TERM is 'Срок хранения'
+comment on column DB_TERM.TERM is 'РЎСЂРѕРє С…СЂР°РЅРµРЅРёСЏ'
 /
 
-comment on column DB_TERM.NARCHIVED is 'Признак архивации'
+comment on column DB_TERM.NARCHIVED is 'РџСЂРёР·РЅР°Рє Р°СЂС…РёРІР°С†РёРё'
 /
 
-comment on column DB_TERM.VINDIC_COLUMN is 'Определяющая колонка'
+comment on column DB_TERM.VINDIC_COLUMN is 'РћРїСЂРµРґРµР»СЏСЋС‰Р°СЏ РєРѕР»РѕРЅРєР°'
 /
 
-comment on column DB_TERM.VEXTENTION is 'Расширение файла'
+comment on column DB_TERM.VEXTENTION is 'Р Р°СЃС€РёСЂРµРЅРёРµ С„Р°Р№Р»Р°'
 /
 -- ============================================================
 --   Index: DB_TERM_IDX1
@@ -5445,13 +5445,13 @@ create table TARIFF
 )
 /
 
-comment on table TARIFF is 'Тарифы UMS'
+comment on table TARIFF is 'РўР°СЂРёС„С‹ UMS'
 /
 
-comment on column TARIFF.DSTART is 'Дата начала'
+comment on column TARIFF.DSTART is 'Р”Р°С‚Р° РЅР°С‡Р°Р»Р°'
 /
 
-comment on column TARIFF.NVALUE is 'Значение'
+comment on column TARIFF.NVALUE is 'Р—РЅР°С‡РµРЅРёРµ'
 /
 
 
@@ -5472,13 +5472,13 @@ create table COMPORTTYPE
 )
 /
 
-comment on table COMPORTTYPE is 'Типы соединения'
+comment on table COMPORTTYPE is 'РўРёРїС‹ СЃРѕРµРґРёРЅРµРЅРёСЏ'
 /
 
-comment on column COMPORTTYPE.NCOMTYPE is 'Ид типа соединения'
+comment on column COMPORTTYPE.NCOMTYPE is 'РРґ С‚РёРїР° СЃРѕРµРґРёРЅРµРЅРёСЏ'
 /
 
-comment on column COMPORTTYPE.VNAME is 'Название типа'
+comment on column COMPORTTYPE.VNAME is 'РќР°Р·РІР°РЅРёРµ С‚РёРїР°'
 /
 
 
@@ -5493,37 +5493,37 @@ create unique index COMPORTTYPE_IDX1 on COMPORTTYPE (VNAME asc)
 INSERT INTO COMPORTTYPE
 (NCOMTYPE,VNAME)
 VALUES
-(1,'Стандартное соединение')
+(1,'РЎС‚Р°РЅРґР°СЂС‚РЅРѕРµ СЃРѕРµРґРёРЅРµРЅРёРµ')
 /
 INSERT INTO COMPORTTYPE
 (NCOMTYPE,VNAME)
 VALUES
-(2,'Соединение по каналам связи телемеханики')
+(2,'РЎРѕРµРґРёРЅРµРЅРёРµ РїРѕ РєР°РЅР°Р»Р°Рј СЃРІСЏР·Рё С‚РµР»РµРјРµС…Р°РЅРёРєРё')
 /
 INSERT INTO COMPORTTYPE
 (NCOMTYPE,VNAME)
 VALUES
-(3,'Стандартный коммутируемый модем')
+(3,'РЎС‚Р°РЅРґР°СЂС‚РЅС‹Р№ РєРѕРјРјСѓС‚РёСЂСѓРµРјС‹Р№ РјРѕРґРµРј')
 /
 INSERT INTO COMPORTTYPE
 (NCOMTYPE,VNAME)
 VALUES
-(4,'GSM терминал')
+(4,'GSM С‚РµСЂРјРёРЅР°Р»')
 /
 INSERT INTO COMPORTTYPE
 (NCOMTYPE,VNAME)
 VALUES
-(5,'GSM терминал с управлением питанием')
+(5,'GSM С‚РµСЂРјРёРЅР°Р» СЃ СѓРїСЂР°РІР»РµРЅРёРµРј РїРёС‚Р°РЅРёРµРј')
 /
 INSERT INTO COMPORTTYPE
 (NCOMTYPE,VNAME)
 VALUES
-(6,'Радиостанция типа LG')
+(6,'Р Р°РґРёРѕСЃС‚Р°РЅС†РёСЏ С‚РёРїР° LG')
 /
 INSERT INTO COMPORTTYPE
 (NCOMTYPE,VNAME)
 VALUES
-(7,'Соединение по спутниковому каналу ')
+(7,'РЎРѕРµРґРёРЅРµРЅРёРµ РїРѕ СЃРїСѓС‚РЅРёРєРѕРІРѕРјСѓ РєР°РЅР°Р»Сѓ ')
 /
 
 -- ============================================================
@@ -5535,34 +5535,34 @@ alter table COMPORTS add
 )
 /
 
-comment on table COMPORTS is 'Ком порты'
+comment on table COMPORTS is 'РљРѕРј РїРѕСЂС‚С‹'
 /
 
-comment on column COMPORTS.COM_ID is 'Ид компорта'
+comment on column COMPORTS.COM_ID is 'РРґ РєРѕРјРїРѕСЂС‚Р°'
 /
 
-comment on column COMPORTS.NAME is 'Название'
+comment on column COMPORTS.NAME is 'РќР°Р·РІР°РЅРёРµ'
 /
 
-comment on column COMPORTS.BAUDRATE is 'Скорость'
+comment on column COMPORTS.BAUDRATE is 'РЎРєРѕСЂРѕСЃС‚СЊ'
 /
 
-comment on column COMPORTS.BYTESIZE is 'Разрядность'
+comment on column COMPORTS.BYTESIZE is 'Р Р°Р·СЂСЏРґРЅРѕСЃС‚СЊ'
 /
 
-comment on column COMPORTS.PARITY is 'Контроль четности'
+comment on column COMPORTS.PARITY is 'РљРѕРЅС‚СЂРѕР»СЊ С‡РµС‚РЅРѕСЃС‚Рё'
 /
 
-comment on column COMPORTS.STOPBITS is 'Кол стоповых бит'
+comment on column COMPORTS.STOPBITS is 'РљРѕР» СЃС‚РѕРїРѕРІС‹С… Р±РёС‚'
 /
 
-comment on column COMPORTS.DLASTEVENT is 'Дата посл события'
+comment on column COMPORTS.DLASTEVENT is 'Р”Р°С‚Р° РїРѕСЃР» СЃРѕР±С‹С‚РёСЏ'
 /
 
-comment on column COMPORTS.VLASTEVENT is 'Последнее событие'
+comment on column COMPORTS.VLASTEVENT is 'РџРѕСЃР»РµРґРЅРµРµ СЃРѕР±С‹С‚РёРµ'
 /
 
-comment on column COMPORTS.NCOMTYPE is 'Ид типа соединения'
+comment on column COMPORTS.NCOMTYPE is 'РРґ С‚РёРїР° СЃРѕРµРґРёРЅРµРЅРёСЏ'
 /
 
 
@@ -5583,16 +5583,16 @@ alter table COMPORTS
 
 
 ---24.02.2003
-comment on table CONNECTIONPARAM is 'Парам присоединения'
+comment on table CONNECTIONPARAM is 'РџР°СЂР°Рј РїСЂРёСЃРѕРµРґРёРЅРµРЅРёСЏ'
 /
 
-comment on column CONNECTIONPARAM.NCONNECTIONPARAM is 'Ид параметра'
+comment on column CONNECTIONPARAM.NCONNECTIONPARAM is 'РРґ РїР°СЂР°РјРµС‚СЂР°'
 /
 
-comment on column CONNECTIONPARAM.MID is 'Ид точки'
+comment on column CONNECTIONPARAM.MID is 'РРґ С‚РѕС‡РєРё'
 /
 
-comment on column CONNECTIONPARAM.VNAME is 'Название'
+comment on column CONNECTIONPARAM.VNAME is 'РќР°Р·РІР°РЅРёРµ'
 /
 
 comment on column CONNECTIONPARAM.NSN is 'NSN'
@@ -5610,7 +5610,7 @@ comment on column CONNECTIONPARAM.NDELTAPSC is 'NDELTAPSC'
 comment on column CONNECTIONPARAM.NIIDLING is 'NIIDLING'
 /
 
-comment on column CONNECTIONPARAM.NUSC is 'Uкз% /'
+comment on column CONNECTIONPARAM.NUSC is 'UРєР·% /'
 /
 
 comment on column CONNECTIONPARAM.NRO is 'NRO'
@@ -5625,19 +5625,19 @@ comment on column CONNECTIONPARAM.NL is 'NL'
 comment on column CONNECTIONPARAM.NUN is 'NUN'
 /
 
-comment on column CONNECTIONPARAM.NENERGYPERCENT is 'Процент вхождения'
+comment on column CONNECTIONPARAM.NENERGYPERCENT is 'РџСЂРѕС†РµРЅС‚ РІС…РѕР¶РґРµРЅРёСЏ'
 /
 
-comment on column CONNECTIONPARAM.NWORKINGHOURS is 'Время работы'
+comment on column CONNECTIONPARAM.NWORKINGHOURS is 'Р’СЂРµРјСЏ СЂР°Р±РѕС‚С‹'
 /
 
-comment on column CONNECTIONPARAM.NFULLHOURS is 'Полное время'
+comment on column CONNECTIONPARAM.NFULLHOURS is 'РџРѕР»РЅРѕРµ РІСЂРµРјСЏ'
 /
 
-comment on column CONNECTIONPARAM.NNOTINCLUDECONSUMP is 'Расход не учитывать'
+comment on column CONNECTIONPARAM.NNOTINCLUDECONSUMP is 'Р Р°СЃС…РѕРґ РЅРµ СѓС‡РёС‚С‹РІР°С‚СЊ'
 /
 
-comment on column CONNECTIONPARAM.NPARALLELCONNECTION is 'Паралельное соединение'
+comment on column CONNECTIONPARAM.NPARALLELCONNECTION is 'РџР°СЂР°Р»РµР»СЊРЅРѕРµ СЃРѕРµРґРёРЅРµРЅРёРµ'
 /
 
 
@@ -5656,7 +5656,7 @@ alter table DEPORTFILES add
 )
 /
 
-comment on column DEPORTFILES.NATTACH is 'Отсылка отдельным файлом'
+comment on column DEPORTFILES.NATTACH is 'РћС‚СЃС‹Р»РєР° РѕС‚РґРµР»СЊРЅС‹Рј С„Р°Р№Р»РѕРј'
 /
 
 alter table DEPORTATION add
@@ -5665,7 +5665,7 @@ alter table DEPORTATION add
 )
 /
 
-comment on column DEPORTATION.VPARAM is 'Параметры отсылки'
+comment on column DEPORTATION.VPARAM is 'РџР°СЂР°РјРµС‚СЂС‹ РѕС‚СЃС‹Р»РєРё'
 /
 
 
@@ -5708,37 +5708,37 @@ create table RECOMPENS
 )
 /
 
-comment on table RECOMPENS is 'Расчет реактива для потерь'
+comment on table RECOMPENS is 'Р Р°СЃС‡РµС‚ СЂРµР°РєС‚РёРІР° РґР»СЏ РїРѕС‚РµСЂСЊ'
 /
 
-comment on column RECOMPENS.NRECOMPENS is 'Ид типа расч реакт'
+comment on column RECOMPENS.NRECOMPENS is 'РРґ С‚РёРїР° СЂР°СЃС‡ СЂРµР°РєС‚'
 /
 
-comment on column RECOMPENS.VNAME is 'Название'
+comment on column RECOMPENS.VNAME is 'РќР°Р·РІР°РЅРёРµ'
 /
 
-comment on column RECOMPENS.NRATIO is 'Значение'
+comment on column RECOMPENS.NRATIO is 'Р—РЅР°С‡РµРЅРёРµ'
 /
 
 INSERT INTO RECOMPENS
 (NRECOMPENS,VNAME,NRATIO)
 VALUES
-(1,'Пром потребители ',to_number('0.8','9.9'))
+(1,'РџСЂРѕРј РїРѕС‚СЂРµР±РёС‚РµР»Рё ',to_number('0.8','9.9'))
 /
 INSERT INTO RECOMPENS
 (NRECOMPENS,VNAME,NRATIO)
 VALUES
-(2,'Тяг п/ст ж/д пер тока',1)
+(2,'РўСЏРі Рї/СЃС‚ Р¶/Рґ РїРµСЂ С‚РѕРєР°',1)
 /
 INSERT INTO RECOMPENS
 (NRECOMPENS,VNAME,NRATIO)
 VALUES
-(3,'Тяг п/ст ж/д пост тока',to_number('0.5','9.9'))
+(3,'РўСЏРі Рї/СЃС‚ Р¶/Рґ РїРѕСЃС‚ С‚РѕРєР°',to_number('0.5','9.9'))
 /
 INSERT INTO RECOMPENS
 (NRECOMPENS,VNAME,NRATIO)
 VALUES
-(4,'Непром потребители',to_number('0.6','9.9'))
+(4,'РќРµРїСЂРѕРј РїРѕС‚СЂРµР±РёС‚РµР»Рё',to_number('0.6','9.9'))
 /
 
 alter table FEEDERS add
@@ -5747,7 +5747,7 @@ alter table FEEDERS add
 )
 /
 
-comment on column FEEDERS.NRECOMPENS is 'Ид типа расч реакт'
+comment on column FEEDERS.NRECOMPENS is 'РРґ С‚РёРїР° СЂР°СЃС‡ СЂРµР°РєС‚'
 /
 
 create index FEEDERS_IDX1 on FEEDERS (NRECOMPENS asc)
@@ -5762,7 +5762,7 @@ alter table FEEDERS
 
 
 -- Start of DDL Script for Table RYDA.ROUND_ERRORS
--- Generated 14-мар-2003 16:06:26 from RYDA@ems
+-- Generated 14-РјР°СЂ-2003 16:06:26 from RYDA@ems
 CREATE TABLE round_errors
     (mid                            NUMBER NOT NULL,
     nsource                        NUMBER NOT NULL,
@@ -5808,22 +5808,22 @@ create table MAKET30817
 )
 /
 
-comment on table MAKET30817 is 'Результаты расчетов М30817'
+comment on table MAKET30817 is 'Р РµР·СѓР»СЊС‚Р°С‚С‹ СЂР°СЃС‡РµС‚РѕРІ Рњ30817'
 /
 
-comment on column MAKET30817.DDATE is 'Отчетная дата'
+comment on column MAKET30817.DDATE is 'РћС‚С‡РµС‚РЅР°СЏ РґР°С‚Р°'
 /
 
-comment on column MAKET30817.NGROUP is 'Группа'
+comment on column MAKET30817.NGROUP is 'Р“СЂСѓРїРїР°'
 /
 
-comment on column MAKET30817.HOUR is 'Час'
+comment on column MAKET30817.HOUR is 'Р§Р°СЃ'
 /
 
-comment on column MAKET30817.KWH is 'Расход'
+comment on column MAKET30817.KWH is 'Р Р°СЃС…РѕРґ'
 /
 
-comment on column MAKET30817.ERR is 'Ошибка округления'
+comment on column MAKET30817.ERR is 'РћС€РёР±РєР° РѕРєСЂСѓРіР»РµРЅРёСЏ'
 /
 
 
@@ -5872,7 +5872,7 @@ alter table HALFHOUROLD add
 /
 update HALFHOUROLD h set nkc=(select KC from feeders where mid=h.mid)
 /
-comment on column HALFHOUROLD.NKC is 'Коеф счетчика'
+comment on column HALFHOUROLD.NKC is 'РљРѕРµС„ СЃС‡РµС‚С‡РёРєР°'
 /
 begin
 for lc in (select mid,KC from feeders) loop
@@ -5898,74 +5898,74 @@ drop  PROCEDURE replicator
 drop  PROCEDURE arround_m3017
 /
 
-update form_templates set COMMENTFORM='Активная мощность [МВт]' where CODETEMPLATE=10;
-update form_templates set COMMENTFORM='Реактивная мощность [МВАр]' where CODETEMPLATE=20;
-update form_templates set COMMENTFORM='Мощность, лимит, отклонение [МВт]' where CODETEMPLATE=30;
-update form_templates set COMMENTFORM='Мощность, лимит, отклонение [МВАр]' where CODETEMPLATE=40;
-update form_templates set COMMENTFORM='Текущая нагрузка [МВт/МВАр]' where CODETEMPLATE=50;
-update form_templates set COMMENTFORM='Контроль лимитов' where CODETEMPLATE=51;
-update form_templates set COMMENTFORM='Текущая нагрузка [МВт/МВАр]' where CODETEMPLATE=52;
-update form_templates set COMMENTFORM='Контроль лимитов' where CODETEMPLATE=53;
-update form_templates set COMMENTFORM='Контроль потребителей' where CODETEMPLATE=54;
-update form_templates set COMMENTFORM='Контроль потребителей' where CODETEMPLATE=55;
-update form_templates set COMMENTFORM='Контроль потребителей-должников' where CODETEMPLATE=56;
-update form_templates set COMMENTFORM='Контроль потребителей-должников' where CODETEMPLATE=57;
-update form_templates set COMMENTFORM='Контроль потребителей-перерасходчиков' where CODETEMPLATE=58;
-update form_templates set COMMENTFORM='Контроль потребителей-перерасходчиков' where CODETEMPLATE=59;
-update form_templates set COMMENTFORM='Контроль не поступления данных' where CODETEMPLATE=60;
-update form_templates set COMMENTFORM='Контроль не поступления данных (Ч\Б)' where CODETEMPLATE=61;
-update form_templates set COMMENTFORM='Контроль потребителей' where CODETEMPLATE=62;
-update form_templates set COMMENTFORM='Небалансы энергобъектов' where CODETEMPLATE=63;
-update form_templates set COMMENTFORM='Небалансы энергобъектов' where CODETEMPLATE=64;
-update form_templates set COMMENTFORM='Переток Активной ; Реактивной энергии [тыс.кВтч/тыс.кВАрч]' where CODETEMPLATE=100;
-update form_templates set COMMENTFORM='Переток Активной ; Реактивной энергии [тыс.кВтч/тыс.кВАрч]' where CODETEMPLATE=101;
-update form_templates set COMMENTFORM='Переток Активной ; Реактивной энергии [тыс.кВтч/тыс.кВАрч]' where CODETEMPLATE=102;
-update form_templates set COMMENTFORM='Приём ; Отдача Активной энергии [тыс.кВтч]' where CODETEMPLATE=200;
-update form_templates set COMMENTFORM='Приём ; Отдача Активной энергии [тыс.кВтч]' where CODETEMPLATE=201;
-update form_templates set COMMENTFORM='Приём ; Отдача Активной энергии [тыс.кВтч]' where CODETEMPLATE=202;
-update form_templates set COMMENTFORM='Приём ; Отдача Реактивной энергии [тыс.кВАрч]' where CODETEMPLATE=300;
-update form_templates set COMMENTFORM='Приём ; Отдача Реактивной энергии [тыс.кВАрч]' where CODETEMPLATE=301;
-update form_templates set COMMENTFORM='Приём ; Отдача Реактивной энергии [тыс.кВАрч]' where CODETEMPLATE=302;
-update form_templates set COMMENTFORM='Приём ; Отдача Реактивной энергии при импорте активной энергии [тыс.кВАрч]' where CODETEMPLATE=310;
-update form_templates set COMMENTFORM='Приём ; Отдача Реактивной энергии при импорте активной энергии[тыс.кВАрч]' where CODETEMPLATE=311;
-update form_templates set COMMENTFORM='Приём ; Отдача Реактивной энергии при экспорте активной энергии [тыс.кВАрч]' where CODETEMPLATE=320;
-update form_templates set COMMENTFORM='Приём ; Отдача Реактивной энергии при экспорте активной энергии [тыс.кВАрч]' where CODETEMPLATE=321;
-update form_templates set COMMENTFORM='Переток Активной энергии [тыс.кВтч]' where CODETEMPLATE=400;
-update form_templates set COMMENTFORM='Переток Активной энергии [тыс.кВтч]' where CODETEMPLATE=401;
-update form_templates set COMMENTFORM='Переток Активной энергии [тыс.кВтч]' where CODETEMPLATE=402;
-update form_templates set COMMENTFORM='Приём Активной энергии [тыс.кВтч]' where CODETEMPLATE=500;
-update form_templates set COMMENTFORM='Приём Активной энергии [тыс.кВтч]' where CODETEMPLATE=501;
-update form_templates set COMMENTFORM='Приём Активной энергии [тыс.кВтч]' where CODETEMPLATE=502;
-update form_templates set COMMENTFORM='Отдача Активной энергии [тыс.кВтч]' where CODETEMPLATE=600;
-update form_templates set COMMENTFORM='Отдача Активной энергии [тыс.кВтч]' where CODETEMPLATE=601;
-update form_templates set COMMENTFORM='Отдача Активной энергии [тыс.кВтч]' where CODETEMPLATE=602;
-update form_templates set COMMENTFORM='Переток Реактивной энергии [тыс.кВАрч]' where CODETEMPLATE=700;
-update form_templates set COMMENTFORM='Переток Реактивной энергии [тыс.кВАрч]' where CODETEMPLATE=701;
-update form_templates set COMMENTFORM='Переток Реактивной энергии [тыс.кВАрч]' where CODETEMPLATE=702;
-update form_templates set COMMENTFORM='Приём Реактивной энергии [тыс.кВАрч]' where CODETEMPLATE=800;
-update form_templates set COMMENTFORM='Приём Реактивной энергии [тыс.кВАрч]' where CODETEMPLATE=801;
-update form_templates set COMMENTFORM='Приём Реактивной энергии [тыс.кВАрч]' where CODETEMPLATE=802;
-update form_templates set COMMENTFORM='Отдача реактивной энергии [тыс.кВАрч]' where CODETEMPLATE=900;
-update form_templates set COMMENTFORM='Отдача реактивной энергии [тыс.кВАрч]' where CODETEMPLATE=901;
-update form_templates set COMMENTFORM='Отдача реактивной энергии [тыс.кВАрч]' where CODETEMPLATE=902;
-update form_templates set COMMENTFORM='Активная принятая общая и по тарифам [тыс.кВтч]' where CODETEMPLATE=910;
-update form_templates set COMMENTFORM='Активная отданная общая и по тарифам [тыс.кВтч]' where CODETEMPLATE=920;
-update form_templates set COMMENTFORM='Переток активной э/э (общая и по тарифам) [тыс.кВтч]' where CODETEMPLATE=921;
-update form_templates set COMMENTFORM='Реактивная принятая общая и по тарифам [тыс.кВАрч]' where CODETEMPLATE=930;
-update form_templates set COMMENTFORM='Реактивная отданная общая и по тарифам [тыс.кВАрч]' where CODETEMPLATE=940;
-update form_templates set COMMENTFORM='Переток реактивной э/э (общая и по тарифам) [тыс.кВарч]' where CODETEMPLATE=941;
-update form_templates set COMMENTFORM='Активная принятая по тарифам [тыс.кВтч]' where CODETEMPLATE=950;
-update form_templates set COMMENTFORM='Активная отданная по тарифам [тыс.кВтч]' where CODETEMPLATE=960;
-update form_templates set COMMENTFORM='Реактивная принятая по тарифам [тыс.кВАрч]' where CODETEMPLATE=970;
-update form_templates set COMMENTFORM='Реактивная отданная по тарифам [тыс.кВАрч]' where CODETEMPLATE=980;
-update form_templates set COMMENTFORM='Журнал действий оператора' where CODETEMPLATE=1000;
-update form_templates set COMMENTFORM='Журнал сообщений системы' where CODETEMPLATE=1100;
+update form_templates set COMMENTFORM='РђРєС‚РёРІРЅР°СЏ РјРѕС‰РЅРѕСЃС‚СЊ [РњР’С‚]' where CODETEMPLATE=10;
+update form_templates set COMMENTFORM='Р РµР°РєС‚РёРІРЅР°СЏ РјРѕС‰РЅРѕСЃС‚СЊ [РњР’РђСЂ]' where CODETEMPLATE=20;
+update form_templates set COMMENTFORM='РњРѕС‰РЅРѕСЃС‚СЊ, Р»РёРјРёС‚, РѕС‚РєР»РѕРЅРµРЅРёРµ [РњР’С‚]' where CODETEMPLATE=30;
+update form_templates set COMMENTFORM='РњРѕС‰РЅРѕСЃС‚СЊ, Р»РёРјРёС‚, РѕС‚РєР»РѕРЅРµРЅРёРµ [РњР’РђСЂ]' where CODETEMPLATE=40;
+update form_templates set COMMENTFORM='РўРµРєСѓС‰Р°СЏ РЅР°РіСЂСѓР·РєР° [РњР’С‚/РњР’РђСЂ]' where CODETEMPLATE=50;
+update form_templates set COMMENTFORM='РљРѕРЅС‚СЂРѕР»СЊ Р»РёРјРёС‚РѕРІ' where CODETEMPLATE=51;
+update form_templates set COMMENTFORM='РўРµРєСѓС‰Р°СЏ РЅР°РіСЂСѓР·РєР° [РњР’С‚/РњР’РђСЂ]' where CODETEMPLATE=52;
+update form_templates set COMMENTFORM='РљРѕРЅС‚СЂРѕР»СЊ Р»РёРјРёС‚РѕРІ' where CODETEMPLATE=53;
+update form_templates set COMMENTFORM='РљРѕРЅС‚СЂРѕР»СЊ РїРѕС‚СЂРµР±РёС‚РµР»РµР№' where CODETEMPLATE=54;
+update form_templates set COMMENTFORM='РљРѕРЅС‚СЂРѕР»СЊ РїРѕС‚СЂРµР±РёС‚РµР»РµР№' where CODETEMPLATE=55;
+update form_templates set COMMENTFORM='РљРѕРЅС‚СЂРѕР»СЊ РїРѕС‚СЂРµР±РёС‚РµР»РµР№-РґРѕР»Р¶РЅРёРєРѕРІ' where CODETEMPLATE=56;
+update form_templates set COMMENTFORM='РљРѕРЅС‚СЂРѕР»СЊ РїРѕС‚СЂРµР±РёС‚РµР»РµР№-РґРѕР»Р¶РЅРёРєРѕРІ' where CODETEMPLATE=57;
+update form_templates set COMMENTFORM='РљРѕРЅС‚СЂРѕР»СЊ РїРѕС‚СЂРµР±РёС‚РµР»РµР№-РїРµСЂРµСЂР°СЃС…РѕРґС‡РёРєРѕРІ' where CODETEMPLATE=58;
+update form_templates set COMMENTFORM='РљРѕРЅС‚СЂРѕР»СЊ РїРѕС‚СЂРµР±РёС‚РµР»РµР№-РїРµСЂРµСЂР°СЃС…РѕРґС‡РёРєРѕРІ' where CODETEMPLATE=59;
+update form_templates set COMMENTFORM='РљРѕРЅС‚СЂРѕР»СЊ РЅРµ РїРѕСЃС‚СѓРїР»РµРЅРёСЏ РґР°РЅРЅС‹С…' where CODETEMPLATE=60;
+update form_templates set COMMENTFORM='РљРѕРЅС‚СЂРѕР»СЊ РЅРµ РїРѕСЃС‚СѓРїР»РµРЅРёСЏ РґР°РЅРЅС‹С… (Р§\Р‘)' where CODETEMPLATE=61;
+update form_templates set COMMENTFORM='РљРѕРЅС‚СЂРѕР»СЊ РїРѕС‚СЂРµР±РёС‚РµР»РµР№' where CODETEMPLATE=62;
+update form_templates set COMMENTFORM='РќРµР±Р°Р»Р°РЅСЃС‹ СЌРЅРµСЂРіРѕР±СЉРµРєС‚РѕРІ' where CODETEMPLATE=63;
+update form_templates set COMMENTFORM='РќРµР±Р°Р»Р°РЅСЃС‹ СЌРЅРµСЂРіРѕР±СЉРµРєС‚РѕРІ' where CODETEMPLATE=64;
+update form_templates set COMMENTFORM='РџРµСЂРµС‚РѕРє РђРєС‚РёРІРЅРѕР№ ; Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [С‚С‹СЃ.РєР’С‚С‡/С‚С‹СЃ.РєР’РђСЂС‡]' where CODETEMPLATE=100;
+update form_templates set COMMENTFORM='РџРµСЂРµС‚РѕРє РђРєС‚РёРІРЅРѕР№ ; Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [С‚С‹СЃ.РєР’С‚С‡/С‚С‹СЃ.РєР’РђСЂС‡]' where CODETEMPLATE=101;
+update form_templates set COMMENTFORM='РџРµСЂРµС‚РѕРє РђРєС‚РёРІРЅРѕР№ ; Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [С‚С‹СЃ.РєР’С‚С‡/С‚С‹СЃ.РєР’РђСЂС‡]' where CODETEMPLATE=102;
+update form_templates set COMMENTFORM='РџСЂРёС‘Рј ; РћС‚РґР°С‡Р° РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [С‚С‹СЃ.РєР’С‚С‡]' where CODETEMPLATE=200;
+update form_templates set COMMENTFORM='РџСЂРёС‘Рј ; РћС‚РґР°С‡Р° РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [С‚С‹СЃ.РєР’С‚С‡]' where CODETEMPLATE=201;
+update form_templates set COMMENTFORM='РџСЂРёС‘Рј ; РћС‚РґР°С‡Р° РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [С‚С‹СЃ.РєР’С‚С‡]' where CODETEMPLATE=202;
+update form_templates set COMMENTFORM='РџСЂРёС‘Рј ; РћС‚РґР°С‡Р° Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [С‚С‹СЃ.РєР’РђСЂС‡]' where CODETEMPLATE=300;
+update form_templates set COMMENTFORM='РџСЂРёС‘Рј ; РћС‚РґР°С‡Р° Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [С‚С‹СЃ.РєР’РђСЂС‡]' where CODETEMPLATE=301;
+update form_templates set COMMENTFORM='РџСЂРёС‘Рј ; РћС‚РґР°С‡Р° Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [С‚С‹СЃ.РєР’РђСЂС‡]' where CODETEMPLATE=302;
+update form_templates set COMMENTFORM='РџСЂРёС‘Рј ; РћС‚РґР°С‡Р° Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё РїСЂРё РёРјРїРѕСЂС‚Рµ Р°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [С‚С‹СЃ.РєР’РђСЂС‡]' where CODETEMPLATE=310;
+update form_templates set COMMENTFORM='РџСЂРёС‘Рј ; РћС‚РґР°С‡Р° Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё РїСЂРё РёРјРїРѕСЂС‚Рµ Р°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё[С‚С‹СЃ.РєР’РђСЂС‡]' where CODETEMPLATE=311;
+update form_templates set COMMENTFORM='РџСЂРёС‘Рј ; РћС‚РґР°С‡Р° Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё РїСЂРё СЌРєСЃРїРѕСЂС‚Рµ Р°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [С‚С‹СЃ.РєР’РђСЂС‡]' where CODETEMPLATE=320;
+update form_templates set COMMENTFORM='РџСЂРёС‘Рј ; РћС‚РґР°С‡Р° Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё РїСЂРё СЌРєСЃРїРѕСЂС‚Рµ Р°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [С‚С‹СЃ.РєР’РђСЂС‡]' where CODETEMPLATE=321;
+update form_templates set COMMENTFORM='РџРµСЂРµС‚РѕРє РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [С‚С‹СЃ.РєР’С‚С‡]' where CODETEMPLATE=400;
+update form_templates set COMMENTFORM='РџРµСЂРµС‚РѕРє РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [С‚С‹СЃ.РєР’С‚С‡]' where CODETEMPLATE=401;
+update form_templates set COMMENTFORM='РџРµСЂРµС‚РѕРє РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [С‚С‹СЃ.РєР’С‚С‡]' where CODETEMPLATE=402;
+update form_templates set COMMENTFORM='РџСЂРёС‘Рј РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [С‚С‹СЃ.РєР’С‚С‡]' where CODETEMPLATE=500;
+update form_templates set COMMENTFORM='РџСЂРёС‘Рј РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [С‚С‹СЃ.РєР’С‚С‡]' where CODETEMPLATE=501;
+update form_templates set COMMENTFORM='РџСЂРёС‘Рј РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [С‚С‹СЃ.РєР’С‚С‡]' where CODETEMPLATE=502;
+update form_templates set COMMENTFORM='РћС‚РґР°С‡Р° РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [С‚С‹СЃ.РєР’С‚С‡]' where CODETEMPLATE=600;
+update form_templates set COMMENTFORM='РћС‚РґР°С‡Р° РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [С‚С‹СЃ.РєР’С‚С‡]' where CODETEMPLATE=601;
+update form_templates set COMMENTFORM='РћС‚РґР°С‡Р° РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [С‚С‹СЃ.РєР’С‚С‡]' where CODETEMPLATE=602;
+update form_templates set COMMENTFORM='РџРµСЂРµС‚РѕРє Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [С‚С‹СЃ.РєР’РђСЂС‡]' where CODETEMPLATE=700;
+update form_templates set COMMENTFORM='РџРµСЂРµС‚РѕРє Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [С‚С‹СЃ.РєР’РђСЂС‡]' where CODETEMPLATE=701;
+update form_templates set COMMENTFORM='РџРµСЂРµС‚РѕРє Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [С‚С‹СЃ.РєР’РђСЂС‡]' where CODETEMPLATE=702;
+update form_templates set COMMENTFORM='РџСЂРёС‘Рј Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [С‚С‹СЃ.РєР’РђСЂС‡]' where CODETEMPLATE=800;
+update form_templates set COMMENTFORM='РџСЂРёС‘Рј Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [С‚С‹СЃ.РєР’РђСЂС‡]' where CODETEMPLATE=801;
+update form_templates set COMMENTFORM='РџСЂРёС‘Рј Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [С‚С‹СЃ.РєР’РђСЂС‡]' where CODETEMPLATE=802;
+update form_templates set COMMENTFORM='РћС‚РґР°С‡Р° СЂРµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [С‚С‹СЃ.РєР’РђСЂС‡]' where CODETEMPLATE=900;
+update form_templates set COMMENTFORM='РћС‚РґР°С‡Р° СЂРµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [С‚С‹СЃ.РєР’РђСЂС‡]' where CODETEMPLATE=901;
+update form_templates set COMMENTFORM='РћС‚РґР°С‡Р° СЂРµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [С‚С‹СЃ.РєР’РђСЂС‡]' where CODETEMPLATE=902;
+update form_templates set COMMENTFORM='РђРєС‚РёРІРЅР°СЏ РїСЂРёРЅСЏС‚Р°СЏ РѕР±С‰Р°СЏ Рё РїРѕ С‚Р°СЂРёС„Р°Рј [С‚С‹СЃ.РєР’С‚С‡]' where CODETEMPLATE=910;
+update form_templates set COMMENTFORM='РђРєС‚РёРІРЅР°СЏ РѕС‚РґР°РЅРЅР°СЏ РѕР±С‰Р°СЏ Рё РїРѕ С‚Р°СЂРёС„Р°Рј [С‚С‹СЃ.РєР’С‚С‡]' where CODETEMPLATE=920;
+update form_templates set COMMENTFORM='РџРµСЂРµС‚РѕРє Р°РєС‚РёРІРЅРѕР№ СЌ/СЌ (РѕР±С‰Р°СЏ Рё РїРѕ С‚Р°СЂРёС„Р°Рј) [С‚С‹СЃ.РєР’С‚С‡]' where CODETEMPLATE=921;
+update form_templates set COMMENTFORM='Р РµР°РєС‚РёРІРЅР°СЏ РїСЂРёРЅСЏС‚Р°СЏ РѕР±С‰Р°СЏ Рё РїРѕ С‚Р°СЂРёС„Р°Рј [С‚С‹СЃ.РєР’РђСЂС‡]' where CODETEMPLATE=930;
+update form_templates set COMMENTFORM='Р РµР°РєС‚РёРІРЅР°СЏ РѕС‚РґР°РЅРЅР°СЏ РѕР±С‰Р°СЏ Рё РїРѕ С‚Р°СЂРёС„Р°Рј [С‚С‹СЃ.РєР’РђСЂС‡]' where CODETEMPLATE=940;
+update form_templates set COMMENTFORM='РџРµСЂРµС‚РѕРє СЂРµР°РєС‚РёРІРЅРѕР№ СЌ/СЌ (РѕР±С‰Р°СЏ Рё РїРѕ С‚Р°СЂРёС„Р°Рј) [С‚С‹СЃ.РєР’Р°СЂС‡]' where CODETEMPLATE=941;
+update form_templates set COMMENTFORM='РђРєС‚РёРІРЅР°СЏ РїСЂРёРЅСЏС‚Р°СЏ РїРѕ С‚Р°СЂРёС„Р°Рј [С‚С‹СЃ.РєР’С‚С‡]' where CODETEMPLATE=950;
+update form_templates set COMMENTFORM='РђРєС‚РёРІРЅР°СЏ РѕС‚РґР°РЅРЅР°СЏ РїРѕ С‚Р°СЂРёС„Р°Рј [С‚С‹СЃ.РєР’С‚С‡]' where CODETEMPLATE=960;
+update form_templates set COMMENTFORM='Р РµР°РєС‚РёРІРЅР°СЏ РїСЂРёРЅСЏС‚Р°СЏ РїРѕ С‚Р°СЂРёС„Р°Рј [С‚С‹СЃ.РєР’РђСЂС‡]' where CODETEMPLATE=970;
+update form_templates set COMMENTFORM='Р РµР°РєС‚РёРІРЅР°СЏ РѕС‚РґР°РЅРЅР°СЏ РїРѕ С‚Р°СЂРёС„Р°Рј [С‚С‹СЃ.РєР’РђСЂС‡]' where CODETEMPLATE=980;
+update form_templates set COMMENTFORM='Р–СѓСЂРЅР°Р» РґРµР№СЃС‚РІРёР№ РѕРїРµСЂР°С‚РѕСЂР°' where CODETEMPLATE=1000;
+update form_templates set COMMENTFORM='Р–СѓСЂРЅР°Р» СЃРѕРѕР±С‰РµРЅРёР№ СЃРёСЃС‚РµРјС‹' where CODETEMPLATE=1100;
 update form_templates set COMMENTFORM=' ' where CODETEMPLATE=1200;
 update form_templates set COMMENTFORM=' ' where CODETEMPLATE=1201;
 update form_templates set COMMENTFORM=' ' where CODETEMPLATE=1202;
 update form_templates set COMMENTFORM='' where CODETEMPLATE=1203;
-update form_templates set COMMENTFORM='Приём Активной энергии [тыс.кВтч]' where CODETEMPLATE=1400;
-update form_templates set COMMENTFORM='Переток Активной энергии [тыс.кВтч]' where CODETEMPLATE=1410;
+update form_templates set COMMENTFORM='РџСЂРёС‘Рј РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [С‚С‹СЃ.РєР’С‚С‡]' where CODETEMPLATE=1400;
+update form_templates set COMMENTFORM='РџРµСЂРµС‚РѕРє РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [С‚С‹СЃ.РєР’С‚С‡]' where CODETEMPLATE=1410;
 commit;
 update forms f set COMMENTFORM=(select max(COMMENTFORM) from form_templates where CODETEMPLATE=f.CODETEMPLATE);
 commit;
@@ -6029,18 +6029,18 @@ alter table LGSTATUS add
 )
 /
 
-comment on column LGSTATUS.BT is 'Резерв питания'
+comment on column LGSTATUS.BT is 'Р РµР·РµСЂРІ РїРёС‚Р°РЅРёСЏ'
 /
 
-comment on column LGSTATUS.FE is 'Фатальная ошибка'
+comment on column LGSTATUS.FE is 'Р¤Р°С‚Р°Р»СЊРЅР°СЏ РѕС€РёР±РєР°'
 /
 
  COMMENT ON COLUMN RYDA.LGSTATUS.BT IS
-'Резерв питания календарных часов исчерпан'
+'Р РµР·РµСЂРІ РїРёС‚Р°РЅРёСЏ РєР°Р»РµРЅРґР°СЂРЅС‹С… С‡Р°СЃРѕРІ РёСЃС‡РµСЂРїР°РЅ'
 /
 
  COMMENT ON COLUMN RYDA.LGSTATUS.FE IS
-'Регистрация фатальной ошибки'
+'Р РµРіРёСЃС‚СЂР°С†РёСЏ С„Р°С‚Р°Р»СЊРЅРѕР№ РѕС€РёР±РєРё'
 /
 
 
@@ -6081,23 +6081,23 @@ commit
 
 ------------------------------02.05.2003
  insert into deportprocedures (nprocedure, vname, vprocedure, nperiod, ntype, vmemo)
- values (22, 'Смена отчетного периода','ryda.das_pg.closeperiod', 2, 1, 'Расчет потерь, суточных, закрытие периода')
+ values (22, 'РЎРјРµРЅР° РѕС‚С‡РµС‚РЅРѕРіРѕ РїРµСЂРёРѕРґР°','ryda.das_pg.closeperiod', 2, 1, 'Р Р°СЃС‡РµС‚ РїРѕС‚РµСЂСЊ, СЃСѓС‚РѕС‡РЅС‹С…, Р·Р°РєСЂС‹С‚РёРµ РїРµСЂРёРѕРґР°')
  /
  insert into deportprocedures (nprocedure, vname, vprocedure, nperiod, ntype, vmemo)
- values (23, 'Откат отчетного периода','ryda.das_pg.rollbackperiod', 2, 1, 'Откат на один период назад')
+ values (23, 'РћС‚РєР°С‚ РѕС‚С‡РµС‚РЅРѕРіРѕ РїРµСЂРёРѕРґР°','ryda.das_pg.rollbackperiod', 2, 1, 'РћС‚РєР°С‚ РЅР° РѕРґРёРЅ РїРµСЂРёРѕРґ РЅР°Р·Р°Рґ')
  /
  insert into makets (nmaket, nprocedure, vname, nblock, ncycle, nshift)
- values (900, 22, 'Смена отчетного периода', 1, 0, 480)
+ values (900, 22, 'РЎРјРµРЅР° РѕС‚С‡РµС‚РЅРѕРіРѕ РїРµСЂРёРѕРґР°', 1, 0, 480)
  /
  insert into makets (nmaket, nprocedure, vname, nblock, ncycle, nshift)
- values (901, 23, 'Откат отчетного периода', 1, 0, 0)
+ values (901, 23, 'РћС‚РєР°С‚ РѕС‚С‡РµС‚РЅРѕРіРѕ РїРµСЂРёРѕРґР°', 1, 0, 0)
  /
 commit
 /
 
 
 -- Start of DDL script for CALCPERIOD
--- Generated 27-май-03  11:38:26 am
+-- Generated 27-РјР°Р№-03  11:38:26 am
 -- from ems-RYDA:1
 
 -- Table CALCPERIOD
@@ -6108,9 +6108,9 @@ CREATE TABLE calcperiod
  )
 /
 
-COMMENT ON TABLE calcperiod IS 'Расчетные сутки'
+COMMENT ON TABLE calcperiod IS 'Р Р°СЃС‡РµС‚РЅС‹Рµ СЃСѓС‚РєРё'
 /
-COMMENT ON COLUMN calcperiod.ddate IS 'Текущие расчетные сутки. Только одна запись!'
+COMMENT ON COLUMN calcperiod.ddate IS 'РўРµРєСѓС‰РёРµ СЂР°СЃС‡РµС‚РЅС‹Рµ СЃСѓС‚РєРё. РўРѕР»СЊРєРѕ РѕРґРЅР° Р·Р°РїРёСЃСЊ!'
 /
 insert into calcperiod (ddate) values (trunc(sysdate))
 /
@@ -6122,11 +6122,11 @@ CREATE TABLE lagging_records
   ddate                      DATE NOT NULL
  )
 /
-COMMENT ON TABLE lagging_records IS 'Журнал оставших получасовок'
+COMMENT ON TABLE lagging_records IS 'Р–СѓСЂРЅР°Р» РѕСЃС‚Р°РІС€РёС… РїРѕР»СѓС‡Р°СЃРѕРІРѕРє'
 /
-COMMENT ON COLUMN lagging_records.mid IS 'Ид точки'
+COMMENT ON COLUMN lagging_records.mid IS 'РРґ С‚РѕС‡РєРё'
 /
-COMMENT ON COLUMN lagging_records.ddate IS 'Сутки, к которым относятся получасовки'
+COMMENT ON COLUMN lagging_records.ddate IS 'РЎСѓС‚РєРё, Рє РєРѕС‚РѕСЂС‹Рј РѕС‚РЅРѕСЃСЏС‚СЃСЏ РїРѕР»СѓС‡Р°СЃРѕРІРєРё'
 /
 -- Constraints for LAGGING_RECORDS
 
@@ -6154,9 +6154,9 @@ alter table billold add dclosed date
 /
 alter table billold add nexceptcalc number
 /
-COMMENT ON COLUMN billold.dclosed IS 'Дата отчетных суток, включивших запись'
+COMMENT ON COLUMN billold.dclosed IS 'Р”Р°С‚Р° РѕС‚С‡РµС‚РЅС‹С… СЃСѓС‚РѕРє, РІРєР»СЋС‡РёРІС€РёС… Р·Р°РїРёСЃСЊ'
 /
-COMMENT ON COLUMN billold.nexceptcalc IS 'Признак включения в расчет'
+COMMENT ON COLUMN billold.nexceptcalc IS 'РџСЂРёР·РЅР°Рє РІРєР»СЋС‡РµРЅРёСЏ РІ СЂР°СЃС‡РµС‚'
 /
 
 alter table billold drop constraint bill_pk
@@ -6177,7 +6177,7 @@ CREATE  INDEX halfhourold_idx4
 
 
 -- Start of DDL script for SLSTATUS
--- Generated 2-июн-03  12:22:33 pm
+-- Generated 2-РёСЋРЅ-03  12:22:33 pm
 -- from ems-RYDA:1
 
 -- Table SLSTATUS
@@ -6192,12 +6192,12 @@ CREATE TABLE slstatus
 
 -- Comments for SLSTATUS
 
-COMMENT ON TABLE slstatus IS 'Текущий статус счетчиков SL'
+COMMENT ON TABLE slstatus IS 'РўРµРєСѓС‰РёР№ СЃС‚Р°С‚СѓСЃ СЃС‡РµС‚С‡РёРєРѕРІ SL'
 /
 
 -- Column Comments for SLSTATUS
 
-COMMENT ON COLUMN slstatus.status IS 'Отрицательный код обозначает критическую ошибку, положительный - предупреждение, нулевой - OK'
+COMMENT ON COLUMN slstatus.status IS 'РћС‚СЂРёС†Р°С‚РµР»СЊРЅС‹Р№ РєРѕРґ РѕР±РѕР·РЅР°С‡Р°РµС‚ РєСЂРёС‚РёС‡РµСЃРєСѓСЋ РѕС€РёР±РєСѓ, РїРѕР»РѕР¶РёС‚РµР»СЊРЅС‹Р№ - РїСЂРµРґСѓРїСЂРµР¶РґРµРЅРёРµ, РЅСѓР»РµРІРѕР№ - OK'
 /
 
 -- Constraints for SLSTATUS
@@ -6211,7 +6211,7 @@ ALTER TABLE slstatus
 ------------25.06.2003
 alter table channels add nreread number
 /
-comment on column channels.nreread is 'Номер попытки пересчитывания Итека при расхождении данных'
+comment on column channels.nreread is 'РќРѕРјРµСЂ РїРѕРїС‹С‚РєРё РїРµСЂРµСЃС‡РёС‚С‹РІР°РЅРёСЏ РС‚РµРєР° РїСЂРё СЂР°СЃС…РѕР¶РґРµРЅРёРё РґР°РЅРЅС‹С…'
 /
 
 
@@ -6233,7 +6233,7 @@ alter table CHANNELS add
 )
 /
 
-comment on column CHANNELS.NWAIT is 'Время ожид уст соед сек'
+comment on column CHANNELS.NWAIT is 'Р’СЂРµРјСЏ РѕР¶РёРґ СѓСЃС‚ СЃРѕРµРґ СЃРµРє'
 /
 
 -- ============================================================
@@ -6247,7 +6247,7 @@ alter table FEEDERS add
 )
 /
 
-comment on column FEEDERS.NUSD is 'УСД'
+comment on column FEEDERS.NUSD is 'РЈРЎР”'
 /
 
 create index FEEDERS_IDX2 on FEEDERS (NUSD asc)
@@ -6258,7 +6258,7 @@ alter table FEEDERS
        references FEEDERS (MID)
 /
 
-INSERT INTO db_term (DATA_NAME,TABLE_NAME,TERM,VINDIC_COLUMN,VEXTENTION) VALUES ('Протокол запуска фоновых процессов','JOBS',10,'DATE_TIME','jbs')
+INSERT INTO db_term (DATA_NAME,TABLE_NAME,TERM,VINDIC_COLUMN,VEXTENTION) VALUES ('РџСЂРѕС‚РѕРєРѕР» Р·Р°РїСѓСЃРєР° С„РѕРЅРѕРІС‹С… РїСЂРѕС†РµСЃСЃРѕРІ','JOBS',10,'DATE_TIME','jbs')
 /
 
 COMMIT
@@ -6266,9 +6266,9 @@ COMMIT
 
 --21.07.2003
 /*
--- Для КОЭ
+-- Р”Р»СЏ РљРћР­
 INSERT INTO TASKS (TASK_ID,PARENT,TASK_COD,NAME,NUM_ARG,CHAR_ARG,REMARK)
-VALUES (74,42,619,'1.9 Загрузка файлов данных счетчиков LG.',NULL,'','Загрузка файлов данных счетчиков LG')
+VALUES (74,42,619,'1.9 Р—Р°РіСЂСѓР·РєР° С„Р°Р№Р»РѕРІ РґР°РЅРЅС‹С… СЃС‡РµС‚С‡РёРєРѕРІ LG.',NULL,'','Р—Р°РіСЂСѓР·РєР° С„Р°Р№Р»РѕРІ РґР°РЅРЅС‹С… СЃС‡РµС‚С‡РёРєРѕРІ LG')
 /
 */
 
@@ -6295,73 +6295,73 @@ alter table CURR_POWER_ARCH add
 )
 /
 
-comment on table CURR_POWER_ARCH is 'Архив параметров сети'
+comment on table CURR_POWER_ARCH is 'РђСЂС…РёРІ РїР°СЂР°РјРµС‚СЂРѕРІ СЃРµС‚Рё'
 /
 
-comment on column CURR_POWER_ARCH.MID is 'Ид точки'
+comment on column CURR_POWER_ARCH.MID is 'РРґ С‚РѕС‡РєРё'
 /
 
-comment on column CURR_POWER_ARCH.DATE_TIME is 'Дата'
+comment on column CURR_POWER_ARCH.DATE_TIME is 'Р”Р°С‚Р°'
 /
 
-comment on column CURR_POWER_ARCH.ER is 'Мощность A'
+comment on column CURR_POWER_ARCH.ER is 'РњРѕС‰РЅРѕСЃС‚СЊ A'
 /
 
-comment on column CURR_POWER_ARCH.Q1 is 'Мощность R'
+comment on column CURR_POWER_ARCH.Q1 is 'РњРѕС‰РЅРѕСЃС‚СЊ R'
 /
 
-comment on column CURR_POWER_ARCH.ED is 'Мощность A отд'
+comment on column CURR_POWER_ARCH.ED is 'РњРѕС‰РЅРѕСЃС‚СЊ A РѕС‚Рґ'
 /
 
-comment on column CURR_POWER_ARCH.Q3 is 'Мощность R отд'
+comment on column CURR_POWER_ARCH.Q3 is 'РњРѕС‰РЅРѕСЃС‚СЊ R РѕС‚Рґ'
 /
 
-comment on column CURR_POWER_ARCH.FREQ is 'Частота'
+comment on column CURR_POWER_ARCH.FREQ is 'Р§Р°СЃС‚РѕС‚Р°'
 /
 
 comment on column CURR_POWER_ARCH.COSF is 'COSF'
 /
 
-comment on column CURR_POWER_ARCH.VOLT is 'Напряжение A'
+comment on column CURR_POWER_ARCH.VOLT is 'РќР°РїСЂСЏР¶РµРЅРёРµ A'
 /
 
-comment on column CURR_POWER_ARCH.CURRENTO is 'Ток A'
+comment on column CURR_POWER_ARCH.CURRENTO is 'РўРѕРє A'
 /
 
-comment on column CURR_POWER_ARCH.VOLT2 is 'Напряжение B'
+comment on column CURR_POWER_ARCH.VOLT2 is 'РќР°РїСЂСЏР¶РµРЅРёРµ B'
 /
 
-comment on column CURR_POWER_ARCH.VOLT3 is 'Напряжение C'
+comment on column CURR_POWER_ARCH.VOLT3 is 'РќР°РїСЂСЏР¶РµРЅРёРµ C'
 /
 
-comment on column CURR_POWER_ARCH.CURR2 is 'Ток B'
+comment on column CURR_POWER_ARCH.CURR2 is 'РўРѕРє B'
 /
 
-comment on column CURR_POWER_ARCH.CURR3 is 'Ток C'
+comment on column CURR_POWER_ARCH.CURR3 is 'РўРѕРє C'
 /
 
-comment on column CURR_POWER_ARCH.ERM is 'Показания А'
+comment on column CURR_POWER_ARCH.ERM is 'РџРѕРєР°Р·Р°РЅРёСЏ Рђ'
 /
 
-comment on column CURR_POWER_ARCH.EDM is 'Показания А отд'
+comment on column CURR_POWER_ARCH.EDM is 'РџРѕРєР°Р·Р°РЅРёСЏ Рђ РѕС‚Рґ'
 /
 
-comment on column CURR_POWER_ARCH.Q1M is 'Показания Р'
+comment on column CURR_POWER_ARCH.Q1M is 'РџРѕРєР°Р·Р°РЅРёСЏ Р '
 /
 
-comment on column CURR_POWER_ARCH.Q3M is 'Показания Р отд'
+comment on column CURR_POWER_ARCH.Q3M is 'РџРѕРєР°Р·Р°РЅРёСЏ Р  РѕС‚Рґ'
 /
 
-comment on column CURR_POWER_ARCH.Q2 is 'Мощность Р 2'
+comment on column CURR_POWER_ARCH.Q2 is 'РњРѕС‰РЅРѕСЃС‚СЊ Р  2'
 /
 
-comment on column CURR_POWER_ARCH.Q4 is 'Мощность Р 4'
+comment on column CURR_POWER_ARCH.Q4 is 'РњРѕС‰РЅРѕСЃС‚СЊ Р  4'
 /
 
-comment on column CURR_POWER_ARCH.Q2M is 'Показания Р 2'
+comment on column CURR_POWER_ARCH.Q2M is 'РџРѕРєР°Р·Р°РЅРёСЏ Р  2'
 /
 
-comment on column CURR_POWER_ARCH.Q4M is 'Показания Р 4'
+comment on column CURR_POWER_ARCH.Q4M is 'РџРѕРєР°Р·Р°РЅРёСЏ Р  4'
 /
 
 
@@ -6372,30 +6372,30 @@ comment on column CURR_POWER_ARCH.Q4M is 'Показания Р 4'
 -- ============================================================
 
 /*
---Для Одессы
+--Р”Р»СЏ РћРґРµСЃСЃС‹
 
 INSERT INTO deportprocedures
 (NPROCEDURE,VNAME,VPROCEDURE,NPERIOD,NTYPE,VMEMO)
 VALUES
-(14,'Проверка полноты заполнения БД','ryda.check_pg.BY_FULLNESS',2,1,
-'Проверка полноты заполнения БД по каналам опроса точек учёта')
+(14,'РџСЂРѕРІРµСЂРєР° РїРѕР»РЅРѕС‚С‹ Р·Р°РїРѕР»РЅРµРЅРёСЏ Р‘Р”','ryda.check_pg.BY_FULLNESS',2,1,
+'РџСЂРѕРІРµСЂРєР° РїРѕР»РЅРѕС‚С‹ Р·Р°РїРѕР»РЅРµРЅРёСЏ Р‘Р” РїРѕ РєР°РЅР°Р»Р°Рј РѕРїСЂРѕСЃР° С‚РѕС‡РµРє СѓС‡С‘С‚Р°')
 /
 INSERT INTO points
 (mid, name, parent, ind)
 VALUES
-(14,'Проверка заполнения БД',2,1)
+(14,'РџСЂРѕРІРµСЂРєР° Р·Р°РїРѕР»РЅРµРЅРёСЏ Р‘Р”',2,1)
 /
 
 INSERT INTO deportprocedures
 (NPROCEDURE,VNAME,VPROCEDURE,NPERIOD,NTYPE,VMEMO)
 VALUES
-(15,'Проверка переключения ОВ','ryda.CHECK_PG.by_switchov',2,1,'Проверка переключения ОВ')
+(15,'РџСЂРѕРІРµСЂРєР° РїРµСЂРµРєР»СЋС‡РµРЅРёСЏ РћР’','ryda.CHECK_PG.by_switchov',2,1,'РџСЂРѕРІРµСЂРєР° РїРµСЂРµРєР»СЋС‡РµРЅРёСЏ РћР’')
 /
 
 INSERT INTO points
 (mid, name, parent, ind)
 VALUES
-(15,'Проверка переключения ОВ',2,1)
+(15,'РџСЂРѕРІРµСЂРєР° РїРµСЂРµРєР»СЋС‡РµРЅРёСЏ РћР’',2,1)
 /
 
 commit
@@ -6405,23 +6405,23 @@ commit
 
 
 /*
---Для ПГОК
+--Р”Р»СЏ РџР“РћРљ
 
 INSERT INTO points
 (mid, name, parent, ind)
 VALUES
-(2,'Процедуры',NULL,1)
+(2,'РџСЂРѕС†РµРґСѓСЂС‹',NULL,1)
 /
 INSERT INTO points
 (mid, name, parent, ind)
 VALUES
-(16,'Контроль времени Fag-12',2,1)
+(16,'РљРѕРЅС‚СЂРѕР»СЊ РІСЂРµРјРµРЅРё Fag-12',2,1)
 /
 INSERT INTO deportprocedures
 (NPROCEDURE,VNAME,VPROCEDURE,NPERIOD,NTYPE,VMEMO)
 VALUES
-(16,'Контроль времени Fag-12','NULL',2,1,
-'Контроль времени Fag-12')
+(16,'РљРѕРЅС‚СЂРѕР»СЊ РІСЂРµРјРµРЅРё Fag-12','NULL',2,1,
+'РљРѕРЅС‚СЂРѕР»СЊ РІСЂРµРјРµРЅРё Fag-12')
 /
 
 commit
@@ -6430,17 +6430,17 @@ commit
 */
 
 /*
---Устаревшее
+--РЈСЃС‚Р°СЂРµРІС€РµРµ
 INSERT INTO deportprocedures
 (NPROCEDURE,VNAME,VPROCEDURE,NPERIOD,NTYPE,VMEMO)
 VALUES
-(24,'Тарификация по режимным суткам','rates_pg.calcratescoef',2,1,
-'Тарификация по режимным суткам')
+(24,'РўР°СЂРёС„РёРєР°С†РёСЏ РїРѕ СЂРµР¶РёРјРЅС‹Рј СЃСѓС‚РєР°Рј','rates_pg.calcratescoef',2,1,
+'РўР°СЂРёС„РёРєР°С†РёСЏ РїРѕ СЂРµР¶РёРјРЅС‹Рј СЃСѓС‚РєР°Рј')
 /
 INSERT INTO points
 (mid, name, parent, ind)
 VALUES
-(24,'Тарификация по режимным суткам',2,1)
+(24,'РўР°СЂРёС„РёРєР°С†РёСЏ РїРѕ СЂРµР¶РёРјРЅС‹Рј СЃСѓС‚РєР°Рј',2,1)
 /
 commit
 /
@@ -6460,7 +6460,7 @@ alter table GROUPS add
 )
 /
 
-comment on column GROUPS.VPARAM is 'Параметр'
+comment on column GROUPS.VPARAM is 'РџР°СЂР°РјРµС‚СЂ'
 /
 
 alter table HALFHOUROLD add
@@ -6469,7 +6469,7 @@ alter table HALFHOUROLD add
 )
 /
 
-comment on column HALFHOUROLD.ER_MTRSN is 'Номер счетчика'
+comment on column HALFHOUROLD.ER_MTRSN is 'РќРѕРјРµСЂ СЃС‡РµС‚С‡РёРєР°'
 /
 
 alter table HALFHOURTMP add
@@ -6478,12 +6478,12 @@ alter table HALFHOURTMP add
 )
 /
 
-comment on column HALFHOURTMP.ER_MTRSN is 'Номер счетчика'
+comment on column HALFHOURTMP.ER_MTRSN is 'РќРѕРјРµСЂ СЃС‡РµС‚С‡РёРєР°'
 /
 
 
 --08/10/2003
-insert into recompens(nrecompens,vname,nratio) values(5,'Без учета реактива',0)
+insert into recompens(nrecompens,vname,nratio) values(5,'Р‘РµР· СѓС‡РµС‚Р° СЂРµР°РєС‚РёРІР°',0)
 /
 commit
 /
@@ -6718,22 +6718,22 @@ create table TARIFFTYPE
     constraint TARIFFTYPE_PK primary key (NTARIFFTYPE)
 )
 /
-insert into TARIFFTYPE(NTARIFFTYPE,VNAME) values(1,'Услуги UMS')
+insert into TARIFFTYPE(NTARIFFTYPE,VNAME) values(1,'РЈСЃР»СѓРіРё UMS')
 /
 
-insert into TARIFFTYPE(NTARIFFTYPE,VNAME) values(2,'Услуги KYIVSTAR')
+insert into TARIFFTYPE(NTARIFFTYPE,VNAME) values(2,'РЈСЃР»СѓРіРё KYIVSTAR')
 /
 
-insert into TARIFFTYPE(NTARIFFTYPE,VNAME) values(3,'Услуги THURYA')
+insert into TARIFFTYPE(NTARIFFTYPE,VNAME) values(3,'РЈСЃР»СѓРіРё THURYA')
 /
 
-comment on table TARIFFTYPE is 'Тип тарифа'
+comment on table TARIFFTYPE is 'РўРёРї С‚Р°СЂРёС„Р°'
 /
 
-comment on column TARIFFTYPE.NTARIFFTYPE is 'Ид типа тарифа'
+comment on column TARIFFTYPE.NTARIFFTYPE is 'РРґ С‚РёРїР° С‚Р°СЂРёС„Р°'
 /
 
-comment on column TARIFFTYPE.VNAME is 'Название'
+comment on column TARIFFTYPE.VNAME is 'РќР°Р·РІР°РЅРёРµ'
 /
 
 
@@ -6754,10 +6754,10 @@ alter table COMPORTS add
 )
 /
 
-comment on column COMPORTS.NONLYONE is 'Только один канал'
+comment on column COMPORTS.NONLYONE is 'РўРѕР»СЊРєРѕ РѕРґРёРЅ РєР°РЅР°Р»'
 /
 
-comment on column COMPORTS.NTARIFFTYPE is 'Ид типа тарифа'
+comment on column COMPORTS.NTARIFFTYPE is 'РРґ С‚РёРїР° С‚Р°СЂРёС„Р°'
 /
 
 create index COMPORTS_IDX2 on COMPORTS (NTARIFFTYPE asc)
@@ -6781,16 +6781,16 @@ insert into TARIFF(NTARIFFTYPE,DSTART,NVALUE) select 1,DSTART,NVALUE from TARIFF
 drop table TARIFF1
 /
 
-comment on table TARIFF is 'Тарифы'
+comment on table TARIFF is 'РўР°СЂРёС„С‹'
 /
 
-comment on column TARIFF.NTARIFFTYPE is 'Ид типа тарифа'
+comment on column TARIFF.NTARIFFTYPE is 'РРґ С‚РёРїР° С‚Р°СЂРёС„Р°'
 /
 
-comment on column TARIFF.DSTART is 'Дата начала'
+comment on column TARIFF.DSTART is 'Р”Р°С‚Р° РЅР°С‡Р°Р»Р°'
 /
 
-comment on column TARIFF.NVALUE is 'Значение'
+comment on column TARIFF.NVALUE is 'Р—РЅР°С‡РµРЅРёРµ'
 /
 
 
@@ -6817,7 +6817,7 @@ alter table CHANNELS add
 )
 /
 
-comment on column CHANNELS.NDELIVERED is 'Прочитан'
+comment on column CHANNELS.NDELIVERED is 'РџСЂРѕС‡РёС‚Р°РЅ'
 /
 
 
@@ -6853,16 +6853,16 @@ create table RELATEDPARAM
 )
 /
 
-comment on table RELATEDPARAM is 'Зависимые параметры'
+comment on table RELATEDPARAM is 'Р—Р°РІРёСЃРёРјС‹Рµ РїР°СЂР°РјРµС‚СЂС‹'
 /
 
-comment on column RELATEDPARAM.NCONNECTIONPARAM is 'Ид параметра'
+comment on column RELATEDPARAM.NCONNECTIONPARAM is 'РРґ РїР°СЂР°РјРµС‚СЂР°'
 /
 
-comment on column RELATEDPARAM.NFIRSTPARAM is 'Первичный параметр'
+comment on column RELATEDPARAM.NFIRSTPARAM is 'РџРµСЂРІРёС‡РЅС‹Р№ РїР°СЂР°РјРµС‚СЂ'
 /
 
-comment on column RELATEDPARAM.NKC is 'Коэф зввисимости'
+comment on column RELATEDPARAM.NKC is 'РљРѕСЌС„ Р·РІРІРёСЃРёРјРѕСЃС‚Рё'
 /
 
 
@@ -6912,46 +6912,46 @@ create table METERSHISTORY
 )
 /
 
-comment on table METERSHISTORY is 'Замены счетчиков'
+comment on table METERSHISTORY is 'Р—Р°РјРµРЅС‹ СЃС‡РµС‚С‡РёРєРѕРІ'
 /
 
-comment on column METERSHISTORY.MID is 'Ид точки'
+comment on column METERSHISTORY.MID is 'РРґ С‚РѕС‡РєРё'
 /
 
-comment on column METERSHISTORY.DATE_TIME is 'Дата установки'
+comment on column METERSHISTORY.DATE_TIME is 'Р”Р°С‚Р° СѓСЃС‚Р°РЅРѕРІРєРё'
 /
 
-comment on column METERSHISTORY.ENTYPE is 'Тип измерения'
+comment on column METERSHISTORY.ENTYPE is 'РўРёРї РёР·РјРµСЂРµРЅРёСЏ'
 /
 
-comment on column METERSHISTORY.MTRSN is 'Номер'
+comment on column METERSHISTORY.MTRSN is 'РќРѕРјРµСЂ'
 /
 
-comment on column METERSHISTORY.DIGITS is 'Значность'
+comment on column METERSHISTORY.DIGITS is 'Р—РЅР°С‡РЅРѕСЃС‚СЊ'
 /
 
-comment on column METERSHISTORY.MTYPE is 'Тип'
+comment on column METERSHISTORY.MTYPE is 'РўРёРї'
 /
 
-comment on column METERSHISTORY.MCURRENT is 'Ток'
+comment on column METERSHISTORY.MCURRENT is 'РўРѕРє'
 /
 
-comment on column METERSHISTORY.MPOWER is 'Напряжение'
+comment on column METERSHISTORY.MPOWER is 'РќР°РїСЂСЏР¶РµРЅРёРµ'
 /
 
-comment on column METERSHISTORY.MCONST is 'Кол импульсов'
+comment on column METERSHISTORY.MCONST is 'РљРѕР» РёРјРїСѓР»СЊСЃРѕРІ'
 /
 
-comment on column METERSHISTORY.MCLASS is 'Класс'
+comment on column METERSHISTORY.MCLASS is 'РљР»Р°СЃСЃ'
 /
 
-comment on column METERSHISTORY.MYEAR is 'Пломба год'
+comment on column METERSHISTORY.MYEAR is 'РџР»РѕРјР±Р° РіРѕРґ'
 /
 
-comment on column METERSHISTORY.MQUARTER is 'Пломба квартал'
+comment on column METERSHISTORY.MQUARTER is 'РџР»РѕРјР±Р° РєРІР°СЂС‚Р°Р»'
 /
 
-comment on column METERSHISTORY.KC is 'Коеф'
+comment on column METERSHISTORY.KC is 'РљРѕРµС„'
 /
 
 
@@ -6980,7 +6980,7 @@ alter table METERSHISTORY add
 )
 /
 
-comment on column METERSHISTORY.DEND is 'Дата снятия'
+comment on column METERSHISTORY.DEND is 'Р”Р°С‚Р° СЃРЅСЏС‚РёСЏ'
 /
 
 
@@ -7008,13 +7008,13 @@ alter table CONNECTIONPARAM add
 )
 /
 
-comment on column CONNECTIONPARAM.NENERGYPERCENT is 'Процент потерь Актив'
+comment on column CONNECTIONPARAM.NENERGYPERCENT is 'РџСЂРѕС†РµРЅС‚ РїРѕС‚РµСЂСЊ РђРєС‚РёРІ'
 /
 
-comment on column CONNECTIONPARAM.NRENERGYPERCENT is 'Процент потерь Реактив'
+comment on column CONNECTIONPARAM.NRENERGYPERCENT is 'РџСЂРѕС†РµРЅС‚ РїРѕС‚РµСЂСЊ Р РµР°РєС‚РёРІ'
 /
 
-comment on column CONNECTIONPARAM.NPROCENT is 'Потери в процентах'
+comment on column CONNECTIONPARAM.NPROCENT is 'РџРѕС‚РµСЂРё РІ РїСЂРѕС†РµРЅС‚Р°С…'
 /
 
 -- ============================================================
@@ -7065,7 +7065,7 @@ drop table AVERRATE
 drop table RATE_EDIT_DATE
 /
 
-insert into parameter (NPID,VVALUE,VDESCRIPTION) values(19,to_char(sysdate,'dd.mm.yyyy'),'Расчетные сутки')
+insert into parameter (NPID,VVALUE,VDESCRIPTION) values(19,to_char(sysdate,'dd.mm.yyyy'),'Р Р°СЃС‡РµС‚РЅС‹Рµ СЃСѓС‚РєРё')
 /
 update parameter set VVALUE=(select to_char(nvl(max(ddate),sysdate),'dd.mm.yyyy') from calcperiod) where NPID=19
 /
@@ -7111,25 +7111,25 @@ alter table RATES add
 )
 /
 
-comment on table RATES is 'Расписание тар зон'
+comment on table RATES is 'Р Р°СЃРїРёСЃР°РЅРёРµ С‚Р°СЂ Р·РѕРЅ'
 /
 
-comment on column RATES.RID is 'Ид'
+comment on column RATES.RID is 'РРґ'
 /
 
-comment on column RATES.TIME is 'Время начала'
+comment on column RATES.TIME is 'Р’СЂРµРјСЏ РЅР°С‡Р°Р»Р°'
 /
 
-comment on column RATES.RATE is 'Зона'
+comment on column RATES.RATE is 'Р—РѕРЅР°'
 /
 
-comment on column RATES.ENDTIME is 'Время окончания'
+comment on column RATES.ENDTIME is 'Р’СЂРµРјСЏ РѕРєРѕРЅС‡Р°РЅРёСЏ'
 /
 
 
 
 /*
---ХОЭ
+--РҐРћР­
 -- ============================================================
 --   Database name:  Model_2
 --   DBMS name:      ORACLE Version 7.3
@@ -7154,34 +7154,34 @@ create table REALPOINT
 )
 /
 
-comment on table REALPOINT is 'Расчетные точки ПРОМА'
+comment on table REALPOINT is 'Р Р°СЃС‡РµС‚РЅС‹Рµ С‚РѕС‡РєРё РџР РћРњРђ'
 /
 
-comment on column REALPOINT.mid is 'Ид точки'
+comment on column REALPOINT.mid is 'РРґ С‚РѕС‡РєРё'
 /
 
-comment on column REALPOINT.NREALPOINT is 'Ид наст точки'
+comment on column REALPOINT.NREALPOINT is 'РРґ РЅР°СЃС‚ С‚РѕС‡РєРё'
 /
 
-comment on column REALPOINT.NRATIO is 'Коэф'
+comment on column REALPOINT.NRATIO is 'РљРѕСЌС„'
 /
 
-comment on column REALPOINT.ER is 'Ф Апрн'
+comment on column REALPOINT.ER is 'Р¤ РђРїСЂРЅ'
 /
 
-comment on column REALPOINT.Q1 is 'Ф Q1'
+comment on column REALPOINT.Q1 is 'Р¤ Q1'
 /
 
-comment on column REALPOINT.Q2 is 'Ф Q2'
+comment on column REALPOINT.Q2 is 'Р¤ Q2'
 /
 
-comment on column REALPOINT.ED is 'Ф Аотд'
+comment on column REALPOINT.ED is 'Р¤ РђРѕС‚Рґ'
 /
 
-comment on column REALPOINT.Q3 is 'Ф Q3'
+comment on column REALPOINT.Q3 is 'Р¤ Q3'
 /
 
-comment on column REALPOINT.Q4 is 'Ф Q4'
+comment on column REALPOINT.Q4 is 'Р¤ Q4'
 /
 
 
@@ -7202,13 +7202,13 @@ alter table REALPOINT
 /
 
  insert into deportprocedures (nprocedure, vname, vprocedure, nperiod, ntype, vmemo)
- values (25, 'Копирование данных на расчетные точки','background01_pg.setdataunrealpoints', 2, 1, 'Копирование данных на расчетные точки')
+ values (25, 'РљРѕРїРёСЂРѕРІР°РЅРёРµ РґР°РЅРЅС‹С… РЅР° СЂР°СЃС‡РµС‚РЅС‹Рµ С‚РѕС‡РєРё','background01_pg.setdataunrealpoints', 2, 1, 'РљРѕРїРёСЂРѕРІР°РЅРёРµ РґР°РЅРЅС‹С… РЅР° СЂР°СЃС‡РµС‚РЅС‹Рµ С‚РѕС‡РєРё')
  /
 
 INSERT INTO points
 (mid, name, parent, ind)
 VALUES
-(25,'Копирование данных на расчетные точки',2,1)
+(25,'РљРѕРїРёСЂРѕРІР°РЅРёРµ РґР°РЅРЅС‹С… РЅР° СЂР°СЃС‡РµС‚РЅС‹Рµ С‚РѕС‡РєРё',2,1)
 /
 
 commit
@@ -7240,7 +7240,7 @@ alter table CHANPOINT add
 )
 /
 
-comment on column CHANPOINT.NBLOCK is 'Блокировка'
+comment on column CHANPOINT.NBLOCK is 'Р‘Р»РѕРєРёСЂРѕРІРєР°'
 /
 
 
@@ -7249,8 +7249,8 @@ comment on column CHANPOINT.NBLOCK is 'Блокировка'
 INSERT INTO deportprocedures
 (NPROCEDURE,VNAME,VPROCEDURE,NPERIOD,NTYPE,VMEMO)
 VALUES
-(26,'Расчет ручных точек','ryda.background01_pg.replicator',2,1,
-'Расчет ручных точек')
+(26,'Р Р°СЃС‡РµС‚ СЂСѓС‡РЅС‹С… С‚РѕС‡РµРє','ryda.background01_pg.replicator',2,1,
+'Р Р°СЃС‡РµС‚ СЂСѓС‡РЅС‹С… С‚РѕС‡РµРє')
 /
 commit
 
@@ -7276,22 +7276,22 @@ create table USEDCONSUMPT
 )
 /
 
-comment on table USEDCONSUMPT is 'Используемые расходы'
+comment on table USEDCONSUMPT is 'РСЃРїРѕР»СЊР·СѓРµРјС‹Рµ СЂР°СЃС…РѕРґС‹'
 /
 
-comment on column USEDCONSUMPT.NCONNECTIONPARAM is 'Ид параметра'
+comment on column USEDCONSUMPT.NCONNECTIONPARAM is 'РРґ РїР°СЂР°РјРµС‚СЂР°'
 /
 
-comment on column USEDCONSUMPT.MID is 'Ид точки'
+comment on column USEDCONSUMPT.MID is 'РРґ С‚РѕС‡РєРё'
 /
 
-comment on column USEDCONSUMPT.NTYPE is 'Тип измерения'
+comment on column USEDCONSUMPT.NTYPE is 'РўРёРї РёР·РјРµСЂРµРЅРёСЏ'
 /
 
-comment on column USEDCONSUMPT.NKC is 'Коеф вхождения'
+comment on column USEDCONSUMPT.NKC is 'РљРѕРµС„ РІС…РѕР¶РґРµРЅРёСЏ'
 /
 
-comment on column USEDCONSUMPT.NRECOMPENS is 'Ид типа расч реакт'
+comment on column USEDCONSUMPT.NRECOMPENS is 'РРґ С‚РёРїР° СЂР°СЃС‡ СЂРµР°РєС‚'
 /
 
 
@@ -7347,7 +7347,7 @@ alter table FEEDERS add
 )
 /
 
-comment on column FEEDERS.NBLOCK is 'Блокировка авт опроса'
+comment on column FEEDERS.NBLOCK is 'Р‘Р»РѕРєРёСЂРѕРІРєР° Р°РІС‚ РѕРїСЂРѕСЃР°'
 /
 
 update feeders set nblock=1 where mid in (select mid from chanpoint where nblock=1)
@@ -7393,13 +7393,13 @@ create table MEASURES
 )
 /
 
-comment on table MEASURES is 'Измерения'
+comment on table MEASURES is 'РР·РјРµСЂРµРЅРёСЏ'
 /
 
-comment on column MEASURES.NMEASURE is 'Ид измерения'
+comment on column MEASURES.NMEASURE is 'РРґ РёР·РјРµСЂРµРЅРёСЏ'
 /
 
-comment on column MEASURES.VNAME is 'Название измерения'
+comment on column MEASURES.VNAME is 'РќР°Р·РІР°РЅРёРµ РёР·РјРµСЂРµРЅРёСЏ'
 /
 
 -- ============================================================
@@ -7412,22 +7412,22 @@ create unique index MEASURES_IDX1 on MEASURES (VNAME asc)
 INSERT INTO measures
 (nmeasure,VNAME)
 VALUES
-(1,'Актив, прием')
+(1,'РђРєС‚РёРІ, РїСЂРёРµРј')
 /
 INSERT INTO measures
 (nmeasure,VNAME)
 VALUES
-(2,'Актив, отдача')
+(2,'РђРєС‚РёРІ, РѕС‚РґР°С‡Р°')
 /
 INSERT INTO measures
 (nmeasure,VNAME)
 VALUES
-(3,'Q1 (Реактив, прием)')
+(3,'Q1 (Р РµР°РєС‚РёРІ, РїСЂРёРµРј)')
 /
 INSERT INTO measures
 (nmeasure,VNAME)
 VALUES
-(5,'Q3 (Реактив, генерц)')
+(5,'Q3 (Р РµР°РєС‚РёРІ, РіРµРЅРµСЂС†)')
 /
 INSERT INTO measures
 (nmeasure,VNAME)
@@ -7460,13 +7460,13 @@ create table CALCPOINTTYPE
 )
 /
 
-comment on table CALCPOINTTYPE is 'Типы ручников'
+comment on table CALCPOINTTYPE is 'РўРёРїС‹ СЂСѓС‡РЅРёРєРѕРІ'
 /
 
-comment on column CALCPOINTTYPE.NCALCPOINTTYPE is 'Ид типа ручника'
+comment on column CALCPOINTTYPE.NCALCPOINTTYPE is 'РРґ С‚РёРїР° СЂСѓС‡РЅРёРєР°'
 /
 
-comment on column CALCPOINTTYPE.VNAME is 'Название'
+comment on column CALCPOINTTYPE.VNAME is 'РќР°Р·РІР°РЅРёРµ'
 /
 create unique index CALCPOINTTYPE_IDX1 on CALCPOINTTYPE (VNAME asc)
 /
@@ -7474,12 +7474,12 @@ create unique index CALCPOINTTYPE_IDX1 on CALCPOINTTYPE (VNAME asc)
 INSERT INTO calcpointtype
 (NCALCPOINTTYPE,VNAME)
 VALUES
-(1,'Расчет по установленной мощности')
+(1,'Р Р°СЃС‡РµС‚ РїРѕ СѓСЃС‚Р°РЅРѕРІР»РµРЅРЅРѕР№ РјРѕС‰РЅРѕСЃС‚Рё')
 /
 INSERT INTO calcpointtype
 (NCALCPOINTTYPE,VNAME)
 VALUES
-(2,'Расчет по среднемесячному расходу')
+(2,'Р Р°СЃС‡РµС‚ РїРѕ СЃСЂРµРґРЅРµРјРµСЃСЏС‡РЅРѕРјСѓ СЂР°СЃС…РѕРґСѓ')
 /
 commit
 /
@@ -7492,7 +7492,7 @@ alter table FEEDERS add
 )
 /
 
-comment on column FEEDERS.NCALCPOINTTYPE is 'Ид типа ручника'
+comment on column FEEDERS.NCALCPOINTTYPE is 'РРґ С‚РёРїР° СЂСѓС‡РЅРёРєР°'
 /
 
 create index FEEDERS_IDX3 on FEEDERS (NCALCPOINTTYPE asc)
@@ -7521,19 +7521,19 @@ create table POINTSPARAM
 )
 /
 
-comment on table POINTSPARAM is 'Изменяемые параметры присоединений'
+comment on table POINTSPARAM is 'РР·РјРµРЅСЏРµРјС‹Рµ РїР°СЂР°РјРµС‚СЂС‹ РїСЂРёСЃРѕРµРґРёРЅРµРЅРёР№'
 /
 
-comment on column POINTSPARAM.MID is 'Ид точки'
+comment on column POINTSPARAM.MID is 'РРґ С‚РѕС‡РєРё'
 /
 
-comment on column POINTSPARAM.DDATE is 'Дата ввода'
+comment on column POINTSPARAM.DDATE is 'Р”Р°С‚Р° РІРІРѕРґР°'
 /
 
-comment on column POINTSPARAM.NCURRPOWER is 'Уст мощность'
+comment on column POINTSPARAM.NCURRPOWER is 'РЈСЃС‚ РјРѕС‰РЅРѕСЃС‚СЊ'
 /
 
-comment on column POINTSPARAM.NMONTHCONSUMPT is 'Среднемес расход'
+comment on column POINTSPARAM.NMONTHCONSUMPT is 'РЎСЂРµРґРЅРµРјРµСЃ СЂР°СЃС…РѕРґ'
 /
 
 
@@ -7564,22 +7564,22 @@ ALTER TABLE FISCAL MODIFY
    MESSAGE    VARCHAR2(512)
 )
 /
-comment on table FISCAL is 'Фискальный журнал'
+comment on table FISCAL is 'Р¤РёСЃРєР°Р»СЊРЅС‹Р№ Р¶СѓСЂРЅР°Р»'
 /
 
-comment on column FISCAL.DATE_TIME is 'Дата'
+comment on column FISCAL.DATE_TIME is 'Р”Р°С‚Р°'
 /
 
-comment on column FISCAL.TASK_COD is 'Код задачи'
+comment on column FISCAL.TASK_COD is 'РљРѕРґ Р·Р°РґР°С‡Рё'
 /
 
-comment on column FISCAL.TASK_JOB is 'Задача'
+comment on column FISCAL.TASK_JOB is 'Р—Р°РґР°С‡Р°'
 /
 
-comment on column FISCAL.NAME is 'Пользователь'
+comment on column FISCAL.NAME is 'РџРѕР»СЊР·РѕРІР°С‚РµР»СЊ'
 /
 
-comment on column FISCAL.MESSAGE is 'Сообщение'
+comment on column FISCAL.MESSAGE is 'РЎРѕРѕР±С‰РµРЅРёРµ'
 /
 create index FISCAL_IDX1 on FISCAL (DATE_TIME asc)
 /
@@ -7597,10 +7597,10 @@ alter table FEEDERS add
 )
 /
 
-comment on column FEEDERS.NTECHCONTROL is 'Тех контр опроса (мин)'
+comment on column FEEDERS.NTECHCONTROL is 'РўРµС… РєРѕРЅС‚СЂ РѕРїСЂРѕСЃР° (РјРёРЅ)'
 /
 
-comment on column FEEDERS.NCOMMCONTROL is 'Ком контр опроса (мин)'
+comment on column FEEDERS.NCOMMCONTROL is 'РљРѕРј РєРѕРЅС‚СЂ РѕРїСЂРѕСЃР° (РјРёРЅ)'
 /
 
 create table ROLE_GROUPS
@@ -7611,13 +7611,13 @@ create table ROLE_GROUPS
 )
 /
 
-comment on table ROLE_GROUPS is 'Доступные группы роли'
+comment on table ROLE_GROUPS is 'Р”РѕСЃС‚СѓРїРЅС‹Рµ РіСЂСѓРїРїС‹ СЂРѕР»Рё'
 /
 
-comment on column ROLE_GROUPS.ROLE_ID is 'Ид роли'
+comment on column ROLE_GROUPS.ROLE_ID is 'РРґ СЂРѕР»Рё'
 /
 
-comment on column ROLE_GROUPS.GID is 'Ид группы'
+comment on column ROLE_GROUPS.GID is 'РРґ РіСЂСѓРїРїС‹'
 /
 
 create index ROLE_GROUPS_IDX1 on ROLE_GROUPS (GID asc)
@@ -7652,7 +7652,7 @@ alter table FEEDERS add
 )
 /
 
-comment on column FEEDERS.NDATAABSENCE is 'Сигнализировать об отсутствии'
+comment on column FEEDERS.NDATAABSENCE is 'РЎРёРіРЅР°Р»РёР·РёСЂРѕРІР°С‚СЊ РѕР± РѕС‚СЃСѓС‚СЃС‚РІРёРё'
 /
 ---------27/02/2004
 drop package POINTCALC_PG_OLD
@@ -7678,30 +7678,30 @@ alter table FEEDERS add
 /
 
 
-comment on column FEEDERS.NDATAABSENCEC is 'Отсутствие ком данных'
+comment on column FEEDERS.NDATAABSENCEC is 'РћС‚СЃСѓС‚СЃС‚РІРёРµ РєРѕРј РґР°РЅРЅС‹С…'
 /
 
-comment on column FEEDERS.NDATAABSENCECT is 'Отсутствие тех данных'
+comment on column FEEDERS.NDATAABSENCECT is 'РћС‚СЃСѓС‚СЃС‚РІРёРµ С‚РµС… РґР°РЅРЅС‹С…'
 /
 
-comment on column FEEDERS.DDATAABSENCEC is 'Даата контроля ком данных'
+comment on column FEEDERS.DDATAABSENCEC is 'Р”Р°Р°С‚Р° РєРѕРЅС‚СЂРѕР»СЏ РєРѕРј РґР°РЅРЅС‹С…'
 /
 
 
 
 -----------02/03/2004
-insert into parameter (NPID,VVALUE,VDESCRIPTION) values(20,'0','Разбивать долевые потери реактива по реактиву')
---Для ПЖД 1
+insert into parameter (NPID,VVALUE,VDESCRIPTION) values(20,'0','Р Р°Р·Р±РёРІР°С‚СЊ РґРѕР»РµРІС‹Рµ РїРѕС‚РµСЂРё СЂРµР°РєС‚РёРІР° РїРѕ СЂРµР°РєС‚РёРІСѓ')
+--Р”Р»СЏ РџР–Р” 1
 /
 
 
 INSERT INTO RYDA.PROTOCOLS
 VALUES
-(33,'Энергия_9-2003')
+(33,'Р­РЅРµСЂРіРёСЏ_9-2003')
 /
 INSERT INTO RYDA.PROTOCOLS
 VALUES
-(34,'KM --> Энергия_9-2003')
+(34,'KM --> Р­РЅРµСЂРіРёСЏ_9-2003')
 /
 INSERT INTO RYDA.PROTOCOLS
 VALUES
@@ -7713,16 +7713,16 @@ VALUES
 /
 INSERT INTO RYDA.PROTOCOLS
 VALUES
-(37,'Файл (импорт)')
+(37,'Р¤Р°Р№Р» (РёРјРїРѕСЂС‚)')
 /
 INSERT INTO RYDA.PROTOCOLS
 VALUES
-(38,'KM --> Файл (импорт)')
+(38,'KM --> Р¤Р°Р№Р» (РёРјРїРѕСЂС‚)')
 /
 
 commit
 /
-comment on column FEEDERS.NDATAABSENCE is 'Сигнализировать об отсутствии'
+comment on column FEEDERS.NDATAABSENCE is 'РЎРёРіРЅР°Р»РёР·РёСЂРѕРІР°С‚СЊ РѕР± РѕС‚СЃСѓС‚СЃС‚РІРёРё'
 /
 
 
@@ -7730,17 +7730,17 @@ comment on column FEEDERS.NDATAABSENCE is 'Сигнализировать об отсутствии'
 INSERT INTO tasks
 (TASK_ID,PARENT,TASK_COD,NAME,NUM_ARG,CHAR_ARG,REMARK)
 VALUES
-(75,NULL,0,'5. Мониторинг системы',NULL,'','')
+(75,NULL,0,'5. РњРѕРЅРёС‚РѕСЂРёРЅРі СЃРёСЃС‚РµРјС‹',NULL,'','')
 /
 INSERT INTO tasks
 (TASK_ID,PARENT,TASK_COD,NAME,NUM_ARG,CHAR_ARG,REMARK)
 VALUES
-(76,75,620,'5.01 Мониторинг опроса',NULL,'','Мониторинг опроса')
+(76,75,620,'5.01 РњРѕРЅРёС‚РѕСЂРёРЅРі РѕРїСЂРѕСЃР°',NULL,'','РњРѕРЅРёС‚РѕСЂРёРЅРі РѕРїСЂРѕСЃР°')
 /
 INSERT INTO deportprocedures
 (NPROCEDURE,VNAME,VPROCEDURE,NPERIOD,NTYPE,VMEMO)
 VALUES
-(27,'Мониторинг опроса','check_pg.RequestMonitoring_p',1,1,'Мониторинг опроса')
+(27,'РњРѕРЅРёС‚РѕСЂРёРЅРі РѕРїСЂРѕСЃР°','check_pg.RequestMonitoring_p',1,1,'РњРѕРЅРёС‚РѕСЂРёРЅРі РѕРїСЂРѕСЃР°')
 /
 
 commit
@@ -7749,7 +7749,7 @@ commit
 INSERT INTO makets
 (NMAKET,NPROCEDURE,VNAME,VNOTE,NBLOCK,NCYCLE,NSHIFT,VPARAM,DOLDCREATED,VERROR)
 VALUES
-(1063,27,'Мониторинг опроса','',0,0,5,'','','')
+(1063,27,'РњРѕРЅРёС‚РѕСЂРёРЅРі РѕРїСЂРѕСЃР°','',0,0,5,'','','')
 /
 commit
 /
@@ -7757,29 +7757,29 @@ commit
 
 
 ---------------23/03/2004
-insert into parameter (NPID,VVALUE,VDESCRIPTION) values(21,'0','Ведение ГН по абсолютному времени')
+insert into parameter (NPID,VVALUE,VDESCRIPTION) values(21,'0','Р’РµРґРµРЅРёРµ Р“Рќ РїРѕ Р°Р±СЃРѕР»СЋС‚РЅРѕРјСѓ РІСЂРµРјРµРЅРё')
 /
 commit
 /
 
 
 /*
---Формы мониторинга опроса
+--Р¤РѕСЂРјС‹ РјРѕРЅРёС‚РѕСЂРёРЅРіР° РѕРїСЂРѕСЃР°
 INSERT INTO forms
 (FID,PARENT,MONITOR,CODETEMPLATE,NAMEFORM,COMMENTFORM,ENABLECONTROLS,STEPPROFILE,NAMEALERT,VPROCNAME)
 VALUES
-(1365,1060,1,1203,'08. Каналы опросившиеся по GSM','','1111110',2,'','plsql3_pg.report12_p')
+(1365,1060,1,1203,'08. РљР°РЅР°Р»С‹ РѕРїСЂРѕСЃРёРІС€РёРµСЃСЏ РїРѕ GSM','','1111110',2,'','plsql3_pg.report12_p')
 /
 INSERT INTO forms
 (FID,PARENT,MONITOR,CODETEMPLATE,NAMEFORM,COMMENTFORM,ENABLECONTROLS,STEPPROFILE,NAMEALERT,VPROCNAME)
 VALUES
-(1384,1060,1,1203,'09. Отчет об отсутствии получасовых данных','','1101110',2,'',
+(1384,1060,1,1203,'09. РћС‚С‡РµС‚ РѕР± РѕС‚СЃСѓС‚СЃС‚РІРёРё РїРѕР»СѓС‡Р°СЃРѕРІС‹С… РґР°РЅРЅС‹С…','','1101110',2,'',
 'plsql3_pg.report13_p')
 /
 INSERT INTO forms
 (FID,PARENT,MONITOR,CODETEMPLATE,NAMEFORM,COMMENTFORM,ENABLECONTROLS,STEPPROFILE,NAMEALERT,VPROCNAME)
 VALUES
-(1386,1060,1,1203,'10. Статистика работы каналов','','1111110',2,'','plsql3_pg.report121_p')
+(1386,1060,1,1203,'10. РЎС‚Р°С‚РёСЃС‚РёРєР° СЂР°Р±РѕС‚С‹ РєР°РЅР°Р»РѕРІ','','1111110',2,'','plsql3_pg.report121_p')
 /
 commit
 /
@@ -7800,7 +7800,7 @@ alter table HALFHOUROLD add
 )
 /
 
-comment on column HALFHOUROLD.DENTER is 'Дата попадания'
+comment on column HALFHOUROLD.DENTER is 'Р”Р°С‚Р° РїРѕРїР°РґР°РЅРёСЏ'
 /
 
 alter table billorg add
@@ -7809,7 +7809,7 @@ alter table billorg add
 )
 /
 
-comment on column billorg.DENTER is 'Дата попадания'
+comment on column billorg.DENTER is 'Р”Р°С‚Р° РїРѕРїР°РґР°РЅРёСЏ'
 /
 
 alter table MONTHSORG add
@@ -7818,7 +7818,7 @@ alter table MONTHSORG add
 )
 /
 
-comment on column MONTHSORG.DENTER is 'Дата попадания'
+comment on column MONTHSORG.DENTER is 'Р”Р°С‚Р° РїРѕРїР°РґР°РЅРёСЏ'
 /
 
 
@@ -7845,18 +7845,18 @@ alter table TASKS add
 )
 /
 
-comment on column TASKS.NSHOW is 'Показывать в списке'
+comment on column TASKS.NSHOW is 'РџРѕРєР°Р·С‹РІР°С‚СЊ РІ СЃРїРёСЃРєРµ'
 /
 
 INSERT INTO tasks
 (TASK_ID,PARENT,TASK_COD,NAME,REMARK,nshow)
 VALUES
-(77,NULL,0,'6. Инструментарий',NULL,0)
+(77,NULL,0,'6. РРЅСЃС‚СЂСѓРјРµРЅС‚Р°СЂРёР№',NULL,0)
 /
 INSERT INTO tasks
 (TASK_ID,PARENT,TASK_COD,NAME,REMARK,nshow)
 VALUES
-(78,77,630,'6. Терминал показаний','Терминал показаний',0)
+(78,77,630,'6. РўРµСЂРјРёРЅР°Р» РїРѕРєР°Р·Р°РЅРёР№','РўРµСЂРјРёРЅР°Р» РїРѕРєР°Р·Р°РЅРёР№',0)
 /
 
 insert into role_task
@@ -7906,25 +7906,25 @@ create table CHECK_RESULTSG
 )
 /
 
-comment on table CHECK_RESULTSG is 'Результаты верификации по группам'
+comment on table CHECK_RESULTSG is 'Р РµР·СѓР»СЊС‚Р°С‚С‹ РІРµСЂРёС„РёРєР°С†РёРё РїРѕ РіСЂСѓРїРїР°Рј'
 /
 
-comment on column CHECK_RESULTSG.NPROCEDURE is 'Ид процедуры'
+comment on column CHECK_RESULTSG.NPROCEDURE is 'РРґ РїСЂРѕС†РµРґСѓСЂС‹'
 /
 
-comment on column CHECK_RESULTSG.DDATE is 'Дата'
+comment on column CHECK_RESULTSG.DDATE is 'Р”Р°С‚Р°'
 /
 
-comment on column CHECK_RESULTSG.GID is 'Группа учета'
+comment on column CHECK_RESULTSG.GID is 'Р“СЂСѓРїРїР° СѓС‡РµС‚Р°'
 /
 
-comment on column CHECK_RESULTSG.VPARAM is 'Параметр'
+comment on column CHECK_RESULTSG.VPARAM is 'РџР°СЂР°РјРµС‚СЂ'
 /
 
-comment on column CHECK_RESULTSG.NMUSTBE is 'Первое значение'
+comment on column CHECK_RESULTSG.NMUSTBE is 'РџРµСЂРІРѕРµ Р·РЅР°С‡РµРЅРёРµ'
 /
 
-comment on column CHECK_RESULTSG.NINDEED is 'Второе значение'
+comment on column CHECK_RESULTSG.NINDEED is 'Р’С‚РѕСЂРѕРµ Р·РЅР°С‡РµРЅРёРµ'
 /
 
 
@@ -7955,7 +7955,7 @@ alter table CHECK_RESULTSG
 
 
 -- Start of DDL script for BRANCH_SEQ
--- Generated 7-апр-04  12:29:13 pm
+-- Generated 7-Р°РїСЂ-04  12:29:13 pm
 -- from oe-RYDA:4
 
 -- Drop the old instance of BRANCH_SEQ
@@ -8009,7 +8009,7 @@ alter table FEEDERS add
 )
 /
 
-comment on column FEEDERS.NMAINPOINT is 'Основной учет'
+comment on column FEEDERS.NMAINPOINT is 'РћСЃРЅРѕРІРЅРѕР№ СѓС‡РµС‚'
 /
 
 create index FEEDERS_IDX4 on FEEDERS (NMAINPOINT asc)
@@ -8048,8 +8048,8 @@ create unique index USERS_IDX3 on USERS (NAME asc)
 INSERT INTO form_templates
 (TEMPLATE_ID,PARENT,CODETEMPLATE,NAMEFORM,COMMENTFORM,ENABLECONTROLS,STEPPROFILE,NAMEALERT)
 VALUES
-(80,20,65,'3.06. Контроль значений и параметров качества электроэнергии',
-'Контроль значений и параметров качества электроэнергии','0111011',3,'')
+(80,20,65,'3.06. РљРѕРЅС‚СЂРѕР»СЊ Р·РЅР°С‡РµРЅРёР№ Рё РїР°СЂР°РјРµС‚СЂРѕРІ РєР°С‡РµСЃС‚РІР° СЌР»РµРєС‚СЂРѕСЌРЅРµСЂРіРёРё',
+'РљРѕРЅС‚СЂРѕР»СЊ Р·РЅР°С‡РµРЅРёР№ Рё РїР°СЂР°РјРµС‚СЂРѕРІ РєР°С‡РµСЃС‚РІР° СЌР»РµРєС‚СЂРѕСЌРЅРµСЂРіРёРё','0111011',3,'')
 /
 commit
 /
@@ -8057,9 +8057,9 @@ commit
 
 
 ----------------------09/06/2004
-insert into parameter (NPID,VVALUE,VDESCRIPTION) values(22,5,'Интервал интеграции профиля (мин)')
+insert into parameter (NPID,VVALUE,VDESCRIPTION) values(22,5,'РРЅС‚РµСЂРІР°Р» РёРЅС‚РµРіСЂР°С†РёРё РїСЂРѕС„РёР»СЏ (РјРёРЅ)')
 /
-insert into parameter (NPID,VVALUE,VDESCRIPTION) values(23,24,'Длина шага профиля (час)')
+insert into parameter (NPID,VVALUE,VDESCRIPTION) values(23,24,'Р”Р»РёРЅР° С€Р°РіР° РїСЂРѕС„РёР»СЏ (С‡Р°СЃ)')
 /
 commit
 /
@@ -8081,22 +8081,22 @@ ALTER table CURR_POWER ADD
 )
 /
 
-comment on column CURR_POWER.NFIU1 is 'Угол напр 1'
+comment on column CURR_POWER.NFIU1 is 'РЈРіРѕР» РЅР°РїСЂ 1'
 /
 
-comment on column CURR_POWER.NFIU2 is 'Угол напр 2'
+comment on column CURR_POWER.NFIU2 is 'РЈРіРѕР» РЅР°РїСЂ 2'
 /
 
-comment on column CURR_POWER.NFIU3 is 'Угол напр 3'
+comment on column CURR_POWER.NFIU3 is 'РЈРіРѕР» РЅР°РїСЂ 3'
 /
 
-comment on column CURR_POWER.NFII1 is 'Угол тока 1'
+comment on column CURR_POWER.NFII1 is 'РЈРіРѕР» С‚РѕРєР° 1'
 /
 
-comment on column CURR_POWER.NFII2 is 'Угол тока 2'
+comment on column CURR_POWER.NFII2 is 'РЈРіРѕР» С‚РѕРєР° 2'
 /
 
-comment on column CURR_POWER.NFII3 is 'Угол тока 3'
+comment on column CURR_POWER.NFII3 is 'РЈРіРѕР» С‚РѕРєР° 3'
 /
 
 ALTER table curr_power_arch ADD
@@ -8110,29 +8110,29 @@ ALTER table curr_power_arch ADD
 )
 /
 
-comment on column curr_power_arch.NFIU1 is 'Угол напр 1'
+comment on column curr_power_arch.NFIU1 is 'РЈРіРѕР» РЅР°РїСЂ 1'
 /
 
-comment on column curr_power_arch.NFIU2 is 'Угол напр 2'
+comment on column curr_power_arch.NFIU2 is 'РЈРіРѕР» РЅР°РїСЂ 2'
 /
 
-comment on column curr_power_arch.NFIU3 is 'Угол напр 3'
+comment on column curr_power_arch.NFIU3 is 'РЈРіРѕР» РЅР°РїСЂ 3'
 /
 
-comment on column curr_power_arch.NFII1 is 'Угол тока 1'
+comment on column curr_power_arch.NFII1 is 'РЈРіРѕР» С‚РѕРєР° 1'
 /
 
-comment on column curr_power_arch.NFII2 is 'Угол тока 2'
+comment on column curr_power_arch.NFII2 is 'РЈРіРѕР» С‚РѕРєР° 2'
 /
 
-comment on column curr_power_arch.NFII3 is 'Угол тока 3'
+comment on column curr_power_arch.NFII3 is 'РЈРіРѕР» С‚РѕРєР° 3'
 /
 
 ---------12/06/2004
 INSERT INTO form_templates
 (TEMPLATE_ID,PARENT,CODETEMPLATE,NAMEFORM,COMMENTFORM,ENABLECONTROLS,STEPPROFILE,NAMEALERT)
 VALUES
-(81,40,1204,'5.03. Схема сети','Схема электрической сети','0000000',2,'-1')
+(81,40,1204,'5.03. РЎС…РµРјР° СЃРµС‚Рё','РЎС…РµРјР° СЌР»РµРєС‚СЂРёС‡РµСЃРєРѕР№ СЃРµС‚Рё','0000000',2,'-1')
 /
 commit
 /
@@ -8158,7 +8158,7 @@ commit
 INSERT INTO calcpointtype
 (NCALCPOINTTYPE,VNAME)
 VALUES
-(3,'Расчет по дифтарифным актам')
+(3,'Р Р°СЃС‡РµС‚ РїРѕ РґРёС„С‚Р°СЂРёС„РЅС‹Рј Р°РєС‚Р°Рј')
 /
 commit
 /
@@ -8205,85 +8205,85 @@ create table DIFTARIFF
 )
 /
 
-comment on table DIFTARIFF is 'Дифтарифный акт'
+comment on table DIFTARIFF is 'Р”РёС„С‚Р°СЂРёС„РЅС‹Р№ Р°РєС‚'
 /
 
-comment on column DIFTARIFF.MID is 'Ид точки'
+comment on column DIFTARIFF.MID is 'РРґ С‚РѕС‡РєРё'
 /
 
-comment on column DIFTARIFF.DATE_TIME is 'Дата ввода'
+comment on column DIFTARIFF.DATE_TIME is 'Р”Р°С‚Р° РІРІРѕРґР°'
 /
 
-comment on column DIFTARIFF.AER is 'Процент AER'
+comment on column DIFTARIFF.AER is 'РџСЂРѕС†РµРЅС‚ AER'
 /
 
-comment on column DIFTARIFF.BER is 'Процент BER'
+comment on column DIFTARIFF.BER is 'РџСЂРѕС†РµРЅС‚ BER'
 /
 
-comment on column DIFTARIFF.CER is 'Процент CER'
+comment on column DIFTARIFF.CER is 'РџСЂРѕС†РµРЅС‚ CER'
 /
 
-comment on column DIFTARIFF.DER is 'Процент DER'
+comment on column DIFTARIFF.DER is 'РџСЂРѕС†РµРЅС‚ DER'
 /
 
-comment on column DIFTARIFF.AED is 'Процент AED'
+comment on column DIFTARIFF.AED is 'РџСЂРѕС†РµРЅС‚ AED'
 /
 
-comment on column DIFTARIFF.BED is 'Процент BED'
+comment on column DIFTARIFF.BED is 'РџСЂРѕС†РµРЅС‚ BED'
 /
 
-comment on column DIFTARIFF.CED is 'Процент CED'
+comment on column DIFTARIFF.CED is 'РџСЂРѕС†РµРЅС‚ CED'
 /
 
-comment on column DIFTARIFF.DED is 'Процент DED'
+comment on column DIFTARIFF.DED is 'РџСЂРѕС†РµРЅС‚ DED'
 /
 
-comment on column DIFTARIFF.AQ1 is 'Процент AQ1'
+comment on column DIFTARIFF.AQ1 is 'РџСЂРѕС†РµРЅС‚ AQ1'
 /
 
-comment on column DIFTARIFF.BQ1 is 'Процент BQ1'
+comment on column DIFTARIFF.BQ1 is 'РџСЂРѕС†РµРЅС‚ BQ1'
 /
 
-comment on column DIFTARIFF.CQ1 is 'Процент CQ1'
+comment on column DIFTARIFF.CQ1 is 'РџСЂРѕС†РµРЅС‚ CQ1'
 /
 
-comment on column DIFTARIFF.DQ1 is 'Процент DQ1'
+comment on column DIFTARIFF.DQ1 is 'РџСЂРѕС†РµРЅС‚ DQ1'
 /
 
-comment on column DIFTARIFF.AQ2 is 'Процент AQ2'
+comment on column DIFTARIFF.AQ2 is 'РџСЂРѕС†РµРЅС‚ AQ2'
 /
 
-comment on column DIFTARIFF.BQ2 is 'Процент BQ2'
+comment on column DIFTARIFF.BQ2 is 'РџСЂРѕС†РµРЅС‚ BQ2'
 /
 
-comment on column DIFTARIFF.CQ2 is 'Процент CQ2'
+comment on column DIFTARIFF.CQ2 is 'РџСЂРѕС†РµРЅС‚ CQ2'
 /
 
-comment on column DIFTARIFF.DQ2 is 'Процент DQ2'
+comment on column DIFTARIFF.DQ2 is 'РџСЂРѕС†РµРЅС‚ DQ2'
 /
 
-comment on column DIFTARIFF.AQ3 is 'Процент AQ3'
+comment on column DIFTARIFF.AQ3 is 'РџСЂРѕС†РµРЅС‚ AQ3'
 /
 
-comment on column DIFTARIFF.BQ3 is 'Процент BQ3'
+comment on column DIFTARIFF.BQ3 is 'РџСЂРѕС†РµРЅС‚ BQ3'
 /
 
-comment on column DIFTARIFF.CQ3 is 'Процент CQ3'
+comment on column DIFTARIFF.CQ3 is 'РџСЂРѕС†РµРЅС‚ CQ3'
 /
 
-comment on column DIFTARIFF.DQ3 is 'Процент DQ3'
+comment on column DIFTARIFF.DQ3 is 'РџСЂРѕС†РµРЅС‚ DQ3'
 /
 
-comment on column DIFTARIFF.AQ4 is 'Процент AQ4'
+comment on column DIFTARIFF.AQ4 is 'РџСЂРѕС†РµРЅС‚ AQ4'
 /
 
-comment on column DIFTARIFF.BQ4 is 'Процент BQ4'
+comment on column DIFTARIFF.BQ4 is 'РџСЂРѕС†РµРЅС‚ BQ4'
 /
 
-comment on column DIFTARIFF.CQ4 is 'Процент CQ4'
+comment on column DIFTARIFF.CQ4 is 'РџСЂРѕС†РµРЅС‚ CQ4'
 /
 
-comment on column DIFTARIFF.DQ4 is 'Процент DQ4'
+comment on column DIFTARIFF.DQ4 is 'РџСЂРѕС†РµРЅС‚ DQ4'
 /
 
 
@@ -8318,17 +8318,17 @@ alter table HALFHOUROLD add
 )
 /
 
-comment on column HALFHOUROLD.QM is 'Метка качества'
+comment on column HALFHOUROLD.QM is 'РњРµС‚РєР° РєР°С‡РµСЃС‚РІР°'
 /
 
 
 
 /*
-Только в ХЭС
+РўРѕР»СЊРєРѕ РІ РҐР­РЎ
 INSERT INTO tasks
 (TASK_ID,PARENT,TASK_COD,NAME,REMARK,NSHOW)
 VALUES
-(79,16,1000,'2.7 Настройка верификации','2.7 Настройка верификации',1)
+(79,16,1000,'2.7 РќР°СЃС‚СЂРѕР№РєР° РІРµСЂРёС„РёРєР°С†РёРё','2.7 РќР°СЃС‚СЂРѕР№РєР° РІРµСЂРёС„РёРєР°С†РёРё',1)
 /
 commit
 /
@@ -8349,7 +8349,7 @@ alter table BILLOLD add
 )
 /
 
-comment on column BILLOLD.QM is 'Метка качества'
+comment on column BILLOLD.QM is 'РњРµС‚РєР° РєР°С‡РµСЃС‚РІР°'
 /
 
 UPDATE DEPORTPROCEDURES SET VPROCEDURE='ryda.SWITCHES_PG.by_switchov' WHERE NPROCEDURE=15
@@ -8364,12 +8364,12 @@ delete from deportprocedures where NPROCEDURE in (28,29)
 INSERT INTO deportprocedures
 (NPROCEDURE,VNAME,VPROCEDURE,NPERIOD,NTYPE,VMEMO)
 VALUES
-(28,'Макет 30818','reports1_pg.m30818_p',2,0,'Макет 30818 (показания счетчиков)')
+(28,'РњР°РєРµС‚ 30818','reports1_pg.m30818_p',2,0,'РњР°РєРµС‚ 30818 (РїРѕРєР°Р·Р°РЅРёСЏ СЃС‡РµС‚С‡РёРєРѕРІ)')
 /
 INSERT INTO deportprocedures
 (NPROCEDURE,VNAME,VPROCEDURE,NPERIOD,NTYPE,VMEMO)
 VALUES
-(29,'Макет 30917','reports1_pg.m30917_p',2,0,'Макет 30917 (получасовые расходы эл. энергии)')
+(29,'РњР°РєРµС‚ 30917','reports1_pg.m30917_p',2,0,'РњР°РєРµС‚ 30917 (РїРѕР»СѓС‡Р°СЃРѕРІС‹Рµ СЂР°СЃС…РѕРґС‹ СЌР». СЌРЅРµСЂРіРёРё)')
 /
 commit
 /
@@ -8389,28 +8389,28 @@ alter table FEEDERS add
 )
 /
 
-comment on column FEEDERS.VERIFYPARAM is 'Парам верификации'
+comment on column FEEDERS.VERIFYPARAM is 'РџР°СЂР°Рј РІРµСЂРёС„РёРєР°С†РёРё'
 /
 
-update deportprocedures set VNAME='Верификация по дублирующим каналам измерения',vprocedure='ryda.check_pg.by_duplicatechannel' where nprocedure=6
+update deportprocedures set VNAME='Р’РµСЂРёС„РёРєР°С†РёСЏ РїРѕ РґСѓР±Р»РёСЂСѓСЋС‰РёРј РєР°РЅР°Р»Р°Рј РёР·РјРµСЂРµРЅРёСЏ',vprocedure='ryda.check_pg.by_duplicatechannel' where nprocedure=6
 /
 insert into deportprocedures (nprocedure, vname, vprocedure, nperiod, ntype, vmemo)
-values (30, 'Верификация по дублирующим счетчикам','ryda.check_pg.by_duplicatemeter', 2, 1, 'Процедура верификации по дублирующим счетчикам')
+values (30, 'Р’РµСЂРёС„РёРєР°С†РёСЏ РїРѕ РґСѓР±Р»РёСЂСѓСЋС‰РёРј СЃС‡РµС‚С‡РёРєР°Рј','ryda.check_pg.by_duplicatemeter', 2, 1, 'РџСЂРѕС†РµРґСѓСЂР° РІРµСЂРёС„РёРєР°С†РёРё РїРѕ РґСѓР±Р»РёСЂСѓСЋС‰РёРј СЃС‡РµС‚С‡РёРєР°Рј')
 /
 INSERT INTO points
 (mid, name, parent, ind)
 VALUES
-(26,'Расчет ручных точек',2,1)
+(26,'Р Р°СЃС‡РµС‚ СЂСѓС‡РЅС‹С… С‚РѕС‡РµРє',2,1)
 /
 INSERT INTO points
 (mid, name, parent, ind)
 VALUES
-(27,'Мониторинг опроса',2,1)
+(27,'РњРѕРЅРёС‚РѕСЂРёРЅРі РѕРїСЂРѕСЃР°',2,1)
 /
 INSERT INTO points
 (mid, name, parent, ind)
 VALUES
-(30,'Верификация по дублирующим счетчикам',2,1)
+(30,'Р’РµСЂРёС„РёРєР°С†РёСЏ РїРѕ РґСѓР±Р»РёСЂСѓСЋС‰РёРј СЃС‡РµС‚С‡РёРєР°Рј',2,1)
 /
 commit
 /
@@ -8419,7 +8419,7 @@ drop package DEPORTPROCS_PG
 /
 
 insert into deportprocedures (nprocedure, vname, vprocedure, nperiod, ntype, vmemo)
-values (31, 'Обновление мониторов','ryda.background01_pg.refreshmonitor', 0, 1, 'Процедура посылает широковещательный сигнал на обновление мониторов')
+values (31, 'РћР±РЅРѕРІР»РµРЅРёРµ РјРѕРЅРёС‚РѕСЂРѕРІ','ryda.background01_pg.refreshmonitor', 0, 1, 'РџСЂРѕС†РµРґСѓСЂР° РїРѕСЃС‹Р»Р°РµС‚ С€РёСЂРѕРєРѕРІРµС‰Р°С‚РµР»СЊРЅС‹Р№ СЃРёРіРЅР°Р» РЅР° РѕР±РЅРѕРІР»РµРЅРёРµ РјРѕРЅРёС‚РѕСЂРѕРІ')
 /
 commit
 /
@@ -8446,7 +8446,7 @@ alter table meters drop column NTRANSFORMER
 
 
 -- Start of DDL Script for Trigger RYDA.ON_LOGOFF_FROM_SCHEMA
--- Generated 5-авг-2004 10:58:34 from RYDA@oe
+-- Generated 5-Р°РІРі-2004 10:58:34 from RYDA@oe
 
 CREATE OR REPLACE TRIGGER on_logoff_from_schema
  BEFORE
@@ -8454,7 +8454,7 @@ CREATE OR REPLACE TRIGGER on_logoff_from_schema
  ON SCHEMA
 begin
 if common_pg.username_f is not null then
-admin_pg.fiscal_p(NULL, 3, 'Произведен выход из системы с компьютера: '||USERENV('TERMINAL'));
+admin_pg.fiscal_p(NULL, 3, 'РџСЂРѕРёР·РІРµРґРµРЅ РІС‹С…РѕРґ РёР· СЃРёСЃС‚РµРјС‹ СЃ РєРѕРјРїСЊСЋС‚РµСЂР°: '||USERENV('TERMINAL'));
 end if;
 end;
 /
@@ -8462,7 +8462,7 @@ end;
 alter table groups drop column LIMIT_ID
 /
 ----------- 12.08.2004
-insert into parameter (NPID,VVALUE,VDESCRIPTION) values(24,0,'Посылка сигнала на обновление мониторов после опроса канала')
+insert into parameter (NPID,VVALUE,VDESCRIPTION) values(24,0,'РџРѕСЃС‹Р»РєР° СЃРёРіРЅР°Р»Р° РЅР° РѕР±РЅРѕРІР»РµРЅРёРµ РјРѕРЅРёС‚РѕСЂРѕРІ РїРѕСЃР»Рµ РѕРїСЂРѕСЃР° РєР°РЅР°Р»Р°')
 /
 commit
 /
@@ -8500,28 +8500,28 @@ create table TRANSFORMER
 )
 /
 
-comment on table TRANSFORMER is 'Трансформаторы'
+comment on table TRANSFORMER is 'РўСЂР°РЅСЃС„РѕСЂРјР°С‚РѕСЂС‹'
 /
 
-comment on column TRANSFORMER.NTRANSFORMER is 'Ид трансформатора'
+comment on column TRANSFORMER.NTRANSFORMER is 'РРґ С‚СЂР°РЅСЃС„РѕСЂРјР°С‚РѕСЂР°'
 /
 
-comment on column TRANSFORMER.MID is 'Ид подстанции'
+comment on column TRANSFORMER.MID is 'РРґ РїРѕРґСЃС‚Р°РЅС†РёРё'
 /
 
-comment on column TRANSFORMER.VNAME is 'Наименование'
+comment on column TRANSFORMER.VNAME is 'РќР°РёРјРµРЅРѕРІР°РЅРёРµ'
 /
 
-comment on column TRANSFORMER.NTYPE is 'Тип'
+comment on column TRANSFORMER.NTYPE is 'РўРёРї'
 /
 
-comment on column TRANSFORMER.DINSTALL is 'Дата установки'
+comment on column TRANSFORMER.DINSTALL is 'Р”Р°С‚Р° СѓСЃС‚Р°РЅРѕРІРєРё'
 /
 
-comment on column TRANSFORMER.NVALUE1 is 'Перв сторона'
+comment on column TRANSFORMER.NVALUE1 is 'РџРµСЂРІ СЃС‚РѕСЂРѕРЅР°'
 /
 
-comment on column TRANSFORMER.NVALUE2 is 'Втор сторона'
+comment on column TRANSFORMER.NVALUE2 is 'Р’С‚РѕСЂ СЃС‚РѕСЂРѕРЅР°'
 /
 
 
@@ -8541,10 +8541,10 @@ alter table FEEDERS add
 )
 /
 
-comment on column FEEDERS.NTCURRENT is 'Трансформатор тока'
+comment on column FEEDERS.NTCURRENT is 'РўСЂР°РЅСЃС„РѕСЂРјР°С‚РѕСЂ С‚РѕРєР°'
 /
 
-comment on column FEEDERS.NTPOWER is 'Трансформатор напряжения'
+comment on column FEEDERS.NTPOWER is 'РўСЂР°РЅСЃС„РѕСЂРјР°С‚РѕСЂ РЅР°РїСЂСЏР¶РµРЅРёСЏ'
 /
 
 -- ============================================================
@@ -8573,22 +8573,22 @@ create table TRANSFORMERHISTORY
 )
 /
 
-comment on table TRANSFORMERHISTORY is 'История трансформаторов'
+comment on table TRANSFORMERHISTORY is 'РСЃС‚РѕСЂРёСЏ С‚СЂР°РЅСЃС„РѕСЂРјР°С‚РѕСЂРѕРІ'
 /
 
-comment on column TRANSFORMERHISTORY.NTRANSFORMER is 'Ид трансформатора'
+comment on column TRANSFORMERHISTORY.NTRANSFORMER is 'РРґ С‚СЂР°РЅСЃС„РѕСЂРјР°С‚РѕСЂР°'
 /
 
-comment on column TRANSFORMERHISTORY.DINSTALL is 'Дата установки'
+comment on column TRANSFORMERHISTORY.DINSTALL is 'Р”Р°С‚Р° СѓСЃС‚Р°РЅРѕРІРєРё'
 /
 
-comment on column TRANSFORMERHISTORY.DEND is 'Дата снятия'
+comment on column TRANSFORMERHISTORY.DEND is 'Р”Р°С‚Р° СЃРЅСЏС‚РёСЏ'
 /
 
-comment on column TRANSFORMERHISTORY.NVALUE1 is 'Перв сторона'
+comment on column TRANSFORMERHISTORY.NVALUE1 is 'РџРµСЂРІ СЃС‚РѕСЂРѕРЅР°'
 /
 
-comment on column TRANSFORMERHISTORY.NVALUE2 is 'Втор сторона'
+comment on column TRANSFORMERHISTORY.NVALUE2 is 'Р’С‚РѕСЂ СЃС‚РѕСЂРѕРЅР°'
 /
 
 
@@ -8630,11 +8630,11 @@ ALTER TABLE RYDA.curr_power MODIFY
 
 INSERT INTO RYDA.PROTOCOLS
 VALUES
-(39,'УСД КМ1')
+(39,'РЈРЎР” РљРњ1')
 /
 INSERT INTO RYDA.PROTOCOLS
 VALUES
-(40,'KM --> УСД КМ1')
+(40,'KM --> РЈРЎР” РљРњ1')
 /
 INSERT INTO RYDA.PROTOCOLS
 VALUES
@@ -8665,16 +8665,16 @@ alter table TRANSFORMERHISTORY add
 )
 /
 
-comment on column TRANSFORMER.VTYPE is 'Тип трансформатора'
+comment on column TRANSFORMER.VTYPE is 'РўРёРї С‚СЂР°РЅСЃС„РѕСЂРјР°С‚РѕСЂР°'
 /
 
-comment on column TRANSFORMER.NCLASS is 'Класс точности'
+comment on column TRANSFORMER.NCLASS is 'РљР»Р°СЃСЃ С‚РѕС‡РЅРѕСЃС‚Рё'
 /
 
-comment on column TRANSFORMERHISTORY.VTYPE is 'Тип трансформатора'
+comment on column TRANSFORMERHISTORY.VTYPE is 'РўРёРї С‚СЂР°РЅСЃС„РѕСЂРјР°С‚РѕСЂР°'
 /
 
-comment on column TRANSFORMERHISTORY.NCLASS is 'Класс точности'
+comment on column TRANSFORMERHISTORY.NCLASS is 'РљР»Р°СЃСЃ С‚РѕС‡РЅРѕСЃС‚Рё'
 /
 
 
@@ -8686,12 +8686,12 @@ ALTER TABLE RYDA.CHANNELS MODIFY
    COM_ID                     NOT NULL)
 /
 
-insert into parameter (NPID,VVALUE,VDESCRIPTION) values(25,'1','Вести архив параметров сети 0-нет, 1-да, 2 при условии привышения')
+insert into parameter (NPID,VVALUE,VDESCRIPTION) values(25,'1','Р’РµСЃС‚Рё Р°СЂС…РёРІ РїР°СЂР°РјРµС‚СЂРѕРІ СЃРµС‚Рё 0-РЅРµС‚, 1-РґР°, 2 РїСЂРё СѓСЃР»РѕРІРёРё РїСЂРёРІС‹С€РµРЅРёСЏ')
 /
------Для метро харьков 2 -- для ЖОЭ и Киев ГАЭС и ТЕЦ-5
+-----Р”Р»СЏ РјРµС‚СЂРѕ С…Р°СЂСЊРєРѕРІ 2 -- РґР»СЏ Р–РћР­ Рё РљРёРµРІ Р“РђР­РЎ Рё РўР•Р¦-5
 
 INSERT INTO db_term(TABLE_NAME,DATA_NAME,TERM,NARCHIVED,VINDIC_COLUMN,VEXTENTION)
-VALUES('CURR_POWER_ARCH','Архив параметров сети',10000,0,'date_time','car')
+VALUES('CURR_POWER_ARCH','РђСЂС…РёРІ РїР°СЂР°РјРµС‚СЂРѕРІ СЃРµС‚Рё',10000,0,'date_time','car')
 /
 commit
 /
@@ -8725,7 +8725,7 @@ create index DEPORTATIONFILES_IDX2 on DEPORTFILES (DDATE asc)
 INSERT INTO db_term
 (TABLE_NAME,DATA_NAME,TERM,NARCHIVED,VINDIC_COLUMN,VEXTENTION)
 VALUES
-('TRAFFIC','Трафик сеансов связи',10000,0,'dopen','trf')
+('TRAFFIC','РўСЂР°С„РёРє СЃРµР°РЅСЃРѕРІ СЃРІСЏР·Рё',10000,0,'dopen','trf')
 /
 
 update db_term set table_name='BILLOLD' where table_name='BILL'
@@ -8748,10 +8748,10 @@ alter table CHANNELS add
 )
 /
 
-comment on column CHANNELS.VACCUSER is 'Пользователь доступа'
+comment on column CHANNELS.VACCUSER is 'РџРѕР»СЊР·РѕРІР°С‚РµР»СЊ РґРѕСЃС‚СѓРїР°'
 /
 
-comment on column CHANNELS.VACCPASSWORD is 'Пароль доступа'
+comment on column CHANNELS.VACCPASSWORD is 'РџР°СЂРѕР»СЊ РґРѕСЃС‚СѓРїР°'
 /
 
 
@@ -8952,7 +8952,7 @@ alter table GROUPS add
 )
 /
 
-comment on column GROUPS.NPARTLY is 'Признак частичного вхожд'
+comment on column GROUPS.NPARTLY is 'РџСЂРёР·РЅР°Рє С‡Р°СЃС‚РёС‡РЅРѕРіРѕ РІС…РѕР¶Рґ'
 /
 
 
@@ -8960,7 +8960,7 @@ comment on column GROUPS.NPARTLY is 'Признак частичного вхожд'
 INSERT INTO form_templates
 (TEMPLATE_ID,PARENT,CODETEMPLATE,NAMEFORM,COMMENTFORM,ENABLECONTROLS,STEPPROFILE,NAMEALERT)
 VALUES
-(82,40,1205,'5.04. Схема сети (Модус)','Схема электрической сети (Модус)','0000000',2,'-1')
+(82,40,1205,'5.04. РЎС…РµРјР° СЃРµС‚Рё (РњРѕРґСѓСЃ)','РЎС…РµРјР° СЌР»РµРєС‚СЂРёС‡РµСЃРєРѕР№ СЃРµС‚Рё (РњРѕРґСѓСЃ)','0000000',2,'-1')
 /
 commit
 /
@@ -8978,13 +8978,13 @@ alter table METERSHISTORY add
 )
 /
 
-comment on column METERSHISTORY.VMEMO is 'Примечание'
+comment on column METERSHISTORY.VMEMO is 'РџСЂРёРјРµС‡Р°РЅРёРµ'
 /
 
 -------24.02.2005
 begin
 INSERT INTO deportprocedures(NPROCEDURE,VNAME,VPROCEDURE,NPERIOD,NTYPE,VMEMO)
-select 5,'Макет 30817 с переносом остатков округлений','ryda.reports1_pg.arround_m30817',2,0,'' from dual
+select 5,'РњР°РєРµС‚ 30817 СЃ РїРµСЂРµРЅРѕСЃРѕРј РѕСЃС‚Р°С‚РєРѕРІ РѕРєСЂСѓРіР»РµРЅРёР№','ryda.reports1_pg.arround_m30817',2,0,'' from dual
 where not exists (select * from deportprocedures where NPROCEDURE=5);
 
 update maketgroups set VCODE=replace(replace(VCODE,'('),')') where nmaket in
@@ -9002,19 +9002,19 @@ end;
 --------------25.02.2005
 INSERT INTO RYDA.PROTOCOLS
 VALUES
-(43,'ЕвроАльфа (упрощенный)')
+(43,'Р•РІСЂРѕРђР»СЊС„Р° (СѓРїСЂРѕС‰РµРЅРЅС‹Р№)')
 /
 INSERT INTO RYDA.PROTOCOLS
 VALUES
-(44,'KM --> ЕвроАльфа (упрощенный)')
+(44,'KM --> Р•РІСЂРѕРђР»СЊС„Р° (СѓРїСЂРѕС‰РµРЅРЅС‹Р№)')
 /
 INSERT INTO RYDA.PROTOCOLS
 VALUES
-(45,'АРГО')
+(45,'РђР Р“Рћ')
 /
 INSERT INTO RYDA.PROTOCOLS
 VALUES
-(46,'KM --> АРГО')
+(46,'KM --> РђР Р“Рћ')
 /
 commit
 /
@@ -9034,47 +9034,47 @@ create table FULLJOURNAL
 )
 /
 
-comment on table FULLJOURNAL is 'Полный журнал'
+comment on table FULLJOURNAL is 'РџРѕР»РЅС‹Р№ Р¶СѓСЂРЅР°Р»'
 /
 
-comment on column FULLJOURNAL.DSYS is 'Дата'
+comment on column FULLJOURNAL.DSYS is 'Р”Р°С‚Р°'
 /
 
-comment on column FULLJOURNAL.VUSER is 'Пользователь'
+comment on column FULLJOURNAL.VUSER is 'РџРѕР»СЊР·РѕРІР°С‚РµР»СЊ'
 /
 
-comment on column FULLJOURNAL.VTYPE is 'Тип изменения'
+comment on column FULLJOURNAL.VTYPE is 'РўРёРї РёР·РјРµРЅРµРЅРёСЏ'
 /
 
-comment on column FULLJOURNAL.VTERMINAL is 'Терминал'
+comment on column FULLJOURNAL.VTERMINAL is 'РўРµСЂРјРёРЅР°Р»'
 /
 
-comment on column FULLJOURNAL.NOPERATION is 'Операция'
+comment on column FULLJOURNAL.NOPERATION is 'РћРїРµСЂР°С†РёСЏ'
 /
 
-comment on column FULLJOURNAL.VTABLE is 'Таблица'
+comment on column FULLJOURNAL.VTABLE is 'РўР°Р±Р»РёС†Р°'
 /
 
-comment on column FULLJOURNAL.VCOLUMN is 'Колонка'
+comment on column FULLJOURNAL.VCOLUMN is 'РљРѕР»РѕРЅРєР°'
 /
 
-comment on column FULLJOURNAL.VOLD is 'Старое'
+comment on column FULLJOURNAL.VOLD is 'РЎС‚Р°СЂРѕРµ'
 /
 
-comment on column FULLJOURNAL.VNEW is 'Новое'
+comment on column FULLJOURNAL.VNEW is 'РќРѕРІРѕРµ'
 /
 
-comment on column FULLJOURNAL.VPK is 'Первичный ключ'
+comment on column FULLJOURNAL.VPK is 'РџРµСЂРІРёС‡РЅС‹Р№ РєР»СЋС‡'
 /
 
 
 INSERT INTO db_term
 (TABLE_NAME,DATA_NAME,TERM,NARCHIVED,VINDIC_COLUMN,VEXTENTION)
 VALUES
-('FULLJOURNAL','Журнал изменений БД',100,0,'dsys','dbj')
+('FULLJOURNAL','Р–СѓСЂРЅР°Р» РёР·РјРµРЅРµРЅРёР№ Р‘Р”',100,0,'dsys','dbj')
 /
 
-insert into parameter (NPID,VVALUE,VDESCRIPTION) values(26,0,'Признак ведения полного журнала действий')
+insert into parameter (NPID,VVALUE,VDESCRIPTION) values(26,0,'РџСЂРёР·РЅР°Рє РІРµРґРµРЅРёСЏ РїРѕР»РЅРѕРіРѕ Р¶СѓСЂРЅР°Р»Р° РґРµР№СЃС‚РІРёР№')
 /
 
 commit
@@ -9100,13 +9100,13 @@ end;
 INSERT INTO form_templates
 (TEMPLATE_ID,PARENT,CODETEMPLATE,NAMEFORM,COMMENTFORM,ENABLECONTROLS,STEPPROFILE,NAMEALERT)
 VALUES
-(41,NULL,NULL,'6. Макеты','Макеты','0000000',0,NULL)
+(41,NULL,NULL,'6. РњР°РєРµС‚С‹','РњР°РєРµС‚С‹','0000000',0,NULL)
 /
 
 INSERT INTO form_templates
 (TEMPLATE_ID,PARENT,CODETEMPLATE,NAMEFORM,COMMENTFORM,ENABLECONTROLS,STEPPROFILE,NAMEALERT)
 VALUES
-(83,41,1450,'6.1. Отосланные макеты 30817','Отосланные макеты 30817','1001010',0,NULL)
+(83,41,1450,'6.1. РћС‚РѕСЃР»Р°РЅРЅС‹Рµ РјР°РєРµС‚С‹ 30817','РћС‚РѕСЃР»Р°РЅРЅС‹Рµ РјР°РєРµС‚С‹ 30817','1001010',0,NULL)
 /
 
 commit
@@ -9117,13 +9117,13 @@ commit
 INSERT INTO tasks
 (TASK_ID,PARENT,TASK_COD,NAME,REMARK,NSHOW)
 VALUES
-(80,NULL,0,'9. Операции','9. Операции, доступные для выбранной роли',0)
+(80,NULL,0,'9. РћРїРµСЂР°С†РёРё','9. РћРїРµСЂР°С†РёРё, РґРѕСЃС‚СѓРїРЅС‹Рµ РґР»СЏ РІС‹Р±СЂР°РЅРЅРѕР№ СЂРѕР»Рё',0)
 /
 
 INSERT INTO tasks
 (TASK_ID,PARENT,TASK_COD,NAME,REMARK,NSHOW)
 VALUES
-(81,80,650,'9.01 Сохранение и редактирование мониторов','9.01 Сохранение и редактирование мониторов',0)
+(81,80,650,'9.01 РЎРѕС…СЂР°РЅРµРЅРёРµ Рё СЂРµРґР°РєС‚РёСЂРѕРІР°РЅРёРµ РјРѕРЅРёС‚РѕСЂРѕРІ','9.01 РЎРѕС…СЂР°РЅРµРЅРёРµ Рё СЂРµРґР°РєС‚РёСЂРѕРІР°РЅРёРµ РјРѕРЅРёС‚РѕСЂРѕРІ',0)
 /
 
 insert into role_task
@@ -9154,18 +9154,18 @@ declare
 ln_nmaket NUMBER;
 begin
  insert into deportprocedures (nprocedure, vname, vprocedure, nperiod, ntype, vmemo)
- values (32, 'Перерасчет суточных расходов','ryda.das_pg.recalcperiod', 2, 1, 'Перерасчет суточных расходов');
-makets_pg.ins_m(32,'Перерасчет суточных расходов','',1,0,0,'',ln_nmaket);
+ values (32, 'РџРµСЂРµСЂР°СЃС‡РµС‚ СЃСѓС‚РѕС‡РЅС‹С… СЂР°СЃС…РѕРґРѕРІ','ryda.das_pg.recalcperiod', 2, 1, 'РџРµСЂРµСЂР°СЃС‡РµС‚ СЃСѓС‚РѕС‡РЅС‹С… СЂР°СЃС…РѕРґРѕРІ');
+makets_pg.ins_m(32,'РџРµСЂРµСЂР°СЃС‡РµС‚ СЃСѓС‚РѕС‡РЅС‹С… СЂР°СЃС…РѕРґРѕРІ','',1,0,0,'',ln_nmaket);
 commit;
 end;
 /
 
 
 -----------01/04/2005
-update protocols set NAME='УСПД КМ-64' where PROTOCOL_ID=39
+update protocols set NAME='РЈРЎРџР” РљРњ-64' where PROTOCOL_ID=39
 /
 
-update protocols set NAME='KM --> УСПД КМ-64' where PROTOCOL_ID=40
+update protocols set NAME='KM --> РЈРЎРџР” РљРњ-64' where PROTOCOL_ID=40
 /
 
 commit
@@ -9188,7 +9188,7 @@ alter table FEEDERS add
 /
 
 
-comment on column FEEDERS.VADDPARAMS is 'Дополнительные параметры'
+comment on column FEEDERS.VADDPARAMS is 'Р”РѕРїРѕР»РЅРёС‚РµР»СЊРЅС‹Рµ РїР°СЂР°РјРµС‚СЂС‹'
 /
 
 
@@ -9198,7 +9198,7 @@ comment on column FEEDERS.VADDPARAMS is 'Дополнительные параметры'
 INSERT INTO tasks
 (TASK_ID,PARENT,TASK_COD,NAME,REMARK,NSHOW)
 VALUES
-(82,80,651,'9.02 Переход на резервный сервер','9.02 Переход на резервный сервер',0)
+(82,80,651,'9.02 РџРµСЂРµС…РѕРґ РЅР° СЂРµР·РµСЂРІРЅС‹Р№ СЃРµСЂРІРµСЂ','9.02 РџРµСЂРµС…РѕРґ РЅР° СЂРµР·РµСЂРІРЅС‹Р№ СЃРµСЂРІРµСЂ',0)
 /
 
 insert into role_task
@@ -9212,11 +9212,11 @@ commit
 ----13/05/2005
 INSERT INTO RYDA.PROTOCOLS
 VALUES
-(47,'Элвин')
+(47,'Р­Р»РІРёРЅ')
 /
 INSERT INTO RYDA.PROTOCOLS
 VALUES
-(48,'KM --> Элвин')
+(48,'KM --> Р­Р»РІРёРЅ')
 /
 INSERT INTO RYDA.PROTOCOLS
 VALUES
@@ -9232,16 +9232,16 @@ commit
 
 -----------------------------------
 --07/06/2005
-update protocols set NAME='УСПД КМ-64 (эхо)' where PROTOCOL_ID=39
+update protocols set NAME='РЈРЎРџР” РљРњ-64 (СЌС…Рѕ)' where PROTOCOL_ID=39
 /
 
-update protocols set NAME='KM --> УСПД КМ-64 (эхо)' where PROTOCOL_ID=40
+update protocols set NAME='KM --> РЈРЎРџР” РљРњ-64 (СЌС…Рѕ)' where PROTOCOL_ID=40
 /
 
-update protocols set NAME='УСПД КМ-64' where PROTOCOL_ID=14
+update protocols set NAME='РЈРЎРџР” РљРњ-64' where PROTOCOL_ID=14
 /
 
-update protocols set NAME='KM --> УСПД КМ-64' where PROTOCOL_ID=15
+update protocols set NAME='KM --> РЈРЎРџР” РљРњ-64' where PROTOCOL_ID=15
 /
 
 commit
@@ -9268,19 +9268,19 @@ create table COPYFILES
 )
 /
 
-comment on table COPYFILES is 'Скопированые файлы'
+comment on table COPYFILES is 'РЎРєРѕРїРёСЂРѕРІР°РЅС‹Рµ С„Р°Р№Р»С‹'
 /
 
-comment on column COPYFILES.CID is 'Ид канала'
+comment on column COPYFILES.CID is 'РРґ РєР°РЅР°Р»Р°'
 /
 
-comment on column COPYFILES.VFILENAME is 'Название файла'
+comment on column COPYFILES.VFILENAME is 'РќР°Р·РІР°РЅРёРµ С„Р°Р№Р»Р°'
 /
 
-comment on column COPYFILES.DENTER is 'Дата копирования'
+comment on column COPYFILES.DENTER is 'Р”Р°С‚Р° РєРѕРїРёСЂРѕРІР°РЅРёСЏ'
 /
 
-comment on column COPYFILES.DFILEDATE is 'Дата файла'
+comment on column COPYFILES.DFILEDATE is 'Р”Р°С‚Р° С„Р°Р№Р»Р°'
 /
 
 
@@ -9303,7 +9303,7 @@ alter table CONNECTIONPARAM add
 )
 /
 
-comment on column CONNECTIONPARAM.NWINDING is 'Номер обмотки'
+comment on column CONNECTIONPARAM.NWINDING is 'РќРѕРјРµСЂ РѕР±РјРѕС‚РєРё'
 /
 
 update points set ind=1 where ind is null
@@ -9329,31 +9329,31 @@ create table DICT_OBJ_TYPES
 )
 /
 
-comment on table DICT_OBJ_TYPES is 'Типы объектов'
+comment on table DICT_OBJ_TYPES is 'РўРёРїС‹ РѕР±СЉРµРєС‚РѕРІ'
 /
 
-comment on column DICT_OBJ_TYPES.IND is 'Ид типа объекта'
+comment on column DICT_OBJ_TYPES.IND is 'РРґ С‚РёРїР° РѕР±СЉРµРєС‚Р°'
 /
 
-comment on column DICT_OBJ_TYPES.VNAME is 'Название типа объекта'
+comment on column DICT_OBJ_TYPES.VNAME is 'РќР°Р·РІР°РЅРёРµ С‚РёРїР° РѕР±СЉРµРєС‚Р°'
 /
 
-insert into DICT_OBJ_TYPES(ind,vname) values(1,'Обобщенный объект 1-го уровня')
+insert into DICT_OBJ_TYPES(ind,vname) values(1,'РћР±РѕР±С‰РµРЅРЅС‹Р№ РѕР±СЉРµРєС‚ 1-РіРѕ СѓСЂРѕРІРЅСЏ')
 /
 
-insert into DICT_OBJ_TYPES(ind,vname) values(2,'Обобщенный объект 2-го уровня')
+insert into DICT_OBJ_TYPES(ind,vname) values(2,'РћР±РѕР±С‰РµРЅРЅС‹Р№ РѕР±СЉРµРєС‚ 2-РіРѕ СѓСЂРѕРІРЅСЏ')
 /
 
-insert into DICT_OBJ_TYPES(ind,vname) values(3,'Точка учета')
+insert into DICT_OBJ_TYPES(ind,vname) values(3,'РўРѕС‡РєР° СѓС‡РµС‚Р°')
 /
 
-insert into DICT_OBJ_TYPES(ind,vname) values(600,'Силовой трансформатор (двухобмлточный)')
+insert into DICT_OBJ_TYPES(ind,vname) values(600,'РЎРёР»РѕРІРѕР№ С‚СЂР°РЅСЃС„РѕСЂРјР°С‚РѕСЂ (РґРІСѓС…РѕР±РјР»С‚РѕС‡РЅС‹Р№)')
 /
 
-insert into DICT_OBJ_TYPES(ind,vname) values(610,'Силовой трансформатор (трехобмлточный)')
+insert into DICT_OBJ_TYPES(ind,vname) values(610,'РЎРёР»РѕРІРѕР№ С‚СЂР°РЅСЃС„РѕСЂРјР°С‚РѕСЂ (С‚СЂРµС…РѕР±РјР»С‚РѕС‡РЅС‹Р№)')
 /
 
-insert into DICT_OBJ_TYPES(ind,vname) values(500,'Линия')
+insert into DICT_OBJ_TYPES(ind,vname) values(500,'Р›РёРЅРёСЏ')
 /
 
 alter table POINTS
@@ -9362,67 +9362,67 @@ alter table POINTS
 /
 
 
-comment on column CONNECTIONPARAM.NCONNECTIONPARAM is 'Ид параметра'
+comment on column CONNECTIONPARAM.NCONNECTIONPARAM is 'РРґ РїР°СЂР°РјРµС‚СЂР°'
 /
 
-comment on column CONNECTIONPARAM.MID is 'Ид точки'
+comment on column CONNECTIONPARAM.MID is 'РРґ С‚РѕС‡РєРё'
 /
 
-comment on column CONNECTIONPARAM.VNAME is 'Название'
+comment on column CONNECTIONPARAM.VNAME is 'РќР°Р·РІР°РЅРёРµ'
 /
 
-comment on column CONNECTIONPARAM.NSN is 'Номинальная мощность кВА (Sn)'
+comment on column CONNECTIONPARAM.NSN is 'РќРѕРјРёРЅР°Р»СЊРЅР°СЏ РјРѕС‰РЅРѕСЃС‚СЊ РєР’Рђ (Sn)'
 /
 
-comment on column CONNECTIONPARAM.NSH is 'Номинальная мощность кВА обмотки (Sh)'
+comment on column CONNECTIONPARAM.NSH is 'РќРѕРјРёРЅР°Р»СЊРЅР°СЏ РјРѕС‰РЅРѕСЃС‚СЊ РєР’Рђ РѕР±РјРѕС‚РєРё (Sh)'
 /
 
-comment on column CONNECTIONPARAM.NDELTAPIDLING is 'Потери холостого хода кВт (Pxx)'
+comment on column CONNECTIONPARAM.NDELTAPIDLING is 'РџРѕС‚РµСЂРё С…РѕР»РѕСЃС‚РѕРіРѕ С…РѕРґР° РєР’С‚ (Pxx)'
 /
 
-comment on column CONNECTIONPARAM.NDELTAPSC is 'Потери короткого замыкания кВт (Pкз)'
+comment on column CONNECTIONPARAM.NDELTAPSC is 'РџРѕС‚РµСЂРё РєРѕСЂРѕС‚РєРѕРіРѕ Р·Р°РјС‹РєР°РЅРёСЏ РєР’С‚ (PРєР·)'
 /
 
-comment on column CONNECTIONPARAM.NIIDLING is 'Ток холостого хода (Ixx)'
+comment on column CONNECTIONPARAM.NIIDLING is 'РўРѕРє С…РѕР»РѕСЃС‚РѕРіРѕ С…РѕРґР° (Ixx)'
 /
 
-comment on column CONNECTIONPARAM.NUSC is 'Напряжение короткого замыкания (Uкz)'
+comment on column CONNECTIONPARAM.NUSC is 'РќР°РїСЂСЏР¶РµРЅРёРµ РєРѕСЂРѕС‚РєРѕРіРѕ Р·Р°РјС‹РєР°РЅРёСЏ (UРєz)'
 /
 
-comment on column CONNECTIONPARAM.NRO is 'Активное сопротивление (Ro)'
+comment on column CONNECTIONPARAM.NRO is 'РђРєС‚РёРІРЅРѕРµ СЃРѕРїСЂРѕС‚РёРІР»РµРЅРёРµ (Ro)'
 /
 
-comment on column CONNECTIONPARAM.NXO is 'Реактивное сопротивление (Xo)'
+comment on column CONNECTIONPARAM.NXO is 'Р РµР°РєС‚РёРІРЅРѕРµ СЃРѕРїСЂРѕС‚РёРІР»РµРЅРёРµ (Xo)'
 /
 
-comment on column CONNECTIONPARAM.NL is 'Длина линии км (L)'
+comment on column CONNECTIONPARAM.NL is 'Р”Р»РёРЅР° Р»РёРЅРёРё РєРј (L)'
 /
 
-comment on column CONNECTIONPARAM.NUN is 'Номинальное напряжение В (Un)'
+comment on column CONNECTIONPARAM.NUN is 'РќРѕРјРёРЅР°Р»СЊРЅРѕРµ РЅР°РїСЂСЏР¶РµРЅРёРµ Р’ (Un)'
 /
 
-comment on column CONNECTIONPARAM.NWORKINGHOURS is 'Номинальное время работы'
+comment on column CONNECTIONPARAM.NWORKINGHOURS is 'РќРѕРјРёРЅР°Р»СЊРЅРѕРµ РІСЂРµРјСЏ СЂР°Р±РѕС‚С‹'
 /
 
-comment on column CONNECTIONPARAM.NFULLHOURS is 'Номинальное полное время'
+comment on column CONNECTIONPARAM.NFULLHOURS is 'РќРѕРјРёРЅР°Р»СЊРЅРѕРµ РїРѕР»РЅРѕРµ РІСЂРµРјСЏ'
 /
 
-comment on column CONNECTIONPARAM.NNOTINCLUDECONSUMP is 'Расход не учитывать'
+comment on column CONNECTIONPARAM.NNOTINCLUDECONSUMP is 'Р Р°СЃС…РѕРґ РЅРµ СѓС‡РёС‚С‹РІР°С‚СЊ'
 /
 
-comment on column CONNECTIONPARAM.NPARALLELCONNECTION is 'Паралельное соединение'
+comment on column CONNECTIONPARAM.NPARALLELCONNECTION is 'РџР°СЂР°Р»РµР»СЊРЅРѕРµ СЃРѕРµРґРёРЅРµРЅРёРµ'
 /
 
-comment on column CONNECTIONPARAM.NENERGYPERCENT is 'Процент потерь Актив'
+comment on column CONNECTIONPARAM.NENERGYPERCENT is 'РџСЂРѕС†РµРЅС‚ РїРѕС‚РµСЂСЊ РђРєС‚РёРІ'
 /
 
-comment on column CONNECTIONPARAM.NRENERGYPERCENT is 'Процент потерь Реактив'
+comment on column CONNECTIONPARAM.NRENERGYPERCENT is 'РџСЂРѕС†РµРЅС‚ РїРѕС‚РµСЂСЊ Р РµР°РєС‚РёРІ'
 /
 
-comment on column CONNECTIONPARAM.NPROCENT is 'Потери в процентах'
+comment on column CONNECTIONPARAM.NPROCENT is 'РџРѕС‚РµСЂРё РІ РїСЂРѕС†РµРЅС‚Р°С…'
 /
 
-comment on column CONNECTIONPARAM.NWINDING is 'Номер обмотки'
+comment on column CONNECTIONPARAM.NWINDING is 'РќРѕРјРµСЂ РѕР±РјРѕС‚РєРё'
 /
 
 
@@ -9445,19 +9445,19 @@ create table JOURNALLAST
 )
 /
 
-comment on table JOURNALLAST is 'Системный журнал (оперативный)'
+comment on table JOURNALLAST is 'РЎРёСЃС‚РµРјРЅС‹Р№ Р¶СѓСЂРЅР°Р» (РѕРїРµСЂР°С‚РёРІРЅС‹Р№)'
 /
 
-comment on column JOURNALLAST.DATE_TIME is 'Дата'
+comment on column JOURNALLAST.DATE_TIME is 'Р”Р°С‚Р°'
 /
 
-comment on column JOURNALLAST.MID is 'Ид точки'
+comment on column JOURNALLAST.MID is 'РРґ С‚РѕС‡РєРё'
 /
 
-comment on column JOURNALLAST.STATE_COD is 'Код сообщения'
+comment on column JOURNALLAST.STATE_COD is 'РљРѕРґ СЃРѕРѕР±С‰РµРЅРёСЏ'
 /
 
-comment on column JOURNALLAST.STATE_DESCR is 'Сообщение'
+comment on column JOURNALLAST.STATE_DESCR is 'РЎРѕРѕР±С‰РµРЅРёРµ'
 /
 
 
@@ -9539,25 +9539,25 @@ create table CALCBYDUPLICATION
 )
 /
 
-comment on table CALCBYDUPLICATION is 'Расчет по дублирующему сч'
+comment on table CALCBYDUPLICATION is 'Р Р°СЃС‡РµС‚ РїРѕ РґСѓР±Р»РёСЂСѓСЋС‰РµРјСѓ СЃС‡'
 /
 
-comment on column CALCBYDUPLICATION.MID is 'Ид дублирующего сч'
+comment on column CALCBYDUPLICATION.MID is 'РРґ РґСѓР±Р»РёСЂСѓСЋС‰РµРіРѕ СЃС‡'
 /
 
-comment on column CALCBYDUPLICATION.DSTART is 'Дата начала учета'
+comment on column CALCBYDUPLICATION.DSTART is 'Р”Р°С‚Р° РЅР°С‡Р°Р»Р° СѓС‡РµС‚Р°'
 /
 
-comment on column CALCBYDUPLICATION.DEND is 'Дата окончпния учета'
+comment on column CALCBYDUPLICATION.DEND is 'Р”Р°С‚Р° РѕРєРѕРЅС‡РїРЅРёСЏ СѓС‡РµС‚Р°'
 /
 
-comment on column CALCBYDUPLICATION.VMEMO is 'Основание'
+comment on column CALCBYDUPLICATION.VMEMO is 'РћСЃРЅРѕРІР°РЅРёРµ'
 /
 
-comment on column CALCBYDUPLICATION.USER_ID is 'Ид пользователя'
+comment on column CALCBYDUPLICATION.USER_ID is 'РРґ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ'
 /
 
-comment on column CALCBYDUPLICATION.DENTER is 'Дата ввода'
+comment on column CALCBYDUPLICATION.DENTER is 'Р”Р°С‚Р° РІРІРѕРґР°'
 /
 
 
@@ -9586,7 +9586,7 @@ alter table CALCBYDUPLICATION
 INSERT INTO tasks
 (TASK_ID,PARENT,TASK_COD,NAME,REMARK)
 VALUES
-(91,16,73,'2.81 Учет электроэнергии по дублирующим счетчикам',NULL)
+(91,16,73,'2.81 РЈС‡РµС‚ СЌР»РµРєС‚СЂРѕСЌРЅРµСЂРіРёРё РїРѕ РґСѓР±Р»РёСЂСѓСЋС‰РёРј СЃС‡РµС‚С‡РёРєР°Рј',NULL)
 /
 commit
 /
@@ -9596,7 +9596,7 @@ commit
 INSERT INTO form_templates
 (TEMPLATE_ID,PARENT,CODETEMPLATE,NAMEFORM,COMMENTFORM,ENABLECONTROLS,STEPPROFILE,NAMEALERT)
 VALUES
-(84,40,1206,'5.2.1 Форма отчета (Excel - внешний)','5.2.1 Форма отчета (Excel - внешний)','1100010',1,NULL)
+(84,40,1206,'5.2.1 Р¤РѕСЂРјР° РѕС‚С‡РµС‚Р° (Excel - РІРЅРµС€РЅРёР№)','5.2.1 Р¤РѕСЂРјР° РѕС‚С‡РµС‚Р° (Excel - РІРЅРµС€РЅРёР№)','1100010',1,NULL)
 /
 commit
 /
@@ -9616,7 +9616,7 @@ create index FULLJOURNAL_IDX1 on FULLJOURNAL (DSYS asc)
 ------25/07/2005
 INSERT INTO RYDA.PROTOCOLS
 VALUES
-(51,'Тест MOXA NPort')
+(51,'РўРµСЃС‚ MOXA NPort')
 /
 commit
 /
@@ -9625,27 +9625,27 @@ commit
 --------------14/09/2005
   INSERT INTO dict_obj_types
 VALUES
-(4,'Расчетная точка (для копирования данных с основного или дублирующего счетчиков)')
+(4,'Р Р°СЃС‡РµС‚РЅР°СЏ С‚РѕС‡РєР° (РґР»СЏ РєРѕРїРёСЂРѕРІР°РЅРёСЏ РґР°РЅРЅС‹С… СЃ РѕСЃРЅРѕРІРЅРѕРіРѕ РёР»Рё РґСѓР±Р»РёСЂСѓСЋС‰РµРіРѕ СЃС‡РµС‚С‡РёРєРѕРІ)')
 /
 
 INSERT INTO tasks
 (TASK_ID,PARENT,TASK_COD,NAME,REMARK,NSHOW)
 VALUES
-(77,NULL,0,'6. Инструментарий',NULL,0)
+(77,NULL,0,'6. РРЅСЃС‚СЂСѓРјРµРЅС‚Р°СЂРёР№',NULL,0)
 /
 
 /*
 INSERT INTO tasks
 (TASK_ID,PARENT,TASK_COD,NAME,REMARK,NSHOW)
 VALUES
-(78,77,630,'6.01 Терминал показаний','Терминал показаний',0)
+(78,77,630,'6.01 РўРµСЂРјРёРЅР°Р» РїРѕРєР°Р·Р°РЅРёР№','РўРµСЂРјРёРЅР°Р» РїРѕРєР°Р·Р°РЅРёР№',0)
 /
 */
 
 INSERT INTO tasks
 (TASK_ID,PARENT,TASK_COD,NAME,REMARK,NSHOW)
 VALUES
-(83,77,631,'6.02 Терминал опроса','Терминал опроса',0)
+(83,77,631,'6.02 РўРµСЂРјРёРЅР°Р» РѕРїСЂРѕСЃР°','РўРµСЂРјРёРЅР°Р» РѕРїСЂРѕСЃР°',0)
 /
 
 CREATE GLOBAL TEMPORARY TABLE rep_classic
@@ -9669,39 +9669,39 @@ CREATE GLOBAL TEMPORARY TABLE rep_classic
 ON COMMIT PRESERVE ROWS
 /
 
-COMMENT ON COLUMN rep_classic.cons IS 'расход'
+COMMENT ON COLUMN rep_classic.cons IS 'СЂР°СЃС…РѕРґ'
 /
-COMMENT ON COLUMN rep_classic.dif IS 'разность показаний'
+COMMENT ON COLUMN rep_classic.dif IS 'СЂР°Р·РЅРѕСЃС‚СЊ РїРѕРєР°Р·Р°РЅРёР№'
 /
-COMMENT ON COLUMN rep_classic.edate IS 'Дата конечных показаний'
+COMMENT ON COLUMN rep_classic.edate IS 'Р”Р°С‚Р° РєРѕРЅРµС‡РЅС‹С… РїРѕРєР°Р·Р°РЅРёР№'
 /
-COMMENT ON COLUMN rep_classic.em IS 'конечные показания'
+COMMENT ON COLUMN rep_classic.em IS 'РєРѕРЅРµС‡РЅС‹Рµ РїРѕРєР°Р·Р°РЅРёСЏ'
 /
-COMMENT ON COLUMN rep_classic.etype IS 'тип измерения'
+COMMENT ON COLUMN rep_classic.etype IS 'С‚РёРї РёР·РјРµСЂРµРЅРёСЏ'
 /
-COMMENT ON COLUMN rep_classic.gid IS 'ИД группы'
+COMMENT ON COLUMN rep_classic.gid IS 'РР” РіСЂСѓРїРїС‹'
 /
-COMMENT ON COLUMN rep_classic.kc IS 'коэффициент'
+COMMENT ON COLUMN rep_classic.kc IS 'РєРѕСЌС„С„РёС†РёРµРЅС‚'
 /
-COMMENT ON COLUMN rep_classic.mtrsn IS 'номер счетчика'
+COMMENT ON COLUMN rep_classic.mtrsn IS 'РЅРѕРјРµСЂ СЃС‡РµС‚С‡РёРєР°'
 /
-COMMENT ON COLUMN rep_classic.mtype IS 'тип счетчика'
+COMMENT ON COLUMN rep_classic.mtype IS 'С‚РёРї СЃС‡РµС‚С‡РёРєР°'
 /
-COMMENT ON COLUMN rep_classic.nall IS 'расход +  потери'
+COMMENT ON COLUMN rep_classic.nall IS 'СЂР°СЃС…РѕРґ +  РїРѕС‚РµСЂРё'
 /
-COMMENT ON COLUMN rep_classic.name IS 'название присоед.'
+COMMENT ON COLUMN rep_classic.name IS 'РЅР°Р·РІР°РЅРёРµ РїСЂРёСЃРѕРµРґ.'
 /
-COMMENT ON COLUMN rep_classic.nlevel IS 'уровень в дереве'
+COMMENT ON COLUMN rep_classic.nlevel IS 'СѓСЂРѕРІРµРЅСЊ РІ РґРµСЂРµРІРµ'
 /
-COMMENT ON COLUMN rep_classic.norder IS 'сортировка'
+COMMENT ON COLUMN rep_classic.norder IS 'СЃРѕСЂС‚РёСЂРѕРІРєР°'
 /
-COMMENT ON COLUMN rep_classic.objtype IS 'признак группы 0 - группа 1-точка'
+COMMENT ON COLUMN rep_classic.objtype IS 'РїСЂРёР·РЅР°Рє РіСЂСѓРїРїС‹ 0 - РіСЂСѓРїРїР° 1-С‚РѕС‡РєР°'
 /
-COMMENT ON COLUMN rep_classic.sdate IS 'Дата начальных показаний'
+COMMENT ON COLUMN rep_classic.sdate IS 'Р”Р°С‚Р° РЅР°С‡Р°Р»СЊРЅС‹С… РїРѕРєР°Р·Р°РЅРёР№'
 /
-COMMENT ON COLUMN rep_classic.sm IS 'начальные показания'
+COMMENT ON COLUMN rep_classic.sm IS 'РЅР°С‡Р°Р»СЊРЅС‹Рµ РїРѕРєР°Р·Р°РЅРёСЏ'
 /
-COMMENT ON COLUMN rep_classic.waste IS 'протери'
+COMMENT ON COLUMN rep_classic.waste IS 'РїСЂРѕС‚РµСЂРё'
 /
 
 grant execute on reports3_pg to askuerep
@@ -9754,51 +9754,51 @@ ON COMMIT PRESERVE ROWS
 
 -- Comments for rep_receiv_deliv
 
-COMMENT ON COLUMN rep_receiv_deliv.gid IS 'ИД группы'
+COMMENT ON COLUMN rep_receiv_deliv.gid IS 'РР” РіСЂСѓРїРїС‹'
 /
-COMMENT ON COLUMN rep_receiv_deliv.objtype IS 'признак группы 0 - группа 1-точка'
+COMMENT ON COLUMN rep_receiv_deliv.objtype IS 'РїСЂРёР·РЅР°Рє РіСЂСѓРїРїС‹ 0 - РіСЂСѓРїРїР° 1-С‚РѕС‡РєР°'
 /
-COMMENT ON COLUMN rep_receiv_deliv.nlevel IS 'уровень в дереве'
+COMMENT ON COLUMN rep_receiv_deliv.nlevel IS 'СѓСЂРѕРІРµРЅСЊ РІ РґРµСЂРµРІРµ'
 /
-COMMENT ON COLUMN rep_receiv_deliv.name IS 'название присоед.'
+COMMENT ON COLUMN rep_receiv_deliv.name IS 'РЅР°Р·РІР°РЅРёРµ РїСЂРёСЃРѕРµРґ.'
 /
-COMMENT ON COLUMN rep_receiv_deliv.ermtype IS 'тип счетчика приема'
+COMMENT ON COLUMN rep_receiv_deliv.ermtype IS 'С‚РёРї СЃС‡РµС‚С‡РёРєР° РїСЂРёРµРјР°'
 /
-COMMENT ON COLUMN rep_receiv_deliv.ermtrsn IS 'номер счетчика приема'
+COMMENT ON COLUMN rep_receiv_deliv.ermtrsn IS 'РЅРѕРјРµСЂ СЃС‡РµС‚С‡РёРєР° РїСЂРёРµРјР°'
 /
-COMMENT ON COLUMN rep_receiv_deliv.eredate IS 'Дата конечных показаний приема'
+COMMENT ON COLUMN rep_receiv_deliv.eredate IS 'Р”Р°С‚Р° РєРѕРЅРµС‡РЅС‹С… РїРѕРєР°Р·Р°РЅРёР№ РїСЂРёРµРјР°'
 /
-COMMENT ON COLUMN rep_receiv_deliv.erem IS 'конечные показания приема'
+COMMENT ON COLUMN rep_receiv_deliv.erem IS 'РєРѕРЅРµС‡РЅС‹Рµ РїРѕРєР°Р·Р°РЅРёСЏ РїСЂРёРµРјР°'
 /
-COMMENT ON COLUMN rep_receiv_deliv.ersdate IS 'Дата начальных показаний приема'
+COMMENT ON COLUMN rep_receiv_deliv.ersdate IS 'Р”Р°С‚Р° РЅР°С‡Р°Р»СЊРЅС‹С… РїРѕРєР°Р·Р°РЅРёР№ РїСЂРёРµРјР°'
 /
-COMMENT ON COLUMN rep_receiv_deliv.ersm IS 'начальные показания приема'
+COMMENT ON COLUMN rep_receiv_deliv.ersm IS 'РЅР°С‡Р°Р»СЊРЅС‹Рµ РїРѕРєР°Р·Р°РЅРёСЏ РїСЂРёРµРјР°'
 /
-COMMENT ON COLUMN rep_receiv_deliv.erdif IS 'разность показаний приема'
+COMMENT ON COLUMN rep_receiv_deliv.erdif IS 'СЂР°Р·РЅРѕСЃС‚СЊ РїРѕРєР°Р·Р°РЅРёР№ РїСЂРёРµРјР°'
 /
-COMMENT ON COLUMN rep_receiv_deliv.erkc IS 'коэффициент'
+COMMENT ON COLUMN rep_receiv_deliv.erkc IS 'РєРѕСЌС„С„РёС†РёРµРЅС‚'
 /
-COMMENT ON COLUMN rep_receiv_deliv.ercons IS 'расход приема'
+COMMENT ON COLUMN rep_receiv_deliv.ercons IS 'СЂР°СЃС…РѕРґ РїСЂРёРµРјР°'
 /
-COMMENT ON COLUMN rep_receiv_deliv.edmtype IS 'тип счетчика отдачи'
+COMMENT ON COLUMN rep_receiv_deliv.edmtype IS 'С‚РёРї СЃС‡РµС‚С‡РёРєР° РѕС‚РґР°С‡Рё'
 /
-COMMENT ON COLUMN rep_receiv_deliv.edmtrsn IS 'номер счетчика отдачи'
+COMMENT ON COLUMN rep_receiv_deliv.edmtrsn IS 'РЅРѕРјРµСЂ СЃС‡РµС‚С‡РёРєР° РѕС‚РґР°С‡Рё'
 /
-COMMENT ON COLUMN rep_receiv_deliv.ededate IS 'Дата конечных показаний отдачи'
+COMMENT ON COLUMN rep_receiv_deliv.ededate IS 'Р”Р°С‚Р° РєРѕРЅРµС‡РЅС‹С… РїРѕРєР°Р·Р°РЅРёР№ РѕС‚РґР°С‡Рё'
 /
-COMMENT ON COLUMN rep_receiv_deliv.edem IS 'конечные показания отдачи'
+COMMENT ON COLUMN rep_receiv_deliv.edem IS 'РєРѕРЅРµС‡РЅС‹Рµ РїРѕРєР°Р·Р°РЅРёСЏ РѕС‚РґР°С‡Рё'
 /
-COMMENT ON COLUMN rep_receiv_deliv.edsdate IS 'Дата начальных показаний отдачи'
+COMMENT ON COLUMN rep_receiv_deliv.edsdate IS 'Р”Р°С‚Р° РЅР°С‡Р°Р»СЊРЅС‹С… РїРѕРєР°Р·Р°РЅРёР№ РѕС‚РґР°С‡Рё'
 /
-COMMENT ON COLUMN rep_receiv_deliv.edsm IS 'начальные показания отдачи'
+COMMENT ON COLUMN rep_receiv_deliv.edsm IS 'РЅР°С‡Р°Р»СЊРЅС‹Рµ РїРѕРєР°Р·Р°РЅРёСЏ РѕС‚РґР°С‡Рё'
 /
-COMMENT ON COLUMN rep_receiv_deliv.eddif IS 'разность показаний отдачи'
+COMMENT ON COLUMN rep_receiv_deliv.eddif IS 'СЂР°Р·РЅРѕСЃС‚СЊ РїРѕРєР°Р·Р°РЅРёР№ РѕС‚РґР°С‡Рё'
 /
-COMMENT ON COLUMN rep_receiv_deliv.edkc IS 'коэффициент'
+COMMENT ON COLUMN rep_receiv_deliv.edkc IS 'РєРѕСЌС„С„РёС†РёРµРЅС‚'
 /
-COMMENT ON COLUMN rep_receiv_deliv.edcons IS 'расход отдачи'
+COMMENT ON COLUMN rep_receiv_deliv.edcons IS 'СЂР°СЃС…РѕРґ РѕС‚РґР°С‡Рё'
 /
-COMMENT ON COLUMN rep_receiv_deliv.norder IS 'сортировка'
+COMMENT ON COLUMN rep_receiv_deliv.norder IS 'СЃРѕСЂС‚РёСЂРѕРІРєР°'
 /
 
 -- ============================================================
@@ -9809,7 +9809,7 @@ COMMENT ON COLUMN rep_receiv_deliv.norder IS 'сортировка'
 INSERT INTO calcpointtype
 (NCALCPOINTTYPE,VNAME)
 VALUES
-(4,'Ручной ввод расхода')
+(4,'Р СѓС‡РЅРѕР№ РІРІРѕРґ СЂР°СЃС…РѕРґР°')
 /
 commit
 /
@@ -9824,7 +9824,7 @@ alter table FEEDERS add
 /
 
 
-comment on column FEEDERS.VIMPORTCODE is 'Связной код импорта'
+comment on column FEEDERS.VIMPORTCODE is 'РЎРІСЏР·РЅРѕР№ РєРѕРґ РёРјРїРѕСЂС‚Р°'
 /
 
 update feeders set VIMPORTCODE=decode(canal,0,'',canal)
@@ -9846,7 +9846,7 @@ alter table LAST_SAVE add
     FAIL         DATE                   null
 )
 /
-comment on column LAST_SAVE.FAIL is 'Последняя неудача'
+comment on column LAST_SAVE.FAIL is 'РџРѕСЃР»РµРґРЅСЏСЏ РЅРµСѓРґР°С‡Р°'
 /
 
 
@@ -10017,7 +10017,7 @@ SELECT
 -- End of DDL script for BILLEVID
 
 -- Start of DDL script for BILL_FOR_TERM
--- Generated 4-окт-05  5:54:07 pm
+-- Generated 4-РѕРєС‚-05  5:54:07 pm
 -- from oe-RYDA:4
 
 -- View BILL_FOR_TERM
@@ -10116,7 +10116,7 @@ select
 -- End of DDL script for BILL_FOR_TERM
 
 -- Start of DDL script for HALFHOUR
--- Generated 4-окт-05  5:54:08 pm
+-- Generated 4-РѕРєС‚-05  5:54:08 pm
 -- from oe-RYDA:4
 
 -- View HALFHOUR
@@ -10167,13 +10167,13 @@ SELECT
  FROM RYDA.HALFHOUROLD WHERE NEXCEPTCALC IS NULL and nsource>0
 /
 
-COMMENT ON TABLE halfhour IS 'График нагрузки'
+COMMENT ON TABLE halfhour IS 'Р“СЂР°С„РёРє РЅР°РіСЂСѓР·РєРё'
 /
 
 -- End of DDL script for HALFHOUR
 
 -- Start of DDL script for HALFHOUREVID
--- Generated 4-окт-05  5:54:08 pm
+-- Generated 4-РѕРєС‚-05  5:54:08 pm
 -- from oe-RYDA:4
 
 -- View HALFHOUREVID
@@ -10219,7 +10219,7 @@ SELECT
 /
 
 -- Start of DDL script for MONTHS
--- Generated 4-окт-05  5:54:08 pm
+-- Generated 4-РѕРєС‚-05  5:54:08 pm
 -- from oe-RYDA:4
 
 -- View MONTHS
@@ -10393,7 +10393,7 @@ SELECT
 -- End of DDL script for MONTHS
 
 -- Start of DDL script for MONTHSEVID
--- Generated 4-окт-05  5:54:08 pm
+-- Generated 4-РѕРєС‚-05  5:54:08 pm
 -- from oe-RYDA:4
 
 -- View MONTHSEVID
@@ -10564,7 +10564,7 @@ SELECT
 -- End of DDL script for HALFHOUREVID
 
 -- Start of DDL script for MONTH_FOR_TERM
--- Generated 4-окт-05  5:54:08 pm
+-- Generated 4-РѕРєС‚-05  5:54:08 pm
 -- from oe-RYDA:4
 
 -- View MONTH_FOR_TERM
@@ -10668,13 +10668,13 @@ alter table PROFILE add
 /
 
 
-comment on column PROFILE.DENTER is 'Дата ввода'
+comment on column PROFILE.DENTER is 'Р”Р°С‚Р° РІРІРѕРґР°'
 /
 
 
 
 -- Start of DDL script for PROFILEEVID
--- Generated 4-окт-05  6:02:24 pm
+-- Generated 4-РѕРєС‚-05  6:02:24 pm
 -- from oe-RYDA:4
 
 -- View PROFILEEVID
@@ -10758,7 +10758,7 @@ alter table PROFILE add
 )
 /
 
-comment on column PROFILE.NSOURCE is 'Код источника'
+comment on column PROFILE.NSOURCE is 'РљРѕРґ РёСЃС‚РѕС‡РЅРёРєР°'
 /
 
 alter table PROFILE drop constraint PROFILE_PK
@@ -10854,7 +10854,7 @@ commit
 INSERT INTO deportprocedures
 (NPROCEDURE,VNAME,VPROCEDURE,NPERIOD,NTYPE,VMEMO)
 VALUES
-(34,'Макет (ЦЭС)','ryda.Reports1_pg.m1010ces_p',2,0,'')
+(34,'РњР°РєРµС‚ (Р¦Р­РЎ)','ryda.Reports1_pg.m1010ces_p',2,0,'')
 /
 
 update makets set nprocedure=34 where NPROCEDURE=33 and exists (select * from parameter where NPID=12 and VVALUE='12')
@@ -10865,10 +10865,10 @@ delete from deportprocedures where NPROCEDURE=33 and exists (select * from param
 
 INSERT INTO deportprocedures
 (NPROCEDURE,VNAME,VPROCEDURE,NPERIOD,NTYPE,VMEMO)
-select 33,'Макет 1010 с показаниями','ryda.reports1_pg.m1010met_p',2,0,'' from dual where not exists (select * from deportprocedures where NPROCEDURE=33)
+select 33,'РњР°РєРµС‚ 1010 СЃ РїРѕРєР°Р·Р°РЅРёСЏРјРё','ryda.reports1_pg.m1010met_p',2,0,'' from dual where not exists (select * from deportprocedures where NPROCEDURE=33)
 /
 
-update deportprocedures set VNAME='Макет 1010 с показаниями',VPROCEDURE='ryda.reports1_pg.m1010met_p' where NPROCEDURE=33
+update deportprocedures set VNAME='РњР°РєРµС‚ 1010 СЃ РїРѕРєР°Р·Р°РЅРёСЏРјРё',VPROCEDURE='ryda.reports1_pg.m1010met_p' where NPROCEDURE=33
 /
 
 update makets set VPARAM='1' where NPROCEDURE in (1,33,34)
@@ -10877,9 +10877,9 @@ update makets set VPARAM='1' where NPROCEDURE in (1,33,34)
 INSERT INTO deportprocedures
 (NPROCEDURE,VNAME,VPROCEDURE,NPERIOD,NTYPE,VMEMO)
 VALUES
-(35,'Копирование данных с основных и дублирующих счетчиков',
+(35,'РљРѕРїРёСЂРѕРІР°РЅРёРµ РґР°РЅРЅС‹С… СЃ РѕСЃРЅРѕРІРЅС‹С… Рё РґСѓР±Р»РёСЂСѓСЋС‰РёС… СЃС‡РµС‚С‡РёРєРѕРІ',
 'ryda.calcdublicate_pg.copy_points_data_backgr_p',2,1,
-'Копирование данных с основных и дублирующих счетчиков')
+'РљРѕРїРёСЂРѕРІР°РЅРёРµ РґР°РЅРЅС‹С… СЃ РѕСЃРЅРѕРІРЅС‹С… Рё РґСѓР±Р»РёСЂСѓСЋС‰РёС… СЃС‡РµС‚С‡РёРєРѕРІ')
 /
 
 commit
@@ -10910,46 +10910,46 @@ CREATE GLOBAL TEMPORARY TABLE rep_classic
 ON COMMIT PRESERVE ROWS
 /
 
-COMMENT ON COLUMN rep_classic.cons IS 'расход'
+COMMENT ON COLUMN rep_classic.cons IS 'СЂР°СЃС…РѕРґ'
 /
-COMMENT ON COLUMN rep_classic.dif IS 'разность показаний'
+COMMENT ON COLUMN rep_classic.dif IS 'СЂР°Р·РЅРѕСЃС‚СЊ РїРѕРєР°Р·Р°РЅРёР№'
 /
-COMMENT ON COLUMN rep_classic.edate IS 'Дата конечных показаний'
+COMMENT ON COLUMN rep_classic.edate IS 'Р”Р°С‚Р° РєРѕРЅРµС‡РЅС‹С… РїРѕРєР°Р·Р°РЅРёР№'
 /
-COMMENT ON COLUMN rep_classic.em IS 'конечные показания'
+COMMENT ON COLUMN rep_classic.em IS 'РєРѕРЅРµС‡РЅС‹Рµ РїРѕРєР°Р·Р°РЅРёСЏ'
 /
-COMMENT ON COLUMN rep_classic.zone IS 'тип зоны'
+COMMENT ON COLUMN rep_classic.zone IS 'С‚РёРї Р·РѕРЅС‹'
 /
-COMMENT ON COLUMN rep_classic.etype IS 'тип измерения'
+COMMENT ON COLUMN rep_classic.etype IS 'С‚РёРї РёР·РјРµСЂРµРЅРёСЏ'
 /
-COMMENT ON COLUMN rep_classic.gid IS 'ИД группы'
+COMMENT ON COLUMN rep_classic.gid IS 'РР” РіСЂСѓРїРїС‹'
 /
-COMMENT ON COLUMN rep_classic.kc IS 'коэффициент'
+COMMENT ON COLUMN rep_classic.kc IS 'РєРѕСЌС„С„РёС†РёРµРЅС‚'
 /
-COMMENT ON COLUMN rep_classic.mtrsn IS 'номер счетчика'
+COMMENT ON COLUMN rep_classic.mtrsn IS 'РЅРѕРјРµСЂ СЃС‡РµС‚С‡РёРєР°'
 /
-COMMENT ON COLUMN rep_classic.mtype IS 'тип счетчика'
+COMMENT ON COLUMN rep_classic.mtype IS 'С‚РёРї СЃС‡РµС‚С‡РёРєР°'
 /
-COMMENT ON COLUMN rep_classic.nall IS 'расход +  потери'
+COMMENT ON COLUMN rep_classic.nall IS 'СЂР°СЃС…РѕРґ +  РїРѕС‚РµСЂРё'
 /
-COMMENT ON COLUMN rep_classic.name IS 'название присоед.'
+COMMENT ON COLUMN rep_classic.name IS 'РЅР°Р·РІР°РЅРёРµ РїСЂРёСЃРѕРµРґ.'
 /
-COMMENT ON COLUMN rep_classic.nlevel IS 'уровень в дереве'
+COMMENT ON COLUMN rep_classic.nlevel IS 'СѓСЂРѕРІРµРЅСЊ РІ РґРµСЂРµРІРµ'
 /
-COMMENT ON COLUMN rep_classic.norder IS 'сортировка'
+COMMENT ON COLUMN rep_classic.norder IS 'СЃРѕСЂС‚РёСЂРѕРІРєР°'
 /
-COMMENT ON COLUMN rep_classic.objtype IS 'признак группы 0 - группа 1-точка'
+COMMENT ON COLUMN rep_classic.objtype IS 'РїСЂРёР·РЅР°Рє РіСЂСѓРїРїС‹ 0 - РіСЂСѓРїРїР° 1-С‚РѕС‡РєР°'
 /
-COMMENT ON COLUMN rep_classic.sdate IS 'Дата начальных показаний'
+COMMENT ON COLUMN rep_classic.sdate IS 'Р”Р°С‚Р° РЅР°С‡Р°Р»СЊРЅС‹С… РїРѕРєР°Р·Р°РЅРёР№'
 /
-COMMENT ON COLUMN rep_classic.sm IS 'начальные показания'
+COMMENT ON COLUMN rep_classic.sm IS 'РЅР°С‡Р°Р»СЊРЅС‹Рµ РїРѕРєР°Р·Р°РЅРёСЏ'
 /
-COMMENT ON COLUMN rep_classic.waste IS 'протери'
+COMMENT ON COLUMN rep_classic.waste IS 'РїСЂРѕС‚РµСЂРё'
 /
 
 --------------------------------- 04/11/2005
 insert into deportprocedures (nprocedure, vname, vprocedure, nperiod, ntype, vmemo)
-values (36, 'Пересоздание макетов','ryda.background01_pg.recreatemakets', 0, 1, 'Процедура повторно создает макеты после поступления данных')
+values (36, 'РџРµСЂРµСЃРѕР·РґР°РЅРёРµ РјР°РєРµС‚РѕРІ','ryda.background01_pg.recreatemakets', 0, 1, 'РџСЂРѕС†РµРґСѓСЂР° РїРѕРІС‚РѕСЂРЅРѕ СЃРѕР·РґР°РµС‚ РјР°РєРµС‚С‹ РїРѕСЃР»Рµ РїРѕСЃС‚СѓРїР»РµРЅРёСЏ РґР°РЅРЅС‹С…')
 /
 commit
 /
@@ -10960,7 +10960,7 @@ alter table DEPORTFILES add
 )
 /
 
-comment on column DEPORTFILES.DENTER is 'Дата создания или изменения'
+comment on column DEPORTFILES.DENTER is 'Р”Р°С‚Р° СЃРѕР·РґР°РЅРёСЏ РёР»Рё РёР·РјРµРЅРµРЅРёСЏ'
 /
 
 
@@ -10968,12 +10968,12 @@ comment on column DEPORTFILES.DENTER is 'Дата создания или изменения'
 INSERT INTO protocols
 (PROTOCOL_ID,NAME)
 VALUES
-(52,'УППД')
+(52,'РЈРџРџР”')
 /
 INSERT INTO protocols
 (PROTOCOL_ID,NAME)
 VALUES
-(53,'Элвин - ARC')
+(53,'Р­Р»РІРёРЅ - ARC')
 /
 INSERT INTO protocols
 (PROTOCOL_ID,NAME)
@@ -10989,14 +10989,14 @@ declare
 l NUMBER;
 begin
 select nvl(max(decode(vvalue,'11',5,0)),0) into l from parameter where NPID=12;
-insert into parameter (NPID,VVALUE,VDESCRIPTION) values(27,l,'Коэффициент сглаживания интервала синхронизации пакетов');
+insert into parameter (NPID,VVALUE,VDESCRIPTION) values(27,l,'РљРѕСЌС„С„РёС†РёРµРЅС‚ СЃРіР»Р°Р¶РёРІР°РЅРёСЏ РёРЅС‚РµСЂРІР°Р»Р° СЃРёРЅС…СЂРѕРЅРёР·Р°С†РёРё РїР°РєРµС‚РѕРІ');
 commit;
 end;
 /
 
 
 -- Start of DDL script for HALFHOUR
--- Generated 15-дек-05  4:35:32 pm
+-- Generated 15-РґРµРє-05  4:35:32 pm
 -- from oe-RYDA:12
 
 -- View HALFHOUR
@@ -11047,13 +11047,13 @@ SELECT
  FROM RYDA.HALFHOUROLD WHERE NEXCEPTCALC IS NULL and nsource>0
 /
 
-COMMENT ON TABLE halfhour_l IS 'График нагрузки с потерями'
+COMMENT ON TABLE halfhour_l IS 'Р“СЂР°С„РёРє РЅР°РіСЂСѓР·РєРё СЃ РїРѕС‚РµСЂСЏРјРё'
 /
 
 -- End of DDL script for HALFHOUR
 
 -- Start of DDL script for BILL
--- Generated 15-дек-05  4:35:41 pm
+-- Generated 15-РґРµРє-05  4:35:41 pm
 -- from oe-RYDA:12
 
 -- View BILL
@@ -11224,13 +11224,13 @@ SELECT
  FROM RYDA.BILLOLD WHERE NEXCEPTCALC IS NULL and nsource>0
 /
 
-COMMENT ON TABLE bill_l IS 'Реальные суточные измерения с потерями'
+COMMENT ON TABLE bill_l IS 'Р РµР°Р»СЊРЅС‹Рµ СЃСѓС‚РѕС‡РЅС‹Рµ РёР·РјРµСЂРµРЅРёСЏ СЃ РїРѕС‚РµСЂСЏРјРё'
 /
 
 -- End of DDL script for BILL
 
 -- Start of DDL script for HALFHOUR
--- Generated 15-дек-05  4:35:32 pm
+-- Generated 15-РґРµРє-05  4:35:32 pm
 -- from oe-RYDA:12
 
 -- View HALFHOUR
@@ -11281,13 +11281,13 @@ SELECT
  FROM RYDA.HALFHOUROLD WHERE NEXCEPTCALC IS NULL and nsource>0
 /
 
-COMMENT ON TABLE halfhour_ol IS 'График нагрузки только потери'
+COMMENT ON TABLE halfhour_ol IS 'Р“СЂР°С„РёРє РЅР°РіСЂСѓР·РєРё С‚РѕР»СЊРєРѕ РїРѕС‚РµСЂРё'
 /
 
 -- End of DDL script for HALFHOUR
 
 -- Start of DDL script for BILL
--- Generated 15-дек-05  4:35:41 pm
+-- Generated 15-РґРµРє-05  4:35:41 pm
 -- from oe-RYDA:12
 
 -- View BILL
@@ -11458,7 +11458,7 @@ SELECT
  FROM RYDA.BILLOLD WHERE NEXCEPTCALC IS NULL and nsource>0
 /
 
-COMMENT ON TABLE bill_ol IS 'Реальные суточные измерения только потери'
+COMMENT ON TABLE bill_ol IS 'Р РµР°Р»СЊРЅС‹Рµ СЃСѓС‚РѕС‡РЅС‹Рµ РёР·РјРµСЂРµРЅРёСЏ С‚РѕР»СЊРєРѕ РїРѕС‚РµСЂРё'
 /
 
 
@@ -11468,7 +11468,7 @@ COMMENT ON TABLE bill_ol IS 'Реальные суточные измерения только потери'
 --   DBMS name:      ORACLE Version 7.3
 --   Created on:     23.12.2005  15:20
 -- ============================================================
-comment on column MAKETS.DOLDCREATED is 'Дата предыдущего системного формирования'
+comment on column MAKETS.DOLDCREATED is 'Р”Р°С‚Р° РїСЂРµРґС‹РґСѓС‰РµРіРѕ СЃРёСЃС‚РµРјРЅРѕРіРѕ С„РѕСЂРјРёСЂРѕРІР°РЅРёСЏ'
 /
 
 alter table MAKETS add
@@ -11477,7 +11477,7 @@ alter table MAKETS add
 )
 /
 
-comment on column MAKETS.DLASTCREATED is 'Дата последнего формирования'
+comment on column MAKETS.DLASTCREATED is 'Р”Р°С‚Р° РїРѕСЃР»РµРґРЅРµРіРѕ С„РѕСЂРјРёСЂРѕРІР°РЅРёСЏ'
 /
 
 begin
@@ -11491,12 +11491,12 @@ end;
 INSERT INTO protocols
 (PROTOCOL_ID,NAME)
 VALUES
-(55,'Энергия_9-2005')
+(55,'Р­РЅРµСЂРіРёСЏ_9-2005')
 /
 INSERT INTO protocols
 (PROTOCOL_ID,NAME)
 VALUES
-(56,'KM --> Энергия_9-2005')
+(56,'KM --> Р­РЅРµСЂРіРёСЏ_9-2005')
 /
 commit
 /
@@ -11530,9 +11530,9 @@ begin
 SELECT NVL(SUM(DECODE(vvalue, '', 0, vvalue)), 0)   INTO ln_customer_id   FROM parameter  WHERE npid = 12;
 if ln_customer_id in (0,26) then
  insert into deportprocedures (nprocedure, vname, vprocedure, nperiod, ntype, vmemo)
- values (37, 'Коммерческие данные КГОК','reports1_pg.mkazah_p', 6, 0, 'Макет передачи 15 минутных данных КГОК');
+ values (37, 'РљРѕРјРјРµСЂС‡РµСЃРєРёРµ РґР°РЅРЅС‹Рµ РљР“РћРљ','reports1_pg.mkazah_p', 6, 0, 'РњР°РєРµС‚ РїРµСЂРµРґР°С‡Рё 15 РјРёРЅСѓС‚РЅС‹С… РґР°РЅРЅС‹С… РљР“РћРљ');
  insert into deportprocedures (nprocedure, vname, vprocedure, nperiod, ntype, vmemo)
- values (38, 'Журнал событий счетчиков','reports1_pg.jourkazah_p', 0, 0, 'Макет передачи Журнала событий счетчиков');
+ values (38, 'Р–СѓСЂРЅР°Р» СЃРѕР±С‹С‚РёР№ СЃС‡РµС‚С‡РёРєРѕРІ','reports1_pg.jourkazah_p', 0, 0, 'РњР°РєРµС‚ РїРµСЂРµРґР°С‡Рё Р–СѓСЂРЅР°Р»Р° СЃРѕР±С‹С‚РёР№ СЃС‡РµС‚С‡РёРєРѕРІ');
  end if;
 commit;
 end;
@@ -11541,7 +11541,7 @@ end;
 INSERT INTO points
 (MID,PARENT,COD,IND,NAME,SHORT_NAME,PTYPE,IMPLEMENT_DATE,TAG,NPOINT)
 VALUES
-(3,NULL,NULL,1,'Каналы рассылки','',NULL,'',NULL,NULL)
+(3,NULL,NULL,1,'РљР°РЅР°Р»С‹ СЂР°СЃСЃС‹Р»РєРё','',NULL,'',NULL,NULL)
 /
 INSERT INTO points(mid, parent, cod, ind, name, short_name, ptype, implement_date)
 select ndeportation, 3, 0, 2, vname, '', 1, SYSDATE from deportation
@@ -11556,12 +11556,12 @@ alter table DEPORTATION
 INSERT INTO parameter
 (NPID,VVALUE,VDESCRIPTION)
 VALUES
-(28,'30','Интервал интеграции ГН (мин)')
+(28,'30','РРЅС‚РµСЂРІР°Р» РёРЅС‚РµРіСЂР°С†РёРё Р“Рќ (РјРёРЅ)')
 /
 INSERT INTO parameter
 (NPID,VVALUE,VDESCRIPTION)
 VALUES
-(29,'0','Блокировка перехода на летнее время (Для стран, где перевода нет)')
+(29,'0','Р‘Р»РѕРєРёСЂРѕРІРєР° РїРµСЂРµС…РѕРґР° РЅР° Р»РµС‚РЅРµРµ РІСЂРµРјСЏ (Р”Р»СЏ СЃС‚СЂР°РЅ, РіРґРµ РїРµСЂРµРІРѕРґР° РЅРµС‚)')
 /
 commit
 /
@@ -11580,7 +11580,7 @@ alter table EA_EVENTS add
 )
 /
 
-comment on column EA_EVENTS.DENTER is 'Дата попадания'
+comment on column EA_EVENTS.DENTER is 'Р”Р°С‚Р° РїРѕРїР°РґР°РЅРёСЏ'
 /
 
 -- ============================================================
@@ -11594,38 +11594,38 @@ create index EA_EVENTS_IDX1 on EA_EVENTS (mid asc, DENTER asc)
 INSERT INTO form_templates
 (TEMPLATE_ID,PARENT,CODETEMPLATE,NAMEFORM,COMMENTFORM,ENABLECONTROLS,STEPPROFILE,NAMEALERT)
 VALUES
-(85,1,203,'1.15. Баланс Активной энергии','Баланс Активной энергии [тыс.кВтч]',
+(85,1,203,'1.15. Р‘Р°Р»Р°РЅСЃ РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё','Р‘Р°Р»Р°РЅСЃ РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [С‚С‹СЃ.РєР’С‚С‡]',
 '11110111',2,'')
 /
 INSERT INTO form_templates
 (TEMPLATE_ID,PARENT,CODETEMPLATE,NAMEFORM,COMMENTFORM,ENABLECONTROLS,STEPPROFILE,NAMEALERT)
 VALUES
-(87,1,204,'1.15.1. Баланс Активной энергии (ГН, Тех.проф. - мощность)',
-'Баланс Активной энергии [тыс.кВтч]','11110111',2,'')
+(87,1,204,'1.15.1. Р‘Р°Р»Р°РЅСЃ РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё (Р“Рќ, РўРµС….РїСЂРѕС„. - РјРѕС‰РЅРѕСЃС‚СЊ)',
+'Р‘Р°Р»Р°РЅСЃ РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [С‚С‹СЃ.РєР’С‚С‡]','11110111',2,'')
 /
 INSERT INTO form_templates
 (TEMPLATE_ID,PARENT,CODETEMPLATE,NAMEFORM,COMMENTFORM,ENABLECONTROLS,STEPPROFILE,NAMEALERT)
 VALUES
-(89,1,205,'1.15.2. Баланс Активной энергии (Суммируется по наростающей)',
-'Баланс Активной энергии [тыс.кВтч]','11110111',2,'')
+(89,1,205,'1.15.2. Р‘Р°Р»Р°РЅСЃ РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё (РЎСѓРјРјРёСЂСѓРµС‚СЃСЏ РїРѕ РЅР°СЂРѕСЃС‚Р°СЋС‰РµР№)',
+'Р‘Р°Р»Р°РЅСЃ РђРєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [С‚С‹СЃ.РєР’С‚С‡]','11110111',2,'')
 /
 INSERT INTO form_templates
 (TEMPLATE_ID,PARENT,CODETEMPLATE,NAMEFORM,COMMENTFORM,ENABLECONTROLS,STEPPROFILE,NAMEALERT)
 VALUES
-(86,1,303,'1.16. Баланс Реактивной энергии','Баланс Реактивной энергии [тыс.кВАрч]',
+(86,1,303,'1.16. Р‘Р°Р»Р°РЅСЃ Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё','Р‘Р°Р»Р°РЅСЃ Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [С‚С‹СЃ.РєР’РђСЂС‡]',
 '11110111',2,'')
 /
 INSERT INTO form_templates
 (TEMPLATE_ID,PARENT,CODETEMPLATE,NAMEFORM,COMMENTFORM,ENABLECONTROLS,STEPPROFILE,NAMEALERT)
 VALUES
-(88,1,304,'1.16.1. Баланс Реактивной энергии (ГН, Тех.проф. - мощность)',
-'Баланс Реактивной энергии [тыс.кВАрч]','11110111',2,'')
+(88,1,304,'1.16.1. Р‘Р°Р»Р°РЅСЃ Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё (Р“Рќ, РўРµС….РїСЂРѕС„. - РјРѕС‰РЅРѕСЃС‚СЊ)',
+'Р‘Р°Р»Р°РЅСЃ Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [С‚С‹СЃ.РєР’РђСЂС‡]','11110111',2,'')
 /
 INSERT INTO form_templates
 (TEMPLATE_ID,PARENT,CODETEMPLATE,NAMEFORM,COMMENTFORM,ENABLECONTROLS,STEPPROFILE,NAMEALERT)
 VALUES
-(90,1,305,'1.16.2. Баланс Реактивной энергии (Суммируется по наростающей)',
-'Баланс Реактивной энергии [тыс.кВАрч]','11110111',2,'')
+(90,1,305,'1.16.2. Р‘Р°Р»Р°РЅСЃ Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё (РЎСѓРјРјРёСЂСѓРµС‚СЃСЏ РїРѕ РЅР°СЂРѕСЃС‚Р°СЋС‰РµР№)',
+'Р‘Р°Р»Р°РЅСЃ Р РµР°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [С‚С‹СЃ.РєР’РђСЂС‡]','11110111',2,'')
 /
 commit
 /
@@ -11645,22 +11645,22 @@ alter table GROUPLIMIT add
 )
 /
 
-comment on column GROUPLIMIT.MORNING_START is 'Утро нач'
+comment on column GROUPLIMIT.MORNING_START is 'РЈС‚СЂРѕ РЅР°С‡'
 /
 
-comment on column GROUPLIMIT.MORNING_END is 'Утро кон'
+comment on column GROUPLIMIT.MORNING_END is 'РЈС‚СЂРѕ РєРѕРЅ'
 /
 
-comment on column GROUPLIMIT.EVENING_START is 'Вечер нач'
+comment on column GROUPLIMIT.EVENING_START is 'Р’РµС‡РµСЂ РЅР°С‡'
 /
 
-comment on column GROUPLIMIT.EVENING_END is 'Вечер кон'
+comment on column GROUPLIMIT.EVENING_END is 'Р’РµС‡РµСЂ РєРѕРЅ'
 /
 
 
 
 ----------------------------------------------------------------------------------------------
---         VER 2.18  (Для обновления версии 2.18 до текущей скрипт запускать отсюда)        --
+--         VER 2.18  (Р”Р»СЏ РѕР±РЅРѕРІР»РµРЅРёСЏ РІРµСЂСЃРёРё 2.18 РґРѕ С‚РµРєСѓС‰РµР№ СЃРєСЂРёРїС‚ Р·Р°РїСѓСЃРєР°С‚СЊ РѕС‚СЃСЋРґР°)        --
 ----------------------------------------------------------------------------------------------
 
 
@@ -11682,7 +11682,7 @@ end loop;
 execute immediate 'alter table DEPORTATION disable constraint DEPORTATION_F2';
 execute immediate 'alter table MAKETGROUPS disable constraint MAKETGROUPS_F1';
 for lc in (select points_seq.nextval seq,m.nmaket from makets m) loop
- --Меняем сылки на макеты для фоновых процессов которые контролируют другие макеты
+ --РњРµРЅСЏРµРј СЃС‹Р»РєРё РЅР° РјР°РєРµС‚С‹ РґР»СЏ С„РѕРЅРѕРІС‹С… РїСЂРѕС†РµСЃСЃРѕРІ РєРѕС‚РѕСЂС‹Рµ РєРѕРЅС‚СЂРѕР»РёСЂСѓСЋС‚ РґСЂСѓРіРёРµ РјР°РєРµС‚С‹
  for lc1 in (select * from makets where NPROCEDURE=36) loop
   if trim(lc1.VPARAM) is not null then
    lv_1:=util_pg.allnumber_f(util_pg.get_param(lc1.VPARAM, 1));
@@ -11697,7 +11697,7 @@ for lc in (select points_seq.nextval seq,m.nmaket from makets m) loop
    update makets set VPARAM=lv_1 where nmaket=lc1.nmaket;
   end if;
  end loop;
- --Меняем сылки на макеты для каналов опроса УППД
+ --РњРµРЅСЏРµРј СЃС‹Р»РєРё РЅР° РјР°РєРµС‚С‹ РґР»СЏ РєР°РЅР°Р»РѕРІ РѕРїСЂРѕСЃР° РЈРџРџР”
  for lc1 in (select * from channels where protocol_id=52 and trim(util_pg.get_param(INIT_STR,5))=to_char(lc.nmaket)) loop
   update channels set INIT_STR=substr(INIT_STR,1,instr(INIT_STR,';',1,4))||lc.seq where cid=lc1.cid;
  end loop;
@@ -11714,7 +11714,7 @@ end;
 INSERT INTO points
 (MID,PARENT,COD,IND,NAME,SHORT_NAME,PTYPE,IMPLEMENT_DATE,TAG,NPOINT)
 VALUES
-(4,NULL,NULL,1,'Макеты','',NULL,'',NULL,NULL)
+(4,NULL,NULL,1,'РњР°РєРµС‚С‹','',NULL,'',NULL,NULL)
 /
 INSERT INTO points(mid, parent, cod, ind, name, short_name, ptype, implement_date)
 select nmaket, 4, 0, 2, vname, '', 1, SYSDATE from makets
@@ -11734,7 +11734,7 @@ drop sequence makets_seq
 INSERT INTO tasks
 (TASK_ID,PARENT,TASK_COD,NAME,REMARK,nshow)
 VALUES
-(85,77,632,'6.03 Монитор полноты и своевременности поступления данных','Монитор полноты и своевременности поступления данных',0)
+(85,77,632,'6.03 РњРѕРЅРёС‚РѕСЂ РїРѕР»РЅРѕС‚С‹ Рё СЃРІРѕРµРІСЂРµРјРµРЅРЅРѕСЃС‚Рё РїРѕСЃС‚СѓРїР»РµРЅРёСЏ РґР°РЅРЅС‹С…','РњРѕРЅРёС‚РѕСЂ РїРѕР»РЅРѕС‚С‹ Рё СЃРІРѕРµРІСЂРµРјРµРЅРЅРѕСЃС‚Рё РїРѕСЃС‚СѓРїР»РµРЅРёСЏ РґР°РЅРЅС‹С…',0)
 /
 commit
 /
@@ -11750,7 +11750,7 @@ alter table FORMS add
 )
 /
 
-comment on column FORMS.MID is 'Ид точки'
+comment on column FORMS.MID is 'РРґ С‚РѕС‡РєРё'
 /
 
 alter table FORMS
@@ -11770,16 +11770,16 @@ alter table DEPORTFILES add
 )
 /
 
-comment on column DEPORTFILES.DSEND is 'Дата отсылки'
+comment on column DEPORTFILES.DSEND is 'Р”Р°С‚Р° РѕС‚СЃС‹Р»РєРё'
 /
 
 ----------------------------------------------------------------------------------------------
---         VER 2.19  (Для обновления версии 2.19 до текущей скрипт запускать отсюда)        --
+--         VER 2.19  (Р”Р»СЏ РѕР±РЅРѕРІР»РµРЅРёСЏ РІРµСЂСЃРёРё 2.19 РґРѕ С‚РµРєСѓС‰РµР№ СЃРєСЂРёРїС‚ Р·Р°РїСѓСЃРєР°С‚СЊ РѕС‚СЃСЋРґР°)        --
 ----------------------------------------------------------------------------------------------
 INSERT INTO parameter
 (NPID,VVALUE,VDESCRIPTION)
 VALUES
-(30,'1','Ежесуточный расчет потерь')
+(30,'1','Р•Р¶РµСЃСѓС‚РѕС‡РЅС‹Р№ СЂР°СЃС‡РµС‚ РїРѕС‚РµСЂСЊ')
 /
 commit
 /
@@ -11789,7 +11789,7 @@ commit
 INSERT INTO tasks
 (TASK_ID,PARENT,TASK_COD,NAME,REMARK,NSHOW)
 VALUES
-(22,16,49,'2.8 Редактирование трансформаторов','',1)
+(22,16,49,'2.8 Р РµРґР°РєС‚РёСЂРѕРІР°РЅРёРµ С‚СЂР°РЅСЃС„РѕСЂРјР°С‚РѕСЂРѕРІ','',1)
 /
 commit
 /
@@ -11798,22 +11798,22 @@ commit
 INSERT INTO tasks
 (TASK_ID,PARENT,TASK_COD,NAME,REMARK,NSHOW)
 VALUES
-(92,NULL,0,'6. Потери','',1)
+(92,NULL,0,'6. РџРѕС‚РµСЂРё','',1)
 /
 INSERT INTO tasks
 (TASK_ID,PARENT,TASK_COD,NAME,REMARK,NSHOW)
 VALUES
-(93,92,652,'6.1 Ведение коммутации','',1)
+(93,92,652,'6.1 Р’РµРґРµРЅРёРµ РєРѕРјРјСѓС‚Р°С†РёРё','',1)
 /
 INSERT INTO tasks
 (TASK_ID,PARENT,TASK_COD,NAME,REMARK,NSHOW)
 VALUES
-(94,92,653,'6.2 Просмотр начислений и разноски потерь','',1)
+(94,92,653,'6.2 РџСЂРѕСЃРјРѕС‚СЂ РЅР°С‡РёСЃР»РµРЅРёР№ Рё СЂР°Р·РЅРѕСЃРєРё РїРѕС‚РµСЂСЊ','',1)
 /
 INSERT INTO tasks
 (TASK_ID,PARENT,TASK_COD,NAME,REMARK,NSHOW)
 VALUES
-(95,27,654,'4.4 Просмотр сформированных макетов','',1)
+(95,27,654,'4.4 РџСЂРѕСЃРјРѕС‚СЂ СЃС„РѕСЂРјРёСЂРѕРІР°РЅРЅС‹С… РјР°РєРµС‚РѕРІ','',1)
 /
 insert into role_task
 select distinct ROLE_ID,95,1 from users where ADMIN='*'
@@ -11824,32 +11824,32 @@ commit
 INSERT INTO protocols
 (PROTOCOL_ID,NAME)
 VALUES
-(57,'УСПД КМ-64_v2')
+(57,'РЈРЎРџР” РљРњ-64_v2')
 /
 INSERT INTO protocols
 (PROTOCOL_ID,NAME)
 VALUES
-(58,'KM->УСПД КМ-64_v2')
+(58,'KM->РЈРЎРџР” РљРњ-64_v2')
 /
 INSERT INTO protocols
 (PROTOCOL_ID,NAME)
 VALUES
-(59,'УСПД КМ-64(эхо)_v2')
+(59,'РЈРЎРџР” РљРњ-64(СЌС…Рѕ)_v2')
 /
 INSERT INTO protocols
 (PROTOCOL_ID,NAME)
 VALUES
-(60,'KM->УСПД КМ-64(эхо)_v2')
+(60,'KM->РЈРЎРџР” РљРњ-64(СЌС…Рѕ)_v2')
 /
 update protocols set NAME=replace(NAME,' --> ','->')
 /
-update protocols set NAME='УСПД КМ-64_v1' where PROTOCOL_ID=14
+update protocols set NAME='РЈРЎРџР” РљРњ-64_v1' where PROTOCOL_ID=14
 /
-update protocols set NAME='KM->УСПД КМ-64_v1' where PROTOCOL_ID=15
+update protocols set NAME='KM->РЈРЎРџР” РљРњ-64_v1' where PROTOCOL_ID=15
 /
-update protocols set NAME='УСПД КМ-64(эхо)_v1' where PROTOCOL_ID=39
+update protocols set NAME='РЈРЎРџР” РљРњ-64(СЌС…Рѕ)_v1' where PROTOCOL_ID=39
 /
-update protocols set NAME='KM->УСПД КМ-64(эхо)_v1' where PROTOCOL_ID=40
+update protocols set NAME='KM->РЈРЎРџР” РљРњ-64(СЌС…Рѕ)_v1' where PROTOCOL_ID=40
 /
 commit
 /
@@ -11865,7 +11865,7 @@ alter table DEPORTFILES add
     USER_ID       NUMBER                 null
 )
 /
-comment on column DEPORTFILES.USER_ID is 'Ид пользователя'
+comment on column DEPORTFILES.USER_ID is 'РРґ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ'
 /
 create index DEPORTATIONFILES_IDX3 on DEPORTFILES (USER_ID asc)
 /
@@ -11886,7 +11886,7 @@ alter table FEEDERS add
 )
 /
 
-comment on column FEEDERS.NLOCKCORRECTTIME is 'Блокировка коррекции времени'
+comment on column FEEDERS.NLOCKCORRECTTIME is 'Р‘Р»РѕРєРёСЂРѕРІРєР° РєРѕСЂСЂРµРєС†РёРё РІСЂРµРјРµРЅРё'
 /
 
 alter table CHANNELS add
@@ -11896,10 +11896,10 @@ alter table CHANNELS add
 )
 /
 
-comment on column CHANNELS.NLOCKCORRECTTIME is 'Блокировка коррекции времени'
+comment on column CHANNELS.NLOCKCORRECTTIME is 'Р‘Р»РѕРєРёСЂРѕРІРєР° РєРѕСЂСЂРµРєС†РёРё РІСЂРµРјРµРЅРё'
 /
 
-----15/05/2006 (Потери)
+----15/05/2006 (РџРѕС‚РµСЂРё)
 ---- **********************************************************************
 ----
 alter table POINTS disable constraint POINTS_F1
@@ -11914,7 +11914,7 @@ alter table DICT_OBJ_TYPES add
 )
 /
 
-comment on column DICT_OBJ_TYPES.RT_TYPE is 'Код типа для Редактора схем'
+comment on column DICT_OBJ_TYPES.RT_TYPE is 'РљРѕРґ С‚РёРїР° РґР»СЏ Р РµРґР°РєС‚РѕСЂР° СЃС…РµРј'
 /
 
 create unique index VNAME_IDX1 on DICT_OBJ_TYPES (VNAME asc)
@@ -11922,71 +11922,71 @@ create unique index VNAME_IDX1 on DICT_OBJ_TYPES (VNAME asc)
 
 INSERT INTO dict_obj_types
 VALUES
-(4,'Расчетная точка (для копирования данных с основного или дублирующего счетчиков)',4)
+(4,'Р Р°СЃС‡РµС‚РЅР°СЏ С‚РѕС‡РєР° (РґР»СЏ РєРѕРїРёСЂРѕРІР°РЅРёСЏ РґР°РЅРЅС‹С… СЃ РѕСЃРЅРѕРІРЅРѕРіРѕ РёР»Рё РґСѓР±Р»РёСЂСѓСЋС‰РµРіРѕ СЃС‡РµС‚С‡РёРєРѕРІ)',4)
 /
 INSERT INTO dict_obj_types
 VALUES
-(1,'Обобщенный объект 1-го уровня',1)
+(1,'РћР±РѕР±С‰РµРЅРЅС‹Р№ РѕР±СЉРµРєС‚ 1-РіРѕ СѓСЂРѕРІРЅСЏ',1)
 /
 INSERT INTO dict_obj_types
 VALUES
-(2,'Обобщенный объект 2-го уровня',2)
+(2,'РћР±РѕР±С‰РµРЅРЅС‹Р№ РѕР±СЉРµРєС‚ 2-РіРѕ СѓСЂРѕРІРЅСЏ',2)
 /
 INSERT INTO dict_obj_types
 VALUES
-(3,'Точка учета',3)
+(3,'РўРѕС‡РєР° СѓС‡РµС‚Р°',3)
 /
 INSERT INTO dict_obj_types
 VALUES
-(600,'Силовой трансформатор (двухобмлточный)',600)
+(600,'РЎРёР»РѕРІРѕР№ С‚СЂР°РЅСЃС„РѕСЂРјР°С‚РѕСЂ (РґРІСѓС…РѕР±РјР»С‚РѕС‡РЅС‹Р№)',600)
 /
 INSERT INTO dict_obj_types
 VALUES
-(610,'Силовой трансформатор (трехобмлточный)',610)
+(610,'РЎРёР»РѕРІРѕР№ С‚СЂР°РЅСЃС„РѕСЂРјР°С‚РѕСЂ (С‚СЂРµС…РѕР±РјР»С‚РѕС‡РЅС‹Р№)',610)
 /
 INSERT INTO dict_obj_types
 VALUES
-(500,'Линия',500)
+(500,'Р›РёРЅРёСЏ',500)
 /
 INSERT INTO dict_obj_types
 VALUES
-(800,'Счетчики',800)
+(800,'РЎС‡РµС‚С‡РёРєРё',800)
 /
 INSERT INTO dict_obj_types
 VALUES
-(200,'Разъединители',200)
+(200,'Р Р°Р·СЉРµРґРёРЅРёС‚РµР»Рё',200)
 /
 INSERT INTO dict_obj_types
 VALUES
-(100,'Заземляющие ножи',100)
+(100,'Р—Р°Р·РµРјР»СЏСЋС‰РёРµ РЅРѕР¶Рё',100)
 /
 INSERT INTO dict_obj_types
 VALUES
-(-1,'Фиктивное присоединение',-1)
+(-1,'Р¤РёРєС‚РёРІРЅРѕРµ РїСЂРёСЃРѕРµРґРёРЅРµРЅРёРµ',-1)
 /
 INSERT INTO dict_obj_types
 VALUES
-(0,'Секции шин',0)
+(0,'РЎРµРєС†РёРё С€РёРЅ',0)
 /
 INSERT INTO dict_obj_types
 VALUES
-(300,'Выключатели',300)
+(300,'Р’С‹РєР»СЋС‡Р°С‚РµР»Рё',300)
 /
 INSERT INTO dict_obj_types
 VALUES
-(400,'Отпайки',400)
+(400,'РћС‚РїР°Р№РєРё',400)
 /
 INSERT INTO dict_obj_types
 VALUES
-(900,'Присоединение',900)
+(900,'РџСЂРёСЃРѕРµРґРёРЅРµРЅРёРµ',900)
 /
 INSERT INTO dict_obj_types
 VALUES
-(950,'Класс напряжения',950)
+(950,'РљР»Р°СЃСЃ РЅР°РїСЂСЏР¶РµРЅРёСЏ',950)
 /
 INSERT INTO dict_obj_types
 VALUES
-(1000,'Подстанция',1000)
+(1000,'РџРѕРґСЃС‚Р°РЅС†РёСЏ',1000)
 /
 commit
 /
@@ -12003,14 +12003,14 @@ CREATE SEQUENCE calc_seq
 /
 
 
--------------------Сюда
+-------------------РЎСЋРґР°
 CREATE GLOBAL TEMPORARY TABLE calc_tmp
     (dt                             DATE)
 ON COMMIT DELETE ROWS
 /
-COMMENT ON TABLE calc_tmp IS 'Сугубо вспомогательная таблица для облегчения группировки подпериодов изменения направления тока'
+COMMENT ON TABLE calc_tmp IS 'РЎСѓРіСѓР±Рѕ РІСЃРїРѕРјРѕРіР°С‚РµР»СЊРЅР°СЏ С‚Р°Р±Р»РёС†Р° РґР»СЏ РѕР±Р»РµРіС‡РµРЅРёСЏ РіСЂСѓРїРїРёСЂРѕРІРєРё РїРѕРґРїРµСЂРёРѕРґРѕРІ РёР·РјРµРЅРµРЅРёСЏ РЅР°РїСЂР°РІР»РµРЅРёСЏ С‚РѕРєР°'
 /
-COMMENT ON COLUMN calc_tmp.dt IS 'Дата изменения направления перетока'
+COMMENT ON COLUMN calc_tmp.dt IS 'Р”Р°С‚Р° РёР·РјРµРЅРµРЅРёСЏ РЅР°РїСЂР°РІР»РµРЅРёСЏ РїРµСЂРµС‚РѕРєР°'
 /
 CREATE TABLE calc_hours
     (oid                            NUMBER,
@@ -12019,17 +12019,17 @@ CREATE TABLE calc_hours
     work                           NUMBER,
     rt_type                        NUMBER)
 /
-COMMENT ON TABLE calc_hours IS 'Результаты расчета часов работы трансформаторов и линий'
+COMMENT ON TABLE calc_hours IS 'Р РµР·СѓР»СЊС‚Р°С‚С‹ СЂР°СЃС‡РµС‚Р° С‡Р°СЃРѕРІ СЂР°Р±РѕС‚С‹ С‚СЂР°РЅСЃС„РѕСЂРјР°С‚РѕСЂРѕРІ Рё Р»РёРЅРёР№'
 /
-COMMENT ON COLUMN calc_hours.common IS 'Общие часы работы'
+COMMENT ON COLUMN calc_hours.common IS 'РћР±С‰РёРµ С‡Р°СЃС‹ СЂР°Р±РѕС‚С‹'
 /
-COMMENT ON COLUMN calc_hours.cpid IS 'Ссылка на подпериод'
+COMMENT ON COLUMN calc_hours.cpid IS 'РЎСЃС‹Р»РєР° РЅР° РїРѕРґРїРµСЂРёРѕРґ'
 /
-COMMENT ON COLUMN calc_hours.oid IS 'Ссылка на тр-р, линию'
+COMMENT ON COLUMN calc_hours.oid IS 'РЎСЃС‹Р»РєР° РЅР° С‚СЂ-СЂ, Р»РёРЅРёСЋ'
 /
-COMMENT ON COLUMN calc_hours.rt_type IS 'Тип объекта. Исп. как признак необсчитанной ветви'
+COMMENT ON COLUMN calc_hours.rt_type IS 'РўРёРї РѕР±СЉРµРєС‚Р°. РСЃРї. РєР°Рє РїСЂРёР·РЅР°Рє РЅРµРѕР±СЃС‡РёС‚Р°РЅРЅРѕР№ РІРµС‚РІРё'
 /
-COMMENT ON COLUMN calc_hours.work IS 'Рабочие часы'
+COMMENT ON COLUMN calc_hours.work IS 'Р Р°Р±РѕС‡РёРµ С‡Р°СЃС‹'
 /
 CREATE TABLE calc_links
     (cpid                           NUMBER NOT NULL,
@@ -12043,15 +12043,15 @@ CREATE TABLE calc_links
 
 -- Comments for CALC_LINKS
 
-COMMENT ON TABLE calc_links IS 'Рабочая таблица связей для расчета потерь'
+COMMENT ON TABLE calc_links IS 'Р Р°Р±РѕС‡Р°СЏ С‚Р°Р±Р»РёС†Р° СЃРІСЏР·РµР№ РґР»СЏ СЂР°СЃС‡РµС‚Р° РїРѕС‚РµСЂСЊ'
 /
-COMMENT ON COLUMN calc_links.cpid IS 'Ссылка на подпериод'
+COMMENT ON COLUMN calc_links.cpid IS 'РЎСЃС‹Р»РєР° РЅР° РїРѕРґРїРµСЂРёРѕРґ'
 /
-COMMENT ON COLUMN calc_links.feeder IS 'Ид присоединения'
+COMMENT ON COLUMN calc_links.feeder IS 'РРґ РїСЂРёСЃРѕРµРґРёРЅРµРЅРёСЏ'
 /
-COMMENT ON COLUMN calc_links.outfit IS 'Ид оборудования (Секция, транс., линия)'
+COMMENT ON COLUMN calc_links.outfit IS 'РРґ РѕР±РѕСЂСѓРґРѕРІР°РЅРёСЏ (РЎРµРєС†РёСЏ, С‚СЂР°РЅСЃ., Р»РёРЅРёСЏ)'
 /
-COMMENT ON COLUMN calc_links.switch IS 'Ид выключателя'
+COMMENT ON COLUMN calc_links.switch IS 'РРґ РІС‹РєР»СЋС‡Р°С‚РµР»СЏ'
 /
 CREATE TABLE calc_periods
     (cpid                           NUMBER NOT NULL,
@@ -12066,15 +12066,15 @@ CREATE TABLE calc_periods
 
 -- Comments for CALC_PERIODS
 
-COMMENT ON TABLE calc_periods IS 'Расчетные периоды'
+COMMENT ON TABLE calc_periods IS 'Р Р°СЃС‡РµС‚РЅС‹Рµ РїРµСЂРёРѕРґС‹'
 /
-COMMENT ON COLUMN calc_periods.cpid IS 'Ид подпериода'
+COMMENT ON COLUMN calc_periods.cpid IS 'РРґ РїРѕРґРїРµСЂРёРѕРґР°'
 /
-COMMENT ON COLUMN calc_periods.edate IS 'Дата окончания подпериода'
+COMMENT ON COLUMN calc_periods.edate IS 'Р”Р°С‚Р° РѕРєРѕРЅС‡Р°РЅРёСЏ РїРѕРґРїРµСЂРёРѕРґР°'
 /
-COMMENT ON COLUMN calc_periods.period IS 'Расчетный период'
+COMMENT ON COLUMN calc_periods.period IS 'Р Р°СЃС‡РµС‚РЅС‹Р№ РїРµСЂРёРѕРґ'
 /
-COMMENT ON COLUMN calc_periods.sdate IS 'Дата начала подпериода'
+COMMENT ON COLUMN calc_periods.sdate IS 'Р”Р°С‚Р° РЅР°С‡Р°Р»Р° РїРѕРґРїРµСЂРёРѕРґР°'
 /
 CREATE GLOBAL TEMPORARY TABLE calc_protocol
     (sid                            NUMBER,
@@ -12087,15 +12087,15 @@ ON COMMIT PRESERVE ROWS
 /
 -- Comments for CALC_PROTOCOL
 
-COMMENT ON COLUMN calc_protocol.line IS 'Строка'
+COMMENT ON COLUMN calc_protocol.line IS 'РЎС‚СЂРѕРєР°'
 /
-COMMENT ON COLUMN calc_protocol.lvl IS 'Отступ строки'
+COMMENT ON COLUMN calc_protocol.lvl IS 'РћС‚СЃС‚СѓРї СЃС‚СЂРѕРєРё'
 /
-COMMENT ON COLUMN calc_protocol.ord IS 'Порядковый номер строки'
+COMMENT ON COLUMN calc_protocol.ord IS 'РџРѕСЂСЏРґРєРѕРІС‹Р№ РЅРѕРјРµСЂ СЃС‚СЂРѕРєРё'
 /
-COMMENT ON COLUMN calc_protocol.period IS 'Расчетный период'
+COMMENT ON COLUMN calc_protocol.period IS 'Р Р°СЃС‡РµС‚РЅС‹Р№ РїРµСЂРёРѕРґ'
 /
-COMMENT ON COLUMN calc_protocol.sid IS 'Ссылка на схему'
+COMMENT ON COLUMN calc_protocol.sid IS 'РЎСЃС‹Р»РєР° РЅР° СЃС…РµРјСѓ'
 /
 CREATE TABLE calc_results
     (oid                            NUMBER NOT NULL,
@@ -12112,23 +12112,23 @@ CREATE TABLE calc_results
 /
 -- Comments for CALC_RESULTS
 
-COMMENT ON TABLE calc_results IS 'Результаты расчетов и разноски потерь'
+COMMENT ON TABLE calc_results IS 'Р РµР·СѓР»СЊС‚Р°С‚С‹ СЂР°СЃС‡РµС‚РѕРІ Рё СЂР°Р·РЅРѕСЃРєРё РїРѕС‚РµСЂСЊ'
 /
-COMMENT ON COLUMN calc_results.cpid IS 'Ссылка на подпериод'
+COMMENT ON COLUMN calc_results.cpid IS 'РЎСЃС‹Р»РєР° РЅР° РїРѕРґРїРµСЂРёРѕРґ'
 /
-COMMENT ON COLUMN calc_results.lossed_varh IS 'Потери реактивной э/э'
+COMMENT ON COLUMN calc_results.lossed_varh IS 'РџРѕС‚РµСЂРё СЂРµР°РєС‚РёРІРЅРѕР№ СЌ/СЌ'
 /
-COMMENT ON COLUMN calc_results.lossed_wh IS 'Потери активной э/э'
+COMMENT ON COLUMN calc_results.lossed_wh IS 'РџРѕС‚РµСЂРё Р°РєС‚РёРІРЅРѕР№ СЌ/СЌ'
 /
-COMMENT ON COLUMN calc_results.oid IS 'Ссылка на фидер'
+COMMENT ON COLUMN calc_results.oid IS 'РЎСЃС‹Р»РєР° РЅР° С„РёРґРµСЂ'
 /
-COMMENT ON COLUMN calc_results.qm IS '0 - ОК, 1 - нет данных, -1 - фидер был выключен, -2 - свернут, -3 - навернут'
+COMMENT ON COLUMN calc_results.qm IS '0 - РћРљ, 1 - РЅРµС‚ РґР°РЅРЅС‹С…, -1 - С„РёРґРµСЂ Р±С‹Р» РІС‹РєР»СЋС‡РµРЅ, -2 - СЃРІРµСЂРЅСѓС‚, -3 - РЅР°РІРµСЂРЅСѓС‚'
 /
-COMMENT ON COLUMN calc_results.src IS 'Код источника: 10 - измерения, 20 - нб узла, 30 - нб линии, 40 - нб тр'
+COMMENT ON COLUMN calc_results.src IS 'РљРѕРґ РёСЃС‚РѕС‡РЅРёРєР°: 10 - РёР·РјРµСЂРµРЅРёСЏ, 20 - РЅР± СѓР·Р»Р°, 30 - РЅР± Р»РёРЅРёРё, 40 - РЅР± С‚СЂ'
 /
-COMMENT ON COLUMN calc_results.varh IS 'Переток реактивной э/э'
+COMMENT ON COLUMN calc_results.varh IS 'РџРµСЂРµС‚РѕРє СЂРµР°РєС‚РёРІРЅРѕР№ СЌ/СЌ'
 /
-COMMENT ON COLUMN calc_results.wh IS 'Переток активной э/э'
+COMMENT ON COLUMN calc_results.wh IS 'РџРµСЂРµС‚РѕРє Р°РєС‚РёРІРЅРѕР№ СЌ/СЌ'
 /
 CREATE TABLE osm_switchings
     (oid                            NUMBER NOT NULL,
@@ -12139,15 +12139,15 @@ CREATE TABLE osm_switchings
   CONSTRAINT PK_OSM_SWITCHINGS
   PRIMARY KEY (oid, sdate))
 /
-COMMENT ON TABLE osm_switchings IS 'История переключений коммутационных аппаратов'
+COMMENT ON TABLE osm_switchings IS 'РСЃС‚РѕСЂРёСЏ РїРµСЂРµРєР»СЋС‡РµРЅРёР№ РєРѕРјРјСѓС‚Р°С†РёРѕРЅРЅС‹С… Р°РїРїР°СЂР°С‚РѕРІ'
 /
-COMMENT ON COLUMN osm_switchings.ldate IS 'Дата по'
+COMMENT ON COLUMN osm_switchings.ldate IS 'Р”Р°С‚Р° РїРѕ'
 /
-COMMENT ON COLUMN osm_switchings.oid IS 'Ид выключателя'
+COMMENT ON COLUMN osm_switchings.oid IS 'РРґ РІС‹РєР»СЋС‡Р°С‚РµР»СЏ'
 /
-COMMENT ON COLUMN osm_switchings.sdate IS 'Дата с'
+COMMENT ON COLUMN osm_switchings.sdate IS 'Р”Р°С‚Р° СЃ'
 /
-COMMENT ON COLUMN osm_switchings.state IS 'Состояние: 1 - Вкл, 0 - Выкл'
+COMMENT ON COLUMN osm_switchings.state IS 'РЎРѕСЃС‚РѕСЏРЅРёРµ: 1 - Р’РєР», 0 - Р’С‹РєР»'
 /
 CREATE TABLE rt_feeders
     (oid                            NUMBER NOT NULL,
@@ -12189,53 +12189,53 @@ ADD CONSTRAINT ckc_rtfeeders_isov CHECK (ISOV is null or ( ISOV in (1) ))
 ALTER TABLE rt_feeders
 ADD CONSTRAINT ckc_rtfeeder_activedata CHECK (ACTIVE_DATA is null or ( ACTIVE_DATA in (1) ))
 /
-COMMENT ON TABLE rt_feeders IS 'Параметры присоединений'
+COMMENT ON TABLE rt_feeders IS 'РџР°СЂР°РјРµС‚СЂС‹ РїСЂРёСЃРѕРµРґРёРЅРµРЅРёР№'
 /
-COMMENT ON COLUMN rt_feeders.active_data IS 'Последние параметры которые участвуют в расчетах (1-участвуют; NULL-история)'
+COMMENT ON COLUMN rt_feeders.active_data IS 'РџРѕСЃР»РµРґРЅРёРµ РїР°СЂР°РјРµС‚СЂС‹ РєРѕС‚РѕСЂС‹Рµ СѓС‡Р°СЃС‚РІСѓСЋС‚ РІ СЂР°СЃС‡РµС‚Р°С… (1-СѓС‡Р°СЃС‚РІСѓСЋС‚; NULL-РёСЃС‚РѕСЂРёСЏ)'
 /
-COMMENT ON COLUMN rt_feeders.cell_num IS 'Номер ячейки'
+COMMENT ON COLUMN rt_feeders.cell_num IS 'РќРѕРјРµСЂ СЏС‡РµР№РєРё'
 /
-COMMENT ON COLUMN rt_feeders.commerce IS 'Признак коммерческого присоединения - 1. (Учитывается при дорассчете)'
+COMMENT ON COLUMN rt_feeders.commerce IS 'РџСЂРёР·РЅР°Рє РєРѕРјРјРµСЂС‡РµСЃРєРѕРіРѕ РїСЂРёСЃРѕРµРґРёРЅРµРЅРёСЏ - 1. (РЈС‡РёС‚С‹РІР°РµС‚СЃСЏ РїСЂРё РґРѕСЂР°СЃСЃС‡РµС‚Рµ)'
 /
-COMMENT ON COLUMN rt_feeders.ct_a_rating IS 'Класс точности трансформатора тока'
+COMMENT ON COLUMN rt_feeders.ct_a_rating IS 'РљР»Р°СЃСЃ С‚РѕС‡РЅРѕСЃС‚Рё С‚СЂР°РЅСЃС„РѕСЂРјР°С‚РѕСЂР° С‚РѕРєР°'
 /
-COMMENT ON COLUMN rt_feeders.ct_s1 IS 'Ток первичной обмотки трансформатора тока А'
+COMMENT ON COLUMN rt_feeders.ct_s1 IS 'РўРѕРє РїРµСЂРІРёС‡РЅРѕР№ РѕР±РјРѕС‚РєРё С‚СЂР°РЅСЃС„РѕСЂРјР°С‚РѕСЂР° С‚РѕРєР° Рђ'
 /
-COMMENT ON COLUMN rt_feeders.ct_s2 IS 'Ток вторичной обмотки трансформатора тока А'
+COMMENT ON COLUMN rt_feeders.ct_s2 IS 'РўРѕРє РІС‚РѕСЂРёС‡РЅРѕР№ РѕР±РјРѕС‚РєРё С‚СЂР°РЅСЃС„РѕСЂРјР°С‚РѕСЂР° С‚РѕРєР° Рђ'
 /
-COMMENT ON COLUMN rt_feeders.distrib_lc IS 'Методика разноски графика нагрузки по расходу за период'
+COMMENT ON COLUMN rt_feeders.distrib_lc IS 'РњРµС‚РѕРґРёРєР° СЂР°Р·РЅРѕСЃРєРё РіСЂР°С„РёРєР° РЅР°РіСЂСѓР·РєРё РїРѕ СЂР°СЃС…РѕРґСѓ Р·Р° РїРµСЂРёРѕРґ'
 /
-COMMENT ON COLUMN rt_feeders.ed_tcid IS 'Ид тарифной категории для активной отданой эниргии'
+COMMENT ON COLUMN rt_feeders.ed_tcid IS 'РРґ С‚Р°СЂРёС„РЅРѕР№ РєР°С‚РµРіРѕСЂРёРё РґР»СЏ Р°РєС‚РёРІРЅРѕР№ РѕС‚РґР°РЅРѕР№ СЌРЅРёСЂРіРёРё'
 /
-COMMENT ON COLUMN rt_feeders.er_tcid IS 'Ид тарифной категории для активной принятой эниргии'
+COMMENT ON COLUMN rt_feeders.er_tcid IS 'РРґ С‚Р°СЂРёС„РЅРѕР№ РєР°С‚РµРіРѕСЂРёРё РґР»СЏ Р°РєС‚РёРІРЅРѕР№ РїСЂРёРЅСЏС‚РѕР№ СЌРЅРёСЂРіРёРё'
 /
-COMMENT ON COLUMN rt_feeders.groundn IS 'Признак заземненной нейтрали'
+COMMENT ON COLUMN rt_feeders.groundn IS 'РџСЂРёР·РЅР°Рє Р·Р°Р·РµРјРЅРµРЅРЅРѕР№ РЅРµР№С‚СЂР°Р»Рё'
 /
-COMMENT ON COLUMN rt_feeders.isov IS 'Признак обводного выключателя'
+COMMENT ON COLUMN rt_feeders.isov IS 'РџСЂРёР·РЅР°Рє РѕР±РІРѕРґРЅРѕРіРѕ РІС‹РєР»СЋС‡Р°С‚РµР»СЏ'
 /
-COMMENT ON COLUMN rt_feeders.line_l IS 'Длина линни в км'
+COMMENT ON COLUMN rt_feeders.line_l IS 'Р”Р»РёРЅР° Р»РёРЅРЅРё РІ РєРј'
 /
-COMMENT ON COLUMN rt_feeders.line_loss_part IS 'Процент потерь в линии относящихся к данному фидеру %'
+COMMENT ON COLUMN rt_feeders.line_loss_part IS 'РџСЂРѕС†РµРЅС‚ РїРѕС‚РµСЂСЊ РІ Р»РёРЅРёРё РѕС‚РЅРѕСЃСЏС‰РёС…СЃСЏ Рє РґР°РЅРЅРѕРјСѓ С„РёРґРµСЂСѓ %'
 /
-COMMENT ON COLUMN rt_feeders.line_r IS 'Активное сотротивление линии Ом*км'
+COMMENT ON COLUMN rt_feeders.line_r IS 'РђРєС‚РёРІРЅРѕРµ СЃРѕС‚СЂРѕС‚РёРІР»РµРЅРёРµ Р»РёРЅРёРё РћРј*РєРј'
 /
-COMMENT ON COLUMN rt_feeders.line_x IS 'Реактивное сотротивление линии Ом*км'
+COMMENT ON COLUMN rt_feeders.line_x IS 'Р РµР°РєС‚РёРІРЅРѕРµ СЃРѕС‚СЂРѕС‚РёРІР»РµРЅРёРµ Р»РёРЅРёРё РћРј*РєРј'
 /
-COMMENT ON COLUMN rt_feeders.linker IS 'Ид субабонента питающегося от данного фидера'
+COMMENT ON COLUMN rt_feeders.linker IS 'РРґ СЃСѓР±Р°Р±РѕРЅРµРЅС‚Р° РїРёС‚Р°СЋС‰РµРіРѕСЃСЏ РѕС‚ РґР°РЅРЅРѕРіРѕ С„РёРґРµСЂР°'
 /
-COMMENT ON COLUMN rt_feeders.oid IS 'Ид фидера'
+COMMENT ON COLUMN rt_feeders.oid IS 'РРґ С„РёРґРµСЂР°'
 /
-COMMENT ON COLUMN rt_feeders.owner IS 'Ид владельца фидера'
+COMMENT ON COLUMN rt_feeders.owner IS 'РРґ РІР»Р°РґРµР»СЊС†Р° С„РёРґРµСЂР°'
 /
-COMMENT ON COLUMN rt_feeders.ratio IS 'Расчетный коэффициент'
+COMMENT ON COLUMN rt_feeders.ratio IS 'Р Р°СЃС‡РµС‚РЅС‹Р№ РєРѕСЌС„С„РёС†РёРµРЅС‚'
 /
-COMMENT ON COLUMN rt_feeders.sdate IS 'Дата ввода строки (Используется для ведения истории изменения параметров)'
+COMMENT ON COLUMN rt_feeders.sdate IS 'Р”Р°С‚Р° РІРІРѕРґР° СЃС‚СЂРѕРєРё (РСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ РґР»СЏ РІРµРґРµРЅРёСЏ РёСЃС‚РѕСЂРёРё РёР·РјРµРЅРµРЅРёСЏ РїР°СЂР°РјРµС‚СЂРѕРІ)'
 /
-COMMENT ON COLUMN rt_feeders.vt_a_rating IS 'Класс точности трансформатора напряжения'
+COMMENT ON COLUMN rt_feeders.vt_a_rating IS 'РљР»Р°СЃСЃ С‚РѕС‡РЅРѕСЃС‚Рё С‚СЂР°РЅСЃС„РѕСЂРјР°С‚РѕСЂР° РЅР°РїСЂСЏР¶РµРЅРёСЏ'
 /
-COMMENT ON COLUMN rt_feeders.vt_s1 IS 'Напряжение первичной обмотки трансформатора напряжения  В'
+COMMENT ON COLUMN rt_feeders.vt_s1 IS 'РќР°РїСЂСЏР¶РµРЅРёРµ РїРµСЂРІРёС‡РЅРѕР№ РѕР±РјРѕС‚РєРё С‚СЂР°РЅСЃС„РѕСЂРјР°С‚РѕСЂР° РЅР°РїСЂСЏР¶РµРЅРёСЏ  Р’'
 /
-COMMENT ON COLUMN rt_feeders.vt_s2 IS 'Напряжение вторичной обмотки трансформатора напряжения  В'
+COMMENT ON COLUMN rt_feeders.vt_s2 IS 'РќР°РїСЂСЏР¶РµРЅРёРµ РІС‚РѕСЂРёС‡РЅРѕР№ РѕР±РјРѕС‚РєРё С‚СЂР°РЅСЃС„РѕСЂРјР°С‚РѕСЂР° РЅР°РїСЂСЏР¶РµРЅРёСЏ  Р’'
 /
 CREATE TABLE rt_line
     (oid                            NUMBER NOT NULL,
@@ -12249,15 +12249,15 @@ CREATE TABLE rt_line
 
 -- Comments for RT_LINE
 
-COMMENT ON TABLE rt_line IS 'Параметры линий'
+COMMENT ON TABLE rt_line IS 'РџР°СЂР°РјРµС‚СЂС‹ Р»РёРЅРёР№'
 /
-COMMENT ON COLUMN rt_line.ares IS 'Активное сопротивление линии на Ом на километр'
+COMMENT ON COLUMN rt_line.ares IS 'РђРєС‚РёРІРЅРѕРµ СЃРѕРїСЂРѕС‚РёРІР»РµРЅРёРµ Р»РёРЅРёРё РЅР° РћРј РЅР° РєРёР»РѕРјРµС‚СЂ'
 /
-COMMENT ON COLUMN rt_line.length IS 'Длина линии в километрах'
+COMMENT ON COLUMN rt_line.length IS 'Р”Р»РёРЅР° Р»РёРЅРёРё РІ РєРёР»РѕРјРµС‚СЂР°С…'
 /
-COMMENT ON COLUMN rt_line.oid IS 'Ид объекта'
+COMMENT ON COLUMN rt_line.oid IS 'РРґ РѕР±СЉРµРєС‚Р°'
 /
-COMMENT ON COLUMN rt_line.rres IS 'Реактивное сопротивление линии на Ом на километр'
+COMMENT ON COLUMN rt_line.rres IS 'Р РµР°РєС‚РёРІРЅРѕРµ СЃРѕРїСЂРѕС‚РёРІР»РµРЅРёРµ Р»РёРЅРёРё РЅР° РћРј РЅР° РєРёР»РѕРјРµС‚СЂ'
 /
 CREATE TABLE rt_links
     (outfit                         NUMBER NOT NULL,
@@ -12270,13 +12270,13 @@ ADD CONSTRAINT uk_rt_links UNIQUE (outfit, feeder, switch)
 
 -- Comments for RT_LINKS
 
-COMMENT ON TABLE rt_links IS 'Связи между обектами, используется для расчета потерь'
+COMMENT ON TABLE rt_links IS 'РЎРІСЏР·Рё РјРµР¶РґСѓ РѕР±РµРєС‚Р°РјРё, РёСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ РґР»СЏ СЂР°СЃС‡РµС‚Р° РїРѕС‚РµСЂСЊ'
 /
-COMMENT ON COLUMN rt_links.feeder IS 'Ид присоединения'
+COMMENT ON COLUMN rt_links.feeder IS 'РРґ РїСЂРёСЃРѕРµРґРёРЅРµРЅРёСЏ'
 /
-COMMENT ON COLUMN rt_links.outfit IS 'Ид оборудования (Секция, транс., линия)'
+COMMENT ON COLUMN rt_links.outfit IS 'РРґ РѕР±РѕСЂСѓРґРѕРІР°РЅРёСЏ (РЎРµРєС†РёСЏ, С‚СЂР°РЅСЃ., Р»РёРЅРёСЏ)'
 /
-COMMENT ON COLUMN rt_links.switch IS 'Ид выключателя'
+COMMENT ON COLUMN rt_links.switch IS 'РРґ РІС‹РєР»СЋС‡Р°С‚РµР»СЏ'
 /
 CREATE TABLE rt_objects
     (oid                            NUMBER NOT NULL,
@@ -12295,28 +12295,28 @@ CREATE TABLE rt_objects
 
 -- Comments for RT_OBJECTS
 
-COMMENT ON TABLE rt_objects IS 'Дерево обектов для расчета'
+COMMENT ON TABLE rt_objects IS 'Р”РµСЂРµРІРѕ РѕР±РµРєС‚РѕРІ РґР»СЏ СЂР°СЃС‡РµС‚Р°'
 /
-COMMENT ON COLUMN rt_objects.code IS 'Код объекта для диспетчеров'
+COMMENT ON COLUMN rt_objects.code IS 'РљРѕРґ РѕР±СЉРµРєС‚Р° РґР»СЏ РґРёСЃРїРµС‚С‡РµСЂРѕРІ'
 /
-COMMENT ON COLUMN rt_objects.name IS 'Наименование'
+COMMENT ON COLUMN rt_objects.name IS 'РќР°РёРјРµРЅРѕРІР°РЅРёРµ'
 /
-COMMENT ON COLUMN rt_objects.oid IS 'ID объекта'
+COMMENT ON COLUMN rt_objects.oid IS 'ID РѕР±СЉРµРєС‚Р°'
 /
-COMMENT ON COLUMN rt_objects.parent IS 'ID родителя'
+COMMENT ON COLUMN rt_objects.parent IS 'ID СЂРѕРґРёС‚РµР»СЏ'
 /
-COMMENT ON COLUMN rt_objects.rt_type IS 'Тип объекта в дереве объектов'
+COMMENT ON COLUMN rt_objects.rt_type IS 'РўРёРї РѕР±СЉРµРєС‚Р° РІ РґРµСЂРµРІРµ РѕР±СЉРµРєС‚РѕРІ'
 /
-COMMENT ON COLUMN rt_objects.short_name IS 'Краткое наименование'
+COMMENT ON COLUMN rt_objects.short_name IS 'РљСЂР°С‚РєРѕРµ РЅР°РёРјРµРЅРѕРІР°РЅРёРµ'
 /
-COMMENT ON COLUMN rt_objects.voltage IS 'Уровень напряжения'
+COMMENT ON COLUMN rt_objects.voltage IS 'РЈСЂРѕРІРµРЅСЊ РЅР°РїСЂСЏР¶РµРЅРёСЏ'
 /
 CREATE TABLE rt_seq
     (val                            NUMBER NOT NULL)
 /
-COMMENT ON TABLE rt_seq IS 'Имитатор последовательности для объектов АСКУЭ'
+COMMENT ON TABLE rt_seq IS 'РРјРёС‚Р°С‚РѕСЂ РїРѕСЃР»РµРґРѕРІР°С‚РµР»СЊРЅРѕСЃС‚Рё РґР»СЏ РѕР±СЉРµРєС‚РѕРІ РђРЎРљРЈР­'
 /
-COMMENT ON COLUMN rt_seq.val IS 'Используется в rt_objects'
+COMMENT ON COLUMN rt_seq.val IS 'РСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ РІ rt_objects'
 /
 CREATE TABLE rt_transform2
     (oid                            NUMBER NOT NULL,
@@ -12333,19 +12333,19 @@ CREATE TABLE rt_transform2
 
 -- Comments for RT_TRANSFORM2
 
-COMMENT ON TABLE rt_transform2 IS 'Параметры 2-х обмоточных трансформаторов'
+COMMENT ON TABLE rt_transform2 IS 'РџР°СЂР°РјРµС‚СЂС‹ 2-С… РѕР±РјРѕС‚РѕС‡РЅС‹С… С‚СЂР°РЅСЃС„РѕСЂРјР°С‚РѕСЂРѕРІ'
 /
-COMMENT ON COLUMN rt_transform2.dpkz IS 'Потери короткого замыкания кВт'
+COMMENT ON COLUMN rt_transform2.dpkz IS 'РџРѕС‚РµСЂРё РєРѕСЂРѕС‚РєРѕРіРѕ Р·Р°РјС‹РєР°РЅРёСЏ РєР’С‚'
 /
-COMMENT ON COLUMN rt_transform2.dpxx IS 'Потери холостого хода кВт'
+COMMENT ON COLUMN rt_transform2.dpxx IS 'РџРѕС‚РµСЂРё С…РѕР»РѕСЃС‚РѕРіРѕ С…РѕРґР° РєР’С‚'
 /
-COMMENT ON COLUMN rt_transform2.ixx IS 'Ток холостого хода %'
+COMMENT ON COLUMN rt_transform2.ixx IS 'РўРѕРє С…РѕР»РѕСЃС‚РѕРіРѕ С…РѕРґР° %'
 /
-COMMENT ON COLUMN rt_transform2.oid IS 'Ид объекта'
+COMMENT ON COLUMN rt_transform2.oid IS 'РРґ РѕР±СЉРµРєС‚Р°'
 /
-COMMENT ON COLUMN rt_transform2.sn IS 'Номинальная мощность кВА'
+COMMENT ON COLUMN rt_transform2.sn IS 'РќРѕРјРёРЅР°Р»СЊРЅР°СЏ РјРѕС‰РЅРѕСЃС‚СЊ РєР’Рђ'
 /
-COMMENT ON COLUMN rt_transform2.ukz IS 'Напряжение короткого замыкания %'
+COMMENT ON COLUMN rt_transform2.ukz IS 'РќР°РїСЂСЏР¶РµРЅРёРµ РєРѕСЂРѕС‚РєРѕРіРѕ Р·Р°РјС‹РєР°РЅРёСЏ %'
 /
 CREATE TABLE rt_transform3
     (oid                            NUMBER NOT NULL,
@@ -12365,33 +12365,33 @@ CREATE TABLE rt_transform3
   CONSTRAINT PK_RT_TRANSFORM3
   PRIMARY KEY (oid))
 /
-COMMENT ON TABLE rt_transform3 IS 'Параметры 3-х обмоточных трансформаторов'
+COMMENT ON TABLE rt_transform3 IS 'РџР°СЂР°РјРµС‚СЂС‹ 3-С… РѕР±РјРѕС‚РѕС‡РЅС‹С… С‚СЂР°РЅСЃС„РѕСЂРјР°С‚РѕСЂРѕРІ'
 /
-COMMENT ON COLUMN rt_transform3.dpkzd IS 'Потери короткого замыкания нижней обмотки кВт'
+COMMENT ON COLUMN rt_transform3.dpkzd IS 'РџРѕС‚РµСЂРё РєРѕСЂРѕС‚РєРѕРіРѕ Р·Р°РјС‹РєР°РЅРёСЏ РЅРёР¶РЅРµР№ РѕР±РјРѕС‚РєРё РєР’С‚'
 /
-COMMENT ON COLUMN rt_transform3.dpkzm IS 'Потери короткого замыкания средней обмотки кВт'
+COMMENT ON COLUMN rt_transform3.dpkzm IS 'РџРѕС‚РµСЂРё РєРѕСЂРѕС‚РєРѕРіРѕ Р·Р°РјС‹РєР°РЅРёСЏ СЃСЂРµРґРЅРµР№ РѕР±РјРѕС‚РєРё РєР’С‚'
 /
-COMMENT ON COLUMN rt_transform3.dpkzu IS 'Потери короткого замыкания верхней обмотки кВт'
+COMMENT ON COLUMN rt_transform3.dpkzu IS 'РџРѕС‚РµСЂРё РєРѕСЂРѕС‚РєРѕРіРѕ Р·Р°РјС‹РєР°РЅРёСЏ РІРµСЂС…РЅРµР№ РѕР±РјРѕС‚РєРё РєР’С‚'
 /
-COMMENT ON COLUMN rt_transform3.dpxx IS 'Потери холостого хода кВт'
+COMMENT ON COLUMN rt_transform3.dpxx IS 'РџРѕС‚РµСЂРё С…РѕР»РѕСЃС‚РѕРіРѕ С…РѕРґР° РєР’С‚'
 /
-COMMENT ON COLUMN rt_transform3.ixx IS 'Ток холостого хода %'
+COMMENT ON COLUMN rt_transform3.ixx IS 'РўРѕРє С…РѕР»РѕСЃС‚РѕРіРѕ С…РѕРґР° %'
 /
-COMMENT ON COLUMN rt_transform3.oid IS 'Ид объекта'
+COMMENT ON COLUMN rt_transform3.oid IS 'РРґ РѕР±СЉРµРєС‚Р°'
 /
-COMMENT ON COLUMN rt_transform3.sd IS 'Номинальная мощность нижней обмотки кВА'
+COMMENT ON COLUMN rt_transform3.sd IS 'РќРѕРјРёРЅР°Р»СЊРЅР°СЏ РјРѕС‰РЅРѕСЃС‚СЊ РЅРёР¶РЅРµР№ РѕР±РјРѕС‚РєРё РєР’Рђ'
 /
-COMMENT ON COLUMN rt_transform3.sm IS 'Номинальная мощность средней обмотки кВА'
+COMMENT ON COLUMN rt_transform3.sm IS 'РќРѕРјРёРЅР°Р»СЊРЅР°СЏ РјРѕС‰РЅРѕСЃС‚СЊ СЃСЂРµРґРЅРµР№ РѕР±РјРѕС‚РєРё РєР’Рђ'
 /
-COMMENT ON COLUMN rt_transform3.sn IS 'Номинальная мощность кВА'
+COMMENT ON COLUMN rt_transform3.sn IS 'РќРѕРјРёРЅР°Р»СЊРЅР°СЏ РјРѕС‰РЅРѕСЃС‚СЊ РєР’Рђ'
 /
-COMMENT ON COLUMN rt_transform3.su IS 'Номинальная мощность верхней обмотки кВА'
+COMMENT ON COLUMN rt_transform3.su IS 'РќРѕРјРёРЅР°Р»СЊРЅР°СЏ РјРѕС‰РЅРѕСЃС‚СЊ РІРµСЂС…РЅРµР№ РѕР±РјРѕС‚РєРё РєР’Рђ'
 /
-COMMENT ON COLUMN rt_transform3.ukzd IS 'Напряжение короткого замыкания нижней обмотки %'
+COMMENT ON COLUMN rt_transform3.ukzd IS 'РќР°РїСЂСЏР¶РµРЅРёРµ РєРѕСЂРѕС‚РєРѕРіРѕ Р·Р°РјС‹РєР°РЅРёСЏ РЅРёР¶РЅРµР№ РѕР±РјРѕС‚РєРё %'
 /
-COMMENT ON COLUMN rt_transform3.ukzm IS 'Напряжение короткого замыкания средней обмотки %'
+COMMENT ON COLUMN rt_transform3.ukzm IS 'РќР°РїСЂСЏР¶РµРЅРёРµ РєРѕСЂРѕС‚РєРѕРіРѕ Р·Р°РјС‹РєР°РЅРёСЏ СЃСЂРµРґРЅРµР№ РѕР±РјРѕС‚РєРё %'
 /
-COMMENT ON COLUMN rt_transform3.ukzu IS 'Напряжение короткого замыкания верхней обмотки %'
+COMMENT ON COLUMN rt_transform3.ukzu IS 'РќР°РїСЂСЏР¶РµРЅРёРµ РєРѕСЂРѕС‚РєРѕРіРѕ Р·Р°РјС‹РєР°РЅРёСЏ РІРµСЂС…РЅРµР№ РѕР±РјРѕС‚РєРё %'
 /
 
 CREATE TABLE se_colors
@@ -12405,11 +12405,11 @@ CREATE TABLE se_colors
 
 -- Comments for SE_COLORS
 
-COMMENT ON TABLE se_colors IS 'Раскраска объектов по классам напряжения'
+COMMENT ON TABLE se_colors IS 'Р Р°СЃРєСЂР°СЃРєР° РѕР±СЉРµРєС‚РѕРІ РїРѕ РєР»Р°СЃСЃР°Рј РЅР°РїСЂСЏР¶РµРЅРёСЏ'
 /
-COMMENT ON COLUMN se_colors.classu IS 'Класс напряжения'
+COMMENT ON COLUMN se_colors.classu IS 'РљР»Р°СЃСЃ РЅР°РїСЂСЏР¶РµРЅРёСЏ'
 /
-COMMENT ON COLUMN se_colors.color IS 'Код цвета'
+COMMENT ON COLUMN se_colors.color IS 'РљРѕРґ С†РІРµС‚Р°'
 /
 
 CREATE TABLE se_layers
@@ -12423,15 +12423,15 @@ CREATE TABLE se_layers
   PRIMARY KEY (sid, layer))
 /
 
-COMMENT ON TABLE se_layers IS 'Перечень и видимость слоев схем'
+COMMENT ON TABLE se_layers IS 'РџРµСЂРµС‡РµРЅСЊ Рё РІРёРґРёРјРѕСЃС‚СЊ СЃР»РѕРµРІ СЃС…РµРј'
 /
-COMMENT ON COLUMN se_layers.is_visible IS 'Видимость. 1 - видимый'
+COMMENT ON COLUMN se_layers.is_visible IS 'Р’РёРґРёРјРѕСЃС‚СЊ. 1 - РІРёРґРёРјС‹Р№'
 /
-COMMENT ON COLUMN se_layers.layer IS 'Номер слоя'
+COMMENT ON COLUMN se_layers.layer IS 'РќРѕРјРµСЂ СЃР»РѕСЏ'
 /
-COMMENT ON COLUMN se_layers.name IS 'Название слоя'
+COMMENT ON COLUMN se_layers.name IS 'РќР°Р·РІР°РЅРёРµ СЃР»РѕСЏ'
 /
-COMMENT ON COLUMN se_layers.sid IS 'Код схемы'
+COMMENT ON COLUMN se_layers.sid IS 'РљРѕРґ СЃС…РµРјС‹'
 /
 
 
@@ -12447,15 +12447,15 @@ CREATE TABLE se_links
   PRIMARY KEY (sid, ord, line_ord))
 /
 
-COMMENT ON TABLE se_links IS 'Связи объектов схем графического редактора'
+COMMENT ON TABLE se_links IS 'РЎРІСЏР·Рё РѕР±СЉРµРєС‚РѕРІ СЃС…РµРј РіСЂР°С„РёС‡РµСЃРєРѕРіРѕ СЂРµРґР°РєС‚РѕСЂР°'
 /
-COMMENT ON COLUMN se_links.line_ord IS 'Ид линии'
+COMMENT ON COLUMN se_links.line_ord IS 'РРґ Р»РёРЅРёРё'
 /
-COMMENT ON COLUMN se_links.link_ord IS 'Номер связи'
+COMMENT ON COLUMN se_links.link_ord IS 'РќРѕРјРµСЂ СЃРІСЏР·Рё'
 /
-COMMENT ON COLUMN se_links.ord IS 'Порядковый номер обьекта в схеме'
+COMMENT ON COLUMN se_links.ord IS 'РџРѕСЂСЏРґРєРѕРІС‹Р№ РЅРѕРјРµСЂ РѕР±СЊРµРєС‚Р° РІ СЃС…РµРјРµ'
 /
-COMMENT ON COLUMN se_links.sid IS 'Ид схемы'
+COMMENT ON COLUMN se_links.sid IS 'РРґ СЃС…РµРјС‹'
 /
 CREATE TABLE se_objects
     (sid                            NUMBER NOT NULL,
@@ -12484,39 +12484,39 @@ CREATE TABLE se_objects
 
 -- Comments for SE_OBJECTS
 
-COMMENT ON TABLE se_objects IS 'Объекты схем графического редактора'
+COMMENT ON TABLE se_objects IS 'РћР±СЉРµРєС‚С‹ СЃС…РµРј РіСЂР°С„РёС‡РµСЃРєРѕРіРѕ СЂРµРґР°РєС‚РѕСЂР°'
 /
-COMMENT ON COLUMN se_objects.buses IS 'ID СШ'
+COMMENT ON COLUMN se_objects.buses IS 'ID РЎРЁ'
 /
-COMMENT ON COLUMN se_objects.classu IS 'Класс напряжения'
+COMMENT ON COLUMN se_objects.classu IS 'РљР»Р°СЃСЃ РЅР°РїСЂСЏР¶РµРЅРёСЏ'
 /
-COMMENT ON COLUMN se_objects.feeder IS 'Присоединение'
+COMMENT ON COLUMN se_objects.feeder IS 'РџСЂРёСЃРѕРµРґРёРЅРµРЅРёРµ'
 /
-COMMENT ON COLUMN se_objects.is_new IS 'Признак нового объекта'
+COMMENT ON COLUMN se_objects.is_new IS 'РџСЂРёР·РЅР°Рє РЅРѕРІРѕРіРѕ РѕР±СЉРµРєС‚Р°'
 /
-COMMENT ON COLUMN se_objects.layer IS 'Номер слоя'
+COMMENT ON COLUMN se_objects.layer IS 'РќРѕРјРµСЂ СЃР»РѕСЏ'
 /
-COMMENT ON COLUMN se_objects.link_cnt IS 'Количество связей'
+COMMENT ON COLUMN se_objects.link_cnt IS 'РљРѕР»РёС‡РµСЃС‚РІРѕ СЃРІСЏР·РµР№'
 /
-COMMENT ON COLUMN se_objects.linked IS 'Признак привязки. 1 - привязан'
+COMMENT ON COLUMN se_objects.linked IS 'РџСЂРёР·РЅР°Рє РїСЂРёРІСЏР·РєРё. 1 - РїСЂРёРІСЏР·Р°РЅ'
 /
-COMMENT ON COLUMN se_objects.marked IS 'Используется при приязке к БД'
+COMMENT ON COLUMN se_objects.marked IS 'РСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ РїСЂРё РїСЂРёСЏР·РєРµ Рє Р‘Р”'
 /
-COMMENT ON COLUMN se_objects.name IS 'Название объекта'
+COMMENT ON COLUMN se_objects.name IS 'РќР°Р·РІР°РЅРёРµ РѕР±СЉРµРєС‚Р°'
 /
-COMMENT ON COLUMN se_objects.oid IS 'Ид объекта для связи с RT_OBJECTS'
+COMMENT ON COLUMN se_objects.oid IS 'РРґ РѕР±СЉРµРєС‚Р° РґР»СЏ СЃРІСЏР·Рё СЃ RT_OBJECTS'
 /
-COMMENT ON COLUMN se_objects.ord IS 'Порядковый номер обьекта в схеме'
+COMMENT ON COLUMN se_objects.ord IS 'РџРѕСЂСЏРґРєРѕРІС‹Р№ РЅРѕРјРµСЂ РѕР±СЊРµРєС‚Р° РІ СЃС…РµРјРµ'
 /
-COMMENT ON COLUMN se_objects.se_type IS 'Код типа объекта'
+COMMENT ON COLUMN se_objects.se_type IS 'РљРѕРґ С‚РёРїР° РѕР±СЉРµРєС‚Р°'
 /
-COMMENT ON COLUMN se_objects.sid IS 'Код схемы'
+COMMENT ON COLUMN se_objects.sid IS 'РљРѕРґ СЃС…РµРјС‹'
 /
-COMMENT ON COLUMN se_objects.subst IS 'Подстанция'
+COMMENT ON COLUMN se_objects.subst IS 'РџРѕРґСЃС‚Р°РЅС†РёСЏ'
 /
-COMMENT ON COLUMN se_objects.x1 IS 'X1,Y1 - координаты левого верхнего угла объекта'
+COMMENT ON COLUMN se_objects.x1 IS 'X1,Y1 - РєРѕРѕСЂРґРёРЅР°С‚С‹ Р»РµРІРѕРіРѕ РІРµСЂС…РЅРµРіРѕ СѓРіР»Р° РѕР±СЉРµРєС‚Р°'
 /
-COMMENT ON COLUMN se_objects.x2 IS 'X2,Y2 - координаты правого нижнего угла'
+COMMENT ON COLUMN se_objects.x2 IS 'X2,Y2 - РєРѕРѕСЂРґРёРЅР°С‚С‹ РїСЂР°РІРѕРіРѕ РЅРёР¶РЅРµРіРѕ СѓРіР»Р°'
 /
 
 CREATE TABLE se_properties
@@ -12528,19 +12528,19 @@ CREATE TABLE se_properties
   PRIMARY KEY (pid))
 /
 
-COMMENT ON TABLE se_properties IS 'Перечень свойств объектов'
+COMMENT ON TABLE se_properties IS 'РџРµСЂРµС‡РµРЅСЊ СЃРІРѕР№СЃС‚РІ РѕР±СЉРµРєС‚РѕРІ'
 /
-COMMENT ON COLUMN se_properties.descr IS 'Описание'
+COMMENT ON COLUMN se_properties.descr IS 'РћРїРёСЃР°РЅРёРµ'
 /
-COMMENT ON COLUMN se_properties.name IS 'Название свойства'
+COMMENT ON COLUMN se_properties.name IS 'РќР°Р·РІР°РЅРёРµ СЃРІРѕР№СЃС‚РІР°'
 /
-COMMENT ON COLUMN se_properties.pid IS 'Код свойства'
+COMMENT ON COLUMN se_properties.pid IS 'РљРѕРґ СЃРІРѕР№СЃС‚РІР°'
 /
 
 -- End of DDL Script for Table RYDA.SE_PROPERTIES
 
 -- Start of DDL Script for Table RYDA.SE_SEQ
--- Generated 4-апр-2006 15:57:06 from RYDA@askue1
+-- Generated 4-Р°РїСЂ-2006 15:57:06 from RYDA@askue1
 
 CREATE TABLE se_seq
     (val                            NUMBER NOT NULL)
@@ -12549,15 +12549,15 @@ CREATE TABLE se_seq
 
 -- Comments for SE_SEQ
 
-COMMENT ON TABLE se_seq IS 'Имитатор последовательности для объектов редактора схем'
+COMMENT ON TABLE se_seq IS 'РРјРёС‚Р°С‚РѕСЂ РїРѕСЃР»РµРґРѕРІР°С‚РµР»СЊРЅРѕСЃС‚Рё РґР»СЏ РѕР±СЉРµРєС‚РѕРІ СЂРµРґР°РєС‚РѕСЂР° СЃС…РµРј'
 /
-COMMENT ON COLUMN se_seq.val IS 'Текущее значение последовательности'
+COMMENT ON COLUMN se_seq.val IS 'РўРµРєСѓС‰РµРµ Р·РЅР°С‡РµРЅРёРµ РїРѕСЃР»РµРґРѕРІР°С‚РµР»СЊРЅРѕСЃС‚Рё'
 /
 
 -- End of DDL Script for Table RYDA.SE_SEQ
 
 -- Start of DDL Script for Table RYDA.SE_SHEETS
--- Generated 4-апр-2006 15:57:06 from RYDA@askue1
+-- Generated 4-Р°РїСЂ-2006 15:57:06 from RYDA@askue1
 
 CREATE TABLE se_sheets
     (sid                            NUMBER NOT NULL,
@@ -12575,27 +12575,27 @@ CREATE TABLE se_sheets
 
 -- Comments for SE_SHEETS
 
-COMMENT ON TABLE se_sheets IS 'Список схем графического редактора'
+COMMENT ON TABLE se_sheets IS 'РЎРїРёСЃРѕРє СЃС…РµРј РіСЂР°С„РёС‡РµСЃРєРѕРіРѕ СЂРµРґР°РєС‚РѕСЂР°'
 /
-COMMENT ON COLUMN se_sheets.descr IS 'Комментарий'
+COMMENT ON COLUMN se_sheets.descr IS 'РљРѕРјРјРµРЅС‚Р°СЂРёР№'
 /
-COMMENT ON COLUMN se_sheets.height IS 'Высота в пикселах'
+COMMENT ON COLUMN se_sheets.height IS 'Р’С‹СЃРѕС‚Р° РІ РїРёРєСЃРµР»Р°С…'
 /
-COMMENT ON COLUMN se_sheets.kind IS 'Тип: 0 - подстанция, 10 - схема сети'
+COMMENT ON COLUMN se_sheets.kind IS 'РўРёРї: 0 - РїРѕРґСЃС‚Р°РЅС†РёСЏ, 10 - СЃС…РµРјР° СЃРµС‚Рё'
 /
-COMMENT ON COLUMN se_sheets.name IS 'Название схемы'
+COMMENT ON COLUMN se_sheets.name IS 'РќР°Р·РІР°РЅРёРµ СЃС…РµРјС‹'
 /
-COMMENT ON COLUMN se_sheets.scale IS 'Масштаб'
+COMMENT ON COLUMN se_sheets.scale IS 'РњР°СЃС€С‚Р°Р±'
 /
-COMMENT ON COLUMN se_sheets.sid IS 'Ид схемы'
+COMMENT ON COLUMN se_sheets.sid IS 'РРґ СЃС…РµРјС‹'
 /
-COMMENT ON COLUMN se_sheets.width IS 'Ширина в пикселах'
+COMMENT ON COLUMN se_sheets.width IS 'РЁРёСЂРёРЅР° РІ РїРёРєСЃРµР»Р°С…'
 /
 
 -- End of DDL Script for Table RYDA.SE_SHEETS
 
 -- Start of DDL Script for Table RYDA.SE_TYPE_MAP
--- Generated 4-апр-2006 15:57:06 from RYDA@askue1
+-- Generated 4-Р°РїСЂ-2006 15:57:06 from RYDA@askue1
 
 CREATE TABLE se_type_map
     (se_type                        NUMBER NOT NULL,
@@ -12614,29 +12614,29 @@ CREATE TABLE se_type_map
 
 -- Comments for SE_TYPE_MAP
 
-COMMENT ON TABLE se_type_map IS 'Таблица соответствия типов объектов в редакторе схем и дереве объектов'
+COMMENT ON TABLE se_type_map IS 'РўР°Р±Р»РёС†Р° СЃРѕРѕС‚РІРµС‚СЃС‚РІРёСЏ С‚РёРїРѕРІ РѕР±СЉРµРєС‚РѕРІ РІ СЂРµРґР°РєС‚РѕСЂРµ СЃС…РµРј Рё РґРµСЂРµРІРµ РѕР±СЉРµРєС‚РѕРІ'
 /
-COMMENT ON COLUMN se_type_map.in_classu IS 'присутствует в групп. по U'
+COMMENT ON COLUMN se_type_map.in_classu IS 'РїСЂРёСЃСѓС‚СЃС‚РІСѓРµС‚ РІ РіСЂСѓРїРї. РїРѕ U'
 /
-COMMENT ON COLUMN se_type_map.in_feeder IS 'присутствует в групп. по фидеру'
+COMMENT ON COLUMN se_type_map.in_feeder IS 'РїСЂРёСЃСѓС‚СЃС‚РІСѓРµС‚ РІ РіСЂСѓРїРї. РїРѕ С„РёРґРµСЂСѓ'
 /
-COMMENT ON COLUMN se_type_map.in_line IS 'присутствует в групп. по линии'
+COMMENT ON COLUMN se_type_map.in_line IS 'РїСЂРёСЃСѓС‚СЃС‚РІСѓРµС‚ РІ РіСЂСѓРїРї. РїРѕ Р»РёРЅРёРё'
 /
-COMMENT ON COLUMN se_type_map.in_subst IS 'присутствует в групп. по ПС'
+COMMENT ON COLUMN se_type_map.in_subst IS 'РїСЂРёСЃСѓС‚СЃС‚РІСѓРµС‚ РІ РіСЂСѓРїРї. РїРѕ РџРЎ'
 /
-COMMENT ON COLUMN se_type_map.is_rtobj IS 'входит в состав эл.-тех. оборудования'
+COMMENT ON COLUMN se_type_map.is_rtobj IS 'РІС…РѕРґРёС‚ РІ СЃРѕСЃС‚Р°РІ СЌР».-С‚РµС…. РѕР±РѕСЂСѓРґРѕРІР°РЅРёСЏ'
 /
-COMMENT ON COLUMN se_type_map.name IS 'Название типа обекта'
+COMMENT ON COLUMN se_type_map.name IS 'РќР°Р·РІР°РЅРёРµ С‚РёРїР° РѕР±РµРєС‚Р°'
 /
-COMMENT ON COLUMN se_type_map.rt_type IS 'Тип объекта в дереве объектов'
+COMMENT ON COLUMN se_type_map.rt_type IS 'РўРёРї РѕР±СЉРµРєС‚Р° РІ РґРµСЂРµРІРµ РѕР±СЉРµРєС‚РѕРІ'
 /
-COMMENT ON COLUMN se_type_map.se_type IS 'Номер типа объекта в редакторе схем'
+COMMENT ON COLUMN se_type_map.se_type IS 'РќРѕРјРµСЂ С‚РёРїР° РѕР±СЉРµРєС‚Р° РІ СЂРµРґР°РєС‚РѕСЂРµ СЃС…РµРј'
 /
 
 -- End of DDL Script for Table RYDA.SE_TYPE_MAP
 
 -- Start of DDL Script for Table RYDA.SE_TYPE_PROPERTIES
--- Generated 4-апр-2006 15:57:06 from RYDA@askue1
+-- Generated 4-Р°РїСЂ-2006 15:57:06 from RYDA@askue1
 
 CREATE TABLE se_type_properties
     (se_type                        NUMBER NOT NULL,
@@ -12650,19 +12650,19 @@ CREATE TABLE se_type_properties
 
 -- Comments for SE_TYPE_PROPERTIES
 
-COMMENT ON TABLE se_type_properties IS 'Привязка набора свойств к типам объектов'
+COMMENT ON TABLE se_type_properties IS 'РџСЂРёРІСЏР·РєР° РЅР°Р±РѕСЂР° СЃРІРѕР№СЃС‚РІ Рє С‚РёРїР°Рј РѕР±СЉРµРєС‚РѕРІ'
 /
-COMMENT ON COLUMN se_type_properties.parent IS 'Ссылка на включающий тип'
+COMMENT ON COLUMN se_type_properties.parent IS 'РЎСЃС‹Р»РєР° РЅР° РІРєР»СЋС‡Р°СЋС‰РёР№ С‚РёРї'
 /
-COMMENT ON COLUMN se_type_properties.pid IS 'Код свойства'
+COMMENT ON COLUMN se_type_properties.pid IS 'РљРѕРґ СЃРІРѕР№СЃС‚РІР°'
 /
-COMMENT ON COLUMN se_type_properties.se_type IS 'Ид типа объекта в редакторе схем'
+COMMENT ON COLUMN se_type_properties.se_type IS 'РРґ С‚РёРїР° РѕР±СЉРµРєС‚Р° РІ СЂРµРґР°РєС‚РѕСЂРµ СЃС…РµРј'
 /
 
 -- End of DDL Script for Table RYDA.SE_TYPE_PROPERTIES
 
 -- Start of DDL Script for Table RYDA.SE_VALUES
--- Generated 4-апр-2006 15:57:06 from RYDA@askue1
+-- Generated 4-Р°РїСЂ-2006 15:57:06 from RYDA@askue1
 
 CREATE TABLE se_values
     (sid                            NUMBER NOT NULL,
@@ -12679,15 +12679,15 @@ CREATE TABLE se_values
 
 -- Comments for SE_VALUES
 
-COMMENT ON TABLE se_values IS 'Значения свойств объектов графического редактора'
+COMMENT ON TABLE se_values IS 'Р—РЅР°С‡РµРЅРёСЏ СЃРІРѕР№СЃС‚РІ РѕР±СЉРµРєС‚РѕРІ РіСЂР°С„РёС‡РµСЃРєРѕРіРѕ СЂРµРґР°РєС‚РѕСЂР°'
 /
-COMMENT ON COLUMN se_values.ord IS 'Порядковый номер обьекта в схеме'
+COMMENT ON COLUMN se_values.ord IS 'РџРѕСЂСЏРґРєРѕРІС‹Р№ РЅРѕРјРµСЂ РѕР±СЊРµРєС‚Р° РІ СЃС…РµРјРµ'
 /
-COMMENT ON COLUMN se_values.pid IS 'Код свойства'
+COMMENT ON COLUMN se_values.pid IS 'РљРѕРґ СЃРІРѕР№СЃС‚РІР°'
 /
-COMMENT ON COLUMN se_values.sid IS 'Код схемы'
+COMMENT ON COLUMN se_values.sid IS 'РљРѕРґ СЃС…РµРјС‹'
 /
-COMMENT ON COLUMN se_values.value IS 'Значение'
+COMMENT ON COLUMN se_values.value IS 'Р—РЅР°С‡РµРЅРёРµ'
 /
 
 -- End of DDL Script for Table RYDA.SE_VALUES
@@ -12857,75 +12857,75 @@ VALUES
 
 INSERT INTO se_properties
 VALUES
-(20,'код данных',NULL)
+(20,'РєРѕРґ РґР°РЅРЅС‹С…',NULL)
 /
 INSERT INTO se_properties
 VALUES
-(21,'размер',NULL)
+(21,'СЂР°Р·РјРµСЂ',NULL)
 /
 INSERT INTO se_properties
 VALUES
-(22,'переток',NULL)
+(22,'РїРµСЂРµС‚РѕРє',NULL)
 /
 INSERT INTO se_properties
 VALUES
-(9,'идентификатор',NULL)
+(9,'РёРґРµРЅС‚РёС„РёРєР°С‚РѕСЂ',NULL)
 /
 INSERT INTO se_properties
 VALUES
-(1,'положение при нормальной схеме',NULL)
+(1,'РїРѕР»РѕР¶РµРЅРёРµ РїСЂРё РЅРѕСЂРјР°Р»СЊРЅРѕР№ СЃС…РµРјРµ',NULL)
 /
 INSERT INTO se_properties
 VALUES
-(2,'уровень напряжения U2',NULL)
+(2,'СѓСЂРѕРІРµРЅСЊ РЅР°РїСЂСЏР¶РµРЅРёСЏ U2',NULL)
 /
 INSERT INTO se_properties
 VALUES
-(10,'Масштаб',NULL)
+(10,'РњР°СЃС€С‚Р°Р±',NULL)
 /
 INSERT INTO se_properties
 VALUES
-(11,'Угол',NULL)
+(11,'РЈРіРѕР»',NULL)
 /
 INSERT INTO se_properties
 VALUES
-(12,'Выравнивание',NULL)
+(12,'Р’С‹СЂР°РІРЅРёРІР°РЅРёРµ',NULL)
 /
 INSERT INTO se_properties
 VALUES
-(13,'Наименование шрифта',NULL)
+(13,'РќР°РёРјРµРЅРѕРІР°РЅРёРµ С€СЂРёС„С‚Р°',NULL)
 /
 INSERT INTO se_properties
 VALUES
-(14,'Цвет',NULL)
+(14,'Р¦РІРµС‚',NULL)
 /
 INSERT INTO se_properties
 VALUES
-(15,'Алфавит',NULL)
+(15,'РђР»С„Р°РІРёС‚',NULL)
 /
 INSERT INTO se_properties
 VALUES
-(3,'признак вертикальности',NULL)
+(3,'РїСЂРёР·РЅР°Рє РІРµСЂС‚РёРєР°Р»СЊРЅРѕСЃС‚Рё',NULL)
 /
 INSERT INTO se_properties
 VALUES
-(4,'текст',NULL)
+(4,'С‚РµРєСЃС‚',NULL)
 /
 INSERT INTO se_properties
 VALUES
-(5,'положение стрелки',NULL)
+(5,'РїРѕР»РѕР¶РµРЅРёРµ СЃС‚СЂРµР»РєРё',NULL)
 /
 INSERT INTO se_properties
 VALUES
-(6,'ширина линии',NULL)
+(6,'С€РёСЂРёРЅР° Р»РёРЅРёРё',NULL)
 /
 INSERT INTO se_properties
 VALUES
-(16,'Размер шрифта',NULL)
+(16,'Р Р°Р·РјРµСЂ С€СЂРёС„С‚Р°',NULL)
 /
 INSERT INTO se_properties
 VALUES
-(17,'Жирный',NULL)
+(17,'Р–РёСЂРЅС‹Р№',NULL)
 /
 INSERT INTO se_properties
 VALUES
@@ -12933,113 +12933,113 @@ VALUES
 /
 INSERT INTO se_properties
 VALUES
-(19,'Подчеркнутый',NULL)
+(19,'РџРѕРґС‡РµСЂРєРЅСѓС‚С‹Р№',NULL)
 /
 INSERT INTO se_properties
 VALUES
-(7,'уровень напряжения U3',NULL)
+(7,'СѓСЂРѕРІРµРЅСЊ РЅР°РїСЂСЏР¶РµРЅРёСЏ U3',NULL)
 /
 INSERT INTO se_properties
 VALUES
-(8,'текст2',NULL)
+(8,'С‚РµРєСЃС‚2',NULL)
 /
 
 
 INSERT INTO se_type_map
 VALUES
-(200,'Счетчик A',-1,NULL,NULL,NULL,NULL,NULL)
+(200,'РЎС‡РµС‚С‡РёРє A',-1,NULL,NULL,NULL,NULL,NULL)
 /
 INSERT INTO se_type_map
 VALUES
-(210,'Счетчик R',-1,NULL,NULL,NULL,NULL,NULL)
+(210,'РЎС‡РµС‚С‡РёРє R',-1,NULL,NULL,NULL,NULL,NULL)
 /
 INSERT INTO se_type_map
 VALUES
-(10,'Линия',500,NULL,NULL,NULL,1,1)
+(10,'Р›РёРЅРёСЏ',500,NULL,NULL,NULL,1,1)
 /
 INSERT INTO se_type_map
 VALUES
-(20,'Секция шин (горизонтальная)',0,1,1,NULL,NULL,1)
+(20,'РЎРµРєС†РёСЏ С€РёРЅ (РіРѕСЂРёР·РѕРЅС‚Р°Р»СЊРЅР°СЏ)',0,1,1,NULL,NULL,1)
 /
 INSERT INTO se_type_map
 VALUES
-(30,'МВ горизонтальный',300,1,1,1,NULL,1)
+(30,'РњР’ РіРѕСЂРёР·РѕРЅС‚Р°Р»СЊРЅС‹Р№',300,1,1,1,NULL,1)
 /
 INSERT INTO se_type_map
 VALUES
-(50,'МВ вертикальный',300,1,1,1,NULL,1)
+(50,'РњР’ РІРµСЂС‚РёРєР°Р»СЊРЅС‹Р№',300,1,1,1,NULL,1)
 /
 INSERT INTO se_type_map
 VALUES
-(40,'Трансформатор (двухобмоточный)',600,1,NULL,NULL,NULL,1)
+(40,'РўСЂР°РЅСЃС„РѕСЂРјР°С‚РѕСЂ (РґРІСѓС…РѕР±РјРѕС‚РѕС‡РЅС‹Р№)',600,1,NULL,NULL,NULL,1)
 /
 INSERT INTO se_type_map
 VALUES
-(110,'Силовой трансформатор',610,1,NULL,NULL,NULL,1)
+(110,'РЎРёР»РѕРІРѕР№ С‚СЂР°РЅСЃС„РѕСЂРјР°С‚РѕСЂ',610,1,NULL,NULL,NULL,1)
 /
 INSERT INTO se_type_map
 VALUES
-(60,'Ошиновка',-1,1,1,1,NULL,NULL)
+(60,'РћС€РёРЅРѕРІРєР°',-1,1,1,1,NULL,NULL)
 /
 INSERT INTO se_type_map
 VALUES
-(80,'Стрелочка',-1,1,1,1,NULL,NULL)
+(80,'РЎС‚СЂРµР»РѕС‡РєР°',-1,1,1,1,NULL,NULL)
 /
 INSERT INTO se_type_map
 VALUES
-(90,'Отпайка',400,NULL,NULL,NULL,1,1)
+(90,'РћС‚РїР°Р№РєР°',400,NULL,NULL,NULL,1,1)
 /
 INSERT INTO se_type_map
 VALUES
-(100,'Генератор',600,1,NULL,NULL,NULL,1)
+(100,'Р“РµРЅРµСЂР°С‚РѕСЂ',600,1,NULL,NULL,NULL,1)
 /
 INSERT INTO se_type_map
 VALUES
-(120,'Трансформатор СН',610,1,1,1,NULL,1)
+(120,'РўСЂР°РЅСЃС„РѕСЂРјР°С‚РѕСЂ РЎРќ',610,1,1,1,NULL,1)
 /
 INSERT INTO se_type_map
 VALUES
-(1000,'Подстанция',1000,NULL,NULL,NULL,NULL,1)
+(1000,'РџРѕРґСЃС‚Р°РЅС†РёСЏ',1000,NULL,NULL,NULL,NULL,1)
 /
 INSERT INTO se_type_map
 VALUES
-(950,'Класс напряжения',950,NULL,NULL,NULL,NULL,1)
+(950,'РљР»Р°СЃСЃ РЅР°РїСЂСЏР¶РµРЅРёСЏ',950,NULL,NULL,NULL,NULL,1)
 /
 INSERT INTO se_type_map
 VALUES
-(900,'Присоединение',900,NULL,NULL,NULL,NULL,1)
+(900,'РџСЂРёСЃРѕРµРґРёРЅРµРЅРёРµ',900,NULL,NULL,NULL,NULL,1)
 /
 INSERT INTO se_type_map
 VALUES
-(500,'ВЛ',500,NULL,NULL,NULL,NULL,1)
+(500,'Р’Р›',500,NULL,NULL,NULL,NULL,1)
 /
 INSERT INTO se_type_map
 VALUES
-(130,'Трансформатор тока',-1,1,1,1,NULL,NULL)
+(130,'РўСЂР°РЅСЃС„РѕСЂРјР°С‚РѕСЂ С‚РѕРєР°',-1,1,1,1,NULL,NULL)
 /
 INSERT INTO se_type_map
 VALUES
-(160,'Счетчик MW',-1,NULL,NULL,NULL,NULL,NULL)
+(160,'РЎС‡РµС‚С‡РёРє MW',-1,NULL,NULL,NULL,NULL,NULL)
 /
 INSERT INTO se_type_map
 VALUES
-(170,'Счетчик MVAR',-1,NULL,NULL,NULL,NULL,NULL)
+(170,'РЎС‡РµС‚С‡РёРє MVAR',-1,NULL,NULL,NULL,NULL,NULL)
 /
 INSERT INTO se_type_map
 VALUES
-(180,'Счетчик MW',-1,NULL,NULL,NULL,NULL,NULL)
+(180,'РЎС‡РµС‚С‡РёРє MW',-1,NULL,NULL,NULL,NULL,NULL)
 /
 INSERT INTO se_type_map
 VALUES
-(190,'Счетчик MVAR',-1,NULL,NULL,NULL,NULL,NULL)
+(190,'РЎС‡РµС‚С‡РёРє MVAR',-1,NULL,NULL,NULL,NULL,NULL)
 /
 INSERT INTO se_type_map
 VALUES
-(70,'Текстовая метка',-1,NULL,NULL,NULL,NULL,NULL)
+(70,'РўРµРєСЃС‚РѕРІР°СЏ РјРµС‚РєР°',-1,NULL,NULL,NULL,NULL,NULL)
 /
 INSERT INTO se_type_map
 VALUES
-(140,'Прерывистая линия',-1,NULL,NULL,NULL,NULL,NULL)
+(140,'РџСЂРµСЂС‹РІРёСЃС‚Р°СЏ Р»РёРЅРёСЏ',-1,NULL,NULL,NULL,NULL,NULL)
 /
 
 
@@ -13582,13 +13582,13 @@ SELECT
  FROM RYDA.BILLOLD WHERE NEXCEPTCALC IS NULL
 /
 
-COMMENT ON TABLE bill_l IS 'Реальные суточные измерения с потерями'
+COMMENT ON TABLE bill_l IS 'Р РµР°Р»СЊРЅС‹Рµ СЃСѓС‚РѕС‡РЅС‹Рµ РёР·РјРµСЂРµРЅРёСЏ СЃ РїРѕС‚РµСЂСЏРјРё'
 /
 
 -- End of DDL script for BILL_L
 
 -- Start of DDL script for BILL_OL
--- Generated 16-май-06  11:12:34 am
+-- Generated 16-РјР°Р№-06  11:12:34 am
 -- from oe-RYDA:8
 
 -- View BILL_OL
@@ -13759,13 +13759,13 @@ SELECT
  FROM RYDA.BILLOLD WHERE NEXCEPTCALC IS NULL and nsource<0
 /
 
-COMMENT ON TABLE bill_ol IS 'Реальные суточные измерения только потери'
+COMMENT ON TABLE bill_ol IS 'Р РµР°Р»СЊРЅС‹Рµ СЃСѓС‚РѕС‡РЅС‹Рµ РёР·РјРµСЂРµРЅРёСЏ С‚РѕР»СЊРєРѕ РїРѕС‚РµСЂРё'
 /
 
 -- End of DDL script for BILL_OL
 
 -- Start of DDL script for HALFHOUR_L
--- Generated 16-май-06  11:12:44 am
+-- Generated 16-РјР°Р№-06  11:12:44 am
 -- from oe-RYDA:8
 
 -- View HALFHOUR_L
@@ -13816,13 +13816,13 @@ SELECT
  FROM RYDA.HALFHOUROLD WHERE NEXCEPTCALC IS NULL
 /
 
-COMMENT ON TABLE halfhour_l IS 'График нагрузки с потерями'
+COMMENT ON TABLE halfhour_l IS 'Р“СЂР°С„РёРє РЅР°РіСЂСѓР·РєРё СЃ РїРѕС‚РµСЂСЏРјРё'
 /
 
 -- End of DDL script for HALFHOUR_L
 
 -- Start of DDL script for HALFHOUR_OL
--- Generated 16-май-06  11:12:51 am
+-- Generated 16-РјР°Р№-06  11:12:51 am
 -- from oe-RYDA:8
 
 -- View HALFHOUR_OL
@@ -13873,14 +13873,14 @@ SELECT
  FROM RYDA.HALFHOUROLD WHERE NEXCEPTCALC IS NULL and nsource<0
 /
 
-COMMENT ON TABLE halfhour_ol IS 'График нагрузки только потери'
+COMMENT ON TABLE halfhour_ol IS 'Р“СЂР°С„РёРє РЅР°РіСЂСѓР·РєРё С‚РѕР»СЊРєРѕ РїРѕС‚РµСЂРё'
 /
 -------18/05/2006
 INSERT INTO RYDA.PROTOCOLS
 VALUES
-(61,'УППД - Сервер')
+(61,'РЈРџРџР” - РЎРµСЂРІРµСЂ')
 /
-update protocols set NAME='УППД - Клиент' where PROTOCOL_ID=52
+update protocols set NAME='РЈРџРџР” - РљР»РёРµРЅС‚' where PROTOCOL_ID=52
 /
 update form_templates set ENABLECONTROLS=ENABLECONTROLS||'1' where parent in (1,11,20) and length(ENABLECONTROLS)<8
 /
@@ -13888,7 +13888,7 @@ commit
 /
 
 ----------------------------------------------------------------------------------------------
---         VER 2.20  (Для обновления версии 2.20 до текущей скрипт запускать отсюда)        --
+--         VER 2.20  (Р”Р»СЏ РѕР±РЅРѕРІР»РµРЅРёСЏ РІРµСЂСЃРёРё 2.20 РґРѕ С‚РµРєСѓС‰РµР№ СЃРєСЂРёРїС‚ Р·Р°РїСѓСЃРєР°С‚СЊ РѕС‚СЃСЋРґР°)        --
 ----------------------------------------------------------------------------------------------
 
 ALTER TABLE calc_hours
@@ -13924,9 +13924,9 @@ ln_customer_id NUMBER;
 begin
 SELECT NVL(SUM(DECODE(vvalue, '', 0, vvalue)), 0)   INTO ln_customer_id   FROM parameter  WHERE npid = 12;
 if ln_customer_id=2 then
-insert into parameter (NPID,VVALUE,VDESCRIPTION) values(31,1,'Контролировать суточные по РТУ');
+insert into parameter (NPID,VVALUE,VDESCRIPTION) values(31,1,'РљРѕРЅС‚СЂРѕР»РёСЂРѕРІР°С‚СЊ СЃСѓС‚РѕС‡РЅС‹Рµ РїРѕ Р РўРЈ');
 else
-insert into parameter (NPID,VVALUE,VDESCRIPTION) values(31,0,'Контролировать суточные по РТУ');
+insert into parameter (NPID,VVALUE,VDESCRIPTION) values(31,0,'РљРѕРЅС‚СЂРѕР»РёСЂРѕРІР°С‚СЊ СЃСѓС‚РѕС‡РЅС‹Рµ РїРѕ Р РўРЈ');
 end if;
 commit;
 end;
@@ -13937,9 +13937,9 @@ ln_customer_id NUMBER;
 begin
 SELECT NVL(SUM(DECODE(vvalue, '', 0, vvalue)), 0)   INTO ln_customer_id   FROM parameter  WHERE npid = 12;
 if ln_customer_id in (3,10,11,27,28) then
-insert into parameter (NPID,VVALUE,VDESCRIPTION) values(32,1,'Блокировка разноски суточных расходов на ГН');
+insert into parameter (NPID,VVALUE,VDESCRIPTION) values(32,1,'Р‘Р»РѕРєРёСЂРѕРІРєР° СЂР°Р·РЅРѕСЃРєРё СЃСѓС‚РѕС‡РЅС‹С… СЂР°СЃС…РѕРґРѕРІ РЅР° Р“Рќ');
 else
-insert into parameter (NPID,VVALUE,VDESCRIPTION) values(32,0,'Блокировка разноски суточных расходов на ГН');
+insert into parameter (NPID,VVALUE,VDESCRIPTION) values(32,0,'Р‘Р»РѕРєРёСЂРѕРІРєР° СЂР°Р·РЅРѕСЃРєРё СЃСѓС‚РѕС‡РЅС‹С… СЂР°СЃС…РѕРґРѕРІ РЅР° Р“Рќ');
 end if;
 commit;
 end;
@@ -13959,7 +13959,7 @@ exception
 end;
 /
 /*
-update parameter set VDESCRIPTION='Блокировка разноски суточных расходов на ГН при невозможности разноски' where npid=32
+update parameter set VDESCRIPTION='Р‘Р»РѕРєРёСЂРѕРІРєР° СЂР°Р·РЅРѕСЃРєРё СЃСѓС‚РѕС‡РЅС‹С… СЂР°СЃС…РѕРґРѕРІ РЅР° Р“Рќ РїСЂРё РЅРµРІРѕР·РјРѕР¶РЅРѕСЃС‚Рё СЂР°Р·РЅРѕСЃРєРё' where npid=32
 /
 commit
 /
@@ -13998,7 +13998,7 @@ commit
 /
 
 ----------------------------------------------------------------------------------------------
---         VER 2.20.3  (Для обновления версии 2.20.3 до текущей скрипт запускать отсюда)        --
+--         VER 2.20.3  (Р”Р»СЏ РѕР±РЅРѕРІР»РµРЅРёСЏ РІРµСЂСЃРёРё 2.20.3 РґРѕ С‚РµРєСѓС‰РµР№ СЃРєСЂРёРїС‚ Р·Р°РїСѓСЃРєР°С‚СЊ РѕС‚СЃСЋРґР°)        --
 ----------------------------------------------------------------------------------------------
 ---08/11/2006
 declare
@@ -14009,7 +14009,7 @@ if ln_customer_id in (0,11) then
 INSERT INTO tasks
 (TASK_ID,PARENT,TASK_COD,NAME,REMARK,nshow)
 VALUES
-(96,42,621,'1.21 Заполнение пропусков ГН','Ввод расхода с равномерной разбивкой на график нагрузки на тек сутки по дыркам',1);
+(96,42,621,'1.21 Р—Р°РїРѕР»РЅРµРЅРёРµ РїСЂРѕРїСѓСЃРєРѕРІ Р“Рќ','Р’РІРѕРґ СЂР°СЃС…РѕРґР° СЃ СЂР°РІРЅРѕРјРµСЂРЅРѕР№ СЂР°Р·Р±РёРІРєРѕР№ РЅР° РіСЂР°С„РёРє РЅР°РіСЂСѓР·РєРё РЅР° С‚РµРє СЃСѓС‚РєРё РїРѕ РґС‹СЂРєР°Рј',1);
 
 insert into role_task
 select ROLE_ID,96,decode(ROLE_ID,1,1,0) from roles;
@@ -14024,7 +14024,7 @@ begin
 INSERT INTO tasks
 (TASK_ID,PARENT,TASK_COD,NAME,REMARK,nshow)
 VALUES
-(97,80,655,'9.03 Блокировка ввода показаний при вводе ОВ','9.03 Блокировка ввода показаний при вводе ОВ',1);
+(97,80,655,'9.03 Р‘Р»РѕРєРёСЂРѕРІРєР° РІРІРѕРґР° РїРѕРєР°Р·Р°РЅРёР№ РїСЂРё РІРІРѕРґРµ РћР’','9.03 Р‘Р»РѕРєРёСЂРѕРІРєР° РІРІРѕРґР° РїРѕРєР°Р·Р°РЅРёР№ РїСЂРё РІРІРѕРґРµ РћР’',1);
 
 commit;
 end;
@@ -14046,13 +14046,13 @@ create table TCPARAMS
 )
 /
 
-comment on table TCPARAMS is 'Условия'
+comment on table TCPARAMS is 'РЈСЃР»РѕРІРёСЏ'
 /
 
-comment on column TCPARAMS.NPARAM is 'Ид условия'
+comment on column TCPARAMS.NPARAM is 'РРґ СѓСЃР»РѕРІРёСЏ'
 /
 
-comment on column TCPARAMS.VNAME is 'Наименование'
+comment on column TCPARAMS.VNAME is 'РќР°РёРјРµРЅРѕРІР°РЅРёРµ'
 /
 
 
@@ -14074,16 +14074,16 @@ create table TCCONDITIONS
 )
 /
 
-comment on table TCCONDITIONS is 'Условия выдачи ТУ'
+comment on table TCCONDITIONS is 'РЈСЃР»РѕРІРёСЏ РІС‹РґР°С‡Рё РўРЈ'
 /
 
-comment on column TCCONDITIONS.NPARAM is 'Ид условия'
+comment on column TCCONDITIONS.NPARAM is 'РРґ СѓСЃР»РѕРІРёСЏ'
 /
 
-comment on column TCCONDITIONS.DSTART is 'Дата ввода в действие'
+comment on column TCCONDITIONS.DSTART is 'Р”Р°С‚Р° РІРІРѕРґР° РІ РґРµР№СЃС‚РІРёРµ'
 /
 
-comment on column TCCONDITIONS.VCONDITION is 'Условие'
+comment on column TCCONDITIONS.VCONDITION is 'РЈСЃР»РѕРІРёРµ'
 /
 
 
@@ -14100,19 +14100,19 @@ create table TCSIGNALS
 )
 /
 
-comment on table TCSIGNALS is 'Привязка сигналов ТУ'
+comment on table TCSIGNALS is 'РџСЂРёРІСЏР·РєР° СЃРёРіРЅР°Р»РѕРІ РўРЈ'
 /
 
-comment on column TCSIGNALS.MID is 'Ид точки'
+comment on column TCSIGNALS.MID is 'РРґ С‚РѕС‡РєРё'
 /
 
-comment on column TCSIGNALS.CLAMP is 'Клема'
+comment on column TCSIGNALS.CLAMP is 'РљР»РµРјР°'
 /
 
-comment on column TCSIGNALS.NPARAM is 'Ид условия'
+comment on column TCSIGNALS.NPARAM is 'РРґ СѓСЃР»РѕРІРёСЏ'
 /
 
-comment on column TCSIGNALS.VVALUE is 'Сигнал'
+comment on column TCSIGNALS.VVALUE is 'РЎРёРіРЅР°Р»'
 /
 
 
@@ -14147,33 +14147,33 @@ begin
 INSERT INTO tasks
 (TASK_ID,PARENT,TASK_COD,NAME,REMARK,nshow)
 VALUES
-(97,80,655,'9.03 Блокировка ввода показаний при вводе ОВ','9.03 Блокировка ввода показаний при вводе ОВ',1);
+(97,80,655,'9.03 Р‘Р»РѕРєРёСЂРѕРІРєР° РІРІРѕРґР° РїРѕРєР°Р·Р°РЅРёР№ РїСЂРё РІРІРѕРґРµ РћР’','9.03 Р‘Р»РѕРєРёСЂРѕРІРєР° РІРІРѕРґР° РїРѕРєР°Р·Р°РЅРёР№ РїСЂРё РІРІРѕРґРµ РћР’',1);
 
 commit;
 end;
 /
 
 /*
---Для ПХЗ
+--Р”Р»СЏ РџРҐР—
 INSERT INTO tasks
 (TASK_ID,PARENT,TASK_COD,NAME,REMARK,NSHOW)
 VALUES
-(101,27,1001,'6.12 Условия выдачи телеуправления','Условия выдачи телеуправления',1)
+(101,27,1001,'6.12 РЈСЃР»РѕРІРёСЏ РІС‹РґР°С‡Рё С‚РµР»РµСѓРїСЂР°РІР»РµРЅРёСЏ','РЈСЃР»РѕРІРёСЏ РІС‹РґР°С‡Рё С‚РµР»РµСѓРїСЂР°РІР»РµРЅРёСЏ',1)
 /
 */
 
-update tasks set NAME='1.21 Заполнение пропусков ГН',
-REMARK='Ввод расхода с равномерной разбивкой на график нагрузки на тек сутки по дыркам' where task_id=96
+update tasks set NAME='1.21 Р—Р°РїРѕР»РЅРµРЅРёРµ РїСЂРѕРїСѓСЃРєРѕРІ Р“Рќ',
+REMARK='Р’РІРѕРґ СЂР°СЃС…РѕРґР° СЃ СЂР°РІРЅРѕРјРµСЂРЅРѕР№ СЂР°Р·Р±РёРІРєРѕР№ РЅР° РіСЂР°С„РёРє РЅР°РіСЂСѓР·РєРё РЅР° С‚РµРє СЃСѓС‚РєРё РїРѕ РґС‹СЂРєР°Рј' where task_id=96
 /
 
 commit
 /
 
 ----------------------------------------------------------------------------------------------
---         VER 2.20.5  (Для обновления версии 2.20.5 до текущей скрипт запускать отсюда)        --
+--         VER 2.20.5  (Р”Р»СЏ РѕР±РЅРѕРІР»РµРЅРёСЏ РІРµСЂСЃРёРё 2.20.5 РґРѕ С‚РµРєСѓС‰РµР№ СЃРєСЂРёРїС‚ Р·Р°РїСѓСЃРєР°С‚СЊ РѕС‚СЃСЋРґР°)        --
 ----------------------------------------------------------------------------------------------
 
-insert into parameter (NPID,VVALUE,VDESCRIPTION) values(33,0,'Блокировка ведения системных журналов')
+insert into parameter (NPID,VVALUE,VDESCRIPTION) values(33,0,'Р‘Р»РѕРєРёСЂРѕРІРєР° РІРµРґРµРЅРёСЏ СЃРёСЃС‚РµРјРЅС‹С… Р¶СѓСЂРЅР°Р»РѕРІ')
 /
 commit
 /
@@ -14181,23 +14181,23 @@ commit
 INSERT INTO deportprocedures
 (NPROCEDURE,VNAME,VPROCEDURE,NPERIOD,NTYPE,VMEMO)
 VALUES
-(39,'Макет 30917 (почасовое формирование)','reports1_pg.m30917h_p',2,0,'Макет 30917 (получасовые расходы эл. энергии с почасовым формированием)')
+(39,'РњР°РєРµС‚ 30917 (РїРѕС‡Р°СЃРѕРІРѕРµ С„РѕСЂРјРёСЂРѕРІР°РЅРёРµ)','reports1_pg.m30917h_p',2,0,'РњР°РєРµС‚ 30917 (РїРѕР»СѓС‡Р°СЃРѕРІС‹Рµ СЂР°СЃС…РѕРґС‹ СЌР». СЌРЅРµСЂРіРёРё СЃ РїРѕС‡Р°СЃРѕРІС‹Рј С„РѕСЂРјРёСЂРѕРІР°РЅРёРµРј)')
 /
 commit
 /
 
 
------------12/07/2007 (Для СЭС)
+-----------12/07/2007 (Р”Р»СЏ РЎР­РЎ)
 
 INSERT INTO deportprocedures
 (NPROCEDURE,VNAME,VPROCEDURE,NPERIOD,NTYPE,VMEMO)
 VALUES
-(40,'Северная. ЭС (ГН)','REPORTSSES_PG.mhour_p',2,0,'Северная ЭС (График нагрузки)')
+(40,'РЎРµРІРµСЂРЅР°СЏ. Р­РЎ (Р“Рќ)','REPORTSSES_PG.mhour_p',2,0,'РЎРµРІРµСЂРЅР°СЏ Р­РЎ (Р“СЂР°С„РёРє РЅР°РіСЂСѓР·РєРё)')
 /
 INSERT INTO deportprocedures
 (NPROCEDURE,VNAME,VPROCEDURE,NPERIOD,NTYPE,VMEMO)
 VALUES
-(41,'Северная. ЭС (Макет 20020)','REPORTSSES_PG.m20020_p',2,0,'Северная ЭС (Суточные показания)')
+(41,'РЎРµРІРµСЂРЅР°СЏ. Р­РЎ (РњР°РєРµС‚ 20020)','REPORTSSES_PG.m20020_p',2,0,'РЎРµРІРµСЂРЅР°СЏ Р­РЎ (РЎСѓС‚РѕС‡РЅС‹Рµ РїРѕРєР°Р·Р°РЅРёСЏ)')
 /
 commit
 /
@@ -14214,7 +14214,7 @@ alter table FEEDERS add
 )
 /
 
-comment on column FEEDERS.VCODE is 'Код точки'
+comment on column FEEDERS.VCODE is 'РљРѕРґ С‚РѕС‡РєРё'
 /
 
 create unique index FEEDERS_IDX7 on FEEDERS (VCODE asc)
@@ -14234,33 +14234,33 @@ alter table DEPORTPROCEDURES add (
 INSERT INTO deportprocedures
 (NPROCEDURE,VNAME,VPROCEDURE,NPERIOD,NTYPE,VMEMO)
 VALUES
-(42,'Донбасская ЭС (Макет 30817)','reports1_pg.des_m30817',2,0,'Донбасская ЭС (Макет 30817)')
+(42,'Р”РѕРЅР±Р°СЃСЃРєР°СЏ Р­РЎ (РњР°РєРµС‚ 30817)','reports1_pg.des_m30817',2,0,'Р”РѕРЅР±Р°СЃСЃРєР°СЏ Р­РЎ (РњР°РєРµС‚ 30817)')
 /
 
 INSERT INTO deportprocedures
 (NPROCEDURE,VNAME,VPROCEDURE,NPERIOD,NTYPE,VMEMO)
 VALUES
-(43,'Северная. ЭС (Макет 20030)','REPORTSSES_PG.m20030_p',7,0,'Северная ЭС (Макет 20030 начало работы обходного)')
+(43,'РЎРµРІРµСЂРЅР°СЏ. Р­РЎ (РњР°РєРµС‚ 20030)','REPORTSSES_PG.m20030_p',7,0,'РЎРµРІРµСЂРЅР°СЏ Р­РЎ (РњР°РєРµС‚ 20030 РЅР°С‡Р°Р»Рѕ СЂР°Р±РѕС‚С‹ РѕР±С…РѕРґРЅРѕРіРѕ)')
 /
 INSERT INTO deportprocedures
 (NPROCEDURE,VNAME,VPROCEDURE,NPERIOD,NTYPE,VMEMO)
 VALUES
-(44,'Северная. ЭС (Макет 20031)','REPORTSSES_PG.m20031_p',7,0,'Северная ЭС (Макет 20031 окончания работы обходного)')
+(44,'РЎРµРІРµСЂРЅР°СЏ. Р­РЎ (РњР°РєРµС‚ 20031)','REPORTSSES_PG.m20031_p',7,0,'РЎРµРІРµСЂРЅР°СЏ Р­РЎ (РњР°РєРµС‚ 20031 РѕРєРѕРЅС‡Р°РЅРёСЏ СЂР°Р±РѕС‚С‹ РѕР±С…РѕРґРЅРѕРіРѕ)')
 /
 INSERT INTO deportprocedures
 (NPROCEDURE,VNAME,VPROCEDURE,NPERIOD,NTYPE,VMEMO)
 VALUES
-(45,'Северная. ЭС (Макет 20040)','REPORTSSES_PG.m20040_p',7,0,'Северная ЭС (Макет 20040 замены счетчика)')
+(45,'РЎРµРІРµСЂРЅР°СЏ. Р­РЎ (РњР°РєРµС‚ 20040)','REPORTSSES_PG.m20040_p',7,0,'РЎРµРІРµСЂРЅР°СЏ Р­РЎ (РњР°РєРµС‚ 20040 Р·Р°РјРµРЅС‹ СЃС‡РµС‚С‡РёРєР°)')
 /
 INSERT INTO deportprocedures
 (NPROCEDURE,VNAME,VPROCEDURE,NPERIOD,NTYPE,VMEMO)
 VALUES
-(46,'Северная. ЭС (Макет 20120)','REPORTSSES_PG.m20120_p',7,0,'Северная ЭС (Макет 20120 замены коеф счетчика)')
+(46,'РЎРµРІРµСЂРЅР°СЏ. Р­РЎ (РњР°РєРµС‚ 20120)','REPORTSSES_PG.m20120_p',7,0,'РЎРµРІРµСЂРЅР°СЏ Р­РЎ (РњР°РєРµС‚ 20120 Р·Р°РјРµРЅС‹ РєРѕРµС„ СЃС‡РµС‚С‡РёРєР°)')
 /
 INSERT INTO deportprocedures
 (NPROCEDURE,VNAME,VPROCEDURE,NPERIOD,NTYPE,VMEMO)
 VALUES
-(47,'Северная. ЭС (Макет 20161)','REPORTSSES_PG.m20161_p',7,0,'Северная ЭС (Макет 20161 введения поправок)')
+(47,'РЎРµРІРµСЂРЅР°СЏ. Р­РЎ (РњР°РєРµС‚ 20161)','REPORTSSES_PG.m20161_p',7,0,'РЎРµРІРµСЂРЅР°СЏ Р­РЎ (РњР°РєРµС‚ 20161 РІРІРµРґРµРЅРёСЏ РїРѕРїСЂР°РІРѕРє)')
 /
 commit
 /
@@ -14277,7 +14277,7 @@ alter table DEPORTPROCEDURES add constraint CKC_NPERIOD_DEPORTPR check (NPERIOD 
 INSERT INTO deportprocedures
 (NPROCEDURE,VNAME,VPROCEDURE,NPERIOD,NTYPE,VMEMO)
 VALUES
-(48,'Нарушение работы системы','FILE_PG.mEvents_p',7,0,'Универсальный макет посылки сообщений')
+(48,'РќР°СЂСѓС€РµРЅРёРµ СЂР°Р±РѕС‚С‹ СЃРёСЃС‚РµРјС‹','FILE_PG.mEvents_p',7,0,'РЈРЅРёРІРµСЂСЃР°Р»СЊРЅС‹Р№ РјР°РєРµС‚ РїРѕСЃС‹Р»РєРё СЃРѕРѕР±С‰РµРЅРёР№')
 /
 commit
 /
@@ -14287,22 +14287,22 @@ commit
 INSERT INTO deportprocedures
 (NPROCEDURE,VNAME,VPROCEDURE,NPERIOD,NTYPE,VMEMO)
 VALUES
-(49,'Контроль мощности','ryda.check_pg.checkpower',8,1,'Контроль мощности')
+(49,'РљРѕРЅС‚СЂРѕР»СЊ РјРѕС‰РЅРѕСЃС‚Рё','ryda.check_pg.checkpower',8,1,'РљРѕРЅС‚СЂРѕР»СЊ РјРѕС‰РЅРѕСЃС‚Рё')
 /
 INSERT INTO deportprocedures
 (NPROCEDURE,VNAME,VPROCEDURE,NPERIOD,NTYPE,VMEMO)
 VALUES
-(50,'Контроль суточных по сумме ГН','ryda.check_pg.by_day_and_hour',2,1,'Контроль суточных показаний по сумме ГН')
+(50,'РљРѕРЅС‚СЂРѕР»СЊ СЃСѓС‚РѕС‡РЅС‹С… РїРѕ СЃСѓРјРјРµ Р“Рќ','ryda.check_pg.by_day_and_hour',2,1,'РљРѕРЅС‚СЂРѕР»СЊ СЃСѓС‚РѕС‡РЅС‹С… РїРѕРєР°Р·Р°РЅРёР№ РїРѕ СЃСѓРјРјРµ Р“Рќ')
 /
 INSERT INTO deportprocedures
 (NPROCEDURE,VNAME,VPROCEDURE,NPERIOD,NTYPE,VMEMO)
 VALUES
-(51,'Контроль номера устройства с НСИ','ryda.check_pg.checkmtrsn',2,1,'Контроль номера устройства с НСИ')
+(51,'РљРѕРЅС‚СЂРѕР»СЊ РЅРѕРјРµСЂР° СѓСЃС‚СЂРѕР№СЃС‚РІР° СЃ РќРЎР','ryda.check_pg.checkmtrsn',2,1,'РљРѕРЅС‚СЂРѕР»СЊ РЅРѕРјРµСЂР° СѓСЃС‚СЂРѕР№СЃС‚РІР° СЃ РќРЎР')
 /
 INSERT INTO deportprocedures
 (NPROCEDURE,VNAME,VPROCEDURE,NPERIOD,NTYPE,VMEMO)
 VALUES
-(52,'Контроль полноты данных','ryda.check_pg.checkcomplete',2,1,'Контроль полноты данных')
+(52,'РљРѕРЅС‚СЂРѕР»СЊ РїРѕР»РЅРѕС‚С‹ РґР°РЅРЅС‹С…','ryda.check_pg.checkcomplete',2,1,'РљРѕРЅС‚СЂРѕР»СЊ РїРѕР»РЅРѕС‚С‹ РґР°РЅРЅС‹С…')
 /
 commit
 /
@@ -14325,16 +14325,16 @@ alter table FEEDERS add
 )
 /
 
-comment on column FEEDERS.VERIFYPARAM is 'Парам верификации дубл'
+comment on column FEEDERS.VERIFYPARAM is 'РџР°СЂР°Рј РІРµСЂРёС„РёРєР°С†РёРё РґСѓР±Р»'
 /
 
-comment on column FEEDERS.VERIFYDAY is 'Парам верификации суточных'
+comment on column FEEDERS.VERIFYDAY is 'РџР°СЂР°Рј РІРµСЂРёС„РёРєР°С†РёРё СЃСѓС‚РѕС‡РЅС‹С…'
 /
 
 
 
 ----------------------------------------------------------------------------------------------
---         VER 2.21  (Для обновления версии 2.21 до текущей скрипт запускать отсюда)        --
+--         VER 2.21  (Р”Р»СЏ РѕР±РЅРѕРІР»РµРЅРёСЏ РІРµСЂСЃРёРё 2.21 РґРѕ С‚РµРєСѓС‰РµР№ СЃРєСЂРёРїС‚ Р·Р°РїСѓСЃРєР°С‚СЊ РѕС‚СЃСЋРґР°)        --
 ----------------------------------------------------------------------------------------------
 --01/11/2007
 declare
@@ -14358,27 +14358,27 @@ end;
 ----20/11/2007
 INSERT INTO RYDA.PROTOCOLS
 VALUES
-(62,'СЭТ-4')
+(62,'РЎР­Рў-4')
 /
 INSERT INTO RYDA.PROTOCOLS
 VALUES
-(63,'KM --> СЭТ-4')
+(63,'KM --> РЎР­Рў-4')
 /
 INSERT INTO RYDA.PROTOCOLS
 VALUES
-(64,'ЦТ-5000')
+(64,'Р¦Рў-5000')
 /
 INSERT INTO RYDA.PROTOCOLS
 VALUES
-(65,'KM --> ЦТ-5000')
+(65,'KM --> Р¦Рў-5000')
 /
 INSERT INTO RYDA.PROTOCOLS
 VALUES
-(66,'Меркурий_230')
+(66,'РњРµСЂРєСѓСЂРёР№_230')
 /
 INSERT INTO RYDA.PROTOCOLS
 VALUES
-(67,'KM --> Меркурий_230')
+(67,'KM --> РњРµСЂРєСѓСЂРёР№_230')
 /
 INSERT INTO RYDA.PROTOCOLS
 VALUES
@@ -14449,16 +14449,16 @@ alter table FEEDERS add
 )
 /
 
-comment on column FEEDERS.NTCURRENT is 'Трансформатор тока силовой'
+comment on column FEEDERS.NTCURRENT is 'РўСЂР°РЅСЃС„РѕСЂРјР°С‚РѕСЂ С‚РѕРєР° СЃРёР»РѕРІРѕР№'
 /
 
-comment on column FEEDERS.NTPOWER is 'Трансформатор напряжения силовой'
+comment on column FEEDERS.NTPOWER is 'РўСЂР°РЅСЃС„РѕСЂРјР°С‚РѕСЂ РЅР°РїСЂСЏР¶РµРЅРёСЏ СЃРёР»РѕРІРѕР№'
 /
 
-comment on column FEEDERS.NCLASSTT is 'Класс точности ТТ'
+comment on column FEEDERS.NCLASSTT is 'РљР»Р°СЃСЃ С‚РѕС‡РЅРѕСЃС‚Рё РўРў'
 /
 
-comment on column FEEDERS.NCLASSTN is 'Класс точности ТН'
+comment on column FEEDERS.NCLASSTN is 'РљР»Р°СЃСЃ С‚РѕС‡РЅРѕСЃС‚Рё РўРќ'
 /
 
 INSERT INTO RYDA.PROTOCOLS
@@ -14476,7 +14476,7 @@ commit
 
 
 ----------------------------------------------------------------------------------------------
---         VER 2.22  (Для обновления версии 2.22 до текущей скрипт запускать отсюда)        --
+--         VER 2.22  (Р”Р»СЏ РѕР±РЅРѕРІР»РµРЅРёСЏ РІРµСЂСЃРёРё 2.22 РґРѕ С‚РµРєСѓС‰РµР№ СЃРєСЂРёРїС‚ Р·Р°РїСѓСЃРєР°С‚СЊ РѕС‚СЃСЋРґР°)        --
 ----------------------------------------------------------------------------------------------
 --   Created on:     29.11.2007  9:32
 -- ============================================================
@@ -14492,25 +14492,25 @@ create table OPERATINGDAY
 )
 /
 
-comment on table OPERATINGDAY is 'Режимные дни'
+comment on table OPERATINGDAY is 'Р РµР¶РёРјРЅС‹Рµ РґРЅРё'
 /
 
-comment on column OPERATINGDAY.NOWNER is 'Ид точки вершины'
+comment on column OPERATINGDAY.NOWNER is 'РРґ С‚РѕС‡РєРё РІРµСЂС€РёРЅС‹'
 /
 
-comment on column OPERATINGDAY.DSTART is 'Дата ввода в действие'
+comment on column OPERATINGDAY.DSTART is 'Р”Р°С‚Р° РІРІРѕРґР° РІ РґРµР№СЃС‚РІРёРµ'
 /
 
-comment on column OPERATINGDAY.MID is 'Ид точки шаблона'
+comment on column OPERATINGDAY.MID is 'РРґ С‚РѕС‡РєРё С€Р°Р±Р»РѕРЅР°'
 /
 
-comment on column OPERATINGDAY.GID is 'Ид группы шаблона'
+comment on column OPERATINGDAY.GID is 'РРґ РіСЂСѓРїРїС‹ С€Р°Р±Р»РѕРЅР°'
 /
 
-comment on column OPERATINGDAY.DREGIME is 'Режимный день'
+comment on column OPERATINGDAY.DREGIME is 'Р РµР¶РёРјРЅС‹Р№ РґРµРЅСЊ'
 /
 
-comment on column OPERATINGDAY.NSHIFT is 'Сдвиг'
+comment on column OPERATINGDAY.NSHIFT is 'РЎРґРІРёРі'
 /
 
 
@@ -14546,7 +14546,7 @@ alter table OPERATINGDAY
 INSERT INTO form_templates
 (TEMPLATE_ID,PARENT,CODETEMPLATE,NAMEFORM,COMMENTFORM,ENABLECONTROLS,STEPPROFILE,NAMEALERT)
 VALUES
-(91,40,1207,'5.06. Универсальная таблица','','11111100',2,'')
+(91,40,1207,'5.06. РЈРЅРёРІРµСЂСЃР°Р»СЊРЅР°СЏ С‚Р°Р±Р»РёС†Р°','','11111100',2,'')
 /
 
 commit
@@ -14559,7 +14559,7 @@ alter table PROTOCOLS add
 )
 /
 
-comment on column PROTOCOLS.DLL_NAME is 'Наименование библиотеки'
+comment on column PROTOCOLS.DLL_NAME is 'РќР°РёРјРµРЅРѕРІР°РЅРёРµ Р±РёР±Р»РёРѕС‚РµРєРё'
 /
 
 --26/12/2007
@@ -14572,7 +14572,7 @@ commit
 /
 
 ----------------------------------------------------------------------------------------------
---         VER 2.23  (Для обновления версии 2.23 до текущей скрипт запускать отсюда)        --
+--         VER 2.23  (Р”Р»СЏ РѕР±РЅРѕРІР»РµРЅРёСЏ РІРµСЂСЃРёРё 2.23 РґРѕ С‚РµРєСѓС‰РµР№ СЃРєСЂРёРїС‚ Р·Р°РїСѓСЃРєР°С‚СЊ РѕС‚СЃСЋРґР°)        --
 ----------------------------------------------------------------------------------------------
 
 -- ============================================================
@@ -14588,14 +14588,14 @@ alter table VERSION add
 /
 
 
-comment on column VERSION.VPATH is 'Путь для распаковки'
+comment on column VERSION.VPATH is 'РџСѓС‚СЊ РґР»СЏ СЂР°СЃРїР°РєРѕРІРєРё'
 /
 
 
 INSERT INTO deportprocedures
 (NPROCEDURE,VNAME,VPROCEDURE,NPERIOD,NTYPE,VMEMO)
 VALUES
-(53,'Северная ЭС (ГН) - почасово','REPORTSSES_PG.MHOUR_P',1,0,'Северная ЭС (График нагрузки) - почасово')
+(53,'РЎРµРІРµСЂРЅР°СЏ Р­РЎ (Р“Рќ) - РїРѕС‡Р°СЃРѕРІРѕ','REPORTSSES_PG.MHOUR_P',1,0,'РЎРµРІРµСЂРЅР°СЏ Р­РЎ (Р“СЂР°С„РёРє РЅР°РіСЂСѓР·РєРё) - РїРѕС‡Р°СЃРѕРІРѕ')
 /
 commit
 /
@@ -14615,7 +14615,7 @@ VALUES
 INSERT INTO protocols
 (PROTOCOL_ID,NAME,DLL_NAME)
 VALUES
-(1002,'АСКУЭ Хартэп (DLL)','DbLink_OraKh.dll')
+(1002,'РђРЎРљРЈР­ РҐР°СЂС‚СЌРї (DLL)','DbLink_OraKh.dll')
 /
 commit
 /
@@ -14629,10 +14629,10 @@ alter table GROUPS  add(
 )
 /
 
-comment on column GROUPS.NFROMPERIOD is 'Период с'
+comment on column GROUPS.NFROMPERIOD is 'РџРµСЂРёРѕРґ СЃ'
 /
 
-comment on column GROUPS.NTILLPERIOD is 'Период по'
+comment on column GROUPS.NTILLPERIOD is 'РџРµСЂРёРѕРґ РїРѕ'
 /
 
 --14/02/2008
@@ -14665,38 +14665,38 @@ create global temporary table ICCPMEASURMENT  (
 /
 
 comment on table ICCPMEASURMENT is
-'ICCP измерения'
+'ICCP РёР·РјРµСЂРµРЅРёСЏ'
 /
 
 comment on column ICCPMEASURMENT.ID is
-'Ид измерения'
+'РРґ РёР·РјРµСЂРµРЅРёСЏ'
 /
 
 comment on column ICCPMEASURMENT.DDATETIME is
-'Дата'
+'Р”Р°С‚Р°'
 /
 
 comment on column ICCPMEASURMENT.VALUE is
-'Значение'
+'Р—РЅР°С‡РµРЅРёРµ'
 /
 
 comment on column ICCPMEASURMENT.VALIDITY is
-'Достоверность'
+'Р”РѕСЃС‚РѕРІРµСЂРЅРѕСЃС‚СЊ'
 /
 
 comment on column ICCPMEASURMENT.QUALITY is
-'Метка качества'
+'РњРµС‚РєР° РєР°С‡РµСЃС‚РІР°'
 /
 
 comment on column ICCPMEASURMENT.SOURCE is
-'Источник'
+'РСЃС‚РѕС‡РЅРёРє'
 /
 
 
 ------26/02/2008
 INSERT INTO RYDA.PROTOCOLS
 VALUES
-(77,'ICCP - клиент', null)
+(77,'ICCP - РєР»РёРµРЅС‚', null)
 /
 INSERT INTO RYDA.PROTOCOLS
 VALUES
@@ -14716,25 +14716,25 @@ VALUES
 /
 INSERT INTO RYDA.PROTOCOLS
 VALUES
-(82,'ЕвроАльфа (коммерч)', null)
+(82,'Р•РІСЂРѕРђР»СЊС„Р° (РєРѕРјРјРµСЂС‡)', null)
 /
 INSERT INTO RYDA.PROTOCOLS
 VALUES
-(83,'KM --> ЕвроАльфа (коммерч)', null)
+(83,'KM --> Р•РІСЂРѕРђР»СЊС„Р° (РєРѕРјРјРµСЂС‡)', null)
 /
 INSERT INTO RYDA.PROTOCOLS
 VALUES
-(84,'EA10 Альфа (коммерч)', null)
+(84,'EA10 РђР»СЊС„Р° (РєРѕРјРјРµСЂС‡)', null)
 /
 INSERT INTO RYDA.PROTOCOLS
 VALUES
-(85,'KM --> EA10 Альфа (коммерч)', null)
+(85,'KM --> EA10 РђР»СЊС„Р° (РєРѕРјРјРµСЂС‡)', null)
 /
 commit
 /
 
 ----------------------------------------------------------------------------------------------
---         VER 2.24  (Для обновления версии 2.24 до текущей скрипт запускать отсюда)        --
+--         VER 2.24  (Р”Р»СЏ РѕР±РЅРѕРІР»РµРЅРёСЏ РІРµСЂСЃРёРё 2.24 РґРѕ С‚РµРєСѓС‰РµР№ СЃРєСЂРёРїС‚ Р·Р°РїСѓСЃРєР°С‚СЊ РѕС‚СЃСЋРґР°)        --
 ----------------------------------------------------------------------------------------------
 --DROP ROLE ASKUE_WORK;
 begin
@@ -14785,24 +14785,24 @@ END;
 INSERT INTO parameter
 (NPID,VVALUE,VDESCRIPTION)
 VALUES
-(34,'USERS','Табличное пространство по умолчанию')
+(34,'USERS','РўР°Р±Р»РёС‡РЅРѕРµ РїСЂРѕСЃС‚СЂР°РЅСЃС‚РІРѕ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ')
 /
 INSERT INTO parameter
 (NPID,VVALUE,VDESCRIPTION)
 VALUES
-(35,'TEMP','Временное табличное пространство')
+(35,'TEMP','Р’СЂРµРјРµРЅРЅРѕРµ С‚Р°Р±Р»РёС‡РЅРѕРµ РїСЂРѕСЃС‚СЂР°РЅСЃС‚РІРѕ')
 /
 commit
 /
 
 declare
-lv_deftablespace varchar2(256) default 'USERS';---Табл пространство (если такого нет, то нужно заменить на существующее)
-lv_tmptablespace varchar2(256) default 'TEMP';---Табл пространство (если такого нет, то нужно заменить на существующее)
+lv_deftablespace varchar2(256) default 'USERS';---РўР°Р±Р» РїСЂРѕСЃС‚СЂР°РЅСЃС‚РІРѕ (РµСЃР»Рё С‚Р°РєРѕРіРѕ РЅРµС‚, С‚Рѕ РЅСѓР¶РЅРѕ Р·Р°РјРµРЅРёС‚СЊ РЅР° СЃСѓС‰РµСЃС‚РІСѓСЋС‰РµРµ)
+lv_tmptablespace varchar2(256) default 'TEMP';---РўР°Р±Р» РїСЂРѕСЃС‚СЂР°РЅСЃС‚РІРѕ (РµСЃР»Рё С‚Р°РєРѕРіРѕ РЅРµС‚, С‚Рѕ РЅСѓР¶РЅРѕ Р·Р°РјРµРЅРёС‚СЊ РЅР° СЃСѓС‰РµСЃС‚РІСѓСЋС‰РµРµ)
 ln_count NUMBER;
 begin
  select count(*) into ln_count from USER_TABLESPACES where TABLESPACE_NAME in (lv_deftablespace,lv_tmptablespace);
  if ln_count<>2 then
-  raise_application_error(-20001, 'укажите правильное табл пространство 5-ю и 6-ю строками выше');
+  raise_application_error(-20001, 'СѓРєР°Р¶РёС‚Рµ РїСЂР°РІРёР»СЊРЅРѕРµ С‚Р°Р±Р» РїСЂРѕСЃС‚СЂР°РЅСЃС‚РІРѕ 5-СЋ Рё 6-СЋ СЃС‚СЂРѕРєР°РјРё РІС‹С€Рµ');
  end if;
  for lc in (select 'KHARTEPADM' USR,'KHARTEPADM' PASSWORD,'KHARTEPADM' NAME,'*'ADMIN,min(ROLE_ID) ROLE_ID from users
             having not exists (select * from users where upper(USR)='KHARTEPADM')) loop
@@ -14846,13 +14846,13 @@ alter table POINTSPARAM  add(
 /
 
 comment on column POINTSPARAM.NKC is
-'Коеф пересчета'
+'РљРѕРµС„ РїРµСЂРµСЃС‡РµС‚Р°'
 /
 
 INSERT INTO calcpointtype
 (NCALCPOINTTYPE,VNAME)
 VALUES
-(5,'Расчетная точка (как сумма по группе)')
+(5,'Р Р°СЃС‡РµС‚РЅР°СЏ С‚РѕС‡РєР° (РєР°Рє СЃСѓРјРјР° РїРѕ РіСЂСѓРїРїРµ)')
 /
 
 commit
@@ -14869,13 +14869,13 @@ create table CALCPOINTBYGROUP  (
 );
 
 comment on table CALCPOINTBYGROUP is
-'Расчетные точки по группе';
+'Р Р°СЃС‡РµС‚РЅС‹Рµ С‚РѕС‡РєРё РїРѕ РіСЂСѓРїРїРµ';
 
 comment on column CALCPOINTBYGROUP.MID is
-'Ид точки';
+'РРґ С‚РѕС‡РєРё';
 
 comment on column CALCPOINTBYGROUP.GID is
-'Ид группы';
+'РРґ РіСЂСѓРїРїС‹';
 
 /*==============================================================*/
 /* Index: CALCPOINTBYGROUP_IDX1                                 */
@@ -14907,7 +14907,7 @@ VALUES
 /
 INSERT INTO RYDA.PROTOCOLS
 VALUES
-(1004,'АСУЭ Инэт (DLL)', 'DbLink_OraInet.dll')
+(1004,'РђРЎРЈР­ РРЅСЌС‚ (DLL)', 'DbLink_OraInet.dll')
 /
 commit
 /
@@ -14927,22 +14927,22 @@ create table METERPARAMETER  (
 );
 
 comment on table METERPARAMETER is
-'Параметризация счетчиков';
+'РџР°СЂР°РјРµС‚СЂРёР·Р°С†РёСЏ СЃС‡РµС‚С‡РёРєРѕРІ';
 
 comment on column METERPARAMETER.MID is
-'Ид точки';
+'РРґ С‚РѕС‡РєРё';
 
 comment on column METERPARAMETER.DDATE is
-'Дата параметризации';
+'Р”Р°С‚Р° РїР°СЂР°РјРµС‚СЂРёР·Р°С†РёРё';
 
 comment on column METERPARAMETER.VFILENAME is
-'Имя файла';
+'РРјСЏ С„Р°Р№Р»Р°';
 
 comment on column METERPARAMETER.BFILE is
-'Файл';
+'Р¤Р°Р№Р»';
 
 comment on column METERPARAMETER.VNOTE is
-'Примечание';
+'РџСЂРёРјРµС‡Р°РЅРёРµ';
 
 alter table METERPARAMETER
    add constraint METERPARAMETER_F1 foreign key (MID)
@@ -14975,14 +14975,14 @@ VALUES
 commit
 /
 ----------------------------------------------------------------------------------------------
---         VER 2.25  (Для обновления версии 2.25 до текущей скрипт запускать отсюда)        --
+--         VER 2.25  (Р”Р»СЏ РѕР±РЅРѕРІР»РµРЅРёСЏ РІРµСЂСЃРёРё 2.25 РґРѕ С‚РµРєСѓС‰РµР№ СЃРєСЂРёРїС‚ Р·Р°РїСѓСЃРєР°С‚СЊ РѕС‚СЃСЋРґР°)        --
 ----------------------------------------------------------------------------------------------
 --02/04/2007
 begin
 INSERT INTO tasks
 (TASK_ID,PARENT,TASK_COD,NAME,REMARK,NSHOW)
 VALUES
-(98,80,656,'9.04 Квитирование сообщений','9.04 Квитирование сообщений',0);
+(98,80,656,'9.04 РљРІРёС‚РёСЂРѕРІР°РЅРёРµ СЃРѕРѕР±С‰РµРЅРёР№','9.04 РљРІРёС‚РёСЂРѕРІР°РЅРёРµ СЃРѕРѕР±С‰РµРЅРёР№',0);
 
 
 insert into role_task
@@ -14992,7 +14992,7 @@ select distinct ROLE_ID,98,1 from users;
 INSERT INTO deportprocedures
 (NPROCEDURE,VNAME,VPROCEDURE,NPERIOD,NTYPE,VMEMO)
 VALUES
-(54,'Макет 4024','reports1_pg.m4024_p',2,0,'Макет 4024');
+(54,'РњР°РєРµС‚ 4024','reports1_pg.m4024_p',2,0,'РњР°РєРµС‚ 4024');
 
 commit;
 exception
@@ -15012,16 +15012,16 @@ create table SRV  (
 );
 
 comment on table SRV is
-'Сервера сбора данных';
+'РЎРµСЂРІРµСЂР° СЃР±РѕСЂР° РґР°РЅРЅС‹С…';
 
 comment on column SRV.NSRV is
-'Ид ССД';
+'РРґ РЎРЎР”';
 
 comment on column SRV.VNAME is
-'Наименование сервера';
+'РќР°РёРјРµРЅРѕРІР°РЅРёРµ СЃРµСЂРІРµСЂР°';
 
 comment on column SRV.MID is
-'Ид вершины каналов';
+'РРґ РІРµСЂС€РёРЅС‹ РєР°РЅР°Р»РѕРІ';
 
 /*==============================================================*/
 /* Index: SRV_IDX1                                              */
@@ -15042,7 +15042,7 @@ alter table SRV
       references POINTS (MID)
       on delete cascade;
 
-insert into SRV(NSRV,VNAME,mid) values(1,'Главный ССД',1)
+insert into SRV(NSRV,VNAME,mid) values(1,'Р“Р»Р°РІРЅС‹Р№ РЎРЎР”',1)
 /
 
 commit
@@ -15067,10 +15067,10 @@ alter table COMPORTS  add(
 );
 
 comment on column COMPORTS.NSRV is
-'Ид ССД';
+'РРґ РЎРЎР”';
 
 comment on column COMPORTS.COM_NUM is
-'Номер компорта';
+'РќРѕРјРµСЂ РєРѕРјРїРѕСЂС‚Р°';
 
 /*==============================================================*/
 /* Index: COMPORTS_IDX3                                         */
@@ -15109,49 +15109,49 @@ create table ICCPTMPMEAS  (
 );
 
 comment on table ICCPTMPMEAS is
-'Измерения ICCP';
+'РР·РјРµСЂРµРЅРёСЏ ICCP';
 
 comment on column ICCPTMPMEAS.MID is
-'Ид точки';
+'РРґ С‚РѕС‡РєРё';
 
 comment on column ICCPTMPMEAS.DATE_TIME is
-'Дата';
+'Р”Р°С‚Р°';
 
 comment on column ICCPTMPMEAS.ER is
-'Мощность А';
+'РњРѕС‰РЅРѕСЃС‚СЊ Рђ';
 
 comment on column ICCPTMPMEAS.Q1 is
-'Мощность Р';
+'РњРѕС‰РЅРѕСЃС‚СЊ Р ';
 
 comment on column ICCPTMPMEAS.ED is
-'Мощность А отд';
+'РњРѕС‰РЅРѕСЃС‚СЊ Рђ РѕС‚Рґ';
 
 comment on column ICCPTMPMEAS.Q3 is
-'Мощность Р отд';
+'РњРѕС‰РЅРѕСЃС‚СЊ Р  РѕС‚Рґ';
 
 comment on column ICCPTMPMEAS.Q2 is
-'Мощность Р 2';
+'РњРѕС‰РЅРѕСЃС‚СЊ Р  2';
 
 comment on column ICCPTMPMEAS.Q4 is
-'Мощность Р 4';
+'РњРѕС‰РЅРѕСЃС‚СЊ Р  4';
 
 comment on column ICCPTMPMEAS.ERM is
-'Показания А';
+'РџРѕРєР°Р·Р°РЅРёСЏ Рђ';
 
 comment on column ICCPTMPMEAS.EDM is
-'Показания А отд';
+'РџРѕРєР°Р·Р°РЅРёСЏ Рђ РѕС‚Рґ';
 
 comment on column ICCPTMPMEAS.Q1M is
-'Показания Р';
+'РџРѕРєР°Р·Р°РЅРёСЏ Р ';
 
 comment on column ICCPTMPMEAS.Q3M is
-'Показания Р отд';
+'РџРѕРєР°Р·Р°РЅРёСЏ Р  РѕС‚Рґ';
 
 comment on column ICCPTMPMEAS.Q2M is
-'Показания Р 2';
+'РџРѕРєР°Р·Р°РЅРёСЏ Р  2';
 
 comment on column ICCPTMPMEAS.Q4M is
-'Показания Р 4';
+'РџРѕРєР°Р·Р°РЅРёСЏ Р  4';
 
 alter table ICCPTMPMEAS
    add constraint ICCPTMPMEAS_F1 foreign key (MID)
@@ -15159,13 +15159,13 @@ alter table ICCPTMPMEAS
       on delete cascade;
 
 /*
----Только по разрешению ХАРТЭП (Сечин А.А.)
+---РўРѕР»СЊРєРѕ РїРѕ СЂР°Р·СЂРµС€РµРЅРёСЋ РҐРђР РўР­Рџ (РЎРµС‡РёРЅ Рђ.Рђ.)
 declare
 ln_srv NUMBER default 2;
 begin
  begin
   INSERT INTO points(MID,PARENT,COD,IND,NAME,SHORT_NAME,PTYPE,IMPLEMENT_DATE,TAG,NPOINT)
-  VALUES(101,1,NULL,1,'Главный ССД','',NULL,'',NULL,NULL);
+  VALUES(101,1,NULL,1,'Р“Р»Р°РІРЅС‹Р№ РЎРЎР”','',NULL,'',NULL,NULL);
   update points set parent=101 where parent=1 and mid<>101;
   update SRV set mid=101 where NSRV=1;
  exception
@@ -15173,8 +15173,8 @@ begin
   NULL;
  end;
  INSERT INTO points(MID,PARENT,COD,IND,NAME,SHORT_NAME,PTYPE,IMPLEMENT_DATE,TAG,NPOINT)
- VALUES(100+ln_srv,1,NULL,1,'ССД в Купянске','',NULL,'',NULL,NULL);
- insert into SRV(NSRV,VNAME,mid) values(ln_srv,'ССД в Купянске',100+ln_srv);
+ VALUES(100+ln_srv,1,NULL,1,'РЎРЎР” РІ РљСѓРїСЏРЅСЃРєРµ','',NULL,'',NULL,NULL);
+ insert into SRV(NSRV,VNAME,mid) values(ln_srv,'РЎРЎР” РІ РљСѓРїСЏРЅСЃРєРµ',100+ln_srv);
  for i in 1..128 loop
   insert into comports(COM_ID,    NAME,    BAUDRATE,    BYTESIZE,    PARITY,    STOPBITS,    DLASTEVENT,    NCOMTYPE,    NONLYONE,NSRV,COM_NUM)
   values((ln_srv-1)*1000+i,'COM'||i,9600,8,0,1,sysdate,1,0,ln_srv,i);
@@ -15196,10 +15196,10 @@ alter table FEEDERS  add(
 );
 
 comment on column FEEDERS.NTIMEZONEW is
-'Веменная зона зимой';
+'Р’РµРјРµРЅРЅР°СЏ Р·РѕРЅР° Р·РёРјРѕР№';
 
 comment on column FEEDERS.NTIMEZONES is
-'Веменная зона летом';
+'Р’РµРјРµРЅРЅР°СЏ Р·РѕРЅР° Р»РµС‚РѕРј';
 
 INSERT INTO RYDA.PROTOCOLS
 VALUES
@@ -15220,7 +15220,7 @@ declare
 l NUMBER;
 begin
 select nvl(max(decode(vvalue,'11',2,'1',1,0)),0) into l from parameter where NPID=12;
-insert into parameter (NPID,VVALUE,VDESCRIPTION) values(36,l,'Тип расчета потерь 1-старый 2-Схемы, иначе деньги собирай');
+insert into parameter (NPID,VVALUE,VDESCRIPTION) values(36,l,'РўРёРї СЂР°СЃС‡РµС‚Р° РїРѕС‚РµСЂСЊ 1-СЃС‚Р°СЂС‹Р№ 2-РЎС…РµРјС‹, РёРЅР°С‡Рµ РґРµРЅСЊРіРё СЃРѕР±РёСЂР°Р№');
 commit;
 end;
 /
@@ -15230,7 +15230,7 @@ declare
 l NUMBER;
 begin
 select nvl(max(decode(vvalue,'1',1,0)),0) into l from parameter where NPID=12;
-insert into parameter (NPID,VVALUE,VDESCRIPTION) values(37,l,'Использование новой схемы администрирования.');
+insert into parameter (NPID,VVALUE,VDESCRIPTION) values(37,l,'РСЃРїРѕР»СЊР·РѕРІР°РЅРёРµ РЅРѕРІРѕР№ СЃС…РµРјС‹ Р°РґРјРёРЅРёСЃС‚СЂРёСЂРѕРІР°РЅРёСЏ.');
 commit;
 end;
 /
@@ -15245,13 +15245,13 @@ create table USERPASS  (
 );
 
 comment on table USERPASS is
-'Пароли пользователей';
+'РџР°СЂРѕР»Рё РїРѕР»СЊР·РѕРІР°С‚РµР»РµР№';
 
 comment on column USERPASS.USER_ID is
-'Ид пользователя';
+'РРґ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ';
 
 comment on column USERPASS.PASSWORD is
-'Пароль';
+'РџР°СЂРѕР»СЊ';
 
 alter table USERPASS
    add constraint USERPASS_F1 foreign key (USER_ID)
@@ -15264,10 +15264,10 @@ select USER_ID,nvl(PASSWORD,USR) from users;
 commit;
 
 ----------------------------------------------------------------------------------------------
---         VER 2.26  (Для обновления версии 2.26 до текущей скрипт запускать отсюда)        --
+--         VER 2.26  (Р”Р»СЏ РѕР±РЅРѕРІР»РµРЅРёСЏ РІРµСЂСЃРёРё 2.26 РґРѕ С‚РµРєСѓС‰РµР№ СЃРєСЂРёРїС‚ Р·Р°РїСѓСЃРєР°С‚СЊ РѕС‚СЃСЋРґР°)        --
 ----------------------------------------------------------------------------------------------
 ---------06/05/2008
-insert into parameter (NPID,VVALUE,VDESCRIPTION) values(38,0,'Учитывать часовой пояс счетчика.');
+insert into parameter (NPID,VVALUE,VDESCRIPTION) values(38,0,'РЈС‡РёС‚С‹РІР°С‚СЊ С‡Р°СЃРѕРІРѕР№ РїРѕСЏСЃ СЃС‡РµС‚С‡РёРєР°.');
 
 commit;
 
@@ -15291,7 +15291,7 @@ alter table POINTS  add(
 );
 
 comment on column POINTS.NROOT is
-'Ид точки в родительской БД';
+'РРґ С‚РѕС‡РєРё РІ СЂРѕРґРёС‚РµР»СЊСЃРєРѕР№ Р‘Р”';
 
 create index POINTS_IDX3 on POINTS (
    NROOT ASC
@@ -15313,428 +15313,428 @@ create table METEREVENTSDICT  (
 );
 
 comment on table METEREVENTSDICT is
-'Сообщения счетчиков';
+'РЎРѕРѕР±С‰РµРЅРёСЏ СЃС‡РµС‚С‡РёРєРѕРІ';
 
 comment on column METEREVENTSDICT.NMETERTYPE is
-'Тип счетчика или УСД';
+'РўРёРї СЃС‡РµС‚С‡РёРєР° РёР»Рё РЈРЎР”';
 
 comment on column METEREVENTSDICT.NEVENTCLASS is
-'Класс сообщения';
+'РљР»Р°СЃСЃ СЃРѕРѕР±С‰РµРЅРёСЏ';
 
 comment on column METEREVENTSDICT.NEVENTCODE is
-'Код сообщения';
+'РљРѕРґ СЃРѕРѕР±С‰РµРЅРёСЏ';
 
 comment on column METEREVENTSDICT.VEVENTTEXT is
-'Тескст сообщения';
+'РўРµСЃРєСЃС‚ СЃРѕРѕР±С‰РµРЅРёСЏ';
 
 comment on column METEREVENTSDICT.NLOCK is
-'Блокировка вывода';
+'Р‘Р»РѕРєРёСЂРѕРІРєР° РІС‹РІРѕРґР°';
 
 begin
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,1,'Периодический ОПИ');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,2,'Асинхронный ОПИ');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,3,'Периодический ОРП');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,4,'Программируемый ОРП');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,5,'Асинхронный ОРП');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,6,'Индекс DPM');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,7,'Восстановлен внутренний индекс');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,8,'Индекс _управляющий ввод');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,9,'Суточный график_ЛУ');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,10,'Восстановлен внутренний сут. график');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,11,'Суточный график_управляющий ввод');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,12,'Сезон_SM');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,13,'Восстановлен внутренний сезон');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,14,'Сезон_управляющий ввод');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,15,'Переход на З/Л (ПЗЛ) время с сезоном');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,16,'Внешняя синхр-ия и ПЗЛ с сезоном');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,17,'IР цепь включена');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,18,'IР цепь выключена');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,19,'Ассоциация_LN_программирования');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,20,'Потребл. энергии выше лимита_регистр энергии');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,21,'Потребл. энергии ниже лимита_регистр энергии');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,22,'Потребл. энергии выше лимита_график нагрузки');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,23,'Потребл. энергии ниже лимита_график нагрузки');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,24,'Обнаружена нефатальная ошибка');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,25,'Нефатальная ошибка исчезла');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,26,'Обнаружена фатальная ошибка');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,27,'Сохранение параметров');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,28,'Нефатальные ошибки сквитированы');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,29,'Фатальные ошибки сквитированы');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,30,'Внутренняя синхронизация часов');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,31,'Внешняя синхронизация часов');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,32,'Установка часов');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,33,'Внешняя синхр. и переход З/Л время без сезона');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,34,'Переход на З/Л время без сезона');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,35,'Обнаружено исчезновение перем.тока');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,36,'Восстановление перем.тока');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,37,'Исчезло напряжение питания');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,38,'Появилось напряжение питания');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,39,'ПРОГРАММНЫЙ_СМ');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,40,'ПРОГРАММНЫЙ_DI');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,41,'Отмена _ ПРОГРАММНЫЙ_DI');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,42,'Сброс данных измерений');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,43,'Начало измерений');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,44,'Остановка измерений');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,45,'Начало тестов');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,46,'Остановка тестов');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,47,'Окончание сохранения текущих данных');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,48,'Сброс графика нагрузки');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,49,'Восстановление пароля');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,50,'Индекс остановки часов');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,51,'Успешная коммуникация');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,2,1,'Внутренняя ошибка RAM');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,2,2,'Внешняя ошибка RAM');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,2,3,'Внутр. ошибка программ. памяти');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,2,4,'Внешн. ошибка программ. памяти');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,2,5,'Фатальная ошибка NOVRAM');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,2,6,'Многократная несинхронизация часов');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,2,7,'Работа функции "Wathdog"');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,2,8,'Рассоглас. часов с внешн. источником');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,2,9,'Несоответствие конфигурации');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,2,10,'Нефатальная ошибка NOVRAM');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,2,11,'Ошибка связи');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,2,12,'Программная несовместимость');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,2,13,'Открытие крышки счетчика');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,2,14,'Небаланс токов в фазах 1и 2');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,2,15,'Небаланс токов в фазах 2и 3');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,2,16,'Небаланс токов в фазах 1и 3');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,2,17,'Контроль напряжения фазы 1');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,2,18,'Контроль напряжения фазы 2');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,2,19,'Контроль напряжения фазы 3');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,2,20,'Обрыв нейтрали');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,2,21,'Нет внутр. метрологических имп-ов');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,2,22,'Нет импульсов от внешних приборов');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,2,23,'Последовательность нулей напряжения');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,2,24,'Последовательность нулей тока');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,2,25,'Остановка (неверный ход) часов');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,2,26,'"Тревога" от внешн. устройства');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,2,27,'Изменение направления тока фазы 1');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,2,28,'Изменение направления тока фазы 2');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,2,29,'Изменение направления тока фазы 3');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,2,30,'Повышение температуры');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,2,31,'Исчезновение напряжения фазы 1');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,2,32,'Исчезновение напряжения фазы 2');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,2,33,'Исчезновение напряжения фазы 3');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,2,34,'Понижение напряжения фазы 1');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,2,35,'Понижение напряжения фазы 2');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,2,36,'Понижение напряжения фазы 3');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,2,37,'Повышение напряжения фазы 1');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,2,38,'Повышение напряжения фазы 2');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,2,39,'Повышение напряжения фазы 3');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,2,40,'Батарея');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,2,41,'Превышение нагрузки');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,1,0,'Норма');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,1,1,'К каналу подключен счетчик с нулевым или недопустимым сетевым адресом');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,1,2,'Открытие доступа к счетчику');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,1,3,'Проверка пароля счетчиком');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,1,4,'Установка таймаута обмена со счетчиком');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,1,5,'Запрос времени счетчика');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,1,6,'Коррекция времени счетчика');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,1,7,'Чтение параметров счетчика');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,1,8,'Чтение текущих значений счетчика и параметров сети');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,1,9,'Чтение ГН счетчика');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,1,10,'Чтение суточных показаний счетчика');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,1,11,'Чтение месячных показаний счетчика');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,1,12,'Очистка ГН счетчика');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,1,13,'Очистка журнала событий счетчика');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,1,14,'Окончание опроса счетчика');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,1,15,'Закрытие доступа к счетчику');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,1,16,'Перевод счетчика в Program mode');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,1,17,'Перевод счетчика в Readout mode');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,1,18,'Чтение журнала событий счетчика');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,1,19,'Закрытие доступа к счетчику (COSEM/DLMS)');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,1,20,'Чтение параметров сети (EA)');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,1,255,'Канал не инициализирован');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,2,0,'Норма');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,2,2,'Таймаут при выполнении запроса к или получении ответа от счетчика');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,2,3,'Ошибка в контрольной сумме пакета ответа от счетчика');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,2,4,'Ошибочный запрос к или ответ от счетчика');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,2,5,'Рассогласование времени между УСД и счетчиком превышает максимально допустимое');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,2,6,'Граница получаса при чтении ГН или граница суток/месяца при чтении суточных/месячных данных счетчика');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,2,7,'Ответ от счетчика не помещается в буфер приема УСД');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,2,8,'Ошибка инициализации API COSEM');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,2,9,'Ошибка открытия СОМ порта API COSEM');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,2,10,'Ошибка создания контекста COSEM');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,2,11,'Ошибка COSEM открытия доступа к счетчику');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,2,12,'Ошибка COSEM закрытия доступа к счетчику');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,2,13,'Ошибка удаления контекста COSEM');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,2,14,'Ошибка закрытия СОМ порта API COSEM');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,2,15,'Ошибка деинициализации API COSEM');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,2,16,'Ошибка COSEM чтения данных счетчика');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,2,17,'Ошибка чтения файла');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,2,18,'Ошибка COSEM установки времени счетчика');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,2,19,'Отсутствие данных авточтения счетчика');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,2,20,'Программное исключение при опросе счетчика');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,2,21,'Ошибка в параметрах ГН счетчика');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,2,22,'Недопустимый сетевой адрес счетчика');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,2,23,'Недопустимый номер блока биллинговых данных');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,2,24,'Отсутствует файл системы безопасности');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,2,25,'Ошибка создания файла системы безопасности');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,2,26,'Неверная длина класса памяти Альфы');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,2,129,'Нет необходимости в получении данных');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,2,130,'Контекст устройства не подерживантся');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,2,139,'Тип идентификации не поддерживается');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,2,140,'Название типа идентификации обязательно');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,2,141,'Неверное имя/пароль доступа к счетчику');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,2,142,'Пароль доступа к счетчику не может быть пустым');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,2,201,'Нет связи со счетчиком');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,2,209,'Неверный пароль доступа');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,0,'Событие счетчика: 0');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,1,'1: Параметризация или изменение конфигурации');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,2,'2: Обнуление тарифных регистров');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,3,'3: Обнуление памяти профиля данных');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,4,'4: Выполнен сброс');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,5,'5: Батарея разряжена');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,6,'6: Батарея заменена');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,7,'7: Напряжение батареи в норме ');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,8,'Событие счетчика: 8');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,9,'9: Переход лето/зима');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,10,'10: Изменение времени/даты (старое значение)');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,11,'11: Изменение времени/даты (новое значение)');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,12,'Событие счетчика: 12');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,13,'13: Изменение статуса управляющих входов');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,14,'Событие счетчика: 14');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,15,'Событие счетчика: 15');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,16,'Событие счетчика: 16');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,17,'17: Снижение напряжение ниже допустимого по фазе L1');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,18,'18: Снижение напряжение ниже допустимого по фазе L2');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,19,'19: Снижение напряжение ниже допустимого по фазе L3');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,20,'20: Перенапряжение по фазе L1');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,21,'21: Перенапряжение по фазе L2');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,22,'22: Перенапряжение по фазе L3');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,23,'23: Провал напряжения');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,24,'24: Восстановление напряжения');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,25,'25: Перегрузка по току фаза L1');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,26,'26: Перегрузка по току фаза L2');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,27,'27: Перегрузка по току фаза L3');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,28,'28: Перегрузка по току в нейтрали');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,29,'29: Сигналы событий коэффициента мощности ');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,30,'30: Сигналы событий коэффициента мощности ');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,31,'31: Сигналы событий коэффициента мощности ');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,32,'32: Сигналы событий коэффициента мощности ');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,33,'33: Сигналы событий значения усредненной мощности Pтекущее');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,34,'34: Сигналы событий значения усредненной мощности Pтекущее');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,35,'35: Сигналы событий значения усредненной мощности Pтекущее');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,36,'36: Сигналы событий значения усредненной мощности Pтекущее');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,37,'37: Сигналы событий значения усредненной мощности Pтекущее');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,38,'38: Сигналы событий значения усредненной мощности Pтекущее');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,39,'39: Сигналы событий значения усредненной мощности Pтекущее');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,40,'40: Сигналы событий значения усредненной мощности Pтекущее');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,41,'Событие счетчика: 41');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,42,'Событие счетчика: 42');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,43,'Событие счетчика: 43');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,44,'Событие счетчика: 44');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,45,'45: Ошибка самотестирования (4)');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,46,'46: Ошибка самотестирования (4)');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,47,'47: Ошибка самотестирования (4)');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,48,'48: Ошибка самотестирования (4)');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,49,'Событие счетчика: 49');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,50,'Событие счетчика: 50');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,51,'Событие счетчика: 51');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,52,'Событие счетчика: 52');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,53,'Событие счетчика: 53');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,54,'Событие счетчика: 54');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,55,'Событие счетчика: 55');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,56,'Событие счетчика: 56');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,57,'Событие счетчика: 57');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,58,'Событие счетчика: 58');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,59,'Событие счетчика: 59');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,60,'Событие счетчика: 60');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,61,'Событие счетчика: 61');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,62,'Событие счетчика: 62');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,63,'Событие счетчика: 63');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,64,'Событие счетчика: 64');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,65,'65: Ошибка "Батарея разряжена "');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,66,'66: Ошибка "Некорректное время/дата"');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,67,'Событие счетчика: 67');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,68,'Событие счетчика: 68');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,69,'Событие счетчика: 69');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,70,'Событие счетчика: 70');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,71,'Событие счетчика: 71');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,72,'Событие счетчика: 72');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,73,'73: Ошибка "Доступ к основной памяти"');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,74,'74: Ошибка "Доступ к памяти параметров"');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,75,'75: Ошибка "Доступ к памяти системы измерений"');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,76,'76: Ошибка "Базы времени"');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,77,'77: Ошибка "Доступ к памяти профиля данных"');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,78,'78: Ошибка "Приемник сигналов управления"');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,79,'79: Ошибка "Коммуникационный модуль"');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,80,'80: Ошибка "Дисплей и панель управления"');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,81,'81: Ошибка "Контрольная сумма кода программы"');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,82,'82: Ошибка "Контрольная сумма данных резервного копирования"');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,83,'83: Ошибка "Контрольная сумма данных параметризации"');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,84,'84: Ошибка "Контрольная сумма данных профиля данных "');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,85,'85: Ошибка "Контрольная сумма данных списка событий"');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,86,'Событие счетчика: 86');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,87,'Событие счетчика: 87');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,88,'Событие счетчика: 88');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,89,'Событие счетчика: 89');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,90,'90: Ошибка "Измерительная система"');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,91,'91: Ошибка "Перепрограммирование"');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,92,'92: Ошибка "Режим установки"');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,93,'93: Ошибка "Система"');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,94,'94: Ошибка "Связь заблокирована"');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,95,'95: Ошибка "Некорр. идентификация EEPROM"');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,96,'96: Ошибка "Некорр. функционирование длительная идентификация"');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,97,'Событие счетчика: 97');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,98,'Событие счетчика: 98');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,99,'Событие счетчика: 99');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,100,'Событие счетчика: 100');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,101,'Событие счетчика: 101');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,102,'Событие счетчика: 102');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,103,'Событие счетчика: 103');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,104,'Событие счетчика: 104');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,105,'Событие счетчика: 105');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,106,'Событие счетчика: 106');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,107,'Событие счетчика: 107');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,108,'Событие счетчика: 108');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,109,'Событие счетчика: 109');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,110,'Событие счетчика: 110');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,111,'Событие счетчика: 111');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,112,'Событие счетчика: 112');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,113,'Событие счетчика: 113');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,114,'Событие счетчика: 114');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,115,'Событие счетчика: 115');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,116,'Событие счетчика: 116');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,117,'Событие счетчика: 117');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,118,'Событие счетчика: 118');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,119,'Событие счетчика: 119');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,120,'Событие счетчика: 120');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,121,'Событие счетчика: 121');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,122,'Событие счетчика: 122');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,123,'Событие счетчика: 123');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,124,'Событие счетчика: 124');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,125,'Событие счетчика: 125');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,126,'Событие счетчика: 126');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,127,'Событие счетчика: 127');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,128,'Событие счетчика: 128');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,129,'Событие счетчика: 129');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,130,'Событие счетчика: 130');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,131,'Событие счетчика: 131');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,132,'Событие счетчика: 132');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,133,'Событие счетчика: 133');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,134,'Событие счетчика: 134');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,135,'Событие счетчика: 135');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,136,'Событие счетчика: 136');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,137,'Событие счетчика: 137');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,138,'Событие счетчика: 138');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,139,'Событие счетчика: 139');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,140,'Событие счетчика: 140');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,141,'Событие счетчика: 141');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,142,'Событие счетчика: 142');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,143,'Событие счетчика: 143');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,144,'Событие счетчика: 144');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,145,'Событие счетчика: 145');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,146,'Событие счетчика: 146');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,147,'Событие счетчика: 147');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,148,'Событие счетчика: 148');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,149,'Событие счетчика: 149');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,150,'Событие счетчика: 150');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,151,'Событие счетчика: 151');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,152,'Событие счетчика: 152');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,153,'Событие счетчика: 153');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,154,'Событие счетчика: 154');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,155,'Событие счетчика: 155');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,156,'Событие счетчика: 156');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,157,'Событие счетчика: 157');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,158,'Событие счетчика: 158');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,159,'Событие счетчика: 159');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,160,'Событие счетчика: 160');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,161,'Событие счетчика: 161');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,162,'Событие счетчика: 162');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,163,'Событие счетчика: 163');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,164,'Событие счетчика: 164');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,165,'Событие счетчика: 165');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,166,'Событие счетчика: 166');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,167,'Событие счетчика: 167');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,168,'Событие счетчика: 168');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,169,'Событие счетчика: 169');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,170,'Событие счетчика: 170');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,171,'Событие счетчика: 171');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,172,'Событие счетчика: 172');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,173,'Событие счетчика: 173');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,174,'Событие счетчика: 174');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,175,'Событие счетчика: 175');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,176,'Событие счетчика: 176');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,177,'Событие счетчика: 177');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,178,'Событие счетчика: 178');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,179,'Событие счетчика: 179');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,180,'Событие счетчика: 180');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,181,'Событие счетчика: 181');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,182,'Событие счетчика: 182');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,183,'Событие счетчика: 183');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,184,'Событие счетчика: 184');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,185,'Событие счетчика: 185');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,186,'Событие счетчика: 186');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,187,'Событие счетчика: 187');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,188,'Событие счетчика: 188');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,189,'Событие счетчика: 189');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,190,'Событие счетчика: 190');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,191,'Событие счетчика: 191');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,192,'Событие счетчика: 192');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,193,'Событие счетчика: 193');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,194,'Событие счетчика: 194');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,195,'Событие счетчика: 195');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,196,'Событие счетчика: 196');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,197,'Событие счетчика: 197');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,198,'Событие счетчика: 198');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,199,'Событие счетчика: 199');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,200,'Событие счетчика: 200');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,201,'Событие счетчика: 201');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,202,'Событие счетчика: 202');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,203,'Событие счетчика: 203');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,204,'Событие счетчика: 204');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,205,'Событие счетчика: 205');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,206,'Событие счетчика: 206');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,207,'Событие счетчика: 207');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,208,'Событие счетчика: 208');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,209,'Событие счетчика: 209');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,210,'Событие счетчика: 210');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,211,'Событие счетчика: 211');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,212,'Событие счетчика: 212');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,213,'Событие счетчика: 213');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,214,'Событие счетчика: 214');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,215,'Событие счетчика: 215');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,216,'Событие счетчика: 216');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,217,'Событие счетчика: 217');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,218,'Событие счетчика: 218');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,219,'Событие счетчика: 219');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,220,'Событие счетчика: 220');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,221,'Событие счетчика: 221');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,222,'Событие счетчика: 222');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,223,'Событие счетчика: 223');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,224,'Событие счетчика: 224');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,225,'Событие счетчика: 225');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,226,'Событие счетчика: 226');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,227,'Событие счетчика: 227');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,228,'Событие счетчика: 228');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,229,'Событие счетчика: 229');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,230,'Событие счетчика: 230');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,231,'Событие счетчика: 231');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,232,'Событие счетчика: 232');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,233,'Событие счетчика: 233');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,234,'Событие счетчика: 234');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,235,'Событие счетчика: 235');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,236,'Событие счетчика: 236');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,237,'Событие счетчика: 237');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,238,'Событие счетчика: 238');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,239,'Событие счетчика: 239');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,240,'Событие счетчика: 240');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,241,'Событие счетчика: 241');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,242,'Событие счетчика: 242');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,243,'Событие счетчика: 243');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,244,'Событие счетчика: 244');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,245,'Событие счетчика: 245');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,246,'Событие счетчика: 246');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,247,'Событие счетчика: 247');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,248,'Событие счетчика: 248');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,249,'Событие счетчика: 249');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,250,'Событие счетчика: 250');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,251,'Событие счетчика: 251');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,252,'Событие счетчика: 252');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,253,'Событие счетчика: 253');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,254,'Событие счетчика: 254');
-INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,255,'Событие счетчика: 255');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,1,'РџРµСЂРёРѕРґРёС‡РµСЃРєРёР№ РћРџР');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,2,'РђСЃРёРЅС…СЂРѕРЅРЅС‹Р№ РћРџР');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,3,'РџРµСЂРёРѕРґРёС‡РµСЃРєРёР№ РћР Рџ');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,4,'РџСЂРѕРіСЂР°РјРјРёСЂСѓРµРјС‹Р№ РћР Рџ');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,5,'РђСЃРёРЅС…СЂРѕРЅРЅС‹Р№ РћР Рџ');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,6,'РРЅРґРµРєСЃ DPM');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,7,'Р’РѕСЃСЃС‚Р°РЅРѕРІР»РµРЅ РІРЅСѓС‚СЂРµРЅРЅРёР№ РёРЅРґРµРєСЃ');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,8,'РРЅРґРµРєСЃ _СѓРїСЂР°РІР»СЏСЋС‰РёР№ РІРІРѕРґ');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,9,'РЎСѓС‚РѕС‡РЅС‹Р№ РіСЂР°С„РёРє_Р›РЈ');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,10,'Р’РѕСЃСЃС‚Р°РЅРѕРІР»РµРЅ РІРЅСѓС‚СЂРµРЅРЅРёР№ СЃСѓС‚. РіСЂР°С„РёРє');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,11,'РЎСѓС‚РѕС‡РЅС‹Р№ РіСЂР°С„РёРє_СѓРїСЂР°РІР»СЏСЋС‰РёР№ РІРІРѕРґ');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,12,'РЎРµР·РѕРЅ_SM');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,13,'Р’РѕСЃСЃС‚Р°РЅРѕРІР»РµРЅ РІРЅСѓС‚СЂРµРЅРЅРёР№ СЃРµР·РѕРЅ');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,14,'РЎРµР·РѕРЅ_СѓРїСЂР°РІР»СЏСЋС‰РёР№ РІРІРѕРґ');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,15,'РџРµСЂРµС…РѕРґ РЅР° Р—/Р› (РџР—Р›) РІСЂРµРјСЏ СЃ СЃРµР·РѕРЅРѕРј');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,16,'Р’РЅРµС€РЅСЏСЏ СЃРёРЅС…СЂ-РёСЏ Рё РџР—Р› СЃ СЃРµР·РѕРЅРѕРј');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,17,'IР  С†РµРїСЊ РІРєР»СЋС‡РµРЅР°');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,18,'IР  С†РµРїСЊ РІС‹РєР»СЋС‡РµРЅР°');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,19,'РђСЃСЃРѕС†РёР°С†РёСЏ_LN_РїСЂРѕРіСЂР°РјРјРёСЂРѕРІР°РЅРёСЏ');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,20,'РџРѕС‚СЂРµР±Р». СЌРЅРµСЂРіРёРё РІС‹С€Рµ Р»РёРјРёС‚Р°_СЂРµРіРёСЃС‚СЂ СЌРЅРµСЂРіРёРё');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,21,'РџРѕС‚СЂРµР±Р». СЌРЅРµСЂРіРёРё РЅРёР¶Рµ Р»РёРјРёС‚Р°_СЂРµРіРёСЃС‚СЂ СЌРЅРµСЂРіРёРё');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,22,'РџРѕС‚СЂРµР±Р». СЌРЅРµСЂРіРёРё РІС‹С€Рµ Р»РёРјРёС‚Р°_РіСЂР°С„РёРє РЅР°РіСЂСѓР·РєРё');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,23,'РџРѕС‚СЂРµР±Р». СЌРЅРµСЂРіРёРё РЅРёР¶Рµ Р»РёРјРёС‚Р°_РіСЂР°С„РёРє РЅР°РіСЂСѓР·РєРё');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,24,'РћР±РЅР°СЂСѓР¶РµРЅР° РЅРµС„Р°С‚Р°Р»СЊРЅР°СЏ РѕС€РёР±РєР°');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,25,'РќРµС„Р°С‚Р°Р»СЊРЅР°СЏ РѕС€РёР±РєР° РёСЃС‡РµР·Р»Р°');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,26,'РћР±РЅР°СЂСѓР¶РµРЅР° С„Р°С‚Р°Р»СЊРЅР°СЏ РѕС€РёР±РєР°');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,27,'РЎРѕС…СЂР°РЅРµРЅРёРµ РїР°СЂР°РјРµС‚СЂРѕРІ');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,28,'РќРµС„Р°С‚Р°Р»СЊРЅС‹Рµ РѕС€РёР±РєРё СЃРєРІРёС‚РёСЂРѕРІР°РЅС‹');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,29,'Р¤Р°С‚Р°Р»СЊРЅС‹Рµ РѕС€РёР±РєРё СЃРєРІРёС‚РёСЂРѕРІР°РЅС‹');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,30,'Р’РЅСѓС‚СЂРµРЅРЅСЏСЏ СЃРёРЅС…СЂРѕРЅРёР·Р°С†РёСЏ С‡Р°СЃРѕРІ');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,31,'Р’РЅРµС€РЅСЏСЏ СЃРёРЅС…СЂРѕРЅРёР·Р°С†РёСЏ С‡Р°СЃРѕРІ');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,32,'РЈСЃС‚Р°РЅРѕРІРєР° С‡Р°СЃРѕРІ');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,33,'Р’РЅРµС€РЅСЏСЏ СЃРёРЅС…СЂ. Рё РїРµСЂРµС…РѕРґ Р—/Р› РІСЂРµРјСЏ Р±РµР· СЃРµР·РѕРЅР°');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,34,'РџРµСЂРµС…РѕРґ РЅР° Р—/Р› РІСЂРµРјСЏ Р±РµР· СЃРµР·РѕРЅР°');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,35,'РћР±РЅР°СЂСѓР¶РµРЅРѕ РёСЃС‡РµР·РЅРѕРІРµРЅРёРµ РїРµСЂРµРј.С‚РѕРєР°');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,36,'Р’РѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ РїРµСЂРµРј.С‚РѕРєР°');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,37,'РСЃС‡РµР·Р»Рѕ РЅР°РїСЂСЏР¶РµРЅРёРµ РїРёС‚Р°РЅРёСЏ');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,38,'РџРѕСЏРІРёР»РѕСЃСЊ РЅР°РїСЂСЏР¶РµРЅРёРµ РїРёС‚Р°РЅРёСЏ');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,39,'РџР РћР“Р РђРњРњРќР«Р™_РЎРњ');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,40,'РџР РћР“Р РђРњРњРќР«Р™_DI');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,41,'РћС‚РјРµРЅР° _ РџР РћР“Р РђРњРњРќР«Р™_DI');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,42,'РЎР±СЂРѕСЃ РґР°РЅРЅС‹С… РёР·РјРµСЂРµРЅРёР№');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,43,'РќР°С‡Р°Р»Рѕ РёР·РјРµСЂРµРЅРёР№');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,44,'РћСЃС‚Р°РЅРѕРІРєР° РёР·РјРµСЂРµРЅРёР№');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,45,'РќР°С‡Р°Р»Рѕ С‚РµСЃС‚РѕРІ');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,46,'РћСЃС‚Р°РЅРѕРІРєР° С‚РµСЃС‚РѕРІ');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,47,'РћРєРѕРЅС‡Р°РЅРёРµ СЃРѕС…СЂР°РЅРµРЅРёСЏ С‚РµРєСѓС‰РёС… РґР°РЅРЅС‹С…');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,48,'РЎР±СЂРѕСЃ РіСЂР°С„РёРєР° РЅР°РіСЂСѓР·РєРё');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,49,'Р’РѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ РїР°СЂРѕР»СЏ');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,50,'РРЅРґРµРєСЃ РѕСЃС‚Р°РЅРѕРІРєРё С‡Р°СЃРѕРІ');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,1,51,'РЈСЃРїРµС€РЅР°СЏ РєРѕРјРјСѓРЅРёРєР°С†РёСЏ');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,2,1,'Р’РЅСѓС‚СЂРµРЅРЅСЏСЏ РѕС€РёР±РєР° RAM');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,2,2,'Р’РЅРµС€РЅСЏСЏ РѕС€РёР±РєР° RAM');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,2,3,'Р’РЅСѓС‚СЂ. РѕС€РёР±РєР° РїСЂРѕРіСЂР°РјРј. РїР°РјСЏС‚Рё');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,2,4,'Р’РЅРµС€РЅ. РѕС€РёР±РєР° РїСЂРѕРіСЂР°РјРј. РїР°РјСЏС‚Рё');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,2,5,'Р¤Р°С‚Р°Р»СЊРЅР°СЏ РѕС€РёР±РєР° NOVRAM');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,2,6,'РњРЅРѕРіРѕРєСЂР°С‚РЅР°СЏ РЅРµСЃРёРЅС…СЂРѕРЅРёР·Р°С†РёСЏ С‡Р°СЃРѕРІ');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,2,7,'Р Р°Р±РѕС‚Р° С„СѓРЅРєС†РёРё "Wathdog"');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,2,8,'Р Р°СЃСЃРѕРіР»Р°СЃ. С‡Р°СЃРѕРІ СЃ РІРЅРµС€РЅ. РёСЃС‚РѕС‡РЅРёРєРѕРј');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,2,9,'РќРµСЃРѕРѕС‚РІРµС‚СЃС‚РІРёРµ РєРѕРЅС„РёРіСѓСЂР°С†РёРё');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,2,10,'РќРµС„Р°С‚Р°Р»СЊРЅР°СЏ РѕС€РёР±РєР° NOVRAM');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,2,11,'РћС€РёР±РєР° СЃРІСЏР·Рё');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,2,12,'РџСЂРѕРіСЂР°РјРјРЅР°СЏ РЅРµСЃРѕРІРјРµСЃС‚РёРјРѕСЃС‚СЊ');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,2,13,'РћС‚РєСЂС‹С‚РёРµ РєСЂС‹С€РєРё СЃС‡РµС‚С‡РёРєР°');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,2,14,'РќРµР±Р°Р»Р°РЅСЃ С‚РѕРєРѕРІ РІ С„Р°Р·Р°С… 1Рё 2');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,2,15,'РќРµР±Р°Р»Р°РЅСЃ С‚РѕРєРѕРІ РІ С„Р°Р·Р°С… 2Рё 3');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,2,16,'РќРµР±Р°Р»Р°РЅСЃ С‚РѕРєРѕРІ РІ С„Р°Р·Р°С… 1Рё 3');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,2,17,'РљРѕРЅС‚СЂРѕР»СЊ РЅР°РїСЂСЏР¶РµРЅРёСЏ С„Р°Р·С‹ 1');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,2,18,'РљРѕРЅС‚СЂРѕР»СЊ РЅР°РїСЂСЏР¶РµРЅРёСЏ С„Р°Р·С‹ 2');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,2,19,'РљРѕРЅС‚СЂРѕР»СЊ РЅР°РїСЂСЏР¶РµРЅРёСЏ С„Р°Р·С‹ 3');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,2,20,'РћР±СЂС‹РІ РЅРµР№С‚СЂР°Р»Рё');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,2,21,'РќРµС‚ РІРЅСѓС‚СЂ. РјРµС‚СЂРѕР»РѕРіРёС‡РµСЃРєРёС… РёРјРї-РѕРІ');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,2,22,'РќРµС‚ РёРјРїСѓР»СЊСЃРѕРІ РѕС‚ РІРЅРµС€РЅРёС… РїСЂРёР±РѕСЂРѕРІ');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,2,23,'РџРѕСЃР»РµРґРѕРІР°С‚РµР»СЊРЅРѕСЃС‚СЊ РЅСѓР»РµР№ РЅР°РїСЂСЏР¶РµРЅРёСЏ');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,2,24,'РџРѕСЃР»РµРґРѕРІР°С‚РµР»СЊРЅРѕСЃС‚СЊ РЅСѓР»РµР№ С‚РѕРєР°');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,2,25,'РћСЃС‚Р°РЅРѕРІРєР° (РЅРµРІРµСЂРЅС‹Р№ С…РѕРґ) С‡Р°СЃРѕРІ');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,2,26,'"РўСЂРµРІРѕРіР°" РѕС‚ РІРЅРµС€РЅ. СѓСЃС‚СЂРѕР№СЃС‚РІР°');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,2,27,'РР·РјРµРЅРµРЅРёРµ РЅР°РїСЂР°РІР»РµРЅРёСЏ С‚РѕРєР° С„Р°Р·С‹ 1');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,2,28,'РР·РјРµРЅРµРЅРёРµ РЅР°РїСЂР°РІР»РµРЅРёСЏ С‚РѕРєР° С„Р°Р·С‹ 2');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,2,29,'РР·РјРµРЅРµРЅРёРµ РЅР°РїСЂР°РІР»РµРЅРёСЏ С‚РѕРєР° С„Р°Р·С‹ 3');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,2,30,'РџРѕРІС‹С€РµРЅРёРµ С‚РµРјРїРµСЂР°С‚СѓСЂС‹');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,2,31,'РСЃС‡РµР·РЅРѕРІРµРЅРёРµ РЅР°РїСЂСЏР¶РµРЅРёСЏ С„Р°Р·С‹ 1');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,2,32,'РСЃС‡РµР·РЅРѕРІРµРЅРёРµ РЅР°РїСЂСЏР¶РµРЅРёСЏ С„Р°Р·С‹ 2');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,2,33,'РСЃС‡РµР·РЅРѕРІРµРЅРёРµ РЅР°РїСЂСЏР¶РµРЅРёСЏ С„Р°Р·С‹ 3');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,2,34,'РџРѕРЅРёР¶РµРЅРёРµ РЅР°РїСЂСЏР¶РµРЅРёСЏ С„Р°Р·С‹ 1');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,2,35,'РџРѕРЅРёР¶РµРЅРёРµ РЅР°РїСЂСЏР¶РµРЅРёСЏ С„Р°Р·С‹ 2');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,2,36,'РџРѕРЅРёР¶РµРЅРёРµ РЅР°РїСЂСЏР¶РµРЅРёСЏ С„Р°Р·С‹ 3');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,2,37,'РџРѕРІС‹С€РµРЅРёРµ РЅР°РїСЂСЏР¶РµРЅРёСЏ С„Р°Р·С‹ 1');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,2,38,'РџРѕРІС‹С€РµРЅРёРµ РЅР°РїСЂСЏР¶РµРЅРёСЏ С„Р°Р·С‹ 2');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,2,39,'РџРѕРІС‹С€РµРЅРёРµ РЅР°РїСЂСЏР¶РµРЅРёСЏ С„Р°Р·С‹ 3');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,2,40,'Р‘Р°С‚Р°СЂРµСЏ');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (1,2,41,'РџСЂРµРІС‹С€РµРЅРёРµ РЅР°РіСЂСѓР·РєРё');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,1,0,'РќРѕСЂРјР°');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,1,1,'Рљ РєР°РЅР°Р»Сѓ РїРѕРґРєР»СЋС‡РµРЅ СЃС‡РµС‚С‡РёРє СЃ РЅСѓР»РµРІС‹Рј РёР»Рё РЅРµРґРѕРїСѓСЃС‚РёРјС‹Рј СЃРµС‚РµРІС‹Рј Р°РґСЂРµСЃРѕРј');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,1,2,'РћС‚РєСЂС‹С‚РёРµ РґРѕСЃС‚СѓРїР° Рє СЃС‡РµС‚С‡РёРєСѓ');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,1,3,'РџСЂРѕРІРµСЂРєР° РїР°СЂРѕР»СЏ СЃС‡РµС‚С‡РёРєРѕРј');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,1,4,'РЈСЃС‚Р°РЅРѕРІРєР° С‚Р°Р№РјР°СѓС‚Р° РѕР±РјРµРЅР° СЃРѕ СЃС‡РµС‚С‡РёРєРѕРј');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,1,5,'Р—Р°РїСЂРѕСЃ РІСЂРµРјРµРЅРё СЃС‡РµС‚С‡РёРєР°');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,1,6,'РљРѕСЂСЂРµРєС†РёСЏ РІСЂРµРјРµРЅРё СЃС‡РµС‚С‡РёРєР°');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,1,7,'Р§С‚РµРЅРёРµ РїР°СЂР°РјРµС‚СЂРѕРІ СЃС‡РµС‚С‡РёРєР°');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,1,8,'Р§С‚РµРЅРёРµ С‚РµРєСѓС‰РёС… Р·РЅР°С‡РµРЅРёР№ СЃС‡РµС‚С‡РёРєР° Рё РїР°СЂР°РјРµС‚СЂРѕРІ СЃРµС‚Рё');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,1,9,'Р§С‚РµРЅРёРµ Р“Рќ СЃС‡РµС‚С‡РёРєР°');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,1,10,'Р§С‚РµРЅРёРµ СЃСѓС‚РѕС‡РЅС‹С… РїРѕРєР°Р·Р°РЅРёР№ СЃС‡РµС‚С‡РёРєР°');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,1,11,'Р§С‚РµРЅРёРµ РјРµСЃСЏС‡РЅС‹С… РїРѕРєР°Р·Р°РЅРёР№ СЃС‡РµС‚С‡РёРєР°');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,1,12,'РћС‡РёСЃС‚РєР° Р“Рќ СЃС‡РµС‚С‡РёРєР°');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,1,13,'РћС‡РёСЃС‚РєР° Р¶СѓСЂРЅР°Р»Р° СЃРѕР±С‹С‚РёР№ СЃС‡РµС‚С‡РёРєР°');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,1,14,'РћРєРѕРЅС‡Р°РЅРёРµ РѕРїСЂРѕСЃР° СЃС‡РµС‚С‡РёРєР°');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,1,15,'Р—Р°РєСЂС‹С‚РёРµ РґРѕСЃС‚СѓРїР° Рє СЃС‡РµС‚С‡РёРєСѓ');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,1,16,'РџРµСЂРµРІРѕРґ СЃС‡РµС‚С‡РёРєР° РІ Program mode');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,1,17,'РџРµСЂРµРІРѕРґ СЃС‡РµС‚С‡РёРєР° РІ Readout mode');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,1,18,'Р§С‚РµРЅРёРµ Р¶СѓСЂРЅР°Р»Р° СЃРѕР±С‹С‚РёР№ СЃС‡РµС‚С‡РёРєР°');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,1,19,'Р—Р°РєСЂС‹С‚РёРµ РґРѕСЃС‚СѓРїР° Рє СЃС‡РµС‚С‡РёРєСѓ (COSEM/DLMS)');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,1,20,'Р§С‚РµРЅРёРµ РїР°СЂР°РјРµС‚СЂРѕРІ СЃРµС‚Рё (EA)');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,1,255,'РљР°РЅР°Р» РЅРµ РёРЅРёС†РёР°Р»РёР·РёСЂРѕРІР°РЅ');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,2,0,'РќРѕСЂРјР°');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,2,2,'РўР°Р№РјР°СѓС‚ РїСЂРё РІС‹РїРѕР»РЅРµРЅРёРё Р·Р°РїСЂРѕСЃР° Рє РёР»Рё РїРѕР»СѓС‡РµРЅРёРё РѕС‚РІРµС‚Р° РѕС‚ СЃС‡РµС‚С‡РёРєР°');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,2,3,'РћС€РёР±РєР° РІ РєРѕРЅС‚СЂРѕР»СЊРЅРѕР№ СЃСѓРјРјРµ РїР°РєРµС‚Р° РѕС‚РІРµС‚Р° РѕС‚ СЃС‡РµС‚С‡РёРєР°');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,2,4,'РћС€РёР±РѕС‡РЅС‹Р№ Р·Р°РїСЂРѕСЃ Рє РёР»Рё РѕС‚РІРµС‚ РѕС‚ СЃС‡РµС‚С‡РёРєР°');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,2,5,'Р Р°СЃСЃРѕРіР»Р°СЃРѕРІР°РЅРёРµ РІСЂРµРјРµРЅРё РјРµР¶РґСѓ РЈРЎР” Рё СЃС‡РµС‚С‡РёРєРѕРј РїСЂРµРІС‹С€Р°РµС‚ РјР°РєСЃРёРјР°Р»СЊРЅРѕ РґРѕРїСѓСЃС‚РёРјРѕРµ');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,2,6,'Р“СЂР°РЅРёС†Р° РїРѕР»СѓС‡Р°СЃР° РїСЂРё С‡С‚РµРЅРёРё Р“Рќ РёР»Рё РіСЂР°РЅРёС†Р° СЃСѓС‚РѕРє/РјРµСЃСЏС†Р° РїСЂРё С‡С‚РµРЅРёРё СЃСѓС‚РѕС‡РЅС‹С…/РјРµСЃСЏС‡РЅС‹С… РґР°РЅРЅС‹С… СЃС‡РµС‚С‡РёРєР°');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,2,7,'РћС‚РІРµС‚ РѕС‚ СЃС‡РµС‚С‡РёРєР° РЅРµ РїРѕРјРµС‰Р°РµС‚СЃСЏ РІ Р±СѓС„РµСЂ РїСЂРёРµРјР° РЈРЎР”');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,2,8,'РћС€РёР±РєР° РёРЅРёС†РёР°Р»РёР·Р°С†РёРё API COSEM');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,2,9,'РћС€РёР±РєР° РѕС‚РєСЂС‹С‚РёСЏ РЎРћРњ РїРѕСЂС‚Р° API COSEM');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,2,10,'РћС€РёР±РєР° СЃРѕР·РґР°РЅРёСЏ РєРѕРЅС‚РµРєСЃС‚Р° COSEM');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,2,11,'РћС€РёР±РєР° COSEM РѕС‚РєСЂС‹С‚РёСЏ РґРѕСЃС‚СѓРїР° Рє СЃС‡РµС‚С‡РёРєСѓ');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,2,12,'РћС€РёР±РєР° COSEM Р·Р°РєСЂС‹С‚РёСЏ РґРѕСЃС‚СѓРїР° Рє СЃС‡РµС‚С‡РёРєСѓ');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,2,13,'РћС€РёР±РєР° СѓРґР°Р»РµРЅРёСЏ РєРѕРЅС‚РµРєСЃС‚Р° COSEM');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,2,14,'РћС€РёР±РєР° Р·Р°РєСЂС‹С‚РёСЏ РЎРћРњ РїРѕСЂС‚Р° API COSEM');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,2,15,'РћС€РёР±РєР° РґРµРёРЅРёС†РёР°Р»РёР·Р°С†РёРё API COSEM');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,2,16,'РћС€РёР±РєР° COSEM С‡С‚РµРЅРёСЏ РґР°РЅРЅС‹С… СЃС‡РµС‚С‡РёРєР°');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,2,17,'РћС€РёР±РєР° С‡С‚РµРЅРёСЏ С„Р°Р№Р»Р°');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,2,18,'РћС€РёР±РєР° COSEM СѓСЃС‚Р°РЅРѕРІРєРё РІСЂРµРјРµРЅРё СЃС‡РµС‚С‡РёРєР°');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,2,19,'РћС‚СЃСѓС‚СЃС‚РІРёРµ РґР°РЅРЅС‹С… Р°РІС‚РѕС‡С‚РµРЅРёСЏ СЃС‡РµС‚С‡РёРєР°');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,2,20,'РџСЂРѕРіСЂР°РјРјРЅРѕРµ РёСЃРєР»СЋС‡РµРЅРёРµ РїСЂРё РѕРїСЂРѕСЃРµ СЃС‡РµС‚С‡РёРєР°');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,2,21,'РћС€РёР±РєР° РІ РїР°СЂР°РјРµС‚СЂР°С… Р“Рќ СЃС‡РµС‚С‡РёРєР°');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,2,22,'РќРµРґРѕРїСѓСЃС‚РёРјС‹Р№ СЃРµС‚РµРІРѕР№ Р°РґСЂРµСЃ СЃС‡РµС‚С‡РёРєР°');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,2,23,'РќРµРґРѕРїСѓСЃС‚РёРјС‹Р№ РЅРѕРјРµСЂ Р±Р»РѕРєР° Р±РёР»Р»РёРЅРіРѕРІС‹С… РґР°РЅРЅС‹С…');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,2,24,'РћС‚СЃСѓС‚СЃС‚РІСѓРµС‚ С„Р°Р№Р» СЃРёСЃС‚РµРјС‹ Р±РµР·РѕРїР°СЃРЅРѕСЃС‚Рё');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,2,25,'РћС€РёР±РєР° СЃРѕР·РґР°РЅРёСЏ С„Р°Р№Р»Р° СЃРёСЃС‚РµРјС‹ Р±РµР·РѕРїР°СЃРЅРѕСЃС‚Рё');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,2,26,'РќРµРІРµСЂРЅР°СЏ РґР»РёРЅР° РєР»Р°СЃСЃР° РїР°РјСЏС‚Рё РђР»СЊС„С‹');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,2,129,'РќРµС‚ РЅРµРѕР±С…РѕРґРёРјРѕСЃС‚Рё РІ РїРѕР»СѓС‡РµРЅРёРё РґР°РЅРЅС‹С…');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,2,130,'РљРѕРЅС‚РµРєСЃС‚ СѓСЃС‚СЂРѕР№СЃС‚РІР° РЅРµ РїРѕРґРµСЂР¶РёРІР°РЅС‚СЃСЏ');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,2,139,'РўРёРї РёРґРµРЅС‚РёС„РёРєР°С†РёРё РЅРµ РїРѕРґРґРµСЂР¶РёРІР°РµС‚СЃСЏ');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,2,140,'РќР°Р·РІР°РЅРёРµ С‚РёРїР° РёРґРµРЅС‚РёС„РёРєР°С†РёРё РѕР±СЏР·Р°С‚РµР»СЊРЅРѕ');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,2,141,'РќРµРІРµСЂРЅРѕРµ РёРјСЏ/РїР°СЂРѕР»СЊ РґРѕСЃС‚СѓРїР° Рє СЃС‡РµС‚С‡РёРєСѓ');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,2,142,'РџР°СЂРѕР»СЊ РґРѕСЃС‚СѓРїР° Рє СЃС‡РµС‚С‡РёРєСѓ РЅРµ РјРѕР¶РµС‚ Р±С‹С‚СЊ РїСѓСЃС‚С‹Рј');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,2,201,'РќРµС‚ СЃРІСЏР·Рё СЃРѕ СЃС‡РµС‚С‡РёРєРѕРј');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (2,2,209,'РќРµРІРµСЂРЅС‹Р№ РїР°СЂРѕР»СЊ РґРѕСЃС‚СѓРїР°');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,0,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 0');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,1,'1: РџР°СЂР°РјРµС‚СЂРёР·Р°С†РёСЏ РёР»Рё РёР·РјРµРЅРµРЅРёРµ РєРѕРЅС„РёРіСѓСЂР°С†РёРё');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,2,'2: РћР±РЅСѓР»РµРЅРёРµ С‚Р°СЂРёС„РЅС‹С… СЂРµРіРёСЃС‚СЂРѕРІ');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,3,'3: РћР±РЅСѓР»РµРЅРёРµ РїР°РјСЏС‚Рё РїСЂРѕС„РёР»СЏ РґР°РЅРЅС‹С…');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,4,'4: Р’С‹РїРѕР»РЅРµРЅ СЃР±СЂРѕСЃ');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,5,'5: Р‘Р°С‚Р°СЂРµСЏ СЂР°Р·СЂСЏР¶РµРЅР°');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,6,'6: Р‘Р°С‚Р°СЂРµСЏ Р·Р°РјРµРЅРµРЅР°');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,7,'7: РќР°РїСЂСЏР¶РµРЅРёРµ Р±Р°С‚Р°СЂРµРё РІ РЅРѕСЂРјРµ ');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,8,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 8');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,9,'9: РџРµСЂРµС…РѕРґ Р»РµС‚Рѕ/Р·РёРјР°');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,10,'10: РР·РјРµРЅРµРЅРёРµ РІСЂРµРјРµРЅРё/РґР°С‚С‹ (СЃС‚Р°СЂРѕРµ Р·РЅР°С‡РµРЅРёРµ)');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,11,'11: РР·РјРµРЅРµРЅРёРµ РІСЂРµРјРµРЅРё/РґР°С‚С‹ (РЅРѕРІРѕРµ Р·РЅР°С‡РµРЅРёРµ)');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,12,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 12');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,13,'13: РР·РјРµРЅРµРЅРёРµ СЃС‚Р°С‚СѓСЃР° СѓРїСЂР°РІР»СЏСЋС‰РёС… РІС…РѕРґРѕРІ');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,14,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 14');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,15,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 15');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,16,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 16');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,17,'17: РЎРЅРёР¶РµРЅРёРµ РЅР°РїСЂСЏР¶РµРЅРёРµ РЅРёР¶Рµ РґРѕРїСѓСЃС‚РёРјРѕРіРѕ РїРѕ С„Р°Р·Рµ L1');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,18,'18: РЎРЅРёР¶РµРЅРёРµ РЅР°РїСЂСЏР¶РµРЅРёРµ РЅРёР¶Рµ РґРѕРїСѓСЃС‚РёРјРѕРіРѕ РїРѕ С„Р°Р·Рµ L2');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,19,'19: РЎРЅРёР¶РµРЅРёРµ РЅР°РїСЂСЏР¶РµРЅРёРµ РЅРёР¶Рµ РґРѕРїСѓСЃС‚РёРјРѕРіРѕ РїРѕ С„Р°Р·Рµ L3');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,20,'20: РџРµСЂРµРЅР°РїСЂСЏР¶РµРЅРёРµ РїРѕ С„Р°Р·Рµ L1');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,21,'21: РџРµСЂРµРЅР°РїСЂСЏР¶РµРЅРёРµ РїРѕ С„Р°Р·Рµ L2');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,22,'22: РџРµСЂРµРЅР°РїСЂСЏР¶РµРЅРёРµ РїРѕ С„Р°Р·Рµ L3');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,23,'23: РџСЂРѕРІР°Р» РЅР°РїСЂСЏР¶РµРЅРёСЏ');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,24,'24: Р’РѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ РЅР°РїСЂСЏР¶РµРЅРёСЏ');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,25,'25: РџРµСЂРµРіСЂСѓР·РєР° РїРѕ С‚РѕРєСѓ С„Р°Р·Р° L1');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,26,'26: РџРµСЂРµРіСЂСѓР·РєР° РїРѕ С‚РѕРєСѓ С„Р°Р·Р° L2');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,27,'27: РџРµСЂРµРіСЂСѓР·РєР° РїРѕ С‚РѕРєСѓ С„Р°Р·Р° L3');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,28,'28: РџРµСЂРµРіСЂСѓР·РєР° РїРѕ С‚РѕРєСѓ РІ РЅРµР№С‚СЂР°Р»Рё');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,29,'29: РЎРёРіРЅР°Р»С‹ СЃРѕР±С‹С‚РёР№ РєРѕСЌС„С„РёС†РёРµРЅС‚Р° РјРѕС‰РЅРѕСЃС‚Рё ');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,30,'30: РЎРёРіРЅР°Р»С‹ СЃРѕР±С‹С‚РёР№ РєРѕСЌС„С„РёС†РёРµРЅС‚Р° РјРѕС‰РЅРѕСЃС‚Рё ');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,31,'31: РЎРёРіРЅР°Р»С‹ СЃРѕР±С‹С‚РёР№ РєРѕСЌС„С„РёС†РёРµРЅС‚Р° РјРѕС‰РЅРѕСЃС‚Рё ');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,32,'32: РЎРёРіРЅР°Р»С‹ СЃРѕР±С‹С‚РёР№ РєРѕСЌС„С„РёС†РёРµРЅС‚Р° РјРѕС‰РЅРѕСЃС‚Рё ');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,33,'33: РЎРёРіРЅР°Р»С‹ СЃРѕР±С‹С‚РёР№ Р·РЅР°С‡РµРЅРёСЏ СѓСЃСЂРµРґРЅРµРЅРЅРѕР№ РјРѕС‰РЅРѕСЃС‚Рё PС‚РµРєСѓС‰РµРµ');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,34,'34: РЎРёРіРЅР°Р»С‹ СЃРѕР±С‹С‚РёР№ Р·РЅР°С‡РµРЅРёСЏ СѓСЃСЂРµРґРЅРµРЅРЅРѕР№ РјРѕС‰РЅРѕСЃС‚Рё PС‚РµРєСѓС‰РµРµ');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,35,'35: РЎРёРіРЅР°Р»С‹ СЃРѕР±С‹С‚РёР№ Р·РЅР°С‡РµРЅРёСЏ СѓСЃСЂРµРґРЅРµРЅРЅРѕР№ РјРѕС‰РЅРѕСЃС‚Рё PС‚РµРєСѓС‰РµРµ');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,36,'36: РЎРёРіРЅР°Р»С‹ СЃРѕР±С‹С‚РёР№ Р·РЅР°С‡РµРЅРёСЏ СѓСЃСЂРµРґРЅРµРЅРЅРѕР№ РјРѕС‰РЅРѕСЃС‚Рё PС‚РµРєСѓС‰РµРµ');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,37,'37: РЎРёРіРЅР°Р»С‹ СЃРѕР±С‹С‚РёР№ Р·РЅР°С‡РµРЅРёСЏ СѓСЃСЂРµРґРЅРµРЅРЅРѕР№ РјРѕС‰РЅРѕСЃС‚Рё PС‚РµРєСѓС‰РµРµ');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,38,'38: РЎРёРіРЅР°Р»С‹ СЃРѕР±С‹С‚РёР№ Р·РЅР°С‡РµРЅРёСЏ СѓСЃСЂРµРґРЅРµРЅРЅРѕР№ РјРѕС‰РЅРѕСЃС‚Рё PС‚РµРєСѓС‰РµРµ');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,39,'39: РЎРёРіРЅР°Р»С‹ СЃРѕР±С‹С‚РёР№ Р·РЅР°С‡РµРЅРёСЏ СѓСЃСЂРµРґРЅРµРЅРЅРѕР№ РјРѕС‰РЅРѕСЃС‚Рё PС‚РµРєСѓС‰РµРµ');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,40,'40: РЎРёРіРЅР°Р»С‹ СЃРѕР±С‹С‚РёР№ Р·РЅР°С‡РµРЅРёСЏ СѓСЃСЂРµРґРЅРµРЅРЅРѕР№ РјРѕС‰РЅРѕСЃС‚Рё PС‚РµРєСѓС‰РµРµ');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,41,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 41');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,42,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 42');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,43,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 43');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,44,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 44');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,45,'45: РћС€РёР±РєР° СЃР°РјРѕС‚РµСЃС‚РёСЂРѕРІР°РЅРёСЏ (4)');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,46,'46: РћС€РёР±РєР° СЃР°РјРѕС‚РµСЃС‚РёСЂРѕРІР°РЅРёСЏ (4)');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,47,'47: РћС€РёР±РєР° СЃР°РјРѕС‚РµСЃС‚РёСЂРѕРІР°РЅРёСЏ (4)');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,48,'48: РћС€РёР±РєР° СЃР°РјРѕС‚РµСЃС‚РёСЂРѕРІР°РЅРёСЏ (4)');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,49,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 49');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,50,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 50');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,51,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 51');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,52,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 52');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,53,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 53');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,54,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 54');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,55,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 55');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,56,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 56');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,57,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 57');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,58,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 58');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,59,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 59');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,60,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 60');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,61,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 61');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,62,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 62');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,63,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 63');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,64,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 64');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,65,'65: РћС€РёР±РєР° "Р‘Р°С‚Р°СЂРµСЏ СЂР°Р·СЂСЏР¶РµРЅР° "');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,66,'66: РћС€РёР±РєР° "РќРµРєРѕСЂСЂРµРєС‚РЅРѕРµ РІСЂРµРјСЏ/РґР°С‚Р°"');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,67,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 67');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,68,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 68');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,69,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 69');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,70,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 70');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,71,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 71');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,72,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 72');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,73,'73: РћС€РёР±РєР° "Р”РѕСЃС‚СѓРї Рє РѕСЃРЅРѕРІРЅРѕР№ РїР°РјСЏС‚Рё"');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,74,'74: РћС€РёР±РєР° "Р”РѕСЃС‚СѓРї Рє РїР°РјСЏС‚Рё РїР°СЂР°РјРµС‚СЂРѕРІ"');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,75,'75: РћС€РёР±РєР° "Р”РѕСЃС‚СѓРї Рє РїР°РјСЏС‚Рё СЃРёСЃС‚РµРјС‹ РёР·РјРµСЂРµРЅРёР№"');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,76,'76: РћС€РёР±РєР° "Р‘Р°Р·С‹ РІСЂРµРјРµРЅРё"');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,77,'77: РћС€РёР±РєР° "Р”РѕСЃС‚СѓРї Рє РїР°РјСЏС‚Рё РїСЂРѕС„РёР»СЏ РґР°РЅРЅС‹С…"');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,78,'78: РћС€РёР±РєР° "РџСЂРёРµРјРЅРёРє СЃРёРіРЅР°Р»РѕРІ СѓРїСЂР°РІР»РµРЅРёСЏ"');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,79,'79: РћС€РёР±РєР° "РљРѕРјРјСѓРЅРёРєР°С†РёРѕРЅРЅС‹Р№ РјРѕРґСѓР»СЊ"');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,80,'80: РћС€РёР±РєР° "Р”РёСЃРїР»РµР№ Рё РїР°РЅРµР»СЊ СѓРїСЂР°РІР»РµРЅРёСЏ"');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,81,'81: РћС€РёР±РєР° "РљРѕРЅС‚СЂРѕР»СЊРЅР°СЏ СЃСѓРјРјР° РєРѕРґР° РїСЂРѕРіСЂР°РјРјС‹"');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,82,'82: РћС€РёР±РєР° "РљРѕРЅС‚СЂРѕР»СЊРЅР°СЏ СЃСѓРјРјР° РґР°РЅРЅС‹С… СЂРµР·РµСЂРІРЅРѕРіРѕ РєРѕРїРёСЂРѕРІР°РЅРёСЏ"');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,83,'83: РћС€РёР±РєР° "РљРѕРЅС‚СЂРѕР»СЊРЅР°СЏ СЃСѓРјРјР° РґР°РЅРЅС‹С… РїР°СЂР°РјРµС‚СЂРёР·Р°С†РёРё"');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,84,'84: РћС€РёР±РєР° "РљРѕРЅС‚СЂРѕР»СЊРЅР°СЏ СЃСѓРјРјР° РґР°РЅРЅС‹С… РїСЂРѕС„РёР»СЏ РґР°РЅРЅС‹С… "');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,85,'85: РћС€РёР±РєР° "РљРѕРЅС‚СЂРѕР»СЊРЅР°СЏ СЃСѓРјРјР° РґР°РЅРЅС‹С… СЃРїРёСЃРєР° СЃРѕР±С‹С‚РёР№"');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,86,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 86');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,87,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 87');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,88,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 88');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,89,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 89');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,90,'90: РћС€РёР±РєР° "РР·РјРµСЂРёС‚РµР»СЊРЅР°СЏ СЃРёСЃС‚РµРјР°"');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,91,'91: РћС€РёР±РєР° "РџРµСЂРµРїСЂРѕРіСЂР°РјРјРёСЂРѕРІР°РЅРёРµ"');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,92,'92: РћС€РёР±РєР° "Р РµР¶РёРј СѓСЃС‚Р°РЅРѕРІРєРё"');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,93,'93: РћС€РёР±РєР° "РЎРёСЃС‚РµРјР°"');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,94,'94: РћС€РёР±РєР° "РЎРІСЏР·СЊ Р·Р°Р±Р»РѕРєРёСЂРѕРІР°РЅР°"');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,95,'95: РћС€РёР±РєР° "РќРµРєРѕСЂСЂ. РёРґРµРЅС‚РёС„РёРєР°С†РёСЏ EEPROM"');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,96,'96: РћС€РёР±РєР° "РќРµРєРѕСЂСЂ. С„СѓРЅРєС†РёРѕРЅРёСЂРѕРІР°РЅРёРµ РґР»РёС‚РµР»СЊРЅР°СЏ РёРґРµРЅС‚РёС„РёРєР°С†РёСЏ"');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,97,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 97');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,98,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 98');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,99,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 99');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,100,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 100');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,101,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 101');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,102,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 102');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,103,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 103');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,104,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 104');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,105,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 105');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,106,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 106');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,107,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 107');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,108,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 108');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,109,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 109');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,110,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 110');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,111,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 111');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,112,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 112');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,113,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 113');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,114,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 114');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,115,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 115');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,116,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 116');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,117,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 117');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,118,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 118');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,119,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 119');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,120,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 120');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,121,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 121');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,122,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 122');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,123,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 123');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,124,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 124');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,125,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 125');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,126,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 126');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,127,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 127');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,128,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 128');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,129,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 129');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,130,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 130');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,131,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 131');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,132,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 132');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,133,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 133');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,134,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 134');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,135,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 135');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,136,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 136');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,137,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 137');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,138,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 138');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,139,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 139');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,140,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 140');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,141,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 141');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,142,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 142');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,143,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 143');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,144,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 144');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,145,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 145');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,146,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 146');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,147,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 147');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,148,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 148');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,149,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 149');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,150,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 150');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,151,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 151');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,152,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 152');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,153,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 153');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,154,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 154');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,155,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 155');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,156,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 156');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,157,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 157');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,158,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 158');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,159,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 159');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,160,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 160');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,161,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 161');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,162,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 162');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,163,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 163');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,164,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 164');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,165,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 165');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,166,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 166');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,167,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 167');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,168,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 168');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,169,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 169');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,170,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 170');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,171,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 171');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,172,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 172');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,173,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 173');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,174,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 174');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,175,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 175');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,176,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 176');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,177,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 177');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,178,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 178');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,179,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 179');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,180,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 180');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,181,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 181');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,182,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 182');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,183,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 183');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,184,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 184');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,185,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 185');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,186,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 186');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,187,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 187');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,188,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 188');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,189,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 189');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,190,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 190');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,191,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 191');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,192,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 192');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,193,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 193');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,194,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 194');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,195,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 195');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,196,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 196');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,197,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 197');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,198,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 198');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,199,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 199');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,200,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 200');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,201,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 201');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,202,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 202');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,203,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 203');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,204,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 204');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,205,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 205');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,206,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 206');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,207,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 207');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,208,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 208');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,209,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 209');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,210,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 210');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,211,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 211');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,212,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 212');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,213,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 213');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,214,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 214');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,215,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 215');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,216,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 216');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,217,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 217');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,218,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 218');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,219,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 219');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,220,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 220');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,221,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 221');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,222,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 222');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,223,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 223');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,224,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 224');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,225,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 225');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,226,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 226');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,227,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 227');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,228,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 228');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,229,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 229');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,230,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 230');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,231,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 231');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,232,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 232');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,233,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 233');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,234,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 234');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,235,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 235');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,236,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 236');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,237,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 237');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,238,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 238');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,239,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 239');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,240,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 240');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,241,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 241');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,242,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 242');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,243,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 243');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,244,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 244');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,245,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 245');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,246,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 246');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,247,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 247');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,248,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 248');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,249,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 249');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,250,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 250');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,251,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 251');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,252,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 252');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,253,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 253');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,254,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 254');
+INSERT INTO METEREVENTSDICT (NMETERTYPE,NEVENTCLASS,NEVENTCODE,VEVENTTEXT) VALUES (3,1,255,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 255');
 commit;
 end;
 /
@@ -15778,16 +15778,16 @@ create table ADDPOINTPARAM  (
 );
 
 comment on table ADDPOINTPARAM is
-'Доп параметры ТУ';
+'Р”РѕРї РїР°СЂР°РјРµС‚СЂС‹ РўРЈ';
 
 comment on column ADDPOINTPARAM.NSORT is
-'Номер аттрибута';
+'РќРѕРјРµСЂ Р°С‚С‚СЂРёР±СѓС‚Р°';
 
 comment on column ADDPOINTPARAM.VDESCR is
-'Описание';
+'РћРїРёСЃР°РЅРёРµ';
 
 comment on column ADDPOINTPARAM.NTYPE is
-'Тип аттрибута';
+'РўРёРї Р°С‚С‚СЂРёР±СѓС‚Р°';
 
 /*==============================================================*/
 /* Index: ADDPOINTPARAM_IDX1                                    */
@@ -15807,16 +15807,16 @@ create table ADDPOINTPARAMVAL  (
 );
 
 comment on table ADDPOINTPARAMVAL is
-'Значения доп пар ТУ';
+'Р—РЅР°С‡РµРЅРёСЏ РґРѕРї РїР°СЂ РўРЈ';
 
 comment on column ADDPOINTPARAMVAL.MID is
-'Ид точки';
+'РРґ С‚РѕС‡РєРё';
 
 comment on column ADDPOINTPARAMVAL.NSORT is
-'Номер аттрибута';
+'РќРѕРјРµСЂ Р°С‚С‚СЂРёР±СѓС‚Р°';
 
 comment on column ADDPOINTPARAMVAL.VVALUE is
-'Значение';
+'Р—РЅР°С‡РµРЅРёРµ';
 
 /*==============================================================*/
 /* Index: ADDPOINTPARAMVAL_IDX1                                 */
@@ -15837,58 +15837,58 @@ alter table ADDPOINTPARAMVAL
 
 
 begin
-INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (44,'Схема включения счетчика',0);
-INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (45,'Количество тарифов счетчика',1);
-INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (31,'Тип ТН (Фаза C)',0);
-INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (32,'Зав № ТН (Фаза C)',0);
-INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (1,'Тип ТТ (Фаза A)',0);
-INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (2,'Зав № ТТ(Фаза A)',0);
-INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (3,'Клас точности обмотки ТТ (Фаза A)',2);
-INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (4,'Допустимая нагрузка втор. обмотки ТТ, Ом (Фаза A)',2);
-INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (5,'Фактическая нагрузка втор. обмотки ТТ, Ом (Фаза A)',2);
-INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (6,'Примечание ТТ (Фаза A)',0);
-INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (7,'Тип ТТ (Фаза B)',0);
-INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (8,'Зав № ТТ (Фаза B)',0);
-INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (9,'Клас точности обмотки ТТ (Фаза B)',2);
-INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (10,'Допустимая нагрузка втор. обмотки ТТ, Ом (Фаза B)',2);
-INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (11,'Фактическая нагрузка втор. обмотки ТТ, Ом (Фаза B)',2);
-INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (13,'Тип ТТ (Фаза C)',0);
-INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (14,'Зав № ТТ (Фаза C)',0);
-INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (15,'Клас точности обмотки ТТ (Фаза C)',2);
-INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (16,'Допустимая нагрузка втор. обмотки ТТ, Ом (Фаза C)',2);
-INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (17,'Фактическая нагрузка втор. обмотки ТТ, Ом (Фаза C)',2);
-INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (18,'Примечание ТТ (Фаза C)',0);
-INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (19,'Тип ТН (Фаза A)',0);
-INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (20,'Зав № ТН(Фаза A)',0);
-INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (21,'Клас точности обмотки ТН (Фаза A)',2);
-INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (22,'Допустимая нагрузка втор. обмотки ТН, ВА (Фаза A)',2);
-INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (23,'Фактическая нагрузка втор. обмотки ТН, ВА (Фаза A)',2);
-INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (24,'Примечание ТН (Фаза A)',0);
-INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (25,'Тип ТН (Фаза B)',0);
-INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (26,'Зав № ТН (Фаза B)',0);
-INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (27,'Клас точности обмотки ТН (Фаза B)',2);
-INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (28,'Допустимая нагрузка втор. обмотки ТН, ВА (Фаза B)',2);
-INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (29,'Фактическая нагрузка втор. обмотки ТН, ВА (Фаза B)',2);
-INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (30,'Примечание ТН (Фаза B)',0);
-INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (33,'Клас точности обмотки ТН (Фаза C)',2);
-INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (34,'Допустимая нагрузка втор. обмотки ТН, ВА (Фаза C)',2);
-INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (35,'Фактическая нагрузка втор. обмотки ТН, ВА (Фаза C)',2);
-INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (36,'Примечание ТН (Фаза C)',0);
-INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (37,'Схема соединения обмоток',0);
-INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (38,'Допустимые потери от ТН до счетчика, В',2);
-INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (39,'Фактические потери от ТН до счетчика, В (Фаза A)',2);
-INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (40,'Фактические потери от ТН до счетчика, В (Фаза B)',2);
-INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (41,'Фактические потери от ТН до счетчика, В (Фаза C)',2);
-INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (42,'Дата протокола поверки элементов комплекса',3);
-INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (43,'Номер протокола поверки элементов комплекса',0);
-INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (12,'Примечание ТТ (Фаза B)',0);
+INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (44,'РЎС…РµРјР° РІРєР»СЋС‡РµРЅРёСЏ СЃС‡РµС‚С‡РёРєР°',0);
+INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (45,'РљРѕР»РёС‡РµСЃС‚РІРѕ С‚Р°СЂРёС„РѕРІ СЃС‡РµС‚С‡РёРєР°',1);
+INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (31,'РўРёРї РўРќ (Р¤Р°Р·Р° C)',0);
+INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (32,'Р—Р°РІ в„– РўРќ (Р¤Р°Р·Р° C)',0);
+INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (1,'РўРёРї РўРў (Р¤Р°Р·Р° A)',0);
+INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (2,'Р—Р°РІ в„– РўРў(Р¤Р°Р·Р° A)',0);
+INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (3,'РљР»Р°СЃ С‚РѕС‡РЅРѕСЃС‚Рё РѕР±РјРѕС‚РєРё РўРў (Р¤Р°Р·Р° A)',2);
+INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (4,'Р”РѕРїСѓСЃС‚РёРјР°СЏ РЅР°РіСЂСѓР·РєР° РІС‚РѕСЂ. РѕР±РјРѕС‚РєРё РўРў, РћРј (Р¤Р°Р·Р° A)',2);
+INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (5,'Р¤Р°РєС‚РёС‡РµСЃРєР°СЏ РЅР°РіСЂСѓР·РєР° РІС‚РѕСЂ. РѕР±РјРѕС‚РєРё РўРў, РћРј (Р¤Р°Р·Р° A)',2);
+INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (6,'РџСЂРёРјРµС‡Р°РЅРёРµ РўРў (Р¤Р°Р·Р° A)',0);
+INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (7,'РўРёРї РўРў (Р¤Р°Р·Р° B)',0);
+INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (8,'Р—Р°РІ в„– РўРў (Р¤Р°Р·Р° B)',0);
+INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (9,'РљР»Р°СЃ С‚РѕС‡РЅРѕСЃС‚Рё РѕР±РјРѕС‚РєРё РўРў (Р¤Р°Р·Р° B)',2);
+INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (10,'Р”РѕРїСѓСЃС‚РёРјР°СЏ РЅР°РіСЂСѓР·РєР° РІС‚РѕСЂ. РѕР±РјРѕС‚РєРё РўРў, РћРј (Р¤Р°Р·Р° B)',2);
+INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (11,'Р¤Р°РєС‚РёС‡РµСЃРєР°СЏ РЅР°РіСЂСѓР·РєР° РІС‚РѕСЂ. РѕР±РјРѕС‚РєРё РўРў, РћРј (Р¤Р°Р·Р° B)',2);
+INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (13,'РўРёРї РўРў (Р¤Р°Р·Р° C)',0);
+INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (14,'Р—Р°РІ в„– РўРў (Р¤Р°Р·Р° C)',0);
+INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (15,'РљР»Р°СЃ С‚РѕС‡РЅРѕСЃС‚Рё РѕР±РјРѕС‚РєРё РўРў (Р¤Р°Р·Р° C)',2);
+INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (16,'Р”РѕРїСѓСЃС‚РёРјР°СЏ РЅР°РіСЂСѓР·РєР° РІС‚РѕСЂ. РѕР±РјРѕС‚РєРё РўРў, РћРј (Р¤Р°Р·Р° C)',2);
+INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (17,'Р¤Р°РєС‚РёС‡РµСЃРєР°СЏ РЅР°РіСЂСѓР·РєР° РІС‚РѕСЂ. РѕР±РјРѕС‚РєРё РўРў, РћРј (Р¤Р°Р·Р° C)',2);
+INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (18,'РџСЂРёРјРµС‡Р°РЅРёРµ РўРў (Р¤Р°Р·Р° C)',0);
+INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (19,'РўРёРї РўРќ (Р¤Р°Р·Р° A)',0);
+INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (20,'Р—Р°РІ в„– РўРќ(Р¤Р°Р·Р° A)',0);
+INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (21,'РљР»Р°СЃ С‚РѕС‡РЅРѕСЃС‚Рё РѕР±РјРѕС‚РєРё РўРќ (Р¤Р°Р·Р° A)',2);
+INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (22,'Р”РѕРїСѓСЃС‚РёРјР°СЏ РЅР°РіСЂСѓР·РєР° РІС‚РѕСЂ. РѕР±РјРѕС‚РєРё РўРќ, Р’Рђ (Р¤Р°Р·Р° A)',2);
+INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (23,'Р¤Р°РєС‚РёС‡РµСЃРєР°СЏ РЅР°РіСЂСѓР·РєР° РІС‚РѕСЂ. РѕР±РјРѕС‚РєРё РўРќ, Р’Рђ (Р¤Р°Р·Р° A)',2);
+INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (24,'РџСЂРёРјРµС‡Р°РЅРёРµ РўРќ (Р¤Р°Р·Р° A)',0);
+INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (25,'РўРёРї РўРќ (Р¤Р°Р·Р° B)',0);
+INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (26,'Р—Р°РІ в„– РўРќ (Р¤Р°Р·Р° B)',0);
+INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (27,'РљР»Р°СЃ С‚РѕС‡РЅРѕСЃС‚Рё РѕР±РјРѕС‚РєРё РўРќ (Р¤Р°Р·Р° B)',2);
+INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (28,'Р”РѕРїСѓСЃС‚РёРјР°СЏ РЅР°РіСЂСѓР·РєР° РІС‚РѕСЂ. РѕР±РјРѕС‚РєРё РўРќ, Р’Рђ (Р¤Р°Р·Р° B)',2);
+INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (29,'Р¤Р°РєС‚РёС‡РµСЃРєР°СЏ РЅР°РіСЂСѓР·РєР° РІС‚РѕСЂ. РѕР±РјРѕС‚РєРё РўРќ, Р’Рђ (Р¤Р°Р·Р° B)',2);
+INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (30,'РџСЂРёРјРµС‡Р°РЅРёРµ РўРќ (Р¤Р°Р·Р° B)',0);
+INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (33,'РљР»Р°СЃ С‚РѕС‡РЅРѕСЃС‚Рё РѕР±РјРѕС‚РєРё РўРќ (Р¤Р°Р·Р° C)',2);
+INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (34,'Р”РѕРїСѓСЃС‚РёРјР°СЏ РЅР°РіСЂСѓР·РєР° РІС‚РѕСЂ. РѕР±РјРѕС‚РєРё РўРќ, Р’Рђ (Р¤Р°Р·Р° C)',2);
+INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (35,'Р¤Р°РєС‚РёС‡РµСЃРєР°СЏ РЅР°РіСЂСѓР·РєР° РІС‚РѕСЂ. РѕР±РјРѕС‚РєРё РўРќ, Р’Рђ (Р¤Р°Р·Р° C)',2);
+INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (36,'РџСЂРёРјРµС‡Р°РЅРёРµ РўРќ (Р¤Р°Р·Р° C)',0);
+INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (37,'РЎС…РµРјР° СЃРѕРµРґРёРЅРµРЅРёСЏ РѕР±РјРѕС‚РѕРє',0);
+INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (38,'Р”РѕРїСѓСЃС‚РёРјС‹Рµ РїРѕС‚РµСЂРё РѕС‚ РўРќ РґРѕ СЃС‡РµС‚С‡РёРєР°, Р’',2);
+INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (39,'Р¤Р°РєС‚РёС‡РµСЃРєРёРµ РїРѕС‚РµСЂРё РѕС‚ РўРќ РґРѕ СЃС‡РµС‚С‡РёРєР°, Р’ (Р¤Р°Р·Р° A)',2);
+INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (40,'Р¤Р°РєС‚РёС‡РµСЃРєРёРµ РїРѕС‚РµСЂРё РѕС‚ РўРќ РґРѕ СЃС‡РµС‚С‡РёРєР°, Р’ (Р¤Р°Р·Р° B)',2);
+INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (41,'Р¤Р°РєС‚РёС‡РµСЃРєРёРµ РїРѕС‚РµСЂРё РѕС‚ РўРќ РґРѕ СЃС‡РµС‚С‡РёРєР°, Р’ (Р¤Р°Р·Р° C)',2);
+INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (42,'Р”Р°С‚Р° РїСЂРѕС‚РѕРєРѕР»Р° РїРѕРІРµСЂРєРё СЌР»РµРјРµРЅС‚РѕРІ РєРѕРјРїР»РµРєСЃР°',3);
+INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (43,'РќРѕРјРµСЂ РїСЂРѕС‚РѕРєРѕР»Р° РїРѕРІРµСЂРєРё СЌР»РµРјРµРЅС‚РѕРІ РєРѕРјРїР»РµРєСЃР°',0);
+INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (12,'РџСЂРёРјРµС‡Р°РЅРёРµ РўРў (Р¤Р°Р·Р° B)',0);
 commit;
 end;
 /
 
 
 ----------------------------------------------------------------------------------------------
---         VER 2.26  (Для обновления версии 2.26 до текущей скрипт запускать отсюда)        --
+--         VER 2.26  (Р”Р»СЏ РѕР±РЅРѕРІР»РµРЅРёСЏ РІРµСЂСЃРёРё 2.26 РґРѕ С‚РµРєСѓС‰РµР№ СЃРєСЂРёРїС‚ Р·Р°РїСѓСЃРєР°С‚СЊ РѕС‚СЃСЋРґР°)        --
 ----------------------------------------------------------------------------------------------
 begin
 update ADDPOINTPARAM set NTYPE=0 where NSORT=45;
@@ -15917,16 +15917,16 @@ create table MAKETERR  (
 );
 
 comment on table MAKETERR is
-'Ошибки округления 30817';
+'РћС€РёР±РєРё РѕРєСЂСѓРіР»РµРЅРёСЏ 30817';
 
 comment on column MAKETERR.NGROUP is
-'Группа';
+'Р“СЂСѓРїРїР°';
 
 comment on column MAKETERR.DDATE is
-'Отчетная дата';
+'РћС‚С‡РµС‚РЅР°СЏ РґР°С‚Р°';
 
 comment on column MAKETERR.ERR is
-'Ошибка округления';
+'РћС€РёР±РєР° РѕРєСЂСѓРіР»РµРЅРёСЏ';
 
 /*==============================================================*/
 /* Index: MAKETERR_IDX1                                         */
@@ -15945,61 +15945,61 @@ declare
 l NUMBER;
 begin
 select nvl(max(decode(vvalue,'10',1,0)),0) into l from parameter where NPID=12;
-insert into parameter (NPID,VVALUE,VDESCRIPTION) values(39,l,'Переносить остатки при расчете 30817 на след сутки.');
+insert into parameter (NPID,VVALUE,VDESCRIPTION) values(39,l,'РџРµСЂРµРЅРѕСЃРёС‚СЊ РѕСЃС‚Р°С‚РєРё РїСЂРё СЂР°СЃС‡РµС‚Рµ 30817 РЅР° СЃР»РµРґ СЃСѓС‚РєРё.');
 commit;
 end;
 /
 
 
 ----------------------------------------------------------------------------------------------
---         VER 2.26.4  (Для обновления версии 2.26.3 до текущей скрипт запускать отсюда)        --
+--         VER 2.26.4  (Р”Р»СЏ РѕР±РЅРѕРІР»РµРЅРёСЏ РІРµСЂСЃРёРё 2.26.3 РґРѕ С‚РµРєСѓС‰РµР№ СЃРєСЂРёРїС‚ Р·Р°РїСѓСЃРєР°С‚СЊ РѕС‚СЃСЋРґР°)        --
 ----------------------------------------------------------------------------------------------
 begin
-insert into parameter (NPID,VVALUE,VDESCRIPTION) values(40,'UA.KHARTEP_','Глобальный префикс системы.');
+insert into parameter (NPID,VVALUE,VDESCRIPTION) values(40,'UA.KHARTEP_','Р“Р»РѕР±Р°Р»СЊРЅС‹Р№ РїСЂРµС„РёРєСЃ СЃРёСЃС‚РµРјС‹.');
 commit;
 end;
 /
 
 ----------------------------------------------------------------------------------------------
---         VER 2.26.5  (Для обновления версии 2.26.4 до текущей скрипт запускать отсюда)        --
+--         VER 2.26.5  (Р”Р»СЏ РѕР±РЅРѕРІР»РµРЅРёСЏ РІРµСЂСЃРёРё 2.26.4 РґРѕ С‚РµРєСѓС‰РµР№ СЃРєСЂРёРїС‚ Р·Р°РїСѓСЃРєР°С‚СЊ РѕС‚СЃСЋРґР°)        --
 ----------------------------------------------------------------------------------------------
 INSERT INTO form_templates
 (TEMPLATE_ID,PARENT,CODETEMPLATE,NAMEFORM,COMMENTFORM,ENABLECONTROLS,STEPPROFILE,NAMEALERT)
 VALUES
-(92,1,206,'1.17. Небаланс активной энергии',
-'Небаланс активной энергии [тыс.кВтч]','11110111',2,'')
+(92,1,206,'1.17. РќРµР±Р°Р»Р°РЅСЃ Р°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё',
+'РќРµР±Р°Р»Р°РЅСЃ Р°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё [С‚С‹СЃ.РєР’С‚С‡]','11110111',2,'')
 /
 commit
 /
 
 begin
-INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (-1,'Предупредительная нижняя граница (A+), кВт',2);
-INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (-2,'Предупредительная верхня граница (A+, кВт',2);
-INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (-3,'Аварийная нижняя граница (A+), кВт',2);
-INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (-4,'Аварийная верхня граница (A+), кВт',2);
-INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (-5,'Физическая нижняя граница (A+), кВт',2);
-INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (-6,'Физическая верхня граница (A+), кВт',2);
+INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (-1,'РџСЂРµРґСѓРїСЂРµРґРёС‚РµР»СЊРЅР°СЏ РЅРёР¶РЅСЏСЏ РіСЂР°РЅРёС†Р° (A+), РєР’С‚',2);
+INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (-2,'РџСЂРµРґСѓРїСЂРµРґРёС‚РµР»СЊРЅР°СЏ РІРµСЂС…РЅСЏ РіСЂР°РЅРёС†Р° (A+, РєР’С‚',2);
+INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (-3,'РђРІР°СЂРёР№РЅР°СЏ РЅРёР¶РЅСЏСЏ РіСЂР°РЅРёС†Р° (A+), РєР’С‚',2);
+INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (-4,'РђРІР°СЂРёР№РЅР°СЏ РІРµСЂС…РЅСЏ РіСЂР°РЅРёС†Р° (A+), РєР’С‚',2);
+INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (-5,'Р¤РёР·РёС‡РµСЃРєР°СЏ РЅРёР¶РЅСЏСЏ РіСЂР°РЅРёС†Р° (A+), РєР’С‚',2);
+INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (-6,'Р¤РёР·РёС‡РµСЃРєР°СЏ РІРµСЂС…РЅСЏ РіСЂР°РЅРёС†Р° (A+), РєР’С‚',2);
 
-INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (-7,'Предупредительная нижняя граница (A-), кВт',2);
-INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (-8,'Предупредительная верхня граница (A-), кВт',2);
-INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (-9,'Аварийная нижняя граница (A-), кВт',2);
-INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (-10,'Аварийная верхня граница (A-), кВт',2);
-INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (-11,'Физическая нижняя граница (A-), кВт',2);
-INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (-12,'Физическая верхня граница (A-), кВт',2);
+INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (-7,'РџСЂРµРґСѓРїСЂРµРґРёС‚РµР»СЊРЅР°СЏ РЅРёР¶РЅСЏСЏ РіСЂР°РЅРёС†Р° (A-), РєР’С‚',2);
+INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (-8,'РџСЂРµРґСѓРїСЂРµРґРёС‚РµР»СЊРЅР°СЏ РІРµСЂС…РЅСЏ РіСЂР°РЅРёС†Р° (A-), РєР’С‚',2);
+INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (-9,'РђРІР°СЂРёР№РЅР°СЏ РЅРёР¶РЅСЏСЏ РіСЂР°РЅРёС†Р° (A-), РєР’С‚',2);
+INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (-10,'РђРІР°СЂРёР№РЅР°СЏ РІРµСЂС…РЅСЏ РіСЂР°РЅРёС†Р° (A-), РєР’С‚',2);
+INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (-11,'Р¤РёР·РёС‡РµСЃРєР°СЏ РЅРёР¶РЅСЏСЏ РіСЂР°РЅРёС†Р° (A-), РєР’С‚',2);
+INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (-12,'Р¤РёР·РёС‡РµСЃРєР°СЏ РІРµСЂС…РЅСЏ РіСЂР°РЅРёС†Р° (A-), РєР’С‚',2);
 
-INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (-13,'Предупредительная нижняя граница (R+), кВАр',2);
-INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (-14,'Предупредительная верхня граница (R+), кВАр',2);
-INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (-15,'Аварийная нижняя граница (R+), кВАр',2);
-INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (-16,'Аварийная верхня граница (R+), кВАр',2);
-INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (-17,'Физическая нижняя граница (R+), кВАр',2);
-INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (-18,'Физическая верхня граница (R+), кВАр',2);
+INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (-13,'РџСЂРµРґСѓРїСЂРµРґРёС‚РµР»СЊРЅР°СЏ РЅРёР¶РЅСЏСЏ РіСЂР°РЅРёС†Р° (R+), РєР’РђСЂ',2);
+INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (-14,'РџСЂРµРґСѓРїСЂРµРґРёС‚РµР»СЊРЅР°СЏ РІРµСЂС…РЅСЏ РіСЂР°РЅРёС†Р° (R+), РєР’РђСЂ',2);
+INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (-15,'РђРІР°СЂРёР№РЅР°СЏ РЅРёР¶РЅСЏСЏ РіСЂР°РЅРёС†Р° (R+), РєР’РђСЂ',2);
+INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (-16,'РђРІР°СЂРёР№РЅР°СЏ РІРµСЂС…РЅСЏ РіСЂР°РЅРёС†Р° (R+), РєР’РђСЂ',2);
+INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (-17,'Р¤РёР·РёС‡РµСЃРєР°СЏ РЅРёР¶РЅСЏСЏ РіСЂР°РЅРёС†Р° (R+), РєР’РђСЂ',2);
+INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (-18,'Р¤РёР·РёС‡РµСЃРєР°СЏ РІРµСЂС…РЅСЏ РіСЂР°РЅРёС†Р° (R+), РєР’РђСЂ',2);
 
-INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (-19,'Предупредительная нижняя граница (R-), кВАр',2);
-INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (-20,'Предупредительная верхня граница (R-), кВАр',2);
-INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (-21,'Аварийная нижняя граница (R-), кВАр',2);
-INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (-22,'Аварийная верхня граница (R-), кВАр',2);
-INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (-23,'Физическая нижняя граница (R-), кВАр',2);
-INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (-24,'Физическая верхня граница (R-), кВАр',2);
+INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (-19,'РџСЂРµРґСѓРїСЂРµРґРёС‚РµР»СЊРЅР°СЏ РЅРёР¶РЅСЏСЏ РіСЂР°РЅРёС†Р° (R-), РєР’РђСЂ',2);
+INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (-20,'РџСЂРµРґСѓРїСЂРµРґРёС‚РµР»СЊРЅР°СЏ РІРµСЂС…РЅСЏ РіСЂР°РЅРёС†Р° (R-), РєР’РђСЂ',2);
+INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (-21,'РђРІР°СЂРёР№РЅР°СЏ РЅРёР¶РЅСЏСЏ РіСЂР°РЅРёС†Р° (R-), РєР’РђСЂ',2);
+INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (-22,'РђРІР°СЂРёР№РЅР°СЏ РІРµСЂС…РЅСЏ РіСЂР°РЅРёС†Р° (R-), РєР’РђСЂ',2);
+INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (-23,'Р¤РёР·РёС‡РµСЃРєР°СЏ РЅРёР¶РЅСЏСЏ РіСЂР°РЅРёС†Р° (R-), РєР’РђСЂ',2);
+INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (-24,'Р¤РёР·РёС‡РµСЃРєР°СЏ РІРµСЂС…РЅСЏ РіСЂР°РЅРёС†Р° (R-), РєР’РђСЂ',2);
 commit;
 end;
 /
@@ -16012,7 +16012,7 @@ alter table FEEDERS  add(
    NOPPOSITE            NUMBER
 );
 comment on column FEEDERS.NOPPOSITE is
-'Противоположный учет';
+'РџСЂРѕС‚РёРІРѕРїРѕР»РѕР¶РЅС‹Р№ СѓС‡РµС‚';
 
 /*==============================================================*/
 /* Index: FEEDERS_IDX8                                          */
@@ -16033,22 +16033,22 @@ alter table POINTS  add(
 );
 
 comment on column POINTS.NORDER is
-'Сортировка';
+'РЎРѕСЂС‚РёСЂРѕРІРєР°';
 
 ------------------------
 INSERT INTO RYDA.PROTOCOLS
 VALUES
-(88,'Облик-2005', null)
+(88,'РћР±Р»РёРє-2005', null)
 /
 INSERT INTO RYDA.PROTOCOLS
 VALUES
-(89,'KM --> Облик-2005', null)
+(89,'KM --> РћР±Р»РёРє-2005', null)
 /
 commit
 /
 
 ----------------------------------------------------------------------------------------------
---         VER 2.26.6  (Для обновления версии 2.26.5 до текущей скрипт запускать отсюда)        --
+--         VER 2.26.6  (Р”Р»СЏ РѕР±РЅРѕРІР»РµРЅРёСЏ РІРµСЂСЃРёРё 2.26.5 РґРѕ С‚РµРєСѓС‰РµР№ СЃРєСЂРёРїС‚ Р·Р°РїСѓСЃРєР°С‚СЊ РѕС‚СЃСЋРґР°)        --
 ----------------------------------------------------------------------------------------------
 ---17/09/2008
 
@@ -16062,13 +16062,13 @@ create table METERTYPE  (
 );
 
 comment on table METERTYPE is
-'Типы счетчиков и УСД';
+'РўРёРїС‹ СЃС‡РµС‚С‡РёРєРѕРІ Рё РЈРЎР”';
 
 comment on column METERTYPE.NMETERTYPE is
-'Тип счетчика или УСД';
+'РўРёРї СЃС‡РµС‚С‡РёРєР° РёР»Рё РЈРЎР”';
 
 comment on column METERTYPE.VEVENTTEXT is
-'Наименование';
+'РќР°РёРјРµРЅРѕРІР°РЅРёРµ';
 
 /*==============================================================*/
 /* Index: METERTYPE_IDX1                                        */
@@ -16078,7 +16078,7 @@ create unique index METERTYPE_IDX1 on METERTYPE (
 );
 
 insert into METERTYPE(NMETERTYPE,VEVENTTEXT) values(1,'SL-7000');
-insert into METERTYPE(NMETERTYPE,VEVENTTEXT) values(2,'УСПД КМ-64');
+insert into METERTYPE(NMETERTYPE,VEVENTTEXT) values(2,'РЈРЎРџР” РљРњ-64');
 insert into METERTYPE(NMETERTYPE,VEVENTTEXT) values(3,'LG ZxD');
 commit;
 
@@ -16109,28 +16109,28 @@ create table METEREVENTSDICT  (
 );
 
 comment on table METEREVENTSDICT is
-'Сообщения счетчиков';
+'РЎРѕРѕР±С‰РµРЅРёСЏ СЃС‡РµС‚С‡РёРєРѕРІ';
 
 comment on column METEREVENTSDICT.NEVENT is
-'Ид события';
+'РРґ СЃРѕР±С‹С‚РёСЏ';
 
 comment on column METEREVENTSDICT.NMETERTYPE is
-'Тип счетчика или УСД';
+'РўРёРї СЃС‡РµС‚С‡РёРєР° РёР»Рё РЈРЎР”';
 
 comment on column METEREVENTSDICT.NEVENTCLASS is
-'Класс сообщения';
+'РљР»Р°СЃСЃ СЃРѕРѕР±С‰РµРЅРёСЏ';
 
 comment on column METEREVENTSDICT.NEVENTCODE is
-'Код сообщения';
+'РљРѕРґ СЃРѕРѕР±С‰РµРЅРёСЏ';
 
 comment on column METEREVENTSDICT.VEVENTTEXT is
-'Тескст сообщения';
+'РўРµСЃРєСЃС‚ СЃРѕРѕР±С‰РµРЅРёСЏ';
 
 comment on column METEREVENTSDICT.NLOCK is
-'Блокировка вывода';
+'Р‘Р»РѕРєРёСЂРѕРІРєР° РІС‹РІРѕРґР°';
 
 comment on column METEREVENTSDICT.NVALIDITY is
-'Достовеерность';
+'Р”РѕСЃС‚РѕРІРµРµСЂРЅРѕСЃС‚СЊ';
 
 /*==============================================================*/
 /* Index: METEREVENTSDICT_IDX1                                  */
@@ -16166,22 +16166,22 @@ create table METERSTATUSBITDICT  (
 );
 
 comment on table METERSTATUSBITDICT is
-'Биты статуса счетчика';
+'Р‘РёС‚С‹ СЃС‚Р°С‚СѓСЃР° СЃС‡РµС‚С‡РёРєР°';
 
 comment on column METERSTATUSBITDICT.NMETERTYPE is
-'Тип счетчика или УСД';
+'РўРёРї СЃС‡РµС‚С‡РёРєР° РёР»Рё РЈРЎР”';
 
 comment on column METERSTATUSBITDICT.NBIT is
-'Номер бита';
+'РќРѕРјРµСЂ Р±РёС‚Р°';
 
 comment on column METERSTATUSBITDICT.VEVENTTEXT is
-'Наименование';
+'РќР°РёРјРµРЅРѕРІР°РЅРёРµ';
 
 comment on column METERSTATUSBITDICT.NEVENT0 is
-'Событие при изменении в 0';
+'РЎРѕР±С‹С‚РёРµ РїСЂРё РёР·РјРµРЅРµРЅРёРё РІ 0';
 
 comment on column METERSTATUSBITDICT.NEVENT1 is
-'Событие при изменении в 1';
+'РЎРѕР±С‹С‚РёРµ РїСЂРё РёР·РјРµРЅРµРЅРёРё РІ 1';
 
 /*==============================================================*/
 /* Index: METERSTATUSBITDICT_IDX1                               */
@@ -16217,10 +16217,10 @@ alter table JOURNAL  add(
 );
 
 comment on column JOURNAL.NEVENT is
-'Ид события';
+'РРґ СЃРѕР±С‹С‚РёСЏ';
 
 comment on column JOURNAL.VCODE is
-'Оригинальный код';
+'РћСЂРёРіРёРЅР°Р»СЊРЅС‹Р№ РєРѕРґ';
 
 create index JOURNAL_IDX3 on JOURNAL (
    NEVENT ASC
@@ -16237,10 +16237,10 @@ alter table JOURNALLAST  add(
 );
 
 comment on column JOURNALLAST.NEVENT is
-'Ид события';
+'РРґ СЃРѕР±С‹С‚РёСЏ';
 
 comment on column JOURNALLAST.VCODE is
-'Оригинальный код';
+'РћСЂРёРіРёРЅР°Р»СЊРЅС‹Р№ РєРѕРґ';
 
 create index JOURNALLAST_IDX3 on JOURNALLAST (
    NEVENT ASC
@@ -16252,7 +16252,7 @@ alter table JOURNALLAST
 
 
 
-insert into METERTYPE(NMETERTYPE,VNAME) values(4,'Арго');
+insert into METERTYPE(NMETERTYPE,VNAME) values(4,'РђСЂРіРѕ');
 commit;
 
 begin
@@ -16264,10 +16264,10 @@ end;
 
 drop table SLSTATUS;
 
-INSERT INTO METERTYPE("NMETERTYPE","VNAME")VALUES(5,'ЕвроАльфа');
-INSERT INTO METERTYPE("NMETERTYPE","VNAME")VALUES(6,'Энергия 9');
-INSERT INTO METERTYPE("NMETERTYPE","VNAME")VALUES(7,'Элвин');
-INSERT INTO METERTYPE("NMETERTYPE","VNAME")VALUES(8,'СЭТ-4');
+INSERT INTO METERTYPE("NMETERTYPE","VNAME")VALUES(5,'Р•РІСЂРѕРђР»СЊС„Р°');
+INSERT INTO METERTYPE("NMETERTYPE","VNAME")VALUES(6,'Р­РЅРµСЂРіРёСЏ 9');
+INSERT INTO METERTYPE("NMETERTYPE","VNAME")VALUES(7,'Р­Р»РІРёРЅ');
+INSERT INTO METERTYPE("NMETERTYPE","VNAME")VALUES(8,'РЎР­Рў-4');
 INSERT INTO METERTYPE("NMETERTYPE","VNAME")VALUES(9,'LZQM');
 INSERT INTO METERTYPE("NMETERTYPE","VNAME")VALUES(10,'CE-304');
 INSERT INTO METERTYPE("NMETERTYPE","VNAME")VALUES(11,'CE-6850');
@@ -16288,2681 +16288,2681 @@ create index JOURNAL_IDX2 on JOURNAL (
 begin
 delete from METERSTATUSBITDICT;
 delete from METEREVENTSDICT;
-INSERT INTO METEREVENTSDICT("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")VALUES(520,2,0,0,'Неопределенное событие',0,NULL);
-INSERT INTO METEREVENTSDICT("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")VALUES(1,1,2,29,'Изменение направления тока фазы 3',0,NULL);
-INSERT INTO METEREVENTSDICT("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")VALUES(2,1,2,30,'Повышение температуры',0,NULL);
-INSERT INTO METEREVENTSDICT("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")VALUES(3,1,2,31,'Исчезновение напряжения фазы 1',0,NULL);
-INSERT INTO METEREVENTSDICT("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")VALUES(4,1,2,32,'Исчезновение напряжения фазы 2',0,NULL);
-INSERT INTO METEREVENTSDICT("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")VALUES(5,1,2,33,'Исчезновение напряжения фазы 3',0,NULL);
-INSERT INTO METEREVENTSDICT("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")VALUES(6,1,2,34,'Понижение напряжения фазы 1',0,NULL);
-INSERT INTO METEREVENTSDICT("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")VALUES(7,1,2,35,'Понижение напряжения фазы 2',0,NULL);
-INSERT INTO METEREVENTSDICT("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")VALUES(8,1,2,36,'Понижение напряжения фазы 3',1,NULL);
-INSERT INTO METEREVENTSDICT("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")VALUES(9,1,2,37,'Повышение напряжения фазы 1',0,NULL);
-INSERT INTO METEREVENTSDICT("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")VALUES(10,1,2,38,'Повышение напряжения фазы 2',0,NULL);
+INSERT INTO METEREVENTSDICT("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")VALUES(520,2,0,0,'РќРµРѕРїСЂРµРґРµР»РµРЅРЅРѕРµ СЃРѕР±С‹С‚РёРµ',0,NULL);
+INSERT INTO METEREVENTSDICT("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")VALUES(1,1,2,29,'РР·РјРµРЅРµРЅРёРµ РЅР°РїСЂР°РІР»РµРЅРёСЏ С‚РѕРєР° С„Р°Р·С‹ 3',0,NULL);
+INSERT INTO METEREVENTSDICT("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")VALUES(2,1,2,30,'РџРѕРІС‹С€РµРЅРёРµ С‚РµРјРїРµСЂР°С‚СѓСЂС‹',0,NULL);
+INSERT INTO METEREVENTSDICT("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")VALUES(3,1,2,31,'РСЃС‡РµР·РЅРѕРІРµРЅРёРµ РЅР°РїСЂСЏР¶РµРЅРёСЏ С„Р°Р·С‹ 1',0,NULL);
+INSERT INTO METEREVENTSDICT("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")VALUES(4,1,2,32,'РСЃС‡РµР·РЅРѕРІРµРЅРёРµ РЅР°РїСЂСЏР¶РµРЅРёСЏ С„Р°Р·С‹ 2',0,NULL);
+INSERT INTO METEREVENTSDICT("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")VALUES(5,1,2,33,'РСЃС‡РµР·РЅРѕРІРµРЅРёРµ РЅР°РїСЂСЏР¶РµРЅРёСЏ С„Р°Р·С‹ 3',0,NULL);
+INSERT INTO METEREVENTSDICT("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")VALUES(6,1,2,34,'РџРѕРЅРёР¶РµРЅРёРµ РЅР°РїСЂСЏР¶РµРЅРёСЏ С„Р°Р·С‹ 1',0,NULL);
+INSERT INTO METEREVENTSDICT("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")VALUES(7,1,2,35,'РџРѕРЅРёР¶РµРЅРёРµ РЅР°РїСЂСЏР¶РµРЅРёСЏ С„Р°Р·С‹ 2',0,NULL);
+INSERT INTO METEREVENTSDICT("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")VALUES(8,1,2,36,'РџРѕРЅРёР¶РµРЅРёРµ РЅР°РїСЂСЏР¶РµРЅРёСЏ С„Р°Р·С‹ 3',1,NULL);
+INSERT INTO METEREVENTSDICT("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")VALUES(9,1,2,37,'РџРѕРІС‹С€РµРЅРёРµ РЅР°РїСЂСЏР¶РµРЅРёСЏ С„Р°Р·С‹ 1',0,NULL);
+INSERT INTO METEREVENTSDICT("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")VALUES(10,1,2,38,'РџРѕРІС‹С€РµРЅРёРµ РЅР°РїСЂСЏР¶РµРЅРёСЏ С„Р°Р·С‹ 2',0,NULL);
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(11,1,2,39,'Повышение напряжения фазы 3',0,NULL)
+(11,1,2,39,'РџРѕРІС‹С€РµРЅРёРµ РЅР°РїСЂСЏР¶РµРЅРёСЏ С„Р°Р·С‹ 3',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(12,1,2,40,'Батарея',0,NULL)
+(12,1,2,40,'Р‘Р°С‚Р°СЂРµСЏ',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(13,1,2,41,'Превышение нагрузки',0,NULL)
+(13,1,2,41,'РџСЂРµРІС‹С€РµРЅРёРµ РЅР°РіСЂСѓР·РєРё',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(14,2,1,0,'Норма',0,NULL)
+(14,2,1,0,'РќРѕСЂРјР°',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(15,2,1,1,'К каналу подключен счетчик с нулевым или недопустимым сетевым адресом',0,NULL)
+(15,2,1,1,'Рљ РєР°РЅР°Р»Сѓ РїРѕРґРєР»СЋС‡РµРЅ СЃС‡РµС‚С‡РёРє СЃ РЅСѓР»РµРІС‹Рј РёР»Рё РЅРµРґРѕРїСѓСЃС‚РёРјС‹Рј СЃРµС‚РµРІС‹Рј Р°РґСЂРµСЃРѕРј',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(16,2,1,2,'Открытие доступа к счетчику',0,NULL)
+(16,2,1,2,'РћС‚РєСЂС‹С‚РёРµ РґРѕСЃС‚СѓРїР° Рє СЃС‡РµС‚С‡РёРєСѓ',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(17,2,1,3,'Проверка пароля счетчиком',0,NULL)
+(17,2,1,3,'РџСЂРѕРІРµСЂРєР° РїР°СЂРѕР»СЏ СЃС‡РµС‚С‡РёРєРѕРј',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(18,2,1,4,'Установка таймаута обмена со счетчиком',0,NULL)
+(18,2,1,4,'РЈСЃС‚Р°РЅРѕРІРєР° С‚Р°Р№РјР°СѓС‚Р° РѕР±РјРµРЅР° СЃРѕ СЃС‡РµС‚С‡РёРєРѕРј',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(19,2,1,5,'Запрос времени счетчика',0,NULL)
+(19,2,1,5,'Р—Р°РїСЂРѕСЃ РІСЂРµРјРµРЅРё СЃС‡РµС‚С‡РёРєР°',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(20,2,1,6,'Коррекция времени счетчика',0,NULL)
+(20,2,1,6,'РљРѕСЂСЂРµРєС†РёСЏ РІСЂРµРјРµРЅРё СЃС‡РµС‚С‡РёРєР°',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(21,2,1,7,'Чтение параметров счетчика',0,NULL)
+(21,2,1,7,'Р§С‚РµРЅРёРµ РїР°СЂР°РјРµС‚СЂРѕРІ СЃС‡РµС‚С‡РёРєР°',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(22,2,1,8,'Чтение текущих значений счетчика и параметров сети',0,NULL)
+(22,2,1,8,'Р§С‚РµРЅРёРµ С‚РµРєСѓС‰РёС… Р·РЅР°С‡РµРЅРёР№ СЃС‡РµС‚С‡РёРєР° Рё РїР°СЂР°РјРµС‚СЂРѕРІ СЃРµС‚Рё',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(23,2,1,9,'Чтение ГН счетчика',0,NULL)
+(23,2,1,9,'Р§С‚РµРЅРёРµ Р“Рќ СЃС‡РµС‚С‡РёРєР°',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(24,2,1,10,'Чтение суточных показаний счетчика',0,NULL)
+(24,2,1,10,'Р§С‚РµРЅРёРµ СЃСѓС‚РѕС‡РЅС‹С… РїРѕРєР°Р·Р°РЅРёР№ СЃС‡РµС‚С‡РёРєР°',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(25,2,1,11,'Чтение месячных показаний счетчика',0,NULL)
+(25,2,1,11,'Р§С‚РµРЅРёРµ РјРµСЃСЏС‡РЅС‹С… РїРѕРєР°Р·Р°РЅРёР№ СЃС‡РµС‚С‡РёРєР°',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(26,2,1,12,'Очистка ГН счетчика',0,NULL)
+(26,2,1,12,'РћС‡РёСЃС‚РєР° Р“Рќ СЃС‡РµС‚С‡РёРєР°',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(27,2,1,13,'Очистка журнала событий счетчика',0,NULL)
+(27,2,1,13,'РћС‡РёСЃС‚РєР° Р¶СѓСЂРЅР°Р»Р° СЃРѕР±С‹С‚РёР№ СЃС‡РµС‚С‡РёРєР°',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(28,2,1,14,'Окончание опроса счетчика',0,NULL)
+(28,2,1,14,'РћРєРѕРЅС‡Р°РЅРёРµ РѕРїСЂРѕСЃР° СЃС‡РµС‚С‡РёРєР°',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(29,2,1,15,'Закрытие доступа к счетчику',0,NULL)
+(29,2,1,15,'Р—Р°РєСЂС‹С‚РёРµ РґРѕСЃС‚СѓРїР° Рє СЃС‡РµС‚С‡РёРєСѓ',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(30,2,1,16,'Перевод счетчика в Program mode',0,NULL)
+(30,2,1,16,'РџРµСЂРµРІРѕРґ СЃС‡РµС‚С‡РёРєР° РІ Program mode',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(31,2,1,17,'Перевод счетчика в Readout mode',1,NULL)
+(31,2,1,17,'РџРµСЂРµРІРѕРґ СЃС‡РµС‚С‡РёРєР° РІ Readout mode',1,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(32,2,1,18,'Чтение журнала событий счетчика',0,NULL)
+(32,2,1,18,'Р§С‚РµРЅРёРµ Р¶СѓСЂРЅР°Р»Р° СЃРѕР±С‹С‚РёР№ СЃС‡РµС‚С‡РёРєР°',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(33,2,1,19,'Закрытие доступа к счетчику (COSEM;DLMS)',0,NULL)
+(33,2,1,19,'Р—Р°РєСЂС‹С‚РёРµ РґРѕСЃС‚СѓРїР° Рє СЃС‡РµС‚С‡РёРєСѓ (COSEM;DLMS)',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(34,2,1,20,'Чтение параметров сети (EA)',0,NULL)
+(34,2,1,20,'Р§С‚РµРЅРёРµ РїР°СЂР°РјРµС‚СЂРѕРІ СЃРµС‚Рё (EA)',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(35,2,1,255,'Канал не инициализирован',0,NULL)
+(35,2,1,255,'РљР°РЅР°Р» РЅРµ РёРЅРёС†РёР°Р»РёР·РёСЂРѕРІР°РЅ',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(36,2,2,0,'Норма',1,NULL)
+(36,2,2,0,'РќРѕСЂРјР°',1,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(37,2,2,2,'Таймаут при выполнении запроса к или получении ответа от счетчика',0,NULL)
+(37,2,2,2,'РўР°Р№РјР°СѓС‚ РїСЂРё РІС‹РїРѕР»РЅРµРЅРёРё Р·Р°РїСЂРѕСЃР° Рє РёР»Рё РїРѕР»СѓС‡РµРЅРёРё РѕС‚РІРµС‚Р° РѕС‚ СЃС‡РµС‚С‡РёРєР°',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(38,2,2,3,'Ошибка в контрольной сумме пакета ответа от счетчика',0,NULL)
+(38,2,2,3,'РћС€РёР±РєР° РІ РєРѕРЅС‚СЂРѕР»СЊРЅРѕР№ СЃСѓРјРјРµ РїР°РєРµС‚Р° РѕС‚РІРµС‚Р° РѕС‚ СЃС‡РµС‚С‡РёРєР°',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(39,2,2,4,'Ошибочный запрос к или ответ от счетчика',0,NULL)
+(39,2,2,4,'РћС€РёР±РѕС‡РЅС‹Р№ Р·Р°РїСЂРѕСЃ Рє РёР»Рё РѕС‚РІРµС‚ РѕС‚ СЃС‡РµС‚С‡РёРєР°',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(40,2,2,5,'Рассогласование времени между УСД и счетчиком превышает максимально допустимое',1,NULL)
+(40,2,2,5,'Р Р°СЃСЃРѕРіР»Р°СЃРѕРІР°РЅРёРµ РІСЂРµРјРµРЅРё РјРµР¶РґСѓ РЈРЎР” Рё СЃС‡РµС‚С‡РёРєРѕРј РїСЂРµРІС‹С€Р°РµС‚ РјР°РєСЃРёРјР°Р»СЊРЅРѕ РґРѕРїСѓСЃС‚РёРјРѕРµ',1,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(41,2,2,6,'Граница получаса при чтении ГН или граница суток;месяца при чтении суточных;месячных данных счетчика',0,NULL)
+(41,2,2,6,'Р“СЂР°РЅРёС†Р° РїРѕР»СѓС‡Р°СЃР° РїСЂРё С‡С‚РµРЅРёРё Р“Рќ РёР»Рё РіСЂР°РЅРёС†Р° СЃСѓС‚РѕРє;РјРµСЃСЏС†Р° РїСЂРё С‡С‚РµРЅРёРё СЃСѓС‚РѕС‡РЅС‹С…;РјРµСЃСЏС‡РЅС‹С… РґР°РЅРЅС‹С… СЃС‡РµС‚С‡РёРєР°',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(42,2,2,7,'Ответ от счетчика не помещается в буфер приема УСД',1,NULL)
+(42,2,2,7,'РћС‚РІРµС‚ РѕС‚ СЃС‡РµС‚С‡РёРєР° РЅРµ РїРѕРјРµС‰Р°РµС‚СЃСЏ РІ Р±СѓС„РµСЂ РїСЂРёРµРјР° РЈРЎР”',1,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(43,2,2,8,'Ошибка инициализации API COSEM',0,NULL)
+(43,2,2,8,'РћС€РёР±РєР° РёРЅРёС†РёР°Р»РёР·Р°С†РёРё API COSEM',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(44,2,2,9,'Ошибка открытия СОМ порта API COSEM',0,NULL)
+(44,2,2,9,'РћС€РёР±РєР° РѕС‚РєСЂС‹С‚РёСЏ РЎРћРњ РїРѕСЂС‚Р° API COSEM',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(45,2,2,10,'Ошибка создания контекста COSEM',0,NULL)
+(45,2,2,10,'РћС€РёР±РєР° СЃРѕР·РґР°РЅРёСЏ РєРѕРЅС‚РµРєСЃС‚Р° COSEM',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(46,2,2,11,'Ошибка COSEM открытия доступа к счетчику',0,NULL)
+(46,2,2,11,'РћС€РёР±РєР° COSEM РѕС‚РєСЂС‹С‚РёСЏ РґРѕСЃС‚СѓРїР° Рє СЃС‡РµС‚С‡РёРєСѓ',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(47,2,2,12,'Ошибка COSEM закрытия доступа к счетчику',0,NULL)
+(47,2,2,12,'РћС€РёР±РєР° COSEM Р·Р°РєСЂС‹С‚РёСЏ РґРѕСЃС‚СѓРїР° Рє СЃС‡РµС‚С‡РёРєСѓ',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(48,2,2,13,'Ошибка удаления контекста COSEM',0,NULL)
+(48,2,2,13,'РћС€РёР±РєР° СѓРґР°Р»РµРЅРёСЏ РєРѕРЅС‚РµРєСЃС‚Р° COSEM',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(49,2,2,14,'Ошибка закрытия СОМ порта API COSEM',0,NULL)
+(49,2,2,14,'РћС€РёР±РєР° Р·Р°РєСЂС‹С‚РёСЏ РЎРћРњ РїРѕСЂС‚Р° API COSEM',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(50,2,2,15,'Ошибка деинициализации API COSEM',0,NULL)
+(50,2,2,15,'РћС€РёР±РєР° РґРµРёРЅРёС†РёР°Р»РёР·Р°С†РёРё API COSEM',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(51,2,2,16,'Ошибка COSEM чтения данных счетчика',0,NULL)
+(51,2,2,16,'РћС€РёР±РєР° COSEM С‡С‚РµРЅРёСЏ РґР°РЅРЅС‹С… СЃС‡РµС‚С‡РёРєР°',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(52,1,1,1,'Периодический ОПИ',1,NULL)
+(52,1,1,1,'РџРµСЂРёРѕРґРёС‡РµСЃРєРёР№ РћРџР',1,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(53,1,1,2,'Асинхронный ОПИ',0,NULL)
+(53,1,1,2,'РђСЃРёРЅС…СЂРѕРЅРЅС‹Р№ РћРџР',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(54,1,1,3,'Периодический ОРП',1,NULL)
+(54,1,1,3,'РџРµСЂРёРѕРґРёС‡РµСЃРєРёР№ РћР Рџ',1,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(55,1,1,4,'Программируемый ОРП',1,NULL)
+(55,1,1,4,'РџСЂРѕРіСЂР°РјРјРёСЂСѓРµРјС‹Р№ РћР Рџ',1,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(56,1,1,5,'Асинхронный ОРП',1,NULL)
+(56,1,1,5,'РђСЃРёРЅС…СЂРѕРЅРЅС‹Р№ РћР Рџ',1,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(57,1,1,6,'Индекс DPM',1,NULL)
+(57,1,1,6,'РРЅРґРµРєСЃ DPM',1,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(58,1,1,7,'Восстановлен внутренний индекс',0,NULL)
+(58,1,1,7,'Р’РѕСЃСЃС‚Р°РЅРѕРІР»РµРЅ РІРЅСѓС‚СЂРµРЅРЅРёР№ РёРЅРґРµРєСЃ',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(59,1,1,8,'Индекс _управляющий ввод',1,NULL)
+(59,1,1,8,'РРЅРґРµРєСЃ _СѓРїСЂР°РІР»СЏСЋС‰РёР№ РІРІРѕРґ',1,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(60,1,1,9,'Суточный график_ЛУ',1,NULL)
+(60,1,1,9,'РЎСѓС‚РѕС‡РЅС‹Р№ РіСЂР°С„РёРє_Р›РЈ',1,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(61,1,1,10,'Восстановлен внутренний сут. график',1,NULL)
+(61,1,1,10,'Р’РѕСЃСЃС‚Р°РЅРѕРІР»РµРЅ РІРЅСѓС‚СЂРµРЅРЅРёР№ СЃСѓС‚. РіСЂР°С„РёРє',1,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(62,1,1,11,'Суточный график_управляющий ввод',1,NULL)
+(62,1,1,11,'РЎСѓС‚РѕС‡РЅС‹Р№ РіСЂР°С„РёРє_СѓРїСЂР°РІР»СЏСЋС‰РёР№ РІРІРѕРґ',1,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(63,1,1,12,'Сезон_SM',0,NULL)
+(63,1,1,12,'РЎРµР·РѕРЅ_SM',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(64,1,1,13,'Восстановлен внутренний сезон',0,NULL)
+(64,1,1,13,'Р’РѕСЃСЃС‚Р°РЅРѕРІР»РµРЅ РІРЅСѓС‚СЂРµРЅРЅРёР№ СЃРµР·РѕРЅ',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(65,1,1,14,'Сезон_управляющий ввод',0,NULL)
+(65,1,1,14,'РЎРµР·РѕРЅ_СѓРїСЂР°РІР»СЏСЋС‰РёР№ РІРІРѕРґ',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(66,1,1,15,'Переход на З;Л (ПЗЛ) время с сезоном',0,NULL)
+(66,1,1,15,'РџРµСЂРµС…РѕРґ РЅР° Р—;Р› (РџР—Р›) РІСЂРµРјСЏ СЃ СЃРµР·РѕРЅРѕРј',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(67,1,1,16,'Внешняя синхр-ия и ПЗЛ с сезоном',0,NULL)
+(67,1,1,16,'Р’РЅРµС€РЅСЏСЏ СЃРёРЅС…СЂ-РёСЏ Рё РџР—Р› СЃ СЃРµР·РѕРЅРѕРј',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(68,1,1,17,'IР цепь включена',1,NULL)
+(68,1,1,17,'IР  С†РµРїСЊ РІРєР»СЋС‡РµРЅР°',1,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(69,1,1,18,'IР цепь выключена',0,NULL)
+(69,1,1,18,'IР  С†РµРїСЊ РІС‹РєР»СЋС‡РµРЅР°',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(70,1,1,19,'Ассоциация_LN_программирования',0,NULL)
+(70,1,1,19,'РђСЃСЃРѕС†РёР°С†РёСЏ_LN_РїСЂРѕРіСЂР°РјРјРёСЂРѕРІР°РЅРёСЏ',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(71,1,1,20,'Потребл. энергии выше лимита_регистр энергии',0,NULL)
+(71,1,1,20,'РџРѕС‚СЂРµР±Р». СЌРЅРµСЂРіРёРё РІС‹С€Рµ Р»РёРјРёС‚Р°_СЂРµРіРёСЃС‚СЂ СЌРЅРµСЂРіРёРё',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(72,1,1,21,'Потребл. энергии ниже лимита_регистр энергии',0,NULL)
+(72,1,1,21,'РџРѕС‚СЂРµР±Р». СЌРЅРµСЂРіРёРё РЅРёР¶Рµ Р»РёРјРёС‚Р°_СЂРµРіРёСЃС‚СЂ СЌРЅРµСЂРіРёРё',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(73,1,1,22,'Потребл. энергии выше лимита_график нагрузки',0,NULL)
+(73,1,1,22,'РџРѕС‚СЂРµР±Р». СЌРЅРµСЂРіРёРё РІС‹С€Рµ Р»РёРјРёС‚Р°_РіСЂР°С„РёРє РЅР°РіСЂСѓР·РєРё',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(74,1,1,23,'Потребл. энергии ниже лимита_график нагрузки',0,NULL)
+(74,1,1,23,'РџРѕС‚СЂРµР±Р». СЌРЅРµСЂРіРёРё РЅРёР¶Рµ Р»РёРјРёС‚Р°_РіСЂР°С„РёРє РЅР°РіСЂСѓР·РєРё',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(75,1,1,24,'Обнаружена нефатальная ошибка',0,NULL)
+(75,1,1,24,'РћР±РЅР°СЂСѓР¶РµРЅР° РЅРµС„Р°С‚Р°Р»СЊРЅР°СЏ РѕС€РёР±РєР°',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(76,1,1,25,'Нефатальная ошибка исчезла',0,NULL)
+(76,1,1,25,'РќРµС„Р°С‚Р°Р»СЊРЅР°СЏ РѕС€РёР±РєР° РёСЃС‡РµР·Р»Р°',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(77,1,1,26,'Обнаружена фатальная ошибка',0,NULL)
+(77,1,1,26,'РћР±РЅР°СЂСѓР¶РµРЅР° С„Р°С‚Р°Р»СЊРЅР°СЏ РѕС€РёР±РєР°',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(78,1,1,27,'Сохранение параметров',0,NULL)
+(78,1,1,27,'РЎРѕС…СЂР°РЅРµРЅРёРµ РїР°СЂР°РјРµС‚СЂРѕРІ',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(79,1,1,28,'Нефатальные ошибки сквитированы',0,NULL)
+(79,1,1,28,'РќРµС„Р°С‚Р°Р»СЊРЅС‹Рµ РѕС€РёР±РєРё СЃРєРІРёС‚РёСЂРѕРІР°РЅС‹',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(80,1,1,29,'Фатальные ошибки сквитированы',0,NULL)
+(80,1,1,29,'Р¤Р°С‚Р°Р»СЊРЅС‹Рµ РѕС€РёР±РєРё СЃРєРІРёС‚РёСЂРѕРІР°РЅС‹',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(81,1,1,30,'Внутренняя синхронизация часов',0,NULL)
+(81,1,1,30,'Р’РЅСѓС‚СЂРµРЅРЅСЏСЏ СЃРёРЅС…СЂРѕРЅРёР·Р°С†РёСЏ С‡Р°СЃРѕРІ',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(82,1,1,31,'Внешняя синхронизация часов',0,NULL)
+(82,1,1,31,'Р’РЅРµС€РЅСЏСЏ СЃРёРЅС…СЂРѕРЅРёР·Р°С†РёСЏ С‡Р°СЃРѕРІ',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(83,1,1,32,'Установка часов',0,NULL)
+(83,1,1,32,'РЈСЃС‚Р°РЅРѕРІРєР° С‡Р°СЃРѕРІ',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(84,1,1,33,'Внешняя синхр. и переход З;Л время без сезона',0,NULL)
+(84,1,1,33,'Р’РЅРµС€РЅСЏСЏ СЃРёРЅС…СЂ. Рё РїРµСЂРµС…РѕРґ Р—;Р› РІСЂРµРјСЏ Р±РµР· СЃРµР·РѕРЅР°',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(85,1,1,34,'Переход на З;Л время без сезона',0,NULL)
+(85,1,1,34,'РџРµСЂРµС…РѕРґ РЅР° Р—;Р› РІСЂРµРјСЏ Р±РµР· СЃРµР·РѕРЅР°',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(86,1,1,35,'Обнаружено исчезновение перем.тока',0,NULL)
+(86,1,1,35,'РћР±РЅР°СЂСѓР¶РµРЅРѕ РёСЃС‡РµР·РЅРѕРІРµРЅРёРµ РїРµСЂРµРј.С‚РѕРєР°',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(87,1,1,36,'Восстановление перем.тока',1,NULL)
+(87,1,1,36,'Р’РѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ РїРµСЂРµРј.С‚РѕРєР°',1,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(88,1,1,37,'Исчезло напряжение питания',0,NULL)
+(88,1,1,37,'РСЃС‡РµР·Р»Рѕ РЅР°РїСЂСЏР¶РµРЅРёРµ РїРёС‚Р°РЅРёСЏ',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(89,1,1,38,'Появилось напряжение питания',0,NULL)
+(89,1,1,38,'РџРѕСЏРІРёР»РѕСЃСЊ РЅР°РїСЂСЏР¶РµРЅРёРµ РїРёС‚Р°РЅРёСЏ',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(90,1,1,39,'ПРОГРАММНЫЙ_СМ',0,NULL)
+(90,1,1,39,'РџР РћР“Р РђРњРњРќР«Р™_РЎРњ',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(91,1,1,40,'ПРОГРАММНЫЙ_DI',0,NULL)
+(91,1,1,40,'РџР РћР“Р РђРњРњРќР«Р™_DI',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(92,1,1,41,'Отмена _ ПРОГРАММНЫЙ_DI',0,NULL)
+(92,1,1,41,'РћС‚РјРµРЅР° _ РџР РћР“Р РђРњРњРќР«Р™_DI',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(93,1,1,42,'Сброс данных измерений',0,NULL)
+(93,1,1,42,'РЎР±СЂРѕСЃ РґР°РЅРЅС‹С… РёР·РјРµСЂРµРЅРёР№',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(94,1,1,43,'Начало измерений',0,NULL)
+(94,1,1,43,'РќР°С‡Р°Р»Рѕ РёР·РјРµСЂРµРЅРёР№',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(95,1,1,44,'Остановка измерений',0,NULL)
+(95,1,1,44,'РћСЃС‚Р°РЅРѕРІРєР° РёР·РјРµСЂРµРЅРёР№',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(96,1,1,45,'Начало тестов',0,NULL)
+(96,1,1,45,'РќР°С‡Р°Р»Рѕ С‚РµСЃС‚РѕРІ',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(97,1,1,46,'Остановка тестов',0,NULL)
+(97,1,1,46,'РћСЃС‚Р°РЅРѕРІРєР° С‚РµСЃС‚РѕРІ',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(98,1,1,47,'Окончание сохранения текущих данных',0,NULL)
+(98,1,1,47,'РћРєРѕРЅС‡Р°РЅРёРµ СЃРѕС…СЂР°РЅРµРЅРёСЏ С‚РµРєСѓС‰РёС… РґР°РЅРЅС‹С…',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(99,1,1,48,'Сброс графика нагрузки',0,NULL)
+(99,1,1,48,'РЎР±СЂРѕСЃ РіСЂР°С„РёРєР° РЅР°РіСЂСѓР·РєРё',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(100,1,1,49,'Восстановление пароля',0,NULL)
+(100,1,1,49,'Р’РѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ РїР°СЂРѕР»СЏ',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(101,1,1,50,'Индекс остановки часов',0,NULL)
+(101,1,1,50,'РРЅРґРµРєСЃ РѕСЃС‚Р°РЅРѕРІРєРё С‡Р°СЃРѕРІ',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(102,1,1,51,'Успешная коммуникация',0,NULL)
+(102,1,1,51,'РЈСЃРїРµС€РЅР°СЏ РєРѕРјРјСѓРЅРёРєР°С†РёСЏ',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(103,1,2,1,'Внутренняя ошибка RAM',1,NULL)
+(103,1,2,1,'Р’РЅСѓС‚СЂРµРЅРЅСЏСЏ РѕС€РёР±РєР° RAM',1,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(104,1,2,2,'Внешняя ошибка RAM',1,NULL)
+(104,1,2,2,'Р’РЅРµС€РЅСЏСЏ РѕС€РёР±РєР° RAM',1,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(105,1,2,3,'Внутр. ошибка программ. памяти',1,NULL)
+(105,1,2,3,'Р’РЅСѓС‚СЂ. РѕС€РёР±РєР° РїСЂРѕРіСЂР°РјРј. РїР°РјСЏС‚Рё',1,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(106,1,2,4,'Внешн. ошибка программ. памяти',1,NULL)
+(106,1,2,4,'Р’РЅРµС€РЅ. РѕС€РёР±РєР° РїСЂРѕРіСЂР°РјРј. РїР°РјСЏС‚Рё',1,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(107,1,2,5,'Фатальная ошибка NOVRAM',0,NULL)
+(107,1,2,5,'Р¤Р°С‚Р°Р»СЊРЅР°СЏ РѕС€РёР±РєР° NOVRAM',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(108,1,2,6,'Многократная несинхронизация часов',1,NULL)
+(108,1,2,6,'РњРЅРѕРіРѕРєСЂР°С‚РЅР°СЏ РЅРµСЃРёРЅС…СЂРѕРЅРёР·Р°С†РёСЏ С‡Р°СЃРѕРІ',1,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(109,1,2,7,'Работа функции "Wathdog"',1,NULL)
+(109,1,2,7,'Р Р°Р±РѕС‚Р° С„СѓРЅРєС†РёРё "Wathdog"',1,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(110,1,2,8,'Рассоглас. часов с внешн. источником',0,NULL)
+(110,1,2,8,'Р Р°СЃСЃРѕРіР»Р°СЃ. С‡Р°СЃРѕРІ СЃ РІРЅРµС€РЅ. РёСЃС‚РѕС‡РЅРёРєРѕРј',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(111,1,2,9,'Несоответствие конфигурации',1,NULL)
+(111,1,2,9,'РќРµСЃРѕРѕС‚РІРµС‚СЃС‚РІРёРµ РєРѕРЅС„РёРіСѓСЂР°С†РёРё',1,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(112,1,2,10,'Нефатальная ошибка NOVRAM',1,NULL)
+(112,1,2,10,'РќРµС„Р°С‚Р°Р»СЊРЅР°СЏ РѕС€РёР±РєР° NOVRAM',1,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(113,1,2,11,'Ошибка связи',1,NULL)
+(113,1,2,11,'РћС€РёР±РєР° СЃРІСЏР·Рё',1,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(114,1,2,12,'Программная несовместимость',0,NULL)
+(114,1,2,12,'РџСЂРѕРіСЂР°РјРјРЅР°СЏ РЅРµСЃРѕРІРјРµСЃС‚РёРјРѕСЃС‚СЊ',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(115,1,2,13,'Открытие крышки счетчика',0,NULL)
+(115,1,2,13,'РћС‚РєСЂС‹С‚РёРµ РєСЂС‹С€РєРё СЃС‡РµС‚С‡РёРєР°',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(116,1,2,14,'Небаланс токов в фазах 1и 2',0,NULL)
+(116,1,2,14,'РќРµР±Р°Р»Р°РЅСЃ С‚РѕРєРѕРІ РІ С„Р°Р·Р°С… 1Рё 2',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(117,1,2,15,'Небаланс токов в фазах 2и 3',0,NULL)
+(117,1,2,15,'РќРµР±Р°Р»Р°РЅСЃ С‚РѕРєРѕРІ РІ С„Р°Р·Р°С… 2Рё 3',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(118,1,2,16,'Небаланс токов в фазах 1и 3',0,NULL)
+(118,1,2,16,'РќРµР±Р°Р»Р°РЅСЃ С‚РѕРєРѕРІ РІ С„Р°Р·Р°С… 1Рё 3',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(119,1,2,17,'Контроль напряжения фазы 1',1,NULL)
+(119,1,2,17,'РљРѕРЅС‚СЂРѕР»СЊ РЅР°РїСЂСЏР¶РµРЅРёСЏ С„Р°Р·С‹ 1',1,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(120,1,2,18,'Контроль напряжения фазы 2',0,NULL)
+(120,1,2,18,'РљРѕРЅС‚СЂРѕР»СЊ РЅР°РїСЂСЏР¶РµРЅРёСЏ С„Р°Р·С‹ 2',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(121,1,2,19,'Контроль напряжения фазы 3',0,NULL)
+(121,1,2,19,'РљРѕРЅС‚СЂРѕР»СЊ РЅР°РїСЂСЏР¶РµРЅРёСЏ С„Р°Р·С‹ 3',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(122,1,2,20,'Обрыв нейтрали',0,NULL)
+(122,1,2,20,'РћР±СЂС‹РІ РЅРµР№С‚СЂР°Р»Рё',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(123,1,2,21,'Нет внутр. метрологических имп-ов',0,NULL)
+(123,1,2,21,'РќРµС‚ РІРЅСѓС‚СЂ. РјРµС‚СЂРѕР»РѕРіРёС‡РµСЃРєРёС… РёРјРї-РѕРІ',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(124,1,2,22,'Нет импульсов от внешних приборов',0,NULL)
+(124,1,2,22,'РќРµС‚ РёРјРїСѓР»СЊСЃРѕРІ РѕС‚ РІРЅРµС€РЅРёС… РїСЂРёР±РѕСЂРѕРІ',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(125,1,2,23,'Последовательность нулей напряжения',0,NULL)
+(125,1,2,23,'РџРѕСЃР»РµРґРѕРІР°С‚РµР»СЊРЅРѕСЃС‚СЊ РЅСѓР»РµР№ РЅР°РїСЂСЏР¶РµРЅРёСЏ',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(126,1,2,24,'Последовательность нулей тока',0,NULL)
+(126,1,2,24,'РџРѕСЃР»РµРґРѕРІР°С‚РµР»СЊРЅРѕСЃС‚СЊ РЅСѓР»РµР№ С‚РѕРєР°',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(127,1,2,25,'Остановка (неверный ход) часов',0,NULL)
+(127,1,2,25,'РћСЃС‚Р°РЅРѕРІРєР° (РЅРµРІРµСЂРЅС‹Р№ С…РѕРґ) С‡Р°СЃРѕРІ',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(128,1,2,26,'"Тревога" от внешн. устройства',0,NULL)
+(128,1,2,26,'"РўСЂРµРІРѕРіР°" РѕС‚ РІРЅРµС€РЅ. СѓСЃС‚СЂРѕР№СЃС‚РІР°',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(129,1,2,27,'Изменение направления тока фазы 1',0,NULL)
+(129,1,2,27,'РР·РјРµРЅРµРЅРёРµ РЅР°РїСЂР°РІР»РµРЅРёСЏ С‚РѕРєР° С„Р°Р·С‹ 1',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(130,1,2,28,'Изменение направления тока фазы 2',0,NULL)
+(130,1,2,28,'РР·РјРµРЅРµРЅРёРµ РЅР°РїСЂР°РІР»РµРЅРёСЏ С‚РѕРєР° С„Р°Р·С‹ 2',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(131,2,2,17,'Ошибка чтения файла',1,NULL)
+(131,2,2,17,'РћС€РёР±РєР° С‡С‚РµРЅРёСЏ С„Р°Р№Р»Р°',1,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(132,2,2,18,'Ошибка COSEM установки времени счетчика',0,NULL)
+(132,2,2,18,'РћС€РёР±РєР° COSEM СѓСЃС‚Р°РЅРѕРІРєРё РІСЂРµРјРµРЅРё СЃС‡РµС‚С‡РёРєР°',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(133,2,2,19,'Отсутствие данных авточтения счетчика',0,NULL)
+(133,2,2,19,'РћС‚СЃСѓС‚СЃС‚РІРёРµ РґР°РЅРЅС‹С… Р°РІС‚РѕС‡С‚РµРЅРёСЏ СЃС‡РµС‚С‡РёРєР°',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(134,2,2,20,'Программное исключение при опросе счетчика',0,NULL)
+(134,2,2,20,'РџСЂРѕРіСЂР°РјРјРЅРѕРµ РёСЃРєР»СЋС‡РµРЅРёРµ РїСЂРё РѕРїСЂРѕСЃРµ СЃС‡РµС‚С‡РёРєР°',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(135,2,2,21,'Ошибка в параметрах ГН счетчика',0,NULL)
+(135,2,2,21,'РћС€РёР±РєР° РІ РїР°СЂР°РјРµС‚СЂР°С… Р“Рќ СЃС‡РµС‚С‡РёРєР°',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(136,2,2,22,'Недопустимый сетевой адрес счетчика',0,NULL)
+(136,2,2,22,'РќРµРґРѕРїСѓСЃС‚РёРјС‹Р№ СЃРµС‚РµРІРѕР№ Р°РґСЂРµСЃ СЃС‡РµС‚С‡РёРєР°',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(137,2,2,23,'Недопустимый номер блока биллинговых данных',0,NULL)
+(137,2,2,23,'РќРµРґРѕРїСѓСЃС‚РёРјС‹Р№ РЅРѕРјРµСЂ Р±Р»РѕРєР° Р±РёР»Р»РёРЅРіРѕРІС‹С… РґР°РЅРЅС‹С…',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(138,2,2,24,'Отсутствует файл системы безопасности',0,NULL)
+(138,2,2,24,'РћС‚СЃСѓС‚СЃС‚РІСѓРµС‚ С„Р°Р№Р» СЃРёСЃС‚РµРјС‹ Р±РµР·РѕРїР°СЃРЅРѕСЃС‚Рё',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(139,2,2,25,'Ошибка создания файла системы безопасности',0,NULL)
+(139,2,2,25,'РћС€РёР±РєР° СЃРѕР·РґР°РЅРёСЏ С„Р°Р№Р»Р° СЃРёСЃС‚РµРјС‹ Р±РµР·РѕРїР°СЃРЅРѕСЃС‚Рё',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(140,2,2,26,'Неверная длина класса памяти Альфы',0,NULL)
+(140,2,2,26,'РќРµРІРµСЂРЅР°СЏ РґР»РёРЅР° РєР»Р°СЃСЃР° РїР°РјСЏС‚Рё РђР»СЊС„С‹',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(141,2,2,129,'Нет необходимости в получении данных',0,NULL)
+(141,2,2,129,'РќРµС‚ РЅРµРѕР±С…РѕРґРёРјРѕСЃС‚Рё РІ РїРѕР»СѓС‡РµРЅРёРё РґР°РЅРЅС‹С…',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(142,2,2,130,'Контекст устройства не подерживантся',0,NULL)
+(142,2,2,130,'РљРѕРЅС‚РµРєСЃС‚ СѓСЃС‚СЂРѕР№СЃС‚РІР° РЅРµ РїРѕРґРµСЂР¶РёРІР°РЅС‚СЃСЏ',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(143,2,2,139,'Тип идентификации не поддерживается',0,NULL)
+(143,2,2,139,'РўРёРї РёРґРµРЅС‚РёС„РёРєР°С†РёРё РЅРµ РїРѕРґРґРµСЂР¶РёРІР°РµС‚СЃСЏ',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(144,2,2,140,'Название типа идентификации обязательно',0,NULL)
+(144,2,2,140,'РќР°Р·РІР°РЅРёРµ С‚РёРїР° РёРґРµРЅС‚РёС„РёРєР°С†РёРё РѕР±СЏР·Р°С‚РµР»СЊРЅРѕ',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(145,2,2,141,'Неверное имя;пароль доступа к счетчику',1,NULL)
+(145,2,2,141,'РќРµРІРµСЂРЅРѕРµ РёРјСЏ;РїР°СЂРѕР»СЊ РґРѕСЃС‚СѓРїР° Рє СЃС‡РµС‚С‡РёРєСѓ',1,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(146,2,2,142,'Пароль доступа к счетчику не может быть пустым',0,NULL)
+(146,2,2,142,'РџР°СЂРѕР»СЊ РґРѕСЃС‚СѓРїР° Рє СЃС‡РµС‚С‡РёРєСѓ РЅРµ РјРѕР¶РµС‚ Р±С‹С‚СЊ РїСѓСЃС‚С‹Рј',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(147,2,2,201,'Нет связи со счетчиком',0,NULL)
+(147,2,2,201,'РќРµС‚ СЃРІСЏР·Рё СЃРѕ СЃС‡РµС‚С‡РёРєРѕРј',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(148,2,2,209,'Неверный пароль доступа',1,NULL)
+(148,2,2,209,'РќРµРІРµСЂРЅС‹Р№ РїР°СЂРѕР»СЊ РґРѕСЃС‚СѓРїР°',1,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(149,3,1,0,'Событие счетчика: 0',1,NULL)
+(149,3,1,0,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 0',1,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(150,3,1,1,'1: Параметризация или изменение конфигурации',0,NULL)
+(150,3,1,1,'1: РџР°СЂР°РјРµС‚СЂРёР·Р°С†РёСЏ РёР»Рё РёР·РјРµРЅРµРЅРёРµ РєРѕРЅС„РёРіСѓСЂР°С†РёРё',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(151,3,1,75,'75: Ошибка "Доступ к памяти системы измерений"',0,NULL)
+(151,3,1,75,'75: РћС€РёР±РєР° "Р”РѕСЃС‚СѓРї Рє РїР°РјСЏС‚Рё СЃРёСЃС‚РµРјС‹ РёР·РјРµСЂРµРЅРёР№"',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(152,3,1,76,'76: Ошибка "Базы времени"',0,NULL)
+(152,3,1,76,'76: РћС€РёР±РєР° "Р‘Р°Р·С‹ РІСЂРµРјРµРЅРё"',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(153,3,1,77,'77: Ошибка "Доступ к памяти профиля данных"',0,NULL)
+(153,3,1,77,'77: РћС€РёР±РєР° "Р”РѕСЃС‚СѓРї Рє РїР°РјСЏС‚Рё РїСЂРѕС„РёР»СЏ РґР°РЅРЅС‹С…"',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(154,3,1,78,'78: Ошибка "Приемник сигналов управления"',0,NULL)
+(154,3,1,78,'78: РћС€РёР±РєР° "РџСЂРёРµРјРЅРёРє СЃРёРіРЅР°Р»РѕРІ СѓРїСЂР°РІР»РµРЅРёСЏ"',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(155,3,1,79,'79: Ошибка "Коммуникационный модуль"',0,NULL)
+(155,3,1,79,'79: РћС€РёР±РєР° "РљРѕРјРјСѓРЅРёРєР°С†РёРѕРЅРЅС‹Р№ РјРѕРґСѓР»СЊ"',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(156,3,1,80,'80: Ошибка "Дисплей и панель управления"',0,NULL)
+(156,3,1,80,'80: РћС€РёР±РєР° "Р”РёСЃРїР»РµР№ Рё РїР°РЅРµР»СЊ СѓРїСЂР°РІР»РµРЅРёСЏ"',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(157,3,1,81,'81: Ошибка "Контрольная сумма кода программы"',0,NULL)
+(157,3,1,81,'81: РћС€РёР±РєР° "РљРѕРЅС‚СЂРѕР»СЊРЅР°СЏ СЃСѓРјРјР° РєРѕРґР° РїСЂРѕРіСЂР°РјРјС‹"',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(158,3,1,82,'82: Ошибка "Контрольная сумма данных резервного копирования"',0,NULL)
+(158,3,1,82,'82: РћС€РёР±РєР° "РљРѕРЅС‚СЂРѕР»СЊРЅР°СЏ СЃСѓРјРјР° РґР°РЅРЅС‹С… СЂРµР·РµСЂРІРЅРѕРіРѕ РєРѕРїРёСЂРѕРІР°РЅРёСЏ"',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(159,3,1,83,'83: Ошибка "Контрольная сумма данных параметризации"',0,NULL)
+(159,3,1,83,'83: РћС€РёР±РєР° "РљРѕРЅС‚СЂРѕР»СЊРЅР°СЏ СЃСѓРјРјР° РґР°РЅРЅС‹С… РїР°СЂР°РјРµС‚СЂРёР·Р°С†РёРё"',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(160,3,1,84,'84: Ошибка "Контрольная сумма данных профиля данных "',0,NULL)
+(160,3,1,84,'84: РћС€РёР±РєР° "РљРѕРЅС‚СЂРѕР»СЊРЅР°СЏ СЃСѓРјРјР° РґР°РЅРЅС‹С… РїСЂРѕС„РёР»СЏ РґР°РЅРЅС‹С… "',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(161,3,1,85,'85: Ошибка "Контрольная сумма данных списка событий"',0,NULL)
+(161,3,1,85,'85: РћС€РёР±РєР° "РљРѕРЅС‚СЂРѕР»СЊРЅР°СЏ СЃСѓРјРјР° РґР°РЅРЅС‹С… СЃРїРёСЃРєР° СЃРѕР±С‹С‚РёР№"',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(162,3,1,86,'Событие счетчика: 86',0,NULL)
+(162,3,1,86,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 86',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(163,3,1,87,'Событие счетчика: 87',0,NULL)
+(163,3,1,87,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 87',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(164,3,1,88,'Событие счетчика: 88',0,NULL)
+(164,3,1,88,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 88',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(165,3,1,89,'Событие счетчика: 89',0,NULL)
+(165,3,1,89,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 89',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(166,3,1,90,'90: Ошибка "Измерительная система"',0,NULL)
+(166,3,1,90,'90: РћС€РёР±РєР° "РР·РјРµСЂРёС‚РµР»СЊРЅР°СЏ СЃРёСЃС‚РµРјР°"',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(167,3,1,91,'91: Ошибка "Перепрограммирование"',0,NULL)
+(167,3,1,91,'91: РћС€РёР±РєР° "РџРµСЂРµРїСЂРѕРіСЂР°РјРјРёСЂРѕРІР°РЅРёРµ"',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(168,3,1,92,'92: Ошибка "Режим установки"',0,NULL)
+(168,3,1,92,'92: РћС€РёР±РєР° "Р РµР¶РёРј СѓСЃС‚Р°РЅРѕРІРєРё"',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(169,3,1,93,'93: Ошибка "Система"',0,NULL)
+(169,3,1,93,'93: РћС€РёР±РєР° "РЎРёСЃС‚РµРјР°"',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(170,3,1,94,'94: Ошибка "Связь заблокирована"',0,NULL)
+(170,3,1,94,'94: РћС€РёР±РєР° "РЎРІСЏР·СЊ Р·Р°Р±Р»РѕРєРёСЂРѕРІР°РЅР°"',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(171,3,1,95,'95: Ошибка "Некорр. идентификация EEPROM"',0,NULL)
+(171,3,1,95,'95: РћС€РёР±РєР° "РќРµРєРѕСЂСЂ. РёРґРµРЅС‚РёС„РёРєР°С†РёСЏ EEPROM"',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(172,3,1,96,'96: Ошибка "Некорр. функционирование длительная идентификация"',0,NULL)
+(172,3,1,96,'96: РћС€РёР±РєР° "РќРµРєРѕСЂСЂ. С„СѓРЅРєС†РёРѕРЅРёСЂРѕРІР°РЅРёРµ РґР»РёС‚РµР»СЊРЅР°СЏ РёРґРµРЅС‚РёС„РёРєР°С†РёСЏ"',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(173,3,1,97,'Событие счетчика: 97',0,NULL)
+(173,3,1,97,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 97',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(174,3,1,98,'Событие счетчика: 98',0,NULL)
+(174,3,1,98,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 98',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(175,3,1,99,'Событие счетчика: 99',0,NULL)
+(175,3,1,99,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 99',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(176,3,1,100,'Событие счетчика: 100',0,NULL)
+(176,3,1,100,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 100',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(177,3,1,101,'Событие счетчика: 101',0,NULL)
+(177,3,1,101,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 101',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(178,3,1,102,'Событие счетчика: 102',0,NULL)
+(178,3,1,102,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 102',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(179,3,1,103,'Событие счетчика: 103',0,NULL)
+(179,3,1,103,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 103',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(180,3,1,104,'Событие счетчика: 104',0,NULL)
+(180,3,1,104,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 104',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(181,3,1,105,'Событие счетчика: 105',0,NULL)
+(181,3,1,105,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 105',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(182,3,1,106,'Событие счетчика: 106',0,NULL)
+(182,3,1,106,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 106',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(183,3,1,107,'Событие счетчика: 107',0,NULL)
+(183,3,1,107,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 107',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(184,3,1,108,'Событие счетчика: 108',0,NULL)
+(184,3,1,108,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 108',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(185,3,1,109,'Событие счетчика: 109',0,NULL)
+(185,3,1,109,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 109',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(186,3,1,110,'Событие счетчика: 110',0,NULL)
+(186,3,1,110,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 110',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(187,3,1,111,'Событие счетчика: 111',0,NULL)
+(187,3,1,111,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 111',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(188,3,1,112,'Событие счетчика: 112',0,NULL)
+(188,3,1,112,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 112',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(189,3,1,113,'Событие счетчика: 113',0,NULL)
+(189,3,1,113,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 113',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(190,3,1,114,'Событие счетчика: 114',0,NULL)
+(190,3,1,114,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 114',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(191,3,1,115,'Событие счетчика: 115',0,NULL)
+(191,3,1,115,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 115',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(192,3,1,2,'2: Обнуление тарифных регистров',1,NULL)
+(192,3,1,2,'2: РћР±РЅСѓР»РµРЅРёРµ С‚Р°СЂРёС„РЅС‹С… СЂРµРіРёСЃС‚СЂРѕРІ',1,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(193,3,1,3,'3: Обнуление памяти профиля данных',0,NULL)
+(193,3,1,3,'3: РћР±РЅСѓР»РµРЅРёРµ РїР°РјСЏС‚Рё РїСЂРѕС„РёР»СЏ РґР°РЅРЅС‹С…',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(194,3,1,4,'4: Выполнен сброс',0,NULL)
+(194,3,1,4,'4: Р’С‹РїРѕР»РЅРµРЅ СЃР±СЂРѕСЃ',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(195,3,1,5,'5: Батарея разряжена',0,NULL)
+(195,3,1,5,'5: Р‘Р°С‚Р°СЂРµСЏ СЂР°Р·СЂСЏР¶РµРЅР°',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(196,3,1,6,'6: Батарея заменена',0,NULL)
+(196,3,1,6,'6: Р‘Р°С‚Р°СЂРµСЏ Р·Р°РјРµРЅРµРЅР°',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(197,3,1,7,'7: Напряжение батареи в норме ',0,NULL)
+(197,3,1,7,'7: РќР°РїСЂСЏР¶РµРЅРёРµ Р±Р°С‚Р°СЂРµРё РІ РЅРѕСЂРјРµ ',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(198,3,1,8,'Событие счетчика: 8',0,NULL)
+(198,3,1,8,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 8',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(199,3,1,9,'9: Переход лето;зима',0,NULL)
+(199,3,1,9,'9: РџРµСЂРµС…РѕРґ Р»РµС‚Рѕ;Р·РёРјР°',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(200,3,1,10,'10: Изменение времени;даты (старое значение)',0,NULL)
+(200,3,1,10,'10: РР·РјРµРЅРµРЅРёРµ РІСЂРµРјРµРЅРё;РґР°С‚С‹ (СЃС‚Р°СЂРѕРµ Р·РЅР°С‡РµРЅРёРµ)',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(201,3,1,11,'11: Изменение времени;даты (новое значение)',0,NULL)
+(201,3,1,11,'11: РР·РјРµРЅРµРЅРёРµ РІСЂРµРјРµРЅРё;РґР°С‚С‹ (РЅРѕРІРѕРµ Р·РЅР°С‡РµРЅРёРµ)',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(202,3,1,12,'Событие счетчика: 12',0,NULL)
+(202,3,1,12,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 12',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(203,3,1,13,'13: Изменение статуса управляющих входов',0,NULL)
+(203,3,1,13,'13: РР·РјРµРЅРµРЅРёРµ СЃС‚Р°С‚СѓСЃР° СѓРїСЂР°РІР»СЏСЋС‰РёС… РІС…РѕРґРѕРІ',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(204,3,1,14,'Событие счетчика: 14',0,NULL)
+(204,3,1,14,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 14',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(205,3,1,15,'Событие счетчика: 15',0,NULL)
+(205,3,1,15,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 15',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(206,3,1,16,'Событие счетчика: 16',0,NULL)
+(206,3,1,16,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 16',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(207,3,1,17,'17: Снижение напряжение ниже допустимого по фазе L1',0,NULL)
+(207,3,1,17,'17: РЎРЅРёР¶РµРЅРёРµ РЅР°РїСЂСЏР¶РµРЅРёРµ РЅРёР¶Рµ РґРѕРїСѓСЃС‚РёРјРѕРіРѕ РїРѕ С„Р°Р·Рµ L1',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(208,3,1,18,'18: Снижение напряжение ниже допустимого по фазе L2',0,NULL)
+(208,3,1,18,'18: РЎРЅРёР¶РµРЅРёРµ РЅР°РїСЂСЏР¶РµРЅРёРµ РЅРёР¶Рµ РґРѕРїСѓСЃС‚РёРјРѕРіРѕ РїРѕ С„Р°Р·Рµ L2',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(209,3,1,19,'19: Снижение напряжение ниже допустимого по фазе L3',0,NULL)
+(209,3,1,19,'19: РЎРЅРёР¶РµРЅРёРµ РЅР°РїСЂСЏР¶РµРЅРёРµ РЅРёР¶Рµ РґРѕРїСѓСЃС‚РёРјРѕРіРѕ РїРѕ С„Р°Р·Рµ L3',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(210,3,1,20,'20: Перенапряжение по фазе L1',0,NULL)
+(210,3,1,20,'20: РџРµСЂРµРЅР°РїСЂСЏР¶РµРЅРёРµ РїРѕ С„Р°Р·Рµ L1',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(211,3,1,21,'21: Перенапряжение по фазе L2',0,NULL)
+(211,3,1,21,'21: РџРµСЂРµРЅР°РїСЂСЏР¶РµРЅРёРµ РїРѕ С„Р°Р·Рµ L2',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(212,3,1,22,'22: Перенапряжение по фазе L3',0,NULL)
+(212,3,1,22,'22: РџРµСЂРµРЅР°РїСЂСЏР¶РµРЅРёРµ РїРѕ С„Р°Р·Рµ L3',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(213,3,1,23,'23: Провал напряжения',0,NULL)
+(213,3,1,23,'23: РџСЂРѕРІР°Р» РЅР°РїСЂСЏР¶РµРЅРёСЏ',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(214,3,1,24,'24: Восстановление напряжения',0,NULL)
+(214,3,1,24,'24: Р’РѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ РЅР°РїСЂСЏР¶РµРЅРёСЏ',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(215,3,1,25,'25: Перегрузка по току фаза L1',0,NULL)
+(215,3,1,25,'25: РџРµСЂРµРіСЂСѓР·РєР° РїРѕ С‚РѕРєСѓ С„Р°Р·Р° L1',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(216,3,1,26,'26: Перегрузка по току фаза L2',0,NULL)
+(216,3,1,26,'26: РџРµСЂРµРіСЂСѓР·РєР° РїРѕ С‚РѕРєСѓ С„Р°Р·Р° L2',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(217,3,1,27,'27: Перегрузка по току фаза L3',0,NULL)
+(217,3,1,27,'27: РџРµСЂРµРіСЂСѓР·РєР° РїРѕ С‚РѕРєСѓ С„Р°Р·Р° L3',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(218,3,1,28,'28: Перегрузка по току в нейтрали',0,NULL)
+(218,3,1,28,'28: РџРµСЂРµРіСЂСѓР·РєР° РїРѕ С‚РѕРєСѓ РІ РЅРµР№С‚СЂР°Р»Рё',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(219,3,1,29,'29: Сигналы событий коэффициента мощности ',0,NULL)
+(219,3,1,29,'29: РЎРёРіРЅР°Р»С‹ СЃРѕР±С‹С‚РёР№ РєРѕСЌС„С„РёС†РёРµРЅС‚Р° РјРѕС‰РЅРѕСЃС‚Рё ',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(220,3,1,30,'30: Сигналы событий коэффициента мощности ',0,NULL)
+(220,3,1,30,'30: РЎРёРіРЅР°Р»С‹ СЃРѕР±С‹С‚РёР№ РєРѕСЌС„С„РёС†РёРµРЅС‚Р° РјРѕС‰РЅРѕСЃС‚Рё ',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(221,3,1,31,'31: Сигналы событий коэффициента мощности ',0,NULL)
+(221,3,1,31,'31: РЎРёРіРЅР°Р»С‹ СЃРѕР±С‹С‚РёР№ РєРѕСЌС„С„РёС†РёРµРЅС‚Р° РјРѕС‰РЅРѕСЃС‚Рё ',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(222,3,1,32,'32: Сигналы событий коэффициента мощности ',0,NULL)
+(222,3,1,32,'32: РЎРёРіРЅР°Р»С‹ СЃРѕР±С‹С‚РёР№ РєРѕСЌС„С„РёС†РёРµРЅС‚Р° РјРѕС‰РЅРѕСЃС‚Рё ',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(223,3,1,33,'33: Сигналы событий значения усредненной мощности Pтекущее',0,NULL)
+(223,3,1,33,'33: РЎРёРіРЅР°Р»С‹ СЃРѕР±С‹С‚РёР№ Р·РЅР°С‡РµРЅРёСЏ СѓСЃСЂРµРґРЅРµРЅРЅРѕР№ РјРѕС‰РЅРѕСЃС‚Рё PС‚РµРєСѓС‰РµРµ',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(224,3,1,34,'34: Сигналы событий значения усредненной мощности Pтекущее',0,NULL)
+(224,3,1,34,'34: РЎРёРіРЅР°Р»С‹ СЃРѕР±С‹С‚РёР№ Р·РЅР°С‡РµРЅРёСЏ СѓСЃСЂРµРґРЅРµРЅРЅРѕР№ РјРѕС‰РЅРѕСЃС‚Рё PС‚РµРєСѓС‰РµРµ',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(225,3,1,35,'35: Сигналы событий значения усредненной мощности Pтекущее',0,NULL)
+(225,3,1,35,'35: РЎРёРіРЅР°Р»С‹ СЃРѕР±С‹С‚РёР№ Р·РЅР°С‡РµРЅРёСЏ СѓСЃСЂРµРґРЅРµРЅРЅРѕР№ РјРѕС‰РЅРѕСЃС‚Рё PС‚РµРєСѓС‰РµРµ',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(226,3,1,36,'36: Сигналы событий значения усредненной мощности Pтекущее',0,NULL)
+(226,3,1,36,'36: РЎРёРіРЅР°Р»С‹ СЃРѕР±С‹С‚РёР№ Р·РЅР°С‡РµРЅРёСЏ СѓСЃСЂРµРґРЅРµРЅРЅРѕР№ РјРѕС‰РЅРѕСЃС‚Рё PС‚РµРєСѓС‰РµРµ',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(227,3,1,37,'37: Сигналы событий значения усредненной мощности Pтекущее',0,NULL)
+(227,3,1,37,'37: РЎРёРіРЅР°Р»С‹ СЃРѕР±С‹С‚РёР№ Р·РЅР°С‡РµРЅРёСЏ СѓСЃСЂРµРґРЅРµРЅРЅРѕР№ РјРѕС‰РЅРѕСЃС‚Рё PС‚РµРєСѓС‰РµРµ',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(228,3,1,38,'38: Сигналы событий значения усредненной мощности Pтекущее',0,NULL)
+(228,3,1,38,'38: РЎРёРіРЅР°Р»С‹ СЃРѕР±С‹С‚РёР№ Р·РЅР°С‡РµРЅРёСЏ СѓСЃСЂРµРґРЅРµРЅРЅРѕР№ РјРѕС‰РЅРѕСЃС‚Рё PС‚РµРєСѓС‰РµРµ',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(229,3,1,39,'39: Сигналы событий значения усредненной мощности Pтекущее',0,NULL)
+(229,3,1,39,'39: РЎРёРіРЅР°Р»С‹ СЃРѕР±С‹С‚РёР№ Р·РЅР°С‡РµРЅРёСЏ СѓСЃСЂРµРґРЅРµРЅРЅРѕР№ РјРѕС‰РЅРѕСЃС‚Рё PС‚РµРєСѓС‰РµРµ',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(230,3,1,40,'40: Сигналы событий значения усредненной мощности Pтекущее',0,NULL)
+(230,3,1,40,'40: РЎРёРіРЅР°Р»С‹ СЃРѕР±С‹С‚РёР№ Р·РЅР°С‡РµРЅРёСЏ СѓСЃСЂРµРґРЅРµРЅРЅРѕР№ РјРѕС‰РЅРѕСЃС‚Рё PС‚РµРєСѓС‰РµРµ',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(231,3,1,41,'Событие счетчика: 41',0,NULL)
+(231,3,1,41,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 41',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(232,3,1,42,'Событие счетчика: 42',0,NULL)
+(232,3,1,42,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 42',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(233,3,1,43,'Событие счетчика: 43',0,NULL)
+(233,3,1,43,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 43',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(234,3,1,44,'Событие счетчика: 44',0,NULL)
+(234,3,1,44,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 44',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(235,3,1,45,'45: Ошибка самотестирования (4)',0,NULL)
+(235,3,1,45,'45: РћС€РёР±РєР° СЃР°РјРѕС‚РµСЃС‚РёСЂРѕРІР°РЅРёСЏ (4)',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(236,3,1,46,'46: Ошибка самотестирования (4)',0,NULL)
+(236,3,1,46,'46: РћС€РёР±РєР° СЃР°РјРѕС‚РµСЃС‚РёСЂРѕРІР°РЅРёСЏ (4)',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(237,3,1,47,'47: Ошибка самотестирования (4)',0,NULL)
+(237,3,1,47,'47: РћС€РёР±РєР° СЃР°РјРѕС‚РµСЃС‚РёСЂРѕРІР°РЅРёСЏ (4)',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(238,3,1,48,'48: Ошибка самотестирования (4)',0,NULL)
+(238,3,1,48,'48: РћС€РёР±РєР° СЃР°РјРѕС‚РµСЃС‚РёСЂРѕРІР°РЅРёСЏ (4)',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(239,3,1,49,'Событие счетчика: 49',0,NULL)
+(239,3,1,49,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 49',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(240,3,1,50,'Событие счетчика: 50',0,NULL)
+(240,3,1,50,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 50',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(241,3,1,51,'Событие счетчика: 51',0,NULL)
+(241,3,1,51,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 51',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(242,3,1,52,'Событие счетчика: 52',0,NULL)
+(242,3,1,52,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 52',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(243,3,1,53,'Событие счетчика: 53',0,NULL)
+(243,3,1,53,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 53',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(244,3,1,54,'Событие счетчика: 54',0,NULL)
+(244,3,1,54,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 54',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(245,3,1,55,'Событие счетчика: 55',0,NULL)
+(245,3,1,55,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 55',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(246,3,1,56,'Событие счетчика: 56',0,NULL)
+(246,3,1,56,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 56',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(247,3,1,57,'Событие счетчика: 57',0,NULL)
+(247,3,1,57,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 57',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(248,3,1,58,'Событие счетчика: 58',0,NULL)
+(248,3,1,58,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 58',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(249,3,1,59,'Событие счетчика: 59',0,NULL)
+(249,3,1,59,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 59',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(250,3,1,60,'Событие счетчика: 60',0,NULL)
+(250,3,1,60,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 60',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(251,3,1,61,'Событие счетчика: 61',0,NULL)
+(251,3,1,61,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 61',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(252,3,1,62,'Событие счетчика: 62',0,NULL)
+(252,3,1,62,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 62',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(253,3,1,63,'Событие счетчика: 63',0,NULL)
+(253,3,1,63,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 63',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(254,3,1,64,'Событие счетчика: 64',0,NULL)
+(254,3,1,64,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 64',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(255,3,1,65,'65: Ошибка "Батарея разряжена "',0,NULL)
+(255,3,1,65,'65: РћС€РёР±РєР° "Р‘Р°С‚Р°СЂРµСЏ СЂР°Р·СЂСЏР¶РµРЅР° "',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(256,3,1,66,'66: Ошибка "Некорректное время;дата"',0,NULL)
+(256,3,1,66,'66: РћС€РёР±РєР° "РќРµРєРѕСЂСЂРµРєС‚РЅРѕРµ РІСЂРµРјСЏ;РґР°С‚Р°"',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(257,3,1,67,'Событие счетчика: 67',0,NULL)
+(257,3,1,67,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 67',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(258,3,1,68,'Событие счетчика: 68',0,NULL)
+(258,3,1,68,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 68',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(259,3,1,69,'Событие счетчика: 69',0,NULL)
+(259,3,1,69,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 69',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(260,3,1,70,'Событие счетчика: 70',0,NULL)
+(260,3,1,70,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 70',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(261,3,1,71,'Событие счетчика: 71',0,NULL)
+(261,3,1,71,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 71',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(262,3,1,72,'Событие счетчика: 72',0,NULL)
+(262,3,1,72,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 72',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(263,3,1,73,'73: Ошибка "Доступ к основной памяти"',0,NULL)
+(263,3,1,73,'73: РћС€РёР±РєР° "Р”РѕСЃС‚СѓРї Рє РѕСЃРЅРѕРІРЅРѕР№ РїР°РјСЏС‚Рё"',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(264,3,1,74,'74: Ошибка "Доступ к памяти параметров"',0,NULL)
+(264,3,1,74,'74: РћС€РёР±РєР° "Р”РѕСЃС‚СѓРї Рє РїР°РјСЏС‚Рё РїР°СЂР°РјРµС‚СЂРѕРІ"',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(265,3,1,116,'Событие счетчика: 116',0,NULL)
+(265,3,1,116,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 116',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(266,3,1,117,'Событие счетчика: 117',0,NULL)
+(266,3,1,117,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 117',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(267,3,1,118,'Событие счетчика: 118',0,NULL)
+(267,3,1,118,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 118',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(268,3,1,119,'Событие счетчика: 119',0,NULL)
+(268,3,1,119,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 119',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(269,3,1,120,'Событие счетчика: 120',0,NULL)
+(269,3,1,120,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 120',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(270,3,1,121,'Событие счетчика: 121',0,NULL)
+(270,3,1,121,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 121',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(271,3,1,122,'Событие счетчика: 122',0,NULL)
+(271,3,1,122,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 122',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(272,3,1,123,'Событие счетчика: 123',0,NULL)
+(272,3,1,123,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 123',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(273,3,1,124,'Событие счетчика: 124',0,NULL)
+(273,3,1,124,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 124',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(274,3,1,125,'Событие счетчика: 125',0,NULL)
+(274,3,1,125,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 125',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(275,3,1,126,'Событие счетчика: 126',0,NULL)
+(275,3,1,126,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 126',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(276,3,1,127,'Событие счетчика: 127',0,NULL)
+(276,3,1,127,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 127',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(277,3,1,128,'Событие счетчика: 128',0,NULL)
+(277,3,1,128,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 128',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(278,3,1,129,'Событие счетчика: 129',0,NULL)
+(278,3,1,129,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 129',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(279,3,1,130,'Событие счетчика: 130',0,NULL)
+(279,3,1,130,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 130',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(280,3,1,131,'Событие счетчика: 131',0,NULL)
+(280,3,1,131,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 131',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(281,3,1,132,'Событие счетчика: 132',0,NULL)
+(281,3,1,132,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 132',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(282,3,1,133,'Событие счетчика: 133',0,NULL)
+(282,3,1,133,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 133',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(283,3,1,134,'Событие счетчика: 134',0,NULL)
+(283,3,1,134,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 134',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(284,3,1,135,'Событие счетчика: 135',0,NULL)
+(284,3,1,135,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 135',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(285,3,1,136,'Событие счетчика: 136',0,NULL)
+(285,3,1,136,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 136',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(286,3,1,137,'Событие счетчика: 137',0,NULL)
+(286,3,1,137,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 137',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(287,3,1,138,'Событие счетчика: 138',0,NULL)
+(287,3,1,138,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 138',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(288,3,1,139,'Событие счетчика: 139',0,NULL)
+(288,3,1,139,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 139',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(289,3,1,140,'Событие счетчика: 140',0,NULL)
+(289,3,1,140,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 140',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(290,3,1,141,'Событие счетчика: 141',0,NULL)
+(290,3,1,141,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 141',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(291,3,1,142,'Событие счетчика: 142',0,NULL)
+(291,3,1,142,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 142',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(292,3,1,143,'Событие счетчика: 143',0,NULL)
+(292,3,1,143,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 143',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(293,3,1,144,'Событие счетчика: 144',0,NULL)
+(293,3,1,144,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 144',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(294,3,1,145,'Событие счетчика: 145',0,NULL)
+(294,3,1,145,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 145',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(295,3,1,146,'Событие счетчика: 146',0,NULL)
+(295,3,1,146,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 146',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(296,3,1,147,'Событие счетчика: 147',0,NULL)
+(296,3,1,147,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 147',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(297,3,1,148,'Событие счетчика: 148',0,NULL)
+(297,3,1,148,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 148',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(298,3,1,149,'Событие счетчика: 149',0,NULL)
+(298,3,1,149,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 149',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(299,3,1,150,'Событие счетчика: 150',0,NULL)
+(299,3,1,150,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 150',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(300,3,1,151,'Событие счетчика: 151',0,NULL)
+(300,3,1,151,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 151',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(301,3,1,152,'Событие счетчика: 152',0,NULL)
+(301,3,1,152,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 152',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(302,3,1,153,'Событие счетчика: 153',0,NULL)
+(302,3,1,153,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 153',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(303,3,1,154,'Событие счетчика: 154',0,NULL)
+(303,3,1,154,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 154',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(304,3,1,155,'Событие счетчика: 155',0,NULL)
+(304,3,1,155,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 155',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(305,3,1,156,'Событие счетчика: 156',0,NULL)
+(305,3,1,156,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 156',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(306,3,1,157,'Событие счетчика: 157',0,NULL)
+(306,3,1,157,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 157',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(307,3,1,158,'Событие счетчика: 158',0,NULL)
+(307,3,1,158,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 158',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(308,3,1,159,'Событие счетчика: 159',0,NULL)
+(308,3,1,159,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 159',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(309,3,1,160,'Событие счетчика: 160',0,NULL)
+(309,3,1,160,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 160',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(310,3,1,161,'Событие счетчика: 161',0,NULL)
+(310,3,1,161,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 161',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(311,3,1,162,'Событие счетчика: 162',0,NULL)
+(311,3,1,162,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 162',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(312,3,1,163,'Событие счетчика: 163',0,NULL)
+(312,3,1,163,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 163',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(313,3,1,164,'Событие счетчика: 164',0,NULL)
+(313,3,1,164,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 164',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(314,3,1,165,'Событие счетчика: 165',0,NULL)
+(314,3,1,165,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 165',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(315,3,1,166,'Событие счетчика: 166',0,NULL)
+(315,3,1,166,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 166',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(316,3,1,167,'Событие счетчика: 167',0,NULL)
+(316,3,1,167,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 167',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(317,3,1,168,'Событие счетчика: 168',0,NULL)
+(317,3,1,168,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 168',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(318,3,1,169,'Событие счетчика: 169',0,NULL)
+(318,3,1,169,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 169',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(319,3,1,170,'Событие счетчика: 170',0,NULL)
+(319,3,1,170,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 170',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(320,3,1,171,'Событие счетчика: 171',0,NULL)
+(320,3,1,171,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 171',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(321,3,1,172,'Событие счетчика: 172',0,NULL)
+(321,3,1,172,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 172',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(322,3,1,173,'Событие счетчика: 173',0,NULL)
+(322,3,1,173,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 173',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(323,3,1,174,'Событие счетчика: 174',0,NULL)
+(323,3,1,174,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 174',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(324,3,1,175,'Событие счетчика: 175',0,NULL)
+(324,3,1,175,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 175',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(325,3,1,176,'Событие счетчика: 176',0,NULL)
+(325,3,1,176,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 176',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(326,3,1,177,'Событие счетчика: 177',0,NULL)
+(326,3,1,177,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 177',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(327,3,1,178,'Событие счетчика: 178',0,NULL)
+(327,3,1,178,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 178',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(328,3,1,179,'Событие счетчика: 179',0,NULL)
+(328,3,1,179,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 179',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(329,3,1,180,'Событие счетчика: 180',0,NULL)
+(329,3,1,180,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 180',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(330,3,1,181,'Событие счетчика: 181',0,NULL)
+(330,3,1,181,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 181',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(331,3,1,182,'Событие счетчика: 182',0,NULL)
+(331,3,1,182,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 182',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(332,3,1,183,'Событие счетчика: 183',0,NULL)
+(332,3,1,183,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 183',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(333,3,1,184,'Событие счетчика: 184',0,NULL)
+(333,3,1,184,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 184',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(334,3,1,185,'Событие счетчика: 185',0,NULL)
+(334,3,1,185,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 185',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(335,3,1,186,'Событие счетчика: 186',0,NULL)
+(335,3,1,186,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 186',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(336,3,1,187,'Событие счетчика: 187',0,NULL)
+(336,3,1,187,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 187',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(337,3,1,188,'Событие счетчика: 188',0,NULL)
+(337,3,1,188,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 188',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(338,3,1,189,'Событие счетчика: 189',0,NULL)
+(338,3,1,189,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 189',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(339,3,1,190,'Событие счетчика: 190',0,NULL)
+(339,3,1,190,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 190',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(340,3,1,191,'Событие счетчика: 191',0,NULL)
+(340,3,1,191,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 191',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(341,3,1,192,'Событие счетчика: 192',0,NULL)
+(341,3,1,192,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 192',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(342,3,1,193,'Событие счетчика: 193',0,NULL)
+(342,3,1,193,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 193',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(343,3,1,194,'Событие счетчика: 194',0,NULL)
+(343,3,1,194,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 194',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(344,3,1,195,'Событие счетчика: 195',0,NULL)
+(344,3,1,195,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 195',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(345,3,1,196,'Событие счетчика: 196',0,NULL)
+(345,3,1,196,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 196',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(346,3,1,197,'Событие счетчика: 197',0,NULL)
+(346,3,1,197,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 197',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(347,3,1,198,'Событие счетчика: 198',0,NULL)
+(347,3,1,198,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 198',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(348,3,1,199,'Событие счетчика: 199',0,NULL)
+(348,3,1,199,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 199',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(349,3,1,200,'Событие счетчика: 200',0,NULL)
+(349,3,1,200,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 200',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(350,3,1,201,'Событие счетчика: 201',0,NULL)
+(350,3,1,201,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 201',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(351,3,1,202,'Событие счетчика: 202',0,NULL)
+(351,3,1,202,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 202',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(352,3,1,203,'Событие счетчика: 203',0,NULL)
+(352,3,1,203,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 203',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(353,3,1,204,'Событие счетчика: 204',0,NULL)
+(353,3,1,204,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 204',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(354,3,1,205,'Событие счетчика: 205',0,NULL)
+(354,3,1,205,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 205',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(355,3,1,206,'Событие счетчика: 206',0,NULL)
+(355,3,1,206,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 206',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(356,3,1,207,'Событие счетчика: 207',0,NULL)
+(356,3,1,207,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 207',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(357,3,1,208,'Событие счетчика: 208',0,NULL)
+(357,3,1,208,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 208',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(358,3,1,209,'Событие счетчика: 209',0,NULL)
+(358,3,1,209,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 209',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(359,3,1,210,'Событие счетчика: 210',0,NULL)
+(359,3,1,210,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 210',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(360,3,1,211,'Событие счетчика: 211',0,NULL)
+(360,3,1,211,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 211',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(361,3,1,212,'Событие счетчика: 212',0,NULL)
+(361,3,1,212,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 212',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(362,3,1,213,'Событие счетчика: 213',0,NULL)
+(362,3,1,213,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 213',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(363,3,1,214,'Событие счетчика: 214',0,NULL)
+(363,3,1,214,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 214',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(364,3,1,215,'Событие счетчика: 215',0,NULL)
+(364,3,1,215,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 215',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(365,3,1,216,'Событие счетчика: 216',0,NULL)
+(365,3,1,216,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 216',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(366,3,1,217,'Событие счетчика: 217',0,NULL)
+(366,3,1,217,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 217',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(367,3,1,218,'Событие счетчика: 218',0,NULL)
+(367,3,1,218,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 218',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(368,3,1,219,'Событие счетчика: 219',0,NULL)
+(368,3,1,219,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 219',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(369,3,1,220,'Событие счетчика: 220',0,NULL)
+(369,3,1,220,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 220',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(370,3,1,221,'Событие счетчика: 221',0,NULL)
+(370,3,1,221,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 221',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(371,3,1,222,'Событие счетчика: 222',0,NULL)
+(371,3,1,222,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 222',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(372,3,1,223,'Событие счетчика: 223',0,NULL)
+(372,3,1,223,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 223',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(373,3,1,224,'Событие счетчика: 224',0,NULL)
+(373,3,1,224,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 224',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(374,3,1,225,'Событие счетчика: 225',0,NULL)
+(374,3,1,225,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 225',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(375,3,1,226,'Событие счетчика: 226',0,NULL)
+(375,3,1,226,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 226',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(376,3,1,227,'Событие счетчика: 227',0,NULL)
+(376,3,1,227,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 227',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(377,3,1,228,'Событие счетчика: 228',0,NULL)
+(377,3,1,228,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 228',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(378,3,1,229,'Событие счетчика: 229',0,NULL)
+(378,3,1,229,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 229',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(379,3,1,230,'Событие счетчика: 230',0,NULL)
+(379,3,1,230,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 230',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(380,3,1,231,'Событие счетчика: 231',0,NULL)
+(380,3,1,231,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 231',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(381,3,1,232,'Событие счетчика: 232',0,NULL)
+(381,3,1,232,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 232',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(382,3,1,233,'Событие счетчика: 233',0,NULL)
+(382,3,1,233,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 233',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(383,3,1,234,'Событие счетчика: 234',0,NULL)
+(383,3,1,234,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 234',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(384,3,1,235,'Событие счетчика: 235',0,NULL)
+(384,3,1,235,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 235',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(385,3,1,236,'Событие счетчика: 236',0,NULL)
+(385,3,1,236,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 236',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(386,3,1,237,'Событие счетчика: 237',0,NULL)
+(386,3,1,237,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 237',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(387,3,1,238,'Событие счетчика: 238',0,NULL)
+(387,3,1,238,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 238',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(388,3,1,239,'Событие счетчика: 239',0,NULL)
+(388,3,1,239,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 239',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(389,3,1,240,'Событие счетчика: 240',0,NULL)
+(389,3,1,240,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 240',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(390,3,1,241,'Событие счетчика: 241',0,NULL)
+(390,3,1,241,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 241',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(391,3,1,242,'Событие счетчика: 242',0,NULL)
+(391,3,1,242,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 242',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(392,3,1,243,'Событие счетчика: 243',0,NULL)
+(392,3,1,243,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 243',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(393,3,1,244,'Событие счетчика: 244',0,NULL)
+(393,3,1,244,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 244',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(394,3,1,245,'Событие счетчика: 245',0,NULL)
+(394,3,1,245,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 245',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(395,3,1,246,'Событие счетчика: 246',0,NULL)
+(395,3,1,246,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 246',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(396,3,1,247,'Событие счетчика: 247',0,NULL)
+(396,3,1,247,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 247',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(397,3,1,248,'Событие счетчика: 248',0,NULL)
+(397,3,1,248,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 248',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(398,3,1,249,'Событие счетчика: 249',0,NULL)
+(398,3,1,249,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 249',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(399,3,1,250,'Событие счетчика: 250',0,NULL)
+(399,3,1,250,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 250',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(400,3,1,251,'Событие счетчика: 251',0,NULL)
+(400,3,1,251,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 251',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(401,3,1,252,'Событие счетчика: 252',0,NULL)
+(401,3,1,252,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 252',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(402,3,1,253,'Событие счетчика: 253',0,NULL)
+(402,3,1,253,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 253',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(403,3,1,254,'Событие счетчика: 254',0,NULL)
+(403,3,1,254,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 254',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(404,3,1,255,'Событие счетчика: 255',0,NULL)
+(404,3,1,255,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°: 255',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(405,4,1,0,'Включение напряжения',0,NULL)
+(405,4,1,0,'Р’РєР»СЋС‡РµРЅРёРµ РЅР°РїСЂСЏР¶РµРЅРёСЏ',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(406,4,1,1,'Отключение напряжения',0,NULL)
+(406,4,1,1,'РћС‚РєР»СЋС‡РµРЅРёРµ РЅР°РїСЂСЏР¶РµРЅРёСЏ',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(407,4,1,2,'Есть фаза: A',0,NULL)
+(407,4,1,2,'Р•СЃС‚СЊ С„Р°Р·Р°: A',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(408,4,1,258,'Есть фаза: B',0,NULL)
+(408,4,1,258,'Р•СЃС‚СЊ С„Р°Р·Р°: B',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(409,4,1,514,'Есть фаза: C',0,NULL)
+(409,4,1,514,'Р•СЃС‚СЊ С„Р°Р·Р°: C',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(410,4,1,3,'Нет фазы: A',0,NULL)
+(410,4,1,3,'РќРµС‚ С„Р°Р·С‹: A',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(411,4,1,259,'Нет фазы: B',0,NULL)
+(411,4,1,259,'РќРµС‚ С„Р°Р·С‹: B',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(412,4,1,515,'Нет фазы: C',0,NULL)
+(412,4,1,515,'РќРµС‚ С„Р°Р·С‹: C',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(413,4,1,4,'Переход системного времени через 0 часов',0,NULL)
+(413,4,1,4,'РџРµСЂРµС…РѕРґ СЃРёСЃС‚РµРјРЅРѕРіРѕ РІСЂРµРјРµРЅРё С‡РµСЂРµР· 0 С‡Р°СЃРѕРІ',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(414,4,1,263,'Смена параметров: Коррекция времени',0,NULL)
+(414,4,1,263,'РЎРјРµРЅР° РїР°СЂР°РјРµС‚СЂРѕРІ: РљРѕСЂСЂРµРєС†РёСЏ РІСЂРµРјРµРЅРё',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(415,4,1,519,'Смена параметров: Настройки устройства (сетевой адрес и период графика нагрузки)',0,NULL)
+(415,4,1,519,'РЎРјРµРЅР° РїР°СЂР°РјРµС‚СЂРѕРІ: РќР°СЃС‚СЂРѕР№РєРё СѓСЃС‚СЂРѕР№СЃС‚РІР° (СЃРµС‚РµРІРѕР№ Р°РґСЂРµСЃ Рё РїРµСЂРёРѕРґ РіСЂР°С„РёРєР° РЅР°РіСЂСѓР·РєРё)',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(416,4,1,775,'Смена параметров: Пароль пользователя (уровень 1)',0,NULL)
+(416,4,1,775,'РЎРјРµРЅР° РїР°СЂР°РјРµС‚СЂРѕРІ: РџР°СЂРѕР»СЊ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ (СѓСЂРѕРІРµРЅСЊ 1)',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(417,4,1,1031,'Смена параметров: Пароль энергокомпании (уровень 2)',0,NULL)
+(417,4,1,1031,'РЎРјРµРЅР° РїР°СЂР°РјРµС‚СЂРѕРІ: РџР°СЂРѕР»СЊ СЌРЅРµСЂРіРѕРєРѕРјРїР°РЅРёРё (СѓСЂРѕРІРµРЅСЊ 2)',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(418,4,1,1287,'Смена параметров: Настройки лога данных',0,NULL)
+(418,4,1,1287,'РЎРјРµРЅР° РїР°СЂР°РјРµС‚СЂРѕРІ: РќР°СЃС‚СЂРѕР№РєРё Р»РѕРіР° РґР°РЅРЅС‹С…',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(419,4,1,1543,'Смена параметров: Настройки меню',0,NULL)
+(419,4,1,1543,'РЎРјРµРЅР° РїР°СЂР°РјРµС‚СЂРѕРІ: РќР°СЃС‚СЂРѕР№РєРё РјРµРЅСЋ',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(420,4,1,1799,'Смена параметров: Карта сезонов',0,NULL)
+(420,4,1,1799,'РЎРјРµРЅР° РїР°СЂР°РјРµС‚СЂРѕРІ: РљР°СЂС‚Р° СЃРµР·РѕРЅРѕРІ',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(421,4,1,2055,'Смена параметров: Карта тарифных зон ',0,NULL)
+(421,4,1,2055,'РЎРјРµРЅР° РїР°СЂР°РјРµС‚СЂРѕРІ: РљР°СЂС‚Р° С‚Р°СЂРёС„РЅС‹С… Р·РѕРЅ ',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(422,5,1,273,'Отключение напряжения.',0,NULL)
+(422,5,1,273,'РћС‚РєР»СЋС‡РµРЅРёРµ РЅР°РїСЂСЏР¶РµРЅРёСЏ.',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(423,5,1,274,'Включение напряжения.',0,NULL)
+(423,5,1,274,'Р’РєР»СЋС‡РµРЅРёРµ РЅР°РїСЂСЏР¶РµРЅРёСЏ.',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(424,5,1,275,'Коррекция часов. Время до коррекции.',0,NULL)
+(424,5,1,275,'РљРѕСЂСЂРµРєС†РёСЏ С‡Р°СЃРѕРІ. Р’СЂРµРјСЏ РґРѕ РєРѕСЂСЂРµРєС†РёРё.',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(425,5,1,276,'Коррекция часов. Время после коррекции.',0,NULL)
+(425,5,1,276,'РљРѕСЂСЂРµРєС†РёСЏ С‡Р°СЃРѕРІ. Р’СЂРµРјСЏ РїРѕСЃР»Рµ РєРѕСЂСЂРµРєС†РёРё.',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(426,5,1,277,'Начало режима тестирования счетчика.',0,NULL)
+(426,5,1,277,'РќР°С‡Р°Р»Рѕ СЂРµР¶РёРјР° С‚РµСЃС‚РёСЂРѕРІР°РЅРёСЏ СЃС‡РµС‚С‡РёРєР°.',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(427,5,1,278,'Окончание режима тестирования счетчика.',0,NULL)
+(427,5,1,278,'РћРєРѕРЅС‡Р°РЅРёРµ СЂРµР¶РёРјР° С‚РµСЃС‚РёСЂРѕРІР°РЅРёСЏ СЃС‡РµС‚С‡РёРєР°.',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(428,5,1,279,'Сброс максимальной мощности.',0,NULL)
+(428,5,1,279,'РЎР±СЂРѕСЃ РјР°РєСЃРёРјР°Р»СЊРЅРѕР№ РјРѕС‰РЅРѕСЃС‚Рё.',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(429,5,1,280,'Сброс журнала событий.',0,NULL)
+(429,5,1,280,'РЎР±СЂРѕСЃ Р¶СѓСЂРЅР°Р»Р° СЃРѕР±С‹С‚РёР№.',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(430,6,1,281,'Есть фаза А.',0,NULL)
+(430,6,1,281,'Р•СЃС‚СЊ С„Р°Р·Р° Рђ.',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(431,6,1,282,'Нет фазы А.',0,NULL)
+(431,6,1,282,'РќРµС‚ С„Р°Р·С‹ Рђ.',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(432,6,1,283,'Есть фаза B.',0,NULL)
+(432,6,1,283,'Р•СЃС‚СЊ С„Р°Р·Р° B.',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(433,6,1,284,'Нет фазы B.',0,NULL)
+(433,6,1,284,'РќРµС‚ С„Р°Р·С‹ B.',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(434,6,1,285,'Есть фаза C.',0,NULL)
+(434,6,1,285,'Р•СЃС‚СЊ С„Р°Р·Р° C.',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(435,6,1,286,'Нет фазы C.',0,NULL)
+(435,6,1,286,'РќРµС‚ С„Р°Р·С‹ C.',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(436,7,1,287,'Отключение счетчика.',0,NULL)
+(436,7,1,287,'РћС‚РєР»СЋС‡РµРЅРёРµ СЃС‡РµС‚С‡РёРєР°.',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(437,7,1,288,'Включение счетчика. Нет напряжения на фазах.',0,NULL)
+(437,7,1,288,'Р’РєР»СЋС‡РµРЅРёРµ СЃС‡РµС‚С‡РёРєР°. РќРµС‚ РЅР°РїСЂСЏР¶РµРЅРёСЏ РЅР° С„Р°Р·Р°С….',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(438,7,1,289,'Включение фазы C.',0,NULL)
+(438,7,1,289,'Р’РєР»СЋС‡РµРЅРёРµ С„Р°Р·С‹ C.',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(439,7,1,290,'Включение фазы B.',0,NULL)
+(439,7,1,290,'Р’РєР»СЋС‡РµРЅРёРµ С„Р°Р·С‹ B.',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(440,7,1,291,'Включение фазы A.',0,NULL)
+(440,7,1,291,'Р’РєР»СЋС‡РµРЅРёРµ С„Р°Р·С‹ A.',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(441,8,1,292,'Отключение счетчика.',0,NULL)
+(441,8,1,292,'РћС‚РєР»СЋС‡РµРЅРёРµ СЃС‡РµС‚С‡РёРєР°.',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(442,8,1,293,'Включение счетчика.',0,NULL)
+(442,8,1,293,'Р’РєР»СЋС‡РµРЅРёРµ СЃС‡РµС‚С‡РёРєР°.',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(443,8,1,294,'Коррекция часов. Время до коррекции.',0,NULL)
+(443,8,1,294,'РљРѕСЂСЂРµРєС†РёСЏ С‡Р°СЃРѕРІ. Р’СЂРµРјСЏ РґРѕ РєРѕСЂСЂРµРєС†РёРё.',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(444,8,1,295,'Коррекция часов. Время после коррекции.',0,NULL)
+(444,8,1,295,'РљРѕСЂСЂРµРєС†РёСЏ С‡Р°СЃРѕРІ. Р’СЂРµРјСЏ РїРѕСЃР»Рµ РєРѕСЂСЂРµРєС†РёРё.',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(445,8,1,296,'Коррекция расписания праздничных дней.',0,NULL)
+(445,8,1,296,'РљРѕСЂСЂРµРєС†РёСЏ СЂР°СЃРїРёСЃР°РЅРёСЏ РїСЂР°Р·РґРЅРёС‡РЅС‹С… РґРЅРµР№.',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(446,8,1,297,'Коррекция тарифного расписания.',0,NULL)
+(446,8,1,297,'РљРѕСЂСЂРµРєС†РёСЏ С‚Р°СЂРёС„РЅРѕРіРѕ СЂР°СЃРїРёСЃР°РЅРёСЏ.',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(447,8,1,298,'Сброс показаний энергии.',0,NULL)
+(447,8,1,298,'РЎР±СЂРѕСЃ РїРѕРєР°Р·Р°РЅРёР№ СЌРЅРµСЂРіРёРё.',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(448,8,1,299,'Инициализация массива профиля мощности.',0,NULL)
+(448,8,1,299,'РРЅРёС†РёР°Р»РёР·Р°С†РёСЏ РјР°СЃСЃРёРІР° РїСЂРѕС„РёР»СЏ РјРѕС‰РЅРѕСЃС‚Рё.',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(449,8,1,300,'Выключение фазы 1 счетчика.',0,NULL)
+(449,8,1,300,'Р’С‹РєР»СЋС‡РµРЅРёРµ С„Р°Р·С‹ 1 СЃС‡РµС‚С‡РёРєР°.',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(450,8,1,301,'Включение фазы 1 счетчика.',0,NULL)
+(450,8,1,301,'Р’РєР»СЋС‡РµРЅРёРµ С„Р°Р·С‹ 1 СЃС‡РµС‚С‡РёРєР°.',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(451,8,1,302,'Выключение фазы 2 счетчика.',0,NULL)
+(451,8,1,302,'Р’С‹РєР»СЋС‡РµРЅРёРµ С„Р°Р·С‹ 2 СЃС‡РµС‚С‡РёРєР°.',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(452,8,1,303,'Включение фазы 2 счетчика.',0,NULL)
+(452,8,1,303,'Р’РєР»СЋС‡РµРЅРёРµ С„Р°Р·С‹ 2 СЃС‡РµС‚С‡РёРєР°.',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(453,8,1,304,'Выключение фазы 3 счетчика.',0,NULL)
+(453,8,1,304,'Р’С‹РєР»СЋС‡РµРЅРёРµ С„Р°Р·С‹ 3 СЃС‡РµС‚С‡РёРєР°.',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(454,8,1,305,'Включение фазы 3 счетчика.',0,NULL)
+(454,8,1,305,'Р’РєР»СЋС‡РµРЅРёРµ С„Р°Р·С‹ 3 СЃС‡РµС‚С‡РёРєР°.',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(455,8,1,306,'Открытие защитной крышки.',0,NULL)
+(455,8,1,306,'РћС‚РєСЂС‹С‚РёРµ Р·Р°С‰РёС‚РЅРѕР№ РєСЂС‹С€РєРё.',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(456,8,1,307,'Закрытие защитной крышки.',0,NULL)
+(456,8,1,307,'Р—Р°РєСЂС‹С‚РёРµ Р·Р°С‰РёС‚РЅРѕР№ РєСЂС‹С€РєРё.',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(457,9,1,308,'Отключение счетчика.',0,NULL)
+(457,9,1,308,'РћС‚РєР»СЋС‡РµРЅРёРµ СЃС‡РµС‚С‡РёРєР°.',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(458,9,1,309,'Включение счетчика.',0,NULL)
+(458,9,1,309,'Р’РєР»СЋС‡РµРЅРёРµ СЃС‡РµС‚С‡РёРєР°.',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(459,9,1,310,'Изменение состояния фаз:',0,NULL)
+(459,9,1,310,'РР·РјРµРЅРµРЅРёРµ СЃРѕСЃС‚РѕСЏРЅРёСЏ С„Р°Р·:',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(460,10,1,311,'Проблем счетчика не обнаружено',0,NULL)
+(460,10,1,311,'РџСЂРѕР±Р»РµРј СЃС‡РµС‚С‡РёРєР° РЅРµ РѕР±РЅР°СЂСѓР¶РµРЅРѕ',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(461,10,1,312,'Сбой часов реального времени (невозможна тарификация)',0,NULL)
+(461,10,1,312,'РЎР±РѕР№ С‡Р°СЃРѕРІ СЂРµР°Р»СЊРЅРѕРіРѕ РІСЂРµРјРµРЅРё (РЅРµРІРѕР·РјРѕР¶РЅР° С‚Р°СЂРёС„РёРєР°С†РёСЏ)',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(462,10,1,313,'Проблемы группы системного времени (может быть неучтена энергия последнего измерения)',0,NULL)
+(462,10,1,313,'РџСЂРѕР±Р»РµРјС‹ РіСЂСѓРїРїС‹ СЃРёСЃС‚РµРјРЅРѕРіРѕ РІСЂРµРјРµРЅРё (РјРѕР¶РµС‚ Р±С‹С‚СЊ РЅРµСѓС‡С‚РµРЅР° СЌРЅРµСЂРіРёСЏ РїРѕСЃР»РµРґРЅРµРіРѕ РёР·РјРµСЂРµРЅРёСЏ)',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(463,10,1,314,'Проблемы группы технологической (нет учета энергии)',0,NULL)
+(463,10,1,314,'РџСЂРѕР±Р»РµРјС‹ РіСЂСѓРїРїС‹ С‚РµС…РЅРѕР»РѕРіРёС‡РµСЃРєРѕР№ (РЅРµС‚ СѓС‡РµС‚Р° СЌРЅРµСЂРіРёРё)',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(464,10,1,315,'Проблемы группы параметров измерителя (нет учета энергии)',0,NULL)
+(464,10,1,315,'РџСЂРѕР±Р»РµРјС‹ РіСЂСѓРїРїС‹ РїР°СЂР°РјРµС‚СЂРѕРІ РёР·РјРµСЂРёС‚РµР»СЏ (РЅРµС‚ СѓС‡РµС‚Р° СЌРЅРµСЂРіРёРё)',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(465,10,1,316,'Проблемы группы интерфейсного обмена (недостоверны параметры обмена)',0,NULL)
+(465,10,1,316,'РџСЂРѕР±Р»РµРјС‹ РіСЂСѓРїРїС‹ РёРЅС‚РµСЂС„РµР№СЃРЅРѕРіРѕ РѕР±РјРµРЅР° (РЅРµРґРѕСЃС‚РѕРІРµСЂРЅС‹ РїР°СЂР°РјРµС‚СЂС‹ РѕР±РјРµРЅР°)',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(466,10,1,317,'Проблемы группы тарификации (нет учета по тарифам)',0,NULL)
+(466,10,1,317,'РџСЂРѕР±Р»РµРјС‹ РіСЂСѓРїРїС‹ С‚Р°СЂРёС„РёРєР°С†РёРё (РЅРµС‚ СѓС‡РµС‚Р° РїРѕ С‚Р°СЂРёС„Р°Рј)',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(467,10,1,318,'Проблемы накопленных основных данных (недостоверна группа накопления энергий активного тарифа)',0,NULL)
+(467,10,1,318,'РџСЂРѕР±Р»РµРјС‹ РЅР°РєРѕРїР»РµРЅРЅС‹С… РѕСЃРЅРѕРІРЅС‹С… РґР°РЅРЅС‹С… (РЅРµРґРѕСЃС‚РѕРІРµСЂРЅР° РіСЂСѓРїРїР° РЅР°РєРѕРїР»РµРЅРёСЏ СЌРЅРµСЂРіРёР№ Р°РєС‚РёРІРЅРѕРіРѕ С‚Р°СЂРёС„Р°)',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(468,10,1,319,'Проблемы накопленных дополнительных данных (недостоверны максимумы средней мощности и активные записи профилей)',0,NULL)
+(468,10,1,319,'РџСЂРѕР±Р»РµРјС‹ РЅР°РєРѕРїР»РµРЅРЅС‹С… РґРѕРїРѕР»РЅРёС‚РµР»СЊРЅС‹С… РґР°РЅРЅС‹С… (РЅРµРґРѕСЃС‚РѕРІРµСЂРЅС‹ РјР°РєСЃРёРјСѓРјС‹ СЃСЂРµРґРЅРµР№ РјРѕС‰РЅРѕСЃС‚Рё Рё Р°РєС‚РёРІРЅС‹Рµ Р·Р°РїРёСЃРё РїСЂРѕС„РёР»РµР№)',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(469,10,1,320,'Проблемы группы журналов (недостоверна информация в журналах)',0,NULL)
+(469,10,1,320,'РџСЂРѕР±Р»РµРјС‹ РіСЂСѓРїРїС‹ Р¶СѓСЂРЅР°Р»РѕРІ (РЅРµРґРѕСЃС‚РѕРІРµСЂРЅР° РёРЅС„РѕСЂРјР°С†РёСЏ РІ Р¶СѓСЂРЅР°Р»Р°С…)',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(470,10,1,321,'Неожиданный аппаратный сброс',0,NULL)
+(470,10,1,321,'РќРµРѕР¶РёРґР°РЅРЅС‹Р№ Р°РїРїР°СЂР°С‚РЅС‹Р№ СЃР±СЂРѕСЃ',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(471,10,1,322,'Проблемы накопителя данных профиля.',0,NULL)
+(471,10,1,322,'РџСЂРѕР±Р»РµРјС‹ РЅР°РєРѕРїРёС‚РµР»СЏ РґР°РЅРЅС‹С… РїСЂРѕС„РёР»СЏ.',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(472,10,1,323,'Все параметры счетчика в норме',0,NULL)
+(472,10,1,323,'Р’СЃРµ РїР°СЂР°РјРµС‚СЂС‹ СЃС‡РµС‚С‡РёРєР° РІ РЅРѕСЂРјРµ',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(473,10,1,324,'Фаза А выключена (напряжение фазы меньше 5% номинального)',0,NULL)
+(473,10,1,324,'Р¤Р°Р·Р° Рђ РІС‹РєР»СЋС‡РµРЅР° (РЅР°РїСЂСЏР¶РµРЅРёРµ С„Р°Р·С‹ РјРµРЅСЊС€Рµ 5% РЅРѕРјРёРЅР°Р»СЊРЅРѕРіРѕ)',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(474,10,1,325,'Фаза B выключена (напряжение фазы меньше 5% номинального)',0,NULL)
+(474,10,1,325,'Р¤Р°Р·Р° B РІС‹РєР»СЋС‡РµРЅР° (РЅР°РїСЂСЏР¶РµРЅРёРµ С„Р°Р·С‹ РјРµРЅСЊС€Рµ 5% РЅРѕРјРёРЅР°Р»СЊРЅРѕРіРѕ)',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(475,10,1,326,'Фаза C выключена (напряжение фазы меньше 5% номинального)',0,NULL)
+(475,10,1,326,'Р¤Р°Р·Р° C РІС‹РєР»СЋС‡РµРЅР° (РЅР°РїСЂСЏР¶РµРЅРёРµ С„Р°Р·С‹ РјРµРЅСЊС€Рµ 5% РЅРѕРјРёРЅР°Р»СЊРЅРѕРіРѕ)',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(476,10,1,327,'Напряжение фазы А меньше заданного параметром LEVDN',0,NULL)
+(476,10,1,327,'РќР°РїСЂСЏР¶РµРЅРёРµ С„Р°Р·С‹ Рђ РјРµРЅСЊС€Рµ Р·Р°РґР°РЅРЅРѕРіРѕ РїР°СЂР°РјРµС‚СЂРѕРј LEVDN',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(477,10,1,328,'Напряжение фазы B меньше заданного параметром LEVDN',0,NULL)
+(477,10,1,328,'РќР°РїСЂСЏР¶РµРЅРёРµ С„Р°Р·С‹ B РјРµРЅСЊС€Рµ Р·Р°РґР°РЅРЅРѕРіРѕ РїР°СЂР°РјРµС‚СЂРѕРј LEVDN',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(478,10,1,329,'Напряжение фазы C меньше заданного параметром LEVDN',0,NULL)
+(478,10,1,329,'РќР°РїСЂСЏР¶РµРЅРёРµ С„Р°Р·С‹ C РјРµРЅСЊС€Рµ Р·Р°РґР°РЅРЅРѕРіРѕ РїР°СЂР°РјРµС‚СЂРѕРј LEVDN',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(479,10,1,330,'Напряжение фазы А больше заданного параметром LEVUP',0,NULL)
+(479,10,1,330,'РќР°РїСЂСЏР¶РµРЅРёРµ С„Р°Р·С‹ Рђ Р±РѕР»СЊС€Рµ Р·Р°РґР°РЅРЅРѕРіРѕ РїР°СЂР°РјРµС‚СЂРѕРј LEVUP',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(480,10,1,331,'Напряжение фазы B больше заданного параметром LEVUP',0,NULL)
+(480,10,1,331,'РќР°РїСЂСЏР¶РµРЅРёРµ С„Р°Р·С‹ B Р±РѕР»СЊС€Рµ Р·Р°РґР°РЅРЅРѕРіРѕ РїР°СЂР°РјРµС‚СЂРѕРј LEVUP',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(481,10,1,332,'Напряжение фазы C больше заданного параметром LEVUP',0,NULL)
+(481,10,1,332,'РќР°РїСЂСЏР¶РµРЅРёРµ С„Р°Р·С‹ C Р±РѕР»СЊС€Рµ Р·Р°РґР°РЅРЅРѕРіРѕ РїР°СЂР°РјРµС‚СЂРѕРј LEVUP',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(482,10,1,333,'Частота сети вне диапазона от 47,5 до 52,5 Гц',0,NULL)
+(482,10,1,333,'Р§Р°СЃС‚РѕС‚Р° СЃРµС‚Рё РІРЅРµ РґРёР°РїР°Р·РѕРЅР° РѕС‚ 47,5 РґРѕ 52,5 Р“С†',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(483,10,1,334,'Очистка накопленных данных каналов вычислителя',0,NULL)
+(483,10,1,334,'РћС‡РёСЃС‚РєР° РЅР°РєРѕРїР»РµРЅРЅС‹С… РґР°РЅРЅС‹С… РєР°РЅР°Р»РѕРІ РІС‹С‡РёСЃР»РёС‚РµР»СЏ',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(484,10,1,335,'Неожиданный аппаратный сброс',0,NULL)
+(484,10,1,335,'РќРµРѕР¶РёРґР°РЅРЅС‹Р№ Р°РїРїР°СЂР°С‚РЅС‹Р№ СЃР±СЂРѕСЃ',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(485,10,1,336,'Выключение счетчика',0,NULL)
+(485,10,1,336,'Р’С‹РєР»СЋС‡РµРЅРёРµ СЃС‡РµС‚С‡РёРєР°',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(486,10,1,337,'Включение счетчика',0,NULL)
+(486,10,1,337,'Р’РєР»СЋС‡РµРЅРёРµ СЃС‡РµС‚С‡РёРєР°',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(487,11,1,338,'Фазы счетчика в норме',0,NULL)
+(487,11,1,338,'Р¤Р°Р·С‹ СЃС‡РµС‚С‡РёРєР° РІ РЅРѕСЂРјРµ',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(488,11,1,339,'Превышение напряжения фазы А',0,NULL)
+(488,11,1,339,'РџСЂРµРІС‹С€РµРЅРёРµ РЅР°РїСЂСЏР¶РµРЅРёСЏ С„Р°Р·С‹ Рђ',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(489,11,1,340,'Превышение напряжения фазы B',0,NULL)
+(489,11,1,340,'РџСЂРµРІС‹С€РµРЅРёРµ РЅР°РїСЂСЏР¶РµРЅРёСЏ С„Р°Р·С‹ B',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(490,11,1,341,'Превышение напряжения фазы C',0,NULL)
+(490,11,1,341,'РџСЂРµРІС‹С€РµРЅРёРµ РЅР°РїСЂСЏР¶РµРЅРёСЏ С„Р°Р·С‹ C',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(491,11,1,342,'Понижение напряжения фазы А',0,NULL)
+(491,11,1,342,'РџРѕРЅРёР¶РµРЅРёРµ РЅР°РїСЂСЏР¶РµРЅРёСЏ С„Р°Р·С‹ Рђ',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(492,11,1,343,'Понижение напряжения фазы B',0,NULL)
+(492,11,1,343,'РџРѕРЅРёР¶РµРЅРёРµ РЅР°РїСЂСЏР¶РµРЅРёСЏ С„Р°Р·С‹ B',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(493,11,1,344,'Понижение напряжения фазы C',0,NULL)
+(493,11,1,344,'РџРѕРЅРёР¶РµРЅРёРµ РЅР°РїСЂСЏР¶РµРЅРёСЏ С„Р°Р·С‹ C',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(494,11,1,345,'Нет напряжения фазы А',0,NULL)
+(494,11,1,345,'РќРµС‚ РЅР°РїСЂСЏР¶РµРЅРёСЏ С„Р°Р·С‹ Рђ',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(495,11,1,346,'Нет напряжения фазы B',0,NULL)
+(495,11,1,346,'РќРµС‚ РЅР°РїСЂСЏР¶РµРЅРёСЏ С„Р°Р·С‹ B',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(496,11,1,347,'Нет напряжения фазы C',0,NULL)
+(496,11,1,347,'РќРµС‚ РЅР°РїСЂСЏР¶РµРЅРёСЏ С„Р°Р·С‹ C',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(497,11,1,348,'Выключение счетчика',0,NULL)
+(497,11,1,348,'Р’С‹РєР»СЋС‡РµРЅРёРµ СЃС‡РµС‚С‡РёРєР°',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(498,11,1,349,'Состояние счетчика в норме',0,NULL)
+(498,11,1,349,'РЎРѕСЃС‚РѕСЏРЅРёРµ СЃС‡РµС‚С‡РёРєР° РІ РЅРѕСЂРјРµ',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(499,11,1,350,'Ошибка контрольной суммы калибровочных коэффициентов',0,NULL)
+(499,11,1,350,'РћС€РёР±РєР° РєРѕРЅС‚СЂРѕР»СЊРЅРѕР№ СЃСѓРјРјС‹ РєР°Р»РёР±СЂРѕРІРѕС‡РЅС‹С… РєРѕСЌС„С„РёС†РёРµРЅС‚РѕРІ',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(500,11,1,351,'Ошибка накопления энергии (суммарная)',0,NULL)
+(500,11,1,351,'РћС€РёР±РєР° РЅР°РєРѕРїР»РµРЅРёСЏ СЌРЅРµСЂРіРёРё (СЃСѓРјРјР°СЂРЅР°СЏ)',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(501,11,1,352,'Ошибка EEPROM',0,NULL)
+(501,11,1,352,'РћС€РёР±РєР° EEPROM',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(502,11,1,353,'Состояние (резерв)',0,NULL)
+(502,11,1,353,'РЎРѕСЃС‚РѕСЏРЅРёРµ (СЂРµР·РµСЂРІ)',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(503,11,1,354,'Ошибка массива <Исключительные дни>',0,NULL)
+(503,11,1,354,'РћС€РёР±РєР° РјР°СЃСЃРёРІР° <РСЃРєР»СЋС‡РёС‚РµР»СЊРЅС‹Рµ РґРЅРё>',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(504,11,1,355,'Ошибка массива <Сезонные графики>',0,NULL)
+(504,11,1,355,'РћС€РёР±РєР° РјР°СЃСЃРёРІР° <РЎРµР·РѕРЅРЅС‹Рµ РіСЂР°С„РёРєРё>',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(505,11,1,356,'Ошибка массива <Тарифные графики>',0,NULL)
+(505,11,1,356,'РћС€РёР±РєР° РјР°СЃСЃРёРІР° <РўР°СЂРёС„РЅС‹Рµ РіСЂР°С„РёРєРё>',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(506,11,1,357,'Ошибка массива <Графики дней>',0,NULL)
+(506,11,1,357,'РћС€РёР±РєР° РјР°СЃСЃРёРІР° <Р“СЂР°С„РёРєРё РґРЅРµР№>',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(507,11,1,358,'Авария питания',0,NULL)
+(507,11,1,358,'РђРІР°СЂРёСЏ РїРёС‚Р°РЅРёСЏ',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(508,11,1,359,'Разряд батарейки',0,NULL)
+(508,11,1,359,'Р Р°Р·СЂСЏРґ Р±Р°С‚Р°СЂРµР№РєРё',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(509,11,1,360,'Ошибка чтения часов',0,NULL)
+(509,11,1,360,'РћС€РёР±РєР° С‡С‚РµРЅРёСЏ С‡Р°СЃРѕРІ',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(510,11,1,361,'Последнее воскресенье месяца',0,NULL)
+(510,11,1,361,'РџРѕСЃР»РµРґРЅРµРµ РІРѕСЃРєСЂРµСЃРµРЅСЊРµ РјРµСЃСЏС†Р°',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(511,11,1,362,'Летнее время',0,NULL)
+(511,11,1,362,'Р›РµС‚РЅРµРµ РІСЂРµРјСЏ',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(512,11,1,363,'Была корректировка часов',0,NULL)
+(512,11,1,363,'Р‘С‹Р»Р° РєРѕСЂСЂРµРєС‚РёСЂРѕРІРєР° С‡Р°СЃРѕРІ',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(513,11,1,364,'Ошибка записи энергий нарастающим итогом',0,NULL)
+(513,11,1,364,'РћС€РёР±РєР° Р·Р°РїРёСЃРё СЌРЅРµСЂРіРёР№ РЅР°СЂР°СЃС‚Р°СЋС‰РёРј РёС‚РѕРіРѕРј',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(514,12,1,365,'Фаза А-(1)',0,NULL)
+(514,12,1,365,'Р¤Р°Р·Р° Рђ-(1)',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(515,12,1,366,'Фаза А-(0)',0,NULL)
+(515,12,1,366,'Р¤Р°Р·Р° Рђ-(0)',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(516,12,1,367,'Фаза B-(1)',0,NULL)
+(516,12,1,367,'Р¤Р°Р·Р° B-(1)',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(517,12,1,368,'Фаза B-(0)',0,NULL)
+(517,12,1,368,'Р¤Р°Р·Р° B-(0)',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(518,12,1,369,'Фаза C-(1)',0,NULL)
+(518,12,1,369,'Р¤Р°Р·Р° C-(1)',0,NULL)
 ;
 INSERT INTO METEREVENTSDICT
 ("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")
 VALUES
-(519,12,1,370,'Фаза C-(0)',0,NULL)
+(519,12,1,370,'Р¤Р°Р·Р° C-(0)',0,NULL)
 ;
 INSERT INTO METERSTATUSBITDICT
 ("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1")
 VALUES
-(3,0,'Регистрация фатальной ошибки',NULL,NULL)
+(3,0,'Р РµРіРёСЃС‚СЂР°С†РёСЏ С„Р°С‚Р°Р»СЊРЅРѕР№ РѕС€РёР±РєРё',NULL,NULL)
 ;
 INSERT INTO METERSTATUSBITDICT
 ("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1")
 VALUES
-(3,1,'Резерв питания календарных часов исчерпан (некорр. время)',NULL,NULL)
+(3,1,'Р РµР·РµСЂРІ РїРёС‚Р°РЅРёСЏ РєР°Р»РµРЅРґР°СЂРЅС‹С… С‡Р°СЃРѕРІ РёСЃС‡РµСЂРїР°РЅ (РЅРµРєРѕСЂСЂ. РІСЂРµРјСЏ)',NULL,NULL)
 ;
 INSERT INTO METERSTATUSBITDICT
 ("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1")
 VALUES
-(3,2,'Неполное измерение, интеграционный период слишком мал',NULL,NULL)
+(3,2,'РќРµРїРѕР»РЅРѕРµ РёР·РјРµСЂРµРЅРёРµ, РёРЅС‚РµРіСЂР°С†РёРѕРЅРЅС‹Р№ РїРµСЂРёРѕРґ СЃР»РёС€РєРѕРј РјР°Р»',NULL,NULL)
 ;
 INSERT INTO METERSTATUSBITDICT
 ("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1")
 VALUES
-(3,3,'Лето или зима (1 = лето, 0 = зима)',149,155)
+(3,3,'Р›РµС‚Рѕ РёР»Рё Р·РёРјР° (1 = Р»РµС‚Рѕ, 0 = Р·РёРјР°)',149,155)
 ;
 INSERT INTO METERSTATUSBITDICT
 ("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1")
 VALUES
-(3,4,'Выполнен сброс',162,150)
+(3,4,'Р’С‹РїРѕР»РЅРµРЅ СЃР±СЂРѕСЃ',162,150)
 ;
 INSERT INTO METERSTATUSBITDICT
 ("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1")
 VALUES
-(3,5,'Изменено время;дата',NULL,NULL)
+(3,5,'РР·РјРµРЅРµРЅРѕ РІСЂРµРјСЏ;РґР°С‚Р°',NULL,NULL)
 ;
 INSERT INTO METERSTATUSBITDICT
 ("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1")
 VALUES
-(3,6,'Восстановление напряжения',NULL,NULL)
+(3,6,'Р’РѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ РЅР°РїСЂСЏР¶РµРЅРёСЏ',NULL,NULL)
 ;
 INSERT INTO METERSTATUSBITDICT
 ("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1")
 VALUES
-(3,7,'Провал напряжения (по 3 фазам)',NULL,NULL)
+(3,7,'РџСЂРѕРІР°Р» РЅР°РїСЂСЏР¶РµРЅРёСЏ (РїРѕ 3 С„Р°Р·Р°Рј)',NULL,NULL)
 ;
 INSERT INTO METERSTATUSBITDICT
 ("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1")
 VALUES
-(3,8,'не используется',NULL,NULL)
+(3,8,'РЅРµ РёСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ',NULL,NULL)
 ;
 INSERT INTO METERSTATUSBITDICT
 ("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1")
 VALUES
-(3,9,'не используется',NULL,NULL)
+(3,9,'РЅРµ РёСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ',NULL,NULL)
 ;
 INSERT INTO METERSTATUSBITDICT
 ("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1")
 VALUES
-(3,10,'не используется',NULL,NULL)
+(3,10,'РЅРµ РёСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ',NULL,NULL)
 ;
 INSERT INTO METERSTATUSBITDICT
 ("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1")
 VALUES
-(3,11,'не используется',NULL,NULL)
+(3,11,'РЅРµ РёСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ',NULL,NULL)
 ;
 INSERT INTO METERSTATUSBITDICT
 ("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1")
 VALUES
-(3,12,'не используется',NULL,NULL)
+(3,12,'РЅРµ РёСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ',NULL,NULL)
 ;
 INSERT INTO METERSTATUSBITDICT
 ("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1")
 VALUES
-(3,13,'Список событий полностью удален',NULL,NULL)
+(3,13,'РЎРїРёСЃРѕРє СЃРѕР±С‹С‚РёР№ РїРѕР»РЅРѕСЃС‚СЊСЋ СѓРґР°Р»РµРЅ',NULL,NULL)
 ;
 INSERT INTO METERSTATUSBITDICT
 ("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1")
 VALUES
-(3,14,'Память профиля данных полностью обнулена',NULL,NULL)
+(3,14,'РџР°РјСЏС‚СЊ РїСЂРѕС„РёР»СЏ РґР°РЅРЅС‹С… РїРѕР»РЅРѕСЃС‚СЊСЋ РѕР±РЅСѓР»РµРЅР°',NULL,NULL)
 ;
 INSERT INTO METERSTATUSBITDICT
 ("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1")
 VALUES
-(3,15,'Запись статусного сообщения перед последним изменением времени',NULL,NULL)
+(3,15,'Р—Р°РїРёСЃСЊ СЃС‚Р°С‚СѓСЃРЅРѕРіРѕ СЃРѕРѕР±С‰РµРЅРёСЏ РїРµСЂРµРґ РїРѕСЃР»РµРґРЅРёРј РёР·РјРµРЅРµРЅРёРµРј РІСЂРµРјРµРЅРё',NULL,NULL)
 ;
 INSERT INTO METERSTATUSBITDICT
 ("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1")
 VALUES
-(3,16,'зарезервировано',NULL,NULL)
+(3,16,'Р·Р°СЂРµР·РµСЂРІРёСЂРѕРІР°РЅРѕ',NULL,NULL)
 ;
 INSERT INTO METERSTATUSBITDICT
 ("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1")
 VALUES
-(3,17,'зарезервировано',NULL,NULL)
+(3,17,'Р·Р°СЂРµР·РµСЂРІРёСЂРѕРІР°РЅРѕ',NULL,NULL)
 ;
 INSERT INTO METERSTATUSBITDICT
 ("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1")
 VALUES
-(3,18,'зарезервировано',NULL,NULL)
+(3,18,'Р·Р°СЂРµР·РµСЂРІРёСЂРѕРІР°РЅРѕ',NULL,NULL)
 ;
 INSERT INTO METERSTATUSBITDICT
 ("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1")
 VALUES
-(3,19,'Старт интеграционного периода (SOI - начало интервала)',NULL,NULL)
+(3,19,'РЎС‚Р°СЂС‚ РёРЅС‚РµРіСЂР°С†РёРѕРЅРЅРѕРіРѕ РїРµСЂРёРѕРґР° (SOI - РЅР°С‡Р°Р»Рѕ РёРЅС‚РµСЂРІР°Р»Р°)',NULL,NULL)
 ;
 INSERT INTO METERSTATUSBITDICT
 ("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1")
 VALUES
-(3,20,'Конец интеграционного периода при изменении тарифа (EOI - окончание интервала)',NULL,NULL)
+(3,20,'РљРѕРЅРµС† РёРЅС‚РµРіСЂР°С†РёРѕРЅРЅРѕРіРѕ РїРµСЂРёРѕРґР° РїСЂРё РёР·РјРµРЅРµРЅРёРё С‚Р°СЂРёС„Р° (EOI - РѕРєРѕРЅС‡Р°РЅРёРµ РёРЅС‚РµСЂРІР°Р»Р°)',NULL,NULL)
 ;
 INSERT INTO METERSTATUSBITDICT
 ("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1")
 VALUES
-(3,21,'Преждевременное окончание интеграционного периода (например, при изменении времени)',NULL,NULL)
+(3,21,'РџСЂРµР¶РґРµРІСЂРµРјРµРЅРЅРѕРµ РѕРєРѕРЅС‡Р°РЅРёРµ РёРЅС‚РµРіСЂР°С†РёРѕРЅРЅРѕРіРѕ РїРµСЂРёРѕРґР° (РЅР°РїСЂРёРјРµСЂ, РїСЂРё РёР·РјРµРЅРµРЅРёРё РІСЂРµРјРµРЅРё)',NULL,NULL)
 ;
 INSERT INTO METERSTATUSBITDICT
 ("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1")
 VALUES
-(3,22,'Интеграционный период окончен по внешнему управляющему сигналу',NULL,NULL)
+(3,22,'РРЅС‚РµРіСЂР°С†РёРѕРЅРЅС‹Р№ РїРµСЂРёРѕРґ РѕРєРѕРЅС‡РµРЅ РїРѕ РІРЅРµС€РЅРµРјСѓ СѓРїСЂР°РІР»СЏСЋС‰РµРјСѓ СЃРёРіРЅР°Р»Сѓ',NULL,NULL)
 ;
 INSERT INTO METERSTATUSBITDICT
 ("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1")
 VALUES
-(3,23,'Интеграционный период окончен по внутреннему управляющему сигналу',NULL,NULL)
+(3,23,'РРЅС‚РµРіСЂР°С†РёРѕРЅРЅС‹Р№ РїРµСЂРёРѕРґ РѕРєРѕРЅС‡РµРЅ РїРѕ РІРЅСѓС‚СЂРµРЅРЅРµРјСѓ СѓРїСЂР°РІР»СЏСЋС‰РµРјСѓ СЃРёРіРЅР°Р»Сѓ',NULL,NULL)
 ;
 INSERT INTO METERSTATUSBITDICT
 ("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1")
@@ -19012,19 +19012,19 @@ create table FILTERS  (
 );
 
 comment on table FILTERS is
-'Фильтр';
+'Р¤РёР»СЊС‚СЂ';
 
 comment on column FILTERS.NID is
-'Ид папки';
+'РРґ РїР°РїРєРё';
 
 comment on column FILTERS.NPARENT is
-'Родитель';
+'Р РѕРґРёС‚РµР»СЊ';
 
 comment on column FILTERS.VNAME is
-'Наименование';
+'РќР°РёРјРµРЅРѕРІР°РЅРёРµ';
 
 comment on column FILTERS.NEVENT is
-'Событие';
+'РЎРѕР±С‹С‚РёРµ';
 
 /*==============================================================*/
 /* Index: FILTERS_IDX1                                          */
@@ -19064,31 +19064,31 @@ create table TIMEZONES  (
 );
 
 comment on table TIMEZONES is
-'Часовые пояса';
+'Р§Р°СЃРѕРІС‹Рµ РїРѕСЏСЃР°';
 
 comment on column TIMEZONES.NID is
-'Ид часового пояса';
+'РРґ С‡Р°СЃРѕРІРѕРіРѕ РїРѕСЏСЃР°';
 
 comment on column TIMEZONES.VNAME is
-'Наименование';
+'РќР°РёРјРµРЅРѕРІР°РЅРёРµ';
 
 comment on column TIMEZONES.NSHIFT is
-'Сдвиг относ Украины';
+'РЎРґРІРёРі РѕС‚РЅРѕСЃ РЈРєСЂР°РёРЅС‹';
 
 comment on column TIMEZONES.DSUMMER is
-'Переход на лето';
+'РџРµСЂРµС…РѕРґ РЅР° Р»РµС‚Рѕ';
 
 begin
-insert into TIMEZONES  (NID,VNAME,NSHIFT,DSUMMER) values(1,'(GMT+02:00) Украина',0,to_date('29.03.2008 03:00','dd.mm.yyyy hh24:mi'));
-insert into TIMEZONES  (NID,VNAME,NSHIFT,DSUMMER) values(2,'(GMT+01:00) Среднеевропейское время',-1,to_date('29.03.2008 02:00','dd.mm.yyyy hh24:mi'));
-insert into TIMEZONES  (NID,VNAME,NSHIFT,DSUMMER) values(3,'(GMT+03:00) Россия',1,to_date('29.03.2008 02:00','dd.mm.yyyy hh24:mi'));
+insert into TIMEZONES  (NID,VNAME,NSHIFT,DSUMMER) values(1,'(GMT+02:00) РЈРєСЂР°РёРЅР°',0,to_date('29.03.2008 03:00','dd.mm.yyyy hh24:mi'));
+insert into TIMEZONES  (NID,VNAME,NSHIFT,DSUMMER) values(2,'(GMT+01:00) РЎСЂРµРґРЅРµРµРІСЂРѕРїРµР№СЃРєРѕРµ РІСЂРµРјСЏ',-1,to_date('29.03.2008 02:00','dd.mm.yyyy hh24:mi'));
+insert into TIMEZONES  (NID,VNAME,NSHIFT,DSUMMER) values(3,'(GMT+03:00) Р РѕСЃСЃРёСЏ',1,to_date('29.03.2008 02:00','dd.mm.yyyy hh24:mi'));
 commit;
 end;
 /
 
 
 begin
-INSERT INTO points(MID,PARENT,COD,IND,NAME,SHORT_NAME,PTYPE,IMPLEMENT_DATE,TAG,NPOINT) VALUES(5,NULL,NULL,1,'Подсистема единого времени','',NULL,'',NULL,NULL);
+INSERT INTO points(MID,PARENT,COD,IND,NAME,SHORT_NAME,PTYPE,IMPLEMENT_DATE,TAG,NPOINT) VALUES(5,NULL,NULL,1,'РџРѕРґСЃРёСЃС‚РµРјР° РµРґРёРЅРѕРіРѕ РІСЂРµРјРµРЅРё','',NULL,'',NULL,NULL);
 commit;
 end;
 /
@@ -19098,7 +19098,7 @@ begin
 INSERT INTO tasks
 (TASK_ID,PARENT,TASK_COD,NAME,REMARK,NSHOW)
 VALUES
-(99,80,657,'9.05 Настройка фильтров сообщений','9.05 Настройка фильтров сообщений',0);
+(99,80,657,'9.05 РќР°СЃС‚СЂРѕР№РєР° С„РёР»СЊС‚СЂРѕРІ СЃРѕРѕР±С‰РµРЅРёР№','9.05 РќР°СЃС‚СЂРѕР№РєР° С„РёР»СЊС‚СЂРѕРІ СЃРѕРѕР±С‰РµРЅРёР№',0);
 insert into role_task
 select distinct ROLE_ID,99,1 from users;
 commit;
@@ -19135,7 +19135,7 @@ alter table LAST_SAVE  add(
 );
 
 comment on column LAST_SAVE.JOURNAL is
-'Журнал событий';
+'Р–СѓСЂРЅР°Р» СЃРѕР±С‹С‚РёР№';
 
 update last_save set JOURNAL=sysdate-370 where JOURNAL is null;
 
@@ -19147,7 +19147,7 @@ ALTER TABLE ADDPOINTPARAMVAL MODIFY (VVALUE NULL);
 alter table ADDPOINTPARAMVAL  add(   BVALUE               BLOB);
 
 comment on column ADDPOINTPARAMVAL.BVALUE is
-'Значение BLOB';
+'Р—РЅР°С‡РµРЅРёРµ BLOB';
 
 
 /*==============================================================*/
@@ -19162,16 +19162,16 @@ create table ADDFORMPARAM  (
 );
 
 comment on table ADDFORMPARAM is
-'Доп параметры формы';
+'Р”РѕРї РїР°СЂР°РјРµС‚СЂС‹ С„РѕСЂРјС‹';
 
 comment on column ADDFORMPARAM.NSORT is
-'Номер аттрибута';
+'РќРѕРјРµСЂ Р°С‚С‚СЂРёР±СѓС‚Р°';
 
 comment on column ADDFORMPARAM.VDESCR is
-'Описание';
+'РћРїРёСЃР°РЅРёРµ';
 
 comment on column ADDFORMPARAM.NTYPE is
-'Тип аттрибута';
+'РўРёРї Р°С‚С‚СЂРёР±СѓС‚Р°';
 
 /*==============================================================*/
 /* Index: ADDPOINTPARAM_IDX2                                    */
@@ -19193,19 +19193,19 @@ create table ADDFORMPARAMVAL  (
 );
 
 comment on table ADDFORMPARAMVAL is
-'Значения доп пар формы';
+'Р—РЅР°С‡РµРЅРёСЏ РґРѕРї РїР°СЂ С„РѕСЂРјС‹';
 
 comment on column ADDFORMPARAMVAL.MID is
-'Ид формы';
+'РРґ С„РѕСЂРјС‹';
 
 comment on column ADDFORMPARAMVAL.NSORT is
-'Номер аттрибута';
+'РќРѕРјРµСЂ Р°С‚С‚СЂРёР±СѓС‚Р°';
 
 comment on column ADDFORMPARAMVAL.VVALUE is
-'Значение';
+'Р—РЅР°С‡РµРЅРёРµ';
 
 comment on column ADDFORMPARAMVAL.BVALUE is
-'Значение BLOB';
+'Р—РЅР°С‡РµРЅРёРµ BLOB';
 
 /*==============================================================*/
 /* Index: ADDFORMPARAMVAL_IDX2                                  */
@@ -19227,10 +19227,10 @@ alter table ADDFORMPARAMVAL
 
 
 begin
-insert into ADDFORMPARAM(NSORT,VDESCR,NTYPE) values(-1,'Блокировать вывод заголовка таблицы',1);
-insert into ADDFORMPARAM(NSORT,VDESCR,NTYPE) values(-2,'Блокировать вывод даты флрмирования',1);
-insert into ADDFORMPARAM(NSORT,VDESCR,NTYPE) values(-3,'Шаблон заголовка отчета (rtf-файл)',7);
-insert into ADDFORMPARAM(NSORT,VDESCR,NTYPE) values(-4,'Шаблон итогов отчета (rtf-файл)',7);
+insert into ADDFORMPARAM(NSORT,VDESCR,NTYPE) values(-1,'Р‘Р»РѕРєРёСЂРѕРІР°С‚СЊ РІС‹РІРѕРґ Р·Р°РіРѕР»РѕРІРєР° С‚Р°Р±Р»РёС†С‹',1);
+insert into ADDFORMPARAM(NSORT,VDESCR,NTYPE) values(-2,'Р‘Р»РѕРєРёСЂРѕРІР°С‚СЊ РІС‹РІРѕРґ РґР°С‚С‹ С„Р»СЂРјРёСЂРѕРІР°РЅРёСЏ',1);
+insert into ADDFORMPARAM(NSORT,VDESCR,NTYPE) values(-3,'РЁР°Р±Р»РѕРЅ Р·Р°РіРѕР»РѕРІРєР° РѕС‚С‡РµС‚Р° (rtf-С„Р°Р№Р»)',7);
+insert into ADDFORMPARAM(NSORT,VDESCR,NTYPE) values(-4,'РЁР°Р±Р»РѕРЅ РёС‚РѕРіРѕРІ РѕС‚С‡РµС‚Р° (rtf-С„Р°Р№Р»)',7);
 commit;
 end;
 /
@@ -19248,16 +19248,16 @@ create table BASEFORMULA  (
 );
 
 comment on table BASEFORMULA is
-'Базовые формулы';
+'Р‘Р°Р·РѕРІС‹Рµ С„РѕСЂРјСѓР»С‹';
 
 comment on column BASEFORMULA.NID is
-'Ид формулы';
+'РРґ С„РѕСЂРјСѓР»С‹';
 
 comment on column BASEFORMULA.VNAME is
-'Название';
+'РќР°Р·РІР°РЅРёРµ';
 
 comment on column BASEFORMULA.VVALUE is
-'Формула';
+'Р¤РѕСЂРјСѓР»Р°';
 
 /*==============================================================*/
 /* Index: BASEFORMULA_IDX1                                      */
@@ -19277,16 +19277,16 @@ create table BASEFUNCTION  (
 );
 
 comment on table BASEFUNCTION is
-'Базовые функции';
+'Р‘Р°Р·РѕРІС‹Рµ С„СѓРЅРєС†РёРё';
 
 comment on column BASEFUNCTION.NID is
-'Ид функции';
+'РРґ С„СѓРЅРєС†РёРё';
 
 comment on column BASEFUNCTION.VNAME is
-'Название';
+'РќР°Р·РІР°РЅРёРµ';
 
 comment on column BASEFUNCTION.VVALUE is
-'Функция';
+'Р¤СѓРЅРєС†РёСЏ';
 
 /*==============================================================*/
 /* Index: BASEFUNCTION_IDX1                                     */
@@ -19320,7 +19320,7 @@ ER_MTRSN,    ER_KC,    ERM,    ER,    AERM,    AER,    BERM,    BER,    CERM,   
  FROM RYDA.BILLOLD WHERE NEXCEPTCALC IS NULL and nsource>0
 /
 
-COMMENT ON TABLE bill IS 'Реальные суточные измерения'
+COMMENT ON TABLE bill IS 'Р РµР°Р»СЊРЅС‹Рµ СЃСѓС‚РѕС‡РЅС‹Рµ РёР·РјРµСЂРµРЅРёСЏ'
 /
 
 CREATE OR REPLACE VIEW bill_for_term (   date_time,   p1name,   p2name,   mid,   er,   q1,   ed,   q3,   q2,   q4,   erm,   q1m,   edm,   q3m,   q2m,   q4m,
@@ -19362,7 +19362,7 @@ ER_MTRSN,    ER_KC,    ERM,    ER,    AERM,    AER,    BERM,    BER,    CERM,   
  FROM RYDA.BILLOLD WHERE NEXCEPTCALC IS NULL and nsource<0
 /
 
-COMMENT ON TABLE bill_ol IS 'Реальные суточные измерения только потери'
+COMMENT ON TABLE bill_ol IS 'Р РµР°Р»СЊРЅС‹Рµ СЃСѓС‚РѕС‡РЅС‹Рµ РёР·РјРµСЂРµРЅРёСЏ С‚РѕР»СЊРєРѕ РїРѕС‚РµСЂРё'
 /
 
 CREATE OR REPLACE VIEW billevid (   mid,   date_time,   valid,   source,   remark,   
@@ -19436,7 +19436,7 @@ alter table PROFILE  add(
 );
 
 comment on column PROFILE.VQM is
-'Метка качества';
+'РњРµС‚РєР° РєР°С‡РµСЃС‚РІР°';
 
 CREATE OR REPLACE VIEW profileevid (   mid,   date_time,   er,   q1,   ed,  q3,   q2,   q4,   freq,   cosf,   volt,   currento,   volt2,   volt3,   curr2,   curr3,   erm,   q1m,   edm,   q3m,   q2m,   q4m,   denter,   nsource,vqm )
 AS 
@@ -19444,7 +19444,7 @@ SELECT    MID,    DATE_TIME,    ER,    Q1,    ED,    Q3,    Q2,    Q4,    FREQ, 
 FROM RYDA.PROFILE
 /
 
-insert into ADDFORMPARAM(NSORT,VDESCR,NTYPE) values(-5,'Блокировать вывод итоговых строк',1);
+insert into ADDFORMPARAM(NSORT,VDESCR,NTYPE) values(-5,'Р‘Р»РѕРєРёСЂРѕРІР°С‚СЊ РІС‹РІРѕРґ РёС‚РѕРіРѕРІС‹С… СЃС‚СЂРѕРє',1);
 commit;
 
 grant update on addpointparamval to askue_work;
@@ -19457,10 +19457,10 @@ alter table HALFHOURTMP  add(
 );
 
 comment on column HALFHOURTMP.VQM is
-'Метка качества';
+'РњРµС‚РєР° РєР°С‡РµСЃС‚РІР°';
 
 comment on column HALFHOURTMP.NMETERTYPE is
-'Тип счетчика';
+'РўРёРї СЃС‡РµС‚С‡РёРєР°';
 
 create index HALFHOURTMP_IDX1 on HALFHOURTMP (
    NMETERTYPE ASC
@@ -19478,7 +19478,7 @@ alter table HALFHOUROLD  add(
 );
 
 comment on column HALFHOUROLD.NMETERTYPE is
-'Тип счетчика';
+'РўРёРї СЃС‡РµС‚С‡РёРєР°';
 
 create index HALFHOUROLD_IDX3 on HALFHOUROLD (
    NMETERTYPE ASC   
@@ -19516,14 +19516,14 @@ alter table HALFHOURTMP drop column Q61850;
 */
 
 begin
-INSERT INTO metertype("NMETERTYPE","VNAME")VALUES(20,'ИТЕК-210');
+INSERT INTO metertype("NMETERTYPE","VNAME")VALUES(20,'РРўР•Рљ-210');
 commit;
 end;
 /
 
 
 begin
-INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (0,'Примечание о работе счетчика',0);
+INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (0,'РџСЂРёРјРµС‡Р°РЅРёРµ Рѕ СЂР°Р±РѕС‚Рµ СЃС‡РµС‚С‡РёРєР°',0);
 commit;
 exception
     when others then null;
@@ -19746,7 +19746,7 @@ BEGIN
 END;
 /
 ----------------------------------------------------------------------------------------------
---         VER 2.27.1  (Для обновления версии 2.27 до текущей скрипт запускать отсюда)        --
+--         VER 2.27.1  (Р”Р»СЏ РѕР±РЅРѕРІР»РµРЅРёСЏ РІРµСЂСЃРёРё 2.27 РґРѕ С‚РµРєСѓС‰РµР№ СЃРєСЂРёРїС‚ Р·Р°РїСѓСЃРєР°С‚СЊ РѕС‚СЃСЋРґР°)        --
 ----------------------------------------------------------------------------------------------
 --16.10.2008
 
@@ -19765,13 +19765,13 @@ END;
 
 begin
 INSERT INTO metertype("NMETERTYPE","VNAME")VALUES(14,'LG ZxB');
-INSERT INTO metertype("NMETERTYPE","VNAME")VALUES(15,'Энергия  упрощенная');
-INSERT INTO metertype("NMETERTYPE","VNAME")VALUES(16,'Макет');
-INSERT INTO metertype("NMETERTYPE","VNAME")VALUES(17,'Альфа');
-INSERT INTO metertype("NMETERTYPE","VNAME")VALUES(18,'Метком');
+INSERT INTO metertype("NMETERTYPE","VNAME")VALUES(15,'Р­РЅРµСЂРіРёСЏ  СѓРїСЂРѕС‰РµРЅРЅР°СЏ');
+INSERT INTO metertype("NMETERTYPE","VNAME")VALUES(16,'РњР°РєРµС‚');
+INSERT INTO metertype("NMETERTYPE","VNAME")VALUES(17,'РђР»СЊС„Р°');
+INSERT INTO metertype("NMETERTYPE","VNAME")VALUES(18,'РњРµС‚РєРѕРј');
 INSERT INTO metertype("NMETERTYPE","VNAME")VALUES(19,'RTU');
-INSERT INTO metertype("NMETERTYPE","VNAME")VALUES(21,'Облик');
-INSERT INTO metertype("NMETERTYPE","VNAME")VALUES(22,'Меркурий');
+INSERT INTO metertype("NMETERTYPE","VNAME")VALUES(21,'РћР±Р»РёРє');
+INSERT INTO metertype("NMETERTYPE","VNAME")VALUES(22,'РњРµСЂРєСѓСЂРёР№');
 commit;
 exception when others then null;
 end;
@@ -19816,25 +19816,25 @@ create table BASEFORMULA  (
 );
 
 comment on table BASEFORMULA is
-'Базовые формулы';
+'Р‘Р°Р·РѕРІС‹Рµ С„РѕСЂРјСѓР»С‹';
 
 comment on column BASEFORMULA.NID is
-'Ид формулы';
+'РРґ С„РѕСЂРјСѓР»С‹';
 
 comment on column BASEFORMULA.NPARENT is
-'Ид родителя';
+'РРґ СЂРѕРґРёС‚РµР»СЏ';
 
 comment on column BASEFORMULA.NTYPE is
-'Тип';
+'РўРёРї';
 
 comment on column BASEFORMULA.VNAME is
-'Название';
+'РќР°Р·РІР°РЅРёРµ';
 
 comment on column BASEFORMULA.VFORMULA is
-'Формула';
+'Р¤РѕСЂРјСѓР»Р°';
 
 comment on column BASEFORMULA.VMEMO is
-'Примечание';
+'РџСЂРёРјРµС‡Р°РЅРёРµ';
 
 /*==============================================================*/
 /* Index: BASEFORMULA_IDX1                                      */
@@ -19862,22 +19862,22 @@ create table BASEFORMULPARAMS  (
 );
 
 comment on table BASEFORMULPARAMS is
-'Параметры базовой формулы';
+'РџР°СЂР°РјРµС‚СЂС‹ Р±Р°Р·РѕРІРѕР№ С„РѕСЂРјСѓР»С‹';
 
 comment on column BASEFORMULPARAMS.NID is
-'Ид формулы';
+'РРґ С„РѕСЂРјСѓР»С‹';
 
 comment on column BASEFORMULPARAMS.NORDER is
-'Порядок';
+'РџРѕСЂСЏРґРѕРє';
 
 comment on column BASEFORMULPARAMS.VNAME is
-'Обозначение';
+'РћР±РѕР·РЅР°С‡РµРЅРёРµ';
 
 comment on column BASEFORMULPARAMS.VPARAM is
-'Параметр';
+'РџР°СЂР°РјРµС‚СЂ';
 
 comment on column BASEFORMULPARAMS.VMEMO is
-'Назначение';
+'РќР°Р·РЅР°С‡РµРЅРёРµ';
 
 alter table BASEFORMULPARAMS
    add constraint BASEFORMULPARAMS_F1 foreign key (NID)
@@ -19900,25 +19900,25 @@ create table POINTFORMULA  (
 );
 
 comment on table POINTFORMULA is
-'Дорасчетные формулы';
+'Р”РѕСЂР°СЃС‡РµС‚РЅС‹Рµ С„РѕСЂРјСѓР»С‹';
 
 comment on column POINTFORMULA.NID is
-'Ид формулы';
+'РРґ С„РѕСЂРјСѓР»С‹';
 
 comment on column POINTFORMULA.MID is
-'Ид точки';
+'РРґ С‚РѕС‡РєРё';
 
 comment on column POINTFORMULA.NMEAS is
-'Тип измерения';
+'РўРёРї РёР·РјРµСЂРµРЅРёСЏ';
 
 comment on column POINTFORMULA.VFORMULA is
-'Формула';
+'Р¤РѕСЂРјСѓР»Р°';
 
 comment on column POINTFORMULA.VMEMO is
-'Примечание';
+'РџСЂРёРјРµС‡Р°РЅРёРµ';
 
 comment on column POINTFORMULA.NORDER is
-'Порядок';
+'РџРѕСЂСЏРґРѕРє';
 
 /*==============================================================*/
 /* Index: POINTFORMULA_IDX1                                     */
@@ -19952,22 +19952,22 @@ create table FORMULPARAMS  (
 );
 
 comment on table FORMULPARAMS is
-'Параметры формулы';
+'РџР°СЂР°РјРµС‚СЂС‹ С„РѕСЂРјСѓР»С‹';
 
 comment on column FORMULPARAMS.NID is
-'Ид формулы';
+'РРґ С„РѕСЂРјСѓР»С‹';
 
 comment on column FORMULPARAMS.NORDER is
-'Порядок';
+'РџРѕСЂСЏРґРѕРє';
 
 comment on column FORMULPARAMS.VNAME is
-'Обозначение';
+'РћР±РѕР·РЅР°С‡РµРЅРёРµ';
 
 comment on column FORMULPARAMS.VPARAM is
-'Параметр';
+'РџР°СЂР°РјРµС‚СЂ';
 
 comment on column FORMULPARAMS.VMEMO is
-'Назначение';
+'РќР°Р·РЅР°С‡РµРЅРёРµ';
 
 alter table FORMULPARAMS
    add constraint FORMULPARAMS_F1 foreign key (NID)
@@ -19981,66 +19981,66 @@ ln_2 NUMBER;
 begin
 select points_seq.NEXTVAL into ln_1 from dual;
 select points_seq.NEXTVAL into ln_2 from dual;
-insert into BASEFORMULA(nid,nparent,ntype,vname,vformula,vmemo) values(ln_1,NULL,0,'Базовые формулы','','В данной папке содержатся базовые формулы');
-insert into BASEFORMULA(nid,nparent,ntype,vname,vformula,vmemo) values(points_seq.NEXTVAL,ln_1,0,'Расчет потерь в двухобмоточном тр-ре','if(Pf>Pxx, (sqrt(Pf^2+Qf^2)/Sn)^2*Pkz, if ((Pf>0)&(Pf<=Pxx), Pxx, 0))','Формула расчета потерь в двухобмоточном тр-ре');
-insert into BASEFORMULA(nid,nparent,ntype,vname,vformula,vmemo) values(ln_2,NULL,0,'Базовые функции','','В данной папке содержатся базовые функции');
-insert into BASEFORMULA(nid,nparent,ntype,vname,vformula,vmemo) values(points_seq.NEXTVAL,ln_2,0,'модуль (абсолютное значение)','abs','');
-insert into BASEFORMULA(nid,nparent,ntype,vname,vformula,vmemo) values(points_seq.NEXTVAL,ln_2,0,'арккосинус','acos','');
-insert into BASEFORMULA(nid,nparent,ntype,vname,vformula,vmemo) values(points_seq.NEXTVAL,ln_2,0,'арксинус','asin','');
-insert into BASEFORMULA(nid,nparent,ntype,vname,vformula,vmemo) values(points_seq.NEXTVAL,ln_2,0,'арктангенс','atan','');
-insert into BASEFORMULA(nid,nparent,ntype,vname,vformula,vmemo) values(points_seq.NEXTVAL,ln_2,0,'среднее','avg','');
-insert into BASEFORMULA(nid,nparent,ntype,vname,vformula,vmemo) values(points_seq.NEXTVAL,ln_2,0,'преобразование двоичного формата в десятичный','bin','');
-insert into BASEFORMULA(nid,nparent,ntype,vname,vformula,vmemo) values(points_seq.NEXTVAL,ln_2,0,'округление в бОльшую сторону','ceil','');
-insert into BASEFORMULA(nid,nparent,ntype,vname,vformula,vmemo) values(points_seq.NEXTVAL,ln_2,0,'косинус','cos','');
-insert into BASEFORMULA(nid,nparent,ntype,vname,vformula,vmemo) values(points_seq.NEXTVAL,ln_2,0,'гиперболический косинус','cosh','');
-insert into BASEFORMULA(nid,nparent,ntype,vname,vformula,vmemo) values(points_seq.NEXTVAL,ln_2,0,'дата date(y,m,d)','date','');
-insert into BASEFORMULA(nid,nparent,ntype,vname,vformula,vmemo) values(points_seq.NEXTVAL,ln_2,0,'преобразование текстового представления даты в численное','datevalue','');
-insert into BASEFORMULA(nid,nparent,ntype,vname,vformula,vmemo) values(points_seq.NEXTVAL,ln_2,0,'факториал','fact','');
-insert into BASEFORMULA(nid,nparent,ntype,vname,vformula,vmemo) values(points_seq.NEXTVAL,ln_2,0,'округление в меньшую сторону','floor','');
-insert into BASEFORMULA(nid,nparent,ntype,vname,vformula,vmemo) values(points_seq.NEXTVAL,ln_2,0,'преобразование 16-ричного числа в десятиричное','hex','');
-insert into BASEFORMULA(nid,nparent,ntype,vname,vformula,vmemo) values(points_seq.NEXTVAL,ln_2,0,'условие if(условие, выраж_истина, выраж_ложь) )','if','');
-insert into BASEFORMULA(nid,nparent,ntype,vname,vformula,vmemo) values(points_seq.NEXTVAL,ln_2,0,'возвращает 1 если число определено, если число NaN, то возвращает 0','isFinite','');
-insert into BASEFORMULA(nid,nparent,ntype,vname,vformula,vmemo) values(points_seq.NEXTVAL,ln_2,0,'возвращает 1 если число равно NaN, иначе 0','isNaN','');
-insert into BASEFORMULA(nid,nparent,ntype,vname,vformula,vmemo) values(points_seq.NEXTVAL,ln_2,0,'натуральный логарифм','log','');
-insert into BASEFORMULA(nid,nparent,ntype,vname,vformula,vmemo) values(points_seq.NEXTVAL,ln_2,0,'десятичный логарифм','log10','');
-insert into BASEFORMULA(nid,nparent,ntype,vname,vformula,vmemo) values(points_seq.NEXTVAL,ln_2,0,'максимум','max','');
-insert into BASEFORMULA(nid,nparent,ntype,vname,vformula,vmemo) values(points_seq.NEXTVAL,ln_2,0,'минимум','min','');
-insert into BASEFORMULA(nid,nparent,ntype,vname,vformula,vmemo) values(points_seq.NEXTVAL,ln_2,0,'возвращает сегдняшнюю дату','nowdate','');
-insert into BASEFORMULA(nid,nparent,ntype,vname,vformula,vmemo) values(points_seq.NEXTVAL,ln_2,0,'возвращает текущее время','nowtime','');
-insert into BASEFORMULA(nid,nparent,ntype,vname,vformula,vmemo) values(points_seq.NEXTVAL,ln_2,0,'случайное число rand(min, max)','rand','');
-insert into BASEFORMULA(nid,nparent,ntype,vname,vformula,vmemo) values(points_seq.NEXTVAL,ln_2,0,'синус','sin','');
-insert into BASEFORMULA(nid,nparent,ntype,vname,vformula,vmemo) values(points_seq.NEXTVAL,ln_2,0,'гиперболический синус','sinh','');
-insert into BASEFORMULA(nid,nparent,ntype,vname,vformula,vmemo) values(points_seq.NEXTVAL,ln_2,0,'вычисление выражения','solve','');
-insert into BASEFORMULA(nid,nparent,ntype,vname,vformula,vmemo) values(points_seq.NEXTVAL,ln_2,0,'квадратный корень','sqrt','');
-insert into BASEFORMULA(nid,nparent,ntype,vname,vformula,vmemo) values(points_seq.NEXTVAL,ln_2,0,'сумма аргументов функции','sum','');
-insert into BASEFORMULA(nid,nparent,ntype,vname,vformula,vmemo) values(points_seq.NEXTVAL,ln_2,0,'тангенс','tan','');
-insert into BASEFORMULA(nid,nparent,ntype,vname,vformula,vmemo) values(points_seq.NEXTVAL,ln_2,0,'время time(h,m,s)','time','');
-insert into BASEFORMULA(nid,nparent,ntype,vname,vformula,vmemo) values(points_seq.NEXTVAL,ln_2,0,'преобразование текстового представления времени в численное','timevalue','');
-insert into BASEFORMULA(nid,nparent,ntype,vname,vformula,vmemo) values(points_seq.NEXTVAL,ln_2,0,'возвращает номер дня недели weekday(date_value) 1..7','weekday','');
-insert into BASEFORMULA(nid,nparent,ntype,vname,vformula,vmemo) values(points_seq.NEXTVAL,ln_2,0,'возвращает номер дня в году','yearday','');
+insert into BASEFORMULA(nid,nparent,ntype,vname,vformula,vmemo) values(ln_1,NULL,0,'Р‘Р°Р·РѕРІС‹Рµ С„РѕСЂРјСѓР»С‹','','Р’ РґР°РЅРЅРѕР№ РїР°РїРєРµ СЃРѕРґРµСЂР¶Р°С‚СЃСЏ Р±Р°Р·РѕРІС‹Рµ С„РѕСЂРјСѓР»С‹');
+insert into BASEFORMULA(nid,nparent,ntype,vname,vformula,vmemo) values(points_seq.NEXTVAL,ln_1,0,'Р Р°СЃС‡РµС‚ РїРѕС‚РµСЂСЊ РІ РґРІСѓС…РѕР±РјРѕС‚РѕС‡РЅРѕРј С‚СЂ-СЂРµ','if(Pf>Pxx, (sqrt(Pf^2+Qf^2)/Sn)^2*Pkz, if ((Pf>0)&(Pf<=Pxx), Pxx, 0))','Р¤РѕСЂРјСѓР»Р° СЂР°СЃС‡РµС‚Р° РїРѕС‚РµСЂСЊ РІ РґРІСѓС…РѕР±РјРѕС‚РѕС‡РЅРѕРј С‚СЂ-СЂРµ');
+insert into BASEFORMULA(nid,nparent,ntype,vname,vformula,vmemo) values(ln_2,NULL,0,'Р‘Р°Р·РѕРІС‹Рµ С„СѓРЅРєС†РёРё','','Р’ РґР°РЅРЅРѕР№ РїР°РїРєРµ СЃРѕРґРµСЂР¶Р°С‚СЃСЏ Р±Р°Р·РѕРІС‹Рµ С„СѓРЅРєС†РёРё');
+insert into BASEFORMULA(nid,nparent,ntype,vname,vformula,vmemo) values(points_seq.NEXTVAL,ln_2,0,'РјРѕРґСѓР»СЊ (Р°Р±СЃРѕР»СЋС‚РЅРѕРµ Р·РЅР°С‡РµРЅРёРµ)','abs','');
+insert into BASEFORMULA(nid,nparent,ntype,vname,vformula,vmemo) values(points_seq.NEXTVAL,ln_2,0,'Р°СЂРєРєРѕСЃРёРЅСѓСЃ','acos','');
+insert into BASEFORMULA(nid,nparent,ntype,vname,vformula,vmemo) values(points_seq.NEXTVAL,ln_2,0,'Р°СЂРєСЃРёРЅСѓСЃ','asin','');
+insert into BASEFORMULA(nid,nparent,ntype,vname,vformula,vmemo) values(points_seq.NEXTVAL,ln_2,0,'Р°СЂРєС‚Р°РЅРіРµРЅСЃ','atan','');
+insert into BASEFORMULA(nid,nparent,ntype,vname,vformula,vmemo) values(points_seq.NEXTVAL,ln_2,0,'СЃСЂРµРґРЅРµРµ','avg','');
+insert into BASEFORMULA(nid,nparent,ntype,vname,vformula,vmemo) values(points_seq.NEXTVAL,ln_2,0,'РїСЂРµРѕР±СЂР°Р·РѕРІР°РЅРёРµ РґРІРѕРёС‡РЅРѕРіРѕ С„РѕСЂРјР°С‚Р° РІ РґРµСЃСЏС‚РёС‡РЅС‹Р№','bin','');
+insert into BASEFORMULA(nid,nparent,ntype,vname,vformula,vmemo) values(points_seq.NEXTVAL,ln_2,0,'РѕРєСЂСѓРіР»РµРЅРёРµ РІ Р±РћР»СЊС€СѓСЋ СЃС‚РѕСЂРѕРЅСѓ','ceil','');
+insert into BASEFORMULA(nid,nparent,ntype,vname,vformula,vmemo) values(points_seq.NEXTVAL,ln_2,0,'РєРѕСЃРёРЅСѓСЃ','cos','');
+insert into BASEFORMULA(nid,nparent,ntype,vname,vformula,vmemo) values(points_seq.NEXTVAL,ln_2,0,'РіРёРїРµСЂР±РѕР»РёС‡РµСЃРєРёР№ РєРѕСЃРёРЅСѓСЃ','cosh','');
+insert into BASEFORMULA(nid,nparent,ntype,vname,vformula,vmemo) values(points_seq.NEXTVAL,ln_2,0,'РґР°С‚Р° date(y,m,d)','date','');
+insert into BASEFORMULA(nid,nparent,ntype,vname,vformula,vmemo) values(points_seq.NEXTVAL,ln_2,0,'РїСЂРµРѕР±СЂР°Р·РѕРІР°РЅРёРµ С‚РµРєСЃС‚РѕРІРѕРіРѕ РїСЂРµРґСЃС‚Р°РІР»РµРЅРёСЏ РґР°С‚С‹ РІ С‡РёСЃР»РµРЅРЅРѕРµ','datevalue','');
+insert into BASEFORMULA(nid,nparent,ntype,vname,vformula,vmemo) values(points_seq.NEXTVAL,ln_2,0,'С„Р°РєС‚РѕСЂРёР°Р»','fact','');
+insert into BASEFORMULA(nid,nparent,ntype,vname,vformula,vmemo) values(points_seq.NEXTVAL,ln_2,0,'РѕРєСЂСѓРіР»РµРЅРёРµ РІ РјРµРЅСЊС€СѓСЋ СЃС‚РѕСЂРѕРЅСѓ','floor','');
+insert into BASEFORMULA(nid,nparent,ntype,vname,vformula,vmemo) values(points_seq.NEXTVAL,ln_2,0,'РїСЂРµРѕР±СЂР°Р·РѕРІР°РЅРёРµ 16-СЂРёС‡РЅРѕРіРѕ С‡РёСЃР»Р° РІ РґРµСЃСЏС‚РёСЂРёС‡РЅРѕРµ','hex','');
+insert into BASEFORMULA(nid,nparent,ntype,vname,vformula,vmemo) values(points_seq.NEXTVAL,ln_2,0,'СѓСЃР»РѕРІРёРµ if(СѓСЃР»РѕРІРёРµ, РІС‹СЂР°Р¶_РёСЃС‚РёРЅР°, РІС‹СЂР°Р¶_Р»РѕР¶СЊ) )','if','');
+insert into BASEFORMULA(nid,nparent,ntype,vname,vformula,vmemo) values(points_seq.NEXTVAL,ln_2,0,'РІРѕР·РІСЂР°С‰Р°РµС‚ 1 РµСЃР»Рё С‡РёСЃР»Рѕ РѕРїСЂРµРґРµР»РµРЅРѕ, РµСЃР»Рё С‡РёСЃР»Рѕ NaN, С‚Рѕ РІРѕР·РІСЂР°С‰Р°РµС‚ 0','isFinite','');
+insert into BASEFORMULA(nid,nparent,ntype,vname,vformula,vmemo) values(points_seq.NEXTVAL,ln_2,0,'РІРѕР·РІСЂР°С‰Р°РµС‚ 1 РµСЃР»Рё С‡РёСЃР»Рѕ СЂР°РІРЅРѕ NaN, РёРЅР°С‡Рµ 0','isNaN','');
+insert into BASEFORMULA(nid,nparent,ntype,vname,vformula,vmemo) values(points_seq.NEXTVAL,ln_2,0,'РЅР°С‚СѓСЂР°Р»СЊРЅС‹Р№ Р»РѕРіР°СЂРёС„Рј','log','');
+insert into BASEFORMULA(nid,nparent,ntype,vname,vformula,vmemo) values(points_seq.NEXTVAL,ln_2,0,'РґРµСЃСЏС‚РёС‡РЅС‹Р№ Р»РѕРіР°СЂРёС„Рј','log10','');
+insert into BASEFORMULA(nid,nparent,ntype,vname,vformula,vmemo) values(points_seq.NEXTVAL,ln_2,0,'РјР°РєСЃРёРјСѓРј','max','');
+insert into BASEFORMULA(nid,nparent,ntype,vname,vformula,vmemo) values(points_seq.NEXTVAL,ln_2,0,'РјРёРЅРёРјСѓРј','min','');
+insert into BASEFORMULA(nid,nparent,ntype,vname,vformula,vmemo) values(points_seq.NEXTVAL,ln_2,0,'РІРѕР·РІСЂР°С‰Р°РµС‚ СЃРµРіРґРЅСЏС€РЅСЋСЋ РґР°С‚Сѓ','nowdate','');
+insert into BASEFORMULA(nid,nparent,ntype,vname,vformula,vmemo) values(points_seq.NEXTVAL,ln_2,0,'РІРѕР·РІСЂР°С‰Р°РµС‚ С‚РµРєСѓС‰РµРµ РІСЂРµРјСЏ','nowtime','');
+insert into BASEFORMULA(nid,nparent,ntype,vname,vformula,vmemo) values(points_seq.NEXTVAL,ln_2,0,'СЃР»СѓС‡Р°Р№РЅРѕРµ С‡РёСЃР»Рѕ rand(min, max)','rand','');
+insert into BASEFORMULA(nid,nparent,ntype,vname,vformula,vmemo) values(points_seq.NEXTVAL,ln_2,0,'СЃРёРЅСѓСЃ','sin','');
+insert into BASEFORMULA(nid,nparent,ntype,vname,vformula,vmemo) values(points_seq.NEXTVAL,ln_2,0,'РіРёРїРµСЂР±РѕР»РёС‡РµСЃРєРёР№ СЃРёРЅСѓСЃ','sinh','');
+insert into BASEFORMULA(nid,nparent,ntype,vname,vformula,vmemo) values(points_seq.NEXTVAL,ln_2,0,'РІС‹С‡РёСЃР»РµРЅРёРµ РІС‹СЂР°Р¶РµРЅРёСЏ','solve','');
+insert into BASEFORMULA(nid,nparent,ntype,vname,vformula,vmemo) values(points_seq.NEXTVAL,ln_2,0,'РєРІР°РґСЂР°С‚РЅС‹Р№ РєРѕСЂРµРЅСЊ','sqrt','');
+insert into BASEFORMULA(nid,nparent,ntype,vname,vformula,vmemo) values(points_seq.NEXTVAL,ln_2,0,'СЃСѓРјРјР° Р°СЂРіСѓРјРµРЅС‚РѕРІ С„СѓРЅРєС†РёРё','sum','');
+insert into BASEFORMULA(nid,nparent,ntype,vname,vformula,vmemo) values(points_seq.NEXTVAL,ln_2,0,'С‚Р°РЅРіРµРЅСЃ','tan','');
+insert into BASEFORMULA(nid,nparent,ntype,vname,vformula,vmemo) values(points_seq.NEXTVAL,ln_2,0,'РІСЂРµРјСЏ time(h,m,s)','time','');
+insert into BASEFORMULA(nid,nparent,ntype,vname,vformula,vmemo) values(points_seq.NEXTVAL,ln_2,0,'РїСЂРµРѕР±СЂР°Р·РѕРІР°РЅРёРµ С‚РµРєСЃС‚РѕРІРѕРіРѕ РїСЂРµРґСЃС‚Р°РІР»РµРЅРёСЏ РІСЂРµРјРµРЅРё РІ С‡РёСЃР»РµРЅРЅРѕРµ','timevalue','');
+insert into BASEFORMULA(nid,nparent,ntype,vname,vformula,vmemo) values(points_seq.NEXTVAL,ln_2,0,'РІРѕР·РІСЂР°С‰Р°РµС‚ РЅРѕРјРµСЂ РґРЅСЏ РЅРµРґРµР»Рё weekday(date_value) 1..7','weekday','');
+insert into BASEFORMULA(nid,nparent,ntype,vname,vformula,vmemo) values(points_seq.NEXTVAL,ln_2,0,'РІРѕР·РІСЂР°С‰Р°РµС‚ РЅРѕРјРµСЂ РґРЅСЏ РІ РіРѕРґСѓ','yearday','');
 commit;
 end;
 /
 
 update baseformula set VMEMO=vname where vmemo is null;
-update baseformula set ntype=1 where nparent=(select max(nid) from baseformula where vname='Базовые формулы');
-update baseformula set ntype=2 where nparent=(select max(nid) from baseformula where vname='Базовые функции');
+update baseformula set ntype=1 where nparent=(select max(nid) from baseformula where vname='Р‘Р°Р·РѕРІС‹Рµ С„РѕСЂРјСѓР»С‹');
+update baseformula set ntype=2 where nparent=(select max(nid) from baseformula where vname='Р‘Р°Р·РѕРІС‹Рµ С„СѓРЅРєС†РёРё');
 commit;
 
-insert into CALCPOINTTYPE(NCALCPOINTTYPE,VNAME) values(6,'Расчет по формуле');
+insert into CALCPOINTTYPE(NCALCPOINTTYPE,VNAME) values(6,'Р Р°СЃС‡РµС‚ РїРѕ С„РѕСЂРјСѓР»Рµ');
 commit;
 
 
 ----------------------------------------------------------------------------------------------
---         VER 2.27.2  (Для обновления версии 2.27 до текущей скрипт запускать отсюда)        --
+--         VER 2.27.2  (Р”Р»СЏ РѕР±РЅРѕРІР»РµРЅРёСЏ РІРµСЂСЃРёРё 2.27 РґРѕ С‚РµРєСѓС‰РµР№ СЃРєСЂРёРїС‚ Р·Р°РїСѓСЃРєР°С‚СЊ РѕС‚СЃСЋРґР°)        --
 ----------------------------------------------------------------------------------------------
 
 begin
-INSERT INTO metertype("NMETERTYPE","VNAME")VALUES(23,'Результат расчета');
-INSERT INTO metertype("NMETERTYPE","VNAME")VALUES(24,'АСКУЭ ИНЭТ');
-INSERT INTO metertype("NMETERTYPE","VNAME")VALUES(25,'АСКУЭ Energovision');
+INSERT INTO metertype("NMETERTYPE","VNAME")VALUES(23,'Р РµР·СѓР»СЊС‚Р°С‚ СЂР°СЃС‡РµС‚Р°');
+INSERT INTO metertype("NMETERTYPE","VNAME")VALUES(24,'РђРЎРљРЈР­ РРќР­Рў');
+INSERT INTO metertype("NMETERTYPE","VNAME")VALUES(25,'РђРЎРљРЈР­ Energovision');
 INSERT INTO metertype("NMETERTYPE","VNAME")VALUES(26,'ICCP');
-INSERT INTO metertype("NMETERTYPE","VNAME")VALUES(27,'УППД (энергорынок)');
+INSERT INTO metertype("NMETERTYPE","VNAME")VALUES(27,'РЈРџРџР” (СЌРЅРµСЂРіРѕСЂС‹РЅРѕРє)');
 commit;
 exception when others then null;
 end;
@@ -20062,7 +20062,7 @@ declare
 l NUMBER;
 begin
 select nvl(max(decode(vvalue,'1',2,'10',1,0)),0) into l from parameter where NPID=12;
-insert into parameter (NPID,VVALUE,VDESCRIPTION) values(42,l,'Тип учета инверсии на точке учета. 1-условная, 2-всегда инвертировать, иначе никогда');
+insert into parameter (NPID,VVALUE,VDESCRIPTION) values(42,l,'РўРёРї СѓС‡РµС‚Р° РёРЅРІРµСЂСЃРёРё РЅР° С‚РѕС‡РєРµ СѓС‡РµС‚Р°. 1-СѓСЃР»РѕРІРЅР°СЏ, 2-РІСЃРµРіРґР° РёРЅРІРµСЂС‚РёСЂРѕРІР°С‚СЊ, РёРЅР°С‡Рµ РЅРёРєРѕРіРґР°');
 commit;
 end;
 /
@@ -20071,9 +20071,9 @@ ALTER table MEASURES  ADD(
    VCODE                VARCHAR2(16)                    
 );
 comment on column MEASURES.VCODE is
-'Код измерения';
+'РљРѕРґ РёР·РјРµСЂРµРЅРёСЏ';
 
-insert into measures(nmeasure, vname) values(0,'Автоматически определяемое');
+insert into measures(nmeasure, vname) values(0,'РђРІС‚РѕРјР°С‚РёС‡РµСЃРєРё РѕРїСЂРµРґРµР»СЏРµРјРѕРµ');
 update MEASURES set vcode='ER' where NMEASURE=1;
 update MEASURES set vcode='ED' where NMEASURE=2;
 update MEASURES set vcode='Q1' where NMEASURE=3;
@@ -20088,7 +20088,7 @@ update METEREVENTSDICT set NVALIDITY=0;
 alter table METEREVENTSDICT  modify(   NVALIDITY            NUMBER                         default 0 not null);
 
 ----------------------------------------------------------------------------------------------
---         VER 2.27.3  (Для обновления версии 2.27.2 до текущей скрипт запускать отсюда)        --
+--         VER 2.27.3  (Р”Р»СЏ РѕР±РЅРѕРІР»РµРЅРёСЏ РІРµСЂСЃРёРё 2.27.2 РґРѕ С‚РµРєСѓС‰РµР№ СЃРєСЂРёРїС‚ Р·Р°РїСѓСЃРєР°С‚СЊ РѕС‚СЃСЋРґР°)        --
 ----------------------------------------------------------------------------------------------
 ALTER TABLE MEASURES 
  MODIFY (
@@ -20099,42 +20099,42 @@ ALTER TABLE MEASURES
 
 BEGIN
 DELETE FROM MEASURES;
-INSERT INTO MEASURES("NMEASURE","VNAME","VCODE")VALUES(1,'ER (Актив, прием)','ER');
-INSERT INTO MEASURES("NMEASURE","VNAME","VCODE")VALUES(2,'ED (Актив, отдача)','ED');
-INSERT INTO MEASURES("NMEASURE","VNAME","VCODE")VALUES(3,'Q1 (Реактив, прием)','Q1');
-INSERT INTO MEASURES("NMEASURE","VNAME","VCODE")VALUES(5,'Q3 (Реактив, генерц)','Q3');
+INSERT INTO MEASURES("NMEASURE","VNAME","VCODE")VALUES(1,'ER (РђРєС‚РёРІ, РїСЂРёРµРј)','ER');
+INSERT INTO MEASURES("NMEASURE","VNAME","VCODE")VALUES(2,'ED (РђРєС‚РёРІ, РѕС‚РґР°С‡Р°)','ED');
+INSERT INTO MEASURES("NMEASURE","VNAME","VCODE")VALUES(3,'Q1 (Р РµР°РєС‚РёРІ, РїСЂРёРµРј)','Q1');
+INSERT INTO MEASURES("NMEASURE","VNAME","VCODE")VALUES(5,'Q3 (Р РµР°РєС‚РёРІ, РіРµРЅРµСЂС†)','Q3');
 INSERT INTO MEASURES("NMEASURE","VNAME","VCODE")VALUES(4,'Q2','Q2');
 INSERT INTO MEASURES("NMEASURE","VNAME","VCODE")VALUES(6,'Q4','Q4');
 INSERT INTO MEASURES("NMEASURE","VNAME","VCODE")VALUES(7,'R+ (Q1+Q2)','Q12');
-INSERT INTO MEASURES("NMEASURE","VNAME","VCODE")VALUES(0,'Автоматически определяемое','A');
+INSERT INTO MEASURES("NMEASURE","VNAME","VCODE")VALUES(0,'РђРІС‚РѕРјР°С‚РёС‡РµСЃРєРё РѕРїСЂРµРґРµР»СЏРµРјРѕРµ','A');
 INSERT INTO MEASURES("NMEASURE","VNAME","VCODE")VALUES(8,'R- (Q3+Q4)','Q34');
-INSERT INTO MEASURES("NMEASURE","VNAME","VCODE")VALUES(9,'E (ER-ED) Факт. небаланс','E');
+INSERT INTO MEASURES("NMEASURE","VNAME","VCODE")VALUES(9,'E (ER-ED) Р¤Р°РєС‚. РЅРµР±Р°Р»Р°РЅСЃ','E');
 INSERT INTO MEASURES("NMEASURE","VNAME","VCODE")VALUES(10,'Q (Q1-Q3)+(Q2-Q4)','Q');
-INSERT INTO MEASURES("NMEASURE","VNAME","VCODE")VALUES(16,'Номинальная мощность трансф-ра','Sn');
-INSERT INTO MEASURES("NMEASURE","VNAME","VCODE")VALUES(17,'DPxx - Потери актив мощн в стали тр','DPxx');
-INSERT INTO MEASURES("NMEASURE","VNAME","VCODE")VALUES(18,'DPkz - Потери актив мощн в меди обмоток','DPkz');
-INSERT INTO MEASURES("NMEASURE","VNAME","VCODE")VALUES(19,'Ixx - Ток холостого хода трансф','Ixx');
-INSERT INTO MEASURES("NMEASURE","VNAME","VCODE")VALUES(20,'Ukz - Напр короткого замыкания','Ukz');
-INSERT INTO MEASURES("NMEASURE","VNAME","VCODE")VALUES(21,'Tn - Кол-во часов работы трансф','Tn');
-INSERT INTO MEASURES("NMEASURE","VNAME","VCODE")VALUES(22,'Tp - Кол-во часов работы тр под нагр','Tp');
-INSERT INTO MEASURES("NMEASURE","VNAME","VCODE")VALUES(23,'SBH - Мощность обмотки ВН','SBH');
-INSERT INTO MEASURES("NMEASURE","VNAME","VCODE")VALUES(24,'SCH - Мощность обмотки СН','SCH');
-INSERT INTO MEASURES("NMEASURE","VNAME","VCODE")VALUES(25,'SHH - Мощность обмотки НН','SHH');
-INSERT INTO MEASURES("NMEASURE","VNAME","VCODE")VALUES(26,'DPBH - Потери мощн в меди обм ВН','DPBH');
-INSERT INTO MEASURES("NMEASURE","VNAME","VCODE")VALUES(27,'DPCH - Потери мощн в меди обм СН','DPCH');
-INSERT INTO MEASURES("NMEASURE","VNAME","VCODE")VALUES(28,'DPHH - Потери мощн в меди обм НН','DPHH');
-INSERT INTO MEASURES("NMEASURE","VNAME","VCODE")VALUES(29,'UBH_CH - Напр-е обмотки ВН-СН','UBH_CH');
-INSERT INTO MEASURES("NMEASURE","VNAME","VCODE")VALUES(30,'UCH_HH - Напр-е обмотки СН-НН','UCH_HH');
-INSERT INTO MEASURES("NMEASURE","VNAME","VCODE")VALUES(31,'UBH_HH - Напр-е обмотки ВН-НН','UBH_HH');
-INSERT INTO MEASURES("NMEASURE","VNAME","VCODE")VALUES(32,'L - Длина линии','L');
-INSERT INTO MEASURES("NMEASURE","VNAME","VCODE")VALUES(33,'r0 - Удельное актив сопрот-е линии','r0');
-INSERT INTO MEASURES("NMEASURE","VNAME","VCODE")VALUES(34,'x0 - Удельное реактив сопрот-е линии','x0');
-INSERT INTO MEASURES("NMEASURE","VNAME","VCODE")VALUES(35,'Un - Номинальное напряжение линии','Un');
-INSERT INTO MEASURES("NMEASURE","VNAME","VCODE")VALUES(12,'Допустимый небаланс','ADBALANCE');
-INSERT INTO MEASURES("NMEASURE","VNAME","VCODE")VALUES(11,'Фактический небаланс %','BALANCEP');
-INSERT INTO MEASURES("NMEASURE","VNAME","VCODE")VALUES(13,'Допустимый небаланс %','ADBALANCEP');
-INSERT INTO MEASURES("NMEASURE","VNAME","VCODE")VALUES(14,'Доп небал - Факт небал','BALANCEDIF');
-INSERT INTO MEASURES("NMEASURE","VNAME","VCODE")VALUES(15,'Доп небал - Факт небал %','BALANCEDIFP');
+INSERT INTO MEASURES("NMEASURE","VNAME","VCODE")VALUES(16,'РќРѕРјРёРЅР°Р»СЊРЅР°СЏ РјРѕС‰РЅРѕСЃС‚СЊ С‚СЂР°РЅСЃС„-СЂР°','Sn');
+INSERT INTO MEASURES("NMEASURE","VNAME","VCODE")VALUES(17,'DPxx - РџРѕС‚РµСЂРё Р°РєС‚РёРІ РјРѕС‰РЅ РІ СЃС‚Р°Р»Рё С‚СЂ','DPxx');
+INSERT INTO MEASURES("NMEASURE","VNAME","VCODE")VALUES(18,'DPkz - РџРѕС‚РµСЂРё Р°РєС‚РёРІ РјРѕС‰РЅ РІ РјРµРґРё РѕР±РјРѕС‚РѕРє','DPkz');
+INSERT INTO MEASURES("NMEASURE","VNAME","VCODE")VALUES(19,'Ixx - РўРѕРє С…РѕР»РѕСЃС‚РѕРіРѕ С…РѕРґР° С‚СЂР°РЅСЃС„','Ixx');
+INSERT INTO MEASURES("NMEASURE","VNAME","VCODE")VALUES(20,'Ukz - РќР°РїСЂ РєРѕСЂРѕС‚РєРѕРіРѕ Р·Р°РјС‹РєР°РЅРёСЏ','Ukz');
+INSERT INTO MEASURES("NMEASURE","VNAME","VCODE")VALUES(21,'Tn - РљРѕР»-РІРѕ С‡Р°СЃРѕРІ СЂР°Р±РѕС‚С‹ С‚СЂР°РЅСЃС„','Tn');
+INSERT INTO MEASURES("NMEASURE","VNAME","VCODE")VALUES(22,'Tp - РљРѕР»-РІРѕ С‡Р°СЃРѕРІ СЂР°Р±РѕС‚С‹ С‚СЂ РїРѕРґ РЅР°РіСЂ','Tp');
+INSERT INTO MEASURES("NMEASURE","VNAME","VCODE")VALUES(23,'SBH - РњРѕС‰РЅРѕСЃС‚СЊ РѕР±РјРѕС‚РєРё Р’Рќ','SBH');
+INSERT INTO MEASURES("NMEASURE","VNAME","VCODE")VALUES(24,'SCH - РњРѕС‰РЅРѕСЃС‚СЊ РѕР±РјРѕС‚РєРё РЎРќ','SCH');
+INSERT INTO MEASURES("NMEASURE","VNAME","VCODE")VALUES(25,'SHH - РњРѕС‰РЅРѕСЃС‚СЊ РѕР±РјРѕС‚РєРё РќРќ','SHH');
+INSERT INTO MEASURES("NMEASURE","VNAME","VCODE")VALUES(26,'DPBH - РџРѕС‚РµСЂРё РјРѕС‰РЅ РІ РјРµРґРё РѕР±Рј Р’Рќ','DPBH');
+INSERT INTO MEASURES("NMEASURE","VNAME","VCODE")VALUES(27,'DPCH - РџРѕС‚РµСЂРё РјРѕС‰РЅ РІ РјРµРґРё РѕР±Рј РЎРќ','DPCH');
+INSERT INTO MEASURES("NMEASURE","VNAME","VCODE")VALUES(28,'DPHH - РџРѕС‚РµСЂРё РјРѕС‰РЅ РІ РјРµРґРё РѕР±Рј РќРќ','DPHH');
+INSERT INTO MEASURES("NMEASURE","VNAME","VCODE")VALUES(29,'UBH_CH - РќР°РїСЂ-Рµ РѕР±РјРѕС‚РєРё Р’Рќ-РЎРќ','UBH_CH');
+INSERT INTO MEASURES("NMEASURE","VNAME","VCODE")VALUES(30,'UCH_HH - РќР°РїСЂ-Рµ РѕР±РјРѕС‚РєРё РЎРќ-РќРќ','UCH_HH');
+INSERT INTO MEASURES("NMEASURE","VNAME","VCODE")VALUES(31,'UBH_HH - РќР°РїСЂ-Рµ РѕР±РјРѕС‚РєРё Р’Рќ-РќРќ','UBH_HH');
+INSERT INTO MEASURES("NMEASURE","VNAME","VCODE")VALUES(32,'L - Р”Р»РёРЅР° Р»РёРЅРёРё','L');
+INSERT INTO MEASURES("NMEASURE","VNAME","VCODE")VALUES(33,'r0 - РЈРґРµР»СЊРЅРѕРµ Р°РєС‚РёРІ СЃРѕРїСЂРѕС‚-Рµ Р»РёРЅРёРё','r0');
+INSERT INTO MEASURES("NMEASURE","VNAME","VCODE")VALUES(34,'x0 - РЈРґРµР»СЊРЅРѕРµ СЂРµР°РєС‚РёРІ СЃРѕРїСЂРѕС‚-Рµ Р»РёРЅРёРё','x0');
+INSERT INTO MEASURES("NMEASURE","VNAME","VCODE")VALUES(35,'Un - РќРѕРјРёРЅР°Р»СЊРЅРѕРµ РЅР°РїСЂСЏР¶РµРЅРёРµ Р»РёРЅРёРё','Un');
+INSERT INTO MEASURES("NMEASURE","VNAME","VCODE")VALUES(12,'Р”РѕРїСѓСЃС‚РёРјС‹Р№ РЅРµР±Р°Р»Р°РЅСЃ','ADBALANCE');
+INSERT INTO MEASURES("NMEASURE","VNAME","VCODE")VALUES(11,'Р¤Р°РєС‚РёС‡РµСЃРєРёР№ РЅРµР±Р°Р»Р°РЅСЃ %','BALANCEP');
+INSERT INTO MEASURES("NMEASURE","VNAME","VCODE")VALUES(13,'Р”РѕРїСѓСЃС‚РёРјС‹Р№ РЅРµР±Р°Р»Р°РЅСЃ %','ADBALANCEP');
+INSERT INTO MEASURES("NMEASURE","VNAME","VCODE")VALUES(14,'Р”РѕРї РЅРµР±Р°Р» - Р¤Р°РєС‚ РЅРµР±Р°Р»','BALANCEDIF');
+INSERT INTO MEASURES("NMEASURE","VNAME","VCODE")VALUES(15,'Р”РѕРї РЅРµР±Р°Р» - Р¤Р°РєС‚ РЅРµР±Р°Р» %','BALANCEDIFP');
 COMMIT;
 END;
 /
@@ -20142,7 +20142,7 @@ END;
 
 ----------27.10.2008
 begin
-INSERT INTO points(MID,PARENT,COD,IND,NAME,SHORT_NAME,PTYPE,IMPLEMENT_DATE,TAG,NPOINT) VALUES(53,NULL,NULL,1,'Подсистема диагностики','',NULL,'',NULL,NULL);
+INSERT INTO points(MID,PARENT,COD,IND,NAME,SHORT_NAME,PTYPE,IMPLEMENT_DATE,TAG,NPOINT) VALUES(53,NULL,NULL,1,'РџРѕРґСЃРёСЃС‚РµРјР° РґРёР°РіРЅРѕСЃС‚РёРєРё','',NULL,'',NULL,NULL);
 commit;
 end;
 /
@@ -20187,19 +20187,19 @@ end;
 declare
 ln_1 NUMBER;
 begin
-select max(nid) into ln_1 from BASEFORMULA where vname='Базовые формулы';
-INSERT INTO baseformula("NID","NPARENT","NTYPE","VNAME","VFORMULA","VMEMO")VALUES(points_seq.NEXTVAL,ln_1,1,'Расчет потерь реактивное электроенергии в двухобмоточном тр-ре','if(WQf>(Sn*(Ixx/100))*0.5, (Sn*(Ixx/100))*0.5+(sqrt((WPf/0.5)^2+(WQf/0.5)^2)/Sn)^2*(Sn*(Ukz/100))*0.5, if ((WQf>0)&(WQf<=(Sn*(Ixx/100))*0.5), (Sn*(Ixx/100))*0.5, 0))','Формула расчета потерь реактивное электроенергии в двухобмоточном тр-ре');
-INSERT INTO baseformula("NID","NPARENT","NTYPE","VNAME","VFORMULA","VMEMO")VALUES(points_seq.NEXTVAL,ln_1,1,'Расчет потерь активной электроэнергии в трехобмоточном тр-ре','if(WPf>DPxx*0.5, DPxx*0.5+(DPBH*((sqrt(((WPCH+WPHH)/0.5)^2+((WQCH+WQHH)/0.5)^2)/SBH)^2)+DPCH*((sqrt((WPCH/0.5)^2+(WQCH/0.5)^2)/SCH)^2)+DPHH*((sqrt((WPHH/0.5)^2+(WQHH/0.5)^2)/SHH)^2))*0.5, if ((WPf>0)&(WPf<=DPxx*0.5), DPxx*0.5, 0))','Формула расчета потерь активной электроэнергии в трехобмоточном тр-ре');
-INSERT INTO baseformula("NID","NPARENT","NTYPE","VNAME","VFORMULA","VMEMO")VALUES(points_seq.NEXTVAL,ln_1,1,'Расчет потерь реактивной электроэнергии в трехобмоточном тр-ре','if(WQf>(Sn*(Ixx/100))*0.5, (Sn*(Ixx/100))*0.5+((SBH*0.5*(UBH_CH+UBH_HH-UCH_HH)/100)*((sqrt(((WPCH+WPHH)/0.5)^2+((WQCH+WQHH)/0.5)^2)/SBH)^2)+(SCH*0.5*(UBH_CH+UCH_HH-UBH_HH)/100)*((sqrt((WPCH/0.5)^2+(WQCH/0.5)^2)/SCH)^2)+(SHH*0.5*(UBH_HH+UCH_HH-UBH_CH)/100)*((sqrt((WPHH/0.5)^2+(WQHH/0.5)^2)/SHH)^2))*0.5, if ((WQf>0)&(WQf<=(Sn*(Ixx/100))*0.5), (Sn*(Ixx/100))*0.5, 0))','Формула расчета потерь реактивной электроэнергии в трехобмоточном тр-ре');
-INSERT INTO baseformula("NID","NPARENT","NTYPE","VNAME","VFORMULA","VMEMO")VALUES(points_seq.NEXTVAL,ln_1,1,'Расчет потерь активной электроенергии в линии','(WP^2+WQ^2)/(Un^2*0.5)*r0*L*10^-3','Формула расчета потерь активной электроенергии в линии');
-INSERT INTO baseformula("NID","NPARENT","NTYPE","VNAME","VFORMULA","VMEMO")VALUES(points_seq.NEXTVAL,ln_1,1,'Расчет потерь реактивной электроенергии в линии','(WP^2+WQ^2)/(Un^2*0.5)*x0*L*10^-3','Формула расчета потерь реактивной электроенергии в линии');
-INSERT INTO baseformula("NID","NPARENT","NTYPE","VNAME","VFORMULA","VMEMO")VALUES(points_seq.NEXTVAL,ln_1,1,'Расчет потерь активное электроенергии в двухобмоточном тр-ре','if(WPf>DPxx*0.5, DPxx*0.5+(sqrt((WPf/0.5)^2+(WQf/0.5)^2)/Sn)^2*DPkz*0.5, if ((WPf>0)&(WPf<=DPxx*0.5), DPxx*0.5, 0))','Формула расчета потерь в двухобмоточном тр-ре');
+select max(nid) into ln_1 from BASEFORMULA where vname='Р‘Р°Р·РѕРІС‹Рµ С„РѕСЂРјСѓР»С‹';
+INSERT INTO baseformula("NID","NPARENT","NTYPE","VNAME","VFORMULA","VMEMO")VALUES(points_seq.NEXTVAL,ln_1,1,'Р Р°СЃС‡РµС‚ РїРѕС‚РµСЂСЊ СЂРµР°РєС‚РёРІРЅРѕРµ СЌР»РµРєС‚СЂРѕРµРЅРµСЂРіРёРё РІ РґРІСѓС…РѕР±РјРѕС‚РѕС‡РЅРѕРј С‚СЂ-СЂРµ','if(WQf>(Sn*(Ixx/100))*0.5, (Sn*(Ixx/100))*0.5+(sqrt((WPf/0.5)^2+(WQf/0.5)^2)/Sn)^2*(Sn*(Ukz/100))*0.5, if ((WQf>0)&(WQf<=(Sn*(Ixx/100))*0.5), (Sn*(Ixx/100))*0.5, 0))','Р¤РѕСЂРјСѓР»Р° СЂР°СЃС‡РµС‚Р° РїРѕС‚РµСЂСЊ СЂРµР°РєС‚РёРІРЅРѕРµ СЌР»РµРєС‚СЂРѕРµРЅРµСЂРіРёРё РІ РґРІСѓС…РѕР±РјРѕС‚РѕС‡РЅРѕРј С‚СЂ-СЂРµ');
+INSERT INTO baseformula("NID","NPARENT","NTYPE","VNAME","VFORMULA","VMEMO")VALUES(points_seq.NEXTVAL,ln_1,1,'Р Р°СЃС‡РµС‚ РїРѕС‚РµСЂСЊ Р°РєС‚РёРІРЅРѕР№ СЌР»РµРєС‚СЂРѕСЌРЅРµСЂРіРёРё РІ С‚СЂРµС…РѕР±РјРѕС‚РѕС‡РЅРѕРј С‚СЂ-СЂРµ','if(WPf>DPxx*0.5, DPxx*0.5+(DPBH*((sqrt(((WPCH+WPHH)/0.5)^2+((WQCH+WQHH)/0.5)^2)/SBH)^2)+DPCH*((sqrt((WPCH/0.5)^2+(WQCH/0.5)^2)/SCH)^2)+DPHH*((sqrt((WPHH/0.5)^2+(WQHH/0.5)^2)/SHH)^2))*0.5, if ((WPf>0)&(WPf<=DPxx*0.5), DPxx*0.5, 0))','Р¤РѕСЂРјСѓР»Р° СЂР°СЃС‡РµС‚Р° РїРѕС‚РµСЂСЊ Р°РєС‚РёРІРЅРѕР№ СЌР»РµРєС‚СЂРѕСЌРЅРµСЂРіРёРё РІ С‚СЂРµС…РѕР±РјРѕС‚РѕС‡РЅРѕРј С‚СЂ-СЂРµ');
+INSERT INTO baseformula("NID","NPARENT","NTYPE","VNAME","VFORMULA","VMEMO")VALUES(points_seq.NEXTVAL,ln_1,1,'Р Р°СЃС‡РµС‚ РїРѕС‚РµСЂСЊ СЂРµР°РєС‚РёРІРЅРѕР№ СЌР»РµРєС‚СЂРѕСЌРЅРµСЂРіРёРё РІ С‚СЂРµС…РѕР±РјРѕС‚РѕС‡РЅРѕРј С‚СЂ-СЂРµ','if(WQf>(Sn*(Ixx/100))*0.5, (Sn*(Ixx/100))*0.5+((SBH*0.5*(UBH_CH+UBH_HH-UCH_HH)/100)*((sqrt(((WPCH+WPHH)/0.5)^2+((WQCH+WQHH)/0.5)^2)/SBH)^2)+(SCH*0.5*(UBH_CH+UCH_HH-UBH_HH)/100)*((sqrt((WPCH/0.5)^2+(WQCH/0.5)^2)/SCH)^2)+(SHH*0.5*(UBH_HH+UCH_HH-UBH_CH)/100)*((sqrt((WPHH/0.5)^2+(WQHH/0.5)^2)/SHH)^2))*0.5, if ((WQf>0)&(WQf<=(Sn*(Ixx/100))*0.5), (Sn*(Ixx/100))*0.5, 0))','Р¤РѕСЂРјСѓР»Р° СЂР°СЃС‡РµС‚Р° РїРѕС‚РµСЂСЊ СЂРµР°РєС‚РёРІРЅРѕР№ СЌР»РµРєС‚СЂРѕСЌРЅРµСЂРіРёРё РІ С‚СЂРµС…РѕР±РјРѕС‚РѕС‡РЅРѕРј С‚СЂ-СЂРµ');
+INSERT INTO baseformula("NID","NPARENT","NTYPE","VNAME","VFORMULA","VMEMO")VALUES(points_seq.NEXTVAL,ln_1,1,'Р Р°СЃС‡РµС‚ РїРѕС‚РµСЂСЊ Р°РєС‚РёРІРЅРѕР№ СЌР»РµРєС‚СЂРѕРµРЅРµСЂРіРёРё РІ Р»РёРЅРёРё','(WP^2+WQ^2)/(Un^2*0.5)*r0*L*10^-3','Р¤РѕСЂРјСѓР»Р° СЂР°СЃС‡РµС‚Р° РїРѕС‚РµСЂСЊ Р°РєС‚РёРІРЅРѕР№ СЌР»РµРєС‚СЂРѕРµРЅРµСЂРіРёРё РІ Р»РёРЅРёРё');
+INSERT INTO baseformula("NID","NPARENT","NTYPE","VNAME","VFORMULA","VMEMO")VALUES(points_seq.NEXTVAL,ln_1,1,'Р Р°СЃС‡РµС‚ РїРѕС‚РµСЂСЊ СЂРµР°РєС‚РёРІРЅРѕР№ СЌР»РµРєС‚СЂРѕРµРЅРµСЂРіРёРё РІ Р»РёРЅРёРё','(WP^2+WQ^2)/(Un^2*0.5)*x0*L*10^-3','Р¤РѕСЂРјСѓР»Р° СЂР°СЃС‡РµС‚Р° РїРѕС‚РµСЂСЊ СЂРµР°РєС‚РёРІРЅРѕР№ СЌР»РµРєС‚СЂРѕРµРЅРµСЂРіРёРё РІ Р»РёРЅРёРё');
+INSERT INTO baseformula("NID","NPARENT","NTYPE","VNAME","VFORMULA","VMEMO")VALUES(points_seq.NEXTVAL,ln_1,1,'Р Р°СЃС‡РµС‚ РїРѕС‚РµСЂСЊ Р°РєС‚РёРІРЅРѕРµ СЌР»РµРєС‚СЂРѕРµРЅРµСЂРіРёРё РІ РґРІСѓС…РѕР±РјРѕС‚РѕС‡РЅРѕРј С‚СЂ-СЂРµ','if(WPf>DPxx*0.5, DPxx*0.5+(sqrt((WPf/0.5)^2+(WQf/0.5)^2)/Sn)^2*DPkz*0.5, if ((WPf>0)&(WPf<=DPxx*0.5), DPxx*0.5, 0))','Р¤РѕСЂРјСѓР»Р° СЂР°СЃС‡РµС‚Р° РїРѕС‚РµСЂСЊ РІ РґРІСѓС…РѕР±РјРѕС‚РѕС‡РЅРѕРј С‚СЂ-СЂРµ');
 commit;
 end;
 /
 
 begin
-INSERT INTO tasks("TASK_ID","PARENT","TASK_COD","NAME","REMARK","NSHOW")VALUES(22,16,49,'2.5 Редактирование трансформаторов','Редактирование трансформаторов',1);
+INSERT INTO tasks("TASK_ID","PARENT","TASK_COD","NAME","REMARK","NSHOW")VALUES(22,16,49,'2.5 Р РµРґР°РєС‚РёСЂРѕРІР°РЅРёРµ С‚СЂР°РЅСЃС„РѕСЂРјР°С‚РѕСЂРѕРІ','Р РµРґР°РєС‚РёСЂРѕРІР°РЅРёРµ С‚СЂР°РЅСЃС„РѕСЂРјР°С‚РѕСЂРѕРІ',1);
 insert into role_task select distinct ROLE_ID,22,1 from users where ADMIN='*';
 commit;
 exception
@@ -20209,7 +20209,7 @@ END;
 
 --06/11/2008
 ----------------------------------------------------------------------------------------------
---         VER 2.27.3  (Для обновления версии 2.27.1 до текущей скрипт запускать отсюда)        --
+--         VER 2.27.3  (Р”Р»СЏ РѕР±РЅРѕРІР»РµРЅРёСЏ РІРµСЂСЃРёРё 2.27.1 РґРѕ С‚РµРєСѓС‰РµР№ СЃРєСЂРёРїС‚ Р·Р°РїСѓСЃРєР°С‚СЊ РѕС‚СЃСЋРґР°)        --
 ----------------------------------------------------------------------------------------------
 drop table measures;
 
@@ -20221,16 +20221,16 @@ create table MEASURES  (
 );
 
 comment on table MEASURES is
-'Измерения';
+'РР·РјРµСЂРµРЅРёСЏ';
 
 comment on column MEASURES.NMEASURE is
-'Ид измерения';
+'РРґ РёР·РјРµСЂРµРЅРёСЏ';
 
 comment on column MEASURES.VNAME is
-'Название измерения';
+'РќР°Р·РІР°РЅРёРµ РёР·РјРµСЂРµРЅРёСЏ';
 
 comment on column MEASURES.VCODE is
-'Код измерения';
+'РљРѕРґ РёР·РјРµСЂРµРЅРёСЏ';
 
 /*==============================================================*/
 /* Index: MEASURES_IDX1                                         */
@@ -20240,42 +20240,42 @@ create unique index MEASURES_IDX1 on MEASURES (
 );
 
 begin
-INSERT INTO measures("NMEASURE","VNAME","VCODE")VALUES(1,'ER (Актив, прием)','ER');
-INSERT INTO measures("NMEASURE","VNAME","VCODE")VALUES(2,'ED (Актив, отдача)','ED');
-INSERT INTO measures("NMEASURE","VNAME","VCODE")VALUES(3,'Q1 (Реактив, прием)','Q1');
-INSERT INTO measures("NMEASURE","VNAME","VCODE")VALUES(5,'Q3 (Реактив, генерц)','Q3');
+INSERT INTO measures("NMEASURE","VNAME","VCODE")VALUES(1,'ER (РђРєС‚РёРІ, РїСЂРёРµРј)','ER');
+INSERT INTO measures("NMEASURE","VNAME","VCODE")VALUES(2,'ED (РђРєС‚РёРІ, РѕС‚РґР°С‡Р°)','ED');
+INSERT INTO measures("NMEASURE","VNAME","VCODE")VALUES(3,'Q1 (Р РµР°РєС‚РёРІ, РїСЂРёРµРј)','Q1');
+INSERT INTO measures("NMEASURE","VNAME","VCODE")VALUES(5,'Q3 (Р РµР°РєС‚РёРІ, РіРµРЅРµСЂС†)','Q3');
 INSERT INTO measures("NMEASURE","VNAME","VCODE")VALUES(4,'Q2','Q2');
 INSERT INTO measures("NMEASURE","VNAME","VCODE")VALUES(6,'Q4','Q4');
 INSERT INTO measures("NMEASURE","VNAME","VCODE")VALUES(7,'R+ (Q1+Q2)','Q12');
-INSERT INTO measures("NMEASURE","VNAME","VCODE")VALUES(0,'Автоматически определяемое','A');
+INSERT INTO measures("NMEASURE","VNAME","VCODE")VALUES(0,'РђРІС‚РѕРјР°С‚РёС‡РµСЃРєРё РѕРїСЂРµРґРµР»СЏРµРјРѕРµ','A');
 INSERT INTO measures("NMEASURE","VNAME","VCODE")VALUES(8,'R- (Q3+Q4)','Q34');
-INSERT INTO measures("NMEASURE","VNAME","VCODE")VALUES(9,'E (ER-ED) Факт. небаланс','E');
+INSERT INTO measures("NMEASURE","VNAME","VCODE")VALUES(9,'E (ER-ED) Р¤Р°РєС‚. РЅРµР±Р°Р»Р°РЅСЃ','E');
 INSERT INTO measures("NMEASURE","VNAME","VCODE")VALUES(10,'Q (Q1-Q3)+(Q2-Q4)','Q');
-INSERT INTO measures("NMEASURE","VNAME","VCODE")VALUES(16,'Номинальная мощность трансф-ра','Sn');
-INSERT INTO measures("NMEASURE","VNAME","VCODE")VALUES(17,'DPxx - Потери актив мощн в стали тр','DPxx');
-INSERT INTO measures("NMEASURE","VNAME","VCODE")VALUES(18,'DPkz - Потери актив мощн в меди обмоток','DPkz');
-INSERT INTO measures("NMEASURE","VNAME","VCODE")VALUES(19,'Ixx - Ток холостого хода трансф','Ixx');
-INSERT INTO measures("NMEASURE","VNAME","VCODE")VALUES(20,'Ukz - Напр короткого замыкания','Ukz');
-INSERT INTO measures("NMEASURE","VNAME","VCODE")VALUES(21,'Tn - Кол-во часов работы трансф','Tn');
-INSERT INTO measures("NMEASURE","VNAME","VCODE")VALUES(22,'Tp - Кол-во часов работы тр под нагр','Tp');
-INSERT INTO measures("NMEASURE","VNAME","VCODE")VALUES(23,'SBH - Мощность обмотки ВН','SBH');
-INSERT INTO measures("NMEASURE","VNAME","VCODE")VALUES(24,'SCH - Мощность обмотки СН','SCH');
-INSERT INTO measures("NMEASURE","VNAME","VCODE")VALUES(25,'SHH - Мощность обмотки НН','SHH');
-INSERT INTO measures("NMEASURE","VNAME","VCODE")VALUES(26,'DPBH - Потери мощн в меди обм ВН','DPBH');
-INSERT INTO measures("NMEASURE","VNAME","VCODE")VALUES(27,'DPCH - Потери мощн в меди обм СН','DPCH');
-INSERT INTO measures("NMEASURE","VNAME","VCODE")VALUES(28,'DPHH - Потери мощн в меди обм НН','DPHH');
-INSERT INTO measures("NMEASURE","VNAME","VCODE")VALUES(29,'UBH_CH - Напр-е обмотки ВН-СН','UBH_CH');
-INSERT INTO measures("NMEASURE","VNAME","VCODE")VALUES(30,'UCH_HH - Напр-е обмотки СН-НН','UCH_HH');
-INSERT INTO measures("NMEASURE","VNAME","VCODE")VALUES(31,'UBH_HH - Напр-е обмотки ВН-НН','UBH_HH');
-INSERT INTO measures("NMEASURE","VNAME","VCODE")VALUES(32,'L - Длина линии','L');
-INSERT INTO measures("NMEASURE","VNAME","VCODE")VALUES(33,'r0 - Удельное актив сопрот-е линии','r0');
-INSERT INTO measures("NMEASURE","VNAME","VCODE")VALUES(34,'x0 - Удельное реактив сопрот-е линии','x0');
-INSERT INTO measures("NMEASURE","VNAME","VCODE")VALUES(35,'Un - Номинальное напряжение линии','Un');
-INSERT INTO measures("NMEASURE","VNAME","VCODE")VALUES(12,'Допустимый небаланс','ADBALANCE');
-INSERT INTO measures("NMEASURE","VNAME","VCODE")VALUES(11,'Фактический небаланс %','BALANCEP');
-INSERT INTO measures("NMEASURE","VNAME","VCODE")VALUES(13,'Допустимый небаланс %','ADBALANCEP');
-INSERT INTO measures("NMEASURE","VNAME","VCODE")VALUES(14,'Доп небал - Факт небал','BALANCEDIF');
-INSERT INTO measures("NMEASURE","VNAME","VCODE")VALUES(15,'Доп небал - Факт небал %','BALANCEDIFP');
+INSERT INTO measures("NMEASURE","VNAME","VCODE")VALUES(16,'РќРѕРјРёРЅР°Р»СЊРЅР°СЏ РјРѕС‰РЅРѕСЃС‚СЊ С‚СЂР°РЅСЃС„-СЂР°','Sn');
+INSERT INTO measures("NMEASURE","VNAME","VCODE")VALUES(17,'DPxx - РџРѕС‚РµСЂРё Р°РєС‚РёРІ РјРѕС‰РЅ РІ СЃС‚Р°Р»Рё С‚СЂ','DPxx');
+INSERT INTO measures("NMEASURE","VNAME","VCODE")VALUES(18,'DPkz - РџРѕС‚РµСЂРё Р°РєС‚РёРІ РјРѕС‰РЅ РІ РјРµРґРё РѕР±РјРѕС‚РѕРє','DPkz');
+INSERT INTO measures("NMEASURE","VNAME","VCODE")VALUES(19,'Ixx - РўРѕРє С…РѕР»РѕСЃС‚РѕРіРѕ С…РѕРґР° С‚СЂР°РЅСЃС„','Ixx');
+INSERT INTO measures("NMEASURE","VNAME","VCODE")VALUES(20,'Ukz - РќР°РїСЂ РєРѕСЂРѕС‚РєРѕРіРѕ Р·Р°РјС‹РєР°РЅРёСЏ','Ukz');
+INSERT INTO measures("NMEASURE","VNAME","VCODE")VALUES(21,'Tn - РљРѕР»-РІРѕ С‡Р°СЃРѕРІ СЂР°Р±РѕС‚С‹ С‚СЂР°РЅСЃС„','Tn');
+INSERT INTO measures("NMEASURE","VNAME","VCODE")VALUES(22,'Tp - РљРѕР»-РІРѕ С‡Р°СЃРѕРІ СЂР°Р±РѕС‚С‹ С‚СЂ РїРѕРґ РЅР°РіСЂ','Tp');
+INSERT INTO measures("NMEASURE","VNAME","VCODE")VALUES(23,'SBH - РњРѕС‰РЅРѕСЃС‚СЊ РѕР±РјРѕС‚РєРё Р’Рќ','SBH');
+INSERT INTO measures("NMEASURE","VNAME","VCODE")VALUES(24,'SCH - РњРѕС‰РЅРѕСЃС‚СЊ РѕР±РјРѕС‚РєРё РЎРќ','SCH');
+INSERT INTO measures("NMEASURE","VNAME","VCODE")VALUES(25,'SHH - РњРѕС‰РЅРѕСЃС‚СЊ РѕР±РјРѕС‚РєРё РќРќ','SHH');
+INSERT INTO measures("NMEASURE","VNAME","VCODE")VALUES(26,'DPBH - РџРѕС‚РµСЂРё РјРѕС‰РЅ РІ РјРµРґРё РѕР±Рј Р’Рќ','DPBH');
+INSERT INTO measures("NMEASURE","VNAME","VCODE")VALUES(27,'DPCH - РџРѕС‚РµСЂРё РјРѕС‰РЅ РІ РјРµРґРё РѕР±Рј РЎРќ','DPCH');
+INSERT INTO measures("NMEASURE","VNAME","VCODE")VALUES(28,'DPHH - РџРѕС‚РµСЂРё РјРѕС‰РЅ РІ РјРµРґРё РѕР±Рј РќРќ','DPHH');
+INSERT INTO measures("NMEASURE","VNAME","VCODE")VALUES(29,'UBH_CH - РќР°РїСЂ-Рµ РѕР±РјРѕС‚РєРё Р’Рќ-РЎРќ','UBH_CH');
+INSERT INTO measures("NMEASURE","VNAME","VCODE")VALUES(30,'UCH_HH - РќР°РїСЂ-Рµ РѕР±РјРѕС‚РєРё РЎРќ-РќРќ','UCH_HH');
+INSERT INTO measures("NMEASURE","VNAME","VCODE")VALUES(31,'UBH_HH - РќР°РїСЂ-Рµ РѕР±РјРѕС‚РєРё Р’Рќ-РќРќ','UBH_HH');
+INSERT INTO measures("NMEASURE","VNAME","VCODE")VALUES(32,'L - Р”Р»РёРЅР° Р»РёРЅРёРё','L');
+INSERT INTO measures("NMEASURE","VNAME","VCODE")VALUES(33,'r0 - РЈРґРµР»СЊРЅРѕРµ Р°РєС‚РёРІ СЃРѕРїСЂРѕС‚-Рµ Р»РёРЅРёРё','r0');
+INSERT INTO measures("NMEASURE","VNAME","VCODE")VALUES(34,'x0 - РЈРґРµР»СЊРЅРѕРµ СЂРµР°РєС‚РёРІ СЃРѕРїСЂРѕС‚-Рµ Р»РёРЅРёРё','x0');
+INSERT INTO measures("NMEASURE","VNAME","VCODE")VALUES(35,'Un - РќРѕРјРёРЅР°Р»СЊРЅРѕРµ РЅР°РїСЂСЏР¶РµРЅРёРµ Р»РёРЅРёРё','Un');
+INSERT INTO measures("NMEASURE","VNAME","VCODE")VALUES(12,'Р”РѕРїСѓСЃС‚РёРјС‹Р№ РЅРµР±Р°Р»Р°РЅСЃ','ADBALANCE');
+INSERT INTO measures("NMEASURE","VNAME","VCODE")VALUES(11,'Р¤Р°РєС‚РёС‡РµСЃРєРёР№ РЅРµР±Р°Р»Р°РЅСЃ %','BALANCEP');
+INSERT INTO measures("NMEASURE","VNAME","VCODE")VALUES(13,'Р”РѕРїСѓСЃС‚РёРјС‹Р№ РЅРµР±Р°Р»Р°РЅСЃ %','ADBALANCEP');
+INSERT INTO measures("NMEASURE","VNAME","VCODE")VALUES(14,'Р”РѕРї РЅРµР±Р°Р» - Р¤Р°РєС‚ РЅРµР±Р°Р»','BALANCEDIF');
+INSERT INTO measures("NMEASURE","VNAME","VCODE")VALUES(15,'Р”РѕРї РЅРµР±Р°Р» - Р¤Р°РєС‚ РЅРµР±Р°Р» %','BALANCEDIFP');
 commit;
 end;
 /
@@ -20290,13 +20290,13 @@ create table OBJTYPEMEAS  (
 );
 
 comment on table OBJTYPEMEAS is
-'Измерения типов объектов';
+'РР·РјРµСЂРµРЅРёСЏ С‚РёРїРѕРІ РѕР±СЉРµРєС‚РѕРІ';
 
 comment on column OBJTYPEMEAS.IND is
-'Ид типа объекта';
+'РРґ С‚РёРїР° РѕР±СЉРµРєС‚Р°';
 
 comment on column OBJTYPEMEAS.NMEASURE is
-'Ид измерения';
+'РРґ РёР·РјРµСЂРµРЅРёСЏ';
 
 /*==============================================================*/
 /* Index: OBJTYPEMEAS_IDX1                                      */
@@ -20316,8 +20316,8 @@ alter table OBJTYPEMEAS
       on delete cascade;
 
 begin
-INSERT INTO DICT_OBJ_TYPES("IND","VNAME","RT_TYPE")VALUES(11,'Группа учета',11);
-INSERT INTO DICT_OBJ_TYPES("IND","VNAME","RT_TYPE")VALUES(12,'Точка в группе учета',12);
+INSERT INTO DICT_OBJ_TYPES("IND","VNAME","RT_TYPE")VALUES(11,'Р“СЂСѓРїРїР° СѓС‡РµС‚Р°',11);
+INSERT INTO DICT_OBJ_TYPES("IND","VNAME","RT_TYPE")VALUES(12,'РўРѕС‡РєР° РІ РіСЂСѓРїРїРµ СѓС‡РµС‚Р°',12);
 commit;
 end;
 /
@@ -20435,19 +20435,19 @@ create table SWITCHESSRV  (
 );
 
 comment on table SWITCHESSRV is
-'Перекл обводвых опрос';
+'РџРµСЂРµРєР» РѕР±РІРѕРґРІС‹С… РѕРїСЂРѕСЃ';
 
 comment on column SWITCHESSRV.NSWITCH is
-'Ид обводника';
+'РРґ РѕР±РІРѕРґРЅРёРєР°';
 
 comment on column SWITCHESSRV.DSWITCH is
-'Дата переключения';
+'Р”Р°С‚Р° РїРµСЂРµРєР»СЋС‡РµРЅРёСЏ';
 
 comment on column SWITCHESSRV.DESCAPE is
-'Дата окончания';
+'Р”Р°С‚Р° РѕРєРѕРЅС‡Р°РЅРёСЏ';
 
 comment on column SWITCHESSRV.MID is
-'Ид точки';
+'РРґ С‚РѕС‡РєРё';
 
 /*==============================================================*/
 /* Index: SWITCHESSRV_IDX1                                      */
@@ -20476,7 +20476,7 @@ end;
 /
 
 begin
-INSERT INTO measures("NMEASURE","VNAME","VCODE")VALUES(36,'EE (ER+ED) Суммарная активная','EE');
+INSERT INTO measures("NMEASURE","VNAME","VCODE")VALUES(36,'EE (ER+ED) РЎСѓРјРјР°СЂРЅР°СЏ Р°РєС‚РёРІРЅР°СЏ','EE');
 INSERT INTO measures("NMEASURE","VNAME","VCODE")VALUES(37,'QQ (Q1+Q3)+(Q2+Q4)','QQ');
 commit;
 end;
@@ -20495,16 +20495,16 @@ create table MRIDS  (
 );
 
 comment on table MRIDS is
-'Глобальные идентификаторы';
+'Р“Р»РѕР±Р°Р»СЊРЅС‹Рµ РёРґРµРЅС‚РёС„РёРєР°С‚РѕСЂС‹';
 
 comment on column MRIDS.MID is
-'Ид точки';
+'РРґ С‚РѕС‡РєРё';
 
 comment on column MRIDS.NMEASURE is
-'Ид измерения';
+'РРґ РёР·РјРµСЂРµРЅРёСЏ';
 
 comment on column MRIDS.MRID is
-'Глобальный идент';
+'Р“Р»РѕР±Р°Р»СЊРЅС‹Р№ РёРґРµРЅС‚';
 
 /*==============================================================*/
 /* Index: MRIDS_IDX1                                            */
@@ -20531,7 +20531,7 @@ alter table MRIDS
       on delete cascade;
 
 ----------------------------------------------------------------------------------------------
---         VER 2.27.5  (Для обновления версии 2.27.4 до текущей скрипт запускать отсюда)        --
+--         VER 2.27.5  (Р”Р»СЏ РѕР±РЅРѕРІР»РµРЅРёСЏ РІРµСЂСЃРёРё 2.27.4 РґРѕ С‚РµРєСѓС‰РµР№ СЃРєСЂРёРїС‚ Р·Р°РїСѓСЃРєР°С‚СЊ РѕС‚СЃСЋРґР°)        --
 ----------------------------------------------------------------------------------------------
 alter table SWITCHESSRV drop constraint SWITCHESSRV_F1;
 alter table SWITCHESSRV drop constraint SWITCHESSRV_F2;
@@ -20566,13 +20566,13 @@ end;
 /
 
 --20.11.2008
-update parameter set vdescription='Ид уполномоченного субъекта' where npid=40;
+update parameter set vdescription='РРґ СѓРїРѕР»РЅРѕРјРѕС‡РµРЅРЅРѕРіРѕ СЃСѓР±СЉРµРєС‚Р°' where npid=40;
 commit;
 
 
 
 INSERT INTO deportprocedures(NPROCEDURE,VNAME,VPROCEDURE,NPERIOD,NTYPE,VMEMO)
-VALUES(15,'Анализ журнала ОВ структурных подразделений','ryda.BACKGROUND01_PG.copyswitches',0,1,'Анализ журнала ОВ структурных подразделений')
+VALUES(15,'РђРЅР°Р»РёР· Р¶СѓСЂРЅР°Р»Р° РћР’ СЃС‚СЂСѓРєС‚СѓСЂРЅС‹С… РїРѕРґСЂР°Р·РґРµР»РµРЅРёР№','ryda.BACKGROUND01_PG.copyswitches',0,1,'РђРЅР°Р»РёР· Р¶СѓСЂРЅР°Р»Р° РћР’ СЃС‚СЂСѓРєС‚СѓСЂРЅС‹С… РїРѕРґСЂР°Р·РґРµР»РµРЅРёР№')
 /
 commit
 /
@@ -20589,7 +20589,7 @@ end;
 INSERT INTO deportprocedures
 (NPROCEDURE,VNAME,VPROCEDURE,NPERIOD,NTYPE,VMEMO)
 VALUES
-(55,'КППД (RDF-макет)','reports2_pg.mrdf_p',2,0,'КППД (RDF-макет) в XML - формате')
+(55,'РљРџРџР” (RDF-РјР°РєРµС‚)','reports2_pg.mrdf_p',2,0,'РљРџРџР” (RDF-РјР°РєРµС‚) РІ XML - С„РѕСЂРјР°С‚Рµ')
 /
 commit
 /
@@ -20603,7 +20603,7 @@ alter table POINTFORMULA  add(
 );
 
 comment on column POINTFORMULA.NOPTTYPE is
-'Тип орптимизации';
+'РўРёРї РѕСЂРїС‚РёРјРёР·Р°С†РёРё';
 
 
 /*==============================================================*/
@@ -20614,11 +20614,11 @@ alter table FORMULPARAMS  add (
 );
 
 comment on column FORMULPARAMS.NSIGN is
-'Знак';
+'Р—РЅР°Рє';
 
 -------01/12/2008
 begin
-INSERT INTO measures("NMEASURE","VNAME","VCODE")VALUES(38,'Автоматически определяемое (инверсия)','AI');
+INSERT INTO measures("NMEASURE","VNAME","VCODE")VALUES(38,'РђРІС‚РѕРјР°С‚РёС‡РµСЃРєРё РѕРїСЂРµРґРµР»СЏРµРјРѕРµ (РёРЅРІРµСЂСЃРёСЏ)','AI');
 commit;
 end;
 /
@@ -20643,81 +20643,81 @@ declare
 ln_1 NUMBER;
 ln_2 NUMBER;
 begin
-select max(nid) into ln_1 from BASEFORMULA where vname='Базовые формулы';
+select max(nid) into ln_1 from BASEFORMULA where vname='Р‘Р°Р·РѕРІС‹Рµ С„РѕСЂРјСѓР»С‹';
 if ln_1 is null then 
 return;
 end if;
 delete from baseformula where nparent=ln_1;
 select points_seq.NEXTVAL into ln_2 from dual;
-INSERT INTO BASEFORMULA("NID","NPARENT","NTYPE","VNAME","VFORMULA","VMEMO")VALUES(ln_2,ln_1,1,'Разница счетчиков актив (для потерь в линиях по разн. сч)','abs(a-b)',NULL);
-INSERT INTO BASEFORMULPARAMS("NID","NORDER","VNAME","VPARAM","VMEMO")VALUES(ln_2,1,'a','MID.1000.EE','EE (ER+ED) Суммарная активная');
-INSERT INTO BASEFORMULPARAMS("NID","NORDER","VNAME","VPARAM","VMEMO")VALUES(ln_2,2,'b','MID.1000.EE','EE (ER+ED) Суммарная активная');
+INSERT INTO BASEFORMULA("NID","NPARENT","NTYPE","VNAME","VFORMULA","VMEMO")VALUES(ln_2,ln_1,1,'Р Р°Р·РЅРёС†Р° СЃС‡РµС‚С‡РёРєРѕРІ Р°РєС‚РёРІ (РґР»СЏ РїРѕС‚РµСЂСЊ РІ Р»РёРЅРёСЏС… РїРѕ СЂР°Р·РЅ. СЃС‡)','abs(a-b)',NULL);
+INSERT INTO BASEFORMULPARAMS("NID","NORDER","VNAME","VPARAM","VMEMO")VALUES(ln_2,1,'a','MID.1000.EE','EE (ER+ED) РЎСѓРјРјР°СЂРЅР°СЏ Р°РєС‚РёРІРЅР°СЏ');
+INSERT INTO BASEFORMULPARAMS("NID","NORDER","VNAME","VPARAM","VMEMO")VALUES(ln_2,2,'b','MID.1000.EE','EE (ER+ED) РЎСѓРјРјР°СЂРЅР°СЏ Р°РєС‚РёРІРЅР°СЏ');
 
 select points_seq.NEXTVAL into ln_2 from dual;
-INSERT INTO BASEFORMULA("NID","NPARENT","NTYPE","VNAME","VFORMULA","VMEMO")VALUES(ln_2,ln_1,1,'Разница счетчиков реактив (для потерь в линиях по разн. сч)','abs(a-b)',NULL);
+INSERT INTO BASEFORMULA("NID","NPARENT","NTYPE","VNAME","VFORMULA","VMEMO")VALUES(ln_2,ln_1,1,'Р Р°Р·РЅРёС†Р° СЃС‡РµС‚С‡РёРєРѕРІ СЂРµР°РєС‚РёРІ (РґР»СЏ РїРѕС‚РµСЂСЊ РІ Р»РёРЅРёСЏС… РїРѕ СЂР°Р·РЅ. СЃС‡)','abs(a-b)',NULL);
 INSERT INTO BASEFORMULPARAMS("NID","NORDER","VNAME","VPARAM","VMEMO")VALUES(ln_2,1,'a','MID.1000.QQ','QQ (Q1+Q3)+(Q2+Q4)');
 INSERT INTO BASEFORMULPARAMS("NID","NORDER","VNAME","VPARAM","VMEMO")VALUES(ln_2,2,'b','MID.1000.QQ','QQ (Q1+Q3)+(Q2+Q4)');
 
 select points_seq.NEXTVAL into ln_2 from dual;
-INSERT INTO BASEFORMULA("NID","NPARENT","NTYPE","VNAME","VFORMULA","VMEMO")VALUES(ln_2,ln_1,1,'Расчет потерь активной электроэнергии в двухобмоточном тр-ре','if(WPf>DPxx*0.5, DPxx*0.5+(sqrt((WPf/0.5)^2+(WQf/0.5)^2)/Sn)^2*DPkz*0.5, if ((WPf>0)&(WPf<=DPxx*0.5), DPxx*0.5, 0))',NULL);
-INSERT INTO BASEFORMULPARAMS("NID","NORDER","VNAME","VPARAM","VMEMO")VALUES(ln_2,1,'WPf','MID.1000.EE','EE (ER+ED) Суммарная активная');
-INSERT INTO BASEFORMULPARAMS("NID","NORDER","VNAME","VPARAM","VMEMO")VALUES(ln_2,2,'DPxx','MID.1000.DPxx','DPxx - Потери актив мощн в стали тр');
+INSERT INTO BASEFORMULA("NID","NPARENT","NTYPE","VNAME","VFORMULA","VMEMO")VALUES(ln_2,ln_1,1,'Р Р°СЃС‡РµС‚ РїРѕС‚РµСЂСЊ Р°РєС‚РёРІРЅРѕР№ СЌР»РµРєС‚СЂРѕСЌРЅРµСЂРіРёРё РІ РґРІСѓС…РѕР±РјРѕС‚РѕС‡РЅРѕРј С‚СЂ-СЂРµ','if(WPf>DPxx*0.5, DPxx*0.5+(sqrt((WPf/0.5)^2+(WQf/0.5)^2)/Sn)^2*DPkz*0.5, if ((WPf>0)&(WPf<=DPxx*0.5), DPxx*0.5, 0))',NULL);
+INSERT INTO BASEFORMULPARAMS("NID","NORDER","VNAME","VPARAM","VMEMO")VALUES(ln_2,1,'WPf','MID.1000.EE','EE (ER+ED) РЎСѓРјРјР°СЂРЅР°СЏ Р°РєС‚РёРІРЅР°СЏ');
+INSERT INTO BASEFORMULPARAMS("NID","NORDER","VNAME","VPARAM","VMEMO")VALUES(ln_2,2,'DPxx','MID.1000.DPxx','DPxx - РџРѕС‚РµСЂРё Р°РєС‚РёРІ РјРѕС‰РЅ РІ СЃС‚Р°Р»Рё С‚СЂ');
 INSERT INTO BASEFORMULPARAMS("NID","NORDER","VNAME","VPARAM","VMEMO")VALUES(ln_2,3,'WQf','MID.1000.QQ','QQ (Q1+Q3)+(Q2+Q4)');
-INSERT INTO BASEFORMULPARAMS("NID","NORDER","VNAME","VPARAM","VMEMO")VALUES(ln_2,4,'Sn','MID.1000.Sn','Номинальная мощность трансф-ра');
-INSERT INTO BASEFORMULPARAMS("NID","NORDER","VNAME","VPARAM","VMEMO")VALUES(ln_2,5,'DPkz','MID.1000.DPkz','DPkz - Потери актив мощн в меди обмоток');
+INSERT INTO BASEFORMULPARAMS("NID","NORDER","VNAME","VPARAM","VMEMO")VALUES(ln_2,4,'Sn','MID.1000.Sn','РќРѕРјРёРЅР°Р»СЊРЅР°СЏ РјРѕС‰РЅРѕСЃС‚СЊ С‚СЂР°РЅСЃС„-СЂР°');
+INSERT INTO BASEFORMULPARAMS("NID","NORDER","VNAME","VPARAM","VMEMO")VALUES(ln_2,5,'DPkz','MID.1000.DPkz','DPkz - РџРѕС‚РµСЂРё Р°РєС‚РёРІ РјРѕС‰РЅ РІ РјРµРґРё РѕР±РјРѕС‚РѕРє');
 
 select points_seq.NEXTVAL into ln_2 from dual;
-INSERT INTO BASEFORMULA("NID","NPARENT","NTYPE","VNAME","VFORMULA","VMEMO")VALUES(ln_2,ln_1,1,'Расчет потерь активной электроэнергии в линии','((WP^2+WQ^2)/(Un^2*0.5))*((r0*L)/100)*0.001',NULL);
-INSERT INTO BASEFORMULPARAMS("NID","NORDER","VNAME","VPARAM","VMEMO")VALUES(ln_2,1,'WP','MID.1000.EE','EE (ER+ED) Суммарная активная');
+INSERT INTO BASEFORMULA("NID","NPARENT","NTYPE","VNAME","VFORMULA","VMEMO")VALUES(ln_2,ln_1,1,'Р Р°СЃС‡РµС‚ РїРѕС‚РµСЂСЊ Р°РєС‚РёРІРЅРѕР№ СЌР»РµРєС‚СЂРѕСЌРЅРµСЂРіРёРё РІ Р»РёРЅРёРё','((WP^2+WQ^2)/(Un^2*0.5))*((r0*L)/100)*0.001',NULL);
+INSERT INTO BASEFORMULPARAMS("NID","NORDER","VNAME","VPARAM","VMEMO")VALUES(ln_2,1,'WP','MID.1000.EE','EE (ER+ED) РЎСѓРјРјР°СЂРЅР°СЏ Р°РєС‚РёРІРЅР°СЏ');
 INSERT INTO BASEFORMULPARAMS("NID","NORDER","VNAME","VPARAM","VMEMO")VALUES(ln_2,2,'WQ','MID.1000.QQ','QQ (Q1+Q3)+(Q2+Q4)');
-INSERT INTO BASEFORMULPARAMS("NID","NORDER","VNAME","VPARAM","VMEMO")VALUES(ln_2,3,'Un','MID.1000.Un','Un - Номинальное напряжение линии');
-INSERT INTO BASEFORMULPARAMS("NID","NORDER","VNAME","VPARAM","VMEMO")VALUES(ln_2,4,'r0','MID.1000.r0','r0 - Удельное актив сопрот-е линии');
-INSERT INTO BASEFORMULPARAMS("NID","NORDER","VNAME","VPARAM","VMEMO")VALUES(ln_2,5,'L','MID.1000.L','L - Длина линии');
+INSERT INTO BASEFORMULPARAMS("NID","NORDER","VNAME","VPARAM","VMEMO")VALUES(ln_2,3,'Un','MID.1000.Un','Un - РќРѕРјРёРЅР°Р»СЊРЅРѕРµ РЅР°РїСЂСЏР¶РµРЅРёРµ Р»РёРЅРёРё');
+INSERT INTO BASEFORMULPARAMS("NID","NORDER","VNAME","VPARAM","VMEMO")VALUES(ln_2,4,'r0','MID.1000.r0','r0 - РЈРґРµР»СЊРЅРѕРµ Р°РєС‚РёРІ СЃРѕРїСЂРѕС‚-Рµ Р»РёРЅРёРё');
+INSERT INTO BASEFORMULPARAMS("NID","NORDER","VNAME","VPARAM","VMEMO")VALUES(ln_2,5,'L','MID.1000.L','L - Р”Р»РёРЅР° Р»РёРЅРёРё');
 
 select points_seq.NEXTVAL into ln_2 from dual;
-INSERT INTO BASEFORMULA("NID","NPARENT","NTYPE","VNAME","VFORMULA","VMEMO")VALUES(ln_2,ln_1,1,'Расчет потерь активной электроэнергии в трехобмоточном тр-ре','if((WPCH+WPHH)>DPxx*0.5, DPxx*0.5+(DPBH*((sqrt(((WPCH+WPHH)/0.5)^2+((WQCH+WQHH)/0.5)^2)/SBH)^2)+DPCH*((sqrt((WPCH/0.5)^2+(WQCH/0.5)^2)/SCH)^2)+DPHH*((sqrt((WPHH/0.5)^2+(WQHH/0.5)^2)/SHH)^2))*0.5, if (((WPCH+WPHH)>0)&((WPCH+WPHH)<=DPxx*0.5), DPxx*0.5, 0))',NULL);
-INSERT INTO BASEFORMULPARAMS("NID","NORDER","VNAME","VPARAM","VMEMO")VALUES(ln_2,1,'WPCH','MID.1000.EE','EE (ER+ED) Суммарная активная');
-INSERT INTO BASEFORMULPARAMS("NID","NORDER","VNAME","VPARAM","VMEMO")VALUES(ln_2,2,'WPHH','MID.1000.EE','EE (ER+ED) Суммарная активная');
-INSERT INTO BASEFORMULPARAMS("NID","NORDER","VNAME","VPARAM","VMEMO")VALUES(ln_2,3,'DPxx','MID.53092.DPxx','DPxx - Потери актив мощн в стали тр');
-INSERT INTO BASEFORMULPARAMS("NID","NORDER","VNAME","VPARAM","VMEMO")VALUES(ln_2,4,'DPBH','MID.53092.DPBH','DPBH - Потери мощн в меди обм ВН');
+INSERT INTO BASEFORMULA("NID","NPARENT","NTYPE","VNAME","VFORMULA","VMEMO")VALUES(ln_2,ln_1,1,'Р Р°СЃС‡РµС‚ РїРѕС‚РµСЂСЊ Р°РєС‚РёРІРЅРѕР№ СЌР»РµРєС‚СЂРѕСЌРЅРµСЂРіРёРё РІ С‚СЂРµС…РѕР±РјРѕС‚РѕС‡РЅРѕРј С‚СЂ-СЂРµ','if((WPCH+WPHH)>DPxx*0.5, DPxx*0.5+(DPBH*((sqrt(((WPCH+WPHH)/0.5)^2+((WQCH+WQHH)/0.5)^2)/SBH)^2)+DPCH*((sqrt((WPCH/0.5)^2+(WQCH/0.5)^2)/SCH)^2)+DPHH*((sqrt((WPHH/0.5)^2+(WQHH/0.5)^2)/SHH)^2))*0.5, if (((WPCH+WPHH)>0)&((WPCH+WPHH)<=DPxx*0.5), DPxx*0.5, 0))',NULL);
+INSERT INTO BASEFORMULPARAMS("NID","NORDER","VNAME","VPARAM","VMEMO")VALUES(ln_2,1,'WPCH','MID.1000.EE','EE (ER+ED) РЎСѓРјРјР°СЂРЅР°СЏ Р°РєС‚РёРІРЅР°СЏ');
+INSERT INTO BASEFORMULPARAMS("NID","NORDER","VNAME","VPARAM","VMEMO")VALUES(ln_2,2,'WPHH','MID.1000.EE','EE (ER+ED) РЎСѓРјРјР°СЂРЅР°СЏ Р°РєС‚РёРІРЅР°СЏ');
+INSERT INTO BASEFORMULPARAMS("NID","NORDER","VNAME","VPARAM","VMEMO")VALUES(ln_2,3,'DPxx','MID.53092.DPxx','DPxx - РџРѕС‚РµСЂРё Р°РєС‚РёРІ РјРѕС‰РЅ РІ СЃС‚Р°Р»Рё С‚СЂ');
+INSERT INTO BASEFORMULPARAMS("NID","NORDER","VNAME","VPARAM","VMEMO")VALUES(ln_2,4,'DPBH','MID.53092.DPBH','DPBH - РџРѕС‚РµСЂРё РјРѕС‰РЅ РІ РјРµРґРё РѕР±Рј Р’Рќ');
 INSERT INTO BASEFORMULPARAMS("NID","NORDER","VNAME","VPARAM","VMEMO")VALUES(ln_2,5,'WQCH','MID.1000.QQ','QQ (Q1+Q3)+(Q2+Q4)');
 INSERT INTO BASEFORMULPARAMS("NID","NORDER","VNAME","VPARAM","VMEMO")VALUES(ln_2,6,'WQHH','MID.1000.QQ','QQ (Q1+Q3)+(Q2+Q4)');
-INSERT INTO BASEFORMULPARAMS("NID","NORDER","VNAME","VPARAM","VMEMO")VALUES(ln_2,7,'SBH','MID.53092.SBH','SBH - Мощность обмотки ВН');
-INSERT INTO BASEFORMULPARAMS("NID","NORDER","VNAME","VPARAM","VMEMO")VALUES(ln_2,8,'DPCH','MID.53092.DPCH','DPCH - Потери мощн в меди обм СН');
-INSERT INTO BASEFORMULPARAMS("NID","NORDER","VNAME","VPARAM","VMEMO")VALUES(ln_2,9,'SCH','MID.53092.SCH','SCH - Мощность обмотки СН');
-INSERT INTO BASEFORMULPARAMS("NID","NORDER","VNAME","VPARAM","VMEMO")VALUES(ln_2,10,'DPHH','MID.53092.DPHH','DPHH - Потери мощн в меди обм НН');
-INSERT INTO BASEFORMULPARAMS("NID","NORDER","VNAME","VPARAM","VMEMO")VALUES(ln_2,11,'SHH','MID.53092.SHH','SHH - Мощность обмотки НН');
+INSERT INTO BASEFORMULPARAMS("NID","NORDER","VNAME","VPARAM","VMEMO")VALUES(ln_2,7,'SBH','MID.53092.SBH','SBH - РњРѕС‰РЅРѕСЃС‚СЊ РѕР±РјРѕС‚РєРё Р’Рќ');
+INSERT INTO BASEFORMULPARAMS("NID","NORDER","VNAME","VPARAM","VMEMO")VALUES(ln_2,8,'DPCH','MID.53092.DPCH','DPCH - РџРѕС‚РµСЂРё РјРѕС‰РЅ РІ РјРµРґРё РѕР±Рј РЎРќ');
+INSERT INTO BASEFORMULPARAMS("NID","NORDER","VNAME","VPARAM","VMEMO")VALUES(ln_2,9,'SCH','MID.53092.SCH','SCH - РњРѕС‰РЅРѕСЃС‚СЊ РѕР±РјРѕС‚РєРё РЎРќ');
+INSERT INTO BASEFORMULPARAMS("NID","NORDER","VNAME","VPARAM","VMEMO")VALUES(ln_2,10,'DPHH','MID.53092.DPHH','DPHH - РџРѕС‚РµСЂРё РјРѕС‰РЅ РІ РјРµРґРё РѕР±Рј РќРќ');
+INSERT INTO BASEFORMULPARAMS("NID","NORDER","VNAME","VPARAM","VMEMO")VALUES(ln_2,11,'SHH','MID.53092.SHH','SHH - РњРѕС‰РЅРѕСЃС‚СЊ РѕР±РјРѕС‚РєРё РќРќ');
 
 select points_seq.NEXTVAL into ln_2 from dual;
-INSERT INTO BASEFORMULA("NID","NPARENT","NTYPE","VNAME","VFORMULA","VMEMO")VALUES(ln_2,ln_1,1,'Расчет потерь реактивной электроэнергии в двухобмоточном тр-ре','if(WQf>(Sn*(Ixx/100))*0.5, (Sn*(Ixx/100))*0.5+(sqrt((WPf/0.5)^2+(WQf/0.5)^2)/Sn)^2*(Sn*(Ukz/100))*0.5, if ((WQf>0)&(WQf<=(Sn*(Ixx/100))*0.5), (Sn*(Ixx/100))*0.5, 0))',NULL);
+INSERT INTO BASEFORMULA("NID","NPARENT","NTYPE","VNAME","VFORMULA","VMEMO")VALUES(ln_2,ln_1,1,'Р Р°СЃС‡РµС‚ РїРѕС‚РµСЂСЊ СЂРµР°РєС‚РёРІРЅРѕР№ СЌР»РµРєС‚СЂРѕСЌРЅРµСЂРіРёРё РІ РґРІСѓС…РѕР±РјРѕС‚РѕС‡РЅРѕРј С‚СЂ-СЂРµ','if(WQf>(Sn*(Ixx/100))*0.5, (Sn*(Ixx/100))*0.5+(sqrt((WPf/0.5)^2+(WQf/0.5)^2)/Sn)^2*(Sn*(Ukz/100))*0.5, if ((WQf>0)&(WQf<=(Sn*(Ixx/100))*0.5), (Sn*(Ixx/100))*0.5, 0))',NULL);
 INSERT INTO BASEFORMULPARAMS("NID","NORDER","VNAME","VPARAM","VMEMO")VALUES(ln_2,1,'WQf','MID.1000.QQ','QQ (Q1+Q3)+(Q2+Q4)');
-INSERT INTO BASEFORMULPARAMS("NID","NORDER","VNAME","VPARAM","VMEMO")VALUES(ln_2,2,'Sn','MID.1000.Sn','Номинальная мощность трансф-ра');
-INSERT INTO BASEFORMULPARAMS("NID","NORDER","VNAME","VPARAM","VMEMO")VALUES(ln_2,3,'Ixx','MID.1000.Ixx','Ixx - Ток холостого хода трансф');
-INSERT INTO BASEFORMULPARAMS("NID","NORDER","VNAME","VPARAM","VMEMO")VALUES(ln_2,4,'WPf','MID.1000.EE','EE (ER+ED) Суммарная активная');
-INSERT INTO BASEFORMULPARAMS("NID","NORDER","VNAME","VPARAM","VMEMO")VALUES(ln_2,5,'Ukz','MID.1000.Ukz','Ukz - Напр короткого замыкания');
+INSERT INTO BASEFORMULPARAMS("NID","NORDER","VNAME","VPARAM","VMEMO")VALUES(ln_2,2,'Sn','MID.1000.Sn','РќРѕРјРёРЅР°Р»СЊРЅР°СЏ РјРѕС‰РЅРѕСЃС‚СЊ С‚СЂР°РЅСЃС„-СЂР°');
+INSERT INTO BASEFORMULPARAMS("NID","NORDER","VNAME","VPARAM","VMEMO")VALUES(ln_2,3,'Ixx','MID.1000.Ixx','Ixx - РўРѕРє С…РѕР»РѕСЃС‚РѕРіРѕ С…РѕРґР° С‚СЂР°РЅСЃС„');
+INSERT INTO BASEFORMULPARAMS("NID","NORDER","VNAME","VPARAM","VMEMO")VALUES(ln_2,4,'WPf','MID.1000.EE','EE (ER+ED) РЎСѓРјРјР°СЂРЅР°СЏ Р°РєС‚РёРІРЅР°СЏ');
+INSERT INTO BASEFORMULPARAMS("NID","NORDER","VNAME","VPARAM","VMEMO")VALUES(ln_2,5,'Ukz','MID.1000.Ukz','Ukz - РќР°РїСЂ РєРѕСЂРѕС‚РєРѕРіРѕ Р·Р°РјС‹РєР°РЅРёСЏ');
 
 select points_seq.NEXTVAL into ln_2 from dual;
-INSERT INTO BASEFORMULA("NID","NPARENT","NTYPE","VNAME","VFORMULA","VMEMO")VALUES(ln_2,ln_1,1,'Расчет потерь реактивной электроэнергии в линии','((WP^2+WQ^2)/(Un^2*0.5))*((x0*L)/100)*0.001',NULL);
-INSERT INTO BASEFORMULPARAMS("NID","NORDER","VNAME","VPARAM","VMEMO")VALUES(ln_2,1,'WP','MID.1000.EE','EE (ER+ED) Суммарная активная');
+INSERT INTO BASEFORMULA("NID","NPARENT","NTYPE","VNAME","VFORMULA","VMEMO")VALUES(ln_2,ln_1,1,'Р Р°СЃС‡РµС‚ РїРѕС‚РµСЂСЊ СЂРµР°РєС‚РёРІРЅРѕР№ СЌР»РµРєС‚СЂРѕСЌРЅРµСЂРіРёРё РІ Р»РёРЅРёРё','((WP^2+WQ^2)/(Un^2*0.5))*((x0*L)/100)*0.001',NULL);
+INSERT INTO BASEFORMULPARAMS("NID","NORDER","VNAME","VPARAM","VMEMO")VALUES(ln_2,1,'WP','MID.1000.EE','EE (ER+ED) РЎСѓРјРјР°СЂРЅР°СЏ Р°РєС‚РёРІРЅР°СЏ');
 INSERT INTO BASEFORMULPARAMS("NID","NORDER","VNAME","VPARAM","VMEMO")VALUES(ln_2,2,'WQ','MID.1000.QQ','QQ (Q1+Q3)+(Q2+Q4)');
-INSERT INTO BASEFORMULPARAMS("NID","NORDER","VNAME","VPARAM","VMEMO")VALUES(ln_2,3,'Un','MID.1000.Un','Un - Номинальное напряжение линии');
-INSERT INTO BASEFORMULPARAMS("NID","NORDER","VNAME","VPARAM","VMEMO")VALUES(ln_2,4,'x0','MID.1000.x0','x0 - Удельное реактив сопрот-е линии');
-INSERT INTO BASEFORMULPARAMS("NID","NORDER","VNAME","VPARAM","VMEMO")VALUES(ln_2,5,'L','MID.1000.L','L - Длина линии');
+INSERT INTO BASEFORMULPARAMS("NID","NORDER","VNAME","VPARAM","VMEMO")VALUES(ln_2,3,'Un','MID.1000.Un','Un - РќРѕРјРёРЅР°Р»СЊРЅРѕРµ РЅР°РїСЂСЏР¶РµРЅРёРµ Р»РёРЅРёРё');
+INSERT INTO BASEFORMULPARAMS("NID","NORDER","VNAME","VPARAM","VMEMO")VALUES(ln_2,4,'x0','MID.1000.x0','x0 - РЈРґРµР»СЊРЅРѕРµ СЂРµР°РєС‚РёРІ СЃРѕРїСЂРѕС‚-Рµ Р»РёРЅРёРё');
+INSERT INTO BASEFORMULPARAMS("NID","NORDER","VNAME","VPARAM","VMEMO")VALUES(ln_2,5,'L','MID.1000.L','L - Р”Р»РёРЅР° Р»РёРЅРёРё');
 
 select points_seq.NEXTVAL into ln_2 from dual;
-INSERT INTO BASEFORMULA("NID","NPARENT","NTYPE","VNAME","VFORMULA","VMEMO")VALUES(ln_2,ln_1,1,'Расчет потерь реактивной электроэнергии в трехобмоточном тр-ре ','if((WQCH+WQHH)>(Sn*(Ixx/100))*0.5, (Sn*(Ixx/100))*0.5+((SBH*0.5*(UBH_CH+UBH_HH-UCH_HH)/100)*((sqrt(((WPCH+WPHH)/0.5)^2+((WQCH+WQHH)/0.5)^2)/SBH)^2)+(SCH*0.5*(UBH_CH+UCH_HH-UBH_HH)/100)*((sqrt((WPCH/0.5)^2+(WQCH/0.5)^2)/SCH)^2)+(SHH*0.5*(UBH_HH+UCH_HH-UBH_CH)/100)*((sqrt((WPHH/0.5)^2+(WQHH/0.5)^2)/SHH)^2))*0.5, if (((WQCH+WQHH)>0)&((WQCH+WQHH)<=(Sn*(Ixx/100))*0.5), (Sn*(Ixx/100))*0.5, 0))',NULL);
+INSERT INTO BASEFORMULA("NID","NPARENT","NTYPE","VNAME","VFORMULA","VMEMO")VALUES(ln_2,ln_1,1,'Р Р°СЃС‡РµС‚ РїРѕС‚РµСЂСЊ СЂРµР°РєС‚РёРІРЅРѕР№ СЌР»РµРєС‚СЂРѕСЌРЅРµСЂРіРёРё РІ С‚СЂРµС…РѕР±РјРѕС‚РѕС‡РЅРѕРј С‚СЂ-СЂРµ ','if((WQCH+WQHH)>(Sn*(Ixx/100))*0.5, (Sn*(Ixx/100))*0.5+((SBH*0.5*(UBH_CH+UBH_HH-UCH_HH)/100)*((sqrt(((WPCH+WPHH)/0.5)^2+((WQCH+WQHH)/0.5)^2)/SBH)^2)+(SCH*0.5*(UBH_CH+UCH_HH-UBH_HH)/100)*((sqrt((WPCH/0.5)^2+(WQCH/0.5)^2)/SCH)^2)+(SHH*0.5*(UBH_HH+UCH_HH-UBH_CH)/100)*((sqrt((WPHH/0.5)^2+(WQHH/0.5)^2)/SHH)^2))*0.5, if (((WQCH+WQHH)>0)&((WQCH+WQHH)<=(Sn*(Ixx/100))*0.5), (Sn*(Ixx/100))*0.5, 0))',NULL);
 INSERT INTO BASEFORMULPARAMS("NID","NORDER","VNAME","VPARAM","VMEMO")VALUES(ln_2,1,'WQCH','MID.1000.QQ','QQ (Q1+Q3)+(Q2+Q4)');
 INSERT INTO BASEFORMULPARAMS("NID","NORDER","VNAME","VPARAM","VMEMO")VALUES(ln_2,2,'WQHH','MID.1000.QQ','QQ (Q1+Q3)+(Q2+Q4)');
-INSERT INTO BASEFORMULPARAMS("NID","NORDER","VNAME","VPARAM","VMEMO")VALUES(ln_2,3,'Sn','MID.1000.Sn','Номинальная мощность трансф-ра');
-INSERT INTO BASEFORMULPARAMS("NID","NORDER","VNAME","VPARAM","VMEMO")VALUES(ln_2,4,'Ixx','MID.1000.Ixx','Ixx - Ток холостого хода трансф');
-INSERT INTO BASEFORMULPARAMS("NID","NORDER","VNAME","VPARAM","VMEMO")VALUES(ln_2,5,'SBH','MID.1000.SBH','SBH - Мощность обмотки ВН');
-INSERT INTO BASEFORMULPARAMS("NID","NORDER","VNAME","VPARAM","VMEMO")VALUES(ln_2,6,'UBH_CH','MID.1000.UBH_CH','UBH_CH - Напр-е обмотки ВН-СН');
-INSERT INTO BASEFORMULPARAMS("NID","NORDER","VNAME","VPARAM","VMEMO")VALUES(ln_2,7,'UBH_HH','MID.1000.UBH_HH','UBH_HH - Напр-е обмотки ВН-НН');
-INSERT INTO BASEFORMULPARAMS("NID","NORDER","VNAME","VPARAM","VMEMO")VALUES(ln_2,8,'UCH_HH','MID.1000.UCH_HH','UCH_HH - Напр-е обмотки СН-НН');
-INSERT INTO BASEFORMULPARAMS("NID","NORDER","VNAME","VPARAM","VMEMO")VALUES(ln_2,9,'WPCH','MID.1000.EE','EE (ER+ED) Суммарная активная');
-INSERT INTO BASEFORMULPARAMS("NID","NORDER","VNAME","VPARAM","VMEMO")VALUES(ln_2,10,'WPHH','MID.1000.EE','EE (ER+ED) Суммарная активная');
-INSERT INTO BASEFORMULPARAMS("NID","NORDER","VNAME","VPARAM","VMEMO")VALUES(ln_2,11,'SCH','MID.1000.SCH','SCH - Мощность обмотки СН');
-INSERT INTO BASEFORMULPARAMS("NID","NORDER","VNAME","VPARAM","VMEMO")VALUES(ln_2,12,'SHH','MID.1000.SHH','SHH - Мощность обмотки НН');
+INSERT INTO BASEFORMULPARAMS("NID","NORDER","VNAME","VPARAM","VMEMO")VALUES(ln_2,3,'Sn','MID.1000.Sn','РќРѕРјРёРЅР°Р»СЊРЅР°СЏ РјРѕС‰РЅРѕСЃС‚СЊ С‚СЂР°РЅСЃС„-СЂР°');
+INSERT INTO BASEFORMULPARAMS("NID","NORDER","VNAME","VPARAM","VMEMO")VALUES(ln_2,4,'Ixx','MID.1000.Ixx','Ixx - РўРѕРє С…РѕР»РѕСЃС‚РѕРіРѕ С…РѕРґР° С‚СЂР°РЅСЃС„');
+INSERT INTO BASEFORMULPARAMS("NID","NORDER","VNAME","VPARAM","VMEMO")VALUES(ln_2,5,'SBH','MID.1000.SBH','SBH - РњРѕС‰РЅРѕСЃС‚СЊ РѕР±РјРѕС‚РєРё Р’Рќ');
+INSERT INTO BASEFORMULPARAMS("NID","NORDER","VNAME","VPARAM","VMEMO")VALUES(ln_2,6,'UBH_CH','MID.1000.UBH_CH','UBH_CH - РќР°РїСЂ-Рµ РѕР±РјРѕС‚РєРё Р’Рќ-РЎРќ');
+INSERT INTO BASEFORMULPARAMS("NID","NORDER","VNAME","VPARAM","VMEMO")VALUES(ln_2,7,'UBH_HH','MID.1000.UBH_HH','UBH_HH - РќР°РїСЂ-Рµ РѕР±РјРѕС‚РєРё Р’Рќ-РќРќ');
+INSERT INTO BASEFORMULPARAMS("NID","NORDER","VNAME","VPARAM","VMEMO")VALUES(ln_2,8,'UCH_HH','MID.1000.UCH_HH','UCH_HH - РќР°РїСЂ-Рµ РѕР±РјРѕС‚РєРё РЎРќ-РќРќ');
+INSERT INTO BASEFORMULPARAMS("NID","NORDER","VNAME","VPARAM","VMEMO")VALUES(ln_2,9,'WPCH','MID.1000.EE','EE (ER+ED) РЎСѓРјРјР°СЂРЅР°СЏ Р°РєС‚РёРІРЅР°СЏ');
+INSERT INTO BASEFORMULPARAMS("NID","NORDER","VNAME","VPARAM","VMEMO")VALUES(ln_2,10,'WPHH','MID.1000.EE','EE (ER+ED) РЎСѓРјРјР°СЂРЅР°СЏ Р°РєС‚РёРІРЅР°СЏ');
+INSERT INTO BASEFORMULPARAMS("NID","NORDER","VNAME","VPARAM","VMEMO")VALUES(ln_2,11,'SCH','MID.1000.SCH','SCH - РњРѕС‰РЅРѕСЃС‚СЊ РѕР±РјРѕС‚РєРё РЎРќ');
+INSERT INTO BASEFORMULPARAMS("NID","NORDER","VNAME","VPARAM","VMEMO")VALUES(ln_2,12,'SHH','MID.1000.SHH','SHH - РњРѕС‰РЅРѕСЃС‚СЊ РѕР±РјРѕС‚РєРё РќРќ');
 
 commit;
 exception
@@ -20726,12 +20726,12 @@ end;
 /
 
 ----------------------------------------------------------------------------------------------
---         VER 2.28.2  (Для обновления версии 2.28 до текущей скрипт запускать отсюда)        --
+--         VER 2.28.2  (Р”Р»СЏ РѕР±РЅРѕРІР»РµРЅРёСЏ РІРµСЂСЃРёРё 2.28 РґРѕ С‚РµРєСѓС‰РµР№ СЃРєСЂРёРїС‚ Р·Р°РїСѓСЃРєР°С‚СЊ РѕС‚СЃСЋРґР°)        --
 ----------------------------------------------------------------------------------------------
 INSERT INTO deportprocedures
 (NPROCEDURE,VNAME,VPROCEDURE,NPERIOD,NTYPE,VMEMO)
 VALUES
-(56,'Макет 817-818','reports1_pg.817_818p',2,0,'Макет 817-818')
+(56,'РњР°РєРµС‚ 817-818','reports1_pg.817_818p',2,0,'РњР°РєРµС‚ 817-818')
 /
 commit
 /
@@ -20741,28 +20741,28 @@ commit;
 
 
 begin
-INSERT INTO protocols("PROTOCOL_ID","NAME","DLL_NAME")VALUES(1006,'Меркурий-200 (DLL)','Mercury_200_02.dll');
-INSERT INTO protocols("PROTOCOL_ID","NAME","DLL_NAME")VALUES(1007,'Энергия-9 v.42 (DLL)','en942.dll');
+INSERT INTO protocols("PROTOCOL_ID","NAME","DLL_NAME")VALUES(1006,'РњРµСЂРєСѓСЂРёР№-200 (DLL)','Mercury_200_02.dll');
+INSERT INTO protocols("PROTOCOL_ID","NAME","DLL_NAME")VALUES(1007,'Р­РЅРµСЂРіРёСЏ-9 v.42 (DLL)','en942.dll');
 commit;
 end;
 /
 
 begin
-insert into metertype(nmetertype,vname) values(28,'ОИК Хартэп');
+insert into metertype(nmetertype,vname) values(28,'РћРРљ РҐР°СЂС‚СЌРї');
 commit;
 end;
 /
 
 --23.12.2008
 begin
-insert into metertype(nmetertype,vname) values(29,'ОИК Донбас ЭС (Старый)');
+insert into metertype(nmetertype,vname) values(29,'РћРРљ Р”РѕРЅР±Р°СЃ Р­РЎ (РЎС‚Р°СЂС‹Р№)');
 commit;
 end;
 /
 
 
 ----------------------------------------------------------------------------------------------
---         VER 2.29  (Для обновления версии 2.28.2 до текущей скрипт запускать отсюда)        --
+--         VER 2.29  (Р”Р»СЏ РѕР±РЅРѕРІР»РµРЅРёСЏ РІРµСЂСЃРёРё 2.28.2 РґРѕ С‚РµРєСѓС‰РµР№ СЃРєСЂРёРїС‚ Р·Р°РїСѓСЃРєР°С‚СЊ РѕС‚СЃСЋРґР°)        --
 ----------------------------------------------------------------------------------------------
 --30/12/2008
 
@@ -20779,7 +20779,7 @@ alter table ADDPOINTPARAMVAL
 INSERT INTO tasks
 (TASK_ID,PARENT,TASK_COD,NAME,REMARK,NSHOW)
 VALUES
-(102,27,658,'4.5 АРМ оператора приема мкетов','',1)
+(102,27,658,'4.5 РђР Рњ РѕРїРµСЂР°С‚РѕСЂР° РїСЂРёРµРјР° РјРєРµС‚РѕРІ','',1)
 /
 insert into role_task
 select distinct ROLE_ID,102,1 from users where ADMIN='*'
@@ -20794,17 +20794,17 @@ commit
 /*select *from form_templates  where commentform is  null
 select * from form_templates  where commentform is not null */ 
 
----15/01/2009    --изменение комментария мониторов убирем размерность
+---15/01/2009    --РёР·РјРµРЅРµРЅРёРµ РєРѕРјРјРµРЅС‚Р°СЂРёСЏ РјРѕРЅРёС‚РѕСЂРѕРІ СѓР±РёСЂРµРј СЂР°Р·РјРµСЂРЅРѕСЃС‚СЊ
 BEGIN
     FOR lc IN (select replace(replace(replace(replace(replace(replace('update forms set  commentform='''||commentform||'''  
-            where codetemplate='||codetemplate||' and fid='||fid||' ','[тыс.кВтч]'),'[тыс.кВАрч]'),'[тыс.кВтч/тыс.кВАрч]'),'[МВт]'),'[МВАрч]'),'[МВт/МВАр]') c
+            where codetemplate='||codetemplate||' and fid='||fid||' ','[С‚С‹СЃ.РєР’С‚С‡]'),'[С‚С‹СЃ.РєР’РђСЂС‡]'),'[С‚С‹СЃ.РєР’С‚С‡/С‚С‹СЃ.РєР’РђСЂС‡]'),'[РњР’С‚]'),'[РњР’РђСЂС‡]'),'[РњР’С‚/РњР’РђСЂ]') c
                 from forms  where commentform is not null and commentform<>' ' and codetemplate>0)loop
         EXECUTE IMMEDIATE lc.c;
     END LOOP;
   
    for lc in
     (select replace(replace(replace(replace(replace(replace('update form_templates set  commentform='''||commentform||'''  where codetemplate='||codetemplate||' 
-    and template_id='||template_id||' ','[тыс.кВтч]'),'[тыс.кВАрч]'),'[тыс.кВтч/тыс.кВАрч]'),'[МВт]'),'[МВАрч]'),'[МВт/МВАр]')l 
+    and template_id='||template_id||' ','[С‚С‹СЃ.РєР’С‚С‡]'),'[С‚С‹СЃ.РєР’РђСЂС‡]'),'[С‚С‹СЃ.РєР’С‚С‡/С‚С‹СЃ.РєР’РђСЂС‡]'),'[РњР’С‚]'),'[РњР’РђСЂС‡]'),'[РњР’С‚/РњР’РђСЂ]')l 
     from form_templates where commentform is not null and commentform<>' '  and codetemplate>0)loop
 
     EXECUTE IMMEDIATE lc.l;
@@ -20828,12 +20828,12 @@ select max(nmeasure) into a from measures;
 select count(*) into b from measures where VCODE='A.D';
 if b=0 then
 insert into measures (nmeasure, vname, vcode) 
-select  row_number() OVER(ORDER BY nmeasure)+a, vname||' - суточные', vcode||'.D' 
+select  row_number() OVER(ORDER BY nmeasure)+a, vname||' - СЃСѓС‚РѕС‡РЅС‹Рµ', vcode||'.D' 
 from measures where NMEASURE between 0 AND 10 OR NMEASURE between 36 AND 38;
 
 select max(nmeasure) into a from measures;
 insert into measures (nmeasure, vname, vcode) 
-select  row_number() OVER(ORDER BY nmeasure)+a, vname||' - месячные', vcode||'.M' 
+select  row_number() OVER(ORDER BY nmeasure)+a, vname||' - РјРµСЃСЏС‡РЅС‹Рµ', vcode||'.M' 
 from measures where NMEASURE between 0 AND 10 OR NMEASURE between 36 AND 38;
 
 insert into objtypemeas
@@ -20845,17 +20845,17 @@ end;
 /      
 
 --21/01/2009
-INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (46,'Тип параметризации углов (4 - Токи-относительные, иначе - по умолчанию)',1);
+INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (46,'РўРёРї РїР°СЂР°РјРµС‚СЂРёР·Р°С†РёРё СѓРіР»РѕРІ (4 - РўРѕРєРё-РѕС‚РЅРѕСЃРёС‚РµР»СЊРЅС‹Рµ, РёРЅР°С‡Рµ - РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ)',1);
 commit;
 
 ---------------29/01/2009
 begin
-INSERT INTO points(MID,PARENT,COD,IND,NAME,SHORT_NAME,PTYPE,IMPLEMENT_DATE,TAG,NPOINT) VALUES(54,NULL,NULL,1,'Кластер АСКУЭ','',NULL,'',NULL,NULL);
+INSERT INTO points(MID,PARENT,COD,IND,NAME,SHORT_NAME,PTYPE,IMPLEMENT_DATE,TAG,NPOINT) VALUES(54,NULL,NULL,1,'РљР»Р°СЃС‚РµСЂ РђРЎРљРЈР­','',NULL,'',NULL,NULL);
 commit;
 end;
 /
 
-INSERT INTO RYDA.PROTOCOLS VALUES(90,'УППД - ИНЭТ','');
+INSERT INTO RYDA.PROTOCOLS VALUES(90,'РЈРџРџР” - РРќР­Рў','');
 INSERT INTO RYDA.PROTOCOLS VALUES(91,'ZxQ (dlms)','');
 INSERT INTO RYDA.PROTOCOLS VALUES(92,'KM --> ZxQ (dlms)','');
 commit;
@@ -20864,7 +20864,7 @@ commit;
 grant update on forms_ex to askue_work;  
 
 
-INSERT INTO deportprocedures("NPROCEDURE","VNAME","VPROCEDURE","NPERIOD","NTYPE","VMEMO") VALUES(57,'Расчет текущих суток','BACKGROUND01_PG.calccurrentformula',1,1,'Расчет текущих суток');
+INSERT INTO deportprocedures("NPROCEDURE","VNAME","VPROCEDURE","NPERIOD","NTYPE","VMEMO") VALUES(57,'Р Р°СЃС‡РµС‚ С‚РµРєСѓС‰РёС… СЃСѓС‚РѕРє','BACKGROUND01_PG.calccurrentformula',1,1,'Р Р°СЃС‡РµС‚ С‚РµРєСѓС‰РёС… СЃСѓС‚РѕРє');
 commit;
 
 
@@ -20887,46 +20887,46 @@ create table RMAKETS  (
 );
 
 comment on table RMAKETS is
-'Принятые макеты';
+'РџСЂРёРЅСЏС‚С‹Рµ РјР°РєРµС‚С‹';
 
 comment on column RMAKETS.NOPERATION is
-'Ид операции';
+'РРґ РѕРїРµСЂР°С†РёРё';
 
 comment on column RMAKETS.NDEPORTATION is
-'Ид канала';
+'РРґ РєР°РЅР°Р»Р°';
 
 comment on column RMAKETS.DCREATE is
-'Дата приема';
+'Р”Р°С‚Р° РїСЂРёРµРјР°';
 
 comment on column RMAKETS.VFILENAME is
-'Название файла';
+'РќР°Р·РІР°РЅРёРµ С„Р°Р№Р»Р°';
 
 comment on column RMAKETS.DFILE is
-'Дата файла';
+'Р”Р°С‚Р° С„Р°Р№Р»Р°';
 
 comment on column RMAKETS.NSTATE is
-'Состояние';
+'РЎРѕСЃС‚РѕСЏРЅРёРµ';
 
 comment on column RMAKETS.VERROR is
-'Ошибка';
+'РћС€РёР±РєР°';
 
 comment on column RMAKETS.VMAKET is
-'Текст макета';
+'РўРµРєСЃС‚ РјР°РєРµС‚Р°';
 
 comment on column RMAKETS.NMAKET is
-'Ид макета';
+'РРґ РјР°РєРµС‚Р°';
 
 comment on column RMAKETS.DDATE is
-'Дата информации';
+'Р”Р°С‚Р° РёРЅС„РѕСЂРјР°С†РёРё';
 
 comment on column RMAKETS.NTYPE is
-'Тип макета';
+'РўРёРї РјР°РєРµС‚Р°';
 
 comment on column RMAKETS.DLOAD is
-'Дата загрузки';
+'Р”Р°С‚Р° Р·Р°РіСЂСѓР·РєРё';
 
 comment on column RMAKETS.NUID is
-'идентификатор';
+'РёРґРµРЅС‚РёС„РёРєР°С‚РѕСЂ';
 
 /*==============================================================*/
 /* Index: RMAKETS_IDX1                                          */
@@ -20991,13 +20991,13 @@ create table MAKDEPORT  (
 );
 
 comment on table MAKDEPORT is
-'МакетКанал';
+'РњР°РєРµС‚РљР°РЅР°Р»';
 
 comment on column MAKDEPORT.NMAKET is
-'Ид макета';
+'РРґ РјР°РєРµС‚Р°';
 
 comment on column MAKDEPORT.NDEPORTATION is
-'Ид канала';
+'РРґ РєР°РЅР°Р»Р°';
 
 /*==============================================================*/
 /* Index: MAKDEPORT_IDX1                                        */
@@ -21036,7 +21036,7 @@ grant update on rmakets to askue_work;
 
 
 ----------------------------------------------------------------------------------------------
---         VER 2.29.1  (Для обновления версии 2.28.2 до текущей скрипт запускать отсюда)        ---------------09/02/2009
+--         VER 2.29.1  (Р”Р»СЏ РѕР±РЅРѕРІР»РµРЅРёСЏ РІРµСЂСЃРёРё 2.28.2 РґРѕ С‚РµРєСѓС‰РµР№ СЃРєСЂРёРїС‚ Р·Р°РїСѓСЃРєР°С‚СЊ РѕС‚СЃСЋРґР°)        ---------------09/02/2009
 ----------------------------------------------------------------------------------------------
 
 /*==============================================================*/
@@ -21053,70 +21053,70 @@ alter table SWITCHES  add(
 );
 
 comment on table SWITCHES is
-'Переключение обводвых';
+'РџРµСЂРµРєР»СЋС‡РµРЅРёРµ РѕР±РІРѕРґРІС‹С…';
 
 comment on column SWITCHES.ID is
-'Ид строки';
+'РРґ СЃС‚СЂРѕРєРё';
 
 comment on column SWITCHES.NSWITCH is
-'Ид обводника';
+'РРґ РѕР±РІРѕРґРЅРёРєР°';
 
 comment on column SWITCHES.DSWITCH is
-'Дата переключения';
+'Р”Р°С‚Р° РїРµСЂРµРєР»СЋС‡РµРЅРёСЏ';
 
 comment on column SWITCHES.DESCAPE is
-'Дата окончания';
+'Р”Р°С‚Р° РѕРєРѕРЅС‡Р°РЅРёСЏ';
 
 comment on column SWITCHES.MID is
-'Ид точки';
+'РРґ С‚РѕС‡РєРё';
 
 comment on column SWITCHES.DENTER is
-'Дата ввода';
+'Р”Р°С‚Р° РІРІРѕРґР°';
 
 comment on column SWITCHES.USER_ID is
-'Ид пользователя';
+'РРґ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ';
 
 comment on column SWITCHES.ERM is
-'Показание A пр';
+'РџРѕРєР°Р·Р°РЅРёРµ A РїСЂ';
 
 comment on column SWITCHES.EDM is
-'Показание A от';
+'РџРѕРєР°Р·Р°РЅРёРµ A РѕС‚';
 
 comment on column SWITCHES.Q1M is
-'Показание Q1';
+'РџРѕРєР°Р·Р°РЅРёРµ Q1';
 
 comment on column SWITCHES.Q2M is
-'Показание Q2';
+'РџРѕРєР°Р·Р°РЅРёРµ Q2';
 
 comment on column SWITCHES.Q3M is
-'Показание Q3';
+'РџРѕРєР°Р·Р°РЅРёРµ Q3';
 
 comment on column SWITCHES.Q4M is
-'Показание Q4';
+'РџРѕРєР°Р·Р°РЅРёРµ Q4';
 
 comment on column SWITCHES.NSTATE is
-'Состояние расчета';
+'РЎРѕСЃС‚РѕСЏРЅРёРµ СЂР°СЃС‡РµС‚Р°';
 
 comment on column SWITCHES.VERROR is
-'Текст ошибки';
+'РўРµРєСЃС‚ РѕС€РёР±РєРё';
 
 comment on column SWITCHES.ERME is
-'Показание A пр кон';
+'РџРѕРєР°Р·Р°РЅРёРµ A РїСЂ РєРѕРЅ';
 
 comment on column SWITCHES.EDME is
-'Показание A от кон';
+'РџРѕРєР°Р·Р°РЅРёРµ A РѕС‚ РєРѕРЅ';
 
 comment on column SWITCHES.Q1ME is
-'Показание Q1 кон';
+'РџРѕРєР°Р·Р°РЅРёРµ Q1 РєРѕРЅ';
 
 comment on column SWITCHES.Q2ME is
-'Показание Q2 кон';
+'РџРѕРєР°Р·Р°РЅРёРµ Q2 РєРѕРЅ';
 
 comment on column SWITCHES.Q3ME is
-'Показание Q3 кон';
+'РџРѕРєР°Р·Р°РЅРёРµ Q3 РєРѕРЅ';
 
 comment on column SWITCHES.Q4ME is
-'Показание Q4 кон';
+'РџРѕРєР°Р·Р°РЅРёРµ Q4 РєРѕРЅ';
 
 -------------------16/02/2009
 alter table OPERATINGDAY  drop constraint OPERATINGDAY_PK;
@@ -21130,7 +21130,7 @@ alter table OPERATINGDAY  add (
 );
 
 comment on column OPERATINGDAY.NMEAS is
-'Тип измерения';
+'РўРёРї РёР·РјРµСЂРµРЅРёСЏ';
 
 alter table OPERATINGDAY  add(
    NTYPE                NUMBER(1)                      default 0 not null
@@ -21139,11 +21139,11 @@ alter table OPERATINGDAY  add(
 
 
 comment on column OPERATINGDAY.NTYPE is
-'Тип разноски (разносить по)';
+'РўРёРї СЂР°Р·РЅРѕСЃРєРё (СЂР°Р·РЅРѕСЃРёС‚СЊ РїРѕ)';
 
 
 ----------------------------------------------------------------------------------------------
---         VER 2.29.2  (Для обновления версии 2.29.1 до текущей скрипт запускать отсюда)        -----------------24/02/2009
+--         VER 2.29.2  (Р”Р»СЏ РѕР±РЅРѕРІР»РµРЅРёСЏ РІРµСЂСЃРёРё 2.29.1 РґРѕ С‚РµРєСѓС‰РµР№ СЃРєСЂРёРїС‚ Р·Р°РїСѓСЃРєР°С‚СЊ РѕС‚СЃСЋРґР°)        -----------------24/02/2009
 ----------------------------------------------------------------------------------------------
 /*==============================================================*/
 /* Table: FEEDERSCOEF                                           */
@@ -21157,19 +21157,19 @@ create table FEEDERSCOEF  (
 );
 
 comment on table FEEDERSCOEF is
-'Коефициентты точек';
+'РљРѕРµС„РёС†РёРµРЅС‚С‚С‹ С‚РѕС‡РµРє';
 
 comment on column FEEDERSCOEF.MID is
-'Ид точки';
+'РРґ С‚РѕС‡РєРё';
 
 comment on column FEEDERSCOEF.DSTART is
-'Дата с';
+'Р”Р°С‚Р° СЃ';
 
 comment on column FEEDERSCOEF.DEND is
-'Дата по';
+'Р”Р°С‚Р° РїРѕ';
 
 comment on column FEEDERSCOEF.KC is
-'Коеф';
+'РљРѕРµС„';
 
 alter table FEEDERSCOEF
    add constraint FEEDERSCOEF_F1 foreign key (MID)
@@ -21182,7 +21182,7 @@ alter table METERSTATUSBITDICT  add(
 );
 
 comment on column METERSTATUSBITDICT.NVALIDITY is
-'Достовеерность';
+'Р”РѕСЃС‚РѕРІРµРµСЂРЅРѕСЃС‚СЊ';
 
 
 
@@ -21199,19 +21199,19 @@ create table PRIORITY  (
 );
 
 comment on table PRIORITY is
-'Приоритеты восстановления';
+'РџСЂРёРѕСЂРёС‚РµС‚С‹ РІРѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёСЏ';
 
 comment on column PRIORITY.MID is
-'Ид точки';
+'РРґ С‚РѕС‡РєРё';
 
 comment on column PRIORITY.DSTART is
-'Дата с';
+'Р”Р°С‚Р° СЃ';
 
 comment on column PRIORITY.DEND is
-'Дата по';
+'Р”Р°С‚Р° РїРѕ';
 
 comment on column PRIORITY.NORDER is
-'Приоритет';
+'РџСЂРёРѕСЂРёС‚РµС‚';
 
 alter table METEREVENTSDICT  drop column NVALIDITY;
 alter table METEREVENTSDICT  add(
@@ -21220,7 +21220,7 @@ alter table METEREVENTSDICT  add(
 );
 
 comment on column METEREVENTSDICT.NVALIDITY is
-'Достовеерность';
+'Р”РѕСЃС‚РѕРІРµРµСЂРЅРѕСЃС‚СЊ';
 
 alter table METERSTATUSBITDICT  drop column NVALIDITY;
 alter table METERSTATUSBITDICT  add(
@@ -21229,53 +21229,53 @@ alter table METERSTATUSBITDICT  add(
 );
 
 comment on column METERSTATUSBITDICT.NVALIDITY is
-'Достовеерность';
+'Р”РѕСЃС‚РѕРІРµРµСЂРЅРѕСЃС‚СЊ';
 
 --------04/03/2009
 begin
 delete from meterstatusbitdict;
 INSERT INTO meterstatusbitdict("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1","NVALIDITY")VALUES(1,0,'Start of measurement ',NULL,NULL,0);
-INSERT INTO meterstatusbitdict("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1","NVALIDITY")VALUES(3,0,'Регистрация фатальной ошибки',NULL,NULL,0);
-INSERT INTO meterstatusbitdict("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1","NVALIDITY")VALUES(3,1,'Резерв питания календарных часов исчерпан (некорр. время)',NULL,NULL,0);
+INSERT INTO meterstatusbitdict("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1","NVALIDITY")VALUES(3,0,'Р РµРіРёСЃС‚СЂР°С†РёСЏ С„Р°С‚Р°Р»СЊРЅРѕР№ РѕС€РёР±РєРё',NULL,NULL,0);
+INSERT INTO meterstatusbitdict("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1","NVALIDITY")VALUES(3,1,'Р РµР·РµСЂРІ РїРёС‚Р°РЅРёСЏ РєР°Р»РµРЅРґР°СЂРЅС‹С… С‡Р°СЃРѕРІ РёСЃС‡РµСЂРїР°РЅ (РЅРµРєРѕСЂСЂ. РІСЂРµРјСЏ)',NULL,NULL,0);
 INSERT INTO meterstatusbitdict("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1","NVALIDITY")VALUES(1,1,'Power failure',NULL,NULL,1);
-INSERT INTO meterstatusbitdict("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1","NVALIDITY")VALUES(3,2,'Неполное измерение, интеграционный период слишком мал',NULL,NULL,0);
+INSERT INTO meterstatusbitdict("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1","NVALIDITY")VALUES(3,2,'РќРµРїРѕР»РЅРѕРµ РёР·РјРµСЂРµРЅРёРµ, РёРЅС‚РµРіСЂР°С†РёРѕРЅРЅС‹Р№ РїРµСЂРёРѕРґ СЃР»РёС€РєРѕРј РјР°Р»',NULL,NULL,0);
 INSERT INTO meterstatusbitdict("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1","NVALIDITY")VALUES(1,2,'Clock Setting',NULL,NULL,0);
 INSERT INTO meterstatusbitdict("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1","NVALIDITY")VALUES(1,3,'External Clock Synchro',NULL,NULL,0);
-INSERT INTO meterstatusbitdict("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1","NVALIDITY")VALUES(3,3,'Лето или зима (1 = лето, 0 = зима)',NULL,NULL,0);
+INSERT INTO meterstatusbitdict("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1","NVALIDITY")VALUES(3,3,'Р›РµС‚Рѕ РёР»Рё Р·РёРјР° (1 = Р»РµС‚Рѕ, 0 = Р·РёРјР°)',NULL,NULL,0);
 INSERT INTO meterstatusbitdict("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1","NVALIDITY")VALUES(1,4,'DST',NULL,NULL,0);
-INSERT INTO meterstatusbitdict("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1","NVALIDITY")VALUES(3,4,'Выполнен сброс',NULL,NULL,0);
-INSERT INTO meterstatusbitdict("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1","NVALIDITY")VALUES(3,5,'Изменено время;дата',NULL,NULL,0);
+INSERT INTO meterstatusbitdict("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1","NVALIDITY")VALUES(3,4,'Р’С‹РїРѕР»РЅРµРЅ СЃР±СЂРѕСЃ',NULL,NULL,0);
+INSERT INTO meterstatusbitdict("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1","NVALIDITY")VALUES(3,5,'РР·РјРµРЅРµРЅРѕ РІСЂРµРјСЏ;РґР°С‚Р°',NULL,NULL,0);
 INSERT INTO meterstatusbitdict("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1","NVALIDITY")VALUES(1,5,'Watch dog reset',NULL,NULL,0);
-INSERT INTO meterstatusbitdict("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1","NVALIDITY")VALUES(3,6,'Восстановление напряжения',NULL,NULL,0);
-INSERT INTO meterstatusbitdict("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1","NVALIDITY")VALUES(3,7,'Провал напряжения (по 3 фазам)',NULL,NULL,1);
-INSERT INTO meterstatusbitdict("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1","NVALIDITY")VALUES(3,8,'не используется',NULL,NULL,0);
+INSERT INTO meterstatusbitdict("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1","NVALIDITY")VALUES(3,6,'Р’РѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ РЅР°РїСЂСЏР¶РµРЅРёСЏ',NULL,NULL,0);
+INSERT INTO meterstatusbitdict("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1","NVALIDITY")VALUES(3,7,'РџСЂРѕРІР°Р» РЅР°РїСЂСЏР¶РµРЅРёСЏ (РїРѕ 3 С„Р°Р·Р°Рј)',NULL,NULL,1);
+INSERT INTO meterstatusbitdict("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1","NVALIDITY")VALUES(3,8,'РЅРµ РёСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ',NULL,NULL,0);
 INSERT INTO meterstatusbitdict("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1","NVALIDITY")VALUES(1,8,'Start of measurement ',NULL,NULL,0);
 INSERT INTO meterstatusbitdict("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1","NVALIDITY")VALUES(1,9,'Power failure',NULL,NULL,1);
-INSERT INTO meterstatusbitdict("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1","NVALIDITY")VALUES(3,9,'не используется',NULL,NULL,0);
+INSERT INTO meterstatusbitdict("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1","NVALIDITY")VALUES(3,9,'РЅРµ РёСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ',NULL,NULL,0);
 INSERT INTO meterstatusbitdict("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1","NVALIDITY")VALUES(1,10,'Clock Setting',NULL,NULL,0);
-INSERT INTO meterstatusbitdict("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1","NVALIDITY")VALUES(3,10,'не используется',NULL,NULL,0);
+INSERT INTO meterstatusbitdict("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1","NVALIDITY")VALUES(3,10,'РЅРµ РёСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ',NULL,NULL,0);
 INSERT INTO meterstatusbitdict("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1","NVALIDITY")VALUES(1,11,'External Clock Synchro',NULL,NULL,0);
-INSERT INTO meterstatusbitdict("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1","NVALIDITY")VALUES(3,11,'не используется',NULL,NULL,0);
-INSERT INTO meterstatusbitdict("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1","NVALIDITY")VALUES(3,12,'не используется',NULL,NULL,0);
+INSERT INTO meterstatusbitdict("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1","NVALIDITY")VALUES(3,11,'РЅРµ РёСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ',NULL,NULL,0);
+INSERT INTO meterstatusbitdict("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1","NVALIDITY")VALUES(3,12,'РЅРµ РёСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ',NULL,NULL,0);
 INSERT INTO meterstatusbitdict("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1","NVALIDITY")VALUES(1,12,'DST',NULL,NULL,0);
 INSERT INTO meterstatusbitdict("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1","NVALIDITY")VALUES(1,13,'Watch dog reset',NULL,NULL,0);
-INSERT INTO meterstatusbitdict("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1","NVALIDITY")VALUES(3,13,'Список событий полностью удален',NULL,NULL,0);
-INSERT INTO meterstatusbitdict("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1","NVALIDITY")VALUES(3,14,'Память профиля данных полностью обнулена',NULL,NULL,0);
-INSERT INTO meterstatusbitdict("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1","NVALIDITY")VALUES(3,15,'Запись статусного сообщения перед последним изменением времени',NULL,NULL,0);
+INSERT INTO meterstatusbitdict("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1","NVALIDITY")VALUES(3,13,'РЎРїРёСЃРѕРє СЃРѕР±С‹С‚РёР№ РїРѕР»РЅРѕСЃС‚СЊСЋ СѓРґР°Р»РµРЅ',NULL,NULL,0);
+INSERT INTO meterstatusbitdict("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1","NVALIDITY")VALUES(3,14,'РџР°РјСЏС‚СЊ РїСЂРѕС„РёР»СЏ РґР°РЅРЅС‹С… РїРѕР»РЅРѕСЃС‚СЊСЋ РѕР±РЅСѓР»РµРЅР°',NULL,NULL,0);
+INSERT INTO meterstatusbitdict("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1","NVALIDITY")VALUES(3,15,'Р—Р°РїРёСЃСЊ СЃС‚Р°С‚СѓСЃРЅРѕРіРѕ СЃРѕРѕР±С‰РµРЅРёСЏ РїРµСЂРµРґ РїРѕСЃР»РµРґРЅРёРј РёР·РјРµРЅРµРЅРёРµРј РІСЂРµРјРµРЅРё',NULL,NULL,0);
 INSERT INTO meterstatusbitdict("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1","NVALIDITY")VALUES(1,16,'Start of measurement ',NULL,NULL,0);
-INSERT INTO meterstatusbitdict("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1","NVALIDITY")VALUES(3,16,'зарезервировано',NULL,NULL,0);
+INSERT INTO meterstatusbitdict("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1","NVALIDITY")VALUES(3,16,'Р·Р°СЂРµР·РµСЂРІРёСЂРѕРІР°РЅРѕ',NULL,NULL,0);
 INSERT INTO meterstatusbitdict("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1","NVALIDITY")VALUES(1,17,'Power failure',NULL,NULL,1);
-INSERT INTO meterstatusbitdict("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1","NVALIDITY")VALUES(3,17,'зарезервировано',NULL,NULL,0);
-INSERT INTO meterstatusbitdict("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1","NVALIDITY")VALUES(3,18,'зарезервировано',NULL,NULL,0);
+INSERT INTO meterstatusbitdict("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1","NVALIDITY")VALUES(3,17,'Р·Р°СЂРµР·РµСЂРІРёСЂРѕРІР°РЅРѕ',NULL,NULL,0);
+INSERT INTO meterstatusbitdict("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1","NVALIDITY")VALUES(3,18,'Р·Р°СЂРµР·РµСЂРІРёСЂРѕРІР°РЅРѕ',NULL,NULL,0);
 INSERT INTO meterstatusbitdict("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1","NVALIDITY")VALUES(1,18,'Clock Setting',NULL,NULL,0);
-INSERT INTO meterstatusbitdict("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1","NVALIDITY")VALUES(3,19,'Старт интеграционного периода (SOI - начало интервала)',NULL,NULL,0);
+INSERT INTO meterstatusbitdict("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1","NVALIDITY")VALUES(3,19,'РЎС‚Р°СЂС‚ РёРЅС‚РµРіСЂР°С†РёРѕРЅРЅРѕРіРѕ РїРµСЂРёРѕРґР° (SOI - РЅР°С‡Р°Р»Рѕ РёРЅС‚РµСЂРІР°Р»Р°)',NULL,NULL,0);
 INSERT INTO meterstatusbitdict("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1","NVALIDITY")VALUES(1,19,'External Clock Synchro',NULL,NULL,0);
-INSERT INTO meterstatusbitdict("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1","NVALIDITY")VALUES(3,20,'Конец интеграционного периода при изменении тарифа (EOI - окончание интервала)',NULL,NULL,0);
+INSERT INTO meterstatusbitdict("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1","NVALIDITY")VALUES(3,20,'РљРѕРЅРµС† РёРЅС‚РµРіСЂР°С†РёРѕРЅРЅРѕРіРѕ РїРµСЂРёРѕРґР° РїСЂРё РёР·РјРµРЅРµРЅРёРё С‚Р°СЂРёС„Р° (EOI - РѕРєРѕРЅС‡Р°РЅРёРµ РёРЅС‚РµСЂРІР°Р»Р°)',NULL,NULL,0);
 INSERT INTO meterstatusbitdict("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1","NVALIDITY")VALUES(1,20,'DST',NULL,NULL,0);
 INSERT INTO meterstatusbitdict("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1","NVALIDITY")VALUES(1,21,'Watch dog reset',NULL,NULL,0);
-INSERT INTO meterstatusbitdict("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1","NVALIDITY")VALUES(3,21,'Преждевременное окончание интеграционного периода (например, при изменении времени)',NULL,NULL,0);
-INSERT INTO meterstatusbitdict("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1","NVALIDITY")VALUES(3,22,'Интеграционный период окончен по внешнему управляющему сигналу',NULL,NULL,0);
-INSERT INTO meterstatusbitdict("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1","NVALIDITY")VALUES(3,23,'Интеграционный период окончен по внутреннему управляющему сигналу',NULL,NULL,0);
+INSERT INTO meterstatusbitdict("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1","NVALIDITY")VALUES(3,21,'РџСЂРµР¶РґРµРІСЂРµРјРµРЅРЅРѕРµ РѕРєРѕРЅС‡Р°РЅРёРµ РёРЅС‚РµРіСЂР°С†РёРѕРЅРЅРѕРіРѕ РїРµСЂРёРѕРґР° (РЅР°РїСЂРёРјРµСЂ, РїСЂРё РёР·РјРµРЅРµРЅРёРё РІСЂРµРјРµРЅРё)',NULL,NULL,0);
+INSERT INTO meterstatusbitdict("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1","NVALIDITY")VALUES(3,22,'РРЅС‚РµРіСЂР°С†РёРѕРЅРЅС‹Р№ РїРµСЂРёРѕРґ РѕРєРѕРЅС‡РµРЅ РїРѕ РІРЅРµС€РЅРµРјСѓ СѓРїСЂР°РІР»СЏСЋС‰РµРјСѓ СЃРёРіРЅР°Р»Сѓ',NULL,NULL,0);
+INSERT INTO meterstatusbitdict("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1","NVALIDITY")VALUES(3,23,'РРЅС‚РµРіСЂР°С†РёРѕРЅРЅС‹Р№ РїРµСЂРёРѕРґ РѕРєРѕРЅС‡РµРЅ РїРѕ РІРЅСѓС‚СЂРµРЅРЅРµРјСѓ СѓРїСЂР°РІР»СЏСЋС‰РµРјСѓ СЃРёРіРЅР°Р»Сѓ',NULL,NULL,0);
 INSERT INTO meterstatusbitdict("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1","NVALIDITY")VALUES(1,24,'Start of measurement ',NULL,NULL,0);
 INSERT INTO meterstatusbitdict("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1","NVALIDITY")VALUES(1,25,'Power failure',NULL,NULL,1);
 INSERT INTO meterstatusbitdict("NMETERTYPE","NBIT","VEVENTTEXT","NEVENT0","NEVENT1","NVALIDITY")VALUES(1,26,'Clock Setting',NULL,NULL,0);
@@ -21288,7 +21288,7 @@ end;
 
 
 ----------------------------------------------------------------------------------------------
---         VER 2.29.3  (Для обновления версии 2.29.2 до текущей скрипт запускать отсюда)        -----------------06/03/2009
+--         VER 2.29.3  (Р”Р»СЏ РѕР±РЅРѕРІР»РµРЅРёСЏ РІРµСЂСЃРёРё 2.29.2 РґРѕ С‚РµРєСѓС‰РµР№ СЃРєСЂРёРїС‚ Р·Р°РїСѓСЃРєР°С‚СЊ РѕС‚СЃСЋРґР°)        -----------------06/03/2009
 ----------------------------------------------------------------------------------------------
 
 -----------04.03.2009
@@ -21300,9 +21300,9 @@ end;
 
 -------10/03/2008
 begin
-INSERT INTO measures("NMEASURE","VNAME","VCODE")VALUES(67,'Класс ТН','CTN');
-INSERT INTO measures("NMEASURE","VNAME","VCODE")VALUES(68,'Класс ТТ','CTT');
-INSERT INTO measures("NMEASURE","VNAME","VCODE")VALUES(69,'Класс счетчика','CM');
+INSERT INTO measures("NMEASURE","VNAME","VCODE")VALUES(67,'РљР»Р°СЃСЃ РўРќ','CTN');
+INSERT INTO measures("NMEASURE","VNAME","VCODE")VALUES(68,'РљР»Р°СЃСЃ РўРў','CTT');
+INSERT INTO measures("NMEASURE","VNAME","VCODE")VALUES(69,'РљР»Р°СЃСЃ СЃС‡РµС‚С‡РёРєР°','CM');
 commit;
 end;
 /
@@ -21321,10 +21321,10 @@ end;
 /
 
 ----------------------------------------------------------------------------------------------
---         VER 2.29.4  (Для обновления версии 2.29.3 до текущей скрипт запускать отсюда)        -----------------10/03/2009
+--         VER 2.29.4  (Р”Р»СЏ РѕР±РЅРѕРІР»РµРЅРёСЏ РІРµСЂСЃРёРё 2.29.3 РґРѕ С‚РµРєСѓС‰РµР№ СЃРєСЂРёРїС‚ Р·Р°РїСѓСЃРєР°С‚СЊ РѕС‚СЃСЋРґР°)        -----------------10/03/2009
 ----------------------------------------------------------------------------------------------
 
-INSERT INTO dict_obj_types("IND","VNAME","RT_TYPE")VALUES(620,'Реактор',620);
+INSERT INTO dict_obj_types("IND","VNAME","RT_TYPE")VALUES(620,'Р РµР°РєС‚РѕСЂ',620);
 
 commit;
 
@@ -21332,7 +21332,7 @@ commit;
 declare
 l NUMBER;
 begin
-insert into parameter (NPID,VVALUE,VDESCRIPTION) values(43,0,'Вычислять паузу между циклами опроса канала от старта');
+insert into parameter (NPID,VVALUE,VDESCRIPTION) values(43,0,'Р’С‹С‡РёСЃР»СЏС‚СЊ РїР°СѓР·Сѓ РјРµР¶РґСѓ С†РёРєР»Р°РјРё РѕРїСЂРѕСЃР° РєР°РЅР°Р»Р° РѕС‚ СЃС‚Р°СЂС‚Р°');
 commit;
 end;
 /
@@ -21368,11 +21368,11 @@ end;
 drop table switches1;
 ALTER TABLE SWITCHES  MODIFY (  MID NOT NULL );
 
-update measures set VNAME='Un - Номинальное напряжение' where NMEASURE=35;
-update measures set VNAME='Sn - Номинальная мощность' where NMEASURE=16;
-update measures set VNAME='DPkz - Потери актив мощности' where NMEASURE=18;
-update measures set VNAME='Tn - Полное время работы' where NMEASURE=21;
-update measures set VNAME='Tp - Время работы под нагрузкой' where NMEASURE=22;
+update measures set VNAME='Un - РќРѕРјРёРЅР°Р»СЊРЅРѕРµ РЅР°РїСЂСЏР¶РµРЅРёРµ' where NMEASURE=35;
+update measures set VNAME='Sn - РќРѕРјРёРЅР°Р»СЊРЅР°СЏ РјРѕС‰РЅРѕСЃС‚СЊ' where NMEASURE=16;
+update measures set VNAME='DPkz - РџРѕС‚РµСЂРё Р°РєС‚РёРІ РјРѕС‰РЅРѕСЃС‚Рё' where NMEASURE=18;
+update measures set VNAME='Tn - РџРѕР»РЅРѕРµ РІСЂРµРјСЏ СЂР°Р±РѕС‚С‹' where NMEASURE=21;
+update measures set VNAME='Tp - Р’СЂРµРјСЏ СЂР°Р±РѕС‚С‹ РїРѕРґ РЅР°РіСЂСѓР·РєРѕР№' where NMEASURE=22;
 
 INSERT INTO OBJTYPEMEAS("IND","NMEASURE")VALUES(620,35);
 INSERT INTO OBJTYPEMEAS("IND","NMEASURE")VALUES(620,16);
@@ -21383,7 +21383,7 @@ commit;
 
 
 ----------------------------------------------------------------------------------------------
---  18/03/2009    VER 2.30. (Для обновления версии 2.29.4 до текущей скрипт запускать отсюда)      
+--  18/03/2009    VER 2.30. (Р”Р»СЏ РѕР±РЅРѕРІР»РµРЅРёСЏ РІРµСЂСЃРёРё 2.29.4 РґРѕ С‚РµРєСѓС‰РµР№ СЃРєСЂРёРїС‚ Р·Р°РїСѓСЃРєР°С‚СЊ РѕС‚СЃСЋРґР°)      
 ----------------------------------------------------------------------------------------------
 begin
 execute immediate 'drop table ICCPTMPMEAS';
@@ -21421,43 +21421,43 @@ create table ICCPSTAT  (
 );
 
 comment on table ICCPSTAT is
-'Статистика ICCP';
+'РЎС‚Р°С‚РёСЃС‚РёРєР° ICCP';
 
 comment on column ICCPSTAT.CID is
-'Ид канала';
+'РРґ РєР°РЅР°Р»Р°';
 
 comment on column ICCPSTAT.DDATE is
-'Дата';
+'Р”Р°С‚Р°';
 
 comment on column ICCPSTAT.NREASON is
-'Причина';
+'РџСЂРёС‡РёРЅР°';
 
 comment on column ICCPSTAT.NSEND is
-'Запрсов';
+'Р—Р°РїСЂСЃРѕРІ';
 
 comment on column ICCPSTAT.NRECEIVED is
-'Ответов';
+'РћС‚РІРµС‚РѕРІ';
 
 comment on column ICCPSTAT.NLOSS is
-'Потерь';
+'РџРѕС‚РµСЂСЊ';
 
 comment on column ICCPSTAT.NCORRECTION is
-'Коррекций';
+'РљРѕСЂСЂРµРєС†РёР№';
 
 comment on column ICCPSTAT.NERROR is
-'Ошибок';
+'РћС€РёР±РѕРє';
 
 comment on column ICCPSTAT.NDURATION is
-'Длительность';
+'Р”Р»РёС‚РµР»СЊРЅРѕСЃС‚СЊ';
 
 comment on column ICCPSTAT.NMINDELAY is
-'Мин задержка';
+'РњРёРЅ Р·Р°РґРµСЂР¶РєР°';
 
 comment on column ICCPSTAT.NMAXDELAY is
-'Макс задержка';
+'РњР°РєСЃ Р·Р°РґРµСЂР¶РєР°';
 
 comment on column ICCPSTAT.NAVGDELAY is
-'Средн задержка';
+'РЎСЂРµРґРЅ Р·Р°РґРµСЂР¶РєР°';
 
 alter table ICCPSTAT
    add constraint ICCPSTAT_F1 foreign key (CID)
@@ -21490,10 +21490,10 @@ alter table ICCPSTAT  add(
 
 
 comment on column ICCPSTAT.NCONNECT is
-'Соединений';
+'РЎРѕРµРґРёРЅРµРЅРёР№';
 
 comment on column ICCPSTAT.NDISCONNECT is
-'Обрывы связи';
+'РћР±СЂС‹РІС‹ СЃРІСЏР·Рё';
 
 
 ----27/03/2009
@@ -21513,7 +21513,7 @@ l NUMBER;
 begin
 select nvl(max(decode(vvalue,'0',1,'42',1,'43',1,'44',1,'45',1,'46',1,0)),0) into l from parameter where NPID=12;
 if l=1 then
-INSERT INTO tasks(TASK_ID,PARENT,TASK_COD,NAME,REMARK,NSHOW) VALUES (103,56,659,'3.4 Статистика ICCP','',1);
+INSERT INTO tasks(TASK_ID,PARENT,TASK_COD,NAME,REMARK,NSHOW) VALUES (103,56,659,'3.4 РЎС‚Р°С‚РёСЃС‚РёРєР° ICCP','',1);
 insert into role_task select ROLE_ID,103,decode(ROLE_ID,1,1,0) from roles;
 commit;
 end if;
@@ -21529,7 +21529,7 @@ alter table DEPORTFILES  add(
 );
 
 comment on column DEPORTFILES.NNOTFULL is
-'Неполные данные';
+'РќРµРїРѕР»РЅС‹Рµ РґР°РЅРЅС‹Рµ';
 
 
 ----06/04/2009
@@ -21547,24 +21547,24 @@ ON COMMIT  PRESERVE ROWS
 ;
 
 comment on table SWITCHESSRVP is
-'Перекл обводвых опрос обработка';
+'РџРµСЂРµРєР» РѕР±РІРѕРґРІС‹С… РѕРїСЂРѕСЃ РѕР±СЂР°Р±РѕС‚РєР°';
 
 comment on column SWITCHESSRVP.DSWITCH is
-'Дата переключения';
+'Р”Р°С‚Р° РїРµСЂРµРєР»СЋС‡РµРЅРёСЏ';
 
 comment on column SWITCHESSRVP.DESCAPE is
-'Дата окончания';
+'Р”Р°С‚Р° РѕРєРѕРЅС‡Р°РЅРёСЏ';
 
 comment on column SWITCHESSRVP.MID is
-'Ид точки';
+'РРґ С‚РѕС‡РєРё';
 
-INSERT INTO RYDA.PROTOCOLS VALUES (1008,'Альфа А1140 (DLL)','Alpha1140.dll');
+INSERT INTO RYDA.PROTOCOLS VALUES (1008,'РђР»СЊС„Р° Рђ1140 (DLL)','Alpha1140.dll');
 
 commit;
 
 
 ----------------------------------------------------------------------------------------------
---  14/04/2009    VER 2.30.4 (Для обновления версии 2.30.3 до текущей скрипт запускать отсюда)      
+--  14/04/2009    VER 2.30.4 (Р”Р»СЏ РѕР±РЅРѕРІР»РµРЅРёСЏ РІРµСЂСЃРёРё 2.30.3 РґРѕ С‚РµРєСѓС‰РµР№ СЃРєСЂРёРїС‚ Р·Р°РїСѓСЃРєР°С‚СЊ РѕС‚СЃСЋРґР°)      
 ----------------------------------------------------------------------------------------------
 create table SCHEDULELIST  (
    NSCHEDULELIST        NUMBER(10)                      not null,
@@ -21574,16 +21574,16 @@ create table SCHEDULELIST  (
 );
 
 comment on table SCHEDULELIST is
-'Виды расписаний тар зон';
+'Р’РёРґС‹ СЂР°СЃРїРёСЃР°РЅРёР№ С‚Р°СЂ Р·РѕРЅ';
 
 comment on column SCHEDULELIST.NSCHEDULELIST is
-'Ид расписания';
+'РРґ СЂР°СЃРїРёСЃР°РЅРёСЏ';
 
 comment on column SCHEDULELIST.VNAME is
-'Наименование расписания';
+'РќР°РёРјРµРЅРѕРІР°РЅРёРµ СЂР°СЃРїРёСЃР°РЅРёСЏ';
 
 comment on column SCHEDULELIST.NCOUNT is
-'Макс количество зон';
+'РњР°РєСЃ РєРѕР»РёС‡РµСЃС‚РІРѕ Р·РѕРЅ';
 
 create unique index SCHEDULELIST_IDX1 on SCHEDULELIST (
    VNAME ASC
@@ -21593,7 +21593,7 @@ alter table RATE_LIST drop constraint RATE_LIST_UNI;
 drop index RATE_LIST_UNI;
 
 
-insert into SCHEDULELIST(NSCHEDULELIST,VNAME,NCOUNT) values(1,'Тарифные зоны Украины (время украинское)',3);
+insert into SCHEDULELIST(NSCHEDULELIST,VNAME,NCOUNT) values(1,'РўР°СЂРёС„РЅС‹Рµ Р·РѕРЅС‹ РЈРєСЂР°РёРЅС‹ (РІСЂРµРјСЏ СѓРєСЂР°РёРЅСЃРєРѕРµ)',3);
 /*==============================================================*/
 /* Table: RATE_LIST                                             */
 /*==============================================================*/
@@ -21603,7 +21603,7 @@ alter table RATE_LIST add (
 
 
 comment on column RATE_LIST.NSCHEDULELIST is
-'Ид расписания';
+'РРґ СЂР°СЃРїРёСЃР°РЅРёСЏ';
 
 create unique index RATE_LIST_IDX1 on RATE_LIST (
    NSCHEDULELIST ASC,
@@ -21615,9 +21615,9 @@ alter table RATE_LIST
       references SCHEDULELIST (NSCHEDULELIST);
 
 /*
---Только для АСКУЭ ПГОК
+--РўРѕР»СЊРєРѕ РґР»СЏ РђРЎРљРЈР­ РџР“РћРљ
  insert into deportprocedures (nprocedure, vname, vprocedure, nperiod, ntype, vmemo)
- values (59, 'Загрузка данных выработки','ryda.pgok_pg.copy_pgok_data', 1, 1, 'Загрузка данных выработки')
+ values (59, 'Р—Р°РіСЂСѓР·РєР° РґР°РЅРЅС‹С… РІС‹СЂР°Р±РѕС‚РєРё','ryda.pgok_pg.copy_pgok_data', 1, 1, 'Р—Р°РіСЂСѓР·РєР° РґР°РЅРЅС‹С… РІС‹СЂР°Р±РѕС‚РєРё')
  /
  commit
  /
@@ -21653,18 +21653,18 @@ commit;
 INSERT INTO form_templates
 (TEMPLATE_ID,PARENT,CODETEMPLATE,NAMEFORM,COMMENTFORM,ENABLECONTROLS,STEPPROFILE,NAMEALERT)
 VALUES
-(93,1,330,'1.18. Полнота и своевременность данных',
-'Полнота и своевременность данных','11111111',2,'')
+(93,1,330,'1.18. РџРѕР»РЅРѕС‚Р° Рё СЃРІРѕРµРІСЂРµРјРµРЅРЅРѕСЃС‚СЊ РґР°РЅРЅС‹С…',
+'РџРѕР»РЅРѕС‚Р° Рё СЃРІРѕРµРІСЂРµРјРµРЅРЅРѕСЃС‚СЊ РґР°РЅРЅС‹С…','11111111',2,'')
 /
 commit
 /
 
 
---INSERT INTO RYDA.PROTOCOLS VALUES (1009,'Энергия-9 v.29 (DLL)','Energy9v29.dll'); будет дальше
+--INSERT INTO RYDA.PROTOCOLS VALUES (1009,'Р­РЅРµСЂРіРёСЏ-9 v.29 (DLL)','Energy9v29.dll'); Р±СѓРґРµС‚ РґР°Р»СЊС€Рµ
 commit;
 
 ----------------------------------------------------------------------------------------------
---  23/04/2009    VER 2.31 (Для обновления версии 2.30.4 до текущей скрипт запускать отсюда)      
+--  23/04/2009    VER 2.31 (Р”Р»СЏ РѕР±РЅРѕРІР»РµРЅРёСЏ РІРµСЂСЃРёРё 2.30.4 РґРѕ С‚РµРєСѓС‰РµР№ СЃРєСЂРёРїС‚ Р·Р°РїСѓСЃРєР°С‚СЊ РѕС‚СЃСЋРґР°)      
 ----------------------------------------------------------------------------------------------
 
 alter table SWITCHES  add(
@@ -21673,16 +21673,16 @@ alter table SWITCHES  add(
 );
 
 comment on column SWITCHES.DENTER is
-'Дата ввода перевода';
+'Р”Р°С‚Р° РІРІРѕРґР° РїРµСЂРµРІРѕРґР°';
 
 comment on column SWITCHES.USER_ID is
-'Ид пользователя перевода';
+'РРґ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ РїРµСЂРµРІРѕРґР°';
 
 comment on column SWITCHES.DENTERRET is
-'Дата ввода возврата';
+'Р”Р°С‚Р° РІРІРѕРґР° РІРѕР·РІСЂР°С‚Р°';
 
 comment on column SWITCHES.USER_IDRET is
-'Ид пользователя возврата';
+'РРґ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ РІРѕР·РІСЂР°С‚Р°';
 
 create index SWITCHES_IDX5 on SWITCHES (
    USER_IDRET ASC
@@ -21700,7 +21700,7 @@ alter table SCHEDULELIST  add(
 );
 
 comment on column SCHEDULELIST.NID is
-'Ид часового пояса';
+'РРґ С‡Р°СЃРѕРІРѕРіРѕ РїРѕСЏСЃР°';
 
 create index SCHEDULELIST_IDX2 on SCHEDULELIST (
    NID ASC
@@ -21712,7 +21712,7 @@ update switches set DENTERRET=DENTER,USER_IDRET=USER_ID where descape is not nul
 commit;
 
 begin
-INSERT INTO RYDA.PROTOCOLS VALUES (1009,'Энергия-9 v.29 (DLL)','Energy9v29.dll');
+INSERT INTO RYDA.PROTOCOLS VALUES (1009,'Р­РЅРµСЂРіРёСЏ-9 v.29 (DLL)','Energy9v29.dll');
 commit;
 exception
 when others then null;
@@ -21721,7 +21721,7 @@ end;
 
 
 ----------------------------------------------------------------------------------------------
---  07/05/2009    VER 2.31.2 (Для обновления версии 2.30.4 до текущей скрипт запускать отсюда)      
+--  07/05/2009    VER 2.31.2 (Р”Р»СЏ РѕР±РЅРѕРІР»РµРЅРёСЏ РІРµСЂСЃРёРё 2.30.4 РґРѕ С‚РµРєСѓС‰РµР№ СЃРєСЂРёРїС‚ Р·Р°РїСѓСЃРєР°С‚СЊ РѕС‚СЃСЋРґР°)      
 ----------------------------------------------------------------------------------------------
 
 alter table METERSTATUSBITDICT  add(
@@ -21730,7 +21730,7 @@ alter table METERSTATUSBITDICT  add(
 );
 
 comment on column METERSTATUSBITDICT.NQM is
-'Биты метки качества';
+'Р‘РёС‚С‹ РјРµС‚РєРё РєР°С‡РµСЃС‚РІР°';
 
 begin
 update meterstatusbitdict set nvalidity =2, nqm =9 where nmetertype=1and nbit=7;
@@ -21787,10 +21787,10 @@ end;
 
 
 ----------------------------------------------------------------------------------------------
---  18/05/2009    VER 2.32 (Для обновления версии 2.31.2 до текущей скрипт запускать отсюда)      
+--  18/05/2009    VER 2.32 (Р”Р»СЏ РѕР±РЅРѕРІР»РµРЅРёСЏ РІРµСЂСЃРёРё 2.31.2 РґРѕ С‚РµРєСѓС‰РµР№ СЃРєСЂРёРїС‚ Р·Р°РїСѓСЃРєР°С‚СЊ РѕС‚СЃСЋРґР°)      
 ----------------------------------------------------------------------------------------------
 begin
-INSERT INTO measures("NMEASURE","VNAME","VCODE")VALUES(70,'Допустимые потери от ТН до счетчика, В','APP38');
+INSERT INTO measures("NMEASURE","VNAME","VCODE")VALUES(70,'Р”РѕРїСѓСЃС‚РёРјС‹Рµ РїРѕС‚РµСЂРё РѕС‚ РўРќ РґРѕ СЃС‡РµС‚С‡РёРєР°, Р’','APP38');
 INSERT INTO OBJTYPEMEAS("IND","NMEASURE")VALUES(3,70);
 INSERT INTO OBJTYPEMEAS("IND","NMEASURE")VALUES(4,70);
 commit;
@@ -21805,31 +21805,31 @@ alter table FORMULPARAMS  add(
    NSHIFT               NUMBER                         default 0 not null);
 
 comment on column FORMULPARAMS.NSHIFT is
-'Сдвиг';
+'РЎРґРІРёРі';
 
 --27/05/2009
 
 begin
-INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (-31,'Код канала  A+',0);
-INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (-32,'Код канала  A-',0);
-INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (-33,'Код канала  R+ (Q1 + Q2)',0);
-INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (-34,'Код канала  R- (Q3 + Q4)',0);
-INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (-35,'Код канала  A  (A+ - A-)',0);
-INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (-36,'Код канала  R  (R+ - R-)',0);
-INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (-37,'Код канала  Q1',0);
-INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (-38,'Код канала  Q2',0);
-INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (-39,'Код канала  Q3',0);
-INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (-40,'Код канала  Q4',0);
-INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (-41,'Код объекта A+',0);
-INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (-42,'Код объекта A-',0);
-INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (-43,'Код объекта R+ (Q1 + Q2)',0);
-INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (-44,'Код объекта R- (Q3 + Q4)',0);
-INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (-45,'Код объекта A  (A+ - A-)',0);
-INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (-46,'Код объекта R  (R+ - R-)',0);
-INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (-47,'Код объекта Q1',0);
-INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (-48,'Код объекта Q2',0);
-INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (-49,'Код объекта Q3',0);
-INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (-50,'Код объекта Q4',0);
+INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (-31,'РљРѕРґ РєР°РЅР°Р»Р°  A+',0);
+INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (-32,'РљРѕРґ РєР°РЅР°Р»Р°  A-',0);
+INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (-33,'РљРѕРґ РєР°РЅР°Р»Р°  R+ (Q1 + Q2)',0);
+INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (-34,'РљРѕРґ РєР°РЅР°Р»Р°  R- (Q3 + Q4)',0);
+INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (-35,'РљРѕРґ РєР°РЅР°Р»Р°  A  (A+ - A-)',0);
+INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (-36,'РљРѕРґ РєР°РЅР°Р»Р°  R  (R+ - R-)',0);
+INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (-37,'РљРѕРґ РєР°РЅР°Р»Р°  Q1',0);
+INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (-38,'РљРѕРґ РєР°РЅР°Р»Р°  Q2',0);
+INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (-39,'РљРѕРґ РєР°РЅР°Р»Р°  Q3',0);
+INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (-40,'РљРѕРґ РєР°РЅР°Р»Р°  Q4',0);
+INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (-41,'РљРѕРґ РѕР±СЉРµРєС‚Р° A+',0);
+INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (-42,'РљРѕРґ РѕР±СЉРµРєС‚Р° A-',0);
+INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (-43,'РљРѕРґ РѕР±СЉРµРєС‚Р° R+ (Q1 + Q2)',0);
+INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (-44,'РљРѕРґ РѕР±СЉРµРєС‚Р° R- (Q3 + Q4)',0);
+INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (-45,'РљРѕРґ РѕР±СЉРµРєС‚Р° A  (A+ - A-)',0);
+INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (-46,'РљРѕРґ РѕР±СЉРµРєС‚Р° R  (R+ - R-)',0);
+INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (-47,'РљРѕРґ РѕР±СЉРµРєС‚Р° Q1',0);
+INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (-48,'РљРѕРґ РѕР±СЉРµРєС‚Р° Q2',0);
+INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (-49,'РљРѕРґ РѕР±СЉРµРєС‚Р° Q3',0);
+INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (-50,'РљРѕРґ РѕР±СЉРµРєС‚Р° Q4',0);
 commit;
 end;
 /
@@ -21837,11 +21837,11 @@ end;
 ----------02/06/2009
 INSERT INTO RYDA.PROTOCOLS
 VALUES
-(93,'ЕвроАльфа - Link','')
+(93,'Р•РІСЂРѕРђР»СЊС„Р° - Link','')
 /
 INSERT INTO RYDA.PROTOCOLS
 VALUES
-(94,'KM --> ЕвроАльфа - Link','')
+(94,'KM --> Р•РІСЂРѕРђР»СЊС„Р° - Link','')
 /
 INSERT INTO RYDA.PROTOCOLS
 VALUES
@@ -21856,7 +21856,7 @@ commit
 
 
 ----------------------------------------------------------------------------------------------
---  02/06/2009    VER 2.32.2 (Для обновления версии 2.32 до текущей скрипт запускать отсюда)      
+--  02/06/2009    VER 2.32.2 (Р”Р»СЏ РѕР±РЅРѕРІР»РµРЅРёСЏ РІРµСЂСЃРёРё 2.32 РґРѕ С‚РµРєСѓС‰РµР№ СЃРєСЂРёРїС‚ Р·Р°РїСѓСЃРєР°С‚СЊ РѕС‚СЃСЋРґР°)      
 ----------------------------------------------------------------------------------------------
 begin
 update timezones set nshift=-1,dsummer=null where nid=2;
@@ -21872,11 +21872,11 @@ alter table LAST_SAVE  add(
 
 
 comment on column LAST_SAVE.HALFHOURCHANGE is
-'Последняя запись ГН';
+'РџРѕСЃР»РµРґРЅСЏСЏ Р·Р°РїРёСЃСЊ Р“Рќ';
 
 --12.06.2009
 begin
-insert into ADDFORMPARAM(NSORT,VDESCR,NTYPE) values(-6,'Вывод форматированного заголовка отчета',1);
+insert into ADDFORMPARAM(NSORT,VDESCR,NTYPE) values(-6,'Р’С‹РІРѕРґ С„РѕСЂРјР°С‚РёСЂРѕРІР°РЅРЅРѕРіРѕ Р·Р°РіРѕР»РѕРІРєР° РѕС‚С‡РµС‚Р°',1);
 commit;
 end;
 /
@@ -21887,7 +21887,7 @@ delete from RYDA.PROTOCOLS where protocol_id  in (9, 22, 23, 24, 25, 30, 35, 36,
 commit;
 
 begin
-INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (47,'Тип параметризации при подключении к Fag-12 (1 - автосохранение показаний, иначе - автосохранение ГН)',1);
+INSERT INTO ADDPOINTPARAM(NSORT,VDESCR,NTYPE)VALUES (47,'РўРёРї РїР°СЂР°РјРµС‚СЂРёР·Р°С†РёРё РїСЂРё РїРѕРґРєР»СЋС‡РµРЅРёРё Рє Fag-12 (1 - Р°РІС‚РѕСЃРѕС…СЂР°РЅРµРЅРёРµ РїРѕРєР°Р·Р°РЅРёР№, РёРЅР°С‡Рµ - Р°РІС‚РѕСЃРѕС…СЂР°РЅРµРЅРёРµ Р“Рќ)',1);
 commit;
 exception
 when others then null;
@@ -21950,20 +21950,20 @@ end;
 /
 
 --02/07/2009
-update ADDPOINTPARAM set NSORT=72 where NSORT=47 and VDESCR='Тип параметризации при подключении к Fag-12 (1 - автосохранение показаний, иначе - автосохранение ГН)';
+update ADDPOINTPARAM set NSORT=72 where NSORT=47 and VDESCR='РўРёРї РїР°СЂР°РјРµС‚СЂРёР·Р°С†РёРё РїСЂРё РїРѕРґРєР»СЋС‡РµРЅРёРё Рє Fag-12 (1 - Р°РІС‚РѕСЃРѕС…СЂР°РЅРµРЅРёРµ РїРѕРєР°Р·Р°РЅРёР№, РёРЅР°С‡Рµ - Р°РІС‚РѕСЃРѕС…СЂР°РЅРµРЅРёРµ Р“Рќ)';
 commit;
 
 
 
 ----------------------------------------------------------------------------------------------
---  02/06/2009    VER 2.32.3 (Для обновления версии 2.32.2 до текущей скрипт запускать отсюда)      
+--  02/06/2009    VER 2.32.3 (Р”Р»СЏ РѕР±РЅРѕРІР»РµРЅРёСЏ РІРµСЂСЃРёРё 2.32.2 РґРѕ С‚РµРєСѓС‰РµР№ СЃРєСЂРёРїС‚ Р·Р°РїСѓСЃРєР°С‚СЊ РѕС‚СЃСЋРґР°)      
 ----------------------------------------------------------------------------------------------
 
 begin
-INSERT INTO measures(nmeasure,VNAME,vcode)VALUES(71,'Показания Актив, прием','ERM');
-INSERT INTO measures(nmeasure,VNAME,vcode)VALUES(72,'Показания Актив, отдача','EDM');
-INSERT INTO measures(nmeasure,VNAME,vcode)VALUES(73,'Показания Q1 (Реактив, прием)','Q1M');
-INSERT INTO measures(nmeasure,VNAME,vcode)VALUES(75,'Показания Q3 (Реактив, генерц)','Q3M');
+INSERT INTO measures(nmeasure,VNAME,vcode)VALUES(71,'РџРѕРєР°Р·Р°РЅРёСЏ РђРєС‚РёРІ, РїСЂРёРµРј','ERM');
+INSERT INTO measures(nmeasure,VNAME,vcode)VALUES(72,'РџРѕРєР°Р·Р°РЅРёСЏ РђРєС‚РёРІ, РѕС‚РґР°С‡Р°','EDM');
+INSERT INTO measures(nmeasure,VNAME,vcode)VALUES(73,'РџРѕРєР°Р·Р°РЅРёСЏ Q1 (Р РµР°РєС‚РёРІ, РїСЂРёРµРј)','Q1M');
+INSERT INTO measures(nmeasure,VNAME,vcode)VALUES(75,'РџРѕРєР°Р·Р°РЅРёСЏ Q3 (Р РµР°РєС‚РёРІ, РіРµРЅРµСЂС†)','Q3M');
 commit;
 exception
 when others then rollback;
@@ -21977,12 +21977,12 @@ alter table MEASURES  add(
 );
 
 comment on column MEASURES.NMRID is
-'Наличае MRID';
+'РќР°Р»РёС‡Р°Рµ MRID';
 
 
 
 begin
-INSERT INTO measures(nmeasure,VNAME,vcode)VALUES(77,'События','EVENT');
+INSERT INTO measures(nmeasure,VNAME,vcode)VALUES(77,'РЎРѕР±С‹С‚РёСЏ','EVENT');
 commit;
 exception
 when others then rollback;
@@ -21995,11 +21995,11 @@ commit;
 
 
 ----------------------------------------------------------------------------------------------
---  10/07/2009    VER 2.32.4 (Для обновления версии 2.32.3 до текущей скрипт запускать отсюда)      
+--  10/07/2009    VER 2.32.4 (Р”Р»СЏ РѕР±РЅРѕРІР»РµРЅРёСЏ РІРµСЂСЃРёРё 2.32.3 РґРѕ С‚РµРєСѓС‰РµР№ СЃРєСЂРёРїС‚ Р·Р°РїСѓСЃРєР°С‚СЊ РѕС‚СЃСЋРґР°)      
 ----------------------------------------------------------------------------------------------
 begin
-insert into ADDFORMPARAM(NSORT,VDESCR,NTYPE) values(-7,'Вывод метки качества',1);
-insert into ADDFORMPARAM(NSORT,VDESCR,NTYPE) values(-8,'Вывод тарифной зоны',1);
+insert into ADDFORMPARAM(NSORT,VDESCR,NTYPE) values(-7,'Р’С‹РІРѕРґ РјРµС‚РєРё РєР°С‡РµСЃС‚РІР°',1);
+insert into ADDFORMPARAM(NSORT,VDESCR,NTYPE) values(-8,'Р’С‹РІРѕРґ С‚Р°СЂРёС„РЅРѕР№ Р·РѕРЅС‹',1);
 commit;
 end;
 /
@@ -22012,10 +22012,10 @@ end;
 /
 
 ---13/07/2009
-INSERT INTO deportprocedures("NPROCEDURE","VNAME","VPROCEDURE","NPERIOD","NTYPE","VMEMO")VALUES(60,'Макет 30817 с меткой качества','ryda.reports1_pg.m30817qm_p',2,0,'Макет 30817 с меткой качества');
+INSERT INTO deportprocedures("NPROCEDURE","VNAME","VPROCEDURE","NPERIOD","NTYPE","VMEMO")VALUES(60,'РњР°РєРµС‚ 30817 СЃ РјРµС‚РєРѕР№ РєР°С‡РµСЃС‚РІР°','ryda.reports1_pg.m30817qm_p',2,0,'РњР°РєРµС‚ 30817 СЃ РјРµС‚РєРѕР№ РєР°С‡РµСЃС‚РІР°');
 commit;
 
-INSERT INTO deportprocedures("NPROCEDURE","VNAME","VPROCEDURE","NPERIOD","NTYPE","VMEMO")VALUES(61,'Макет Отчет','ryda.reports4_pg.report_p',2,0,'Макет Отчет');
+INSERT INTO deportprocedures("NPROCEDURE","VNAME","VPROCEDURE","NPERIOD","NTYPE","VMEMO")VALUES(61,'РњР°РєРµС‚ РћС‚С‡РµС‚','ryda.reports4_pg.report_p',2,0,'РњР°РєРµС‚ РћС‚С‡РµС‚');
 commit;
 
 --14/07/2009
@@ -22100,34 +22100,34 @@ create table UPPDSTAT  (
 );
 
 comment on table UPPDSTAT is
-'Статистика УППД';
+'РЎС‚Р°С‚РёСЃС‚РёРєР° РЈРџРџР”';
 
 comment on column UPPDSTAT.NOPERATION is
-'Ид операции';
+'РРґ РѕРїРµСЂР°С†РёРё';
 
 comment on column UPPDSTAT.CID is
-'Ид канала';
+'РРґ РєР°РЅР°Р»Р°';
 
 comment on column UPPDSTAT.DDATE is
-'Дата данных';
+'Р”Р°С‚Р° РґР°РЅРЅС‹С…';
 
 comment on column UPPDSTAT.DENTER is
-'Дата создания';
+'Р”Р°С‚Р° СЃРѕР·РґР°РЅРёСЏ';
 
 comment on column UPPDSTAT.NSTATE is
-'Состояние';
+'РЎРѕСЃС‚РѕСЏРЅРёРµ';
 
 comment on column UPPDSTAT.DSEND is
-'Дата отсылки или ошибки';
+'Р”Р°С‚Р° РѕС‚СЃС‹Р»РєРё РёР»Рё РѕС€РёР±РєРё';
 
 comment on column UPPDSTAT.VERROR is
-'Доп инфо при отсылке';
+'Р”РѕРї РёРЅС„Рѕ РїСЂРё РѕС‚СЃС‹Р»РєРµ';
 
 comment on column UPPDSTAT.USER_ID is
-'Ид пользователя';
+'РРґ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ';
 
 comment on column UPPDSTAT.NNOTFULL is
-'Неполные данные';
+'РќРµРїРѕР»РЅС‹Рµ РґР°РЅРЅС‹Рµ';
 
 /*==============================================================*/
 /* Index: UPPDSTAT_IDX1                                         */
@@ -22161,19 +22161,19 @@ create table UPPDDATA  (
 );
 
 comment on table UPPDDATA is
-'Данные УППД';
+'Р”Р°РЅРЅС‹Рµ РЈРџРџР”';
 
 comment on column UPPDDATA.NOPERATION is
-'Ид операции';
+'РРґ РѕРїРµСЂР°С†РёРё';
 
 comment on column UPPDDATA.NGROUP is
-'Ид группы';
+'РРґ РіСЂСѓРїРїС‹';
 
 comment on column UPPDDATA.NORDER is
-'Номер данных (час 0 это сутки)';
+'РќРѕРјРµСЂ РґР°РЅРЅС‹С… (С‡Р°СЃ 0 СЌС‚Рѕ СЃСѓС‚РєРё)';
 
 comment on column UPPDDATA.NVALUE is
-'Значение';
+'Р—РЅР°С‡РµРЅРёРµ';
 
 /*==============================================================*/
 /* Index: UPPDDATA_IDX1                                         */
@@ -22257,16 +22257,16 @@ end;
 /
 
 --17.07.2009
-INSERT INTO deportprocedures("NPROCEDURE","VNAME","VPROCEDURE","NPERIOD","NTYPE","VMEMO")VALUES(62,'Макет Отчет месячный','ryda.reports4_pg.reportm_p',5,0,'Макет Отчет месячный');
-update deportprocedures set VNAME='Макет Отчет суточный',VMEMO='Макет Отчет суточный' where NPROCEDURE=61;
+INSERT INTO deportprocedures("NPROCEDURE","VNAME","VPROCEDURE","NPERIOD","NTYPE","VMEMO")VALUES(62,'РњР°РєРµС‚ РћС‚С‡РµС‚ РјРµСЃСЏС‡РЅС‹Р№','ryda.reports4_pg.reportm_p',5,0,'РњР°РєРµС‚ РћС‚С‡РµС‚ РјРµСЃСЏС‡РЅС‹Р№');
+update deportprocedures set VNAME='РњР°РєРµС‚ РћС‚С‡РµС‚ СЃСѓС‚РѕС‡РЅС‹Р№',VMEMO='РњР°РєРµС‚ РћС‚С‡РµС‚ СЃСѓС‚РѕС‡РЅС‹Р№' where NPROCEDURE=61;
 commit;
 
 
 ----------------------------------------------------------------------------------------------
---  22/07/2009    VER 2.32.6 (Для обновления версии 2.32.5 до текущей скрипт запускать отсюда)      
+--  22/07/2009    VER 2.32.6 (Р”Р»СЏ РѕР±РЅРѕРІР»РµРЅРёСЏ РІРµСЂСЃРёРё 2.32.5 РґРѕ С‚РµРєСѓС‰РµР№ СЃРєСЂРёРїС‚ Р·Р°РїСѓСЃРєР°С‚СЊ РѕС‚СЃСЋРґР°)      
 ----------------------------------------------------------------------------------------------
 begin
-insert into ADDFORMPARAM(NSORT,VDESCR,NTYPE) values(-9,'Вывод часового пояса',1);
+insert into ADDFORMPARAM(NSORT,VDESCR,NTYPE) values(-9,'Р’С‹РІРѕРґ С‡Р°СЃРѕРІРѕРіРѕ РїРѕСЏСЃР°',1);
 commit;
 end;
 /
@@ -22274,21 +22274,21 @@ end;
 INSERT INTO deportprocedures
 ("NPROCEDURE","VNAME","VPROCEDURE","NPERIOD","NTYPE","VMEMO")
 VALUES
-(63,'Макет АСКП','reports1_pg.mASKP_p',2,0,'Макет АСКП')
+(63,'РњР°РєРµС‚ РђРЎРљРџ','reports1_pg.mASKP_p',2,0,'РњР°РєРµС‚ РђРЎРљРџ')
 /
 INSERT INTO deportprocedures
 ("NPROCEDURE","VNAME","VPROCEDURE","NPERIOD","NTYPE","VMEMO")
 VALUES
-(64,'Макет LG','ryda.reports1_pg.mLG_p',2,0,'Макет LG')
+(64,'РњР°РєРµС‚ LG','ryda.reports1_pg.mLG_p',2,0,'РњР°РєРµС‚ LG')
 /
 
 ----------------------------------------------------------------------------------------------
---  29/07/2009    VER 2.32.8 (Для обновления версии 2.32.7 до текущей скрипт запускать отсюда)      
+--  29/07/2009    VER 2.32.8 (Р”Р»СЏ РѕР±РЅРѕРІР»РµРЅРёСЏ РІРµСЂСЃРёРё 2.32.7 РґРѕ С‚РµРєСѓС‰РµР№ СЃРєСЂРёРїС‚ Р·Р°РїСѓСЃРєР°С‚СЊ РѕС‚СЃСЋРґР°)      
 ----------------------------------------------------------------------------------------------
 declare
 l NUMBER;
 begin
-insert into parameter (NPID,VVALUE,VDESCRIPTION) values(44,0,'УППД - всегда 25 значений');
+insert into parameter (NPID,VVALUE,VDESCRIPTION) values(44,0,'РЈРџРџР” - РІСЃРµРіРґР° 25 Р·РЅР°С‡РµРЅРёР№');
 commit;
 end;
 /
@@ -22298,22 +22298,22 @@ alter table UPPDDATA  add(
 );
 
 comment on column UPPDDATA.NQM is
-'Достоверность';
+'Р”РѕСЃС‚РѕРІРµСЂРЅРѕСЃС‚СЊ';
 
-INSERT INTO RYDA.PROTOCOLS VALUES(100,'УППД - Клиент (v.2)','');
+INSERT INTO RYDA.PROTOCOLS VALUES(100,'РЈРџРџР” - РљР»РёРµРЅС‚ (v.2)','');
 commit;
 
 declare
 l NUMBER;
 begin
-insert into parameter (NPID,VVALUE,VDESCRIPTION) values(45,0,'Блокировка перерасчета после удаления данных');
+insert into parameter (NPID,VVALUE,VDESCRIPTION) values(45,0,'Р‘Р»РѕРєРёСЂРѕРІРєР° РїРµСЂРµСЂР°СЃС‡РµС‚Р° РїРѕСЃР»Рµ СѓРґР°Р»РµРЅРёСЏ РґР°РЅРЅС‹С…');
 commit;
 end;
 /
 
 
 ----------------------------------------------------------------------------------------------
---  26/08/2009    VER 2.33.2 (Для обновления версии 2.31.8 до текущей скрипт запускать отсюда)      
+--  26/08/2009    VER 2.33.2 (Р”Р»СЏ РѕР±РЅРѕРІР»РµРЅРёСЏ РІРµСЂСЃРёРё 2.31.8 РґРѕ С‚РµРєСѓС‰РµР№ СЃРєСЂРёРїС‚ Р·Р°РїСѓСЃРєР°С‚СЊ РѕС‚СЃСЋРґР°)      
 ----------------------------------------------------------------------------------------------
 begin
 execute immediate 'grant execute on POINTCALC_PG to askuerep';
@@ -22328,7 +22328,7 @@ alter table LAST_SAVE  add(
 );
 
 comment on column LAST_SAVE.DPARAMETRIZATION is
-'Дата параметризации';
+'Р”Р°С‚Р° РїР°СЂР°РјРµС‚СЂРёР·Р°С†РёРё';
 
 
 ------------------29/09/2009
@@ -22338,20 +22338,20 @@ VALUES
 /
 INSERT INTO RYDA.PROTOCOLS
 VALUES
-(102,'A1R Альфа (коммерч)','')
+(102,'A1R РђР»СЊС„Р° (РєРѕРјРјРµСЂС‡)','')
 /
 COMMIT;
 
 ----------------------------------------------------------------------------------------------
---  26/08/2009    VER 2.34. (Для обновления версии 2.32.3 до текущей скрипт запускать отсюда)      
+--  26/08/2009    VER 2.34. (Р”Р»СЏ РѕР±РЅРѕРІР»РµРЅРёСЏ РІРµСЂСЃРёРё 2.32.3 РґРѕ С‚РµРєСѓС‰РµР№ СЃРєСЂРёРїС‚ Р·Р°РїСѓСЃРєР°С‚СЊ РѕС‚СЃСЋРґР°)      
 ----------------------------------------------------------------------------------------------
-INSERT INTO RYDA.PROTOCOLS VALUES(1010,'СЭБ-2А.07 (DLL)','Seb_2a_07.dll');
+INSERT INTO RYDA.PROTOCOLS VALUES(1010,'РЎР­Р‘-2Рђ.07 (DLL)','Seb_2a_07.dll');
 COMMIT;
                                   	 	
 declare
 l NUMBER;
 begin
-insert into parameter (NPID,VVALUE,VDESCRIPTION) values(46,1,'Коррекция времени только внутри интеграционного периода');
+insert into parameter (NPID,VVALUE,VDESCRIPTION) values(46,1,'РљРѕСЂСЂРµРєС†РёСЏ РІСЂРµРјРµРЅРё С‚РѕР»СЊРєРѕ РІРЅСѓС‚СЂРё РёРЅС‚РµРіСЂР°С†РёРѕРЅРЅРѕРіРѕ РїРµСЂРёРѕРґР°');
 commit;
 end;
 /
@@ -22365,19 +22365,19 @@ alter table LAST_SAVE  add(
 
 
 comment on column LAST_SAVE.DMETERCORRECT is
-'Дата последней коррекции времени';
+'Р”Р°С‚Р° РїРѕСЃР»РµРґРЅРµР№ РєРѕСЂСЂРµРєС†РёРё РІСЂРµРјРµРЅРё';
 
 
 
 
 ---  20/11/2009 
 
-INSERT INTO deportprocedures("NPROCEDURE","VNAME","VPROCEDURE","NPERIOD","NTYPE","VMEMO")VALUES(65,'Макет 30902','ryda.reports1_pg.m30902_p',5,0,'Макет 30902');
+INSERT INTO deportprocedures("NPROCEDURE","VNAME","VPROCEDURE","NPERIOD","NTYPE","VMEMO")VALUES(65,'РњР°РєРµС‚ 30902','ryda.reports1_pg.m30902_p',5,0,'РњР°РєРµС‚ 30902');
 commit;
 
 
 ----23.12.2009
-insert into deportprocedures values (66, 'Макет Отчет суточный с нарастающим итогом', 'ryda.reports4_pg.report_mon',2,0,'Макет Отчет суточный с нарастающим итогом');
+insert into deportprocedures values (66, 'РњР°РєРµС‚ РћС‚С‡РµС‚ СЃСѓС‚РѕС‡РЅС‹Р№ СЃ РЅР°СЂР°СЃС‚Р°СЋС‰РёРј РёС‚РѕРіРѕРј', 'ryda.reports4_pg.report_mon',2,0,'РњР°РєРµС‚ РћС‚С‡РµС‚ СЃСѓС‚РѕС‡РЅС‹Р№ СЃ РЅР°СЂР°СЃС‚Р°СЋС‰РёРј РёС‚РѕРіРѕРј');
 commit;
 
 
@@ -22387,11 +22387,11 @@ alter table FEEDERS  add(
 );
 
 comment on column FEEDERS.NINTEGRALPERIOD is
-'Базовый период интеграции';
+'Р‘Р°Р·РѕРІС‹Р№ РїРµСЂРёРѕРґ РёРЅС‚РµРіСЂР°С†РёРё';
 ----------------------------------------------------------------------------------------------
---  28/12/2009    VER 2.35 (Для обновления версии 2.34.2 до текущей скрипт запускать отсюда)      
+--  28/12/2009    VER 2.35 (Р”Р»СЏ РѕР±РЅРѕРІР»РµРЅРёСЏ РІРµСЂСЃРёРё 2.34.2 РґРѕ С‚РµРєСѓС‰РµР№ СЃРєСЂРёРїС‚ Р·Р°РїСѓСЃРєР°С‚СЊ РѕС‚СЃСЋРґР°)      
 ----------------------------------------------------------------------------------------------
-INSERT INTO addformparam("NSORT","VDESCR","NTYPE")VALUES(-10,'Вывод даты формирования',1);
+INSERT INTO addformparam("NSORT","VDESCR","NTYPE")VALUES(-10,'Р’С‹РІРѕРґ РґР°С‚С‹ С„РѕСЂРјРёСЂРѕРІР°РЅРёСЏ',1);
 commit;
 
 --  04/01/2010
@@ -22408,13 +22408,13 @@ create table SOURCETYPES  (
 );
 
 comment on table SOURCETYPES is
-'Виды источников';
+'Р’РёРґС‹ РёСЃС‚РѕС‡РЅРёРєРѕРІ';
 
 comment on column SOURCETYPES.PTYPE is
-'Ид источника';
+'РРґ РёСЃС‚РѕС‡РЅРёРєР°';
 
 comment on column SOURCETYPES.VNAME is
-'Наименование источника';
+'РќР°РёРјРµРЅРѕРІР°РЅРёРµ РёСЃС‚РѕС‡РЅРёРєР°';
 
 /*==============================================================*/
 /* Index: SOURCETYPES_IDX1                                      */
@@ -22427,11 +22427,11 @@ alter table POINTS
    add constraint POINTS_F2 foreign key (PTYPE)
       references SOURCETYPES (PTYPE);
 
-insert into SOURCETYPES(PTYPE,VNAME) values(1,'Счетчик');
-insert into SOURCETYPES(PTYPE,VNAME) values(2,'Макет');
-insert into SOURCETYPES(PTYPE,VNAME) values(3,'Импульс');
+insert into SOURCETYPES(PTYPE,VNAME) values(1,'РЎС‡РµС‚С‡РёРє');
+insert into SOURCETYPES(PTYPE,VNAME) values(2,'РњР°РєРµС‚');
+insert into SOURCETYPES(PTYPE,VNAME) values(3,'РРјРїСѓР»СЊСЃ');
 insert into SOURCETYPES(PTYPE,VNAME) values(4,'Notebook');
-insert into SOURCETYPES(PTYPE,VNAME) values(5,'Ручник');
+insert into SOURCETYPES(PTYPE,VNAME) values(5,'Р СѓС‡РЅРёРє');
 commit;
 
 ----05.01.2010
@@ -22440,12 +22440,12 @@ CREATE OR REPLACE type numarray as table of number
 CREATE OR REPLACE type strarray as table of VARCHAR2(4000)
 /
 
-comment on column POINTS.PTYPE is 'Источник данных';
+comment on column POINTS.PTYPE is 'РСЃС‚РѕС‡РЅРёРє РґР°РЅРЅС‹С…';
 
 ----------------------------------------------------------------------------------------------
---12.01.2010      VER 2.35.3 (Для обновления версии 2.35.2 до текущей скрипт запускать отсюда)      
+--12.01.2010      VER 2.35.3 (Р”Р»СЏ РѕР±РЅРѕРІР»РµРЅРёСЏ РІРµСЂСЃРёРё 2.35.2 РґРѕ С‚РµРєСѓС‰РµР№ СЃРєСЂРёРїС‚ Р·Р°РїСѓСЃРєР°С‚СЊ РѕС‚СЃСЋРґР°)      
 ----------------------------------------------------------------------------------------------
-INSERT INTO RYDA.PROTOCOLS VALUES(103,'A1R Альфа - Link','');
+INSERT INTO RYDA.PROTOCOLS VALUES(103,'A1R РђР»СЊС„Р° - Link','');
 commit;
 
 
@@ -22514,10 +22514,10 @@ BEGIN
     EXCEPTION
     WHEN error THEN 
         ROLLBACK;
-        raise_application_error (-20001, 'Ошибка в формуле '||lv_formula||' ИД формулы:' || ln_nid);
+        raise_application_error (-20001, 'РћС€РёР±РєР° РІ С„РѕСЂРјСѓР»Рµ '||lv_formula||' РР” С„РѕСЂРјСѓР»С‹:' || ln_nid);
     WHEN error1 THEN 
         ROLLBACK;
-        raise_application_error (-20001, 'В формуле '||lv_formula||' ИД формулы:' || ln_nid||' кол-во параметров неверно');
+        raise_application_error (-20001, 'Р’ С„РѕСЂРјСѓР»Рµ '||lv_formula||' РР” С„РѕСЂРјСѓР»С‹:' || ln_nid||' РєРѕР»-РІРѕ РїР°СЂР°РјРµС‚СЂРѕРІ РЅРµРІРµСЂРЅРѕ');
     WHEN OTHERS THEN 
         ROLLBACK;
         raise_application_error (-20001, 'PARSER_PG: ' || SQLERRM (SQLCODE));
@@ -22538,22 +22538,22 @@ create table USERFORUM  (
 );
 
 comment on table USERFORUM is
-'Форум пользователей';
+'Р¤РѕСЂСѓРј РїРѕР»СЊР·РѕРІР°С‚РµР»РµР№';
 
 comment on column USERFORUM.NMESSAGE is
-'Ид сообщения';
+'РРґ СЃРѕРѕР±С‰РµРЅРёСЏ';
 
 comment on column USERFORUM.DDATE is
-'Дата сообщения';
+'Р”Р°С‚Р° СЃРѕРѕР±С‰РµРЅРёСЏ';
 
 comment on column USERFORUM.USER_ID is
-'Ид пользователя';
+'РРґ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ';
 
 comment on column USERFORUM.VSUBJECT is
-'Тема сообщения';
+'РўРµРјР° СЃРѕРѕР±С‰РµРЅРёСЏ';
 
 comment on column USERFORUM.VMESSAGE is
-'Текст сообщения';
+'РўРµРєСЃС‚ СЃРѕРѕР±С‰РµРЅРёСЏ';
 
 /*==============================================================*/
 /* Index: USERSFORUM_IDX2                                       */
@@ -22587,19 +22587,19 @@ create table USERFORUMDET  (
 );
 
 comment on table USERFORUMDET is
-'Форум детализация';
+'Р¤РѕСЂСѓРј РґРµС‚Р°Р»РёР·Р°С†РёСЏ';
 
 comment on column USERFORUMDET.NMESSAGE is
-'Ид сообщения';
+'РРґ СЃРѕРѕР±С‰РµРЅРёСЏ';
 
 comment on column USERFORUMDET.DDATE is
-'Дата ответа';
+'Р”Р°С‚Р° РѕС‚РІРµС‚Р°';
 
 comment on column USERFORUMDET.USER_ID is
-'Ид пользователя';
+'РРґ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ';
 
 comment on column USERFORUMDET.VMESSAGE is
-'Текст ответа';
+'РўРµРєСЃС‚ РѕС‚РІРµС‚Р°';
 
 /*==============================================================*/
 /* Index: USERSFORUMDET_IDX1                                    */
@@ -22629,7 +22629,7 @@ CREATE SEQUENCE USERFORUM_SEQ INCREMENT BY  1 START WITH  1001 CACHE 20;
 
 
 ----------------------------------------------------------------------------------------------
---18.01.2010      VER 2.34.4 (Для обновления версии 2.34.3 до текущей скрипт запускать отсюда)      
+--18.01.2010      VER 2.34.4 (Р”Р»СЏ РѕР±РЅРѕРІР»РµРЅРёСЏ РІРµСЂСЃРёРё 2.34.3 РґРѕ С‚РµРєСѓС‰РµР№ СЃРєСЂРёРїС‚ Р·Р°РїСѓСЃРєР°С‚СЊ РѕС‚СЃСЋРґР°)      
 ----------------------------------------------------------------------------------------------
 
 -----
@@ -22642,7 +22642,7 @@ if ln_customer_id in (1) then
 INSERT INTO tasks
 (TASK_ID,PARENT,TASK_COD,NAME,REMARK,nshow)
 VALUES
-(104,80,660,'9.06 Форум пользователей','9.06 Форум пользователей',0);
+(104,80,660,'9.06 Р¤РѕСЂСѓРј РїРѕР»СЊР·РѕРІР°С‚РµР»РµР№','9.06 Р¤РѕСЂСѓРј РїРѕР»СЊР·РѕРІР°С‚РµР»РµР№',0);
 
 insert into role_task
 select ROLE_ID,104,decode(ROLE_ID,1,1,0) from roles;
@@ -22658,32 +22658,32 @@ alter table DB_TERM  add(
 );
 
 comment on column DB_TERM.INDEX_NAME is
-'Наименование индекса для hint';
+'РќР°РёРјРµРЅРѕРІР°РЅРёРµ РёРЅРґРµРєСЃР° РґР»СЏ hint';
 
 --11.02.2010
 declare
 l NUMBER;
 begin
 select count(*) into l from parameter where NPID=12 and vvalue='1';
-IF l>0 THEN --для ХОЭ
-    update parameter set VVALUE=3,VDESCRIPTION='Тип инверсии на т. учета. 1-условная, 2-всегда,3-условная обратная (ХОЭ), иначе никогда' where NPID=42;
+IF l>0 THEN --РґР»СЏ РҐРћР­
+    update parameter set VVALUE=3,VDESCRIPTION='РўРёРї РёРЅРІРµСЂСЃРёРё РЅР° С‚. СѓС‡РµС‚Р°. 1-СѓСЃР»РѕРІРЅР°СЏ, 2-РІСЃРµРіРґР°,3-СѓСЃР»РѕРІРЅР°СЏ РѕР±СЂР°С‚РЅР°СЏ (РҐРћР­), РёРЅР°С‡Рµ РЅРёРєРѕРіРґР°' where NPID=42;
 else
-    update parameter set VDESCRIPTION='Тип инверсии на т. учета 1-условная, 2-всегда,3-условная обратная (ХОЭ), иначе никогда' where NPID=42;
+    update parameter set VDESCRIPTION='РўРёРї РёРЅРІРµСЂСЃРёРё РЅР° С‚. СѓС‡РµС‚Р° 1-СѓСЃР»РѕРІРЅР°СЏ, 2-РІСЃРµРіРґР°,3-СѓСЃР»РѕРІРЅР°СЏ РѕР±СЂР°С‚РЅР°СЏ (РҐРћР­), РёРЅР°С‡Рµ РЅРёРєРѕРіРґР°' where NPID=42;
 END IF;
 commit;
 end;
 /
 
 ----------------------------------------------------------------------------------------------
---17.03.2010      VER 2.34.5 (Для обновления версии 2.34.4 до текущей скрипт запускать отсюда)      
+--17.03.2010      VER 2.34.5 (Р”Р»СЏ РѕР±РЅРѕРІР»РµРЅРёСЏ РІРµСЂСЃРёРё 2.34.4 РґРѕ С‚РµРєСѓС‰РµР№ СЃРєСЂРёРїС‚ Р·Р°РїСѓСЃРєР°С‚СЊ РѕС‚СЃСЋРґР°)      
 ----------------------------------------------------------------------------------------------
 begin
-insert into parameter (NPID,VVALUE,VDESCRIPTION) values(47,'','Наименование родительской БД');
+insert into parameter (NPID,VVALUE,VDESCRIPTION) values(47,'','РќР°РёРјРµРЅРѕРІР°РЅРёРµ СЂРѕРґРёС‚РµР»СЊСЃРєРѕР№ Р‘Р”');
 commit;
 end;
 /
 
-INSERT INTO deportprocedures("NPROCEDURE","VNAME","VPROCEDURE","NPERIOD","NTYPE","VMEMO")VALUES(67,'Синхронизация с главной БД','SYNHRON_PG.synhrondb',0,1,'Синхронизация с главной БД');
+INSERT INTO deportprocedures("NPROCEDURE","VNAME","VPROCEDURE","NPERIOD","NTYPE","VMEMO")VALUES(67,'РЎРёРЅС…СЂРѕРЅРёР·Р°С†РёСЏ СЃ РіР»Р°РІРЅРѕР№ Р‘Р”','SYNHRON_PG.synhrondb',0,1,'РЎРёРЅС…СЂРѕРЅРёР·Р°С†РёСЏ СЃ РіР»Р°РІРЅРѕР№ Р‘Р”');
 commit;
 
 --18/02/2010
@@ -22714,7 +22714,7 @@ declare
 l NUMBER;
 begin
 select count(*) into l from parameter where NPID=12 and vvalue='1';
-insert into parameter (NPID,VVALUE,VDESCRIPTION) values(50,l,'Оптимизатор +ordered для мониторов и расчета');
+insert into parameter (NPID,VVALUE,VDESCRIPTION) values(50,l,'РћРїС‚РёРјРёР·Р°С‚РѕСЂ +ordered РґР»СЏ РјРѕРЅРёС‚РѕСЂРѕРІ Рё СЂР°СЃС‡РµС‚Р°');
 commit;
 end;
 /
@@ -22725,7 +22725,7 @@ l NUMBER;
 begin
 select nvl(max(decode(vvalue,'0',1,'41',1,'42',1,'43',1,'44',1,'45',1,'46',1,0)),0) into l from parameter where NPID=12;
 if l=1 then
-INSERT INTO tasks(TASK_ID,PARENT,TASK_COD,NAME,REMARK,NSHOW) VALUES (105,56,661,'3.5 Мониторинг ICCP','',1);
+INSERT INTO tasks(TASK_ID,PARENT,TASK_COD,NAME,REMARK,NSHOW) VALUES (105,56,661,'3.5 РњРѕРЅРёС‚РѕСЂРёРЅРі ICCP','',1);
 insert into role_task select ROLE_ID,103,decode(ROLE_ID,1,1,0) from roles;
 commit;
 end if;
@@ -22745,13 +22745,13 @@ create table DBMAIN  (
 );
 
 comment on table DBMAIN is
-'Главная БД';
+'Р“Р»Р°РІРЅР°СЏ Р‘Р”';
 
 comment on column DBMAIN.NID is
-'Ид параметра';
+'РРґ РїР°СЂР°РјРµС‚СЂР°';
 
 comment on column DBMAIN.NTYPE is
-'Тип параметра';
+'РўРёРї РїР°СЂР°РјРµС‚СЂР°';
 
 /*==============================================================*/
 /* Index: DBMAIN_IDX1                                           */
@@ -22761,13 +22761,13 @@ create unique index DBMAIN_IDX1 on DBMAIN (
 );
 
 begin
-INSERT INTO points(MID,PARENT,COD,IND,NAME,SHORT_NAME,PTYPE,IMPLEMENT_DATE,TAG,NPOINT) VALUES(55,NULL,NULL,1,'Службы ICCP','',NULL,'',NULL,NULL);
+INSERT INTO points(MID,PARENT,COD,IND,NAME,SHORT_NAME,PTYPE,IMPLEMENT_DATE,TAG,NPOINT) VALUES(55,NULL,NULL,1,'РЎР»СѓР¶Р±С‹ ICCP','',NULL,'',NULL,NULL);
 commit;
 end;
 /
 
 --23/02/2010
---begin INSERT INTO RYDA.PROTOCOLS VALUES (104,'A1800 Альфа',''); commit; end;
+--begin INSERT INTO RYDA.PROTOCOLS VALUES (104,'A1800 РђР»СЊС„Р°',''); commit; end;
 --/
 
 INSERT INTO RYDA.METERTYPE VALUES(30,'A1800'); 
@@ -22778,7 +22778,7 @@ commit;
 
 
 ----------------------------------------------------------------------------------------------
---26.01.2010      VER 2.34.7 (Для обновления версии 2.34.6 до текущей скрипт запускать отсюда)      
+--26.01.2010      VER 2.34.7 (Р”Р»СЏ РѕР±РЅРѕРІР»РµРЅРёСЏ РІРµСЂСЃРёРё 2.34.6 РґРѕ С‚РµРєСѓС‰РµР№ СЃРєСЂРёРїС‚ Р·Р°РїСѓСЃРєР°С‚СЊ РѕС‚СЃСЋРґР°)      
 ----------------------------------------------------------------------------------------------
 create table HALFHOURARCH  (
    NID                  NUMBER(10)                      not null,
@@ -22811,85 +22811,85 @@ create table HALFHOURARCH  (
 );
 
 comment on table HALFHOURARCH is
-'Получасовки архив';
+'РџРѕР»СѓС‡Р°СЃРѕРІРєРё Р°СЂС…РёРІ';
 
 comment on column HALFHOURARCH.NID is
-'Ид записи';
+'РРґ Р·Р°РїРёСЃРё';
 
 comment on column HALFHOURARCH.DID is
-'Дата фиксации';
+'Р”Р°С‚Р° С„РёРєСЃР°С†РёРё';
 
 comment on column HALFHOURARCH.MID is
-'Ид точки';
+'РРґ С‚РѕС‡РєРё';
 
 comment on column HALFHOURARCH.DATE_TIME is
-'Дата показаний';
+'Р”Р°С‚Р° РїРѕРєР°Р·Р°РЅРёР№';
 
 comment on column HALFHOURARCH.NSOURCE is
-'Код источника';
+'РљРѕРґ РёСЃС‚РѕС‡РЅРёРєР°';
 
 comment on column HALFHOURARCH.ER is
-'Расход А пр';
+'Р Р°СЃС…РѕРґ Рђ РїСЂ';
 
 comment on column HALFHOURARCH.Q1 is
-'Расход Q1';
+'Р Р°СЃС…РѕРґ Q1';
 
 comment on column HALFHOURARCH.ED is
-'Расход А от';
+'Р Р°СЃС…РѕРґ Рђ РѕС‚';
 
 comment on column HALFHOURARCH.Q3 is
-'Расход Q3';
+'Р Р°СЃС…РѕРґ Q3';
 
 comment on column HALFHOURARCH.Q2 is
-'Расход Q2';
+'Р Р°СЃС…РѕРґ Q2';
 
 comment on column HALFHOURARCH.Q4 is
-'Расход Q4';
+'Р Р°СЃС…РѕРґ Q4';
 
 comment on column HALFHOURARCH.ERM is
-'Показания А пр';
+'РџРѕРєР°Р·Р°РЅРёСЏ Рђ РїСЂ';
 
 comment on column HALFHOURARCH.Q1M is
-'Показания Q1';
+'РџРѕРєР°Р·Р°РЅРёСЏ Q1';
 
 comment on column HALFHOURARCH.EDM is
-'Показания А от';
+'РџРѕРєР°Р·Р°РЅРёСЏ Рђ РѕС‚';
 
 comment on column HALFHOURARCH.Q3M is
-'Показания Q3';
+'РџРѕРєР°Р·Р°РЅРёСЏ Q3';
 
 comment on column HALFHOURARCH.Q2M is
-'Показания Q2';
+'РџРѕРєР°Р·Р°РЅРёСЏ Q2';
 
 comment on column HALFHOURARCH.Q4M is
-'Показания Q4';
+'РџРѕРєР°Р·Р°РЅРёСЏ Q4';
 
 comment on column HALFHOURARCH.STATUS is
-'Статус';
+'РЎС‚Р°С‚СѓСЃ';
 
 comment on column HALFHOURARCH.NSWITCH is
-'Ид обводника';
+'РРґ РѕР±РІРѕРґРЅРёРєР°';
 
 comment on column HALFHOURARCH.NEXCEPTCALC is
-'Исключен из расчета';
+'РСЃРєР»СЋС‡РµРЅ РёР· СЂР°СЃС‡РµС‚Р°';
 
 comment on column HALFHOURARCH.DCLOSED is
-'Дата закрытия суток';
+'Р”Р°С‚Р° Р·Р°РєСЂС‹С‚РёСЏ СЃСѓС‚РѕРє';
 
 comment on column HALFHOURARCH.NKC is
-'Коеф счетчика';
+'РљРѕРµС„ СЃС‡РµС‚С‡РёРєР°';
 
 comment on column HALFHOURARCH.ER_MTRSN is
-'Номер счетчика';
+'РќРѕРјРµСЂ СЃС‡РµС‚С‡РёРєР°';
 
 comment on column HALFHOURARCH.DENTER is
-'Дата попадания';
+'Р”Р°С‚Р° РїРѕРїР°РґР°РЅРёСЏ';
 
 comment on column HALFHOURARCH.VQM is
-'Метка качества';
+'РњРµС‚РєР° РєР°С‡РµСЃС‚РІР°';
 
 comment on column HALFHOURARCH.NMETERTYPE is
-'Тип счетчика';
+'РўРёРї СЃС‡РµС‚С‡РёРєР°';
 
 /*==============================================================*/
 /* Index: HALFHOURARCH_IDX1                                     */
@@ -22908,7 +22908,7 @@ create sequence HALFHOURARCH_SEQ increment by 1 start with 1000;
 
 
 /*
-Только для ХОЭ
+РўРѕР»СЊРєРѕ РґР»СЏ РҐРћР­
 
 -- Start of DDL Script for Trigger RYDA.HALFHOUROLD_UPD
 -- Generated 2-ia?-2010 11:18:54 from RYDA@ASKUE
@@ -23055,253 +23055,253 @@ create table MONTHSORGARCH  (
 );
 
 comment on table MONTHSORGARCH is
-'Месячные архив';
+'РњРµСЃСЏС‡РЅС‹Рµ Р°СЂС…РёРІ';
 
 comment on column MONTHSORGARCH.NID is
-'Ид записи';
+'РРґ Р·Р°РїРёСЃРё';
 
 comment on column MONTHSORGARCH.DID is
-'Дата фиксации';
+'Р”Р°С‚Р° С„РёРєСЃР°С†РёРё';
 
 comment on column MONTHSORGARCH.MID is
-'Ид точки';
+'РРґ С‚РѕС‡РєРё';
 
 comment on column MONTHSORGARCH.DATE_TIME is
-'Дата';
+'Р”Р°С‚Р°';
 
 comment on column MONTHSORGARCH.NSOURCE is
-'Код источника';
+'РљРѕРґ РёСЃС‚РѕС‡РЅРёРєР°';
 
 comment on column MONTHSORGARCH.VALID is
-'Приз качества';
+'РџСЂРёР· РєР°С‡РµСЃС‚РІР°';
 
 comment on column MONTHSORGARCH.SOURCE is
-'Источник ввода';
+'РСЃС‚РѕС‡РЅРёРє РІРІРѕРґР°';
 
 comment on column MONTHSORGARCH.REMARK is
-'Примечание';
+'РџСЂРёРјРµС‡Р°РЅРёРµ';
 
 comment on column MONTHSORGARCH.ER_MTRSN is
-'Номер сч Ап';
+'РќРѕРјРµСЂ СЃС‡ РђРї';
 
 comment on column MONTHSORGARCH.ER_KC is
-'Коэф Ап';
+'РљРѕСЌС„ РђРї';
 
 comment on column MONTHSORGARCH.ERM is
-'Пок Ап';
+'РџРѕРє РђРї';
 
 comment on column MONTHSORGARCH.ER is
-'Рас Ап';
+'Р Р°СЃ РђРї';
 
 comment on column MONTHSORGARCH.AERM is
-'Пок Ап A';
+'РџРѕРє РђРї A';
 
 comment on column MONTHSORGARCH.AER is
-'Рас Ап A';
+'Р Р°СЃ РђРї A';
 
 comment on column MONTHSORGARCH.BERM is
-'Пок Ап B';
+'РџРѕРє РђРї B';
 
 comment on column MONTHSORGARCH.BER is
-'Рас Ап B';
+'Р Р°СЃ РђРї B';
 
 comment on column MONTHSORGARCH.CERM is
-'Пок Ап C';
+'РџРѕРє РђРї C';
 
 comment on column MONTHSORGARCH.CER is
-'Рас Ап C';
+'Р Р°СЃ РђРї C';
 
 comment on column MONTHSORGARCH.DERM is
-'Пок Ап D';
+'РџРѕРє РђРї D';
 
 comment on column MONTHSORGARCH.DER is
-'Рас Ап D';
+'Р Р°СЃ РђРї D';
 
 comment on column MONTHSORGARCH.Q1_MTRSN is
-'Номер сч Рп';
+'РќРѕРјРµСЂ СЃС‡ Р Рї';
 
 comment on column MONTHSORGARCH.Q1_KC is
-'Коэф Рп';
+'РљРѕСЌС„ Р Рї';
 
 comment on column MONTHSORGARCH.Q1M is
-'Пок Рп';
+'РџРѕРє Р Рї';
 
 comment on column MONTHSORGARCH.Q1 is
-'Рас Рп';
+'Р Р°СЃ Р Рї';
 
 comment on column MONTHSORGARCH.AQ1M is
-'Пок Рп A';
+'РџРѕРє Р Рї A';
 
 comment on column MONTHSORGARCH.AQ1 is
-'Рас Рп A';
+'Р Р°СЃ Р Рї A';
 
 comment on column MONTHSORGARCH.BQ1M is
-'Пок Рп B';
+'РџРѕРє Р Рї B';
 
 comment on column MONTHSORGARCH.BQ1 is
-'Рас Рп B';
+'Р Р°СЃ Р Рї B';
 
 comment on column MONTHSORGARCH.CQ1M is
-'Пок Рп C';
+'РџРѕРє Р Рї C';
 
 comment on column MONTHSORGARCH.CQ1 is
-'Рас Рп C';
+'Р Р°СЃ Р Рї C';
 
 comment on column MONTHSORGARCH.DQ1M is
-'Пок Рп D';
+'РџРѕРє Р Рї D';
 
 comment on column MONTHSORGARCH.DQ1 is
-'Рас Рп D';
+'Р Р°СЃ Р Рї D';
 
 comment on column MONTHSORGARCH.ED_MTRSN is
-'Номер сч А отд';
+'РќРѕРјРµСЂ СЃС‡ Рђ РѕС‚Рґ';
 
 comment on column MONTHSORGARCH.ED_KC is
-'Коэф Аотд';
+'РљРѕСЌС„ РђРѕС‚Рґ';
 
 comment on column MONTHSORGARCH.EDM is
-'Пок Аотд';
+'РџРѕРє РђРѕС‚Рґ';
 
 comment on column MONTHSORGARCH.ED is
-'Рас Аотд';
+'Р Р°СЃ РђРѕС‚Рґ';
 
 comment on column MONTHSORGARCH.AEDM is
-'Пок Аотд А';
+'РџРѕРє РђРѕС‚Рґ Рђ';
 
 comment on column MONTHSORGARCH.AED is
-'Рас Аотд А';
+'Р Р°СЃ РђРѕС‚Рґ Рђ';
 
 comment on column MONTHSORGARCH.BEDM is
-'Пок Аотд В';
+'РџРѕРє РђРѕС‚Рґ Р’';
 
 comment on column MONTHSORGARCH.BED is
-'Рас Аотд В';
+'Р Р°СЃ РђРѕС‚Рґ Р’';
 
 comment on column MONTHSORGARCH.CEDM is
-'Пок Аотд С';
+'РџРѕРє РђРѕС‚Рґ РЎ';
 
 comment on column MONTHSORGARCH.CED is
-'Рас Аотд С';
+'Р Р°СЃ РђРѕС‚Рґ РЎ';
 
 comment on column MONTHSORGARCH.DEDM is
-'Пок Аотд D';
+'РџРѕРє РђРѕС‚Рґ D';
 
 comment on column MONTHSORGARCH.DED is
-'Рас Аотд D';
+'Р Р°СЃ РђРѕС‚Рґ D';
 
 comment on column MONTHSORGARCH.Q3_MTRSN is
-'Номер сч Q1';
+'РќРѕРјРµСЂ СЃС‡ Q1';
 
 comment on column MONTHSORGARCH.Q3_KC is
-'Коэф Q1';
+'РљРѕСЌС„ Q1';
 
 comment on column MONTHSORGARCH.Q3M is
-'Пок Q1';
+'РџРѕРє Q1';
 
 comment on column MONTHSORGARCH.Q3 is
-'Рас Q1';
+'Р Р°СЃ Q1';
 
 comment on column MONTHSORGARCH.AQ3M is
-'Пок Q1 A';
+'РџРѕРє Q1 A';
 
 comment on column MONTHSORGARCH.AQ3 is
-'Рас Q1 A';
+'Р Р°СЃ Q1 A';
 
 comment on column MONTHSORGARCH.BQ3M is
-'Пок Q1 B';
+'РџРѕРє Q1 B';
 
 comment on column MONTHSORGARCH.BQ3 is
-'Рас Q1 B';
+'Р Р°СЃ Q1 B';
 
 comment on column MONTHSORGARCH.CQ3M is
-'Пок Q1 C';
+'РџРѕРє Q1 C';
 
 comment on column MONTHSORGARCH.CQ3 is
-'Рас Q1 C';
+'Р Р°СЃ Q1 C';
 
 comment on column MONTHSORGARCH.DQ3M is
-'Пок Q1 D';
+'РџРѕРє Q1 D';
 
 comment on column MONTHSORGARCH.DQ3 is
-'Рас Q1 D';
+'Р Р°СЃ Q1 D';
 
 comment on column MONTHSORGARCH.Q2_MTRSN is
-'Номер сч Q2';
+'РќРѕРјРµСЂ СЃС‡ Q2';
 
 comment on column MONTHSORGARCH.Q2_KC is
-'Коэф Q2';
+'РљРѕСЌС„ Q2';
 
 comment on column MONTHSORGARCH.Q2M is
-'Пок Q2';
+'РџРѕРє Q2';
 
 comment on column MONTHSORGARCH.Q2 is
-'Рас Q2';
+'Р Р°СЃ Q2';
 
 comment on column MONTHSORGARCH.AQ2M is
-'Пок Q2 A';
+'РџРѕРє Q2 A';
 
 comment on column MONTHSORGARCH.AQ2 is
-'Рас Q2 A';
+'Р Р°СЃ Q2 A';
 
 comment on column MONTHSORGARCH.BQ2M is
-'Пок Q2 B';
+'РџРѕРє Q2 B';
 
 comment on column MONTHSORGARCH.BQ2 is
-'Рас Q2 B';
+'Р Р°СЃ Q2 B';
 
 comment on column MONTHSORGARCH.CQ2M is
-'Пок Q2 C';
+'РџРѕРє Q2 C';
 
 comment on column MONTHSORGARCH.CQ2 is
-'Рас Q2 C';
+'Р Р°СЃ Q2 C';
 
 comment on column MONTHSORGARCH.DQ2M is
-'Пок Q2 D';
+'РџРѕРє Q2 D';
 
 comment on column MONTHSORGARCH.DQ2 is
-'Рас Q2 D';
+'Р Р°СЃ Q2 D';
 
 comment on column MONTHSORGARCH.Q4_MTRSN is
-'Номер сч Q4';
+'РќРѕРјРµСЂ СЃС‡ Q4';
 
 comment on column MONTHSORGARCH.Q4_KC is
-'Коэф Q4';
+'РљРѕСЌС„ Q4';
 
 comment on column MONTHSORGARCH.Q4M is
-'Пок Q4';
+'РџРѕРє Q4';
 
 comment on column MONTHSORGARCH.Q4 is
-'Рас Q4';
+'Р Р°СЃ Q4';
 
 comment on column MONTHSORGARCH.AQ4M is
-'Пок Q4 A';
+'РџРѕРє Q4 A';
 
 comment on column MONTHSORGARCH.AQ4 is
-'Рас Q4 A';
+'Р Р°СЃ Q4 A';
 
 comment on column MONTHSORGARCH.BQ4M is
-'Пок Q4 B';
+'РџРѕРє Q4 B';
 
 comment on column MONTHSORGARCH.BQ4 is
-'Рас Q4 B';
+'Р Р°СЃ Q4 B';
 
 comment on column MONTHSORGARCH.CQ4M is
-'Пок Q4 C';
+'РџРѕРє Q4 C';
 
 comment on column MONTHSORGARCH.CQ4 is
-'Рас Q4 C';
+'Р Р°СЃ Q4 C';
 
 comment on column MONTHSORGARCH.DQ4M is
-'Пок Q4 D';
+'РџРѕРє Q4 D';
 
 comment on column MONTHSORGARCH.DQ4 is
-'Рас Q4 D';
+'Р Р°СЃ Q4 D';
 
 comment on column MONTHSORGARCH.NWASTEABS is
-'Служебный1';
+'РЎР»СѓР¶РµР±РЅС‹Р№1';
 
 comment on column MONTHSORGARCH.DENTER is
-'Дата попадания';
+'Р”Р°С‚Р° РїРѕРїР°РґР°РЅРёСЏ';
 
 /*==============================================================*/
 /* Index: MONTHSORGARCH_IDX1                                    */
@@ -23401,22 +23401,22 @@ create table BILLORGARCH  (
 );
 
 comment on table BILLORGARCH is
-'Суточные первичка архив';
+'РЎСѓС‚РѕС‡РЅС‹Рµ РїРµСЂРІРёС‡РєР° Р°СЂС…РёРІ';
 
 comment on column BILLORGARCH.NID is
-'Ид записи';
+'РРґ Р·Р°РїРёСЃРё';
 
 comment on column BILLORGARCH.DID is
-'Дата фиксации';
+'Р”Р°С‚Р° С„РёРєСЃР°С†РёРё';
 
 comment on column BILLORGARCH.MID is
-'Ид точки';
+'РРґ С‚РѕС‡РєРё';
 
 comment on column BILLORGARCH.DATE_TIME is
-'Метка времени';
+'РњРµС‚РєР° РІСЂРµРјРµРЅРё';
 
 comment on column BILLORGARCH.NSOURCE is
-'Код источника';
+'РљРѕРґ РёСЃС‚РѕС‡РЅРёРєР°';
 
 comment on column BILLORGARCH.VALID is
 'VALID';
@@ -23644,10 +23644,10 @@ comment on column BILLORGARCH.DQ4 is
 'DQ4';
 
 comment on column BILLORGARCH.NWASTEABS is
-'Служебный1';
+'РЎР»СѓР¶РµР±РЅС‹Р№1';
 
 comment on column BILLORGARCH.DENTER is
-'Дата попадания';
+'Р”Р°С‚Р° РїРѕРїР°РґР°РЅРёСЏ';
 
 /*==============================================================*/
 /* Index: BILLORGARCH_IDX1                                      */
@@ -23678,17 +23678,17 @@ alter table SOURCETYPES  add(
 );
 
 comment on column SOURCETYPES.NVALIDITY is
-'Достоверность МК';
+'Р”РѕСЃС‚РѕРІРµСЂРЅРѕСЃС‚СЊ РњРљ';
 
 comment on column SOURCETYPES.NSOURCE is
-'Источник МК';
+'РСЃС‚РѕС‡РЅРёРє РњРљ';
 
 
 begin
 INSERT INTO tasks
 (TASK_ID,PARENT,TASK_COD,NAME,REMARK,NSHOW)
 VALUES
-(106,80,662,'9.06 Сохранение файлов параметризации счетчиков','9.06 Сохранение файлов параметризации счетчиков',0);
+(106,80,662,'9.06 РЎРѕС…СЂР°РЅРµРЅРёРµ С„Р°Р№Р»РѕРІ РїР°СЂР°РјРµС‚СЂРёР·Р°С†РёРё СЃС‡РµС‚С‡РёРєРѕРІ','9.06 РЎРѕС…СЂР°РЅРµРЅРёРµ С„Р°Р№Р»РѕРІ РїР°СЂР°РјРµС‚СЂРёР·Р°С†РёРё СЃС‡РµС‚С‡РёРєРѕРІ',0);
 
 commit;
 exception
@@ -23697,7 +23697,7 @@ end;
 /
 
 /*
-Только для ХОЭ
+РўРѕР»СЊРєРѕ РґР»СЏ РҐРћР­
 
 CREATE OR REPLACE TRIGGER billorg_upd
  AFTER
@@ -23963,19 +23963,19 @@ create table ICCPEVENTS  (
 );
 
 comment on table ICCPEVENTS is
-'События по ICCP';
+'РЎРѕР±С‹С‚РёСЏ РїРѕ ICCP';
 
 comment on column ICCPEVENTS.NORDER is
-'Ид события';
+'РРґ СЃРѕР±С‹С‚РёСЏ';
 
 comment on column ICCPEVENTS.MID is
-'Ид ассоциации';
+'РРґ Р°СЃСЃРѕС†РёР°С†РёРё';
 
 comment on column ICCPEVENTS.DLASTEVENT is
-'Дата cобытия';
+'Р”Р°С‚Р° cРѕР±С‹С‚РёСЏ';
 
 comment on column ICCPEVENTS.VLASTEVENT is
-'Cобытие';
+'CРѕР±С‹С‚РёРµ';
 
 /*==============================================================*/
 /* Index: ICCPEVENTS_IDX1                                       */
@@ -24000,7 +24000,7 @@ alter table ICCPEVENTS
 INSERT INTO db_term
 ("TABLE_NAME","DATA_NAME","TERM","NARCHIVED","VINDIC_COLUMN","VEXTENTION","INDEX_NAME")
 VALUES
-('ICCPEVENTS','Протокол работы ICCP',2,0,'dlastevent','icc','')
+('ICCPEVENTS','РџСЂРѕС‚РѕРєРѕР» СЂР°Р±РѕС‚С‹ ICCP',2,0,'dlastevent','icc','')
 /
 
 CREATE SEQUENCE iccp_seq MINVALUE 1 MAXVALUE 999999999999999999999999999
@@ -24016,13 +24016,13 @@ INSERT INTO PROTOCOLS("PROTOCOL_ID","NAME","DLL_NAME") VALUES(105,'EMS','');
 commit;
 
 ----------------------------------------------------------------------------------------------
---17.03.2010      VER 2.35.3 (Для обновления версии 2.35.2 до текущей скрипт запускать отсюда)      
+--17.03.2010      VER 2.35.3 (Р”Р»СЏ РѕР±РЅРѕРІР»РµРЅРёСЏ РІРµСЂСЃРёРё 2.35.2 РґРѕ С‚РµРєСѓС‰РµР№ СЃРєСЂРёРїС‚ Р·Р°РїСѓСЃРєР°С‚СЊ РѕС‚СЃСЋРґР°)      
 ----------------------------------------------------------------------------------------------
-INSERT INTO RYDA.METERTYPE VALUES(31,'АСКУЭ Хартэп'); 
-INSERT INTO METEREVENTSDICT("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")VALUES(521,31,0,1,'Процесс опроса:',0,0);
-INSERT INTO METEREVENTSDICT("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")VALUES(522,31,0,2,'Изменение даты параметризации:',0,0);
-INSERT INTO METEREVENTSDICT("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")VALUES(523,31,0,3,'Загрузчик файлов:',0,0);
-INSERT INTO METEREVENTSDICT("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")VALUES(524,31,0,4,'Подсистема верификации:',0,0);
+INSERT INTO RYDA.METERTYPE VALUES(31,'РђРЎРљРЈР­ РҐР°СЂС‚СЌРї'); 
+INSERT INTO METEREVENTSDICT("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")VALUES(521,31,0,1,'РџСЂРѕС†РµСЃСЃ РѕРїСЂРѕСЃР°:',0,0);
+INSERT INTO METEREVENTSDICT("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")VALUES(522,31,0,2,'РР·РјРµРЅРµРЅРёРµ РґР°С‚С‹ РїР°СЂР°РјРµС‚СЂРёР·Р°С†РёРё:',0,0);
+INSERT INTO METEREVENTSDICT("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")VALUES(523,31,0,3,'Р—Р°РіСЂСѓР·С‡РёРє С„Р°Р№Р»РѕРІ:',0,0);
+INSERT INTO METEREVENTSDICT("NEVENT","NMETERTYPE","NEVENTCLASS","NEVENTCODE","VEVENTTEXT","NLOCK","NVALIDITY")VALUES(524,31,0,4,'РџРѕРґСЃРёСЃС‚РµРјР° РІРµСЂРёС„РёРєР°С†РёРё:',0,0);
 commit;
 
 ----22/03/2010
@@ -24032,14 +24032,14 @@ alter table FEEDERS  add(
 );
 
 comment on column FEEDERS.NLOCKSWITCH is
-'Блокировка перехода на ОВ';
+'Р‘Р»РѕРєРёСЂРѕРІРєР° РїРµСЂРµС…РѕРґР° РЅР° РћР’';
 
 
 declare
 l NUMBER;
 begin
 select count(*) into l from parameter where NPID=12 and vvalue='1';
-insert into parameter (NPID,VVALUE,VDESCRIPTION) values(48,l,'Расширенная область видимости в задаче выбора ОВ');
+insert into parameter (NPID,VVALUE,VDESCRIPTION) values(48,l,'Р Р°СЃС€РёСЂРµРЅРЅР°СЏ РѕР±Р»Р°СЃС‚СЊ РІРёРґРёРјРѕСЃС‚Рё РІ Р·Р°РґР°С‡Рµ РІС‹Р±РѕСЂР° РћР’');
 commit;
 end;
 /
@@ -24064,32 +24064,32 @@ create global temporary table ARCHSTAT  (
 ;
 
 comment on table ARCHSTAT is
-'Статистика архивов';
+'РЎС‚Р°С‚РёСЃС‚РёРєР° Р°СЂС…РёРІРѕРІ';
 
 comment on column ARCHSTAT.MID is
-'Ид точки';
+'РРґ С‚РѕС‡РєРё';
 
 comment on column ARCHSTAT.CNH is
-'Количество ГН';
+'РљРѕР»РёС‡РµСЃС‚РІРѕ Р“Рќ';
 
 comment on column ARCHSTAT.CNB is
-'Количество Суточных';
+'РљРѕР»РёС‡РµСЃС‚РІРѕ РЎСѓС‚РѕС‡РЅС‹С…';
 
 comment on column ARCHSTAT.CNM is
-'Количество Месячных';
+'РљРѕР»РёС‡РµСЃС‚РІРѕ РњРµСЃСЏС‡РЅС‹С…';
 
 
 
 
 ----------------------------------------------------------------------------------------------
---08.04.2010      VER 2.35.4 (Для обновления версии 2.35.3 до текущей скрипт запускать отсюда)      
+--08.04.2010      VER 2.35.4 (Р”Р»СЏ РѕР±РЅРѕРІР»РµРЅРёСЏ РІРµСЂСЃРёРё 2.35.3 РґРѕ С‚РµРєСѓС‰РµР№ СЃРєСЂРёРїС‚ Р·Р°РїСѓСЃРєР°С‚СЊ РѕС‚СЃСЋРґР°)      
 ----------------------------------------------------------------------------------------------
 alter table GROUPS  add (
    NROOT3               NUMBER(10)
 );
 
 comment on column GROUPS.NROOT3 is
-'Служебная 3';
+'РЎР»СѓР¶РµР±РЅР°СЏ 3';
 
 create index GROUPS_IDX4 on GROUPS (
    NROOT3 ASC
@@ -24104,11 +24104,11 @@ end;
 --------09.04.2010
 alter table CURR_POWER  add(   NI0                  NUMBER);
 
-comment on column CURR_POWER.NI0 is 'Ток в нуле';
+comment on column CURR_POWER.NI0 is 'РўРѕРє РІ РЅСѓР»Рµ';
 
 alter table CURR_POWER_ARCH  add(   NI0                  NUMBER);
 
-comment on column CURR_POWER_ARCH.NI0 is 'Ток в нуле';
+comment on column CURR_POWER_ARCH.NI0 is 'РўРѕРє РІ РЅСѓР»Рµ';
 
 -- Start of DDL Script for Trigger RYDA.CURR_POWER_ARCH
 -- Generated 9.04.2010 15:23:49 from RYDA@OE
@@ -24132,7 +24132,7 @@ END;
 create index POINTS_IDX4 on POINTS (   PTYPE ASC);
 
 ----------------------------------------------------------------------------------------------
---14/04/2010     VER 2.35.6 (Для обновления версии 2.35.3 до текущей скрипт запускать отсюда)      
+--14/04/2010     VER 2.35.6 (Р”Р»СЏ РѕР±РЅРѕРІР»РµРЅРёСЏ РІРµСЂСЃРёРё 2.35.3 РґРѕ С‚РµРєСѓС‰РµР№ СЃРєСЂРёРїС‚ Р·Р°РїСѓСЃРєР°С‚СЊ РѕС‚СЃСЋРґР°)      
 ----------------------------------------------------------------------------------------------
 
 drop index MAKET30817_IDX1;
@@ -24143,7 +24143,7 @@ alter table GROUPS  add(
 );
 
 comment on column GROUPS.NKC is
-'Коеф вхождения для ХОЭ';
+'РљРѕРµС„ РІС…РѕР¶РґРµРЅРёСЏ РґР»СЏ РҐРћР­';
 
 ----15/04/2010
 alter table M30817  add(
@@ -24151,16 +24151,16 @@ alter table M30817  add(
 );
 
 comment on column M30817.VQM is
-'Метка качества';
+'РњРµС‚РєР° РєР°С‡РµСЃС‚РІР°';
 
 
 
 
 ----------------------------------------------------------------------------------------------
---19/04/2010     VER 2.36.1 (Для обновления версии 2.35.6 до текущей скрипт запускать отсюда)      
+--19/04/2010     VER 2.36.1 (Р”Р»СЏ РѕР±РЅРѕРІР»РµРЅРёСЏ РІРµСЂСЃРёРё 2.35.6 РґРѕ С‚РµРєСѓС‰РµР№ СЃРєСЂРёРїС‚ Р·Р°РїСѓСЃРєР°С‚СЊ РѕС‚СЃСЋРґР°)      
 ----------------------------------------------------------------------------------------------
 INSERT INTO deportprocedures("NPROCEDURE","VNAME","VPROCEDURE","NPERIOD","NTYPE","VMEMO")
-VALUES(68,'Макет 30816','reports1_pg.m30816_p',2,0,'Макет 30816 (Текущие значения)');
+VALUES(68,'РњР°РєРµС‚ 30816','reports1_pg.m30816_p',2,0,'РњР°РєРµС‚ 30816 (РўРµРєСѓС‰РёРµ Р·РЅР°С‡РµРЅРёСЏ)');
 commit;
 
 ----29.04.2010
@@ -24176,7 +24176,7 @@ alter table USERS  add(
 
 
 comment on column USERS.NLOCK is
-'Блокировка';
+'Р‘Р»РѕРєРёСЂРѕРІРєР°';
 
 --13/05/2010  
 INSERT INTO deportprocedures("NPROCEDURE","VNAME","VPROCEDURE","NPERIOD","NTYPE","VMEMO")
@@ -24212,67 +24212,67 @@ create table CURR_QUALITY_ARCH  (
 );
 
 comment on table CURR_QUALITY_ARCH is
-'Архив параметров качества';
+'РђСЂС…РёРІ РїР°СЂР°РјРµС‚СЂРѕРІ РєР°С‡РµСЃС‚РІР°';
 
 comment on column CURR_QUALITY_ARCH.MID is
-'Ид точки';
+'РРґ С‚РѕС‡РєРё';
 
 comment on column CURR_QUALITY_ARCH.DATE_TIME is
-'Дата';
+'Р”Р°С‚Р°';
 
 comment on column CURR_QUALITY_ARCH.NVOLTVAR is
-'Отклонение напряжения';
+'РћС‚РєР»РѕРЅРµРЅРёРµ РЅР°РїСЂСЏР¶РµРЅРёСЏ';
 
 comment on column CURR_QUALITY_ARCH.NVOLTCHANMOD is
-'Размах изменения напряжения';
+'Р Р°Р·РјР°С… РёР·РјРµРЅРµРЅРёСЏ РЅР°РїСЂСЏР¶РµРЅРёСЏ';
 
 comment on column CURR_QUALITY_ARCH.NFLICKERSEV is
-'Доза фликера';
+'Р”РѕР·Р° С„Р»РёРєРµСЂР°';
 
 comment on column CURR_QUALITY_ARCH.NTHD is
-'Коэфф иск синус кривой напр';
+'РљРѕСЌС„С„ РёСЃРє СЃРёРЅСѓСЃ РєСЂРёРІРѕР№ РЅР°РїСЂ';
 
 comment on column CURR_QUALITY_ARCH.NNHARMKOEF is
-'Коэфф Nой гарм сост напр';
+'РљРѕСЌС„С„ NРѕР№ РіР°СЂРј СЃРѕСЃС‚ РЅР°РїСЂ';
 
 comment on column CURR_QUALITY_ARCH.NOBRUNBKOEF is
-'Коэфф несимметрии по обр посл';
+'РљРѕСЌС„С„ РЅРµСЃРёРјРјРµС‚СЂРёРё РїРѕ РѕР±СЂ РїРѕСЃР»';
 
 comment on column CURR_QUALITY_ARCH.NZERUNBKOEF is
-'Коэфф несимметрии по нулевой посл';
+'РљРѕСЌС„С„ РЅРµСЃРёРјРјРµС‚СЂРёРё РїРѕ РЅСѓР»РµРІРѕР№ РїРѕСЃР»';
 
 comment on column CURR_QUALITY_ARCH.NPOWFREQ is
-'Отклонение частоты';
+'РћС‚РєР»РѕРЅРµРЅРёРµ С‡Р°СЃС‚РѕС‚С‹';
 
 comment on column CURR_QUALITY_ARCH.NVOLTDIPTIME is
-'Длительность провала напряж';
+'Р”Р»РёС‚РµР»СЊРЅРѕСЃС‚СЊ РїСЂРѕРІР°Р»Р° РЅР°РїСЂСЏР¶';
 
 comment on column CURR_QUALITY_ARCH.NTEMPVOLTKOEF is
-'Коэффициент временного напряж';
+'РљРѕСЌС„С„РёС†РёРµРЅС‚ РІСЂРµРјРµРЅРЅРѕРіРѕ РЅР°РїСЂСЏР¶';
 
 comment on column CURR_QUALITY_ARCH.NQUICKCHAN is
-'Быстрые изменения напр';
+'Р‘С‹СЃС‚СЂС‹Рµ РёР·РјРµРЅРµРЅРёСЏ РЅР°РїСЂ';
 
 comment on column CURR_QUALITY_ARCH.NUNBALVOLT is
-'Несимметрия напряжений';
+'РќРµСЃРёРјРјРµС‚СЂРёСЏ РЅР°РїСЂСЏР¶РµРЅРёР№';
 
 comment on column CURR_QUALITY_ARCH.NVOLTINTERHARM is
-'Напряжение интергармоник';
+'РќР°РїСЂСЏР¶РµРЅРёРµ РёРЅС‚РµСЂРіР°СЂРјРѕРЅРёРє';
 
 comment on column CURR_QUALITY_ARCH.NVOLTDIP is
-'Провалы напряжения';
+'РџСЂРѕРІР°Р»С‹ РЅР°РїСЂСЏР¶РµРЅРёСЏ';
 
 comment on column CURR_QUALITY_ARCH.NSHORTINTERRUPT is
-'Короткие отключения напряжения';
+'РљРѕСЂРѕС‚РєРёРµ РѕС‚РєР»СЋС‡РµРЅРёСЏ РЅР°РїСЂСЏР¶РµРЅРёСЏ';
 
 comment on column CURR_QUALITY_ARCH.NLONGINTERRUPT is
-'Длинные отключения напряжения';
+'Р”Р»РёРЅРЅС‹Рµ РѕС‚РєР»СЋС‡РµРЅРёСЏ РЅР°РїСЂСЏР¶РµРЅРёСЏ';
 
 comment on column CURR_QUALITY_ARCH.NTEMPOVERVOLT is
-'Временные напряжения';
+'Р’СЂРµРјРµРЅРЅС‹Рµ РЅР°РїСЂСЏР¶РµРЅРёСЏ';
 
 comment on column CURR_QUALITY_ARCH.NTRANSOVERVOLT is
-'Импульсные напряжения';
+'РРјРїСѓР»СЊСЃРЅС‹Рµ РЅР°РїСЂСЏР¶РµРЅРёСЏ';
 
 /*==============================================================*/
 /* Index: CURR_QUALITY_ARCH_IDX1                                */
@@ -24314,67 +24314,67 @@ create table CURR_QUALITY  (
 );
 
 comment on table CURR_QUALITY is
-'Параметры качества';
+'РџР°СЂР°РјРµС‚СЂС‹ РєР°С‡РµСЃС‚РІР°';
 
 comment on column CURR_QUALITY.MID is
-'Ид точки';
+'РРґ С‚РѕС‡РєРё';
 
 comment on column CURR_QUALITY.DATE_TIME is
-'Дата';
+'Р”Р°С‚Р°';
 
 comment on column CURR_QUALITY.NVOLTVAR is
-'Отклонение напряжения';
+'РћС‚РєР»РѕРЅРµРЅРёРµ РЅР°РїСЂСЏР¶РµРЅРёСЏ';
 
 comment on column CURR_QUALITY.NVOLTCHANMOD is
-'Размах изменения напряжения';
+'Р Р°Р·РјР°С… РёР·РјРµРЅРµРЅРёСЏ РЅР°РїСЂСЏР¶РµРЅРёСЏ';
 
 comment on column CURR_QUALITY.NFLICKERSEV is
-'Доза фликера';
+'Р”РѕР·Р° С„Р»РёРєРµСЂР°';
 
 comment on column CURR_QUALITY.NTHD is
-'Коэфф иск синус кривой напр';
+'РљРѕСЌС„С„ РёСЃРє СЃРёРЅСѓСЃ РєСЂРёРІРѕР№ РЅР°РїСЂ';
 
 comment on column CURR_QUALITY.NNHARMKOEF is
-'Коэфф Nой гарм сост напр';
+'РљРѕСЌС„С„ NРѕР№ РіР°СЂРј СЃРѕСЃС‚ РЅР°РїСЂ';
 
 comment on column CURR_QUALITY.NOBRUNBKOEF is
-'Коэфф несимметрии по обр посл';
+'РљРѕСЌС„С„ РЅРµСЃРёРјРјРµС‚СЂРёРё РїРѕ РѕР±СЂ РїРѕСЃР»';
 
 comment on column CURR_QUALITY.NZERUNBKOEF is
-'Коэфф несимметрии по нулевой посл';
+'РљРѕСЌС„С„ РЅРµСЃРёРјРјРµС‚СЂРёРё РїРѕ РЅСѓР»РµРІРѕР№ РїРѕСЃР»';
 
 comment on column CURR_QUALITY.NPOWFREQ is
-'Отклонение частоты';
+'РћС‚РєР»РѕРЅРµРЅРёРµ С‡Р°СЃС‚РѕС‚С‹';
 
 comment on column CURR_QUALITY.NVOLTDIPTIME is
-'Длительность провала напряж';
+'Р”Р»РёС‚РµР»СЊРЅРѕСЃС‚СЊ РїСЂРѕРІР°Р»Р° РЅР°РїСЂСЏР¶';
 
 comment on column CURR_QUALITY.NTEMPVOLTKOEF is
-'Коэффициент временного напряж';
+'РљРѕСЌС„С„РёС†РёРµРЅС‚ РІСЂРµРјРµРЅРЅРѕРіРѕ РЅР°РїСЂСЏР¶';
 
 comment on column CURR_QUALITY.NQUICKCHAN is
-'Быстрые изменения напр';
+'Р‘С‹СЃС‚СЂС‹Рµ РёР·РјРµРЅРµРЅРёСЏ РЅР°РїСЂ';
 
 comment on column CURR_QUALITY.NUNBALVOLT is
-'Несимметрия напряжений';
+'РќРµСЃРёРјРјРµС‚СЂРёСЏ РЅР°РїСЂСЏР¶РµРЅРёР№';
 
 comment on column CURR_QUALITY.NVOLTINTERHARM is
-'Напряжение интергармоник';
+'РќР°РїСЂСЏР¶РµРЅРёРµ РёРЅС‚РµСЂРіР°СЂРјРѕРЅРёРє';
 
 comment on column CURR_QUALITY.NVOLTDIP is
-'Провалы напряжения';
+'РџСЂРѕРІР°Р»С‹ РЅР°РїСЂСЏР¶РµРЅРёСЏ';
 
 comment on column CURR_QUALITY.NSHORTINTERRUPT is
-'Короткие отключения напряжения';
+'РљРѕСЂРѕС‚РєРёРµ РѕС‚РєР»СЋС‡РµРЅРёСЏ РЅР°РїСЂСЏР¶РµРЅРёСЏ';
 
 comment on column CURR_QUALITY.NLONGINTERRUPT is
-'Длинные отключения напряжения';
+'Р”Р»РёРЅРЅС‹Рµ РѕС‚РєР»СЋС‡РµРЅРёСЏ РЅР°РїСЂСЏР¶РµРЅРёСЏ';
 
 comment on column CURR_QUALITY.NTEMPOVERVOLT is
-'Временные напряжения';
+'Р’СЂРµРјРµРЅРЅС‹Рµ РЅР°РїСЂСЏР¶РµРЅРёСЏ';
 
 comment on column CURR_QUALITY.NTRANSOVERVOLT is
-'Импульсные напряжения';
+'РРјРїСѓР»СЊСЃРЅС‹Рµ РЅР°РїСЂСЏР¶РµРЅРёСЏ';
 
 alter table CURR_QUALITY
    add constraint CURR_QUALITY_F1 foreign key (MID)
@@ -24382,7 +24382,7 @@ alter table CURR_QUALITY
       on delete cascade;
 
 -----28/05/2010
-insert into parameter (NPID,VVALUE,VDESCRIPTION) values(49,0,'Передача ГН с учетом в ОВ по Хартэп - dbLink');
+insert into parameter (NPID,VVALUE,VDESCRIPTION) values(49,0,'РџРµСЂРµРґР°С‡Р° Р“Рќ СЃ СѓС‡РµС‚РѕРј РІ РћР’ РїРѕ РҐР°СЂС‚СЌРї - dbLink');
 commit;
 
 
@@ -24400,16 +24400,16 @@ create table HALFHOURHOLES  (
 );
 
 comment on table HALFHOURHOLES is
-'Получасовки дырки';
+'РџРѕР»СѓС‡Р°СЃРѕРІРєРё РґС‹СЂРєРё';
 
 comment on column HALFHOURHOLES.MID is
-'Ид точки';
+'РРґ С‚РѕС‡РєРё';
 
 comment on column HALFHOURHOLES.DATE_TIME is
-'Дата показаний';
+'Р”Р°С‚Р° РїРѕРєР°Р·Р°РЅРёР№';
 
 comment on column HALFHOURHOLES.NSTAT is
-'Кол попыток перезапроса';
+'РљРѕР» РїРѕРїС‹С‚РѕРє РїРµСЂРµР·Р°РїСЂРѕСЃР°';
 
 alter table HALFHOURHOLES
    add constraint HALFHOURHOLES_F1 foreign key (MID)
@@ -24422,11 +24422,11 @@ alter table LAST_SAVE  add(
 );
 
 comment on column LAST_SAVE.NREPEATICCP is
-'Номер повтора перезапроса данных';
+'РќРѕРјРµСЂ РїРѕРІС‚РѕСЂР° РїРµСЂРµР·Р°РїСЂРѕСЃР° РґР°РЅРЅС‹С…';
 
 
 ----------------------------------------------------------------------------------------------
---11/05/2010     VER 2.36.1 (Для обновления версии 2.36.0.1 до текущей скрипт запускать отсюда)      
+--11/05/2010     VER 2.36.1 (Р”Р»СЏ РѕР±РЅРѕРІР»РµРЅРёСЏ РІРµСЂСЃРёРё 2.36.0.1 РґРѕ С‚РµРєСѓС‰РµР№ СЃРєСЂРёРїС‚ Р·Р°РїСѓСЃРєР°С‚СЊ РѕС‚СЃСЋРґР°)      
 ----------------------------------------------------------------------------------------------
 
 /*==============================================================*/
@@ -24435,7 +24435,7 @@ comment on column LAST_SAVE.NREPEATICCP is
 create index HALFHOURHOLES_IDX1 on HALFHOURHOLES ( DATE_TIME ASC);
 
 INSERT INTO db_term("TABLE_NAME","DATA_NAME","TERM","NARCHIVED","VINDIC_COLUMN","VEXTENTION","INDEX_NAME")
-VALUES('HALFHOURHOLES','Пропуски в архивах (служебная)',40,0,'DATE_TIME','hhh',NULL);
+VALUES('HALFHOURHOLES','РџСЂРѕРїСѓСЃРєРё РІ Р°СЂС…РёРІР°С… (СЃР»СѓР¶РµР±РЅР°СЏ)',40,0,'DATE_TIME','hhh',NULL);
 commit;
 
 declare
@@ -24444,7 +24444,7 @@ begin
 select nvl(max(decode(vvalue,'0',1,'41',1,'42',1,'43',1,'44',1,'45',1,'46',1,0)),0) into l from parameter where NPID=12;
 if l=1 then
 INSERT INTO deportprocedures("NPROCEDURE","VNAME","VPROCEDURE","NPERIOD","NTYPE","VMEMO")
-VALUES(70,'Поиск пропусков в архивах ГН','TSDA_PG.GET_NOTDATA',2,1,'Поиск пропусков в архивах ГН');
+VALUES(70,'РџРѕРёСЃРє РїСЂРѕРїСѓСЃРєРѕРІ РІ Р°СЂС…РёРІР°С… Р“Рќ','TSDA_PG.GET_NOTDATA',2,1,'РџРѕРёСЃРє РїСЂРѕРїСѓСЃРєРѕРІ РІ Р°СЂС…РёРІР°С… Р“Рќ');
 commit;
 end if;
 end;
@@ -24499,17 +24499,17 @@ END;
 /
 
 ----18.06.2010
-INSERT INTO RYDA.PROTOCOLS VALUES(107,'Satec - Качество_ЭЭ','');
-INSERT INTO RYDA.PROTOCOLS VALUES(108,'УСД LG_ZxB (ИдЭхо)','');
-INSERT INTO RYDA.PROTOCOLS VALUES(109,'УСД LG_ZxD (IEC+ИдЭхо)','');
+INSERT INTO RYDA.PROTOCOLS VALUES(107,'Satec - РљР°С‡РµСЃС‚РІРѕ_Р­Р­','');
+INSERT INTO RYDA.PROTOCOLS VALUES(108,'РЈРЎР” LG_ZxB (РРґР­С…Рѕ)','');
+INSERT INTO RYDA.PROTOCOLS VALUES(109,'РЈРЎР” LG_ZxD (IEC+РРґР­С…Рѕ)','');
 commit;
 
 --22.06.2010
-insert into parameter (NPID,VVALUE,VDESCRIPTION) values(51,0,'Выполнять расчет формул при поступлении данных');
+insert into parameter (NPID,VVALUE,VDESCRIPTION) values(51,0,'Р’С‹РїРѕР»РЅСЏС‚СЊ СЂР°СЃС‡РµС‚ С„РѕСЂРјСѓР» РїСЂРё РїРѕСЃС‚СѓРїР»РµРЅРёРё РґР°РЅРЅС‹С…');
 commit;
 
 ----------------------------------------------------------------------------------------------
--- 2010.07.13     VER 2.36.2 (Для обновления версии 2.36.1.1 до текущей скрипт запускать отсюда)      
+-- 2010.07.13     VER 2.36.2 (Р”Р»СЏ РѕР±РЅРѕРІР»РµРЅРёСЏ РІРµСЂСЃРёРё 2.36.1.1 РґРѕ С‚РµРєСѓС‰РµР№ СЃРєСЂРёРїС‚ Р·Р°РїСѓСЃРєР°С‚СЊ РѕС‚СЃСЋРґР°)      
 ----------------------------------------------------------------------------------------------
 alter table BILLOLD  add(   NQE                  NUMBER);
 alter table PROFILE  add(   NQE                  NUMBER);
@@ -24628,43 +24628,43 @@ create table RMAKETS  (
 );
 
 comment on table RMAKETS is
-'Принятые макеты';
+'РџСЂРёРЅСЏС‚С‹Рµ РјР°РєРµС‚С‹';
 
 comment on column RMAKETS.NOPERATION is
-'Ид операции';
+'РРґ РѕРїРµСЂР°С†РёРё';
 
 comment on column RMAKETS.CID is
-'Ид канала';
+'РРґ РєР°РЅР°Р»Р°';
 
 comment on column RMAKETS.DCREATE is
-'Дата приема';
+'Р”Р°С‚Р° РїСЂРёРµРјР°';
 
 comment on column RMAKETS.VFILENAME is
-'Название файла';
+'РќР°Р·РІР°РЅРёРµ С„Р°Р№Р»Р°';
 
 comment on column RMAKETS.DFILE is
-'Дата файла';
+'Р”Р°С‚Р° С„Р°Р№Р»Р°';
 
 comment on column RMAKETS.NSTATE is
-'Состояние';
+'РЎРѕСЃС‚РѕСЏРЅРёРµ';
 
 comment on column RMAKETS.VERROR is
-'Ошибка';
+'РћС€РёР±РєР°';
 
 comment on column RMAKETS.VMAKET is
-'Текст макета';
+'РўРµРєСЃС‚ РјР°РєРµС‚Р°';
 
 comment on column RMAKETS.DDATE is
-'Дата информации';
+'Р”Р°С‚Р° РёРЅС„РѕСЂРјР°С†РёРё';
 
 comment on column RMAKETS.NTYPE is
-'Тип макета';
+'РўРёРї РјР°РєРµС‚Р°';
 
 comment on column RMAKETS.DLOAD is
-'Дата загрузки';
+'Р”Р°С‚Р° Р·Р°РіСЂСѓР·РєРё';
 
 comment on column RMAKETS.USER_ID is
-'идентификатор';
+'РёРґРµРЅС‚РёС„РёРєР°С‚РѕСЂ';
 
 /*==============================================================*/
 /* Index: RMAKETS_IDX1                                          */
@@ -24755,52 +24755,52 @@ create table PQLOG  (
 );
 
 comment on table PQLOG is
-'Журнал качества энергии';
+'Р–СѓСЂРЅР°Р» РєР°С‡РµСЃС‚РІР° СЌРЅРµСЂРіРёРё';
 
 comment on column PQLOG.MID is
-'Ид точки';
+'РРґ С‚РѕС‡РєРё';
 
 comment on column PQLOG.DSTART is
-'Дата начала события';
+'Р”Р°С‚Р° РЅР°С‡Р°Р»Р° СЃРѕР±С‹С‚РёСЏ';
 
 comment on column PQLOG.NSEQUENCE is
-'Номер записи';
+'РќРѕРјРµСЂ Р·Р°РїРёСЃРё';
 
 comment on column PQLOG.VPHASE is
-'Фаза';
+'Р¤Р°Р·Р°';
 
 comment on column PQLOG.NBEVENTTYPE is
-'Тип события';
+'РўРёРї СЃРѕР±С‹С‚РёСЏ';
 
 comment on column PQLOG.NMCSTIMESTART is
-'Микросекунды начала события';
+'РњРёРєСЂРѕСЃРµРєСѓРЅРґС‹ РЅР°С‡Р°Р»Р° СЃРѕР±С‹С‚РёСЏ';
 
 comment on column PQLOG.DEND is
-'Дата окончания события';
+'Р”Р°С‚Р° РѕРєРѕРЅС‡Р°РЅРёСЏ СЃРѕР±С‹С‚РёСЏ';
 
 comment on column PQLOG.NMCSTIMEEND is
-'Микросекунды окончания события';
+'РњРёРєСЂРѕСЃРµРєСѓРЅРґС‹ РѕРєРѕРЅС‡Р°РЅРёСЏ СЃРѕР±С‹С‚РёСЏ';
 
 comment on column PQLOG.NREFERENCE is
-'Номинальное значение';
+'РќРѕРјРёРЅР°Р»СЊРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ';
 
 comment on column PQLOG.NBEVENTSEQ is
-'Номер события';
+'РќРѕРјРµСЂ СЃРѕР±С‹С‚РёСЏ';
 
 comment on column PQLOG.NMAGNITUDE is
-'Измеренное значение';
+'РР·РјРµСЂРµРЅРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ';
 
 comment on column PQLOG.VPU is
-'Относительное отклонение';
+'РћС‚РЅРѕСЃРёС‚РµР»СЊРЅРѕРµ РѕС‚РєР»РѕРЅРµРЅРёРµ';
 
 comment on column PQLOG.VDURATION is
-'Длительность сек';
+'Р”Р»РёС‚РµР»СЊРЅРѕСЃС‚СЊ СЃРµРє';
 
 comment on column PQLOG.VEVENT is
-'Код события';
+'РљРѕРґ СЃРѕР±С‹С‚РёСЏ';
 
 comment on column PQLOG.VCATEGORY is
-'Категория нарушения';
+'РљР°С‚РµРіРѕСЂРёСЏ РЅР°СЂСѓС€РµРЅРёСЏ';
 
 alter table PQLOG
    add constraint PQLOG_F1 foreign key (MID)
@@ -24818,13 +24818,13 @@ create table TIMETYPES  (
 );
 
 comment on table TIMETYPES is
-'Типы временного среза';
+'РўРёРїС‹ РІСЂРµРјРµРЅРЅРѕРіРѕ СЃСЂРµР·Р°';
 
 comment on column TIMETYPES.NTIMETYPE is
-'Ид типа временного среза';
+'РРґ С‚РёРїР° РІСЂРµРјРµРЅРЅРѕРіРѕ СЃСЂРµР·Р°';
 
 comment on column TIMETYPES.VTIMETYPE is
-'Наименование';
+'РќР°РёРјРµРЅРѕРІР°РЅРёРµ';
 
 /*==============================================================*/
 /* Index: TIMETYPES_IDX1                                        */
@@ -24853,37 +24853,37 @@ on commit preserve rows
 /
 
 comment on table PARSINGMAKETS is
-'Разобранные макеты';
+'Р Р°Р·РѕР±СЂР°РЅРЅС‹Рµ РјР°РєРµС‚С‹';
 
 comment on column PARSINGMAKETS.NOPERATION is
-'Ид операции';
+'РРґ РѕРїРµСЂР°С†РёРё';
 
 comment on column PARSINGMAKETS.NROW is
-'Строка';
+'РЎС‚СЂРѕРєР°';
 
 comment on column PARSINGMAKETS.NCOL is
-'Столбец';
+'РЎС‚РѕР»Р±РµС†';
 
 comment on column PARSINGMAKETS.VCODE is
-'Код строки в макете';
+'РљРѕРґ СЃС‚СЂРѕРєРё РІ РјР°РєРµС‚Рµ';
 
 comment on column PARSINGMAKETS.MID is
-'ИД точки';
+'РР” С‚РѕС‡РєРё';
 
 comment on column PARSINGMAKETS.NMEASURE is
-'Ид типа информации';
+'РРґ С‚РёРїР° РёРЅС„РѕСЂРјР°С†РёРё';
 
 comment on column PARSINGMAKETS.NTIMETYPE is
-'Ид типа временного среза';
+'РРґ С‚РёРїР° РІСЂРµРјРµРЅРЅРѕРіРѕ СЃСЂРµР·Р°';
 
 comment on column PARSINGMAKETS.RATE is
-'Зона';
+'Р—РѕРЅР°';
 
 comment on column PARSINGMAKETS.DDATETIME is
-'Дата время';
+'Р”Р°С‚Р° РІСЂРµРјСЏ';
 
 comment on column PARSINGMAKETS.NVALUE is
-'Значение';
+'Р—РЅР°С‡РµРЅРёРµ';
 
 /*==============================================================*/
 /* Index: PARSINGMAKETS_IDX1                                    */
@@ -24906,17 +24906,17 @@ create index PARSINGMAKETS_IDX3 on PARSINGMAKETS (
    MID ASC
 );
 
-INSERT INTO TIMETYPES ("NTIMETYPE","VTIMETYPE") VALUES(1,'Месячный срез (MONTHSORG)');
-INSERT INTO TIMETYPES("NTIMETYPE","VTIMETYPE")VALUES(2,'Дневной срез (BILLORG)');
-INSERT INTO TIMETYPES("NTIMETYPE","VTIMETYPE")VALUES(3,'Часовой срез (HALFHOUROLD)');
-INSERT INTO TIMETYPES("NTIMETYPE","VTIMETYPE")VALUES(4,'Минутный срез (PROFILE)');
-INSERT INTO TIMETYPES("NTIMETYPE","VTIMETYPE")VALUES(5,'Текущий срез (CURR_POWER)');
+INSERT INTO TIMETYPES ("NTIMETYPE","VTIMETYPE") VALUES(1,'РњРµСЃСЏС‡РЅС‹Р№ СЃСЂРµР· (MONTHSORG)');
+INSERT INTO TIMETYPES("NTIMETYPE","VTIMETYPE")VALUES(2,'Р”РЅРµРІРЅРѕР№ СЃСЂРµР· (BILLORG)');
+INSERT INTO TIMETYPES("NTIMETYPE","VTIMETYPE")VALUES(3,'Р§Р°СЃРѕРІРѕР№ СЃСЂРµР· (HALFHOUROLD)');
+INSERT INTO TIMETYPES("NTIMETYPE","VTIMETYPE")VALUES(4,'РњРёРЅСѓС‚РЅС‹Р№ СЃСЂРµР· (PROFILE)');
+INSERT INTO TIMETYPES("NTIMETYPE","VTIMETYPE")VALUES(5,'РўРµРєСѓС‰РёР№ СЃСЂРµР· (CURR_POWER)');
 
 
 --29/07/2010
 begin
-INSERT INTO measures(nmeasure,VNAME,vcode)VALUES(74,'Показания Q2 (Реактив, Q2)','Q2M');
-INSERT INTO measures(nmeasure,VNAME,vcode)VALUES(76,'Показания Q4 (Реактив, Q4)','Q4M');
+INSERT INTO measures(nmeasure,VNAME,vcode)VALUES(74,'РџРѕРєР°Р·Р°РЅРёСЏ Q2 (Р РµР°РєС‚РёРІ, Q2)','Q2M');
+INSERT INTO measures(nmeasure,VNAME,vcode)VALUES(76,'РџРѕРєР°Р·Р°РЅРёСЏ Q4 (Р РµР°РєС‚РёРІ, Q4)','Q4M');
 commit;
 exception
 when others then rollback;
@@ -24924,15 +24924,15 @@ end;
 /
 
 --30/07/2010
-INSERT INTO PROTOCOLS(protocol_id, name, dll_name) VALUES (1011,'МСТ-04 (DLL)','mst.dll');
+INSERT INTO PROTOCOLS(protocol_id, name, dll_name) VALUES (1011,'РњРЎРў-04 (DLL)','mst.dll');
 commit;
 
-INSERT INTO TIMETYPES("NTIMETYPE","VTIMETYPE")VALUES(6,'Часовой срез сумма (без таблицы)');
+INSERT INTO TIMETYPES("NTIMETYPE","VTIMETYPE")VALUES(6,'Р§Р°СЃРѕРІРѕР№ СЃСЂРµР· СЃСѓРјРјР° (Р±РµР· С‚Р°Р±Р»РёС†С‹)');
 commit;
 
 
 ----06.08.2010
-INSERT INTO RYDA.PROTOCOLS VALUES(110,'Satec - Качество_ЭЭ (файл)','');
+INSERT INTO RYDA.PROTOCOLS VALUES(110,'Satec - РљР°С‡РµСЃС‚РІРѕ_Р­Р­ (С„Р°Р№Р»)','');
 commit;
 
 
@@ -24941,7 +24941,7 @@ begin execute immediate 'drop package MAKETLOADER_PG'; exception when others the
 /
 
 ----------------------------------------------------------------------------------------------
--- 2010.09.17     VER 2.37.1 (Для обновления версии 2.37.0.1 до текущей скрипт запускать отсюда)      
+-- 2010.09.17     VER 2.37.1 (Р”Р»СЏ РѕР±РЅРѕРІР»РµРЅРёСЏ РІРµСЂСЃРёРё 2.37.0.1 РґРѕ С‚РµРєСѓС‰РµР№ СЃРєСЂРёРїС‚ Р·Р°РїСѓСЃРєР°С‚СЊ РѕС‚СЃСЋРґР°)      
 ----------------------------------------------------------------------------------------------
 alter table FORMULPARAMS add(
    MID                  NUMBER
@@ -24964,7 +24964,7 @@ and util_pg.allnumber_f(util_pg.get_param(VPARAM,2,'.')) in (select mid from poi
 commit;
 
 ----------------18/10/2010
-INSERT INTO measures("NMEASURE","VNAME","VCODE","NMRID")VALUES(78,'Номер получасовки','DATNUM',0);
+INSERT INTO measures("NMEASURE","VNAME","VCODE","NMRID")VALUES(78,'РќРѕРјРµСЂ РїРѕР»СѓС‡Р°СЃРѕРІРєРё','DATNUM',0);
 INSERT INTO OBJTYPEMEAS("IND","NMEASURE")VALUES(3,78);
 INSERT INTO OBJTYPEMEAS("IND","NMEASURE")VALUES(4,78);
 commit;
@@ -24979,16 +24979,16 @@ alter table POINTFORMULA  add(
 );
 
 comment on column POINTFORMULA.NHOURERIOD is
-'Часовой период интеграции при расчете';
+'Р§Р°СЃРѕРІРѕР№ РїРµСЂРёРѕРґ РёРЅС‚РµРіСЂР°С†РёРё РїСЂРё СЂР°СЃС‡РµС‚Рµ';
 
 comment on column POINTFORMULA.NDIVTYPE is
-'Тип деления данных при часовом расчете';
+'РўРёРї РґРµР»РµРЅРёСЏ РґР°РЅРЅС‹С… РїСЂРё С‡Р°СЃРѕРІРѕРј СЂР°СЃС‡РµС‚Рµ';
 
 -------------08/11/2010
 drop table bill_calc;
 
 ------12/11/2010
-update parameter set VVALUE=to_char(trunc(sysdate),'dd.mm.yyyy hh24:mi:ss'),VDESCRIPTION='Дата последнего анализа измененных данных' where npid=4;
+update parameter set VVALUE=to_char(trunc(sysdate),'dd.mm.yyyy hh24:mi:ss'),VDESCRIPTION='Р”Р°С‚Р° РїРѕСЃР»РµРґРЅРµРіРѕ Р°РЅР°Р»РёР·Р° РёР·РјРµРЅРµРЅРЅС‹С… РґР°РЅРЅС‹С…' where npid=4;
 commit;
 
 ------16/11/2010
@@ -25007,13 +25007,13 @@ on commit preserve rows
  organization heap;
 
 comment on table LASTREC is
-'Последние получасовки';
+'РџРѕСЃР»РµРґРЅРёРµ РїРѕР»СѓС‡Р°СЃРѕРІРєРё';
 
 comment on column LASTREC.MID is
-'Ид точки';
+'РРґ С‚РѕС‡РєРё';
 
 comment on column LASTREC.DDATE is
-'Дата';
+'Р”Р°С‚Р°';
 
 /*==============================================================*/
 /* Index: LASTREC_IDX1                                          */
@@ -25035,16 +25035,16 @@ on commit preserve rows
  organization heap;
 
 comment on table LASTRECFORRECALC is
-'Последние получасовки для пересчета';
+'РџРѕСЃР»РµРґРЅРёРµ РїРѕР»СѓС‡Р°СЃРѕРІРєРё РґР»СЏ РїРµСЂРµСЃС‡РµС‚Р°';
 
 comment on column LASTRECFORRECALC.MID is
-'Ид точки';
+'РРґ С‚РѕС‡РєРё';
 
 comment on column LASTRECFORRECALC.DDATE is
-'Дата';
+'Р”Р°С‚Р°';
 
 comment on column LASTRECFORRECALC.NTYPE is
-'Тип';
+'РўРёРї';
 
 /*==============================================================*/
 /* Index: LASTRECFORRECALC_IDX1                                 */
@@ -25057,14 +25057,14 @@ create index LASTRECFORRECALC_IDX1 on LASTRECFORRECALC (
 drop table LAGGING_RECORDS;
 
 INSERT INTO deportprocedures("NPROCEDURE","VNAME","VPROCEDURE","NPERIOD","NTYPE","VMEMO")
-VALUES(72,'Расчет зависимых данных','CALCFORMULA_PG.CALC_LAGGING_JOB',0,1,'Расчет зависимых данных');
+VALUES(72,'Р Р°СЃС‡РµС‚ Р·Р°РІРёСЃРёРјС‹С… РґР°РЅРЅС‹С…','CALCFORMULA_PG.CALC_LAGGING_JOB',0,1,'Р Р°СЃС‡РµС‚ Р·Р°РІРёСЃРёРјС‹С… РґР°РЅРЅС‹С…');
 commit;
 
-INSERT INTO PROTOCOLS(protocol_id, name, dll_name) VALUES (112,'НИК-2303','');
+INSERT INTO PROTOCOLS(protocol_id, name, dll_name) VALUES (112,'РќРРљ-2303','');
 commit;
 
 ------19/11/2010
-update parameter set VVALUE=0,VDESCRIPTION='Строка семафора диспетчера ССД' where npid=6;
+update parameter set VVALUE=0,VDESCRIPTION='РЎС‚СЂРѕРєР° СЃРµРјР°С„РѕСЂР° РґРёСЃРїРµС‚С‡РµСЂР° РЎРЎР”' where npid=6;
 commit;
 
 update channels set NLOCKCORRECTTIME=0 where PROTOCOL_ID=37;
@@ -25077,7 +25077,7 @@ commit;
 
 
 ----------------------------------------------------------------------------------------------
--- 2010.11.26     VER 2.38.2 (Для обновления версии 2.38.1.1 до текущей скрипт запускать отсюда)      
+-- 2010.11.26     VER 2.38.2 (Р”Р»СЏ РѕР±РЅРѕРІР»РµРЅРёСЏ РІРµСЂСЃРёРё 2.38.1.1 РґРѕ С‚РµРєСѓС‰РµР№ СЃРєСЂРёРїС‚ Р·Р°РїСѓСЃРєР°С‚СЊ РѕС‚СЃСЋРґР°)      
 ----------------------------------------------------------------------------------------------
 --drop table ROUND30817;
 create table ROUND30817  (
@@ -25093,31 +25093,31 @@ create table ROUND30817  (
 );
 
 comment on table ROUND30817 is
-'Остатки округления 30817';
+'РћСЃС‚Р°С‚РєРё РѕРєСЂСѓРіР»РµРЅРёСЏ 30817';
 
 comment on column ROUND30817.MID is
-'Ид точки';
+'РРґ С‚РѕС‡РєРё';
 
 comment on column ROUND30817.DATE_TIME is
-'Дата';
+'Р”Р°С‚Р°';
 
 comment on column ROUND30817.ER is
-'Расход А пр';
+'Р Р°СЃС…РѕРґ Рђ РїСЂ';
 
 comment on column ROUND30817.ED is
-'Расход А отд';
+'Р Р°СЃС…РѕРґ Рђ РѕС‚Рґ';
 
 comment on column ROUND30817.Q1 is
-'Расход R пр';
+'Р Р°СЃС…РѕРґ R РїСЂ';
 
 comment on column ROUND30817.Q3 is
-'Расход R отд';
+'Р Р°СЃС…РѕРґ R РѕС‚Рґ';
 
 comment on column ROUND30817.Q2 is
-'Расход Q2';
+'Р Р°СЃС…РѕРґ Q2';
 
 comment on column ROUND30817.Q4 is
-'Расход Q4';
+'Р Р°СЃС…РѕРґ Q4';
 
 alter table ROUND30817
    add constraint ROUND30817_F1 foreign key (MID)
@@ -25130,7 +25130,7 @@ alter table FEEDERS  add(
       constraint CKC_NWITHSWITCH_FEEDERS check (NWITHSWITCH in (0,1))
 );
 
-comment on column FEEDERS.NWITHSWITCH is 'Данные с учетом ОВ';
+comment on column FEEDERS.NWITHSWITCH is 'Р”Р°РЅРЅС‹Рµ СЃ СѓС‡РµС‚РѕРј РћР’';
 
 -----01/12/2010
 create library utils_lib as '$ORACLE_HOME\bin\orawpcom10.dll'
@@ -25142,7 +25142,7 @@ create TYPE OAArgTypeTable AS TABLE OF VARCHAR2(32)
 
 
 --02.12.2010
-insert into parameter (NPID,VVALUE,VDESCRIPTION) values(52,10,'Сдвиг времени (мин) привыдачи последней получасовки (мощности) на мнемосхему.');
+insert into parameter (NPID,VVALUE,VDESCRIPTION) values(52,10,'РЎРґРІРёРі РІСЂРµРјРµРЅРё (РјРёРЅ) РїСЂРёРІС‹РґР°С‡Рё РїРѕСЃР»РµРґРЅРµР№ РїРѕР»СѓС‡Р°СЃРѕРІРєРё (РјРѕС‰РЅРѕСЃС‚Рё) РЅР° РјРЅРµРјРѕСЃС…РµРјСѓ.');
 commit;
 
 
@@ -25150,14 +25150,14 @@ declare
 ln_1 NUMBER;
 ln_2 NUMBER;
 begin
-select max(nid) into ln_1 from BASEFORMULA where vname='Базовые функции';
+select max(nid) into ln_1 from BASEFORMULA where vname='Р‘Р°Р·РѕРІС‹Рµ С„СѓРЅРєС†РёРё';
 if ln_1 is null then 
 return;
 end if;
 select points_seq.NEXTVAL into ln_2 from dual;
-INSERT INTO BASEFORMULA("NID","NPARENT","NTYPE","VNAME","VFORMULA","VMEMO")VALUES(ln_2,ln_1,1,'Округление ГН с переносом остатков','round30817(a,1)',NULL);
+INSERT INTO BASEFORMULA("NID","NPARENT","NTYPE","VNAME","VFORMULA","VMEMO")VALUES(ln_2,ln_1,1,'РћРєСЂСѓРіР»РµРЅРёРµ Р“Рќ СЃ РїРµСЂРµРЅРѕСЃРѕРј РѕСЃС‚Р°С‚РєРѕРІ','round30817(a,1)',NULL);
 select points_seq.NEXTVAL into ln_2 from dual;
-INSERT INTO BASEFORMULA("NID","NPARENT","NTYPE","VNAME","VFORMULA","VMEMO")VALUES(ln_2,ln_1,1,'Приведение ГН к разнице показаний','round30817(a,2)',NULL);
+INSERT INTO BASEFORMULA("NID","NPARENT","NTYPE","VNAME","VFORMULA","VMEMO")VALUES(ln_2,ln_1,1,'РџСЂРёРІРµРґРµРЅРёРµ Р“Рќ Рє СЂР°Р·РЅРёС†Рµ РїРѕРєР°Р·Р°РЅРёР№','round30817(a,2)',NULL);
 commit;
 exception
 when others then rollback;
@@ -25165,7 +25165,7 @@ end;
 /
 
 ----------------------------------------------------------------------------------------------
--- 2010.12.08     VER 2.38.4 (Для обновления версии 2.38.3.1 до текущей скрипт запускать отсюда)      
+-- 2010.12.08     VER 2.38.4 (Р”Р»СЏ РѕР±РЅРѕРІР»РµРЅРёСЏ РІРµСЂСЃРёРё 2.38.3.1 РґРѕ С‚РµРєСѓС‰РµР№ СЃРєСЂРёРїС‚ Р·Р°РїСѓСЃРєР°С‚СЊ РѕС‚СЃСЋРґР°)      
 ----------------------------------------------------------------------------------------------
 
 
@@ -25184,28 +25184,28 @@ create table METERTYPEDICT  (
 );
 
 comment on table METERTYPEDICT is
-'Справочник типов счетчиков';
+'РЎРїСЂР°РІРѕС‡РЅРёРє С‚РёРїРѕРІ СЃС‡РµС‚С‡РёРєРѕРІ';
 
 comment on column METERTYPEDICT.NMETERTYPE is
-'Ид тиа счетчика';
+'РРґ С‚РёР° СЃС‡РµС‚С‡РёРєР°';
 
 comment on column METERTYPEDICT.VNAME is
-'Наименование типа';
+'РќР°РёРјРµРЅРѕРІР°РЅРёРµ С‚РёРїР°';
 
 comment on column METERTYPEDICT.DIGITS is
-'Значность';
+'Р—РЅР°С‡РЅРѕСЃС‚СЊ';
 
 comment on column METERTYPEDICT.MCURRENT is
-'Ток';
+'РўРѕРє';
 
 comment on column METERTYPEDICT.MPOWER is
-'Напряжение';
+'РќР°РїСЂСЏР¶РµРЅРёРµ';
 
 comment on column METERTYPEDICT.MCONST is
-'Кол импульсов';
+'РљРѕР» РёРјРїСѓР»СЊСЃРѕРІ';
 
 comment on column METERTYPEDICT.MCLASS is
-'Класс';
+'РљР»Р°СЃСЃ';
 
 /*==============================================================*/
 /* Index: METERTYPEDICT_IDX1                                    */
@@ -25233,22 +25233,22 @@ create table PASFILES  (
 );
 
 comment on table PASFILES is
-'Файлы PAS';
+'Р¤Р°Р№Р»С‹ PAS';
 
 comment on column PASFILES.MID is
-'Ид точки';
+'РРґ С‚РѕС‡РєРё';
 
 comment on column PASFILES.DENTER is
-'Дата изменения';
+'Р”Р°С‚Р° РёР·РјРµРЅРµРЅРёСЏ';
 
 comment on column PASFILES.VFILENAME is
-'Название файла';
+'РќР°Р·РІР°РЅРёРµ С„Р°Р№Р»Р°';
 
 comment on column PASFILES.DFILEDATE is
-'Дата файла';
+'Р”Р°С‚Р° С„Р°Р№Р»Р°';
 
 comment on column PASFILES.BFILEBODY is
-'Файл';
+'Р¤Р°Р№Р»';
 
 
 alter table PASFILES
@@ -25257,26 +25257,26 @@ alter table PASFILES
       on delete cascade;
 
 /*
--- Только СЭС
+-- РўРѕР»СЊРєРѕ РЎР­РЎ
 INSERT INTO tasks(TASK_ID,PARENT,TASK_COD,NAME,REMARK,nshow)
-VALUES(107,77,663,'6.04 Обновление БД качества электроэнергии','Обновление БД качества электроэнергии',0);
+VALUES(107,77,663,'6.04 РћР±РЅРѕРІР»РµРЅРёРµ Р‘Р” РєР°С‡РµСЃС‚РІР° СЌР»РµРєС‚СЂРѕСЌРЅРµСЂРіРёРё','РћР±РЅРѕРІР»РµРЅРёРµ Р‘Р” РєР°С‡РµСЃС‚РІР° СЌР»РµРєС‚СЂРѕСЌРЅРµСЂРіРёРё',0);
 commit;
 */
 
 
 
 ----------------------------------------------------------------------------------------------
--- 2010.12.15     VER 2.38.5 (Для обновления версии 2.38.4.1 до текущей скрипт запускать отсюда)      
+-- 2010.12.15     VER 2.38.5 (Р”Р»СЏ РѕР±РЅРѕРІР»РµРЅРёСЏ РІРµСЂСЃРёРё 2.38.4.1 РґРѕ С‚РµРєСѓС‰РµР№ СЃРєСЂРёРїС‚ Р·Р°РїСѓСЃРєР°С‚СЊ РѕС‚СЃСЋРґР°)      
 ----------------------------------------------------------------------------------------------
 INSERT INTO protocols("PROTOCOL_ID","NAME","DLL_NAME")VALUES(111,'Satec - v2m',NULL);
 commit;
 
-update protocols set PROTOCOL_ID=112, NAME='НИК-2303',DLL_NAME='' where PROTOCOL_ID=1012;
+update protocols set PROTOCOL_ID=112, NAME='РќРРљ-2303',DLL_NAME='' where PROTOCOL_ID=1012;
 commit;
 
 /*
---Для НЭК
-INSERT INTO protocols("PROTOCOL_ID","NAME","DLL_NAME")VALUES(113,'Файл (XLS-Молдова)',NULL);
+--Р”Р»СЏ РќР­Рљ
+INSERT INTO protocols("PROTOCOL_ID","NAME","DLL_NAME")VALUES(113,'Р¤Р°Р№Р» (XLS-РњРѕР»РґРѕРІР°)',NULL);
 commit;
 */
 
@@ -25286,36 +25286,36 @@ alter table RMAKETS  add(
 );
 
 comment on column RMAKETS.BMAKET is
-'Файл макета';
+'Р¤Р°Р№Р» РјР°РєРµС‚Р°';
 
 ----22/12/2010
  insert into addpointparam
- select -25,'Допустимая разница показаний и ГН (A+)кВт',NTYPE from addpointparam where nsort=-24;
+ select -25,'Р”РѕРїСѓСЃС‚РёРјР°СЏ СЂР°Р·РЅРёС†Р° РїРѕРєР°Р·Р°РЅРёР№ Рё Р“Рќ (A+)РєР’С‚',NTYPE from addpointparam where nsort=-24;
  insert into addpointparam
- select -26,'Допустимая разница показаний и ГН (A-)кВт',NTYPE from addpointparam where nsort=-24;
+ select -26,'Р”РѕРїСѓСЃС‚РёРјР°СЏ СЂР°Р·РЅРёС†Р° РїРѕРєР°Р·Р°РЅРёР№ Рё Р“Рќ (A-)РєР’С‚',NTYPE from addpointparam where nsort=-24;
  insert into addpointparam
- select -27,'Допустимая разница показаний и ГН (Q1)кВт',NTYPE from addpointparam where nsort=-24;
+ select -27,'Р”РѕРїСѓСЃС‚РёРјР°СЏ СЂР°Р·РЅРёС†Р° РїРѕРєР°Р·Р°РЅРёР№ Рё Р“Рќ (Q1)РєР’С‚',NTYPE from addpointparam where nsort=-24;
  insert into addpointparam
- select -28,'Допустимая разница показаний и ГН (Q2)кВт',NTYPE from addpointparam where nsort=-24;
+ select -28,'Р”РѕРїСѓСЃС‚РёРјР°СЏ СЂР°Р·РЅРёС†Р° РїРѕРєР°Р·Р°РЅРёР№ Рё Р“Рќ (Q2)РєР’С‚',NTYPE from addpointparam where nsort=-24;
  insert into addpointparam
- select -29,'Допустимая разница показаний и ГН (Q3)кВт',NTYPE from addpointparam where nsort=-24;
+ select -29,'Р”РѕРїСѓСЃС‚РёРјР°СЏ СЂР°Р·РЅРёС†Р° РїРѕРєР°Р·Р°РЅРёР№ Рё Р“Рќ (Q3)РєР’С‚',NTYPE from addpointparam where nsort=-24;
  insert into addpointparam
- select -30,'Допустимая разница показаний и ГН (Q4)кВт',NTYPE from addpointparam where nsort=-24;
+ select -30,'Р”РѕРїСѓСЃС‚РёРјР°СЏ СЂР°Р·РЅРёС†Р° РїРѕРєР°Р·Р°РЅРёР№ Рё Р“Рќ (Q4)РєР’С‚',NTYPE from addpointparam where nsort=-24;
 
- update addpointparam set VDESCR='Допустимая разница показаний и ГН (A+), кВт' where nsort=-25; 
- update addpointparam set VDESCR='Допустимая разница показаний и ГН (A-), кВт' where nsort=-26; 
- update addpointparam set VDESCR='Допустимая разница показаний и ГН (R+ или Q1), кВАр'where nsort=-27; 
- update addpointparam set VDESCR='Допустимая разница показаний и ГН (Q2), кВАр' where nsort=-28; 
- update addpointparam set VDESCR='Допустимая разница показаний и ГН (R- или Q3), кВАр' where nsort=-29; 
- update addpointparam set VDESCR='Допустимая разница показаний и ГН (Q4), кВАр'where nsort=-30; 
+ update addpointparam set VDESCR='Р”РѕРїСѓСЃС‚РёРјР°СЏ СЂР°Р·РЅРёС†Р° РїРѕРєР°Р·Р°РЅРёР№ Рё Р“Рќ (A+), РєР’С‚' where nsort=-25; 
+ update addpointparam set VDESCR='Р”РѕРїСѓСЃС‚РёРјР°СЏ СЂР°Р·РЅРёС†Р° РїРѕРєР°Р·Р°РЅРёР№ Рё Р“Рќ (A-), РєР’С‚' where nsort=-26; 
+ update addpointparam set VDESCR='Р”РѕРїСѓСЃС‚РёРјР°СЏ СЂР°Р·РЅРёС†Р° РїРѕРєР°Р·Р°РЅРёР№ Рё Р“Рќ (R+ РёР»Рё Q1), РєР’РђСЂ'where nsort=-27; 
+ update addpointparam set VDESCR='Р”РѕРїСѓСЃС‚РёРјР°СЏ СЂР°Р·РЅРёС†Р° РїРѕРєР°Р·Р°РЅРёР№ Рё Р“Рќ (Q2), РєР’РђСЂ' where nsort=-28; 
+ update addpointparam set VDESCR='Р”РѕРїСѓСЃС‚РёРјР°СЏ СЂР°Р·РЅРёС†Р° РїРѕРєР°Р·Р°РЅРёР№ Рё Р“Рќ (R- РёР»Рё Q3), РєР’РђСЂ' where nsort=-29; 
+ update addpointparam set VDESCR='Р”РѕРїСѓСЃС‚РёРјР°СЏ СЂР°Р·РЅРёС†Р° РїРѕРєР°Р·Р°РЅРёР№ Рё Р“Рќ (Q4), РєР’РђСЂ'where nsort=-30; 
  commit;
 
 
 ----------------------------------------------------------------------------------------------
--- 2010.12.27     VER 2.39.0 (Для обновления версии 2.38.6 до текущей скрипт запускать отсюда)      
+-- 2010.12.27     VER 2.39.0 (Р”Р»СЏ РѕР±РЅРѕРІР»РµРЅРёСЏ РІРµСЂСЃРёРё 2.38.6 РґРѕ С‚РµРєСѓС‰РµР№ СЃРєСЂРёРїС‚ Р·Р°РїСѓСЃРєР°С‚СЊ РѕС‚СЃСЋРґР°)      
 ----------------------------------------------------------------------------------------------
 begin 
-insert into parameter (NPID,VVALUE,VDESCRIPTION) values(53,0,'Режим опроса с постоянным интервалом между циклами (не зависимо от ошибки соединения).');
+insert into parameter (NPID,VVALUE,VDESCRIPTION) values(53,0,'Р РµР¶РёРј РѕРїСЂРѕСЃР° СЃ РїРѕСЃС‚РѕСЏРЅРЅС‹Рј РёРЅС‚РµСЂРІР°Р»РѕРј РјРµР¶РґСѓ С†РёРєР»Р°РјРё (РЅРµ Р·Р°РІРёСЃРёРјРѕ РѕС‚ РѕС€РёР±РєРё СЃРѕРµРґРёРЅРµРЅРёСЏ).');
 commit;
 exception
 when others then null;
@@ -25327,12 +25327,12 @@ declare
 ln_1 NUMBER;
 ln_2 NUMBER;
 begin
-select max(nid) into ln_1 from BASEFORMULA where vname='Базовые функции';
+select max(nid) into ln_1 from BASEFORMULA where vname='Р‘Р°Р·РѕРІС‹Рµ С„СѓРЅРєС†РёРё';
 if ln_1 is null then 
 return;
 end if;
 select points_seq.NEXTVAL into ln_2 from dual;
-INSERT INTO BASEFORMULA("NID","NPARENT","NTYPE","VNAME","VFORMULA","VMEMO") VALUES(ln_2,ln_1,2,'округление','round(a)',NULL);
+INSERT INTO BASEFORMULA("NID","NPARENT","NTYPE","VNAME","VFORMULA","VMEMO") VALUES(ln_2,ln_1,2,'РѕРєСЂСѓРіР»РµРЅРёРµ','round(a)',NULL);
 commit;
 exception
 when others then rollback;
@@ -25343,12 +25343,12 @@ end;
 drop sequence CALC_SEQ;
 
 --03.02.2010
-insert into METERTYPE(NMETERTYPE,VNAME) values(32,'НИК-2303');
+insert into METERTYPE(NMETERTYPE,VNAME) values(32,'РќРРљ-2303');
 commit;
 
 
 ----------------------------------------------------------------------------------------------
--- 2010.02.14     VER 2.39.2 (Для обновления версии 2.39.0 до текущей скрипт запускать отсюда)      
+-- 2010.02.14     VER 2.39.2 (Р”Р»СЏ РѕР±РЅРѕРІР»РµРЅРёСЏ РІРµСЂСЃРёРё 2.39.0 РґРѕ С‚РµРєСѓС‰РµР№ СЃРєСЂРёРїС‚ Р·Р°РїСѓСЃРєР°С‚СЊ РѕС‚СЃСЋРґР°)      
 ----------------------------------------------------------------------------------------------
 /*==============================================================*/
 /* Table: GREENPOINT                                            */
@@ -25360,13 +25360,13 @@ create table GREENPOINT  (
 );
 
 comment on table GREENPOINT is
-'Зеленые точки подъема';
+'Р—РµР»РµРЅС‹Рµ С‚РѕС‡РєРё РїРѕРґСЉРµРјР°';
 
 comment on column GREENPOINT.MID is
-'Ид точки';
+'РРґ С‚РѕС‡РєРё';
 
 comment on column GREENPOINT.NORDER is
-'Сортровка';
+'РЎРѕСЂС‚СЂРѕРІРєР°';
 
 alter table GREENPOINT
    add constraint FK_GREENPOI_GREENPOIN_POINTS foreign key (MID)
@@ -25401,7 +25401,7 @@ end;
 /
 
 /*
---Только вручную убираем GID.
+--РўРѕР»СЊРєРѕ РІСЂСѓС‡РЅСѓСЋ СѓР±РёСЂР°РµРј GID.
 update formulparams set vparam='MID.'||EDITFORMULA_PG.get_mid(vparam)||substr(vparam,instr(VPARAM,'.',1,2)) where VPARAM like 'GID.%' and EDITFORMULA_PG.get_mid(vparam) is not null;
 --select * from  formulparams where VPARAM like 'GID.%' and EDITFORMULA_PG.get_mid(vparam) is null
 */
@@ -25414,7 +25414,7 @@ alter table GREENPOINT  add(
 );
 
 comment on column GREENPOINT.NTYPE is
-'Тип точки';
+'РўРёРї С‚РѕС‡РєРё';
 
 
 
@@ -25423,17 +25423,17 @@ declare
 ln_1 NUMBER;
 ln_2 NUMBER;
 begin
-update BASEFORMULA set VNAME='Округление ГН (тыс. кВт*ч) с переносом остатков' where vname='Округление ГН с переносом остатков';
-update BASEFORMULA set VNAME='Приведение ГН (тыс. кВт*ч) к разнице показаний' where vname='Приведение ГН к разнице показаний';
+update BASEFORMULA set VNAME='РћРєСЂСѓРіР»РµРЅРёРµ Р“Рќ (С‚С‹СЃ. РєР’С‚*С‡) СЃ РїРµСЂРµРЅРѕСЃРѕРј РѕСЃС‚Р°С‚РєРѕРІ' where vname='РћРєСЂСѓРіР»РµРЅРёРµ Р“Рќ СЃ РїРµСЂРµРЅРѕСЃРѕРј РѕСЃС‚Р°С‚РєРѕРІ';
+update BASEFORMULA set VNAME='РџСЂРёРІРµРґРµРЅРёРµ Р“Рќ (С‚С‹СЃ. РєР’С‚*С‡) Рє СЂР°Р·РЅРёС†Рµ РїРѕРєР°Р·Р°РЅРёР№' where vname='РџСЂРёРІРµРґРµРЅРёРµ Р“Рќ Рє СЂР°Р·РЅРёС†Рµ РїРѕРєР°Р·Р°РЅРёР№';
 
-select max(nid) into ln_1 from BASEFORMULA where vname='Базовые функции';
+select max(nid) into ln_1 from BASEFORMULA where vname='Р‘Р°Р·РѕРІС‹Рµ С„СѓРЅРєС†РёРё';
 if ln_1 is null then 
 return;
 end if;
 select points_seq.NEXTVAL into ln_2 from dual;
-INSERT INTO BASEFORMULA("NID","NPARENT","NTYPE","VNAME","VFORMULA","VMEMO")VALUES(ln_2,ln_1,1,'Округление ГН (кВт*ч) с переносом остатков','round30817(a,3)',NULL);
+INSERT INTO BASEFORMULA("NID","NPARENT","NTYPE","VNAME","VFORMULA","VMEMO")VALUES(ln_2,ln_1,1,'РћРєСЂСѓРіР»РµРЅРёРµ Р“Рќ (РєР’С‚*С‡) СЃ РїРµСЂРµРЅРѕСЃРѕРј РѕСЃС‚Р°С‚РєРѕРІ','round30817(a,3)',NULL);
 select points_seq.NEXTVAL into ln_2 from dual;
-INSERT INTO BASEFORMULA("NID","NPARENT","NTYPE","VNAME","VFORMULA","VMEMO")VALUES(ln_2,ln_1,1,'Приведение ГН (кВт*ч) к разнице показаний','round30817(a,4)',NULL);
+INSERT INTO BASEFORMULA("NID","NPARENT","NTYPE","VNAME","VFORMULA","VMEMO")VALUES(ln_2,ln_1,1,'РџСЂРёРІРµРґРµРЅРёРµ Р“Рќ (РєР’С‚*С‡) Рє СЂР°Р·РЅРёС†Рµ РїРѕРєР°Р·Р°РЅРёР№','round30817(a,4)',NULL);
 commit;
 exception
 when others then rollback;
@@ -25441,15 +25441,15 @@ end;
 /
 
 ----------------------------------------------------------------------------------------------
--- 2010.03.10     VER 2.39.3 (Для обновления версии 2.39.2 до текущей скрипт запускать отсюда)      
+-- 2010.03.10     VER 2.39.3 (Р”Р»СЏ РѕР±РЅРѕРІР»РµРЅРёСЏ РІРµСЂСЃРёРё 2.39.2 РґРѕ С‚РµРєСѓС‰РµР№ СЃРєСЂРёРїС‚ Р·Р°РїСѓСЃРєР°С‚СЊ РѕС‚СЃСЋРґР°)      
 ----------------------------------------------------------------------------------------------
-INSERT INTO deportprocedures VALUES (73,'Проверка переключения ОВ','check_pg.checkSwitchOV',2,1,'Проверкапереключения ОВ в АСКУЭ');
-INSERT INTO deportprocedures VALUES (74,'Проверка изменения номера счетчика','check_pg.checkmeters',2,1,'Проверяет факт отображения в АСКУЭ реальной замены счетчика');
+INSERT INTO deportprocedures VALUES (73,'РџСЂРѕРІРµСЂРєР° РїРµСЂРµРєР»СЋС‡РµРЅРёСЏ РћР’','check_pg.checkSwitchOV',2,1,'РџСЂРѕРІРµСЂРєР°РїРµСЂРµРєР»СЋС‡РµРЅРёСЏ РћР’ РІ РђРЎРљРЈР­');
+INSERT INTO deportprocedures VALUES (74,'РџСЂРѕРІРµСЂРєР° РёР·РјРµРЅРµРЅРёСЏ РЅРѕРјРµСЂР° СЃС‡РµС‚С‡РёРєР°','check_pg.checkmeters',2,1,'РџСЂРѕРІРµСЂСЏРµС‚ С„Р°РєС‚ РѕС‚РѕР±СЂР°Р¶РµРЅРёСЏ РІ РђРЎРљРЈР­ СЂРµР°Р»СЊРЅРѕР№ Р·Р°РјРµРЅС‹ СЃС‡РµС‚С‡РёРєР°');
 commit;
 
 
 ----------------------------------------------------------------------------------------------
--- 2010.03.21     VER 2.39.4 (Для обновления версии 2.39.3 до текущей скрипт запускать отсюда)      
+-- 2010.03.21     VER 2.39.4 (Р”Р»СЏ РѕР±РЅРѕРІР»РµРЅРёСЏ РІРµСЂСЃРёРё 2.39.3 РґРѕ С‚РµРєСѓС‰РµР№ СЃРєСЂРёРїС‚ Р·Р°РїСѓСЃРєР°С‚СЊ РѕС‚СЃСЋРґР°)      
 ----------------------------------------------------------------------------------------------
 declare
  ln_nn NUMBER;
@@ -25459,14 +25459,14 @@ begin
  FROM form_templates a;
  
 insert into form_templates(template_id, parent, codetemplate, nameform, commentform, enablecontrols, stepprofile, namealert)
-SELECT ln_nn, a.parent, 207,'1.19. Небаланс активной энергии нарастающий','Небаланс активной энергии нарастающий', a.enablecontrols, a.stepprofile, a.namealert
+SELECT ln_nn, a.parent, 207,'1.19. РќРµР±Р°Р»Р°РЅСЃ Р°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё РЅР°СЂР°СЃС‚Р°СЋС‰РёР№','РќРµР±Р°Р»Р°РЅСЃ Р°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё РЅР°СЂР°СЃС‚Р°СЋС‰РёР№', a.enablecontrols, a.stepprofile, a.namealert
   FROM form_templates a  where CODETEMPLATE=206;
   commit;
 end;
 /
 
 ----------------------------------------------------------------------------------------------
--- 2010.04.01     VER 2.40 (Для обновления версии 2.40 до текущей скрипт запускать отсюда)      
+-- 2010.04.01     VER 2.40 (Р”Р»СЏ РѕР±РЅРѕРІР»РµРЅРёСЏ РІРµСЂСЃРёРё 2.40 РґРѕ С‚РµРєСѓС‰РµР№ СЃРєСЂРёРїС‚ Р·Р°РїСѓСЃРєР°С‚СЊ РѕС‚СЃСЋРґР°)      
 ----------------------------------------------------------------------------------------------
 
 begin
@@ -25478,35 +25478,35 @@ end;
 
 ----------------------------------------------------------------------------------------------
 
--- 2010.04.27     VER 2.40 (Для обновления версии 2.40 до текущей скрипт запускать отсюда)      
+-- 2010.04.27     VER 2.40 (Р”Р»СЏ РѕР±РЅРѕРІР»РµРЅРёСЏ РІРµСЂСЃРёРё 2.40 РґРѕ С‚РµРєСѓС‰РµР№ СЃРєСЂРёРїС‚ Р·Р°РїСѓСЃРєР°С‚СЊ РѕС‚СЃСЋРґР°)      
  
  declare
  ln_nn NUMBER:=78;
  begin
 --  select max(nmeasure)into ln_nn from measures;
   insert into measures (nmeasure, vname, vcode, nmrid)
-  values (ln_nn+1,'ER_C (Актив,прием) -нараст.итог с начала суток','ER_C.CD',0);
+  values (ln_nn+1,'ER_C (РђРєС‚РёРІ,РїСЂРёРµРј) -РЅР°СЂР°СЃС‚.РёС‚РѕРі СЃ РЅР°С‡Р°Р»Р° СЃСѓС‚РѕРє','ER_C.CD',0);
   insert into objtypemeas (ind,NMEASURE)values(3,ln_nn+1);
   insert into objtypemeas (ind,NMEASURE)values(4,ln_nn+1);
   insert into measures (nmeasure, vname, vcode, nmrid)
-  values (ln_nn+2,'ER_C (Актив,прием) -нараст.итог с начала месяца','ER_C.CM',0);
+  values (ln_nn+2,'ER_C (РђРєС‚РёРІ,РїСЂРёРµРј) -РЅР°СЂР°СЃС‚.РёС‚РѕРі СЃ РЅР°С‡Р°Р»Р° РјРµСЃСЏС†Р°','ER_C.CM',0);
    insert into objtypemeas (ind,NMEASURE)values(3,ln_nn+2);
   insert into objtypemeas (ind,NMEASURE)values(4,ln_nn+2);
  /* insert into measures (nmeasure, vname, vcode, nmrid)
-  values (ln_nn+3,'ER_C (Актив,прием) -нараст.итог с начала года','ER_C.CY',0);
+  values (ln_nn+3,'ER_C (РђРєС‚РёРІ,РїСЂРёРµРј) -РЅР°СЂР°СЃС‚.РёС‚РѕРі СЃ РЅР°С‡Р°Р»Р° РіРѕРґР°','ER_C.CY',0);
    insert into objtypemeas (ind,NMEASURE)values(3,ln_nn+3);
   insert into objtypemeas (ind,NMEASURE)values(4,ln_nn+3);*/
   commit;
    insert into measures (nmeasure, vname, vcode, nmrid)
-  values (ln_nn+4,'ED_C (Актив,отдача) -нараст.итог с начала суток','ED_C.CD',0);
+  values (ln_nn+4,'ED_C (РђРєС‚РёРІ,РѕС‚РґР°С‡Р°) -РЅР°СЂР°СЃС‚.РёС‚РѕРі СЃ РЅР°С‡Р°Р»Р° СЃСѓС‚РѕРє','ED_C.CD',0);
    insert into objtypemeas (ind,NMEASURE)values(3,ln_nn+4);
   insert into objtypemeas (ind,NMEASURE)values(4,ln_nn+4);
   insert into measures (nmeasure, vname, vcode, nmrid)
-  values (ln_nn+5,'ED_C (Актив,отдача) -нараст.итог с начала месяца','ED_C.CM',0);
+  values (ln_nn+5,'ED_C (РђРєС‚РёРІ,РѕС‚РґР°С‡Р°) -РЅР°СЂР°СЃС‚.РёС‚РѕРі СЃ РЅР°С‡Р°Р»Р° РјРµСЃСЏС†Р°','ED_C.CM',0);
    insert into objtypemeas (ind,NMEASURE)values(3,ln_nn+5);
   insert into objtypemeas (ind,NMEASURE)values(4,ln_nn+5);
 /*  insert into measures (nmeasure, vname, vcode, nmrid)
-  values (ln_nn+6,'ED_C (Актив,отдача) -нараст.итог с начала года','ED_C.CY',0);
+  values (ln_nn+6,'ED_C (РђРєС‚РёРІ,РѕС‚РґР°С‡Р°) -РЅР°СЂР°СЃС‚.РёС‚РѕРі СЃ РЅР°С‡Р°Р»Р° РіРѕРґР°','ED_C.CY',0);
    insert into objtypemeas (ind,NMEASURE)values(3,ln_nn+6);
   insert into objtypemeas (ind,NMEASURE)values(4,ln_nn+6);*/
   commit;
@@ -25514,7 +25514,7 @@ end;
  /  
 
 ----------------------------------------------------------------------------------------------
---2011.09.01 ИНТЭП ИНТЭП ИНТЭП ИНТЭП ИНТЭП     VER 3.0 (Для обновления версии 2.40 до текущей скрипт запускать отсюда)      
+--2011.09.01 РРќРўР­Рџ РРќРўР­Рџ РРќРўР­Рџ РРќРўР­Рџ РРќРўР­Рџ     VER 3.0 (Р”Р»СЏ РѕР±РЅРѕРІР»РµРЅРёСЏ РІРµСЂСЃРёРё 2.40 РґРѕ С‚РµРєСѓС‰РµР№ СЃРєСЂРёРїС‚ Р·Р°РїСѓСЃРєР°С‚СЊ РѕС‚СЃСЋРґР°)      
 ----------------------------------------------------------------------------------------------
    
 alter table FEEDERS  add(
@@ -25522,10 +25522,10 @@ alter table FEEDERS  add(
 );
 
 comment on column FEEDERS.NWITHSWITCH is
-'Данные с учетом ОВ';
+'Р”Р°РЅРЅС‹Рµ СЃ СѓС‡РµС‚РѕРј РћР’';
 
 comment on column FEEDERS.NPOWERPRIM is
-'Напряжение на ГБР';
+'РќР°РїСЂСЏР¶РµРЅРёРµ РЅР° Р“Р‘Р ';
    
 
 --21/09/2011
@@ -25534,7 +25534,7 @@ alter table PROTOCOLS  add(
 );
 
 comment on column PROTOCOLS.NCODE is
-'Обобщеный код протокола';
+'РћР±РѕР±С‰РµРЅС‹Р№ РєРѕРґ РїСЂРѕС‚РѕРєРѕР»Р°';
 
 create index PROTOCOLS_IDX1 on PROTOCOLS (
    NCODE ASC
@@ -25547,13 +25547,13 @@ create table COMMONPROTOCOLS  (
 );
 
 comment on table COMMONPROTOCOLS is
-'Обобщенные протоколы';
+'РћР±РѕР±С‰РµРЅРЅС‹Рµ РїСЂРѕС‚РѕРєРѕР»С‹';
 
 comment on column COMMONPROTOCOLS.NCODE is
-'Ид протокола';
+'РРґ РїСЂРѕС‚РѕРєРѕР»Р°';
 
 comment on column COMMONPROTOCOLS.VNAME is
-'Наименование протокола';
+'РќР°РёРјРµРЅРѕРІР°РЅРёРµ РїСЂРѕС‚РѕРєРѕР»Р°';
 
 create unique index COMMONPROTOCOLS_IDX1 on COMMONPROTOCOLS (
    VNAME ASC
@@ -25566,10 +25566,10 @@ alter table PROTOCOLS
 begin
 insert into COMMONPROTOCOLS values(0,'ACE6000');
 insert into COMMONPROTOCOLS values(1,'SL-7000');
-insert into COMMONPROTOCOLS values(2,'A1R Альфа');
-insert into COMMONPROTOCOLS values(3,'ЕвроАльфа');
-insert into COMMONPROTOCOLS values(4,'А1140 Альфа ');
-insert into COMMONPROTOCOLS values(5,'A1800 Альфа');
+insert into COMMONPROTOCOLS values(2,'A1R РђР»СЊС„Р°');
+insert into COMMONPROTOCOLS values(3,'Р•РІСЂРѕРђР»СЊС„Р°');
+insert into COMMONPROTOCOLS values(4,'Рђ1140 РђР»СЊС„Р° ');
+insert into COMMONPROTOCOLS values(5,'A1800 РђР»СЊС„Р°');
 insert into COMMONPROTOCOLS values(6,'RTU_ABB');
 insert into COMMONPROTOCOLS values(7,'LG ZxB');
 insert into COMMONPROTOCOLS values(8,'LG ZxD');
@@ -25577,31 +25577,31 @@ insert into COMMONPROTOCOLS values(9,'ZxQ');
 insert into COMMONPROTOCOLS values(10,'Metcom');
 insert into COMMONPROTOCOLS values(11,'FAG');
 insert into COMMONPROTOCOLS values(12,'EMH');
-insert into COMMONPROTOCOLS values(13,'УСПД КМ-64 Хартэп');
-insert into COMMONPROTOCOLS values(14,'КМ Хартэп');
-insert into COMMONPROTOCOLS values(15,'АСКУЭ Хартэп');
+insert into COMMONPROTOCOLS values(13,'РЈРЎРџР” РљРњ-64 РҐР°СЂС‚СЌРї');
+insert into COMMONPROTOCOLS values(14,'РљРњ РҐР°СЂС‚СЌРї');
+insert into COMMONPROTOCOLS values(15,'РђРЎРљРЈР­ РҐР°СЂС‚СЌРї');
 insert into COMMONPROTOCOLS values(16,'Oracle Database');
-insert into COMMONPROTOCOLS values(17,'Загрузка файлов');
+insert into COMMONPROTOCOLS values(17,'Р—Р°РіСЂСѓР·РєР° С„Р°Р№Р»РѕРІ');
 insert into COMMONPROTOCOLS values(18,'EVision');
 insert into COMMONPROTOCOLS values(19,'LZQM');
 insert into COMMONPROTOCOLS values(20,'EMS');
-insert into COMMONPROTOCOLS values(21,'Элвин');
-insert into COMMONPROTOCOLS values(22,'Облик');
-insert into COMMONPROTOCOLS values(23,'Меркурий');
-insert into COMMONPROTOCOLS values(24,'АРГО');
-insert into COMMONPROTOCOLS values(25,'МСТ-04');
-insert into COMMONPROTOCOLS values(26,'НИК-2303');
-insert into COMMONPROTOCOLS values(27,'СЭБ-2А');
-insert into COMMONPROTOCOLS values(28,'СЭТ-4');
-insert into COMMONPROTOCOLS values(29,'Энергия 9');
+insert into COMMONPROTOCOLS values(21,'Р­Р»РІРёРЅ');
+insert into COMMONPROTOCOLS values(22,'РћР±Р»РёРє');
+insert into COMMONPROTOCOLS values(23,'РњРµСЂРєСѓСЂРёР№');
+insert into COMMONPROTOCOLS values(24,'РђР Р“Рћ');
+insert into COMMONPROTOCOLS values(25,'РњРЎРў-04');
+insert into COMMONPROTOCOLS values(26,'РќРРљ-2303');
+insert into COMMONPROTOCOLS values(27,'РЎР­Р‘-2Рђ');
+insert into COMMONPROTOCOLS values(28,'РЎР­Рў-4');
+insert into COMMONPROTOCOLS values(29,'Р­РЅРµСЂРіРёСЏ 9');
 insert into COMMONPROTOCOLS values(30,'CE-301');
 insert into COMMONPROTOCOLS values(31,'CE-303');
 insert into COMMONPROTOCOLS values(32,'CE-304');
 insert into COMMONPROTOCOLS values(33,'CE-6850');
 insert into COMMONPROTOCOLS values(34,'Satec');
-insert into COMMONPROTOCOLS values(35,'Итек');
-insert into COMMONPROTOCOLS values(36,'ЦТ-5000');
-insert into COMMONPROTOCOLS values(37,'УППД');
+insert into COMMONPROTOCOLS values(35,'РС‚РµРє');
+insert into COMMONPROTOCOLS values(36,'Р¦Рў-5000');
+insert into COMMONPROTOCOLS values(37,'РЈРџРџР”');
 insert into COMMONPROTOCOLS values(38,'ICCP');
 
 update protocols set NCODE=0 where PROTOCOL_ID=98;
@@ -25722,13 +25722,13 @@ update protocols set name='Oracle Database' where protocol_id=1004;
 commit;
 
 ----------------------------------------------------------------------------------------------
--- 2011.09.14     VER 3.2 (Для обновления версии 3.1 до текущей скрипт запускать отсюда)      
+-- 2011.09.14     VER 3.2 (Р”Р»СЏ РѕР±РЅРѕРІР»РµРЅРёСЏ РІРµСЂСЃРёРё 3.1 РґРѕ С‚РµРєСѓС‰РµР№ СЃРєСЂРёРїС‚ Р·Р°РїСѓСЃРєР°С‚СЊ РѕС‚СЃСЋРґР°)      
 ----------------------------------------------------------------------------------------------
 alter table TIMEZONES  add(
    DSUMMERESC           DATE
 );
 
-comment on column TIMEZONES.DSUMMERESC is 'Отмена переход на лето';
+comment on column TIMEZONES.DSUMMERESC is 'РћС‚РјРµРЅР° РїРµСЂРµС…РѕРґ РЅР° Р»РµС‚Рѕ';
 
 
 update timezones set DSUMMERESC=to_date('01.04.2111 00:00:00','dd.mm.yyyy hh24:mi:ss') where nid=1;
@@ -25742,10 +25742,10 @@ commit;
 
 
 ----------------------------------------------------------------------------------------------
--- 2011.11.16     VER 3.2.3 (Для обновления версии 3.2 до текущей скрипт запускать отсюда)      
+-- 2011.11.16     VER 3.2.3 (Р”Р»СЏ РѕР±РЅРѕРІР»РµРЅРёСЏ РІРµСЂСЃРёРё 3.2 РґРѕ С‚РµРєСѓС‰РµР№ СЃРєСЂРёРїС‚ Р·Р°РїСѓСЃРєР°С‚СЊ РѕС‚СЃСЋРґР°)      
 ----------------------------------------------------------------------------------------------
 begin 
-insert into parameter (NPID,VVALUE,VDESCRIPTION) values(54,0,'Режим передачи текущих данных (углов) по протоколу comsrvdll_pg. 1-отно углы, иначе абс.');
+insert into parameter (NPID,VVALUE,VDESCRIPTION) values(54,0,'Р РµР¶РёРј РїРµСЂРµРґР°С‡Рё С‚РµРєСѓС‰РёС… РґР°РЅРЅС‹С… (СѓРіР»РѕРІ) РїРѕ РїСЂРѕС‚РѕРєРѕР»Сѓ comsrvdll_pg. 1-РѕС‚РЅРѕ СѓРіР»С‹, РёРЅР°С‡Рµ Р°Р±СЃ.');
 commit;
 exception
 when others then null;
@@ -25753,7 +25753,7 @@ end;
 /
 
 begin 
-insert into parameter (NPID,VVALUE,VDESCRIPTION) values(55,0,'Режим передачи ГН без КС по протоколу comsrvdll_pg.');
+insert into parameter (NPID,VVALUE,VDESCRIPTION) values(55,0,'Р РµР¶РёРј РїРµСЂРµРґР°С‡Рё Р“Рќ Р±РµР· РљРЎ РїРѕ РїСЂРѕС‚РѕРєРѕР»Сѓ comsrvdll_pg.');
 commit;
 exception
 when others then null;
@@ -25762,7 +25762,7 @@ end;
 
 ---01/12/2011
 begin 
-INSERT INTO db_term VALUES('RMAKETS','Принятые макеты',1000,0,'DCREATE','rmk','RMAKETS_IDX1');
+INSERT INTO db_term VALUES('RMAKETS','РџСЂРёРЅСЏС‚С‹Рµ РјР°РєРµС‚С‹',1000,0,'DCREATE','rmk','RMAKETS_IDX1');
 commit;
 exception
 when others then null;
@@ -25770,7 +25770,7 @@ end;
 /
 
 begin 
-INSERT INTO db_term VALUES('LG_LOADPROF','Мониторинг каналов (loadprof)',100,0,'DATE_TIME','lgp',NULL);
+INSERT INTO db_term VALUES('LG_LOADPROF','РњРѕРЅРёС‚РѕСЂРёРЅРі РєР°РЅР°Р»РѕРІ (loadprof)',100,0,'DATE_TIME','lgp',NULL);
 commit;
 exception
 when others then null;
@@ -25778,7 +25778,7 @@ end;
 /
 
 begin 
-INSERT INTO db_term VALUES('LG_READOUT','Мониторинг каналов (readout)',100,0,'DATE_TIME','lgo',NULL);
+INSERT INTO db_term VALUES('LG_READOUT','РњРѕРЅРёС‚РѕСЂРёРЅРі РєР°РЅР°Р»РѕРІ (readout)',100,0,'DATE_TIME','lgo',NULL);
 commit;
 exception
 when others then null;
@@ -25788,11 +25788,11 @@ end;
 
 
 ----01/12/2011
-INSERT INTO protocols VALUES (2001,'KM --> Альфа А1140 (DLL)','Alpha1140.dll',4);
+INSERT INTO protocols VALUES (2001,'KM --> РђР»СЊС„Р° Рђ1140 (DLL)','Alpha1140.dll',4);
 commit;
 
 --01/02/2012
-update ADDPOINTPARAM set VDESCR='Тип парам. углов (1-SL,2-ARGO,3 или 0-все углы абсолютные,4 - Токи-относительные, иначе автоопределение)' where NSORT=46;
+update ADDPOINTPARAM set VDESCR='РўРёРї РїР°СЂР°Рј. СѓРіР»РѕРІ (1-SL,2-ARGO,3 РёР»Рё 0-РІСЃРµ СѓРіР»С‹ Р°Р±СЃРѕР»СЋС‚РЅС‹Рµ,4 - РўРѕРєРё-РѕС‚РЅРѕСЃРёС‚РµР»СЊРЅС‹Рµ, РёРЅР°С‡Рµ Р°РІС‚РѕРѕРїСЂРµРґРµР»РµРЅРёРµ)' where NSORT=46;
 commit;
 
 --08/02/2012
@@ -25802,7 +25802,7 @@ ln_proc number:=72;
 begin                   
 select count(*) into ln_ret from dual where exists(select * from makets where nprocedure=ln_proc);
 if ln_ret=0 then
-RYDA.makets_pg.ins_m(ln_proc,'Расчет зависимых данных',NULL,0,0,1,NULL,ln_ret);
+RYDA.makets_pg.ins_m(ln_proc,'Р Р°СЃС‡РµС‚ Р·Р°РІРёСЃРёРјС‹С… РґР°РЅРЅС‹С…',NULL,0,0,1,NULL,ln_ret);
 end if;
 commit;
 exception
@@ -25813,9 +25813,9 @@ end;
 
 
 ----------------------------------------------------------------------------------------------
--- 2012.02.08     VER 3.2.4 (Для обновления версии 3.2.3 до текущей скрипт запускать отсюда)      
+-- 2012.02.08     VER 3.2.4 (Р”Р»СЏ РѕР±РЅРѕРІР»РµРЅРёСЏ РІРµСЂСЃРёРё 3.2.3 РґРѕ С‚РµРєСѓС‰РµР№ СЃРєСЂРёРїС‚ Р·Р°РїСѓСЃРєР°С‚СЊ РѕС‚СЃСЋРґР°)      
 ----------------------------------------------------------------------------------------------
-INSERT INTO protocols VALUES (115,'УППД - Клиент (v.3)',NULL,37);
+INSERT INTO protocols VALUES (115,'РЈРџРџР” - РљР»РёРµРЅС‚ (v.3)',NULL,37);
 commit;
 
 
@@ -25828,16 +25828,16 @@ commit;
 
 
 ----------------------------------------------------------------------------------------------
--- 2012.03.27     VER 3.2.5 (Для обновления версии 3.2.4 до текущей скрипт запускать отсюда)      
+-- 2012.03.27     VER 3.2.5 (Р”Р»СЏ РѕР±РЅРѕРІР»РµРЅРёСЏ РІРµСЂСЃРёРё 3.2.4 РґРѕ С‚РµРєСѓС‰РµР№ СЃРєСЂРёРїС‚ Р·Р°РїСѓСЃРєР°С‚СЊ РѕС‚СЃСЋРґР°)      
 ----------------------------------------------------------------------------------------------
 declare
 ln_customer_id NUMBER;
 begin
 SELECT NVL(SUM(DECODE(vvalue, '', 0, vvalue)), 0)   INTO ln_customer_id   FROM parameter  WHERE npid = 12;
 if ln_customer_id in (0,1,6,51) then
-insert into parameter (NPID,VVALUE,VDESCRIPTION) values(56,1,'Разрешен оперативный опрос точки');
+insert into parameter (NPID,VVALUE,VDESCRIPTION) values(56,1,'Р Р°Р·СЂРµС€РµРЅ РѕРїРµСЂР°С‚РёРІРЅС‹Р№ РѕРїСЂРѕСЃ С‚РѕС‡РєРё');
 else
-insert into parameter (NPID,VVALUE,VDESCRIPTION) values(56,0,'Разрешен оперативный опрос точки');
+insert into parameter (NPID,VVALUE,VDESCRIPTION) values(56,0,'Р Р°Р·СЂРµС€РµРЅ РѕРїРµСЂР°С‚РёРІРЅС‹Р№ РѕРїСЂРѕСЃ С‚РѕС‡РєРё');
 end if;
 commit;
 end;
@@ -25846,13 +25846,13 @@ end;
 
 
 ----------------------------------------------------------------------------------------------
--- 2012.03.27     VER 3.2.5.2 (Для обновления версии 3.2.5.1 до текущей скрипт запускать отсюда)      
+-- 2012.03.27     VER 3.2.5.2 (Р”Р»СЏ РѕР±РЅРѕРІР»РµРЅРёСЏ РІРµСЂСЃРёРё 3.2.5.1 РґРѕ С‚РµРєСѓС‰РµР№ СЃРєСЂРёРїС‚ Р·Р°РїСѓСЃРєР°С‚СЊ РѕС‚СЃСЋРґР°)      
 ----------------------------------------------------------------------------------------------
 insert into metertype(nmetertype,vname) values(33,'MTX Router') ;
 commit;
 
 begin 
-insert into parameter (NPID,VVALUE,VDESCRIPTION) values(57,0,'IP порт MTX router');
+insert into parameter (NPID,VVALUE,VDESCRIPTION) values(57,0,'IP РїРѕСЂС‚ MTX router');
 commit;
 exception
 when others then null;
@@ -25860,7 +25860,7 @@ end;
 /
 
 begin 
-insert into parameter (NPID,VVALUE,VDESCRIPTION) values(58,16,'MAX количество одновременно работающих MTX router');
+insert into parameter (NPID,VVALUE,VDESCRIPTION) values(58,16,'MAX РєРѕР»РёС‡РµСЃС‚РІРѕ РѕРґРЅРѕРІСЂРµРјРµРЅРЅРѕ СЂР°Р±РѕС‚Р°СЋС‰РёС… MTX router');
 commit;
 exception
 when others then null;
@@ -25871,7 +25871,7 @@ declare
  ln_nn NUMBER:=84;
  begin
   insert into measures (nmeasure, vname, vcode, nmrid)
-  values (ln_nn+1,'RK (Коеф пересчета)','RK',0);
+  values (ln_nn+1,'RK (РљРѕРµС„ РїРµСЂРµСЃС‡РµС‚Р°)','RK',0);
   insert into objtypemeas (ind,NMEASURE)values(3,ln_nn+1);
   insert into objtypemeas (ind,NMEASURE)values(4,ln_nn+1);
   commit;
@@ -25884,7 +25884,7 @@ update metertype set vname='TeleTec MTX RT' where nmetertype=33 ;
 update COMMONPROTOCOLS set vname='TeleTec MTX RT' where ncode=39;
 update protocols set name='TeleTec MTX RT' where protocol_id=116;
 
---Молдавские счетчики NP
+--РњРѕР»РґР°РІСЃРєРёРµ СЃС‡РµС‚С‡РёРєРё NP
 insert into metertype(nmetertype,vname) values(34,'TeleTec RTR56') ;
 insert into COMMONPROTOCOLS values(40,'TeleTec RTR56');
 INSERT INTO protocols VALUES (117,'TeleTec RTR56',NULL,40);
@@ -25892,117 +25892,117 @@ commit;
 
 
 BEGIN
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	631	,	1	,SUBSTR(REPLACE('	Значения накопительных регистров тарифа 1 потеряны	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	525	,	2	,SUBSTR(REPLACE('	Значения накопительных регистров тарифа 2 потеряны	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	526	,	3	,SUBSTR(REPLACE('	Значения накопительных регистров тарифа 3 потеряны	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	527	,	4	,SUBSTR(REPLACE('	Значения накопительных регистров тарифа 4 потеряны	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	528	,	17	,SUBSTR(REPLACE('	Доступ закрыт до конца суток из-за ошибок ключа доступа	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	529	,	18	,SUBSTR(REPLACE('	Доступ открыт',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	530	,	19	,SUBSTR(REPLACE('	Неверный ключ доступа	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	531	,	20	,SUBSTR(REPLACE('	Корпус счётчика открыт	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	532	,	21	,SUBSTR(REPLACE('	Корпус счётчика закрыт	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	533	,	22	,SUBSTR(REPLACE('	Обнаружено наличие электромагнитного влияния	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	534	,	23	,SUBSTR(REPLACE('	Обнаружено прекращение электромагнитного влияния	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	535	,	32	,SUBSTR(REPLACE('	Ключ доступа уровня 0 изменён	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	536	,	33	,SUBSTR(REPLACE('	Ключ доступа уровня 1 изменён	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	537	,	34	,SUBSTR(REPLACE('	Ключ доступа уровня 2 изменён	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	538	,	35	,SUBSTR(REPLACE('	Ключ доступа уровня 3 изменён	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	539	,	36	,SUBSTR(REPLACE('	Параметры изменены локально	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	540	,	37	,SUBSTR(REPLACE('	Параметры изменены удаленно	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	541	,	38	,SUBSTR(REPLACE('	Получена команда установки времени. Время установлено	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	542	,	39	,SUBSTR(REPLACE('	Получена команда включения реле	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	543	,	40	,SUBSTR(REPLACE('	Получена команда выключения реле	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	544	,	49	,SUBSTR(REPLACE('	Переполнение накопительного регистра энергии	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	545	,	50	,SUBSTR(REPLACE('	Тарифный план изменён	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	546	,	51	,SUBSTR(REPLACE('	Получен новый тарифный план	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	547	,	52	,SUBSTR(REPLACE('	Переход на летнее время	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	548	,	53	,SUBSTR(REPLACE('	Переход на зимнее время	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	549	,	54	,SUBSTR(REPLACE('	Реле включено	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	550	,	55	,SUBSTR(REPLACE('	Реле выключено	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	551	,	56	,SUBSTR(REPLACE('	Рестарт программы микроконтроллера	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	552	,	57	,SUBSTR(REPLACE('	Рестарт по WATCHDOG	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	553	,	64	,SUBSTR(REPLACE('	Восстановление нормального напряжения фазы A после повышенного	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	554	,	65	,SUBSTR(REPLACE('	Напряжение фазы A выше порога максимального напряжения	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	555	,	66	,SUBSTR(REPLACE('	Восстановление нормального напряжения фазы A после пониженного	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	556	,	67	,SUBSTR(REPLACE('	Напряжение фазы A ниже порога минимального напряжения	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	557	,	68	,SUBSTR(REPLACE('	Восстановление нормального напряжения фазы B после повышенного	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	558	,	69	,SUBSTR(REPLACE('	Напряжение фазы B выше порога максимального напряжения	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	559	,	70	,SUBSTR(REPLACE('	Восстановление нормального напряжения фазы B после пониженного	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	560	,	71	,SUBSTR(REPLACE('	Напряжение фазы B ниже порога минимального напряжения	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	561	,	72	,SUBSTR(REPLACE('	Восстановление нормального напряжения фазы C после повышенного	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	562	,	73	,SUBSTR(REPLACE('	Напряжение фазы C выше порога максимального напряжения	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	563	,	74	,SUBSTR(REPLACE('	Восстановление нормального напряжения фазы C после пониженного	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	564	,	75	,SUBSTR(REPLACE('	Напряжение фазы C ниже порога минимального напряжения	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	565	,	76	,SUBSTR(REPLACE('	Восстановление нормальной частоты после повышенной	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	566	,	77	,SUBSTR(REPLACE('	Частота выше порога максимальной частоты сети	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	567	,	78	,SUBSTR(REPLACE('	Восстановление нормальной частоты после пониженной	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	568	,	79	,SUBSTR(REPLACE('	Частота ниже порога минимальной частоты сети	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	569	,	80	,SUBSTR(REPLACE('	Восстановление нормальной температуры после повышенной	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	570	,	81	,SUBSTR(REPLACE('	Температура выше порога максимальной температуры	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	571	,	82	,SUBSTR(REPLACE('	Восстановление нормальной температуры после пониженной	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	572	,	83	,SUBSTR(REPLACE('	Температура нижее порога минимальной температуры	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	573	,	84	,SUBSTR(REPLACE('	Восстановление допустимого тока фазы A после повышенного	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	574	,	85	,SUBSTR(REPLACE('	Ток фазы A выше порога максимального тока	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	575	,	86	,SUBSTR(REPLACE('	Восстановление допустимого тока фазы B после повышенного	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	576	,	87	,SUBSTR(REPLACE('	Ток фазы B выше порога максимального тока	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	577	,	88	,SUBSTR(REPLACE('	Восстановление допустимого тока фазы C после повышенного	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	578	,	89	,SUBSTR(REPLACE('	Ток фазы C выше порога максимального тока	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	579	,	90	,SUBSTR(REPLACE('	Восстановление допустимой активной потребляемой мощности после повышенной	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	580	,	91	,SUBSTR(REPLACE('	Активная потребляемая мощность выше максимальной	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	581	,	92	,SUBSTR(REPLACE('	Восстановление допустимой реактивной потребляемой мощности после повышенной	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	582	,	93	,SUBSTR(REPLACE('	Реактивная потребляемая мощность выше максимальной	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	583	,	94	,SUBSTR(REPLACE('	Восстановление допустимого дифференциального тока после повышенного	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	584	,	95	,SUBSTR(REPLACE('	Превышение допустимого дифференциального тока	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	585	,	96	,SUBSTR(REPLACE('	Нормальное состояние часов реального времени восстановлено	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	586	,	97	,SUBSTR(REPLACE('	Часы реального времени не установлены	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	587	,	98	,SUBSTR(REPLACE('	Включение напряжения фазы C	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	588	,	99	,SUBSTR(REPLACE('	Выключение напряжения фазы C	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	589	,	100	,SUBSTR(REPLACE('	Включение напряжения фазы B	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	590	,	101	,SUBSTR(REPLACE('	Выключение напряжения фазы B	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	591	,	102	,SUBSTR(REPLACE('	Включение напряжения фазы A	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	592	,	103	,SUBSTR(REPLACE('	Выключение напряжения фазы A	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	593	,	104	,SUBSTR(REPLACE('	Восстановление нормального напряжения батареи	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	594	,	105	,SUBSTR(REPLACE('	Пониженное напряжения батареи	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	595	,	106	,SUBSTR(REPLACE('	Параметров калибровки установлены	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	596	,	107	,SUBSTR(REPLACE('	Калибровочные параметры потеряны	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	597	,	108	,SUBSTR(REPLACE('	Заводские параметры установлены	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	598	,	109	,SUBSTR(REPLACE('	Заводские параметры потеряны	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	599	,	110	,SUBSTR(REPLACE('	Параметры установлены	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	600	,	111	,SUBSTR(REPLACE('	Параметры потеряны	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	601	,	112	,SUBSTR(REPLACE('	Изменены параметры перехода на летнее время	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	602	,	113	,SUBSTR(REPLACE('	Включение второго реле	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	603	,	114	,SUBSTR(REPLACE('	Выключение второго реле	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	604	,	115	,SUBSTR(REPLACE('	Переход через 0 счетчика активной энергии по тарифу 1 при достижения 100000,000 кВт для счетчиков транф. включения (и счетчиков прямого включ. версии ниже 1.55). Переход через 0 счетчика активной энергии по тарифу 1 при достижения 1000000,00 кВт для счетчиков прямого включения	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	605	,	116	,SUBSTR(REPLACE('	Переход через 0 счетчика активной энергии по тарифу 2 при достижения 100000,000 кВт для счетчиков транф. включения (и счетчиков прямого включ. версии ниже 1.55) . Переход через 0 счетчика активной энергии по тарифу 2 при достижения 1000000,00 кВт для счетчиков прямого включения	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	606	,	117	,SUBSTR(REPLACE('	Переход через 0 счетчика активной энергии по тарифу 3 при достижения 100000,000 кВт для счетчиков транф. включения (и счетчиков прямого включ. версии ниже 1.55) . Переход через 0 счетчика активной энергии по тарифу 3 при достижения 1000000,00 кВт для счетчиков прямого включения	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	607	,	118	,SUBSTR(REPLACE('	Переход через 0 счетчика активной энергии по тарифу 4 при достижения 100000,000 кВт для счетчиков транф. включения (и счетчиков прямого включ. версии ниже 1.55) . Переход через 0 счетчика активной энергии по тарифу 4 при достижения 1000000,00 кВт для счетчиков прямого включения	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	608	,	119	,SUBSTR(REPLACE('	Переход через 0 счетчика реактивной положительной энергии по тарифу 1 при достижения 100000,000 кВар для счетчиков транф. включения (и счетчиков прямого включ. версии ниже 1.55) . Переход через 0 счетчика реактивной положительной энергии по тарифу 1 при достижения 1000000,00 кВар для счетчиков прямого включения	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	609	,	120	,SUBSTR(REPLACE('	Переход через 0 счетчика реактивной положительной энергии по тарифу 2 при достижения 100000,000 кВар для счетчиков транф. включения (и счетчиков прямого включ. версии ниже 1.55) . Переход через 0 счетчика реактивной положительной энергии по тарифу 2 при достижения 1000000,00 кВар для счетчиков прямого включения	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	610	,	121	,SUBSTR(REPLACE('	Переход через 0 счетчика реактивной положительной энергии по тарифу 3 при достижения 100000,000 кВар для счетчиков транф. включения (и счетчиков прямого включ. версии ниже 1.55) . Переход через 0 счетчика реактивной положительной энергии по тарифу 3 при достижения 1000000,00 кВар для счетчиков прямого включения	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	611	,	122	,SUBSTR(REPLACE('	Переход через 0 счетчика реактивной положительной энергии по тарифу 4 при достижения 100000,000 кВар для счетчиков транф. включения (и счетчиков прямого включ. версии ниже 1.55) . Переход через 0 счетчика реактивной положительной энергии по тарифу 4 при достижения 1000000,00 кВар для счетчиков прямого включения	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	612	,	123	,SUBSTR(REPLACE('	Переход через 0 счетчика реактивной отрицательной энергии по тарифу 1 при достижения 100000,000 кВар для счетчиков транф. включения (и счетчиков прямого включ. версии ниже 1.55) . Переход через 0 счетчика реактивной отрицательной энергии по тарифу 1 при достижения 1000000,00 кВар для счетчиков прямого включения	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	613	,	124	,SUBSTR(REPLACE('	Переход через 0 счетчика реактивной отрицательной энергии по тарифу 2 при достижения 100000,000 кВар для счетчиков транф. включения (и счетчиков прямого включ. версии ниже 1.55) . Переход через 0 счетчика реактивной отрицательной энергии по тарифу 2 при достижения 1000000,00 кВар для счетчиков прямого включения	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	614	,	125	,SUBSTR(REPLACE('	Переход через 0 счетчика реактивной отрицательной энергии по тарифу 3 при достижения 100000,000 кВар для счетчиков транф. включения (и счетчиков прямого включ. версии ниже 1.55) . Переход через 0 счетчика реактивной отрицательной энергии по тарифу 3 при достижения 1000000,00 кВар для счетчиков прямого включения	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	615	,	126	,SUBSTR(REPLACE('	Переход через 0 счетчика реактивной отрицательной энергии по тарифу 4 при достижения 100000,000 кВар для счетчиков транф. включения (и счетчиков прямого включ. версии ниже 1.55) . Переход через 0 счетчика реактивной отрицательной энергии по тарифу 4 при достижения 1000000,00 кВар для счетчиков прямого включения	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	616	,	127	,SUBSTR(REPLACE('	Калибровочный флаг установлен	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	617	,	128	,SUBSTR(REPLACE('	Калибровочный флаг сброшен	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	618	,	129	,SUBSTR(REPLACE('	Тест ЕЕPROM не прошел	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	619	,	130	,SUBSTR(REPLACE('	Тест FRAM не прошел	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	620	,	131	,SUBSTR(REPLACE('	Получена новая предоплата	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	621	,	132	,SUBSTR(REPLACE('	Параметры сальдо потеряны	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	622	,	133	,SUBSTR(REPLACE('	Аккумуляционные параметры потеряны	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	623	,	134	,SUBSTR(REPLACE('	Дополнительные аккумуляционные параметры потеряны	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	624	,	135	,SUBSTR(REPLACE('	Данные расчетных периодов потеряны	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	625	,	136	,SUBSTR(REPLACE('	Параметры блочных тарифов потеряны	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	626	,	137	,SUBSTR(REPLACE('	Значение калибровочных параметров потеряны	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	627	,	138	,SUBSTR(REPLACE('	Значение параметров перехода на зимнее/летнее время потеряны	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	628	,	139	,SUBSTR(REPLACE('	Операторские параметры потеряны	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	629	,	140	,SUBSTR(REPLACE('	Операторские параметры 2 потеряны	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	631	,	1	,SUBSTR(REPLACE('	Р—РЅР°С‡РµРЅРёСЏ РЅР°РєРѕРїРёС‚РµР»СЊРЅС‹С… СЂРµРіРёСЃС‚СЂРѕРІ С‚Р°СЂРёС„Р° 1 РїРѕС‚РµСЂСЏРЅС‹	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	525	,	2	,SUBSTR(REPLACE('	Р—РЅР°С‡РµРЅРёСЏ РЅР°РєРѕРїРёС‚РµР»СЊРЅС‹С… СЂРµРіРёСЃС‚СЂРѕРІ С‚Р°СЂРёС„Р° 2 РїРѕС‚РµСЂСЏРЅС‹	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	526	,	3	,SUBSTR(REPLACE('	Р—РЅР°С‡РµРЅРёСЏ РЅР°РєРѕРїРёС‚РµР»СЊРЅС‹С… СЂРµРіРёСЃС‚СЂРѕРІ С‚Р°СЂРёС„Р° 3 РїРѕС‚РµСЂСЏРЅС‹	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	527	,	4	,SUBSTR(REPLACE('	Р—РЅР°С‡РµРЅРёСЏ РЅР°РєРѕРїРёС‚РµР»СЊРЅС‹С… СЂРµРіРёСЃС‚СЂРѕРІ С‚Р°СЂРёС„Р° 4 РїРѕС‚РµСЂСЏРЅС‹	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	528	,	17	,SUBSTR(REPLACE('	Р”РѕСЃС‚СѓРї Р·Р°РєСЂС‹С‚ РґРѕ РєРѕРЅС†Р° СЃСѓС‚РѕРє РёР·-Р·Р° РѕС€РёР±РѕРє РєР»СЋС‡Р° РґРѕСЃС‚СѓРїР°	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	529	,	18	,SUBSTR(REPLACE('	Р”РѕСЃС‚СѓРї РѕС‚РєСЂС‹С‚',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	530	,	19	,SUBSTR(REPLACE('	РќРµРІРµСЂРЅС‹Р№ РєР»СЋС‡ РґРѕСЃС‚СѓРїР°	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	531	,	20	,SUBSTR(REPLACE('	РљРѕСЂРїСѓСЃ СЃС‡С‘С‚С‡РёРєР° РѕС‚РєСЂС‹С‚	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	532	,	21	,SUBSTR(REPLACE('	РљРѕСЂРїСѓСЃ СЃС‡С‘С‚С‡РёРєР° Р·Р°РєСЂС‹С‚	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	533	,	22	,SUBSTR(REPLACE('	РћР±РЅР°СЂСѓР¶РµРЅРѕ РЅР°Р»РёС‡РёРµ СЌР»РµРєС‚СЂРѕРјР°РіРЅРёС‚РЅРѕРіРѕ РІР»РёСЏРЅРёСЏ	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	534	,	23	,SUBSTR(REPLACE('	РћР±РЅР°СЂСѓР¶РµРЅРѕ РїСЂРµРєСЂР°С‰РµРЅРёРµ СЌР»РµРєС‚СЂРѕРјР°РіРЅРёС‚РЅРѕРіРѕ РІР»РёСЏРЅРёСЏ	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	535	,	32	,SUBSTR(REPLACE('	РљР»СЋС‡ РґРѕСЃС‚СѓРїР° СѓСЂРѕРІРЅСЏ 0 РёР·РјРµРЅС‘РЅ	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	536	,	33	,SUBSTR(REPLACE('	РљР»СЋС‡ РґРѕСЃС‚СѓРїР° СѓСЂРѕРІРЅСЏ 1 РёР·РјРµРЅС‘РЅ	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	537	,	34	,SUBSTR(REPLACE('	РљР»СЋС‡ РґРѕСЃС‚СѓРїР° СѓСЂРѕРІРЅСЏ 2 РёР·РјРµРЅС‘РЅ	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	538	,	35	,SUBSTR(REPLACE('	РљР»СЋС‡ РґРѕСЃС‚СѓРїР° СѓСЂРѕРІРЅСЏ 3 РёР·РјРµРЅС‘РЅ	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	539	,	36	,SUBSTR(REPLACE('	РџР°СЂР°РјРµС‚СЂС‹ РёР·РјРµРЅРµРЅС‹ Р»РѕРєР°Р»СЊРЅРѕ	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	540	,	37	,SUBSTR(REPLACE('	РџР°СЂР°РјРµС‚СЂС‹ РёР·РјРµРЅРµРЅС‹ СѓРґР°Р»РµРЅРЅРѕ	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	541	,	38	,SUBSTR(REPLACE('	РџРѕР»СѓС‡РµРЅР° РєРѕРјР°РЅРґР° СѓСЃС‚Р°РЅРѕРІРєРё РІСЂРµРјРµРЅРё. Р’СЂРµРјСЏ СѓСЃС‚Р°РЅРѕРІР»РµРЅРѕ	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	542	,	39	,SUBSTR(REPLACE('	РџРѕР»СѓС‡РµРЅР° РєРѕРјР°РЅРґР° РІРєР»СЋС‡РµРЅРёСЏ СЂРµР»Рµ	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	543	,	40	,SUBSTR(REPLACE('	РџРѕР»СѓС‡РµРЅР° РєРѕРјР°РЅРґР° РІС‹РєР»СЋС‡РµРЅРёСЏ СЂРµР»Рµ	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	544	,	49	,SUBSTR(REPLACE('	РџРµСЂРµРїРѕР»РЅРµРЅРёРµ РЅР°РєРѕРїРёС‚РµР»СЊРЅРѕРіРѕ СЂРµРіРёСЃС‚СЂР° СЌРЅРµСЂРіРёРё	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	545	,	50	,SUBSTR(REPLACE('	РўР°СЂРёС„РЅС‹Р№ РїР»Р°РЅ РёР·РјРµРЅС‘РЅ	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	546	,	51	,SUBSTR(REPLACE('	РџРѕР»СѓС‡РµРЅ РЅРѕРІС‹Р№ С‚Р°СЂРёС„РЅС‹Р№ РїР»Р°РЅ	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	547	,	52	,SUBSTR(REPLACE('	РџРµСЂРµС…РѕРґ РЅР° Р»РµС‚РЅРµРµ РІСЂРµРјСЏ	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	548	,	53	,SUBSTR(REPLACE('	РџРµСЂРµС…РѕРґ РЅР° Р·РёРјРЅРµРµ РІСЂРµРјСЏ	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	549	,	54	,SUBSTR(REPLACE('	Р РµР»Рµ РІРєР»СЋС‡РµРЅРѕ	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	550	,	55	,SUBSTR(REPLACE('	Р РµР»Рµ РІС‹РєР»СЋС‡РµРЅРѕ	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	551	,	56	,SUBSTR(REPLACE('	Р РµСЃС‚Р°СЂС‚ РїСЂРѕРіСЂР°РјРјС‹ РјРёРєСЂРѕРєРѕРЅС‚СЂРѕР»Р»РµСЂР°	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	552	,	57	,SUBSTR(REPLACE('	Р РµСЃС‚Р°СЂС‚ РїРѕ WATCHDOG	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	553	,	64	,SUBSTR(REPLACE('	Р’РѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ РЅРѕСЂРјР°Р»СЊРЅРѕРіРѕ РЅР°РїСЂСЏР¶РµРЅРёСЏ С„Р°Р·С‹ A РїРѕСЃР»Рµ РїРѕРІС‹С€РµРЅРЅРѕРіРѕ	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	554	,	65	,SUBSTR(REPLACE('	РќР°РїСЂСЏР¶РµРЅРёРµ С„Р°Р·С‹ A РІС‹С€Рµ РїРѕСЂРѕРіР° РјР°РєСЃРёРјР°Р»СЊРЅРѕРіРѕ РЅР°РїСЂСЏР¶РµРЅРёСЏ	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	555	,	66	,SUBSTR(REPLACE('	Р’РѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ РЅРѕСЂРјР°Р»СЊРЅРѕРіРѕ РЅР°РїСЂСЏР¶РµРЅРёСЏ С„Р°Р·С‹ A РїРѕСЃР»Рµ РїРѕРЅРёР¶РµРЅРЅРѕРіРѕ	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	556	,	67	,SUBSTR(REPLACE('	РќР°РїСЂСЏР¶РµРЅРёРµ С„Р°Р·С‹ A РЅРёР¶Рµ РїРѕСЂРѕРіР° РјРёРЅРёРјР°Р»СЊРЅРѕРіРѕ РЅР°РїСЂСЏР¶РµРЅРёСЏ	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	557	,	68	,SUBSTR(REPLACE('	Р’РѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ РЅРѕСЂРјР°Р»СЊРЅРѕРіРѕ РЅР°РїСЂСЏР¶РµРЅРёСЏ С„Р°Р·С‹ B РїРѕСЃР»Рµ РїРѕРІС‹С€РµРЅРЅРѕРіРѕ	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	558	,	69	,SUBSTR(REPLACE('	РќР°РїСЂСЏР¶РµРЅРёРµ С„Р°Р·С‹ B РІС‹С€Рµ РїРѕСЂРѕРіР° РјР°РєСЃРёРјР°Р»СЊРЅРѕРіРѕ РЅР°РїСЂСЏР¶РµРЅРёСЏ	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	559	,	70	,SUBSTR(REPLACE('	Р’РѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ РЅРѕСЂРјР°Р»СЊРЅРѕРіРѕ РЅР°РїСЂСЏР¶РµРЅРёСЏ С„Р°Р·С‹ B РїРѕСЃР»Рµ РїРѕРЅРёР¶РµРЅРЅРѕРіРѕ	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	560	,	71	,SUBSTR(REPLACE('	РќР°РїСЂСЏР¶РµРЅРёРµ С„Р°Р·С‹ B РЅРёР¶Рµ РїРѕСЂРѕРіР° РјРёРЅРёРјР°Р»СЊРЅРѕРіРѕ РЅР°РїСЂСЏР¶РµРЅРёСЏ	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	561	,	72	,SUBSTR(REPLACE('	Р’РѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ РЅРѕСЂРјР°Р»СЊРЅРѕРіРѕ РЅР°РїСЂСЏР¶РµРЅРёСЏ С„Р°Р·С‹ C РїРѕСЃР»Рµ РїРѕРІС‹С€РµРЅРЅРѕРіРѕ	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	562	,	73	,SUBSTR(REPLACE('	РќР°РїСЂСЏР¶РµРЅРёРµ С„Р°Р·С‹ C РІС‹С€Рµ РїРѕСЂРѕРіР° РјР°РєСЃРёРјР°Р»СЊРЅРѕРіРѕ РЅР°РїСЂСЏР¶РµРЅРёСЏ	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	563	,	74	,SUBSTR(REPLACE('	Р’РѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ РЅРѕСЂРјР°Р»СЊРЅРѕРіРѕ РЅР°РїСЂСЏР¶РµРЅРёСЏ С„Р°Р·С‹ C РїРѕСЃР»Рµ РїРѕРЅРёР¶РµРЅРЅРѕРіРѕ	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	564	,	75	,SUBSTR(REPLACE('	РќР°РїСЂСЏР¶РµРЅРёРµ С„Р°Р·С‹ C РЅРёР¶Рµ РїРѕСЂРѕРіР° РјРёРЅРёРјР°Р»СЊРЅРѕРіРѕ РЅР°РїСЂСЏР¶РµРЅРёСЏ	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	565	,	76	,SUBSTR(REPLACE('	Р’РѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ РЅРѕСЂРјР°Р»СЊРЅРѕР№ С‡Р°СЃС‚РѕС‚С‹ РїРѕСЃР»Рµ РїРѕРІС‹С€РµРЅРЅРѕР№	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	566	,	77	,SUBSTR(REPLACE('	Р§Р°СЃС‚РѕС‚Р° РІС‹С€Рµ РїРѕСЂРѕРіР° РјР°РєСЃРёРјР°Р»СЊРЅРѕР№ С‡Р°СЃС‚РѕС‚С‹ СЃРµС‚Рё	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	567	,	78	,SUBSTR(REPLACE('	Р’РѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ РЅРѕСЂРјР°Р»СЊРЅРѕР№ С‡Р°СЃС‚РѕС‚С‹ РїРѕСЃР»Рµ РїРѕРЅРёР¶РµРЅРЅРѕР№	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	568	,	79	,SUBSTR(REPLACE('	Р§Р°СЃС‚РѕС‚Р° РЅРёР¶Рµ РїРѕСЂРѕРіР° РјРёРЅРёРјР°Р»СЊРЅРѕР№ С‡Р°СЃС‚РѕС‚С‹ СЃРµС‚Рё	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	569	,	80	,SUBSTR(REPLACE('	Р’РѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ РЅРѕСЂРјР°Р»СЊРЅРѕР№ С‚РµРјРїРµСЂР°С‚СѓСЂС‹ РїРѕСЃР»Рµ РїРѕРІС‹С€РµРЅРЅРѕР№	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	570	,	81	,SUBSTR(REPLACE('	РўРµРјРїРµСЂР°С‚СѓСЂР° РІС‹С€Рµ РїРѕСЂРѕРіР° РјР°РєСЃРёРјР°Р»СЊРЅРѕР№ С‚РµРјРїРµСЂР°С‚СѓСЂС‹	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	571	,	82	,SUBSTR(REPLACE('	Р’РѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ РЅРѕСЂРјР°Р»СЊРЅРѕР№ С‚РµРјРїРµСЂР°С‚СѓСЂС‹ РїРѕСЃР»Рµ РїРѕРЅРёР¶РµРЅРЅРѕР№	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	572	,	83	,SUBSTR(REPLACE('	РўРµРјРїРµСЂР°С‚СѓСЂР° РЅРёР¶РµРµ РїРѕСЂРѕРіР° РјРёРЅРёРјР°Р»СЊРЅРѕР№ С‚РµРјРїРµСЂР°С‚СѓСЂС‹	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	573	,	84	,SUBSTR(REPLACE('	Р’РѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ РґРѕРїСѓСЃС‚РёРјРѕРіРѕ С‚РѕРєР° С„Р°Р·С‹ A РїРѕСЃР»Рµ РїРѕРІС‹С€РµРЅРЅРѕРіРѕ	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	574	,	85	,SUBSTR(REPLACE('	РўРѕРє С„Р°Р·С‹ A РІС‹С€Рµ РїРѕСЂРѕРіР° РјР°РєСЃРёРјР°Р»СЊРЅРѕРіРѕ С‚РѕРєР°	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	575	,	86	,SUBSTR(REPLACE('	Р’РѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ РґРѕРїСѓСЃС‚РёРјРѕРіРѕ С‚РѕРєР° С„Р°Р·С‹ B РїРѕСЃР»Рµ РїРѕРІС‹С€РµРЅРЅРѕРіРѕ	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	576	,	87	,SUBSTR(REPLACE('	РўРѕРє С„Р°Р·С‹ B РІС‹С€Рµ РїРѕСЂРѕРіР° РјР°РєСЃРёРјР°Р»СЊРЅРѕРіРѕ С‚РѕРєР°	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	577	,	88	,SUBSTR(REPLACE('	Р’РѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ РґРѕРїСѓСЃС‚РёРјРѕРіРѕ С‚РѕРєР° С„Р°Р·С‹ C РїРѕСЃР»Рµ РїРѕРІС‹С€РµРЅРЅРѕРіРѕ	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	578	,	89	,SUBSTR(REPLACE('	РўРѕРє С„Р°Р·С‹ C РІС‹С€Рµ РїРѕСЂРѕРіР° РјР°РєСЃРёРјР°Р»СЊРЅРѕРіРѕ С‚РѕРєР°	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	579	,	90	,SUBSTR(REPLACE('	Р’РѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ РґРѕРїСѓСЃС‚РёРјРѕР№ Р°РєС‚РёРІРЅРѕР№ РїРѕС‚СЂРµР±Р»СЏРµРјРѕР№ РјРѕС‰РЅРѕСЃС‚Рё РїРѕСЃР»Рµ РїРѕРІС‹С€РµРЅРЅРѕР№	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	580	,	91	,SUBSTR(REPLACE('	РђРєС‚РёРІРЅР°СЏ РїРѕС‚СЂРµР±Р»СЏРµРјР°СЏ РјРѕС‰РЅРѕСЃС‚СЊ РІС‹С€Рµ РјР°РєСЃРёРјР°Р»СЊРЅРѕР№	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	581	,	92	,SUBSTR(REPLACE('	Р’РѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ РґРѕРїСѓСЃС‚РёРјРѕР№ СЂРµР°РєС‚РёРІРЅРѕР№ РїРѕС‚СЂРµР±Р»СЏРµРјРѕР№ РјРѕС‰РЅРѕСЃС‚Рё РїРѕСЃР»Рµ РїРѕРІС‹С€РµРЅРЅРѕР№	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	582	,	93	,SUBSTR(REPLACE('	Р РµР°РєС‚РёРІРЅР°СЏ РїРѕС‚СЂРµР±Р»СЏРµРјР°СЏ РјРѕС‰РЅРѕСЃС‚СЊ РІС‹С€Рµ РјР°РєСЃРёРјР°Р»СЊРЅРѕР№	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	583	,	94	,SUBSTR(REPLACE('	Р’РѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ РґРѕРїСѓСЃС‚РёРјРѕРіРѕ РґРёС„С„РµСЂРµРЅС†РёР°Р»СЊРЅРѕРіРѕ С‚РѕРєР° РїРѕСЃР»Рµ РїРѕРІС‹С€РµРЅРЅРѕРіРѕ	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	584	,	95	,SUBSTR(REPLACE('	РџСЂРµРІС‹С€РµРЅРёРµ РґРѕРїСѓСЃС‚РёРјРѕРіРѕ РґРёС„С„РµСЂРµРЅС†РёР°Р»СЊРЅРѕРіРѕ С‚РѕРєР°	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	585	,	96	,SUBSTR(REPLACE('	РќРѕСЂРјР°Р»СЊРЅРѕРµ СЃРѕСЃС‚РѕСЏРЅРёРµ С‡Р°СЃРѕРІ СЂРµР°Р»СЊРЅРѕРіРѕ РІСЂРµРјРµРЅРё РІРѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРѕ	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	586	,	97	,SUBSTR(REPLACE('	Р§Р°СЃС‹ СЂРµР°Р»СЊРЅРѕРіРѕ РІСЂРµРјРµРЅРё РЅРµ СѓСЃС‚Р°РЅРѕРІР»РµРЅС‹	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	587	,	98	,SUBSTR(REPLACE('	Р’РєР»СЋС‡РµРЅРёРµ РЅР°РїСЂСЏР¶РµРЅРёСЏ С„Р°Р·С‹ C	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	588	,	99	,SUBSTR(REPLACE('	Р’С‹РєР»СЋС‡РµРЅРёРµ РЅР°РїСЂСЏР¶РµРЅРёСЏ С„Р°Р·С‹ C	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	589	,	100	,SUBSTR(REPLACE('	Р’РєР»СЋС‡РµРЅРёРµ РЅР°РїСЂСЏР¶РµРЅРёСЏ С„Р°Р·С‹ B	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	590	,	101	,SUBSTR(REPLACE('	Р’С‹РєР»СЋС‡РµРЅРёРµ РЅР°РїСЂСЏР¶РµРЅРёСЏ С„Р°Р·С‹ B	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	591	,	102	,SUBSTR(REPLACE('	Р’РєР»СЋС‡РµРЅРёРµ РЅР°РїСЂСЏР¶РµРЅРёСЏ С„Р°Р·С‹ A	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	592	,	103	,SUBSTR(REPLACE('	Р’С‹РєР»СЋС‡РµРЅРёРµ РЅР°РїСЂСЏР¶РµРЅРёСЏ С„Р°Р·С‹ A	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	593	,	104	,SUBSTR(REPLACE('	Р’РѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ РЅРѕСЂРјР°Р»СЊРЅРѕРіРѕ РЅР°РїСЂСЏР¶РµРЅРёСЏ Р±Р°С‚Р°СЂРµРё	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	594	,	105	,SUBSTR(REPLACE('	РџРѕРЅРёР¶РµРЅРЅРѕРµ РЅР°РїСЂСЏР¶РµРЅРёСЏ Р±Р°С‚Р°СЂРµРё	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	595	,	106	,SUBSTR(REPLACE('	РџР°СЂР°РјРµС‚СЂРѕРІ РєР°Р»РёР±СЂРѕРІРєРё СѓСЃС‚Р°РЅРѕРІР»РµРЅС‹	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	596	,	107	,SUBSTR(REPLACE('	РљР°Р»РёР±СЂРѕРІРѕС‡РЅС‹Рµ РїР°СЂР°РјРµС‚СЂС‹ РїРѕС‚РµСЂСЏРЅС‹	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	597	,	108	,SUBSTR(REPLACE('	Р—Р°РІРѕРґСЃРєРёРµ РїР°СЂР°РјРµС‚СЂС‹ СѓСЃС‚Р°РЅРѕРІР»РµРЅС‹	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	598	,	109	,SUBSTR(REPLACE('	Р—Р°РІРѕРґСЃРєРёРµ РїР°СЂР°РјРµС‚СЂС‹ РїРѕС‚РµСЂСЏРЅС‹	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	599	,	110	,SUBSTR(REPLACE('	РџР°СЂР°РјРµС‚СЂС‹ СѓСЃС‚Р°РЅРѕРІР»РµРЅС‹	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	600	,	111	,SUBSTR(REPLACE('	РџР°СЂР°РјРµС‚СЂС‹ РїРѕС‚РµСЂСЏРЅС‹	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	601	,	112	,SUBSTR(REPLACE('	РР·РјРµРЅРµРЅС‹ РїР°СЂР°РјРµС‚СЂС‹ РїРµСЂРµС…РѕРґР° РЅР° Р»РµС‚РЅРµРµ РІСЂРµРјСЏ	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	602	,	113	,SUBSTR(REPLACE('	Р’РєР»СЋС‡РµРЅРёРµ РІС‚РѕСЂРѕРіРѕ СЂРµР»Рµ	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	603	,	114	,SUBSTR(REPLACE('	Р’С‹РєР»СЋС‡РµРЅРёРµ РІС‚РѕСЂРѕРіРѕ СЂРµР»Рµ	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	604	,	115	,SUBSTR(REPLACE('	РџРµСЂРµС…РѕРґ С‡РµСЂРµР· 0 СЃС‡РµС‚С‡РёРєР° Р°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё РїРѕ С‚Р°СЂРёС„Сѓ 1 РїСЂРё РґРѕСЃС‚РёР¶РµРЅРёСЏ 100000,000 РєР’С‚ РґР»СЏ СЃС‡РµС‚С‡РёРєРѕРІ С‚СЂР°РЅС„. РІРєР»СЋС‡РµРЅРёСЏ (Рё СЃС‡РµС‚С‡РёРєРѕРІ РїСЂСЏРјРѕРіРѕ РІРєР»СЋС‡. РІРµСЂСЃРёРё РЅРёР¶Рµ 1.55). РџРµСЂРµС…РѕРґ С‡РµСЂРµР· 0 СЃС‡РµС‚С‡РёРєР° Р°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё РїРѕ С‚Р°СЂРёС„Сѓ 1 РїСЂРё РґРѕСЃС‚РёР¶РµРЅРёСЏ 1000000,00 РєР’С‚ РґР»СЏ СЃС‡РµС‚С‡РёРєРѕРІ РїСЂСЏРјРѕРіРѕ РІРєР»СЋС‡РµРЅРёСЏ	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	605	,	116	,SUBSTR(REPLACE('	РџРµСЂРµС…РѕРґ С‡РµСЂРµР· 0 СЃС‡РµС‚С‡РёРєР° Р°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё РїРѕ С‚Р°СЂРёС„Сѓ 2 РїСЂРё РґРѕСЃС‚РёР¶РµРЅРёСЏ 100000,000 РєР’С‚ РґР»СЏ СЃС‡РµС‚С‡РёРєРѕРІ С‚СЂР°РЅС„. РІРєР»СЋС‡РµРЅРёСЏ (Рё СЃС‡РµС‚С‡РёРєРѕРІ РїСЂСЏРјРѕРіРѕ РІРєР»СЋС‡. РІРµСЂСЃРёРё РЅРёР¶Рµ 1.55) . РџРµСЂРµС…РѕРґ С‡РµСЂРµР· 0 СЃС‡РµС‚С‡РёРєР° Р°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё РїРѕ С‚Р°СЂРёС„Сѓ 2 РїСЂРё РґРѕСЃС‚РёР¶РµРЅРёСЏ 1000000,00 РєР’С‚ РґР»СЏ СЃС‡РµС‚С‡РёРєРѕРІ РїСЂСЏРјРѕРіРѕ РІРєР»СЋС‡РµРЅРёСЏ	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	606	,	117	,SUBSTR(REPLACE('	РџРµСЂРµС…РѕРґ С‡РµСЂРµР· 0 СЃС‡РµС‚С‡РёРєР° Р°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё РїРѕ С‚Р°СЂРёС„Сѓ 3 РїСЂРё РґРѕСЃС‚РёР¶РµРЅРёСЏ 100000,000 РєР’С‚ РґР»СЏ СЃС‡РµС‚С‡РёРєРѕРІ С‚СЂР°РЅС„. РІРєР»СЋС‡РµРЅРёСЏ (Рё СЃС‡РµС‚С‡РёРєРѕРІ РїСЂСЏРјРѕРіРѕ РІРєР»СЋС‡. РІРµСЂСЃРёРё РЅРёР¶Рµ 1.55) . РџРµСЂРµС…РѕРґ С‡РµСЂРµР· 0 СЃС‡РµС‚С‡РёРєР° Р°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё РїРѕ С‚Р°СЂРёС„Сѓ 3 РїСЂРё РґРѕСЃС‚РёР¶РµРЅРёСЏ 1000000,00 РєР’С‚ РґР»СЏ СЃС‡РµС‚С‡РёРєРѕРІ РїСЂСЏРјРѕРіРѕ РІРєР»СЋС‡РµРЅРёСЏ	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	607	,	118	,SUBSTR(REPLACE('	РџРµСЂРµС…РѕРґ С‡РµСЂРµР· 0 СЃС‡РµС‚С‡РёРєР° Р°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё РїРѕ С‚Р°СЂРёС„Сѓ 4 РїСЂРё РґРѕСЃС‚РёР¶РµРЅРёСЏ 100000,000 РєР’С‚ РґР»СЏ СЃС‡РµС‚С‡РёРєРѕРІ С‚СЂР°РЅС„. РІРєР»СЋС‡РµРЅРёСЏ (Рё СЃС‡РµС‚С‡РёРєРѕРІ РїСЂСЏРјРѕРіРѕ РІРєР»СЋС‡. РІРµСЂСЃРёРё РЅРёР¶Рµ 1.55) . РџРµСЂРµС…РѕРґ С‡РµСЂРµР· 0 СЃС‡РµС‚С‡РёРєР° Р°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё РїРѕ С‚Р°СЂРёС„Сѓ 4 РїСЂРё РґРѕСЃС‚РёР¶РµРЅРёСЏ 1000000,00 РєР’С‚ РґР»СЏ СЃС‡РµС‚С‡РёРєРѕРІ РїСЂСЏРјРѕРіРѕ РІРєР»СЋС‡РµРЅРёСЏ	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	608	,	119	,SUBSTR(REPLACE('	РџРµСЂРµС…РѕРґ С‡РµСЂРµР· 0 СЃС‡РµС‚С‡РёРєР° СЂРµР°РєС‚РёРІРЅРѕР№ РїРѕР»РѕР¶РёС‚РµР»СЊРЅРѕР№ СЌРЅРµСЂРіРёРё РїРѕ С‚Р°СЂРёС„Сѓ 1 РїСЂРё РґРѕСЃС‚РёР¶РµРЅРёСЏ 100000,000 РєР’Р°СЂ РґР»СЏ СЃС‡РµС‚С‡РёРєРѕРІ С‚СЂР°РЅС„. РІРєР»СЋС‡РµРЅРёСЏ (Рё СЃС‡РµС‚С‡РёРєРѕРІ РїСЂСЏРјРѕРіРѕ РІРєР»СЋС‡. РІРµСЂСЃРёРё РЅРёР¶Рµ 1.55) . РџРµСЂРµС…РѕРґ С‡РµСЂРµР· 0 СЃС‡РµС‚С‡РёРєР° СЂРµР°РєС‚РёРІРЅРѕР№ РїРѕР»РѕР¶РёС‚РµР»СЊРЅРѕР№ СЌРЅРµСЂРіРёРё РїРѕ С‚Р°СЂРёС„Сѓ 1 РїСЂРё РґРѕСЃС‚РёР¶РµРЅРёСЏ 1000000,00 РєР’Р°СЂ РґР»СЏ СЃС‡РµС‚С‡РёРєРѕРІ РїСЂСЏРјРѕРіРѕ РІРєР»СЋС‡РµРЅРёСЏ	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	609	,	120	,SUBSTR(REPLACE('	РџРµСЂРµС…РѕРґ С‡РµСЂРµР· 0 СЃС‡РµС‚С‡РёРєР° СЂРµР°РєС‚РёРІРЅРѕР№ РїРѕР»РѕР¶РёС‚РµР»СЊРЅРѕР№ СЌРЅРµСЂРіРёРё РїРѕ С‚Р°СЂРёС„Сѓ 2 РїСЂРё РґРѕСЃС‚РёР¶РµРЅРёСЏ 100000,000 РєР’Р°СЂ РґР»СЏ СЃС‡РµС‚С‡РёРєРѕРІ С‚СЂР°РЅС„. РІРєР»СЋС‡РµРЅРёСЏ (Рё СЃС‡РµС‚С‡РёРєРѕРІ РїСЂСЏРјРѕРіРѕ РІРєР»СЋС‡. РІРµСЂСЃРёРё РЅРёР¶Рµ 1.55) . РџРµСЂРµС…РѕРґ С‡РµСЂРµР· 0 СЃС‡РµС‚С‡РёРєР° СЂРµР°РєС‚РёРІРЅРѕР№ РїРѕР»РѕР¶РёС‚РµР»СЊРЅРѕР№ СЌРЅРµСЂРіРёРё РїРѕ С‚Р°СЂРёС„Сѓ 2 РїСЂРё РґРѕСЃС‚РёР¶РµРЅРёСЏ 1000000,00 РєР’Р°СЂ РґР»СЏ СЃС‡РµС‚С‡РёРєРѕРІ РїСЂСЏРјРѕРіРѕ РІРєР»СЋС‡РµРЅРёСЏ	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	610	,	121	,SUBSTR(REPLACE('	РџРµСЂРµС…РѕРґ С‡РµСЂРµР· 0 СЃС‡РµС‚С‡РёРєР° СЂРµР°РєС‚РёРІРЅРѕР№ РїРѕР»РѕР¶РёС‚РµР»СЊРЅРѕР№ СЌРЅРµСЂРіРёРё РїРѕ С‚Р°СЂРёС„Сѓ 3 РїСЂРё РґРѕСЃС‚РёР¶РµРЅРёСЏ 100000,000 РєР’Р°СЂ РґР»СЏ СЃС‡РµС‚С‡РёРєРѕРІ С‚СЂР°РЅС„. РІРєР»СЋС‡РµРЅРёСЏ (Рё СЃС‡РµС‚С‡РёРєРѕРІ РїСЂСЏРјРѕРіРѕ РІРєР»СЋС‡. РІРµСЂСЃРёРё РЅРёР¶Рµ 1.55) . РџРµСЂРµС…РѕРґ С‡РµСЂРµР· 0 СЃС‡РµС‚С‡РёРєР° СЂРµР°РєС‚РёРІРЅРѕР№ РїРѕР»РѕР¶РёС‚РµР»СЊРЅРѕР№ СЌРЅРµСЂРіРёРё РїРѕ С‚Р°СЂРёС„Сѓ 3 РїСЂРё РґРѕСЃС‚РёР¶РµРЅРёСЏ 1000000,00 РєР’Р°СЂ РґР»СЏ СЃС‡РµС‚С‡РёРєРѕРІ РїСЂСЏРјРѕРіРѕ РІРєР»СЋС‡РµРЅРёСЏ	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	611	,	122	,SUBSTR(REPLACE('	РџРµСЂРµС…РѕРґ С‡РµСЂРµР· 0 СЃС‡РµС‚С‡РёРєР° СЂРµР°РєС‚РёРІРЅРѕР№ РїРѕР»РѕР¶РёС‚РµР»СЊРЅРѕР№ СЌРЅРµСЂРіРёРё РїРѕ С‚Р°СЂРёС„Сѓ 4 РїСЂРё РґРѕСЃС‚РёР¶РµРЅРёСЏ 100000,000 РєР’Р°СЂ РґР»СЏ СЃС‡РµС‚С‡РёРєРѕРІ С‚СЂР°РЅС„. РІРєР»СЋС‡РµРЅРёСЏ (Рё СЃС‡РµС‚С‡РёРєРѕРІ РїСЂСЏРјРѕРіРѕ РІРєР»СЋС‡. РІРµСЂСЃРёРё РЅРёР¶Рµ 1.55) . РџРµСЂРµС…РѕРґ С‡РµСЂРµР· 0 СЃС‡РµС‚С‡РёРєР° СЂРµР°РєС‚РёРІРЅРѕР№ РїРѕР»РѕР¶РёС‚РµР»СЊРЅРѕР№ СЌРЅРµСЂРіРёРё РїРѕ С‚Р°СЂРёС„Сѓ 4 РїСЂРё РґРѕСЃС‚РёР¶РµРЅРёСЏ 1000000,00 РєР’Р°СЂ РґР»СЏ СЃС‡РµС‚С‡РёРєРѕРІ РїСЂСЏРјРѕРіРѕ РІРєР»СЋС‡РµРЅРёСЏ	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	612	,	123	,SUBSTR(REPLACE('	РџРµСЂРµС…РѕРґ С‡РµСЂРµР· 0 СЃС‡РµС‚С‡РёРєР° СЂРµР°РєС‚РёРІРЅРѕР№ РѕС‚СЂРёС†Р°С‚РµР»СЊРЅРѕР№ СЌРЅРµСЂРіРёРё РїРѕ С‚Р°СЂРёС„Сѓ 1 РїСЂРё РґРѕСЃС‚РёР¶РµРЅРёСЏ 100000,000 РєР’Р°СЂ РґР»СЏ СЃС‡РµС‚С‡РёРєРѕРІ С‚СЂР°РЅС„. РІРєР»СЋС‡РµРЅРёСЏ (Рё СЃС‡РµС‚С‡РёРєРѕРІ РїСЂСЏРјРѕРіРѕ РІРєР»СЋС‡. РІРµСЂСЃРёРё РЅРёР¶Рµ 1.55) . РџРµСЂРµС…РѕРґ С‡РµСЂРµР· 0 СЃС‡РµС‚С‡РёРєР° СЂРµР°РєС‚РёРІРЅРѕР№ РѕС‚СЂРёС†Р°С‚РµР»СЊРЅРѕР№ СЌРЅРµСЂРіРёРё РїРѕ С‚Р°СЂРёС„Сѓ 1 РїСЂРё РґРѕСЃС‚РёР¶РµРЅРёСЏ 1000000,00 РєР’Р°СЂ РґР»СЏ СЃС‡РµС‚С‡РёРєРѕРІ РїСЂСЏРјРѕРіРѕ РІРєР»СЋС‡РµРЅРёСЏ	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	613	,	124	,SUBSTR(REPLACE('	РџРµСЂРµС…РѕРґ С‡РµСЂРµР· 0 СЃС‡РµС‚С‡РёРєР° СЂРµР°РєС‚РёРІРЅРѕР№ РѕС‚СЂРёС†Р°С‚РµР»СЊРЅРѕР№ СЌРЅРµСЂРіРёРё РїРѕ С‚Р°СЂРёС„Сѓ 2 РїСЂРё РґРѕСЃС‚РёР¶РµРЅРёСЏ 100000,000 РєР’Р°СЂ РґР»СЏ СЃС‡РµС‚С‡РёРєРѕРІ С‚СЂР°РЅС„. РІРєР»СЋС‡РµРЅРёСЏ (Рё СЃС‡РµС‚С‡РёРєРѕРІ РїСЂСЏРјРѕРіРѕ РІРєР»СЋС‡. РІРµСЂСЃРёРё РЅРёР¶Рµ 1.55) . РџРµСЂРµС…РѕРґ С‡РµСЂРµР· 0 СЃС‡РµС‚С‡РёРєР° СЂРµР°РєС‚РёРІРЅРѕР№ РѕС‚СЂРёС†Р°С‚РµР»СЊРЅРѕР№ СЌРЅРµСЂРіРёРё РїРѕ С‚Р°СЂРёС„Сѓ 2 РїСЂРё РґРѕСЃС‚РёР¶РµРЅРёСЏ 1000000,00 РєР’Р°СЂ РґР»СЏ СЃС‡РµС‚С‡РёРєРѕРІ РїСЂСЏРјРѕРіРѕ РІРєР»СЋС‡РµРЅРёСЏ	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	614	,	125	,SUBSTR(REPLACE('	РџРµСЂРµС…РѕРґ С‡РµСЂРµР· 0 СЃС‡РµС‚С‡РёРєР° СЂРµР°РєС‚РёРІРЅРѕР№ РѕС‚СЂРёС†Р°С‚РµР»СЊРЅРѕР№ СЌРЅРµСЂРіРёРё РїРѕ С‚Р°СЂРёС„Сѓ 3 РїСЂРё РґРѕСЃС‚РёР¶РµРЅРёСЏ 100000,000 РєР’Р°СЂ РґР»СЏ СЃС‡РµС‚С‡РёРєРѕРІ С‚СЂР°РЅС„. РІРєР»СЋС‡РµРЅРёСЏ (Рё СЃС‡РµС‚С‡РёРєРѕРІ РїСЂСЏРјРѕРіРѕ РІРєР»СЋС‡. РІРµСЂСЃРёРё РЅРёР¶Рµ 1.55) . РџРµСЂРµС…РѕРґ С‡РµСЂРµР· 0 СЃС‡РµС‚С‡РёРєР° СЂРµР°РєС‚РёРІРЅРѕР№ РѕС‚СЂРёС†Р°С‚РµР»СЊРЅРѕР№ СЌРЅРµСЂРіРёРё РїРѕ С‚Р°СЂРёС„Сѓ 3 РїСЂРё РґРѕСЃС‚РёР¶РµРЅРёСЏ 1000000,00 РєР’Р°СЂ РґР»СЏ СЃС‡РµС‚С‡РёРєРѕРІ РїСЂСЏРјРѕРіРѕ РІРєР»СЋС‡РµРЅРёСЏ	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	615	,	126	,SUBSTR(REPLACE('	РџРµСЂРµС…РѕРґ С‡РµСЂРµР· 0 СЃС‡РµС‚С‡РёРєР° СЂРµР°РєС‚РёРІРЅРѕР№ РѕС‚СЂРёС†Р°С‚РµР»СЊРЅРѕР№ СЌРЅРµСЂРіРёРё РїРѕ С‚Р°СЂРёС„Сѓ 4 РїСЂРё РґРѕСЃС‚РёР¶РµРЅРёСЏ 100000,000 РєР’Р°СЂ РґР»СЏ СЃС‡РµС‚С‡РёРєРѕРІ С‚СЂР°РЅС„. РІРєР»СЋС‡РµРЅРёСЏ (Рё СЃС‡РµС‚С‡РёРєРѕРІ РїСЂСЏРјРѕРіРѕ РІРєР»СЋС‡. РІРµСЂСЃРёРё РЅРёР¶Рµ 1.55) . РџРµСЂРµС…РѕРґ С‡РµСЂРµР· 0 СЃС‡РµС‚С‡РёРєР° СЂРµР°РєС‚РёРІРЅРѕР№ РѕС‚СЂРёС†Р°С‚РµР»СЊРЅРѕР№ СЌРЅРµСЂРіРёРё РїРѕ С‚Р°СЂРёС„Сѓ 4 РїСЂРё РґРѕСЃС‚РёР¶РµРЅРёСЏ 1000000,00 РєР’Р°СЂ РґР»СЏ СЃС‡РµС‚С‡РёРєРѕРІ РїСЂСЏРјРѕРіРѕ РІРєР»СЋС‡РµРЅРёСЏ	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	616	,	127	,SUBSTR(REPLACE('	РљР°Р»РёР±СЂРѕРІРѕС‡РЅС‹Р№ С„Р»Р°Рі СѓСЃС‚Р°РЅРѕРІР»РµРЅ	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	617	,	128	,SUBSTR(REPLACE('	РљР°Р»РёР±СЂРѕРІРѕС‡РЅС‹Р№ С„Р»Р°Рі СЃР±СЂРѕС€РµРЅ	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	618	,	129	,SUBSTR(REPLACE('	РўРµСЃС‚ Р•Р•PROM РЅРµ РїСЂРѕС€РµР»	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	619	,	130	,SUBSTR(REPLACE('	РўРµСЃС‚ FRAM РЅРµ РїСЂРѕС€РµР»	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	620	,	131	,SUBSTR(REPLACE('	РџРѕР»СѓС‡РµРЅР° РЅРѕРІР°СЏ РїСЂРµРґРѕРїР»Р°С‚Р°	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	621	,	132	,SUBSTR(REPLACE('	РџР°СЂР°РјРµС‚СЂС‹ СЃР°Р»СЊРґРѕ РїРѕС‚РµСЂСЏРЅС‹	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	622	,	133	,SUBSTR(REPLACE('	РђРєРєСѓРјСѓР»СЏС†РёРѕРЅРЅС‹Рµ РїР°СЂР°РјРµС‚СЂС‹ РїРѕС‚РµСЂСЏРЅС‹	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	623	,	134	,SUBSTR(REPLACE('	Р”РѕРїРѕР»РЅРёС‚РµР»СЊРЅС‹Рµ Р°РєРєСѓРјСѓР»СЏС†РёРѕРЅРЅС‹Рµ РїР°СЂР°РјРµС‚СЂС‹ РїРѕС‚РµСЂСЏРЅС‹	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	624	,	135	,SUBSTR(REPLACE('	Р”Р°РЅРЅС‹Рµ СЂР°СЃС‡РµС‚РЅС‹С… РїРµСЂРёРѕРґРѕРІ РїРѕС‚РµСЂСЏРЅС‹	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	625	,	136	,SUBSTR(REPLACE('	РџР°СЂР°РјРµС‚СЂС‹ Р±Р»РѕС‡РЅС‹С… С‚Р°СЂРёС„РѕРІ РїРѕС‚РµСЂСЏРЅС‹	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	626	,	137	,SUBSTR(REPLACE('	Р—РЅР°С‡РµРЅРёРµ РєР°Р»РёР±СЂРѕРІРѕС‡РЅС‹С… РїР°СЂР°РјРµС‚СЂРѕРІ РїРѕС‚РµСЂСЏРЅС‹	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	627	,	138	,SUBSTR(REPLACE('	Р—РЅР°С‡РµРЅРёРµ РїР°СЂР°РјРµС‚СЂРѕРІ РїРµСЂРµС…РѕРґР° РЅР° Р·РёРјРЅРµРµ/Р»РµС‚РЅРµРµ РІСЂРµРјСЏ РїРѕС‚РµСЂСЏРЅС‹	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	628	,	139	,SUBSTR(REPLACE('	РћРїРµСЂР°С‚РѕСЂСЃРєРёРµ РїР°СЂР°РјРµС‚СЂС‹ РїРѕС‚РµСЂСЏРЅС‹	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	629	,	140	,SUBSTR(REPLACE('	РћРїРµСЂР°С‚РѕСЂСЃРєРёРµ РїР°СЂР°РјРµС‚СЂС‹ 2 РїРѕС‚РµСЂСЏРЅС‹	',CHR(9)),1,255),33,1,0,0);
 COMMIT;
 END;
 /
 
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	630	,	0	,'Событие счетчика',33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	630	,	0	,'РЎРѕР±С‹С‚РёРµ СЃС‡РµС‚С‡РёРєР°',33,1,0,0);
 commit;
 
 ---03/05/2012
@@ -26011,16 +26011,16 @@ ln_customer_id NUMBER;
 begin
 SELECT NVL(SUM(DECODE(vvalue, '', 0, vvalue)), 0)   INTO ln_customer_id   FROM parameter  WHERE npid = 12;
 if ln_customer_id in (7, 41, 42, 44, 49) then
-insert into parameter (NPID,VVALUE,VDESCRIPTION) values(59,1,'Разрешена запись отрицательных значений при расчете формул (1-Да)');
+insert into parameter (NPID,VVALUE,VDESCRIPTION) values(59,1,'Р Р°Р·СЂРµС€РµРЅР° Р·Р°РїРёСЃСЊ РѕС‚СЂРёС†Р°С‚РµР»СЊРЅС‹С… Р·РЅР°С‡РµРЅРёР№ РїСЂРё СЂР°СЃС‡РµС‚Рµ С„РѕСЂРјСѓР» (1-Р”Р°)');
 else
-insert into parameter (NPID,VVALUE,VDESCRIPTION) values(59,0,'Разрешена запись отрицательных значений при расчете формул');
+insert into parameter (NPID,VVALUE,VDESCRIPTION) values(59,0,'Р Р°Р·СЂРµС€РµРЅР° Р·Р°РїРёСЃСЊ РѕС‚СЂРёС†Р°С‚РµР»СЊРЅС‹С… Р·РЅР°С‡РµРЅРёР№ РїСЂРё СЂР°СЃС‡РµС‚Рµ С„РѕСЂРјСѓР»');
 end if;
 commit;
 exception when others then rollback;
 end;
 /
 
---14/05/2012 --Молдавские счетчики NP вторая нить (чтение SMS)
+--14/05/2012 --РњРѕР»РґР°РІСЃРєРёРµ СЃС‡РµС‚С‡РёРєРё NP РІС‚РѕСЂР°СЏ РЅРёС‚СЊ (С‡С‚РµРЅРёРµ SMS)
 INSERT INTO protocols VALUES (118,'TeleTec RTR56 (SMS)',NULL,40);
 commit;
 
@@ -26028,7 +26028,7 @@ commit;
 
 
 ----------------------------------------------------------------------------------------------
--- 2012.05.21     VER 3.3 (Для обновления версии 3.2.5.2 до текущей скрипт запускать отсюда)      
+-- 2012.05.21     VER 3.3 (Р”Р»СЏ РѕР±РЅРѕРІР»РµРЅРёСЏ РІРµСЂСЃРёРё 3.2.5.2 РґРѕ С‚РµРєСѓС‰РµР№ СЃРєСЂРёРїС‚ Р·Р°РїСѓСЃРєР°С‚СЊ РѕС‚СЃСЋРґР°)      
 ----------------------------------------------------------------------------------------------
 insert into COMMONPROTOCOLS values(41,'TeleTec meters');
 INSERT INTO protocols VALUES (119,'TeleTec MTX (dlms)',NULL,41);
@@ -26047,16 +26047,16 @@ create table MTXCONF  (
 );
 
 comment on table MTXCONF is
-'Кофигурация MTX RT';
+'РљРѕС„РёРіСѓСЂР°С†РёСЏ MTX RT';
 
 comment on column MTXCONF.CID is
-'Ид канала';
+'РРґ РєР°РЅР°Р»Р°';
 
 comment on column MTXCONF.DENTER is
-'Дата чтения';
+'Р”Р°С‚Р° С‡С‚РµРЅРёСЏ';
 
 comment on column MTXCONF.ADDR is
-'Номер router';
+'РќРѕРјРµСЂ router';
 
 alter table MTXCONF
    add constraint MTXCONF_F1 foreign key (CID)
@@ -26079,25 +26079,25 @@ create table MTXCONFDET  (
 );
 
 comment on table MTXCONFDET is
-'Кофигурация MTX RT детализация';
+'РљРѕС„РёРіСѓСЂР°С†РёСЏ MTX RT РґРµС‚Р°Р»РёР·Р°С†РёСЏ';
 
 comment on column MTXCONFDET.CID is
-'Ид канала';
+'РРґ РєР°РЅР°Р»Р°';
 
 comment on column MTXCONFDET.NORDER is
-'Номер по порядку';
+'РќРѕРјРµСЂ РїРѕ РїРѕСЂСЏРґРєСѓ';
 
 comment on column MTXCONFDET.VMAC is
-'Mac адрес';
+'Mac Р°РґСЂРµСЃ';
 
 comment on column MTXCONFDET.NTYPE is
-'Тип устройства';
+'РўРёРї СѓСЃС‚СЂРѕР№СЃС‚РІР°';
 
 comment on column MTXCONFDET.DPRODUCTION is
-'Год выпуска';
+'Р“РѕРґ РІС‹РїСѓСЃРєР°';
 
 comment on column MTXCONFDET.NMTRSN is
-'Номер счетчика';
+'РќРѕРјРµСЂ СЃС‡РµС‚С‡РёРєР°';
 
 alter table MTXCONFDET
    add constraint MTXCONFDET_F1 foreign key (CID)
@@ -26123,25 +26123,25 @@ create table RTRSMS  (
 );
 
 comment on table RTRSMS is
-'Сообщения от счетчика';
+'РЎРѕРѕР±С‰РµРЅРёСЏ РѕС‚ СЃС‡РµС‚С‡РёРєР°';
 
 comment on column RTRSMS.NOPERATION is
-'Ид записи';
+'РРґ Р·Р°РїРёСЃРё';
 
 comment on column RTRSMS.COM_ID is
-'Ид компорта';
+'РРґ РєРѕРјРїРѕСЂС‚Р°';
 
 comment on column RTRSMS.VNUMBER is
-'Номер телефона';
+'РќРѕРјРµСЂ С‚РµР»РµС„РѕРЅР°';
 
 comment on column RTRSMS.NPACKID is
-'Номер запроса';
+'РќРѕРјРµСЂ Р·Р°РїСЂРѕСЃР°';
 
 comment on column RTRSMS.NFRAMECNT is
-'Общее количество SMS';
+'РћР±С‰РµРµ РєРѕР»РёС‡РµСЃС‚РІРѕ SMS';
 
 comment on column RTRSMS.NSTATE is
-'Состояние';
+'РЎРѕСЃС‚РѕСЏРЅРёРµ';
 
 /*==============================================================*/
 /* Index: RTRSMS_IDX1                                           */
@@ -26170,16 +26170,16 @@ comment on table RTRSMSDET is
 'RTRSMSDET';
 
 comment on column RTRSMSDET.NOPERATION is
-'Ид записи';
+'РРґ Р·Р°РїРёСЃРё';
 
 comment on column RTRSMSDET.NFRAMENUM is
-'Номер SMS ответа';
+'РќРѕРјРµСЂ SMS РѕС‚РІРµС‚Р°';
 
 comment on column RTRSMSDET.DENTER is
-'Дата получения';
+'Р”Р°С‚Р° РїРѕР»СѓС‡РµРЅРёСЏ';
 
 comment on column RTRSMSDET.VFRAME is
-'Текст SMS';
+'РўРµРєСЃС‚ SMS';
 
 alter table RTRSMSDET
    add constraint FK_RTRSMSDE_REFERENCE_RTRSMS foreign key (NOPERATION)
@@ -26193,7 +26193,7 @@ alter table MTXCONFDET  add(
 );
 
 comment on column MTXCONFDET.VID is
-'Ид счетчика';
+'РРґ СЃС‡РµС‚С‡РёРєР°';
 
 
 CREATE SEQUENCE SMS_SEQ
@@ -26204,7 +26204,7 @@ CREATE SEQUENCE SMS_SEQ
 
 --29/05/2012
 begin
-INSERT INTO points(MID,PARENT,COD,IND,NAME,SHORT_NAME,PTYPE,IMPLEMENT_DATE,TAG,NPOINT) VALUES(56,NULL,NULL,1,'Устройства MTX RT','',NULL,'',NULL,NULL);
+INSERT INTO points(MID,PARENT,COD,IND,NAME,SHORT_NAME,PTYPE,IMPLEMENT_DATE,TAG,NPOINT) VALUES(56,NULL,NULL,1,'РЈСЃС‚СЂРѕР№СЃС‚РІР° MTX RT','',NULL,'',NULL,NULL);
 commit;
 end;
 /
@@ -26227,25 +26227,25 @@ create table MTXCONF  (
 );
 
 comment on table MTXCONF is
-'Устройства MTX RT';
+'РЈСЃС‚СЂРѕР№СЃС‚РІР° MTX RT';
 
 comment on column MTXCONF.MID is
-'Ид устройства';
+'РРґ СѓСЃС‚СЂРѕР№СЃС‚РІР°';
 
 comment on column MTXCONF.ADDR is
-'Номер router';
+'РќРѕРјРµСЂ router';
 
 comment on column MTXCONF.NMTRSN is
-'Заводской номер устройства';
+'Р—Р°РІРѕРґСЃРєРѕР№ РЅРѕРјРµСЂ СѓСЃС‚СЂРѕР№СЃС‚РІР°';
 
 comment on column MTXCONF.DENTER is
-'Дата ввода';
+'Р”Р°С‚Р° РІРІРѕРґР°';
 
 comment on column MTXCONF.NSTATE is
-'Состояние';
+'РЎРѕСЃС‚РѕСЏРЅРёРµ';
 
 comment on column MTXCONF.DSTATE is
-'Дата изменения состояния';
+'Р”Р°С‚Р° РёР·РјРµРЅРµРЅРёСЏ СЃРѕСЃС‚РѕСЏРЅРёСЏ';
 
 /*==============================================================*/
 /* Index: MTXCONF_IDX1                                          */
@@ -26282,28 +26282,28 @@ create table MTXCONFDET  (
 );
 
 comment on table MTXCONFDET is
-'Кофигурация MTX RT детализация';
+'РљРѕС„РёРіСѓСЂР°С†РёСЏ MTX RT РґРµС‚Р°Р»РёР·Р°С†РёСЏ';
 
 comment on column MTXCONFDET.MID is
-'Ид устройства';
+'РРґ СѓСЃС‚СЂРѕР№СЃС‚РІР°';
 
 comment on column MTXCONFDET.NORDER is
-'Номер по порядку';
+'РќРѕРјРµСЂ РїРѕ РїРѕСЂСЏРґРєСѓ';
 
 comment on column MTXCONFDET.VMAC is
-'Mac адрес';
+'Mac Р°РґСЂРµСЃ';
 
 comment on column MTXCONFDET.NTYPE is
-'Тип устройства';
+'РўРёРї СѓСЃС‚СЂРѕР№СЃС‚РІР°';
 
 comment on column MTXCONFDET.DPRODUCTION is
-'Год выпуска';
+'Р“РѕРґ РІС‹РїСѓСЃРєР°';
 
 comment on column MTXCONFDET.NMTRSN is
-'Номер счетчика';
+'РќРѕРјРµСЂ СЃС‡РµС‚С‡РёРєР°';
 
 comment on column MTXCONFDET.VID is
-'Ид счетчика';
+'РРґ СЃС‡РµС‚С‡РёРєР°';
 
 alter table MTXCONFDET
    add constraint MTXCONFDET_F1 foreign key (MID)
@@ -26325,85 +26325,85 @@ drop index METEREVENTSDICT_IDX2;
 create unique index METEREVENTSDICT_IDX2 on METEREVENTSDICT (   NMETERTYPE ASC,   VEVENTTEXT ASC,   NEVENTCLASS ASC);
 
 begin
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	632	,	1	,SUBSTR(REPLACE('	Значения накопительных регистров потеряны	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	633	,	2	,SUBSTR(REPLACE('	Значение заводских параметров потеряны	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	634	,	3	,SUBSTR(REPLACE('	Значения операторских параметров потеряны	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	635	,	16	,SUBSTR(REPLACE('	Доступ закрыт до конца суток из-за ошибок ключа доступа	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	636	,	17	,SUBSTR(REPLACE('	Неверный ключ доступа	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	637	,	18	,SUBSTR(REPLACE('	Корпус счётчика открыт	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	638	,	19	,SUBSTR(REPLACE('	Корпус счётчика закрыт	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	639	,	20	,SUBSTR(REPLACE('	Обнаружено наличие электромагнитного влияния	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	640	,	21	,SUBSTR(REPLACE('	Обнаружено прекращение электромагнитного влияния	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	641	,	32	,SUBSTR(REPLACE('	Ключ доступа уровня 0 изменён	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	642	,	33	,SUBSTR(REPLACE('	Ключ доступа уровня 1 изменён	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	643	,	34	,SUBSTR(REPLACE('	Ключ доступа уровня 2 изменён	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	644	,	35	,SUBSTR(REPLACE('	Ключ доступа уровня 3 изменён	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	645	,	36	,SUBSTR(REPLACE('	Параметры изменены локально	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	646	,	37	,SUBSTR(REPLACE('	Параметры изменены удаленно	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	647	,	38	,SUBSTR(REPLACE('	Время изменено	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	648	,	39	,SUBSTR(REPLACE('	Получена команда включения реле	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	649	,	40	,SUBSTR(REPLACE('	Получена команда выключения реле	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	650	,	41	,SUBSTR(REPLACE('	Изменены параметры перехода на летнее время	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	651	,	49	,SUBSTR(REPLACE('	Переполнение накопительного регистра энергии	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	652	,	50	,SUBSTR(REPLACE('	Тарифный план изменён	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	653	,	51	,SUBSTR(REPLACE('	Получен новый тарифный план	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	654	,	52	,SUBSTR(REPLACE('	Переход на летнее время	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	655	,	53	,SUBSTR(REPLACE('	Переход на зимнее время	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	656	,	54	,SUBSTR(REPLACE('	Релев ключено	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	657	,	55	,SUBSTR(REPLACE('	Реле выключено	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	658	,	56	,SUBSTR(REPLACE('	Рестарт программы микроконтроллера	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	659	,	57	,SUBSTR(REPLACE('	Рестарт по WATCHDOG	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	660	,	58	,SUBSTR(REPLACE('	Включение напряжения фазы A	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	661	,	59	,SUBSTR(REPLACE('	Выключение напряжения фазы A	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	662	,	60	,SUBSTR(REPLACE('	Включение напряжения фазы B	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	663	,	61	,SUBSTR(REPLACE('	Выключение напряжения фазы B	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	664	,	62	,SUBSTR(REPLACE('	Включение напряжения фазы C	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	665	,	63	,SUBSTR(REPLACE('	Выключение напряжения фазы C	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	666	,	64	,SUBSTR(REPLACE('	Восстановление нормального напряжения после повышенного	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	667	,	65	,SUBSTR(REPLACE('	Напряжение выше порога максимального напряжения	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	668	,	66	,SUBSTR(REPLACE('	Восстановление нормального напряжения после пониженного	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	669	,	67	,SUBSTR(REPLACE('	Напряжение ниже порога минимального напряжения	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	670	,	68	,SUBSTR(REPLACE('	Восстановление нормальной температуры после повышенной	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	671	,	69	,SUBSTR(REPLACE('	Температура выше порога максимальной температуры	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	672	,	70	,SUBSTR(REPLACE('	Восстановление нормальной температуры после пониженной	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	673	,	71	,SUBSTR(REPLACE('	Температура нижее порога минимальной температуры	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	674	,	72	,SUBSTR(REPLACE('	Восстановление нормальной частоты после повышенной	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	675	,	73	,SUBSTR(REPLACE('	Частота выше порога максимальной частоты сети	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	676	,	74	,SUBSTR(REPLACE('	Восстановление нормальной частоты после пониженной	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	677	,	75	,SUBSTR(REPLACE('	Частота ниже порога минимальной частоты сети	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	678	,	76	,SUBSTR(REPLACE('	Восстановление допустимого тока после повышенного	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	679	,	77	,SUBSTR(REPLACE('	Ток выше порога максимального тока	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	680	,	78	,SUBSTR(REPLACE('	Восстановление допустимой потребляемой мощности после повышенной	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	681	,	79	,SUBSTR(REPLACE('	Потребляемая мощность выше порога максимальной мощности	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	682	,	80	,SUBSTR(REPLACE('	Восстановление допустимого дифференциального тока после повышенного	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	683	,	81	,SUBSTR(REPLACE('	Превышение допустимого дифференциального тока	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	684	,	82	,SUBSTR(REPLACE('	Восстановление нормального напряжения батареи	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	685	,	83	,SUBSTR(REPLACE('	Пониженное напряжения батареи	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	686	,	84	,SUBSTR(REPLACE('	Сохранение параметров калибровки	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	687	,	85	,SUBSTR(REPLACE('	Калибровочные параметры потеряны	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	688	,	86	,SUBSTR(REPLACE('	Восстановление нормального состояния часов реального времени	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	689	,	87	,SUBSTR(REPLACE('	Часы реального времени не установлены	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	690	,	88	,SUBSTR(REPLACE('	Выключение напряжения фазы ABC	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	691	,	89	,SUBSTR(REPLACE('	Включение напряжения фазы ABC	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	692	,	96	,SUBSTR(REPLACE('	Включение второго реле	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	693	,	97	,SUBSTR(REPLACE('	Выключение второго реле	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	694	,	98	,SUBSTR(REPLACE('	Переход через 0 счетчика активной энергии по тарифу 1 при достижения 1 000 000 000 Вт	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	695	,	99	,SUBSTR(REPLACE('	Переход через 0 счетчика активной энергии по тарифу 2 при достижения 1 000 000 000 Вт	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	696	,	100	,SUBSTR(REPLACE('	Переход через 0 счетчика активной энергии по тарифу 3 при достижения 1 000 000 000 Вт	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	697	,	101	,SUBSTR(REPLACE('	Переход через 0 счетчика активной энергии по тарифу 4 при достижения 1 000 000 000 Вт	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	698	,	102	,SUBSTR(REPLACE('	Калибровочный флаг установлен	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	699	,	103	,SUBSTR(REPLACE('	Калибровочный флаг сброшен	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	700	,	104	,SUBSTR(REPLACE('	Тест ЕЕPROM не прошел	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	701	,	105	,SUBSTR(REPLACE('	Тест FRAM не прошел	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	702	,	112	,SUBSTR(REPLACE('	Получена новая предоплата	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	703	,	113	,SUBSTR(REPLACE('	Параметры сальдо потеряны	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	704	,	114	,SUBSTR(REPLACE('	Аккумуляционные параметры потеряны	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	705	,	115	,SUBSTR(REPLACE('	Дополнительные аккумуляционные параметры потеряны	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	706	,	116	,SUBSTR(REPLACE('	Данные расчетных периодов потеряны	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	707	,	117	,SUBSTR(REPLACE('	Параметры блочных тарифов потеряны	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	708	,	118	,SUBSTR(REPLACE('	Значение калибровочных параметров потеряны	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	709	,	119	,SUBSTR(REPLACE('	Значение параметров перехода на зимнее/летнее время потеряны	',CHR(9)),1,255),33,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	710	,	120	,SUBSTR(REPLACE('	Значения энергий для расчета сальдо потеряны	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	632	,	1	,SUBSTR(REPLACE('	Р—РЅР°С‡РµРЅРёСЏ РЅР°РєРѕРїРёС‚РµР»СЊРЅС‹С… СЂРµРіРёСЃС‚СЂРѕРІ РїРѕС‚РµСЂСЏРЅС‹	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	633	,	2	,SUBSTR(REPLACE('	Р—РЅР°С‡РµРЅРёРµ Р·Р°РІРѕРґСЃРєРёС… РїР°СЂР°РјРµС‚СЂРѕРІ РїРѕС‚РµСЂСЏРЅС‹	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	634	,	3	,SUBSTR(REPLACE('	Р—РЅР°С‡РµРЅРёСЏ РѕРїРµСЂР°С‚РѕСЂСЃРєРёС… РїР°СЂР°РјРµС‚СЂРѕРІ РїРѕС‚РµСЂСЏРЅС‹	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	635	,	16	,SUBSTR(REPLACE('	Р”РѕСЃС‚СѓРї Р·Р°РєСЂС‹С‚ РґРѕ РєРѕРЅС†Р° СЃСѓС‚РѕРє РёР·-Р·Р° РѕС€РёР±РѕРє РєР»СЋС‡Р° РґРѕСЃС‚СѓРїР°	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	636	,	17	,SUBSTR(REPLACE('	РќРµРІРµСЂРЅС‹Р№ РєР»СЋС‡ РґРѕСЃС‚СѓРїР°	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	637	,	18	,SUBSTR(REPLACE('	РљРѕСЂРїСѓСЃ СЃС‡С‘С‚С‡РёРєР° РѕС‚РєСЂС‹С‚	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	638	,	19	,SUBSTR(REPLACE('	РљРѕСЂРїСѓСЃ СЃС‡С‘С‚С‡РёРєР° Р·Р°РєСЂС‹С‚	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	639	,	20	,SUBSTR(REPLACE('	РћР±РЅР°СЂСѓР¶РµРЅРѕ РЅР°Р»РёС‡РёРµ СЌР»РµРєС‚СЂРѕРјР°РіРЅРёС‚РЅРѕРіРѕ РІР»РёСЏРЅРёСЏ	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	640	,	21	,SUBSTR(REPLACE('	РћР±РЅР°СЂСѓР¶РµРЅРѕ РїСЂРµРєСЂР°С‰РµРЅРёРµ СЌР»РµРєС‚СЂРѕРјР°РіРЅРёС‚РЅРѕРіРѕ РІР»РёСЏРЅРёСЏ	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	641	,	32	,SUBSTR(REPLACE('	РљР»СЋС‡ РґРѕСЃС‚СѓРїР° СѓСЂРѕРІРЅСЏ 0 РёР·РјРµРЅС‘РЅ	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	642	,	33	,SUBSTR(REPLACE('	РљР»СЋС‡ РґРѕСЃС‚СѓРїР° СѓСЂРѕРІРЅСЏ 1 РёР·РјРµРЅС‘РЅ	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	643	,	34	,SUBSTR(REPLACE('	РљР»СЋС‡ РґРѕСЃС‚СѓРїР° СѓСЂРѕРІРЅСЏ 2 РёР·РјРµРЅС‘РЅ	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	644	,	35	,SUBSTR(REPLACE('	РљР»СЋС‡ РґРѕСЃС‚СѓРїР° СѓСЂРѕРІРЅСЏ 3 РёР·РјРµРЅС‘РЅ	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	645	,	36	,SUBSTR(REPLACE('	РџР°СЂР°РјРµС‚СЂС‹ РёР·РјРµРЅРµРЅС‹ Р»РѕРєР°Р»СЊРЅРѕ	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	646	,	37	,SUBSTR(REPLACE('	РџР°СЂР°РјРµС‚СЂС‹ РёР·РјРµРЅРµРЅС‹ СѓРґР°Р»РµРЅРЅРѕ	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	647	,	38	,SUBSTR(REPLACE('	Р’СЂРµРјСЏ РёР·РјРµРЅРµРЅРѕ	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	648	,	39	,SUBSTR(REPLACE('	РџРѕР»СѓС‡РµРЅР° РєРѕРјР°РЅРґР° РІРєР»СЋС‡РµРЅРёСЏ СЂРµР»Рµ	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	649	,	40	,SUBSTR(REPLACE('	РџРѕР»СѓС‡РµРЅР° РєРѕРјР°РЅРґР° РІС‹РєР»СЋС‡РµРЅРёСЏ СЂРµР»Рµ	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	650	,	41	,SUBSTR(REPLACE('	РР·РјРµРЅРµРЅС‹ РїР°СЂР°РјРµС‚СЂС‹ РїРµСЂРµС…РѕРґР° РЅР° Р»РµС‚РЅРµРµ РІСЂРµРјСЏ	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	651	,	49	,SUBSTR(REPLACE('	РџРµСЂРµРїРѕР»РЅРµРЅРёРµ РЅР°РєРѕРїРёС‚РµР»СЊРЅРѕРіРѕ СЂРµРіРёСЃС‚СЂР° СЌРЅРµСЂРіРёРё	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	652	,	50	,SUBSTR(REPLACE('	РўР°СЂРёС„РЅС‹Р№ РїР»Р°РЅ РёР·РјРµРЅС‘РЅ	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	653	,	51	,SUBSTR(REPLACE('	РџРѕР»СѓС‡РµРЅ РЅРѕРІС‹Р№ С‚Р°СЂРёС„РЅС‹Р№ РїР»Р°РЅ	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	654	,	52	,SUBSTR(REPLACE('	РџРµСЂРµС…РѕРґ РЅР° Р»РµС‚РЅРµРµ РІСЂРµРјСЏ	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	655	,	53	,SUBSTR(REPLACE('	РџРµСЂРµС…РѕРґ РЅР° Р·РёРјРЅРµРµ РІСЂРµРјСЏ	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	656	,	54	,SUBSTR(REPLACE('	Р РµР»РµРІ РєР»СЋС‡РµРЅРѕ	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	657	,	55	,SUBSTR(REPLACE('	Р РµР»Рµ РІС‹РєР»СЋС‡РµРЅРѕ	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	658	,	56	,SUBSTR(REPLACE('	Р РµСЃС‚Р°СЂС‚ РїСЂРѕРіСЂР°РјРјС‹ РјРёРєСЂРѕРєРѕРЅС‚СЂРѕР»Р»РµСЂР°	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	659	,	57	,SUBSTR(REPLACE('	Р РµСЃС‚Р°СЂС‚ РїРѕ WATCHDOG	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	660	,	58	,SUBSTR(REPLACE('	Р’РєР»СЋС‡РµРЅРёРµ РЅР°РїСЂСЏР¶РµРЅРёСЏ С„Р°Р·С‹ A	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	661	,	59	,SUBSTR(REPLACE('	Р’С‹РєР»СЋС‡РµРЅРёРµ РЅР°РїСЂСЏР¶РµРЅРёСЏ С„Р°Р·С‹ A	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	662	,	60	,SUBSTR(REPLACE('	Р’РєР»СЋС‡РµРЅРёРµ РЅР°РїСЂСЏР¶РµРЅРёСЏ С„Р°Р·С‹ B	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	663	,	61	,SUBSTR(REPLACE('	Р’С‹РєР»СЋС‡РµРЅРёРµ РЅР°РїСЂСЏР¶РµРЅРёСЏ С„Р°Р·С‹ B	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	664	,	62	,SUBSTR(REPLACE('	Р’РєР»СЋС‡РµРЅРёРµ РЅР°РїСЂСЏР¶РµРЅРёСЏ С„Р°Р·С‹ C	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	665	,	63	,SUBSTR(REPLACE('	Р’С‹РєР»СЋС‡РµРЅРёРµ РЅР°РїСЂСЏР¶РµРЅРёСЏ С„Р°Р·С‹ C	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	666	,	64	,SUBSTR(REPLACE('	Р’РѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ РЅРѕСЂРјР°Р»СЊРЅРѕРіРѕ РЅР°РїСЂСЏР¶РµРЅРёСЏ РїРѕСЃР»Рµ РїРѕРІС‹С€РµРЅРЅРѕРіРѕ	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	667	,	65	,SUBSTR(REPLACE('	РќР°РїСЂСЏР¶РµРЅРёРµ РІС‹С€Рµ РїРѕСЂРѕРіР° РјР°РєСЃРёРјР°Р»СЊРЅРѕРіРѕ РЅР°РїСЂСЏР¶РµРЅРёСЏ	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	668	,	66	,SUBSTR(REPLACE('	Р’РѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ РЅРѕСЂРјР°Р»СЊРЅРѕРіРѕ РЅР°РїСЂСЏР¶РµРЅРёСЏ РїРѕСЃР»Рµ РїРѕРЅРёР¶РµРЅРЅРѕРіРѕ	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	669	,	67	,SUBSTR(REPLACE('	РќР°РїСЂСЏР¶РµРЅРёРµ РЅРёР¶Рµ РїРѕСЂРѕРіР° РјРёРЅРёРјР°Р»СЊРЅРѕРіРѕ РЅР°РїСЂСЏР¶РµРЅРёСЏ	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	670	,	68	,SUBSTR(REPLACE('	Р’РѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ РЅРѕСЂРјР°Р»СЊРЅРѕР№ С‚РµРјРїРµСЂР°С‚СѓСЂС‹ РїРѕСЃР»Рµ РїРѕРІС‹С€РµРЅРЅРѕР№	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	671	,	69	,SUBSTR(REPLACE('	РўРµРјРїРµСЂР°С‚СѓСЂР° РІС‹С€Рµ РїРѕСЂРѕРіР° РјР°РєСЃРёРјР°Р»СЊРЅРѕР№ С‚РµРјРїРµСЂР°С‚СѓСЂС‹	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	672	,	70	,SUBSTR(REPLACE('	Р’РѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ РЅРѕСЂРјР°Р»СЊРЅРѕР№ С‚РµРјРїРµСЂР°С‚СѓСЂС‹ РїРѕСЃР»Рµ РїРѕРЅРёР¶РµРЅРЅРѕР№	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	673	,	71	,SUBSTR(REPLACE('	РўРµРјРїРµСЂР°С‚СѓСЂР° РЅРёР¶РµРµ РїРѕСЂРѕРіР° РјРёРЅРёРјР°Р»СЊРЅРѕР№ С‚РµРјРїРµСЂР°С‚СѓСЂС‹	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	674	,	72	,SUBSTR(REPLACE('	Р’РѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ РЅРѕСЂРјР°Р»СЊРЅРѕР№ С‡Р°СЃС‚РѕС‚С‹ РїРѕСЃР»Рµ РїРѕРІС‹С€РµРЅРЅРѕР№	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	675	,	73	,SUBSTR(REPLACE('	Р§Р°СЃС‚РѕС‚Р° РІС‹С€Рµ РїРѕСЂРѕРіР° РјР°РєСЃРёРјР°Р»СЊРЅРѕР№ С‡Р°СЃС‚РѕС‚С‹ СЃРµС‚Рё	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	676	,	74	,SUBSTR(REPLACE('	Р’РѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ РЅРѕСЂРјР°Р»СЊРЅРѕР№ С‡Р°СЃС‚РѕС‚С‹ РїРѕСЃР»Рµ РїРѕРЅРёР¶РµРЅРЅРѕР№	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	677	,	75	,SUBSTR(REPLACE('	Р§Р°СЃС‚РѕС‚Р° РЅРёР¶Рµ РїРѕСЂРѕРіР° РјРёРЅРёРјР°Р»СЊРЅРѕР№ С‡Р°СЃС‚РѕС‚С‹ СЃРµС‚Рё	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	678	,	76	,SUBSTR(REPLACE('	Р’РѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ РґРѕРїСѓСЃС‚РёРјРѕРіРѕ С‚РѕРєР° РїРѕСЃР»Рµ РїРѕРІС‹С€РµРЅРЅРѕРіРѕ	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	679	,	77	,SUBSTR(REPLACE('	РўРѕРє РІС‹С€Рµ РїРѕСЂРѕРіР° РјР°РєСЃРёРјР°Р»СЊРЅРѕРіРѕ С‚РѕРєР°	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	680	,	78	,SUBSTR(REPLACE('	Р’РѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ РґРѕРїСѓСЃС‚РёРјРѕР№ РїРѕС‚СЂРµР±Р»СЏРµРјРѕР№ РјРѕС‰РЅРѕСЃС‚Рё РїРѕСЃР»Рµ РїРѕРІС‹С€РµРЅРЅРѕР№	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	681	,	79	,SUBSTR(REPLACE('	РџРѕС‚СЂРµР±Р»СЏРµРјР°СЏ РјРѕС‰РЅРѕСЃС‚СЊ РІС‹С€Рµ РїРѕСЂРѕРіР° РјР°РєСЃРёРјР°Р»СЊРЅРѕР№ РјРѕС‰РЅРѕСЃС‚Рё	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	682	,	80	,SUBSTR(REPLACE('	Р’РѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ РґРѕРїСѓСЃС‚РёРјРѕРіРѕ РґРёС„С„РµСЂРµРЅС†РёР°Р»СЊРЅРѕРіРѕ С‚РѕРєР° РїРѕСЃР»Рµ РїРѕРІС‹С€РµРЅРЅРѕРіРѕ	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	683	,	81	,SUBSTR(REPLACE('	РџСЂРµРІС‹С€РµРЅРёРµ РґРѕРїСѓСЃС‚РёРјРѕРіРѕ РґРёС„С„РµСЂРµРЅС†РёР°Р»СЊРЅРѕРіРѕ С‚РѕРєР°	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	684	,	82	,SUBSTR(REPLACE('	Р’РѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ РЅРѕСЂРјР°Р»СЊРЅРѕРіРѕ РЅР°РїСЂСЏР¶РµРЅРёСЏ Р±Р°С‚Р°СЂРµРё	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	685	,	83	,SUBSTR(REPLACE('	РџРѕРЅРёР¶РµРЅРЅРѕРµ РЅР°РїСЂСЏР¶РµРЅРёСЏ Р±Р°С‚Р°СЂРµРё	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	686	,	84	,SUBSTR(REPLACE('	РЎРѕС…СЂР°РЅРµРЅРёРµ РїР°СЂР°РјРµС‚СЂРѕРІ РєР°Р»РёР±СЂРѕРІРєРё	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	687	,	85	,SUBSTR(REPLACE('	РљР°Р»РёР±СЂРѕРІРѕС‡РЅС‹Рµ РїР°СЂР°РјРµС‚СЂС‹ РїРѕС‚РµСЂСЏРЅС‹	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	688	,	86	,SUBSTR(REPLACE('	Р’РѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ РЅРѕСЂРјР°Р»СЊРЅРѕРіРѕ СЃРѕСЃС‚РѕСЏРЅРёСЏ С‡Р°СЃРѕРІ СЂРµР°Р»СЊРЅРѕРіРѕ РІСЂРµРјРµРЅРё	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	689	,	87	,SUBSTR(REPLACE('	Р§Р°СЃС‹ СЂРµР°Р»СЊРЅРѕРіРѕ РІСЂРµРјРµРЅРё РЅРµ СѓСЃС‚Р°РЅРѕРІР»РµРЅС‹	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	690	,	88	,SUBSTR(REPLACE('	Р’С‹РєР»СЋС‡РµРЅРёРµ РЅР°РїСЂСЏР¶РµРЅРёСЏ С„Р°Р·С‹ ABC	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	691	,	89	,SUBSTR(REPLACE('	Р’РєР»СЋС‡РµРЅРёРµ РЅР°РїСЂСЏР¶РµРЅРёСЏ С„Р°Р·С‹ ABC	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	692	,	96	,SUBSTR(REPLACE('	Р’РєР»СЋС‡РµРЅРёРµ РІС‚РѕСЂРѕРіРѕ СЂРµР»Рµ	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	693	,	97	,SUBSTR(REPLACE('	Р’С‹РєР»СЋС‡РµРЅРёРµ РІС‚РѕСЂРѕРіРѕ СЂРµР»Рµ	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	694	,	98	,SUBSTR(REPLACE('	РџРµСЂРµС…РѕРґ С‡РµСЂРµР· 0 СЃС‡РµС‚С‡РёРєР° Р°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё РїРѕ С‚Р°СЂРёС„Сѓ 1 РїСЂРё РґРѕСЃС‚РёР¶РµРЅРёСЏ 1 000 000 000 Р’С‚	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	695	,	99	,SUBSTR(REPLACE('	РџРµСЂРµС…РѕРґ С‡РµСЂРµР· 0 СЃС‡РµС‚С‡РёРєР° Р°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё РїРѕ С‚Р°СЂРёС„Сѓ 2 РїСЂРё РґРѕСЃС‚РёР¶РµРЅРёСЏ 1 000 000 000 Р’С‚	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	696	,	100	,SUBSTR(REPLACE('	РџРµСЂРµС…РѕРґ С‡РµСЂРµР· 0 СЃС‡РµС‚С‡РёРєР° Р°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё РїРѕ С‚Р°СЂРёС„Сѓ 3 РїСЂРё РґРѕСЃС‚РёР¶РµРЅРёСЏ 1 000 000 000 Р’С‚	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	697	,	101	,SUBSTR(REPLACE('	РџРµСЂРµС…РѕРґ С‡РµСЂРµР· 0 СЃС‡РµС‚С‡РёРєР° Р°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё РїРѕ С‚Р°СЂРёС„Сѓ 4 РїСЂРё РґРѕСЃС‚РёР¶РµРЅРёСЏ 1 000 000 000 Р’С‚	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	698	,	102	,SUBSTR(REPLACE('	РљР°Р»РёР±СЂРѕРІРѕС‡РЅС‹Р№ С„Р»Р°Рі СѓСЃС‚Р°РЅРѕРІР»РµРЅ	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	699	,	103	,SUBSTR(REPLACE('	РљР°Р»РёР±СЂРѕРІРѕС‡РЅС‹Р№ С„Р»Р°Рі СЃР±СЂРѕС€РµРЅ	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	700	,	104	,SUBSTR(REPLACE('	РўРµСЃС‚ Р•Р•PROM РЅРµ РїСЂРѕС€РµР»	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	701	,	105	,SUBSTR(REPLACE('	РўРµСЃС‚ FRAM РЅРµ РїСЂРѕС€РµР»	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	702	,	112	,SUBSTR(REPLACE('	РџРѕР»СѓС‡РµРЅР° РЅРѕРІР°СЏ РїСЂРµРґРѕРїР»Р°С‚Р°	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	703	,	113	,SUBSTR(REPLACE('	РџР°СЂР°РјРµС‚СЂС‹ СЃР°Р»СЊРґРѕ РїРѕС‚РµСЂСЏРЅС‹	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	704	,	114	,SUBSTR(REPLACE('	РђРєРєСѓРјСѓР»СЏС†РёРѕРЅРЅС‹Рµ РїР°СЂР°РјРµС‚СЂС‹ РїРѕС‚РµСЂСЏРЅС‹	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	705	,	115	,SUBSTR(REPLACE('	Р”РѕРїРѕР»РЅРёС‚РµР»СЊРЅС‹Рµ Р°РєРєСѓРјСѓР»СЏС†РёРѕРЅРЅС‹Рµ РїР°СЂР°РјРµС‚СЂС‹ РїРѕС‚РµСЂСЏРЅС‹	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	706	,	116	,SUBSTR(REPLACE('	Р”Р°РЅРЅС‹Рµ СЂР°СЃС‡РµС‚РЅС‹С… РїРµСЂРёРѕРґРѕРІ РїРѕС‚РµСЂСЏРЅС‹	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	707	,	117	,SUBSTR(REPLACE('	РџР°СЂР°РјРµС‚СЂС‹ Р±Р»РѕС‡РЅС‹С… С‚Р°СЂРёС„РѕРІ РїРѕС‚РµСЂСЏРЅС‹	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	708	,	118	,SUBSTR(REPLACE('	Р—РЅР°С‡РµРЅРёРµ РєР°Р»РёР±СЂРѕРІРѕС‡РЅС‹С… РїР°СЂР°РјРµС‚СЂРѕРІ РїРѕС‚РµСЂСЏРЅС‹	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	709	,	119	,SUBSTR(REPLACE('	Р—РЅР°С‡РµРЅРёРµ РїР°СЂР°РјРµС‚СЂРѕРІ РїРµСЂРµС…РѕРґР° РЅР° Р·РёРјРЅРµРµ/Р»РµС‚РЅРµРµ РІСЂРµРјСЏ РїРѕС‚РµСЂСЏРЅС‹	',CHR(9)),1,255),33,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	710	,	120	,SUBSTR(REPLACE('	Р—РЅР°С‡РµРЅРёСЏ СЌРЅРµСЂРіРёР№ РґР»СЏ СЂР°СЃС‡РµС‚Р° СЃР°Р»СЊРґРѕ РїРѕС‚РµСЂСЏРЅС‹	',CHR(9)),1,255),33,1,0,0);
 commit;
 end;
 /
@@ -26427,25 +26427,25 @@ create table RTRSMS  (
 );
 
 comment on table RTRSMS is
-'Сообщения от счетчика';
+'РЎРѕРѕР±С‰РµРЅРёСЏ РѕС‚ СЃС‡РµС‚С‡РёРєР°';
 
 comment on column RTRSMS.NOPERATION is
-'Ид записи';
+'РРґ Р·Р°РїРёСЃРё';
 
 comment on column RTRSMS.NPACKID is
-'Номер запроса';
+'РќРѕРјРµСЂ Р·Р°РїСЂРѕСЃР°';
 
 comment on column RTRSMS.NID is
-'Номер счетчика';
+'РќРѕРјРµСЂ СЃС‡РµС‚С‡РёРєР°';
 
 comment on column RTRSMS.NFRAMECNT is
-'Общее количество SMS';
+'РћР±С‰РµРµ РєРѕР»РёС‡РµСЃС‚РІРѕ SMS';
 
 comment on column RTRSMS.NSTATE is
-'Состояние';
+'РЎРѕСЃС‚РѕСЏРЅРёРµ';
 
 comment on column RTRSMS.VSOURCE is
-'Источник';
+'РСЃС‚РѕС‡РЅРёРє';
 
 /*==============================================================*/
 /* Index: RTRSMS_IDX1                                           */
@@ -26469,16 +26469,16 @@ comment on table RTRSMSDET is
 'RTRSMSDET';
 
 comment on column RTRSMSDET.NOPERATION is
-'Ид записи';
+'РРґ Р·Р°РїРёСЃРё';
 
 comment on column RTRSMSDET.NFRAMENUM is
-'Номер SMS ответа';
+'РќРѕРјРµСЂ SMS РѕС‚РІРµС‚Р°';
 
 comment on column RTRSMSDET.DENTER is
-'Дата получения';
+'Р”Р°С‚Р° РїРѕР»СѓС‡РµРЅРёСЏ';
 
 comment on column RTRSMSDET.VFRAME is
-'Текст SMS';
+'РўРµРєСЃС‚ SMS';
 
 alter table RTRSMSDET
    add constraint RTRSMSDET_F1 foreign key (NOPERATION)
@@ -26487,9 +26487,9 @@ alter table RTRSMSDET
 
 
 ----------------------------------------------------------------------------------------------
--- 17/07/2012     VER 3.3.2 (Для обновления версии 3.3.1 до текущей скрипт запускать отсюда)      
+-- 17/07/2012     VER 3.3.2 (Р”Р»СЏ РѕР±РЅРѕРІР»РµРЅРёСЏ РІРµСЂСЃРёРё 3.3.1 РґРѕ С‚РµРєСѓС‰РµР№ СЃРєСЂРёРїС‚ Р·Р°РїСѓСЃРєР°С‚СЊ РѕС‚СЃСЋРґР°)      
 ----------------------------------------------------------------------------------------------
-INSERT INTO protocols VALUES (121,'TeleTec MTX (dlms)+Эхо',NULL,41);
+INSERT INTO protocols VALUES (121,'TeleTec MTX (dlms)+Р­С…Рѕ',NULL,41);
 commit;
 
 
@@ -26502,7 +26502,7 @@ commit;
 
 
 ----------------------------------------------------------------------------------------------
--- 26/09/2012     VER 3.3.3 (Для обновления версии 3.3.2 до текущей скрипт запускать отсюда)      
+-- 26/09/2012     VER 3.3.3 (Р”Р»СЏ РѕР±РЅРѕРІР»РµРЅРёСЏ РІРµСЂСЃРёРё 3.3.2 РґРѕ С‚РµРєСѓС‰РµР№ СЃРєСЂРёРїС‚ Р·Р°РїСѓСЃРєР°С‚СЊ РѕС‚СЃСЋРґР°)      
 ----------------------------------------------------------------------------------------------
 
 alter table FEEDERS  add(
@@ -26511,10 +26511,10 @@ alter table FEEDERS  add(
 );
 
 comment on column FEEDERS.CANAL is
-'Связной номер';
+'РЎРІСЏР·РЅРѕР№ РЅРѕРјРµСЂ';
 
 comment on column FEEDERS.RESCANAL is
-'Связной номер дополнительный';
+'РЎРІСЏР·РЅРѕР№ РЅРѕРјРµСЂ РґРѕРїРѕР»РЅРёС‚РµР»СЊРЅС‹Р№';
 
 
 alter table CHANPOINT  add(
@@ -26523,7 +26523,7 @@ alter table CHANPOINT  add(
 );
 
 comment on column CHANPOINT.NUSERESCANAL is
-'Использовать второй связной номер';
+'РСЃРїРѕР»СЊР·РѕРІР°С‚СЊ РІС‚РѕСЂРѕР№ СЃРІСЏР·РЅРѕР№ РЅРѕРјРµСЂ';
 
 
 
@@ -26532,13 +26532,13 @@ alter table CHANNELS  add(
 );
 
 comment on column CHANNELS.VADDPARAM is
-'Доп параметр канала';
+'Р”РѕРї РїР°СЂР°РјРµС‚СЂ РєР°РЅР°Р»Р°';
 
 ----------------------------------------------------------------------------------------------
--- 23/10/2012     VER 3.3.4 (Для обновления версии 3.3.3 до текущей скрипт запускать отсюда)      
+-- 23/10/2012     VER 3.3.4 (Р”Р»СЏ РѕР±РЅРѕРІР»РµРЅРёСЏ РІРµСЂСЃРёРё 3.3.3 РґРѕ С‚РµРєСѓС‰РµР№ СЃРєСЂРёРїС‚ Р·Р°РїСѓСЃРєР°С‚СЊ РѕС‚СЃСЋРґР°)      
 ----------------------------------------------------------------------------------------------
 INSERT INTO addformparam a( a.nsort, a.vdescr, a.ntype)
-VALUES (-11,'Вывод формата представления данных',1); 
+VALUES (-11,'Р’С‹РІРѕРґ С„РѕСЂРјР°С‚Р° РїСЂРµРґСЃС‚Р°РІР»РµРЅРёСЏ РґР°РЅРЅС‹С…',1); 
 COMMIT;
 
 
@@ -26553,8 +26553,8 @@ commit;
 
 
 --27/11/2012
-INSERT INTO deportprocedures("NPROCEDURE","VNAME","VPROCEDURE","NPERIOD","NTYPE","VMEMO")VALUES(75,'Архивирование БД НСИ','ryda.DB_DUMP_PG.EXP_DB',2,1,'Архивирование БД НСИ для НЭК');
-INSERT INTO deportprocedures("NPROCEDURE","VNAME","VPROCEDURE","NPERIOD","NTYPE","VMEMO")VALUES(76,'Восстановление архива БД НСИ','ryda.DB_DUMP_PG.IMP_DB',2,1,'Восстановление архива БД НСИ для НЭК');
+INSERT INTO deportprocedures("NPROCEDURE","VNAME","VPROCEDURE","NPERIOD","NTYPE","VMEMO")VALUES(75,'РђСЂС…РёРІРёСЂРѕРІР°РЅРёРµ Р‘Р” РќРЎР','ryda.DB_DUMP_PG.EXP_DB',2,1,'РђСЂС…РёРІРёСЂРѕРІР°РЅРёРµ Р‘Р” РќРЎР РґР»СЏ РќР­Рљ');
+INSERT INTO deportprocedures("NPROCEDURE","VNAME","VPROCEDURE","NPERIOD","NTYPE","VMEMO")VALUES(76,'Р’РѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ Р°СЂС…РёРІР° Р‘Р” РќРЎР','ryda.DB_DUMP_PG.IMP_DB',2,1,'Р’РѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ Р°СЂС…РёРІР° Р‘Р” РќРЎР РґР»СЏ РќР­Рљ');
 commit;
 
 
@@ -26568,10 +26568,10 @@ create table DBNRI  (
 );
 
 comment on table DBNRI is
-'Таблицы НСИ';
+'РўР°Р±Р»РёС†С‹ РќРЎР';
 
 comment on column DBNRI.VTABLENAME is
-'Название таблицы';
+'РќР°Р·РІР°РЅРёРµ С‚Р°Р±Р»РёС†С‹';
 
 
 ---03/11/2012
@@ -26717,10 +26717,10 @@ SELECT NVL(SUM(DECODE(vvalue, '', 0, vvalue)), 0)   INTO ln_customer_id   FROM p
   end loop;
 end if;
  
- update addpointparam set VDESCR='М30817. Править ГН кВтч, если не пусто и разница меньше чем:' where nsort=-25;  
-	update addpointparam set VDESCR='М30817. Править ГН кВАрч, если не пусто и разница меньше чем:' where nsort=-26;  
-	update addpointparam set VDESCR='М30817. Кол-во разрядов дробной части при корректировке:' where nsort=-27;  
-	update addpointparam set VDESCR='М30817. Если не пусто - не округлять до целого:' where nsort=-28;  
+ update addpointparam set VDESCR='Рњ30817. РџСЂР°РІРёС‚СЊ Р“Рќ РєР’С‚С‡, РµСЃР»Рё РЅРµ РїСѓСЃС‚Рѕ Рё СЂР°Р·РЅРёС†Р° РјРµРЅСЊС€Рµ С‡РµРј:' where nsort=-25;  
+	update addpointparam set VDESCR='Рњ30817. РџСЂР°РІРёС‚СЊ Р“Рќ РєР’РђСЂС‡, РµСЃР»Рё РЅРµ РїСѓСЃС‚Рѕ Рё СЂР°Р·РЅРёС†Р° РјРµРЅСЊС€Рµ С‡РµРј:' where nsort=-26;  
+	update addpointparam set VDESCR='Рњ30817. РљРѕР»-РІРѕ СЂР°Р·СЂСЏРґРѕРІ РґСЂРѕР±РЅРѕР№ С‡Р°СЃС‚Рё РїСЂРё РєРѕСЂСЂРµРєС‚РёСЂРѕРІРєРµ:' where nsort=-27;  
+	update addpointparam set VDESCR='Рњ30817. Р•СЃР»Рё РЅРµ РїСѓСЃС‚Рѕ - РЅРµ РѕРєСЂСѓРіР»СЏС‚СЊ РґРѕ С†РµР»РѕРіРѕ:' where nsort=-28;  
 	delete addpointparam where nsort=-29;  
 	delete addpointparam where nsort=-30;
  
@@ -26730,7 +26730,7 @@ end;
 
 
 ----------------------------------------------------------------------------------------------
--- 13/02/2013     VER 3.3.5 (Для обновления версии 3.3.4 до текущей скрипт запускать отсюда)      
+-- 13/02/2013     VER 3.3.5 (Р”Р»СЏ РѕР±РЅРѕРІР»РµРЅРёСЏ РІРµСЂСЃРёРё 3.3.4 РґРѕ С‚РµРєСѓС‰РµР№ СЃРєСЂРёРїС‚ Р·Р°РїСѓСЃРєР°С‚СЊ РѕС‚СЃСЋРґР°)      
 ----------------------------------------------------------------------------------------------
 /*==============================================================*/
 /* Table: CHANINTERVAL                                          */
@@ -26743,16 +26743,16 @@ create table CHANINTERVAL  (
 );
 
 comment on table CHANINTERVAL is
-'Интервалы работы канала';
+'РРЅС‚РµСЂРІР°Р»С‹ СЂР°Р±РѕС‚С‹ РєР°РЅР°Р»Р°';
 
 comment on column CHANINTERVAL.CID is
-'Ид канала';
+'РРґ РєР°РЅР°Р»Р°';
 
 comment on column CHANINTERVAL.DSTART is
-'Начало опроса';
+'РќР°С‡Р°Р»Рѕ РѕРїСЂРѕСЃР°';
 
 comment on column CHANINTERVAL.DEND is
-'Окончание';
+'РћРєРѕРЅС‡Р°РЅРёРµ';
 
 alter table CHANINTERVAL
    add constraint CHANINTERVAL_F1 foreign key (CID)
@@ -26774,18 +26774,18 @@ alter table CHANINTERVAL  add(
 );
 
 comment on column CHANINTERVAL.NNETPARAM is
-'Параметры сети';
+'РџР°СЂР°РјРµС‚СЂС‹ СЃРµС‚Рё';
 
 comment on column CHANINTERVAL.NJOURNAL is
-'Журнал событий';
+'Р–СѓСЂРЅР°Р» СЃРѕР±С‹С‚РёР№';
 
 comment on column CHANINTERVAL.NNOTREADCURR is
-'Не читать тек сутки';
+'РќРµ С‡РёС‚Р°С‚СЊ С‚РµРє СЃСѓС‚РєРё';
 
 
 
 begin
-insert into parameter (NPID,VVALUE,VDESCRIPTION) values(60,0,'Блокировка переноса остатков округлений в Round30817 на следующие сутки.');
+insert into parameter (NPID,VVALUE,VDESCRIPTION) values(60,0,'Р‘Р»РѕРєРёСЂРѕРІРєР° РїРµСЂРµРЅРѕСЃР° РѕСЃС‚Р°С‚РєРѕРІ РѕРєСЂСѓРіР»РµРЅРёР№ РІ Round30817 РЅР° СЃР»РµРґСѓСЋС‰РёРµ СЃСѓС‚РєРё.');
 commit;
 exception when others then rollback;
 end;
@@ -26830,31 +26830,31 @@ drop FUNCTION tmp_substr_cnt;
 
 
 --12/03/2013
-INSERT INTO protocols(protocol_id, name, dll_name, ncode) VALUES (124,'EMH LZQJ +Эхо',NULL,12);
+INSERT INTO protocols(protocol_id, name, dll_name, ncode) VALUES (124,'EMH LZQJ +Р­С…Рѕ',NULL,12);
 commit;
 
 
 --14/03/2013
-INSERT INTO protocols(protocol_id, name, dll_name, ncode) VALUES (125,'ACE6000 (dlms) +Эхо',NULL,0);
+INSERT INTO protocols(protocol_id, name, dll_name, ncode) VALUES (125,'ACE6000 (dlms) +Р­С…Рѕ',NULL,0);
 commit;
 
 ----------------------------------------------------------------------------------------------
--- 14/03/2013     VER 3.4 (Для обновления версии 3.3.5 до текущей скрипт запускать отсюда)      
+-- 14/03/2013     VER 3.4 (Р”Р»СЏ РѕР±РЅРѕРІР»РµРЅРёСЏ РІРµСЂСЃРёРё 3.3.5 РґРѕ С‚РµРєСѓС‰РµР№ СЃРєСЂРёРїС‚ Р·Р°РїСѓСЃРєР°С‚СЊ РѕС‚СЃСЋРґР°)      
 ----------------------------------------------------------------------------------------------
 alter table TRAFFIC  add(
    VINITSTR             VARCHAR2(256)
 );
 
 comment on column TRAFFIC.VINITSTR is
-'Порт и строка инициализации';
+'РџРѕСЂС‚ Рё СЃС‚СЂРѕРєР° РёРЅРёС†РёР°Р»РёР·Р°С†РёРё';
 
 
 
 ---------------------------------------------------------------
---        26/03/2013   Новая схема администрирования
+--        26/03/2013   РќРѕРІР°СЏ СЃС…РµРјР° Р°РґРјРёРЅРёСЃС‚СЂРёСЂРѕРІР°РЅРёСЏ
 ---------------------------------------------------------------
 begin
-insert into parameter (NPID,VVALUE,VDESCRIPTION) values(61,0,'Использование администрирования с горизонтальным разделением прав.');
+insert into parameter (NPID,VVALUE,VDESCRIPTION) values(61,0,'РСЃРїРѕР»СЊР·РѕРІР°РЅРёРµ Р°РґРјРёРЅРёСЃС‚СЂРёСЂРѕРІР°РЅРёСЏ СЃ РіРѕСЂРёР·РѕРЅС‚Р°Р»СЊРЅС‹Рј СЂР°Р·РґРµР»РµРЅРёРµРј РїСЂР°РІ.');
 commit;
 exception when others then rollback;
 end;
@@ -26874,16 +26874,16 @@ create table ROLEPOINT  (
 );
 
 comment on table ROLEPOINT is
-'Права роли на точки';
+'РџСЂР°РІР° СЂРѕР»Рё РЅР° С‚РѕС‡РєРё';
 
 comment on column ROLEPOINT.ROLE_ID is
-'Ид роли';
+'РРґ СЂРѕР»Рё';
 
 comment on column ROLEPOINT.MID is
-'Ид точки';
+'РРґ С‚РѕС‡РєРё';
 
 comment on column ROLEPOINT.NACC is
-'Права (битовая маска 0 чтение 1 р в 2 редакт 3 редакт и рв )';
+'РџСЂР°РІР° (Р±РёС‚РѕРІР°СЏ РјР°СЃРєР° 0 С‡С‚РµРЅРёРµ 1 СЂ РІ 2 СЂРµРґР°РєС‚ 3 СЂРµРґР°РєС‚ Рё СЂРІ )';
 
 /*==============================================================*/
 /* Index: ROLEPOINT_IDX1                                        */
@@ -26913,16 +26913,16 @@ create table ROLEGROUP  (
 );
 
 comment on table ROLEGROUP is
-'Права роли на группы';
+'РџСЂР°РІР° СЂРѕР»Рё РЅР° РіСЂСѓРїРїС‹';
 
 comment on column ROLEGROUP.ROLE_ID is
-'Ид роли';
+'РРґ СЂРѕР»Рё';
 
 comment on column ROLEGROUP.GID is
-'Ид группы';
+'РРґ РіСЂСѓРїРїС‹';
 
 comment on column ROLEGROUP.NACC is
-'Права (битовая маска 0 чтение 1 р в 2 редакт 3 редакт и рв )';
+'РџСЂР°РІР° (Р±РёС‚РѕРІР°СЏ РјР°СЃРєР° 0 С‡С‚РµРЅРёРµ 1 СЂ РІ 2 СЂРµРґР°РєС‚ 3 СЂРµРґР°РєС‚ Рё СЂРІ )';
 
 /*==============================================================*/
 /* Index: ROLEGROUP_IDX1                                        */
@@ -26947,60 +26947,60 @@ drop package EDITTRANSFORMER_PG;
 
 
 --        05/04/2013   
-insert into COMMONPROTOCOLS values(43,'НИК КС-02');
-INSERT INTO protocols(PROTOCOL_ID,NAME,DLL_NAME,NCODE) VALUES (126,'НИК КС-02',NULL,43);
+insert into COMMONPROTOCOLS values(43,'РќРРљ РљРЎ-02');
+INSERT INTO protocols(PROTOCOL_ID,NAME,DLL_NAME,NCODE) VALUES (126,'РќРРљ РљРЎ-02',NULL,43);
 commit;
 
 
 --16/04/2013   
-insert into metertype(nmetertype,vname) values(36,'НИК КС-02') ;
+insert into metertype(nmetertype,vname) values(36,'РќРРљ РљРЎ-02') ;
 commit;
 
 
 ----17/04/2013
 begin
---Флаги состояний
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	711	,	0	,'Есть фазное напряжение L1',35,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	712	,	1	,'Есть фазное напряжение L2',35,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	713	,	2	,'Есть фазное напряжение L3',35,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	714	,	3	,'Влияние магнитным полем',35,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	715	,	4	,'Неблагоприятная температура',35,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	716	,	5	,'Связь блокирована (четыре неверных пароля)',35,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	717	,	6	,'Разрешена заводская параметризация (нажата кнопка)',35,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	718	,	7	,'Обратная последовательность фаз',35,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	719	,	8	,'Отказ часов',35,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	720	,	9	,'Проблемы «железа» («fatal  error»)',35,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	722	,	10	,'Состояние реле 1',35,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	723	,	11	,'Состояние реле 2',35,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	724	,	12	,'Превышение заявленной мощности',35,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	725	,	13	,'Не использован',35,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	726	,	14	,'Низкое напряжение батареи',35,1,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	727	,	15	,'Летнее время',35,1,0,0);
---Флаги событий
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	728	,	0	,'Открытия корпуса',35,2,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	729	,	1	,'Старое время перед  установкой  или коррекции часов',35,2,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	730	,	2	,'Установка часов (новое время)',35,2,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	731	,	3	,'Кумуляция + обнуление',35,2,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	732	,	4	,'Параметризация из сети',35,2,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	733	,	5	,'Локальная параметризация',35,2,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	734	,	6	,'Обнуление суточных максимальных мощностей',35,2,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	735	,	7	,'Обнуление месячных максимальных мощностей',35,2,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	736	,	8	,'Обнуление суточной энергии',35,2,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	737	,	9	,'Обнуление месячной энергии',35,2,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	738	,	10	,'Коррекция часов на несколько секунд вперёд',35,2,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	739	,	11	,'Ошибка без «reset» программы',35,2,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	740	,	12	,'Ошибочная ситуация требующая «reset» программы',35,2,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	741	,	13	,'«Watchdog reset»',35,2,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	742	,	14	,'«Illegal operation»',35,2,0,0);
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	743	,	15	,'Коррекция часов на несколько секунд назад',35,2,0,0);
---От нас добавка (Изменение состояния)
-INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	744	,	0	,'Изменение состояния',35,0,0,0);
+--Р¤Р»Р°РіРё СЃРѕСЃС‚РѕСЏРЅРёР№
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	711	,	0	,'Р•СЃС‚СЊ С„Р°Р·РЅРѕРµ РЅР°РїСЂСЏР¶РµРЅРёРµ L1',35,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	712	,	1	,'Р•СЃС‚СЊ С„Р°Р·РЅРѕРµ РЅР°РїСЂСЏР¶РµРЅРёРµ L2',35,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	713	,	2	,'Р•СЃС‚СЊ С„Р°Р·РЅРѕРµ РЅР°РїСЂСЏР¶РµРЅРёРµ L3',35,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	714	,	3	,'Р’Р»РёСЏРЅРёРµ РјР°РіРЅРёС‚РЅС‹Рј РїРѕР»РµРј',35,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	715	,	4	,'РќРµР±Р»Р°РіРѕРїСЂРёСЏС‚РЅР°СЏ С‚РµРјРїРµСЂР°С‚СѓСЂР°',35,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	716	,	5	,'РЎРІСЏР·СЊ Р±Р»РѕРєРёСЂРѕРІР°РЅР° (С‡РµС‚С‹СЂРµ РЅРµРІРµСЂРЅС‹С… РїР°СЂРѕР»СЏ)',35,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	717	,	6	,'Р Р°Р·СЂРµС€РµРЅР° Р·Р°РІРѕРґСЃРєР°СЏ РїР°СЂР°РјРµС‚СЂРёР·Р°С†РёСЏ (РЅР°Р¶Р°С‚Р° РєРЅРѕРїРєР°)',35,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	718	,	7	,'РћР±СЂР°С‚РЅР°СЏ РїРѕСЃР»РµРґРѕРІР°С‚РµР»СЊРЅРѕСЃС‚СЊ С„Р°Р·',35,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	719	,	8	,'РћС‚РєР°Р· С‡Р°СЃРѕРІ',35,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	720	,	9	,'РџСЂРѕР±Р»РµРјС‹ В«Р¶РµР»РµР·Р°В» (В«fatal  errorВ»)',35,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	722	,	10	,'РЎРѕСЃС‚РѕСЏРЅРёРµ СЂРµР»Рµ 1',35,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	723	,	11	,'РЎРѕСЃС‚РѕСЏРЅРёРµ СЂРµР»Рµ 2',35,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	724	,	12	,'РџСЂРµРІС‹С€РµРЅРёРµ Р·Р°СЏРІР»РµРЅРЅРѕР№ РјРѕС‰РЅРѕСЃС‚Рё',35,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	725	,	13	,'РќРµ РёСЃРїРѕР»СЊР·РѕРІР°РЅ',35,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	726	,	14	,'РќРёР·РєРѕРµ РЅР°РїСЂСЏР¶РµРЅРёРµ Р±Р°С‚Р°СЂРµРё',35,1,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	727	,	15	,'Р›РµС‚РЅРµРµ РІСЂРµРјСЏ',35,1,0,0);
+--Р¤Р»Р°РіРё СЃРѕР±С‹С‚РёР№
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	728	,	0	,'РћС‚РєСЂС‹С‚РёСЏ РєРѕСЂРїСѓСЃР°',35,2,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	729	,	1	,'РЎС‚Р°СЂРѕРµ РІСЂРµРјСЏ РїРµСЂРµРґ  СѓСЃС‚Р°РЅРѕРІРєРѕР№  РёР»Рё РєРѕСЂСЂРµРєС†РёРё С‡Р°СЃРѕРІ',35,2,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	730	,	2	,'РЈСЃС‚Р°РЅРѕРІРєР° С‡Р°СЃРѕРІ (РЅРѕРІРѕРµ РІСЂРµРјСЏ)',35,2,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	731	,	3	,'РљСѓРјСѓР»СЏС†РёСЏ + РѕР±РЅСѓР»РµРЅРёРµ',35,2,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	732	,	4	,'РџР°СЂР°РјРµС‚СЂРёР·Р°С†РёСЏ РёР· СЃРµС‚Рё',35,2,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	733	,	5	,'Р›РѕРєР°Р»СЊРЅР°СЏ РїР°СЂР°РјРµС‚СЂРёР·Р°С†РёСЏ',35,2,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	734	,	6	,'РћР±РЅСѓР»РµРЅРёРµ СЃСѓС‚РѕС‡РЅС‹С… РјР°РєСЃРёРјР°Р»СЊРЅС‹С… РјРѕС‰РЅРѕСЃС‚РµР№',35,2,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	735	,	7	,'РћР±РЅСѓР»РµРЅРёРµ РјРµСЃСЏС‡РЅС‹С… РјР°РєСЃРёРјР°Р»СЊРЅС‹С… РјРѕС‰РЅРѕСЃС‚РµР№',35,2,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	736	,	8	,'РћР±РЅСѓР»РµРЅРёРµ СЃСѓС‚РѕС‡РЅРѕР№ СЌРЅРµСЂРіРёРё',35,2,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	737	,	9	,'РћР±РЅСѓР»РµРЅРёРµ РјРµСЃСЏС‡РЅРѕР№ СЌРЅРµСЂРіРёРё',35,2,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	738	,	10	,'РљРѕСЂСЂРµРєС†РёСЏ С‡Р°СЃРѕРІ РЅР° РЅРµСЃРєРѕР»СЊРєРѕ СЃРµРєСѓРЅРґ РІРїРµСЂС‘Рґ',35,2,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	739	,	11	,'РћС€РёР±РєР° Р±РµР· В«resetВ» РїСЂРѕРіСЂР°РјРјС‹',35,2,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	740	,	12	,'РћС€РёР±РѕС‡РЅР°СЏ СЃРёС‚СѓР°С†РёСЏ С‚СЂРµР±СѓСЋС‰Р°СЏ В«resetВ» РїСЂРѕРіСЂР°РјРјС‹',35,2,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	741	,	13	,'В«Watchdog resetВ»',35,2,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	742	,	14	,'В«Illegal operationВ»',35,2,0,0);
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	743	,	15	,'РљРѕСЂСЂРµРєС†РёСЏ С‡Р°СЃРѕРІ РЅР° РЅРµСЃРєРѕР»СЊРєРѕ СЃРµРєСѓРЅРґ РЅР°Р·Р°Рґ',35,2,0,0);
+--РћС‚ РЅР°СЃ РґРѕР±Р°РІРєР° (РР·РјРµРЅРµРЅРёРµ СЃРѕСЃС‚РѕСЏРЅРёСЏ)
+INSERT INTO metereventsdict(nevent, neventcode,veventtext, nmetertype, neventclass, nlock, nvalidity) VALUES(	744	,	0	,'РР·РјРµРЅРµРЅРёРµ СЃРѕСЃС‚РѕСЏРЅРёСЏ',35,0,0,0);
 commit;
 end;
 /
 
 --22/04/2013
-INSERT INTO protocols(PROTOCOL_ID,NAME,DLL_NAME,NCODE) VALUES (1012,'НИК КС-02(dll)','NIKRouter.dll',43);
+INSERT INTO protocols(PROTOCOL_ID,NAME,DLL_NAME,NCODE) VALUES (1012,'РќРРљ РљРЎ-02(dll)','NIKRouter.dll',43);
 commit;
 
 
@@ -27013,17 +27013,17 @@ declare
 ln_1 NUMBER;
 ln_2 NUMBER;
 begin
-update BASEFORMULA set VNAME='Округление ГН (тыс. кВт*ч) с переносом остатков (в течение месяца)' where  VFORMULA='round30817(a,1)';
-update BASEFORMULA set VNAME='Округление ГН (кВт*ч) с переносом остатков (в течение месяца)' where  VFORMULA='round30817(a,3)';
+update BASEFORMULA set VNAME='РћРєСЂСѓРіР»РµРЅРёРµ Р“Рќ (С‚С‹СЃ. РєР’С‚*С‡) СЃ РїРµСЂРµРЅРѕСЃРѕРј РѕСЃС‚Р°С‚РєРѕРІ (РІ С‚РµС‡РµРЅРёРµ РјРµСЃСЏС†Р°)' where  VFORMULA='round30817(a,1)';
+update BASEFORMULA set VNAME='РћРєСЂСѓРіР»РµРЅРёРµ Р“Рќ (РєР’С‚*С‡) СЃ РїРµСЂРµРЅРѕСЃРѕРј РѕСЃС‚Р°С‚РєРѕРІ (РІ С‚РµС‡РµРЅРёРµ РјРµСЃСЏС†Р°)' where  VFORMULA='round30817(a,3)';
 
-select max(nid) into ln_1 from BASEFORMULA where vname='Базовые функции';
+select max(nid) into ln_1 from BASEFORMULA where vname='Р‘Р°Р·РѕРІС‹Рµ С„СѓРЅРєС†РёРё';
 if ln_1 is null then 
 return;
 end if;
 select points_seq.NEXTVAL into ln_2 from dual;
-INSERT INTO BASEFORMULA("NID","NPARENT","NTYPE","VNAME","VFORMULA","VMEMO")VALUES(ln_2,ln_1,1,'Округление ГН (тыс. кВт*ч) с переносом остатков (в течение суток)','round30817(a,5)',NULL);
+INSERT INTO BASEFORMULA("NID","NPARENT","NTYPE","VNAME","VFORMULA","VMEMO")VALUES(ln_2,ln_1,1,'РћРєСЂСѓРіР»РµРЅРёРµ Р“Рќ (С‚С‹СЃ. РєР’С‚*С‡) СЃ РїРµСЂРµРЅРѕСЃРѕРј РѕСЃС‚Р°С‚РєРѕРІ (РІ С‚РµС‡РµРЅРёРµ СЃСѓС‚РѕРє)','round30817(a,5)',NULL);
 select points_seq.NEXTVAL into ln_2 from dual;
-INSERT INTO BASEFORMULA("NID","NPARENT","NTYPE","VNAME","VFORMULA","VMEMO")VALUES(ln_2,ln_1,1,'Округление ГН (кВт*ч) с переносом остатков (в течение суток)','round30817(a,6)',NULL);
+INSERT INTO BASEFORMULA("NID","NPARENT","NTYPE","VNAME","VFORMULA","VMEMO")VALUES(ln_2,ln_1,1,'РћРєСЂСѓРіР»РµРЅРёРµ Р“Рќ (РєР’С‚*С‡) СЃ РїРµСЂРµРЅРѕСЃРѕРј РѕСЃС‚Р°С‚РєРѕРІ (РІ С‚РµС‡РµРЅРёРµ СЃСѓС‚РѕРє)','round30817(a,6)',NULL);
 commit;
 exception
 when others then rollback;
@@ -27031,7 +27031,7 @@ end;
 /
 
 delete from BASEFORMULA where  VFORMULA='round30817(a,2)';
-update BASEFORMULA set VNAME='Приведение ГН к разнице показаний' where  VFORMULA='round30817(a,4)';
+update BASEFORMULA set VNAME='РџСЂРёРІРµРґРµРЅРёРµ Р“Рќ Рє СЂР°Р·РЅРёС†Рµ РїРѕРєР°Р·Р°РЅРёР№' where  VFORMULA='round30817(a,4)';
 commit;
 
 UPDATE POINTFORMULA SET NOPTTYPE=5 WHERE NOPTTYPE=3;
@@ -27040,10 +27040,10 @@ COMMIT;
 
 -- 26/07/2013     
 /*
---Только в Интэп для разработки ПО
+--РўРѕР»СЊРєРѕ РІ РРЅС‚СЌРї РґР»СЏ СЂР°Р·СЂР°Р±РѕС‚РєРё РџРћ
 begin
-insert into COMMONPROTOCOLS values(44,'Интэп Тест');
-INSERT INTO protocols(protocol_id, name, dll_name, ncode) VALUES (127,'Интэп Тест',NULL,44);
+insert into COMMONPROTOCOLS values(44,'РРЅС‚СЌРї РўРµСЃС‚');
+INSERT INTO protocols(protocol_id, name, dll_name, ncode) VALUES (127,'РРЅС‚СЌРї РўРµСЃС‚',NULL,44);
 commit;
 end;
 /
@@ -27052,7 +27052,7 @@ end;
 
 
 ----------------------------------------------------------------------------------------------
--- 14/07/2013     VER 3.4.1 (Для обновления версии 3.4.0.2 до текущей скрипт запускать отсюда)      
+-- 14/07/2013     VER 3.4.1 (Р”Р»СЏ РѕР±РЅРѕРІР»РµРЅРёСЏ РІРµСЂСЃРёРё 3.4.0.2 РґРѕ С‚РµРєСѓС‰РµР№ СЃРєСЂРёРїС‚ Р·Р°РїСѓСЃРєР°С‚СЊ РѕС‚СЃСЋРґР°)      
 ----------------------------------------------------------------------------------------------
 CREATE OR REPLACE type datarray as table of date
 /
@@ -27062,8 +27062,8 @@ CREATE OR REPLACE type datarray as table of date
 -- 01/08/2013
 
 begin
-insert into ADDFORMPARAM(NSORT,VDESCR,NTYPE) values(-12,'Отобрашать наименование родителя уровня 1 под',0);
-insert into ADDFORMPARAM(NSORT,VDESCR,NTYPE) values(-13,'Отобрашать наименование родителя уровня 2 под',0);
+insert into ADDFORMPARAM(NSORT,VDESCR,NTYPE) values(-12,'РћС‚РѕР±СЂР°С€Р°С‚СЊ РЅР°РёРјРµРЅРѕРІР°РЅРёРµ СЂРѕРґРёС‚РµР»СЏ СѓСЂРѕРІРЅСЏ 1 РїРѕРґ',0);
+insert into ADDFORMPARAM(NSORT,VDESCR,NTYPE) values(-13,'РћС‚РѕР±СЂР°С€Р°С‚СЊ РЅР°РёРјРµРЅРѕРІР°РЅРёРµ СЂРѕРґРёС‚РµР»СЏ СѓСЂРѕРІРЅСЏ 2 РїРѕРґ',0);
 commit;
 end;
 /
@@ -27072,9 +27072,9 @@ end;
 
 
 /*
---Только для ООЭ и прочих платежеспособных
+--РўРѕР»СЊРєРѕ РґР»СЏ РћРћР­ Рё РїСЂРѕС‡РёС… РїР»Р°С‚РµР¶РµСЃРїРѕСЃРѕР±РЅС‹С…
 begin 
-INSERT INTO tasks ("TASK_ID","PARENT","TASK_COD","NAME","REMARK","NSHOW") VALUES(108,42,664,'1.9 Ввод стартовых показаний счетчика',NULL,1); 
+INSERT INTO tasks ("TASK_ID","PARENT","TASK_COD","NAME","REMARK","NSHOW") VALUES(108,42,664,'1.9 Р’РІРѕРґ СЃС‚Р°СЂС‚РѕРІС‹С… РїРѕРєР°Р·Р°РЅРёР№ СЃС‡РµС‚С‡РёРєР°',NULL,1); 
 insert into role_task select 1,108,1 from dual;
 commit; 
 end;
@@ -27086,7 +27086,7 @@ end;
 
 
 ----------------------------------------------------------------------------------------------
--- 02/09/2013     VER 3.4.3.0 (Для обновления версии 3.4.2.1 до текущей скрипт запускать отсюда)      
+-- 02/09/2013     VER 3.4.3.0 (Р”Р»СЏ РѕР±РЅРѕРІР»РµРЅРёСЏ РІРµСЂСЃРёРё 3.4.2.1 РґРѕ С‚РµРєСѓС‰РµР№ СЃРєСЂРёРїС‚ Р·Р°РїСѓСЃРєР°С‚СЊ РѕС‚СЃСЋРґР°)      
 ----------------------------------------------------------------------------------------------
 /*==============================================================*/
 /* Table: NIKRTCONF                                             */
@@ -27106,37 +27106,37 @@ create table NIKRTCONF  (
 );
 
 comment on table NIKRTCONF is
-'Конфигурация маршрутизаторов NIK';
+'РљРѕРЅС„РёРіСѓСЂР°С†РёСЏ РјР°СЂС€СЂСѓС‚РёР·Р°С‚РѕСЂРѕРІ NIK';
 
 comment on column NIKRTCONF.CID is
-'Ид канала';
+'РРґ РєР°РЅР°Р»Р°';
 
 comment on column NIKRTCONF.NID is
-'Ид счетчика в маршрутизаторе';
+'РРґ СЃС‡РµС‚С‡РёРєР° РІ РјР°СЂС€СЂСѓС‚РёР·Р°С‚РѕСЂРµ';
 
 comment on column NIKRTCONF.NMODEL is
-'Ид модели';
+'РРґ РјРѕРґРµР»Рё';
 
 comment on column NIKRTCONF.NADDRH is
-'АдресHi';
+'РђРґСЂРµСЃHi';
 
 comment on column NIKRTCONF.NADDRL is
-'АдресLo';
+'РђРґСЂРµСЃLo';
 
 comment on column NIKRTCONF.NSERIAL is
-'Номер счетчика';
+'РќРѕРјРµСЂ СЃС‡РµС‚С‡РёРєР°';
 
 comment on column NIKRTCONF.NCID is
-'Ид канала в маршрутизаторе';
+'РРґ РєР°РЅР°Р»Р° РІ РјР°СЂС€СЂСѓС‚РёР·Р°С‚РѕСЂРµ';
 
 comment on column NIKRTCONF.DENERGY is
-'Дата данных в маршрутизаторе';
+'Р”Р°С‚Р° РґР°РЅРЅС‹С… РІ РјР°СЂС€СЂСѓС‚РёР·Р°С‚РѕСЂРµ';
 
 comment on column NIKRTCONF.DSTATE is
-'Дата состояния';
+'Р”Р°С‚Р° СЃРѕСЃС‚РѕСЏРЅРёСЏ';
 
 comment on column NIKRTCONF.NSTATE is
-'Состояние';
+'РЎРѕСЃС‚РѕСЏРЅРёРµ';
 
 alter table NIKRTCONF
    add constraint NIKRTCONF_F1 foreign key (CID)
@@ -27150,7 +27150,7 @@ alter table NIKRTCONF  add(
 );
 
 comment on column NIKRTCONF.NOFF is
-'Отключен';
+'РћС‚РєР»СЋС‡РµРЅ';
 
 ----------------------------------------------------------------------------------------------
 -- 02/09/2013
@@ -27170,7 +27170,7 @@ alter table FEEDERS  add(
 
 
 comment on column FEEDERS.VACCOUNT is
-'Лицевой счет';
+'Р›РёС†РµРІРѕР№ СЃС‡РµС‚';
 
 
 /*==============================================================*/
@@ -27196,12 +27196,12 @@ commit;
 ----------------------------------------------------------------------------------------------
 -- 02/10/2013
 ----------------------------------------------------------------------------------------------
-INSERT INTO deportprocedures("NPROCEDURE","VNAME","VPROCEDURE","NPERIOD","NTYPE","VMEMO") VALUES(77,'Перерасчет данных по группе точек за период','ryda.BACKGROUND01_PG.recalcpoints',2,1,'Перерасчет данных по группе точек за период');
+INSERT INTO deportprocedures("NPROCEDURE","VNAME","VPROCEDURE","NPERIOD","NTYPE","VMEMO") VALUES(77,'РџРµСЂРµСЂР°СЃС‡РµС‚ РґР°РЅРЅС‹С… РїРѕ РіСЂСѓРїРїРµ С‚РѕС‡РµРє Р·Р° РїРµСЂРёРѕРґ','ryda.BACKGROUND01_PG.recalcpoints',2,1,'РџРµСЂРµСЂР°СЃС‡РµС‚ РґР°РЅРЅС‹С… РїРѕ РіСЂСѓРїРїРµ С‚РѕС‡РµРє Р·Р° РїРµСЂРёРѕРґ');
 commit;
 
 
 ----------------------------------------------------------------------------------------------
--- 03/10/2013     VER 3.4.3.1 (Для обновления версии 3.4.3.0 до текущей скрипт запускать отсюда)      
+-- 03/10/2013     VER 3.4.3.1 (Р”Р»СЏ РѕР±РЅРѕРІР»РµРЅРёСЏ РІРµСЂСЃРёРё 3.4.3.0 РґРѕ С‚РµРєСѓС‰РµР№ СЃРєСЂРёРїС‚ Р·Р°РїСѓСЃРєР°С‚СЊ РѕС‚СЃСЋРґР°)      
 ----------------------------------------------------------------------------------------------
 update protocols set DLL_NAME='TeletecHTTP.dll' where protocol_id=1013;
 commit;
@@ -27216,8 +27216,8 @@ a NUMBER;
 ln_customer_id NUMBER;
 begin
 SELECT NVL(SUM(DECODE(vvalue, '', 0, vvalue)), 0)   INTO ln_customer_id   FROM parameter  WHERE npid = 12;
- if ln_customer_id in (0,7) then --ОДЕССА ОЭ
-		INSERT INTO deportprocedures("NPROCEDURE","VNAME","VPROCEDURE","NPERIOD","NTYPE","VMEMO") VALUES(78,'Выгрузка суточных показаний в расчетную систему','ryda.reports1_pg.export_to_billing',2,0,'Выгрузка суточных показаний в расчетную систему');
+ if ln_customer_id in (0,7) then --РћР”Р•РЎРЎРђ РћР­
+		INSERT INTO deportprocedures("NPROCEDURE","VNAME","VPROCEDURE","NPERIOD","NTYPE","VMEMO") VALUES(78,'Р’С‹РіСЂСѓР·РєР° СЃСѓС‚РѕС‡РЅС‹С… РїРѕРєР°Р·Р°РЅРёР№ РІ СЂР°СЃС‡РµС‚РЅСѓСЋ СЃРёСЃС‚РµРјСѓ','ryda.reports1_pg.export_to_billing',2,0,'Р’С‹РіСЂСѓР·РєР° СЃСѓС‚РѕС‡РЅС‹С… РїРѕРєР°Р·Р°РЅРёР№ РІ СЂР°СЃС‡РµС‚РЅСѓСЋ СЃРёСЃС‚РµРјСѓ');
 		commit;
 	END IF;	
 end;
@@ -27226,11 +27226,11 @@ end;
 
 
 ----------------------------------------------------------------------------------------------
--- 22/10/2013     VER 3.5.0.1 (Для обновления версии 3.4.3.1 до текущей скрипт запускать отсюда)      
+-- 22/10/2013     VER 3.5.0.1 (Р”Р»СЏ РѕР±РЅРѕРІР»РµРЅРёСЏ РІРµСЂСЃРёРё 3.4.3.1 РґРѕ С‚РµРєСѓС‰РµР№ СЃРєСЂРёРїС‚ Р·Р°РїСѓСЃРєР°С‚СЊ РѕС‚СЃСЋРґР°)      
 ----------------------------------------------------------------------------------------------
 
 /*
---Только с разрешения Интэп
+--РўРѕР»СЊРєРѕ СЃ СЂР°Р·СЂРµС€РµРЅРёСЏ РРЅС‚СЌРї
 
 --drop table ROLEGROUP;
 --drop table ROLEPOINT
@@ -27254,10 +27254,10 @@ end;
 ----------------------------------------------------------------------------------------------
 
 begin
-update ADDFORMPARAM set VDESCR='Отображать наименование родителя уровня 1 под' where NSORT=-12;
-update ADDFORMPARAM set VDESCR='Отображать наименование родителя уровня 2 под' where NSORT=-13;
-insert into ADDFORMPARAM(NSORT,VDESCR,NTYPE) values(-14,'Отображение доп. параметров окна диалога',0);
-update ADDFORMPARAM set VDESCR='Отображение доп. параметров окна диалога' where NSORT=-14;
+update ADDFORMPARAM set VDESCR='РћС‚РѕР±СЂР°Р¶Р°С‚СЊ РЅР°РёРјРµРЅРѕРІР°РЅРёРµ СЂРѕРґРёС‚РµР»СЏ СѓСЂРѕРІРЅСЏ 1 РїРѕРґ' where NSORT=-12;
+update ADDFORMPARAM set VDESCR='РћС‚РѕР±СЂР°Р¶Р°С‚СЊ РЅР°РёРјРµРЅРѕРІР°РЅРёРµ СЂРѕРґРёС‚РµР»СЏ СѓСЂРѕРІРЅСЏ 2 РїРѕРґ' where NSORT=-13;
+insert into ADDFORMPARAM(NSORT,VDESCR,NTYPE) values(-14,'РћС‚РѕР±СЂР°Р¶РµРЅРёРµ РґРѕРї. РїР°СЂР°РјРµС‚СЂРѕРІ РѕРєРЅР° РґРёР°Р»РѕРіР°',0);
+update ADDFORMPARAM set VDESCR='РћС‚РѕР±СЂР°Р¶РµРЅРёРµ РґРѕРї. РїР°СЂР°РјРµС‚СЂРѕРІ РѕРєРЅР° РґРёР°Р»РѕРіР°' where NSORT=-14;
 commit;
 end;
 /
@@ -27279,16 +27279,16 @@ create table SRVINI  (
 );
 
 comment on table SRVINI is
-'INI файл ССД';
+'INI С„Р°Р№Р» РЎРЎР”';
 
 comment on column SRVINI.NSRV is
-'Ид ССД';
+'РРґ РЎРЎР”';
 
 comment on column SRVINI.NORDER is
-'Номер строки';
+'РќРѕРјРµСЂ СЃС‚СЂРѕРєРё';
 
 comment on column SRVINI.VTEXT is
-'Строка';
+'РЎС‚СЂРѕРєР°';
 
 alter table SRVINI
    add constraint SRVINI_F1 foreign key (NSRV)
@@ -27306,16 +27306,16 @@ create table SRVLOG  (
 );
 
 comment on table SRVLOG is
-'INI файл ССД2';
+'INI С„Р°Р№Р» РЎРЎР”2';
 
 comment on column SRVLOG.NSRV is
-'Ид ССД';
+'РРґ РЎРЎР”';
 
 comment on column SRVLOG.NORDER is
-'Номер строки';
+'РќРѕРјРµСЂ СЃС‚СЂРѕРєРё';
 
 comment on column SRVLOG.VTEXT is
-'Строка';
+'РЎС‚СЂРѕРєР°';
 
 alter table SRVLOG
    add constraint SRVLOG_F1 foreign key (NSRV)
@@ -27323,7 +27323,7 @@ alter table SRVLOG
       on delete cascade;
 
 
-----Структура для хранения информации по отключению
+----РЎС‚СЂСѓРєС‚СѓСЂР° РґР»СЏ С…СЂР°РЅРµРЅРёСЏ РёРЅС„РѕСЂРјР°С†РёРё РїРѕ РѕС‚РєР»СЋС‡РµРЅРёСЋ
 
 alter table CURR_POWER_ARCH  add(
    NOFF                 NUMBER(1),
@@ -27332,13 +27332,13 @@ alter table CURR_POWER_ARCH  add(
 );
 
 comment on column CURR_POWER_ARCH.NOFF is
-'Признак отключения';
+'РџСЂРёР·РЅР°Рє РѕС‚РєР»СЋС‡РµРЅРёСЏ';
 
 comment on column CURR_POWER_ARCH.DOFF is
-'Дата изменения состояния отключения';
+'Р”Р°С‚Р° РёР·РјРµРЅРµРЅРёСЏ СЃРѕСЃС‚РѕСЏРЅРёСЏ РѕС‚РєР»СЋС‡РµРЅРёСЏ';
 
 comment on column CURR_POWER_ARCH.NSTATUS is
-'Статусный байт счетчика';
+'РЎС‚Р°С‚СѓСЃРЅС‹Р№ Р±Р°Р№С‚ СЃС‡РµС‚С‡РёРєР°';
 
 
 
@@ -27349,13 +27349,13 @@ alter table CURR_POWER  add(
 );
 
 comment on column CURR_POWER.NOFF is
-'Признак отключения';
+'РџСЂРёР·РЅР°Рє РѕС‚РєР»СЋС‡РµРЅРёСЏ';
 
 comment on column CURR_POWER.DOFF is
-'Дата изменения состояния отключения';
+'Р”Р°С‚Р° РёР·РјРµРЅРµРЅРёСЏ СЃРѕСЃС‚РѕСЏРЅРёСЏ РѕС‚РєР»СЋС‡РµРЅРёСЏ';
 
 comment on column CURR_POWER.NSTATUS is
-'Статусный байт счетчика';
+'РЎС‚Р°С‚СѓСЃРЅС‹Р№ Р±Р°Р№С‚ СЃС‡РµС‚С‡РёРєР°';
 
 
 --alter table LAST_SAVE  drop column DEXECMDOFF;
@@ -27371,47 +27371,47 @@ alter table LAST_SAVE  add(
 
 
 comment on column LAST_SAVE.PROFILE is
-'Профиль';
+'РџСЂРѕС„РёР»СЊ';
 
 comment on column LAST_SAVE.HALFHOUR is
-'График';
+'Р“СЂР°С„РёРє';
 
 comment on column LAST_SAVE.BILL is
-'Сутки';
+'РЎСѓС‚РєРё';
 
 comment on column LAST_SAVE.RATE is
-'Тарифы';
+'РўР°СЂРёС„С‹';
 
 comment on column LAST_SAVE.CLOCK is
-'Расхождение t';
+'Р Р°СЃС…РѕР¶РґРµРЅРёРµ t';
 
 comment on column LAST_SAVE.STATE_DATE is
-'Дата состояния';
+'Р”Р°С‚Р° СЃРѕСЃС‚РѕСЏРЅРёСЏ';
 
 comment on column LAST_SAVE.STATE_COD is
-'Код состояние';
+'РљРѕРґ СЃРѕСЃС‚РѕСЏРЅРёРµ';
 
 comment on column LAST_SAVE.STATE_DESCR is
-'Описание состояния';
+'РћРїРёСЃР°РЅРёРµ СЃРѕСЃС‚РѕСЏРЅРёСЏ';
 
 comment on column LAST_SAVE.LUCK is
-'Последняя удача';
+'РџРѕСЃР»РµРґРЅСЏСЏ СѓРґР°С‡Р°';
 
 comment on column LAST_SAVE.RATES is
-'Тариф';
+'РўР°СЂРёС„';
 
 comment on column LAST_SAVE.MONTHS is
-'Месячные';
+'РњРµСЃСЏС‡РЅС‹Рµ';
 
 comment on column LAST_SAVE.TRIAL is
-'Попытка';
+'РџРѕРїС‹С‚РєР°';
 
 comment on column LAST_SAVE.FAIL is
-'Последняя неудача';
+'РџРѕСЃР»РµРґРЅСЏСЏ РЅРµСѓРґР°С‡Р°';
 
 
 begin
-insert into parameter (NPID,VVALUE,VDESCRIPTION) values(62,5000,'Максимальная глубина хранения файла журнала опросчика.');
+insert into parameter (NPID,VVALUE,VDESCRIPTION) values(62,5000,'РњР°РєСЃРёРјР°Р»СЊРЅР°СЏ РіР»СѓР±РёРЅР° С…СЂР°РЅРµРЅРёСЏ С„Р°Р№Р»Р° Р¶СѓСЂРЅР°Р»Р° РѕРїСЂРѕСЃС‡РёРєР°.');
 commit;
 exception when others then rollback;
 end;
@@ -27433,7 +27433,7 @@ alter table CURR_POWER_ARCH  add (
 INSERT INTO tasks
 (TASK_ID,PARENT,TASK_COD,NAME,REMARK,NSHOW)
 VALUES
-(109,80,665,'9.07 Отключение нагрузки на счетчике','9.07 Отключение нагрузки на счетчике',0)
+(109,80,665,'9.07 РћС‚РєР»СЋС‡РµРЅРёРµ РЅР°РіСЂСѓР·РєРё РЅР° СЃС‡РµС‚С‡РёРєРµ','9.07 РћС‚РєР»СЋС‡РµРЅРёРµ РЅР°РіСЂСѓР·РєРё РЅР° СЃС‡РµС‚С‡РёРєРµ',0)
 /
 commit;
 
@@ -27496,7 +27496,7 @@ commit;
 
 --------------12/02/2014
 begin
-insert into parameter (NPID,VVALUE,VDESCRIPTION) values(63,0,'Уровень строгости проверки синтаксиса входящих макетов [0..10] (0-полное, 1-допускается отклонение).');
+insert into parameter (NPID,VVALUE,VDESCRIPTION) values(63,0,'РЈСЂРѕРІРµРЅСЊ СЃС‚СЂРѕРіРѕСЃС‚Рё РїСЂРѕРІРµСЂРєРё СЃРёРЅС‚Р°РєСЃРёСЃР° РІС…РѕРґСЏС‰РёС… РјР°РєРµС‚РѕРІ [0..10] (0-РїРѕР»РЅРѕРµ, 1-РґРѕРїСѓСЃРєР°РµС‚СЃСЏ РѕС‚РєР»РѕРЅРµРЅРёРµ).');
 commit;
 exception when others then rollback;
 end;
@@ -27505,7 +27505,7 @@ end;
 
 
 --25/02/2014
-INSERT INTO protocols VALUES (131,'Управление портом',NULL,NULL);
+INSERT INTO protocols VALUES (131,'РЈРїСЂР°РІР»РµРЅРёРµ РїРѕСЂС‚РѕРј',NULL,NULL);
 commit;
 
 --19/03/2014
@@ -27526,7 +27526,7 @@ alter table SRV  add(
 
 
 comment on column SRV.VVERSION is
-'Версия';
+'Р’РµСЂСЃРёСЏ';
 
 --27/04/2014
 update db_term set INDEX_NAME='COMPORTEVENTS_IDX2' where TABLE_NAME='COMPORTEVENTS';

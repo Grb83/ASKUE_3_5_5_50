@@ -1,0 +1,17 @@
+truncate table BILLOLD;
+truncate table BILLORG;
+truncate table COMPORTEVENTS;
+truncate table CURR_POWER_ARCH;
+truncate table EA_EVENTS;
+truncate table FISCAL;
+truncate table HALFHOUROLD;
+truncate table JOBS;
+truncate table JOURNAL;
+truncate table JOURNALLAST;
+truncate table LG_LOADPROF;
+truncate table LG_READOUT;
+truncate table MAKET30817;
+truncate table MONTHSORG;
+truncate table PROFILE;
+delete from switches;
+truncate table TRAFFIC;

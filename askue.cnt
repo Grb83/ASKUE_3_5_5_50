@@ -1,0 +1,328 @@
+:TITLE Справочная система  АСКУЭ
+:BASE askue.hlp
+1 Главное меню АСКУЭ
+2 Главное меню АСКУЭ. Общая часть=Scribble201@askue.hlp
+2 Пункт главного меню "Файл"
+3 Пункт главного меню "Файл". Общая часть=PunktFail@askue.hlp
+3 Команда "Открыть монитор"=Scribble312@askue.hlp
+3 Команда "Открыть редактор"=Scribble2113@askue.hlp
+3 Команда "Оперативный опрос"=Scribble2116@askue.hlp
+3 Команда "Фоновые процессы"=Scribble2114@askue.hlp
+3 Команда "Редактировать список мониторов"=Scribble2156@askue.hlp
+3 Команда "Сохранить монитор"=Scribble2151@askue.hlp
+3 Команда "Сохранить монитор как"=Scribble2152@askue.hlp
+3 Команда "Настройка стилей монитора"=Scribble2157@askue.hlp
+3 Команда "Печать таблицы"=Scribble2159@askue.hlp
+3 Команда "Печать графика"=Scribble2161@askue.hlp
+3 Команда "Сохранить график как"=Scribble2162@askue.hlp
+3 Команда "Сохранить таблицу в файл"=Scribble2163@askue.hlp
+3 Команда "Выход"=Scribble2115@askue.hlp
+3 Команда "Настройка фильтров..."=Filters_setting@askue.hlp
+3 Команда "Печать отчета"=Print_report@askue.hlp
+3 Команда "Сохранить отчет как..."=Save_report@askue.hlp
+1 Пункт главного меню "Вид"=Scribble212@askue.hlp
+2 Пункт главного меню "Администратор"
+3 Администратор. Общая часть=Scribble401@askue.hlp
+3 Смена пароля пользователя АСКУЭ=Scribble430@askue.hlp
+3 Администрирование=New_item7@askue.hlp
+2 Пункт главного меню "Инструментарий"
+3 Инструментарий. Общая часть.=Scribble701@askue.hlp
+3 Терминал опроса=Scribble710@askue.hlp
+3 Рабочие кнопки терминала опроса=Scribble711@askue.hlp
+3 Параметры окна терминала=Scribble712@askue.hlp
+3 Журнал терминала опроса=Scribble713@askue.hlp
+3 Терминал показаний=Scribble720@askue.hlp
+3 График терминала=Scribble714@askue.hlp
+3 Монитор полноты и своевременности поступления данных. Общая часть=Scribble731@askue.hlp
+3 График наличия данных=Scribble732@askue.hlp
+3 История заполнения БД=Scribble733@askue.hlp
+3 Журнал сообщений монитора показаний=Scribble734@askue.hlp
+3 Главное меню монитора показаний=Scribble735@askue.hlp
+3 Панель задания исходных данных=Scribble736@askue.hlp
+3 Панель группировок объектов=Scribble737@askue.hlp
+3 Обновить БД качества электроэнергии=ObnovlenieKa4estvaElektr@askue.hlp
+2 Пункт главного меню "Монитор"
+3 Монитор. Общая часть.=Scribble601@askue.hlp
+3 Команда "Развернуть на 90"=Scribble2153@askue.hlp
+3 Команда "Добавить панель снизу"=Scribble2154@askue.hlp
+3 Команда "Добавить панель справа"=Scribble2155@askue.hlp
+2 Пункт главного меню "Окна"
+3 Команда "Упорядочить горизонтально"=Scribble314@askue.hlp
+3 Команда "Упорядочить вертикально"=Scribble315@askue.hlp
+3 Команда "Каскад"=Scribble316@askue.hlp
+1 Пункт главного меню "Помощь"=New_item2@askue.hlp
+1 Графическая консоль редактирования схем
+2 Формат идентификатора на схемах=1123@askue.hlp
+1 Информационная панель
+2 Информационная панель. Общая часть=Scribble301@askue.hlp
+2 Кнопка "Открыть редактор"=Scribble311@askue.hlp
+2 Кнопка "Открыть монитор"=otkrmon@askue.hlp
+2 Кнопка "Создать монитор"=sozdmon@askue.hlp
+2 Кнопка "Оперативный опрос"=Scribble320@askue.hlp
+2 Кнопка "Обрывы связи"=Scribble317@askue.hlp
+2 Кнопка "Предупреждения"=Scribble318@askue.hlp
+2 Кнопка "Сообщения"=Scribble319@askue.hlp
+2 Кнопка "ССД"=Scribble313@askue.hlp
+2 Кнопка "Занимаемое место БД ORACLE"=ZanimaeomoeMestoBDOracle@askue.hlp
+2 Кнопка "СЕВ"=SEV_btn@askue.hlp
+2 Кнопка "СД"=SD_btn@askue.hlp
+2 Выбор текущего часового пояса и расписания тарифных зон=1031001@askue.hlp
+2 Кнопка "Форум пользователей"=2402101@askue.hlp
+2 Кнопка "?"=Scribble340@askue.hlp
+1 Редактор АСКУЭ
+2 Редактор АСКУЭ. Общая часть=Scribble506@askue.hlp
+2 Список задач=Scribble507@askue.hlp
+2 Раздел редактора "Ручной ввод"
+3 Ручной ввод. Общая часть=Scribble501@askue.hlp
+3 Ввод показаний=Scribble511@askue.hlp
+3 Ввод количества энергии=Scribble512@askue.hlp
+3 Ввод показаний (график нагрузки)=Scribble513@askue.hlp
+3 Ввод расходов (график нагрузки)=Scribble514@askue.hlp
+3 Ввод начальных показаний=Scribble515@askue.hlp
+3 Расписание тарифных зон=Scribble516@askue.hlp
+3 Задание часов максимумов=Scribble517@askue.hlp
+3 Замена счетчиков=Scribble518@askue.hlp
+3 Окно для задания параметров ввода расходов=New_item5@askue.hlp
+3 Окно для задания параметров ввода показаний=New_item4@askue.hlp
+3 Ввод тарифов=Scribble519@askue.hlp
+3 Загрузка файлов данных счетчиков LG=lg_counters@askue.hlp
+2 Раздел редактора "Базы данных"
+3 База данных. Общая часть=Scribble502@askue.hlp
+3 Точки учёта=Scribble521@askue.hlp
+3 Группы учёта=Scribble522@askue.hlp
+3 Формы учета=Scribble523@askue.hlp
+3 Редактирование счетчиков=Scribble525@askue.hlp
+3 Параметры глубины хранения данных=Scribble524@askue.hlp
+3 Спецификация предприятия=Scribble526@askue.hlp
+3 Переключение ОВ=Scribble5271@askue.hlp
+3 Загрузка файлов данных счетчиков=New_item@askue.hlp
+2 Раздел редактора "Коммуникации"
+3 Коммуникации. Общая часть=Scribble503@askue.hlp
+3 Настройка COM-портов=Scribble531@askue.hlp
+3 Параметры сервера сбора данных=Scribble532@askue.hlp
+3 План опроса=Scribble533@askue.hlp
+2 Раздел редактора "Макеты"
+3 Макеты. Общая часть=Scribble504@askue.hlp
+3 Формирование макетов=Scribble541@askue.hlp
+3 План рассылки макетов=Scribble543@askue.hlp
+3 Просмотр сформированных макетов=Scribble546@askue.hlp
+3 План выполнения фоновых процессов=Scribble542@askue.hlp
+3 АРМ оператора приема макетов=Recieve_makets@askue.hlp
+3 Формирование макета для отправки отчетов=Maket_report@askue.hlp
+3 Работа с макетом CIM/RDF=220620101@askue.hlp
+2 Раздел редактора "Мониторинг системы"
+3 Мониторинг системы. Общая часть=Scribble505@askue.hlp
+3 Мониторинг опроса=Scribble551@askue.hlp
+2 Раздел редактора "Потери"
+3 Потери. Общая часть=Scribble508@askue.hlp
+3 Задача "Ведение коммутации"=Scribble561@askue.hlp
+3 Задача "Просмотр начислений и разноски потерь"=Scribble562@askue.hlp
+1 Поиск точки учета=Iiene_oiee_oaoa@askue.hlp
+1 Монитор АСКУЭ
+2 Монитор. Общая часть=Scribble601@askue.hlp
+2 Экранная форма АСКУЭ=Scribble625@askue.hlp
+2 Шаблоны форм монитора=Scribble620@askue.hlp
+2 Таблица <Монитор АСКУЭ>=Scribble6014@askue.hlp
+2 Название монитора <Монитор АСКУЭ>=Scribble6006@askue.hlp
+2 Название таблицы <Монитор АСКУЭ>=Scribble6007@askue.hlp
+2 Единицы измерения <Монитор АСКУЭ>=Scribble6008@askue.hlp
+2 Название параметров <Монитор АСКУЭ>=Scribble6009@askue.hlp
+2 Строки таблицы <Монитор АСКУЭ>=Scribble6010@askue.hlp
+2 Столбцы таблицы <Монитор АСКУЭ>=Scribble6011@askue.hlp
+2 Измеряемое значение <Монитор АСКУЭ>=Scribble6001@askue.hlp
+2 Суммарные показания по группе <Монитор АСКУЭ>=Pokazgr@askue.hlp
+2 Суммарные показания по профилю <Монитор АСКУЭ>=Scribble6003@askue.hlp
+2 Прокрутка таблицы <Монитор АСКУЭ>=Scribble6013@askue.hlp
+2 Итоговые значения <Монитор АСКУЭ>=Scribble6004@askue.hlp
+2 График монитора <Монитор АСКУЭ>=Scribble6005@askue.hlp
+2 Пояснения графика <Монитор АСКУЭ>=Scribble6012@askue.hlp
+2 Параметры монитора <Монитор АСКУЭ>=Scribble6020@askue.hlp
+2 Форма монитора <Монитор АСКУЭ>=Scribble6030@askue.hlp
+2 Кнопки переключения <Монитор АСКУЭ>=Scribble6040@askue.hlp
+2 Закрыть <Монитор АСКУЭ>=Scribble6050@askue.hlp
+2 Журнал сообщений системы=Scribble6212@askue.hlp
+2 Журнал действий оператора=Scribble6211@askue.hlp
+2 Команды монитора=Scribble610@askue.hlp
+2 Настройки обновлений мониторов=Scribble2158@askue.hlp
+2 Мнемосхемы подстанций=Mnemoschemes@askue.hlp
+1 Инструментарий
+2 Инструментарий. Общая часть=Scribble701@askue.hlp
+2 Терминал опроса
+3 Терминал опроса. Общая часть=Scribble715@askue.hlp
+3 Рабочие кнопки терминала опроса=Scribble711@askue.hlp
+3 Параметры окна терминала=Scribble712@askue.hlp
+3 Журнал терминала опроса=Scribble713@askue.hlp
+3 График терминала=Scribble714@askue.hlp
+2 Терминал показаний
+3 Терминал показаний. Общая часть=Evid_terme@askue.hlp
+3 Вкладка "На момент времени"=Moment@askue.hlp
+3 Вкладка "В глубину по времени"=DepthTime@askue.hlp
+3 Параметры. Основные рабочие кнопки=Parameters@askue.hlp
+2 Монитор полноты и своевременности поступления данных
+3 Монитор полноты и своевременности поступления данных. Общая часть=Scribble731@askue.hlp
+3 График наличия данных=Scribble732@askue.hlp
+3 История заполнения БД=Scribble733@askue.hlp
+3 Журнал сообщений монитора показаний=Scribble734@askue.hlp
+3 Главное меню монитора показаний=Scribble735@askue.hlp
+3 Панель задания исходных данных=Scribble736@askue.hlp
+3 Панель группировок объектов=Scribble737@askue.hlp
+2 Обновить БД качества электроэнергии
+3 Обновить БД качества электроэнергии=ObnovlenieKa4estvaElektr@askue.hlp
+1 Общие возможности
+2 Контекстное меню=Scribble5202@askue.hlp
+2 Функциональные кнопки=Scribble5201@askue.hlp
+2 Рабочие кнопки=Scribble5203@askue.hlp
+2 Горячие клавиши=Scribble5207@askue.hlp
+2 Как создать новую точку учета=1001@askue.hlp
+2 Как создать новую группу учета=1002@askue.hlp
+2 Как создать новую форму учета=1003@askue.hlp
+2 Как создать новый макет=1004@askue.hlp
+2 Как создать новый канал=1005@askue.hlp
+2 Как проконтролировать полноту данных опроса за прошедшие сутки=1006@askue.hlp
+2 Как  выполнить контроль состояния каналов связи за прошедшие сутки=1007@askue.hlp
+2 Как  выполнить контроль полноты и своевременности составления и отправки макетов=1008@askue.hlp
+2 Как  выполнить контроль ручного ввода данных за прошедшие сутки=1009@askue.hlp
+2 Как выполнить контроль синхронизации времени за прошедшие сутки=1011@askue.hlp
+2 Как выполнить контроль работы сервера=1012@askue.hlp
+2 Как выполнить контроль состояния СУБД=1013@askue.hlp
+2 Как выполнить ежедневный контроль работоспособности=1010@askue.hlp
+1 Комплекс задач по администрированию
+2 Вход в систему=Scribble460@askue.hlp
+2 Администратор. Общая часть=Scribble401@askue.hlp
+2 Изменение пароля=Scribble431@askue.hlp
+2 Редактирование списка схем оперативного опроса=Scribble440_2@askue.hlp
+2 Редактирование списка схем просмотра=New_item8@askue.hlp
+2 Редактирование списка пользователей=Scribble420_2@askue.hlp
+2 Редактирование групп пользователей=Scribble410_3@askue.hlp
+2 Параметры системы=ParametriSistemi@askue.hlp
+1 Комплекс задач по ручному вводу
+2 Комплекс задач по ручному вводу=Scribble291@askue.hlp
+2 Ввод показаний ПУ=Scribble511@askue.hlp
+2 Ввод показаний ПУ по тарифным зонам суток=Scribble534@askue.hlp
+2 Ввод показаний ПУ по получасовому ГН=Scribble513@askue.hlp
+2 Ввод начальных показаний ПУ=Scribble515@askue.hlp
+2 Ввод показаний ПУ с пропорциональной разбивкой на ГН=Scribble536@askue.hlp
+2 Ввод показаний ПУ с пропорциональной разбивкой на ГН для последних суток=Pokazania1@askue.hlp
+2 Ввод показаний ПУ с равномерной разбивкой на ГН=Scribble538@askue.hlp
+2 Ввод показаний ПУ с равномерной разбивкой на ГН для последних суток=Pokazania2@askue.hlp
+2 Ввод расходов  электроэнергии=Scribble512@askue.hlp
+2 Ввод расходов по тарифным зонам суток=Scribble535@askue.hlp
+2 Ввод расходов (график нагрузки)=Scribble514@askue.hlp
+2 Ввод расходов с пропорциональной разбивкой на ГН=Scribble537@askue.hlp
+2 Ввод расходов с пропорциональной разбивкой на ГН для последних суток=Aaiae_anoiaeia_n_iiiioeeiiaeue@askue.hlp
+2 Ввод расходов с равномерной разбивкой на ГН=Scribble539@askue.hlp
+2 Ввод расходов с равномерной разбивкой на ГН для последних суток=Rashod1@askue.hlp
+2 Ввод информации о переключениях обходных выключателей=OB@askue.hlp
+2 Загрузка файлов данных счётчиков=Scribble528@askue.hlp
+2 Редактирование формул/функций=FormulesFunc_Edit@askue.hlp
+2 Редактирование приоритетов источников данных=Prioritets@askue.hlp
+2 Изменение расчетного коэффициента=Koeff@askue.hlp
+2 Ввод специальных параметров=Spec_parametres@askue.hlp
+2 Ввод физических и технологических границ=Limits@askue.hlp
+2 Ввод времени работы точки учета=WorkTime@askue.hlp
+1 Комплекс задач ведения НСИ
+2 Комплекс задач ведения НСИ. Общая часть=Scribble281@askue.hlp
+2 Спецификация предприятия=Scribble526@askue.hlp
+2 Расписание тарифных зон=Scribble516@askue.hlp
+2 Ввод тарифов=Scribble519@askue.hlp
+2 Задание часов максимумов=Scribble517@askue.hlp
+2 Параметры сервера сбора данных=Scribble532@askue.hlp
+2 Параметры глубины хранения данных=Scribble524@askue.hlp
+2 План выполнения фоновых процессов=Scribble542@askue.hlp
+2 Настройка COM-портов=Scribble531@askue.hlp
+2 План опроса=Scribble533@askue.hlp
+2 Точки учёта=Scribble521@askue.hlp
+2 Группы учёта=Scribble522@askue.hlp
+1 Комплекс задач по работе с приборами учета
+2 Работа с приборами учета. Общая часть=Scribble465@askue.hlp
+2 Редактирование счетчиков=Scribble525@askue.hlp
+2 Замена счетчиков=Scribble518@askue.hlp
+2 Редактирование трансформаторов=Scribble529@askue.hlp
+2 Атрибуты счетчика=Scribble5182@askue.hlp
+2 Счётчики=Scribble5206@askue.hlp
+1 Комплекс задач получения выходной информации
+2 Выходная информация АСКУЭ. Общая часть=Scribble470@askue.hlp
+2 Выходная информация в виде отчетных документов=Scribble471@askue.hlp
+2 Вызов нужного отчетного документа=Scribble473@askue.hlp
+2 Просмотр процедуры формирования отчетного документа=Scribble474@askue.hlp
+2 Создание нового отчетного документа в формате EXCEL=Scribble475@askue.hlp
+2 Группы точек учета для отчетного документа=Scribble476@askue.hlp
+2 Выходная информация в виде экранных форм=Scribble472@askue.hlp
+2 Создать монитор=Scribble2111@askue.hlp
+2 Открыть монитор=Scribble312@askue.hlp
+2 Работа с любой из доступных экранных форм=Scribble477@askue.hlp
+2 Редактировать список мониторов=Scribble2156@askue.hlp
+2 Настройка стилей монитора=Scribble2157@askue.hlp
+2 Формы учёта=Scribble523@askue.hlp
+2 Группы учёта=Scribble522@askue.hlp
+1 Комплекс задач выполнения фоновых процессов
+2 Фоновые процессы. Общая часть=Scribble271@askue.hlp
+2 План выполнения фоновых процессов=Scribble542@askue.hlp
+2 Фоновый процесс "Контроль мощности"=New_item6@askue.hlp
+2 Фоновый процесс "Контроль суточных по ГН"=KontrolCutochnihPoGN@askue.hlp
+2 Фоновый процесс "Верификация счетчиков"=VerefikaciyaSchetchikov@askue.hlp
+2 Фоновый процесс "Контроль номера устройства с НСИ"=Oiiiaue_iioeann_Eiioieue_iiiaa@askue.hlp
+2 Фоновый процесс "Верификация балансов""=Aaeoeeaoee_aaeainia@askue.hlp
+2 Отчетный документ "Расхождения при  верификации"=Ioaoiue_aeieoiaio_Ieaee_aaeoee@askue.hlp
+2 Формирование макетов=Scribble541@askue.hlp
+2 План рассылки макетов=Scribble543@askue.hlp
+2 Создание макета "Нарушения работы системы"=Nicaeaiea_iaeaoa_Iaoaie_aaiou_@askue.hlp
+1 Комплекс задач фиксирования и индикации событий
+2 Комплекс задач фиксирования и индикации событий. Общая часть=Scribble251@askue.hlp
+2 Мониторинг опроса=Scribble551@askue.hlp
+2 Обрывы связи=Scribble317@askue.hlp
+2 Предупреждения=Scribble318@askue.hlp
+2 Предупреждения о расхождениях при верификации данных=Scribble252@askue.hlp
+2 Сообщения=Scribble319@askue.hlp
+2 ССД=Scribble313@askue.hlp
+2 Журнал сообщений системы=Scribble6212@askue.hlp
+2 Журнал действий оператора=Scribble6211@askue.hlp
+1 Комплекс задач сбора данных
+2 Комплекс задач сбора данных. Общая часть=Scribble261@askue.hlp
+2 Программное обеспечение службы сбора данных=progssd@askue.hlp
+2 Конфигурирование сервера сбора данных посредством редактора АСКУЭ=Konfssd@askue.hlp
+2 Конфигурирование сервера сбора данных посредством файла инициализации=konfssd1@askue.hlp
+2 План опроса=Scribble533@askue.hlp
+2 Состояние опроса MTX маршрутизаторов=MTX@askue.hlp
+2 Состояние опроса RTRNP маршрутизаторов.=RTRNP@askue.hlp
+2 Точки учёта=Scribble521@askue.hlp
+2 Условия выдачи телеуправления=Scribble5220@askue.hlp
+2 Настройка COM-портов=Scribble531@askue.hlp
+2 Мониторинг опроса=Scribble551@askue.hlp
+2 Терминал опроса=Scribble710@askue.hlp
+2 Терминал показаний=Scribble720@askue.hlp
+2 Монитор полноты и своевременности поступления данных=Scribble731@askue.hlp
+2 Отчетные документы для анализа результатов опроса=Scribble262@askue.hlp
+1 Потери
+2 Расчет нормативных потерь=VNB1@askue.hlp
+1 Отчеты
+2 Общие настройки. Создание отчетов.=Report_Settings@askue.hlp
+2 Просмотр. Сохранение. Вывод на печать=View_print_report@askue.hlp
+2 Складання балансу електроенергії на ПС=Report_settings1@askue.hlp
+2 Покази розрахункових і контрольних лічильників в точках обліку міждержавних перетоків (МДП)=Report_Settings2@askue.hlp
+2 Звірка показів розрахункових лічильників=Report_settings3@askue.hlp
+2 Про стан балансу електроенергії=Report_settings4@askue.hlp
+2 Зняття показів лічильників=Report_settings5@askue.hlp
+2 Звірка показів основних та дублюючих лічильників по ПС=Report_settings6@askue.hlp
+2 Звірка показів основних лічильників з інтегрованої інформацією ОІК=Report_settings7@askue.hlp
+2 Сальдо електроенергії (надходження, віддача, сальдо) по ПЛ МДП=Report_settings8@askue.hlp
+2 Баланс електроенергії по регіону (енергосистемі)=Report_settings9@askue.hlp
+2 Реєстр даних=Report_settings10@askue.hlp
+2 По передаче э/э по линиям меж/гос перетоков по группе - актив, реактив=Report_settings17@askue.hlp
+2 По передаче э/э по линиям меж/гос перетоков актив=Report_settings18@askue.hlp
+2 Сальдо переток электроэнергии со смежными государствами с разбивкой по тарифным зонам=Report_settings18_2@askue.hlp
+2 Согласованные графики перетоков электроэнергии по меж/гос ЛЭП=22054@askue.hlp
+2 Сальдо преток э/э по МГ ЛЭП=22051@askue.hlp
+2 Обобщенный отчет по точкам=Report_settings31@askue.hlp
+2 Нормативно-справочная информация по тарифным зонам=Report_settings32@askue.hlp
+2 "Переключение ОВ" отчет "Журнал переключений"=Report_settings36@askue.hlp
+2 "Точки учета" отчет "Общий список точек учета"=Report_Settings33@askue.hlp
+2 "Точки учета" отчет "Параметры расчетной точки"=report_settings34@askue.hlp
+2 Группы учета=Report_settings35@askue.hlp
+2 Настройка СОМ-портов=Report_settings37@askue.hlp
+2 "План опроса" отчет "Общий список каналов"=Report_settings38@askue.hlp
+2 "План опроса" отчет "Параметры и перечень точек учета, входящих в канал"=Report_settings39@askue.hlp
+2 Общий список макетов=Report_settings40@askue.hlp
+2 Расписание плана рассылки макетов=Report_settings41@askue.hlp
+1 УППД
+2 Настройка функции передачи данных по протоколу УППД=YPPD@askue.hlp

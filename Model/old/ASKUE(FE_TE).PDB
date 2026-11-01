@@ -1,0 +1,8050 @@
+/BEGIN_TABLE AMCHEAD
+NAME A30
+VERS A8
+USER A30
+/BEGIN_DATA AMCHEAD
+PowerDesigner/PDM
+6.0.0
+
+/END_TABLE AMCHEAD
+
+/BEGIN_TABLE AMCMODL
+@       N5
+OID     N8
+MODL    N8
+NAME    A80
+CODE    A80
+LABL    A254
+DESC    TXT
+NOTE    TXT
+OPTS    TXT
+EXOP    TXT
+DBMS    A256
+FILE    A256
+HEAD    TXT
+FOOT    TXT
+POID    N8
+PNAM    A80
+PCOD    A80
+USER    A80
+VERS    A8
+CDAT    N12
+MDAT    N12
+EDAT    N12
+PART    N1
+ACCS    N5
+CUST    TXT
+/BEGIN_DATA AMCMODL
+3
+4
+4
+Model_4
+Model_4
+
+
+
+
+
+ORACLE Version 7.3
+ORACLE73.DEF
+
+
+0
+
+
+
+
+1011777064
+1011777244
+0
+0
+0
+
+/END_TABLE AMCMODL
+
+/BEGIN_TABLE AMCDOMN
+@       N5
+OID     N8
+DOMN    N8
+NAME    A80
+CODE    A80
+DESC    TXT
+NOTE    TXT
+LABL    A254
+DTTP    A30
+MLEN    N8
+PREC    N2
+IDNT    N1
+WDEF    N1
+MAND    N1
+UNIT    A8
+FRMT    A20
+LVAL    A20
+HVAL    A20
+DVAL    A30
+UPPR    N1
+LOWR    N1
+NMDF    N1
+VALS    TXT
+CRUL    TXT
+SRUL    TXT
+SOID    N8
+/BEGIN_DATA AMCDOMN
+/END_TABLE AMCDOMN
+
+/BEGIN_TABLE AMCTABL
+@       N5
+OID     N8
+TABL    N8
+MODL    N8
+NAME    A80
+CODE    A80
+LABL    A254
+DESC    TXT
+NOTE    TXT
+NBRC    N8
+SOID    N8
+TOBJ    N5
+COBJ    A80
+OPTS    TXT
+PKOP    TXT
+CRUL    TXT
+SRUL    TXT
+PKCN    A30
+CKCN    A30
+HEAD    TXT
+FOOT    TXT
+NGEN    N1
+/BEGIN_DATA AMCTABL
+1
+6
+6
+4
+DFM код формы диалога
+FE_DIALOGS
+
+
+
+0
+0
+0
+
+pctfree 10\
+pctused 40\
+initrans 1\
+maxtrans 255\
+tablespace AMS\
+storage\
+(\
+initial 20K\
+next 20K\
+minextents 1\
+maxextents 249\
+pctincrease 50\
+freelists 1\
+freelist groups 1\
+)
+
+
+
+PK_FE_DIALOGS
+
+
+
+0
+1
+7
+7
+4
+Список таблиц
+TE_TABLES
+
+
+
+0
+0
+0
+
+pctfree 10\
+pctused 40\
+initrans 1\
+maxtrans 255\
+tablespace AMS\
+storage\
+(\
+initial 20K\
+next 20K\
+minextents 1\
+maxextents 249\
+pctincrease 50\
+freelists 1\
+freelist groups 1\
+)
+
+
+
+PK_TE_TABLES
+
+
+
+0
+1
+8
+8
+4
+Данные с массивов шаблонов
+TE_ARRAYS
+
+
+
+0
+0
+0
+
+pctfree 10\
+pctused 40\
+initrans 1\
+maxtrans 255\
+tablespace AMS\
+storage\
+(\
+initial 20K\
+next 20K\
+minextents 1\
+maxextents 249\
+pctincrease 50\
+freelists 1\
+freelist groups 1\
+)
+
+
+
+PK_TE_ARRAYS
+
+
+
+0
+1
+9
+9
+4
+Текст основных атрибутов таблицы
+TE_ATTR_TABLE_TEXT
+
+
+
+0
+0
+0
+
+pctfree 10\
+pctused 40\
+initrans 1\
+maxtrans 255\
+tablespace AMS\
+storage\
+(\
+initial 20K\
+next 20K\
+minextents 1\
+maxextents 249\
+pctincrease 50\
+freelists 1\
+freelist groups 1\
+)
+
+
+
+PK_TE_ATTR_TABLE_TEXT
+
+
+
+0
+1
+10
+10
+4
+Текст динамических запросов
+TE_VAR_SQL_TEXT
+
+
+
+0
+0
+0
+
+pctfree 10\
+pctused 40\
+initrans 1\
+maxtrans 255\
+tablespace AMS\
+storage\
+(\
+initial 20K\
+next 20K\
+minextents 1\
+maxextents 249\
+pctincrease 50\
+freelists 1\
+freelist groups 1\
+)
+
+
+
+PK_TE_VAR_SQL_TEXT
+
+
+
+0
+1
+11
+11
+4
+Описание ячеек
+TE_CELLS
+
+
+
+0
+0
+0
+
+pctfree 10\
+pctused 40\
+initrans 1\
+maxtrans 255\
+tablespace AMS\
+storage\
+(\
+initial 20K\
+next 20K\
+minextents 1\
+maxextents 249\
+pctincrease 50\
+freelists 1\
+freelist groups 1\
+)
+
+
+
+PK_TE_CELLS
+
+
+
+0
+1
+12
+12
+4
+Текст макроса Excel
+TE_MACROS_TEXT
+
+
+
+0
+0
+0
+
+pctfree 10\
+pctused 40\
+initrans 1\
+maxtrans 255\
+tablespace AMS\
+storage\
+(\
+initial 20K\
+next 20K\
+minextents 1\
+maxextents 249\
+pctincrease 50\
+freelists 1\
+freelist groups 1\
+)
+
+
+
+PK_TE_MACROS_TEXT
+
+
+
+0
+1
+13
+13
+4
+Значения входных параметров
+TE_VAL_IN_PARAMS
+
+
+
+0
+0
+0
+
+pctfree 10\
+pctused 40\
+initrans 1\
+maxtrans 255\
+tablespace AMS\
+storage\
+(\
+initial 20K\
+next 20K\
+minextents 1\
+maxextents 249\
+pctincrease 50\
+freelists 1\
+freelist groups 1\
+)
+
+
+
+PK_TE_VAL_IN_PARAMS
+
+
+
+0
+1
+14
+14
+4
+Текст стаических запросов
+TE_STAT_SQL_TEXT
+
+
+
+0
+0
+0
+
+pctfree 10\
+pctused 40\
+initrans 1\
+maxtrans 255\
+tablespace AMS\
+storage\
+(\
+initial 20K\
+next 20K\
+minextents 1\
+maxextents 249\
+pctincrease 50\
+freelists 1\
+freelist groups 1\
+)
+
+
+
+PK_TE_STAT_SQL_TEXT
+
+
+
+0
+1
+15
+15
+4
+Атрибуты SQL запросов
+TE_SELECTS
+
+
+
+0
+0
+0
+
+pctfree 10\
+pctused 40\
+initrans 1\
+maxtrans 255\
+tablespace AMS\
+storage\
+(\
+initial 20K\
+next 20K\
+minextents 1\
+maxextents 249\
+pctincrease 50\
+freelists 1\
+freelist groups 1\
+)
+
+
+
+PK_TE_SELECTS
+
+
+
+0
+1
+16
+16
+4
+Атрибуты команд AR_AC
+TE_AR_AC
+
+
+
+0
+0
+0
+
+pctfree 10\
+pctused 40\
+initrans 1\
+maxtrans 255\
+tablespace AMS\
+storage\
+(\
+initial 20K\
+next 20K\
+minextents 1\
+maxextents 249\
+pctincrease 50\
+freelists 1\
+freelist groups 1\
+)
+
+
+
+PK_TE_AR_AC
+
+
+
+0
+1
+17
+17
+4
+Атрибуты команд VRC
+TE_VRC
+
+
+
+0
+0
+0
+
+pctfree 10\
+pctused 40\
+initrans 1\
+maxtrans 255\
+tablespace AMS\
+storage\
+(\
+initial 20K\
+next 20K\
+minextents 1\
+maxextents 249\
+pctincrease 50\
+freelists 1\
+freelist groups 1\
+)
+
+
+
+PK_TE_VRC
+
+
+
+0
+1
+18
+18
+4
+Изменение значений входных параметров
+TE_CHANGE_IN_PARAM
+
+
+
+0
+0
+0
+
+pctfree 10\
+pctused 40\
+initrans 1\
+maxtrans 255\
+tablespace AMS\
+storage\
+(\
+initial 20K\
+next 20K\
+minextents 1\
+maxextents 249\
+pctincrease 50\
+freelists 1\
+freelist groups 1\
+)
+
+
+
+PK_TE_CHANGE_IN_PARAM
+
+
+
+0
+1
+19
+19
+4
+Данные о формах
+FE_FORMS
+
+
+
+0
+0
+0
+
+pctfree 10\
+pctused 40\
+initrans 1\
+maxtrans 255\
+tablespace AMS\
+storage\
+(\
+initial 20K\
+next 20K\
+minextents 1\
+maxextents 249\
+pctincrease 50\
+freelists 1\
+freelist groups 1\
+)
+
+
+
+PK_FE_FORMS
+
+
+
+0
+1
+20
+20
+4
+Исходный DFM формы
+FE_FORM_DFM
+
+
+
+0
+0
+0
+
+pctfree 10\
+pctused 40\
+initrans 1\
+maxtrans 255\
+tablespace AMS\
+storage\
+(\
+initial 20K\
+next 20K\
+minextents 1\
+maxextents 249\
+pctincrease 50\
+freelists 1\
+freelist groups 1\
+)
+
+
+
+PK_FE_FORM_DFM
+
+
+
+0
+1
+21
+21
+4
+Данные о графиках
+FE_GRAPHICS
+
+
+
+0
+0
+0
+
+pctfree 10\
+pctused 40\
+initrans 1\
+maxtrans 255\
+tablespace AMS\
+storage\
+(\
+initial 20K\
+next 20K\
+minextents 1\
+maxextents 249\
+pctincrease 50\
+freelists 1\
+freelist groups 1\
+)
+
+
+
+PK_FE_GRAPHICS
+
+
+
+0
+1
+22
+22
+4
+DFM графика
+FE_GRAPH
+
+
+
+0
+0
+0
+
+pctfree 10\
+pctused 40\
+initrans 1\
+maxtrans 255\
+tablespace AMS\
+storage\
+(\
+initial 20K\
+next 20K\
+minextents 1\
+maxextents 249\
+pctincrease 50\
+freelists 1\
+freelist groups 1\
+)
+
+
+
+PK_FE_GRAPH
+
+
+
+0
+/END_TABLE AMCTABL
+
+/BEGIN_TABLE AMCCOLN
+@       N5
+OID     N8
+COLN    N8
+NAME    A80
+CODE    A80
+LABL    A254
+DESC    TXT
+NOTE    TXT
+TABL    N8
+DOMN    N8
+DTTP    A30
+MLEN    N8
+PREC    N2
+IDNT    N1
+WDEF    N1
+UNIT    A8
+FRMT    A20
+LVAL    A20
+HVAL    A20
+DVAL    A30
+UPPR    N1
+LOWR    N1
+NMDF    N1
+VALS    TXT
+CRUL    TXT
+SRUL    TXT
+PRIM    N1
+FORN    N1
+MAND    N1
+DISP    N1
+SOID    N8
+TOBJ    N5
+COBJ    A80
+CKCN    A30
+NUMR    N8
+/BEGIN_DATA AMCCOLN
+1
+23
+23
+Ид диалога
+DID
+
+
+
+6
+0
+NUMBER
+0
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+1
+0
+1
+1
+0
+0
+
+
+1
+1
+24
+24
+Название
+NAME
+
+
+
+6
+0
+VARCHAR2(200)
+200
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+0
+0
+1
+1
+0
+0
+
+
+2
+1
+25
+25
+Примечание
+NOTE
+
+
+
+6
+0
+VARCHAR2(1000)
+1000
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+0
+0
+0
+1
+0
+0
+
+
+3
+1
+26
+26
+Текст DFM кода формы диалога
+DFM
+
+
+
+6
+0
+LONG
+0
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+0
+0
+0
+1
+0
+0
+
+
+4
+1
+27
+27
+Длина текста
+LENGHT_TEXT
+
+
+
+6
+0
+NUMBER
+0
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+0
+0
+1
+1
+0
+0
+
+
+5
+1
+28
+28
+Ид таблицы
+TID
+
+
+
+7
+0
+NUMBER
+0
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+1
+0
+1
+1
+0
+0
+
+
+1
+1
+29
+29
+Родитель
+PARENT
+
+
+
+7
+0
+NUMBER
+0
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+0
+1
+0
+1
+0
+0
+
+
+2
+1
+30
+30
+Название
+NAME
+
+
+
+7
+0
+VARCHAR2(200)
+200
+0
+0
+0
+
+
+
+
+No Name
+0
+0
+0
+
+
+
+0
+0
+1
+1
+0
+0
+
+
+3
+1
+31
+31
+Примечание
+NOTE
+
+
+
+7
+0
+VARCHAR2(1000)
+1000
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+0
+0
+0
+1
+0
+0
+
+
+4
+1
+32
+32
+Кол строк в таблице
+ROW_COUNT
+
+
+
+7
+0
+NUMBER
+0
+0
+0
+0
+
+
+
+
+0
+0
+0
+0
+
+
+
+0
+0
+1
+1
+0
+0
+
+
+5
+1
+33
+33
+Кол столбцов в таблице
+COL_COUNT
+
+
+
+7
+0
+NUMBER
+0
+0
+0
+0
+
+
+
+
+0
+0
+0
+0
+
+
+
+0
+0
+1
+1
+0
+0
+
+
+6
+1
+34
+34
+Кол фикс строк в таблице
+FIXED_ROWS
+
+
+
+7
+0
+NUMBER
+0
+0
+0
+0
+
+
+
+
+0
+0
+0
+0
+
+
+
+0
+0
+1
+1
+0
+0
+
+
+7
+1
+35
+35
+Кол фикс столбцов в таблице
+FIXED_COLS
+
+
+
+7
+0
+NUMBER
+0
+0
+0
+0
+
+
+
+
+0
+0
+0
+0
+
+
+
+0
+0
+1
+1
+0
+0
+
+
+8
+1
+36
+36
+Высоты строк
+ROWS_HEIGHT
+
+
+
+7
+0
+VARCHAR2(1000)
+1000
+0
+0
+0
+
+
+
+
+0
+0
+0
+0
+
+
+
+0
+0
+1
+1
+0
+0
+
+
+9
+1
+37
+37
+Ширины столбцов
+COLS_WIDTH
+
+
+
+7
+0
+VARCHAR2(1000)
+1000
+0
+0
+0
+
+
+
+
+0
+0
+0
+0
+
+
+
+0
+0
+1
+1
+0
+0
+
+
+10
+1
+38
+38
+Кол входных параметров
+IN_PARAM_COUNT
+
+
+
+7
+0
+NUMBER
+0
+0
+0
+0
+
+
+
+
+0
+0
+0
+0
+
+
+
+0
+0
+1
+1
+0
+0
+
+
+11
+1
+39
+39
+Кол массивов шаблонов
+COUNT_ARRAY
+
+
+
+7
+0
+NUMBER
+0
+0
+0
+0
+
+
+
+
+0
+0
+0
+0
+
+
+
+0
+0
+1
+1
+0
+0
+
+
+12
+1
+40
+40
+Номер SID в таблице SELECTS
+SID_VAR_SQL
+Номер SID в таблице SELECTS с которого начинаются динамические запросы
+
+
+7
+0
+NUMBER
+0
+0
+0
+0
+
+
+
+
+0
+0
+0
+0
+
+
+
+0
+0
+1
+1
+0
+0
+
+
+13
+1
+41
+41
+Ид
+VID
+
+
+
+8
+0
+NUMBER
+0
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+1
+0
+1
+1
+0
+0
+
+
+1
+1
+42
+42
+Ид таблицы
+TID
+
+
+
+8
+0
+NUMBER
+0
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+0
+1
+1
+1
+0
+0
+
+
+2
+1
+43
+43
+Номер массива шаблона
+NUM_ARRAY
+
+
+
+8
+0
+NUMBER
+0
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+0
+0
+1
+1
+0
+0
+
+
+3
+1
+44
+44
+Данные одной ячейки массива шаблона
+VAL
+-рээvх юфэющ  ўхщъш ьрёёштр-°рсыюэр
+
+
+8
+0
+VARCHAR2(100)
+100
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+0
+0
+1
+1
+0
+0
+
+
+4
+1
+45
+45
+Ид таблицы
+TID
+
+
+
+9
+0
+NUMBER
+0
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+1
+1
+1
+1
+0
+0
+
+
+1
+1
+46
+46
+Текст основных атрибутов таблицы
+TEXT
+
+
+
+9
+0
+LONG
+0
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+0
+0
+0
+1
+0
+0
+
+
+2
+1
+47
+47
+Длина поля TEXT
+LENGHT_TEXT
+
+
+
+9
+0
+NUMBER
+0
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+0
+0
+1
+1
+0
+0
+
+
+3
+1
+48
+48
+Ид таблицы
+TID
+
+
+
+10
+0
+NUMBER
+0
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+1
+1
+1
+1
+0
+0
+
+
+1
+1
+49
+49
+Текст динамических запросов
+TEXT
+
+
+
+10
+0
+LONG
+0
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+0
+0
+0
+1
+0
+0
+
+
+2
+1
+50
+50
+Длина поля TEXT
+LENGHT_TEXT
+
+
+
+10
+0
+NUMBER
+0
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+0
+0
+1
+1
+0
+0
+
+
+3
+1
+51
+51
+Ид таблицы
+TID
+
+
+
+11
+0
+NUMBER
+0
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+1
+1
+1
+1
+0
+0
+
+
+1
+1
+52
+52
+CID
+CID
+
+
+
+11
+0
+NUMBER
+0
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+1
+0
+1
+1
+0
+0
+
+
+2
+1
+53
+53
+Стиль ячейки (Статическая)
+STYLE_CELL
+
+
+
+11
+0
+NUMBER
+0
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+0
+0
+1
+1
+0
+0
+
+
+3
+1
+54
+54
+Признак слияния ячейки влево
+SP_LEFT
+
+
+
+11
+0
+NUMBER
+0
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+0
+0
+1
+1
+0
+0
+
+
+4
+1
+55
+55
+Признак слияния ячейки вверх
+SP_UP
+
+
+
+11
+0
+NUMBER
+0
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+0
+0
+1
+1
+0
+0
+
+
+5
+1
+56
+56
+Данные которые хранит ячейка
+VAL
+
+
+
+11
+0
+VARCHAR2(250)
+250
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+0
+0
+0
+1
+0
+0
+
+
+6
+1
+57
+57
+Количество цифр после запятой
+FLOAT_DIGITS
+¦юышўхёЄтю ЎшЇЁ яюёых чря Єющ
+
+
+11
+0
+NUMBER
+0
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+0
+0
+1
+1
+0
+0
+
+
+7
+1
+58
+58
+INDEX_VAL
+INDEX_VAL
+
+
+
+11
+0
+NUMBER
+0
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+0
+0
+1
+1
+0
+0
+
+
+8
+1
+59
+59
+Флаг выравнивания текста
+ALIGN_TEXT
+
+
+
+11
+0
+NUMBER
+0
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+0
+0
+1
+1
+0
+0
+
+
+9
+1
+60
+60
+Название шрифта
+FONT_NAME
+
+
+
+11
+0
+VARCHAR2(20)
+20
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+0
+0
+1
+1
+0
+0
+
+
+10
+1
+61
+61
+Размер шрифта
+FONT_SIZE
+
+
+
+11
+0
+NUMBER
+0
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+0
+0
+1
+1
+0
+0
+
+
+11
+1
+62
+62
+Цвет шрифта
+FONT_COLOR
+
+
+
+11
+0
+NUMBER
+0
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+0
+0
+1
+1
+0
+0
+
+
+12
+1
+63
+63
+Признак жирного шрифта
+FONT_BOLD
+
+
+
+11
+0
+NUMBER
+0
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+0
+0
+1
+1
+0
+0
+
+
+13
+1
+64
+64
+Признак наклонного шрифта
+FONT_ITALIC
+
+
+
+11
+0
+NUMBER
+0
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+0
+0
+1
+1
+0
+0
+
+
+14
+1
+65
+65
+Фоновый цвет ячейки
+BACKGROUND_COLOR
+
+
+
+11
+0
+NUMBER
+0
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+0
+0
+1
+1
+0
+0
+
+
+15
+1
+66
+66
+Тип границы
+MARGIN_EDGE
+
+
+
+11
+0
+NUMBER
+0
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+0
+0
+1
+1
+0
+0
+
+
+16
+1
+67
+67
+Тип рамки
+MARGIN_FLAGS
+
+
+
+11
+0
+NUMBER
+0
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+0
+0
+1
+1
+0
+0
+
+
+17
+1
+68
+68
+Толщина линии левой границы ячейки
+LEFTLINEWIDTH
+
+
+
+11
+0
+NUMBER
+0
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+0
+0
+1
+1
+0
+0
+
+
+18
+1
+69
+69
+Цвет левой границы ячейки
+LEFTLINECOLOR
+
+
+
+11
+0
+NUMBER
+0
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+0
+0
+1
+1
+0
+0
+
+
+19
+1
+70
+70
+Стиль линии левой границы ячейки
+LEFTLINESTYLE
+
+
+
+11
+0
+NUMBER
+0
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+0
+0
+1
+1
+0
+0
+
+
+20
+1
+71
+71
+Толщина линии верхней границы ячейки
+TOPLINEWIDTH
+
+
+
+11
+0
+NUMBER
+0
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+0
+0
+1
+1
+0
+0
+
+
+21
+1
+72
+72
+Цвет верхней границы ячейки
+TOPLINECOLOR
+
+
+
+11
+0
+NUMBER
+0
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+0
+0
+1
+1
+0
+0
+
+
+22
+1
+73
+73
+Стиль линии верхней границы ячейки
+TOPLINESTYLE
+
+
+
+11
+0
+NUMBER
+0
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+0
+0
+1
+1
+0
+0
+
+
+23
+1
+74
+74
+Толщина линии правой границы ячейки
+RIGHTLINEWIDTH
+
+
+
+11
+0
+NUMBER
+0
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+0
+0
+1
+1
+0
+0
+
+
+24
+1
+75
+75
+Цвет правой границы ячейки
+RIGHTLINECOLOR
+
+
+
+11
+0
+NUMBER
+0
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+0
+0
+1
+1
+0
+0
+
+
+25
+1
+76
+76
+Стиль линии правой границы ячейки
+RIGHTLINESTYLE
+
+
+
+11
+0
+NUMBER
+0
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+0
+0
+1
+1
+0
+0
+
+
+26
+1
+77
+77
+Толщина линии нижней границы ячейки
+BOTTOMLINEWIDTH
+
+
+
+11
+0
+NUMBER
+0
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+0
+0
+1
+1
+0
+0
+
+
+27
+1
+78
+78
+Цвет нижней границы ячейки
+BOTTOMLINECOLOR
+
+
+
+11
+0
+NUMBER
+0
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+0
+0
+1
+1
+0
+0
+
+
+28
+1
+79
+79
+Стиль линии нижней границы ячейки
+BOTTOMLINESTYLE
+TЄшы№ ышэшш эшцэхщ уЁрэшЎv  ўхщъш
+
+
+11
+0
+NUMBER
+0
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+0
+0
+1
+1
+0
+0
+
+
+29
+1
+80
+80
+Ид таблицы
+TID
+
+
+
+12
+0
+NUMBER
+0
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+1
+1
+1
+1
+0
+0
+
+
+1
+1
+81
+81
+Текст макроса Excel
+TEXT
+
+
+
+12
+0
+LONG
+0
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+0
+0
+0
+1
+0
+0
+
+
+2
+1
+82
+82
+Длина поля TEXT
+LENGHT_TEXT
+
+
+
+12
+0
+NUMBER
+0
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+0
+0
+1
+1
+0
+0
+
+
+3
+1
+83
+83
+Ид таблицы
+TID
+
+
+
+13
+0
+NUMBER
+0
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+1
+1
+1
+1
+0
+0
+
+
+1
+1
+84
+84
+Номер параметра
+NUM
+
+
+
+13
+0
+NUMBER
+0
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+1
+0
+1
+1
+0
+0
+
+
+2
+1
+85
+85
+Значение
+VAL
+
+
+
+13
+0
+VARCHAR2(100)
+100
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+0
+0
+1
+1
+0
+0
+
+
+3
+1
+86
+86
+Ид таблицы
+TID
+
+
+
+14
+0
+NUMBER
+0
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+1
+1
+1
+1
+0
+0
+
+
+1
+1
+87
+87
+Текст стаических запросов
+TEXT
+
+
+
+14
+0
+LONG
+0
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+0
+0
+0
+1
+0
+0
+
+
+2
+1
+88
+88
+Длина поля TEXT
+LENGHT_TEXT
+
+
+
+14
+0
+NUMBER
+0
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+0
+0
+1
+1
+0
+0
+
+
+3
+1
+89
+89
+Ид запроса
+SID
+
+
+
+15
+0
+NUMBER
+0
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+1
+0
+1
+1
+0
+0
+
+
+1
+1
+90
+90
+Ид таблицы
+TID
+
+
+
+15
+0
+NUMBER
+0
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+0
+0
+1
+1
+0
+0
+
+
+2
+1
+91
+91
+Количество выходных параметров
+OUT_PARAM_COUNT
+
+
+
+15
+0
+NUMBER
+0
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+0
+0
+1
+1
+0
+0
+
+
+3
+1
+92
+92
+Номер якорной клетки вывода
+BASE_CELL
+
+
+
+15
+0
+NUMBER
+0
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+0
+0
+1
+1
+0
+0
+
+
+4
+1
+93
+93
+Признак нормального вывода|
+NORMAL_OUT
+
+
+
+15
+0
+NUMBER
+0
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+0
+0
+1
+1
+0
+0
+
+
+5
+1
+94
+94
+Межстрочный интервал
+INTERLIVE
+
+
+
+15
+0
+NUMBER
+0
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+0
+0
+1
+1
+0
+0
+
+
+6
+1
+95
+95
+Текст SQL запроса
+SQL_TEXT
+
+
+
+15
+0
+VARCHAR2(2000)
+2000
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+0
+0
+1
+1
+0
+0
+
+
+7
+1
+96
+96
+Номер массива шаблона
+OUT_ARRAY
+Номер массива шаблона для вывода если 0 то выводим в таблицу
+
+
+15
+0
+NUMBER
+0
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+0
+0
+1
+1
+0
+0
+
+
+8
+1
+97
+97
+Ид запроса
+SID
+
+
+
+16
+0
+NUMBER
+0
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+1
+1
+1
+1
+0
+0
+
+
+1
+1
+98
+98
+Номер команды по счету
+NUM_COMMAND
+
+
+
+16
+0
+NUMBER
+0
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+1
+0
+1
+1
+0
+0
+
+
+2
+1
+99
+99
+Код команды
+CODE_COMMAND
+
+
+
+16
+0
+NUMBER
+0
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+0
+0
+1
+1
+0
+0
+
+
+3
+1
+100
+100
+Множитель
+FACTOR
+
+
+
+16
+0
+NUMBER
+0
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+0
+0
+1
+1
+0
+0
+
+
+4
+1
+101
+101
+Номер массива
+NUM_ARRAY
+
+
+
+16
+0
+NUMBER
+0
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+0
+0
+1
+1
+0
+0
+
+
+5
+1
+102
+102
+Ид запроса
+SID
+
+
+
+17
+0
+NUMBER
+0
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+1
+1
+1
+1
+0
+0
+
+
+1
+1
+103
+103
+Номер колонки
+NUM_OUT_COL
+
+
+
+17
+0
+NUMBER
+0
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+1
+0
+1
+1
+0
+0
+
+
+2
+1
+104
+104
+Смещение по строкам
+ROW_OFFS
+
+
+
+17
+0
+NUMBER
+0
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+0
+0
+1
+1
+0
+0
+
+
+3
+1
+105
+105
+Смещение по колонкам
+COL_OFFS
+
+
+
+17
+0
+NUMBER
+0
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+0
+0
+1
+1
+0
+0
+
+
+4
+1
+106
+106
+Ид запроса
+SID
+
+
+
+18
+0
+NUMBER
+0
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+1
+1
+1
+1
+0
+0
+
+
+1
+1
+107
+107
+Номер входного параметра
+NUM_PARAM
+
+
+
+18
+0
+NUMBER
+0
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+1
+0
+1
+1
+0
+0
+
+
+2
+1
+108
+108
+Номер массива шаблона из которого берется параметр
+NUM_ARRAY
+
+
+
+18
+0
+NUMBER
+0
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+0
+0
+1
+1
+0
+0
+
+
+3
+1
+109
+109
+Ид
+FID
+
+
+
+19
+0
+NUMBER
+0
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+1
+0
+1
+1
+0
+0
+
+
+1
+1
+110
+110
+Родитель
+PARENT
+
+
+
+19
+0
+NUMBER
+0
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+0
+1
+0
+1
+0
+0
+
+
+2
+1
+111
+111
+ID диалога
+DID
+ID диалога нужен для вытяжки DFM диалога
+
+
+19
+0
+NUMBER
+0
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+0
+0
+1
+1
+0
+0
+
+
+3
+1
+112
+112
+Название
+NAME
+
+
+
+19
+0
+VARCHAR2(200)
+200
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+0
+0
+1
+1
+0
+0
+
+
+4
+1
+113
+113
+Модифицированный текст DFM формы
+DFM
+Модифицированный текст DFM формы
+
+
+19
+0
+LONG
+0
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+0
+0
+0
+1
+0
+0
+
+
+5
+1
+114
+114
+Длина текста
+LENGHT_TEXT
+
+
+
+19
+0
+NUMBER
+0
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+0
+0
+1
+1
+0
+0
+
+
+6
+1
+115
+115
+Ид
+FID
+
+
+
+20
+0
+NUMBER
+0
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+1
+1
+1
+1
+0
+0
+
+
+1
+1
+116
+116
+Исходный текст DFM формы
+DFM_ORG
+
+
+
+20
+0
+LONG
+0
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+0
+0
+0
+1
+0
+0
+
+
+2
+1
+117
+117
+Длина текста
+LENGHT_TEXT
+
+
+
+20
+0
+NUMBER
+0
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+0
+0
+1
+1
+0
+0
+
+
+3
+1
+118
+118
+Ид графика
+GID
+
+
+
+21
+0
+NUMBER
+0
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+1
+0
+1
+1
+0
+0
+
+
+1
+1
+119
+119
+Название
+NAME
+
+
+
+21
+0
+VARCHAR2(200)
+200
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+0
+0
+1
+1
+0
+0
+
+
+2
+1
+120
+120
+Примечание
+NOTE
+
+
+
+21
+0
+VARCHAR2(1000)
+1000
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+0
+0
+0
+1
+0
+0
+
+
+3
+1
+121
+121
+Полный текст DFM графика
+DFM_ORG
+
+
+
+21
+0
+LONG
+0
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+0
+0
+0
+1
+0
+0
+
+
+4
+1
+122
+122
+Длина DFM
+LENGHT_TEXT
+
+
+
+21
+0
+NUMBER
+0
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+0
+0
+1
+1
+0
+0
+
+
+5
+1
+123
+123
+Ид графика
+GID
+
+
+
+22
+0
+NUMBER
+0
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+1
+1
+1
+1
+0
+0
+
+
+1
+1
+124
+124
+Текст DFM графика
+DFM
+
+
+
+22
+0
+LONG
+0
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+0
+0
+0
+1
+0
+0
+
+
+2
+1
+125
+125
+Длина текста
+LENGHT_TEXT
+
+
+
+22
+0
+NUMBER
+0
+0
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+0
+0
+1
+1
+0
+0
+
+
+3
+/END_TABLE AMCCOLN
+
+/BEGIN_TABLE AMCREFR
+@       N5
+OID     N8
+REFR    N8
+NAME    A80
+CODE    A80
+LABL    A254
+DESC    TXT
+NOTE    TXT
+TABL1   N8
+TABL2   N8
+URUL    N1
+DRUL    N1
+MAND    N1
+CPRT    N1
+SOID    N8
+TOBJ    N5
+COBJ    A80
+FKCN    A30
+CMIN    A10
+CMAX    A10
+NGEN    N1
+/BEGIN_DATA AMCREFR
+1
+126
+126
+FK_TE_STAT_SQL_TEXT_TID
+FK_TE_STAT_SQL_TEXT_TID
+
+
+
+7
+14
+1
+2
+1
+1
+0
+0
+
+FK_TE_STAT_SQL_TEXT_TID
+0
+n
+0
+1
+127
+127
+FK_TE_VAL_IN_PARAMS_TID
+FK_TE_VAL_IN_PARAMS_TID
+
+
+
+7
+13
+1
+2
+1
+1
+0
+0
+
+FK_TE_VAL_IN_PARAMS_TID
+0
+n
+0
+1
+128
+128
+FK_TE_TABLES_PAR
+FK_TE_TABLES_PAR
+
+
+
+7
+7
+1
+2
+0
+1
+0
+0
+
+FK_TE_TABLES_PAR
+0
+n
+0
+1
+129
+129
+FK_TE_CHANGE_IN_PARAM_SID
+FK_TE_CHANGE_IN_PARAM_SID
+
+
+
+15
+18
+1
+2
+1
+1
+0
+0
+
+FK_TE_CHANGE_IN_PARAM_SID
+0
+n
+0
+1
+130
+130
+FK_TE_MACROS_TEXT_TID
+FK_TE_MACROS_TEXT_TID
+
+
+
+7
+12
+1
+2
+1
+1
+0
+0
+
+FK_TE_MACROS_TEXT_TID
+0
+n
+0
+1
+131
+131
+FK_TE_CELLS_TID
+FK_TE_CELLS_TID
+
+
+
+7
+11
+1
+2
+1
+1
+0
+0
+
+FK_TE_CELLS_TID
+0
+n
+0
+1
+132
+132
+FK_TE_VRC_SID
+FK_TE_VRC_SID
+
+
+
+15
+17
+1
+2
+1
+1
+0
+0
+
+FK_TE_VRC_SID
+0
+n
+0
+1
+133
+133
+FK_TE_VAR_SQL_TEXT_TID
+FK_TE_VAR_SQL_TEXT_TID
+
+
+
+7
+10
+1
+2
+1
+1
+0
+0
+
+FK_TE_VAR_SQL_TEXT_TID
+0
+n
+0
+1
+134
+134
+FK_TE_ATTR_TABLE_TEXT_TID
+FK_TE_ATTR_TABLE_TEXT_TID
+
+
+
+7
+9
+1
+2
+1
+1
+0
+0
+
+FK_TE_ATTR_TABLE_TEXT_TID
+0
+n
+0
+1
+135
+135
+FK_TE_AR_AC_SID
+FK_TE_AR_AC_SID
+
+
+
+15
+16
+1
+2
+1
+1
+0
+0
+
+FK_TE_AR_AC_SID
+0
+n
+0
+1
+136
+136
+FK_TE_ARRAYS_TID
+FK_TE_ARRAYS_TID
+
+
+
+7
+8
+1
+2
+1
+1
+0
+0
+
+FK_TE_ARRAYS_TID
+0
+n
+0
+1
+137
+137
+FK_FE_GRAPH_GID
+FK_FE_GRAPH_GID
+
+
+
+21
+22
+1
+2
+1
+1
+0
+0
+
+FK_FE_GRAPH_GID
+0
+n
+0
+1
+138
+138
+FK_FE_FORMS_PAR
+FK_FE_FORMS_PAR
+
+
+
+19
+19
+1
+2
+0
+1
+0
+0
+
+FK_FE_FORMS_PAR
+0
+n
+0
+1
+139
+139
+FK_FE_FORM_DFM_FID
+FK_FE_FORM_DFM_FID
+
+
+
+19
+20
+1
+2
+1
+1
+0
+0
+
+FK_FE_FORM_DFM_FID
+0
+n
+0
+/END_TABLE AMCREFR
+
+/BEGIN_TABLE AMCCCOL
+@       N5
+OID     N8
+CCOL    N8
+COLN1   N8
+COLN2   N8
+/BEGIN_DATA AMCCCOL
+1
+140
+140
+28
+86
+1
+141
+141
+28
+83
+1
+142
+142
+28
+29
+1
+143
+143
+89
+106
+1
+144
+144
+28
+80
+1
+145
+145
+28
+51
+1
+146
+146
+89
+102
+1
+147
+147
+28
+48
+1
+148
+148
+28
+45
+1
+149
+149
+89
+97
+1
+150
+150
+28
+42
+1
+151
+151
+118
+123
+1
+152
+152
+109
+110
+1
+153
+153
+109
+115
+/END_TABLE AMCCCOL
+
+/BEGIN_TABLE AMCCREF
+@       N5
+OID     N8
+CREF    N8
+REFR    N8
+CCOL    N8
+NUMR    N8
+/BEGIN_DATA AMCCREF
+3
+154
+154
+126
+140
+1
+3
+155
+155
+127
+141
+1
+3
+156
+156
+128
+142
+1
+3
+157
+157
+129
+143
+1
+3
+158
+158
+130
+144
+1
+3
+159
+159
+131
+145
+1
+3
+160
+160
+132
+146
+1
+3
+161
+161
+133
+147
+1
+3
+162
+162
+134
+148
+1
+3
+163
+163
+135
+149
+1
+3
+164
+164
+136
+150
+1
+3
+165
+165
+137
+151
+1
+3
+166
+166
+138
+152
+1
+3
+167
+167
+139
+153
+1
+/END_TABLE AMCCREF
+
+/BEGIN_TABLE AMCINDX
+@       N5
+OID     N8
+INDX    N8
+NAME    A80
+CODE    A80
+TABL    N8
+LABL    A254
+DESC    TXT
+NOTE    TXT
+PRIM    N1
+FORN    N1
+UNIQ    N1
+CLUS    N1
+OPTS    TXT
+COBJ    A80
+NUMR    N8
+TYPE    A40
+/BEGIN_DATA AMCINDX
+3
+168
+168
+PK_FE_DIALOGS
+PK_FE_DIALOGS
+6
+
+
+
+1
+0
+1
+0
+initrans 2\
+maxtrans 255\
+tablespace AMS\
+storage\
+(\
+initial 20K\
+next 20K\
+minextents 1\
+maxextents 249\
+pctincrease 50\
+freelists 1\
+)\
+pctfree 10
+
+1
+
+3
+169
+169
+PK_TE_TABLES
+PK_TE_TABLES
+7
+
+
+
+1
+0
+1
+0
+initrans 2\
+maxtrans 255\
+tablespace AMS\
+storage\
+(\
+initial 20K\
+next 20K\
+minextents 1\
+maxextents 249\
+pctincrease 50\
+freelists 1\
+)\
+pctfree 10
+
+2
+
+3
+170
+170
+PK_TE_ARRAYS
+PK_TE_ARRAYS
+8
+
+
+
+1
+0
+1
+0
+initrans 2\
+maxtrans 255\
+tablespace AMS\
+storage\
+(\
+initial 20K\
+next 20K\
+minextents 1\
+maxextents 249\
+pctincrease 50\
+freelists 1\
+)\
+pctfree 10
+
+3
+
+3
+171
+171
+PK_TE_ATTR_TABLE_TEXT
+PK_TE_ATTR_TABLE_TEXT
+9
+
+
+
+1
+1
+1
+0
+initrans 2\
+maxtrans 255\
+tablespace AMS\
+storage\
+(\
+initial 20K\
+next 20K\
+minextents 1\
+maxextents 249\
+pctincrease 50\
+freelists 1\
+)\
+pctfree 10
+
+4
+
+3
+172
+172
+PK_TE_VAR_SQL_TEXT
+PK_TE_VAR_SQL_TEXT
+10
+
+
+
+1
+1
+1
+0
+initrans 2\
+maxtrans 255\
+tablespace AMS\
+storage\
+(\
+initial 20K\
+next 20K\
+minextents 1\
+maxextents 249\
+pctincrease 50\
+freelists 1\
+)\
+pctfree 10
+
+5
+
+3
+173
+173
+PK_TE_CELLS
+PK_TE_CELLS
+11
+
+
+
+1
+0
+1
+0
+initrans 2\
+maxtrans 255\
+tablespace AMS\
+storage\
+(\
+initial 20K\
+next 20K\
+minextents 1\
+maxextents 249\
+pctincrease 50\
+freelists 1\
+)\
+pctfree 10
+
+6
+
+3
+174
+174
+PK_TE_MACROS_TEXT
+PK_TE_MACROS_TEXT
+12
+
+
+
+1
+1
+1
+0
+initrans 2\
+maxtrans 255\
+tablespace AMS\
+storage\
+(\
+initial 20K\
+next 20K\
+minextents 1\
+maxextents 249\
+pctincrease 50\
+freelists 1\
+)\
+pctfree 10
+
+7
+
+3
+175
+175
+PK_TE_VAL_IN_PARAMS
+PK_TE_VAL_IN_PARAMS
+13
+
+
+
+1
+0
+1
+0
+initrans 2\
+maxtrans 255\
+tablespace AMS\
+storage\
+(\
+initial 20K\
+next 20K\
+minextents 1\
+maxextents 249\
+pctincrease 50\
+freelists 1\
+)\
+pctfree 10
+
+8
+
+3
+176
+176
+PK_TE_STAT_SQL_TEXT
+PK_TE_STAT_SQL_TEXT
+14
+
+
+
+1
+1
+1
+0
+initrans 2\
+maxtrans 255\
+tablespace AMS\
+storage\
+(\
+initial 20K\
+next 20K\
+minextents 1\
+maxextents 249\
+pctincrease 50\
+freelists 1\
+)\
+pctfree 10
+
+9
+
+3
+177
+177
+PK_TE_SELECTS
+PK_TE_SELECTS
+15
+
+
+
+1
+0
+1
+0
+initrans 2\
+maxtrans 255\
+tablespace AMS\
+storage\
+(\
+initial 20K\
+next 20K\
+minextents 1\
+maxextents 249\
+pctincrease 50\
+freelists 1\
+)\
+pctfree 10
+
+10
+
+3
+178
+178
+IDX_TE_SELECTS_TIDSID
+IDX_TE_SELECTS_TIDSID
+15
+
+
+
+0
+0
+1
+0
+initrans 2\
+maxtrans 255\
+tablespace AMS\
+storage\
+(\
+initial 20K\
+next 20K\
+minextents 1\
+maxextents 249\
+pctincrease 50\
+freelists 1\
+)\
+pctfree 10
+
+11
+
+3
+179
+179
+PK_TE_AR_AC
+PK_TE_AR_AC
+16
+
+
+
+1
+0
+1
+0
+initrans 2\
+maxtrans 255\
+tablespace AMS\
+storage\
+(\
+initial 20K\
+next 20K\
+minextents 1\
+maxextents 249\
+pctincrease 50\
+freelists 1\
+)\
+pctfree 10
+
+12
+
+3
+180
+180
+PK_TE_VRC
+PK_TE_VRC
+17
+
+
+
+1
+0
+1
+0
+initrans 2\
+maxtrans 255\
+tablespace AMS\
+storage\
+(\
+initial 20K\
+next 20K\
+minextents 1\
+maxextents 249\
+pctincrease 50\
+freelists 1\
+)\
+pctfree 10
+
+13
+
+3
+181
+181
+PK_TE_CHANGE_IN_PARAM
+PK_TE_CHANGE_IN_PARAM
+18
+
+
+
+1
+0
+1
+0
+initrans 2\
+maxtrans 255\
+tablespace AMS\
+storage\
+(\
+initial 20K\
+next 20K\
+minextents 1\
+maxextents 249\
+pctincrease 50\
+freelists 1\
+)\
+pctfree 10
+
+14
+
+3
+182
+182
+PK_FE_FORMS
+PK_FE_FORMS
+19
+
+
+
+1
+0
+1
+0
+initrans 2\
+maxtrans 255\
+tablespace AMS\
+storage\
+(\
+initial 20K\
+next 20K\
+minextents 1\
+maxextents 249\
+pctincrease 50\
+freelists 1\
+)\
+pctfree 10
+
+15
+
+3
+183
+183
+PK_FE_FORM_DFM
+PK_FE_FORM_DFM
+20
+
+
+
+1
+1
+1
+0
+initrans 2\
+maxtrans 255\
+tablespace AMS\
+storage\
+(\
+initial 20K\
+next 20K\
+minextents 1\
+maxextents 249\
+pctincrease 50\
+freelists 1\
+)\
+pctfree 10
+
+16
+
+3
+184
+184
+PK_FE_GRAPHICS
+PK_FE_GRAPHICS
+21
+
+
+
+1
+0
+1
+0
+initrans 2\
+maxtrans 255\
+tablespace AMS\
+storage\
+(\
+initial 20K\
+next 20K\
+minextents 1\
+maxextents 249\
+pctincrease 50\
+freelists 1\
+)\
+pctfree 10
+
+17
+
+3
+185
+185
+PK_FE_GRAPH
+PK_FE_GRAPH
+22
+
+
+
+1
+1
+1
+0
+initrans 2\
+maxtrans 255\
+tablespace AMS\
+storage\
+(\
+initial 20K\
+next 20K\
+minextents 1\
+maxextents 249\
+pctincrease 50\
+freelists 1\
+)\
+pctfree 10
+
+18
+
+/END_TABLE AMCINDX
+
+/BEGIN_TABLE AMCCIDX
+@       N5
+OID     N8
+CIDX    N8
+INDX    N8
+COLN    N8
+ASCD    N1
+NUMR    N8
+/BEGIN_DATA AMCCIDX
+3
+186
+186
+168
+23
+1
+1
+3
+187
+187
+169
+28
+1
+1
+3
+188
+188
+170
+41
+1
+1
+3
+189
+189
+171
+45
+1
+1
+3
+190
+190
+172
+48
+1
+1
+3
+191
+191
+173
+51
+1
+1
+3
+192
+192
+173
+52
+1
+2
+3
+193
+193
+174
+80
+1
+1
+3
+194
+194
+175
+83
+1
+1
+3
+195
+195
+175
+84
+1
+2
+3
+196
+196
+176
+86
+1
+1
+3
+197
+197
+177
+89
+1
+1
+3
+198
+198
+178
+90
+1
+1
+3
+199
+199
+178
+89
+1
+2
+3
+200
+200
+179
+97
+1
+1
+3
+201
+201
+179
+98
+1
+2
+3
+202
+202
+180
+102
+1
+1
+3
+203
+203
+180
+103
+1
+2
+3
+204
+204
+181
+106
+1
+1
+3
+205
+205
+181
+107
+1
+2
+3
+206
+206
+182
+109
+1
+1
+3
+207
+207
+183
+115
+1
+1
+3
+208
+208
+184
+118
+1
+1
+3
+209
+209
+185
+123
+1
+1
+/END_TABLE AMCCIDX
+
+/BEGIN_TABLE AMCAKEY
+@       N5
+OID     N8
+AKEY    N8
+NAME    A80
+CODE    A80
+TABL    N8
+LABL    A254
+DESC    TXT
+NOTE    TXT
+OPTS    TXT
+AKCN    A30
+NUMR    N8
+/BEGIN_DATA AMCAKEY
+3
+210
+210
+UN_TE_TABLES_PARNAM
+UN_TE_TABLES_PARNAM
+7
+
+
+
+
+UN_TE_TABLES_PARNAM
+1
+3
+211
+211
+UN_FE_FORMS_PARNAM
+UN_FE_FORMS_PARNAM
+19
+
+
+
+
+UN_FE_FORMS_PARNAM
+2
+/END_TABLE AMCAKEY
+
+/BEGIN_TABLE AMCCKEY
+@       N5
+OID     N8
+CKEY    N8
+AKEY    N8
+COLN    N8
+NUMR    N8
+/BEGIN_DATA AMCCKEY
+3
+212
+212
+210
+29
+1
+3
+213
+213
+210
+30
+2
+3
+214
+214
+211
+110
+1
+3
+215
+215
+211
+112
+2
+/END_TABLE AMCCKEY
+
+/BEGIN_TABLE AMCTRGR
+@       N5
+TEMP    A30
+TEXT    TXT
+NAME    A30
+TABL    N8
+ALWS    N1
+/BEGIN_DATA AMCTRGR
+/END_TABLE AMCTRGR
+
+/BEGIN_TABLE AMCPROC
+@       N5
+OID     N8
+PROC    N8
+NAME    A80
+CODE    A80
+LABL    A254
+DESC    TXT
+NOTE    TXT
+TEXT    TXT
+FUNC    N1
+/BEGIN_DATA AMCPROC
+/END_TABLE AMCPROC
+
+/BEGIN_TABLE AMCVIEW
+@       N5
+OID     N8
+VIEW    N8
+NAME    A80
+CODE    A80
+LABL    A254
+DESC    TXT
+NOTE    TXT
+CUST    N1
+LOBJ    TXT
+QURY    TXT
+UPDT    N1
+GENE    N1
+CHCK    N1
+/BEGIN_DATA AMCVIEW
+/END_TABLE AMCVIEW
+
+/BEGIN_TABLE AMCRULE
+@       N5
+OID     N8
+RULE    N8
+NAME    A80
+CODE    A80
+LABL    A254
+DESC    TXT
+NOTE    TXT
+TYPE    N5
+FLAG    N5
+CEXP    TXT
+SEXP    TXT
+LOBJ    TXT
+SOID    N8
+COBJ    A80
+/BEGIN_DATA AMCRULE
+/END_TABLE AMCRULE
+
+/BEGIN_TABLE AMCTSPC
+@       N5
+OID     N8
+TSPC    N8
+NAME    A80
+CODE    A80
+LABL    A254
+DESC    TXT
+NOTE    TXT
+OPTS    TXT
+/BEGIN_DATA AMCTSPC
+/END_TABLE AMCTSPC
+
+/BEGIN_TABLE AMCSTOR
+@       N5
+OID     N8
+STOR    N8
+NAME    A80
+CODE    A80
+LABL    A254
+DESC    TXT
+NOTE    TXT
+OPTS    TXT
+/BEGIN_DATA AMCSTOR
+/END_TABLE AMCSTOR
+
+/BEGIN_TABLE AMCLTBL
+@       N5
+OID     N8
+LTBL    N8
+LABL    A254
+DESC    TXT
+NOTE    TXT
+OPTS    TXT
+HEAD    TXT
+FOOT    TXT
+GENE    N1
+TABL    N8
+/BEGIN_DATA AMCLTBL
+/END_TABLE AMCLTBL
+
+/BEGIN_TABLE AMCLCOL
+@       N5
+OID     N8
+LCOL    N8
+NAME    A80
+CODE    A80
+LABL    A254
+DESC    TXT
+NOTE    TXT
+LTBL    N8
+COLN    N8
+DTTP    A30
+MLEN    N8
+PREC    N2
+MAND    N1
+UNIQ    N1
+DISP    N1
+IQIX    N4
+OPTFP   TXT
+OPTLF   TXT
+OPTLD   TXT
+OPTHG   TXT
+OPTHNG  TXT
+NUMR    N8
+/BEGIN_DATA AMCLCOL
+/END_TABLE AMCLCOL
+
+/BEGIN_TABLE AMCJREL
+@       N5
+OID     N8
+JREL    N8
+NAME    A80
+CODE    A80
+LABL    A254
+DESC    TXT
+NOTE    TXT
+LTBL1   N8
+LTBL2   N8
+MANY    N1
+/BEGIN_DATA AMCJREL
+/END_TABLE AMCJREL
+
+/BEGIN_TABLE AMCJIDX
+@       N5
+OID     N8
+JIDX    N8
+NAME    A80
+CODE    A80
+LABL    A254
+DESC    TXT
+NOTE    TXT
+OPTS    TXT
+HEAD    TXT
+FOOT    TXT
+LTBL    N8
+LOBJ    TXT
+/BEGIN_DATA AMCJIDX
+/END_TABLE AMCJIDX
+
+/BEGIN_TABLE AMCJCCL
+@       N5
+OID     N8
+JCCL    N8
+LCOL1   N8
+LCOL2   N8
+/BEGIN_DATA AMCJCCL
+/END_TABLE AMCJCCL
+
+/BEGIN_TABLE AMCJCRL
+@       N5
+OID     N8
+JCRL    N8
+JREL    N8
+JCCL    N8
+NUMR    N8
+/BEGIN_DATA AMCJCRL
+/END_TABLE AMCJCRL
+
+/BEGIN_TABLE AMCFACT
+@       N5
+OID     N8
+FACT    N8
+NAME    A80
+CODE    A80
+LABL    A254
+DESC    TXT
+NOTE    TXT
+TABL    N8
+/BEGIN_DATA AMCFACT
+/END_TABLE AMCFACT
+
+/BEGIN_TABLE AMCDIM
+@       N5
+OID     N8
+DIM     N8
+NAME    A80
+CODE    A80
+LABL    A254
+DESC    TXT
+NOTE    TXT
+TABL    N8
+/BEGIN_DATA AMCDIM
+/END_TABLE AMCDIM
+
+/BEGIN_TABLE AMCHFCT
+@       N5
+OID     N8
+HFCT    N8
+NAME    A80
+CODE    A80
+LABL    A254
+DESC    TXT
+NOTE    TXT
+/BEGIN_DATA AMCHFCT
+/END_TABLE AMCHFCT
+
+/BEGIN_TABLE AMCHDIM
+@       N5
+OID     N8
+HDIM    N8
+NAME    A80
+CODE    A80
+LABL    A254
+DESC    TXT
+NOTE    TXT
+/BEGIN_DATA AMCHDIM
+/END_TABLE AMCHDIM
+
+/BEGIN_TABLE AMCMETR
+@       N5
+OID     N8
+METR    N8
+NAME    A80
+CODE    A80
+LABL    A254
+DESC    TXT
+NOTE    TXT
+TTYP    N8
+COLN    N8
+/BEGIN_DATA AMCMETR
+/END_TABLE AMCMETR
+
+/BEGIN_TABLE AMCATTR
+@       N5
+OID     N8
+ATTR    N8
+NAME    A80
+CODE    A80
+LABL    A254
+DESC    TXT
+NOTE    TXT
+TTYP    N8
+COLN    N8
+/BEGIN_DATA AMCATTR
+/END_TABLE AMCATTR
+
+/BEGIN_TABLE AMCNODE
+@       N5
+OID     N8
+NODE    N8
+PNODE   N8
+TYPE    N8
+NUMR    N8
+/BEGIN_DATA AMCNODE
+/END_TABLE AMCNODE
+
+/BEGIN_TABLE AMCDTBS
+@       N5
+OID     N8
+DTBS    N8
+NAME    A80
+CODE    A80
+LABL    A254
+DESC    TXT
+NOTE    TXT
+DEFF    A256
+DTSC    A80
+SRVN    A30
+LOGN    A128
+PASS    A256
+/BEGIN_DATA AMCDTBS
+/END_TABLE AMCDTBS
+
+/BEGIN_TABLE AMCETBL
+@       N5
+OID     N8
+ETBL    N8
+NAME    A80
+CODE    A80
+LABL    A254
+DESC    TXT
+NOTE    TXT
+DTBS    N8
+/BEGIN_DATA AMCETBL
+/END_TABLE AMCETBL
+
+/BEGIN_TABLE AMCECOL
+@       N5
+OID     N8
+ECOL    N8
+NAME    A80
+CODE    A80
+LABL    A254
+DESC    TXT
+NOTE    TXT
+ETBL    N8
+DTTP    A30
+MLEN    N8
+PREC    N2
+DISP    N1
+NUMR    N8
+/BEGIN_DATA AMCECOL
+/END_TABLE AMCECOL
+
+/BEGIN_TABLE AMCTSRC
+@       N5
+OID     N8
+TSRC    N8
+TABL    N8
+DTBS    N8
+SCRPT   TXT
+INVLD   N1
+LOBJ    TXT
+/BEGIN_DATA AMCTSRC
+/END_TABLE AMCTSRC
+
+/BEGIN_TABLE AMCCSRC
+@       N5
+OID     N8
+CSRC    N8
+COLN    N8
+TSRC    N8
+ALIAS   A80
+EXPR    TXT
+INVLD   N1
+LOBJ    TXT
+/BEGIN_DATA AMCCSRC
+/END_TABLE AMCCSRC
+
+/BEGIN_TABLE AMCRPRT
+@       N5
+OID     N8
+RPRT    N8
+FLGS    N8
+NAME    A64
+DESC    A254
+TMLT    BIN
+/BEGIN_DATA AMCRPRT
+/END_TABLE AMCRPRT
+
+/BEGIN_TABLE AMCSLCT
+RPRT    N8
+MODL    N8
+LOBJ    TXT
+/BEGIN_DATA AMCSLCT
+/END_TABLE AMCSLCT
+
+/BEGIN_TABLE AMCCNST
+@       N5
+CNST    N8
+MODL    N8
+NAME    A30
+TYPE    A20
+VALE    A254
+RSRV    N1
+/BEGIN_DATA AMCCNST
+/END_TABLE AMCCNST
+
+/BEGIN_TABLE AMCEXAT
+@       N5
+EXAT    N8
+MODL    N8
+NAME    A30
+TYPE    A20
+LABL    A254
+VALE    A254
+TOBJ    N5
+RSRV    N1
+/BEGIN_DATA AMCEXAT
+/END_TABLE AMCEXAT
+
+/BEGIN_TABLE AMCEXAV
+@       N5
+EXAV    N8
+MODL    N8
+EXAT    N8
+VALE    A254
+OBJT    N8
+/BEGIN_DATA AMCEXAV
+/END_TABLE AMCEXAV
+
+/BEGIN_TABLE PBEDTS
+@       N5
+EDTN    N8
+NAME    A30
+EDIT    A254
+TYPE    N5
+CNTR    N8
+SEQN    N5
+FLAG    N12
+RSVD    A32
+/BEGIN_DATA PBEDTS
+/END_TABLE PBEDTS
+
+/BEGIN_TABLE PBFRMT
+@       N5
+FMTN    N8
+NAME    A30
+FRMT    A254
+TYPE    N5
+CNTR    N8
+GENE    N8
+/BEGIN_DATA PBFRMT
+/END_TABLE PBFRMT
+
+/BEGIN_TABLE PBVALD
+@       N5
+VLDN    N8
+NAME    A30
+VALD    A254
+TYPE    N5
+CNTR    N8
+VMSG    A254
+GENE    N8
+/BEGIN_DATA PBVALD
+/END_TABLE PBVALD
+
+/BEGIN_TABLE AMCFONT
+FONT    N5
+FNAM    A32
+FSIZ    N5
+FSTY    N5
+/BEGIN_DATA AMCFONT
+1
+Arial
+8
+0
+2
+MS Sans Serif
+8
+0
+3
+Arial Cyr
+8
+1
+4
+Arial Cyr
+8
+8
+5
+Arial Cyr
+6
+1
+/END_TABLE AMCFONT
+
+/BEGIN_TABLE AMCPENS
+PENS    N5
+PSTY    N5
+PCLR    N8
+PWID    N5
+/BEGIN_DATA AMCPENS
+1
+1
+0
+0
+2
+1
+255
+0
+/END_TABLE AMCPENS
+
+/BEGIN_TABLE AMCBRSH
+BRSH    N5
+BSTY    N5
+BCLR    N8
+BHAT    N5
+/BEGIN_DATA AMCBRSH
+1
+0
+16777215
+0
+2
+0
+32896
+0
+3
+0
+255
+0
+/END_TABLE AMCBRSH
+
+/BEGIN_TABLE AMCPROP
+PROP    N5
+MODL    N8
+SUBM    N8
+SECT    A50
+NPRO    A30
+VPRO    A80
+/BEGIN_DATA AMCPROP
+0
+4
+0
+DataArchitect
+Shadow
+no
+1
+4
+0
+DataArchitect
+AutoAdjust
+yes
+2
+4
+0
+DataArchitect
+LineStyle
+2
+3
+4
+0
+DataArchitect
+PrnScale
+100
+4
+4
+0
+DataArchitect
+Orientation
+1
+5
+4
+0
+DataArchitect
+LengthName
+80
+6
+4
+0
+DataArchitect
+UpprCaseName
+no
+7
+4
+0
+DataArchitect
+LowrCaseName
+no
+8
+4
+0
+DataArchitect
+AllowAllName
+yes
+9
+4
+0
+DataArchitect
+AllowChrName
+
+10
+4
+0
+DataArchitect
+InvldChrName
+"+-*/\.,!:;"
+11
+4
+0
+DataArchitect
+NoAccentName
+no
+12
+4
+0
+DataArchitect
+LengthCode
+80
+13
+4
+0
+DataArchitect
+UpprCaseCode
+no
+14
+4
+0
+DataArchitect
+LowrCaseCode
+no
+15
+4
+0
+DataArchitect
+AllowAllCode
+no
+16
+4
+0
+DataArchitect
+AllowChrCode
+'a'-'z', 'A'-'Z', '0'-'9', "_"
+17
+4
+0
+DataArchitect
+InvldChrCode
+
+18
+4
+0
+DataArchitect
+NoAccentCode
+yes
+19
+4
+0
+DataArchitect
+NoSplitting
+yes
+20
+4
+0
+DataArchitect
+Truncation
+no
+21
+4
+0
+DataArchitect
+Wrapping
+no
+22
+4
+0
+DataArchitect
+WrapLength
+80
+23
+4
+0
+DataArchitect
+WrapChar
+" !""#$%&'()*+,-./:;<=>?@[\]^_`{|}~"
+24
+4
+0
+DataArchitect
+PdmShowName
+yes
+25
+4
+0
+DataArchitect
+PdmShowPrim
+yes
+26
+4
+0
+DataArchitect
+PdmShowColn
+yes
+27
+4
+0
+DataArchitect
+PdmShowDttp
+yes
+28
+4
+0
+DataArchitect
+PdmShowKeys
+no
+29
+4
+0
+DataArchitect
+PdmShowNull
+no
+30
+4
+0
+DataArchitect
+PdmShowIndx
+no
+31
+4
+0
+DataArchitect
+PdmShowNameRefr
+no
+32
+4
+0
+DataArchitect
+PdmShowJoinRefr
+yes
+33
+4
+0
+DataArchitect
+PdmShowCnstRefr
+no
+34
+4
+0
+DataArchitect
+PdmShowIdclRefr
+no
+35
+4
+0
+DataArchitect
+PdmShowCardRefr
+no
+36
+4
+0
+DataArchitect
+PdmShowColnView
+yes
+37
+4
+0
+DataArchitect
+PdmShowDttpView
+yes
+38
+4
+0
+DataArchitect
+PdmShowExprView
+yes
+39
+4
+0
+DataArchitect
+PdmShowTablView
+yes
+40
+4
+0
+DataArchitect
+PdmRltnMode
+yes
+41
+4
+0
+DataArchitect
+PdmAutoMigrFkey
+no
+42
+4
+0
+DataArchitect
+PdmRefrUnique
+yes
+43
+4
+0
+DataArchitect
+PdmColnDmnNoDiv
+no
+44
+4
+0
+DataArchitect
+PdmColnDmnDivInd
+1
+45
+4
+0
+DataArchitect
+PdmDefDttp
+
+46
+4
+0
+DataArchitect
+PdmDefMlen
+0
+47
+4
+0
+DataArchitect
+PdmDefPrec
+0
+48
+4
+0
+DataArchitect
+DwShowSSrv
+no
+49
+4
+0
+DataArchitect
+DwShowLCol
+yes
+50
+4
+0
+DataArchitect
+DwShowLColDttp
+yes
+51
+4
+0
+DataArchitect
+DwShowIQIndx
+yes
+52
+4
+0
+DataArchitect
+DwShowNameJref
+no
+53
+4
+0
+DataArchitect
+DwShowJoinJref
+yes
+54
+4
+0
+DataArchitect
+DwShowCardJref
+no
+55
+4
+0
+DataArchitect
+Language
+1033
+56
+4
+0
+DataArchitect
+DBOCreaTspc
+no
+57
+4
+0
+DataArchitect
+DBOAltIndex
+yes
+58
+4
+0
+DataArchitect
+DBOAltrIndx
+no
+59
+4
+0
+DataArchitect
+DBOFornIndx
+yes
+60
+4
+0
+DataArchitect
+DBOPrimIndx
+no
+61
+4
+0
+DataArchitect
+DBOOthrIndx
+yes
+62
+4
+0
+DataArchitect
+DBOConsIOpt
+yes
+63
+4
+0
+DataArchitect
+DBOTypeTrgr
+0
+64
+4
+0
+DataArchitect
+DBOAltTrgr
+yes
+65
+4
+0
+DataArchitect
+DBOCreaTrgr
+yes
+66
+4
+0
+DataArchitect
+DBODeltTrgr
+yes
+67
+4
+0
+DataArchitect
+DBODropTrgr
+no
+68
+4
+0
+DataArchitect
+DBOInstTrgr
+yes
+69
+4
+0
+DataArchitect
+DBOUpdtTrgr
+yes
+70
+4
+0
+DataArchitect
+DBOChkC1
+yes
+71
+4
+0
+DataArchitect
+DBOChkC2
+yes
+72
+4
+0
+DataArchitect
+DBOChkC3
+yes
+73
+4
+0
+DataArchitect
+DBOChkC4
+yes
+74
+4
+0
+DataArchitect
+DBOChkC5
+yes
+75
+4
+0
+DataArchitect
+DBOChkC6
+yes
+76
+4
+0
+DataArchitect
+DBOChkC7
+yes
+77
+4
+0
+DataArchitect
+DBOChkC8
+yes
+78
+4
+0
+DataArchitect
+DBOChkC9
+yes
+79
+4
+0
+DataArchitect
+DBOChkC10
+yes
+80
+4
+0
+DataArchitect
+DBOChkC11
+yes
+81
+4
+0
+DataArchitect
+DBOStdMsg
+yes
+82
+4
+0
+DataArchitect
+DBOMsgTab
+
+83
+4
+0
+DataArchitect
+DBOMsgNo
+
+84
+4
+0
+DataArchitect
+DBOMsgTxt
+
+85
+4
+0
+DataArchitect
+DBOAltView
+yes
+86
+4
+0
+DataArchitect
+DBOCreaView
+no
+87
+4
+0
+DataArchitect
+DBODropView
+no
+88
+4
+0
+DataArchitect
+DBOViewComm
+no
+89
+4
+0
+DataArchitect
+DBOColnComm
+no
+90
+4
+0
+DataArchitect
+DBOTablComm
+no
+91
+4
+0
+DataArchitect
+DBOConsAkey
+yes
+92
+4
+0
+DataArchitect
+DBOConsChck
+yes
+93
+4
+0
+DataArchitect
+DBOConsTChk
+yes
+94
+4
+0
+DataArchitect
+DBOConsCChk
+yes
+95
+4
+0
+DataArchitect
+DBOConsDChk
+yes
+96
+4
+0
+DataArchitect
+DBOConsDeft
+yes
+97
+4
+0
+DataArchitect
+DBOConsFkey
+yes
+98
+4
+0
+DataArchitect
+DBOConsIDcl
+no
+99
+4
+0
+DataArchitect
+DBOConsPkey
+yes
+100
+4
+0
+DataArchitect
+DBOConsIDUR
+yes
+101
+4
+0
+DataArchitect
+DBOConsIDUC
+no
+102
+4
+0
+DataArchitect
+DBOConsIDUN
+no
+103
+4
+0
+DataArchitect
+DBOConsIDUD
+no
+104
+4
+0
+DataArchitect
+DBOConsIDDR
+yes
+105
+4
+0
+DataArchitect
+DBOConsIDDC
+yes
+106
+4
+0
+DataArchitect
+DBOConsIDDN
+no
+107
+4
+0
+DataArchitect
+DBOConsIDDD
+no
+108
+4
+0
+DataArchitect
+DBOCreaDtbs
+no
+109
+4
+0
+DataArchitect
+DBOCreaProc
+yes
+110
+4
+0
+DataArchitect
+DBODropProc
+no
+111
+4
+0
+DataArchitect
+DBOConsDOpt
+no
+112
+4
+0
+DataArchitect
+DBOConsDBSc
+no
+113
+4
+0
+DataArchitect
+DBOConsDESc
+no
+114
+4
+0
+DataArchitect
+DBODropIndx
+no
+115
+4
+0
+DataArchitect
+DBODropTabl
+no
+116
+4
+0
+DataArchitect
+DBODropTspc
+no
+117
+4
+0
+DataArchitect
+DBOCreaTabl
+yes
+118
+4
+0
+DataArchitect
+DBOConsTBSc
+yes
+119
+4
+0
+DataArchitect
+DBOConsTESc
+yes
+120
+4
+0
+DataArchitect
+DBOConsTOpt
+yes
+121
+4
+0
+DataArchitect
+DBODrpTmpTbl
+yes
+122
+4
+0
+DataArchitect
+DBOAltTable
+yes
+123
+4
+0
+DataArchitect
+DBOUseTrgUR
+no
+124
+4
+0
+DataArchitect
+DBOUseTrgDR
+no
+125
+4
+0
+DataArchitect
+DBOUseTrgDC
+no
+126
+4
+0
+DataArchitect
+DBOLowrCase
+no
+127
+4
+0
+DataArchitect
+DBOUpprCase
+no
+128
+4
+0
+DataArchitect
+DBONoAccent
+no
+129
+4
+0
+DataArchitect
+DBOAnsiChar
+no
+130
+4
+0
+DataArchitect
+DBOAddTitle
+yes
+131
+4
+0
+DataArchitect
+DBOUseNames
+no
+132
+4
+0
+DataArchitect
+DBOSqlODBC
+no
+133
+4
+0
+DataArchitect
+DBOChkModl
+yes
+134
+4
+0
+DataArchitect
+OLAPFile
+
+135
+4
+0
+DataArchitect
+OLAPDbms
+
+136
+4
+0
+DataArchitect
+OLAPUseNames
+yes
+/END_TABLE AMCPROP
+
+/BEGIN_TABLE AMCSYMB
+@       N5
+SID     N8
+TSYM    N5
+SSYM    N8
+NUMR    N8
+CSID    N8
+SID1    N8
+SID2    N8
+CLND    N8
+CLNN    N5
+RCX1    N8
+RCY1    N8
+RCX2    N8
+RCY2    N8
+PENS    N5
+BRSH    N5
+CTXT    N8
+FONT    N5
+JUST    N5
+WOVL    N8
+HOVL    N8
+SARR    N5
+CARR    N5
+TARR    N5
+NBPT    N8
+LSPT    BIN
+LSTY    N5
+TEXT    TXT
+PICT    PIC
+BTMP    BMP
+GRPH    N8
+OID     N8
+OLE     BIN
+/BEGIN_DATA AMCSYMB
+3
+1940
+289
+2
+1
+0
+0
+0
+0
+0
+370
+-37723
+21819
+-31424
+2
+1
+0
+0
+0
+0
+0
+0
+0
+0
+0
+
+0
+
+
+
+1939
+6
+
+3
+1941
+289
+2
+2
+0
+0
+0
+0
+0
+166
+-1250
+21090
+12849
+2
+1
+0
+0
+0
+0
+0
+0
+0
+0
+0
+
+0
+
+
+
+1939
+7
+
+3
+1942
+289
+2
+3
+0
+0
+0
+0
+0
+-625
+15470
+23299
+20794
+2
+1
+0
+0
+0
+0
+0
+0
+0
+0
+0
+
+0
+
+
+
+1939
+8
+
+3
+1943
+289
+2
+4
+0
+0
+0
+0
+0
+-20326
+-14383
+-977
+-10034
+2
+1
+0
+0
+0
+0
+0
+0
+0
+0
+0
+
+0
+
+
+
+1939
+9
+
+3
+1944
+289
+2
+5
+0
+0
+0
+0
+0
+8148
+-12917
+25322
+-8568
+2
+1
+0
+0
+0
+0
+0
+0
+0
+0
+0
+
+0
+
+
+
+1939
+10
+
+3
+1945
+289
+2
+6
+0
+0
+0
+0
+0
+-25323
+-8924
+-1174
+20775
+2
+1
+0
+0
+0
+0
+0
+0
+0
+0
+0
+
+0
+
+
+
+1939
+11
+
+3
+1946
+289
+2
+7
+0
+0
+0
+0
+0
+11825
+-8201
+25099
+-3852
+2
+1
+0
+0
+0
+0
+0
+0
+0
+0
+0
+
+0
+
+
+
+1939
+12
+
+3
+1947
+289
+2
+8
+0
+0
+0
+0
+0
+-16016
+-19495
+-1092
+-15146
+2
+1
+0
+0
+0
+0
+0
+0
+0
+0
+0
+
+0
+
+
+
+1939
+13
+
+3
+1948
+289
+2
+9
+0
+0
+0
+0
+0
+7386
+-18080
+23360
+-13731
+2
+1
+0
+0
+0
+0
+0
+0
+0
+0
+0
+
+0
+
+
+
+1939
+14
+
+3
+1949
+289
+2
+10
+0
+0
+0
+0
+0
+3033
+21474
+25082
+30698
+2
+1
+0
+0
+0
+0
+0
+0
+0
+0
+0
+
+0
+
+
+
+1939
+15
+
+3
+1950
+289
+2
+11
+0
+0
+0
+0
+0
+-19268
+31275
+-4344
+37574
+2
+1
+0
+0
+0
+0
+0
+0
+0
+0
+0
+
+0
+
+
+
+1939
+16
+
+3
+1951
+289
+2
+12
+0
+0
+0
+0
+0
+-19344
+25603
+-5020
+30927
+2
+1
+0
+0
+0
+0
+0
+0
+0
+0
+0
+
+0
+
+
+
+1939
+17
+
+3
+1952
+289
+2
+13
+0
+0
+0
+0
+0
+-2580
+33373
+25019
+37722
+2
+1
+0
+0
+0
+0
+0
+0
+0
+0
+0
+
+0
+
+
+
+1939
+18
+
+3
+1953
+289
+2
+14
+0
+0
+0
+0
+0
+-24714
+-29819
+-1015
+-22545
+2
+1
+0
+0
+0
+0
+0
+0
+0
+0
+0
+
+0
+
+
+
+1939
+19
+
+3
+1954
+289
+2
+15
+0
+0
+0
+0
+0
+-24568
+-34750
+-8069
+-30402
+2
+1
+0
+0
+0
+0
+0
+0
+0
+0
+0
+
+0
+
+
+
+1939
+20
+
+3
+1955
+289
+2
+16
+0
+0
+0
+0
+0
+5363
+-25788
+24862
+-19489
+2
+1
+0
+0
+0
+0
+0
+0
+0
+0
+0
+
+0
+
+
+
+1939
+21
+
+3
+1956
+289
+2
+17
+0
+0
+0
+0
+0
+11883
+-31197
+24782
+-26848
+2
+1
+0
+0
+0
+0
+0
+0
+0
+0
+0
+
+0
+
+
+
+1939
+22
+
+3
+1957
+290
+2
+18
+0
+1953
+1954
+0
+0
+0
+0
+0
+0
+2
+3
+0
+0
+0
+0
+0
+1
+0
+0
+4
+40f0ffff599bffff40f0ffff518affff23e0ffff518affff23e0ffff3f80ffff
+2
+
+
+
+1939
+139
+
+3
+1960
+290
+2
+19
+0
+1953
+1953
+0
+0
+0
+0
+0
+0
+2
+3
+0
+0
+0
+0
+0
+1
+0
+0
+4
+5ea3ffff6d8fffff5ea3ffff4fb1ffff21f8ffff4fb1ffff21f8ffff06a4ffff
+2
+
+
+
+1939
+138
+
+3
+1963
+290
+2
+20
+0
+1955
+1956
+0
+0
+0
+0
+0
+0
+2
+3
+0
+0
+0
+0
+0
+1
+0
+0
+3
+691b000090a7ffff691b0000968cffff10310000968cffff
+2
+
+
+
+1939
+137
+
+3
+1966
+290
+2
+21
+0
+1941
+1942
+0
+0
+0
+0
+0
+0
+2
+3
+0
+0
+0
+0
+0
+1
+0
+0
+2
+40360000e023000040360000a4480000
+2
+
+
+
+1939
+136
+
+3
+1969
+290
+2
+22
+0
+1949
+1950
+0
+0
+0
+0
+0
+0
+2
+3
+0
+0
+0
+0
+0
+1
+0
+0
+3
+7f120000117400007f120000767d00008decffff767d0000
+2
+
+
+
+1939
+135
+
+3
+1972
+290
+2
+23
+0
+1941
+1943
+0
+0
+0
+0
+0
+0
+2
+3
+0
+0
+0
+0
+0
+1
+0
+0
+3
+b6060000f5fcffffb6060000fbcbffff77f9fffffbcbffff
+2
+
+
+
+1939
+134
+
+3
+1975
+290
+2
+24
+0
+1941
+1944
+0
+0
+0
+0
+0
+0
+2
+3
+0
+0
+0
+0
+0
+1
+0
+0
+2
+322500008afbffff32250000b6d0ffff
+2
+
+
+
+1939
+133
+
+3
+1978
+290
+2
+25
+0
+1949
+1951
+0
+0
+0
+0
+0
+0
+2
+3
+0
+0
+0
+0
+0
+1
+0
+0
+2
+5a250000bd6d000046ceffffbd6d0000
+2
+
+
+
+1939
+132
+
+3
+1981
+290
+2
+26
+0
+1941
+1945
+0
+0
+0
+0
+0
+0
+2
+3
+0
+0
+0
+0
+0
+1
+0
+0
+3
+a20100007d310000a201000027e4ffffd8ccffff27e4ffff
+2
+
+
+
+1939
+131
+
+3
+1984
+290
+2
+27
+0
+1941
+1946
+0
+0
+0
+0
+0
+0
+2
+3
+0
+0
+0
+0
+0
+1
+0
+0
+2
+6c4200003bfcffff6c420000feebffff
+2
+
+
+
+1939
+130
+
+3
+1987
+290
+2
+28
+0
+1949
+1952
+0
+0
+0
+0
+0
+0
+2
+3
+0
+0
+0
+0
+0
+1
+0
+0
+2
+025100000875000002510000d1920000
+2
+
+
+
+1939
+129
+
+3
+1990
+290
+2
+29
+0
+1941
+1941
+0
+0
+0
+0
+0
+0
+2
+3
+0
+0
+0
+0
+0
+1
+0
+0
+4
+8e04000006ffffff8e040000913b00007a4e0000913b00007a4e0000942e0000
+2
+
+
+
+1939
+128
+
+3
+1993
+290
+2
+30
+0
+1941
+1947
+0
+0
+0
+0
+0
+0
+2
+3
+0
+0
+0
+0
+0
+1
+0
+0
+3
+6e0b0000260f00006e0b0000c6b9ffffeff9ffffc6b9ffff
+2
+
+
+
+1939
+127
+
+3
+1996
+290
+2
+31
+0
+1941
+1948
+0
+0
+0
+0
+0
+0
+2
+3
+0
+0
+0
+0
+0
+1
+0
+0
+2
+6b1d00009cfeffff6b1d000096c4ffff
+2
+
+
+
+1939
+126
+
+/END_TABLE AMCSYMB
+
+

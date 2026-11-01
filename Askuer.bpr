@@ -1,0 +1,600 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!-- C++Builder XML Project -->
+<PROJECT>
+  <MACROS>
+    <VERSION value="BCB.06.00"/>
+    <PROJECT value="$(BCB)\Projects\ASKUE_Work3520\Askuer.exe"/>
+    <OBJFILES value="reconst.obj reinit.obj Askuer.obj unDataMod.obj uOraDBConnection.obj 
+      FindPoint.obj Find.obj Filter.obj Main.obj setpasword.obj unAbout.obj 
+      SaveMonitorAs.obj MonitorForm\PrintDrawTable.obj 
+      MonitorAlert\JournalAlert.obj Indic\selectpoint.obj 
+      InputSwitchMeterage.obj OperScanSchedEd.obj OperScanSched.obj 
+      OperScanPointPar.obj SupperMain.obj TaskMenu.obj 
+      MonitorForm\MONITORFORM.obj MonitorForm\Interior.obj 
+      MonitorForm\Interior2xDrawTableChart.obj MonitorForm\FormDescr.obj 
+      Saa_SelectGroup.obj Saa_SelectGroupProc.obj Saa_SelectForm.obj 
+      SplitForm\SplitForm.obj SplitForm\Monitor.obj SplitForm\PageCtrlSpl.obj 
+      MonitorAlert\MonitorAlert.obj MonitorForm\Interior1.obj 
+      MonitorForm\Interior2.obj MonitorForm\Interior4.obj 
+      MonitorForm\InteriorChart.obj MonitorForm\InteriorDU.obj 
+      MonitorForm\InteriorEx.obj MonitorForm\InteriorJournal.obj 
+      MonitorForm\InteriorJournalSys.obj MonitorForm\InteriorLimCons.obj 
+      MonitorForm\InteriorLimitPower.obj MonitorForm\InteriorLimConsDebt.obj 
+      MonitorForm\InteriorConsImbalance.obj MonitorForm\InteriorExRep.obj 
+      MonitorForm\InteriorExOpForm.obj MonitorForm\InteriorDecad.obj 
+      MonitorForm\InteriorPLProc.obj MonitorForm\InteriorDU2Chart.obj 
+      MonitorForm\InteriorModus.obj MonitorForm\InteriorMaket.obj 
+      MonitorAlert\InteriorAlert.obj MonitorList.obj GetSelectDateTime.obj 
+      MonitorForm\InteriorExRepOut.obj PeriodFormUnit.obj InfoFormUnit.obj 
+      ParamCommunicationServer.obj InterpriseRename.obj DeportProcsSched.obj 
+      DeportProcRun.obj Vit_Meter.obj Vit_input.obj VIT_InputExcel.obj 
+      EditGroupsList.obj EditTimeMaxLoad.obj ControlVolueDB.obj 
+      ChangeCounters.obj CountParam.obj GetDataIntCounter.obj 
+      EditIntrodactPulsCout.obj EditFormsList.obj CopySchemaParams.obj 
+      EditRates.obj DeportProcs.obj EditCOMportList.obj SwitchOV.obj 
+      SelectSvitchPoint.obj DuplicateCnt.obj DuplicateCnt_InputParams.obj 
+      DuplicateCnt_ps_tu.obj EditMaket.obj maketarm.obj Vit_Delta.obj 
+      Vit_deltaExcel.obj Indic\consump.obj EditTariff.obj RequestMonitoring.obj 
+      EditCounter.obj InputParameters.obj InputParameters4.obj LastSave.obj 
+      ParameterPointsList.obj unCalcParam.obj unWorkTime.obj EditRequestPlan.obj 
+      TeleControlSignals.obj EditFiders.obj PointConditions.obj 
+      ChannelPointsList.obj EditDeportationPlan.obj DLK_ViewShem.obj 
+      EditTransformers.obj ChangeTransformers.obj ImportDatafiles.obj 
+      InputParam.obj TypePart.obj NewMonitorForm\unGraphMaket.obj 
+      NewMonitorForm\unInteriorUni.obj NewMonitorForm\InteriorPLTable.obj 
+      MonitorAlert\unCTSJournal.obj unMeterParameter.obj unEditFormula.obj 
+      BlockMessage.obj unSetupFilters.obj MonitorAlert\JournalPortScan.obj 
+      unSpecParam.obj MonitorForm\ValidParamOld.obj unTree.obj 
+      MonitorAlert\unDSJournal.obj unAddToTree.obj unGuid.obj unMaketArmR.obj 
+      unKoeff.obj unPrior.obj SetupMonitor\SetupMonitors.obj ManualInput.obj 
+      ManualInTree.obj StatICCPUnit.obj MonitorForm\ValidParam.obj 
+      MonitorForm\InteriorFullDat.obj FormUserForumViewTopic.obj 
+      FormUserForumAddReply.obj FormUserForumAddTopic.obj FormUserForumMain.obj 
+      ManualInputMeter.obj unEditServName.obj MonitorICCPUnit.obj 
+      MonitorForm\unEnrgValid.obj MonitorForm\DetailPoint.obj unRefCounter.obj 
+      unListCounter.obj unViewTree.obj unComportEvents.obj 
+      TablespaceUsageForm.obj unMTX.obj unRTRNIK.obj unChInt.obj 
+      InputStartMeters.obj unRTRNP.obj MonitorForm\InteriorDU2ChartGRB.obj 
+      GetSelectDate.obj"/>
+    <RESFILES value="Askuer.res"/>
+    <IDLFILES value=""/>
+    <IDLGENFILES value=""/>
+    <DEFFILE value=""/>
+    <RESDEPEN value="$(RESFILES) unDataMod.dfm uOraDBConnection.dfm FindPoint.dfm Find.dfm 
+      Filter.dfm Main.dfm setpasword.dfm unAbout.dfm SaveMonitorAs.dfm 
+      MonitorForm\PrintDrawTable.dfm MonitorAlert\JournalAlert.dfm 
+      Indic\selectpoint.dfm InputSwitchMeterage.dfm OperScanSchedEd.dfm 
+      OperScanSched.dfm OperScanPointPar.dfm SupperMain.dfm TaskMenu.dfm 
+      MonitorForm\MONITORFORM.dfm Saa_SelectGroup.dfm Saa_SelectGroupProc.dfm 
+      Saa_SelectForm.dfm SplitForm\SplitForm.dfm SplitForm\Monitor.dfm 
+      MonitorList.dfm GetSelectDateTime.dfm PeriodFormUnit.dfm InfoFormUnit.dfm 
+      ParamCommunicationServer.dfm InterpriseRename.dfm DeportProcsSched.dfm 
+      DeportProcRun.dfm Vit_Meter.dfm Vit_input.dfm VIT_InputExcel.dfm 
+      EditGroupsList.dfm EditTimeMaxLoad.dfm ControlVolueDB.dfm 
+      ChangeCounters.dfm CountParam.dfm GetDataIntCounter.dfm 
+      EditIntrodactPulsCout.dfm EditFormsList.dfm CopySchemaParams.dfm 
+      EditRates.dfm DeportProcs.dfm EditCOMportList.dfm SwitchOV.dfm 
+      SelectSvitchPoint.dfm DuplicateCnt.dfm DuplicateCnt_InputParams.dfm 
+      DuplicateCnt_ps_tu.dfm EditMaket.dfm maketarm.dfm Vit_Delta.dfm 
+      Vit_deltaExcel.dfm Indic\consump.dfm EditTariff.dfm RequestMonitoring.dfm 
+      EditCounter.dfm InputParameters.dfm InputParameters4.dfm LastSave.dfm 
+      ParameterPointsList.dfm unCalcParam.dfm unWorkTime.dfm EditRequestPlan.dfm 
+      TeleControlSignals.dfm EditFiders.dfm PointConditions.dfm 
+      ChannelPointsList.dfm EditDeportationPlan.dfm DLK_ViewShem.dfm 
+      EditTransformers.dfm ChangeTransformers.dfm ImportDatafiles.dfm 
+      InputParam.dfm TypePart.dfm NewMonitorForm\unGraphMaket.dfm 
+      NewMonitorForm\unInteriorUni.dfm MonitorAlert\unCTSJournal.dfm 
+      unMeterParameter.dfm unEditFormula.dfm BlockMessage.dfm unSetupFilters.dfm 
+      MonitorAlert\JournalPortScan.dfm unSpecParam.dfm 
+      MonitorForm\ValidParamOld.dfm unTree.dfm MonitorAlert\unDSJournal.dfm 
+      unAddToTree.dfm unGuid.dfm unMaketArmR.dfm unKoeff.dfm unPrior.dfm 
+      SetupMonitor\SetupMonitors.dfm ManualInput.dfm ManualInTree.dfm 
+      StatICCPUnit.dfm MonitorForm\ValidParam.dfm FormUserForumViewTopic.dfm 
+      FormUserForumAddReply.dfm FormUserForumAddTopic.dfm FormUserForumMain.dfm 
+      ManualInputMeter.dfm unEditServName.dfm MonitorICCPUnit.dfm 
+      MonitorForm\unEnrgValid.dfm MonitorForm\DetailPoint.dfm unRefCounter.dfm 
+      unListCounter.dfm unViewTree.dfm unComportEvents.dfm 
+      TablespaceUsageForm.dfm unMTX.dfm unRTRNIK.dfm unChInt.dfm 
+      InputStartMeters.dfm unRTRNP.dfm GetSelectDate.dfm"/>
+    <LIBFILES value="..\..\PermLib\permlib.lib"/>
+    <LIBRARIES value="CompresPak.lib indy.lib schem.lib dclusrDiag.lib Mappack.lib 
+      dclusrZulu.lib dclusrtl.lib dclusr.lib DinGridPackage.lib monthcalendar.lib 
+      oraprov60.lib XStringGrid_BC5.lib xvcl.lib bcbshlctrls.lib Indy60.lib 
+      dbxcds.lib soaprtl.lib bcbie.lib nmfast.lib dbexpress.lib inetdbxpress.lib 
+      inetdbbde.lib dsnapcon.lib dsnapcrba.lib visualdbclx.lib teeqr.lib dss.lib 
+      teedb.lib teeui.lib bdecds.lib cds.lib ibxpress.lib adortl.lib 
+      crcontrols60.lib dacvcl60.lib odacvcl60.lib odac60.lib dac60.lib 
+      bcb2kaxserver.lib qrpt.lib bcb97axserver.lib tee.lib MyTable.lib 
+      dclocx.lib bcbsmp.lib vcldbx.lib bdertl.lib vcldb.lib dbrtl.lib vclx.lib 
+      vcl.lib rtl.lib"/>
+    <SPARELIBS value="rtl.lib vcl.lib vclx.lib dbrtl.lib vcldb.lib bdertl.lib vcldbx.lib 
+      bcbsmp.lib dclocx.lib MyTable.lib tee.lib bcb97axserver.lib qrpt.lib 
+      bcb2kaxserver.lib dac60.lib odac60.lib odacvcl60.lib dacvcl60.lib 
+      crcontrols60.lib adortl.lib ibxpress.lib cds.lib bdecds.lib teeui.lib 
+      teedb.lib dss.lib teeqr.lib visualdbclx.lib dsnapcrba.lib dsnapcon.lib 
+      inetdbbde.lib inetdbxpress.lib dbexpress.lib nmfast.lib bcbie.lib 
+      soaprtl.lib dbxcds.lib Indy60.lib bcbshlctrls.lib xvcl.lib 
+      XStringGrid_BC5.lib oraprov60.lib monthcalendar.lib DinGridPackage.lib 
+      dclusr.lib dclusrtl.lib dclusrZulu.lib Mappack.lib dclusrDiag.lib 
+      schem.lib indy.lib CompresPak.lib"/>
+    <PACKAGES value="rtl.bpi vcl.bpi vclx.bpi bcbsmp.bpi dbrtl.bpi vcldb.bpi adortl.bpi 
+      ibsmp.bpi bdertl.bpi vcldbx.bpi qrpt.bpi teeui.bpi teedb.bpi tee.bpi 
+      dss.bpi teeqr.bpi ibxpress.bpi dsnap.bpi vclie.bpi inetdb.bpi inet.bpi 
+      nmfast.bpi webdsnap.bpi MyTable.bpi bcb97axserver.bpi dac60.bpi odac60.bpi 
+      dacvcl60.bpi odacvcl60.bpi"/>
+    <PATHCPP value=".;MonitorForm;MonitorAlert;Indic;MonitorForm;MonitorForm;MonitorForm;MonitorForm;SplitForm;SplitForm;SplitForm;MonitorAlert;MonitorForm;MonitorForm;MonitorForm;MonitorForm;MonitorForm;MonitorForm;MonitorForm;MonitorForm;MonitorForm;MonitorForm;MonitorForm;MonitorForm;MonitorForm;MonitorForm;MonitorForm;MonitorForm;MonitorForm;MonitorForm;MonitorForm;MonitorAlert;MonitorForm;Indic;NewMonitorForm;NewMonitorForm;NewMonitorForm;MonitorAlert;MonitorAlert;MonitorForm;MonitorAlert;SetupMonitor;MonitorForm;MonitorForm;MonitorForm;MonitorForm;MonitorForm"/>
+    <PATHPAS value=".;"/>
+    <PATHRC value=".;"/>
+    <PATHASM value=".;"/>
+    <DEBUGLIBPATH value="$(BCB)\lib\debug"/>
+    <RELEASELIBPATH value="$(BCB)\lib\release"/>
+    <LINKER value="ilink32"/>
+    <USERDEFINES value="_DEBUG"/>
+    <SYSDEFINES value="NO_STRICT"/>
+    <MAINSOURCE value="Askuer.cpp"/>
+    <INCLUDEPATH value="$(BCB)\Projects\ASKUE_Work3520\SetupMonitor;$(BCB)\Projects\ASKUE_Work3520\NewMonitorForm;$(BCB)\Projects\ASKUE_Work3520\SplitForm;$(BCB)\Projects\ASKUE_Work3520\Indic;$(BCB)\Projects\ASKUE_Work3520\MonitorAlert;$(BCB)\Projects\ASKUE_Work3520\MonitorForm;ENU;UKR;$(BCB)\Imports;..\..;ReportsForm;$(BCB)\include;$(BCB)\include\vcl;$(BCB)\Projects;..\PermLib;$(BCB)\ODAC_191031\Source;$(BCB)\Component\EH;$(BCB)\Component\VTR_DTable"/>
+    <LIBPATH value="$(BCB)\Projects\ASKUE_Work3520\SetupMonitor;$(BCB)\Projects\ASKUE_Work3520\NewMonitorForm;$(BCB)\Projects\ASKUE_Work3520\SplitForm;$(BCB)\Projects\ASKUE_Work3520\Indic;$(BCB)\Projects\ASKUE_Work3520\MonitorAlert;$(BCB)\Projects\ASKUE_Work3520\MonitorForm;$(BCB)\Lib;ENU;UKR;$(BCB)\Imports;..\..;ReportsForm;$(BCB)\lib\obj;$(BCB)\Projects;$(BCB)\Projects\Lib;..\..\Source;..\PermLib;$(BCB)\ODAC_191031\Source;$(BCB)\ODAC_191031\Source\CBuilder6;$(BCB)\Component\EH;$(BCB)\Component\VTR_DTable;$(BCB)\Bin"/>
+    <WARNINGS value="-w-par -w-8027 -w-8026"/>
+    <WARNOPTSTR value=""/>
+    <OTHERFILES value=""/>
+  </MACROS>
+  <OPTIONS>
+    <IDLCFLAGS value="-src_suffix cpp -D_DEBUG -I$(BCB)\Projects\ASKUE_Work3520\SetupMonitor 
+      -I$(BCB)\Projects\ASKUE_Work3520\NewMonitorForm 
+      -I$(BCB)\Projects\ASKUE_Work3520\SplitForm 
+      -I$(BCB)\Projects\ASKUE_Work3520\Indic 
+      -I$(BCB)\Projects\ASKUE_Work3520\MonitorAlert 
+      -I$(BCB)\Projects\ASKUE_Work3520\MonitorForm -IENU -IUKR -I$(BCB)\Imports 
+      -I..\.. -IReportsForm -I$(BCB)\include -I$(BCB)\include\vcl 
+      -I$(BCB)\Projects -I..\PermLib -I$(BCB)\ODAC_191031\Source 
+      -I$(BCB)\Component\EH -I$(BCB)\Component\VTR_DTable -no_tie -boa"/>
+    <CFLAG1 value="-Od -H=&quot;c:\Program Files\Borland\CBuilder6\Lib\vcl60.csm&quot; -Hc -Vx -Ve -X- 
+      -r- -a8 -b- -k -y -v -vi- -c -tWM"/>
+    <CFLAG2 value=""/>
+    <CFLAG3 value=""/>
+    <PFLAGS value="-AWinTypes=Windows;WinProcs=Windows;DbiTypes=BDE;DbiProcs=BDE;DbiErrs=BDE 
+      -$Y+ -$W -$O- -$A8 -v -JPHNV -M -JPHNE"/>
+    <RFLAGS value=""/>
+    <AFLAGS value="/mu /w0 /zi"/>
+    <LFLAGS value="-D&quot;&quot; -aa -Tpe -GD -s -v"/>
+    <IFLAGS value=""/>
+    <OTHERFILES value=""/>
+  </OPTIONS>
+  <LINKER>
+    <ALLOBJ value="c0w32.obj sysinit.obj $(OBJFILES)"/>
+    <ALLRES value="$(RESFILES)"/>
+    <ALLLIB value="$(LIBFILES) $(LIBRARIES) import32.lib cp32mt.lib"/>
+    <OTHERFILES value=""/>
+  </LINKER>
+  <FILELIST>
+      <FILE FILENAME="reconst.pas" FORMNAME="" UNITNAME="ReConst" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="reinit.pas" FORMNAME="" UNITNAME="reinit" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="reconst.hpp" FORMNAME="" UNITNAME="reconst.hpp" CONTAINERID="" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Askuer.cpp" FORMNAME="" UNITNAME="Askuer" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Askuer.res" FORMNAME="" UNITNAME="Askuer.res" CONTAINERID="ResTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="ASKUETypes.h" FORMNAME="" UNITNAME="ASKUETypes" CONTAINERID="" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="unDataMod.cpp" FORMNAME="dmMain" UNITNAME="unDataMod" CONTAINERID="CCompiler" DESIGNCLASS="TDataModule" LOCALCOMMAND=""/>
+      <FILE FILENAME="uOraDBConnection.cpp" FORMNAME="fmConnect" UNITNAME="uOraDBConnection" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="FindPoint.cpp" FORMNAME="fmFindPoint" UNITNAME="FindPoint" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Find.cpp" FORMNAME="FindForm" UNITNAME="Find" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Filter.cpp" FORMNAME="fmFilter" UNITNAME="Filter" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Main.cpp" FORMNAME="MainForm" UNITNAME="Main" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="setpasword.cpp" FORMNAME="FormSetPasword" UNITNAME="setpasword" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="unAbout.cpp" FORMNAME="fmAbout" UNITNAME="unAbout" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="SaveMonitorAs.cpp" FORMNAME="fmSaveMonitorAs" UNITNAME="SaveMonitorAs" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="MonitorForm\PrintDrawTable.cpp" FORMNAME="fmQR" UNITNAME="PrintDrawTable" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="MonitorAlert\JournalAlert.cpp" FORMNAME="dlgJournalAlert" UNITNAME="JournalAlert" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Indic\selectpoint.cpp" FORMNAME="fmSelectPoint" UNITNAME="selectpoint" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="InputSwitchMeterage.cpp" FORMNAME="fmInputMeterage" UNITNAME="InputSwitchMeterage" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="OperScanSchedEd.cpp" FORMNAME="fmOperScanSchedEd" UNITNAME="OperScanSchedEd" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="OperScanSched.cpp" FORMNAME="fmOperScanSched" UNITNAME="OperScanSched" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="OperScanPointPar.cpp" FORMNAME="fmOperScanPointPar" UNITNAME="OperScanPointPar" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="SupperMain.cpp" FORMNAME="SupperMainForm" UNITNAME="SupperMain" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="TaskMenu.cpp" FORMNAME="TaskMenuForm" UNITNAME="TaskMenu" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="MonitorForm\MONITORFORM.cpp" FORMNAME="BaseMonitorForm" UNITNAME="MONITORFORM" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="MonitorForm\Interior.cpp" FORMNAME="" UNITNAME="Interior" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="MonitorForm\Interior2xDrawTableChart.cpp" FORMNAME="" UNITNAME="Interior2xDrawTableChart" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="MonitorForm\FormDescr.cpp" FORMNAME="" UNITNAME="FormDescr" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Saa_SelectGroup.cpp" FORMNAME="fmSelectGroupReport" UNITNAME="Saa_SelectGroup" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Saa_SelectGroupProc.cpp" FORMNAME="fmSelectGroupReportProc" UNITNAME="Saa_SelectGroupProc" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Saa_SelectForm.cpp" FORMNAME="fmSelectReportForm" UNITNAME="Saa_SelectForm" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="SplitForm\SplitForm.cpp" FORMNAME="SplitterForm" UNITNAME="SplitForm" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="SplitForm\Monitor.cpp" FORMNAME="ManForm" UNITNAME="Monitor" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="SplitForm\PageCtrlSpl.cpp" FORMNAME="" UNITNAME="PageCtrlSpl" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="MonitorAlert\MonitorAlert.cpp" FORMNAME="" UNITNAME="MonitorAlert" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="MonitorForm\Interior1.cpp" FORMNAME="" UNITNAME="Interior1" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="MonitorForm\Interior2.cpp" FORMNAME="" UNITNAME="Interior2" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="MonitorForm\Interior4.cpp" FORMNAME="" UNITNAME="Interior4" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="MonitorForm\InteriorChart.cpp" FORMNAME="" UNITNAME="InteriorChart" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="MonitorForm\InteriorDU.cpp" FORMNAME="" UNITNAME="InteriorDU" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="MonitorForm\InteriorEx.cpp" FORMNAME="" UNITNAME="InteriorEx" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="MonitorForm\InteriorJournal.cpp" FORMNAME="" UNITNAME="InteriorJournal" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="MonitorForm\InteriorJournalSys.cpp" FORMNAME="" UNITNAME="InteriorJournalSys" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="MonitorForm\InteriorLimCons.cpp" FORMNAME="" UNITNAME="InteriorLimCons" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="MonitorForm\InteriorLimitPower.cpp" FORMNAME="" UNITNAME="InteriorLimitPower" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="MonitorForm\InteriorLimConsDebt.cpp" FORMNAME="" UNITNAME="InteriorLimConsDebt" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="MonitorForm\InteriorConsImbalance.cpp" FORMNAME="" UNITNAME="InteriorConsImbalance" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="MonitorForm\InteriorExRep.cpp" FORMNAME="" UNITNAME="InteriorExRep" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="MonitorForm\InteriorExOpForm.cpp" FORMNAME="" UNITNAME="InteriorExOpForm" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="MonitorForm\InteriorDecad.cpp" FORMNAME="" UNITNAME="InteriorDecad" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="MonitorForm\InteriorPLProc.cpp" FORMNAME="" UNITNAME="InteriorPLProc" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="MonitorForm\InteriorDU2Chart.cpp" FORMNAME="" UNITNAME="InteriorDU2Chart" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="MonitorForm\InteriorModus.cpp" FORMNAME="" UNITNAME="InteriorModus" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="MonitorForm\InteriorMaket.cpp" FORMNAME="" UNITNAME="InteriorMaket" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="MonitorAlert\InteriorAlert.cpp" FORMNAME="" UNITNAME="InteriorAlert" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="MonitorList.cpp" FORMNAME="fmMonitorList" UNITNAME="MonitorList" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="GetSelectDateTime.cpp" FORMNAME="fmGetSelectDateTime" UNITNAME="GetSelectDateTime" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="MonitorForm\InteriorExRepOut.cpp" FORMNAME="" UNITNAME="InteriorExRepOut" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="PeriodFormUnit.cpp" FORMNAME="PeriodForm" UNITNAME="PeriodFormUnit" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="InfoFormUnit.cpp" FORMNAME="InfoForm" UNITNAME="InfoFormUnit" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="ParamCommunicationServer.cpp" FORMNAME="FormParamCommunicationServer" UNITNAME="ParamCommunicationServer" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="InterpriseRename.cpp" FORMNAME="FormIntrpriseReneme" UNITNAME="InterpriseRename" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="DeportProcsSched.cpp" FORMNAME="fmDeportProcsSched" UNITNAME="DeportProcsSched" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="DeportProcRun.cpp" FORMNAME="fmDeportProcRun" UNITNAME="DeportProcRun" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Vit_Meter.cpp" FORMNAME="FormVVMeter" UNITNAME="Vit_Meter" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Vit_input.cpp" FORMNAME="FormVITInput" UNITNAME="Vit_input" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="VIT_InputExcel.cpp" FORMNAME="FormVITInputExcel" UNITNAME="VIT_InputExcel" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="EditGroupsList.cpp" FORMNAME="FormEditGropsList" UNITNAME="EditGroupsList" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="EditTimeMaxLoad.cpp" FORMNAME="FormEditTimeMaxLoad" UNITNAME="EditTimeMaxLoad" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="ControlVolueDB.cpp" FORMNAME="FormControlVolueDB" UNITNAME="ControlVolueDB" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="ChangeCounters.cpp" FORMNAME="FormChangeCounters" UNITNAME="ChangeCounters" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="CountParam.cpp" FORMNAME="FormCountParam" UNITNAME="CountParam" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="GetDataIntCounter.cpp" FORMNAME="FormGetDataIntCounter" UNITNAME="GetDataIntCounter" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="EditIntrodactPulsCout.cpp" FORMNAME="FormIntrodactPulsCount" UNITNAME="EditIntrodactPulsCout" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="EditFormsList.cpp" FORMNAME="FormEditFormList" UNITNAME="EditFormsList" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="CopySchemaParams.cpp" FORMNAME="FormCopyShcema" UNITNAME="CopySchemaParams" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="EditRates.cpp" FORMNAME="FormEditRates" UNITNAME="EditRates" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="DeportProcs.cpp" FORMNAME="fmDeportProcs" UNITNAME="DeportProcs" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="EditCOMportList.cpp" FORMNAME="FormEditCOMportList" UNITNAME="EditCOMportList" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="SwitchOV.cpp" FORMNAME="FormSwitchOV" UNITNAME="SwitchOV" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="SelectSvitchPoint.cpp" FORMNAME="FormSelectSvitchPoint" UNITNAME="SelectSvitchPoint" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="DuplicateCnt.cpp" FORMNAME="fmDuplicateCnt" UNITNAME="DuplicateCnt" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="DuplicateCnt_InputParams.cpp" FORMNAME="fmDuplicateCnt_InputParams" UNITNAME="DuplicateCnt_InputParams" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="DuplicateCnt_ps_tu.cpp" FORMNAME="fmDuplicateCnt_PS_TU" UNITNAME="DuplicateCnt_ps_tu" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="EditMaket.cpp" FORMNAME="EditMaketForm" UNITNAME="EditMaket" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="maketarm.cpp" FORMNAME="fmMaketArm" UNITNAME="maketarm" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Vit_Delta.cpp" FORMNAME="FormVITInputDelta" UNITNAME="Vit_Delta" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Vit_deltaExcel.cpp" FORMNAME="FormVITInputDeltaExcel" UNITNAME="Vit_deltaExcel" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Indic\consump.cpp" FORMNAME="fmConsump" UNITNAME="consump" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="EditTariff.cpp" FORMNAME="EditTariffForm" UNITNAME="EditTariff" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="RequestMonitoring.cpp" FORMNAME="fmRequestMonitoring" UNITNAME="RequestMonitoring" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="EditCounter.cpp" FORMNAME="FormCounter" UNITNAME="EditCounter" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="InputParameters.cpp" FORMNAME="FormInputParameters" UNITNAME="InputParameters" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="InputParameters4.cpp" FORMNAME="FormInputParameters4" UNITNAME="InputParameters4" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="LastSave.cpp" FORMNAME="LastSaveForm" UNITNAME="LastSave" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="ParameterPointsList.cpp" FORMNAME="fmParameterPointsList" UNITNAME="ParameterPointsList" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="unCalcParam.cpp" FORMNAME="fmCalcParam" UNITNAME="unCalcParam" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="unWorkTime.cpp" FORMNAME="fmWorkTime" UNITNAME="unWorkTime" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="EditRequestPlan.cpp" FORMNAME="fmEditRequestPlan" UNITNAME="EditRequestPlan" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="TeleControlSignals.cpp" FORMNAME="FormTeleControlSignals" UNITNAME="TeleControlSignals" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="EditFiders.cpp" FORMNAME="FormEditFiders" UNITNAME="EditFiders" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="PointConditions.cpp" FORMNAME="fmPointConditions" UNITNAME="PointConditions" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="ChannelPointsList.cpp" FORMNAME="fmChannelPointsList" UNITNAME="ChannelPointsList" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="EditDeportationPlan.cpp" FORMNAME="fmEditDeportationPlan" UNITNAME="EditDeportationPlan" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="DLK_ViewShem.cpp" FORMNAME="ViewShemForm" UNITNAME="DLK_ViewShem" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="EditTransformers.cpp" FORMNAME="TransformersForm" UNITNAME="EditTransformers" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="ChangeTransformers.cpp" FORMNAME="ChangeTransformersForm" UNITNAME="ChangeTransformers" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="ImportDatafiles.cpp" FORMNAME="ImportDatafilesForm" UNITNAME="ImportDatafiles" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="InputParam.cpp" FORMNAME="FormInputParam" UNITNAME="InputParam" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="TypePart.cpp" FORMNAME="fmTypePart" UNITNAME="TypePart" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="NewMonitorForm\unGraphMaket.cpp" FORMNAME="fmGraphMaket" UNITNAME="unGraphMaket" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="NewMonitorForm\unInteriorUni.cpp" FORMNAME="fmInteriorUni" UNITNAME="unInteriorUni" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="NewMonitorForm\InteriorPLTable.cpp" FORMNAME="" UNITNAME="InteriorPLTable" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="MonitorAlert\unCTSJournal.cpp" FORMNAME="fmCTSJournal" UNITNAME="unCTSJournal" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="unMeterParameter.cpp" FORMNAME="fmMeterParameter" UNITNAME="unMeterParameter" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="unEditFormula.cpp" FORMNAME="fmEditFormula" UNITNAME="unEditFormula" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="BlockMessage.cpp" FORMNAME="fmBlockMess" UNITNAME="BlockMessage" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="unSetupFilters.cpp" FORMNAME="fmSetupFilters" UNITNAME="unSetupFilters" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="MonitorAlert\JournalPortScan.cpp" FORMNAME="dlgJournalPortScan" UNITNAME="JournalPortScan" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="unSpecParam.cpp" FORMNAME="fmSpecParam" UNITNAME="unSpecParam" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="MonitorForm\ValidParamOld.cpp" FORMNAME="fmValidityFormOld" UNITNAME="ValidParamOld" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="unTree.cpp" FORMNAME="fmTree" UNITNAME="unTree" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="MonitorAlert\unDSJournal.cpp" FORMNAME="fmDSJournal" UNITNAME="unDSJournal" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="unAddToTree.cpp" FORMNAME="fmAddToTree" UNITNAME="unAddToTree" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="unGuid.cpp" FORMNAME="fmGuid" UNITNAME="unGuid" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="unMaketArmR.cpp" FORMNAME="fmMaketArmR" UNITNAME="unMaketArmR" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="unKoeff.cpp" FORMNAME="fmKoeff" UNITNAME="unKoeff" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="unPrior.cpp" FORMNAME="fmPrior" UNITNAME="unPrior" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="SetupMonitor\SetupMonitors.cpp" FORMNAME="FormSetupMonitors" UNITNAME="SetupMonitors" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="ManualInput.cpp" FORMNAME="fmManualInput" UNITNAME="ManualInput" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="ManualInTree.cpp" FORMNAME="FormManualInTree" UNITNAME="ManualInTree" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="StatICCPUnit.cpp" FORMNAME="StatICCPForm" UNITNAME="StatICCPUnit" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="MonitorForm\ValidParam.cpp" FORMNAME="fmValidityForm" UNITNAME="ValidParam" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="MonitorForm\InteriorFullDat.cpp" FORMNAME="" UNITNAME="InteriorFullDat" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="FormUserForumViewTopic.cpp" FORMNAME="UserForumViewTopic" UNITNAME="FormUserForumViewTopic" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="FormUserForumAddReply.cpp" FORMNAME="UserForumAddReply" UNITNAME="FormUserForumAddReply" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="FormUserForumAddTopic.cpp" FORMNAME="UserForumAddTopic" UNITNAME="FormUserForumAddTopic" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="FormUserForumMain.cpp" FORMNAME="UserForumMain" UNITNAME="FormUserForumMain" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="ManualInputMeter.cpp" FORMNAME="fmManualInputMeter" UNITNAME="ManualInputMeter" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="unEditServName.cpp" FORMNAME="fmEditServName" UNITNAME="unEditServName" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="MonitorICCPUnit.cpp" FORMNAME="MonitorICCPForm" UNITNAME="MonitorICCPUnit" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="MonitorForm\unEnrgValid.cpp" FORMNAME="fmEnrgValid" UNITNAME="unEnrgValid" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="MonitorForm\DetailPoint.cpp" FORMNAME="fmDetailPoint" UNITNAME="DetailPoint" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="unRefCounter.cpp" FORMNAME="fmRefCounter" UNITNAME="unRefCounter" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="unListCounter.cpp" FORMNAME="fmListCounter" UNITNAME="unListCounter" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="unViewTree.cpp" FORMNAME="fmViewTree" UNITNAME="unViewTree" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\PermLib\permlib.lib" FORMNAME="" UNITNAME="permlib.lib" CONTAINERID="LibTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="unComportEvents.cpp" FORMNAME="fmComportEvents" UNITNAME="unComportEvents" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="TablespaceUsageForm.cpp" FORMNAME="TablespaceUsage" UNITNAME="TablespaceUsageForm" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="unMTX.cpp" FORMNAME="fmMTX" UNITNAME="unMTX" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="unRTRNIK.cpp" FORMNAME="fmRTRNIK" UNITNAME="unRTRNIK" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="unChInt.cpp" FORMNAME="fmChInter" UNITNAME="unChInt" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="InputStartMeters.cpp" FORMNAME="fmInputStartMeters" UNITNAME="InputStartMeters" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="unRTRNP.cpp" FORMNAME="fmRTRNP" UNITNAME="unRTRNP" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="MonitorForm\InteriorDU2ChartGRB.cpp" FORMNAME="" UNITNAME="InteriorDU2ChartGRB" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="GetSelectDate.cpp" FORMNAME="fmGetSelectDate" UNITNAME="GetSelectDate" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+  </FILELIST>
+  <BUILDTOOLS>
+  </BUILDTOOLS>
+
+  <IDEOPTIONS>
+[Version Info]
+IncludeVerInfo=1
+AutoIncBuild=0
+MajorVer=3
+MinorVer=5
+Release=5
+Build=50
+Debug=0
+PreRelease=0
+Special=0
+Private=0
+DLL=0
+Locale=1049
+CodePage=1251
+
+[Version Info Keys]
+CompanyName=ИНТЭП
+FileDescription=Автоматизированная система учета энергоресурсов
+FileVersion=3.5.5.50
+InternalName=askuer.exe
+LegalCopyright=ИНТЭП
+LegalTrademarks=ИНТЭП
+OriginalFilename=askuer
+ProductName=Автоматизированная система учета энергоресурсов
+ProductVersion=3.5.5.50
+
+[HistoryLists\hlIncludePath]
+Count=30
+Item0=$(BCB)\Projects\ASKUE_Work3520\SetupMonitor;$(BCB)\Projects\ASKUE_Work3520\NewMonitorForm;$(BCB)\Projects\ASKUE_Work3520\SplitForm;$(BCB)\Projects\ASKUE_Work3520\Indic;$(BCB)\Projects\ASKUE_Work3520\MonitorAlert;$(BCB)\Projects\ASKUE_Work3520\MonitorForm;ENU;UKR;$(BCB)\Imports;..\..;ReportsForm;$(BCB)\include;$(BCB)\include\vcl;$(BCB)\Projects;..\PermLib;$(BCB)\ODAC_191031\Source;$(BCB)\Component\EH;$(BCB)\Component\VTR_DTable
+Item1=$(BCB)\Projects\ASKUE_Work3520\SetupMonitor;$(BCB)\Projects\ASKUE_Work3520\NewMonitorForm;$(BCB)\Projects\ASKUE_Work3520\SplitForm;$(BCB)\Projects\ASKUE_Work3520\Indic;$(BCB)\Projects\ASKUE_Work3520\MonitorAlert;$(BCB)\Projects\ASKUE_Work3520\MonitorForm;ENU;UKR;$(BCB)\Imports;NewMonitorForm;..\..;Indic;ReportsForm;setupmonitor;monitoralert;splitform;monitorform;$(BCB)\include;$(BCB)\include\vcl;$(BCB)\Projects;..\PermLib;$(BCB)\ODAC_191031\Source;$(BCB)\Component\EH;$(BCB)\Component\VTR_DTable
+Item2=ENU;UKR;$(BCB)\Imports;NewMonitorForm;..\..;Indic;ReportsForm;setupmonitor;monitoralert;splitform;monitorform;$(BCB)\include;$(BCB)\include\vcl;$(BCB)\Projects;..\PermLib;$(BCB)\ODAC_191031\Source;$(BCB)\Component\EH;$(BCB)\Component\VTR_DTable
+Item3=ENU;UKR;$(BCB)\Imports;NewMonitorForm;..\..;Indic;ReportsForm;setupmonitor;monitoralert;splitform;monitorform;$(BCB)\include;$(BCB)\include\vcl;$(BCB)\Projects;..\..\PermLib;$(BCB)\ODAC_191031\Source;$(BCB)\Component\EH;$(BCB)\Component\VTR_DTable
+Item4=ENU;UKR;$(BCB)\Imports;NewMonitorForm;..\..;Indic;ReportsForm;setupmonitor;monitoralert;splitform;monitorform;$(BCB)\include;$(BCB)\include\vcl;$(BCB)\Projects;..\..\PermLib;$(BCB)\ODAC\Source;$(BCB)\ODAC\Source\CBuilder6;$(BCB)\Component\EH;$(BCB)\Component\VTR_DTable
+Item5=ENU;UKR;$(BCB)\Imports;NewMonitorForm;..\..;Indic;ReportsForm;setupmonitor;monitoralert;splitform;monitorform;$(BCB)\include;$(BCB)\include\vcl;$(BCB)\Projects;..\..\PermLib;$(BCB)\ODAC\Source;$(BCB)\Component\EH;$(BCB)\Component\VTR_DTable
+Item6=ENU;UKR;$(BCB)\Imports;NewMonitorForm;..\..;Indic;ReportsForm;setupmonitor;monitoralert;splitform;monitorform;$(BCB)\include;$(BCB)\include\vcl;$(BCB)\Projects;..\..\PermLib;$(BCB)\ODAC\Source;$(BCB)\Component\EH
+Item7=ENU;UKR;$(BCB)\Imports;NewMonitorForm;..\..;Indic;ReportsForm;setupmonitor;monitoralert;splitform;monitorform;$(BCB)\include;$(BCB)\include\vcl;$(BCB)\Projects;..\..\PermLib;$(BCB)\ODAC\Source;$(BCB)\Component\EH;
+Item8=ENU;UKR;$(BCB)\Imports;NewMonitorForm;..\..;Indic;ReportsForm;setupmonitor;monitoralert;splitform;monitorform;$(BCB)\include;$(BCB)\include\vcl;$(BCB)\Projects;..\..\PermLib;$(BCB)\ODAC\Source
+Item9=ENU;UKR;$(BCB)\Imports;NewMonitorForm;..\..;Indic;ReportsForm;setupmonitor;monitoralert;splitform;monitorform;$(BCB)\include;$(BCB)\include\vcl;$(BCB)\Projects;..\..\PermLib
+Item10=ENU;UKR;$(BCB)\Imports;NewMonitorForm;..\..;Indic;ReportsForm;setupmonitor;monitoralert;splitform;monitorform;$(BCB)\include;$(BCB)\include\vcl;$(BCB)\Projects
+Item11=ENU;UKR;NewMonitorForm;..\..;Indic;ReportsForm;setupmonitor;monitoralert;splitform;monitorform;$(BCB)\Imports;$(BCB)\include;$(BCB)\include\vcl;$(BCB)\Projects
+Item12=NewMonitorForm;..\..;Indic;ReportsForm;setupmonitor;monitoralert;splitform;monitorform;$(BCB)\Imports;$(BCB)\include;$(BCB)\include\vcl;$(BCB)\Projects
+Item13=..\..;Indic;ReportsForm;setupmonitor;monitoralert;splitform;monitorform;$(BCB)\Imports;$(BCB)\include;$(BCB)\include\vcl;$(BCB)\Projects
+Item14=..\..;Indic;ReportsForm;setupmonitor;monitoralert;splitform;monitorform;$(BCB)\Imports;$(BCB)\include;$(BCB)\include\vcl;$(BCB)\Projects;..\..\Source
+Item15=Indic;ReportsForm;setupmonitor;monitoralert;splitform;monitorform;$(BCB)\Imports;$(BCB)\include;$(BCB)\include\vcl;$(BCB)\Projects;..\..\Source
+Item16=Indic;ReportsForm;setupmonitor;monitoralert;splitform;monitorform;$(BCB)\include;$(BCB)\include\vcl;$(BCB)\Projects;..\..\Source
+Item17=$(BCB)\include;$(BCB)\include\vcl;$(BCB)\Projects;..\..\Source;Indic;ReportsForm;setupmonitor;monitoralert;splitform;monitorform
+Item18=..\..\Source;..\askueold;..\..;Indic;$(BCB)\Projects;ReportsForm;$(BCB)\Bin;$(BCB)\Imports;setupmonitor;dialup;monitoralert;splitform;monitorform;$(BCB)\include;$(BCB)\include\vcl;$(BCB)\ODAC\Include;$(BCB)\VTR_DTable
+Item19=..\..;Indic;$(BCB)\Projects;ReportsForm;$(BCB)\Bin;$(BCB)\Imports;setupmonitor;dialup;monitoralert;splitform;monitorform;$(BCB)\include;$(BCB)\include\vcl;$(BCB)\ODAC\Include;$(BCB)\VTR_DTable
+Item20=..\..\Include;..\..;Indic;$(BCB)\Projects;ReportsForm;$(BCB)\Bin;$(BCB)\Imports;setupmonitor;dialup;monitoralert;splitform;monitorform;$(BCB)\include;$(BCB)\include\vcl;$(BCB)\ODAC\Include;$(BCB)\VTR_DTable
+Item21=..\..;..\..\include;Indic;$(BCB)\Projects;ReportsForm;$(BCB)\Bin;$(BCB)\Imports;setupmonitor;dialup;monitoralert;splitform;monitorform;$(BCB)\include;$(BCB)\include\vcl;$(BCB)\ODAC\Include;$(BCB)\VTR_DTable;$(BCB)\ODAC;$(BCB)\ODAC\CRGrid
+Item22=;..\..;..\..\include;Indic;$(BCB)\Projects;ReportsForm;$(BCB)\Bin;$(BCB)\Imports;setupmonitor;dialup;monitoralert;splitform;monitorform;$(BCB)\include;$(BCB)\include\vcl;$(BCB)\ODAC\Include;$(BCB)\VTR_DTable;$(BCB)\ODAC;$(BCB)\ODAC\CRGrid
+Item23=;;;..\..;..\..\include;Indic;$(BCB)\Projects;ReportsForm;$(BCB)\Bin;$(BCB)\Imports;setupmonitor;dialup;monitoralert;splitform;monitorform;$(BCB)\include;$(BCB)\include\vcl;$(BCB)\ODAC\Include;$(BCB)\VTR_DTable;$(BCB)\ODAC;$(BCB)\ODAC\CRGrid
+Item24=..\..\include;Indic;$(BCB)\Projects;ReportsForm;$(BCB)\Bin;$(BCB)\Imports;setupmonitor;dialup;monitoralert;splitform;monitorform;$(BCB)\include;$(BCB)\include\vcl;$(BCB)\ODAC\Include;$(BCB)\VTR_DTable;$(BCB)\ODAC;$(BCB)\ODAC\CRGrid
+Item25=..\..\include;Indic;$(BCB)\Projects;ReportsForm;$(BCB)\Bin;$(BCB)\Imports;setupmonitor;dialup;monitoralert;splitform;monitorform;$(BCB)\include;$(BCB)\include\vcl;$(BCB)\ODAC\Include;$(BCB)\VTR_DTable;$(BCB)\ODAC
+Item26=..\..\include;Indic;$(BCB)\Projects;ReportsForm;$(BCB)\Bin;$(BCB)\Imports;setupmonitor;dialup;monitoralert;splitform;monitorform;$(BCB)\include;$(BCB)\include\vcl;$(BCB)\ODAC\Include;$(BCB)\VTR_DTable
+Item27=..\..\include\;Indic;$(BCB)\Projects;ReportsForm;$(BCB)\Bin;$(BCB)\Imports;setupmonitor;dialup;monitoralert;splitform;monitorform;$(BCB)\include;$(BCB)\include\vcl;$(BCB)\ODAC\Include;$(BCB)\VTR_DTable
+Item28=M:\include\;Indic;$(BCB)\Projects;ReportsForm;$(BCB)\Bin;$(BCB)\Imports;setupmonitor;dialup;monitoralert;splitform;monitorform;$(BCB)\include;$(BCB)\include\vcl;$(BCB)\ODAC\Include;$(BCB)\VTR_DTable
+Item29=M:\include\;Indic;$(BCB)\Projects;ReportsForm;$(BCB)\Bin;$(BCB)\Imports;setupmonitor;dialup;monitoralert;splitform;monitorform;$(BCB)\include;$(BCB)\include\vcl;$(BCB)\ODAC\Include
+
+[HistoryLists\hlLibraryPath]
+Count=30
+Item0=$(BCB)\Projects\ASKUE_Work3520\SetupMonitor;$(BCB)\Projects\ASKUE_Work3520\NewMonitorForm;$(BCB)\Projects\ASKUE_Work3520\SplitForm;$(BCB)\Projects\ASKUE_Work3520\Indic;$(BCB)\Projects\ASKUE_Work3520\MonitorAlert;$(BCB)\Projects\ASKUE_Work3520\MonitorForm;$(BCB)\Lib;ENU;UKR;$(BCB)\Imports;..\..;ReportsForm;$(BCB)\lib\obj;$(BCB)\Projects;$(BCB)\Projects\Lib;..\..\Source;..\PermLib;$(BCB)\ODAC_191031\Source;$(BCB)\ODAC_191031\Source\CBuilder6;$(BCB)\Component\EH;$(BCB)\Component\VTR_DTable;$(BCB)\Bin
+Item1=$(BCB)\Projects\ASKUE_Work3520\SetupMonitor;$(BCB)\Projects\ASKUE_Work3520\NewMonitorForm;$(BCB)\Projects\ASKUE_Work3520\SplitForm;$(BCB)\Projects\ASKUE_Work3520\Indic;$(BCB)\Projects\ASKUE_Work3520\MonitorAlert;$(BCB)\Projects\ASKUE_Work3520\MonitorForm;$(BCB)\Lib;ENU;UKR;$(BCB)\Imports;NewMonitorForm;..\..;Indic;ReportsForm;setupmonitor;monitoralert;splitform;monitorform;$(BCB)\lib\obj;$(BCB)\Projects;$(BCB)\Projects\Lib;..\..\Source;..\PermLib;$(BCB)\ODAC_191031\Source;$(BCB)\ODAC_191031\Source\CBuilder6;$(BCB)\Component\EH;$(BCB)\Component\VTR_DTable;$(BCB)\Bin
+Item2=$(BCB)\Lib;ENU;UKR;$(BCB)\Imports;NewMonitorForm;..\..;Indic;ReportsForm;setupmonitor;monitoralert;splitform;monitorform;$(BCB)\lib\obj;$(BCB)\Projects;$(BCB)\Projects\Lib;..\..\Source;..\PermLib;$(BCB)\ODAC_191031\Source;$(BCB)\ODAC_191031\Source\CBuilder6;$(BCB)\Component\EH;$(BCB)\Component\VTR_DTable;$(BCB)\Bin
+Item3=$(BCB)\Lib;ENU;UKR;$(BCB)\Imports;NewMonitorForm;..\..;Indic;ReportsForm;setupmonitor;monitoralert;splitform;monitorform;$(BCB)\lib\obj;$(BCB)\Projects;$(BCB)\Projects\Lib;..\..\Source;..\PermLib;$(BCB)\ODAC_191031\Source;$(BCB)\ODAC_191031\Source\CBuilder6;$(BCB)\Component\EH;$(BCB)\Component\VTR_DTable;$(BCB)\Bin;$(BCB)\Include
+Item4=$(BCB)\Lib;ENU;UKR;$(BCB)\Imports;NewMonitorForm;..\..;Indic;ReportsForm;setupmonitor;monitoralert;splitform;monitorform;$(BCB)\lib\obj;$(BCB)\Projects;$(BCB)\Projects\Lib;..\..\Source;..\PermLib;$(BCB)\ODAC_191031\Source;$(BCB)\ODAC_191031\Source\CBuilder6;$(BCB)\Component\EH;$(BCB)\Component\VTR_DTable
+Item5=$(BCB)\Lib;ENU;UKR;$(BCB)\Imports;NewMonitorForm;..\..;Indic;ReportsForm;setupmonitor;monitoralert;splitform;monitorform;$(BCB)\lib\obj;$(BCB)\Projects;$(BCB)\Projects\Lib;..\..\Source;..\..\PermLib;$(BCB)\ODAC_191031\Source;$(BCB)\ODAC_191031\Source\CBuilder6;$(BCB)\Component\EH;$(BCB)\Component\VTR_DTable
+Item6=$(BCB)\Lib;ENU;UKR;$(BCB)\Imports;NewMonitorForm;..\..;Indic;ReportsForm;setupmonitor;monitoralert;splitform;monitorform;$(BCB)\lib\obj;$(BCB)\Projects;$(BCB)\Projects\Lib;..\..\Source;..\..\PermLib;$(BCB)\ODAC\Source;$(BCB)\ODAC\Source\CBuilder6;$(BCB)\Component\EH;$(BCB)\Component\VTR_DTable;$(BCB)\Component\TCompres
+Item7=$(BCB)\Lib;ENU;UKR;$(BCB)\Imports;NewMonitorForm;..\..;Indic;ReportsForm;setupmonitor;monitoralert;splitform;monitorform;$(BCB)\lib\obj;$(BCB)\Projects;$(BCB)\Projects\Lib;..\..\Source;..\..\PermLib;$(BCB)\ODAC\Source;$(BCB)\ODAC\Source\CBuilder6;$(BCB)\Component\EH;$(BCB)\Component\VTR_DTable
+Item8=$(BCB)\Lib;ENU;UKR;$(BCB)\Imports;NewMonitorForm;..\..;Indic;ReportsForm;setupmonitor;monitoralert;splitform;monitorform;$(BCB)\lib\obj;$(BCB)\Projects;$(BCB)\Projects\Lib;..\..\Source;..\..\PermLib;$(BCB)\ODAC\Source;$(BCB)\Component\EH;$(BCB)\Component\VTR_DTable
+Item9=$(BCB)\Lib;ENU;UKR;$(BCB)\Imports;NewMonitorForm;..\..;..\..\Lib;Indic;ReportsForm;setupmonitor;monitoralert;splitform;monitorform;$(BCB)\lib\obj;$(BCB)\Projects;$(BCB)\Projects\Lib;..\..\Source;..\..\PermLib;$(BCB)\ODAC\Source;$(BCB)\ODAC\Source\CBuilder6;$(BCB)\Component\EH;$(BCB)\Component\VTR_DTable
+Item10=ENU;UKR;$(BCB)\Imports;NewMonitorForm;..\..;..\..\Lib;Indic;ReportsForm;setupmonitor;monitoralert;splitform;monitorform;$(BCB)\lib\obj;$(BCB)\Projects;$(BCB)\Projects\Lib;..\..\Source;..\..\PermLib;$(BCB)\ODAC\Source;$(BCB)\ODAC\Source\CBuilder6;$(BCB)\Component\EH;$(BCB)\Component\VTR_DTable
+Item11=ENU;UKR;$(BCB)\Imports;NewMonitorForm;..\..;..\..\Lib;Indic;ReportsForm;setupmonitor;monitoralert;splitform;monitorform;$(BCB)\lib\obj;$(BCB)\Projects;$(BCB)\Projects\Lib;..\..\Source;..\..\PermLib;$(BCB)\ODAC\Source\CBuilder6;$(BCB)\Component\EH;$(BCB)\Component\VTR_DTable
+Item12=ENU;UKR;$(BCB)\Imports;NewMonitorForm;..\..;..\..\Lib;Indic;ReportsForm;setupmonitor;monitoralert;splitform;monitorform;$(BCB)\lib\obj;$(BCB)\Projects;$(BCB)\Projects\Lib;..\..\Source;..\..\PermLib;$(BCB)\ODAC\Source\CBuilder6;$(BCB)\Component\EH;;$(BCB)\Component\VTR_DTable
+Item13=ENU;UKR;$(BCB)\Imports;NewMonitorForm;..\..;..\..\Lib;Indic;ReportsForm;setupmonitor;monitoralert;splitform;monitorform;$(BCB)\lib\obj;$(BCB)\Projects;$(BCB)\Projects\Lib;..\..\Source;..\..\PermLib;$(BCB)\ODAC\Source\CBuilder6
+Item14=ENU;UKR;$(BCB)\Imports;NewMonitorForm;..\..;..\..\Lib;Indic;ReportsForm;setupmonitor;monitoralert;splitform;monitorform;$(BCB)\lib\obj;$(BCB)\Projects;$(BCB)\Projects\Lib;..\..\Source;..\..\PermLib;$(BCB)\ODAC\Source\CBuilder6;
+Item15=ENU;UKR;$(BCB)\Imports;NewMonitorForm;..\..;..\..\Lib;Indic;ReportsForm;setupmonitor;monitoralert;splitform;monitorform;$(BCB)\lib\obj;$(BCB)\Projects;$(BCB)\Projects\Lib;..\..\Source;..\..\PermLib;$(BCB)\ODAC\Source
+Item16=ENU;UKR;$(BCB)\Imports;NewMonitorForm;..\..;..\..\Lib;Indic;ReportsForm;setupmonitor;monitoralert;splitform;monitorform;$(BCB)\lib\obj;$(BCB)\Projects;$(BCB)\Projects\Lib;..\..\Source;..\..\PermLib;$(BCB)\ODAC\Source;
+Item17=ENU;UKR;$(BCB)\Imports;NewMonitorForm;..\..;..\..\Lib;Indic;ReportsForm;setupmonitor;monitoralert;splitform;monitorform;$(BCB)\lib\obj;$(BCB)\Projects;$(BCB)\Projects\Lib;..\..\Source;..\..\PermLib
+Item18=ENU;UKR;$(BCB)\Imports;NewMonitorForm;..\..;..\..\Lib;Indic;ReportsForm;setupmonitor;monitoralert;splitform;monitorform;$(BCB)\lib\obj;$(BCB)\lib;$(BCB)\Projects;$(BCB)\Projects\Lib;..\..\Source;..\..\PermLib
+Item19=ENU;UKR;$(BCB)\Imports;NewMonitorForm;..\..;..\..\Lib;Indic;ReportsForm;setupmonitor;monitoralert;splitform;monitorform;$(BCB)\lib\obj;$(BCB)\lib;$(BCB)\Projects;$(BCB)\Projects\Lib;..\..\Source
+Item20=ENU;UKR;NewMonitorForm;..\..;..\..\Lib;Indic;ReportsForm;setupmonitor;monitoralert;splitform;monitorform;$(BCB)\lib\obj;$(BCB)\lib;$(BCB)\Projects;$(BCB)\Projects\Lib;..\..\Source
+Item21=NewMonitorForm;..\..;..\..\Lib;Indic;ReportsForm;setupmonitor;monitoralert;splitform;monitorform;$(BCB)\lib\obj;$(BCB)\lib;$(BCB)\Projects;$(BCB)\Projects\Lib;..\..\Source
+Item22=..\..;..\..\Lib;Indic;ReportsForm;setupmonitor;monitoralert;splitform;monitorform;$(BCB)\lib\obj;$(BCB)\lib;$(BCB)\Projects;$(BCB)\Projects\Lib;..\..\Source
+Item23=Indic;ReportsForm;setupmonitor;monitoralert;splitform;monitorform;$(BCB)\lib\obj;$(BCB)\lib;$(BCB)\Projects;$(BCB)\Projects\Lib;..\..\Source;..\..\Lib
+Item24=..\..\Source;..\askueold;..\..;..\..\Lib;Indic;$(BCB)\Projects;ReportsForm;(BCB)\Imports;$(BCB)\Projects\Lib;setupmonitor;dialup;monitoralert;splitform;monitorform;$(BCB)\lib;$(BCB)\bin;$(BCB)\lib\obj
+Item25=..\..;..\..\Lib;Indic;$(BCB)\Projects;ReportsForm;(BCB)\Imports;$(BCB)\Projects\Lib;setupmonitor;dialup;monitoralert;splitform;monitorform;$(BCB)\lib;$(BCB)\bin;$(BCB)\lib\obj
+Item26=..\..;..\..\Lib;Indic;$(BCB)\Projects;ReportsForm;$(BCB)\ODAC\Lib;$(BCB)\Imports;$(BCB)\Projects\Lib;$(BCB)\Projects\Bpl;setupmonitor;dialup;monitoralert;splitform;monitorform;$(BCB)\lib;$(BCB)\bin;$(BCB)\lib\obj;$(BCB)\VTR_DTable
+Item27=..\..;..\..\Lib;Indic;$(BCB)\Projects;ReportsForm;$(BCB)\ODAC\Lib;$(BCB)\Imports;$(BCB)\Projects\Lib;$(BCB)\Projects\Bpl;setupmonitor;dialup;monitoralert;splitform;monitorform;$(BCB)\lib;$(BCB)\bin;$(BCB)\lib\obj;$(BCB)\VTR_DTable;$(BCB)\ODAC\CBuilder5;$(BCB)\ODAC\CRGrid
+Item28=;..\..;..\..\Lib;Indic;$(BCB)\Projects;ReportsForm;$(BCB)\ODAC\Lib;$(BCB)\Imports;$(BCB)\Projects\Lib;$(BCB)\Projects\Bpl;setupmonitor;dialup;monitoralert;splitform;monitorform;$(BCB)\lib;$(BCB)\bin;$(BCB)\lib\obj;$(BCB)\VTR_DTable;$(BCB)\ODAC\CBuilder5;$(BCB)\ODAC\CRGrid
+Item29=;;;..\..;..\..\Lib;Indic;$(BCB)\Projects;ReportsForm;$(BCB)\ODAC\Lib;$(BCB)\Imports;$(BCB)\Projects\Lib;$(BCB)\Projects\Bpl;setupmonitor;dialup;monitoralert;splitform;monitorform;$(BCB)\lib;$(BCB)\bin;$(BCB)\lib\obj;$(BCB)\VTR_DTable;$(BCB)\ODAC\CBuilder5;$(BCB)\ODAC\CRGrid
+
+[HistoryLists\hlDebugSourcePath]
+Count=2
+Item0=C:\CBuilder5\Lib\;C:\Program Files\Borland\CBuilder5\Source\Comservers\Office97\
+Item1=C:\CBuilder5\Lib\
+
+[HistoryLists\hlConditionals]
+Count=1
+Item0=_DEBUG
+
+[HistoryLists\hlUnitAliases]
+Count=1
+Item0=WinTypes=Windows;WinProcs=Windows;DbiTypes=BDE;DbiProcs=BDE;DbiErrs=BDE
+
+[HistoryLists\hlIntOutputDir]
+Count=1
+Item0=.obj
+
+[HistoryLists\hlFinalOutputDir]
+Count=2
+Item0=$(BCB)\Projects\ASKUE_Work3520\
+Item1=$(BCB)\Projects\ASKUE_Work3520
+
+[Debugging]
+DebugSourceDirs=
+
+[Parameters]
+RunParams=
+Launcher=
+UseLauncher=0
+DebugCWD=
+HostApplication=
+RemoteHost=
+RemotePath=
+RemoteLauncher=
+RemoteCWD=
+RemoteDebug=0
+
+[Compiler]
+ShowInfoMsgs=0
+LinkDebugVcl=0
+LinkCGLIB=0
+
+[CORBA]
+AddServerUnit=1
+AddClientUnit=1
+PrecompiledHeaders=1
+
+[Resource DLL Projects]
+Item0=Украинский (Украина)*0x00000422*UKR*UKR
+
+[RDP Source Files]
+Item0=unDataMod.dfm
+Item1=uOraDBConnection.dfm
+Item2=FindPoint.dfm
+Item3=Find.dfm
+Item4=Filter.dfm
+Item5=Main.dfm
+Item6=setpasword.dfm
+Item7=unAbout.dfm
+Item8=SaveMonitorAs.dfm
+Item9=MonitorForm\PrintDrawTable.dfm
+Item10=MonitorAlert\JournalAlert.dfm
+Item11=Indic\selectpoint.dfm
+Item12=InputSwitchMeterage.dfm
+Item13=OperScanSchedEd.dfm
+Item14=OperScanSched.dfm
+Item15=OperScanPointPar.dfm
+Item16=SupperMain.dfm
+Item17=TaskMenu.dfm
+Item18=MonitorForm\MONITORFORM.dfm
+Item19=Saa_SelectGroup.dfm
+Item20=Saa_SelectGroupProc.dfm
+Item21=Saa_SelectForm.dfm
+Item22=SplitForm\SplitForm.dfm
+Item23=SplitForm\Monitor.dfm
+Item24=MonitorList.dfm
+Item25=GetSelectDateTime.dfm
+Item26=PeriodFormUnit.dfm
+Item27=InfoFormUnit.dfm
+Item28=ParamCommunicationServer.dfm
+Item29=InterpriseRename.dfm
+Item30=DeportProcsSched.dfm
+Item31=DeportProcRun.dfm
+Item32=Vit_Meter.dfm
+Item33=Vit_input.dfm
+Item34=VIT_InputExcel.dfm
+Item35=EditGroupsList.dfm
+Item36=EditTimeMaxLoad.dfm
+Item37=ControlVolueDB.dfm
+Item38=ChangeCounters.dfm
+Item39=CountParam.dfm
+Item40=GetDataIntCounter.dfm
+Item41=EditIntrodactPulsCout.dfm
+Item42=EditFormsList.dfm
+Item43=CopySchemaParams.dfm
+Item44=EditRates.dfm
+Item45=DeportProcs.dfm
+Item46=EditCOMportList.dfm
+Item47=SwitchOV.dfm
+Item48=SelectSvitchPoint.dfm
+Item49=DuplicateCnt.dfm
+Item50=DuplicateCnt_InputParams.dfm
+Item51=DuplicateCnt_ps_tu.dfm
+Item52=EditMaket.dfm
+Item53=maketarm.dfm
+Item54=Vit_Delta.dfm
+Item55=Vit_deltaExcel.dfm
+Item56=Indic\consump.dfm
+Item57=EditTariff.dfm
+Item58=RequestMonitoring.dfm
+Item59=EditCounter.dfm
+Item60=InputParameters.dfm
+Item61=InputParameters4.dfm
+Item62=LastSave.dfm
+Item63=ParameterPointsList.dfm
+Item64=unCalcParam.dfm
+Item65=unWorkTime.dfm
+Item66=EditRequestPlan.dfm
+Item67=TeleControlSignals.dfm
+Item68=EditFiders.dfm
+Item69=PointConditions.dfm
+Item70=ChannelPointsList.dfm
+Item71=EditDeportationPlan.dfm
+Item72=DLK_ViewShem.dfm
+Item73=EditTransformers.dfm
+Item74=ChangeTransformers.dfm
+Item75=ImportDatafiles.dfm
+Item76=InputParam.dfm
+Item77=TypePart.dfm
+Item78=NewMonitorForm\unGraphMaket.dfm
+Item79=NewMonitorForm\unInteriorUni.dfm
+Item80=MonitorAlert\unCTSJournal.dfm
+Item81=unMeterParameter.dfm
+Item82=unEditFormula.dfm
+Item83=BlockMessage.dfm
+Item84=unSetupFilters.dfm
+Item85=MonitorAlert\JournalPortScan.dfm
+Item86=unSpecParam.dfm
+Item87=MonitorForm\ValidParamOld.dfm
+Item88=unTree.dfm
+Item89=MonitorAlert\unDSJournal.dfm
+Item90=unAddToTree.dfm
+Item91=unGuid.dfm
+Item92=unMaketArmR.dfm
+Item93=unKoeff.dfm
+Item94=unPrior.dfm
+Item95=SetupMonitor\SetupMonitors.dfm
+Item96=ManualInput.dfm
+Item97=ManualInTree.dfm
+Item98=StatICCPUnit.dfm
+Item99=MonitorForm\ValidParam.dfm
+Item100=FormUserForumViewTopic.dfm
+Item101=FormUserForumAddReply.dfm
+Item102=FormUserForumAddTopic.dfm
+Item103=FormUserForumMain.dfm
+Item104=ManualInputMeter.dfm
+Item105=unEditServName.dfm
+Item106=MonitorICCPUnit.dfm
+Item107=MonitorForm\unEnrgValid.dfm
+Item108=MonitorForm\DetailPoint.dfm
+Item109=unRefCounter.dfm
+Item110=unListCounter.dfm
+Item111=unViewTree.dfm
+Item112=unComportEvents.dfm
+Item113=TablespaceUsageForm.dfm
+Item114=unMTX.dfm
+Item115=unRTRNIK.dfm
+Item116=unChInt.dfm
+Item117=InputStartMeters.dfm
+Item118=unRTRNP.dfm
+Item119=GetSelectDate.dfm
+
+[Language]
+ActiveLang=
+ProjectLang=0x00000419
+RootDir=
+  </IDEOPTIONS>
+</PROJECT>

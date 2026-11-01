@@ -1,0 +1,11 @@
+Key/Unkey version!
+Ищем и закомменчиваем все GrdGetPermission в
+1)Askuer.cpp
+2)unDataMod.cpp
+3)SupperMain.cpp (+h, ddp, dfm) <- (Trial+Timer на форме)
+4)EditFiders.cpp
+5)EditGroupsList.cpp
+6)RequestMonitoring.cpp
+7)MonitorForm/MONITORFORM.cpp
+8)TaskMenu.cpp  
+Ищи GRB-комментарии или GrdGetPermission, GrdInitPermission
